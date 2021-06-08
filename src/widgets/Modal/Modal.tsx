@@ -17,13 +17,13 @@ const StyledModal = styled.div`
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
   border-radius: 32px;
-  width: 404px;
+  width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
-    /* width: auto; */
-    width: 404px;
-    /* max-width: 50%; */
+    width: auto;
+    min-width: 360px;
+    max-width: 100%;
   }
 `;
 

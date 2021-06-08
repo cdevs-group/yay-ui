@@ -4,10 +4,58 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg viewBox="0 0 24 24" {...props}>
-      <path d="M18.3 5.70997C17.91 5.31997 17.28 5.31997 16.89 5.70997L12 10.59L7.10997 5.69997C6.71997 5.30997 6.08997 5.30997 5.69997 5.69997C5.30997 6.08997 5.30997 6.71997 5.69997 7.10997L10.59 12L5.69997 16.89C5.30997 17.28 5.30997 17.91 5.69997 18.3C6.08997 18.69 6.71997 18.69 7.10997 18.3L12 13.41L16.89 18.3C17.28 18.69 17.91 18.69 18.3 18.3C18.69 17.91 18.69 17.28 18.3 16.89L13.41 12L18.3 7.10997C18.68 6.72997 18.68 6.08997 18.3 5.70997Z" />
-    </Svg>
+    <svg
+      width={42}
+      height={42}
+      viewBox="0 0 42 42"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect
+        x={6}
+        y={6}
+        width={30}
+        height={30}
+        rx={7}
+        fill="#fff"
+        fillOpacity={0.15}
+      />
+      <g
+        filter="url(#prefix__filter0_d)"
+        stroke="#fff"
+        strokeWidth={2}
+        strokeLinecap="round"
+      >
+        <path d="M17.465 17.465l7.07 7.07M24.537 17.465l-7.071 7.07" />
+      </g>
+      <defs>
+        <filter
+          id="prefix__filter0_d"
+          x={12.465}
+          y={14.464}
+          width={17.073}
+          height={17.071}
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
+          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feColorMatrix
+            in="SourceAlpha"
+            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          />
+          <feOffset dy={2} />
+          <feGaussianBlur stdDeviation={2} />
+          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+      </defs>
+    </svg>
   );
 };
 
 export default Icon;
+
+
+
