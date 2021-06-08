@@ -27,24 +27,24 @@ const Wrap = styled.div`
 `
 
 const Button = styled.button`
-display: inline-flex;
-align-items: center;
-margin-bottom: 14px;
-padding: 16px 7px 16px 27px;
-width: 85%;
-background: rgba(0, 0, 0, 0.25);
-border: 0;
-border-radius: 16px;
-box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;
-cursor: pointer;
-font-family: inherit;
-font-size: 15px;
-justify-content: space-between;
-letter-spacing: 0.03em;
-line-height: 19px;
-outline: 0;
-transition: background-color 0.2s;
-color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 16px 7px 16px 27px;
+  width: 85%;
+  background: rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  justify-content: space-between;
+  letter-spacing: 0.03em;
+  line-height: 19px;
+  outline: 0;
+  transition: background-color 0.2s;
+  color: #fff;
 ` 
 
 const config = [
