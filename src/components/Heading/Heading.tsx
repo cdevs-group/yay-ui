@@ -4,8 +4,8 @@ import { tags, sizes, HeadingProps } from "./types";
 
 const style = {
   [sizes.MD]: {
-    fontSize: "20px",
-    fontSizeLg: "20px",
+    fontSize: "21px",
+    fontSizeLg: "21px",
   },
   [sizes.LG]: {
     fontSize: "24px",
@@ -23,7 +23,7 @@ const style = {
 
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   font-size: ${({ size }) => style[size || sizes.MD].fontSize};
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
 
   ${({ theme }) => theme.mediaQueries.lg} {

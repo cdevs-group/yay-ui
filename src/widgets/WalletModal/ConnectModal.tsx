@@ -1,16 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "../../components/Link";
-import { Modal } from "../Modal";
-import { Login } from "./types";
-import { Text } from "../../components/Text";
-import * as Metamask from "./img/metamask.png";
-import * as TrustWallet from "./img/trust-wallet.png";
-import * as MathWallet from "./img/math-wallet.png";
-import * as TokenPocket from "./img/tocken-pocket.png";
-import * as WalletConnect from "./img/wallet-connect.png";
-import * as BinanceWallet from "./img/binance-wallet.png";
-import * as SafepackWallet from "./img/safepack-wallet.png";
+import React from 'react';
+import styled from 'styled-components';
+import { transparentize } from 'polished'
+import { Link } from '../../components/Link';
+import { Modal } from '../Modal';
+import { Login } from './types';
+import { Text } from '../../components/Text';
+import * as Metamask from './img/metamask.png';
+import * as TrustWallet from './img/trust-wallet.png';
+import * as MathWallet from './img/math-wallet.png';
+import * as TokenPocket from './img/tocken-pocket.png';
+import * as WalletConnect from './img/wallet-connect.png';
+import * as BinanceWallet from './img/binance-wallet.png';
+import * as SafepackWallet from './img/safepack-wallet.png';
 
 interface Props {
   login: Login;
@@ -30,7 +31,7 @@ const HelpLink = styled(Link)`
 
 const Wrap = styled.div`
   text-align: center;
-`
+`;
 
 const Button = styled.button`
   display: inline-flex;
@@ -51,35 +52,45 @@ const Button = styled.button`
   outline: 0;
   transition: background-color 0.2s;
   color: ${({ theme }) => theme.colors.text};
-` 
+`;
+
+const ImgWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
+`;
 
 const config = [
   {
-    title: "Metamask",
+    title: 'Metamask',
     icon: Metamask,
   },
   {
-    title: "Trust Wallet",
+    title: 'Trust Wallet',
     icon: TrustWallet,
   },
   {
-    title: "Math Wallet",
+    title: 'Math Wallet',
     icon: MathWallet,
   },
   {
-    title: "Token Pocket",
+    title: 'Token Pocket',
     icon: TokenPocket,
   },
   {
-    title: "Wallet Connect",
+    title: 'Wallet Connect',
     icon: WalletConnect,
   },
   {
-    title: "Binance Chain Wallet",
+    title: 'Binance Chain Wallet',
     icon: BinanceWallet,
   },
   {
-    title: "SafePak Wallet",
+    title: 'SafePak Wallet',
     icon: SafepackWallet,
   },
 ];
@@ -89,12 +100,14 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
     {config.map((entry, index) => (
       <Wrap key={index}>
         <Button>
-          <Text bold color="primary" mr="16px">
+          <Text fontWeight={500} color="text" mr="16px">
             {entry.title}
           </Text>
-          <img src={entry.icon}/>
+          <ImgWrap>
+            <img src={entry.icon} />
+          </ImgWrap>
         </Button>
-      </Wrap>      
+      </Wrap>
     ))}
     <HelpLink
       href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain"
