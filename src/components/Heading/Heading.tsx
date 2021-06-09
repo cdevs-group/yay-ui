@@ -36,3 +36,4 @@ Heading.defaultProps = {
 };
 
 export default Heading;
+
