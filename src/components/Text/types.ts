@@ -7,3 +7,11 @@ export interface TextProps extends SpaceProps, TypographyProps {
   small?: boolean;
   textTransform?: "uppercase" | "lowercase" | "capitalize";
 }
+
+export const sizes = {
+  SM:"sm",
+  MD: "md",
+  LG: "lg",
+  XL: "xl",
+  XXL: "xxl",
+} as const;

@@ -8,6 +8,19 @@ export const baseColors = {
   secondary: "#7645D9",
   success: "#31D0AA",
   warning: "#FFB237",
+
+  
+  green:"#4BE43E",
+  textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
+  textShadow2:"0px 4px 7px rgba(0, 0, 0, 0.15)",
+  boxShadow:"inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow2:"0px 4px 10px rgba(0, 0, 0, 0.25)",
+  bgOpacity:"rgba(0, 0, 0, 0.3)",
+  bgBlackRgba:"rgba(43, 43, 50, .7)",
+  textGray:"#A3A3A3",
+  bgGray:"#26262D",
+  greenGradient:"linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
+  text2:"F3F3F3"
 };
 
 export const brandColors = {
@@ -39,6 +52,12 @@ export const darkColors: Colors = {
   ...brandColors,
   secondary: "#9A6AFF",
   background: "#100C18",
+  overlayBg: "rgba(0, 0, 0, 0.7)", 
+  linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
+  buttonBg: "rgba(0, 0, 0, 0.25)", 
+  buttonShadow: "rgba(0, 0, 0, 0.2)",
+
+
   backgroundDisabled: "#3c3742",
   contrast: "#FFFFFF",
   invertedContrast: "#191326",
@@ -46,7 +65,7 @@ export const darkColors: Colors = {
   inputSecondary: "#66578D",
   primaryDark: "#0098A1",
   tertiary: "#353547",
-  text: "#EAE2FC",
+  text: "#fff",
   textDisabled: "#666171",
   textSubtle: "#A28BD4",
   borderColor: "#524B63",

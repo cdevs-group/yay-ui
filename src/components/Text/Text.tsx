@@ -1,27 +1,36 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, typography } from "styled-system";
-// import getThemeValue from "../../util/getThemeValue";
-import { TextProps } from "./types";
+import { TextProps, sizes } from "./types";
 
 interface ThemedProps extends TextProps {
   theme: DefaultTheme;
 }
 
-const getColor = () => {
-  // return getThemeValue(`colors.${color}`, color)(theme);
-  return '#000'
-};
-
-const getFontSize = ({ fontSize, small }: TextProps) => {
-  return small ? "14px" : fontSize || "16px";
+const style = {
+  [sizes.SM]: {
+    fontSize: "13px",
+    fontSizeLg: "16px",
+  },
+  [sizes.MD]: {
+    fontSize: "15px",
+    fontSizeLg: "19px",
+  },
+  [sizes.LG]: {
+    fontSize: "19px",
+    fontSizeLg: "24px",
+  },
+  [sizes.XL]: {
+    fontSize: "24px",
+    fontSizeLg: "30px",
+  },
 };
 
 const Text = styled.div<TextProps>`
-  color: ${getColor};
-  font-size: ${getFontSize};
-  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  font-size: ${({size}:any) => style[size || sizes.MD].fontSize};
+  line-height: ${({size}:any) => style[size || sizes.MD].fontSizeLg};
+  color:${({theme})=>theme.colors.text};
+  font-weight: ${({ bold }) => (bold ? 700 : 500)};
   line-height: 1.5;
-  ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${space}
   ${typography}
 `;

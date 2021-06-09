@@ -1,12 +1,13 @@
 import React from "react";
-import CardsBalance from "./CardsBalance";
-import CardsProducts from "./CardsProducts";
+import CardsBalance from "./CardBalance/CardsBalance";
+import CardsProducts from "./CardsProduct/CardsProducts";
 
 export default {
   title: "Components/Cards",
   component: [CardsBalance,CardsProducts],
   argTypes: {},
 };
+
 
 export const CardsBalancePreview: React.FC = () => {
   return (

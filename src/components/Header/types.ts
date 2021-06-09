@@ -7,12 +7,23 @@
 //   H6: "h6",
 // };
 
-// export const sizes = {
-//   MD: "md",
-//   LG: "lg",
-//   XL: "xl",
-//   XXL: "xxl",
-// } as const;
+export const sizes = {
+  MD: "md",
+  LG: "lg",
+  XL: "xl",
+  XXL: "xxl",
+} as const;
+
+export interface LinkProps{
+  name:string,
+  url:string, 
+  size?:string
+}
+
+export interface AccProps{
+  isAuth:boolean,
+  accName?:string
+}
 
 // export type Tags = typeof tags[keyof typeof tags];
 // export type Sizes = typeof sizes[keyof typeof sizes];

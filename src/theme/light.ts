@@ -7,13 +7,13 @@ import { DefaultTheme } from "styled-components";
 // import { light as lightNav } from "../widgets/Menu/theme";
 import { light as lightModal } from "../widgets/Modal/theme";
 import base from "./base";
-import { lightColors } from "./colors";
+import { darkColors } from "./colors";
 
 const lightTheme: DefaultTheme = {
   ...base,
   isDark: false,
   // alert: lightAlert,
-  colors: lightColors,
+  colors: darkColors,
   // card: lightCard,
   // toggle: lightToggle,
   // nav: lightNav,
