@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { TimerProps } from "../types";
 
 const Wrap = styled.div`
   display: flex;
@@ -20,20 +21,20 @@ const Dots = styled.div`
   color: #fff;
 `
 
-const Timer: React.FC = () => {
+const Timer: React.FC<TimerProps> = ({min, sec, ms}) => {
 
   return (
     <Wrap >
       <Block>
-        00
+        {min}
       </Block>
       <Dots>:</Dots>
       <Block>
-        00
+        {sec}
       </Block>
       <Dots>:</Dots>
       <Block>
-        00
+        {ms}
       </Block>
     </Wrap>
   );
