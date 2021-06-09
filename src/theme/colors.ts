@@ -22,6 +22,7 @@ export const lightColors: Colors = {
   linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
   buttonBg: "rgba(0, 0, 0, 0.25)",
   buttonShadow: "rgba(0, 0, 0, 0.2)",
+  yinyang: "#fff",
 
   backgroundDisabled: "#E9EAEB",
   contrast: "#191326",
@@ -47,6 +48,7 @@ export const darkColors: Colors = {
   linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
   buttonBg: "rgba(0, 0, 0, 0.25)",
   buttonShadow: "rgba(0, 0, 0, 0.2)",
+  yinyang: "#000",
 
   secondary: "#9A6AFF",
   backgroundDisabled: "#3c3742",

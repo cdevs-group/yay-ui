@@ -1,105 +1,117 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
 const LoaderCard: React.FC = () => {
-
   const Wrap = styled.div`
-    height: 470px;
-  `
+    /* height: 470px; */
+  `;
 
-  const loaderCircles = keyframes `
-    0% {
-      width: 0.5em;
-    }
-    35% {
-      width: 2.5em;
-    }
-    70% {
-      width: 0.5em;
-    }
-    100% {
-    }
-  }
-  
-  /* @keyframes after {
-    0% {
-      height: 0.5em;
-    }
-    35% {
-      height: 2.5em;
-    }
-    70% {
-      height: 0.5em;
-    }
-    100% {
-    }
-  } */
-  `
+  const loader1 = keyframes`
+    0%   { transform: rotate(0deg); }
+    25%   { transform: rotate(90deg); }
+    50%   { transform: rotate(180deg); }
+	  75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+  `;
+
+  const loaderdot1 = keyframes`
+    0% { transform: translate3d(0, 0, 0); }
+    50%  { transform: translate3d(6px, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  `;
+  const loaderdot2 = keyframes`
+    0%   { transform: translate3d(0, 0, 0); }
+    50%  { transform: translate3d(-6px, 0, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  `;
+  const loaderdot3 = keyframes`
+    0%   { transform: translate3d(0, 0, 0); }
+    50%  { transform: translate3d(0, 6px, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+ `;
+  const loaderdot4 = keyframes`
+    0%   { transform: translate3d(0, 0, 0); }
+    50%  { transform: translate3d(0, -6px, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  `;
 
   const Loader = styled.div`
-    position: relative;
-    width: 2.5em;
-    height: 2.5em;
-    transform: rotate(165deg);
-    animation: ${loaderCircles} 2s linear infinite;
-    /* &:before, &:after {
+    height: 70px;
+    width: 70px;
+    animation: ${loader1} 3s linear 0s infinite normal;
+    /* animation: ${loader1} 2s ease-in  infinite normal; */
+    &:before {
       content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: auto;
+      margin: auto;
       width: 22px;
       height: 22px;
+      background: #ff9525;
       border-radius: 50%;
-      background: green;
-      transform: translate(-50%, -50%);
-    }
-    &:before {
-      animation: before 2s infinite;
+      animation: ${loaderdot1} 1s ease-out  infinite;
     }
     &:after {
-      animation: after 2s infinite;
-    } */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center; 
-    justify-content: flex-end; 
-    height: 55%; */
-  `
-
-  const Img = styled.img`
-    width: 30px;
-    height: 30px;
-  `
-
-  const TopLine = styled.div`
-    display: flex;
-    margin-bottom: 8px;
-
-    & div:first-child {
-      margin-right: 8px;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: auto;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 22px;
+      height: 22px;
+      background: #69e35f;
+      border-radius: 50%;
+      animation: ${loaderdot2} 1s ease-out  infinite;
     }
-  `
-
-  const OrangeCircle = styled.div`
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #FF9525;
-  `
-
-  const GreenCircle = styled(OrangeCircle)`
-    background: #69E35F;
-  `
-
-  const RedCircle = styled(OrangeCircle)`
-    background: #FF6161;
-  `
-
-  const YellowCircle = styled(OrangeCircle)`
-    background: #ECCB57;
-  `
+    & span {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 70px;
+      width: 70px;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: auto;
+        right: 0;
+        margin: auto;
+        width: 22px;
+        height: 22px;
+        background: #ff6161;
+        border-radius: 50%;
+        animation: ${loaderdot3} 1s ease-out  infinite;
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 22px;
+        height: 22px;
+        background: #eccb57;
+        border-radius: 50%;
+        animation: ${loaderdot4} 1s ease-out  infinite;
+      }
+    }
+  `;
 
   const Text = styled.div`
     margin: 30px 0 100px;
@@ -108,23 +120,16 @@ const LoaderCard: React.FC = () => {
     line-height: 19px;
     color: #fff;
     text-align: center;
-  `
+  `;
 
   return (
-    <Wrap >
-      <Loader>
-        {/* <Img src="https://i.imgur.com/l568ECv.gif"/> */}
-        {/* <TopLine>
-          <OrangeCircle/>
-          <GreenCircle/>
-        </TopLine>
-        <TopLine>
-          <RedCircle/>
-          <YellowCircle/>
-        </TopLine> */}
+    <Wrap>
+      <Loader>  
+        <span />
       </Loader>
-      <Text>Calculating...</Text>                 
+      <Text>Calculating...</Text>
     </Wrap>
   );
 };
+
 export default LoaderCard;

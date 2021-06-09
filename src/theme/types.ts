@@ -55,6 +55,7 @@ export type Colors = {
   linkColor: string;
   buttonBg: string;
   buttonShadow: string;
+  yinyang: string;
 
   // Gradients
   gradients: Gradients;

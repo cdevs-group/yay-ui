@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "./components/Timer";
+import Timer from "../Timer/Timer";
 import * as BnbIcon from "./img/bnb.png";
 
 const payoutArr = [
@@ -119,7 +119,7 @@ const ThirdCard: React.FC = () => {
         <RedButton>Enter Down</RedButton>
       </ButtonBlock>
       <TimerTitle>Bids close in:</TimerTitle>
-      <Timer min="04" sec="30" ms="26"/>
+      <Timer time={2000} />
     </Wrap>
   );
 };

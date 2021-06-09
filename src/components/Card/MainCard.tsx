@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "./components/Timer";
+import Timer from "../Timer/Timer";
 import * as BnbIcon from "./img/bnb.png";
 
 const payoutArr = [
@@ -24,7 +24,7 @@ const TextLeft = styled.div`
   font-weight: 500;
   font-size: 21px;
   line-height: 27px;
-  background: linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%);
+  background: ${({ theme }) => theme.colors.linkColor};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   & div:last-child {
@@ -43,7 +43,7 @@ const PriceBlock = styled.div`
   position: relative;
   padding: 17px 13px 14px 25px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%);
+  background: ${({ theme }) => theme.colors.linkColor};
   z-index:1;
   &::before{
     position: absolute;
@@ -93,7 +93,7 @@ const Item = styled.div`
   line-height: 16px;
   color: #fff;
   & div.bold {
-    font-weight: bold;
+    font-weight: 500;
   }
 `
 
@@ -124,7 +124,7 @@ const MainCard: React.FC = () => {
         ))}
       </Payout>
       <TimerTitle>Bids close:</TimerTitle>
-      <Timer min="00" sec="00" ms="00"/>
+      <Timer time={1500} />
     </Wrap>
   );
 };
