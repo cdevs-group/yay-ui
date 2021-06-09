@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
@@ -64,7 +64,7 @@ const ResetCSS = createGlobalStyle`
     box-sizing: border-box;
   }
   * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Stapel', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -100,7 +100,8 @@ const ResetCSS = createGlobalStyle`
     background: transparent; 
     border-color: transparent;
     color: transparent;
-  }  
+  }    
 `;
 
 export default ResetCSS;
+
