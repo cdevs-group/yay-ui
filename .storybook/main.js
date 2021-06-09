@@ -19,10 +19,9 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     config.module.rules.push({
       test: /\.(sass|scss)$/,
-      use: ['resolve-url-loader'],     include: path.resolve(__dirname, '../')
+      use: ['resolve-url-loader'],     
+      include: path.resolve(__dirname, '../')
     });
-    
-    // fonts
     config.module.rules.push({
       test: /\.(png|woff|woff2|eot|ttf|svg)$/,
       use: [
@@ -33,9 +32,8 @@ module.exports = {
           }
         }
        ],
-      include: path.resolve(__dirname, '../')
-    });
-    // Return the altered config
+       include: path.resolve(__dirname, '../')
+      });
     return config;
   },
 };

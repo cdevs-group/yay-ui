@@ -62,12 +62,7 @@ const ResetCSS = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-  }
-  * {
-    font-family: 'Stapel', sans-serif !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  } 
   /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -104,4 +99,3 @@ const ResetCSS = createGlobalStyle`
 `;
 
 export default ResetCSS;
-
