@@ -6,6 +6,12 @@ export interface CardRibbonProps {
   text: string;
 }
 
+export interface TimerProps {
+  min: string;
+  sec: string;
+  ms: string;
+}
+
 export type CardTheme = {
   background: string;
   boxShadow: string;

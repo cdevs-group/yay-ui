@@ -10,7 +10,7 @@ const payoutArr = [
 ]
 
 const Wrap = styled.div`
-  padding: 22px 19px 21px 22px;
+  padding: 22px 19px 0 22px;
 `
 
 const Title = styled.div`
@@ -124,7 +124,7 @@ const MainCard: React.FC = () => {
         ))}
       </Payout>
       <TimerTitle>Bids close:</TimerTitle>
-      <Timer/>
+      <Timer min="00" sec="00" ms="00"/>
     </Wrap>
   );
 };
