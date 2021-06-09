@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
@@ -62,12 +62,7 @@ const ResetCSS = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
-  }
-  * {
-    font-family: 'Kanit', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+  } 
   /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -100,7 +95,7 @@ const ResetCSS = createGlobalStyle`
     background: transparent; 
     border-color: transparent;
     color: transparent;
-  }  
+  }    
 `;
 
 export default ResetCSS;

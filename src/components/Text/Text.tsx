@@ -7,8 +7,9 @@ interface ThemedProps extends TextProps {
   theme: DefaultTheme;
 }
 
-const getColor = ({ color, theme }: ThemedProps) => {
+const getColor = () => {
   // return getThemeValue(`colors.${color}`, color)(theme);
+  return '#000'
 };
 
 const getFontSize = ({ fontSize, small }: TextProps) => {
@@ -16,11 +17,18 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 };
 
 const Text = styled.div<TextProps>`
-  
+  color: ${getColor};
+  font-size: ${getFontSize};
+  font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  line-height: 1.5;
+  ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
+  ${space}
+  ${typography}
 `;
 
 Text.defaultProps = {
-  
+  color: "text",
+  small: false,
 };
 
 export default Text;
