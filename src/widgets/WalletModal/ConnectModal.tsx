@@ -23,7 +23,7 @@ const HelpLink = styled(Link)`
   align-items: center;
   margin: 0 auto;
   padding: 24px 0 26px 0;
-  background: linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%);
+  background: ${({ theme }) => theme.colors.linkColor};
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;
@@ -35,22 +35,22 @@ const Wrap = styled.div`
 const Button = styled.button`
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 14px;
-  padding: 16px 7px 16px 27px;
+  padding: 7px 7px 7px 27px;
   width: 85%;
-  background: rgba(0, 0, 0, 0.25);
+  background: ${({ theme }) => theme.colors.buttonBg};
   border: 0;
   border-radius: 12px;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 4px 4px ${({ theme }) => theme.colors.buttonShadow};
   cursor: pointer;
   font-family: inherit;
   font-size: 15px;
-  justify-content: space-between;
   letter-spacing: 0.03em;
   line-height: 19px;
   outline: 0;
   transition: background-color 0.2s;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 ` 
 
 const config = [
