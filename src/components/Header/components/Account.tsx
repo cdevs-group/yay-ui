@@ -10,7 +10,7 @@ const shortName = (name)=>`${new Array(...name).join('').slice(0,4)}...${new Arr
     <AccountBlock as='button'>
     {isAuth
     ?<>{shortName(accName)}
-    <Avatar/></>:<Avatar className='notAuth'>Connect</Avatar>
+    <Avatar/></>:<Avatar className= 'notAuth'>Connect</Avatar>
     }
   </AccountBlock>
   )
