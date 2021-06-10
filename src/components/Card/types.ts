@@ -1,15 +1,17 @@
 import { HTMLAttributes } from "react";
 import { SpaceProps } from "styled-system";
-import { Colors } from "../../theme/types";
 
 export interface CardRibbonProps {
   text: string;
 }
 
-export interface TimerProps {
-  min: string;
-  sec: string;
-  ms: string;
+export interface CardHeaderProps {
+  icon: string;
+  coin: string;
+  upDown: string;
+  num: string;
+  greenColor: boolean;
+  whiteCoin: boolean;
 }
 
 export type CardTheme = {
@@ -28,4 +30,5 @@ export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
   isWarning?: boolean;
   isDisabled?: boolean;
   ribbon?: React.ReactNode;
+  active: boolean;
 }

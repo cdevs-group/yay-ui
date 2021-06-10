@@ -49,7 +49,7 @@ const Wrap = styled.div`
     height: 22px;
     animation: ${orangeAnimation} 2s linear infinite;
     border-radius: 50%;
-    background: #FF9525;
+    background: ${({ theme }) => theme.colors.orangeBg};
   `
 
   const GreenCircle = styled.div`
@@ -58,7 +58,7 @@ const Wrap = styled.div`
     height: 22px;
     animation: ${greenAnimation} 2s linear infinite;
     border-radius: 50%;
-    background: #69E35F;
+    background: ${({ theme }) => theme.colors.greenBg};
 
   `
 
@@ -68,7 +68,7 @@ const Wrap = styled.div`
     height: 22px;
     animation: ${redAnimation} 2s linear infinite;
     border-radius: 50%;
-    background: #FF6161;
+    background: ${({ theme }) => theme.colors.redBg};
   `
 
   const YellowCircle = styled.div`
@@ -77,7 +77,7 @@ const Wrap = styled.div`
     height: 22px;
     animation: ${yellowAnimation} 2s linear infinite;
     border-radius: 50%;
-    background: #ECCB57;
+    background: ${({ theme }) => theme.colors.yellowBg};
   `
 
   const Text = styled.div`
@@ -85,7 +85,7 @@ const Wrap = styled.div`
     font-weight: 500;
     font-size: 15px;
     line-height: 19px;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
     text-align: center;
   `
 
@@ -94,7 +94,6 @@ const LoaderCard: React.FC = () => {
   return (
     <Wrap >
       <Loader>
-        {/* <Img src="https://i.imgur.com/l568ECv.gif"/> */}
         <OrangeCircle/>
         <GreenCircle/>
         <RedCircle/>
@@ -104,4 +103,5 @@ const LoaderCard: React.FC = () => {
     </Wrap>
   );
 };
+
 export default LoaderCard;
