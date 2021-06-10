@@ -57,7 +57,7 @@ export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
   secondary: "#9A6AFF",
-  background: "#100C18",
+  background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)",
   overlayBg: "rgba(0, 0, 0, 0.7)", 
   linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
   buttonBg: "rgba(0, 0, 0, 0.25)", 

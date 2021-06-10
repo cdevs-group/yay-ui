@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { BG_IMG } from './constants/images';
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
@@ -30,6 +31,8 @@ const ResetCSS = createGlobalStyle`
   body {
     line-height: 1;
     font-size: 16px;
+    min-height: 100vh;
+    background: url(${BG_IMG}) no-repeat center center /cover;
   }
   ol,
   ul {
