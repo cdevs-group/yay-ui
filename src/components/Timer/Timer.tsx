@@ -1,8 +1,17 @@
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 import { transparentize } from 'polished';
-import { TimerProps } from './types';
+import { TimerProps,TimerColorProps } from './types';
+import getThemeValue from '../../util/getThemeValue';
+interface ThemedProps extends TimerColorProps {
+  theme: DefaultTheme;
+}
+
+const getColor = ({ color, theme }: ThemedProps) => {
+  return getThemeValue(`colors.${color}`, color)(theme);
+};
+
 
 function MyTimer({ expiryTimestamp, color }) {
   const { seconds, minutes, hours } = useTimer({
@@ -47,9 +56,10 @@ const Wrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 `;
 
-const Block = styled.div<{ color: string }>`
+const Block = styled.div<TimerColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +68,7 @@ const Block = styled.div<{ color: string }>`
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  color: ${({ theme, color }) => (color ? color : theme.colors.text)};
+  color: ${getColor};
   font-weight: 500;
 `;
 

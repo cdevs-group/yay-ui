@@ -20,6 +20,7 @@ export const baseColors = {
   textGray:"#A3A3A3",
   bgGray:"#26262D",
   greenGradient:"linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
+  greenGradient2:"linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
   text2:"F3F3F3"
 };
 

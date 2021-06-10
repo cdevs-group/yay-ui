@@ -9,6 +9,7 @@ import WalletConnect from '../../public/images/wallet-connect.png';
 import BinanceWallet from '../../public/images/binance-wallet.png';
 import SafepackWallet from '../../public/images/safepack-wallet.png';
 import BNB from '../../public/images/bnb.png';
+import COINS2 from '../../public/images/coins2.png';
 
 export {
   BG_IMG,
@@ -21,5 +22,6 @@ export {
   WalletConnect,
   BinanceWallet,
   SafepackWallet,
-  BNB
+  BNB,
+  COINS2
 };
