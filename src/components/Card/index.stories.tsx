@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import LoaderCard from "./LoaderCard";
+import LoaderCard from "./LoaderCard/LoaderCard";
 import MainCard from "./MainCard";
 import ThirdCard from "./ThirdCard";
 
