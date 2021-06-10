@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BNB } from "../../constants/images";
 import Timer from "../Timer/Timer";
 import PriceBlock from "./components/PriceBlock";
 import {BnbIcon} from "../../components/Svg";

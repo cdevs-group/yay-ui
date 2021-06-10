@@ -1,5 +1,5 @@
 // import { AlertTheme } from "../components/Alert/types";
-// import { CardTheme } from "../components/Card/types";
+import { CardTheme } from "../components/Card/types";
 // import { RadioTheme } from "../components/Radio/types";
 // import { ToggleTheme } from "../components/Toggle/types";
 // import { TooltipTheme } from "../components/Tooltip/types";
@@ -7,12 +7,11 @@
 import { ModalTheme } from "../widgets/Modal/types";
 import { Colors, Breakpoints, MediaQueries, Spacing, Shadows, Radii, ZIndices } from "./types";
 
-export interface PancakeTheme {
+export interface YayTheme {
   siteWidth: number;
   isDark: boolean;
-  // alert: AlertTheme;
   colors: Colors;
-  // card: CardTheme;
+  card: CardTheme;
   // nav: NavTheme;
   modal: ModalTheme;
   // radio: RadioTheme;

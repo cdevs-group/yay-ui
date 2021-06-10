@@ -2,12 +2,17 @@ import { scales, variants } from "./types";
 
 export const scaleVariants = {
   [scales.MD]: {
-    height: "48px",
+    height: "50px",
     padding: "0 24px",
+    fontSize: "15px",
+    lineHeight: "20px",
   },
   [scales.SM]: {
     height: "32px",
     padding: "0 16px",
+    fontSize:'13px',
+    lineHeight:"16px",
+    borderRadius: '7px'
   },
   [scales.XS]: {
     height: "20px",
@@ -51,6 +56,16 @@ export const styleVariants = {
   [variants.TEXT]: {
     backgroundColor: "transparent",
     color: "primary",
+    boxShadow: "none",
+  },
+  [variants.GREEN]: {
+    background: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
+    color: "#fff",
+    boxShadow: "none",
+  },
+  [variants.PINK]: {
+    backgroundColor: "#FF6161",
+    color: "#fff",
     boxShadow: "none",
   },
 };

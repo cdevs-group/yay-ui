@@ -13,7 +13,7 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
-  background: ${({ theme }) => theme.modal.background};
+  background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   width: 100%;
@@ -30,7 +30,7 @@ const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   align-items: center;
-  padding: 27px 20px 43px 27px;
+  padding: 27px 20px 40px 27px;
 `;
 
 const ModalTitle = styled.div`

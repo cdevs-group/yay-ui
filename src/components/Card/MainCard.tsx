@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BNB } from "../../constants/images";
 import Timer from "../Timer/Timer";
 import CardHeader from "./components/CardHeader";
 import {BnbIcon} from "../../components/Svg";
@@ -40,6 +41,7 @@ const TextLeft = styled.div`
   font-size: 21px;
   line-height: 27px;
   background: ${({ theme }) => theme.colors.linkColor};
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   & div:last-child {
@@ -123,6 +125,7 @@ const MainCard: React.FC = () => {
   return (
     <Wrap>
       <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+
       <PriceBlock><span>Closed Price</span><Price>$ 400`597<div>56.3%</div></Price></PriceBlock>
       <Payout>
         {payoutArr.map((item, i) => (
