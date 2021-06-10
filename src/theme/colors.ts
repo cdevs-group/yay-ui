@@ -31,8 +31,14 @@ export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
   background: "#FAF9FA",
+  overlayBg: "rgba(0, 0, 0, 0.7)", 
+  linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
+  buttonBg: "rgba(0, 0, 0, 0.25)", 
+  buttonShadow: "rgba(0, 0, 0, 0.2)",
+
+
   backgroundDisabled: "#E9EAEB",
-  contrast: "#191326",
+  contrast: "#000",
   invertedContrast: "#FFFFFF",
   input: "#eeeaf4",
   inputSecondary: "#d7caec",
@@ -60,7 +66,7 @@ export const darkColors: Colors = {
 
   backgroundDisabled: "#3c3742",
   contrast: "#FFFFFF",
-  invertedContrast: "#191326",
+  invertedContrast: "#000",
   input: "#483f5a",
   inputSecondary: "#66578D",
   primaryDark: "#0098A1",

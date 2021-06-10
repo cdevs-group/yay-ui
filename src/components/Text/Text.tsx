@@ -24,6 +24,7 @@ const style = {
     fontSize: "24px",
     fontSizeLg: "30px",
   },
+}
 
 const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
@@ -34,9 +35,12 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 };
 
 const Text = styled.div<TextProps>`
-  font-size: ${({size}:any) => style[size || sizes.MD].fontSize};
-  line-height: ${({size}:any) => style[size || sizes.MD].fontSizeLg};
-  color:${({theme})=>theme.colors.text};
+  /* font-size: ${({size}:any) => style[size || sizes.MD].fontSize}; */
+  /* line-height: ${({size}:any) => style[size || sizes.MD].fontSizeLg}; */
+  /* color:${({theme})=>theme.colors.text}; */
+  color: ${getColor};
+  font-size: ${getFontSize};
+  ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   font-weight: ${({ bold }) => (bold ? 700 : 500)};
   line-height: 1.5;
   ${space}
