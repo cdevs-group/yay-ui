@@ -8,6 +8,7 @@ import TokenPocket from '../../public/images/tocken-pocket.png';
 import WalletConnect from '../../public/images/wallet-connect.png';
 import BinanceWallet from '../../public/images/binance-wallet.png';
 import SafepackWallet from '../../public/images/safepack-wallet.png';
+import BNB from '../../public/images/bnb.png';
 
 export {
   BG_IMG,
@@ -20,4 +21,5 @@ export {
   WalletConnect,
   BinanceWallet,
   SafepackWallet,
+  BNB
 };

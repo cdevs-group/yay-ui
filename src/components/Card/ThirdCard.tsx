@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { BNB } from "../../constants/images";
 import Timer from "../Timer/Timer";
-import * as BnbIcon from "./img/bnb.png";
 
 const payoutArr = [
   {name: <div>Start Price:</div>, price: <div className="bold">$ 1`200</div>},
@@ -101,7 +101,7 @@ const ThirdCard: React.FC = () => {
     <Wrap >
       <Title>
         <TextLeft>
-          <div><img src={BnbIcon}/></div>
+          <div><img src={BNB}/></div>
           <div className="white">BNB</div>
           <div className="green">03.01%</div>
         </TextLeft>
