@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import { transparentize } from 'polished'
+import { transparentize } from 'polished';
 import { Link } from '../../components/Link';
 import { Modal } from '../Modal';
 import { Login } from './types';
 import { Text } from '../../components/Text';
-import * as Metamask from './img/metamask.png';
-import * as TrustWallet from './img/trust-wallet.png';
-import * as MathWallet from './img/math-wallet.png';
-import * as TokenPocket from './img/tocken-pocket.png';
-import * as WalletConnect from './img/wallet-connect.png';
-import * as BinanceWallet from './img/binance-wallet.png';
-import * as SafepackWallet from './img/safepack-wallet.png';
+import {
+  Metamask,
+  TrustWallet,
+  MathWallet,
+  TokenPocket,
+  WalletConnect,
+  BinanceWallet,
+  SafepackWallet,
+} from '../../constants/images';
 
 interface Props {
   login: Login;
@@ -25,12 +27,15 @@ const HelpLink = styled(Link)`
   margin: 0 auto;
   padding: 24px 0 26px 0;
   background: ${({ theme }) => theme.colors.linkColor};
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 15px;
 `;
 
 const Wrap = styled.div`
   text-align: center;
+  padding: 0 20px 0 27px;
 `;
 
 export const Button = styled.button`
@@ -38,8 +43,8 @@ export const Button = styled.button`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
-  padding: 7px 7px 7px 27px;
-  width: 85%;
+  padding: 6px 6px 6px 27px;
+  width: 100%;
   background: ${({ theme }) => theme.colors.buttonBg};
   border: 0;
   border-radius: 12px;
@@ -100,7 +105,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
     {config.map((entry, index) => (
       <Wrap key={index}>
         <Button>
-          <Text fontWeight={500} color="text" mr="16px">
+          <Text fontWeight={500} color="text" mr="16px" fontSize="15px">
             {entry.title}
           </Text>
           <ImgWrap>
@@ -110,7 +115,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
       </Wrap>
     ))}
     <HelpLink
-      href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain"
+      href="#"
       external
     >
       Learn how connect

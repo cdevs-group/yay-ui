@@ -30,7 +30,7 @@ const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   align-items: center;
-  padding: 27px 20px 43px 27px;
+  padding: 27px 20px 40px 27px;
 `;
 
 const ModalTitle = styled.div`

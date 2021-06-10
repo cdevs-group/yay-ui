@@ -38,8 +38,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
     <Flex justifyContent="center">
     <Button mt='60px' scale='md' width='100%' variant='green' >
         Logout
-    </Button>
-    
+    </Button>    
     </Flex>
     </ModalWrap>
   </Modal>
