@@ -51,11 +51,10 @@ export type Colors = {
   textSubtle: string;
   borderColor: string;
   card: string;
-  overlayBg: string;
-  linkColor: string;
-  buttonBg: string;
+  overlayBg: string; 
+  linkColor: string; 
+  buttonBg: string; 
   buttonShadow: string;
-  yinyang: string;
 
   // Gradients
   gradients: Gradients;

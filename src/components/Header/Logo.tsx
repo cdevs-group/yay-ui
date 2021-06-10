@@ -1,5 +1,6 @@
-import * as React from "react"
-function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
+import * as React from "react";
+
+function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={171}
@@ -348,5 +349,6 @@ function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
       </defs>
     </svg>
   )
-}
-export default SvgComponent
+};
+
+export default Logo;
