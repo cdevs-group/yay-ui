@@ -25,6 +25,7 @@ const TextLeft = styled.div`
   font-size: 21px;
   line-height: 27px;
   background: ${({ theme }) => theme.colors.linkColor};
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   & div:last-child {

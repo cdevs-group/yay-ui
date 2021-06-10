@@ -21,13 +21,13 @@ function MyTimer({ expiryTimestamp, color }) {
   return (
     <Wrap>
       {timeArray.map((item, i) => (
-        <>
-          <Block key={`item-${i}`} color={color}>
+        <React.Fragment key={`item-${i}`}>
+          <Block color={color}>
             {handleDigit(item).leftDigit}
             {handleDigit(item).rightDigit}
           </Block>
           {i === 2 ? null : <Dots>:</Dots>}
-        </>
+        </React.Fragment>
       ))}
     </Wrap>
   );
