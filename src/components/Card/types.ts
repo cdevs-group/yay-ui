@@ -5,6 +5,15 @@ export interface CardRibbonProps {
   text: string;
 }
 
+export interface CardHeaderProps {
+  icon: string;
+  coin: string;
+  upDown: string;
+  num: string;
+  greenColor: boolean;
+  whiteCoin: boolean;
+}
+
 export type CardTheme = {
   background: string;
   boxShadow: string;
@@ -21,4 +30,5 @@ export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
   isWarning?: boolean;
   isDisabled?: boolean;
   ribbon?: React.ReactNode;
+  active: boolean;
 }

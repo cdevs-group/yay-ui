@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "./Card";
-import LoaderCard from "./LoaderCard";
+import LastCard from "./LastCard";
+import LoaderCard from "./LoaderCard/LoaderCard";
 import MainCard from "./MainCard";
+import PositionCard from "./PositionCard";
 import ThirdCard from "./ThirdCard";
 
 export default {
@@ -13,7 +15,7 @@ export default {
 export const Default: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card>
+      <Card >
         <MainCard/>
       </Card>
     </div>
@@ -33,8 +35,28 @@ export const Loader: React.FC = () => {
 export const CardThird: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card>
+      <Card active>
         <ThirdCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const CardPosition: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card >
+        <PositionCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const CardLast: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <LastCard/>
       </Card>
     </div>
   );

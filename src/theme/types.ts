@@ -25,10 +25,13 @@ export type Shadows = {
   warning: string;
   focus: string;
   inset: string;
+  boxShadow3: string;
+  boxShadow4: string;
 };
 
 export type Gradients = {
   bubblegum: string;
+  greenGradient: string;
 };
 
 export type Colors = {
@@ -55,6 +58,17 @@ export type Colors = {
   linkColor: string; 
   buttonBg: string; 
   buttonShadow: string;
+  cardBg: string;
+  greyText: string;
+  darkGreyBg: string;
+  orangeBg: string;
+  greenBg: string;
+  redBg: string;
+  yellowBg: string;
+  greenText: string;
+  lightGreyBg: string;
+  blackColor: string;
+  greenText2: string;
   green: string;
   greenGradient2: string;
   panel: string;
