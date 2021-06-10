@@ -15,7 +15,7 @@ const Header = ({isAuth, accName}) =>{
     <Nav>
       {links.map((item,i)=>
       <React.Fragment key={i}>
-        <MenuLink size='lg' name={item.name} url={item.url}/>
+        <MenuLink className={i===0?'active':''} size='md' name={item.name} url={item.url}/>
         </React.Fragment>
       )}
     </Nav>
