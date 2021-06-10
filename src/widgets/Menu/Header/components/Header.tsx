@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { links } from "../config";
@@ -13,7 +14,9 @@ const Header = ({isAuth, accName}) =>{
     {/* </Link> */}
     <Nav>
       {links.map((item,i)=>
+      <React.Fragment key={i}>
         <MenuLink size='lg' name={item.name} url={item.url}/>
+        </React.Fragment>
       )}
     </Nav>
     <Account accName={accName} isAuth={isAuth}/>

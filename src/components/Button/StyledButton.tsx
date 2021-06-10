@@ -23,11 +23,12 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
       background-color: ${theme.colors.backgroundDisabled};
       border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
-      color: ${theme.colors.textDisabled};
+      color: ${theme.colors.text};
       cursor: not-allowed;
     }
   `;
 };
+
 
 /**
  * This is to get around an issue where if you use a Link component
@@ -45,7 +46,7 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
   border: 0;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;
   cursor: pointer;
   display: inline-flex;
@@ -60,21 +61,21 @@ const StyledButton = styled.button<BaseButtonProps>`
   transition: background-color 0.2s;
 
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-    opacity: 0.65;
+     box-shadow: 0px 0px 29px #2CB021
   }
 
   &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
-    opacity: 0.85;
+    /* box-shadow: 0px 0px 29px #2CB021 */
   }
 
   ${getDisabledStyles}
   ${variant({
-    prop: "scale",
-    variants: scaleVariants,
-  })}
+  prop: "scale",
+  variants: scaleVariants,
+})}
   ${variant({
-    variants: styleVariants,
-  })}
+  variants: styleVariants,
+})}
   ${layout}
   ${space}
 `;

@@ -9,6 +9,7 @@ export interface TextProps extends SpaceProps, TypographyProps {
 }
 
 export const sizes = {
+  XS:'xs',
   SM:"sm",
   MD: "md",
   LG: "lg",

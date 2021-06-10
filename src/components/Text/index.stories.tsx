@@ -41,16 +41,12 @@ export default {
 export const Default: React.FC = () => {
   return (
     <div>
-      <Text>Default</Text>
-      <Text bold>Bold text</Text>
-      <Text small>Small text</Text>
-      <Text fontSize="24px">Custom fontsize</Text>
-      <Text color="red">Custom color</Text>
-      <Text color="primary">Custom color from theme</Text>
-      <Text color="secondary" textTransform="uppercase">
-        with text transform
-      </Text>
-      <Text textAlign="center">center</Text>
+      <Text bold size='xl'>Medium 24</Text>
+      <Text  bold size='lg'>Medium 21</Text>
+      <Text  bold size='md'>Medium 15</Text>
+      <Text bold size="sm">Medium 13</Text>
+      <Text size='sm'>Regular 13</Text>
+      <Text size='xs'>Regular 11</Text>
     </div>
   );
 };

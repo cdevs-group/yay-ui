@@ -8,6 +8,10 @@ interface ThemedProps extends TextProps {
 }
 
 const style = {
+  [sizes.XS]: {
+    fontSize: "11px",
+    fontSizeLg: "14px",
+  },
   [sizes.SM]: {
     fontSize: "13px",
     fontSizeLg: "16px",
@@ -17,8 +21,8 @@ const style = {
     fontSizeLg: "19px",
   },
   [sizes.LG]: {
-    fontSize: "19px",
-    fontSizeLg: "24px",
+    fontSize: "21px",
+    fontSizeLg: "27px",
   },
   [sizes.XL]: {
     fontSize: "24px",
@@ -35,11 +39,11 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 };
 
 const Text = styled.div<TextProps>`
-  /* font-size: ${({size}:any) => style[size || sizes.MD].fontSize}; */
-  /* line-height: ${({size}:any) => style[size || sizes.MD].fontSizeLg}; */
-  /* color:${({theme})=>theme.colors.text}; */
+  font-size: ${({ size }: any) => style[size || sizes.MD].fontSize};  
+  line-height: ${({ size }: any) => style[size || sizes.MD].fontSizeLg}; 
+  /* color:${({ theme }) => theme.colors.text}; */
   color: ${getColor};
-  font-size: ${getFontSize};
+  /* font-size: ${getFontSize}; */
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   font-weight: ${({ bold }) => (bold ? 700 : 500)};
   line-height: 1.5;

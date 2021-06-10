@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from '../../Text/Text';
+import Text from '../../../../components/Text/Text';
 import { AccProps } from '../types';
 
 const Account = ({isAuth, accName}:AccProps) =>{

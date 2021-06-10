@@ -38,7 +38,7 @@ const Wrap = styled.div`
   padding: 0 20px 0 27px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
