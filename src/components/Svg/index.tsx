@@ -8,6 +8,8 @@ export { default as SquaresIcon } from './Icons/Squares';
 export { default as EyeOpenIcon } from './Icons/EyeOpen';
 export { default as EyeCloseIcon } from './Icons/EyeClose';
 export { default as ArrowIcon } from './Icons/Arrow';
+export { default as ArrowPanel } from './Icons/ArrowPanel';
+export { default as BtnPanel } from './Icons/BtnPanel';
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

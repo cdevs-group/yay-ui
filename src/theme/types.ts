@@ -57,6 +57,7 @@ export type Colors = {
   buttonShadow: string;
   green: string;
   greenGradient2: string;
+  panel: string;
 
   // Gradients
   gradients: Gradients;
