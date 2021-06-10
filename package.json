@@ -6,6 +6,7 @@
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
     "lodash": "^4.17.20",
+    "react-timer-hook": "^2.0.6",
     "react-transition-group": "^4.4.1",
     "storybook": "^6.2.9",
     "styled-system": "^5.1.5"
@@ -15,7 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6007",
+    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
     "build-storybook": "build-storybook"
   },
   "eslintConfig": {
@@ -47,6 +48,7 @@
     ]
   },
   "peerDependencies": {
+    "polished": "^3.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -76,6 +78,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.20.0",
+    "file-loader": "^6.2.0",
     "husky": "4.3.5",
     "jest": "^26.6.3",
     "jest-styled-components": "^7.0.3",
@@ -85,6 +88,7 @@
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
     "react-router-dom": "^5.2.0",
+    "resolve-url-loader": "^4.0.0",
     "rollup": "^2.39.0",
     "styled-components": "^5.2.0",
     "themeprovider-storybook": "^1.6.4",
