@@ -33,7 +33,7 @@ const Wrap = styled.div`
   text-align: center;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;

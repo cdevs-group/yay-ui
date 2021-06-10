@@ -20,7 +20,9 @@ export const baseColors = {
   textGray:"#A3A3A3",
   bgGray:"#26262D",
   greenGradient:"linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
-  text2:"F3F3F3"
+  text2:"F3F3F3",
+  darkPink:"#FF6161",
+  whiteRgba:"rgba(255, 255, 255, 0.15)"
 };
 
 export const brandColors = {
@@ -37,7 +39,7 @@ export const lightColors: Colors = {
   buttonShadow: "rgba(0, 0, 0, 0.2)",
 
 
-  backgroundDisabled: "#E9EAEB",
+  backgroundDisabled: "rgba(255,255,255,.15)",
   contrast: "#000",
   invertedContrast: "#FFFFFF",
   input: "#eeeaf4",
