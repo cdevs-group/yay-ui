@@ -22,40 +22,16 @@ export const baseColors = {
   greenGradient:"linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
   text2:"F3F3F3",
   darkPink:"#FF6161",
-  whiteRgba:"rgba(255, 255, 255, 0.15)"
+  whiteRgba:"rgba(255, 255, 255, 0.15)",
+  greenGradient2:"linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
 };
 
 export const brandColors = {
   binance: "#F0B90B",
 };
 
-export const lightColors: Colors = {
-  ...baseColors,
-  ...brandColors,
-  background: "#FAF9FA",
-  overlayBg: "rgba(0, 0, 0, 0.7)", 
-  linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
-  buttonBg: "rgba(0, 0, 0, 0.25)", 
-  buttonShadow: "rgba(0, 0, 0, 0.2)",
-
-
-  backgroundDisabled: "rgba(255,255,255,.15)",
-  contrast: "#000",
-  invertedContrast: "#FFFFFF",
-  input: "#eeeaf4",
-  inputSecondary: "#d7caec",
-  tertiary: "#EFF4F5",
-  text: "#452A7A",
-  textDisabled: "#BDC2C4",
-  textSubtle: "#8f80ba",
-  borderColor: "#E9EAEB",
-  card: "#FFFFFF",
-  gradients: {
-    bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
-  },
-};
-
 export const darkColors: Colors = {
+// export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
   secondary: "#9A6AFF",
@@ -77,8 +53,36 @@ export const darkColors: Colors = {
   textDisabled: "#666171",
   textSubtle: "#A28BD4",
   borderColor: "#524B63",
-  card: "#27262c",
+  card: "#FFFFFF",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
+  },
+
+};
+export const lightColors: Colors = {
+// export const darkColors: Colors = {
+  ...baseColors,
+  ...brandColors,  
+  
+  background: "#FAF9FA",
+  overlayBg: "rgba(0, 0, 0, 0.7)", 
+  linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
+  buttonBg: "rgba(0, 0, 0, 0.25)", 
+  buttonShadow: "rgba(0, 0, 0, 0.2)",
+
+
+  backgroundDisabled: "rgba(255,255,255,.15)",
+  contrast: "#000",
+  invertedContrast: "#FFFFFF",
+  input: "#eeeaf4",
+  inputSecondary: "#d7caec",
+  tertiary: "#EFF4F5",
+  text: "#452A7A",
+  textDisabled: "#BDC2C4",
+  textSubtle: "#8f80ba",
+  borderColor: "#E9EAEB",
+  card: "#26262D",
+  gradients: {
+    bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
   },
 };

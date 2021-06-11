@@ -1,6 +1,7 @@
-import { Colors } from "../../theme/types";
-
-export interface TimerProps {
+export interface TimerColorProps {
+  color?: string;
+}
+export interface TimerProps{
+  color?: string;
   time: number;
-  color?: Colors;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { BNB } from "../../constants/images";
 import Timer from "../Timer/Timer";
-import * as BnbIcon from "./img/bnb.png";
 
 const payoutArr = [
   {name: <div>Payout:</div>, price: "5,09x"},
@@ -25,6 +25,7 @@ const TextLeft = styled.div`
   font-size: 21px;
   line-height: 27px;
   background: ${({ theme }) => theme.colors.linkColor};
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   & div:last-child {
@@ -110,7 +111,7 @@ const MainCard: React.FC = () => {
     <Wrap >
       <Title>
         <TextLeft>
-          <div><img src={BnbIcon}/></div>
+          <div><img src={BNB}/></div>
           <div>BNB UP</div>
         </TextLeft>
         <TextRight>#0019</TextRight>
