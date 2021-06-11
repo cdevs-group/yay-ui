@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
 import CardHeader from "./components/CardHeader";
 import {BnbIcon} from "../../components/Svg";
 import ClosedPrice from "../ClosedPrice/ClosedPrice";
+import Button from "../Button/Button";
+import {Winner, Win} from '../../constants/images';
 
 const payoutArr = [
   {name: <div>Payout:</div>, price: "5,09x"},
@@ -51,18 +52,30 @@ const Item = styled.div`
   }
 `
 
-const TimerTitle = styled.div`
-  margin: 51px 0 19px;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.text};
+const ButtonBnb = styled.div`
+  position: relative;
+  margin-top: 84px;
 `
 
-const MainCard: React.FC = () => {
+const WinIcon = styled.div`
+  position: absolute;
+  top: 76%;
+  left: 8%;
+  z-index: 2;
+  pointer-events: none;
+`
+
+const WinnerImg = styled.div`
+  position: absolute;
+  top: 63%;
+  left: 59%;
+  pointer-events: none;
+`
+
+const NewWinCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019" svg="svg"/>
       <ClosedPrice price="$ 400`597" rightText="56.3%"/>
       <Payout>
         {payoutArr.map((item, i) => (
@@ -71,9 +84,10 @@ const MainCard: React.FC = () => {
           </div>
         ))}
       </Payout>
-      <TimerTitle>Bids close:</TimerTitle>
-      <Timer time={1500} />
+      <WinIcon><img src={Win}/></WinIcon>
+      <ButtonBnb><Button variant='green' width="100%">Up BNB </Button></ButtonBnb>
+      <WinnerImg><img src={Winner}/></WinnerImg>
     </Wrap>
   );
 };
-export default MainCard;
+export default NewWinCard;

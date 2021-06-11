@@ -60,7 +60,20 @@ const StyledButton = styled.button<BaseButtonProps>`
   opacity: ${getOpacity};
   outline: 0;
   transition:  0.2s;
-
+  &.withGreenBorder {
+    display: flex;
+    width: 100%;
+    border: 1.5px solid ${({ theme }) => theme.colors.greenText};;
+    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
+    color: ${({ theme }) => theme.colors.greenText};
+    text-shadow: ${({ theme }) => theme.colors.boxShadow5};
+  }
+  &.withRedBorder {
+    border: 1.5px solid #FF6161;
+    background: none;
+    color: ${({ theme }) => theme.colors.greenText};
+    text-shadow: ${({ theme }) => theme.colors.boxShadow5};
+  }
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
      /* ; */
      box-shadow: ${({variant})=>variant==='green'?'0px 0px 29px #2CB021':variant==='pink'?'0px 0px 20px rgba(255, 97, 97, 0.38)':'none'};

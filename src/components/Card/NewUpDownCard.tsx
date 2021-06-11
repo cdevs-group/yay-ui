@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
 import CardHeader from "./components/CardHeader";
 import {BnbIcon} from "../../components/Svg";
 import ClosedPrice from "../ClosedPrice/ClosedPrice";
+import Button from "../Button/Button";
 
 const payoutArr = [
   {name: <div>Payout:</div>, price: "5,09x"},
@@ -13,7 +13,7 @@ const payoutArr = [
 
 const Wrap = styled.div`
   position: relative;
-  padding: 22px 19px 32px 22px;
+  padding: 22px 19px 30px 22px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
@@ -51,15 +51,15 @@ const Item = styled.div`
   }
 `
 
-const TimerTitle = styled.div`
-  margin: 51px 0 19px;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.text};
+const ButtonBlock = styled.div`
+  margin-top: 86px;
+  & div {
+    position: absolute;
+    right: 9%;
+  }
 `
 
-const MainCard: React.FC = () => {
+const NewUpDownCard: React.FC = () => {
   return (
     <Wrap>
       <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
@@ -71,9 +71,11 @@ const MainCard: React.FC = () => {
           </div>
         ))}
       </Payout>
-      <TimerTitle>Bids close:</TimerTitle>
-      <Timer time={1500} />
+      <ButtonBlock>
+        <Button variant='green' className="withGreenBorder">Entered Up <div className="right">svg</div></Button>
+      </ButtonBlock>     
     </Wrap>
   );
 };
-export default MainCard;
+
+export default NewUpDownCard;

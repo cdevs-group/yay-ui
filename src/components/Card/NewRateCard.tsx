@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { BNB } from "../../constants/images";
-import Timer from "../Timer/Timer";
 import PriceBlock from "./components/PriceBlock";
-import {BnbIcon} from "../../components/Svg";
+import {BnbIcon} from "../Svg";
 import CardHeader from "./components/CardHeader";
 import Button from "../Button/Button";
+import { Button as Input } from '../../widgets/WalletModal/ConnectModal';
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;
@@ -19,24 +18,16 @@ const ButtonBlock = styled.div`
     font-weight: 500;
     font-size: 15px;
     line-height: 19px;
-  }
-  
+  } 
   & button:not(:last-child) {
     margin-bottom: 14px;
     
   }
-`
-
-const GreenButton = styled.div`
-  margin-bottom: 14px;
-  padding: 16px 0;
-  width: 100%;
-  background: green;
-  text-align: center;
-`
-
-const RedButton = styled(GreenButton)`
-  background: red;
+  & div {
+    position: absolute;
+    right: 62%;
+    text-shadow: ${({ theme }) => theme.colors.boxShadow5};
+  }
 `
 
 const TimerTitle = styled.div`
@@ -47,24 +38,34 @@ const TimerTitle = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `
 
+const InputBlock = styled(Input)`
+  width: 45%;
+  height: 48px;
+  margin: 0 28%;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 53px;
+  cursor: auto;
+`
+
 const payoutArr = [
-  {name: <div>Start Price:</div>, price: <div className="bold">$ 1`200</div>},
+  {name: <div>Round:</div>, price: <div className="grey">#0021</div>},
   {name: <div>Current Price:</div>, price: <div className="bold">$ 3`500</div>},
   {name: <div className="prize">Prize Pool:</div>, price: <div className="boldPrice">12.000 BNB</div>},
 ]
 
-const ThirdCard: React.FC = () => {
+const NewRateCard: React.FC = () => {
   return (
     <Wrap >
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="03.01%" num="#0021" greenColor/>
+      <CardHeader icon={<BnbIcon/>} coin="BNB"/>
       <PriceBlock arr={payoutArr}/>
       <ButtonBlock>
-        <Button variant='green'>Enter Up</Button>
-        <Button variant='pink'>Enter Down</Button>
+        <Button variant='green' className="withGreenBorder">Entered Up <div className="right">svg</div></Button>
+        <Button variant='pink' disabled className="withRedBorder">Enter Down</Button>
       </ButtonBlock>
-      <TimerTitle>Bids close in:</TimerTitle>
-      <Timer time={2000} color="#fff"/>
+      <TimerTitle>You Entered:</TimerTitle>
+      <InputBlock as="input"/>
     </Wrap>
   );
 };
-export default ThirdCard;
+export default NewRateCard;
