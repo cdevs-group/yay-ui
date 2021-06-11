@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Text } from '../../../components/Text';
-import { progressProps } from '../types';
+import { bestProps } from '../types';
 
-const ProgressBar = ({ progress }: progressProps) => {
+const ProgressBar = ({ best }: bestProps) => {
   const [count, setCount] = useState({count:0,profit:0})
 
   const countTrue = () => {
     let count = 0
     let profit = 0
-    progress.map(item => {
-      if (item.status) {
+    best.map(item => {
+      if (item.win) {
         count++
-        profit += item.profit
+        profit += item.average
       }
     })
     return {count, profit};
   }
   useEffect(() => {
     setCount(countTrue())
-  }, [progress])
+  }, [best])
 
   return (<div>
     <ProgressWrap>
       <Progress>
-        {progress.map((item, i) => <React.Fragment key={i}>
-          <Step color={item.status ? '#47DA3B' : '#EF5D5D'} />
+        {best.map((item, i) => <React.Fragment key={i}>
+          <Step color={item.win ? '#47DA3B' : '#FF6161'} />
         </React.Fragment>
         )}
       </Progress>
     </ProgressWrap>
     <Counter>
     <Text fontSize='21px'>
-      {count.count}/{progress.length}
+      {count.count}/{best.length}
     </Text>
     <TextProfit textAlign='right' fontSize='21px' >+{count.profit} BNB</TextProfit>
     <TextPercents >100%</TextPercents>

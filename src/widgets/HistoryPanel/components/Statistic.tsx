@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import Text from '../../../components/Text/Text';
 import { bestProps } from '../types';
 
-const Statistic = ({ best }: bestProps) => {
+const Statistic = ({ bestNumber,best }: bestProps) => {
   const nameRow = (index: number) => {
     switch (index) {
       case 0:
         return { first: 'Average', second: 'return / round' }
       case 1:
-        return { first: 'Best round:', second: '#5426' }
+        return { first: 'Best round:', second: `#${bestNumber?.number}` }
       case 2:
         return { first: 'Average position', second: 'enetered / round' }
       default:
@@ -22,7 +22,11 @@ const Statistic = ({ best }: bestProps) => {
       {best.map((item, i) =>
         <Row>
           <Text>{nameRow(i).first}</Text>
-          <Text textAlign='right' color={i!==3?'#4BE43E':'white'}>+{item.average}BNB</Text>
+         
+         <Best fontSize='13px' textAlign='right' color={i!==2?'#4BE43E':'white'}>
+            {i===1?<Text color='#A3A3A3'fontSize='13px'>({bestNumber?.kef}X)</Text>:null}
+          +{item.average}BNB</Best>
+          
           <Text>{nameRow(i).second}</Text>
           <Text textAlign='right' >{item.round}</Text>
         </Row>
@@ -37,8 +41,12 @@ const Wrap = styled.div`
   margin-top: 20px;
 `;
 const Row = styled.div`
-  margin: 20px 0;
+  margin: 17px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
+`;
+const Best = styled(Text)`
+  display:flex;
+  justify-content: flex-end;
 `;

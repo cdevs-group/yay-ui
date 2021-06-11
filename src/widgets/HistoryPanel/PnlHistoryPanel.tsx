@@ -5,17 +5,21 @@ import { ArrowIcon } from '../../components/Svg';
 import ProgressBar from './components/ProgressBar';
 import Rounds from './components/Rounds';
 import Statistic from './components/Statistic';
+import { PnlProp } from './types';
 
-const progress = [{status:true,profit:0.12},{status:false,profit:1.24},{status:false,profit:12.99}];
-const best = [{win:true,average:0.12,round:.1231},{win:true,average:0.12,round:.1231},{win:true,average:0.12,round:.1231}]
+const data ={
+  bestNumber:{number:2653,kef:1.55},
+  best:[{ win: true, average: 0.12, round: .1231 }, { win: false, average: 0.12, round: .1231 }, { win: false, average: 0.12, round: 0.1231 }]
 
-const PnlHistoryPanel: React.FC = () => (
-   <>
-     <ProgressBar progress={progress}/>
-    <Statistic best={best}/>
-    <Rounds best={best}/>
-    <ButtonBlock width='100%' variant='green' scale='md'>View Reclaimed & Wonv<ArrowIcon fill='rgba(0,0,0,0)'/></ButtonBlock>
-   </>
+}
+
+const PnlHistoryPanel = ({ open }: PnlProp) => (
+  <Wrap open={open}>
+    <ProgressBar best={data.best} />
+    <Statistic bestNumber={data.bestNumber} best={data.best} />
+    <Rounds best={data.best} />
+    <ButtonBlock width='100%' variant='green' scale='md'>View Reclaimed & Wonv<ArrowIcon fill='rgba(0,0,0,0)' /></ButtonBlock>
+  </Wrap>
 );
 
 export default PnlHistoryPanel;
@@ -23,4 +27,9 @@ export default PnlHistoryPanel;
 const ButtonBlock = styled(Button)`
   position: relative;
   top: -30px;
+  z-index:2;
+`;
+const Wrap = styled.div<{ open: boolean }>`
+  transition: .3s;
+  opacity: ${({ open }) => open ? 1 : 0};
 `;

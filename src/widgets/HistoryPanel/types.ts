@@ -6,13 +6,6 @@ export interface InjectedProps {
   open: boolean;
   children?:ReactNode;
 }
-interface statusBar{
-  status:boolean
-  profit:number
-}
-export interface progressProps{
-  progress:Array<statusBar>
-}
 interface bestData{
   average:number
   round:number
@@ -20,5 +13,11 @@ interface bestData{
 }
 export interface bestProps{
   best:Array<bestData>
+  bestNumber?:{
+    number:number,
+    kef:number
+  }
 }
-
+export interface PnlProp{
+  open:boolean
+}
