@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 export interface CardHeaderProps {
-  icon: string;
+  icon?: ReactNode;
   coin: string;
   upDown: string;
   num: string;
