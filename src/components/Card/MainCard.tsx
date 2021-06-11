@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { BNB } from "../../constants/images";
 import Timer from "../Timer/Timer";
+import CardHeader from "./components/CardHeader";
+import {BnbIcon} from "../../components/Svg";
 
 const payoutArr = [
   {name: <div>Payout:</div>, price: "5,09x"},
@@ -10,15 +12,29 @@ const payoutArr = [
 ]
 
 const Wrap = styled.div`
-  padding: 22px 19px 0 22px;
+  position: relative;
+  padding: 22px 19px 32px 22px;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.colors.linkColor};
+  z-index: 1;
+  &.red { 
+    /* background: red; */
+  }
+  &::before{
+    position: absolute;
+    display: block;
+    content:'';   
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    box-sizing: border-box;
+    top: 1px;
+    left: 1px;
+    background: ${({ theme }) => theme.colors.cardBg};;
+    border-radius: 12px;
+    z-index: -1;
+  }
 `
 
-const Title = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 49px;
-`
 const TextLeft = styled.div`
   display: flex;
   font-weight: 500;
@@ -33,29 +49,23 @@ const TextLeft = styled.div`
   }
 `
 
-const TextRight = styled.div`
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 16px;
-  color: #A3A3A3;
-`
-
 const PriceBlock = styled.div`
   position: relative;
+  margin-top: 49px;
   padding: 17px 13px 14px 25px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index:1;
   &::before{
     position: absolute;
-    display:block;
+    display: block;
     content:'';   
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     box-sizing: border-box;
     top: 1px;
     left: 1px;
-    background: #1d1d22;
+    background: ${({ theme }) => theme.colors.darkGreyBg};
     border-radius: 12px;
     z-index: 0;
   }
@@ -64,7 +74,7 @@ const PriceBlock = styled.div`
     z-index: 3;
     font-size: 15px;
     line-height: 19px;
-    color: #A3A3A3
+    color: ${({ theme }) => theme.colors.greyText};
   }
 `
 
@@ -75,10 +85,15 @@ const Price = styled(TextLeft)`
   justify-content: space-between;
   align-items: center;
   margin-top: 18px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
   & div {
     padding: 6px 12px;
-    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
+    background: ${({ theme }) => theme.colors.gradients.greenGradient};
     border-radius: 7px;
+    font-size: 15px;
+    line-height: 19px;
   }
 `
 
@@ -92,7 +107,7 @@ const Item = styled.div`
   margin-bottom: 8px;
   font-size: 13px;
   line-height: 16px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   & div.bold {
     font-weight: 500;
   }
@@ -103,19 +118,14 @@ const TimerTitle = styled.div`
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
 `
 
 const MainCard: React.FC = () => {
   return (
-    <Wrap >
-      <Title>
-        <TextLeft>
-          <div><img src={BNB}/></div>
-          <div>BNB UP</div>
-        </TextLeft>
-        <TextRight>#0019</TextRight>
-      </Title>
+
+    <Wrap>
+      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
       <PriceBlock><span>Closed Price</span><Price>$ 400`597<div>56.3%</div></Price></PriceBlock>
       <Payout>
         {payoutArr.map((item, i) => (
