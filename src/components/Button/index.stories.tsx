@@ -1,8 +1,7 @@
-import { capitalize } from "lodash";
 import React from "react";
 import { BrowserRouter, Link } from "react-router-dom";
-import styled from "styled-components";
-
+import styled, { keyframes } from "styled-components";
+import { CercleIcon } from '../Svg'
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { scales, variants } from "./types";
@@ -116,6 +115,9 @@ export const Variants: React.FC = () => {
           <Button width='170px' disabled scale='md' variant='pink'>
             Button
       </Button>
+          <Button width='300px' spin scale='md' variant='green'>
+          Collect Winnings 
+      </Button>
         </Row>
         <Row>
           <Button width='130px' scale='sm' variant='green'>
@@ -141,3 +143,16 @@ export const Variants: React.FC = () => {
     </div>
   );
 };
+
+// let orangeAnimation = keyframes`
+//   0% { transform: rotate(360deg); },
+//    100% { transform: rotate(360deg); }
+// `;
+
+
+// const ButtonSpin = styled(Button)`
+//   & svg path{
+//     transform-origin: center center;
+//     animation: ${orangeAnimation} 1.5s infinite;
+//   }
+// `;

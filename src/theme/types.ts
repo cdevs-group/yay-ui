@@ -71,10 +71,12 @@ export type Colors = {
   lightGreyBg: string;
   blackColor: string;
   greenText2: string;
-  green: string;
-  greenGradient2: string;
   panel: string;
-
+  boxShadow:string;
+  textGray:string;
+  boxShadow3:string;
+  boxShadow4:string;
+  textGray2:string;
   // Gradients
   gradients: Gradients;
 

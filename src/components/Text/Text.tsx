@@ -39,13 +39,13 @@ const getFontSize = ({ fontSize, small }: TextProps) => {
 };
 
 const Text = styled.div<TextProps>`
-  font-size: ${({ size }: any) => style[size || sizes.MD].fontSize};  
-  line-height: ${({ size }: any) => style[size || sizes.MD].fontSizeLg}; 
+  font-size: ${({ size }) => style[size || sizes.MD].fontSize};  
+  line-height: ${({ size }) => style[size || sizes.MD].fontSizeLg}; 
   /* color:${({ theme }) => theme.colors.text}; */
   color: ${getColor};
   /* font-size: ${getFontSize}; */
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
-  font-weight: ${({ bold }) => (bold ? 700 : 500)};
+  font-weight: ${({ bold }) => (bold ? 700 : 500)||500};
   line-height: 1.5;
   ${space}
   ${typography}

@@ -1,15 +1,17 @@
+import React from 'react';
 import styled from 'styled-components';
 import { ArrowPanel, BtnPanel } from '../../components/Svg';
 import { InjectedProps } from './types';
 
 interface Props extends InjectedProps {}
 
-const HistoryPanel: React.FC<Props> = ({ setOpen, open }) => (
+const HistoryPanel: React.FC<Props> = ({ setOpen, open,children }) => (
   <Panel open={open}>
     <ButtonToggle onClick={() => setOpen(!open)} open={open}>
       <BtnPanel className="button" />
       <ArrowPanel className="arrow" />
     </ButtonToggle>
+    {children}
   </Panel>
 );
 
@@ -26,7 +28,7 @@ const Panel = styled.div<{ open: boolean }>`
   transition: 0.3s;
 `;
 
-const ButtonToggle = styled.button<{ open: boolean }>`
+const ButtonToggle = styled.button<{open: boolean }>`
   position: absolute;
   left: -20px;
   top: 50%;
