@@ -16,13 +16,14 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
       }
     `;
   }
+  // background-color: ${theme.colors.backgroundDisabled};
+  // border-color: ${theme.colors.backgroundDisabled};
 
   return `
     &:disabled,
     &.pancake-button--disabled {
-      background-color: ${theme.colors.backgroundDisabled};
-      border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
+      opacity:.2;
       color: ${theme.colors.text};
       cursor: not-allowed;
     }
@@ -58,10 +59,11 @@ const StyledButton = styled.button<BaseButtonProps>`
   line-height: 1;
   opacity: ${getOpacity};
   outline: 0;
-  transition: background-color 0.2s;
+  transition:  0.2s;
 
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-     box-shadow: 0px 0px 29px #2CB021
+     /* ; */
+     box-shadow: ${({variant})=>variant==='green'?'0px 0px 29px #2CB021':variant==='pink'?'0px 0px 20px rgba(255, 97, 97, 0.38)':'none'};
   }
 
   &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {

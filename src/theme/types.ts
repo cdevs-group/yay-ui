@@ -58,6 +58,8 @@ export type Colors = {
   linkColor: string; 
   buttonBg: string; 
   buttonShadow: string;
+  green: string;
+  greenGradient2: string;
   cardBg: string;
   greyText: string;
   darkGreyBg: string;

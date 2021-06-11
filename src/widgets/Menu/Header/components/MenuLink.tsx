@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import Text from '../../../../components/Text/Text';
 import { LinkProps } from '../types';
 
-const MenuLink = ({name, url, size}:LinkProps) =>{
+const MenuLink = ({name, url, size,className}:LinkProps) =>{
   return(
     <LinkItem 
-    //  className='active'
+     className={className}
      size={size} >
       <NavLinks 
       // to={url}
@@ -30,7 +30,7 @@ const LinkItem = styled(Text)`
   };
   &::after{
     display: block;
-    bottom: -26px;
+    bottom: -28px;
     width: 0;
     height: 2px;
     content: '';

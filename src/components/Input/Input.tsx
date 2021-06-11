@@ -4,17 +4,17 @@ import { SearchIcon } from "../Svg";
 import { InputProp } from "./types";
 
 const Input = ({ placeholder }: InputProp) => {
-const [focus, setFocus] = useState<boolean>(false)
+  const [focus, setFocus] = useState<boolean>(false)
 
   return (
     <InputBlock>
       <InputItem
-        onFocus={()=>setFocus(true)}
-        onBlur={()=>setFocus(false)}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         placeholder={placeholder}
       />
       <Button>
-        <SearchIcon color={focus?"#47DA3B":'white'} />
+        <SearchIcon color={focus ? "#47DA3B" : 'white'} />
       </Button>
     </InputBlock>
   )
@@ -22,7 +22,7 @@ const [focus, setFocus] = useState<boolean>(false)
 
 
 Input.defaultProps = {
-  placeholder:'Seacrh'
+  placeholder: 'Seacrh'
 };
 
 export default Input;
@@ -63,6 +63,6 @@ padding: 0;
   background: none;
   position: absolute;
   top:50%;
-  transform: translateY(-40%);
-  right: 25px;
+  transform: translateY(-50%);
+  right: 15px;
 `;

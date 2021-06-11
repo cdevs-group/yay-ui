@@ -67,5 +67,9 @@ export const styleVariants = {
     backgroundColor: "#FF6161",
     color: "#fff",
     boxShadow: "none",
-  },
+  },[variants.OPTION]: {
+    backgroundColor: "rgba(255, 255, 255, 0.15)",
+    color: "#fff",
+    boxShadow: "none",
+  }
 };

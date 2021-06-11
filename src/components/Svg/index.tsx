@@ -15,6 +15,10 @@ export { default as EyeCloseIcon } from './Icons/EyeClose';
 export { default as ArrowIcon } from './Icons/Arrow';
 export { default as ArrowPanel } from './Icons/ArrowPanel';
 export { default as BtnPanel } from './Icons/BtnPanel';
+export { default as PenIcon } from './Icons/Pen';
+export { default as StrikesWideIcon } from './Icons/StrikesWide';
+export { default as LoadIcon } from './Icons/Load';
+export { default as CercleIcon } from './Icons/Cercle'
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

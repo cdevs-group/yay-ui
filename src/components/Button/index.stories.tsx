@@ -88,7 +88,7 @@ const Row = styled.div`
 //           Disabled
 //         </Button>
 //         <Button width='100%' variant='pink'>sedfdsfdsf</Button>
-        
+
 //       </div>
 //     </>
 //   );
@@ -99,24 +99,44 @@ export const Variants: React.FC = () => {
     <div>
       <BrowserRouter>
         <Row>
-      <Button width='170px'  scale='md' variant='green'>
-        Button
+          <Button width='170px' scale='md' variant='green'>
+            Button
       </Button>
-        <Button width='170px'  scale='md' disabled>
-        Button
+          <Button width='170px' disabled scale='md' variant='green'>
+            Button
       </Button>
-        </Row>
-        <Row>
-        <Button  width='130px'  scale='sm' variant='green'>
-        Button
-      </Button>
-        <Button width='130px' scale='sm' disabled>
-        Button
+          <Button width='170px' scale='md' variant='option'>
+            Button
       </Button>
         </Row>
         <Row>
+          <Button width='170px' scale='md' variant='pink'>
+            Button
+      </Button>
+          <Button width='170px' disabled scale='md' variant='pink'>
+            Button
+      </Button>
         </Row>
-      
+        <Row>
+          <Button width='130px' scale='sm' variant='green'>
+            Button
+      </Button>
+          <Button width='130px' scale='sm' disabled variant='green'>
+            Button
+      </Button>
+          <Button width='130px' scale='sm' variant='pink'>
+            Button
+      </Button>
+          <Button width='130px' scale='sm' disabled variant='pink'>
+            Button
+      </Button>
+          <Button width='130px' scale='sm' variant='option'>
+            Button
+      </Button>
+        </Row>
+        <Row>
+        </Row>
+
       </BrowserRouter>
     </div>
   );

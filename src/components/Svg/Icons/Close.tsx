@@ -18,8 +18,8 @@ const Icon: React.FC<SvgProps> = (props) => {
         width={30}
         height={30}
         rx={7}
-        fill="#fff"
-        fillOpacity={0.15}
+        fill={props.fill || 'rgb(58,58,64)'}
+      // fillOpacity={0.15}
       />
       <g
         filter="url(#prefix__filter0_d)"

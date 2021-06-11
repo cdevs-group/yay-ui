@@ -4,13 +4,14 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg viewBox="0 0 28 16" {...props}>
-      <g filter="url(#filter0_d)">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.08644 2.58988C5.58922 2.36134 6.18207 2.58366 6.41061 3.08644L6.51253 3.31067C7.81069 6.16662 10.6583 8.00024 13.7955 8.00024H14.205C17.3422 8.00024 20.1898 6.16662 21.488 3.31067L21.5899 3.08644C21.8184 2.58366 22.4113 2.36134 22.914 2.58988C23.4168 2.81842 23.6391 3.41127 23.4106 3.91405L23.3087 4.13827C21.686 7.70822 18.1265 10.0002 14.205 10.0002H13.7955C9.87403 10.0002 6.3145 7.70822 4.6918 4.13827L4.58988 3.91405C4.36134 3.41127 4.58366 2.81842 5.08644 2.58988Z" fill="white" />
+    <Svg width='42px' viewBox="0 0 42 42" {...props}>
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || 'rgb(58,58,64)'} />
+      <g filter="url(#filter110_d112)">
+        <path fillRule="evenodd" clipRule="evenodd" d="M12.0864 19.5899C12.5892 19.3613 13.1821 19.5837 13.4106 20.0864L13.5125 20.3107C14.8107 23.1666 17.6583 25.0002 20.7955 25.0002H21.205C24.3422 25.0002 27.1898 23.1666 28.488 20.3107L28.5899 20.0864C28.8184 19.5837 29.4113 19.3613 29.914 19.5899C30.4168 19.8184 30.6391 20.4113 30.4106 20.914L30.3087 21.1383C28.686 24.7082 25.1265 27.0002 21.205 27.0002H20.7955C16.874 27.0002 13.3145 24.7082 11.6918 21.1383L11.5899 20.914C11.3613 20.4113 11.5837 19.8184 12.0864 19.5899Z" fill="white" />
       </g>
       <defs>
-        <filter id="filter0_d" x="0.5" y="0.5" width="27.0005" height="15.5002" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <filter id="filter110_d112" x="7.5" y="17.5" width="27.0005" height="15.5002" filterUnits="userSpaceOnUse" colorInterpolation-filters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -18,6 +19,10 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
+        <linearGradient id="paint0_linear112" x1="21" y1="1.2" x2="21" y2="36" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#4CEE3E" />
+          <stop offset="1" stop-color="#47DA3B" />
+        </linearGradient>
       </defs>
     </Svg>
   );

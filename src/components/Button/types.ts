@@ -17,7 +17,8 @@ export const variants = {
   SUBTLE: "subtle",
   SUCCESS: "success",
   GREEN:'green',
-  PINK:"pink"
+  PINK:"pink",
+  OPTION:"option"
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];

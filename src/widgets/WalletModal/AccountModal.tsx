@@ -17,29 +17,30 @@ interface Props {
 const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null }) => (
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <ModalWrap>
-    <Text
-      bold
-      style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
-    >
-      <AccountWrap as='div'>
-      <Text  fontSize='13px' fontWeight={500} color="text" >
-        {account}
+      <Text
+        bold
+        style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
+      >
+        <AccountWrap as='div'>
+          <Text fontSize='13px' fontWeight={500} color="text" >
+            {account}
+          </Text>
+        </AccountWrap>
       </Text>
-      </AccountWrap>
-    </Text>
-    <Flex mb="32px">
-      <LinkExternal color='#47DA3B' small href={`https://bscscan.com/address/${account}`} mr="16px">
-        View on BscScan
+      <Flex mb="32px">
+        <LinkExternal color='#47DA3B' small href={`https://bscscan.com/address/${account}`} mr="16px">
+          View on BscScan
       </LinkExternal>
-      <Text>
-        <CopyToClipboard toCopy={account}>Copy</CopyToClipboard>
-      </Text>
-    </Flex>
-    <Flex justifyContent="center">
-    <Button mt='60px' scale='md' width='100%' variant='green' >
-        Logout
-    </Button>    
-    </Flex>
+        <CopyText color='#47DA3B'>
+          <CopyToClipboard toCopy={account}>Copy</CopyToClipboard>
+        </CopyText>
+      </Flex>
+      <Flex justifyContent="center">
+        <Button mt='60px' scale='md' width='100%' variant='green' >
+          Logout
+    </Button>
+
+      </Flex>
     </ModalWrap>
   </Modal>
 );
@@ -53,3 +54,9 @@ const AccountWrap = styled(Input)`
   padding: 17px 20px;
   width:100%;
 `;
+const CopyText = styled(Text)`
+  transition: none.2s;
+  &:hover{
+    text-decoration: underline;
+  }
+`

@@ -17,7 +17,8 @@ export const sizes = {
 export interface LinkProps{
   name:string,
   url:string, 
-  size?:string
+  size?:string,
+  className?:string
 }
 
 export interface AccProps{

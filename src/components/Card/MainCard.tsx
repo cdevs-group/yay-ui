@@ -123,9 +123,9 @@ const TimerTitle = styled.div`
 
 const MainCard: React.FC = () => {
   return (
+
     <Wrap>
       <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
-
       <PriceBlock><span>Closed Price</span><Price>$ 400`597<div>56.3%</div></Price></PriceBlock>
       <Payout>
         {payoutArr.map((item, i) => (
