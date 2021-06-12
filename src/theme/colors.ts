@@ -13,6 +13,7 @@ export const baseColors = {
   green:"#4BE43E",
   textShadow:"0px 4px 4px rgba(0, 0, 0, 0.25)",
   textShadow2:"0px 4px 7px rgba(0, 0, 0, 0.15)",
+  textShadow3:"0px 3px 4px rgba(0, 0, 0, 0.15)",
   boxShadow:"inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   boxShadow2:"0px 4px 10px rgba(0, 0, 0, 0.25)",
   bgOpacity:"rgba(0, 0, 0, 0.3)",
@@ -24,6 +25,7 @@ export const baseColors = {
   darkPink:"#FF6161",
   whiteRgba:"rgba(255, 255, 255, 0.15)",
   greenGradient2:"linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
+  textGray2:"#9A9191"
 };
 
 export const brandColors = {

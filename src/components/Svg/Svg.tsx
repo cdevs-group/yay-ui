@@ -13,7 +13,10 @@ const rotate = keyframes`
 `;
 
 const spinStyle = css`
-  animation: ${rotate} 2s linear infinite;
+  & path{
+  animation: ${rotate} 1.5s ease-in-out infinite;
+  transform-origin: center center;
+  }
 `;
 
 const Svg = styled.svg<SvgProps>`

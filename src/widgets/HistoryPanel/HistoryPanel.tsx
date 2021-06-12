@@ -15,7 +15,7 @@ import { ICardAccordeon, InjectedProps } from './types';
 
 interface Props extends InjectedProps {}
 
-const HistoryPanel: React.FC<Props> = ({ setOpen, open }) => {
+const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const handleToggle = () => {
     if (setOpen) setOpen(!open);
   };

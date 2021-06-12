@@ -11,7 +11,8 @@ import {
   StrikeIcon,
   StrikesWideIcon,
   LoadIcon,
-  CercleIcon
+  CercleIcon,
+  CompleteIcon
 } from ".";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
@@ -73,6 +74,9 @@ export const Default: React.FC = () => {
           <CloseIcon fill='#47DA3B' />
         </div>
         <div style={{ marginRight: 20 }}>
+          <CompleteIcon fill='#47DA3B' />
+        </div>
+        <div style={{ marginRight: 20 }}>
           <CloseIcon />
         </div>
         <div style={{ marginRight: 20 }}>
@@ -85,7 +89,7 @@ export const Default: React.FC = () => {
           <CercleIcon />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CercleIcon />
+          <CercleIcon spin/>
         </div>
       </div>
     </div>
