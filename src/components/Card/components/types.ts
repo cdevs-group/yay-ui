@@ -1,3 +1,3 @@
 export interface PriceBlockProps {
-  arr: Array<string>;
+  arr: Array<{name: string,price: string }>;
 }

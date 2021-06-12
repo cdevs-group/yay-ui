@@ -1,13 +1,16 @@
+import React from "react";
 import styled from "styled-components";
 import { TabsProp } from "./types";
 import Text from '../Text/Text';
 
-const SimpleTabs = ({tabValue, tabsList,onClick }:TabsProp) => {
-
+const SimpleTabs = ({tabValue, setTabValue, tabsList }:TabsProp) => {
+  const handleTabSimple = (e: any)=>{
+    setTabValue(+e.target.value)
+  }
   return (
     <TabsWrap>
       {tabsList.map((item, i) =>
-        <Tab as='button'  onClick={onClick} className={tabValue===i?'active':''}  key={i} value={i} >{item}</Tab>
+        <Tab as='button'  onClick={handleTabSimple} className={tabValue===i?'active':''}  key={i} value={i} >{item}</Tab>
       )}
     </TabsWrap>
   )

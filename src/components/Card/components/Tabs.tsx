@@ -33,7 +33,7 @@ const Tabs: React.FC = () => {
   const tabsList = ["10%", "25%", "50%", "75%", "Max"];
   const [tabValue, setTabValue] = useState(0);
 
-  const handleToggleTabs = (e) => {
+  const handleToggleTabs = (e: any) => {
     setTabValue(+e.currentTarget.value);
   };
 

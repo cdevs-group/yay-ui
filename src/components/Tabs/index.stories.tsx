@@ -12,27 +12,21 @@ const tabsList=['Active', 'Finished']
 const tabsListSimple=['All history', 'Collected', 'Uncollected']
 
 export const TabsMain: React.FC = () => {
-  const [tabValue, setTabValue] = useState(0)
-  const handleTab = (e)=>{
-    setTabValue(+e.target.value)
-  }
+  const [tabValue, setTabValue] = useState(0)  
   const [tabValueSimple, setTabValueSimple] = useState(0)
-  const handleTabSimple = (e)=>{
-    setTabValueSimple(+e.target.value)
-  }
-
+ 
   return (
     <div style={{width:300}}>
       <Tabs 
-        onClick={handleTab}
+        setTabValue={setTabValue}
         tabValue={tabValue} 
         tabsList={tabsList}
         />
         <div style={{marginTop:50}}>
         <SimpleTabs
-        onClick={handleTabSimple}
         tabValue={tabValueSimple} 
         tabsList={tabsListSimple}
+        setTabValue={setTabValueSimple}
         />
         </div>
     </div>

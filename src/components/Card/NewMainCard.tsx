@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CardHeader from "./components/CardHeader";
 import {BnbIcon} from "../../components/Svg";
-import ClosedPrice from "../ClosedPrice/ClosedPrice";
+import { ClosedPrice } from "../ClosedPrice";
 
 const payoutArr = [
   {name: <div>Payout:</div>, price: "5,09x"},

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { ClosedPrice } from '../../components/ClosedPrice';
 import {
   ArrowPanel,
   BtnPanel,
@@ -8,9 +9,11 @@ import {
   PlayIcon,
   WatchIcon,
 } from '../../components/Svg';
+import { SimpleTabs } from '../../components/Tabs';
 import { Text } from '../../components/Text';
 import Accordeon from './components/Accordeon';
 import TabsHistory from './components/TabsHistory';
+import PnlHistoryPanel from './PnlHistoryPanel';
 import { ICardAccordeon, InjectedProps } from './types';
 
 interface Props extends InjectedProps {}
@@ -24,7 +27,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
     number | null | undefined
   >();
 
-  const cardsAccordeon:Array<ICardAccordeon> = [
+  const cardsAccordeon: Array<ICardAccordeon> = [
     {
       id: 1,
       value: (
@@ -39,6 +42,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
       content: (
         <>
           <Text mb={17}>Round History </Text>
+          <ClosedPrice price="$ 400`597" rightText="56.3%"/>
         </>
       ),
     },
@@ -92,13 +96,16 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
             <ArrowDownIcon />
           </Flex>
         </>
-      ),content: (
+      ),
+      content: (
         <>
           <Text mb={17}>Round History </Text>
         </>
       ),
     },
   ];
+  const tabsListSimple = ['All history', 'Collected', 'Uncollected'];
+  const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
     <Panel open={open}>
@@ -124,11 +131,23 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
       <TabsWrap>
         <TabsHistory tabValue={tabValue} setTabValue={setTabValue} />
       </TabsWrap>
-      <Accordeon
-        value={valueAccordeon}
-        setValue={setValueAccordeon}
-        cards={cardsAccordeon}
-      />
+      {tabValue === 0 && (
+        <>
+          <SimpleTabsWrap>
+            <SimpleTabs
+              tabsList={tabsListSimple}
+              tabValue={tabValueSimple}
+              setTabValue={setTabValueSimple}
+            />
+          </SimpleTabsWrap>
+          <Accordeon
+            value={valueAccordeon}
+            setValue={setValueAccordeon}
+            cards={cardsAccordeon}
+          />
+        </>
+      )}
+      {tabValue === 1 && <PnlHistoryPanel />}
     </Panel>
   );
 };
@@ -203,4 +222,8 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+const SimpleTabsWrap = styled.div`
+  margin-bottom: 33px;
+  padding: 0 20px;
 `;

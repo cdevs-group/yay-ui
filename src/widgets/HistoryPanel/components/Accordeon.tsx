@@ -47,7 +47,7 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
     <Wrap>
       <Flipper flipKey={newCards[0]}>
         {newCards.map((item) => (
-          <Flipped key={item.id} flipId={item.id} spring="gentle">
+          <Flipped key={item.id} flipId={item.id} spring="stiff">
             <CardWrap key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
