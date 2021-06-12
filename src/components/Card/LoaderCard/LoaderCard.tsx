@@ -89,6 +89,14 @@ const Wrap = styled.div`
     text-align: center;
   `
 
+  const BottomText = styled.div`
+    text-align: center;
+    font-size: 13px;
+    line-height: 16px;
+    color: ${({ theme }) => theme.colors.greyText};
+    letter-spacing: 0.05em;
+  ` 
+
 const LoaderCard: React.FC = () => {
 
   return (
@@ -99,7 +107,8 @@ const LoaderCard: React.FC = () => {
         <RedCircle/>
         <YellowCircle/>
       </Loader>
-      <Text>Calculating...</Text>                 
+      <Text>Calculating...</Text> 
+      <BottomText>This round`s closing transactions has <br/>been submitted to the blockchain, and is <br/>awaiting confirmation</BottomText>                
     </Wrap>
   );
 };

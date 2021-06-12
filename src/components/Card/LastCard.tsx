@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
 import PriceBlock from "./components/PriceBlock";
 import {BnbIcon} from "../../components/Svg";
 import CardHeader from "./components/CardHeader";
@@ -35,11 +34,17 @@ const TimerTitle = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `
 
+const payoutArr = [
+  {name: <div>Start Price:</div>, price: <div className="bold">$ 1`200</div>},
+  {name: <div>Current Price:</div>, price: <div className="bold">$ 3`500</div>},
+  {name: <div className="prize">Prize Pool:</div>, price: <div className="boldPrice">12.000 BNB</div>},
+]
+
 const LastCard: React.FC = () => {
   return (
     <Wrap>
       <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="03.01%" num="#0021" greenColor whiteCoin/>
-      <PriceBlock/>
+      <PriceBlock arr={payoutArr}/>
       <ButtonBlock>
         <GreenButton>Enter Up</GreenButton>
         <RedButton>Enter Down</RedButton>

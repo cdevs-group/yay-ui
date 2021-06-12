@@ -43,6 +43,7 @@ export const darkColors: Colors = {
 
   cardBg: "#26262D",
   greyText: "#A3A3A3",
+  greyText2: "#9A9191",
   darkGreyBg: "#1d1d22",
   text: "#fff",
   greenText: "#4AE43D",
@@ -55,8 +56,10 @@ export const darkColors: Colors = {
 
   boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
   blackColor: "#000",
   greenText2: "47DA3B",
+
 
 
   backgroundDisabled: "#3c3742",
