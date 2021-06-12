@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { PriceBlockProps } from "./types";
 
 const Wrap = styled.div`
   margin-top: 25px;
@@ -15,6 +16,11 @@ const Item = styled.div`
   & div.bold {
     font-weight: bold;
   }
+  & div.grey {
+    font-size: 15px;
+    line-height: 19px;
+    color: ${({ theme }) => theme.colors.greyText2};
+  }
   & div.prize {
     margin-top: 21px;
     font-weight: 500;
@@ -29,17 +35,11 @@ const Item = styled.div`
   }
 `
 
-const PriceBlock: React.FC = () => {
-
-  const payoutArr = [
-    {name: <div>Start Price:</div>, price: <div className="bold">$ 1`200</div>},
-    {name: <div>Current Price:</div>, price: <div className="bold">$ 3`500</div>},
-    {name: <div className="prize">Prize Pool:</div>, price: <div className="boldPrice">12.000 BNB</div>},
-  ]
+const PriceBlock: React.FC<PriceBlockProps> = ({arr}) => {
 
   return (
     <Wrap>
-      {payoutArr.map((item, i) => (
+      {arr.map((item, i) => (
         <div key={i}>
           <Item>{item.name} {item.price}</Item>
         </div>

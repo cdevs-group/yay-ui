@@ -1,8 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 import Card from "./Card";
 import LastCard from "./LastCard";
 import LoaderCard from "./LoaderCard/LoaderCard";
 import MainCard from "./MainCard";
+import NewMainCard from "./NewMainCard";
+import NewRateCard from "./NewRateCard";
+import NewThirdCard from "./NewThirdCard";
+import NewUpDownCard from "./NewUpDownCard";
+import NewWinCard from "./NewWinCard";
 import PositionCard from "./PositionCard";
 import ThirdCard from "./ThirdCard";
 
@@ -17,7 +23,7 @@ export const Default: React.FC = () => {
     <div style={{ padding: "32px", width: "500px" }}>
       <Card >
         <MainCard/>
-      </Card>
+      </Card>     
     </div>
   );
 };
@@ -45,7 +51,7 @@ export const CardThird: React.FC = () => {
 export const CardPosition: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card >
+      <Card active>
         <PositionCard/>
       </Card>
     </div>
@@ -62,3 +68,52 @@ export const CardLast: React.FC = () => {
   );
 };
 
+export const MainCardNew: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <NewMainCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const ThirdCardNew: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <NewThirdCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const WinCardNew: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <NewWinCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const RateCardNew: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <NewRateCard/>
+      </Card>
+    </div>
+  );
+};
+
+export const UpDownCardNew: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card active>
+        <NewUpDownCard/>
+      </Card>
+    </div>
+  );
+};

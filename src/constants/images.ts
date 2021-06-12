@@ -10,6 +10,8 @@ import BinanceWallet from '../../public/images/binance-wallet.png';
 import SafepackWallet from '../../public/images/safepack-wallet.png';
 import BNB from '../../public/images/bnb.png';
 import COINS2 from '../../public/images/coins2.png';
+import Winner from '../../public/images/winner.png';
+import Win from '../../public/images/win.png';
 
 export {
   BG_IMG,
@@ -23,5 +25,7 @@ export {
   BinanceWallet,
   SafepackWallet,
   BNB,
-  COINS2
+  COINS2,
+  Winner,
+  Win,
 };

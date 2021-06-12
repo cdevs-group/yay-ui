@@ -36,14 +36,16 @@ export const darkColors: Colors = {
 // export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
-  secondary: "#9A6AFF",
+
   background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)",
-  overlayBg: "rgba(0, 0, 0, 0.7)", 
+  overlayBg: "rgba(0, 0, 0, 0.7)",   
   linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", 
   buttonBg: "rgba(0, 0, 0, 0.25)", 
   buttonShadow: "rgba(0, 0, 0, 0.2)",
+
   cardBg: "#26262D",
   greyText: "#A3A3A3",
+  greyText2: "#9A9191",
   darkGreyBg: "#1d1d22",
   text: "#fff",
   greenText: "#4AE43D",
@@ -52,10 +54,14 @@ export const darkColors: Colors = {
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
+
+
   boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
   blackColor: "#000",
   greenText2: "47DA3B",
+
 
 
   backgroundDisabled: "#3c3742",
@@ -70,9 +76,9 @@ export const darkColors: Colors = {
   borderColor: "#524B63",
   card: "#FFFFFF",
   panel: "#2E2E35",
+  dark: '#26262D',
   gradients: {
     greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
-
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 
@@ -88,6 +94,21 @@ export const lightColors: Colors = {
   buttonBg: "rgba(0, 0, 0, 0.25)", 
   buttonShadow: "rgba(0, 0, 0, 0.2)",
 
+  cardBg: "#26262D",
+  greyText: "#A3A3A3",
+  darkGreyBg: "#1d1d22",
+  text: "#fff",
+  greenText: "#4AE43D",
+  orangeBg: "#FF9525",
+  greenBg: "#69E35F",
+  redBg: "#FF6161",
+  yellowBg: "#ECCB57",
+  lightGreyBg: "#C0C0C0",
+
+  boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
+  boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  blackColor: "#000",
+  greenText2: "47DA3B",
 
   backgroundDisabled: "rgba(255,255,255,.15)",
   contrast: "#000",
@@ -95,13 +116,14 @@ export const lightColors: Colors = {
   input: "#eeeaf4",
   inputSecondary: "#d7caec",
   tertiary: "#EFF4F5",
-  text: "#452A7A",
   textDisabled: "#BDC2C4",
   textSubtle: "#8f80ba",
   borderColor: "#E9EAEB",
   card: "#26262D",
   panel: "#2E2E35",
+  dark: '#26262D',
   gradients: {
+    greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
     bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
   },
 };

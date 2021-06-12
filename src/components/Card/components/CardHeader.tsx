@@ -7,6 +7,7 @@ const Title = styled.div`
   justify-content: space-between;
   align-items: center;
 `
+
 const TextLeft = styled.div`
   display: flex;
   align-items: center;
@@ -18,8 +19,6 @@ const TextLeft = styled.div`
   -webkit-text-fill-color: transparent;
   & div:nth-child(2) {
     margin: 0 5px 0 16px;
-  }
-  & div.white {
     background: ${({ theme }) => theme.colors.text};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -34,22 +33,26 @@ const TextLeft = styled.div`
 `
 
 const TextRight = styled.div`
+  display: flex;
   font-weight: normal;
   font-size: 13px;
   line-height: 16px;
   color: ${({ theme }) => theme.colors.greyText};
+  & div {
+    margin-left: 15px;
+  }
 `
 
-const CardHeader: React.FC<CardHeaderProps> = ({icon, coin, upDown, num, greenColor, whiteCoin}) => {
+const CardHeader: React.FC<CardHeaderProps> = ({icon, coin, upDown, num, greenColor, svg}) => {
 
   return (
     <Title>
       <TextLeft>
         <div>{icon}</div>
-        <div className={ whiteCoin ? "white" : ""}>{coin}</div>
+        <div >{coin}</div>
         <div className={ greenColor ? "green" : ""}>{upDown}</div>
       </TextLeft>
-      <TextRight>{num}</TextRight>
+      <TextRight>{num} <div>{svg}</div></TextRight>
     </Title>
   );
 };

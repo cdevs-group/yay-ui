@@ -18,8 +18,11 @@ export { default as BtnPanel } from './Icons/BtnPanel';
 export { default as PenIcon } from './Icons/Pen';
 export { default as StrikesWideIcon } from './Icons/StrikesWide';
 export { default as LoadIcon } from './Icons/Load';
-export { default as CercleIcon } from './Icons/Cercle';
 export { default as CompleteIcon } from './Icons/Complete';
- 
+export { default as CercleIcon } from './Icons/Cercle'
+export { default as WatchIcon } from './Icons/Watch'
+export { default as PlayIcon } from './Icons/Play'
+export { default as ArrowDownIcon } from './Icons/ArrowDown'
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

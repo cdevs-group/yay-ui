@@ -7,7 +7,7 @@ interface ThemedProps extends TextProps {
   theme: DefaultTheme;
 }
 
-const style = {
+const style:any = {
   [sizes.XS]: {
     fontSize: "11px",
     fontSizeLg: "14px",

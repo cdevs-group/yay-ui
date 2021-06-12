@@ -27,6 +27,7 @@ export type Shadows = {
   inset: string;
   boxShadow3: string;
   boxShadow4: string;
+  boxShadow5: string;
 };
 
 export type Gradients = {
@@ -62,6 +63,7 @@ export type Colors = {
   greenGradient2: string;
   cardBg: string;
   greyText: string;
+  greyText2: string;
   darkGreyBg: string;
   orangeBg: string;
   greenBg: string;
@@ -77,6 +79,8 @@ export type Colors = {
   boxShadow3:string;
   boxShadow4:string;
   textGray2:string;
+  dark: string;
+
   // Gradients
   gradients: Gradients;
 
