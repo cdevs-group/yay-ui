@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { IconButton } from "../../components/Button";
-import Heading from "../../components/Heading/Heading";
 import { CloseIcon } from "../../components/Svg";
 import { InjectedProps } from "./types";
 
@@ -51,6 +50,9 @@ const Overlay = styled.div`
   bottom: 0;
   width: 100%;
 `;
+
+const Heading = styled.div`
+`
 
 const Modal: React.FC<Props> = ({
   title,
