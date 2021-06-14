@@ -24,6 +24,10 @@ export interface PnlProp{
 
 export interface ICardAccordeon {
   id: number;
-  value: React.ReactNode;  
-  content: React.ReactNode;  
+  number: string;
+  text: string;
+  color: string;
+  icon: React.ReactNode;  
+  content: Array<React.ReactNode>;  
+  collect?: boolean;
 }

@@ -35,9 +35,9 @@ const Tab = styled(Text)`
   text-shadow: ${({theme})=>theme.colors.textShadow3};
   transition: .3s;
   cursor: pointer;
-  border-bottom:1px solid transparent;
+  border-bottom:2px solid transparent;
   &.active{
-    border-bottom:1px solid ${({theme})=>theme.colors.green};
+    border-bottom:2px solid ${({theme})=>theme.colors.green};
     color: ${({theme})=>theme.colors.text}
   }
 `
