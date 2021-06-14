@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ClosedPrice } from '../../components/ClosedPrice';
 import {
   ArrowPanel,
   BtnPanel,
@@ -12,7 +11,9 @@ import {
 import { SimpleTabs } from '../../components/Tabs';
 import { Text } from '../../components/Text';
 import Accordeon from './components/Accordeon';
+import RoundHistory from './components/RoundHistory';
 import TabsHistory from './components/TabsHistory';
+import YourHistory from './components/YourHistory';
 import PnlHistoryPanel from './PnlHistoryPanel';
 import { ICardAccordeon, InjectedProps } from './types';
 
@@ -30,78 +31,90 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
       id: 1,
-      value: (
-        <>
-          <Text>#0022</Text>
-          <Flex>
-            <Text mr={15}>Starting soon</Text>
-            <WatchIcon />
-          </Flex>
-        </>
-      ),
-      content: (
-        <>
-          <Text mb={17}>Round History </Text>
-          <ClosedPrice price="$ 400`597" rightText="56.3%"/>
-        </>
-      ),
+      number: '#0022',
+      color: 'text',
+      text: 'Starting soon',
+      icon: <WatchIcon />,
+      content: [
+        <RoundHistory
+          price="$ 400`597"
+          priceRightText="56.3%"
+          up="2x Playout  0,281 BNB"
+          down="2x Playout  0,791 BNB"
+          prizePool="$ 3`500"
+        />,
+      ],
     },
     {
       id: 2,
-      value: (
-        <>
-          <Text>#0023</Text>
-          <Flex>
-            <Text mr={15} color="green">
-              Live now
-            </Text>
-            <PlayIcon />
-          </Flex>
-        </>
-      ),
-      content: (
-        <>
-          <Text mb={17}>Round History </Text>
-        </>
-      ),
+      number: '#0023',
+      color: 'green',
+      text: 'Live now',
+      icon: <PlayIcon />,
+      content: [
+        <RoundHistory
+          price="$ 400`597"
+          priceRightText="56.3%"
+          up="2x Playout  0,281 BNB"
+          down="2x Playout  0,791 BNB"
+          prizePool="$ 3`500"
+          openingBlock="4542"
+        />,
+      ],
     },
     {
       id: 3,
-      value: (
-        <>
-          <Text>#0024</Text>
-          <Flex>
-            <Text mr={15} color="redBg">
-              -0,001 BNB
-            </Text>
-            <ArrowDownIcon />
-          </Flex>
-        </>
-      ),
-      content: (
-        <>
-          <Text mb={17}>Round History </Text>
-        </>
-      ),
+      number: '#0024',
+      color: 'redBg',
+      text: '-0,001 BNB',
+      icon: <ArrowDownIcon />,
+      content: [
+        <RoundHistory
+          price="$ 400`597"
+          priceRightText="$1,57"
+          up="2x Playout  0,281 BNB"
+          down="2x Playout  0,791 BNB"
+          prizePool="$ 3`500"
+          openingBlock="483029"
+          closingBlock="457442"
+          negative
+        />,
+        <YourHistory
+          price="+0,001 BNB"
+          priceRightText="UP"
+          result="$0.391"
+          yourPosition="0,001 BNB"
+          win={false}
+          negative
+        />,
+      ],
     },
     {
       id: 4,
-      value: (
-        <>
-          <Text>#0025</Text>
-          <Flex>
-            <Text mr={15} color="green">
-              +2,001 BNB
-            </Text>
-            <ArrowDownIcon />
-          </Flex>
-        </>
-      ),
-      content: (
-        <>
-          <Text mb={17}>Round History </Text>
-        </>
-      ),
+      number: '#0025',
+      color: 'green',
+      text: '+2,001 BNB',
+      icon: <ArrowDownIcon />,
+      collect: true,
+      content: [
+        <RoundHistory
+          price="$ 400`597"
+          priceRightText="$1,57"
+          up="2x Playout  0,281 BNB"
+          down="2x Playout  0,791 BNB"
+          prizePool="$ 3`500"
+          openingBlock="483029"
+          closingBlock="457442"
+        />,
+        <YourHistory
+          price="+0,001 BNB"
+          priceRightText="UP"
+          result="$0.391"
+          yourPosition="0,001 BNB"
+          win
+          collect
+        />,
+      ],
     },
   ];
   const tabsListSimple = ['All history', 'Collected', 'Uncollected'];
@@ -109,45 +122,70 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
 
   return (
     <Panel open={open}>
-      <ButtonToggle
-        onClick={handleToggle}
-        open={open}
-        color={valueAccordeon ? 'dark' : 'panel'}
-      >
-        <BtnPanel className="button" />
-        <ArrowPanel className="arrow" />
-      </ButtonToggle>
-      <ButtonClose onClick={handleToggle}>
-        <CloseIcon />
-      </ButtonClose>
-      <Title>
-        <Text size="lg" mr={1}>
-          History{' '}
-        </Text>
-        <Text color="green" size="lg">
-          (0)
-        </Text>
-      </Title>
-      <TabsWrap>
-        <TabsHistory tabValue={tabValue} setTabValue={setTabValue} />
-      </TabsWrap>
-      {tabValue === 0 && (
-        <>
-          <SimpleTabsWrap>
-            <SimpleTabs
-              tabsList={tabsListSimple}
-              tabValue={tabValueSimple}
-              setTabValue={setTabValueSimple}
-            />
-          </SimpleTabsWrap>
-          <Accordeon
-            value={valueAccordeon}
-            setValue={setValueAccordeon}
-            cards={cardsAccordeon}
-          />
-        </>
-      )}
-      {tabValue === 1 && <PnlHistoryPanel />}
+      <Wrap>
+        <ButtonToggle
+          onClick={handleToggle}
+          open={open}
+          color={valueAccordeon ? 'dark' : 'panel'}
+        >
+          <BtnPanel className="button" />
+          <ArrowPanel className="arrow" />
+        </ButtonToggle>
+        <ButtonClose onClick={handleToggle}>
+          <CloseIcon />
+        </ButtonClose>
+        <Title>
+          <Text size="lg" mr={1}>
+            History{' '}
+          </Text>
+          <Text color="green" size="lg">
+            (0)
+          </Text>
+        </Title>
+        <TabsWrap>
+          <TabsHistory tabValue={tabValue} setTabValue={setTabValue} />
+        </TabsWrap>
+        {tabValue === 0 && (
+          <>
+            <SimpleTabsWrap>
+              <SimpleTabs
+                tabsList={tabsListSimple}
+                tabValue={tabValueSimple}
+                setTabValue={setTabValueSimple}
+              />
+            </SimpleTabsWrap>
+            {tabValueSimple === 0 && (
+              // <NoHistory>
+              //   <Text mb={15}>No prediction history available</Text>
+              //   <Text size="sm" fontWeight={400} letterSpacing="0.05em">
+              //     If you are sure you should see history here, make sure you`re
+              //     connected to the correct wallet and try again
+              //   </Text>
+              // </NoHistory>
+              <Accordeon
+                value={valueAccordeon}
+                setValue={setValueAccordeon}
+                cards={cardsAccordeon}
+              />
+            )}
+            {tabValueSimple === 1 && (
+              <Accordeon
+                value={valueAccordeon}
+                setValue={setValueAccordeon}
+                cards={cardsAccordeon.filter((el) => el.id === 4)}
+              />
+            )}
+            {tabValueSimple === 2 && (
+              <Accordeon
+                value={valueAccordeon}
+                setValue={setValueAccordeon}
+                cards={cardsAccordeon.filter((el) => el.id === 3)}
+              />
+            )}
+          </>
+        )}
+        {tabValue === 1 && <PnlHistoryPanel />}
+      </Wrap>
     </Panel>
   );
 };
@@ -163,10 +201,16 @@ const Panel = styled.div<{ open: boolean }>`
   position: fixed;
   right: 0;
   top: 0;
-  height: 100vh;
-  background: ${({ theme }) => theme.colors.panel};
+ 
+  padding-left: 20px;  
   width: ${({ open }) => (open ? '436px' : '8px')};
   transition: 0.3s;
+  overflow-y: auto;
+`;
+const Wrap = styled.div`
+  position: relative; 
+  background: ${({ theme }) => theme.colors.panel}; 
+  height: 100vh;
 `;
 
 const ButtonToggle = styled.button<{ open: boolean; color: string }>`
@@ -202,7 +246,7 @@ const ButtonClose = styled.button`
   display: block;
   margin-left: auto;
   margin-bottom: 50px;
-  padding: 25px 20px 0;
+  padding: 13px 13px 0;
   border: none;
   background: none;
   cursor: pointer;
@@ -214,7 +258,7 @@ const Title = styled.div`
   padding: 0 20px;
 `;
 const TabsWrap = styled.div`
-  margin-bottom: 33px;
+  margin-bottom: 30px;
   padding: 0 20px;
 `;
 
@@ -226,4 +270,11 @@ const Flex = styled.div`
 const SimpleTabsWrap = styled.div`
   margin-bottom: 33px;
   padding: 0 20px;
+`;
+
+const NoHistory = styled.div`
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 170px 20px;
+  text-align: center;
 `;
