@@ -64,7 +64,7 @@ export const CardWrap = styled.div<{closed?:boolean,bg:string}>`
     position:absolute;
     bottom:0;
     left:0;
-    width:200px;
+    width: 100%;
   }
   &:hover{
     &::after{

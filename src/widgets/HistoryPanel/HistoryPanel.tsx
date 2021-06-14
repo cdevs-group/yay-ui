@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   ArrowPanel,
@@ -17,16 +17,26 @@ import YourHistory from './components/YourHistory';
 import PnlHistoryPanel from './PnlHistoryPanel';
 import { ICardAccordeon, InjectedProps } from './types';
 
-interface Props extends InjectedProps {}
+interface Props extends InjectedProps { }
 
 const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const handleToggle = () => {
     if (setOpen) setOpen(!open);
   };
   const [tabValue, setTabValue] = useState(0);
+  const [openDelay, setOpenDelay] = useState(false)
   const [valueAccordeon, setValueAccordeon] = useState<
     number | null | undefined
   >();
+
+  useEffect(() => {
+    const delay = () => setOpenDelay(true)
+    if (open) {
+      setTimeout(delay, 100)
+    } else {
+      setOpenDelay(false)
+    }
+  }, [open])
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
@@ -121,7 +131,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
-    <Panel open={open}>
+    <Panel openDelay={openDelay} open={open}>
       <Wrap>
         <ButtonToggle
           onClick={handleToggle}
@@ -194,10 +204,10 @@ export default HistoryPanel;
 
 HistoryPanel.defaultProps = {
   open: true,
-  setOpen: () => {},
+  setOpen: () => { },
 };
 
-const Panel = styled.div<{ open: boolean }>`
+const Panel = styled.div<{ open: boolean, openDelay: boolean }>`
   position: fixed;
   right: 0;
   top: 0;
@@ -205,7 +215,7 @@ const Panel = styled.div<{ open: boolean }>`
   padding-left: 20px;  
   width: ${({ open }) => (open ? '436px' : '8px')};
   transition: 0.3s;
-  overflow-y: auto;
+  overflow-y: ${({ openDelay }) => (openDelay ? 'auto' : 'none')};
 `;
 const Wrap = styled.div`
   position: relative; 
@@ -237,7 +247,7 @@ const ButtonToggle = styled.button<{ open: boolean; color: string }>`
     & path {
       transition: 0.3s;
       fill: ${({ theme, color }) =>
-        color === 'panel' ? theme.colors.panel : theme.colors.dark};
+    color === 'panel' ? theme.colors.panel : theme.colors.dark};
     }
   }
 `;

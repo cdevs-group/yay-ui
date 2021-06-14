@@ -19,7 +19,7 @@ const PnlHistoryPanel = () => (
   <Wrap>
     <ProgressBar best={data.best} />
     <Statistic bestNumber={data.bestNumber} best={data.best} />
-    <Rounds best={data.best} />
+    <Rounds  best={data.best} />
     <ButtonBlock width="100%" variant="green" scale="md">
       View Reclaimed & Wonv
       <ArrowIcon fill="rgba(0,0,0,0)" />
@@ -36,4 +36,6 @@ const ButtonBlock = styled(Button)`
 `;
 const Wrap = styled.div`
   padding: 0 20px 20px;
+  /* height: 1000px; */
+  background: ${({ theme }) => theme.colors.panel}; 
 `;

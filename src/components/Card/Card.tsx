@@ -9,7 +9,7 @@ import {GreenArrow} from "../../components/Svg";
 
 const Wrap = styled.div`
   width: 404px;
-  height: 470px;
+  /* height: 470px; */
 `
 
 const BottomContent = styled.div`
