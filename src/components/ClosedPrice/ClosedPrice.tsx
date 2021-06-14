@@ -5,7 +5,6 @@ import { ClosedPriceProp } from "./types";
 
 const PriceBlock = styled.div`
   position: relative;
-  margin-top: 49px;
   padding: 17px 13px 14px 25px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};

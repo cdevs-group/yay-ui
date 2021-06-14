@@ -13,7 +13,6 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
   const [active, setActive] = useState<ICardAccordeon>(cards[0]);
   const [heightActiveBlock, setHeightActiveBlock] = useState<number>(0);
   const refHidden = useRef<HTMLDivElement | null>(null);
-  const refCardActive = useRef<HTMLDivElement | null>(null);
   const [newCards, setNewCards] = useState(cards);
 
   const handleToggle = (item: ICardAccordeon) => {
@@ -36,10 +35,8 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
   useEffect(() => {
     const filterCards = cards
       .filter((el) => el.id !== active.id)
-      .map((el, i) => ({ ...el, newId: i + 1 }));
     const filterActiveCard = cards
       .filter((el) => el.id === active.id)
-      .map((el) => ({ ...el, newId: 0 }));
     setNewCards([...filterActiveCard, ...filterCards]);
   }, [active]);
 
@@ -51,7 +48,6 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
             <CardWrap key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
-                ref={refCardActive}
                 className={
                   active && active.id === item.id && value ? 'active' : ''
                 }
