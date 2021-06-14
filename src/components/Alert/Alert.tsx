@@ -25,7 +25,7 @@ const getThemeColor = ({ theme, variant = variants.COLLECTION }: ThemedIconLabel
   }
 };
 
-const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
+const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
   switch (variant) {
     case variants.COLLECTION:
       return <CercleIcon spin={true}/>;
@@ -71,7 +71,7 @@ const SetContent = ({title,value,variant, subtitle, isLoad, onClick}:AlertProps)
     </>
   )
 }
-  const SetButton = ({variant, subtitle, isLoad, onClick}) =>{
+  const SetButton = ({variant, subtitle, isLoad, onClick}:AlertProps) =>{
     const Icon = getIcon(variant);
     return (
       <Button disabled={variant!=='winning'} onClick={onClick}>

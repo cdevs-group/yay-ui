@@ -1,12 +1,13 @@
 import React from 'react';
 import ArrowIcon from '../../ArrowIcon';
 import styled from 'styled-components';
+import { ArrowProps } from '../../types';
 
-const Arrow = ({center})=> <ArrowWrap center={center}><ArrowIcon/></ArrowWrap>;
+const Arrow = ({center}:ArrowProps)=> <ArrowWrap center={center}><ArrowIcon/></ArrowWrap>;
 
 export default Arrow;
 
-const ArrowWrap = styled.div`
+const ArrowWrap = styled.div<{center?:boolean}>`
   width: 45px;
   height: 45px;
   position: absolute;

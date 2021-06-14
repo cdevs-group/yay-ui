@@ -12,7 +12,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M1 9L5 5L1 1" stroke="#A3A3A3" stroke-width="1.8" />
+      <path d="M1 9L5 5L1 1" stroke="#A3A3A3" strokeWidth="1.8" />
     </svg>
   );
 };

@@ -1,8 +1,10 @@
+import { ReactNode } from "react";
+
 export interface CardBalanceProps{
   right?:boolean,
   title:string,
   text:string,
-  children:any
+  children?:ReactNode
 };
 
 export interface CardProductProp {
@@ -10,4 +12,8 @@ export interface CardProductProp {
   img: string
   bg: string
   closed?:boolean
+}
+
+export interface ArrowProps{
+  center?:boolean
 }

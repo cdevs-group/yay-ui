@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CardProductProp } from '../../types';
 import Text from '../../../Text/Text'
 
-export const setColor = (param) => {
+export const setColor = (param:{bg?:string}) => {
   switch (param.bg) {
     case "red":
       return "linear-gradient(180deg, #FF8383 0%, #EF5D5D 100%);"
@@ -32,7 +32,7 @@ const CardProduct = ({ title, img, bg, closed }: CardProductProp) => {
 
 export default CardProduct;
 
-export const CardWrap = styled.div`
+export const CardWrap = styled.div<{closed?:boolean,bg:string}>`
   position: relative;
   height: 100%;
   width: 100%;

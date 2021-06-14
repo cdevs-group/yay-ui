@@ -1,22 +1,23 @@
+import React from 'react';
 import styled from "styled-components";
 import CoinIcon from "../CoinIcon";
 import DualshockIcon from "../DualshockIcon";
 import  Arrow  from "./components/Arrow";
-import CardBalancefrom from './components/CardBalance'
+import CardBalance from './components/CardBalance'
 
 const CardsBalance = () =>{
   return <Cards>
-    <CardBalancefrom
+    <CardBalance
         title='2000 YAY'
         text='Ready to harvest'
       ><CoinIcon/>
-    </CardBalancefrom>
-    <CardBalancefrom
+    </CardBalance>
+    <CardBalance
         right
         title='3`000 YAY'
         text='Your Balance'
       ><DualshockIcon/>
-    </CardBalancefrom>
+    </CardBalance>
     <Arrow center={true}/>
   </Cards>
 }

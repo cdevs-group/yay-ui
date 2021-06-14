@@ -25,7 +25,7 @@ export const baseColors = {
   darkPink:"#FF6161",
   whiteRgba:"rgba(255, 255, 255, 0.15)",
   greenGradient2:"linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
-  textGray2:"#9A9191"
+  textGray2:"#9A9191",
 };
 
 export const brandColors = {
@@ -97,6 +97,7 @@ export const lightColors: Colors = {
   cardBg: "#26262D",
   greyText: "#A3A3A3",
   darkGreyBg: "#1d1d22",
+  greyText2: "#9A9191",
   text: "#fff",
   greenText: "#4AE43D",
   orangeBg: "#FF9525",
@@ -109,6 +110,7 @@ export const lightColors: Colors = {
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   blackColor: "#000",
   greenText2: "47DA3B",
+  boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
 
   backgroundDisabled: "rgba(255,255,255,.15)",
   contrast: "#000",
