@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { CardHeaderProps } from "../types";
 
@@ -42,7 +42,6 @@ const TextRight = styled.div`
     margin-left: 15px;
   }
 `
-
 const CardHeader: React.FC<CardHeaderProps> = ({icon, coin, upDown, num, greenColor, svg}) => {
 
   return (

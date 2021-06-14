@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 export interface CommitBlockProp {
   num: string,
-  coinIcon: string,
+  coinIcon: ReactNode,
   coin: string,
 }

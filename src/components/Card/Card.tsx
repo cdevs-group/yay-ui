@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import StyledCard from "./StyledCard";
 import { CardProps } from "./types";
-import * as Chart from "./img/chart-icon.png";
-import * as History from "./img/history-icon.png";
+import Chart from "./img/chart-icon.png";
+import  History from "./img/history-icon.png";
 import { transparentize } from 'polished';
 import {GreenArrow} from "../../components/Svg";
 

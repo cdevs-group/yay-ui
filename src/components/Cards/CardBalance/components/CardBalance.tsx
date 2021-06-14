@@ -15,7 +15,7 @@ const CardBalance = ({ right, title, children, text }: CardBalanceProps) => {
 
 export default CardBalance;
 
-const CardWrap = styled.div`
+const CardWrap = styled.div<{right?:boolean}>`
   position: relative;
   padding: 25px;
   background-color: ${({ theme }) => theme.colors.bgGray};

@@ -1,10 +1,7 @@
 import React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
-import { CercleIcon } from '../Svg'
-import IconButton from "./IconButton";
+import { BrowserRouter } from "react-router-dom";
+import styled from "styled-components";
 import Button from "./Button";
-import { scales, variants } from "./types";
 
 export default {
   title: "Components/Button",

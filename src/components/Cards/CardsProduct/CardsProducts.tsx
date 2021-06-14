@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 import ROCKET from "../image/rocket.png";
 import MAJONG from "../image/majong.png";

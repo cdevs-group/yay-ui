@@ -80,7 +80,13 @@ export type Colors = {
   boxShadow4:string;
   textGray2:string;
   dark: string;
-
+  boxShadow5:string;
+  textShadow:string;
+  greenGradient:string;
+  boxShadow2:string;
+  bgGray:string;
+  textShadow2:string;
+  textShadow3:string;
   // Gradients
   gradients: Gradients;
 

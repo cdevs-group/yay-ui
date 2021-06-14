@@ -4,7 +4,7 @@ import { SvgProps } from '../types';
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <svg viewBox="0 0 26 24"  width="26" height="24" fill="none" >
+    <svg viewBox="0 0 26 24" width="26" height="24" fill="none" >
       <g filter="url(#filter0_d)">
         <path
           d="M13 15.5L15 12.5H19"
