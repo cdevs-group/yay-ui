@@ -8,6 +8,7 @@ export interface CardHeaderProps {
   greenColor?: boolean;
   whiteCoin?: boolean;
   svg?: ReactNode;
+  negative?: boolean;
 }
 
 export interface CardProps{

@@ -11,15 +11,15 @@ const payoutArr = [
   {name: <div className="bold">Prize Pool:</div>, price: <div className="bold">$ 3`500</div>},
 ]
 
-const Wrap = styled.div`
+const Wrap = styled.div<{ negative?: boolean }>`
   position: relative;
   padding: 22px 19px 30px 22px;
   border-radius: 12px;
-  background: ${({ theme }) => theme.colors.linkColor};
+  background: ${({ theme, negative }) =>
+    negative
+      ? theme.colors.redBg
+      : theme.colors.linkColor};
   z-index: 1;
-  &.red { 
-    /* background: red; */
-  }
   &::before{
     position: absolute;
     display: block;
@@ -64,13 +64,21 @@ const HeaderWrap = styled.div`
   margin-bottom: 49px;
 `
 
-const NewUpDownCard: React.FC = () => {
+interface UpDownProps {
+  negative?: boolean;
+}
+
+const NewUpDownCard = (props: UpDownProps) => {
+  const {
+    negative,
+  } = props;
+
   return (
-    <Wrap>
+    <Wrap negative={negative}>
       <HeaderWrap>
-        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+        <CardHeader icon={<BnbIcon/>} coin="BNB" num="#0019" negative={negative}/>
       </HeaderWrap>
-      <ClosedPrice price="$ 400`597" rightText="56.3%" negative={false}/>
+      <ClosedPrice price="$ 400`597" rightText="56.3%" negative={negative}/>
       <Payout>
         {payoutArr.map((item, i) => (
           <div key={i}>
