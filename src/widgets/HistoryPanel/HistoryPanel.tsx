@@ -210,6 +210,7 @@ const Wrap = styled.div`
   position: relative; 
   background: ${({ theme }) => theme.colors.panel}; 
   height: 100vh;
+  width: 416px;
 `;
 
 const ButtonToggle = styled.button<{ open: boolean; color: string }>`

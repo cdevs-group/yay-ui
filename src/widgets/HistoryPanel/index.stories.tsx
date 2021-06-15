@@ -12,8 +12,3 @@ export const Panel: React.FC = () => {
 
   return <HistoryPanel setOpen={setOpen} open={open} />;
 };
-export const PnlPanel: React.FC = () => {
-  const [open, setOpen] = useState(true)
-
-  return <HistoryPanel setOpen={setOpen} open={open} ><PnlHistoryPanel/></HistoryPanel>;
-};
