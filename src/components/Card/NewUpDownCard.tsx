@@ -59,10 +59,16 @@ const ButtonBlock = styled.div`
   }
 `
 
+const HeaderWrap = styled.div`
+  margin-bottom: 49px;
+`
+
 const NewUpDownCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+      <HeaderWrap>
+        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+      </HeaderWrap>
       <ClosedPrice price="$ 400`597" rightText="56.3%"/>
       <Payout>
         {payoutArr.map((item, i) => (

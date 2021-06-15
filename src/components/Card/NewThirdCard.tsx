@@ -9,7 +9,7 @@ import Button from "../Button/Button";
 import PositionCard from "./PositionCard";
 
 const Wrap = styled.div`
-  padding: 22px 19px 0 22px;
+  padding: 22px 19px 22px 22px;
   &.show {
     /* transform: rotate(360deg); */
   }

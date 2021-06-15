@@ -12,10 +12,11 @@ const payoutArr = [
 
 const Wrap = styled.div`
   position: relative;
-  padding: 22px 19px 160px 22px;
+  padding: 22px 19px 22px 22px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
+  min-height: 445px;
   &.red { 
     /* background: red; */
   }
@@ -49,11 +50,16 @@ const Item = styled.div`
     font-weight: 500;
   }
 `
+const HeaderWrap = styled.div`
+  margin-bottom: 49px;
+`
 
 const NewMainCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+      <HeaderWrap>
+        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
+      </HeaderWrap>
       <ClosedPrice price="$ 400`597" rightText="56.3%"/>
       <Payout>
         {payoutArr.map((item, i) => (

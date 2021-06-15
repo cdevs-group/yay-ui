@@ -22,13 +22,13 @@ const Item = styled.div`
     color: ${({ theme }) => theme.colors.greyText2};
   }
   & div.prize {
-    margin-top: 21px;
+    margin-top: 12px;
     font-weight: 500;
     font-size: 15px;
     line-height: 19px;
   }
   & div.boldPrice {
-    margin-top: 20px;
+    margin-top: 12px;
     font-weight: 500;
     font-size: 21px;
     line-height: 27px;
