@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import PriceBlock from "./components/PriceBlock";
-import {BnbIcon} from "../../components/Svg";
-import CardHeader from "./components/CardHeader";
+import PriceBlock from "../components/PriceBlock";
+import {BnbIcon} from "../../../components/Svg";
+import CardHeader from "../components/CardHeader";
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;

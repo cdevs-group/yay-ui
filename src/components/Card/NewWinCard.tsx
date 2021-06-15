@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardHeader from "./components/CardHeader";
-import {BnbIcon} from "../../components/Svg";
+import {BnbIcon, CompleteIcon} from "../../components/Svg";
 import { ClosedPrice } from "../ClosedPrice";
 import Button from "../Button/Button";
 import {Winner, Win} from '../../constants/images';
@@ -15,12 +15,10 @@ const payoutArr = [
 const Wrap = styled.div`
   position: relative;
   padding: 22px 19px 32px 22px;
+  min-height: 480px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
-  &.red { 
-    /* background: red; */
-  }
   &::before{
     position: absolute;
     display: block;
@@ -80,7 +78,7 @@ const NewWinCard: React.FC = () => {
   return (
     <Wrap>
       <HeaderWrap>
-        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019" svg="svg"/>
+        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019" svg={<CompleteIcon fill='#47DA3B'/>}/>
       </HeaderWrap>
       <ClosedPrice price="$ 400`597" rightText="56.3%"/>
       <Payout>
@@ -91,7 +89,7 @@ const NewWinCard: React.FC = () => {
         ))}
       </Payout>
       <WinIcon><img src={Win}/></WinIcon>
-      <ButtonBnb><Button variant='green' width="100%">Up BNB </Button></ButtonBnb>
+      <ButtonBnb><Button variant='green' width="100%">Collect Winnings</Button></ButtonBnb>
       <WinnerImg><img src={Winner}/></WinnerImg>
     </Wrap>
   );

@@ -5,7 +5,7 @@ import { CardProps } from "./types";
 import Chart from "./img/chart-icon.png";
 import  History from "./img/history-icon.png";
 import { transparentize } from 'polished';
-import {GreenArrow} from "../../components/Svg";
+import {GreenArrow} from "../Svg";
 
 const Wrap = styled.div`
   width: 404px;
@@ -13,12 +13,9 @@ const Wrap = styled.div`
 `
 
 const BottomContent = styled.div`
-  display: none;
-  &.active {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 28px;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28px;
 `
 
 const Button = styled.button`
@@ -82,7 +79,7 @@ const Card: React.FC<CardProps> = ({ children, active, ...props }) => {
       <StyledCard {...props}>
         {children}
       </StyledCard>
-      <BottomContent className={ active ? 'active' : ''}>
+      <BottomContent>
         <Button><img src={Chart}/></Button>
         <CenterBlock>
           <button className="arrowLeft"><GreenArrow color="#47DA3B"/></button>

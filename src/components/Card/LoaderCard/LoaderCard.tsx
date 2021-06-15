@@ -30,7 +30,7 @@ let yellowAnimation = keyframes`
 `;
 
 const Wrap = styled.div`
-    height: 470px;
+    height: 480px;
   `
 
   const Loader = styled.div`

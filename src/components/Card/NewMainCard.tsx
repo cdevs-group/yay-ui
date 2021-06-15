@@ -16,7 +16,7 @@ const Wrap = styled.div`
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
-  min-height: 445px;
+  min-height: 480px;
   &.red { 
     /* background: red; */
   }

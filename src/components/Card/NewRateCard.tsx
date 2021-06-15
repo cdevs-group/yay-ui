@@ -1,16 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import PriceBlock from "./components/PriceBlock";
-import {BnbIcon} from "../Svg";
+import {BnbIcon, CompleteIcon} from "../Svg";
 import CardHeader from "./components/CardHeader";
 import Button from "../Button/Button";
 import { Button as Input } from '../../widgets/WalletModal/ConnectModal';
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;
+  min-height: 480px;
 `
 
 const ButtonBlock = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 27px;
@@ -25,7 +27,7 @@ const ButtonBlock = styled.div`
   }
   & div {
     position: absolute;
-    right: 62%;
+    right: 2%;
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
 `
@@ -42,7 +44,7 @@ const InputBlock = styled(Input)`
   width: 45%;
   height: 48px;
   margin: 0 28%;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   font-weight: bold;
   padding: 0 53px;
   cursor: auto;
@@ -60,7 +62,7 @@ const NewRateCard: React.FC = () => {
       <CardHeader icon={<BnbIcon/>} coin="BNB"/>
       <PriceBlock arr={payoutArr}/>
       <ButtonBlock>
-        <Button variant='green' className="withGreenBorder">Entered Up <div className="right">svg</div></Button>
+        <Button variant='green' className="withGreenBorder">Entered Up <div className="right"><CompleteIcon fill='#47DA3B'/></div></Button>
         <Button variant='pink' disabled className="withRedBorder">Enter Down</Button>
       </ButtonBlock>
       <TimerTitle>You Entered:</TimerTitle>
