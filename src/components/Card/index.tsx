@@ -1,2 +1,2 @@
 export { default as Card } from "./Card";
-export type { CardProps, CardRibbonProps } from "./types";
+export type { CardProps, CardHeaderProps, CardTheme } from "./types";
