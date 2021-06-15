@@ -8,7 +8,7 @@ import { Button as Input } from '../../widgets/WalletModal/ConnectModal';
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;
-  min-height: 470px;
+  min-height: 480px;
 `
 
 const ButtonBlock = styled.div`

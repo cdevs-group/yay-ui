@@ -15,12 +15,10 @@ const payoutArr = [
 const Wrap = styled.div`
   position: relative;
   padding: 22px 19px 32px 22px;
+  min-height: 480px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
-  &.red { 
-    /* background: red; */
-  }
   &::before{
     position: absolute;
     display: block;

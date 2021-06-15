@@ -1,23 +1,22 @@
 import React from "react";
-import Card from "./deprecated/Card";
+import Card from "./Card";
 import LoaderCard from "./LoaderCard/LoaderCard";
 import NewMainCard from "./NewMainCard";
 import NewRateCard from "./NewRateCard";
 import NewThirdCard from "./NewThirdCard";
 import NewUpDownCard from "./NewUpDownCard";
 import NewWinCard from "./NewWinCard";
-import PositionCard from "./PositionCard";
 
 export default {
   title: "Components/Card",
-  component: [NewMainCard, NewThirdCard, PositionCard, NewWinCard, NewRateCard, NewUpDownCard, LoaderCard],
+  component: [NewMainCard, NewThirdCard, NewWinCard, NewRateCard, NewUpDownCard, LoaderCard],
   argTypes: {},
 };
 
 export const MainCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
+      <Card >
         <NewMainCard/>
       </Card>
     </div>
@@ -27,18 +26,8 @@ export const MainCardNew: React.FC = () => {
 export const ThirdCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
+      <Card >
         <NewThirdCard/>
-      </Card>
-    </div>
-  );
-};
-
-export const CardPosition: React.FC = () => {
-  return (
-    <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
-        <PositionCard/>
       </Card>
     </div>
   );
@@ -47,7 +36,7 @@ export const CardPosition: React.FC = () => {
 export const WinCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
+      <Card >
         <NewWinCard/>
       </Card>
     </div>
@@ -57,7 +46,7 @@ export const WinCardNew: React.FC = () => {
 export const RateCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
+      <Card >
         <NewRateCard/>
       </Card>
     </div>
@@ -67,7 +56,7 @@ export const RateCardNew: React.FC = () => {
 export const UpDownCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active>
+      <Card >
         <NewUpDownCard/>
       </Card>
     </div>

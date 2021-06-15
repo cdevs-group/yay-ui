@@ -14,6 +14,7 @@ const payoutArr = [
 const Wrap = styled.div<{ negative?: boolean }>`
   position: relative;
   padding: 22px 19px 30px 22px;
+  min-height: 480px;
   border-radius: 12px;
   background: ${({ theme, negative }) =>
     negative
