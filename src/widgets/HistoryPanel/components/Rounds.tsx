@@ -39,7 +39,7 @@ const Rounds = ({ best }: bestProps) => {
   return (
     <Wrap>
       {best.map((item, i) =>
-        <Row>
+        <Row key={i}>
           <Column>
             <img style={{ float: 'left' }} src={i === 0 ? WIN : LOSE} alt='some img' />
             <div>
@@ -68,7 +68,8 @@ const Wrap = styled.div`
     position: absolute;
     display: block;
     content:'';  
-    width: 120%;
+    /* width: 120%; */
+    width: 408px;
     left: -20px;
     top:0;
     z-index:0;

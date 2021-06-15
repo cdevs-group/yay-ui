@@ -20,7 +20,7 @@ const Statistic = ({ bestNumber,best }: bestProps) => {
   return (
     <Wrap>
       {best.map((item, i) =>
-        <Row>
+        <Row key={i}>
           <Text>{nameRow(i).first}</Text>
          
          <Best fontSize='13px' textAlign='right' color={i!==2?'#4BE43E':'white'}>

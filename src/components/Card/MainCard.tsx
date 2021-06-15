@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Timer from "../Timer/Timer";
 import CardHeader from "./components/CardHeader";
-import {BnbIcon} from "../../components/Svg";
+import { BnbIcon } from "../../components/Svg";
 import { ClosedPrice } from "../ClosedPrice";
 
 const payoutArr = [
-  {name: <div>Payout:</div>, price: "5,09x"},
-  {name: <div>Locked Price:</div>, price: <div className="bold">$ 1`200</div>},
-  {name: <div className="bold">Prize Pool:</div>, price: <div className="bold">$ 3`500</div>},
+  { name: <div>Payout:</div>, price: "5,09x" },
+  { name: <div>Locked Price:</div>, price: <div className="bold">$ 1`200</div> },
+  { name: <div className="bold">Prize Pool:</div>, price: <div className="bold">$ 3`500</div> },
 ]
 
 const Wrap = styled.div`
@@ -17,6 +17,7 @@ const Wrap = styled.div`
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
+  height: 100%;
   &.red { 
     /* background: red; */
   }
@@ -32,6 +33,7 @@ const Wrap = styled.div`
     background: ${({ theme }) => theme.colors.cardBg};;
     border-radius: 12px;
     z-index: -1;
+    
   }
 `
 
@@ -62,8 +64,8 @@ const TimerTitle = styled.div`
 const MainCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
-      <ClosedPrice price="$ 400`597" rightText="56.3%"/>
+      <CardHeader icon={<BnbIcon />} coin="BNB" upDown="UP" num="#0019" />
+      <ClosedPrice price="$ 400`597" rightText="56.3%" />
       <Payout>
         {payoutArr.map((item, i) => (
           <div key={i}>
