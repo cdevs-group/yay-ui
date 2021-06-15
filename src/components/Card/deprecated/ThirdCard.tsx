@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { BNB } from "../../constants/images";
-import Timer from "../Timer/Timer";
-import PriceBlock from "./components/PriceBlock";
-import {BnbIcon} from "../../components/Svg";
-import CardHeader from "./components/CardHeader";
-import Button from "../Button/Button";
+import Timer from "../../Timer/Timer";
+import PriceBlock from "../components/PriceBlock";
+import {BnbIcon} from "../../../components/Svg";
+import CardHeader from "../components/CardHeader";
+import Button from "../../Button/Button";
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;

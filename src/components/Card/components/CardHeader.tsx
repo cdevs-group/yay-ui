@@ -34,12 +34,13 @@ const TextLeft = styled.div`
 
 const TextRight = styled.div`
   display: flex;
+  align-items: center;
   font-weight: normal;
   font-size: 13px;
   line-height: 16px;
   color: ${({ theme }) => theme.colors.greyText};
   & div {
-    margin-left: 15px;
+    margin-left: 10px;
   }
 `
 const CardHeader: React.FC<CardHeaderProps> = ({icon, coin, upDown, num, greenColor, svg}) => {

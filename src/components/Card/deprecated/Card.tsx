@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import StyledCard from "./StyledCard";
-import { CardProps } from "./types";
-import Chart from "./img/chart-icon.png";
-import  History from "./img/history-icon.png";
+import StyledCard from "../StyledCard";
+import { CardProps } from "../types";
+import Chart from "../img/chart-icon.png";
+import  History from "../img/history-icon.png";
 import { transparentize } from 'polished';
-import {GreenArrow} from "../../components/Svg";
+import {GreenArrow} from "../../../components/Svg";
 
 const Wrap = styled.div`
   width: 404px;

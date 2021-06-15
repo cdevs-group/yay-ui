@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardHeader from "./components/CardHeader";
-import {BnbIcon} from "../../components/Svg";
+import {BnbIcon, CompleteIcon} from "../../components/Svg";
 import { ClosedPrice } from "../ClosedPrice";
 import Button from "../Button/Button";
 
@@ -52,10 +52,11 @@ const Item = styled.div`
 `
 
 const ButtonBlock = styled.div`
+  position: relative;
   margin-top: 86px;
   & div {
     position: absolute;
-    right: 9%;
+    right: 2%;
   }
 `
 
@@ -69,7 +70,7 @@ const NewUpDownCard: React.FC = () => {
       <HeaderWrap>
         <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019"/>
       </HeaderWrap>
-      <ClosedPrice price="$ 400`597" rightText="56.3%"/>
+      <ClosedPrice price="$ 400`597" rightText="56.3%" negative={false}/>
       <Payout>
         {payoutArr.map((item, i) => (
           <div key={i}>
@@ -78,7 +79,7 @@ const NewUpDownCard: React.FC = () => {
         ))}
       </Payout>
       <ButtonBlock>
-        <Button variant='green' className="withGreenBorder">Entered Up <div className="right">svg</div></Button>
+        <Button variant='green' className="withGreenBorder">Entered Up <div className="right"><CompleteIcon fill='#47DA3B'/></div></Button>
       </ButtonBlock>     
     </Wrap>
   );

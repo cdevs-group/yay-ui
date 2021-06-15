@@ -16,6 +16,7 @@ const Wrap = styled.div`
 `
 
 const ButtonBlock = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 27px;
@@ -30,7 +31,7 @@ const ButtonBlock = styled.div`
   }
   & div {
     position: absolute;
-    right: 62%;
+    right: 5%;
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
   
