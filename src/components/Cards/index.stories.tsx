@@ -10,9 +10,11 @@ export default {
 
 
 export const CardsBalancePreview: React.FC = () => {
+const text = {text1:"2000 YAY",title1:"Ready to harvest", text2:"Your Balance",title2:"3`000 YAY"};
+
   return (
     <div>
-      <CardsBalance/>
+      <CardsBalance text={text}/>
     </div>
   );
 };

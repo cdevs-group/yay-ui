@@ -1,2 +1,2 @@
 export { default as Header } from "./components/Header";
-// export type { HeadingProps, Sizes as HeadingSizes, Tags as HeadingTags } from "./types";
+export type { LinkProps, AccProps as HeadingSizes, sizes } from "./types";

@@ -2,20 +2,21 @@ import React from 'react';
 import styled from "styled-components";
 import CoinIcon from "../CoinIcon";
 import DualshockIcon from "../DualshockIcon";
+import { TextProps } from '../types';
 import  Arrow  from "./components/Arrow";
 import CardBalance from './components/CardBalance'
 
-const CardsBalance = () =>{
+const CardsBalance = ({text}:TextProps) =>{
   return <Cards>
     <CardBalance
-        title='2000 YAY'
-        text='Ready to harvest'
+        title={text.title1}
+        text={text.text1}
       ><CoinIcon/>
     </CardBalance>
     <CardBalance
         right
-        title='3`000 YAY'
-        text='Your Balance'
+        title={text.title2}
+        text={text.text2}
       ><DualshockIcon/>
     </CardBalance>
     <Arrow center={true}/>

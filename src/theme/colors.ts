@@ -63,7 +63,6 @@ export const darkColors: Colors = {
   greenText2: "47DA3B",
 
 
-
   backgroundDisabled: "#3c3742",
   contrast: "#FFFFFF",
   invertedContrast: "#000",

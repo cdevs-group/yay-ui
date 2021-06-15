@@ -7,7 +7,6 @@ const Title = styled.div`
   justify-content: space-between;
   align-items: center;
 `
-
 const TextLeft = styled.div`
   display: flex;
   align-items: center;

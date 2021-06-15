@@ -6,7 +6,7 @@ export interface InjectedProps {
   open: boolean;
   children?:ReactNode;
 }
-interface bestData{
+export interface bestData{
   average:number
   round:number
   win:boolean

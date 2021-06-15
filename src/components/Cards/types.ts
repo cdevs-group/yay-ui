@@ -17,3 +17,11 @@ export interface CardProductProp {
 export interface ArrowProps{
   center?:boolean
 }
+
+export interface TextProps{
+  text:
+  {text1:string
+  title1:string
+  text2:string
+  title2:string}
+}

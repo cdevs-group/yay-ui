@@ -4,12 +4,14 @@ import styled from "styled-components";
 import { SearchIcon } from "../Svg";
 import { InputProp } from "./types";
 
-const Input = ({ placeholder }: InputProp) => {
+const Input = ({ placeholder,value, onChange }: InputProp) => {
   const [focus, setFocus] = useState<boolean>(false)
 
   return (
     <InputBlock>
       <InputItem
+        value={value}
+        onChange={onChange}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         placeholder={placeholder}

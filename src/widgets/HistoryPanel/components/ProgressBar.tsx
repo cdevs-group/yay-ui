@@ -57,7 +57,7 @@ const Progress = styled.div`
   overflow: hidden;
 `;
 const Step = styled.div<{ color: string }>`
-  height: 20px;
+  height: 9px;
   width: 100%;
   background: ${({ color }) => color};
   transition: none.3s;
