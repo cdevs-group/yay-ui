@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
 import CardHeader from "./components/CardHeader";
 import { BnbIcon } from "../../components/Svg";
 import { ClosedPrice } from "../ClosedPrice";
@@ -18,6 +17,7 @@ const Wrap = styled.div`
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
   height: 100%;
+  min-height: 445px;
   &.red { 
     /* background: red; */
   }
@@ -53,18 +53,16 @@ const Item = styled.div`
   }
 `
 
-const TimerTitle = styled.div`
-  margin: 51px 0 19px;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.text};
+const HeaderWrap = styled.div`
+  margin-bottom: 49px;
 `
 
 const MainCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon />} coin="BNB" upDown="UP" num="#0019" />
+      <HeaderWrap>
+        <CardHeader icon={<BnbIcon />} coin="BNB" upDown="UP" num="#0019" />
+      </HeaderWrap>
       <ClosedPrice price="$ 400`597" rightText="56.3%" />
       <Payout>
         {payoutArr.map((item, i) => (
@@ -72,9 +70,7 @@ const MainCard: React.FC = () => {
             <Item>{item.name} {item.price}</Item>
           </div>
         ))}
-      </Payout>
-      <TimerTitle>Bids close:</TimerTitle>
-      <Timer time={1500} />
+      </Payout>      
     </Wrap>
   );
 };

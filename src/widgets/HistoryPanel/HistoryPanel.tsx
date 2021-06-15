@@ -24,19 +24,9 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
     if (setOpen) setOpen(!open);
   };
   const [tabValue, setTabValue] = useState(0);
-  const [openDelay, setOpenDelay] = useState(false)
   const [valueAccordeon, setValueAccordeon] = useState<
     number | null | undefined
   >();
-
-  useEffect(() => {
-    const delay = () => setOpenDelay(true)
-    if (open) {
-      setTimeout(delay, 100)
-    } else {
-      setOpenDelay(false)
-    }
-  }, [open])
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
@@ -131,7 +121,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
-    <Panel openDelay={openDelay} open={open}>
+    <Panel open={open}>
       <Wrap>
         <ButtonToggle
           onClick={handleToggle}
@@ -207,15 +197,14 @@ HistoryPanel.defaultProps = {
   setOpen: () => { },
 };
 
-const Panel = styled.div<{ open: boolean, openDelay: boolean }>`
+const Panel = styled.div<{ open: boolean }>`
   position: fixed;
   right: 0;
-  top: 0;
- 
+  top: 0; 
   padding-left: 20px;  
   width: ${({ open }) => (open ? '436px' : '8px')};
-  transition: 0.3s;
-  overflow-y: ${({ openDelay }) => (openDelay ? 'auto' : 'none')};
+  transition: all 0.3s ease, overflow-y 0ms;
+  overflow-y: ${({ open }) => (open ? 'auto' : 'none')};
 `;
 const Wrap = styled.div`
   position: relative; 

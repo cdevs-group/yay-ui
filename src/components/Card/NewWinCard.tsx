@@ -72,10 +72,16 @@ const WinnerImg = styled.div`
   pointer-events: none;
 `
 
+const HeaderWrap = styled.div`
+  margin-bottom: 49px;
+`
+
 const NewWinCard: React.FC = () => {
   return (
     <Wrap>
-      <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019" svg="svg"/>
+      <HeaderWrap>
+        <CardHeader icon={<BnbIcon/>} coin="BNB" upDown="UP" num="#0019" svg="svg"/>
+      </HeaderWrap>
       <ClosedPrice price="$ 400`597" rightText="56.3%"/>
       <Payout>
         {payoutArr.map((item, i) => (

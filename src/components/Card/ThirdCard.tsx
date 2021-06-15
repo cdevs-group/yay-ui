@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;
+  min-height: 445px;
 `
 
 const ButtonBlock = styled.div`

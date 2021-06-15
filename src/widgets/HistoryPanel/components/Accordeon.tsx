@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Flipper, Flipped } from 'react-flip-toolkit';
 import { ICardAccordeon } from '../types';
@@ -29,14 +29,19 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
   };
 
   useEffect(() => {
+    setValue && setValue(undefined);
+  }, []);
+
+  useEffect(() => {
     if (refHidden?.current) {
       setHeightActiveBlock(refHidden?.current?.clientHeight);
     }
   }, [value]);
 
+  const filterCards = useMemo(() => cards.filter((el) => el.id !== active.id), [active])
+  const filterActiveCard = useMemo(() => cards.filter((el) => el.id === active.id), [active])
+
   useEffect(() => {
-    const filterCards = cards.filter((el) => el.id !== active.id);
-    const filterActiveCard = cards.filter((el) => el.id === active.id);
     setNewCards([...filterActiveCard, ...filterCards]);
   }, [active]);
 
