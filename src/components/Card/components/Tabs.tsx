@@ -10,7 +10,7 @@ const TabsBlock = styled.div`
 `;
 
 const Tab = styled.button`
-  padding: 7px 7px 4px;
+  padding: 7px 10px;
   border: none;
   background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
   border-radius: 7px; 
@@ -20,8 +20,9 @@ const Tab = styled.button`
   color: ${({ theme }) => theme.colors.text};
   transition: 0.3s;
   cursor: pointer;
+  border: 1px solid transparent;
   &:not(:last-child) {
-    margin-right: 22px;
+    margin-right: 12px;
   }
   &.active {
     border: 1px solid #47DA3B;

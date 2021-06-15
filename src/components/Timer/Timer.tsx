@@ -58,8 +58,7 @@ export default Timer;
 const Wrap = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* width: fit-content; */
+  width: fit-content;
 `;
 
 const Block = styled.div<TimerColorProps>`
