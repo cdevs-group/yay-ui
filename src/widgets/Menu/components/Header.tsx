@@ -3,13 +3,25 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { links } from "../config";
 import Logo from "../Logo";
-import { AccProps } from '../types';
+import { NavProps } from '../types';
 import Account from "./Account";
 import MenuLink from './MenuLink';
 
-const Header = ({isAuth, accName}:AccProps) =>{
+const Header: React.FC<NavProps> =({
+  account,
+  login,
+  logout,
+  isDark,
+  toggleTheme,
+  langs,
+  setLang,
+  currentLang,
+  links,
+  profile,
+  children,
+}) => {
   return (
-  <HeaderWrap>
+  <HeaderWrap>  
     {/* <Link> */}
       <Logo/>
     {/* </Link> */}
@@ -20,7 +32,7 @@ const Header = ({isAuth, accName}:AccProps) =>{
         </React.Fragment>
       )}
     </Nav>
-    <Account accName={accName} isAuth={isAuth}/>
+    <Account account={account} login={login} logout={logout}/>
   </HeaderWrap>)
 }
 
@@ -41,9 +53,5 @@ const Nav = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-Header.defaultProps = {
-  isAuth:false
-};
 
 export default Header;

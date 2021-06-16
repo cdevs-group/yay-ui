@@ -14,6 +14,6 @@ export * from "./components/Alert";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
-export * from "./widgets/Menu/Header";
+export * from "./widgets/Menu";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
