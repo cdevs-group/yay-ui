@@ -1,6 +1,12 @@
+import React from 'react';
 import styled from "styled-components";
 
-const IconBlock = ({active, children}) =><Block active={active}>{children}</Block>
+interface IProps {
+  active: boolean;
+  children: React.ReactNode
+}
+
+const IconBlock = ({active, children}: IProps) =><Block active={active}>{children}</Block>
 
 const Block = styled.div<{active:boolean}>`
   width: 30px;
