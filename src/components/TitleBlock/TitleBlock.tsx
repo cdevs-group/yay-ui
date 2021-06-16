@@ -1,13 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { TitleBlockProps } from './types';
+import React from "react";
+import styled from "styled-components";
+import { TitleBlockProps } from "./types";
 
-const TitleBlock: React.FC<TitleBlockProps> = ({
-  src,
-  title,
-  subtitle,
-  children,
-}) => {
+const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, children }) => {
   return (
     <Block>
       <Img>
@@ -50,7 +45,7 @@ const Img = styled.div`
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.colors.green};
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     top: 50%;

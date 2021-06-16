@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import HistoryPanel from './HistoryPanel';
-import PnlHistoryPanel from './PnlHistoryPanel';
+import React, { useState } from "react";
+import HistoryPanel from "./HistoryPanel";
+import PnlHistoryPanel from "./PnlHistoryPanel";
 
 export default {
-  title: 'Components/HistoryPanel',
-  component: [HistoryPanel,PnlHistoryPanel],
+  title: "Components/HistoryPanel",
+  component: [HistoryPanel, PnlHistoryPanel],
 };
 
 export const Panel: React.FC = () => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(true);
 
   return <HistoryPanel setOpen={setOpen} open={open} />;
 };

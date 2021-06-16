@@ -1,31 +1,24 @@
-import React from 'react';
-import Card from './Card';
-import LoaderCard from './LoaderCard/LoaderCard';
-import NewMainCard from './NewMainCard';
-import NewRateCard from './NewRateCard';
-import NewThirdCard from './NewThirdCard';
-import NewUpDownCard from './NewUpDownCard';
-import NewWinCard from './NewWinCard';
-import ArrowSlider from '../ArrowSlider/ArrowSlider';
-import { ChartIcon, HistoryIcon } from '../Svg';
-import { Flex } from '../Box';
+import React from "react";
+import Card from "./Card";
+import LoaderCard from "./LoaderCard/LoaderCard";
+import NewMainCard from "./NewMainCard";
+import NewRateCard from "./NewRateCard";
+import NewThirdCard from "./NewThirdCard";
+import NewUpDownCard from "./NewUpDownCard";
+import NewWinCard from "./NewWinCard";
+import ArrowSlider from "../ArrowSlider/ArrowSlider";
+import { ChartIcon, HistoryIcon } from "../Svg";
+import { Flex } from "../Box";
 
 export default {
-  title: 'Components/Card',
-  component: [
-    NewMainCard,
-    NewThirdCard,
-    NewWinCard,
-    NewRateCard,
-    NewUpDownCard,
-    LoaderCard,
-  ],
+  title: "Components/Card",
+  component: [NewMainCard, NewThirdCard, NewWinCard, NewRateCard, NewUpDownCard, LoaderCard],
   argTypes: {},
 };
 
 export const MainCardNew: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <NewMainCard />
       </Card>
@@ -42,7 +35,7 @@ export const MainCardNew: React.FC = () => {
 
 export const ThirdCardNew: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <NewThirdCard />
       </Card>
@@ -52,7 +45,7 @@ export const ThirdCardNew: React.FC = () => {
 
 export const WinCardNew: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <NewWinCard />
       </Card>
@@ -62,7 +55,7 @@ export const WinCardNew: React.FC = () => {
 
 export const RateCardNew: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <NewRateCard />
       </Card>
@@ -72,7 +65,7 @@ export const RateCardNew: React.FC = () => {
 
 export const UpDownCardNew: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <NewUpDownCard />
       </Card>
@@ -82,7 +75,7 @@ export const UpDownCardNew: React.FC = () => {
 
 export const Loader: React.FC = () => {
   return (
-    <div style={{ padding: '32px', width: '500px' }}>
+    <div style={{ padding: "32px", width: "500px" }}>
       <Card>
         <LoaderCard />
       </Card>

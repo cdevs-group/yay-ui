@@ -4,29 +4,17 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <svg
-      width={42}
-      height={42}
-      viewBox="0 0 42 42"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width={42} height={42} viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect
         x={6}
         y={6}
         width={30}
         height={30}
         rx={7}
-        fill={props.fill || 'rgb(58,58,64)'}
-      // fillOpacity={0.15}
+        fill={props.fill || "rgb(58,58,64)"}
+        // fillOpacity={0.15}
       />
-      <g
-        filter="url(#prefix__filter0_d)"
-        stroke="#fff"
-        strokeWidth={2}
-        strokeLinecap="round"
-      >
+      <g filter="url(#prefix__filter0_d)" stroke="#fff" strokeWidth={2} strokeLinecap="round">
         <path d="M17.465 17.465l7.07 7.07M24.537 17.465l-7.071 7.07" />
       </g>
       <defs>
@@ -40,10 +28,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
@@ -56,6 +41,3 @@ const Icon: React.FC<SvgProps> = (props) => {
 };
 
 export default Icon;
-
-
-

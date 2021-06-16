@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { links } from "../config";
 import Logo from "../Logo";
 import { NavProps } from '../types';
 import Account from "./Account";
-import MenuLink from './MenuLink';
+import MenuLink from "./MenuLink";
 
 const Header: React.FC<NavProps> =({
   account,
@@ -41,9 +41,9 @@ const HeaderWrap = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 14px 144px;
-  background-color: ${({theme})=>theme.colors.bgBlackRgba};
+  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-  & svg{
+  & svg {
     /* flex-grow: 0; */
     flex-shrink: 0;
   }

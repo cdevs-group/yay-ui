@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const LoaderCard: React.FC = () => {
   const Wrap = styled.div`
@@ -41,7 +41,7 @@ const LoaderCard: React.FC = () => {
     animation: ${loader1} 3s linear 0s infinite normal;
     /* animation: ${loader1} 2s ease-in  infinite normal; */
     &:before {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 0;
@@ -53,10 +53,10 @@ const LoaderCard: React.FC = () => {
       height: 22px;
       background: #ff9525;
       border-radius: 50%;
-      animation: ${loaderdot1} 1s ease-out  infinite;
+      animation: ${loaderdot1} 1s ease-out infinite;
     }
     &:after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 0;
@@ -68,7 +68,7 @@ const LoaderCard: React.FC = () => {
       height: 22px;
       background: #69e35f;
       border-radius: 50%;
-      animation: ${loaderdot2} 1s ease-out  infinite;
+      animation: ${loaderdot2} 1s ease-out infinite;
     }
     & span {
       display: block;
@@ -81,7 +81,7 @@ const LoaderCard: React.FC = () => {
       height: 70px;
       width: 70px;
       &::before {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: 0;
@@ -93,10 +93,10 @@ const LoaderCard: React.FC = () => {
         height: 22px;
         background: #ff6161;
         border-radius: 50%;
-        animation: ${loaderdot3} 1s ease-out  infinite;
+        animation: ${loaderdot3} 1s ease-out infinite;
       }
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: auto;
@@ -108,7 +108,7 @@ const LoaderCard: React.FC = () => {
         height: 22px;
         background: #eccb57;
         border-radius: 50%;
-        animation: ${loaderdot4} 1s ease-out  infinite;
+        animation: ${loaderdot4} 1s ease-out infinite;
       }
     }
   `;
@@ -124,7 +124,7 @@ const LoaderCard: React.FC = () => {
 
   return (
     <Wrap>
-      <Loader>  
+      <Loader>
         <span />
       </Loader>
       <Text>Calculating...</Text>

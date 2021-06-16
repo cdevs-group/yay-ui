@@ -11,17 +11,17 @@ export interface CardHeaderProps {
   negative?: boolean;
 }
 
-export interface CardProps{
-  children?:ReactNode;
-  active?:boolean
+export interface CardProps {
+  children?: ReactNode;
+  active?: boolean;
 }
 
-export interface CardTheme{
-  background: string
-  boxShadow: string
-  boxShadowActive: string
-  boxShadowSuccess:string
-  boxShadowWarning: string
-  cardHeaderBackground: string
-  dropShadow: string,
-};
+export interface CardTheme {
+  background: string;
+  boxShadow: string;
+  boxShadowActive: string;
+  boxShadowSuccess: string;
+  boxShadowWarning: string;
+  cardHeaderBackground: string;
+  dropShadow: string;
+}

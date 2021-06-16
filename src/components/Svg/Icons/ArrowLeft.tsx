@@ -6,10 +6,23 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 24 24" {...props}>
       <g filter="url(#filter0_d)">
-        <path d="M11.5858 14.6568L5.92893 8.99998M5.92893 8.99998L11.5858 3.34312M5.92893 8.99998H20.0711" stroke="white" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d="M11.5858 14.6568L5.92893 8.99998M5.92893 8.99998L11.5858 3.34312M5.92893 8.99998H20.0711"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
       </g>
       <defs>
-        <filter id="filter0_d" x="0.515625" y="0.34314" width="24.5563" height="21.3137" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <filter
+          id="filter0_d"
+          x="0.515625"
+          y="0.34314"
+          width="24.5563"
+          height="21.3137"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />

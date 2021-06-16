@@ -49,14 +49,7 @@ export const LazyImages: React.FC = () => {
   return (
     <Flex flexWrap="wrap">
       {times(40, (index) => (
-        <Img
-          key={index}
-          src={`#`}
-          width={150}
-          height={150}
-          mb="16px"
-          mr="16px"
-        />
+        <Img key={index} src={`#`} width={150} height={150} mb="16px" mr="16px" />
       ))}
     </Flex>
   );
@@ -66,14 +59,7 @@ export const LazyBackgrounds: React.FC = () => {
   return (
     <Flex flexWrap="wrap">
       {times(40, (index) => (
-        <BackgroundImage
-          key={index}
-          src={`#`}
-          width={150}
-          height={150}
-          mb="16px"
-          mr="16px"
-        />
+        <BackgroundImage key={index} src={`#`} width={150} height={150} mb="16px" mr="16px" />
       ))}
     </Flex>
   );

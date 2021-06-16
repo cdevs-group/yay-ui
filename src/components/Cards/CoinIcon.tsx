@@ -1,15 +1,8 @@
-import * as React from "react"
+import * as React from "react";
 
-const  CoinIcon =(props:React.SVGProps<SVGSVGElement>)=> {
+const CoinIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg
-      width={119}
-      height={90}
-      viewBox="0 0 119 90"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width={119} height={90} viewBox="0 0 119 90" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -21,7 +14,7 @@ const  CoinIcon =(props:React.SVGProps<SVGSVGElement>)=> {
         fill="#2E2E35"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default CoinIcon
+export default CoinIcon;

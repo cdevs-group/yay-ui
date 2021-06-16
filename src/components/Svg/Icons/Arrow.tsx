@@ -4,8 +4,8 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width='42px' viewBox="0 0 42 42" {...props}>
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || 'rgb(58,58,64)'} />
+    <Svg width="42px" viewBox="0 0 42 42" {...props}>
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "rgb(58,58,64)"} />
       <g filter="url(#filter0_d)">
         <path d="M19 16H27M27 16V24M27 16L17 26" stroke="white" strokeWidth="2" strokeLinecap="round" />
       </g>
@@ -23,7 +23,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           <stop stopColor="#4CEE3E" />
           <stop offset="1" stopColor="#47DA3B" />
         </linearGradient>
-      </defs>   </Svg>
+      </defs>{" "}
+    </Svg>
   );
 };
 

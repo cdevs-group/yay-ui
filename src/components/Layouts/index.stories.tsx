@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { BaseLayout } from '.';
-import { BG2_IMG, BG_IMG, BG3_IMG } from '../../constants/images';
-import { Text } from '../Text';
+import React from "react";
+import styled from "styled-components";
+import { BaseLayout } from ".";
+import { BG2_IMG, BG_IMG, BG3_IMG } from "../../constants/images";
+import { Text } from "../Text";
 
 export default {
-  title: 'Components/Layouts',
+  title: "Components/Layouts",
   argTypes: {},
 };
 

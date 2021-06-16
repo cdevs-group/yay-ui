@@ -56,14 +56,8 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
             fill="#F9F8F8"
           />
         </g>
-        <path
-          d="M109.723 23.202l1.832 3.193c.033.057.068.11.106.164l-1.936-3.373-.002.016z"
-          fill="#F9F8F8"
-        />
-        <path
-          d="M113.93 22.083l-3.479-6.045a2.336 2.336 0 00-.146-.236l3.619 6.287.006-.006z"
-          fill="#F9F854"
-        />
+        <path d="M109.723 23.202l1.832 3.193c.033.057.068.11.106.164l-1.936-3.373-.002.016z" fill="#F9F8F8" />
+        <path d="M113.93 22.083l-3.479-6.045a2.336 2.336 0 00-.146-.236l3.619 6.287.006-.006z" fill="#F9F854" />
         <g filter="url(#prefix__filter5_d)">
           <path
             d="M107.733 13.911c.061 0 .123 0 .184.008.274.02.54.097.783.226a1.99 1.99 0 011.175.988l4.049 7.033a66.452 66.452 0 015.871-5.319c.227-.282.523-.5.859-.634.223-.085.46-.13.699-.129.135 0 .271.013.405.037h.004a2.064 2.064 0 011.35.87 2.022 2.022 0 01.343 1.575c-.274 1.505-.622 3.83-1.043 6.974-.419 3.13-.753 5.418-1.002 6.864v.005a2.071 2.071 0 01-.868 1.354c-.341.247-.751.38-1.172.38a2.193 2.193 0 01-1.163-.335 2.072 2.072 0 01-.588-.573 2.038 2.038 0 01-.342-1.574c.172-.948.563-3.639 1.172-8.073a81.172 81.172 0 00-3.359 3.444 2.14 2.14 0 01-1.452.682h-.079a2.061 2.061 0 01-1.552-.692 2.273 2.273 0 01-.449-.553l-2.405-4.19v.013c-.115.767-.29 1.912-.526 3.434l-.689 4.57a2.063 2.063 0 01-.842 1.39 1.99 1.99 0 01-1.209.406c-.113 0-.226-.009-.338-.026a2.098 2.098 0 01-1.384-.812l-.006-.008-.006-.008a2.108 2.108 0 01-.368-1.566l.506-3.39c.254-1.582.445-2.805.574-3.668.128-.863.273-1.936.432-3.219.138-1.136.257-2.315.358-3.54a2.071 2.071 0 01.73-1.436 2.02 2.02 0 011.351-.508h-.003zm.003-2.911a4.903 4.903 0 00-3.241 1.21 5 5 0 00-1.732 3.407 94.855 94.855 0 01-.346 3.424c-.157 1.26-.299 2.316-.422 3.138-.127.846-.318 2.07-.568 3.638v.03l-.508 3.39a5.006 5.006 0 00.864 3.67l.005.008.042.06.046.058.004.005a4.972 4.972 0 003.246 1.903 4.897 4.897 0 003.702-.917 5.01 5.01 0 001.988-3.3l.119-.835a4.92 4.92 0 002.62.745h.26c.238-.015.475-.047.709-.094-.044.277-.077.47-.102.606a5.03 5.03 0 00.809 3.749 5.004 5.004 0 003.213 2.082c.307.056.618.085.93.086a5.008 5.008 0 003.189-1.18 5.034 5.034 0 001.706-2.948l.005-.027v-.023c.254-1.476.596-3.817 1.017-6.96.413-3.08.756-5.377 1.02-6.831a5.028 5.028 0 00-.806-3.752 5.002 5.002 0 00-3.215-2.083l-.022-.005h-.019a5.213 5.213 0 00-.896-.08 4.836 4.836 0 00-3.559 1.55 65.826 65.826 0 00-3.211 2.764l-2.173-3.776a4.846 4.846 0 00-2.582-2.255 4.886 4.886 0 00-1.671-.44l-.05-.004h-.014a4.933 4.933 0 00-.359-.013h.002z"
@@ -115,18 +109,12 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={4} />
           <feGaussianBlur stdDeviation={4.5} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
           <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={-2} />
           <feGaussianBlur stdDeviation={4.5} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17 0" />
@@ -143,10 +131,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-1} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
@@ -163,10 +148,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
@@ -183,10 +165,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-1} dy={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.21 0" />
@@ -203,10 +182,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-1} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0" />
@@ -223,10 +199,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-1} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0" />
@@ -243,10 +216,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={2} />
           <feGaussianBlur stdDeviation={1.5} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0" />
@@ -263,18 +233,12 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={-3} dy={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
           <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
@@ -291,10 +255,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17 0" />
@@ -311,34 +272,20 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={4} />
           <feGaussianBlur stdDeviation={4.5} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.17 0" />
           <feBlend in2="BackgroundImageFix" result="effect1_dropShadow" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={-2} />
           <feGaussianBlur stdDeviation={4.5} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
           <feBlend in2="effect1_dropShadow" result="effect2_dropShadow" />
           <feBlend in="SourceGraphic" in2="effect2_dropShadow" result="shape" />
         </filter>
-        <pattern
-          id="prefix__pattern0"
-          patternContentUnits="objectBoundingBox"
-          width={1}
-          height={1}
-        >
-          <use
-            xlinkHref="#prefix__image0"
-            transform="matrix(.00027 0 0 .00054 -.004 0)"
-          />
+        <pattern id="prefix__pattern0" patternContentUnits="objectBoundingBox" width={1} height={1}>
+          <use xlinkHref="#prefix__image0" transform="matrix(.00027 0 0 .00054 -.004 0)" />
         </pattern>
         <image
           id="prefix__image0"
@@ -348,7 +295,7 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
         />
       </defs>
     </svg>
-  )
-};
+  );
+}
 
 export default Logo;

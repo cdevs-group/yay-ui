@@ -1,6 +1,6 @@
-import React from 'react';
-import Svg from '../Svg';
-import { SvgProps } from '../types';
+import React from "react";
+import Svg from "../Svg";
+import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
@@ -16,12 +16,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         />
       </g>
       <g filter="url(#filter1_d)">
-        <path
-          d="M23 27.5L25 24.5H29"
-          stroke="#F3F3F3"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+        <path d="M23 27.5L25 24.5H29" stroke="#F3F3F3" strokeWidth="2" strokeLinecap="round" />
       </g>
       <defs>
         <filter
@@ -34,28 +29,12 @@ const Icon: React.FC<SvgProps> = (props) => {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx="-4" dy="-3" />
           <feGaussianBlur stdDeviation="4" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow"
-            result="shape"
-          />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
         <filter
           id="filter1_d"
@@ -67,28 +46,12 @@ const Icon: React.FC<SvgProps> = (props) => {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx="-4" dy="-3" />
           <feGaussianBlur stdDeviation="4" />
-          <feColorMatrix
-            type="matrix"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-          />
-          <feBlend
-            mode="normal"
-            in2="BackgroundImageFix"
-            result="effect1_dropShadow"
-          />
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="effect1_dropShadow"
-            result="shape"
-          />
+          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
       </defs>
     </Svg>

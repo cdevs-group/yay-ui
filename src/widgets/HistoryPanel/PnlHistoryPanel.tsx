@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Button } from '../../components/Button';
-import { ArrowIcon } from '../../components/Svg';
-import ProgressBar from './components/ProgressBar';
-import Rounds from './components/Rounds';
-import Statistic from './components/Statistic';
+import React from "react";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
+import { ArrowIcon } from "../../components/Svg";
+import ProgressBar from "./components/ProgressBar";
+import Rounds from "./components/Rounds";
+import Statistic from "./components/Statistic";
 
 const data = {
   bestNumber: { number: 2653, kef: 1.55 },
@@ -19,7 +19,7 @@ const PnlHistoryPanel = () => (
   <Wrap>
     <ProgressBar best={data.best} />
     <Statistic bestNumber={data.bestNumber} best={data.best} />
-    <Rounds  best={data.best} />
+    <Rounds best={data.best} />
     <ButtonBlock width="100%" variant="green" scale="md">
       View Reclaimed & Wonv
       <ArrowIcon fill="rgba(0,0,0,0)" />
@@ -37,5 +37,5 @@ const ButtonBlock = styled(Button)`
 const Wrap = styled.div`
   padding: 0 20px 20px;
   /* height: 1000px; */
-  background: ${({ theme }) => theme.colors.panel}; 
+  background: ${({ theme }) => theme.colors.panel};
 `;
