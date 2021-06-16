@@ -1308,6 +1308,52 @@ var BinanceWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAA
 
 var SafepackWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYAAAAVibZIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI2SURBVHgBtZW/ixNREMcnm4UQkRgVzs6TQwtttFIQ1Cs8/AEq+BeoIFf5A0QLKxsbESzksPIXgo2FWAgKyt3ZyBWKIBaHB4mih4WiEUzij+z6GX2bzD13N6dyX/jw3sx7M7tvdvIikqM4jgfgDIxDGybgGFTz4gopibYw7INZKMI5f0+r1dpcLpePM/0MNwqFwiM/SQlGYAw+xj1dhJPG/pZMGo3GJoYXZq0OV2EnhGGn05kuFouD0l8j8Bb2VCqVWW9N4w84noVkXmEWv4Ie5S5ch8M2kmPOMFxwJ8x4tlRDFDnjMewisGFKI/PQG1gDT2CdOgL7ljbh34i4NsP7xA5kAbQgSUMzr1LDYWPXvb0bWE/6esr4F7u45V0PLdWMU9Ruty95fdpVs9n0+9SqFkRR9MevSlUqlSLJEL+m3LbQljrNWHG2HuFIxt5r0ivJO+P/DmeN/WFOFK8+ZI4x5h1/m7c3Of5r8RTg/OIWb8u/KXYPmXR5pm1LLZP/U1LnAU1ac8Z6WOptjKS/9GZbybjV2TOa9JYzlph5X7muqcN+OCW9u/mO1kKbvpbSb/qhTmR9KPp7FN9quGx7FAYDLoNP7Nkr5kKYj4IgeMlwHw451w84SL5Xvz4Uk+cMG6VX326sn4w32QHjTB/CkHPri20nz8ScIByaUO/D85Ihkt1kuAfDxv0A1hI/KXkieBXspm5HbU3hqbGndE9afJjm5Kl1Bv0zWyS//zFH3ZLWUUt1Je/NfgJIntVigmdBzQAAAABJRU5ErkJggg==";
 
+exports.ConnectorNames = void 0;
+(function (ConnectorNames) {
+    ConnectorNames["Injected"] = "injected";
+    ConnectorNames["WalletConnect"] = "walletconnect";
+    ConnectorNames["BSC"] = "bsc";
+})(exports.ConnectorNames || (exports.ConnectorNames = {}));
+
+var connectors = [
+    {
+        title: "Metamask",
+        icon: Metamask,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+    {
+        title: "Trust Wallet",
+        icon: TrustWallet,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+    {
+        title: "MathWallet",
+        icon: MathWallet,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+    {
+        title: "Token Pocket",
+        icon: TokenPocket,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+    {
+        title: "Wallet Connect",
+        icon: WalletConnect,
+        connectorId: exports.ConnectorNames.WalletConnect,
+    },
+    {
+        title: "Binance Chain Wallet",
+        icon: BinanceWallet,
+        connectorId: exports.ConnectorNames.BSC,
+    },
+    {
+        title: "SafePal Wallet",
+        icon: SafepackWallet,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+];
+var connectorLocalStorageKey = "connectorId";
+
 var HelpLink = styled__default['default'](Link)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.linkColor;
@@ -1327,41 +1373,15 @@ var ImgWrap = styled__default['default'].div(templateObject_4$4 || (templateObje
     var theme = _a.theme;
     return polished.transparentize(0.95, theme.colors.text);
 });
-var config = [
-    {
-        title: 'Metamask',
-        icon: Metamask,
-    },
-    {
-        title: 'Trust Wallet',
-        icon: TrustWallet,
-    },
-    {
-        title: 'Math Wallet',
-        icon: MathWallet,
-    },
-    {
-        title: 'Token Pocket',
-        icon: TokenPocket,
-    },
-    {
-        title: 'Wallet Connect',
-        icon: WalletConnect,
-    },
-    {
-        title: 'Binance Chain Wallet',
-        icon: BinanceWallet,
-    },
-    {
-        title: 'SafePak Wallet',
-        icon: SafepackWallet,
-    },
-];
 var ConnectModal = function (_a) {
-    _a.login; var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Connect Wallet", onDismiss: onDismiss },
-        config.map(function (entry, index) { return (React__default['default'].createElement(Wrap$5, { key: index },
-            React__default['default'].createElement(Button, null,
+        connectors.map(function (entry, index) { return (React__default['default'].createElement(Wrap$5, { key: index },
+            React__default['default'].createElement(Button, { onClick: function () {
+                    login(entry.connectorId);
+                    window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
+                    onDismiss();
+                } },
                 React__default['default'].createElement(Text, { fontWeight: 500, color: "text", mr: "16px", fontSize: "15px" }, entry.title),
                 React__default['default'].createElement(ImgWrap, null,
                     React__default['default'].createElement("img", { src: entry.icon }))))); }),
@@ -1402,22 +1422,26 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$f, templateObject_2$e;
 
 var AccountModal = function (_a) {
-    var account = _a.account; _a.logout; var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
         React__default['default'].createElement(ModalWrap, null,
             React__default['default'].createElement(Text, { bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } },
-                React__default['default'].createElement(AccountWrap, { as: 'div' },
-                    React__default['default'].createElement(Text, { fontSize: '13px', fontWeight: 500, color: "text" }, account))),
+                React__default['default'].createElement(AccountWrap, { as: "div" },
+                    React__default['default'].createElement(Text, { fontSize: "13px", fontWeight: 500, color: "text" }, account))),
             React__default['default'].createElement(Flex, { mb: "32px" },
-                React__default['default'].createElement(LinkExternal, { color: '#47DA3B', small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
-                React__default['default'].createElement(CopyText, { color: '#47DA3B' },
+                React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
+                React__default['default'].createElement(CopyText, { color: "#47DA3B" },
                     React__default['default'].createElement(CopyToClipboard, { toCopy: account }, "Copy"))),
             React__default['default'].createElement(Flex, { justifyContent: "center" },
-                React__default['default'].createElement(Button$2, { mt: '60px', scale: 'md', width: '100%', variant: 'green' }, "Logout")))));
+                React__default['default'].createElement(Button$2, { mt: "60px", scale: "md", width: "100%", variant: "green", onClick: function () {
+                        logout();
+                        window.localStorage.removeItem(connectorLocalStorageKey);
+                        onDismiss();
+                    } }, "Logout")))));
 };
-var ModalWrap = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  padding:0 20px 20px;\n"], ["\n  padding:0 20px 20px;\n"])));
-var AccountWrap = styled__default['default'](Button)(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  padding: 17px 20px;\n  width:100%;\n"], ["\n  padding: 17px 20px;\n  width:100%;\n"])));
-var CopyText = styled__default['default'](Text)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  transition: none.2s;\n  &:hover{\n    text-decoration: underline;\n  }\n"], ["\n  transition: none.2s;\n  &:hover{\n    text-decoration: underline;\n  }\n"])));
+var ModalWrap = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  padding: 0 20px 20px;\n"], ["\n  padding: 0 20px 20px;\n"])));
+var AccountWrap = styled__default['default'](Button)(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  padding: 17px 20px;\n  width: 100%;\n"], ["\n  padding: 17px 20px;\n  width: 100%;\n"])));
+var CopyText = styled__default['default'](Text)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  transition: none.2s;\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  transition: none.2s;\n  &:hover {\n    text-decoration: underline;\n  }\n"])));
 var templateObject_1$e, templateObject_2$d, templateObject_3$8;
 
 var useWalletModal = function (login, logout, account) {
@@ -1425,13 +1449,6 @@ var useWalletModal = function (login, logout, account) {
     var onPresentAccountModal = useModal(React__default['default'].createElement(AccountModal, { account: account || "", logout: logout }))[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
-
-exports.ConnectorNames = void 0;
-(function (ConnectorNames) {
-    ConnectorNames["Injected"] = "injected";
-    ConnectorNames["WalletConnect"] = "walletconnect";
-    ConnectorNames["BSC"] = "bsc";
-})(exports.ConnectorNames || (exports.ConnectorNames = {}));
 
 var Accordeon = function (_a) {
     var value = _a.value, setValue = _a.setValue, cards = _a.cards;
@@ -1907,25 +1924,6 @@ var SimpleTabsWrap = styled__default['default'].div(templateObject_8 || (templat
 styled__default['default'].div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  max-width: 340px;\n  margin: 0 auto;\n  padding: 170px 20px;\n  text-align: center;\n"], ["\n  max-width: 340px;\n  margin: 0 auto;\n  padding: 170px 20px;\n  text-align: center;\n"])));
 var templateObject_1$4, templateObject_2$3, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 
-var links = [
-    {
-        name: 'Gaming Marketplace',
-        url: '/'
-    },
-    {
-        name: 'Swap',
-        url: '/'
-    },
-    {
-        name: 'Farm',
-        url: '/'
-    },
-    {
-        name: 'Profile',
-        url: '/'
-    }
-];
-
 function Logo(props) {
     return (React__namespace.createElement("svg", __assign({ width: 171, height: 51, viewBox: "0 0 171 51", fill: "none", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink" }, props),
         React__namespace.createElement("g", { filter: "url(#prefix__filter0_dd)" },
@@ -2059,14 +2057,23 @@ function Logo(props) {
 }
 
 var Account = function (_a) {
-    var isAuth = _a.isAuth, accName = _a.accName;
-    var shortName = function (name) { return new (Array.bind.apply(Array, __spreadArray([void 0], name)))().join('').slice(0, 4) + "..." + new (Array.bind.apply(Array, __spreadArray([void 0], name)))().reverse().join('').slice(0, 4); };
-    return (React__default['default'].createElement(AccountBlock, { as: 'button' }, isAuth
-        ? React__default['default'].createElement(React__default['default'].Fragment, null,
-            shortName(accName),
-            React__default['default'].createElement(Avatar, null)) : React__default['default'].createElement(Avatar, { className: 'notAuth' }, "Connect")));
+    var account = _a.account, login = _a.login, logout = _a.logout;
+    var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var shortName = function (name) {
+        return new (Array.bind.apply(Array, __spreadArray([void 0], name)))().join("").slice(0, 4) + "..." + new (Array.bind.apply(Array, __spreadArray([void 0], name)))().reverse().join("").slice(0, 4);
+    };
+    return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
+            onPresentAccountModal();
+        } },
+        shortName(account),
+        React__default['default'].createElement(Avatar, null))) : (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
+            onPresentConnectModal();
+        } },
+        React__default['default'].createElement(Avatar, { className: "notAuth", onClick: function () {
+                onPresentConnectModal();
+            } }, "Connect")))));
 };
-var AccountBlock = styled__default['default'](Text)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 43px;\n  min-width:160px;\n  align-items: center;\n  padding: 12px 56px 12px 20px;\n  background: ", ";\n  border-radius: 25px;\n  box-shadow: ", ";\n  text-shadow: ", ";\n  cursor: pointer;\n  border:none;\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 43px;\n  min-width:160px;\n  align-items: center;\n  padding: 12px 56px 12px 20px;\n  background: ", ";\n  border-radius: 25px;\n  box-shadow: ", ";\n  text-shadow: ", ";\n  cursor: pointer;\n  border:none;\n"])), function (_a) {
+var AccountBlock = styled__default['default'](Text)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 43px;\n  min-width: 160px;\n  align-items: center;\n  padding: 12px 56px 12px 20px;\n  background: ", ";\n  border-radius: 25px;\n  box-shadow: ", ";\n  text-shadow: ", ";\n  cursor: pointer;\n  border: none;\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 43px;\n  min-width: 160px;\n  align-items: center;\n  padding: 12px 56px 12px 20px;\n  background: ", ";\n  border-radius: 25px;\n  box-shadow: ", ";\n  text-shadow: ", ";\n  cursor: pointer;\n  border: none;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacity;
 }, function (_a) {
@@ -2076,7 +2083,7 @@ var AccountBlock = styled__default['default'](Text)(templateObject_1$3 || (templ
     var theme = _a.theme;
     return theme.colors.textShadow;
 });
-var Avatar = styled__default['default'].div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 10px;\n  right: 2px;\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  background: ", ";\n  &.notAuth{\n    width: calc(100% - 4px);\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 10px;\n  right: 2px;\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  background: ", ";\n  &.notAuth{\n    width: calc(100% - 4px);\n  }\n"])), function (_a) {
+var Avatar = styled__default['default'].div(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 10px;\n  right: 2px;\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  background: ", ";\n  &.notAuth {\n    width: calc(100% - 4px);\n  }\n"], ["\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-left: 10px;\n  right: 2px;\n  height: 40px;\n  width: 40px;\n  border-radius: 20px;\n  background: ", ";\n  &.notAuth {\n    width: calc(100% - 4px);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
@@ -2103,23 +2110,20 @@ var NavLinks = styled__default['default'].a(templateObject_2$1 || (templateObjec
 var templateObject_1$2, templateObject_2$1;
 
 var Header = function (_a) {
-    var isAuth = _a.isAuth, accName = _a.accName;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; var links = _a.links; _a.profile; _a.children;
     return (React__default['default'].createElement(HeaderWrap, null,
         React__default['default'].createElement(Logo, null),
         React__default['default'].createElement(Nav, null, links.map(function (item, i) {
             return React__default['default'].createElement(React__default['default'].Fragment, { key: i },
                 React__default['default'].createElement(MenuLink, { className: i === 0 ? 'active' : '', size: 'md', name: item.name, url: item.url }));
         })),
-        React__default['default'].createElement(Account, { accName: accName, isAuth: isAuth })));
+        React__default['default'].createElement(Account, { account: account, login: login, logout: logout })));
 };
 var HeaderWrap = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 144px;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  & svg{\n    /* flex-grow: 0; */\n    flex-shrink: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 144px;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  & svg{\n    /* flex-grow: 0; */\n    flex-shrink: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgBlackRgba;
 });
 var Nav = styled__default['default'].div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])));
-Header.defaultProps = {
-    isAuth: false
-};
 var templateObject_1$1, templateObject_2;
 
 var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n    min-height: 100vh;\n    background: url(", ") no-repeat center center /cover;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  } \n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }    \n"], ["\n  /* prettier-ignore */\n  html, body, div, span, applet, object, iframe,\n  h1, h2, h3, h4, h5, h6, p, blockquote, pre,\n  a, abbr, acronym, address, big, cite, code,\n  del, dfn, em, img, ins, kbd, q, s, samp,\n  small, strike, strong, sub, sup, tt, var,\n  b, u, i, center,\n  dl, dt, dd, ol, ul, li,\n  fieldset, form, label, legend,\n  table, caption, tbody, tfoot, thead, tr, th, td,\n  article, aside, canvas, details, embed, \n  figure, figcaption, footer, header, hgroup, \n  menu, nav, output, ruby, section, summary,\n  time, mark, audio, video {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    font-size: 100%;\n    vertical-align: baseline;\n  }\n  /* HTML5 display-role reset for older browsers */\n  /* prettier-ignore */\n  article, aside, details, figcaption, figure, \n  footer, header, hgroup, menu, nav, section {\n    display: block;\n  }\n  body {\n    line-height: 1;\n    font-size: 16px;\n    min-height: 100vh;\n    background: url(", ") no-repeat center center /cover;\n  }\n  ol,\n  ul {\n    list-style: disc;\n    list-style-position: inside;\n  }\n  blockquote,\n  q {\n    quotes: none;\n  }\n  blockquote:before,\n  blockquote:after,\n  q:before,\n  q:after {\n    content: \"\";\n    content: none;\n  }\n  table {\n    border-collapse: collapse;\n    border-spacing: 0;\n  }\n  a {\n    color: inherit;\n    text-decoration: none;\n  }\n  [role=\"button\"] {\n    cursor: pointer;\n  }\n  *,\n  *::before,\n  *::after {\n    box-sizing: border-box;\n  } \n  /* Scrollbar */\n  ::-webkit-scrollbar {\n    width: 8px;\n  }\n  ::-webkit-scrollbar-thumb {\n    background: ", "; \n    border-radius: 8px;\n  }\n  ::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px ", "; \n    border-radius: 10px;\n  }\n\n  /* Slider */ \n  input[type=range] {\n    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */\n    width: 100%; /* Specific width is required for Firefox. */\n    background: transparent; /* Otherwise white in Chrome */\n  }\n  input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n  }\n  input[type=range]:focus {\n    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */\n  }\n  input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent; \n    border-color: transparent;\n    color: transparent;\n  }    \n"])), BG_IMG, function (_a) {
@@ -2302,6 +2306,7 @@ exports.Text = Text;
 exports.Timer = Timer;
 exports.WatchIcon = Icon$2;
 exports.alertVariants = variants;
+exports.connectorLocalStorageKey = connectorLocalStorageKey;
 exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.light = lightTheme;
