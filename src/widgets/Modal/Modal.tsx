@@ -17,7 +17,7 @@ const StyledModal = styled.div`
   border-radius: 15px;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
-  overflow-y: auto;  
+  overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
     min-width: 404px;
@@ -51,18 +51,11 @@ const Overlay = styled.div`
   width: 100%;
 `;
 
-const Heading = styled.div`
-`
+const Heading = styled.div``;
 
-const Modal: React.FC<Props> = ({
-  title,
-  onDismiss,
-  onBack,
-  children,
-  hideCloseButton = false,
-}) => (
+const Modal: React.FC<Props> = ({ title, onDismiss, onBack, children, hideCloseButton = false }) => (
   <div>
-    <Overlay/>
+    <Overlay />
     <StyledModal>
       <ModalHeader>
         <ModalTitle>
@@ -77,7 +70,6 @@ const Modal: React.FC<Props> = ({
       {children}
     </StyledModal>
   </div>
-  
 );
 
 export default Modal;

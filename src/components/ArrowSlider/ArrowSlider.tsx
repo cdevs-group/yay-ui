@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ArrowSliderProps } from './types';
-import { transparentize } from 'polished';
-import { GreenArrow } from '../Svg';
+import React from "react";
+import styled from "styled-components";
+import { ArrowSliderProps } from "./types";
+import { transparentize } from "polished";
+import { GreenArrow } from "../Svg";
 
 const Wrap = styled.div`
   /* height: 470px; */
@@ -62,10 +62,7 @@ const TopCard = styled(BottomCard)`
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const ArrowSlider: React.FC<ArrowSliderProps> = ({
-  clsNameLeft,
-  clsNameRight,
-}) => {
+const ArrowSlider: React.FC<ArrowSliderProps> = ({ clsNameLeft, clsNameRight }) => {
   return (
     <Wrap>
       <BottomContent>

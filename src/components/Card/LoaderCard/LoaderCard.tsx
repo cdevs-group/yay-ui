@@ -30,85 +30,87 @@ let yellowAnimation = keyframes`
 `;
 
 const Wrap = styled.div`
-    height: 480px;
-  `
+  height: 480px;
+`;
 
-  const Loader = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center; 
-    justify-content: flex-end; 
-    height: 50%;
-  `
+const Loader = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+  height: 50%;
+`;
 
-  const OrangeCircle = styled.div`
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    animation: ${orangeAnimation} 2s linear infinite;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.colors.orangeBg};
-  `
+const OrangeCircle = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  animation: ${orangeAnimation} 2s linear infinite;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.orangeBg};
+`;
 
-  const GreenCircle = styled.div`
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    animation: ${greenAnimation} 2s linear infinite;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.colors.greenBg};
+const GreenCircle = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  animation: ${greenAnimation} 2s linear infinite;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.greenBg};
+`;
 
-  `
+const RedCircle = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  animation: ${redAnimation} 2s linear infinite;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.redBg};
+`;
 
-  const RedCircle = styled.div`
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    animation: ${redAnimation} 2s linear infinite;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.colors.redBg};
-  `
+const YellowCircle = styled.div`
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  animation: ${yellowAnimation} 2s linear infinite;
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.yellowBg};
+`;
 
-  const YellowCircle = styled.div`
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    animation: ${yellowAnimation} 2s linear infinite;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.colors.yellowBg};
-  `
+const Text = styled.div`
+  margin: 30px 0 100px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: ${({ theme }) => theme.colors.text};
+  text-align: center;
+`;
 
-  const Text = styled.div`
-    margin: 30px 0 100px;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 19px;
-    color: ${({ theme }) => theme.colors.text};
-    text-align: center;
-  `
-
-  const BottomText = styled.div`
-    text-align: center;
-    font-size: 13px;
-    line-height: 16px;
-    color: ${({ theme }) => theme.colors.greyText};
-    letter-spacing: 0.05em;
-  ` 
+const BottomText = styled.div`
+  text-align: center;
+  font-size: 13px;
+  line-height: 16px;
+  color: ${({ theme }) => theme.colors.greyText};
+  letter-spacing: 0.05em;
+`;
 
 const LoaderCard: React.FC = () => {
-
   return (
-    <Wrap >
+    <Wrap>
       <Loader>
-        <OrangeCircle/>
-        <GreenCircle/>
-        <RedCircle/>
-        <YellowCircle/>
+        <OrangeCircle />
+        <GreenCircle />
+        <RedCircle />
+        <YellowCircle />
       </Loader>
-      <Text>Calculating...</Text> 
-      <BottomText>This round`s closing transactions has <br/>been submitted to the blockchain, and is <br/>awaiting confirmation</BottomText>                
+      <Text>Calculating...</Text>
+      <BottomText>
+        This round`s closing transactions has <br />
+        been submitted to the blockchain, and is <br />
+        awaiting confirmation
+      </BottomText>
     </Wrap>
   );
 };

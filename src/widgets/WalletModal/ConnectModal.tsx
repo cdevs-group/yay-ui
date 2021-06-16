@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { transparentize } from 'polished';
-import { Link } from '../../components/Link';
-import { Modal } from '../Modal';
-import { Login } from './types';
-import { Text } from '../../components/Text';
+import React from "react";
+import styled from "styled-components";
+import { transparentize } from "polished";
+import { Link } from "../../components/Link";
+import { Modal } from "../Modal";
+import { Login } from "./types";
+import { Text } from "../../components/Text";
 import {
   Metamask,
   TrustWallet,
@@ -13,7 +13,7 @@ import {
   WalletConnect,
   BinanceWallet,
   SafepackWallet,
-} from '../../constants/images';
+} from "../../constants/images";
 
 interface Props {
   login: Login;
@@ -71,31 +71,31 @@ const ImgWrap = styled.div`
 
 const config = [
   {
-    title: 'Metamask',
+    title: "Metamask",
     icon: Metamask,
   },
   {
-    title: 'Trust Wallet',
+    title: "Trust Wallet",
     icon: TrustWallet,
   },
   {
-    title: 'Math Wallet',
+    title: "Math Wallet",
     icon: MathWallet,
   },
   {
-    title: 'Token Pocket',
+    title: "Token Pocket",
     icon: TokenPocket,
   },
   {
-    title: 'Wallet Connect',
+    title: "Wallet Connect",
     icon: WalletConnect,
   },
   {
-    title: 'Binance Chain Wallet',
+    title: "Binance Chain Wallet",
     icon: BinanceWallet,
   },
   {
-    title: 'SafePak Wallet',
+    title: "SafePak Wallet",
     icon: SafepackWallet,
   },
 ];
@@ -114,10 +114,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         </Button>
       </Wrap>
     ))}
-    <HelpLink
-      href="#"
-      external
-    >
+    <HelpLink href="#" external>
       Learn how connect
     </HelpLink>
   </Modal>

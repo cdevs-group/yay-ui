@@ -6,7 +6,7 @@ import Flex from "../../components/Box/Flex";
 import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import styled from "styled-components";
-import { Button as Input } from './ConnectModal'
+import { Button as Input } from "./ConnectModal";
 
 interface Props {
   account: string;
@@ -17,29 +17,25 @@ interface Props {
 const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null }) => (
   <Modal title="Your wallet" onDismiss={onDismiss}>
     <ModalWrap>
-      <Text
-        bold
-        style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}
-      >
-        <AccountWrap as='div'>
-          <Text fontSize='13px' fontWeight={500} color="text" >
+      <Text bold style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}>
+        <AccountWrap as="div">
+          <Text fontSize="13px" fontWeight={500} color="text">
             {account}
           </Text>
         </AccountWrap>
       </Text>
       <Flex mb="32px">
-        <LinkExternal color='#47DA3B' small href={`https://bscscan.com/address/${account}`} mr="16px">
+        <LinkExternal color="#47DA3B" small href={`https://bscscan.com/address/${account}`} mr="16px">
           View on BscScan
-      </LinkExternal>
-        <CopyText color='#47DA3B'>
+        </LinkExternal>
+        <CopyText color="#47DA3B">
           <CopyToClipboard toCopy={account}>Copy</CopyToClipboard>
         </CopyText>
       </Flex>
       <Flex justifyContent="center">
-        <Button mt='60px' scale='md' width='100%' variant='green' >
+        <Button mt="60px" scale="md" width="100%" variant="green">
           Logout
-    </Button>
-
+        </Button>
       </Flex>
     </ModalWrap>
   </Modal>
@@ -48,15 +44,15 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
 export default AccountModal;
 
 const ModalWrap = styled.div`
-  padding:0 20px 20px;
+  padding: 0 20px 20px;
 `;
 const AccountWrap = styled(Input)`
   padding: 17px 20px;
-  width:100%;
+  width: 100%;
 `;
 const CopyText = styled(Text)`
   transition: none.2s;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
-`
+`;

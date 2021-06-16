@@ -4,7 +4,7 @@ import { PriceBlockProps } from "./types";
 
 const Wrap = styled.div`
   margin-top: 25px;
-`
+`;
 
 const Item = styled.div`
   display: flex;
@@ -33,15 +33,16 @@ const Item = styled.div`
     font-size: 21px;
     line-height: 27px;
   }
-`
+`;
 
-const PriceBlock: React.FC<PriceBlockProps> = ({arr}) => {
-
+const PriceBlock: React.FC<PriceBlockProps> = ({ arr }) => {
   return (
     <Wrap>
       {arr.map((item, i) => (
         <div key={i}>
-          <Item>{item.name} {item.price}</Item>
+          <Item>
+            {item.name} {item.price}
+          </Item>
         </div>
       ))}
     </Wrap>

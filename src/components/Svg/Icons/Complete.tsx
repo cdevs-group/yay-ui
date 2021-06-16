@@ -5,13 +5,21 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width='42px' viewBox="0 0 42 42" {...props}>
+    <Svg width="42px" viewBox="0 0 42 42" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill} />
       <g filter="url(#filter0_d235425)">
         <path d="M15 20L20 25L27 16" stroke="white" fill={props.fill} strokeWidth="2" strokeLinecap="round" />
       </g>
       <defs>
-        <filter id="filter0_d235425" x="10" y="13" width="22" height="19.5082" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <filter
+          id="filter0_d235425"
+          x="10"
+          y="13"
+          width="22"
+          height="19.5082"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />

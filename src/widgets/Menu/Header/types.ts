@@ -14,16 +14,16 @@ export const sizes = {
   XXL: "xxl",
 } as const;
 
-export interface LinkHeaderProps{
-  name:string,
-  url:string, 
-  size?:string,
-  className?:string
+export interface LinkHeaderProps {
+  name: string;
+  url: string;
+  size?: string;
+  className?: string;
 }
 
-export interface AccProps{
-  isAuth:boolean,
-  accName?:string
+export interface AccProps {
+  isAuth: boolean;
+  accName?: string;
 }
 
 // export type Tags = typeof tags[keyof typeof tags];

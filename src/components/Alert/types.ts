@@ -15,10 +15,10 @@ export type Variants = typeof variants[keyof typeof variants];
 export interface AlertProps {
   variant?: Variants;
   title: string;
-  value?:string;
-  subtitle?:string;
+  value?: string;
+  subtitle?: string;
   children?: ReactNode;
-  isLoad?:boolean;
+  isLoad?: boolean;
   onClick?: () => void;
-  showAlert?:boolean
+  showAlert?: boolean;
 }

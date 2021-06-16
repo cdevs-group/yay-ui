@@ -1,5 +1,5 @@
 import React, { cloneElement, ElementType, isValidElement } from "react";
-import { CercleIcon } from '../Svg'
+import { CercleIcon } from "../Svg";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
@@ -18,18 +18,14 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
   }
 
   return (
-    <StyledButton
-      $isLoading={isLoading}
-      className={classNames.join(" ")}
-      disabled={isDisabled}
-      {...rest}
-    >
+    <StyledButton $isLoading={isLoading} className={classNames.join(" ")} disabled={isDisabled} {...rest}>
       <>
         {isValidElement(startIcon) &&
           cloneElement(startIcon, {
             mr: "0.5rem",
           })}
-        {children}{props.spin? <CercleIcon spin={true}  fill='rgba(0,0,0,0)' /> :null}
+        {children}
+        {props.spin ? <CercleIcon spin={true} fill="rgba(0,0,0,0)" /> : null}
         {isValidElement(endIcon) &&
           cloneElement(endIcon, {
             ml: "0.5rem",

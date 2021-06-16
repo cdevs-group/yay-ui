@@ -1,3 +1,3 @@
 export interface PriceBlockProps {
-  arr: Array<{name: JSX.Element,price: JSX.Element }>;
+  arr: Array<{ name: JSX.Element; price: JSX.Element }>;
 }
