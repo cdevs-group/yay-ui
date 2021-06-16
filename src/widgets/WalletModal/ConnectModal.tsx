@@ -5,15 +5,7 @@ import { Link } from "../../components/Link";
 import { Modal } from "../Modal";
 import { Login } from "./types";
 import { Text } from "../../components/Text";
-import {
-  Metamask,
-  TrustWallet,
-  MathWallet,
-  TokenPocket,
-  WalletConnect,
-  BinanceWallet,
-  SafepackWallet,
-} from "../../constants/images";
+import config, { connectorLocalStorageKey } from "./config";
 
 interface Props {
   login: Login;
@@ -69,42 +61,18 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const config = [
-  {
-    title: "Metamask",
-    icon: Metamask,
-  },
-  {
-    title: "Trust Wallet",
-    icon: TrustWallet,
-  },
-  {
-    title: "Math Wallet",
-    icon: MathWallet,
-  },
-  {
-    title: "Token Pocket",
-    icon: TokenPocket,
-  },
-  {
-    title: "Wallet Connect",
-    icon: WalletConnect,
-  },
-  {
-    title: "Binance Chain Wallet",
-    icon: BinanceWallet,
-  },
-  {
-    title: "SafePak Wallet",
-    icon: SafepackWallet,
-  },
-];
 
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
   <Modal title="Connect Wallet" onDismiss={onDismiss}>
     {config.map((entry, index) => (
       <Wrap key={index}>
-        <Button>
+        <Button
+          onClick={() => {
+            login(entry.connectorId);
+            window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
+            onDismiss();
+          }}
+        >
           <Text fontWeight={500} color="text" mr="16px" fontSize="15px">
             {entry.title}
           </Text>

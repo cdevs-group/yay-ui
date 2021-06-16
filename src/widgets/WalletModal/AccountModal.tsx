@@ -7,6 +7,7 @@ import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
 import styled from "styled-components";
 import { Button as Input } from "./ConnectModal";
+import { connectorLocalStorageKey } from "./config";
 
 interface Props {
   account: string;
@@ -33,7 +34,17 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
         </CopyText>
       </Flex>
       <Flex justifyContent="center">
-        <Button mt="60px" scale="md" width="100%" variant="green">
+        <Button
+          mt="60px"
+          scale="md"
+          width="100%"
+          variant="green"
+          onClick={() => {
+            logout();
+            window.localStorage.removeItem(connectorLocalStorageKey);
+            onDismiss();
+          }}
+        >
           Logout
         </Button>
       </Flex>
