@@ -31,8 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format:check",
-      "pre-push": "yarn build && git add dist/ && git commit -m 'build'"
+      "pre-commit": "yarn format:check"
     }
   },
   "eslintConfig": {
