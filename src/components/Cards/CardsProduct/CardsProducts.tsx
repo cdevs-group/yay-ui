@@ -22,9 +22,9 @@ const CardsProducts = () => {
   return (
     <Cards>
       <CardProduct title={data[0].name} bg={data[0].color} img={data[0].img} />
-      <CardProductLeft title={data[1].name} bg={data[1].color} img={data[1].img} />
-      <CardProductRight title={data[2].name} closed bg={data[2].color} img={data[2].img} />
-      <CardProductRcket title={data[3].name} closed bg={data[3].color} img={data[3].img} />
+      <CardProduct title={data[1].name} bg={data[1].color} img={data[1].img} position="left" />
+      <CardProduct title={data[2].name} closed bg={data[2].color} img={data[2].img}  position="right"/>
+      <CardProduct title={data[3].name} closed bg={data[3].color} img={data[3].img} position="rightCenter" />
       <CardProduct title={data[4].name} closed bg={data[4].color} img={data[4].img} />
     </Cards>
   );

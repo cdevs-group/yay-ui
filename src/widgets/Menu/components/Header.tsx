@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { links } from "../config";
 import Logo from "../Logo";
 import { NavProps } from "../types";
 import Account from "./Account";
@@ -28,7 +26,12 @@ const Header: React.FC<NavProps> = ({
       <Nav>
         {links.map((item, i) => (
           <React.Fragment key={i}>
-            <MenuLink className={i === 0 ? "active" : ""} size="md" name={item.name} url={item.url} />
+            <MenuLink
+              className={item.url === location.pathname ? "active" : ""}
+              size="md"
+              name={item.name}
+              url={item.url}
+            />
           </React.Fragment>
         ))}
       </Nav>
@@ -38,6 +41,8 @@ const Header: React.FC<NavProps> = ({
 };
 
 const HeaderWrap = styled.div`
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,5 +59,4 @@ const Nav = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 export default Header;
