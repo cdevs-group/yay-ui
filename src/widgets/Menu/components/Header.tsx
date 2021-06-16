@@ -21,21 +21,23 @@ const Header: React.FC<NavProps> = ({
   return (
     <HeaderWrap>
       {/* <Link> */}
-      <Logo />
-      {/* </Link> */}
-      <Nav>
-        {links.map((item, i) => (
-          <React.Fragment key={i}>
-            <MenuLink
-              className={item.url === location.pathname ? "active" : ""}
-              size="md"
-              name={item.name}
-              url={item.url}
-            />
-          </React.Fragment>
-        ))}
-      </Nav>
-      <Account account={account} login={login} logout={logout} />
+      <Line>
+        <Logo />
+        {/* </Link> */}
+        <Nav>
+          {links.map((item, i) => (
+            <React.Fragment key={i}>
+              <MenuLink
+                className={item.url === location.pathname ? "active" : ""}
+                size="md"
+                name={item.name}
+                url={item.url}
+              />
+            </React.Fragment>
+          ))}
+        </Nav>
+        <Account account={account} login={login} logout={logout} />
+      </Line>
     </HeaderWrap>
   );
 };
@@ -43,15 +45,25 @@ const Header: React.FC<NavProps> = ({
 const HeaderWrap = styled.div`
   position: fixed;
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  & svg {
+    flex-shrink: 0;
+  }
+`;
+const Line = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 144px;
-  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
-  & svg {
-    /* flex-grow: 0; */
-    flex-shrink: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 14px 16px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 `;
 const Nav = styled.div`
