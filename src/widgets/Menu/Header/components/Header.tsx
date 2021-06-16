@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { links } from "../config";
 import Logo from "../Logo";
+import { AccProps } from '../types';
 import Account from "./Account";
 import MenuLink from './MenuLink';
 
-const Header = ({isAuth, accName}) =>{
+const Header = ({isAuth, accName}:AccProps) =>{
   return (
   <HeaderWrap>
     {/* <Link> */}
@@ -30,6 +31,10 @@ const HeaderWrap = styled.div`
   padding: 14px 144px;
   background-color: ${({theme})=>theme.colors.bgBlackRgba};
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  & svg{
+    /* flex-grow: 0; */
+    flex-shrink: 0;
+  }
 `;
 const Nav = styled.div`
   display: flex;

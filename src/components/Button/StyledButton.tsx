@@ -30,7 +30,6 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
   `;
 };
 
-
 /**
  * This is to get around an issue where if you use a Link component
  * React will throw a invalid DOM attribute error

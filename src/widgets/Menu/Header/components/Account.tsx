@@ -4,7 +4,7 @@ import Text from '../../../../components/Text/Text';
 import { AccProps } from '../types';
 
 const Account = ({isAuth, accName}:AccProps) =>{
-const shortName = (name)=>`${new Array(...name).join('').slice(0,4)}...${new Array(...name).reverse().join('').slice(0,4)}`
+const shortName = (name:any)=>`${new Array(...name).join('').slice(0,4)}...${new Array(...name).reverse().join('').slice(0,4)}`
 
   return (
     <AccountBlock as='button'>
