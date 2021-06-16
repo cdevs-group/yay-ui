@@ -16,7 +16,8 @@
     "react-timer-hook": "^2.0.6",
     "react-transition-group": "^4.4.1",
     "storybook": "^6.2.9",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "polished": "^3.3.2"
   },
   "scripts": {
     "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
@@ -57,7 +58,6 @@
     ]
   },
   "peerDependencies": {
-    "polished": "^3.3.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
