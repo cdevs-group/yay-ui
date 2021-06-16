@@ -1,39 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import {
-  ArrowPanel,
-  BtnPanel,
-  CloseIcon,
-  ArrowDownIcon,
-  PlayIcon,
-  WatchIcon,
-} from '../../components/Svg';
-import { SimpleTabs } from '../../components/Tabs';
-import { Text } from '../../components/Text';
-import Accordeon from './components/Accordeon';
-import RoundHistory from './components/RoundHistory';
-import TabsHistory from './components/TabsHistory';
-import YourHistory from './components/YourHistory';
-import PnlHistoryPanel from './PnlHistoryPanel';
-import { ICardAccordeon, InjectedProps } from './types';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { ArrowPanel, BtnPanel, CloseIcon, ArrowDownIcon, PlayIcon, WatchIcon } from "../../components/Svg";
+import { SimpleTabs } from "../../components/Tabs";
+import { Text } from "../../components/Text";
+import Accordeon from "./components/Accordeon";
+import RoundHistory from "./components/RoundHistory";
+import TabsHistory from "./components/TabsHistory";
+import YourHistory from "./components/YourHistory";
+import PnlHistoryPanel from "./PnlHistoryPanel";
+import { ICardAccordeon, InjectedProps } from "./types";
 
-interface Props extends InjectedProps { }
+interface Props extends InjectedProps {}
 
 const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
   const handleToggle = () => {
     if (setOpen) setOpen(!open);
   };
   const [tabValue, setTabValue] = useState(0);
-  const [valueAccordeon, setValueAccordeon] = useState<
-    number | null | undefined
-  >();
+  const [valueAccordeon, setValueAccordeon] = useState<number | null | undefined>();
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
       id: 1,
-      number: '#0022',
-      color: 'text',
-      text: 'Starting soon',
+      number: "#0022",
+      color: "text",
+      text: "Starting soon",
       icon: <WatchIcon />,
       content: [
         <RoundHistory
@@ -47,9 +38,9 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
     },
     {
       id: 2,
-      number: '#0023',
-      color: 'green',
-      text: 'Live now',
+      number: "#0023",
+      color: "green",
+      text: "Live now",
       icon: <PlayIcon />,
       content: [
         <RoundHistory
@@ -64,9 +55,9 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
     },
     {
       id: 3,
-      number: '#0024',
-      color: 'redBg',
-      text: '-0,001 BNB',
+      number: "#0024",
+      color: "redBg",
+      text: "-0,001 BNB",
       icon: <ArrowDownIcon />,
       content: [
         <RoundHistory
@@ -91,9 +82,9 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
     },
     {
       id: 4,
-      number: '#0025',
-      color: 'green',
-      text: '+2,001 BNB',
+      number: "#0025",
+      color: "green",
+      text: "+2,001 BNB",
       icon: <ArrowDownIcon />,
       collect: true,
       content: [
@@ -106,28 +97,17 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
           openingBlock="483029"
           closingBlock="457442"
         />,
-        <YourHistory
-          price="+0,001 BNB"
-          priceRightText="UP"
-          result="$0.391"
-          yourPosition="0,001 BNB"
-          win
-          collect
-        />,
+        <YourHistory price="+0,001 BNB" priceRightText="UP" result="$0.391" yourPosition="0,001 BNB" win collect />,
       ],
     },
   ];
-  const tabsListSimple = ['All history', 'Collected', 'Uncollected'];
+  const tabsListSimple = ["All history", "Collected", "Uncollected"];
   const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
     <Panel open={open}>
       <Wrap>
-        <ButtonToggle
-          onClick={handleToggle}
-          open={open}
-          color={valueAccordeon ? 'dark' : 'panel'}
-        >
+        <ButtonToggle onClick={handleToggle} open={open} color={valueAccordeon ? "dark" : "panel"}>
           <BtnPanel className="button" />
           <ArrowPanel className="arrow" />
         </ButtonToggle>
@@ -136,7 +116,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
         </ButtonClose>
         <Title>
           <Text size="lg" mr={1}>
-            History{' '}
+            History{" "}
           </Text>
           <Text color="green" size="lg">
             (0)
@@ -148,11 +128,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
         {tabValue === 0 && (
           <>
             <SimpleTabsWrap>
-              <SimpleTabs
-                tabsList={tabsListSimple}
-                tabValue={tabValueSimple}
-                setTabValue={setTabValueSimple}
-              />
+              <SimpleTabs tabsList={tabsListSimple} tabValue={tabValueSimple} setTabValue={setTabValueSimple} />
             </SimpleTabsWrap>
             {tabValueSimple === 0 && (
               // <NoHistory>
@@ -162,11 +138,7 @@ const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
               //     connected to the correct wallet and try again
               //   </Text>
               // </NoHistory>
-              <Accordeon
-                value={valueAccordeon}
-                setValue={setValueAccordeon}
-                cards={cardsAccordeon}
-              />
+              <Accordeon value={valueAccordeon} setValue={setValueAccordeon} cards={cardsAccordeon} />
             )}
             {tabValueSimple === 1 && (
               <Accordeon
@@ -194,21 +166,21 @@ export default HistoryPanel;
 
 HistoryPanel.defaultProps = {
   open: true,
-  setOpen: () => { },
+  setOpen: () => {},
 };
 
 const Panel = styled.div<{ open: boolean }>`
   position: fixed;
   right: 0;
-  top: 0; 
-  padding-left: 20px;  
-  width: ${({ open }) => (open ? '436px' : '8px')};
+  top: 0;
+  padding-left: 20px;
+  width: ${({ open }) => (open ? "436px" : "8px")};
   transition: all 0.3s ease, overflow-y 0ms;
-  overflow-y: ${({ open }) => (open ? 'auto' : 'none')};
+  overflow-y: ${({ open }) => (open ? "auto" : "none")};
 `;
 const Wrap = styled.div`
-  position: relative; 
-  background: ${({ theme }) => theme.colors.panel}; 
+  position: relative;
+  background: ${({ theme }) => theme.colors.panel};
   height: 100vh;
   width: 416px;
 `;
@@ -227,7 +199,7 @@ const ButtonToggle = styled.button<{ open: boolean; color: string }>`
   border: none;
   cursor: pointer;
   & .arrow {
-    transform: ${({ open }) => (open ? 'scale(-1,1)' : 'scale(1,1)')};
+    transform: ${({ open }) => (open ? "scale(-1,1)" : "scale(1,1)")};
     transition: 0.3s;
     margin-left: 5px;
   }
@@ -236,8 +208,7 @@ const ButtonToggle = styled.button<{ open: boolean; color: string }>`
     left: 4px;
     & path {
       transition: 0.3s;
-      fill: ${({ theme, color }) =>
-    color === 'panel' ? theme.colors.panel : theme.colors.dark};
+      fill: ${({ theme, color }) => (color === "panel" ? theme.colors.panel : theme.colors.dark)};
     }
   }
 `;

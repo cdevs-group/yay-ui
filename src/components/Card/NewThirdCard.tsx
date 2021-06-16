@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Timer from '../Timer/Timer';
-import PriceBlock from './components/PriceBlock';
-import { BnbIcon, ArrowLeft } from '../../components/Svg';
-import CardHeader from './components/CardHeader';
-import Button from '../Button/Button';
-import PositionCard from './PositionCard';
-import { transparentize } from 'polished';
-import { Flex } from '../Box';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Timer from "../Timer/Timer";
+import PriceBlock from "./components/PriceBlock";
+import { BnbIcon, ArrowLeft } from "../../components/Svg";
+import CardHeader from "./components/CardHeader";
+import Button from "../Button/Button";
+import PositionCard from "./PositionCard";
+import { transparentize } from "polished";
+import { Flex } from "../Box";
 
 const Wrap = styled.div`
   padding: 22px;
@@ -106,14 +106,14 @@ const payoutArr = [
 ];
 
 const NewThirdCard: React.FC = () => {
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState("");
 
   const addClassName = () => {
-    setActive('hover');
+    setActive("hover");
   };
 
   const addButtonClassName = () => {
-    setActive('');
+    setActive("");
   };
 
   return (
@@ -136,7 +136,7 @@ const NewThirdCard: React.FC = () => {
           </Flex>
           <PositionBlock>
             <PositionCard />
-          </PositionBlock>{' '}
+          </PositionBlock>{" "}
         </Wrap>
       </div>
       <div className="back">

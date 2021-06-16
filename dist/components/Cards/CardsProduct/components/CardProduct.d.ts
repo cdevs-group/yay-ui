@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { CardProductProp } from '../../types';
+import { CardProductProp } from "../../types";
 export declare const setColor: (param: {
     bg?: string;
 }) => "linear-gradient(180deg, #FF8383 0%, #EF5D5D 100%);" | "linear-gradient(180deg, #95D0FF 0%, #78C2FD 100%);" | "linear-gradient(180deg, #BDFF00 0%, #95CA00 100%);" | "linear-gradient(180deg, #CA61FB 0%, #B255DE 100%);" | "#ECC2DD;";

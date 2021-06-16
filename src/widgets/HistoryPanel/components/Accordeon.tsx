@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import styled from 'styled-components';
-import { Flipper, Flipped } from 'react-flip-toolkit';
-import { ICardAccordeon } from '../types';
-import { Text } from '../../../components/Text';
-import { Flex } from '../../../components/Box';
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import styled from "styled-components";
+import { Flipper, Flipped } from "react-flip-toolkit";
+import { ICardAccordeon } from "../types";
+import { Text } from "../../../components/Text";
+import { Flex } from "../../../components/Box";
 
 interface IAccordeon {
   value?: number | null | undefined;
@@ -38,8 +38,8 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
     }
   }, [value]);
 
-  const filterCards = useMemo(() => cards.filter((el) => el.id !== active.id), [active])
-  const filterActiveCard = useMemo(() => cards.filter((el) => el.id === active.id), [active])
+  const filterCards = useMemo(() => cards.filter((el) => el.id !== active.id), [active]);
+  const filterActiveCard = useMemo(() => cards.filter((el) => el.id === active.id), [active]);
 
   useEffect(() => {
     setNewCards([...filterActiveCard, ...filterCards]);
@@ -53,9 +53,7 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
             <div key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
-                className={
-                  active && active.id === item.id && value ? 'active' : ''
-                }
+                className={active && active.id === item.id && value ? "active" : ""}
               >
                 <Text>{item.number}</Text>
                 {item.collect && <Collect>Collect</Collect>}
@@ -71,9 +69,7 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
                   height: value && value === item.id ? heightActiveBlock : 0,
                 }}
               >
-                <HiddenBlock
-                  ref={active && active.id === item.id ? refHidden : null}
-                >
+                <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
                   {item.content.map((el, i) => (
                     <HiddenItem key={i}>{el}</HiddenItem>
                   ))}
@@ -91,7 +87,7 @@ export default Accordeon;
 
 const Wrap = styled.div`
   position: relative;
-  background: ${({ theme }) => theme.colors.panel}; 
+  background: ${({ theme }) => theme.colors.panel};
 `;
 
 const Collect = styled.div`

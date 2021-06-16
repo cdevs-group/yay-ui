@@ -10,9 +10,9 @@ export const scaleVariants = {
   [scales.SM]: {
     height: "32px",
     padding: "0 16px",
-    fontSize:'13px',
-    lineHeight:"16px",
-    borderRadius: '7px'
+    fontSize: "13px",
+    lineHeight: "16px",
+    borderRadius: "7px",
   },
   [scales.XS]: {
     height: "20px",
@@ -67,9 +67,10 @@ export const styleVariants = {
     backgroundColor: "#FF6161",
     color: "#fff",
     boxShadow: "none",
-  },[variants.OPTION]: {
+  },
+  [variants.OPTION]: {
     backgroundColor: "rgba(255, 255, 255, 0.15)",
     color: "#fff",
     boxShadow: "none",
-  }
+  },
 };

@@ -1,13 +1,13 @@
-import React from 'react';
-import { useTimer } from 'react-timer-hook';
-import styled, { DefaultTheme } from 'styled-components';
-import { transparentize } from 'polished';
-import { TimerProps,TimerColorProps } from './types';
-import getThemeValue from '../../util/getThemeValue';
+import React from "react";
+import { useTimer } from "react-timer-hook";
+import styled, { DefaultTheme } from "styled-components";
+import { transparentize } from "polished";
+import { TimerProps, TimerColorProps } from "./types";
+import getThemeValue from "../../util/getThemeValue";
 interface ThemedProps extends TimerColorProps {
   theme: DefaultTheme;
 }
-interface MyTimerProps{
+interface MyTimerProps {
   expiryTimestamp: any;
   color: string;
 }
@@ -15,15 +15,14 @@ const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-
 function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
   const { seconds, minutes, hours } = useTimer({
     expiryTimestamp,
-    onExpire: () => console.warn('onExpire called'),
+    onExpire: () => console.warn("onExpire called"),
   });
 
   const handleDigit = (value: number) => {
-    const leftDigit = value >= 10 ? value.toString()[0] : '0';
+    const leftDigit = value >= 10 ? value.toString()[0] : "0";
     const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
     return { leftDigit, rightDigit };
   };
@@ -49,9 +48,7 @@ const Timer: React.FC<TimerProps> = ({ time, color }) => {
   const currentTime = new Date();
   currentTime.setSeconds(currentTime.getSeconds() + time);
 
-  return (
-    <div>{time && <MyTimer expiryTimestamp={currentTime} color={color || 'text'} />}</div>
-  );
+  return <div>{time && <MyTimer expiryTimestamp={currentTime} color={color || "text"} />}</div>;
 };
 export default Timer;
 
