@@ -3,11 +3,12 @@
 # dependencies
 /node_modules
 
+.idea/
+
 # testing
 /coverage
 
 # production
-/dist
 /storybook-static
 
 # misc
