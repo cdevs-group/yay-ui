@@ -2115,10 +2115,8 @@ var Header = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; var links = _a.links; _a.profile; _a.children;
     return (React__default['default'].createElement(HeaderWrap, null,
         React__default['default'].createElement(Logo, null),
-        React__default['default'].createElement(Nav, null, links.map(function (item, i) {
-            return React__default['default'].createElement(React__default['default'].Fragment, { key: i },
-                React__default['default'].createElement(MenuLink, { className: i === 0 ? 'active' : '', size: 'md', name: item.name, url: item.url }));
-        })),
+        React__default['default'].createElement(Nav, null, links.map(function (item, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: i },
+            React__default['default'].createElement(MenuLink, { className: i === 0 ? "active" : "", size: "md", name: item.name, url: item.url }))); })),
         React__default['default'].createElement(Account, { account: account, login: login, logout: logout })));
 };
 var HeaderWrap = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 144px;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  & svg {\n    /* flex-grow: 0; */\n    flex-shrink: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 14px 144px;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  & svg {\n    /* flex-grow: 0; */\n    flex-shrink: 0;\n  }\n"])), function (_a) {
