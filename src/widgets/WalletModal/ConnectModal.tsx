@@ -61,7 +61,6 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-
 const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
   <Modal title="Connect Wallet" onDismiss={onDismiss}>
     {config.map((entry, index) => (

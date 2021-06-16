@@ -59,5 +59,4 @@ const Nav = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
 export default Header;
