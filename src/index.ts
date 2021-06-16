@@ -12,6 +12,12 @@ export * from "./components/Svg";
 export * from "./components/Text";
 export * from "./components/Link";
 export * from "./components/Alert";
+export * from "./components/Input";
+export * from "./components/Toggle";
+export * from "./components/Loader";
+
+// Hooks
+export * from "./hooks";
 
 // Widgets
 export * from "./widgets/Modal";

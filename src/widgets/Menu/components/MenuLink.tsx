@@ -7,11 +7,11 @@ import { LinkHeaderProps } from "../types";
 const MenuLink = ({ name, url, size, className }: LinkHeaderProps) => {
   return (
     <LinkItem className={className} size={size}>
-      <NavLinks
-      // to={url}
+      <NavLink
+        to={url}
       >
         {name}
-      </NavLinks>
+      </NavLink>
     </LinkItem>
   );
 };
@@ -43,4 +43,3 @@ const LinkItem = styled(Text)`
     opacity: 1;
   }
 `;
-const NavLinks = styled.a``;

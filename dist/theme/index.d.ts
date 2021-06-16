@@ -1,4 +1,6 @@
+import { AlertTheme } from "../components/Alert/types";
 import { CardTheme } from "../components/Card/types";
+import { ToggleTheme } from "../components/Toggle/types";
 import { ModalTheme } from "../widgets/Modal/types";
 import { Colors, Breakpoints, MediaQueries, Spacing, Shadows, Radii, ZIndices } from "./types";
 export interface YayTheme {
@@ -6,7 +8,9 @@ export interface YayTheme {
     isDark: boolean;
     colors: Colors;
     card: CardTheme;
+    alert: AlertTheme;
     modal: ModalTheme;
+    toggle: ToggleTheme;
     breakpoints: Breakpoints;
     mediaQueries: MediaQueries;
     spacing: Spacing;

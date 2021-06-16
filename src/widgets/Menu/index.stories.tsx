@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 // import { ReactComponent as LogoIcon } from './logo.svg';
 import noop from "lodash/noop";
+import { BrowserRouter } from "react-router-dom";
 import { Language } from "./types";
 import { links } from "./config";
 
@@ -16,7 +17,7 @@ export const HeaderDefault: React.FC = () => {
   const langs: Language[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
 
   return (
-    <>
+    <BrowserRouter>
       <div>
         <Header
           account={null}
@@ -47,6 +48,6 @@ export const HeaderDefault: React.FC = () => {
           }}
         />
       </div>
-    </>
+    </BrowserRouter>
   );
 };
