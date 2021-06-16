@@ -14,7 +14,7 @@ export const sizes = {
   XXL: "xxl",
 } as const;
 
-export interface LinkProps{
+export interface LinkHeaderProps{
   name:string,
   url:string, 
   size?:string,

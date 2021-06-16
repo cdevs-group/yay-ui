@@ -2,11 +2,11 @@ import React from 'react';
 import styled from "styled-components";
 import CoinIcon from "../CoinIcon";
 import DualshockIcon from "../DualshockIcon";
-import { TextProps } from '../types';
+import { TextCardsProps } from '../types';
 import  Arrow  from "./components/Arrow";
 import CardBalance from './components/CardBalance'
 
-const CardsBalance = ({text}:TextProps) =>{
+const CardsBalance = ({text}:TextCardsProps) =>{
   return <Cards>
     <CardBalance
         title={text.title1}

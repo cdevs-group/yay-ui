@@ -18,7 +18,7 @@ export interface ArrowProps{
   center?:boolean
 }
 
-export interface TextProps{
+export interface TextCardsProps{
   text:
   {text1:string
   title1:string
