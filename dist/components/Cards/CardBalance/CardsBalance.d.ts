@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { TextCardsProps } from '../types';
+import { TextCardsProps } from "../types";
 declare const CardsBalance: {
     ({ text }: TextCardsProps): JSX.Element;
     defaultProps: {};
