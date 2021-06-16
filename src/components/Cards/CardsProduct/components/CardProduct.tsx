@@ -20,9 +20,9 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, position }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg}>
+    <CardWrap closed={closed} bg={bg} className={position || ""}>
       <CardTitle size="lg">{title}</CardTitle>
       <img src={img} alt="some img" />
     </CardWrap>
@@ -64,6 +64,30 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
     bottom: 0;
     left: 0;
     width: 100%;
+  }
+  &.left {
+    & img {
+      width: 105%;
+      left: auto;
+      right: 0;
+      bottom: -15px;
+    }
+  }
+  &.right {
+    & img {
+      width: 110%;
+      left: auto;
+      right: -40px;
+      bottom: -15px;
+    }
+  }
+  &.rightCenter {
+    & img {
+      width: 120%;
+      left: auto;
+      right: -70px;
+      bottom: -35px;
+    }
   }
   &:hover {
     &::after {
