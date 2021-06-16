@@ -25,9 +25,6 @@ export type Shadows = {
   warning: string;
   focus: string;
   inset: string;
-  boxShadow3: string;
-  boxShadow4: string;
-  boxShadow5: string;
 };
 
 export type Gradients = {

@@ -1,6 +1,6 @@
 import * as React from "react"
 
-function DualshockIcon(props:any) {
+function DualshockIcon(props:React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={125}

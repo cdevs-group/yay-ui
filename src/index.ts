@@ -11,6 +11,7 @@ export * from "./components/Timer";
 export * from "./components/Svg";
 export * from "./components/Text";
 export * from "./components/Link";
+export * from "./components/Alert";
 
 // Widgets
 export * from "./widgets/Modal";
