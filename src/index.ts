@@ -15,6 +15,7 @@ export * from "./components/Alert";
 export * from "./components/Input";
 export * from "./components/Toggle";
 export * from "./components/Loader";
+export * from "./components/ArrowSlider";
 
 // Hooks
 export * from "./hooks";

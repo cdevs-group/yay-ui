@@ -30,6 +30,7 @@ const ArrowLeft = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 `;
 
 const ArrowRight = styled.button`
@@ -40,12 +41,13 @@ const ArrowRight = styled.button`
   border: none;
   cursor: pointer;
   transform: scale(-1, 1);
+  padding: 0;
 `;
 
 const BottomCard = styled.div`
   position: absolute;
-  left: 35%;
-  bottom: 1%;
+  left: 0;
+  bottom: 10px;
   transform: rotate(-25deg);
   width: 45px;
   height: 61px;
@@ -56,23 +58,44 @@ const BottomCard = styled.div`
 
 const TopCard = styled(BottomCard)`
   position: absolute;
-  left: 45%;
-  bottom: -8%;
+  right: 0;
+  left: auto;
+  bottom: 5px;
   transform: rotate(20deg);
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const ArrowSlider: React.FC<ArrowSliderProps> = ({ clsNameLeft, clsNameRight }) => {
+const Center = styled.button`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border: none;
+  width: 76px;
+  height: 76px;
+  cursor: pointer;
+`
+
+const ArrowSlider: React.FC<ArrowSliderProps> = ({
+  clsNameLeft,
+  clsNameRight,
+  handlePrevSlide,
+  handleNextSlide,
+  handleSlideToLive,
+}) => {
   return (
     <Wrap>
       <BottomContent>
         <CenterBlock>
-          <ArrowLeft className={clsNameLeft}>
+          <ArrowLeft className={clsNameLeft || ""} onClick={handlePrevSlide}>
             <GreenArrow stroke="#47DA3B" />
           </ArrowLeft>
-          <BottomCard />
-          <TopCard />
-          <ArrowRight className={clsNameRight}>
+          <Center onClick={handleSlideToLive}>
+            <BottomCard />
+            <TopCard />
+          </Center>
+          <ArrowRight className={clsNameRight || ""} onClick={handleNextSlide}>
             <GreenArrow stroke="#47DA3B" />
           </ArrowRight>
         </CenterBlock>

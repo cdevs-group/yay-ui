@@ -5,14 +5,14 @@ export const links = [
   },
   {
     name: "Swap",
-    url: "/",
+    url: "/1",
   },
   {
     name: "Farm",
-    url: "/",
+    url: "/2",
   },
   {
     name: "Profile",
-    url: "/",
+    url: "/3",
   },
 ];
