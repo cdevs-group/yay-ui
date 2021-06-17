@@ -4,10 +4,10 @@ import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
-const MenuLink = ({ name, url, size, className }: LinkHeaderProps) => {
+const MenuLink = ({ name, url, size }: LinkHeaderProps) => {  
   return (
     <Link to={url}>
-      <LinkItem className={className} size={size}>
+      <LinkItem size={size}>
         {name}
       </LinkItem>
     </Link>

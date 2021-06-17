@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import LoaderCard from "./LoaderCard/LoaderCard";
-import NewMainCard from "./NewMainCard";
+import ExpiredCard from "./ExpiredCard";
 import NewRateCard from "./NewRateCard";
 import NewThirdCard from "./NewThirdCard";
 import NewUpDownCard from "./NewUpDownCard";
@@ -12,7 +12,7 @@ import { Flex } from "../Box";
 
 export default {
   title: "Components/Card",
-  component: [NewMainCard, NewThirdCard, NewWinCard, NewRateCard, NewUpDownCard, LoaderCard],
+  component: [ExpiredCard, NewThirdCard, NewWinCard, NewRateCard, NewUpDownCard, LoaderCard],
   argTypes: {},
 };
 
@@ -20,7 +20,15 @@ export const MainCardNew: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Card>
-        <NewMainCard />
+        <ExpiredCard
+          round={{ epoch: 45 }}
+          lockPrice="244"
+          prizePool="445"
+          payot="lfndjvndf"
+          up
+          closePrice="45"
+          priceDifference="45f"
+        />
       </Card>
       <Flex alignItems="center" marginTop="37px">
         <ChartIcon color="" />

@@ -15,6 +15,7 @@ export * from "./components/Input";
 export * from "./components/Toggle";
 export * from "./components/Loader";
 export * from "./components/ArrowSlider";
+export * from "./components/TitleBlock";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";

@@ -16,6 +16,7 @@ export * from "./components/Input";
 export * from "./components/Toggle";
 export * from "./components/Loader";
 export * from "./components/ArrowSlider";
+export * from "./components/TitleBlock";
 
 // Hooks
 export * from "./hooks";

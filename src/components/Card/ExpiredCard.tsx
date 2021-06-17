@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import CardHeader from "./components/CardHeader";
-import { BnbIcon } from "../../components/Svg";
+import { BnbIcon } from "../Svg";
 import { ClosedPrice } from "../ClosedPrice";
-
-const payoutArr = [
-  { name: <div>Payout:</div>, price: "5,09x" },
-  { name: <div>Locked Price:</div>, price: <div className="bold">$ 1`200</div> },
-  { name: <div className="bold">Prize Pool:</div>, price: <div className="bold">$ 3`500</div> },
-];
+import { BetPosition, Round } from "./types";
 
 const Wrap = styled.div`
   position: relative;
@@ -18,7 +13,7 @@ const Wrap = styled.div`
   z-index: 1;
   min-height: 480px;
   &.red {
-    /* background: red; */
+    background: ${({ theme }) => theme.colors.redBg};
   }
   &::before {
     position: absolute;
@@ -54,13 +49,37 @@ const HeaderWrap = styled.div`
   margin-bottom: 49px;
 `;
 
-const NewMainCard: React.FC = () => {
+interface ExpiredCardProps {
+  round: Round;
+  payot: string;
+  up: boolean;
+  lockPrice: string;
+  prizePool: string;
+  closePrice: string;
+  priceDifference: string;
+}
+
+const ExpiredCard: React.FC<ExpiredCardProps> = ({
+  round,
+  lockPrice,
+  prizePool,
+  payot,
+  up,
+  closePrice,
+  priceDifference,
+}) => {
+  const payoutArr = [
+    { name: <div>Payout:</div>, price: payot },
+    { name: <div>Locked Price:</div>, price: <div className="bold">{lockPrice}</div> },
+    { name: <div className="bold">Prize Pool:</div>, price: <div className="bold">{prizePool}</div> },
+  ];
+
   return (
-    <Wrap>
+    <Wrap className={up ? "" : "red"}>
       <HeaderWrap>
-        <CardHeader icon={<BnbIcon />} coin="BNB" upDown="UP" num="#0019" />
+        <CardHeader icon={<BnbIcon />} coin="BNB" upDown={up ? "UP" : "DOWN"} num={`#${round.epoch}`} />
       </HeaderWrap>
-      <ClosedPrice price="$ 400`597" rightText="56.3%" />
+      <ClosedPrice price={closePrice} rightText={priceDifference} negative={!up} />
       <Payout>
         {payoutArr.map((item, i) => (
           <div key={i}>
@@ -74,4 +93,4 @@ const NewMainCard: React.FC = () => {
   );
 };
 
-export default NewMainCard;
+export default ExpiredCard;

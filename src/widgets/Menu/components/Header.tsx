@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo";
 import { NavProps } from "../types";
@@ -18,6 +19,8 @@ const Header: React.FC<NavProps> = ({
   profile,
   children,
 }) => {
+  const location = useLocation();
+ 
   return (
     <HeaderWrap>
       {/* <Link> */}
@@ -28,7 +31,7 @@ const Header: React.FC<NavProps> = ({
           {links.map((item, i) => (
             <MenuLink
               key={i}
-              className={item.url === location.pathname ? "active" : ""}
+              // className={item.url === location.pathname ? "active" : ""}
               size="md"
               name={item.name}
               url={item.url}

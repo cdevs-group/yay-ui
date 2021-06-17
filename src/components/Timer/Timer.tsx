@@ -1,5 +1,4 @@
 import React from "react";
-import { useTimer } from "react-timer-hook";
 import styled, { DefaultTheme } from "styled-components";
 import { transparentize } from "polished";
 import { TimerProps, TimerColorProps } from "./types";
@@ -16,10 +15,9 @@ const getColor = ({ color, theme }: ThemedProps) => {
 };
 
 function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
-  const { seconds, minutes, hours } = useTimer({
-    expiryTimestamp,
-    onExpire: () => console.warn("onExpire called"),
-  });
+  const hours = Math.floor(expiryTimestamp / 3600);
+  const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
 
   const handleDigit = (value: number) => {
     const leftDigit = value >= 10 ? value.toString()[0] : "0";
@@ -45,10 +43,7 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
 }
 
 const Timer: React.FC<TimerProps> = ({ time, color }) => {
-  const currentTime = new Date();
-  currentTime.setSeconds(currentTime.getSeconds() + time);
-
-  return <div>{time && <MyTimer expiryTimestamp={currentTime} color={color || "text"} />}</div>;
+  return <div>{time && <MyTimer expiryTimestamp={time} color={color || "text"} />}</div>;
 };
 export default Timer;
 
