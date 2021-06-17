@@ -6,7 +6,7 @@ import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size }: LinkHeaderProps) => {  
   return (
-    <Link to={url}>
+    <Link to={url} exact>
       <LinkItem size={size}>
         {name}
       </LinkItem>

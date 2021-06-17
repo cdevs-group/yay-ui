@@ -4,6 +4,7 @@ import { transparentize } from "polished";
 import { Flex } from "../Box";
 import { Text } from "../Text";
 import { ClosedPriceProp } from "./types";
+import { GreenArrow } from "../Svg";
 
 const PriceBlock = styled.div<{ negative?: boolean }>`
   position: relative;
@@ -36,12 +37,23 @@ const Price = styled.div<{ negative?: boolean }>`
 `;
 
 const RightText = styled.div<{ negative?: boolean }>`
+  display: flex;
+  align-items: center;
   padding: 6px 12px;
   background: ${({ theme, negative }) =>
     negative ? transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient};
   border-radius: 7px;
   font-size: 15px;
   line-height: 19px;
+  & path {
+    stroke: ${({ theme, negative }) =>
+    negative ? theme.colors.redBg : theme.colors.green};
+  }
+  & svg {
+    margin-right: 10px;
+    transform: ${({ theme, negative }) =>
+    negative ? 'rotate(270deg)' : 'rotate(90deg)'};
+  }
 `;
 
 const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative }) => {
@@ -57,6 +69,7 @@ const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, nega
             {result}
           </Text>
           <RightText negative={rightText === "UP" ? false : negative}>
+            <GreenArrow  />
             <Price negative={rightText === "UP" ? false : negative}>{rightText}</Price>
           </RightText>
         </Flex>

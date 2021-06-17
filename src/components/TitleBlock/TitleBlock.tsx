@@ -58,7 +58,7 @@ const Img = styled.div`
     transform: translate(-50%, -50%);
   }
   & img {
-    width: 176px;
+    min-width: 176px;
     height: 176px;
     margin-right: 2px;
     margin-top: 2px;
