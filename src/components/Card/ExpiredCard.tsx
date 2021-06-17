@@ -77,7 +77,7 @@ const ExpiredCard: React.FC<ExpiredCardProps> = ({
   return (
     <Wrap className={up ? "" : "red"}>
       <HeaderWrap>
-        <CardHeader icon={<BnbIcon />} coin="BNB" upDown={up ? "UP" : "DOWN"} num={`#${round.epoch}`} />
+        <CardHeader icon={<BnbIcon />} coin="BNB" negative={!up} num={`#${round.epoch}`} />
       </HeaderWrap>
       <ClosedPrice price={closePrice} rightText={priceDifference} negative={!up} />
       <Payout>

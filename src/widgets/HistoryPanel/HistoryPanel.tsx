@@ -8,11 +8,29 @@ import RoundHistory from "./components/RoundHistory";
 import TabsHistory from "./components/TabsHistory";
 import YourHistory from "./components/YourHistory";
 import PnlHistoryPanel from "./PnlHistoryPanel";
-import { ICardAccordeon, InjectedProps } from "./types";
+import { Bet, ICardAccordeon, InjectedProps } from "./types";
 
-interface Props extends InjectedProps {}
+interface Props extends InjectedProps {
+  isFetchingHistory?: boolean;
+  bets?: Bet[];
+  isOpenRound?: boolean;
+  isLiveRound?: boolean;
+  yourResult?: string;
+  canClaim?: string | number;
+  roundResult?: string;
+}
 
-const HistoryPanel: React.FC<Props> = ({ setOpen, open, children }) => {
+const HistoryPanel: React.FC<Props> = ({
+  setOpen,
+  open,
+  // isFetchingHistory,
+  // bets,
+  // isOpenRound,
+  // isLiveRound,
+  // yourResult,
+  // canClaim,
+  // roundResult,
+}) => {
   const handleToggle = () => {
     if (setOpen) setOpen(!open);
   };
@@ -188,14 +206,13 @@ const Wrap = styled.div`
 const ButtonToggle = styled.button<{ open: boolean; color: string }>`
   position: absolute;
   left: -20px;
-  top: 50%;
+  top: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
   padding: 10px 8px 10px;
   background: none;
-  transform: translateY(-50%);
   border: none;
   cursor: pointer;
   & .arrow {
