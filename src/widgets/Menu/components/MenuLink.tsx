@@ -6,18 +6,17 @@ import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size, className }: LinkHeaderProps) => {
   return (
-    <LinkItem className={className} size={size}>
-      <NavLink
-        to={url}
-      >
+    <Link to={url}>
+      <LinkItem className={className} size={size}>
         {name}
-      </NavLink>
-    </LinkItem>
+      </LinkItem>
+    </Link>
   );
 };
 
 export default MenuLink;
 
+const Link = styled(NavLink)``
 const LinkItem = styled(Text)`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
@@ -38,8 +37,10 @@ const LinkItem = styled(Text)`
     background: #4be43e;
     transition: all.3s;
   }
-  &.active::after {
-    width: 100%;
-    opacity: 1;
+  ${Link}.active & {
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
   }
 `;

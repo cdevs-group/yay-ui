@@ -85,6 +85,7 @@ export type Colors = {
   textShadow2: string;
   textShadow3: string;
   bgOpacity: string;
+  bgOpacity2:string;
   bgBlackRgba: string;
   whiteRgba: string;
   // Gradients

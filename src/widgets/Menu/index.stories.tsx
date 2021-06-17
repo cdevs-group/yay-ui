@@ -13,7 +13,6 @@ export default {
 };
 
 export const HeaderDefault: React.FC = () => {
-  const accName = "dtyf3465fdv3duy34g87d347irfh34fuy3487fh3f4g34gf87g";
   const langs: Language[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
 
   return (

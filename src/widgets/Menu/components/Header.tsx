@@ -26,14 +26,13 @@ const Header: React.FC<NavProps> = ({
         {/* </Link> */}
         <Nav>
           {links.map((item, i) => (
-            <React.Fragment key={i}>
-              <MenuLink
-                className={item.url === location.pathname ? "active" : ""}
-                size="md"
-                name={item.name}
-                url={item.url}
-              />
-            </React.Fragment>
+            <MenuLink
+              key={i}
+              className={item.url === location.pathname ? "active" : ""}
+              size="md"
+              name={item.name}
+              url={item.url}
+            />
           ))}
         </Nav>
         <Account account={account} login={login} logout={logout} />
