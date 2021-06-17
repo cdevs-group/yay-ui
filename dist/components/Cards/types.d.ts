@@ -10,6 +10,7 @@ export interface CardProductProp {
     img: string;
     bg: string;
     closed?: boolean;
+    position?: string;
 }
 export interface ArrowProps {
     center?: boolean;
