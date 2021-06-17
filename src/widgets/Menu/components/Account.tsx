@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
+import truncateWalletAddress from "../../../helpers/truncateWalletAddress";
 import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
 
@@ -12,8 +13,6 @@ interface Props {
 
 const Account: React.FC<Props> = ({ account, login, logout }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
-  const shortName = (name: any) =>
-    `${new Array(...name).join("").slice(0, 4)}...${new Array(...name).reverse().join("").slice(0, 4)}`;
 
   return (
     <>
@@ -24,7 +23,7 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
             onPresentAccountModal();
           }}
         >
-          {shortName(account)}
+          {truncateWalletAddress(account)}
           <Avatar />
         </AccountBlock>
       ) : (
