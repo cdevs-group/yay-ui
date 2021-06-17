@@ -46,13 +46,11 @@ const RightText = styled.div<{ negative?: boolean }>`
   font-size: 15px;
   line-height: 19px;
   & path {
-    stroke: ${({ theme, negative }) =>
-    negative ? theme.colors.redBg : theme.colors.green};
+    stroke: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.green)};
   }
   & svg {
     margin-right: 10px;
-    transform: ${({ theme, negative }) =>
-    negative ? 'rotate(270deg)' : 'rotate(90deg)'};
+    transform: ${({ theme, negative }) => (negative ? "rotate(270deg)" : "rotate(90deg)")};
   }
 `;
 
@@ -69,7 +67,7 @@ const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, nega
             {result}
           </Text>
           <RightText negative={rightText === "UP" ? false : negative}>
-            <GreenArrow  />
+            <GreenArrow />
             <Price negative={rightText === "UP" ? false : negative}>{rightText}</Price>
           </RightText>
         </Flex>

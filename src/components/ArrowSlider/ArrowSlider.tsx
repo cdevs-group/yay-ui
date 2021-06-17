@@ -75,7 +75,7 @@ const Center = styled.button`
   width: 76px;
   height: 76px;
   cursor: pointer;
-`
+`;
 
 const ArrowSlider: React.FC<ArrowSliderProps> = ({
   clsNameLeft,

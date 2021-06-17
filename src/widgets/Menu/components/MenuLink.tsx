@@ -4,19 +4,17 @@ import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
-const MenuLink = ({ name, url, size }: LinkHeaderProps) => {  
+const MenuLink = ({ name, url, size }: LinkHeaderProps) => {
   return (
     <Link to={url} exact>
-      <LinkItem size={size}>
-        {name}
-      </LinkItem>
+      <LinkItem size={size}>{name}</LinkItem>
     </Link>
   );
 };
 
 export default MenuLink;
 
-const Link = styled(NavLink)``
+const Link = styled(NavLink)``;
 const LinkItem = styled(Text)`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
