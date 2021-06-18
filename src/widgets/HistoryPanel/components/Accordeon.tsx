@@ -1,59 +1,30 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Flipper, Flipped } from "react-flip-toolkit";
 import { ICardAccordeon } from "../types";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
+import useAccordeon from "../../../hooks/useAccordeon/useAccordeon";
 
 interface IAccordeon {
-  value?: number | null | undefined;
+  value?: string | null;
   setValue?: (value: any) => void;
   cards: Array<ICardAccordeon>;
+  children?: React.ReactNode;
 }
 
-const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
-  const [active, setActive] = useState<ICardAccordeon>(cards[0]);
-  const [heightActiveBlock, setHeightActiveBlock] = useState<number>(0);
-  const refHidden = useRef<HTMLDivElement | null>(null);
-  const [newCards, setNewCards] = useState(cards);
-
-  const handleToggle = (item: ICardAccordeon) => {
-    if (active && active.id !== item.id) {
-      setActive(item);
-    }
-    if (value && value === item.id) {
-      setValue && setValue(undefined);
-    } else {
-      setValue && setValue(item.id);
-    }
-  };
-
-  useEffect(() => {
-    setValue && setValue(undefined);
-  }, []);
-
-  useEffect(() => {
-    if (refHidden?.current) {
-      setHeightActiveBlock(refHidden?.current?.clientHeight);
-    }
-  }, [value]);
-
-  const filterCards = useMemo(() => cards.filter((el) => el.id !== active.id), [active]);
-  const filterActiveCard = useMemo(() => cards.filter((el) => el.id === active.id), [active]);
-
-  useEffect(() => {
-    setNewCards([...filterActiveCard, ...filterCards]);
-  }, [active]);
+const Accordeon = ({ value, setValue, cards, children }: IAccordeon) => {
+  const { valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden } = useAccordeon(cards);
 
   return (
     <Wrap>
       <Flipper flipKey={newCards[0]}>
-        {newCards.map((item) => (
+        {newCards.map((item: any) => (
           <Flipped key={item.id} flipId={item.id} spring="stiff">
             <div key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
-                className={active && active.id === item.id && value ? "active" : ""}
+                className={active && active.id === item.id && valueAccordeon ? "active" : ""}
               >
                 <Text>{item.number}</Text>
                 {item.collect && <Collect>Collect</Collect>}
@@ -66,11 +37,11 @@ const Accordeon = ({ value, setValue, cards }: IAccordeon) => {
               </Card>
               <HiddenBlockWrap
                 style={{
-                  height: value && value === item.id ? heightActiveBlock : 0,
+                  height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
                 }}
               >
                 <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
-                  {item.content.map((el, i) => (
+                  {item.content.map((el: any, i: number) => (
                     <HiddenItem key={i}>{el}</HiddenItem>
                   ))}
                 </HiddenBlock>

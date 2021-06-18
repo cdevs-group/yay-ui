@@ -23,7 +23,7 @@ export interface PnlProp {
 }
 
 export interface ICardAccordeon {
-  id: number;
+  id: string;
   number: string;
   text: string;
   color: string;

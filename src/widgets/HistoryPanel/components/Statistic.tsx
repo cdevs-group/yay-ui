@@ -40,9 +40,9 @@ const Statistic = ({
       {hasBestRound && (
         <Row>
           <Text>Best round: </Text>
-          <Best fontSize="13px" textAlign="right" color="white">
+          <Best fontSize="13px" textAlign="right" color="#4BE43E">
             <Text color="#A3A3A3" fontSize="13px">
-              {multiplierBestRound}
+              {multiplierBestRound} &nbsp;
             </Text>{" "}
             {bnbBestRound}
           </Best>

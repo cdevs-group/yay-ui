@@ -1,9 +1,10 @@
-/// <reference types="react" />
+import React from "react";
 import { ICardAccordeon } from "../types";
 interface IAccordeon {
-    value?: number | null | undefined;
+    value?: string | null;
     setValue?: (value: any) => void;
     cards: Array<ICardAccordeon>;
+    children?: React.ReactNode;
 }
-declare const Accordeon: ({ value, setValue, cards }: IAccordeon) => JSX.Element;
+declare const Accordeon: ({ value, setValue, cards, children }: IAccordeon) => JSX.Element;
 export default Accordeon;
