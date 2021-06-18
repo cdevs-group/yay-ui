@@ -14,8 +14,8 @@ const ProgressBar = ({ won, lost, percentageWon, result, price }: Props) => {
     <div>
       <ProgressWrap>
         <Progress>
-          <Step color="#47DA3B" width={won*100/(won+lost)} />
-          <Step color="#FF6161" width={lost*100/(won+lost)}/>
+          <Step color="#47DA3B" width={(won * 100) / (won + lost)} />
+          <Step color="#FF6161" width={(lost * 100) / (won + lost)} />
         </Progress>
       </ProgressWrap>
       <Counter>
@@ -46,9 +46,9 @@ const Progress = styled.div`
   border-radius: 3px;
   overflow: hidden;
 `;
-const Step = styled.div<{ color: string, width: number }>`
+const Step = styled.div<{ color: string; width: number }>`
   height: 9px;
-  width: ${({ width }) => `${width}%`};;
+  width: ${({ width }) => `${width}%`};
   background: ${({ color }) => color};
   transition: none.3s;
 `;

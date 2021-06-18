@@ -1,4 +1,10 @@
 /// <reference types="react" />
-import { bestProps } from "../types";
-declare const ProgressBar: ({ best }: bestProps) => JSX.Element;
+interface Props {
+    won: number;
+    lost: number;
+    percentageWon: number;
+    result: string;
+    price: string;
+}
+declare const ProgressBar: ({ won, lost, percentageWon, result, price }: Props) => JSX.Element;
 export default ProgressBar;

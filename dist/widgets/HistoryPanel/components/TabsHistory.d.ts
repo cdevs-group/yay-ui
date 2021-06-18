@@ -1,7 +1,7 @@
 /// <reference types="react" />
 interface TabsProp {
     tabValue: number;
-    setTabValue: (val: number) => void;
+    onClick: ((e: any) => Promise<void>) | undefined;
 }
-declare const TabsHistory: ({ tabValue, setTabValue }: TabsProp) => JSX.Element;
+declare const TabsHistory: ({ tabValue, onClick }: TabsProp) => JSX.Element;
 export default TabsHistory;

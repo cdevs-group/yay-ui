@@ -5,13 +5,12 @@ import Text from "../Text/Text";
 import { HistoryFilter } from "../../widgets/HistoryPanel/HistoryPanel2";
 
 const SimpleTabs = ({ historyFilter, onClick }: TabsProp) => {
-    
   return (
-    <TabsWrap>    
+    <TabsWrap>
       <Tab
         as="button"
         onClick={onClick}
-        className={historyFilter === HistoryFilter.ALL? "active" : ""}
+        className={historyFilter === HistoryFilter.ALL ? "active" : ""}
         value={HistoryFilter.ALL}
       >
         All history
@@ -27,7 +26,7 @@ const SimpleTabs = ({ historyFilter, onClick }: TabsProp) => {
       <Tab
         as="button"
         onClick={onClick}
-        className={historyFilter === HistoryFilter.UNCOLLECTED? "active" : ""}
+        className={historyFilter === HistoryFilter.UNCOLLECTED ? "active" : ""}
         value={HistoryFilter.UNCOLLECTED}
       >
         Uncollected

@@ -32,7 +32,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
   handleChangeTab,
   historyFilter,
   isFetchingHistory,
-  account
+  account,
 }) => {
   return (
     <>
