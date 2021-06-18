@@ -1,7 +1,6 @@
 /// <reference types="react" />
-import { TabsProp } from "./types";
 declare const Tabs: {
-    ({ tabValue, tabsList, setTabValue }: TabsProp): JSX.Element;
+    (): JSX.Element;
     defaultProps: {
         tabsList: never[];
     };

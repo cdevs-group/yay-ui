@@ -7,31 +7,30 @@ export default {
   component: [HistoryPanel, PnlHistoryPanel],
 };
 
-
 export const Panel: React.FC = () => {
   enum HistoryTabs {
-  ROUNDS,
-  PNL,
-}
-enum HistoryFilter {
-  ALL = "all",
-  COLLECTED = "collected",
-  UNCOLLECTED = "uncollected",
-}
+    ROUNDS,
+    PNL,
+  }
+  enum HistoryFilter {
+    ALL = "all",
+    COLLECTED = "collected",
+    UNCOLLECTED = "uncollected",
+  }
   const [open, setOpen] = useState(true);
   const [activeTab, setActiveTab] = useState(HistoryTabs.ROUNDS);
   const [historyFilter, setHistoryFilter] = useState("all");
 
-  
-  const toggleHistoryFilter = (newFilter: HistoryFilter) => async () => {console.log('dfg')
-  if (newFilter !== historyFilter) {
-    setHistoryFilter(newFilter)
-  }
-}
+  const toggleHistoryFilter = (newFilter: HistoryFilter) => async () => {
+    console.log("dfg");
+    if (newFilter !== historyFilter) {
+      setHistoryFilter(newFilter);
+    }
+  };
   const toggleBaseTab = async (e: any) => {
-    setActiveTab(+e.target.value)
-    await toggleHistoryFilter(HistoryFilter.ALL)()
-  }
+    setActiveTab(+e.target.value);
+    await toggleHistoryFilter(HistoryFilter.ALL)();
+  };
 
   return (
     <HistoryPanel
