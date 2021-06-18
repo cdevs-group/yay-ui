@@ -4,20 +4,21 @@ import { transparentize } from "polished";
 
 interface TabsProp {
   tabValue: number;
-  setTabValue: (val: number) => void;
+  // setTabValue: (val: number) => void;
+  onClick: ((e: any) => Promise<void>) | undefined;
 }
 
-const TabsHistory = ({ tabValue, setTabValue }: TabsProp) => {
+const TabsHistory = ({ tabValue, onClick }: TabsProp) => {
   const tabsList = ["Rounds", "PNL"];
 
-  const handleTabToggle = (e: any) => {
-    setTabValue(+e.target.value);
-  };
+  // const handleTabToggle = (e: any) => {
+  //   setTabValue(+e.target.value);
+  // };
 
   return (
     <TabsWrap>
       {tabsList.map((item, i) => (
-        <Tab onClick={handleTabToggle} className={tabValue === i ? "active" : ""} key={i} value={i}>
+        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
           {item}
         </Tab>
       ))}

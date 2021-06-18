@@ -4,6 +4,7 @@ import { ArrowPanel, BtnPanel, CloseIcon, ArrowDownIcon, PlayIcon, WatchIcon } f
 import { SimpleTabs } from "../../components/Tabs";
 import { Text } from "../../components/Text";
 import Accordeon from "./components/Accordeon";
+import NoHistory from "./components/NoHistory";
 import RoundHistory from "./components/RoundHistory";
 import TabsHistory from "./components/TabsHistory";
 import YourHistory from "./components/YourHistory";
@@ -18,12 +19,36 @@ interface Props extends InjectedProps {
   yourResult?: string;
   canClaim?: string | number;
   roundResult?: string;
+  account: string;
+  toggleBaseTab?: ((e: any) => Promise<void>) | undefined;
+  activeTab: HistoryTabs;
+  // setActiveTab: (value: HistoryTabs) => void
+  historyFilter: string;
+  toggleHistoryFilter?: ((e: any) => () => Promise<void>) | undefined;
+  hasBetHistory: true
+}
+
+export enum HistoryTabs {
+  ROUNDS,
+  PNL,
+}
+
+export enum HistoryFilter {
+  ALL = "all",
+  COLLECTED = "collected",
+  UNCOLLECTED = "uncollected",
 }
 
 const HistoryPanel: React.FC<Props> = ({
   setOpen,
   open,
-  // isFetchingHistory,
+  isFetchingHistory,
+  toggleBaseTab,
+  activeTab,
+  historyFilter,
+  toggleHistoryFilter,
+  hasBetHistory,
+  // setActiveTab
   // bets,
   // isOpenRound,
   // isLiveRound,
@@ -34,7 +59,7 @@ const HistoryPanel: React.FC<Props> = ({
   const handleToggle = () => {
     if (setOpen) setOpen(!open);
   };
-  const [tabValue, setTabValue] = useState(0);
+  // const [tabValue, setTabValue] = useState(0);
   const [valueAccordeon, setValueAccordeon] = useState<number | null | undefined>();
 
   const cardsAccordeon: Array<ICardAccordeon> = [
@@ -119,8 +144,8 @@ const HistoryPanel: React.FC<Props> = ({
       ],
     },
   ];
-  const tabsListSimple = ["All history", "Collected", "Uncollected"];
-  const [tabValueSimple, setTabValueSimple] = useState(0);
+
+  // const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
     <Panel open={open}>
@@ -141,40 +166,46 @@ const HistoryPanel: React.FC<Props> = ({
           </Text>
         </Title>
         <TabsWrap>
-          <TabsHistory tabValue={tabValue} setTabValue={setTabValue} />
+          <TabsHistory tabValue={activeTab} onClick={toggleBaseTab} />
         </TabsWrap>
-        {tabValue === 0 && (
+        {activeTab === HistoryTabs.ROUNDS && (
           <>
             <SimpleTabsWrap>
-              <SimpleTabs tabsList={tabsListSimple} tabValue={tabValueSimple} setTabValue={setTabValueSimple} />
+              <SimpleTabs historyFilter={historyFilter} onClick={toggleHistoryFilter} />
             </SimpleTabsWrap>
-            {tabValueSimple === 0 && (
-              // <NoHistory>
-              //   <Text mb={15}>No prediction history available</Text>
-              //   <Text size="sm" fontWeight={400} letterSpacing="0.05em">
-              //     If you are sure you should see history here, make sure you`re
-              //     connected to the correct wallet and try again
-              //   </Text>
-              // </NoHistory>
-              <Accordeon value={valueAccordeon} setValue={setValueAccordeon} cards={cardsAccordeon} />
-            )}
-            {tabValueSimple === 1 && (
-              <Accordeon
-                value={valueAccordeon}
-                setValue={setValueAccordeon}
-                cards={cardsAccordeon.filter((el) => el.id === 4)}
-              />
-            )}
-            {tabValueSimple === 2 && (
-              <Accordeon
-                value={valueAccordeon}
-                setValue={setValueAccordeon}
-                cards={cardsAccordeon.filter((el) => el.id === 3)}
-              />
+            {hasBetHistory ? (
+              <>
+                {historyFilter === HistoryFilter.ALL && (
+                  // <NoHistory>
+                  //   <Text mb={15}>No prediction history available</Text>
+                  //   <Text size="sm" fontWeight={400} letterSpacing="0.05em">
+                  //     If you are sure you should see history here, make sure you`re
+                  //     connected to the correct wallet and try again
+                  //   </Text>
+                  // </NoHistory>
+                  <Accordeon value={valueAccordeon} setValue={setValueAccordeon} cards={cardsAccordeon} />
+                )}
+                {historyFilter === HistoryFilter.COLLECTED && (
+                  <Accordeon
+                    value={valueAccordeon}
+                    setValue={setValueAccordeon}
+                    cards={cardsAccordeon.filter((el) => el.id === 4)}
+                  />
+                )}
+                {historyFilter === HistoryFilter.UNCOLLECTED && (
+                  <Accordeon
+                    value={valueAccordeon}
+                    setValue={setValueAccordeon}
+                    cards={cardsAccordeon.filter((el) => el.id === 3)}
+                  />
+                )}
+              </>
+            ) : (
+              <NoHistory />
             )}
           </>
         )}
-        {tabValue === 1 && <PnlHistoryPanel />}
+        {activeTab === HistoryTabs.PNL && (hasBetHistory ? <PnlHistoryPanel /> : <NoHistory />)}
       </Wrap>
     </Panel>
   );
@@ -258,11 +289,4 @@ const Flex = styled.div`
 const SimpleTabsWrap = styled.div`
   margin-bottom: 33px;
   padding: 0 20px;
-`;
-
-const NoHistory = styled.div`
-  max-width: 340px;
-  margin: 0 auto;
-  padding: 170px 20px;
-  text-align: center;
 `;
