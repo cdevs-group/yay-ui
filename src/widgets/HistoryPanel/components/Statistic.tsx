@@ -1,24 +1,64 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
-import { bestProps } from "../types";
 
-const Statistic = ({ bestNumber, best }: bestProps) => {
-  const nameRow = (index: number) => {
-    switch (index) {
-      case 0:
-        return { first: "Average", second: "return / round" };
-      case 1:
-        return { first: "Best round:", second: `#${bestNumber?.number}` };
-      case 2:
-        return { first: "Average position", second: "enetered / round" };
-      default:
-        return { first: "Average", second: "return / round" };
-    }
-  };
+interface Props {
+  averageReturn: string;
+  averageReturnPrice: string;
+  colorAverage: string;
+  bestRound: string;
+  hasBestRound: boolean;
+  multiplierBestRound: string;
+  bnbBestRound: string;
+  bestRoundPrice: string;
+  averagePosition: string;
+  averagePositionPrice: string;
+}
 
+const Statistic = ({
+  averageReturn,
+  averageReturnPrice,
+  colorAverage,
+  bestRound,
+  hasBestRound,
+  multiplierBestRound,
+  bnbBestRound,
+  bestRoundPrice,
+  averagePosition,
+  averagePositionPrice
+}: Props) => {
   return (
     <Wrap>
+      <Row>
+        <Text>Average</Text>
+        <Best fontSize="13px" textAlign="right" color={colorAverage}>
+          {averageReturn}
+        </Best>
+        <Text>return / round</Text>
+        <Text textAlign="right">{averageReturnPrice}</Text>
+      </Row>
+      {hasBestRound && (
+        <Row>
+          <Text>Best round: </Text>
+          <Best fontSize="13px" textAlign="right" color="white">
+            <Text color="#A3A3A3" fontSize="13px">
+              {multiplierBestRound}
+            </Text>{" "}
+            {bnbBestRound}
+          </Best>
+          <Text>{bestRound}</Text>
+          <Text textAlign="right">{bestRoundPrice}</Text>
+        </Row>
+      )}
+      <Row>
+        <Text>Average position</Text>
+        <Best fontSize="13px" textAlign="right" color="white">
+          {averagePosition}
+        </Best>
+        <Text>entered / round</Text>
+        <Text textAlign="right">{averagePositionPrice}</Text>
+      </Row>
+{/* 
       {best.map((item, i) => (
         <Row key={i}>
           <Text>{nameRow(i).first}</Text>
@@ -35,7 +75,7 @@ const Statistic = ({ bestNumber, best }: bestProps) => {
           <Text>{nameRow(i).second}</Text>
           <Text textAlign="right">{item.round}</Text>
         </Row>
-      ))}
+      ))} */}
     </Wrap>
   );
 };

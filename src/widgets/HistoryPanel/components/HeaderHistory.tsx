@@ -18,7 +18,7 @@ interface HeaderProps {
   activeTab: HistoryTabs;
   setActiveTab: (value: HistoryTabs) => void;
   handleClose: () => void;
-  switchTab: (tabIndex: number) => Promise<void>;
+  switchTab: ((e: any) => Promise<void>);
   handleChangeTab: (newFilter: HistoryFilter) => any;
   historyFilter: string;
   isFetchingHistory: boolean;

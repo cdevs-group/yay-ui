@@ -4,7 +4,7 @@ import { transparentize } from "polished";
 
 interface TabsProp {
   tabValue: number;
-  onClick: ((e: any) => Promise<void>) | undefined;
+  onClick: ((e: any) => Promise<void>);
 }
 
 const TabsHistory = ({ tabValue, onClick }: TabsProp) => {
