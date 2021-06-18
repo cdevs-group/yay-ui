@@ -5,4 +5,5 @@ export { default as ProgressBar } from "./components/ProgressBar";
 export { default as Statistic } from "./components/Statistic";
 export { default as RoundsLink } from "./components/RoundsLink";
 export { default as Rounds } from "./components/Rounds";
+export { default as AccordeonCard } from "./components/AccordeonCard";
 export type { ICardAccordeon, PnlProp, bestProps, InjectedProps, bestData } from "./types";

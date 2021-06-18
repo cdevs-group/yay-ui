@@ -14,14 +14,13 @@ interface IAccordeon {
 }
 
 const Accordeon = ({ value, setValue, cards, children }: IAccordeon) => {
-  const {valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden} =
-    useAccordeon(cards);
+  const { valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden } = useAccordeon(cards);
 
   return (
     <Wrap>
       <Flipper flipKey={newCards[0]}>
         {newCards.map((item: any) => (
-          <Flipped key={item.id} flipId={item.id} spring="stiff">            
+          <Flipped key={item.id} flipId={item.id} spring="stiff">
             <div key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}

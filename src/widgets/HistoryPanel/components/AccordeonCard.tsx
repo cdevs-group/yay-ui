@@ -19,7 +19,7 @@ export interface IAccordeonCard {
 
 const AccordeonCard = ({ cards, item, collectOrReclaim, round, icon, betLabel, detail }: IAccordeonCard) => {
   const { valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden } = useAccordeon(cards);
-  console.log( active)
+  console.log(active);
   return (
     <Flipped key={item.id} flipId={item.id} spring="stiff">
       <div key={item.id}>
