@@ -15,13 +15,13 @@ interface Props {
 const Rounds = ({ type, rounds, roundsInPercents, roundValue, roundPrice }: Props) => {
   const values = () => {
     switch (type) {
-      case "win":
+      case "won":
         return {
           src: WIN,
           colorRound: "#47DA3B",
           colorValue: "white",
         };
-      case "lose":
+      case "lost":
         return {
           src: LOSE,
           colorRound: "#FF6161",

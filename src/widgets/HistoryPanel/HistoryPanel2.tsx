@@ -60,11 +60,11 @@ const HistoryPanel: React.FC<Props> = ({
     if (setOpen) setOpen(!open);
   };
   // const [tabValue, setTabValue] = useState(0);
-  const [valueAccordeon, setValueAccordeon] = useState<number | null | undefined>();
+  const [valueAccordeon, setValueAccordeon] = useState<string | null | undefined>();
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
-      id: 1,
+      id: '1',
       number: "#0022",
       color: "text",
       text: "Starting soon",
@@ -80,7 +80,7 @@ const HistoryPanel: React.FC<Props> = ({
       ],
     },
     {
-      id: 2,
+      id: '2',
       number: "#0023",
       color: "green",
       text: "Live now",
@@ -97,7 +97,7 @@ const HistoryPanel: React.FC<Props> = ({
       ],
     },
     {
-      id: 3,
+      id: '3',
       number: "#0024",
       color: "redBg",
       text: "-0,001 BNB",
@@ -124,7 +124,7 @@ const HistoryPanel: React.FC<Props> = ({
       ],
     },
     {
-      id: 4,
+      id: '4',
       number: "#0025",
       color: "green",
       text: "+2,001 BNB",
@@ -180,14 +180,14 @@ const HistoryPanel: React.FC<Props> = ({
                   <Accordeon
                     value={valueAccordeon}
                     setValue={setValueAccordeon}
-                    cards={cardsAccordeon.filter((el) => el.id === 4)}
+                    cards={cardsAccordeon.filter((el) => el.id === '4')}
                   />
                 )}
                 {historyFilter === HistoryFilter.UNCOLLECTED && (
                   <Accordeon
                     value={valueAccordeon}
                     setValue={setValueAccordeon}
-                    cards={cardsAccordeon.filter((el) => el.id === 3)}
+                    cards={cardsAccordeon.filter((el) => el.id === '3')}
                   />
                 )}
               </>
