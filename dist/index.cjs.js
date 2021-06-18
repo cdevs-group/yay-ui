@@ -838,17 +838,15 @@ var Price = styled__default['default'].div(templateObject_2$u || (templateObject
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
 var RightText = styled__default['default'].div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n  & path {\n    stroke: ", ";\n  }\n  & svg {\n    margin-right: 10px;\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ",
-    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n  & path {\n    stroke: ",
-    ";\n  }\n  & svg {\n    margin-right: 10px;\n    transform: ",
-    ";\n  }\n"])), function (_a) {
+    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n  & path {\n    stroke: ", ";\n  }\n  & svg {\n    margin-right: 10px;\n    transform: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
     var theme = _a.theme, negative = _a.negative;
-    return negative ? theme.colors.redBg : theme.colors.green;
+    return (negative ? theme.colors.redBg : theme.colors.green);
 }, function (_a) {
     _a.theme; var negative = _a.negative;
-    return negative ? 'rotate(270deg)' : 'rotate(90deg)';
+    return (negative ? "rotate(270deg)" : "rotate(90deg)");
 });
 var ClosedPrice = function (_a) {
     var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative;
@@ -1144,7 +1142,7 @@ var Arrow$1 = function (_a) {
     return (React__default['default'].createElement(ArrowWrap, { center: center },
         React__default['default'].createElement(ArrowIcon, null)));
 };
-var ArrowWrap = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  top: ", ";\n  left: ", ";\n  transform: translate", ";\n  background: ", ";\n  box-shadow: ", ";\n  border: 5px solid ", ";\n  border-radius: 50px;\n"], ["\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  top: ", ";\n  left: ", ";\n  transform: translate", ";\n  background: ", ";\n  box-shadow: ", ";\n  border: 5px solid ", ";\n  border-radius: 50px;\n"])), function (props) { return (props.center ? "50%" : "auto"); }, function (props) { return (props.center ? "50%" : "auto"); }, function (props) { return (props.center ? "(-50%,-50%)" : "0"); }, function (_a) {
+var ArrowWrap = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  top: ", ";\n  left: ", ";\n  transform: translate ", ";\n  background: ", ";\n  box-shadow: ", ";\n  border: 5px solid ", ";\n  border-radius: 50px;\n"], ["\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  top: ", ";\n  left: ", ";\n  transform: translate ", ";\n  background: ", ";\n  box-shadow: ", ";\n  border: 5px solid ", ";\n  border-radius: 50px;\n"])), function (props) { return (props.center ? "50%" : "auto"); }, function (props) { return (props.center ? "50%" : "auto"); }, function (props) { return (props.center ? "(-50%,-50%)" : "0"); }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenGradient;
 }, function (_a) {
