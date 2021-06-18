@@ -25,7 +25,7 @@ const Statistic = ({
   bnbBestRound,
   bestRoundPrice,
   averagePosition,
-  averagePositionPrice
+  averagePositionPrice,
 }: Props) => {
   return (
     <Wrap>
@@ -58,7 +58,7 @@ const Statistic = ({
         <Text>entered / round</Text>
         <Text textAlign="right">{averagePositionPrice}</Text>
       </Row>
-{/* 
+      {/* 
       {best.map((item, i) => (
         <Row key={i}>
           <Text>{nameRow(i).first}</Text>

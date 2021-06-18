@@ -18,12 +18,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const PnlHistoryPanel: React.FC<Props> = ({ children }) => (
-  <Wrap>
-    {children} 
-    
-  </Wrap>
-);
+const PnlHistoryPanel: React.FC<Props> = ({ children }) => <Wrap>{children}</Wrap>;
 
 export default PnlHistoryPanel;
 

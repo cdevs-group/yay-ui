@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { TabsProp } from "./types";
 import Text from "../Text/Text";
-import { HistoryFilter } from "../../widgets/HistoryPanel/HistoryPanel2";
+
+export enum HistoryFilter {
+  ALL = "all",
+  COLLECTED = "collected",
+  UNCOLLECTED = "uncollected",
+}
 
 const SimpleTabs = ({ historyFilter, onClick }: TabsProp) => {
   return (
