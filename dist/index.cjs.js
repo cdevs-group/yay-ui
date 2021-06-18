@@ -1201,9 +1201,7 @@ var BaseLayout = function (_a) {
 };
 var templateObject_1$s;
 
-var Tabs = function (
-// { tabValue, tabsList, setTabValue }: TabsProp
-) {
+var Tabs = function () {
     // const handleTab = (e: any) => {
     //   setTabValue(+e.target.value);
     // };
