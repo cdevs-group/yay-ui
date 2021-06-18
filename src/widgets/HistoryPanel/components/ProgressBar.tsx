@@ -4,7 +4,7 @@ import { Text } from "../../../components/Text";
 interface Props {
   won: number;
   lost: number;
-  percentageWon: number;
+  percentageWon: string;
   result: string;
   price: string;
 }

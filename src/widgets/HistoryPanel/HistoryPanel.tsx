@@ -33,6 +33,7 @@ const Panel = styled.div<{ open: boolean }>`
   width: ${({ open }) => (open ? "436px" : "8px")};
   transition: all 0.3s ease, overflow-y 0ms;
   overflow-y: ${({ open }) => (open ? "auto" : "none")};
+  z-index: 11;
 `;
 const Wrap = styled.div`
   position: relative;

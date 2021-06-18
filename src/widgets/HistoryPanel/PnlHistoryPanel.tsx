@@ -18,25 +18,10 @@ interface Props {
   children: React.ReactNode;
 }
 
-const PnlHistoryPanel: React.FC<Props> = ({ children }) => (
-  <Wrap>
-    {children}
-    <Statistic bestNumber={data.bestNumber} best={data.best} />
-    <Rounds best={data.best} />
-    <ButtonBlock width="100%" variant="green" scale="md">
-      View Reclaimed & Wonv
-      <ArrowIcon fill="rgba(0,0,0,0)" />
-    </ButtonBlock>
-  </Wrap>
-);
+const PnlHistoryPanel: React.FC<Props> = ({ children }) => <Wrap>{children}</Wrap>;
 
 export default PnlHistoryPanel;
 
-const ButtonBlock = styled(Button)`
-  position: relative;
-  top: -30px;
-  z-index: 2;
-`;
 const Wrap = styled.div`
   padding: 0 20px 20px;
   /* height: 1000px; */

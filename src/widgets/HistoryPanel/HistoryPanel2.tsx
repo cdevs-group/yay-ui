@@ -165,9 +165,7 @@ const HistoryPanel: React.FC<Props> = ({
             (0)
           </Text>
         </Title>
-        <TabsWrap>
-          <TabsHistory tabValue={activeTab} onClick={toggleBaseTab} />
-        </TabsWrap>
+        <TabsWrap>{/* <TabsHistory tabValue={activeTab} onClick={toggleBaseTab} /> */}</TabsWrap>
         {activeTab === HistoryTabs.ROUNDS && (
           <>
             <SimpleTabsWrap>
