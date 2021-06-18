@@ -21,7 +21,7 @@ const ArrowWrap = styled.div<{ center?: boolean }>`
 
   top: ${(props) => (props.center ? "50%" : "auto")};
   left: ${(props) => (props.center ? "50%" : "auto")};
-  transform: translate${(props) => (props.center ? "(-50%,-50%)" : "0")};
+  transform: translate ${(props) => (props.center ? "(-50%,-50%)" : "0")};
   background: ${({ theme }) => theme.colors.greenGradient};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border: 5px solid ${({ theme }) => theme.colors.bgGray};

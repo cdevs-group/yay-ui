@@ -806,10 +806,18 @@ var Price = styled.div(templateObject_2$u || (templateObject_2$u = __makeTemplat
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
-var RightText = styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  padding: 6px 12px;\n  background: ",
-    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
+var RightText = styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n  & path {\n    stroke: ", ";\n  }\n  & svg {\n    margin-right: 10px;\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ",
+    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n  & path {\n    stroke: ",
+    ";\n  }\n  & svg {\n    margin-right: 10px;\n    transform: ",
+    ";\n  }\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
+}, function (_a) {
+    var theme = _a.theme, negative = _a.negative;
+    return negative ? theme.colors.redBg : theme.colors.green;
+}, function (_a) {
+    _a.theme; var negative = _a.negative;
+    return negative ? 'rotate(270deg)' : 'rotate(90deg)';
 });
 var ClosedPrice = function (_a) {
     var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative;
@@ -820,6 +828,7 @@ var ClosedPrice = function (_a) {
                 React__default.createElement(Price, { negative: negative }, price),
                 React__default.createElement(Text, { size: "sm", fontWeight: 400, mr: "auto", ml: 9 }, result),
                 React__default.createElement(RightText, { negative: rightText === "UP" ? false : negative },
+                    React__default.createElement(Icon$h, null),
                     React__default.createElement(Price, { negative: rightText === "UP" ? false : negative }, rightText))))));
 };
 var templateObject_1$C, templateObject_2$u, templateObject_3$j;
@@ -849,7 +858,7 @@ var ExpiredCard = function (_a) {
     ];
     return (React__default.createElement(Wrap$8, { className: up ? "" : "red" },
         React__default.createElement(HeaderWrap$1, null,
-            React__default.createElement(CardHeader$1, { icon: React__default.createElement(Icon$k, null), coin: "BNB", upDown: up ? "UP" : "DOWN", num: "#" + round.epoch })),
+            React__default.createElement(CardHeader$1, { icon: React__default.createElement(Icon$k, null), coin: "BNB", negative: !up, num: "#" + round.epoch })),
         React__default.createElement(ClosedPrice, { price: closePrice, rightText: priceDifference, negative: !up }),
         React__default.createElement(Payout, null, payoutArr.map(function (item, i) { return (React__default.createElement("div", { key: i },
             React__default.createElement(Item, null,
@@ -1394,7 +1403,7 @@ var TitleBlock = function (_a) {
 };
 var Block$2 = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
 styled.div(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 186px;\n  margin-right: 50px;\n  border-radius: 50%;\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 186px;\n  margin-right: 50px;\n  border-radius: 50%;\n"])));
-var Img = styled.div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 170px;\n  height: 170px;\n  margin-right: 50px;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: 186px;\n    height: 186px;\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n  }\n  & img {\n    width: 176px;\n    height: 176px;\n    margin-right: 2px;\n    margin-top: 2px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 170px;\n  height: 170px;\n  margin-right: 50px;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: 186px;\n    height: 186px;\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n  }\n  & img {\n    width: 176px;\n    height: 176px;\n    margin-right: 2px;\n    margin-top: 2px;\n  }\n"])), function (_a) {
+var Img = styled.div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 170px;\n  height: 170px;\n  margin-right: 50px;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: 186px;\n    height: 186px;\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n  }\n  & img {\n    min-width: 176px;\n    height: 176px;\n    margin-right: 2px;\n    margin-top: 2px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 170px;\n  height: 170px;\n  margin-right: 50px;\n  border-radius: 50%;\n  border: 2px solid ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: 186px;\n    height: 186px;\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n  }\n  & img {\n    min-width: 176px;\n    height: 176px;\n    margin-right: 2px;\n    margin-top: 2px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, function (_a) {
@@ -2482,7 +2491,7 @@ var Wrap$1 = styled.div(templateObject_2$4 || (templateObject_2$4 = __makeTempla
 var templateObject_1$5, templateObject_2$4;
 
 var HistoryPanel = function (_a) {
-    var setOpen = _a.setOpen, open = _a.open; _a.children;
+    var setOpen = _a.setOpen, open = _a.open;
     var handleToggle = function () {
         if (setOpen)
             setOpen(!open);
@@ -2581,7 +2590,7 @@ var Wrap = styled.div(templateObject_2$3 || (templateObject_2$3 = __makeTemplate
     var theme = _a.theme;
     return theme.colors.panel;
 });
-var ButtonToggle = styled.button(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: absolute;\n  left: -20px;\n  top: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  transform: translateY(-50%);\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"], ["\n  position: absolute;\n  left: -20px;\n  top: 50%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  transform: translateY(-50%);\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
+var ButtonToggle = styled.button(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"], ["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
     var open = _a.open;
     return (open ? "scale(-1,1)" : "scale(1,1)");
 }, function (_a) {
@@ -2766,7 +2775,7 @@ var templateObject_1$3, templateObject_2$2;
 
 var MenuLink = function (_a) {
     var name = _a.name, url = _a.url, size = _a.size;
-    return (React__default.createElement(Link, { to: url },
+    return (React__default.createElement(Link, { to: url, exact: true },
         React__default.createElement(LinkItem, { size: size }, name)));
 };
 var Link = styled(NavLink)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject([""], [""])));
