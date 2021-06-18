@@ -17,9 +17,9 @@ export const TabsMain: React.FC = () => {
 
   return (
     <div style={{ width: 300 }}>
-      <Tabs setTabValue={setTabValue} tabValue={tabValue} tabsList={tabsList} />
+      {/* <Tabs setTabValue={setTabValue} tabValue={tabValue} tabsList={tabsList} /> */}
       <div style={{ marginTop: 50 }}>
-        <SimpleTabs tabValue={tabValueSimple} tabsList={tabsListSimple} setTabValue={setTabValueSimple} />
+        {/* <SimpleTabs tabValue={tabValueSimple} tabsList={tabsListSimple} setTabValue={setTabValueSimple} /> */}
       </div>
     </div>
   );
