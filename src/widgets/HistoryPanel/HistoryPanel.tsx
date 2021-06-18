@@ -25,7 +25,7 @@ interface Props extends InjectedProps {
   // setActiveTab: (value: HistoryTabs) => void
   historyFilter: string;
   toggleHistoryFilter?: ((e: any) => () => Promise<void>) | undefined;
-  hasBetHistory: true
+  hasBetHistory: true;
 }
 
 export enum HistoryTabs {
@@ -176,13 +176,6 @@ const HistoryPanel: React.FC<Props> = ({
             {hasBetHistory ? (
               <>
                 {historyFilter === HistoryFilter.ALL && (
-                  // <NoHistory>
-                  //   <Text mb={15}>No prediction history available</Text>
-                  //   <Text size="sm" fontWeight={400} letterSpacing="0.05em">
-                  //     If you are sure you should see history here, make sure you`re
-                  //     connected to the correct wallet and try again
-                  //   </Text>
-                  // </NoHistory>
                   <Accordeon value={valueAccordeon} setValue={setValueAccordeon} cards={cardsAccordeon} />
                 )}
                 {historyFilter === HistoryFilter.COLLECTED && (
