@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HistoryPanel from "./HistoryPanel";
+import HistoryPanel from "./HistoryPanel2";
 import PnlHistoryPanel from "./PnlHistoryPanel";
 
 export default {
@@ -23,7 +23,7 @@ enum HistoryFilter {
   const [historyFilter, setHistoryFilter] = useState("all");
 
   
-  const toggleHistoryFilter = (newFilter: HistoryFilter) => async () => {console.log('dfg')
+  const toggleHistoryFilter = (newFilter: HistoryFilter) => async () => {
   if (newFilter !== historyFilter) {
     setHistoryFilter(newFilter)
   }

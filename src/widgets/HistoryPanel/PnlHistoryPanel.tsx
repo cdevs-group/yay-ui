@@ -14,10 +14,13 @@ const data = {
     { win: false, average: 0.12, round: 0.1231 },
   ],
 };
+interface Props {
+  children: React.ReactNode;
+}
 
-const PnlHistoryPanel = () => (
+const PnlHistoryPanel: React.FC<Props> = ({ children }) => (
   <Wrap>
-    <ProgressBar best={data.best} />
+    {children}
     <Statistic bestNumber={data.bestNumber} best={data.best} />
     <Rounds best={data.best} />
     <ButtonBlock width="100%" variant="green" scale="md">

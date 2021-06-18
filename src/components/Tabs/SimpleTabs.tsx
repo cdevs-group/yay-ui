@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { TabsProp } from "./types";
 import Text from "../Text/Text";
-import { HistoryFilter } from "../../widgets/HistoryPanel/HistoryPanel";
+import { HistoryFilter } from "../../widgets/HistoryPanel/HistoryPanel2";
 
 const SimpleTabs = ({ historyFilter, onClick }: TabsProp) => {
     
