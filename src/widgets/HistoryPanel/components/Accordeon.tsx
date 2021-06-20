@@ -14,13 +14,12 @@ interface IAccordeon {
   children?: React.ReactNode;
 }
 
-const Accordeon = ({ cards, children }: IAccordeon) => { 
+const Accordeon = ({ cards, children }: IAccordeon) => {
   return (
     <Wrap>
       <Flipper flipKey={cards[0]}>
-        
-         {children}
-          {/* <Flipped key={item.id} flipId={item.id} spring="stiff">
+        {children}
+        {/* <Flipped key={item.id} flipId={item.id} spring="stiff">
             <div key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
@@ -48,7 +47,6 @@ const Accordeon = ({ cards, children }: IAccordeon) => {
               </HiddenBlockWrap>
             </div>
           </Flipped> */}
-
       </Flipper>
     </Wrap>
   );

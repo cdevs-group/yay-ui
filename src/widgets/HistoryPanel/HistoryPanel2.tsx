@@ -178,16 +178,18 @@ const HistoryPanel: React.FC<Props> = ({
               <>
                 {historyFilter === HistoryFilter.ALL && (
                   <Accordeon cards={newCards}>
-                    {newCards.map((item: any) => (<AccordeonCard
-                      item={item}
-                      round={item.id}
-                      valueAccordeon={valueAccordeon}
-                      heightActiveBlock={heightActiveBlock}
-                      handleToggle={handleToggleAccordeon}
-                      active={active}
-                      refHidden={refHidden}
-                      detail={"detail"+item.id}
-                    />))}
+                    {newCards.map((item: any) => (
+                      <AccordeonCard
+                        item={item}
+                        round={item.id}
+                        valueAccordeon={valueAccordeon}
+                        heightActiveBlock={heightActiveBlock}
+                        handleToggle={handleToggleAccordeon}
+                        active={active}
+                        refHidden={refHidden}
+                        detail={"detail" + item.id}
+                      />
+                    ))}
                   </Accordeon>
                 )}
                 {/* {historyFilter === HistoryFilter.COLLECTED && (

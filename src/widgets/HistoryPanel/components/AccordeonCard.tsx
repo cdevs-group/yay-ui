@@ -33,7 +33,6 @@ const AccordeonCard = ({
   active,
   refHidden,
 }: IAccordeonCard) => {
-
   return (
     <Flipped key={item.id} flipId={item.id} spring="stiff">
       <div key={item.id}>
