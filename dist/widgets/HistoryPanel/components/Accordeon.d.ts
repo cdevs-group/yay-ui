@@ -1,9 +1,7 @@
 import React from "react";
-import { ICardAccordeon } from "../types";
+import { Bet } from "../types";
 interface IAccordeon {
-    value?: string | null;
-    setValue?: (value: any) => void;
-    cards: Array<ICardAccordeon>;
+    cards: Array<Bet>;
     children?: React.ReactNode;
 }
 declare const Accordeon: ({ cards, children }: IAccordeon) => JSX.Element;

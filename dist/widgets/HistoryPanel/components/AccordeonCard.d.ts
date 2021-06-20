@@ -10,7 +10,7 @@ export interface IAccordeonCard {
     valueAccordeon: string | null | undefined;
     heightActiveBlock: number;
     handleToggle: (item: Bet) => void;
-    active: Bet;
+    active: Bet | undefined;
     refHidden: RefObject<HTMLDivElement> | null | undefined;
 }
 declare const AccordeonCard: ({ item, collectOrReclaim, round, icon, betLabel, detail, valueAccordeon, heightActiveBlock, handleToggle, active, refHidden, }: IAccordeonCard) => JSX.Element;
