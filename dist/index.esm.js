@@ -1932,7 +1932,7 @@ var useAccordeon = function (cards) {
     var _c = useState(0), heightActiveBlock = _c[0], setHeightActiveBlock = _c[1];
     var refHidden = useRef(null);
     var _d = useState(cards), newCards = _d[0], setNewCards = _d[1];
-    var handleToggle = function (item) {
+    var handleToggleAccordeon = function (item) {
         if (active && active.id !== item.id) {
             setActive(item);
         }
@@ -1957,7 +1957,7 @@ var useAccordeon = function (cards) {
     useEffect(function () {
         setNewCards(__spreadArray(__spreadArray([], filterActiveCard), filterCards));
     }, [active]);
-    return { valueAccordeon: valueAccordeon, setValueAccordeon: setValueAccordeon, heightActiveBlock: heightActiveBlock, handleToggle: handleToggle, newCards: newCards, active: active, refHidden: refHidden };
+    return { valueAccordeon: valueAccordeon, setValueAccordeon: setValueAccordeon, heightActiveBlock: heightActiveBlock, handleToggleAccordeon: handleToggleAccordeon, newCards: newCards, active: active, refHidden: refHidden };
 };
 
 var StyledModal = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 404px;\n    max-width: 100%;\n  }\n"], ["\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  width: 100%;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    width: auto;\n    min-width: 404px;\n    max-width: 100%;\n  }\n"])), function (_a) {
@@ -2457,9 +2457,7 @@ var Column = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTempla
 var templateObject_1$5, templateObject_2$4, templateObject_3$2, templateObject_4$1;
 
 var AccordeonCard = function (_a) {
-    var cards = _a.cards, item = _a.item, collectOrReclaim = _a.collectOrReclaim, round = _a.round, icon = _a.icon, betLabel = _a.betLabel, detail = _a.detail;
-    var _b = useAccordeon(cards), valueAccordeon = _b.valueAccordeon, heightActiveBlock = _b.heightActiveBlock, handleToggle = _b.handleToggle; _b.newCards; var active = _b.active, refHidden = _b.refHidden;
-    console.log(active);
+    var item = _a.item, collectOrReclaim = _a.collectOrReclaim, round = _a.round, icon = _a.icon, betLabel = _a.betLabel, detail = _a.detail, valueAccordeon = _a.valueAccordeon, heightActiveBlock = _a.heightActiveBlock, handleToggle = _a.handleToggle, active = _a.active, refHidden = _a.refHidden;
     return (React__default.createElement(Flipped, { key: item.id, flipId: item.id, spring: "stiff" },
         React__default.createElement("div", { key: item.id },
             React__default.createElement(Card, { onClick: function () { return handleToggle(item); }, className: active && active.id === item.id && valueAccordeon ? "active" : "" },

@@ -1,12 +1,12 @@
-import React from "react";
+/// <reference types="react" />
 import { Bet } from "../../widgets/HistoryPanel/types";
 declare const useAccordeon: (cards: any) => {
     valueAccordeon: string | null | undefined;
-    setValueAccordeon: React.Dispatch<React.SetStateAction<string | null | undefined>>;
+    setValueAccordeon: import("react").Dispatch<import("react").SetStateAction<string | null | undefined>>;
     heightActiveBlock: number;
-    handleToggle: (item: Bet) => void;
+    handleToggleAccordeon: (item: Bet) => void;
     newCards: any;
     active: Bet;
-    refHidden: React.MutableRefObject<HTMLDivElement | null>;
+    refHidden: import("react").MutableRefObject<HTMLDivElement | null>;
 };
 export default useAccordeon;

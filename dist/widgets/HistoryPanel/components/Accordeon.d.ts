@@ -6,5 +6,5 @@ interface IAccordeon {
     cards: Array<ICardAccordeon>;
     children?: React.ReactNode;
 }
-declare const Accordeon: ({ value, setValue, cards, children }: IAccordeon) => JSX.Element;
+declare const Accordeon: ({ cards, children }: IAccordeon) => JSX.Element;
 export default Accordeon;
