@@ -16,7 +16,7 @@ export interface IAccordeonCard {
   valueAccordeon: string | null | undefined;
   heightActiveBlock: number;
   handleToggle: (item: Bet) => void;
-  active: Bet;
+  active: Bet | undefined;
   refHidden: RefObject<HTMLDivElement> | null | undefined;
 }
 
@@ -43,9 +43,7 @@ const AccordeonCard = ({
           <Text>{round}</Text>
           {collectOrReclaim && collectOrReclaim}
           <Flex alignItems="center">
-            {/* <Text mr={15} color={item.color}> */}
             {betLabel}
-            {/* </Text> */}
             {icon || <ArrowDownIcon />}
           </Flex>
         </Card>

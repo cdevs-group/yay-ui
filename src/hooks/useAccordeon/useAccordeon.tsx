@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Bet } from "../../widgets/HistoryPanel/types";
 
-const useAccordeon = (cards: any) => {
+const useAccordeon = (cards?: any) => {
   const [valueAccordeon, setValueAccordeon] = useState<string | null | undefined>();
-  const [active, setActive] = useState<Bet>(cards[0]);
+  const [active, setActive] = useState<Bet>();
   const [heightActiveBlock, setHeightActiveBlock] = useState<number>(0);
   const refHidden = useRef<HTMLDivElement | null>(null);
-  const [newCards, setNewCards] = useState(cards);
+  const [newCards, setNewCards] = useState<Array<Bet>>([]);
 
   const handleToggleAccordeon = (item: Bet) => {
     if (active && active.id !== item.id) {
@@ -20,6 +20,7 @@ const useAccordeon = (cards: any) => {
   };
 
   useEffect(() => {
+    setActive(cards?.[0]);
     setValueAccordeon && setValueAccordeon(undefined);
   }, []);
 
@@ -29,8 +30,8 @@ const useAccordeon = (cards: any) => {
     }
   }, [valueAccordeon]);
 
-  const filterCards = useMemo(() => cards.filter((el: any) => el.id !== active.id), [active]);
-  const filterActiveCard = useMemo(() => cards.filter((el: any) => el.id === active.id), [active]);
+  const filterCards = useMemo(() => cards?.filter((el: any) => el?.id !== active?.id), [active, cards]);
+  const filterActiveCard = useMemo(() => cards?.filter((el: any) => el?.id === active?.id), [active, cards]);
 
   useEffect(() => {
     setNewCards([...filterActiveCard, ...filterCards]);

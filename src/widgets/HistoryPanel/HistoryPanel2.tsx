@@ -180,6 +180,7 @@ const HistoryPanel: React.FC<Props> = ({
                   <Accordeon cards={newCards}>
                     {newCards.map((item: any) => (
                       <AccordeonCard
+                        key={item.id}
                         item={item}
                         round={item.id}
                         valueAccordeon={valueAccordeon}
@@ -192,14 +193,10 @@ const HistoryPanel: React.FC<Props> = ({
                     ))}
                   </Accordeon>
                 )}
-                {/* {historyFilter === HistoryFilter.COLLECTED && (
-                  <Accordeon
-                    value={valueAccordeon}
-                    setValue={setValueAccordeon}
-                    cards={cardsAccordeon.filter((el) => el.id === "4")}
-                  />
+                {historyFilter === HistoryFilter.COLLECTED && (
+                  <div>No result</div>
                 )}
-                {historyFilter === HistoryFilter.UNCOLLECTED && (
+                {/* {historyFilter === HistoryFilter.UNCOLLECTED && (
                   <Accordeon
                     value={valueAccordeon}
                     setValue={setValueAccordeon}
