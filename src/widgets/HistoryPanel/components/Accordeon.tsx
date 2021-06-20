@@ -1,11 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Flipper, Flipped } from "react-flip-toolkit";
+import { Flipper } from "react-flip-toolkit";
 import { ICardAccordeon } from "../types";
-import { Text } from "../../../components/Text";
-import { Flex } from "../../../components/Box";
-import useAccordeon from "../../../hooks/useAccordeon/useAccordeon";
-import AccordeonCard from "./AccordeonCard";
 
 interface IAccordeon {
   value?: string | null;
@@ -18,35 +14,7 @@ const Accordeon = ({ cards, children }: IAccordeon) => {
   return (
     <Wrap>
       <Flipper flipKey={cards[0]}>
-        {children}
-        {/* <Flipped key={item.id} flipId={item.id} spring="stiff">
-            <div key={item.id}>
-              <Card
-                onClick={() => handleToggle(item)}
-                className={active && active.id === item.id && valueAccordeon ? "active" : ""}
-              >
-                <Text>{item.number}</Text>
-                {item.collect && <Collect>Collect</Collect>}
-                <Flex alignItems="center">
-                  <Text mr={15} color={item.color}>
-                    {item.text}
-                  </Text>
-                  {item.icon}
-                </Flex>
-              </Card>
-              <HiddenBlockWrap
-                style={{
-                  height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
-                }}
-              >
-                <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
-                  {item.content.map((el: any, i: number) => (
-                    <HiddenItem key={i}>{el}</HiddenItem>
-                  ))}
-                </HiddenBlock>
-              </HiddenBlockWrap>
-            </div>
-          </Flipped> */}
+        {children}        
       </Flipper>
     </Wrap>
   );
