@@ -13,9 +13,7 @@ interface IAccordeon {
 const Accordeon = ({ cards, children }: IAccordeon) => {
   return (
     <Wrap>
-      <Flipper flipKey={cards[0]}>
-        {children}        
-      </Flipper>
+      <Flipper flipKey={cards[0]}>{children}</Flipper>
     </Wrap>
   );
 };
