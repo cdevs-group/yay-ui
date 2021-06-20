@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { ArrowPanel, BtnPanel, CloseIcon, ArrowDownIcon, PlayIcon, WatchIcon } from "../../components/Svg";
 import { SimpleTabs } from "../../components/Tabs";
 import { Text } from "../../components/Text";
+import { useAccordeon } from "../../hooks";
 import Accordeon from "./components/Accordeon";
+import AccordeonCard from "./components/AccordeonCard";
 import NoHistory from "./components/NoHistory";
 import RoundHistory from "./components/RoundHistory";
 import TabsHistory from "./components/TabsHistory";
@@ -60,7 +62,7 @@ const HistoryPanel: React.FC<Props> = ({
     if (setOpen) setOpen(!open);
   };
   // const [tabValue, setTabValue] = useState(0);
-  const [valueAccordeon, setValueAccordeon] = useState<string | null | undefined>();
+  // const [valueAccordeon, setValueAccordeon] = useState<string | null | undefined>();
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
@@ -144,7 +146,8 @@ const HistoryPanel: React.FC<Props> = ({
       ],
     },
   ];
-
+  const { valueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden } =
+    useAccordeon(cardsAccordeon);
   // const [tabValueSimple, setTabValueSimple] = useState(0);
 
   return (
@@ -174,9 +177,20 @@ const HistoryPanel: React.FC<Props> = ({
             {hasBetHistory ? (
               <>
                 {historyFilter === HistoryFilter.ALL && (
-                  <Accordeon value={valueAccordeon} setValue={setValueAccordeon} cards={cardsAccordeon} />
+                  <Accordeon cards={newCards}>
+                    {newCards.map((item: any) => (<AccordeonCard
+                      item={item}
+                      round={item.id}
+                      valueAccordeon={valueAccordeon}
+                      heightActiveBlock={heightActiveBlock}
+                      handleToggle={handleToggleAccordeon}
+                      active={active}
+                      refHidden={refHidden}
+                      detail={"detail"+item.id}
+                    />))}
+                  </Accordeon>
                 )}
-                {historyFilter === HistoryFilter.COLLECTED && (
+                {/* {historyFilter === HistoryFilter.COLLECTED && (
                   <Accordeon
                     value={valueAccordeon}
                     setValue={setValueAccordeon}
@@ -189,7 +203,7 @@ const HistoryPanel: React.FC<Props> = ({
                     setValue={setValueAccordeon}
                     cards={cardsAccordeon.filter((el) => el.id === "3")}
                   />
-                )}
+                )} */}
               </>
             ) : (
               <NoHistory />

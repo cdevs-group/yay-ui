@@ -1,25 +1,39 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { Flipped } from "react-flip-toolkit";
 import styled from "styled-components";
 import { Bet } from "../types";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { ArrowDownIcon } from "../../../components/Svg";
-import { useAccordeon } from "../../../hooks";
 
 export interface IAccordeonCard {
-  cards: any;
   item: Bet;
   collectOrReclaim?: React.ReactNode;
   round?: string;
   icon?: React.ReactNode;
   betLabel?: React.ReactNode;
   detail?: React.ReactNode;
+  valueAccordeon: string | null | undefined;
+  heightActiveBlock: number;
+  handleToggle: (item: Bet) => void;
+  active: Bet;
+  refHidden: RefObject<HTMLDivElement> | null | undefined;
 }
 
-const AccordeonCard = ({ cards, item, collectOrReclaim, round, icon, betLabel, detail }: IAccordeonCard) => {
-  const { valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden } = useAccordeon(cards);
-  console.log(active);
+const AccordeonCard = ({
+  item,
+  collectOrReclaim,
+  round,
+  icon,
+  betLabel,
+  detail,
+  valueAccordeon,
+  heightActiveBlock,
+  handleToggle,
+  active,
+  refHidden,
+}: IAccordeonCard) => {
+
   return (
     <Flipped key={item.id} flipId={item.id} spring="stiff">
       <div key={item.id}>

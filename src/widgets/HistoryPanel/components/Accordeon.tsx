@@ -5,6 +5,7 @@ import { ICardAccordeon } from "../types";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import useAccordeon from "../../../hooks/useAccordeon/useAccordeon";
+import AccordeonCard from "./AccordeonCard";
 
 interface IAccordeon {
   value?: string | null;
@@ -13,14 +14,13 @@ interface IAccordeon {
   children?: React.ReactNode;
 }
 
-const Accordeon = ({ value, setValue, cards, children }: IAccordeon) => {
-  const { valueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden } = useAccordeon(cards);
-
+const Accordeon = ({ cards, children }: IAccordeon) => { 
   return (
     <Wrap>
-      <Flipper flipKey={newCards[0]}>
-        {newCards.map((item: any) => (
-          <Flipped key={item.id} flipId={item.id} spring="stiff">
+      <Flipper flipKey={cards[0]}>
+        
+         {children}
+          {/* <Flipped key={item.id} flipId={item.id} spring="stiff">
             <div key={item.id}>
               <Card
                 onClick={() => handleToggle(item)}
@@ -47,8 +47,8 @@ const Accordeon = ({ value, setValue, cards, children }: IAccordeon) => {
                 </HiddenBlock>
               </HiddenBlockWrap>
             </div>
-          </Flipped>
-        ))}
+          </Flipped> */}
+
       </Flipper>
     </Wrap>
   );

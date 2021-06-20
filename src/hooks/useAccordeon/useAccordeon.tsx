@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Bet } from "../../widgets/HistoryPanel/types";
 
 const useAccordeon = (cards: any) => {
@@ -8,7 +8,7 @@ const useAccordeon = (cards: any) => {
   const refHidden = useRef<HTMLDivElement | null>(null);
   const [newCards, setNewCards] = useState(cards);
 
-  const handleToggle = (item: Bet) => {
+  const handleToggleAccordeon = (item: Bet) => {
     if (active && active.id !== item.id) {
       setActive(item);
     }
@@ -36,7 +36,7 @@ const useAccordeon = (cards: any) => {
     setNewCards([...filterActiveCard, ...filterCards]);
   }, [active]);
 
-  return { valueAccordeon, setValueAccordeon, heightActiveBlock, handleToggle, newCards, active, refHidden };
+  return { valueAccordeon, setValueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden };
 };
 
 export default useAccordeon;
