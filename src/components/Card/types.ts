@@ -16,6 +16,12 @@ export interface CardProps{
   active?:boolean
 }
 
+export interface StyledCardProps{
+  children?:ReactNode;
+  leftContent?:string;
+  rightContent?:string;
+}
+
 export interface CardTheme{
   background: string
   boxShadow: string

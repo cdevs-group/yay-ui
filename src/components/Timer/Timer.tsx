@@ -73,6 +73,6 @@ const Block = styled.div<TimerColorProps>`
 `;
 
 const Dots = styled.div`
-  margin: 0 12px;
+  /* margin: 0 12px; */
   color: ${({ theme }) => theme.colors.text};
 `;
