@@ -16,6 +16,7 @@ const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 28px;
+  width: 308px
 `
 
 const Button = styled.button`
