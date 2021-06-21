@@ -17,9 +17,6 @@ const Wrap = styled.div`
   background: ${({ theme }) => theme.colors.linkColor};
   z-index: 1;
   min-height: 480px;
-  &.red { 
-    /* background: red; */
-  }
   &::before{
     position: absolute;
     display: block;
