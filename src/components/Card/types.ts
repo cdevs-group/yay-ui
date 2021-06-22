@@ -4,6 +4,11 @@ export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string;
   rightContent?: string;
+  isReturn?:boolean;
+  setIsReturn:(isReturn:string)=>void;
+  isAuth:boolean;
+  setConfirm:()=>void;
+  setChoice:()=>void;
 }
 
 export interface CardHeaderProps {
@@ -20,6 +25,11 @@ export interface CardHeaderProps {
 export interface CardProps {
   children?: ReactNode;
   active?: boolean;
+  isReturn?:boolean;
+  setIsReturn:(isReturn:string)=>void;
+  isAuth:boolean;
+  setConfirm:()=>void;
+  setChoice:()=>void;
 }
 
 export interface CardTheme {
