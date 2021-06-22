@@ -1,4 +1,9 @@
 import { ReactNode } from "react";
+export interface StyledCardProps {
+    children?: ReactNode;
+    leftContent?: string;
+    rightContent?: string;
+}
 export interface CardHeaderProps {
     icon?: ReactNode;
     coin: string;

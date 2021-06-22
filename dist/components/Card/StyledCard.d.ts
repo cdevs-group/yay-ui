@@ -1,2 +1,4 @@
-declare const StyledCard: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+import React from "react";
+import { StyledCardProps } from "./types";
+declare const StyledCard: React.FC<StyledCardProps>;
 export default StyledCard;

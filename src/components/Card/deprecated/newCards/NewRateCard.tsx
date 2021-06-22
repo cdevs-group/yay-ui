@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import PriceBlock from "./components/PriceBlock";
-import { BnbIcon, CompleteIcon } from "../Svg";
-import CardHeader from "./components/CardHeader";
-import Button from "../Button/Button";
-import { Button as Input } from "../../widgets/WalletModal/ConnectModal";
+import PriceBlock from "../../components/PriceBlock";
+import { BnbIcon, CompleteIcon } from "../../../Svg";
+import CardHeader from "../../components/CardHeader";
+import Button from "../../../Button/Button";
+import { Button as Input } from "../../../../widgets/WalletModal/ConnectModal";
 
 const Wrap = styled.div`
   padding: 22px 19px 0 22px;
