@@ -15,7 +15,7 @@ export interface IAccordeonCard {
   detail?: React.ReactNode;
   valueAccordeon: string | null | undefined;
   heightActiveBlock: number;
-  handleToggle: (item: Bet) => void;
+  handleToggle: (e: any,item: Bet) => void;
   active: Bet | undefined;
   refHidden: RefObject<HTMLDivElement> | null | undefined;
 }
@@ -37,7 +37,7 @@ const AccordeonCard = ({
     <Flipped key={item.id} flipId={item.id} spring="stiff">
       <div key={item.id}>
         <Card
-          onClick={() => handleToggle(item)}
+          onClick={(e) => handleToggle(e,item)}
           className={active && active.id === item.id && valueAccordeon ? "active" : ""}
         >
           <Text>{round}</Text>
