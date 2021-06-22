@@ -35,7 +35,7 @@ const useAccordeon = (cards?: any) => {
 
   useEffect(() => {
     setNewCards([...filterActiveCard, ...filterCards]);
-  }, [active]);
+  }, [active, cards.length]);
 
   return { valueAccordeon, setValueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden };
 };

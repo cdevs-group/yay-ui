@@ -7,11 +7,11 @@ interface IRoundHistory {
   price: string;
   priceRightText: string;
   result?: string;
-  up: string | React.ReactNode;
-  down: string | React.ReactNode;
+  up: React.ReactNode;
+  down: React.ReactNode;
   prizePool: string;
-  openingBlock?: string;
-  closingBlock?: string;
+  openingBlock?: string | React.ReactNode;
+  closingBlock?: string | React.ReactNode;
   negative?: boolean;
 }
 

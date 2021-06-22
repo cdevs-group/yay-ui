@@ -11,6 +11,9 @@ const StyledLink = styled(Text)<LinkProps>`
   &:hover {
     text-decoration: underline;
   }
+  & svg {
+    fill: ${({ theme }) => theme.colors.green};
+  }
 `;
 
 const Link: React.FC<any> = ({ external, ...props }) => {
@@ -19,7 +22,7 @@ const Link: React.FC<any> = ({ external, ...props }) => {
 };
 
 Link.defaultProps = {
-  color: "primary",
+  color: "green",
 };
 
 export default Link;
