@@ -8,11 +8,9 @@ const useAccordeon = (cards?: any) => {
   const refHidden = useRef<HTMLDivElement | null>(null);
   const [newCards, setNewCards] = useState<Array<Bet>>([]);
 
-  const handleToggleAccordeon = (e: any,item: Bet) => {
+  const handleToggleAccordeon = (item: Bet) => {
     if (active && active.id !== item.id) {
       setActive(item);
-
-      setHeightActiveBlock(e.target?.nextElementSibling?.firstElementChild?.clientHeight)
     }
     if (valueAccordeon && valueAccordeon === item.id) {
       setValueAccordeon && setValueAccordeon(undefined);
@@ -26,14 +24,10 @@ const useAccordeon = (cards?: any) => {
     setValueAccordeon && setValueAccordeon(undefined);
   }, []);
 
-  useEffect(() => {
-    // console.log(el && el.nextElementSibling.firstElementChild.clientHeight)
-    // if (el) {
-    //   setHeightActiveBlock(el?.nextElementSibling?.firstElementChild?.clientHeight);
-    // }
-    // if (refHidden?.current) {
-    //   setHeightActiveBlock(refHidden?.current?.clientHeight);
-    // }
+  useEffect(() => {   
+    if (refHidden?.current) {
+      setHeightActiveBlock(refHidden?.current?.clientHeight);
+    }
   }, [active, cards.length]);
 
   const filterCards = useMemo(() => cards?.filter((el: any) => el?.id !== active?.id), [active, cards]);
