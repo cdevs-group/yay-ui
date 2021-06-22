@@ -2006,11 +2006,9 @@ var useAccordeon = function (cards) {
     var _c = useState(0), heightActiveBlock = _c[0], setHeightActiveBlock = _c[1];
     var refHidden = useRef(null);
     var _d = useState([]), newCards = _d[0], setNewCards = _d[1];
-    var handleToggleAccordeon = function (e, item) {
-        var _a, _b, _c;
+    var handleToggleAccordeon = function (item) {
         if (active && active.id !== item.id) {
             setActive(item);
-            setHeightActiveBlock((_c = (_b = (_a = e.target) === null || _a === void 0 ? void 0 : _a.nextElementSibling) === null || _b === void 0 ? void 0 : _b.firstElementChild) === null || _c === void 0 ? void 0 : _c.clientHeight);
         }
         if (valueAccordeon && valueAccordeon === item.id) {
             setValueAccordeon && setValueAccordeon(undefined);
@@ -2024,13 +2022,10 @@ var useAccordeon = function (cards) {
         setValueAccordeon && setValueAccordeon(undefined);
     }, []);
     useEffect(function () {
-        // console.log(el && el.nextElementSibling.firstElementChild.clientHeight)
-        // if (el) {
-        //   setHeightActiveBlock(el?.nextElementSibling?.firstElementChild?.clientHeight);
-        // }
-        // if (refHidden?.current) {
-        //   setHeightActiveBlock(refHidden?.current?.clientHeight);
-        // }
+        var _a;
+        if (refHidden === null || refHidden === void 0 ? void 0 : refHidden.current) {
+            setHeightActiveBlock((_a = refHidden === null || refHidden === void 0 ? void 0 : refHidden.current) === null || _a === void 0 ? void 0 : _a.clientHeight);
+        }
     }, [active, cards.length]);
     var filterCards = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) !== (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
     var filterActiveCard = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) === (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
@@ -2540,7 +2535,7 @@ var AccordeonCard = function (_a) {
     var item = _a.item, collectOrReclaim = _a.collectOrReclaim, round = _a.round, icon = _a.icon, betLabel = _a.betLabel, detail = _a.detail, valueAccordeon = _a.valueAccordeon, heightActiveBlock = _a.heightActiveBlock, handleToggle = _a.handleToggle, active = _a.active, refHidden = _a.refHidden;
     return (React__default.createElement(Flipped, { key: item.id, flipId: item.id, spring: "stiff" },
         React__default.createElement("div", { key: item.id },
-            React__default.createElement(Card, { onClick: function (e) { return handleToggle(e, item); }, className: active && active.id === item.id && valueAccordeon ? "active" : "" },
+            React__default.createElement(Card, { onClick: function () { return handleToggle(item); }, className: active && active.id === item.id && valueAccordeon ? "active" : "" },
                 React__default.createElement(Text, null, round),
                 collectOrReclaim && collectOrReclaim,
                 React__default.createElement(Flex, { alignItems: "center" },

@@ -9,7 +9,7 @@ export interface IAccordeonCard {
     detail?: React.ReactNode;
     valueAccordeon: string | null | undefined;
     heightActiveBlock: number;
-    handleToggle: (e: any, item: Bet) => void;
+    handleToggle: (item: Bet) => void;
     active: Bet | undefined;
     refHidden: RefObject<HTMLDivElement> | null | undefined;
 }

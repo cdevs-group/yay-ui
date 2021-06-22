@@ -24,7 +24,7 @@ const useAccordeon = (cards?: any) => {
     setValueAccordeon && setValueAccordeon(undefined);
   }, []);
 
-  useEffect(() => {   
+  useEffect(() => {
     if (refHidden?.current) {
       setHeightActiveBlock(refHidden?.current?.clientHeight);
     }
