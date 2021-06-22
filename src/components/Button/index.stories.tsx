@@ -95,47 +95,45 @@ export const Variants: React.FC = () => {
     <div>
       <BrowserRouter>
         <Row>
-          <Button width='170px' scale='md' variant='green'>
+          <Button width="170px" scale="md" variant="green">
             Button
-      </Button>
-          <Button width='170px' disabled scale='md' variant='green'>
+          </Button>
+          <Button width="170px" disabled scale="md" variant="green">
             Button
-      </Button>
-          <Button width='170px' scale='md' variant='option'>
+          </Button>
+          <Button width="170px" scale="md" variant="option">
             Button
-      </Button>
+          </Button>
         </Row>
         <Row>
-          <Button width='170px' scale='md' variant='pink'>
+          <Button width="170px" scale="md" variant="pink">
             Button
-      </Button>
-          <Button width='170px' disabled scale='md' variant='pink'>
+          </Button>
+          <Button width="170px" disabled scale="md" variant="pink">
             Button
-      </Button>
-          <Button width='300px' spin scale='md' variant='green'>
-          Collect Winnings 
-      </Button>
+          </Button>
+          <Button width="300px" spin scale="md" variant="green">
+            Collect Winnings
+          </Button>
         </Row>
         <Row>
-          <Button width='130px' scale='sm' variant='green'>
+          <Button width="130px" scale="sm" variant="green">
             Button
-      </Button>
-          <Button width='130px' scale='sm' disabled variant='green'>
+          </Button>
+          <Button width="130px" scale="sm" disabled variant="green">
             Button
-      </Button>
-          <Button width='130px' scale='sm' variant='pink'>
+          </Button>
+          <Button width="130px" scale="sm" variant="pink">
             Button
-      </Button>
-          <Button width='130px' scale='sm' disabled variant='pink'>
+          </Button>
+          <Button width="130px" scale="sm" disabled variant="pink">
             Button
-      </Button>
-          <Button width='130px' scale='sm' variant='option'>
+          </Button>
+          <Button width="130px" scale="sm" variant="option">
             Button
-      </Button>
+          </Button>
         </Row>
-        <Row>
-        </Row>
-
+        <Row></Row>
       </BrowserRouter>
     </div>
   );
@@ -145,7 +143,6 @@ export const Variants: React.FC = () => {
 //   0% { transform: rotate(360deg); },
 //    100% { transform: rotate(360deg); }
 // `;
-
 
 // const ButtonSpin = styled(Button)`
 //   & svg path{

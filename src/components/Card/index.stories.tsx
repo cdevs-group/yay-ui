@@ -14,13 +14,11 @@ export default {
   argTypes: {},
 };
 
-
-
 export const ExpiredNA: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active="false">
-        <ExpiredCardNA/>
+      <Card active={false}>
+        <ExpiredCardNA />
       </Card>
     </div>
   );

@@ -1,23 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { TabsProp } from "./types";
-import Text from '../Text/Text';
+import Text from "../Text/Text";
 
-const Tabs = ({tabValue, tabsList,setTabValue }:TabsProp) => {
-  const handleTab = (e: any)=>{
-    setTabValue(+e.target.value)
-  }
-  return (
-    <TabsWrap>
-      {tabsList.map((item, i) =>
-        <Tab as='button' onClick={handleTab} className={tabValue===i?'active':''}  key={i} value={i} >{item}</Tab>
-      )}
-    </TabsWrap>
-  )
-}
+const Tabs = () =>
+  // { tabValue, tabsList, setTabValue }: TabsProp
+  {
+    // const handleTab = (e: any) => {
+    //   setTabValue(+e.target.value);
+    // };
+    return (
+      <TabsWrap>
+        {/* {tabsList.map((item, i) => (
+        <Tab as="button" onClick={handleTab} className={tabValue === i ? "active" : ""} key={i} value={i}>
+          {item}
+        </Tab>
+      ))} */}
+      </TabsWrap>
+    );
+  };
 
 Tabs.defaultProps = {
-  tabsList: []
+  tabsList: [],
 };
 
 export default Tabs;
@@ -34,11 +38,11 @@ const Tab = styled(Text)`
   background: transparent;
   border-radius: 12px;
   letter-spacing: 0.5px;
-  color: ${({theme})=>theme.colors.text};
-  text-shadow: ${({theme})=>theme.colors.textShadow3};
-  transition: .3s;
+  color: ${({ theme }) => theme.colors.text};
+  text-shadow: ${({ theme }) => theme.colors.textShadow3};
+  transition: 0.3s;
   cursor: pointer;
-  &.active{
+  &.active {
     background: ${({ theme }) => theme.colors.whiteRgba};
   }
-`
+`;

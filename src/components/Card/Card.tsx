@@ -2,28 +2,27 @@ import React from "react";
 import styled from "styled-components";
 import StyledCard from "./StyledCard";
 import { CardProps } from "./types";
-import Chart from "./img/chart-icon.png";
-import  History from "./img/history-icon.png";
-import { transparentize } from 'polished';
-import {GreenArrow} from "../Svg";
+
+import { transparentize } from "polished";
+import { GreenArrow } from "../Svg";
 
 const Wrap = styled.div`
   width: 404px;
   /* height: 470px; */
-`
+`;
 
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 28px;
-  width: 308px
-`
+  width: 308px;
+`;
 
 const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`
+`;
 
 const CenterBlock = styled.div`
   position: relative;
@@ -51,7 +50,7 @@ const CenterBlock = styled.div`
     transform: rotate(180deg);
     cursor: pointer;
   }
-`
+`;
 
 const BottomCard = styled.div`
   position: absolute;
@@ -63,8 +62,7 @@ const BottomCard = styled.div`
   background: ${({ theme }) => theme.colors.lightGreyBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow3};
   border-radius: 10px;
-
-`
+`;
 
 const TopCard = styled(BottomCard)`
   position: absolute;
@@ -72,26 +70,27 @@ const TopCard = styled(BottomCard)`
   bottom: -8%;
   transform: rotate(20deg);
   background: ${({ theme }) => theme.colors.text};
-`
+`;
 
 const Card: React.FC<CardProps> = ({ children, active, ...props }) => {
   return (
     <Wrap>
-      <StyledCard {...props}>
-        {children}
-      </StyledCard>
+      <StyledCard {...props}>{children}</StyledCard>
       <BottomContent>
-        <Button><img src={Chart}/></Button>
+        <Button>{/* <img src={Chart}/>  */}</Button>
         <CenterBlock>
-          <button className="arrowLeft"><GreenArrow color="#47DA3B"/></button>
-          <BottomCard/>
-          <TopCard/>
-          <button className="arrowRight"><GreenArrow color="#47DA3B"/></button>
+          <button className="arrowLeft">
+            <GreenArrow color="#47DA3B" />
+          </button>
+          <BottomCard />
+          <TopCard />
+          <button className="arrowRight">
+            <GreenArrow color="#47DA3B" />
+          </button>
         </CenterBlock>
-        <Button><img src={History}/></Button>
+        <Button>{/* <img src={History}/>  */}</Button>
       </BottomContent>
     </Wrap>
-    
   );
 };
 export default Card;

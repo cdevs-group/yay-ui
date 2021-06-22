@@ -6,8 +6,7 @@ const Title = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
+`;
 const TextLeft = styled.div`
   display: flex;
   align-items: center;
@@ -23,18 +22,15 @@ const TextLeft = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-`
+`;
 
 const UpDown = styled.div<{ negative?: boolean }>`
   margin-left: 2px;
   font-weight: 500;
   font-size: 21px;
   line-height: 27px;
-  color: ${({ theme, negative }) =>
-    negative
-      ? theme.colors.redBg
-      : theme.colors.greenText};  
-`
+  color: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.greenText)};
+`;
 
 const TextRight = styled.div`
   display: flex;
@@ -46,17 +42,18 @@ const TextRight = styled.div`
   & div {
     margin-left: 10px;
   }
-`
-const CardHeader: React.FC<CardHeaderProps> = ({icon, coin, num, svg, negative}) => {
-
+`;
+const CardHeader: React.FC<CardHeaderProps> = ({ icon, coin, num, svg, negative }) => {
   return (
     <Title>
       <TextLeft>
         <div>{icon}</div>
-        <div >{coin}</div>
+        <div>{coin}</div>
         <UpDown negative={negative}>{negative ? "DOWN" : "UP"}</UpDown>
       </TextLeft>
-      <TextRight>{num} <div>{svg}</div></TextRight>
+      <TextRight>
+        {num} <div>{svg}</div>
+      </TextRight>
     </Title>
   );
 };

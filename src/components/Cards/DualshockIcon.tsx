@@ -1,15 +1,8 @@
-import * as React from "react"
+import * as React from "react";
 
-function DualshockIcon(props) {
+function DualshockIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width={125}
-      height={89}
-      viewBox="0 0 125 89"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width={125} height={89} viewBox="0 0 125 89" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -17,7 +10,7 @@ function DualshockIcon(props) {
         fill="#2E2E35"
       />
     </svg>
-  )
+  );
 }
 
-export default DualshockIcon
+export default DualshockIcon;

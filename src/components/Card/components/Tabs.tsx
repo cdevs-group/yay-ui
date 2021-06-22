@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { transparentize } from 'polished';
+import { transparentize } from "polished";
 
 const TabsBlock = styled.div`
   display: flex;
@@ -10,21 +10,22 @@ const TabsBlock = styled.div`
 `;
 
 const Tab = styled.button`
-  padding: 7px 7px 4px;
+  padding: 7px 10px;
   border: none;
   background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
-  border-radius: 7px; 
+  border-radius: 7px;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   color: ${({ theme }) => theme.colors.text};
   transition: 0.3s;
   cursor: pointer;
+  border: 1px solid transparent;
   &:not(:last-child) {
-    margin-right: 22px;
+    margin-right: 12px;
   }
   &.active {
-    border: 1px solid #47DA3B;
+    border: 1px solid #47da3b;
     transition: 0.3s;
   }
 `;
@@ -37,16 +38,10 @@ const Tabs: React.FC = () => {
     setTabValue(+e.currentTarget.value);
   };
 
-
   return (
     <TabsBlock>
       {tabsList.map((item, i) => (
-        <Tab
-          key={i}
-          value={i}
-          onClick={handleToggleTabs}
-          className={tabValue === i ? "active" : ""}
-        >
+        <Tab key={i} value={i} onClick={handleToggleTabs} className={tabValue === i ? "active" : ""}>
           {item}
         </Tab>
       ))}

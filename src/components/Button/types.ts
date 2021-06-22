@@ -16,9 +16,9 @@ export const variants = {
   DANGER: "danger",
   SUBTLE: "subtle",
   SUCCESS: "success",
-  GREEN:'green',
-  PINK:"pink",
-  OPTION:"option"
+  GREEN: "green",
+  PINK: "pink",
+  OPTION: "option",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
@@ -48,7 +48,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
-  spin?:boolean
+  spin?: boolean;
 }
 
 export type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;

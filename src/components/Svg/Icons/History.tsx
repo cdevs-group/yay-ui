@@ -4,15 +4,30 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width="37" height="37" viewBox="0 0 37 37" {...props}>
+    <Svg width="50" height="50" viewBox="0 0 50 50" {...props}>
+      <rect width="50" height="50" rx="12" fill="white" fill-opacity="0.15" />
       <g filter="url(#filter0_d)">
-        <path d="M13 21.5C13 26.7467 17.2533 31 22.5 31C27.7467 31 32 26.7467 32 21.5C32 16.2533 27.7467 12 22.5 12C20.4503 12 18.5521 12.6492 17 13.7531" stroke="#F3F3F3" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d="M16 25.5C16 30.7467 20.2533 35 25.5 35C30.7467 35 35 30.7467 35 25.5C35 20.2533 30.7467 16 25.5 16C23.4503 16 21.5521 16.6492 20 17.7531"
+          stroke="#F3F3F3"
+          fill="none"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
       </g>
       <g filter="url(#filter1_d)">
-        <path d="M20 23.5L22 20.5H26" stroke="#F3F3F3" strokeWidth="2" strokeLinecap="round" />
+        <path d="M23 27.5L25 24.5H29" stroke="#F3F3F3" strokeWidth="2" strokeLinecap="round" />
       </g>
       <defs>
-        <filter id="filter0_d" x="0" y="0" width="37" height="37" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <filter
+          id="filter0_d"
+          x="3"
+          y="4"
+          width="37"
+          height="37"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx="-4" dy="-3" />
@@ -21,8 +36,16 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
-        <filter id="filter1_d" x="7" y="8.5" width="24.0001" height="21.0001" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-          <feFlood floodOpacity="1" result="BackgroundImageFix" />
+        <filter
+          id="filter1_d"
+          x="10"
+          y="12.5"
+          width="24.0001"
+          height="21.0001"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dx="-4" dy="-3" />
           <feGaussianBlur stdDeviation="4" />

@@ -13,9 +13,9 @@ const rotate = keyframes`
 `;
 
 const spinStyle = css`
-  & path{
-  animation: ${rotate} 1.5s ease-in-out infinite;
-  transform-origin: center center;
+  & path {
+    animation: ${rotate} 1.5s ease-in-out infinite;
+    transform-origin: center center;
   }
 `;
 

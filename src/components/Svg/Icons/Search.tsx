@@ -4,14 +4,29 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   return (
-    <Svg width='42px' viewBox="0 0 42 42" {...props}>
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || 'rgba(0,0,0,0)'} />
+    <Svg width="42px" viewBox="0 0 42 42" {...props}>
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "rgba(0,0,0,0)"} />
       <g filter="url(#filter0_d111)">
-        <circle fill={props.fill || 'rgba(0,0,0,0)'} cx="20.5" cy="20.5" r="4.6" stroke={props.color || 'white'} strokeWidth="1.8" />
-        <path d="M24 24L26 26" stroke={props.color || 'white'} strokeWidth="1.8" strokeLinecap="round" />
+        <circle
+          fill={props.fill || "rgba(0,0,0,0)"}
+          cx="20.5"
+          cy="20.5"
+          r="4.6"
+          stroke={props.color || "white"}
+          strokeWidth="1.8"
+        />
+        <path d="M24 24L26 26" stroke={props.color || "white"} strokeWidth="1.8" strokeLinecap="round" />
       </g>
       <defs>
-        <filter id="filter0_d111" x="11" y="13" width="19.8996" height="19.9001" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <filter
+          id="filter0_d111"
+          x="11"
+          y="13"
+          width="19.8996"
+          height="19.9001"
+          filterUnits="userSpaceOnUse"
+          colorInterpolationFilters="sRGB"
+        >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />

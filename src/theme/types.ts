@@ -25,9 +25,6 @@ export type Shadows = {
   warning: string;
   focus: string;
   inset: string;
-  boxShadow3: string;
-  boxShadow4: string;
-  boxShadow5: string;
 };
 
 export type Gradients = {
@@ -56,9 +53,9 @@ export type Colors = {
   textSubtle: string;
   borderColor: string;
   card: string;
-  overlayBg: string; 
-  linkColor: string; 
-  buttonBg: string; 
+  overlayBg: string;
+  linkColor: string;
+  buttonBg: string;
   buttonShadow: string;
   green: string;
   greenGradient2: string;
@@ -75,19 +72,23 @@ export type Colors = {
   blackColor: string;
   greenText2: string;
   panel: string;
-  boxShadow:string;
-  textGray:string;
-  boxShadow3:string;
-  boxShadow4:string;
-  textGray2:string;
+  boxShadow: string;
+  textGray: string;
+  boxShadow3: string;
+  boxShadow4: string;
+  textGray2: string;
   dark: string;
-  boxShadow5:string;
-  textShadow:string;
-  greenGradient:string;
-  boxShadow2:string;
-  bgGray:string;
-  textShadow2:string;
-  textShadow3:string;
+  boxShadow5: string;
+  textShadow: string;
+  greenGradient: string;
+  boxShadow2: string;
+  bgGray: string;
+  textShadow2: string;
+  textShadow3: string;
+  bgOpacity: string;
+  bgOpacity2: string;
+  bgBlackRgba: string;
+  whiteRgba: string;
   // Gradients
   gradients: Gradients;
 

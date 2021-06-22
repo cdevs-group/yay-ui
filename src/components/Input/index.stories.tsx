@@ -1,5 +1,5 @@
-import React from "react";
-import  Input  from "./Input";
+import React, { useState } from "react";
+import Input from "./Input";
 
 export default {
   title: "Components/Input",
@@ -7,12 +7,12 @@ export default {
   argTypes: {},
 };
 
-
 export const InputMain: React.FC = () => {
+  const [value, setValue] = useState<string>("");
+
   return (
     <div>
-      <Input placeholder='Search'/>
+      <Input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Search" />
     </div>
   );
 };
-

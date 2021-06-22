@@ -2,7 +2,7 @@ import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { BaseButtonProps } from "./types";
- 
+
 interface ThemedButtonProps extends BaseButtonProps {
   theme: DefaultTheme;
 }
@@ -29,7 +29,6 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
     }
   `;
 };
-
 
 /**
  * This is to get around an issue where if you use a Link component
@@ -59,24 +58,29 @@ const StyledButton = styled.button<BaseButtonProps>`
   line-height: 1;
   opacity: ${getOpacity};
   outline: 0;
-  transition:  0.2s;
+  transition: 0.2s;
   &.withGreenBorder {
     display: flex;
     width: 100%;
-    border: 1.5px solid ${({ theme }) => theme.colors.greenText};;
+    border: 1.5px solid ${({ theme }) => theme.colors.greenText};
     background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
   &.withRedBorder {
-    border: 1.5px solid #FF6161;
+    border: 1.5px solid #ff6161;
     background: none;
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
   &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
-     /* ; */
-     box-shadow: ${({variant})=>variant==='green'?'0px 0px 29px #2CB021':variant==='pink'?'0px 0px 20px rgba(255, 97, 97, 0.38)':'none'};
+    /* ; */
+    box-shadow: ${({ variant }) =>
+      variant === "green"
+        ? "0px 0px 29px #2CB021"
+        : variant === "pink"
+        ? "0px 0px 20px rgba(255, 97, 97, 0.38)"
+        : "none"};
   }
 
   &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {
@@ -85,12 +89,12 @@ const StyledButton = styled.button<BaseButtonProps>`
 
   ${getDisabledStyles}
   ${variant({
-  prop: "scale",
-  variants: scaleVariants,
-})}
+    prop: "scale",
+    variants: scaleVariants,
+  })}
   ${variant({
-  variants: styleVariants,
-})}
+    variants: styleVariants,
+  })}
   ${layout}
   ${space}
 `;

@@ -1,26 +1,26 @@
-import React from 'react';
-import { useTimer } from 'react-timer-hook';
-import styled, { DefaultTheme } from 'styled-components';
-import { transparentize } from 'polished';
-import { TimerProps,TimerColorProps } from './types';
-import getThemeValue from '../../util/getThemeValue';
+import React from "react";
+import styled, { DefaultTheme } from "styled-components";
+import { transparentize } from "polished";
+import { TimerProps, TimerColorProps } from "./types";
+import getThemeValue from "../../util/getThemeValue";
 interface ThemedProps extends TimerColorProps {
   theme: DefaultTheme;
 }
-
+interface MyTimerProps {
+  expiryTimestamp: any;
+  color: string;
+}
 const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
+function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
+  const hours = Math.floor(expiryTimestamp / 3600);
+  const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
 
-function MyTimer({ expiryTimestamp, color }) {
-  const { seconds, minutes, hours } = useTimer({
-    expiryTimestamp,
-    onExpire: () => console.warn('onExpire called'),
-  });
-
-  const handleDigit = (value) => {
-    const leftDigit = value >= 10 ? value.toString()[0] : '0';
+  const handleDigit = (value: number) => {
+    const leftDigit = value >= 10 ? value.toString()[0] : "0";
     const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
     return { leftDigit, rightDigit };
   };
@@ -43,20 +43,14 @@ function MyTimer({ expiryTimestamp, color }) {
 }
 
 const Timer: React.FC<TimerProps> = ({ time, color }) => {
-  const currentTime = new Date();
-  currentTime.setSeconds(currentTime.getSeconds() + time);
-
-  return (
-    <div>{time && <MyTimer expiryTimestamp={currentTime} color={color} />}</div>
-  );
+  return <div>{time && <MyTimer expiryTimestamp={time} color={color || "text"} />}</div>;
 };
 export default Timer;
 
 const Wrap = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* width: fit-content; */
+  width: fit-content;
 `;
 
 const Block = styled.div<TimerColorProps>`

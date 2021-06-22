@@ -1,28 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import { transparentize } from 'polished';
+import React from "react";
+import styled from "styled-components";
+import { transparentize } from "polished";
 
 interface TabsProp {
   tabValue: number;
-  setTabValue: (val: number) => void;
+  onClick: (e: any) => Promise<void>;
 }
 
-const TabsHistory = ({ tabValue, setTabValue }: TabsProp) => {
-  const tabsList = ['Rounds', 'PNL'];
-
-  const handleTabToggle = (e: any) => {
-    setTabValue(+e.target.value);
-  };
+const TabsHistory = ({ tabValue, onClick }: TabsProp) => {
+  const tabsList = ["Rounds", "PNL"];
 
   return (
     <TabsWrap>
       {tabsList.map((item, i) => (
-        <Tab
-          onClick={handleTabToggle}
-          className={tabValue === i ? 'active' : ''}
-          key={i}
-          value={i}
-        >
+        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
           {item}
         </Tab>
       ))}
@@ -37,7 +28,7 @@ const TabsWrap = styled.div`
   grid-template-columns: repeat(2, 1fr);
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
-  box-shadow: ${({ theme }) => theme.colors.boxShadow4};  
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
 `;
 const Tab = styled.button`
   padding: 15px 30px;
@@ -52,7 +43,7 @@ const Tab = styled.button`
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   transition: 0.3s;
   cursor: pointer;
-  color: ${({ theme }) => transparentize(0.30, theme.colors.text)};
+  color: ${({ theme }) => transparentize(0.3, theme.colors.text)};
   &.active {
     background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
     color: ${({ theme }) => theme.colors.text};

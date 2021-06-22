@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ClosedPrice } from '../../../components/ClosedPrice';
-import { Text } from '../../../components/Text';
-import WIN from './img/win.png';
-import LOSE from './img/lose.png';
-import { Button } from '../../../components/Button';
+import React from "react";
+import styled from "styled-components";
+import { ClosedPrice } from "../../../components/ClosedPrice";
+import { Text } from "../../../components/Text";
+import WIN from "./img/win.png";
+import LOSE from "./img/lose.png";
+import { Button } from "../../../components/Button";
 
 interface IYourHistory {
   price: string;
@@ -17,15 +17,7 @@ interface IYourHistory {
 }
 
 const YourHistory = (props: IYourHistory) => {
-  const {
-    price,
-    priceRightText,
-    yourPosition,
-    win,
-    negative,
-    result,
-    collect,
-  } = props;
+  const { price, priceRightText, yourPosition, win, negative, result, collect } = props;
 
   return (
     <Block>
@@ -50,19 +42,18 @@ const YourHistory = (props: IYourHistory) => {
           )}
         </Line>
       </Line>
-      <ClosedPrice
-        price={price}
-        rightText={priceRightText}
-        result={result}
-        negative={negative}
-      />
+      <ClosedPrice price={price} rightText={priceRightText} result={result} negative={negative} />
       <LineMargin>
         <Text size="sm" fontWeight={400}>
           Your Position
         </Text>
         <Text size="sm">{yourPosition}</Text>
       </LineMargin>
-      {collect && <Button width='100%' scale='md' variant='green' disabled>Collect Winnings</Button>}
+      {collect && (
+        <Button width="100%" scale="md" variant="green" disabled>
+          Collect Winnings
+        </Button>
+      )}
     </Block>
   );
 };

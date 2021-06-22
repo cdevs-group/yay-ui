@@ -1,26 +1,24 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 import CoinIcon from "../CoinIcon";
 import DualshockIcon from "../DualshockIcon";
-import  Arrow  from "./components/Arrow";
-import CardBalance from './components/CardBalance'
+import { TextCardsProps } from "../types";
+import Arrow from "./components/Arrow";
+import CardBalance from "./components/CardBalance";
 
-const CardsBalance = () =>{
-  return <Cards>
-    <CardBalance
-        title='2000 YAY'
-        text='Ready to harvest'
-      ><CoinIcon/>
-    </CardBalance>
-    <CardBalance
-        right
-        title='3`000 YAY'
-        text='Your Balance'
-      ><DualshockIcon/>
-    </CardBalance>
-    <Arrow center={true}/>
-  </Cards>
-}
+const CardsBalance = ({ text }: TextCardsProps) => {
+  return (
+    <Cards>
+      <CardBalance title={text.title1} text={text.text1}>
+        <CoinIcon />
+      </CardBalance>
+      <CardBalance right title={text.title2} text={text.text2}>
+        <DualshockIcon />
+      </CardBalance>
+      <Arrow center={true} />
+    </Cards>
+  );
+};
 
 const Cards = styled.div`
   position: relative;
@@ -29,7 +27,6 @@ const Cards = styled.div`
   gap: 0 16px;
 `;
 
-CardsBalance.defaultProps = {
-};
+CardsBalance.defaultProps = {};
 
 export default CardsBalance;

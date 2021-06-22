@@ -12,7 +12,7 @@ import {
   StrikesWideIcon,
   LoadIcon,
   CercleIcon,
-  CompleteIcon
+  CompleteIcon,
 } from ".";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
@@ -20,7 +20,8 @@ import Text from "../Text/Text";
 
 export default {
   title: "Components/Svg Icons",
-  component: [AddIcon,
+  component: [
+    AddIcon,
     ArrowIcon,
     CloseIcon,
     EyeCloseIcon,
@@ -30,7 +31,8 @@ export default {
     SquaresIcon,
     StrikeIcon,
     StrikesWideIcon,
-    LoadIcon],
+    LoadIcon,
+  ],
   argTypes: {},
 };
 
@@ -48,33 +50,33 @@ export const Default: React.FC = () => {
           <path d="M6 10.2001L2.5 6.70007C2.11 6.31007 1.49 6.31007 1.1 6.70007C0.709995 7.09007 0.709995 7.71007 1.1 8.10007L5.29 12.2901C5.68 12.6801 6.31 12.6801 6.7 12.2901L17.3 1.70007C17.69 1.31007 17.69 0.690068 17.3 0.300068C16.91 -0.0899316 16.29 -0.0899316 15.9 0.300068L6 10.2001Z" />
         </Svg> */}
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: "flex" }}>
         <div style={{ marginRight: 20 }}>
-          <EyeCloseIcon fill='#47DA3B' />
+          <EyeCloseIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <EyeOpenIcon fill='#47DA3B' />
+          <EyeOpenIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <ArrowIcon fill='#47DA3B' />
+          <ArrowIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <AddIcon fill='#47DA3B' />
+          <AddIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <SearchIcon fill='#47DA3B' />
+          <SearchIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <StrikeIcon fill='#47DA3B' />
+          <StrikeIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <SquaresIcon fill='#47DA3B' />
+          <SquaresIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CloseIcon fill='#47DA3B' />
+          <CloseIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CompleteIcon fill='#47DA3B' />
+          <CompleteIcon fill="#47DA3B" />
         </div>
         <div style={{ marginRight: 20 }}>
           <CloseIcon />
@@ -89,7 +91,7 @@ export const Default: React.FC = () => {
           <CercleIcon />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CercleIcon spin/>
+          <CercleIcon spin />
         </div>
       </div>
     </div>

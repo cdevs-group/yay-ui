@@ -1,51 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { Text } from '../../../components/Text';
-import { bestProps } from '../types';
+import React from "react";
+import styled from "styled-components";
+import { Text } from "../../../components/Text";
+interface Props {
+  won: number;
+  lost: number;
+  percentageWon: string;
+  result: string;
+  price: string;
+}
 
-const ProgressBar = ({ best }: bestProps) => {
-  const [count, setCount] = useState({count:0,profit:0})
-
-  const countTrue = () => {
-    let count = 0
-    let profit = 0
-    best.map(item => {
-      if (item.win) {
-        count++
-        profit += item.average
-      }
-    })
-    return {count, profit};
-  }
-  useEffect(() => {
-    setCount(countTrue())
-  }, [best])
-
-  return (<div>
-    <ProgressWrap>
-      <Progress>
-        {best.map((item, i) => <React.Fragment key={i}>
-          <Step color={item.win ? '#47DA3B' : '#FF6161'} />
-        </React.Fragment>
-        )}
-      </Progress>
-    </ProgressWrap>
-    <Counter>
-    <Text fontSize='21px'>
-      {count.count}/{best.length}
-    </Text>
-    <TextProfit textAlign='right' fontSize='21px' >+{count.profit} BNB</TextProfit>
-    <TextPercents >100%</TextPercents>
-    <Text textAlign='right'>$0.177</Text>
-    </Counter>
-  </div>
-  )
+const ProgressBar = ({ won, lost, percentageWon, result, price }: Props) => {
+  return (
+    <div>
+      <ProgressWrap>
+        <Progress>
+          <Step color="#47DA3B" width={(won * 100) / (won + lost)} />
+          <Step color="#FF6161" width={(lost * 100) / (won + lost)} />
+        </Progress>
+      </ProgressWrap>
+      <Counter>
+        <Text fontSize="21px">
+          {won}/{won + lost}
+        </Text>
+        <TextProfit textAlign="right" fontSize="21px">
+          {result}
+        </TextProfit>
+        <TextPercents>{percentageWon}%</TextPercents>
+        <Text textAlign="right">{price}</Text>
+      </Counter>
+    </div>
+  );
 };
 
 export default ProgressBar;
 
 const ProgressWrap = styled.div`
-  padding:6px;
+  padding: 6px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 5px;
@@ -56,21 +46,21 @@ const Progress = styled.div`
   border-radius: 3px;
   overflow: hidden;
 `;
-const Step = styled.div<{ color: string }>`
-  height: 20px;
-  width: 100%;
+const Step = styled.div<{ color: string; width: number }>`
+  height: 9px;
+  width: ${({ width }) => `${width}%`};
   background: ${({ color }) => color};
   transition: none.3s;
 `;
 const Counter = styled.div`
   margin-top: 15px;
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 `;
 const TextProfit = styled(Text)`
-  color:${({theme})=>theme.colors.green};
+  color: ${({ theme }) => theme.colors.green};
 `;
 const TextPercents = styled(Text)`
-  color:${({theme})=>theme.colors.textGray2};
+  color: ${({ theme }) => theme.colors.textGray2};
 `;

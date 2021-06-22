@@ -1,15 +1,8 @@
-import * as React from "react"
+import * as React from "react";
 
-function ArrowIcon(props) {
+function ArrowIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width={26}
-      height={26}
-      viewBox="0 0 26 26"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <g filter="url(#prefix__filter0_d)">
         <path
           d="M14.485 5.272l5.656 5.657m0 0l-5.656 5.657m5.656-5.657H6"
@@ -29,10 +22,7 @@ function ArrowIcon(props) {
           colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feColorMatrix
-            in="SourceAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
+          <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy={2} />
           <feGaussianBlur stdDeviation={2} />
           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
@@ -41,7 +31,7 @@ function ArrowIcon(props) {
         </filter>
       </defs>
     </svg>
-  )
+  );
 }
 
-export default ArrowIcon
+export default ArrowIcon;

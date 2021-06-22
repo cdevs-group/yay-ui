@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { BG_IMG } from './constants/images';
+import { createGlobalStyle } from "styled-components";
+import { BG_IMG } from "./constants/images";
 
 const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
