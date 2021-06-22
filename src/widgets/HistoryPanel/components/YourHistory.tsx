@@ -13,7 +13,7 @@ interface IYourHistory {
   yourPosition: string;
   negative?: boolean;
   win: boolean;
-  collect?: boolean;
+  collect?: React.ReactNode;
 }
 
 const YourHistory = (props: IYourHistory) => {
@@ -49,11 +49,12 @@ const YourHistory = (props: IYourHistory) => {
         </Text>
         <Text size="sm">{yourPosition}</Text>
       </LineMargin>
-      {collect && (
+      {collect}
+      {/* {collect && (
         <Button width="100%" scale="md" variant="green" disabled>
           Collect Winnings
         </Button>
-      )}
+      )} */}
     </Block>
   );
 };

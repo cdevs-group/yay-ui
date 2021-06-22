@@ -53,7 +53,7 @@ const AccordeonCard = ({
           }}
         >
           <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
-            {detail}
+            <HiddenItem>{detail}</HiddenItem>
             {/* {item.content.map((el, i) => (
             <HiddenItem key={i}>{el}</HiddenItem>
           ))} */}
