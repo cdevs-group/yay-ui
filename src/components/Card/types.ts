@@ -4,6 +4,20 @@ export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string;
   rightContent?: string;
+  payoutUp?: number;
+  payoutDown?: number;
+  negative?: boolean;
+  show?: boolean;
+  closedCount?: any;
+  linePrice?: any;
+  lockedPrice?: any;
+  prize?: any;
+  up?: boolean;
+  showUp?: boolean;
+  showIcon?: boolean;
+  live?: boolean;
+  colorIcon?: string;
+  displayNone?: boolean;
 }
 
 export interface CardHeaderProps {

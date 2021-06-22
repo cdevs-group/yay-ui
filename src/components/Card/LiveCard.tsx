@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ArrowCardDown } from "../Svg";
 import { StyledCardProps } from "./types";
@@ -26,6 +26,10 @@ const ClosedCount = styled.div<{ negative?: boolean }>`
   letter-spacing: 0.5px;
   color: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.greenText)};
 `;
+
+const Title = styled.div``;
+
+const Count = styled.div``;
 
 const Line = styled.div`
   display: flex;
@@ -88,18 +92,11 @@ const Prize = styled.div`
   }
 `;
 
-const ExpiredCardNA: React.FC<StyledCardProps> = ({
-  negative,
-  closedCount,
-  linePrice,
-  lockedPrice,
-  prize,
-  colorIcon,
-}) => {
+const LiveCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice, lockedPrice, prize }) => {
   return (
     <Wrap>
       <Closed>
-        <div className="closed">Closed Price</div>
+        <div className="closed">LAST PRICE</div>
         <ClosedCount negative={negative}>$ {closedCount}</ClosedCount>
       </Closed>
       <Line>
@@ -119,4 +116,4 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
     </Wrap>
   );
 };
-export default ExpiredCardNA;
+export default LiveCard;

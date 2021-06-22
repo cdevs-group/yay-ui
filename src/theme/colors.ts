@@ -103,6 +103,7 @@ export const lightColors: Colors = {
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
+  yellowBg2: "#FFB72C",
 
   boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
