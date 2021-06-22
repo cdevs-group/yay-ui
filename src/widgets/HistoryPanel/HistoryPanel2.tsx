@@ -193,9 +193,7 @@ const HistoryPanel: React.FC<Props> = ({
                     ))}
                   </Accordeon>
                 )}
-                {historyFilter === HistoryFilter.COLLECTED && (
-                  <div>No result</div>
-                )}
+                {historyFilter === HistoryFilter.COLLECTED && <div>No result</div>}
                 {/* {historyFilter === HistoryFilter.UNCOLLECTED && (
                   <Accordeon
                     value={valueAccordeon}

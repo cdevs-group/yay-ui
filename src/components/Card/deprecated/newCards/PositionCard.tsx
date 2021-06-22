@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BnbIcon } from "../../components/Svg";
-import Tabs from "./components/Tabs";
-import CommitBlock from "../CommitBlock/CommitBlock";
-import Button from "../Button/Button";
+import { BnbIcon } from "../../../../components/Svg";
+import Tabs from "../../components/Tabs";
+import CommitBlock from "../../../CommitBlock/CommitBlock";
+import Button from "../../../Button/Button";
 
 const AmountTitle = styled.div`
   margin-top: 32px;

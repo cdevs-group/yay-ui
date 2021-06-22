@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
-import PriceBlock from "./components/PriceBlock";
-import { BnbIcon, ArrowLeft } from "../../components/Svg";
-import CardHeader from "./components/CardHeader";
-import Button from "../Button/Button";
+import Timer from "../../../Timer/Timer";
+import PriceBlock from "../../components/PriceBlock";
+import { BnbIcon, ArrowLeft } from "../../../../components/Svg";
+import CardHeader from "../../components/CardHeader";
+import Button from "../../../Button/Button";
 import PositionCard from "./PositionCard";
 import { transparentize } from "polished";
-import { Flex } from "../Box";
+import { Flex } from "../../../Box";
 
 const Wrap = styled.div`
   padding: 22px;

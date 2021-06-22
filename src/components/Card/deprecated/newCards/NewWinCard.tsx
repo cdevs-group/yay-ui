@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import CardHeader from "./components/CardHeader";
-import { BnbIcon, CompleteIcon } from "../../components/Svg";
-import { ClosedPrice } from "../ClosedPrice";
-import Button from "../Button/Button";
-import { Winner, Win } from "../../constants/images";
+import CardHeader from "../../components/CardHeader";
+import { BnbIcon, CompleteIcon } from "../../../../components/Svg";
+import { ClosedPrice } from "../../../ClosedPrice";
+import Button from "../../../Button/Button";
+import { Winner, Win } from "../../../../constants/images";
 
 const payoutArr = [
   { name: <div>Payout:</div>, price: "5,09x" },
