@@ -48,18 +48,19 @@ const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, nega
         <Text color="greyText" mb={18} fontWeight={400}>
           {!result ? "Closed Price" : "Your Result"}
         </Text>
-        {(!roundFailed && !result) || result && (
-          <Flex justifyContent="space-between" alignItems="center">
-            <Price negative={negative}>{price}</Price>
-            <Text size="sm" fontWeight={400} mr="auto" ml={9}>
-              {result}
-            </Text>
-            <RightText negative={rightText === "UP" ? false : negative}>
-              <GreenArrow />
-              <Price negative={rightText === "UP" ? false : negative}>{rightText}</Price>
-            </RightText>
-          </Flex>
-        )}
+        {(!roundFailed && !result) ||
+          (result && (
+            <Flex justifyContent="space-between" alignItems="center">
+              <Price negative={negative}>{price}</Price>
+              <Text size="sm" fontWeight={400} mr="auto" ml={9}>
+                {result}
+              </Text>
+              <RightText negative={rightText === "UP" ? false : negative}>
+                <GreenArrow />
+                <Price negative={rightText === "UP" ? false : negative}>{rightText}</Price>
+              </RightText>
+            </Flex>
+          ))}
         {roundFailed && !result && <Text>CANCELED</Text>}
       </div>
     </PriceBlock>
