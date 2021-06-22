@@ -11,6 +11,8 @@ const useAccordeon = (cards?: any) => {
   const handleToggleAccordeon = (item: Bet) => {
     if (active && active.id !== item.id) {
       setActive(item);
+
+      // setHeightActiveBlock(e.target?.nextElementSibling?.firstElementChild?.clientHeight)
     }
     if (valueAccordeon && valueAccordeon === item.id) {
       setValueAccordeon && setValueAccordeon(undefined);
@@ -25,10 +27,14 @@ const useAccordeon = (cards?: any) => {
   }, []);
 
   useEffect(() => {
+    // console.log(el && el.nextElementSibling.firstElementChild.clientHeight)
+    // if (el) {
+    //   setHeightActiveBlock(el?.nextElementSibling?.firstElementChild?.clientHeight);
+    // }
     if (refHidden?.current) {
       setHeightActiveBlock(refHidden?.current?.clientHeight);
     }
-  }, [valueAccordeon, cards.length]);
+  }, [active, cards.length, refHidden]);
 
   const filterCards = useMemo(() => cards?.filter((el: any) => el?.id !== active?.id), [active, cards]);
   const filterActiveCard = useMemo(() => cards?.filter((el: any) => el?.id === active?.id), [active, cards]);
