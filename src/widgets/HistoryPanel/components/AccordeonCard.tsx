@@ -52,9 +52,7 @@ const AccordeonCard = ({
             height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
           }}
         >
-          <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
-            {detail}            
-          </HiddenBlock>
+          <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>{detail}</HiddenBlock>
         </HiddenBlockWrap>
       </div>
     </Flipped>
