@@ -9,6 +9,8 @@ interface IRoundHistory {
     openingBlock?: string | React.ReactNode;
     closingBlock?: string | React.ReactNode;
     negative?: boolean;
+    lockPrice?: string;
+    roundFailed?: boolean;
 }
 declare const RoundHistory: (props: IRoundHistory) => JSX.Element;
 export default RoundHistory;

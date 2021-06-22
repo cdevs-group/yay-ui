@@ -11,7 +11,7 @@ const useAccordeon = (cards?: any) => {
   const handleToggleAccordeon = (item: Bet) => {
     if (active && active.id !== item.id) {
       setActive(item);
-     
+
       // setHeightActiveBlock(e.target?.nextElementSibling?.firstElementChild?.clientHeight)
     }
     if (valueAccordeon && valueAccordeon === item.id) {

@@ -21,7 +21,7 @@ export const Panel: React.FC = () => {
   const [activeTab, setActiveTab] = useState(HistoryTabs.ROUNDS);
   const [historyFilter, setHistoryFilter] = useState("all");
 
-  const toggleHistoryFilter = (e) => {   
+  const toggleHistoryFilter = (e) => {
     if (e.target.value !== historyFilter) {
       setHistoryFilter(e.target.value);
     }
