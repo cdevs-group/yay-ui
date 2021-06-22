@@ -6,24 +6,11 @@ import { Text } from "../Text";
 import { ClosedPriceProp } from "./types";
 import { GreenArrow } from "../Svg";
 
-const PriceBlock = styled.div<{ negative?: boolean }>`
-  position: relative;
+const PriceBlock = styled.div`
   padding: 17px 13px 14px 25px;
   border-radius: 12px;
-  background: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.linkColor)};
-  z-index: 1;
-  &::before {
-    position: absolute;
-    display: block;
-    content: "";
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    box-sizing: border-box;
-    top: 1px;
-    left: 1px;
-    background: ${({ theme }) => theme.colors.darkGreyBg};
-    border-radius: 12px;
-  }
+  background: ${({ theme }) => theme.colors.darkGreyBg};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
 `;
 
 const Price = styled.div<{ negative?: boolean }>`
@@ -56,7 +43,7 @@ const RightText = styled.div<{ negative?: boolean }>`
 
 const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative }) => {
   return (
-    <PriceBlock negative={negative}>
+    <PriceBlock>
       <div style={{ position: "relative", zIndex: 3 }}>
         <Text color="greyText" mb={18} fontWeight={400}>
           {!result ? "Closed Price" : "Your Result"}
