@@ -768,7 +768,7 @@ var LeftContent = styled__default['default'].div(templateObject_3$m || (template
     var theme = _a.theme;
     return theme.colors.text;
 });
-var RightContent = styled__default['default'](LeftContent)(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n"], ["\n"])));
+var RightContent = styled__default['default'](LeftContent)(templateObject_4$c || (templateObject_4$c = __makeTemplateObject([""], [""])));
 var Content = styled__default['default'].div(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBg;
@@ -781,7 +781,7 @@ var RightText$1 = styled__default['default'].div(templateObject_7$2 || (template
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var MainBlock = styled__default['default'].div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262D;\n  border: 2px solid #FF6161;\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"], ["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262D;\n  border: 2px solid #FF6161;\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"])));
+var MainBlock = styled__default['default'].div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid #ff6161;\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"], ["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid #ff6161;\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"])));
 var Down = styled__default['default'](Up)(templateObject_9 || (templateObject_9 = __makeTemplateObject([""], [""])));
 var StyledCard = function (_a) {
     var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent;
@@ -812,7 +812,7 @@ var CenterBlock$1 = styled__default['default'].div(templateObject_4$b || (templa
     var theme = _a.theme;
     return polished.transparentize(0.85, theme.colors.text);
 });
-var BottomCard$1 = styled__default['default'].div(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n\n"], ["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n\n"])), function (_a) {
+var BottomCard$1 = styled__default['default'].div(templateObject_5$7 || (templateObject_5$7 = __makeTemplateObject(["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n"], ["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.lightGreyBg;
 }, function (_a) {
@@ -2571,7 +2571,8 @@ var AccordeonCard = function (_a) {
             React__default['default'].createElement(HiddenBlockWrap, { style: {
                     height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
                 } },
-                React__default['default'].createElement(HiddenBlock, { ref: active && active.id === item.id ? refHidden : null }, detail)))));
+                React__default['default'].createElement(HiddenBlock, { ref: active && active.id === item.id ? refHidden : null },
+                    React__default['default'].createElement(HiddenItem, null, detail))))));
 };
 styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n"], ["\n  position: relative;\n  background: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -2590,7 +2591,7 @@ var HiddenBlock = styled__default['default'].div(templateObject_5 || (templateOb
     var theme = _a.theme;
     return theme.colors.panel;
 });
-styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  padding: 30px 20px;\n  background: ", ";\n"], ["\n  padding: 30px 20px;\n  background: ", ";\n"])), function (_a) {
+var HiddenItem = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  padding: 30px 20px;\n  background: ", ";\n"], ["\n  padding: 30px 20px;\n  background: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 });
@@ -2657,7 +2658,7 @@ var YourHistory = function (props) {
         React__default['default'].createElement(LineMargin, null,
             React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, "Your Position"),
             React__default['default'].createElement(Text, { size: "sm" }, yourPosition)),
-        collect && (React__default['default'].createElement(Button$4, { width: "100%", scale: "md", variant: "green", disabled: true }, "Collect Winnings"))));
+        collect));
 };
 var Line$1 = styled__default['default'].div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 8px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 8px;\n"])));
 var Block = styled__default['default'].div(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  margin-top: 3px;\n"], ["\n  margin-top: 3px;\n"])));

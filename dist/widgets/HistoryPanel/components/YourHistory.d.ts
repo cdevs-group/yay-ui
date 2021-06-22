@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from "react";
 interface IYourHistory {
     price: string;
     priceRightText: string;
@@ -6,7 +6,7 @@ interface IYourHistory {
     yourPosition: string;
     negative?: boolean;
     win: boolean;
-    collect?: boolean;
+    collect?: React.ReactNode;
 }
 declare const YourHistory: (props: IYourHistory) => JSX.Element;
 export default YourHistory;
