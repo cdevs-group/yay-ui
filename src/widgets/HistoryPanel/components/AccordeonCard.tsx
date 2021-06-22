@@ -81,8 +81,3 @@ const HiddenBlockWrap = styled.div`
 const HiddenBlock = styled.div`
   background: ${({ theme }) => theme.colors.panel};
 `;
-
-const HiddenItem = styled.div`
-  padding: 30px 20px;
-  background: ${({ theme }) => theme.colors.dark};
-`;

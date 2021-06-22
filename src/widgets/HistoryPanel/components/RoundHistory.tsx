@@ -13,15 +13,35 @@ interface IRoundHistory {
   openingBlock?: string | React.ReactNode;
   closingBlock?: string | React.ReactNode;
   negative?: boolean;
+  lockPrice?: string;
+  roundFailed?: boolean;
 }
 
 const RoundHistory = (props: IRoundHistory) => {
-  const { price, priceRightText, up, down, prizePool, openingBlock, closingBlock, negative, result } = props;
+  const {
+    price,
+    priceRightText,
+    up,
+    down,
+    prizePool,
+    openingBlock,
+    closingBlock,
+    negative,
+    result,
+    lockPrice,
+    roundFailed,
+  } = props;
 
   return (
     <>
       <Text mb={17}>Round History </Text>
-      <ClosedPrice price={price} rightText={priceRightText} result={result} negative={negative} />
+      <ClosedPrice
+        price={price}
+        rightText={priceRightText}
+        result={result}
+        negative={negative}
+        roundFailed={roundFailed}
+      />
       <Block>
         <Line>
           <Text size="sm" fontWeight={400}>
@@ -35,6 +55,14 @@ const RoundHistory = (props: IRoundHistory) => {
           </Text>
           <Text size="sm">{down}</Text>
         </Line>
+        {lockPrice && (
+          <Line>
+            <Text size="sm" fontWeight={400}>
+              Locked Price:
+            </Text>
+            <Text size="sm">{lockPrice}</Text>
+          </Line>
+        )}
         <LineMargin>
           <Text size="sm">Prize Pool:</Text>
           <Text>{prizePool}</Text>
