@@ -8,11 +8,11 @@ const useAccordeon = (cards?: any) => {
   const refHidden = useRef<HTMLDivElement | null>(null);
   const [newCards, setNewCards] = useState<Array<Bet>>([]);
 
-  const handleToggleAccordeon = (e: any,item: Bet) => {
+  const handleToggleAccordeon = (e: any, item: Bet) => {
     if (active && active.id !== item.id) {
       setActive(item);
 
-      setHeightActiveBlock(e.target?.nextElementSibling?.firstElementChild?.clientHeight)
+      setHeightActiveBlock(e.target?.nextElementSibling?.firstElementChild?.clientHeight);
     }
     if (valueAccordeon && valueAccordeon === item.id) {
       setValueAccordeon && setValueAccordeon(undefined);
