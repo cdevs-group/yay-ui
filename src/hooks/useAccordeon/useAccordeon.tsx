@@ -28,7 +28,7 @@ const useAccordeon = (cards?: any) => {
     if (refHidden?.current) {
       setHeightActiveBlock(refHidden?.current?.clientHeight);
     }
-  }, [valueAccordeon]);
+  }, [valueAccordeon, cards.length]);
 
   const filterCards = useMemo(() => cards?.filter((el: any) => el?.id !== active?.id), [active, cards]);
   const filterActiveCard = useMemo(() => cards?.filter((el: any) => el?.id === active?.id), [active, cards]);
