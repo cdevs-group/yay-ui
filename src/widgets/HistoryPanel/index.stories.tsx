@@ -21,14 +21,14 @@ export const Panel: React.FC = () => {
   const [activeTab, setActiveTab] = useState(HistoryTabs.ROUNDS);
   const [historyFilter, setHistoryFilter] = useState("all");
 
-  const toggleHistoryFilter = (newFilter: HistoryFilter) => async () => {
-    if (newFilter !== historyFilter) {
-      setHistoryFilter(newFilter);
+  const toggleHistoryFilter = (e) => {   
+    if (e.target.value !== historyFilter) {
+      setHistoryFilter(e.target.value);
     }
   };
   const toggleBaseTab = async (e: any) => {
     setActiveTab(+e.target.value);
-    await toggleHistoryFilter(HistoryFilter.ALL)();
+    setHistoryFilter(HistoryFilter.ALL);
   };
 
   return (

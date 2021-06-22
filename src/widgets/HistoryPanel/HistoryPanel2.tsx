@@ -174,9 +174,10 @@ const HistoryPanel: React.FC<Props> = ({
             <SimpleTabsWrap>
               <SimpleTabs historyFilter={historyFilter} onClick={toggleHistoryFilter} />
             </SimpleTabsWrap>
-            {hasBetHistory ? (
-              <>
-                {historyFilter === HistoryFilter.ALL && (
+
+            <>
+              {historyFilter === HistoryFilter.ALL &&
+                (hasBetHistory ? (
                   <Accordeon cards={newCards}>
                     {newCards.map((item: any) => (
                       <AccordeonCard
@@ -192,19 +193,31 @@ const HistoryPanel: React.FC<Props> = ({
                       />
                     ))}
                   </Accordeon>
-                )}
-                {historyFilter === HistoryFilter.COLLECTED && <div>No result</div>}
-                {/* {historyFilter === HistoryFilter.UNCOLLECTED && (
-                  <Accordeon
-                    value={valueAccordeon}
-                    setValue={setValueAccordeon}
-                    cards={cardsAccordeon.filter((el) => el.id === "3")}
-                  />
-                )} */}
-              </>
-            ) : (
-              <NoHistory />
-            )}
+                ) : (
+                  <NoHistory />
+                ))}
+              {historyFilter === HistoryFilter.COLLECTED &&
+                (hasBetHistory ? (
+                  <Accordeon cards={newCards}>
+                    {newCards.map((item: any) => (
+                      <AccordeonCard
+                        key={item.id}
+                        item={item}
+                        round={item.id}
+                        valueAccordeon={valueAccordeon}
+                        heightActiveBlock={heightActiveBlock}
+                        handleToggle={handleToggleAccordeon}
+                        active={active}
+                        refHidden={refHidden}
+                        detail={"detail" + item.id}
+                      />
+                    ))}
+                  </Accordeon>
+                ) : (
+                  <NoHistory />
+                ))}
+              {historyFilter === HistoryFilter.UNCOLLECTED && <div>No result</div>}
+            </>
           </>
         )}
         {activeTab === HistoryTabs.PNL && (hasBetHistory ? <PnlHistoryPanel>d</PnlHistoryPanel> : <NoHistory />)}
