@@ -19,6 +19,7 @@ export interface StyledCardProps {
     displayNone?: boolean;
     colorNone?: boolean;
     textTooltip?: string;
+    time?: number;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
     isReturn: string;
@@ -33,6 +34,7 @@ export interface StyledCardUpDownProps extends StyledCardProps {
     tabsList: Array<string>;
     inputValue: string;
     handleInputChange: (e: any) => void;
+    time: number;
 }
 export interface CardHeaderProps {
     icon?: ReactNode;
@@ -63,6 +65,7 @@ export interface CardUpDownProps extends CardProps {
     handleInputChange: (e: any) => void;
     leftContent?: string | ReactNode;
     rightContent?: string | ReactNode;
+    time: number;
 }
 export interface CardTheme {
     background: string;

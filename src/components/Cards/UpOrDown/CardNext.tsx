@@ -68,7 +68,7 @@ const CardNext: React.FC<CardUpDownProps> = ({
   handleInputChange,
   leftContent,
   rightContent,
-  time
+  time,
 }) => {
   return (
     <>

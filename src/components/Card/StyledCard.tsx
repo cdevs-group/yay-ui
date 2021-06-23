@@ -160,7 +160,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
   live,
   displayNone,
   colorNone,
-  time
+  time,
 }) => {
   return (
     <Wrap live={live}>
