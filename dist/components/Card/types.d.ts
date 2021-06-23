@@ -3,6 +3,20 @@ export interface StyledCardProps {
     children?: ReactNode;
     leftContent?: string;
     rightContent?: string;
+    payoutUp?: number;
+    payoutDown?: number;
+    negative?: boolean;
+    show?: boolean;
+    closedCount?: any;
+    linePrice?: any;
+    lockedPrice?: any;
+    prize?: any;
+    up?: boolean;
+    showUp?: boolean;
+    showIcon?: boolean;
+    live?: boolean;
+    colorIcon?: string;
+    displayNone?: boolean;
 }
 export interface CardHeaderProps {
     icon?: ReactNode;
@@ -17,6 +31,11 @@ export interface CardHeaderProps {
 export interface CardProps {
     children?: ReactNode;
     active?: boolean;
+    isReturn?: boolean;
+    setIsReturn: (isReturn: string) => void;
+    isAuth: boolean;
+    setConfirm: (value: boolean) => void;
+    setChoice: (value: string) => void;
 }
 export interface CardTheme {
     background: string;

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import CardsBalance from "./CardBalance/CardsBalance";
 import CardsProducts from "./CardsProduct/CardsProducts";
 import UpOrDownCard from "./UpOrDown/UpOrDownCard";
@@ -15,13 +15,13 @@ export const CardsBalancePreview: React.FC = () => {
   return (
     <div>
       <CardsBalance text={text} />
-      <div style={{marginTop:'100px', marginLeft:'100px'}}>
-        <p style={{fontSize:'22px', color:'#fff', marginBottom:'20px'}}>Auth</p>
-        <UpOrDownCard/>
+      <div style={{ marginTop: "100px", marginLeft: "100px" }}>
+        <p style={{ fontSize: "22px", color: "#fff", marginBottom: "20px" }}>Auth</p>
+        <UpOrDownCard />
       </div>
-      <div style={{marginTop:'100px', marginLeft:'100px'}}>
-      <p style={{fontSize:'22px', color:'#fff', marginBottom:'20px'}}>NotAuth</p>
-        <UpOrDownCard/>
+      <div style={{ marginTop: "100px", marginLeft: "100px" }}>
+        <p style={{ fontSize: "22px", color: "#fff", marginBottom: "20px" }}>NotAuth</p>
+        <UpOrDownCard />
       </div>
     </div>
   );

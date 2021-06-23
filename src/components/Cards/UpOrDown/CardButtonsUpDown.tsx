@@ -20,61 +20,54 @@ const Text = styled.div`
   font-size: 17px;
   line-height: 22px;
   letter-spacing: 0.5px;
-  color: #FFFFFF;
+  color: #ffffff;
 `;
 const ButtonWrap = styled.div`
   position: relative;
-  &:last-child{
+  &:last-child {
     margin-top: 30px;
   }
-  &.unChoiced{
-    opacity: .25;
+  &.unChoiced {
+    opacity: 0.25;
   }
 `;
 const CompleteBlock = styled.div`
   position: absolute;
-  top:50%;
-  transform:translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   right: 20px;
-  & svg{
-    fill:${({theme})=>theme.colors.yellow};
+  & svg {
+    fill: ${({ theme }) => theme.colors.yellow};
   }
-`
+`;
 
-const CardButtonsUpDown = ({confirm,handleTurn, choise}:CardButtonsProps) => {
-
+const CardButtonsUpDown = ({ confirm, handleTurn, choise }: CardButtonsProps) => {
   return (
-    <Wrap >
+    <Wrap>
       <Payout>
         <Text>
           <p>PriZe POOL</p>
           <p>$ 400`597</p>
         </Text>
-        <ButtonWrap className={confirm&&choise==='down'?'unChoiced':''} >
-          <Button 
-            value='up' 
-            onClick={handleTurn} 
-            variant='green' 
-            width='100%'
-          >
+        <ButtonWrap className={confirm && choise === "down" ? "unChoiced" : ""}>
+          <Button value="up" onClick={handleTurn} variant="green" width="100%">
             Enter UP
-        </Button>
-        {confirm&&choise==='up'?<CompleteBlock>
-          <CompleteIcon/>
-        </CompleteBlock>:null}
+          </Button>
+          {confirm && choise === "up" ? (
+            <CompleteBlock>
+              <CompleteIcon />
+            </CompleteBlock>
+          ) : null}
         </ButtonWrap>
-        <ButtonWrap  className={confirm&&choise==='up'?'unChoiced':''}  >
-          <Button 
-            value='down' 
-            onClick={handleTurn} 
-            variant='pink' 
-            width='100%'
-          >
+        <ButtonWrap className={confirm && choise === "up" ? "unChoiced" : ""}>
+          <Button value="down" onClick={handleTurn} variant="pink" width="100%">
             Enter DOWN
-        </Button>
-        {confirm&&choise==='down'?<CompleteBlock>
-          <CompleteIcon/>
-        </CompleteBlock>:null}
+          </Button>
+          {confirm && choise === "down" ? (
+            <CompleteBlock>
+              <CompleteIcon />
+            </CompleteBlock>
+          ) : null}
         </ButtonWrap>
       </Payout>
     </Wrap>

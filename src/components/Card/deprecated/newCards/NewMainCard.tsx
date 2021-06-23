@@ -52,7 +52,6 @@ const HeaderWrap = styled.div`
 `;
 
 const NewMainCard: React.FC = () => {
-  const { negative } = props;
 
   return (
     <Wrap>

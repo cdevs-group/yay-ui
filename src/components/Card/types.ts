@@ -18,11 +18,11 @@ export interface StyledCardProps {
   live?: boolean;
   colorIcon?: string;
   displayNone?: boolean;
-//   isReturn?:boolean;
-//   setIsReturn:(isReturn:string)=>void;
-//   isAuth:boolean;
-//   setConfirm:()=>void;
-//   setChoice:()=>void;
+  //   isReturn?:boolean;
+  //   setIsReturn:(isReturn:string)=>void;
+  //   isAuth:boolean;
+  //   setConfirm:()=>void;
+  //   setChoice:()=>void;
 }
 
 export interface CardHeaderProps {
@@ -39,11 +39,11 @@ export interface CardHeaderProps {
 export interface CardProps {
   children?: ReactNode;
   active?: boolean;
-  isReturn?:boolean;
-  setIsReturn:(isReturn:string)=>void;
-  isAuth:boolean;
-  setConfirm:()=>void;
-  setChoice:()=>void;
+  isReturn?: boolean;
+  setIsReturn: (isReturn: string) => void;
+  isAuth: boolean;
+  setConfirm: (value: boolean) => void;
+  setChoice: (value: string) => void;
 }
 
 export interface CardTheme {

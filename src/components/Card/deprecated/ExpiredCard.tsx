@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import CardHeader from "./components/CardHeader";
-import { BnbIcon } from "../Svg";
-import { ClosedPrice } from "../ClosedPrice";
-import { BetPosition, Round } from "./types";
+import { BnbIcon } from "../../Svg";
+import { BetPosition, Round } from "../types";
+import CardHeader from "../components/CardHeader";
+import { ClosedPrice } from "../../ClosedPrice";
 
 const Wrap = styled.div`
   position: relative;

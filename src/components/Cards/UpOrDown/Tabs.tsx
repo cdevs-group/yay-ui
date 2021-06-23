@@ -30,8 +30,7 @@ const Tab = styled.button`
   }
 `;
 
-const Tabs = ({tabValue,handleToggleTabs,tabsList}:TabsProps) => {
-
+const Tabs = ({ tabValue, handleToggleTabs, tabsList }: TabsProps) => {
   return (
     <TabsBlock>
       {tabsList.map((item, i) => (
