@@ -51,24 +51,6 @@ const CenterBlock = styled.div`
     cursor: pointer;
   }
 `;
-const BottomCard = styled.div`
-  position: absolute;
-  left: 35%;
-  bottom: 1%;
-  transform: rotate(-25deg);
-  width: 45px;
-  height: 61px;
-  background: ${({ theme }) => theme.colors.lightGreyBg};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow3};
-  border-radius: 10px;
-`;
-const TopCard = styled(BottomCard)`
-  position: absolute;
-  left: 45%;
-  bottom: -8%;
-  transform: rotate(20deg);
-  background: ${({ theme }) => theme.colors.text};
-`;
 
 const CardNext: React.FC<CardUpDownProps> = ({
   setChoice,
@@ -84,6 +66,8 @@ const CardNext: React.FC<CardUpDownProps> = ({
   tabsList,
   inputValue,
   handleInputChange,
+  leftContent,
+  rightContent,
 }) => {
   return (
     <>
@@ -100,6 +84,8 @@ const CardNext: React.FC<CardUpDownProps> = ({
         tabsList={tabsList}
         inputValue={inputValue}
         handleInputChange={handleInputChange}
+        leftContent={leftContent}
+        rightContent={rightContent}
       >
         {children}
       </StyledCard>

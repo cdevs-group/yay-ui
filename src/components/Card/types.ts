@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string | ReactNode;
-  rightContent?: string;
+  rightContent?: string | ReactNode;
   payoutUp?: number | string;
   payoutDown?: number | string;
   negative?: boolean;
@@ -65,6 +65,8 @@ export interface CardUpDownProps extends CardProps {
   tabsList: Array<string>;
   inputValue: string;
   handleInputChange: (e: any) => void;
+  leftContent?: string | ReactNode;
+  rightContent?: string | ReactNode;
 }
 
 export interface CardTheme {

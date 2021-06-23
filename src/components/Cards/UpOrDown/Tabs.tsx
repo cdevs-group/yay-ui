@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { transparentize } from "polished";
 import { TabsProp } from "../../Tabs";
 import { TabsProps } from "../types";
+import { Box } from "../../Box";
 
 const TabsBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 15px;
   height: 30px;
 `;
 
@@ -30,7 +30,7 @@ const Tab = styled.button`
   }
 `;
 
-const Tabs = ({ tabValue, handleToggleTabs, tabsList }: TabsProps) => {
+const Tabs = ({ tabValue, handleToggleTabs, tabsList, ...props }: TabsProps) => {
   return (
     <TabsBlock>
       {tabsList.map((item, i) => (
