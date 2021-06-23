@@ -20,7 +20,7 @@ const Header: React.FC<NavProps> = ({
   children,
 }) => {
   const location = useLocation();
- 
+
   return (
     <HeaderWrap>
       {/* <Link> */}

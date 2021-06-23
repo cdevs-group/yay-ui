@@ -130,7 +130,7 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   }
 `;
 
-const DownContent = styled.div<{ negative?: boolean, displayNone?: boolean }>`
+const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   display: flex;
   justify-content: ${({ displayNone }) => (displayNone ? "center" : "space-between")};
   max-height: 50px;
