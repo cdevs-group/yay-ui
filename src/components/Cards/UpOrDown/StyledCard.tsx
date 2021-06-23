@@ -177,7 +177,7 @@ const StyledCard: React.FC<StyledCardUpDownProps> = ({
             UP
             <RightText>
               <div className="payout">Payout</div>
-              {/* <div>{upValue}</div> */}
+              <div>{upValue}</div>
             </RightText>
           </Up>
           <MainBlock>{children}</MainBlock>
