@@ -9,9 +9,40 @@ import Tabs from "./Tabs";
 import InputCard from "./InputCard";
 
 const Wrap = styled.div`
+  height: 367px;
   width: 308px;
   @media (max-width: 767px) {
     width: 278px;
+  }
+  transition: 0.5s;
+  &.turn {
+    transform: rotateY(180deg);
+    & div.back {
+      backface-visibility: visible;
+      opacity: 1;
+    }
+    & div.front {
+      backface-visibility: hidden;
+      opacity: 0;
+    }
+  }
+  & div.front {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    backface-visibility: visible;
+    opacity: 1;
+  }
+  & div.back {
+    position: absolute;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    z-index: 3;
+    opacity: 0;
   }
 `;
 
@@ -19,6 +50,10 @@ const TopContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* position: absolute; */
+  ${Wrap}.turn & {
+    display: none;
+  }
 `;
 
 const LeftContent = styled.div`
@@ -34,9 +69,6 @@ const LeftContent = styled.div`
   font-size: 12px;
   color: ${({ theme }) => theme.colors.text};
 `;
-
-const RightContent = styled(LeftContent)``;
-
 const Content = styled.div`
   position: relative;
   margin-top: 28px;
@@ -73,11 +105,13 @@ const Content = styled.div`
     opacity: 0;
   }
 `;
-
+const RightContent = styled(LeftContent)`
+  font-size: 11px;
+`;
 const Up = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 28px 20px 13px;
+  padding: 18px 20px 15px;
   font-weight: 500;
   font-size: 15px;
   line-height: 19px;
@@ -108,10 +142,13 @@ const MainBlock = styled.div`
   }
 `;
 const BackSide = styled.div`
-  height: 100%;
   width: 100%;
+  height: 367px;
+  top: 0;
+  position: absolute;
+  box-sizing: border-box;
   background: ${({ theme }) => theme.colors.dark};
-  padding: 20px 15px 25px;
+  padding: 26px 20px 25px;
 `;
 const ButtonBack = styled.button`
   height: 30px;
@@ -130,11 +167,12 @@ const ButtonBack = styled.button`
   cursor: pointer;
 `;
 const Title = styled.div`
+  margin-bottom: 22px;
   font-weight: 500;
   font-size: 21px;
   line-height: 27px;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.contrast};
 `;
 const NoteBlock = styled.div`
   margin-top: 17px;
@@ -142,7 +180,11 @@ const NoteBlock = styled.div`
   line-height: 14px;
   text-align: center;
   letter-spacing: 0.05em;
-  color: #a3a3a3;
+  color: ${({ theme }) => theme.colors.textGray};
+`;
+const TabsBlock = styled.div`
+  margin-top: 25px;
+  margin-bottom: 20px;
 `;
 
 const Down = styled(Up)``;
@@ -165,19 +207,19 @@ const StyledCard: React.FC<StyledCardUpDownProps> = ({
   handleInputChange,
 }) => {
   return (
-    <Wrap>
-      {/* <TopContent>
+    <Wrap className={isReturn !== "" ? "turn" : ""}>
+      <TopContent>
         <LeftContent>{leftContent}</LeftContent>
         <Timer time={2000} color="#fff" />
         <RightContent>{rightContent}</RightContent>
-      </TopContent> */}
-      <Content className={isReturn !== "" ? "turn" : ""}>
+      </TopContent>
+      <Content>
         <div className="front">
           <Up>
             UP
             <RightText>
               <div className="payout">Payout</div>
-              {/* <div>{upValue}</div> */}
+              <div>{upValue}</div>
             </RightText>
           </Up>
           <MainBlock>{children}</MainBlock>
@@ -195,7 +237,9 @@ const StyledCard: React.FC<StyledCardUpDownProps> = ({
           </ButtonBack>
           <Title>Set Position</Title>
           <InputCard value={inputValue} onChange={handleInputChange} />
-          <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
+          <TabsBlock>
+            <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
+          </TabsBlock>
           <Button
             onClick={() => {
               setConfirm(true);

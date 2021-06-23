@@ -4,16 +4,12 @@ import { Button } from "../../Button";
 import { CompleteIcon } from "../../Svg";
 import { CardButtonsProps } from "../types";
 
-const Wrap = styled.div`
-  padding-bottom: 10px;
-`;
-
 const Payout = styled.div`
-  padding-bottom: 15px;
+  padding-bottom: 17px;
   background: ${({ theme }) => theme.colors.cardBg};
 `;
 const Text = styled.div`
-  padding: 19px 10px;
+  padding: 23px 18px 18px;
   display: flex;
   justify-content: space-between;
   font-weight: 500;
@@ -25,7 +21,7 @@ const Text = styled.div`
 const ButtonWrap = styled.div`
   position: relative;
   &:last-child {
-    margin-top: 30px;
+    margin-top: 14px;
   }
   &.unChoiced {
     opacity: 0.25;
@@ -43,7 +39,7 @@ const CompleteBlock = styled.div`
 
 const CardButtonsUpDown = ({ pool, confirm, handleTurn, choise }: CardButtonsProps) => {
   return (
-    <Wrap>
+    <>
       <Payout>
         <Text>
           <p>PriZe POOL</p>
@@ -70,7 +66,7 @@ const CardButtonsUpDown = ({ pool, confirm, handleTurn, choise }: CardButtonsPro
           ) : null}
         </ButtonWrap>
       </Payout>
-    </Wrap>
+    </>
   );
 };
 export default CardButtonsUpDown;

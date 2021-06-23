@@ -65,6 +65,8 @@ export interface CardUpDownProps extends CardProps {
   tabsList: Array<string>;
   inputValue: string;
   handleInputChange: (e: any) => void;
+  leftContent: string;
+  rightContent: string;
 }
 
 export interface CardTheme {
