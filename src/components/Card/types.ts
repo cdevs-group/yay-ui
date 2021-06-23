@@ -4,6 +4,7 @@ export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string;
   rightContent?: string;
+
   payoutUp?: number;
   payoutDown?: number;
   negative?: boolean;
