@@ -43,6 +43,8 @@ const Arrow = styled.div<{ negative?: boolean }>`
   background: ${({ theme, negative }) =>
     negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient};
   border-radius: 7px;
+  transform: ${({ negative }) =>
+    negative ? 'scale(1,-1)' : 'none'};
 `;
 
 const LinePrice = styled.div<{ negative?: boolean }>`

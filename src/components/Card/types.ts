@@ -4,8 +4,8 @@ export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string | ReactNode;
   rightContent?: string;
-  payoutUp?: number;
-  payoutDown?: number;
+  payoutUp?: number | string;
+  payoutDown?: number | string;
   negative?: boolean;
   show?: boolean;
   closedCount?: any;
@@ -19,6 +19,7 @@ export interface StyledCardProps {
   colorIcon?: string;
   displayNone?: boolean;
   colorNone?: boolean;
+  textTooltip?: string;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;

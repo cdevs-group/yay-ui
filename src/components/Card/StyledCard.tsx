@@ -173,7 +173,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
           UP
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
-            <div>{payoutUp}x</div>
+            <div>{payoutUp}</div>
             <IconComplete className="completeIcon" showIcon={showIcon} negative={negative}>
               <CompleteIcon fill="#FFB72C" />
             </IconComplete>
@@ -196,7 +196,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
           DOWN
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
-            <div>{payoutDown}x</div>
+            <div>{payoutDown}</div>
             <IconCompleteDown className="completeIcon" showIcon={showIcon} negative={negative}>
               <CompleteIcon fill="#FFB72C" />
             </IconCompleteDown>
