@@ -76,11 +76,11 @@ const TopCard = styled(BottomCard)`
 `;
 
 const Card: React.FC<CardProps> = ({
-  setChoice,
-  setConfirm,
-  isAuth,
-  setIsReturn,
-  isReturn,
+  // setChoice,
+  // setConfirm,
+  // isAuth,
+  // setIsReturn,
+  // isReturn,
   children,
   active,
   ...props

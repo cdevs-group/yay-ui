@@ -29,15 +29,15 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
 
   return (
     <Wrap>
-      {timeArray.map((item, i) => (
-        <React.Fragment key={`item-${i}`}>
-          <Block color={color}>
+      <Block color={color}>
+        {timeArray.map((item, i) => (
+          <React.Fragment key={`item-${i}`}>
             {handleDigit(item).leftDigit}
             {handleDigit(item).rightDigit}
-          </Block>
-          {i === 2 ? null : <Dots>:</Dots>}
-        </React.Fragment>
-      ))}
+            {i === 2 ? null : <Dots>:</Dots>}
+          </React.Fragment>
+        ))}
+      </Block>
     </Wrap>
   );
 }
@@ -57,16 +57,18 @@ const Block = styled.div<TimerColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
+  width: 186px;
   height: 48px;
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   color: ${getColor};
   font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.05em;
 `;
 
 const Dots = styled.div`
-  /* margin: 0 12px; */
+  margin: 0 12px;
   color: ${({ theme }) => theme.colors.text};
 `;

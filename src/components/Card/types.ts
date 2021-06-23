@@ -19,6 +19,7 @@ export interface StyledCardProps {
   live?: boolean;
   colorIcon?: string;
   displayNone?: boolean;
+  colorNone?: boolean;
   //   isReturn?:boolean;
   //   setIsReturn:(isReturn:string)=>void;
   //   isAuth:boolean;

@@ -6,7 +6,7 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="50" height="50" viewBox="0 0 50 50" {...props}>
       <rect width="50" height="50" rx="12" fill="white" fill-opacity="0.15" />
-      <g filter="url(#filter0_d)">
+      <g filter="url(#fil44444)">
         <path
           d="M16 25.5C16 30.7467 20.2533 35 25.5 35C30.7467 35 35 30.7467 35 25.5C35 20.2533 30.7467 16 25.5 16C23.4503 16 21.5521 16.6492 20 17.7531"
           stroke="#F3F3F3"
@@ -20,7 +20,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       </g>
       <defs>
         <filter
-          id="filter0_d"
+          id="fil44444"
           x="3"
           y="4"
           width="37"
