@@ -88,11 +88,11 @@ const Card: React.FC<CardProps> = ({
   return (
     <Wrap>
       <StyledCard
-        setChoice={setChoice}
-        setConfirm={setConfirm}
-        isAuth={isAuth}
-        setIsReturn={setIsReturn}
-        isReturn={isReturn}
+        // setChoice={setChoice}
+        // setConfirm={setConfirm}
+        // isAuth={isAuth}
+        // setIsReturn={setIsReturn}
+        // isReturn={isReturn}
         {...props}
       >
         {children}

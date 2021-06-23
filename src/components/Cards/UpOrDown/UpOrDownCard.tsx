@@ -17,7 +17,7 @@ const UpOrDownCard = () => {
       setChoice={setChoice}
       isAuth
       setIsReturn={setIsReturn}
-      isReturn={isReturn}
+      // isReturn={isReturn}
       active={true}
     >
       <CardButtonsUpDown choise={choise} confirm={confirm} handleTurn={handleTurn} />

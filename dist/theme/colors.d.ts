@@ -24,6 +24,9 @@ export declare const baseColors: {
     whiteRgba: string;
     greenGradient2: string;
     textGray2: string;
+    bgCard: string;
+    cardShadow: string;
+    yellow: string;
 };
 export declare const brandColors: {
     binance: string;

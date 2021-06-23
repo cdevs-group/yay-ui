@@ -142,11 +142,11 @@ const NoteBlock = styled.div`
 const Down = styled(Up)``;
 
 const StyledCard: React.FC<StyledCardProps> = ({
-  setChoice,
-  setConfirm,
-  isAuth,
-  setIsReturn,
-  isReturn,
+  // setChoice,
+  // setConfirm,
+  // isAuth,
+  // setIsReturn,
+  // isReturn,
   children,
   leftContent,
   rightContent,
@@ -169,50 +169,50 @@ const StyledCard: React.FC<StyledCardProps> = ({
         <Timer time={2000} color="#fff" />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
-      <Content className={isReturn ? "turn" : ""}>
-        <div className="front">
-          <Up>
-            UP
-            <RightText>
-              <div className="payout">Payout</div>
-              <div>1,03x</div>
-            </RightText>
-          </Up>
-          <MainBlock>{children}</MainBlock>
-          <Down>
-            DOWN
-            <RightText>
-              <div className="payout">Payout</div>
-              <div>1,03x</div>
-            </RightText>
-          </Down>
-        </div>
-        <BackSide className="back">
-          <ButtonBack onClick={() => setIsReturn("")}>
+      {/* <Content className={isReturn ? "turn" : ""}> */}
+      <div className="front">
+        <Up>
+          UP
+          <RightText>
+            <div className="payout">Payout</div>
+            <div>1,03x</div>
+          </RightText>
+        </Up>
+        <MainBlock>{children}</MainBlock>
+        <Down>
+          DOWN
+          <RightText>
+            <div className="payout">Payout</div>
+            <div>1,03x</div>
+          </RightText>
+        </Down>
+      </div>
+      <BackSide className="back">
+        {/* <ButtonBack onClick={() => setIsReturn("")}>
             <ArrowIcon />
-          </ButtonBack>
-          <Title>Set Position</Title>
-          <InputCard value={inputValue} onChange={handleInputChange} />
-          <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
-          <Button
-            onClick={() => {
-              setConfirm(true);
-              setChoice(isReturn);
-              setIsReturn("");
-            }}
-            marginTop="15px"
-            width="100%"
-            variant="green"
-          >
-            {isAuth && isReturn === "up"
+          </ButtonBack> */}
+        <Title>Set Position</Title>
+        <InputCard value={inputValue} onChange={handleInputChange} />
+        <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
+        <Button
+          // onClick={() => {
+          //   setConfirm(true);
+          //   setChoice(isReturn);
+          //   setIsReturn("");
+          // }}
+          marginTop="15px"
+          width="100%"
+          variant="green"
+        >
+          {/* {isAuth && isReturn === "up"
               ? "Confirm UP"
               : isAuth && isReturn === "down"
               ? "Confirm DOWN"
-              : "Unlock Wallet"}
-          </Button>
-          <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
-        </BackSide>
-      </Content>
+              : "Unlock Wallet"} */}
+        </Button>
+        <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
+      </BackSide>
+      {/* </Content> */}
     </Wrap>
   );
 };

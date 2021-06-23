@@ -61,6 +61,7 @@ export declare type Colors = {
     greenBg: string;
     redBg: string;
     yellowBg: string;
+    yellowBg2: string;
     greenText: string;
     lightGreyBg: string;
     blackColor: string;
@@ -83,6 +84,9 @@ export declare type Colors = {
     bgOpacity2: string;
     bgBlackRgba: string;
     whiteRgba: string;
+    cardShadow: string;
+    bgCard: string;
+    yellow: string;
     gradients: Gradients;
     binance: string;
 };

@@ -52,12 +52,7 @@ const AccordeonCard = ({
             height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
           }}
         >
-          <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>
-            <HiddenItem>{detail}</HiddenItem>
-            {/* {item.content.map((el, i) => (
-            <HiddenItem key={i}>{el}</HiddenItem>
-          ))} */}
-          </HiddenBlock>
+          <HiddenBlock ref={active && active.id === item.id ? refHidden : null}>{detail}</HiddenBlock>
         </HiddenBlockWrap>
       </div>
     </Flipped>
@@ -65,23 +60,6 @@ const AccordeonCard = ({
 };
 
 export default AccordeonCard;
-
-const Wrap = styled.div`
-  position: relative;
-  background: ${({ theme }) => theme.colors.panel};
-`;
-
-const Collect = styled.div`
-  padding: 7px 21px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.5px;
-  border-radius: 7px;
-  border: 1px solid ${({ theme }) => theme.colors.green};
-  color: ${({ theme }) => theme.colors.text};
-`;
 
 const Card = styled.div`
   display: flex;
@@ -102,9 +80,4 @@ const HiddenBlockWrap = styled.div`
 
 const HiddenBlock = styled.div`
   background: ${({ theme }) => theme.colors.panel};
-`;
-
-const HiddenItem = styled.div`
-  padding: 30px 20px;
-  background: ${({ theme }) => theme.colors.dark};
 `;
