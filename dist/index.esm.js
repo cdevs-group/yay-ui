@@ -2049,6 +2049,8 @@ var useAccordeon = function (cards) {
     };
     useEffect(function () {
         setActive(cards === null || cards === void 0 ? void 0 : cards[0]);
+    }, [cards.length]);
+    useEffect(function () {
         setValueAccordeon && setValueAccordeon(undefined);
     }, []);
     useEffect(function () {

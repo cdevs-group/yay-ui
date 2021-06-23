@@ -2080,6 +2080,8 @@ var useAccordeon = function (cards) {
     };
     React.useEffect(function () {
         setActive(cards === null || cards === void 0 ? void 0 : cards[0]);
+    }, [cards.length]);
+    React.useEffect(function () {
         setValueAccordeon && setValueAccordeon(undefined);
     }, []);
     React.useEffect(function () {
