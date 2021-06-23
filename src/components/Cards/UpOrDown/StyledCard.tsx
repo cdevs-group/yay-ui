@@ -4,12 +4,15 @@ import Timer from "../../Timer/Timer";
 import { transparentize } from "polished";
 import ArrowIcon from "../../Cards/ArrowIcon";
 import { Button } from "../../Button";
-import { StyledCardProps } from "../../Card/types";
+import { StyledCardUpDownProps } from "../../Card/types";
 import Tabs from "./Tabs";
 import InputCard from "./InputCard";
 
 const Wrap = styled.div`
   width: 308px;
+  @media (max-width: 767px) {
+    width: 278px;
+  }
 `;
 
 const TopContent = styled.div`
@@ -100,6 +103,9 @@ const MainBlock = styled.div`
   box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.colors.cardShadow};
   border-radius: 15px;
+  @media (max-width: 767px) {
+    width: 303px;
+  }
 `;
 const BackSide = styled.div`
   height: 100%;
@@ -141,78 +147,74 @@ const NoteBlock = styled.div`
 
 const Down = styled(Up)``;
 
-const StyledCard: React.FC<StyledCardProps> = ({
-  // setChoice,
-  // setConfirm,
-  // isAuth,
-  // setIsReturn,
-  // isReturn,
+const StyledCard: React.FC<StyledCardUpDownProps> = ({
+  setChoice,
+  setConfirm,
+  isAuth,
+  setIsReturn,
+  isReturn,
   children,
+  upValue,
+  downValue,
   leftContent,
   rightContent,
+  tabValue,
+  handleToggleTabs,
+  tabsList,
+  inputValue,
+  handleInputChange,
 }) => {
-  const tabsList = ["10%", "25%", "50%", "75%", "Max"];
-  const [tabValue, setTabValue] = useState(0);
-  const [inputValue, setInputValue] = useState("");
-
-  const handleToggleTabs = (e: any) => {
-    setTabValue(+e.currentTarget.value);
-  };
-  const handleInputChange = (e: any) => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <Wrap>
-      <TopContent>
+      {/* <TopContent>
         <LeftContent>{leftContent}</LeftContent>
         <Timer time={2000} color="#fff" />
         <RightContent>{rightContent}</RightContent>
-      </TopContent>
-      {/* <Content className={isReturn ? "turn" : ""}> */}
-      <div className="front">
-        <Up>
-          UP
-          <RightText>
-            <div className="payout">Payout</div>
-            <div>1,03x</div>
-          </RightText>
-        </Up>
-        <MainBlock>{children}</MainBlock>
-        <Down>
-          DOWN
-          <RightText>
-            <div className="payout">Payout</div>
-            <div>1,03x</div>
-          </RightText>
-        </Down>
-      </div>
-      <BackSide className="back">
-        {/* <ButtonBack onClick={() => setIsReturn("")}>
+      </TopContent> */}
+      <Content className={isReturn !== "" ? "turn" : ""}>
+        <div className="front">
+          <Up>
+            UP
+            <RightText>
+              <div className="payout">Payout</div>
+              {/* <div>{upValue}</div> */}
+            </RightText>
+          </Up>
+          <MainBlock>{children}</MainBlock>
+          <Down>
+            DOWN
+            <RightText>
+              <div className="payout">Payout</div>
+              <div>{downValue}</div>
+            </RightText>
+          </Down>
+        </div>
+        <BackSide className="back">
+          <ButtonBack onClick={() => setIsReturn("")}>
             <ArrowIcon />
-          </ButtonBack> */}
-        <Title>Set Position</Title>
-        <InputCard value={inputValue} onChange={handleInputChange} />
-        <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
-        <Button
-          // onClick={() => {
-          //   setConfirm(true);
-          //   setChoice(isReturn);
-          //   setIsReturn("");
-          // }}
-          marginTop="15px"
-          width="100%"
-          variant="green"
-        >
-          {/* {isAuth && isReturn === "up"
+          </ButtonBack>
+          <Title>Set Position</Title>
+          <InputCard value={inputValue} onChange={handleInputChange} />
+          <Tabs tabValue={tabValue} handleToggleTabs={handleToggleTabs} tabsList={tabsList} />
+          <Button
+            onClick={() => {
+              setConfirm(true);
+              setChoice(isReturn);
+              setIsReturn("");
+            }}
+            marginTop="15px"
+            width="100%"
+            variant="green"
+          >
+            {isAuth && isReturn === "up"
               ? "Confirm UP"
               : isAuth && isReturn === "down"
               ? "Confirm DOWN"
-              : "Unlock Wallet"} */}
-        </Button>
-        <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
-      </BackSide>
-      {/* </Content> */}
+              : "Unlock Wallet"}
+          </Button>
+          <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
+        </BackSide>
+      </Content>
     </Wrap>
   );
 };

@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { CardProps } from "../../Card/types";
+import { CardUpDownProps } from "../../Card/types";
 import { ChartIcon, GreenArrow, HistoryIcon } from "../../Svg";
 import StyledCard from "./StyledCard";
-
-const Wrap = styled.div`
-  width: 404px;
-`;
 
 const BottomContent = styled.div`
   display: flex;
@@ -14,14 +10,15 @@ const BottomContent = styled.div`
   margin-top: 20px;
   width: 308px;
   transition: 0.3s;
+  @media (max-width: 767px) {
+    width: 278px;
+  }
 `;
-
 const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
 `;
-
 const CenterBlock = styled.div`
   position: relative;
   display: flex;
@@ -54,7 +51,6 @@ const CenterBlock = styled.div`
     cursor: pointer;
   }
 `;
-
 const BottomCard = styled.div`
   position: absolute;
   left: 35%;
@@ -66,7 +62,6 @@ const BottomCard = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow3};
   border-radius: 10px;
 `;
-
 const TopCard = styled(BottomCard)`
   position: absolute;
   left: 45%;
@@ -75,25 +70,36 @@ const TopCard = styled(BottomCard)`
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<CardUpDownProps> = ({
   setChoice,
   setConfirm,
   isAuth,
   setIsReturn,
   isReturn,
   children,
-  active,
-  ...props
+  upValue,
+  downValue,
+  tabValue,
+  handleToggleTabs,
+  tabsList,
+  inputValue,
+  handleInputChange,
 }) => {
   return (
-    <Wrap>
+    <>
       <StyledCard
-        // setChoice={setChoice}
-        // setConfirm={setConfirm}
-        // isAuth={isAuth}
-        // setIsReturn={setIsReturn}
-        // isReturn={isReturn}
-        {...props}
+        setChoice={setChoice}
+        setConfirm={setConfirm}
+        isAuth={isAuth}
+        setIsReturn={setIsReturn}
+        isReturn={isReturn}
+        upValue={upValue}
+        downValue={downValue}
+        tabValue={tabValue}
+        handleToggleTabs={handleToggleTabs}
+        tabsList={tabsList}
+        inputValue={inputValue}
+        handleInputChange={handleInputChange}
       >
         {children}
       </StyledCard>
@@ -115,7 +121,7 @@ const Card: React.FC<CardProps> = ({
           <HistoryIcon />
         </Button>
       </BottomContent>
-    </Wrap>
+    </>
   );
 };
 export default Card;
