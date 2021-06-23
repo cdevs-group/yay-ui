@@ -86,7 +86,7 @@ const Card: React.FC<CardProps> = ({ children, ...props }) => {
   return (
     <Wrap>
       <StyledCard {...props}>{children}</StyledCard>
-      <BottomContent>
+      {/* <BottomContent>
         <Button>
           <ChartIcon />
         </Button>
@@ -103,7 +103,7 @@ const Card: React.FC<CardProps> = ({ children, ...props }) => {
         <Button>
           <HistoryIcon />
         </Button>
-      </BottomContent>
+      </BottomContent> */}
     </Wrap>
   );
 };

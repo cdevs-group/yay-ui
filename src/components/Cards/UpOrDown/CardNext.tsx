@@ -70,7 +70,7 @@ const TopCard = styled(BottomCard)`
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const Card: React.FC<CardUpDownProps> = ({
+const CardNext: React.FC<CardUpDownProps> = ({
   setChoice,
   setConfirm,
   isAuth,
@@ -103,7 +103,7 @@ const Card: React.FC<CardUpDownProps> = ({
       >
         {children}
       </StyledCard>
-      <BottomContent>
+      {/* <BottomContent>
         <Button>
           <ChartIcon />
         </Button>
@@ -120,8 +120,8 @@ const Card: React.FC<CardUpDownProps> = ({
         <Button>
           <HistoryIcon />
         </Button>
-      </BottomContent>
+      </BottomContent> */}
     </>
   );
 };
-export default Card;
+export default CardNext;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CardsBalance from "./CardBalance/CardsBalance";
 import CardsProducts from "./CardsProduct/CardsProducts";
-import Card from "./UpOrDown/Card";
+import Card from "./UpOrDown/CardNext";
 import CardButtonsUpDown from "./UpOrDown/CardButtonsUpDown";
 import UpOrDownCard from "./UpOrDown/UpOrDownCard";
 
