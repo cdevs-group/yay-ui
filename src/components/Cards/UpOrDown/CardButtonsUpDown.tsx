@@ -41,13 +41,13 @@ const CompleteBlock = styled.div`
   }
 `;
 
-const CardButtonsUpDown = ({ confirm, handleTurn, choise }: CardButtonsProps) => {
+const CardButtonsUpDown = ({ pool, confirm, handleTurn, choise }: CardButtonsProps) => {
   return (
     <Wrap>
       <Payout>
         <Text>
           <p>PriZe POOL</p>
-          <p>$ 400`597</p>
+          <p>{pool}</p>
         </Text>
         <ButtonWrap className={confirm && choise === "down" ? "unChoiced" : ""}>
           <Button value="up" onClick={handleTurn} variant="green" width="100%">

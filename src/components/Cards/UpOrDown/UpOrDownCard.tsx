@@ -6,9 +6,19 @@ const UpOrDownCard = () => {
   const [isReturn, setIsReturn] = useState<string>("");
   const [confirm, setConfirm] = useState<boolean>(false);
   const [choise, setChoice] = useState<string>("");
+  const tabsList = ["10%", "25%", "50%", "75%", "Max"];
+  const [tabValue, setTabValue] = useState(0);
+  const [inputValue, setInputValue] = useState("");
 
   const handleTurn = (e: any) => {
     setIsReturn(e.target.value);
+  };
+
+  const handleToggleTabs = (e: any) => {
+    setTabValue(+e.currentTarget.value);
+  };
+  const handleInputChange = (e: any) => {
+    setInputValue(e.target.value);
   };
 
   return (
@@ -17,10 +27,16 @@ const UpOrDownCard = () => {
       setChoice={setChoice}
       isAuth
       setIsReturn={setIsReturn}
-      // isReturn={isReturn}
-      active={true}
+      isReturn={isReturn}
+      upValue="1.02x"
+      downValue="1.30x"
+      tabValue={tabValue}
+      handleToggleTabs={handleToggleTabs}
+      tabsList={tabsList}
+      inputValue={inputValue}
+      handleInputChange={handleInputChange}
     >
-      <CardButtonsUpDown choise={choise} confirm={confirm} handleTurn={handleTurn} />
+      <CardButtonsUpDown pool="$ 4354323" choise={choise} confirm={confirm} handleTurn={handleTurn} />
     </Card>
   );
 };
