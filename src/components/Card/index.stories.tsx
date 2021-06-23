@@ -3,6 +3,7 @@ import ExpiredCard from "./ExpiredCard";
 import LiveCard from "./LiveCard";
 import LoaderCard from "./Loader";
 import Card from "./Card";
+import { IconCircle } from "../Svg";
 
 export default {
   title: "Components/Card",
@@ -13,7 +14,7 @@ export default {
 export const ExpiredNAuth: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card displayNone leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} negative>
+      <Card leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} negative>
         <ExpiredCard negative closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
       </Card>
     </div>
@@ -83,7 +84,15 @@ export const LiveUpDownCard: React.FC = () => {
 export const CardLoader: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card live leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} displayNone>
+      <Card
+        live
+        leftContent={<IconCircle />}
+        rightContent="#001"
+        payoutUp={1.03}
+        payoutDown={5.03}
+        displayNone
+        colorNone
+      >
         <LoaderCard />
       </Card>
     </div>

@@ -41,19 +41,7 @@ const Wrap = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const Loader = styled.div`
-  /* position: relative; */
-  /* top: 50%;
-  bottom: 0;
-  left: 0;
-  right: 0; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center; */
-  /* justify-content: center; */
-  /* height: 50%; */
-`;
+const Loader = styled.div``;
 
 const OrangeCircle = styled.div`
   position: absolute;
@@ -92,7 +80,7 @@ const YellowCircle = styled.div`
 `;
 
 const BottomText = styled.div`
-  margin-top: 40px;
+  margin-top: 75px;
   text-align: center;
   font-weight: normal;
   font-size: 11px;
@@ -111,9 +99,7 @@ const LoaderCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePric
         <YellowCircle />
       </Loader>
       <BottomText>
-        This round`s closing transactions has <br />
-        been submitted to the blockchain, and is <br />
-        awaiting confirmation
+        This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation
       </BottomText>
     </Wrap>
   );

@@ -19,6 +19,7 @@ export interface StyledCardProps {
   live?: boolean;
   colorIcon?: string;
   displayNone?: boolean;
+  colorNone?: boolean;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;

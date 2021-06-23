@@ -3,18 +3,24 @@ import styled from "styled-components";
 import StyledCard from "./StyledCard";
 import { CardProps } from "./types";
 import { transparentize } from "polished";
-import { GreenArrow } from "../Svg";
+import { GreenArrow, ChartIcon, HistoryIcon } from "../Svg";
+
+interface CardProps extends StyledCardProps {}
 
 const Wrap = styled.div`
-  width: 404px;
+  width: 335px;
   /* height: 470px; */
 `;
 
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 28px;
+  margin-top: 30px;
   width: 308px;
+  transition: 0.3s;
+  @media (max-width: 400px) {
+    width: 278px;
+  }
 `;
 
 const Button = styled.button`
@@ -28,8 +34,13 @@ const CenterBlock = styled.div`
   display: flex;
   justify-content: center;
   width: 198px;
-  background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
+  & button {
+    display: flex;
+    align-items: center;
+  }
   & button.arrowLeft {
     position: absolute;
     z-index: 1;
@@ -45,7 +56,7 @@ const CenterBlock = styled.div`
     background: none;
     border: none;
     right: 3%;
-    top: 20%;
+    top: 35%;
     transform: rotate(180deg);
     cursor: pointer;
   }
@@ -71,12 +82,14 @@ const TopCard = styled(BottomCard)`
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const Card: React.FC<CardProps> = ({ children, active, ...props }) => {
+const Card: React.FC<CardProps> = ({ children, ...props }) => {
   return (
     <Wrap>
       <StyledCard {...props}>{children}</StyledCard>
       <BottomContent>
-        <Button>{/* <img src={Chart}/>  */}</Button>
+        <Button>
+          <ChartIcon />
+        </Button>
         <CenterBlock>
           <button className="arrowLeft">
             <GreenArrow color="#47DA3B" />
@@ -87,7 +100,9 @@ const Card: React.FC<CardProps> = ({ children, active, ...props }) => {
             <GreenArrow color="#47DA3B" />
           </button>
         </CenterBlock>
-        <Button>{/* <img src={History}/>  */}</Button>
+        <Button>
+          <HistoryIcon />
+        </Button>
       </BottomContent>
     </Wrap>
   );
