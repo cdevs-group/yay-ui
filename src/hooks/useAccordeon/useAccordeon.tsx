@@ -28,14 +28,14 @@ const useAccordeon = (cards?: any) => {
     if (refHidden?.current) {
       setHeightActiveBlock(refHidden?.current?.clientHeight);
     }
-  }, [valueAccordeon]);
+  }, [active, cards.length]);
 
   const filterCards = useMemo(() => cards?.filter((el: any) => el?.id !== active?.id), [active, cards]);
   const filterActiveCard = useMemo(() => cards?.filter((el: any) => el?.id === active?.id), [active, cards]);
 
   useEffect(() => {
     setNewCards([...filterActiveCard, ...filterCards]);
-  }, [active]);
+  }, [active, cards.length]);
 
   return { valueAccordeon, setValueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden };
 };

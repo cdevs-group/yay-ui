@@ -7,14 +7,14 @@ const Icon: React.FC<SvgProps> = (props) => {
     <Svg width="18" height="18" viewBox="0 0 18 18">
       <path
         d="M7.58579 14.6571L1.92893 9.00022M1.92893 9.00022L7.58579 3.34337M1.92893 9.00022L16.0711 9.00022"
-        stroke="url(#paint0_linear)"
+        stroke="url(#paint0_linearzaq)"
         strokeWidth="2"
         strokeLinecap="round"
         {...props}
       />
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id="paint0_linearzaq"
           x1="4.33309"
           y1="13.6671"
           x2="12.5355"

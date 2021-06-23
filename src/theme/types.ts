@@ -90,6 +90,9 @@ export type Colors = {
   bgOpacity2: string;
   bgBlackRgba: string;
   whiteRgba: string;
+  cardShadow:string;
+  bgCard:string;
+  yellow:string;
   // Gradients
   gradients: Gradients;
 
