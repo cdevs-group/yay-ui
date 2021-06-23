@@ -13,7 +13,7 @@ const BottomContent = styled.div`
   justify-content: space-between;
   margin-top: 20px;
   width: 308px;
-  transition: .3s;
+  transition: 0.3s;
 `;
 
 const Button = styled.button`
@@ -75,26 +75,32 @@ const TopCard = styled(BottomCard)`
   background: ${({ theme }) => theme.colors.text};
 `;
 
-const Card: React.FC<CardProps> = ({setChoice,
+const Card: React.FC<CardProps> = ({
+  setChoice,
   setConfirm,
   isAuth,
-  setIsReturn, 
+  setIsReturn,
   isReturn,
-  children, 
-  active, 
-  ...props }) => {
+  children,
+  active,
+  ...props
+}) => {
   return (
     <Wrap>
-      <StyledCard 
-        setChoice={setChoice} 
-        setConfirm={setConfirm} 
-        isAuth={isAuth} 
-        setIsReturn={setIsReturn} 
-        isReturn={isReturn} 
+      <StyledCard
+        setChoice={setChoice}
+        setConfirm={setConfirm}
+        isAuth={isAuth}
+        setIsReturn={setIsReturn}
+        isReturn={isReturn}
         {...props}
-      >{children}</StyledCard>
+      >
+        {children}
+      </StyledCard>
       <BottomContent>
-        <Button><ChartIcon/></Button>
+        <Button>
+          <ChartIcon />
+        </Button>
         <CenterBlock>
           <button className="arrowLeft">
             <GreenArrow color="#47DA3B" />
@@ -105,7 +111,9 @@ const Card: React.FC<CardProps> = ({setChoice,
             <GreenArrow color="#47DA3B" />
           </button>
         </CenterBlock>
-        <Button><HistoryIcon/></Button>
+        <Button>
+          <HistoryIcon />
+        </Button>
       </BottomContent>
     </Wrap>
   );

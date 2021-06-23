@@ -24,18 +24,18 @@ export interface TextCardsProps {
 }
 
 export interface CardButtonsProps {
-  handleTurn:(e:any)=>void;
-  confirm:boolean;
-  choise?:null|string;
-};
+  handleTurn: (e: any) => void;
+  confirm: boolean;
+  choise?: null | string;
+}
 
-export interface TabsProps{
-  tabsList:Array<string>;
-  handleToggleTabs:(e:any)=>void;
-  tabValue:number;
-};
+export interface TabsProps {
+  tabsList: Array<string>;
+  handleToggleTabs: (e: any) => void;
+  tabValue: number;
+}
 
-export interface InputProps{
-  value:string;
-  onChange:(e:any)=>void;
+export interface InputProps {
+  value: string;
+  onChange: (e: any) => void;
 }
