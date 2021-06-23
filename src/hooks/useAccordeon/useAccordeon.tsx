@@ -21,6 +21,9 @@ const useAccordeon = (cards?: any) => {
 
   useEffect(() => {
     setActive(cards?.[0]);
+  }, [cards.length]);
+
+  useEffect(() => {
     setValueAccordeon && setValueAccordeon(undefined);
   }, []);
 
