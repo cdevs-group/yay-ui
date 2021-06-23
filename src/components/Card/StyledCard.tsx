@@ -160,12 +160,13 @@ const StyledCard: React.FC<StyledCardProps> = ({
   live,
   displayNone,
   colorNone,
+  time
 }) => {
   return (
     <Wrap live={live}>
       <TopContent>
         <LeftContent>{leftContent}</LeftContent>
-        <Timer time={2000} color="#fff" />
+        <Timer time={time} color="#fff" />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
       <Content>

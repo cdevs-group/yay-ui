@@ -38,6 +38,7 @@ const UpOrDownCard = () => {
         handleInputChange={handleInputChange}
         leftContent="NEXT"
         rightContent="#001"
+        time={2000}
       >
         <CardButtonsUpDown pool="$ 4354323" choise={choise} confirm={confirm} handleTurn={handleTurn} />
       </Card>

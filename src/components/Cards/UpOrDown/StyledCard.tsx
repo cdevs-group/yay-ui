@@ -71,7 +71,7 @@ const LeftContent = styled.div`
 `;
 const Content = styled.div`
   position: relative;
-  margin-top: 28px;
+  margin-top: 26px;
   background: ${({ theme }) => theme.colors.bgCard};
   border-radius: 15px;
   transition: 0.3s;
@@ -111,7 +111,7 @@ const RightContent = styled(LeftContent)`
 const Up = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 18px 20px 15px;
+  padding: 16px 20px 15px;
   font-weight: 500;
   font-size: 15px;
   line-height: 19px;
@@ -205,12 +205,13 @@ const StyledCard: React.FC<StyledCardUpDownProps> = ({
   tabsList,
   inputValue,
   handleInputChange,
+  time
 }) => {
   return (
     <Wrap className={isReturn !== "" ? "turn" : ""}>
       <TopContent>
         <LeftContent>{leftContent}</LeftContent>
-        <Timer time={2000} color="#fff" />
+        <Timer time={time} color="#fff" />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
       <Content>

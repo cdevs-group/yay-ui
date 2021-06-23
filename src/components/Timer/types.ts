@@ -3,5 +3,5 @@ export interface TimerColorProps {
 }
 export interface TimerProps {
   color?: string;
-  time: number;
+  time?: number;
 }

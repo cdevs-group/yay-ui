@@ -68,6 +68,7 @@ const CardNext: React.FC<CardUpDownProps> = ({
   handleInputChange,
   leftContent,
   rightContent,
+  time
 }) => {
   return (
     <>
@@ -86,6 +87,7 @@ const CardNext: React.FC<CardUpDownProps> = ({
         handleInputChange={handleInputChange}
         leftContent={leftContent}
         rightContent={rightContent}
+        time={time}
       >
         {children}
       </StyledCard>

@@ -50,6 +50,7 @@ export const CardsBalancePreview: React.FC = () => {
           tabsList={tabsList}
           inputValue={inputValue}
           handleInputChange={handleInputChange}
+          time={2000}
         >
           <CardButtonsUpDown pool="$ 4354323" choise={choise} confirm={confirm} handleTurn={handleTurn} />
         </Card>
