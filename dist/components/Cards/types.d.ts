@@ -27,6 +27,7 @@ export interface CardButtonsProps {
     handleTurn: (e: any) => void;
     confirm: boolean;
     choise?: null | string;
+    pool: string;
 }
 export interface TabsProps {
     tabsList: Array<string>;

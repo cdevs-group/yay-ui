@@ -20,11 +20,20 @@ export interface StyledCardProps {
   colorIcon?: string;
   displayNone?: boolean;
   colorNone?: boolean;
-  //   isReturn?:boolean;
-  //   setIsReturn:(isReturn:string)=>void;
-  //   isAuth:boolean;
-  //   setConfirm:()=>void;
-  //   setChoice:()=>void;
+}
+export interface StyledCardUpDownProps extends StyledCardProps {
+  isReturn: string;
+  setIsReturn: (value: string) => void;
+  isAuth: boolean;
+  setConfirm: (value: boolean) => void;
+  setChoice: (value: string) => void;
+  upValue: string;
+  downValue: string;
+  tabValue: number;
+  handleToggleTabs: (e: any) => void;
+  tabsList: Array<string>;
+  inputValue: string;
+  handleInputChange: (e: any) => void;
 }
 
 export interface CardHeaderProps {
@@ -41,11 +50,21 @@ export interface CardHeaderProps {
 export interface CardProps {
   children?: ReactNode;
   active?: boolean;
-  isReturn?: boolean;
-  setIsReturn: (isReturn: string) => void;
+}
+
+export interface CardUpDownProps extends CardProps {
+  isReturn: string;
+  setIsReturn: (string: string) => void;
   isAuth: boolean;
   setConfirm: (value: boolean) => void;
-  setChoice: (value: string) => void;
+  setChoice: (isReturn: string) => void;
+  upValue: string;
+  downValue: string;
+  tabValue: number;
+  handleToggleTabs: (e: any) => void;
+  tabsList: Array<string>;
+  inputValue: string;
+  handleInputChange: (e: any) => void;
 }
 
 export interface CardTheme {

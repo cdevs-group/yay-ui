@@ -1,4 +1,4 @@
 import React from "react";
-import { CardProps } from "../../Card/types";
-declare const Card: React.FC<CardProps>;
+import { CardUpDownProps } from "../../Card/types";
+declare const Card: React.FC<CardUpDownProps>;
 export default Card;

@@ -1,4 +1,4 @@
 import React from "react";
-import { StyledCardProps } from "../../Card/types";
-declare const StyledCard: React.FC<StyledCardProps>;
+import { StyledCardUpDownProps } from "../../Card/types";
+declare const StyledCard: React.FC<StyledCardUpDownProps>;
 export default StyledCard;

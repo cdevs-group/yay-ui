@@ -6,7 +6,7 @@ interface Props {
   isHistoryPaneOpen: boolean;
   children: React.ReactNode;
   handleToggle: () => void;
-  valueAccordeon?: number;
+  valueAccordeon?: number | string;
 }
 
 const HistoryPanel: React.FC<Props> = ({ isHistoryPaneOpen, children, handleToggle, valueAccordeon }) => {
