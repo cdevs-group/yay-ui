@@ -52,7 +52,6 @@ const HeaderWrap = styled.div`
 `;
 
 const NewMainCard: React.FC = () => {
-
   return (
     <Wrap>
       <HeaderWrap>
