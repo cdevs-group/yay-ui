@@ -116,4 +116,5 @@ const LiveCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice,
     </Wrap>
   );
 };
+
 export default LiveCard;
