@@ -2,9 +2,8 @@ import { ReactNode } from "react";
 
 export interface StyledCardProps {
   children?: ReactNode;
-  leftContent?: string;
+  leftContent?: string | ReactNode;
   rightContent?: string;
-
   payoutUp?: number;
   payoutDown?: number;
   negative?: boolean;

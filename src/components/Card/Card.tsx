@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import StyledCard from "./StyledCard";
-import { CardProps } from "./types";
+import { StyledCardProps } from "./types";
 import { transparentize } from "polished";
 import { GreenArrow, ChartIcon, HistoryIcon } from "../Svg";
 

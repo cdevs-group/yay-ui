@@ -24,5 +24,6 @@ export { default as WatchIcon } from "./Icons/Watch";
 export { default as PlayIcon } from "./Icons/Play";
 export { default as ArrowDownIcon } from "./Icons/ArrowDown";
 export { default as ArrowCardDown } from "./Icons/ArrowCardDown";
+export { default as IconCircle } from "./Icons/CircleIcon";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

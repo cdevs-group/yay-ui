@@ -119,7 +119,7 @@ Svg.defaultProps = {
 };
 var templateObject_1$O, templateObject_2$A, templateObject_3$p;
 
-var Icon$p = function (props) {
+var Icon$q = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -140,7 +140,7 @@ var Icon$p = function (props) {
         " "));
 };
 
-var Icon$o = function (props) {
+var Icon$p = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: 42, height: 42, viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("rect", { x: 6, y: 6, width: 30, height: 30, rx: 7, fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#prefix__filter0_d)", stroke: "#fff", strokeWidth: 2, strokeLinecap: "round" },
@@ -156,12 +156,12 @@ var Icon$o = function (props) {
                 React__default['default'].createElement("feBlend", { in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$n = function (props) {
+var Icon$o = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default['default'].createElement("path", { d: "M18 19H6C5.45 19 5 18.55 5 18V6C5 5.45 5.45 5 6 5H11C11.55 5 12 4.55 12 4C12 3.45 11.55 3 11 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V13C21 12.45 20.55 12 20 12C19.45 12 19 12.45 19 13V18C19 18.55 18.55 19 18 19ZM14 4C14 4.55 14.45 5 15 5H17.59L8.46 14.13C8.07 14.52 8.07 15.15 8.46 15.54C8.85 15.93 9.48 15.93 9.87 15.54L19 6.41V9C19 9.55 19.45 10 20 10C20.55 10 21 9.55 21 9V4C21 3.45 20.55 3 20 3H15C14.45 3 14 3.45 14 4Z" })));
 };
 
-var Icon$m = function (props) {
+var Icon$n = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
             React__default['default'].createElement("path", { d: "M11.5858 14.6568L5.92893 8.99998M5.92893 8.99998L11.5858 3.34312M5.92893 8.99998H20.0711", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
@@ -176,7 +176,7 @@ var Icon$m = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$l = function (props) {
+var Icon$m = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "29", height: "29", viewBox: "0 0 29 29" }, props),
         React__default['default'].createElement("rect", { width: "28.0333", height: "29", rx: "7", fill: "url(#paint0_linear)" }),
         React__default['default'].createElement("path", { d: "M14.1042 6.76672L8.94336 11.6768L10.8579 13.4983L14.1042 10.4097L17.3506 13.4983L19.2651 11.6768L14.1042 6.76672Z", fill: "white" }),
@@ -190,7 +190,7 @@ var Icon$l = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#FF8A00" })))));
 };
 
-var Icon$k = function (props) {
+var Icon$l = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "50", height: "50", viewBox: "0 0 50 50" }, props),
         React__default['default'].createElement("rect", { width: "50", height: "50", rx: "12", fill: "white", fillOpacity: "0.15" }),
         React__default['default'].createElement("mask", { id: "path-2-inside-1", fill: "white" },
@@ -204,15 +204,15 @@ var Icon$k = function (props) {
         React__default['default'].createElement("rect", { x: "30", y: "19", width: "6", height: "17", rx: "1", stroke: "#F3F3F3", strokeWidth: "4", mask: "url(#path-4-inside-3)" })));
 };
 
-var Icon$j = function (props) {
+var Icon$k = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "50", height: "50", viewBox: "0 0 50 50" }, props),
-        React__default['default'].createElement("rect", { width: "50", height: "50", rx: "12", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
+        React__default['default'].createElement("rect", { width: "50", height: "50", rx: "12", fill: "white", "fill-opacity": "0.15" }),
+        React__default['default'].createElement("g", { filter: "url(#fil44444)" },
             React__default['default'].createElement("path", { d: "M16 25.5C16 30.7467 20.2533 35 25.5 35C30.7467 35 35 30.7467 35 25.5C35 20.2533 30.7467 16 25.5 16C23.4503 16 21.5521 16.6492 20 17.7531", stroke: "#F3F3F3", fill: "none", strokeWidth: "2", strokeLinecap: "round" })),
         React__default['default'].createElement("g", { filter: "url(#filter1_d)" },
             React__default['default'].createElement("path", { d: "M23 27.5L25 24.5H29", stroke: "#F3F3F3", strokeWidth: "2", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "3", y: "4", width: "37", height: "37", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+            React__default['default'].createElement("filter", { id: "fil44444", x: "3", y: "4", width: "37", height: "37", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
                 React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dx: "-4", dy: "-3" }),
@@ -230,7 +230,7 @@ var Icon$j = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$i = function (props) {
+var Icon$j = function (props) {
     return (React__default['default'].createElement(Svg, { width: "18", height: "18", viewBox: "0 0 18 18" },
         React__default['default'].createElement("path", __assign({ d: "M7.58579 14.6571L1.92893 9.00022M1.92893 9.00022L7.58579 3.34337M1.92893 9.00022L16.0711 9.00022", stroke: "url(#paint0_linearzaq)", strokeWidth: "2", strokeLinecap: "round" }, props)),
         React__default['default'].createElement("defs", null,
@@ -239,12 +239,12 @@ var Icon$i = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$h = function (props) {
+var Icon$i = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default['default'].createElement("path", { d: "M15 1H4C2.9 1 2 1.9 2 3V16C2 16.55 2.45 17 3 17C3.55 17 4 16.55 4 16V4C4 3.45 4.45 3 5 3H15C15.55 3 16 2.55 16 2C16 1.45 15.55 1 15 1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM18 21H9C8.45 21 8 20.55 8 20V8C8 7.45 8.45 7 9 7H18C18.55 7 19 7.45 19 8V20C19 20.55 18.55 21 18 21Z" })));
 };
 
-var Icon$g = function (props) {
+var Icon$h = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgba(0,0,0,0)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d111)" },
@@ -264,7 +264,7 @@ var Icon$g = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$f = function (props) {
+var Icon$g = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -303,7 +303,7 @@ var Icon$f = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$e = function (props) {
+var Icon$f = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { fill: props.fill || "rgba(0,0,0,0)", x: "6", y: "6", width: "30", height: "30", rx: "7" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -358,7 +358,7 @@ var Icon$e = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$d = function (props) {
+var Icon$e = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -377,7 +377,7 @@ var Icon$d = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$c = function (props) {
+var Icon$d = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter110_d112)" },
@@ -396,7 +396,7 @@ var Icon$c = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$b = function (props) {
+var Icon$c = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -416,17 +416,17 @@ var Icon$b = function (props) {
         " "));
 };
 
-var Icon$a = function (props) {
+var Icon$b = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "7", height: "10", viewBox: "0 0 7 10", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M1 9L5 5L1 1", stroke: "#A3A3A3", strokeWidth: "1.8" })));
 };
 
-var Icon$9 = function (props) {
+var Icon$a = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "29", height: "82", viewBox: "0 0 20 82", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M3.33975 75.2265L12.9199 81.6133C13.809 82.206 15 81.5686 15 80.5V2.33333C15 0.823494 13.391 -0.141886 12.0588 0.568627L4.76471 4.45882C1.83193 6.02297 0 9.07619 0 12.4V68.9861C0 71.4938 1.25326 73.8355 3.33975 75.2265Z", fill: "#2E2E35" })));
 };
 
-var Icon$8 = function (props) {
+var Icon$9 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42  42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d65)" },
@@ -443,7 +443,7 @@ var Icon$8 = function (props) {
         " "));
 };
 
-var Icon$7 = function (props) {
+var Icon$8 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "rgb(58,58,64)" }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
@@ -479,12 +479,12 @@ var Icon$7 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$6 = function (props) {
+var Icon$7 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "30px", viewBox: "0 0  15" }, props),
         React__default['default'].createElement("path", { d: "M12.3958 3.92058L12.3959 3.9204C12.5706 3.74631 12.6685 3.50968 12.6679 3.26306L12.3958 3.92058ZM12.3958 3.92058L4.73889 11.5774M12.3958 3.92058L4.73889 11.5774M4.73889 11.5774L2.76208 12.2376L3.41999 10.2638L11.0797 2.60709C11.0797 2.60707 11.0797 2.60705 11.0797 2.60703C11.4436 2.24396 12.0329 2.24457 12.396 2.6084C12.5694 2.78219 12.6672 3.01746 12.6679 3.26298L4.73889 11.5774ZM1.59063 14.0001C1.65406 14 1.71711 13.9898 1.77735 13.9699L1.03045 13.2224C0.927303 13.532 1.09471 13.8667 1.40435 13.9698C1.46442 13.9898 1.52733 14 1.59063 14.0001ZM11.7382 0.85001C11.0978 0.848164 10.4834 1.10278 10.032 1.55705C10.0319 1.55714 10.0319 1.55723 10.0318 1.55731L2.24861 9.33982L2.24821 9.34022C2.16739 9.42164 2.10645 9.52058 2.07003 9.62928L2.06996 9.6295L0.888144 13.175L0.888135 13.175C0.758808 13.5632 0.96871 13.9828 1.35696 14.1121L11.7382 0.85001Z", fill: "white", stroke: "white", strokeWidth: "0.3" })));
 };
 
-var Icon$5 = function (props) {
+var Icon$6 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "42px", viewBox: "0 0 42 42" }, props),
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill }),
         React__default['default'].createElement("g", { filter: "url(#filter0_d235425)" },
@@ -503,7 +503,7 @@ var Icon$5 = function (props) {
                 React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
-var Icon$4 = function (props) {
+var Icon$5 = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ width: "30", height: "30", viewBox: "0 0 30 30", color: "none" }, props),
         React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: "white", fillOpacity: "0.15" }),
         React__default['default'].createElement("path", { d: "M13.3102 8.0011C13.4534 8.0011 13.5934 8.04357 13.7125 8.12313C13.8316 8.20269 13.9244 8.31578 13.9792 8.44808C14.034 8.58039 14.0483 8.72598 14.0204 8.86644C13.9925 9.0069 13.9235 9.13591 13.8222 9.23718C13.7209 9.33844 13.5919 9.4074 13.4514 9.43534C13.311 9.46328 13.1654 9.44894 13.0331 9.39414C12.9007 9.33933 12.7876 9.24653 12.7081 9.12745C12.6285 9.00838 12.586 8.86839 12.586 8.72518C12.586 8.53314 12.6623 8.34897 12.7981 8.21318C12.9339 8.07739 13.1181 8.0011 13.3102 8.0011ZM8.24121 13.0696C8.24121 13.2129 8.28368 13.3529 8.36325 13.4719C8.44282 13.591 8.55591 13.6838 8.68823 13.7386C8.82055 13.7934 8.96615 13.8078 9.10662 13.7798C9.24709 13.7519 9.37612 13.6829 9.47739 13.5816C9.57866 13.4804 9.64763 13.3514 9.67557 13.2109C9.70351 13.0705 9.68917 12.9249 9.63436 12.7926C9.57956 12.6602 9.48674 12.5472 9.36766 12.4676C9.24857 12.388 9.10857 12.3456 8.96535 12.3456C8.7733 12.3456 8.58911 12.4219 8.45331 12.5576C8.3175 12.6934 8.24121 12.8776 8.24121 13.0696ZM9.84035 10.3242C9.84035 10.4674 9.88282 10.6074 9.96239 10.7265C10.042 10.8455 10.1551 10.9383 10.2874 10.9931C10.4197 11.0479 10.5653 11.0623 10.7058 11.0343C10.8462 11.0064 10.9753 10.9374 11.0765 10.8362C11.1778 10.7349 11.2468 10.6059 11.2747 10.4654C11.3026 10.325 11.2883 10.1794 11.2335 10.0471C11.1787 9.91478 11.0859 9.8017 10.9668 9.72213C10.8477 9.64257 10.7077 9.60011 10.5645 9.60011C10.3724 9.60011 10.1882 9.67639 10.0524 9.81218C9.91664 9.94797 9.84035 10.1321 9.84035 10.3242Z", fill: "white" }),
@@ -520,7 +520,7 @@ var Icon$4 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$3 = function (props) {
+var Icon$4 = function (props) {
     return (React__default['default'].createElement("svg", { viewBox: "0 0 26 24", width: "26", height: "24", fill: "none" },
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
             React__default['default'].createElement("path", { d: "M13 15.5L15 12.5H19", stroke: "#F3F3F3", strokeWidth: "2", strokeLinecap: "round" })),
@@ -536,18 +536,18 @@ var Icon$3 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
 
-var Icon$2 = function (props) {
+var Icon$3 = function (props) {
     return (React__default['default'].createElement("svg", { width: "22", height: "22", viewBox: "0 0 20 22", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("path", { d: "M8 13.1683V7.83167C8 7.0405 8.87525 6.56266 9.54076 6.99049L13.6915 9.65882C14.3038 10.0525 14.3038 10.9475 13.6915 11.3412L9.54076 14.0095C8.87525 14.4373 8 13.9595 8 13.1683Z", fill: "#4BE43E" }),
         React__default['default'].createElement("circle", { cx: "10.5", cy: "10.5", r: "9.5", stroke: "#4BE43E", strokeWidth: "2" })));
 };
 
-var Icon$1 = function (props) {
+var Icon$2 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "10", height: "7", viewBox: "0 0 10 7", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("path", { d: "M1 1L5 5L9 1", stroke: "white", strokeWidth: "1.8" })));
 };
 
-var Icon = function (props) {
+var Icon$1 = function (props) {
     return (React__default['default'].createElement("svg", { width: "19", height: "22", viewBox: "0 0 19 22", fill: "#fff", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
             React__default['default'].createElement("path", { d: "M14.1601 9.77351L9.64417 14.2894M9.64417 14.2894L5.12825 9.77351M9.64417 14.2894L9.64417 2.99964", stroke: props.color, "stroke-width": "1.5", "stroke-linecap": "round" })),
@@ -558,6 +558,22 @@ var Icon = function (props) {
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
                 React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" }),
+                React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
+                React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
+};
+
+var Icon = function (props) {
+    return (React__default['default'].createElement(Svg, __assign({ width: "30", height: "30", viewBox: "0 0 30 30", color: "none" }, props),
+        React__default['default'].createElement("path", { d: "M13.3102 8.0011C13.4534 8.0011 13.5934 8.04357 13.7125 8.12313C13.8316 8.20269 13.9244 8.31578 13.9792 8.44808C14.034 8.58039 14.0483 8.72598 14.0204 8.86644C13.9925 9.0069 13.9235 9.13591 13.8222 9.23718C13.7209 9.33844 13.5919 9.4074 13.4514 9.43534C13.311 9.46328 13.1654 9.44894 13.0331 9.39414C12.9007 9.33933 12.7876 9.24653 12.7081 9.12745C12.6285 9.00838 12.586 8.86839 12.586 8.72518C12.586 8.53314 12.6623 8.34897 12.7981 8.21318C12.9339 8.07739 13.1181 8.0011 13.3102 8.0011ZM8.24121 13.0696C8.24121 13.2129 8.28368 13.3529 8.36325 13.4719C8.44282 13.591 8.55591 13.6838 8.68823 13.7386C8.82055 13.7934 8.96615 13.8078 9.10662 13.7798C9.24709 13.7519 9.37612 13.6829 9.47739 13.5816C9.57866 13.4804 9.64763 13.3514 9.67557 13.2109C9.70351 13.0705 9.68917 12.9249 9.63436 12.7926C9.57956 12.6602 9.48674 12.5472 9.36766 12.4676C9.24857 12.388 9.10857 12.3456 8.96535 12.3456C8.7733 12.3456 8.58911 12.4219 8.45331 12.5576C8.3175 12.6934 8.24121 12.8776 8.24121 13.0696ZM9.84035 10.3242C9.84035 10.4674 9.88282 10.6074 9.96239 10.7265C10.042 10.8455 10.1551 10.9383 10.2874 10.9931C10.4197 11.0479 10.5653 11.0623 10.7058 11.0343C10.8462 11.0064 10.9753 10.9374 11.0765 10.8362C11.1778 10.7349 11.2468 10.6059 11.2747 10.4654C11.3026 10.325 11.2883 10.1794 11.2335 10.0471C11.1787 9.91478 11.0859 9.8017 10.9668 9.72213C10.8477 9.64257 10.7077 9.60011 10.5645 9.60011C10.3724 9.60011 10.1882 9.67639 10.0524 9.81218C9.91664 9.94797 9.84035 10.1321 9.84035 10.3242Z", fill: "white" }),
+        React__default['default'].createElement("g", { filter: "url(#filter0_d)" },
+            React__default['default'].createElement("path", { d: "M16.6237 9C19.1545 9.75321 21 12.0977 21 14.8731C21 18.2569 18.2569 21 14.8731 21C12.0977 21 9.75321 19.1545 9 16.6237", stroke: "white", "stroke-width": "1.8", "stroke-linecap": "round" })),
+        React__default['default'].createElement("defs", null,
+            React__default['default'].createElement("filter", { id: "filter0_d", x: "4.09961", y: "6.09973", width: "21.8002", height: "21.8002", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
+                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+                React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
+                React__default['default'].createElement("feOffset", { dy: "2" }),
+                React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
+                React__default['default'].createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })))));
 };
@@ -718,7 +734,7 @@ var Button$4 = function (props) {
                     mr: "0.5rem",
                 }),
             children,
-            props.spin ? React__default['default'].createElement(Icon$4, { spin: true, fill: "rgba(0,0,0,0)" }) : null,
+            props.spin ? React__default['default'].createElement(Icon$5, { spin: true, fill: "rgba(0,0,0,0)" }) : null,
             React.isValidElement(endIcon) &&
                 React.cloneElement(endIcon, {
                     ml: "0.5rem",
@@ -753,22 +769,22 @@ function MyTimer(_a) {
         return { leftDigit: leftDigit, rightDigit: rightDigit };
     };
     var timeArray = [hours, minutes, seconds];
-    return (React__default['default'].createElement(Wrap$b, null, timeArray.map(function (item, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: "item-" + i },
-        React__default['default'].createElement(Block$3, { color: color },
+    return (React__default['default'].createElement(Wrap$b, null,
+        React__default['default'].createElement(Block$3, { color: color }, timeArray.map(function (item, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: "item-" + i },
             handleDigit(item).leftDigit,
-            handleDigit(item).rightDigit),
-        i === 2 ? null : React__default['default'].createElement(Dots, null, ":"))); })));
+            handleDigit(item).rightDigit,
+            i === 2 ? null : React__default['default'].createElement(Dots, null, ":"))); }))));
 }
 var Timer = function (_a) {
     var time = _a.time, color = _a.color;
     return React__default['default'].createElement("div", null, time && React__default['default'].createElement(MyTimer, { expiryTimestamp: time, color: color || "text" }));
 };
 var Wrap$b = styled__default['default'].div(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"])));
-var Block$3 = styled__default['default'].div(templateObject_2$z || (templateObject_2$z = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 48px;\n  height: 48px;\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 48px;\n  height: 48px;\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n"])), function (_a) {
+var Block$3 = styled__default['default'].div(templateObject_2$z || (templateObject_2$z = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 48px;\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 48px;\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.75, theme.colors.invertedContrast);
 }, getColor$1);
-var Dots = styled__default['default'].div(templateObject_3$o || (templateObject_3$o = __makeTemplateObject(["\n  /* margin: 0 12px; */\n  color: ", ";\n"], ["\n  /* margin: 0 12px; */\n  color: ", ";\n"])), function (_a) {
+var Dots = styled__default['default'].div(templateObject_3$o || (templateObject_3$o = __makeTemplateObject(["\n  margin: 0 12px;\n  color: ", ";\n"], ["\n  margin: 0 12px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -792,7 +808,7 @@ var SafepackWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYA
 
 var Winner = "data:image/png;base64,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";
 
-var Wrap$a = styled__default['default'].div(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  width: 308px;\n  opacity: ", ";\n  &:hover {\n    opacity: 1;\n  }\n"], ["\n  width: 308px;\n  opacity: ", ";\n  &:hover {\n    opacity: 1;\n  }\n"])), function (_a) {
+var Wrap$a = styled__default['default'].div(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  width: 308px;\n  opacity: ", ";\n  &:hover {\n    opacity: 1;\n  }\n  @media (max-width: 400px) {\n    width: 278px;\n  }\n"], ["\n  width: 308px;\n  opacity: ", ";\n  &:hover {\n    opacity: 1;\n  }\n  @media (max-width: 400px) {\n    width: 278px;\n  }\n"])), function (_a) {
     var live = _a.live;
     return (live ? "1" : "0.5");
 });
@@ -809,12 +825,16 @@ var Content = styled__default['default'].div(templateObject_5$a || (templateObje
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
-var UpContent = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: ", ";\n  justify-content: space-between;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: space-between;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var UpContent = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ",
+    ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var showUp = _a.showUp;
     return (showUp ? "none" : "flex");
 }, function (_a) {
-    var theme = _a.theme, negative = _a.negative;
-    return (negative ? theme.colors.cardBg : theme.colors.greenText);
+    var displayNone = _a.displayNone;
+    return (displayNone ? "center" : "space-between");
+}, function (_a) {
+    var theme = _a.theme, negative = _a.negative, colorNone = _a.colorNone;
+    return negative ? theme.colors.cardBg : colorNone ? "none" : theme.colors.greenText;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -833,14 +853,21 @@ var RightText$1 = styled__default['default'].div(templateObject_10$2 || (templat
     return polished.transparentize(0.2, theme.colors.text);
 });
 var IconComplete = styled__default['default'].div(templateObject_11$2 || (templateObject_11$2 = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
-    var showIcon = _a.showIcon;
-    return (showIcon ? "flex" : "none");
+    var showIcon = _a.showIcon, negative = _a.negative;
+    return (showIcon && !negative ? "flex" : "none");
 });
-var MainBlock = styled__default['default'].div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"], ["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n"])), function (_a) {
-    var theme = _a.theme, negative = _a.negative;
-    return (negative ? theme.colors.redBg : theme.colors.greenText);
+var IconCompleteDown = styled__default['default'].div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
+    var showIcon = _a.showIcon, negative = _a.negative;
+    return (showIcon && negative ? "flex" : "none");
 });
-var DownContent = styled__default['default'].div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var MainBlock = styled__default['default'].div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  @media (max-width: 400px) {\n    width: 308px;\n  }\n"], ["\n  position: relative;\n  left: -5%;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 335px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  @media (max-width: 400px) {\n    width: 308px;\n  }\n"])), function (_a) {
+    var theme = _a.theme, negative = _a.negative, colorNone = _a.colorNone;
+    return (negative ? theme.colors.redBg : colorNone ? "none" : theme.colors.greenText);
+});
+var DownContent = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+    var displayNone = _a.displayNone;
+    return (displayNone ? "center" : "space-between");
+}, function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.cardBg);
 }, function (_a) {
@@ -848,45 +875,44 @@ var DownContent = styled__default['default'].div(templateObject_13 || (templateO
     return theme.colors.text;
 });
 var StyledCard = function (_a) {
-    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, show = _a.show, showUp = _a.showUp, showIcon = _a.showIcon, live = _a.live, displayNone = _a.displayNone;
+    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, show = _a.show, showUp = _a.showUp, showIcon = _a.showIcon, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone;
     return (React__default['default'].createElement(Wrap$a, { live: live },
         React__default['default'].createElement(TopContent, null,
             React__default['default'].createElement(LeftContent, null, leftContent),
             React__default['default'].createElement(Timer, { time: 2000, color: "#fff" }),
             React__default['default'].createElement(RightContent, null, rightContent)),
         React__default['default'].createElement(Content, null,
-            React__default['default'].createElement(UpContent, { negative: negative, showUp: showUp },
+            React__default['default'].createElement(UpContent, { negative: negative, showUp: showUp, colorNone: colorNone, displayNone: displayNone },
                 "UP",
                 React__default['default'].createElement(RightText$1, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, "Payout"),
                     React__default['default'].createElement("div", null,
                         payoutUp,
                         "x"),
-                    React__default['default'].createElement(IconComplete, { className: "completeIcon", showIcon: showIcon },
-                        React__default['default'].createElement(Icon$5, { fill: "#FFB72C" })))),
+                    React__default['default'].createElement(IconComplete, { className: "completeIcon", showIcon: showIcon, negative: negative },
+                        React__default['default'].createElement(Icon$6, { fill: "#FFB72C" })))),
             React__default['default'].createElement(UpContentWin, { show: show },
                 React__default['default'].createElement(ButtonBnb, null,
                     React__default['default'].createElement(Button$4, { variant: "green", width: "100%" }, "Collect Winnings")),
                 React__default['default'].createElement(WinnerImg, null,
                     React__default['default'].createElement("img", { src: Winner }))),
-            React__default['default'].createElement(MainBlock, { negative: negative }, children),
-            React__default['default'].createElement(DownContent, { negative: negative },
+            React__default['default'].createElement(MainBlock, { negative: negative, colorNone: colorNone }, children),
+            React__default['default'].createElement(DownContent, { negative: negative, displayNone: displayNone },
                 "DOWN",
                 React__default['default'].createElement(RightText$1, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, "Payout"),
                     React__default['default'].createElement("div", null,
                         payoutDown,
-                        "x"))))));
+                        "x"),
+                    React__default['default'].createElement(IconCompleteDown, { className: "completeIcon", showIcon: showIcon, negative: negative },
+                        React__default['default'].createElement(Icon$6, { fill: "#FFB72C" })))))));
 };
-var templateObject_1$K, templateObject_2$y, templateObject_3$n, templateObject_4$c, templateObject_5$a, templateObject_6$8, templateObject_7$5, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12, templateObject_13;
+var templateObject_1$K, templateObject_2$y, templateObject_3$n, templateObject_4$c, templateObject_5$a, templateObject_6$8, templateObject_7$5, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12, templateObject_13, templateObject_14;
 
-var Wrap$9 = styled__default['default'].div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  width: 404px;\n  /* height: 470px; */\n"], ["\n  width: 404px;\n  /* height: 470px; */\n"])));
-var BottomContent$1 = styled__default['default'].div(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 28px;\n  width: 308px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 28px;\n  width: 308px;\n"])));
+var Wrap$9 = styled__default['default'].div(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  width: 335px;\n  /* height: 470px; */\n"], ["\n  width: 335px;\n  /* height: 470px; */\n"])));
+var BottomContent$1 = styled__default['default'].div(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 30px;\n  width: 308px;\n  transition: 0.3s;\n  @media (max-width: 400px) {\n    width: 278px;\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 30px;\n  width: 308px;\n  transition: 0.3s;\n  @media (max-width: 400px) {\n    width: 278px;\n  }\n"])));
 var Button$3 = styled__default['default'].button(templateObject_3$m || (templateObject_3$m = __makeTemplateObject(["\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
-var CenterBlock$1 = styled__default['default'].div(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  background: ", ";\n  border-radius: 12px;\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 20%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  background: ", ";\n  border-radius: 12px;\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 20%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return polished.transparentize(0.85, theme.colors.text);
-});
+var CenterBlock$1 = styled__default['default'].div(templateObject_4$b || (templateObject_4$b = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  & button {\n    display: flex;\n    align-items: center;\n  }\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 35%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  & button {\n    display: flex;\n    align-items: center;\n  }\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 35%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"])));
 var BottomCard$1 = styled__default['default'].div(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n"], ["\n  position: absolute;\n  left: 35%;\n  bottom: 1%;\n  transform: rotate(-25deg);\n  width: 45px;\n  height: 61px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.lightGreyBg;
@@ -899,19 +925,21 @@ var TopCard$1 = styled__default['default'](BottomCard$1)(templateObject_6$7 || (
     return theme.colors.text;
 });
 var Card$1 = function (_a) {
-    var children = _a.children; _a.active; var props = __rest(_a, ["children", "active"]);
+    var children = _a.children, props = __rest(_a, ["children"]);
     return (React__default['default'].createElement(Wrap$9, null,
         React__default['default'].createElement(StyledCard, __assign({}, props), children),
         React__default['default'].createElement(BottomContent$1, null,
-            React__default['default'].createElement(Button$3, null),
+            React__default['default'].createElement(Button$3, null,
+                React__default['default'].createElement(Icon$l, null)),
             React__default['default'].createElement(CenterBlock$1, null,
                 React__default['default'].createElement("button", { className: "arrowLeft" },
-                    React__default['default'].createElement(Icon$i, { color: "#47DA3B" })),
+                    React__default['default'].createElement(Icon$j, { color: "#47DA3B" })),
                 React__default['default'].createElement(BottomCard$1, null),
                 React__default['default'].createElement(TopCard$1, null),
                 React__default['default'].createElement("button", { className: "arrowRight" },
-                    React__default['default'].createElement(Icon$i, { color: "#47DA3B" }))),
-            React__default['default'].createElement(Button$3, null))));
+                    React__default['default'].createElement(Icon$j, { color: "#47DA3B" }))),
+            React__default['default'].createElement(Button$3, null,
+                React__default['default'].createElement(Icon$k, null)))));
 };
 var templateObject_1$J, templateObject_2$x, templateObject_3$m, templateObject_4$b, templateObject_5$9, templateObject_6$7;
 
@@ -951,7 +979,7 @@ var ExpiredCardNA = function (_a) {
                 closedCount)),
         React__default['default'].createElement(Line$4, null,
             React__default['default'].createElement(Arrow$3, { negative: negative },
-                React__default['default'].createElement(Icon, { color: negative ? "#FF6161" : "#4AE43D" })),
+                React__default['default'].createElement(Icon$1, { color: negative ? "#FF6161" : "#4AE43D" })),
             React__default['default'].createElement(LinePrice$1, { negative: negative }, linePrice)),
         React__default['default'].createElement(Info$1, null,
             React__default['default'].createElement(LockedPrice$1, null,
@@ -1005,7 +1033,7 @@ var LiveCard = function (_a) {
                 closedCount)),
         React__default['default'].createElement(Line$3, null,
             React__default['default'].createElement(Arrow$2, { negative: negative },
-                React__default['default'].createElement(Icon, { color: negative ? "#FF6161" : "#4AE43D" })),
+                React__default['default'].createElement(Icon$1, { color: negative ? "#FF6161" : "#4AE43D" })),
             React__default['default'].createElement(LinePrice, { negative: negative },
                 "$",
                 linePrice)),
@@ -1031,7 +1059,7 @@ var Wrap$6 = styled__default['default'].div(templateObject_5$6 || (templateObjec
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Loader$1 = styled__default['default'].div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  /* position: relative; */\n  /* top: 50%;\n  bottom: 0;\n  left: 0;\n  right: 0; */\n  /* display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center; */\n  /* justify-content: center; */\n  /* height: 50%; */\n"], ["\n  /* position: relative; */\n  /* top: 50%;\n  bottom: 0;\n  left: 0;\n  right: 0; */\n  /* display: flex;\n  flex-direction: column;\n  align-items: center;\n  align-content: center; */\n  /* justify-content: center; */\n  /* height: 50%; */\n"])));
+var Loader$1 = styled__default['default'].div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject([""], [""])));
 var OrangeCircle = styled__default['default'].div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), orangeAnimation, function (_a) {
     var theme = _a.theme;
     return theme.colors.orangeBg;
@@ -1048,7 +1076,7 @@ var YellowCircle = styled__default['default'].div(templateObject_10 || (template
     var theme = _a.theme;
     return theme.colors.yellowBg;
 });
-var BottomText = styled__default['default'].div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  margin-top: 40px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: 40px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var BottomText = styled__default['default'].div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
@@ -1060,12 +1088,7 @@ var LoaderCard = function (_a) {
             React__default['default'].createElement(GreenCircle, null),
             React__default['default'].createElement(RedCircle, null),
             React__default['default'].createElement(YellowCircle, null)),
-        React__default['default'].createElement(BottomText, null,
-            "This round`s closing transactions has ",
-            React__default['default'].createElement("br", null),
-            "been submitted to the blockchain, and is ",
-            React__default['default'].createElement("br", null),
-            "awaiting confirmation")));
+        React__default['default'].createElement(BottomText, null, "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation")));
 };
 var templateObject_1$G, templateObject_2$u, templateObject_3$j, templateObject_4$8, templateObject_5$6, templateObject_6$4, templateObject_7$2, templateObject_8$1, templateObject_9, templateObject_10, templateObject_11;
 
@@ -1160,7 +1183,7 @@ var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React__default['default'].createElement(Link$1, __assign({ external: true }, props),
         children,
-        React__default['default'].createElement(Icon$n, { ml: "4px" })));
+        React__default['default'].createElement(Icon$o, { ml: "4px" })));
 };
 
 var StyledAlert = styled__default['default'](Flex)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  width: fit-content;\n  position: fixed;\n  z-index: 5;\n  top: 100px;\n  right: ", ";\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  align-items: self-end;\n  justify-content: space-between;\n"], ["\n  width: fit-content;\n  position: fixed;\n  z-index: 5;\n  top: 100px;\n  right: ", ";\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  align-items: self-end;\n  justify-content: space-between;\n"])), function (_a) {
@@ -1177,13 +1200,13 @@ var getIcon = function (variant) {
     if (variant === void 0) { variant = variants.COLLECTION; }
     switch (variant) {
         case variants.COLLECTION:
-            return React__default['default'].createElement(Icon$4, { spin: true });
+            return React__default['default'].createElement(Icon$5, { spin: true });
         case variants.WINNING:
-            return React__default['default'].createElement(Icon$o, null);
+            return React__default['default'].createElement(Icon$p, null);
         case variants.SUCCESS:
-            return React__default['default'].createElement(Icon$5, { fill: "#47DA3B" });
+            return React__default['default'].createElement(Icon$6, { fill: "#47DA3B" });
         default:
-            return React__default['default'].createElement(Icon$4, { spin: true });
+            return React__default['default'].createElement(Icon$5, { spin: true });
     }
 };
 var Button$2 = styled__default['default'].button(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  position: absolute;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 10px;\n  cursor: pointer;\n  &:disabled {\n    cursor: default;\n  }\n"], ["\n  position: absolute;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 10px;\n  cursor: pointer;\n  &:disabled {\n    cursor: default;\n  }\n"])));
@@ -1502,7 +1525,7 @@ var Input$1 = function (_a) {
     return (React__default['default'].createElement(InputBlock, null,
         React__default['default'].createElement(InputItem, { value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder }),
         React__default['default'].createElement(Button$1, null,
-            React__default['default'].createElement(Icon$g, { color: focus ? "#47DA3B" : "white" }))));
+            React__default['default'].createElement(Icon$h, { color: focus ? "#47DA3B" : "white" }))));
 };
 Input$1.defaultProps = {
     placeholder: "Seacrh",
@@ -1618,12 +1641,12 @@ var ArrowSlider = function (_a) {
         React__default['default'].createElement(BottomContent, null,
             React__default['default'].createElement(CenterBlock, null,
                 React__default['default'].createElement(ArrowLeft, { className: clsNameLeft || "", onClick: handlePrevSlide },
-                    React__default['default'].createElement(Icon$i, { stroke: "#47DA3B" })),
+                    React__default['default'].createElement(Icon$j, { stroke: "#47DA3B" })),
                 React__default['default'].createElement(Center, { onClick: handleSlideToLive },
                     React__default['default'].createElement(BottomCard, null),
                     React__default['default'].createElement(TopCard, null)),
                 React__default['default'].createElement(ArrowRight, { className: clsNameRight || "", onClick: handleNextSlide },
-                    React__default['default'].createElement(Icon$i, { stroke: "#47DA3B" }))))));
+                    React__default['default'].createElement(Icon$j, { stroke: "#47DA3B" }))))));
 };
 var templateObject_1$p, templateObject_2$k, templateObject_3$e, templateObject_4$6, templateObject_5$4, templateObject_6$2, templateObject_7$1, templateObject_8;
 
@@ -2227,7 +2250,7 @@ var Modal = function (_a) {
                 React__default['default'].createElement(ModalTitle, null,
                     React__default['default'].createElement(Heading, null, title)),
                 !hideCloseButton && (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                    React__default['default'].createElement(Icon$o, null)))),
+                    React__default['default'].createElement(Icon$p, null)))),
             children)));
 };
 var templateObject_1$m, templateObject_2$h, templateObject_3$c, templateObject_4$4, templateObject_5$2;
@@ -2387,7 +2410,7 @@ var CopyToClipboard = function (_a) {
             }
         } }, props),
         children,
-        React__default['default'].createElement(Icon$h, { width: "20px", color: "#47DA3B", ml: "4px" }),
+        React__default['default'].createElement(Icon$i, { width: "20px", color: "#47DA3B", ml: "4px" }),
         React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
 };
 var templateObject_1$j, templateObject_2$f;
@@ -2426,8 +2449,8 @@ var HistoryPanel = function (_a) {
     return (React__default['default'].createElement(Panel, { open: isHistoryPaneOpen },
         React__default['default'].createElement(Wrap$3, null,
             React__default['default'].createElement(ButtonToggle, { onClick: handleToggle, open: isHistoryPaneOpen, color: valueAccordeon ? "dark" : "panel" },
-                React__default['default'].createElement(Icon$9, { className: "button" }),
-                React__default['default'].createElement(Icon$a, { className: "arrow" })),
+                React__default['default'].createElement(Icon$a, { className: "button" }),
+                React__default['default'].createElement(Icon$b, { className: "arrow" })),
             children)));
 };
 var Panel = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"], ["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"])), function (_a) {
@@ -2489,7 +2512,7 @@ var HeaderHistory = function (_a) {
     var activeTab = _a.activeTab, handleClose = _a.handleClose, switchTab = _a.switchTab, handleChangeTab = _a.handleChangeTab, historyFilter = _a.historyFilter, isFetchingHistory = _a.isFetchingHistory, account = _a.account;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(ButtonClose, { onClick: handleClose },
-            React__default['default'].createElement(Icon$o, null)),
+            React__default['default'].createElement(Icon$p, null)),
         React__default['default'].createElement(Title, null,
             React__default['default'].createElement(Text, { size: "lg", mr: 1 },
                 "History",
@@ -2613,7 +2636,7 @@ var RoundsLink = function (_a) {
             React__default['default'].createElement("a", { href: href },
                 React__default['default'].createElement(ButtonBlock, { width: "100%", variant: "green", scale: "md" },
                     "View Reclaimed & Wonv",
-                    React__default['default'].createElement(Icon$b, { fill: "rgba(0,0,0,0)" }))))));
+                    React__default['default'].createElement(Icon$c, { fill: "rgba(0,0,0,0)" }))))));
 };
 var Wrap$1 = styled__default['default'].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  background: ", ";\n  padding-bottom: 30px;\n  position: relative;\n  z-index: 1;\n  &::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 408px;\n    left: -20px;\n    top: 0;\n    z-index: 0;\n    height: 100%;\n    background: ", ";\n  }\n"], ["\n  background: ", ";\n  padding-bottom: 30px;\n  position: relative;\n  z-index: 1;\n  &::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 408px;\n    left: -20px;\n    top: 0;\n    z-index: 0;\n    height: 100%;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -2687,7 +2710,7 @@ var AccordeonCard = function (_a) {
                 collectOrReclaim && collectOrReclaim,
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     betLabel,
-                    icon || React__default['default'].createElement(Icon$1, null))),
+                    icon || React__default['default'].createElement(Icon$2, null))),
             React__default['default'].createElement(HiddenBlockWrap, { style: {
                     height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
                 } },
@@ -2743,7 +2766,7 @@ var ClosedPrice = function (_a) {
                 React__default['default'].createElement(Price, { negative: negative }, price),
                 React__default['default'].createElement(Text, { size: "sm", fontWeight: 400, mr: "auto", ml: 9 }, result),
                 React__default['default'].createElement(RightText, { negative: rightText === "UP" ? false : negative },
-                    React__default['default'].createElement(Icon$i, null),
+                    React__default['default'].createElement(Icon$j, null),
                     React__default['default'].createElement(Price, { negative: rightText === "UP" ? false : negative }, rightText)))),
             roundFailed && !result && React__default['default'].createElement(Text, null, "CANCELED"))));
 };
@@ -3034,72 +3057,73 @@ var templateObject_1;
 
 exports.Accordeon = Accordeon;
 exports.AccordeonCard = AccordeonCard;
-exports.AddIcon = Icon$p;
+exports.AddIcon = Icon$q;
 exports.Alert = Alert;
-exports.ArrowCardDown = Icon;
-exports.ArrowDownIcon = Icon$1;
-exports.ArrowIcon = Icon$b;
-exports.ArrowLeft = Icon$m;
-exports.ArrowPanel = Icon$a;
+exports.ArrowCardDown = Icon$1;
+exports.ArrowDownIcon = Icon$2;
+exports.ArrowIcon = Icon$c;
+exports.ArrowLeft = Icon$n;
+exports.ArrowPanel = Icon$b;
 exports.ArrowSlider = ArrowSlider;
 exports.BackgroundImage = BackgroundImage;
 exports.BaseLayout = BaseLayout;
-exports.BnbIcon = Icon$l;
+exports.BnbIcon = Icon$m;
 exports.Box = Box;
-exports.BtnPanel = Icon$9;
+exports.BtnPanel = Icon$a;
 exports.Button = Button$4;
 exports.Card = Card$1;
 exports.CardProduct = CardProduct;
 exports.CardsBalance = CardsBalance;
 exports.CardsProducts = CardsProducts;
-exports.CercleIcon = Icon$4;
-exports.ChartIcon = Icon$k;
-exports.CloseIcon = Icon$o;
-exports.CompleteIcon = Icon$5;
-exports.CopyIcon = Icon$h;
+exports.CercleIcon = Icon$5;
+exports.ChartIcon = Icon$l;
+exports.CloseIcon = Icon$p;
+exports.CompleteIcon = Icon$6;
+exports.CopyIcon = Icon$i;
 exports.ExpiredCard = ExpiredCardNA;
-exports.EyeCloseIcon = Icon$c;
-exports.EyeOpenIcon = Icon$d;
+exports.EyeCloseIcon = Icon$d;
+exports.EyeOpenIcon = Icon$e;
 exports.Flex = Flex;
-exports.GreenArrow = Icon$i;
+exports.GreenArrow = Icon$j;
 exports.Header = Header;
 exports.HeaderHistory = HeaderHistory;
 exports.HiddenItemAccordeonCard = HiddenItemAccordeonCard;
-exports.HistoryIcon = Icon$j;
+exports.HistoryIcon = Icon$k;
 exports.HistoryPanel = HistoryPanel;
 exports.IconButton = IconButton;
+exports.IconCircle = Icon;
 exports.Image = Image;
 exports.Input = Input$1;
 exports.Link = Link$1;
 exports.LinkExternal = LinkExternal;
 exports.LiveCard = LiveCard;
-exports.LoadIcon = Icon$6;
+exports.LoadIcon = Icon$7;
 exports.Loader = Loader;
 exports.LoaderCard = LoaderCard;
 exports.Modal = Modal;
 exports.ModalProvider = ModalProvider;
 exports.NoHistory = NoHistory;
-exports.OpenNewIcon = Icon$n;
-exports.PenIcon = Icon$8;
-exports.PlayIcon = Icon$2;
+exports.OpenNewIcon = Icon$o;
+exports.PenIcon = Icon$9;
+exports.PlayIcon = Icon$3;
 exports.ProgressBar = ProgressBar;
 exports.ResetCSS = ResetCSS;
 exports.RoundHistory = RoundHistory;
 exports.Rounds = Rounds;
 exports.RoundsLink = RoundsLink;
-exports.SearchIcon = Icon$g;
+exports.SearchIcon = Icon$h;
 exports.SimpleTabs = SimpleTabs;
-exports.SquaresIcon = Icon$e;
+exports.SquaresIcon = Icon$f;
 exports.Statistic = Statistic;
-exports.StrikeIcon = Icon$f;
-exports.StrikesWideIcon = Icon$7;
+exports.StrikeIcon = Icon$g;
+exports.StrikesWideIcon = Icon$8;
 exports.Svg = Svg;
 exports.Tabs = Tabs;
 exports.Text = Text;
 exports.Timer = Timer;
 exports.TitleBlock = TitleBlock;
 exports.Toggle = Toggle;
-exports.WatchIcon = Icon$3;
+exports.WatchIcon = Icon$4;
 exports.YourHistory = YourHistory;
 exports.alertVariants = variants;
 exports.connectorLocalStorageKey = connectorLocalStorageKey;

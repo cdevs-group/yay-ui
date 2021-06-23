@@ -20,7 +20,7 @@ const Header: React.FC<NavProps> = ({
   children,
 }) => {
   const location = useLocation();
-
+ 
   return (
     <HeaderWrap>
       {/* <Link> */}
@@ -73,4 +73,5 @@ const Nav = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 export default Header;
