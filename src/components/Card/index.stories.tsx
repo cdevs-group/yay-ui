@@ -1,75 +1,91 @@
 import React from "react";
+import ExpiredCard from "./ExpiredCard";
+import LiveCard from "./LiveCard";
+import LoaderCard from "./Loader";
 import Card from "./Card";
-import ExpiredCardNA from "./ExpiredCardNA";
-// import LoaderCard from "./LoaderCard/LoaderCard";
-// import NewMainCard from "./NewMainCard";
-// import NewRateCard from "./NewRateCard";
-// import NewThirdCard from "./NewThirdCard";
-// import NewUpDownCard from "./NewUpDownCard";
-// import NewWinCard from "./NewWinCard";
 
 export default {
   title: "Components/Card",
-  component: [ExpiredCardNA],
+  component: [ExpiredCard, LiveCard, LoaderCard],
   argTypes: {},
 };
 
-export const ExpiredNA: React.FC = () => {
+export const ExpiredNAuth: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card active={false}>
-        <ExpiredCardNA />
+      <Card displayNone leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} negative>
+        <ExpiredCard negative closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
       </Card>
     </div>
   );
 };
 
-// export const ThirdCardNew: React.FC = () => {
-//   return (
-//     <div style={{ padding: "32px", width: "500px" }}>
-//       <Card >
-//         <NewThirdCard/>
-//       </Card>
-//     </div>
-//   );
-// };
+export const ExpiredAuth: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03}>
+        <ExpiredCard closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
 
-// export const WinCardNew: React.FC = () => {
-//   return (
-//     <div style={{ padding: "32px", width: "500px" }}>
-//       <Card >
-//         <NewWinCard/>
-//       </Card>
-//     </div>
-//   );
-// };
+export const CollectWinnings: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} show showUp>
+        <ExpiredCard closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
 
-// export const RateCardNew: React.FC = () => {
-//   return (
-//     <div style={{ padding: "32px", width: "500px" }}>
-//       <Card >
-//         <NewRateCard/>
-//       </Card>
-//     </div>
-//   );
-// };
+export const ResultUpDownCard: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} showIcon>
+        <ExpiredCard closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
 
-// export const UpDownCardNew: React.FC = () => {
-//   return (
-//     <div style={{ padding: "32px", width: "500px" }}>
-//       <Card >
-//         <NewUpDownCard/>
-//       </Card>
-//     </div>
-//   );
-// };
+export const CardLiveNAuth: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card live negative leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03}>
+        <LiveCard negative closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
 
-// export const Loader: React.FC = () => {
-//   return (
-//     <div style={{ padding: "32px", width: "500px" }}>
-//       <Card>
-//         <LoaderCard/>
-//       </Card>
-//     </div>
-//   );
-// };
+export const CardLiveAuth: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card live leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03}>
+        <LiveCard closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
+
+export const LiveUpDownCard: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card live negative leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} showIcon>
+        <LiveCard negative closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
+      </Card>
+    </div>
+  );
+};
+
+export const CardLoader: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card live leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} displayNone>
+        <LoaderCard />
+      </Card>
+    </div>
+  );
+};
