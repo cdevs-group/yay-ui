@@ -855,9 +855,7 @@ var StyledCard$1 = function (_a) {
                 "UP",
                 React__default.createElement(RightText$2, { displayNone: displayNone },
                     React__default.createElement("div", { className: "payout" }, "Payout"),
-                    React__default.createElement("div", null,
-                        payoutUp,
-                        "x"),
+                    React__default.createElement("div", null, payoutUp),
                     React__default.createElement(IconComplete, { className: "completeIcon", showIcon: showIcon, negative: negative },
                         React__default.createElement(Icon$6, { fill: "#FFB72C" })))),
             React__default.createElement(UpContentWin, { show: show },
@@ -870,9 +868,7 @@ var StyledCard$1 = function (_a) {
                 "DOWN",
                 React__default.createElement(RightText$2, { displayNone: displayNone },
                     React__default.createElement("div", { className: "payout" }, "Payout"),
-                    React__default.createElement("div", null,
-                        payoutDown,
-                        "x"),
+                    React__default.createElement("div", null, payoutDown),
                     React__default.createElement(IconCompleteDown, { className: "completeIcon", showIcon: showIcon, negative: negative },
                         React__default.createElement(Icon$6, { fill: "#FFB72C" })))))));
 };
@@ -910,10 +906,13 @@ var ClosedCount$1 = styled.div(templateObject_3$p || (templateObject_3$p = __mak
     return (negative ? theme.colors.redBg : theme.colors.greenText);
 });
 var Line$4 = styled.div(templateObject_4$e || (templateObject_4$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
-var Arrow$3 = styled.div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n"])), function (_a) {
+var Arrow$3 = styled.div(templateObject_5$b || (templateObject_5$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
+    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
+}, function (_a) {
+    var negative = _a.negative;
+    return (negative ? "scale(1,-1)" : "none");
 });
 var LinePrice$1 = styled.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
     ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
@@ -964,10 +963,13 @@ var ClosedCount = styled.div(templateObject_3$o || (templateObject_3$o = __makeT
 styled.div(templateObject_4$d || (templateObject_4$d = __makeTemplateObject([""], [""])));
 styled.div(templateObject_5$a || (templateObject_5$a = __makeTemplateObject([""], [""])));
 var Line$3 = styled.div(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
-var Arrow$2 = styled.div(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n"])), function (_a) {
+var Arrow$2 = styled.div(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
+    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
+}, function (_a) {
+    var negative = _a.negative;
+    return (negative ? "scale(1,-1)" : "none");
 });
 var LinePrice = styled.div(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
     ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
@@ -985,26 +987,18 @@ var LiveCard = function (_a) {
     return (React__default.createElement(Wrap$9, null,
         React__default.createElement(Closed, null,
             React__default.createElement("div", { className: "closed" }, "LAST PRICE"),
-            React__default.createElement(ClosedCount, { negative: negative },
-                "$ ",
-                closedCount)),
+            React__default.createElement(ClosedCount, { negative: negative }, closedCount)),
         React__default.createElement(Line$3, null,
             React__default.createElement(Arrow$2, { negative: negative },
                 React__default.createElement(Icon$1, { color: negative ? "#FF6161" : "#4AE43D" })),
-            React__default.createElement(LinePrice, { negative: negative },
-                "$",
-                linePrice)),
+            React__default.createElement(LinePrice, { negative: negative }, linePrice)),
         React__default.createElement(Info, null,
             React__default.createElement(LockedPrice, null,
                 "Locked Price BNB: ",
-                React__default.createElement("div", null,
-                    "$ ",
-                    lockedPrice)),
+                React__default.createElement("div", null, lockedPrice)),
             React__default.createElement(Prize, null,
                 "Prize Pool: ",
-                React__default.createElement("div", null,
-                    prize,
-                    " BNB")))));
+                React__default.createElement("div", null, prize)))));
 };
 var templateObject_1$M, templateObject_2$A, templateObject_3$o, templateObject_4$d, templateObject_5$a, templateObject_6$6, templateObject_7$4, templateObject_8$3, templateObject_9$2, templateObject_10$2, templateObject_11$2;
 
@@ -1038,14 +1032,14 @@ var BottomText = styled.div(templateObject_11$1 || (templateObject_11$1 = __make
     return theme.colors.greyText;
 });
 var LoaderCard = function (_a) {
-    _a.negative; _a.closedCount; _a.linePrice; _a.lockedPrice; _a.prize; _a.colorIcon;
+    var textTooltip = _a.textTooltip;
     return (React__default.createElement(Wrap$8, null,
         React__default.createElement(Loader$1, null,
             React__default.createElement(OrangeCircle, null),
             React__default.createElement(GreenCircle, null),
             React__default.createElement(RedCircle, null),
             React__default.createElement(YellowCircle, null)),
-        React__default.createElement(BottomText, null, "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation")));
+        React__default.createElement(BottomText, null, textTooltip)));
 };
 var templateObject_1$L, templateObject_2$z, templateObject_3$n, templateObject_4$c, templateObject_5$9, templateObject_6$5, templateObject_7$3, templateObject_8$2, templateObject_9$1, templateObject_10$1, templateObject_11$1;
 
