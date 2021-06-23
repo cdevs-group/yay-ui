@@ -22,22 +22,26 @@ const UpOrDownCard = () => {
   };
 
   return (
-    <Card
-      setConfirm={setConfirm}
-      setChoice={setChoice}
-      isAuth
-      setIsReturn={setIsReturn}
-      isReturn={isReturn}
-      upValue="1.02x"
-      downValue="1.30x"
-      tabValue={tabValue}
-      handleToggleTabs={handleToggleTabs}
-      tabsList={tabsList}
-      inputValue={inputValue}
-      handleInputChange={handleInputChange}
-    >
-      <CardButtonsUpDown pool="$ 4354323" choise={choise} confirm={confirm} handleTurn={handleTurn} />
-    </Card>
+    <div style={{ height: "367px" }}>
+      <Card
+        setConfirm={setConfirm}
+        setChoice={setChoice}
+        isAuth
+        setIsReturn={setIsReturn}
+        isReturn={isReturn}
+        upValue="1.02x"
+        downValue="1.30x"
+        tabValue={tabValue}
+        handleToggleTabs={handleToggleTabs}
+        tabsList={tabsList}
+        inputValue={inputValue}
+        handleInputChange={handleInputChange}
+        leftContent="NEXT"
+        rightContent="#001"
+      >
+        <CardButtonsUpDown pool="$ 4354323" choise={choise} confirm={confirm} handleTurn={handleTurn} />
+      </Card>
+    </div>
   );
 };
 
