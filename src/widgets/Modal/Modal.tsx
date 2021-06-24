@@ -12,16 +12,20 @@ interface Props extends InjectedProps {
 }
 
 const StyledModal = styled.div`
+  max-width: 404px;
+  width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
-  width: 100%;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.xs} {
-    width: auto;
+    min-width: 360px;
+    width: 100%;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
     min-width: 404px;
-    max-width: 100%;
+    width: 100%;
   }
 `;
 
