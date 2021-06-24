@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import CardsBalance from "./CardBalance/CardsBalance";
 import CardsProducts from "./CardsProduct/CardsProducts";
-import CardFlip from "./CarnNext/CardFlip";
-import ValueRow from "./CarnNext/ValueRow";
+import CardFlip from "./CardNext/CardFlip";
+import ValueRow from "./CardNext/ValueRow";
 import { Button } from "../Button";
-import ButtonsBlock from "./CarnNext/ButtonsBlock";
-import SetPositionCard from "./CarnNext/SetPositionCard";
+import ButtonsBlock from "./CardNext/ButtonsBlock";
+import SetPositionCard from "./CardNext/SetPositionCard";
 import Timer from "../Timer/Timer";
-import TopContent from "./CarnNext/TopContent";
+import TopContent from "./CardNext/TopContent";
 import LaterCard from "./CardLater/LaterCard";
 
 export default {

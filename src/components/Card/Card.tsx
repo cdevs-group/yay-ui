@@ -1,15 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import StyledCard from "../Cards/CardLater/StyledCard";
 import { StyledCardProps } from "./types";
-import { transparentize } from "polished";
-import { GreenArrow, ChartIcon, HistoryIcon } from "../Svg";
+import StyledCard from "./components/StyledCard";
 
 interface CardProps extends StyledCardProps {}
 
 const Wrap = styled.div`
   width: 335px;
-  /* height: 470px; */
 `;
 
 const BottomCard = styled.div`

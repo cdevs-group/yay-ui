@@ -42,8 +42,7 @@ const ProgressWrap = styled.div`
 `;
 const Progress = styled.div`
   display: flex;
-  width: 100%;
-  border-radius: 3px;
+  width: 100%; 
   overflow: hidden;
 `;
 const Step = styled.div<{ color: string; width: number }>`
@@ -51,6 +50,7 @@ const Step = styled.div<{ color: string; width: number }>`
   width: ${({ width }) => `${width}%`};
   background: ${({ color }) => color};
   transition: none.3s;
+  border-radius: 3px;
 `;
 const Counter = styled.div`
   margin-top: 15px;

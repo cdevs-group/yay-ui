@@ -7,7 +7,7 @@ import { SetPositionCardProps } from "../types";
 import InputCard from "./InputCard";
 import Tabs from "./TabsCard";
 
-const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, handleBetMethod }) => {
+const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, handleBetMethod, isWarning }) => {
   const [inputValue, setInputValue] = useState("");
   const [tabValue, setTabValue] = useState(0);
   const account = true;
@@ -26,11 +26,11 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, han
         <ArrowIcon />
       </ButtonBack>
       <Title>Set Position</Title>
-      <InputCard value={inputValue} onChange={handleInputChange} isWarning={false} />
+      <InputCard value={inputValue} onChange={handleInputChange} isWarning={isWarning} />
       <TabsBlock>
         <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
       </TabsBlock>
-      {account ? (
+      {/* {account ? (
         <Button
           width="100%"
           variant="green"
@@ -46,7 +46,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, han
           Тут текст и стиль для неавторизованного пользователя
         </Button>
       )}
-      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
+      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock> */}
     </Wrap>
   );
 };

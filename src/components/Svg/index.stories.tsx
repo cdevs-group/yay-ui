@@ -91,7 +91,7 @@ export const Default: React.FC = () => {
           <CercleIcon />
         </div>
         <div style={{ marginRight: 20 }}>
-          <CercleIcon spin />
+          <CercleIcon spin fill="none" />
         </div>
       </div>
     </div>
