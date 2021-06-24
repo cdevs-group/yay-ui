@@ -27,7 +27,7 @@ const BottomCard = styled.div`
 const Card: React.FC<CardProps> = ({ children, ...props }) => {
   return (
     <Wrap>
-      <StyledCard {...props}>{children}</StyledCard>   
+      <StyledCard {...props}>{children}</StyledCard>
     </Wrap>
   );
 };

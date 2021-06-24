@@ -6,20 +6,21 @@ export interface StyledCardProps {
     payoutUp?: number | string;
     payoutDown?: number | string;
     negative?: boolean;
-    show?: boolean;
     closedCount?: any;
     linePrice?: any;
     lockedPrice?: any;
     prize?: any;
     up?: boolean;
-    showUp?: boolean;
-    showIcon?: boolean;
+    showBtnWinnings?: boolean;
+    hasEnteredUp?: boolean;
+    hasEnteredDown?: boolean;
     live?: boolean;
     colorIcon?: string;
     displayNone?: boolean;
     colorNone?: boolean;
     textTooltip?: string;
     time?: number;
+    btnWinnings?: ReactNode;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
     isReturn: string;
