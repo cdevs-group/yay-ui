@@ -42,7 +42,7 @@ const ProgressWrap = styled.div`
 `;
 const Progress = styled.div`
   display: flex;
-  width: 100%; 
+  width: 100%;
   overflow: hidden;
 `;
 const Step = styled.div<{ color: string; width: number }>`

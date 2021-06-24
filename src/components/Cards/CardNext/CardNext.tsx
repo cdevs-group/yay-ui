@@ -16,8 +16,6 @@ import React from "react";
 //   disabledButtons: boolean
 // }
 
-
-
 // const CardNext: React.FC<IProps> = ({roundEpoch, time, payoutWin, payoutLose, handleSetPosition, targetRef}) => {
 //   return (
 //     <>
