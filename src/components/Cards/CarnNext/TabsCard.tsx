@@ -29,7 +29,7 @@ const Tab = styled.button`
 `;
 const tabsList = ["10%", "25%", "50%", "75%", "Max"];
 
-const Tabs = ({ tabValue, handleToggleTabs }: TabsProps) => {
+const TabsCard = ({ tabValue, handleToggleTabs }: TabsProps) => {
   return (
     <TabsBlock>
       {tabsList.map((item, i) => (
@@ -41,4 +41,4 @@ const Tabs = ({ tabValue, handleToggleTabs }: TabsProps) => {
   );
 };
 
-export default Tabs;
+export default TabsCard;

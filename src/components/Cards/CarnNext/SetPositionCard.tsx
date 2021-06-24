@@ -5,7 +5,7 @@ import { BetPosition } from "../../Card/types";
 import ArrowIcon from "../ArrowIcon";
 import { SetPositionCardProps } from "../types";
 import InputCard from "./InputCard";
-import Tabs from "./Tabs";
+import Tabs from "./TabsCard";
 
 const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, handleBetMethod }) => {
   const [inputValue, setInputValue] = useState("");

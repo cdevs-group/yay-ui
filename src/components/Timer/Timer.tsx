@@ -43,7 +43,7 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
 }
 
 const Timer: React.FC<TimerProps> = ({ time, color }) => {
-  return <div>{time && <MyTimer expiryTimestamp={time} color={color || "text"} />}</div>;
+  return <div>{(time || time === 0) && <MyTimer expiryTimestamp={time} color={color || "text"} />}</div>;
 };
 export default Timer;
 

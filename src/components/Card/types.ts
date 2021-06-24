@@ -3,23 +3,25 @@ import { ReactNode } from "react";
 export interface StyledCardProps {
   children?: ReactNode;
   leftContent?: string | ReactNode;
-  rightContent?: string;
-  payoutUp?: number;
-  payoutDown?: number;
+  rightContent?: string | ReactNode;
+  payoutUp?: number | string;
+  payoutDown?: number | string;
   negative?: boolean;
-  show?: boolean;
   closedCount?: any;
   linePrice?: any;
   lockedPrice?: any;
   prize?: any;
   up?: boolean;
-  showUp?: boolean;
-  showIcon?: boolean;
+  showBtnWinnings?: boolean;
+  hasEnteredUp?: boolean;
+  hasEnteredDown?: boolean;
   live?: boolean;
   colorIcon?: string;
   displayNone?: boolean;
   colorNone?: boolean;
+  textTooltip?: string;
   time?: number;
+  btnWinnings?: ReactNode;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;
@@ -34,6 +36,7 @@ export interface StyledCardUpDownProps extends StyledCardProps {
   tabsList: Array<string>;
   inputValue: string;
   handleInputChange: (e: any) => void;
+  time: number;
 }
 
 export interface CardHeaderProps {
@@ -65,8 +68,9 @@ export interface CardUpDownProps extends CardProps {
   tabsList: Array<string>;
   inputValue: string;
   handleInputChange: (e: any) => void;
-  leftContent: string;
-  rightContent: string;
+  leftContent?: string | ReactNode;
+  rightContent?: string | ReactNode;
+  time: number;
 }
 
 export interface CardTheme {

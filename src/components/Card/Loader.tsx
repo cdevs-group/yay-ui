@@ -89,7 +89,7 @@ const BottomText = styled.div`
   letter-spacing: 0.05em;
 `;
 
-const LoaderCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice, lockedPrice, prize, colorIcon }) => {
+const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
   return (
     <Wrap>
       <Loader>
@@ -98,9 +98,7 @@ const LoaderCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePric
         <RedCircle />
         <YellowCircle />
       </Loader>
-      <BottomText>
-        This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation
-      </BottomText>
+      <BottomText>{textTooltip}</BottomText>
     </Wrap>
   );
 };

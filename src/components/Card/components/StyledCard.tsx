@@ -69,6 +69,7 @@ const UpContent = styled.div<{ negative?: boolean; showUp?: boolean; colorNone?:
 `;
 
 const UpContentWin = styled.div<{ show?: boolean }>`
+  position: relative;
   display: ${({ show }) => (show ? "flex" : "none")};
   justify-content: space-between;
   align-items: center;
@@ -87,9 +88,10 @@ const ButtonBnb = styled.div`
 
 const WinnerImg = styled.div`
   position: absolute;
-  top: 55px;
-  left: 20%;
+  top: -64px;
+  right: -37px;
   pointer-events: none;
+  z-index: 3;
 `;
 
 const RightText = styled.div<{ displayNone?: boolean }>`
@@ -102,13 +104,13 @@ const RightText = styled.div<{ displayNone?: boolean }>`
   }
 `;
 
-const IconComplete = styled.div<{ showIcon?: boolean; negative?: boolean }>`
-  display: ${({ showIcon, negative }) => (showIcon && !negative ? "flex" : "none")};
+const IconComplete = styled.div<{ showIcon?: boolean }>`
+  display: ${({ showIcon }) => (showIcon ? "flex" : "none")};
   margin-left: 7px;
 `;
 
-const IconCompleteDown = styled.div<{ showIcon?: boolean; negative?: boolean }>`
-  display: ${({ showIcon, negative }) => (showIcon && negative ? "flex" : "none")};
+const IconCompleteDown = styled.div<{ showIcon?: boolean }>`
+  display: ${({ showIcon }) => (showIcon ? "flex" : "none")};
   margin-left: 7px;
 `;
 
@@ -154,37 +156,35 @@ const StyledCard: React.FC<StyledCardProps> = ({
   payoutUp,
   payoutDown,
   negative,
-  show,
-  showUp,
-  showIcon,
+  showBtnWinnings,
+  hasEnteredUp,
+  hasEnteredDown,
   live,
   displayNone,
   colorNone,
+  time,
+  btnWinnings,
 }) => {
   return (
     <Wrap live={live}>
       <TopContent>
         <LeftContent>{leftContent}</LeftContent>
-        <Timer time={2000} color="#fff" />
+        <Timer time={time} color="#fff" />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
       <Content>
-        <UpContent negative={negative} showUp={showUp} colorNone={colorNone} displayNone={displayNone}>
+        <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
           UP
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
-            <div>{payoutUp}x</div>
-            <IconComplete className="completeIcon" showIcon={showIcon} negative={negative}>
+            <div>{payoutUp}</div>
+            <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
               <CompleteIcon fill="#FFB72C" />
             </IconComplete>
           </RightText>
         </UpContent>
-        <UpContentWin show={show}>
-          <ButtonBnb>
-            <Button variant="green" width="100%">
-              Collect Winnings
-            </Button>
-          </ButtonBnb>
+        <UpContentWin show={showBtnWinnings}>
+          <ButtonBnb>{btnWinnings}</ButtonBnb>
           <WinnerImg>
             <img src={Winner} />
           </WinnerImg>
@@ -196,8 +196,8 @@ const StyledCard: React.FC<StyledCardProps> = ({
           DOWN
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
-            <div>{payoutDown}x</div>
-            <IconCompleteDown className="completeIcon" showIcon={showIcon} negative={negative}>
+            <div>{payoutDown}</div>
+            <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
               <CompleteIcon fill="#FFB72C" />
             </IconCompleteDown>
           </RightText>

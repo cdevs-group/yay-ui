@@ -49,7 +49,7 @@ export interface InputProps {
   onChange: (e: any) => void;
 }
 export interface SetPositionCardProps {
-  onBack: (value: string) => void;
+  onBack: (e: any) => void;
   position: any;
   handleBetMethod: () => void;
 }
