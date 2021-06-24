@@ -47,11 +47,16 @@ export interface InputProps {
   value: string;
   isWarning?: boolean;
   onChange: (e: any) => void;
+  inputProps: { disabled: boolean };
 }
 export interface SetPositionCardProps {
   onBack: (e: any) => void;
   position: any;
   handleBetMethod: () => void;
+  inputValue: string;
+  handleInputChange: (e: any) => void;
+  showFieldWarning: boolean;
+  inputProps: { disabled: boolean };
 }
 
 export interface ButtonsBlockRops {

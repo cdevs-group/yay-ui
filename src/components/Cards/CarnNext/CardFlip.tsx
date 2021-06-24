@@ -26,7 +26,7 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 
   ${Front} {
     z-index: ${({ isFlipped }) => (isFlipped ? 5 : 10)};
-    padding: 18px 15px 20px;
+    padding: 18px 15px 14px;
     justify-content: space-between;
     flex-direction: column;
     backface-visibility: hidden;
@@ -35,7 +35,7 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
     transition: 0;
     background: ${({ theme }) => theme.colors.bgCard};
     position: absolute;
-    height: 310px;
+    height: 293px;
     bottom: 0;
     top: auto;
   }
