@@ -8,8 +8,7 @@ import ButtonsBlock from "./CarnNext/ButtonsBlock";
 import SetPositionCard from "./CarnNext/SetPositionCard";
 import Timer from "../Timer/Timer";
 import TopContent from "./CarnNext/TopContent";
-import CardLater from "./CardLater/CardLater";
-import Card from "./CardLater/Card";
+import LaterCard from "./CardLater/LaterCard";
 
 export default {
   title: "Components/Cards",
@@ -97,9 +96,7 @@ export const CardsBalancePreview: React.FC = () => {
         </CardFlip>
       </div>
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
-        <Card>
-          <CardLater />
-        </Card>
+        <LaterCard />
       </div>
     </div>
   );

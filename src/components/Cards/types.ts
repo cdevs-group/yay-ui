@@ -48,13 +48,6 @@ export interface InputProps {
   isWarning?: boolean;
   onChange: (e: any) => void;
 }
-
-export enum BetPosition {
-  BULL = "Bull",
-  BEAR = "Bear",
-  HOUSE = "House",
-}
-
 export interface SetPositionCardProps {
   onBack: (value: string) => void;
   position: any;

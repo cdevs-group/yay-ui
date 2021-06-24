@@ -1,7 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { StyledCardProps } from "./types";
-import { transparentize } from "polished";
 
 let orangeAnimation = keyframes`
   0%, 100% { transform: translate(0, 0); }
@@ -79,18 +77,7 @@ const YellowCircle = styled.div`
   background: ${({ theme }) => theme.colors.yellowBg};
 `;
 
-const BottomText = styled.div`
-  margin-top: 75px;
-  text-align: center;
-  font-weight: normal;
-  font-size: 11px;
-  line-height: 14px;
-  color: ${({ theme }) => theme.colors.greyText};
-  letter-spacing: 0.05em;
-`;
-interface CardLaterProps {}
-
-const CardLater: React.FC<CardLaterProps> = ({}) => {
+const LoaderCard: React.FC = () => {
   return (
     <Wrap>
       <Loader>
@@ -99,10 +86,7 @@ const CardLater: React.FC<CardLaterProps> = ({}) => {
         <RedCircle />
         <YellowCircle />
       </Loader>
-      <BottomText>
-        This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation
-      </BottomText>
     </Wrap>
   );
 };
-export default CardLater;
+export default LoaderCard;

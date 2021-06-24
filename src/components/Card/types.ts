@@ -19,6 +19,7 @@ export interface StyledCardProps {
   colorIcon?: string;
   displayNone?: boolean;
   colorNone?: boolean;
+  time?: number;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;
