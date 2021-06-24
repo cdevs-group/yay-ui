@@ -11,6 +11,10 @@ export { default as ChartIcon } from "./Icons/ChartIcon";
 export { default as HistoryIcon } from "./Icons/HistoryIcon";
 export { default as CompleteIcon } from "./Icons/CompleteIcon";
 export { default as CircleIcon } from "./Icons/CircleIcon";
+export { default as EyeClose } from "./Icons/EyeClose";
+export { default as SearchIcon } from "./Icons/SearchIcon";
+export { default as SquaresIcon } from "./Icons/SquaresIcon";
+export { default as PenIcon } from "./Icons/PenIcon";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

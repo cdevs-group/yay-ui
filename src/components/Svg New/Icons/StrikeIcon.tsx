@@ -6,7 +6,7 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "rgb(58,58,64)"} />
-      <g filter={props.fill || "url(#filter0_d)"}>
+      <g>
         <path d="M16 18H27" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
       </g>
       <g filter="url(#filter1_d)">

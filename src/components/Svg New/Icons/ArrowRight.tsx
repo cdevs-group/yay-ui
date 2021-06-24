@@ -15,7 +15,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         stroke={props.fill || "url(#paint0_linear)"}
       />
       <g filter={props.fill || "url(#filter0_d)"}>
-        <path d="M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15" stroke="white" stroke-width="2" />
+        <path d="M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15" stroke={props.stroke || "white"} stroke-width="2" />
       </g>
       <defs>
         <filter
