@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BnbIcon } from "../../Svg";
 import { InputProps } from "../types";
 
-const InputCard = ({ value, onChange }: InputProps) => {
+const InputCard = ({ value, onChange, isWarning }: InputProps) => {
   return (
     <InputWrap>
       <TitleInput>Commit</TitleInput>
@@ -11,7 +11,7 @@ const InputCard = ({ value, onChange }: InputProps) => {
         <BnbIcon />
         BNB
       </InputIcon>
-      <Input value={value} onChange={onChange} placeholder="0.0" />
+      <Input className={isWarning ? "warning" : ""} value={value} onChange={onChange} placeholder="0.0" />
     </InputWrap>
   );
 };
@@ -21,6 +21,7 @@ export default InputCard;
 const Input = styled.input`
   background: none;
   border: none;
+  width: 100%;
   font-weight: 500;
   font-size: 17px;
   line-height: 22px;
@@ -30,7 +31,7 @@ const Input = styled.input`
 `;
 const InputWrap = styled.div`
   position: relative;
-  padding: 17px 20px 20px;
+  padding: 17px 100px 20px 20px;
   background: rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 12px;

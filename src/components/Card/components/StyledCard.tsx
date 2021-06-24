@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Timer from "../Timer/Timer";
-import { StyledCardProps } from "./types";
+import Timer from "../../Timer/Timer";
+import { StyledCardProps } from "../../Card/types";
 import { transparentize } from "polished";
-import Button from "../Button/Button";
-import { Winner } from "../../constants/images";
-import { CompleteIcon } from "../Svg";
+import Button from "../../Button/Button";
+import { Winner } from "../../../constants/images";
+import { CompleteIcon } from "../../Svg";
 
 const Wrap = styled.div<{ live?: boolean }>`
   width: 308px;

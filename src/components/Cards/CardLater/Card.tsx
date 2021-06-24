@@ -1,24 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { CardUpDownProps } from "../../Card/types";
-import { ChartIcon, GreenArrow, HistoryIcon } from "../../Svg";
 import StyledCard from "./StyledCard";
+import { transparentize } from "polished";
+
+interface CardProps extends StyledCardProps {}
+
+const Wrap = styled.div`
+  width: 335px;
+  /* height: 470px; */
+`;
 
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 308px;
   transition: 0.3s;
-  @media (max-width: 767px) {
+  @media (max-width: 400px) {
     width: 278px;
   }
 `;
+
 const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
 `;
+
 const CenterBlock = styled.div`
   position: relative;
   display: flex;
@@ -52,43 +60,30 @@ const CenterBlock = styled.div`
   }
 `;
 
-const CardNext: React.FC<CardUpDownProps> = ({
-  setChoice,
-  setConfirm,
-  isAuth,
-  setIsReturn,
-  isReturn,
-  children,
-  upValue,
-  downValue,
-  tabValue,
-  handleToggleTabs,
-  tabsList,
-  inputValue,
-  handleInputChange,
-  leftContent,
-  rightContent,
-}) => {
+const BottomCard = styled.div`
+  position: absolute;
+  left: 35%;
+  bottom: 1%;
+  transform: rotate(-25deg);
+  width: 45px;
+  height: 61px;
+  background: ${({ theme }) => theme.colors.lightGreyBg};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow3};
+  border-radius: 10px;
+`;
+
+const TopCard = styled(BottomCard)`
+  position: absolute;
+  left: 45%;
+  bottom: -8%;
+  transform: rotate(20deg);
+  background: ${({ theme }) => theme.colors.text};
+`;
+
+const Card: React.FC<CardProps> = ({ children, ...props }) => {
   return (
-    <>
-      <StyledCard
-        setChoice={setChoice}
-        setConfirm={setConfirm}
-        isAuth={isAuth}
-        setIsReturn={setIsReturn}
-        isReturn={isReturn}
-        upValue={upValue}
-        downValue={downValue}
-        tabValue={tabValue}
-        handleToggleTabs={handleToggleTabs}
-        tabsList={tabsList}
-        inputValue={inputValue}
-        handleInputChange={handleInputChange}
-        leftContent={leftContent}
-        rightContent={rightContent}
-      >
-        {children}
-      </StyledCard>
+    <Wrap>
+      <StyledCard {...props}>{children}</StyledCard>
       {/* <BottomContent>
         <Button>
           <ChartIcon />
@@ -107,7 +102,7 @@ const CardNext: React.FC<CardUpDownProps> = ({
           <HistoryIcon />
         </Button>
       </BottomContent> */}
-    </>
+    </Wrap>
   );
 };
-export default CardNext;
+export default Card;

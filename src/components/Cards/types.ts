@@ -6,7 +6,14 @@ export interface CardBalanceProps {
   text: string;
   children?: ReactNode;
 }
-
+export interface CardFlipProps {
+  isFlipped: boolean;
+  children: [ReactNode, ReactNode];
+}
+export interface ValueProps {
+  vector: string;
+  value: string;
+}
 export interface CardProductProp {
   title: string;
   img: string;
@@ -31,12 +38,35 @@ export interface CardButtonsProps {
 }
 
 export interface TabsProps {
-  tabsList: Array<string>;
   handleToggleTabs: (e: any) => void;
   tabValue: number;
+  tabsList?: Array<string>;
 }
 
 export interface InputProps {
   value: string;
+  isWarning?: boolean;
   onChange: (e: any) => void;
+}
+
+export enum BetPosition {
+  BULL = "Bull",
+  BEAR = "Bear",
+  HOUSE = "House",
+}
+
+export interface SetPositionCardProps {
+  onBack: (value: string) => void;
+  position: any;
+  handleBetMethod: () => void;
+}
+
+export interface ButtonsBlockRops {
+  children: [ReactNode, ReactNode];
+  pool: string;
+  betMethod: string;
+}
+export interface TopContentProps {
+  children: ReactNode;
+  rightContent: string;
 }
