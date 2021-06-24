@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
-import { TabsProp } from "../../Tabs";
 import { TabsProps } from "../types";
-import { Box } from "../../Box";
 
 const TabsBlock = styled.div`
   display: flex;
@@ -29,8 +27,9 @@ const Tab = styled.button`
     transition: 0.3s;
   }
 `;
+const tabsList = ["10%", "25%", "50%", "75%", "Max"];
 
-const Tabs = ({ tabValue, handleToggleTabs, tabsList, ...props }: TabsProps) => {
+const TabsCard = ({ tabValue, handleToggleTabs }: TabsProps) => {
   return (
     <TabsBlock>
       {tabsList.map((item, i) => (
@@ -42,4 +41,4 @@ const Tabs = ({ tabValue, handleToggleTabs, tabsList, ...props }: TabsProps) => 
   );
 };
 
-export default Tabs;
+export default TabsCard;
