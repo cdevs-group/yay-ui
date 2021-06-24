@@ -5,6 +5,7 @@ import Logo from "../Logo";
 import { NavProps } from "../types";
 import Account from "./Account";
 import MenuLink from "./MenuLink";
+import LanguageSelect from "./LanguageSelect";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -38,7 +39,10 @@ const Header: React.FC<NavProps> = ({
             />
           ))}
         </Nav>
-        <Account account={account} login={login} logout={logout} />
+        <RightContent>
+          <LanguageSelect currentLang={currentLang} />
+          <Account account={account} login={login} logout={logout} />
+        </RightContent>
       </Line>
     </HeaderWrap>
   );
@@ -72,6 +76,10 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const RightContent = styled.div`
+  display: flex;
 `;
 
 export default Header;
