@@ -205,7 +205,7 @@ const StyledCard: React.FC<StyledCardUpDownProps> = ({
   tabsList,
   inputValue,
   handleInputChange,
-  time
+  time,
 }) => {
   return (
     <Wrap className={isReturn !== "" ? "turn" : ""}>

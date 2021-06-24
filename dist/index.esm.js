@@ -844,11 +844,11 @@ var DownContent = styled.div(templateObject_14$1 || (templateObject_14$1 = __mak
     return theme.colors.text;
 });
 var StyledCard$1 = function (_a) {
-    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, show = _a.show, showUp = _a.showUp, showIcon = _a.showIcon, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone;
+    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, show = _a.show, showUp = _a.showUp, showIcon = _a.showIcon, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone, time = _a.time;
     return (React__default.createElement(Wrap$b, { live: live },
         React__default.createElement(TopContent$1, null,
             React__default.createElement(LeftContent$1, null, leftContent),
-            React__default.createElement(Timer, { time: 2000, color: "#fff" }),
+            React__default.createElement(Timer, { time: time, color: "#fff" }),
             React__default.createElement(RightContent$1, null, rightContent)),
         React__default.createElement(Content$1, null,
             React__default.createElement(UpContent, { negative: negative, showUp: showUp, colorNone: colorNone, displayNone: displayNone },
@@ -907,13 +907,12 @@ var ClosedCount$1 = styled.div(templateObject_3$p || (templateObject_3$p = __mak
 });
 var Line$4 = styled.div(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
 var Arrow$3 = styled.div(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n  transform: ",
-    ";\n"])), function (_a) {
+    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
     var negative = _a.negative;
-    return !negative ? 'scale(1,-1)' : 'none';
+    return (!negative ? "scale(1,-1)" : "none");
 });
 var LinePrice$1 = styled.div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
     ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
@@ -965,13 +964,12 @@ styled.div(templateObject_4$c || (templateObject_4$c = __makeTemplateObject([""]
 styled.div(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject([""], [""])));
 var Line$3 = styled.div(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
 var Arrow$2 = styled.div(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n  transform: ",
-    ";\n"])), function (_a) {
+    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
     var negative = _a.negative;
-    return !negative ? 'scale(1,-1)' : 'none';
+    return (!negative ? "scale(1,-1)" : "none");
 });
 var LinePrice = styled.div(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
     ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
@@ -1439,12 +1437,12 @@ var LeftContent = styled.div(templateObject_3$k || (templateObject_3$k = __makeT
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Content = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  position: relative;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n  transition: 0.3s;\n  &.turn {\n    transform: rotateY(180deg);\n    & div.back {\n      backface-visibility: visible;\n      opacity: 1;\n    }\n    & div.front {\n      backface-visibility: hidden;\n      opacity: 0;\n    }\n  }\n  & div.front {\n    position: relative;\n    top: 0;\n    left: 0;\n    z-index: 2;\n    backface-visibility: visible;\n    opacity: 1;\n  }\n  & div.back {\n    position: absolute;\n    border-radius: 15px;\n    top: 0;\n    left: 0;\n    transform: rotateY(180deg);\n    backface-visibility: hidden;\n    z-index: 3;\n    opacity: 0;\n  }\n"], ["\n  position: relative;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n  transition: 0.3s;\n  &.turn {\n    transform: rotateY(180deg);\n    & div.back {\n      backface-visibility: visible;\n      opacity: 1;\n    }\n    & div.front {\n      backface-visibility: hidden;\n      opacity: 0;\n    }\n  }\n  & div.front {\n    position: relative;\n    top: 0;\n    left: 0;\n    z-index: 2;\n    backface-visibility: visible;\n    opacity: 1;\n  }\n  & div.back {\n    position: absolute;\n    border-radius: 15px;\n    top: 0;\n    left: 0;\n    transform: rotateY(180deg);\n    backface-visibility: hidden;\n    z-index: 3;\n    opacity: 0;\n  }\n"])), function (_a) {
+var Content = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  position: relative;\n  margin-top: 26px;\n  background: ", ";\n  border-radius: 15px;\n  transition: 0.3s;\n  &.turn {\n    transform: rotateY(180deg);\n    & div.back {\n      backface-visibility: visible;\n      opacity: 1;\n    }\n    & div.front {\n      backface-visibility: hidden;\n      opacity: 0;\n    }\n  }\n  & div.front {\n    position: relative;\n    top: 0;\n    left: 0;\n    z-index: 2;\n    backface-visibility: visible;\n    opacity: 1;\n  }\n  & div.back {\n    position: absolute;\n    border-radius: 15px;\n    top: 0;\n    left: 0;\n    transform: rotateY(180deg);\n    backface-visibility: hidden;\n    z-index: 3;\n    opacity: 0;\n  }\n"], ["\n  position: relative;\n  margin-top: 26px;\n  background: ", ";\n  border-radius: 15px;\n  transition: 0.3s;\n  &.turn {\n    transform: rotateY(180deg);\n    & div.back {\n      backface-visibility: visible;\n      opacity: 1;\n    }\n    & div.front {\n      backface-visibility: hidden;\n      opacity: 0;\n    }\n  }\n  & div.front {\n    position: relative;\n    top: 0;\n    left: 0;\n    z-index: 2;\n    backface-visibility: visible;\n    opacity: 1;\n  }\n  & div.back {\n    position: absolute;\n    border-radius: 15px;\n    top: 0;\n    left: 0;\n    transform: rotateY(180deg);\n    backface-visibility: hidden;\n    z-index: 3;\n    opacity: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
 var RightContent = styled(LeftContent)(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  font-size: 11px;\n"], ["\n  font-size: 11px;\n"])));
-var Up = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  padding: 18px 20px 15px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  padding: 18px 20px 15px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var Up = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  padding: 16px 20px 15px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  padding: 16px 20px 15px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -1478,11 +1476,11 @@ var NoteBlock = styled.div(templateObject_12 || (templateObject_12 = __makeTempl
 var TabsBlock = styled.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  margin-top: 25px;\n  margin-bottom: 20px;\n"], ["\n  margin-top: 25px;\n  margin-bottom: 20px;\n"])));
 var Down = styled(Up)(templateObject_14 || (templateObject_14 = __makeTemplateObject([""], [""])));
 var StyledCard = function (_a) {
-    var setChoice = _a.setChoice, setConfirm = _a.setConfirm, isAuth = _a.isAuth, setIsReturn = _a.setIsReturn, isReturn = _a.isReturn, children = _a.children, upValue = _a.upValue, downValue = _a.downValue, leftContent = _a.leftContent, rightContent = _a.rightContent, tabValue = _a.tabValue, handleToggleTabs = _a.handleToggleTabs, tabsList = _a.tabsList, inputValue = _a.inputValue, handleInputChange = _a.handleInputChange;
+    var setChoice = _a.setChoice, setConfirm = _a.setConfirm, isAuth = _a.isAuth, setIsReturn = _a.setIsReturn, isReturn = _a.isReturn, children = _a.children, upValue = _a.upValue, downValue = _a.downValue, leftContent = _a.leftContent, rightContent = _a.rightContent, tabValue = _a.tabValue, handleToggleTabs = _a.handleToggleTabs, tabsList = _a.tabsList, inputValue = _a.inputValue, handleInputChange = _a.handleInputChange, time = _a.time;
     return (React__default.createElement(Wrap$6, { className: isReturn !== "" ? "turn" : "" },
         React__default.createElement(TopContent, null,
             React__default.createElement(LeftContent, null, leftContent),
-            React__default.createElement(Timer, { time: 2000, color: "#fff" }),
+            React__default.createElement(Timer, { time: time, color: "#fff" }),
             React__default.createElement(RightContent, null, rightContent)),
         React__default.createElement(Content, null,
             React__default.createElement("div", { className: "front" },
@@ -1521,9 +1519,9 @@ styled.div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n
 styled.button(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 styled.div(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  & button {\n    display: flex;\n    align-items: center;\n  }\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 35%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  width: 198px;\n  height: 50px;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 12px;\n  & button {\n    display: flex;\n    align-items: center;\n  }\n  & button.arrowLeft {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    left: 3%;\n    top: 35%;\n    cursor: pointer;\n  }\n  & button.arrowRight {\n    position: absolute;\n    z-index: 1;\n    background: none;\n    border: none;\n    right: 3%;\n    top: 35%;\n    transform: rotate(180deg);\n    cursor: pointer;\n  }\n"])));
 var CardNext = function (_a) {
-    var setChoice = _a.setChoice, setConfirm = _a.setConfirm, isAuth = _a.isAuth, setIsReturn = _a.setIsReturn, isReturn = _a.isReturn, children = _a.children, upValue = _a.upValue, downValue = _a.downValue, tabValue = _a.tabValue, handleToggleTabs = _a.handleToggleTabs, tabsList = _a.tabsList, inputValue = _a.inputValue, handleInputChange = _a.handleInputChange, leftContent = _a.leftContent, rightContent = _a.rightContent;
+    var setChoice = _a.setChoice, setConfirm = _a.setConfirm, isAuth = _a.isAuth, setIsReturn = _a.setIsReturn, isReturn = _a.isReturn, children = _a.children, upValue = _a.upValue, downValue = _a.downValue, tabValue = _a.tabValue, handleToggleTabs = _a.handleToggleTabs, tabsList = _a.tabsList, inputValue = _a.inputValue, handleInputChange = _a.handleInputChange, leftContent = _a.leftContent, rightContent = _a.rightContent, time = _a.time;
     return (React__default.createElement(React__default.Fragment, null,
-        React__default.createElement(StyledCard, { setChoice: setChoice, setConfirm: setConfirm, isAuth: isAuth, setIsReturn: setIsReturn, isReturn: isReturn, upValue: upValue, downValue: downValue, tabValue: tabValue, handleToggleTabs: handleToggleTabs, tabsList: tabsList, inputValue: inputValue, handleInputChange: handleInputChange, leftContent: leftContent, rightContent: rightContent }, children)));
+        React__default.createElement(StyledCard, { setChoice: setChoice, setConfirm: setConfirm, isAuth: isAuth, setIsReturn: setIsReturn, isReturn: isReturn, upValue: upValue, downValue: downValue, tabValue: tabValue, handleToggleTabs: handleToggleTabs, tabsList: tabsList, inputValue: inputValue, handleInputChange: handleInputChange, leftContent: leftContent, rightContent: rightContent, time: time }, children)));
 };
 var templateObject_1$x, templateObject_2$r, templateObject_3$j;
 
