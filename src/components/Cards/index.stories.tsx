@@ -96,7 +96,7 @@ export const CardsBalancePreview: React.FC = () => {
         </CardFlip>
       </div>
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
-        <LaterCard />
+        <LaterCard color="#4CEE3E" rightContent="#003" time={6616} />
       </div>
     </div>
   );

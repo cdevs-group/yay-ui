@@ -23,4 +23,5 @@ export type {
   SetPositionCardProps,
   ButtonsBlockRops,
   TopContentProps,
+  LaterCardProps,
 } from "./types";
