@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 
-const LanguageSelect: React.FC<NavProps> = ({ currentLang }) => {
+const LanguageSelect: React.FC<any> = ({ currentLang }) => {
   return (
     <Button>
       <ButtonText>{currentLang}</ButtonText>

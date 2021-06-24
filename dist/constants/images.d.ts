@@ -12,4 +12,5 @@ import BNB from "../../public/images/bnb.png";
 import COINS2 from "../../public/images/coins2.png";
 import Winner from "../../public/images/winner.png";
 import Win from "../../public/images/win.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, };
+import AccountIcon from "../../public/images/account-logo.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, };
