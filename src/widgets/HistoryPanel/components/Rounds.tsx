@@ -37,7 +37,7 @@ const Rounds = ({ type, rounds, roundsInPercents, roundValue, roundPrice }: Prop
   };
 
   return (
-    <>
+    <Wrap>
       <Row>
         <Column>
           <img style={{ float: "left" }} src={values().src} alt="img" />
@@ -57,11 +57,29 @@ const Rounds = ({ type, rounds, roundsInPercents, roundValue, roundPrice }: Prop
           </Value>
         </div>
       </Row>
-    </>
+    </Wrap>
   );
 };
 
 export default Rounds;
+
+const Wrap = styled.div`
+  background: ${({ theme }) => theme.colors.cardBg};
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 408px;
+    left: -20px;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    background: ${({ theme }) => theme.colors.cardBg};
+  }
+`;
 
 const Row = styled.div`
   padding: 17px 0;

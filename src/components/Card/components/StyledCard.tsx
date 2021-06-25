@@ -47,7 +47,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 28px;
-  background: ${({ theme }) => theme.colors.cardBg};
+  background: ${({ theme }) => theme.colors.bgCard};
   border-radius: 15px;
 `;
 
@@ -143,7 +143,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   height: 100%;
   width: 100%;
   padding: 18px 20px 13px;
-  background: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.cardBg)};
+  background: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.bgCard)};
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 12px;
@@ -169,6 +169,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
   colorNone,
   time,
   btnWinnings,
+  hide,
 }) => {
   return (
     <Wrap live={live}>
@@ -179,7 +180,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
       </TopContent>
       <Content>
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
-          UP
+          <p style={{ opacity: hide ? "0" : "1" }}>UP</p>
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
             <div>{payoutUp}</div>
@@ -198,7 +199,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
           {children}
         </MainBlock>
         <DownContent negative={negative} displayNone={displayNone}>
-          DOWN
+          <p style={{ opacity: hide ? "0" : "1" }}>DOWN</p>
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
             <div>{payoutDown}</div>

@@ -18,7 +18,7 @@ const Languages = ({ select, setSelect, list }: LanguagesProps) => {
         open={open}
         setOpen={setOpen}
         icon={
-          <Button>
+          <Button open={open}>
             <ButtonText>{select}</ButtonText>
           </Button>
         }
@@ -63,9 +63,9 @@ const Select = styled.button`
     margin-bottom: 0;
   }
 `;
-const Button = styled.button`
+const Button = styled.button<{ open: boolean }>`
   padding: 0;
-  background: ${({ theme }) => theme.colors.bgOpacity};
+  background: ${({ theme, open }) => (open ? theme.colors.buttonBg2 : theme.colors.buttonBg)};
   border: none;
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};

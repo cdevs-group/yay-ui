@@ -5,11 +5,31 @@ import LoaderCard from "./Loader";
 import Card from "./Card";
 import { CercleIcon } from "../Svg";
 import { Button } from "../Button";
+import GhostCard from "./GhostCard/GhostCard";
 
 export default {
   title: "Components/Card",
-  component: [ExpiredCard, LiveCard, LoaderCard],
+  component: [ExpiredCard, LiveCard, LoaderCard, GhostCard],
   argTypes: {},
+};
+
+export const GhostCardBlock: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card
+        live
+        leftContent="CANCEL"
+        rightContent="#001"
+        payoutUp={1.03}
+        payoutDown={5.03}
+        displayNone
+        colorNone
+        time={2000}
+      >
+        <GhostCard href="#" />
+      </Card>
+    </div>
+  );
 };
 
 export const ExpiredNAuth: React.FC = () => {
