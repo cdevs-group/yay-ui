@@ -3007,7 +3007,7 @@ var HeaderHistory = function (_a) {
         activeTab === HistoryTabs.ROUNDS && (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(SimpleTabsWrap, null,
                 React__default.createElement(TabsWrap, null,
-                    React__default.createElement(Tab, { as: "button", onClick: function () { return handleChangeTab(HistoryFilter.ALL); }, className: historyFilter === HistoryFilter.ALL ? "active" : "", value: HistoryFilter.ALL, disabled: isFetchingHistory || !account }, "All history"),
+                    React__default.createElement(Tab, { as: "button", onClick: handleChangeTab(HistoryFilter.ALL), className: historyFilter === HistoryFilter.ALL ? "active" : "", value: HistoryFilter.ALL, disabled: isFetchingHistory || !account }, "All history"),
                     " ",
                     React__default.createElement(Tab, { as: "button", onClick: handleChangeTab(HistoryFilter.COLLECTED), className: historyFilter === HistoryFilter.COLLECTED ? "active" : "", value: HistoryFilter.COLLECTED, disabled: isFetchingHistory || !account }, "Collected"),
                     React__default.createElement(Tab, { as: "button", onClick: handleChangeTab(HistoryFilter.UNCOLLECTED), className: historyFilter === HistoryFilter.UNCOLLECTED ? "active" : "", value: HistoryFilter.UNCOLLECTED, disabled: isFetchingHistory || !account }, "Uncollected")))))));
