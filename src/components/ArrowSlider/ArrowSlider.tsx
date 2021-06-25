@@ -25,7 +25,6 @@ const CenterBlock = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 198px;
   }
-
 `;
 const ArrowLeft = styled.button`
   display: flex;
