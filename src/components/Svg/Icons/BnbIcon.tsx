@@ -5,7 +5,7 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="29" height="29" viewBox="0 0 29 29" {...props}>
-      <rect width="28.0333" height="29" rx="7" fill="url(#paint0_linear)" />
+      <rect width="28.0333" height="29" rx="7" fill={props.fill || "url(#paint7447834)"} />
       <path
         d="M14.1042 6.76672L8.94336 11.6768L10.8579 13.4983L14.1042 10.4097L17.3506 13.4983L19.2651 11.6768L14.1042 6.76672Z"
         fill="white"
@@ -40,7 +40,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       />
       <defs>
         <linearGradient
-          id="paint0_linear"
+          id="paint7447834"
           x1="14.0167"
           y1="-6.76667"
           x2="14.0167"

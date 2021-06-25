@@ -5,17 +5,17 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg viewBox="0 0 24 24" {...props}>
-      <g filter="url(#filter0_d)">
+      <g filter="url(#filter7837483784)">
         <path
           d="M11.5858 14.6568L5.92893 8.99998M5.92893 8.99998L11.5858 3.34312M5.92893 8.99998H20.0711"
-          stroke="white"
+          stroke={props.fill || "white"}
           strokeWidth="2"
           strokeLinecap="round"
         />
       </g>
       <defs>
         <filter
-          id="filter0_d"
+          id="filter7837483784"
           x="0.515625"
           y="0.34314"
           width="24.5563"
