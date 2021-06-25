@@ -8,7 +8,7 @@ const ButtonsBlock = ({ children, pool, betMethod }: ButtonsBlockRops) => {
   return (
     <ButtonsBlockWrap>
       <PrizeBlock>
-        <p>PRIZE POOL</p>
+        <p>PRIZE POoL</p>
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
