@@ -1,36 +1,44 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { Button } from "../../Button";
+import { BetPosition } from "../../Card/types";
 import { CompleteIcon } from "../../Svg";
 import { ButtonsBlockRops } from "../types";
 
-const ButtonsBlock = ({ children, pool, betMethod }: ButtonsBlockRops) => {
-  console.log(betMethod);
+const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, disabledButton }: ButtonsBlockRops) => {
   return (
     <ButtonsBlockWrap>
       <PrizeBlock>
-        <p>PRIZE POoL</p>
+        <p>PRIZE POOL</p>
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
-        {children.map((item, i) => (
-          <ButtonWrap
-            className={
-              i === 1 && betMethod === "betBull" ? "unCoise" : i === 0 && betMethod === "betBear" ? "unCoise" : ""
-            }
-            key={i}
+        <ButtonWrap style={{ marginBottom: 14 }} className={hasEnteredDown ? 'unCoise' : ''}>
+          <Button
+            width="100%"
+            variant="green"
+            onClick={() => handleSetPosition(BetPosition.BULL)}
+            disabled={disabledButton}
           >
-            {item}{" "}
-            {i === 0 && betMethod === "betBull" ? (
-              <CompleteBlock>
-                <CompleteIcon />
-              </CompleteBlock>
-            ) : i === 1 && betMethod === "betBear" ? (
-              <CompleteBlock>
-                <CompleteIcon />
-              </CompleteBlock>
-            ) : null}
-          </ButtonWrap>
-        ))}
+            Enter UP
+          </Button>
+          <IconComplete className="completeIcon" hasEntered={hasEnteredUp}>
+            <CompleteIcon fill="#FFB72C" />
+          </IconComplete>
+        </ButtonWrap>
+        <ButtonWrap className={hasEnteredUp ? 'unCoise' : ''}>
+          <Button
+            width="100%"
+            variant="pink"
+            onClick={() => handleSetPosition(BetPosition.BEAR)}
+            disabled={disabledButton}
+          >
+            Enter DOWN
+          </Button>
+          <IconComplete className="completeIcon" hasEntered={hasEnteredDown}>
+            <CompleteIcon fill="#FFB72C" />
+          </IconComplete>
+        </ButtonWrap>
       </Buttons>
     </ButtonsBlockWrap>
   );
@@ -47,7 +55,7 @@ const ButtonsBlockWrap = styled.div`
   left: -10%;
   z-index: 2;
   padding: 0 13px;
-  top: -13px;
+  top: 0px;
   box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.colors.cardShadow};
   border-radius: 15px;
@@ -73,18 +81,16 @@ const PrizeBlock = styled.div`
 `;
 const ButtonWrap = styled.div`
   position: relative;
-  margin-top: 8px;
-  margin-bottom: 11px;
   &.unCoise {
     opacity: 0.25;
   }
 `;
-const CompleteBlock = styled.div`
+
+const IconComplete = styled.div<{ hasEntered?: boolean }>`
+  display: ${({ hasEntered }) => (hasEntered ? "flex" : "none")};
+  margin-left: 7px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 20px;
-  & svg {
-    fill: ${({ theme }) => theme.colors.yellow};
-  }
+  right: 19px;
 `;

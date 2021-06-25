@@ -1,63 +1,84 @@
 import React from "react";
-// import { Button } from "../../Button";
-// import { BetPosition } from "../../Card/types";
-// import { Timer } from "../../Timer";
-// import ButtonsBlock from "./ButtonsBlock";
-// import TopContent from "./TopContent";
-// import ValueRow from "./ValueRow";
+import styled from "styled-components";
+import { Button } from "../../Button";
+import { BetPosition } from "../../Card/types";
+import { ArrowCardDown } from "../../Svg";
+import { Timer } from "../../Timer";
+import ButtonsBlock from "./ButtonsBlock";
+import TopContent from "./TopContent";
+import ValueRow from "./ValueRow";
 
-// interface IProps {
-//   roundEpoch: string
-//   time: number
-//   payoutWin: string
-//   payoutLose: string
-//   handleSetPosition: (newPosition: BetPosition) => void
-//   targetRef: any
-//   disabledButtons: boolean
-// }
+interface IProps {
+  roundEpoch: string;
+  time: number;
+  payoutWin: string;
+  payoutLose: string;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  pool: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  disabledButton: boolean;
+  canEnterPosition: boolean;
+  negative: boolean;
+}
 
-// const CardNext: React.FC<IProps> = ({roundEpoch, time, payoutWin, payoutLose, handleSetPosition, targetRef}) => {
-//   return (
-//     <>
-//       <TopContent rightContent={roundEpoch}>
-//         <Timer color="white" time={time} />
-//       </TopContent>
-//       <ValueRow vector="UP" value={payoutWin} />
+const CardNext: React.FC<IProps> = ({
+  roundEpoch,
+  time,
+  payoutWin,
+  payoutLose,
+  pool,
+  hasEnteredUp,
+  hasEnteredDown,
+  handleSetPosition,
+  disabledButton,
+  canEnterPosition,
+  negative,
+}) => {
+  return (
+    <>
+      <TopContent rightContent={roundEpoch}>
+        <Timer color="white" time={time} />
+      </TopContent>
+      <ValueRow vector="UP" value={payoutWin} />
 
-//       <ButtonsBlock betMethod={state.betMethod} pool={`${getPrizePoolAmount(round.totalAmount)} BNB`}>
-//         <>
-//           {canEnterPosition ? (
-//             <>
-//               <Button
-//                 variant="green"
-//                 width="100%"
-//                 onClick={() => handleSetPosition(BetPosition.BULL)}
-//                 disabled={!canEnterPosition || isBufferPhase}
-//                 mb="14px"
-//               >
-//                 UP
-//               </Button>
-//               <Button
-//                 variant="pink"
-//                 width="100%"
-//                 onClick={() => handleSetPosition(BetPosition.BEAR)}
-//                 disabled={!canEnterPosition || isBufferPhase}
-//               >
-//                 DOWN
-//               </Button>
-//             </>
-//           ) : (
-//             <div ref={targetRef} style={{ marginTop: 70 }}>
-//               <Button disabled startIcon={getPositionEnteredIcon()} width="100%" mb="8px" variant="green">
-//                 {t("%position% Entered", { position: positionDisplay })}
-//               </Button>
-//             </div>
-//           )}
-//         </>
-//       </ButtonsBlock>
-//       <ValueRow vector="DOWN" value={payoutLose} />
-//     </>
-//   );
-// };
+      {canEnterPosition ? (
+        <ButtonsBlock
+          pool={pool}
+          hasEnteredUp={hasEnteredUp}
+          hasEnteredDown={hasEnteredDown}
+          handleSetPosition={handleSetPosition}
+          disabledButton={disabledButton}
+        />
+      ) : (
+        <div style={{ marginTop: 70 }}>
+          <Button
+            disabled
+            startIcon={
+              <Arrow negative={negative}>
+                <ArrowCardDown color={negative ? "#FF6161" : "#4AE43D"} />
+              </Arrow>
+            }
+            width="100%"
+            mb="8px"
+            variant="green"
+          >
+            Entered
+          </Button>
+        </div>
+      )}
+      <ValueRow vector="DOWN" value={payoutLose} />
+    </>
+  );
+};
 
-// export default CardNext;
+export default CardNext;
+
+const Arrow = styled.div<{ negative?: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transform: ${({ negative }) => (!negative ? "scale(1,-1)" : "none")};
+`;

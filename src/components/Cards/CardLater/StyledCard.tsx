@@ -38,7 +38,7 @@ const RightContent = styled(LeftContent)`
 const Content = styled.div`
   margin-top: 28px;
   border-radius: 15px;
-  height: 300px;
+  height: 292px;
   background: ${({ theme }) => theme.colors.bgCard};
   position: relative;
 `;

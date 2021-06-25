@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { BetPosition } from "../Card/types";
 
 export interface CardBalanceProps {
   right?: boolean;
@@ -51,8 +52,7 @@ export interface InputProps {
 }
 export interface SetPositionCardProps {
   onBack: (e: any) => void;
-  position: any;
-  handleBetMethod: () => void;
+  children: ReactNode;
   inputValue: string;
   handleInputChange: (e: any) => void;
   showFieldWarning: boolean;
@@ -60,9 +60,11 @@ export interface SetPositionCardProps {
 }
 
 export interface ButtonsBlockRops {
-  children: Array<ReactNode>;
   pool: string;
-  betMethod: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  disabledButton: boolean;
 }
 export interface TopContentProps {
   children: ReactNode;

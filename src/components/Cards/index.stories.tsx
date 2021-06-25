@@ -9,10 +9,11 @@ import SetPositionCard from "./CardNext/SetPositionCard";
 import Timer from "../Timer/Timer";
 import TopContent from "./CardNext/TopContent";
 import LaterCard from "./CardLater/LaterCard";
+import CardNext from "./CardNext/CardNext";
 
 export default {
   title: "Components/Cards",
-  component: [CardsBalance, CardsProducts],
+  component: [CardsBalance, CardsProducts, CardNext],
   argTypes: {},
 };
 
@@ -72,42 +73,59 @@ export const CardsBalancePreview: React.FC = () => {
               <Timer color="white" time={200} />
             </TopContent>
             <ValueRow vector="UP" value="1.23x" />
-            <ButtonsBlock betMethod={state.betMethod} pool="$ 12536145">
-              <Button
-                variant="green"
-                width="100%"
-                onClick={() => handleSetPosition(BetPosition.BULL)}
-                // disabled={!canEnterPosition || isBufferPhase}
-              >
-                UP
-              </Button>
-              <Button
-                variant="pink"
-                width="100%"
-                onClick={() => handleSetPosition(BetPosition.BEAR)}
-                // disabled={!canEnterPosition || isBufferPhase}
-              >
-                DOWN
-              </Button>
-            </ButtonsBlock>
+            <ButtonsBlock
+              pool="$ 12536145"
+              hasEnteredDown
+              hasEnteredUp={false}
+              handleSetPosition={handleSetPosition}
+              disabledButton={false}
+            />
 
             <ValueRow vector="DOWN" value="2.23x" />
           </>
           <SetPositionCard
             inputValue={inputValue}
-            handleBetMethod={handleBetMethod}
             handleInputChange={handleInputChange}
             showFieldWarning={false}
             onBack={handleBack}
             // onSuccess={()=>alert('ok')}
             inputProps={{ disabled: false }}
             // {{ disabled: !account || isTxPending }}
-            position={position}
-          />
+          >
+            <></>
+          </SetPositionCard>
         </CardFlip>
       </div>
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
         <LaterCard color="#4CEE3E" rightContent="#003" time={6616} />
+      </div>
+      <div style={{ marginTop: "100px", marginLeft: "100px" }}>
+        <CardFlip isFlipped={state.isSettingPosition}>
+          <CardNext
+            roundEpoch="round"
+            time={200}
+            payoutWin="payoutWin"
+            payoutLose="payoutLose"
+            pool="pool"
+            hasEnteredUp
+            hasEnteredDown={false}
+            handleSetPosition={handleSetPosition}
+            disabledButton={false}
+            canEnterPosition
+            negative
+          />
+          <SetPositionCard
+            inputValue={inputValue}
+            handleInputChange={handleInputChange}
+            showFieldWarning={false}
+            onBack={handleBack}
+            // onSuccess={()=>alert('ok')}
+            inputProps={{ disabled: false }}
+            // {{ disabled: !account || isTxPending }}
+          >
+            <></>
+          </SetPositionCard>
+        </CardFlip>
       </div>
     </div>
   );
