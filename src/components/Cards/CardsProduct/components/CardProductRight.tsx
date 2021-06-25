@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { CardProductProp } from "../../types";
 import { CardWrap, CardTitle } from "./CardProduct";
 
-const CardProductRight = ({ title, img, bg, closed }: CardProductProp) => {
+const CardProductRight = ({ title, img, bg, closed, href }: CardProductProp) => {
   return (
-    <CardRightWrap closed={closed} bg={bg}>
+    <CardRightWrap closed={closed} bg={bg} to={href || ""}>
       <CardTitle size="lg">{title}</CardTitle>
       <img src={img} alt="some img" />
     </CardRightWrap>

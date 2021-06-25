@@ -23,7 +23,7 @@ export const setColor = (param: { bg?: string }) => {
 
 const CardProduct = ({ title, img, bg, closed, position, href }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg} className={position || ""} to={href || ''}>
+    <CardWrap closed={closed} bg={bg} className={position || ""} to={href || ""}>
       <CardTitle size="lg">{title}</CardTitle>
       <img src={img} alt="some img" />
     </CardWrap>
@@ -44,7 +44,7 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
-  cursor: ${({closed}) => (closed ? 'default' : 'pointer')};
+  cursor: ${({ closed }) => (closed ? "default" : "pointer")};
   &::after {
     display: block;
     content: "";

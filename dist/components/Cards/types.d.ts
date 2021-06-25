@@ -20,6 +20,7 @@ export interface CardProductProp {
     bg: string;
     closed?: boolean;
     position?: string;
+    href?: string;
 }
 export interface ArrowProps {
     center?: boolean;

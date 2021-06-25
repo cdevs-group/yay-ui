@@ -123,7 +123,7 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   position: relative;
   z-index: 2;
   padding: 23px 35px 25px 32px;
-  width: 308px;  
+  width: 308px;
   height: 193px;
   background: #26262d;
   border: 2px solid
@@ -134,7 +134,6 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 335px;
   }
-  
 `;
 
 const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
