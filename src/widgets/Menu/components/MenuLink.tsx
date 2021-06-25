@@ -25,24 +25,24 @@ const LinkItem = styled(Text)`
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
-  &::after {
-    display: block;
-    bottom: -30px;
-    width: 0;
-    height: 2px;
-    content: "";
-    position: absolute;
-    background: #4be43e;
-    transition: all.3s;
-  }
-  ${Link}.active & {
-    &::after {
-      width: 100%;
-      opacity: 1;
-    }
-  }
   ${({ theme }) => theme.mediaQueries.lg} {
+    &::after {
+      display: block;
+      bottom: -30px;
+      width: 0;
+      height: 2px;
+      content: "";
+      position: absolute;
+      background: #4be43e;
+      transition: all.3s;
+    }
     margin: 0 20px;
+    ${Link}.active & {
+      &::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     margin: 0 35px;

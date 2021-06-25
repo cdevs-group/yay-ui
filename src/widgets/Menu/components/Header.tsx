@@ -5,8 +5,8 @@ import Logo from "../Logo";
 import { NavProps } from "../types";
 import Account from "./Account";
 import MenuLink from "./MenuLink";
-import LanguageSelect from "./LanguageSelect";
 import Burger from "./Burger";
+import Languages from "../../../components/DropDown/Languages";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -23,6 +23,8 @@ const Header: React.FC<NavProps> = ({
 }) => {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(false);
+  const languages = ["EN", "RU", "BG"];
+  const [select, setSelect] = useState<string>(languages[0]);
 
   return (
     <HeaderWrap>
@@ -43,12 +45,12 @@ const Header: React.FC<NavProps> = ({
             />
           ))}
           <LanguageBlockMob>
-            <LanguageSelect currentLang={currentLang} />
+            <Languages select={select} setSelect={setSelect} list={languages} />
           </LanguageBlockMob>
         </Nav>
         <RightContent>
           <LanguageBlockDesk>
-            <LanguageSelect currentLang={currentLang} />
+            <Languages select={select} setSelect={setSelect} list={languages} />
           </LanguageBlockDesk>
           <Account account={account} login={login} logout={logout} />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
@@ -85,7 +87,7 @@ const Line = styled.div`
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
   position: fixed;
   min-height: 100vh;
@@ -115,7 +117,6 @@ const RightContent = styled.div`
 `;
 
 const LanguageBlockMob = styled.div`
-  padding-left: 20px;
   ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
   }
@@ -125,17 +126,6 @@ const LanguageBlockDesk = styled.div`
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
   }
-`;
-const Overlay = styled.div`
-  pointer-events: none;
-  display: block;
-  background: ${({ theme }) => theme.colors.overlayBg};
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
 `;
 const LogoWrap = styled.div`
   & svg {

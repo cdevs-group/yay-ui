@@ -28,6 +28,7 @@ const CardsBalance = ({ text }: TextCardsProps) => {
 
 const Cards = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   ${({ theme }) => theme.mediaQueries.sm} {
     position: relative;
@@ -54,15 +55,15 @@ const DualShockBalance = styled.div`
 const ArrowIcon = styled.div`
   position: absolute;
   z-index: 2;
-  transform: rotate(90deg);
-  top: 20%;
-  right: 50%;
+  transform: rotate(90deg) translate(-50%, -50%);
+  top: calc(50% - 12px);
+  left: 50%;
   & svg {
     margin-top: 4px;
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     transform: rotate(0deg);
-    top: 45%;
+    top: 50%;
     right: 50%;
   }
 `;

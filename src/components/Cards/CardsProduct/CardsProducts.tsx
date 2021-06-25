@@ -31,13 +31,19 @@ const CardsProducts = () => {
 };
 
 const Cards = styled.div`
-  position: relative;
+  /* position: relative;
   display: grid;
+  gap: 8px;
   grid-template-columns: repeat(2, 1fr);
-  ${({ theme }) => theme.mediaQueries.xl} {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0 12px;
+  ${({ theme }) => theme.mediaQueries.sm} { */
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  ${({ theme }) => theme.mediaQueries.md} {
+    gap: 15px;
   }
+  /* } */
 `;
 
 CardsProducts.defaultProps = {};

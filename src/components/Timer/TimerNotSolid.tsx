@@ -33,8 +33,10 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
       <Block color={color}>
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            {handleDigit(item).leftDigit}
-            {handleDigit(item).rightDigit}
+            <Item>
+              {handleDigit(item).leftDigit}
+              {handleDigit(item).rightDigit}{" "}
+            </Item>
             {i === 2 ? null : <Dots>:</Dots>}
           </React.Fragment>
         ))}
@@ -51,7 +53,7 @@ const LoadingTimer = () => {
       <Block>
         {LoadIcons.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            {item}
+            <Item>{item}</Item>
             {i === 2 ? null : <Dots>:</Dots>}
           </React.Fragment>
         ))}
@@ -60,14 +62,14 @@ const LoadingTimer = () => {
   );
 };
 
-const Timer: React.FC<TimerProps> = ({ time, color, isLoad }) => {
+const TimerNotSolid: React.FC<TimerProps> = ({ time, color, isLoad }) => {
   return (
     <div>
       {(time || time === 0) && !isLoad ? <MyTimer expiryTimestamp={time} color={color || "text"} /> : <LoadingTimer />}
     </div>
   );
 };
-export default Timer;
+export default TimerNotSolid;
 
 const Wrap = styled.div`
   display: flex;
@@ -78,20 +80,27 @@ const Wrap = styled.div`
 const Block = styled.div<TimerColorProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 186px;
   height: 48px;
-  padding: 0 20px;
-  background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   color: ${getColor};
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.05em;
 `;
+const Item = styled.div`
+  background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 48px;
+  width: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Dots = styled.div`
-  margin: 0 12px;
+  margin: 0 6px;
   color: ${({ theme }) => theme.colors.text};
 `;
