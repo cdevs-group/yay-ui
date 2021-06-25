@@ -57,7 +57,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
             <TabsWrap>
               <Tab
                 as="button"
-                onClick={handleChangeTab(HistoryFilter.ALL)}
+                onClick={() => handleChangeTab(HistoryFilter.ALL)}
                 className={historyFilter === HistoryFilter.ALL ? "active" : ""}
                 value={HistoryFilter.ALL}
                 disabled={isFetchingHistory || !account}
@@ -66,7 +66,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
               </Tab>{" "}
               <Tab
                 as="button"
-                onClick={handleChangeTab(HistoryFilter.COLLECTED)}
+                onClick={() => handleChangeTab(HistoryFilter.COLLECTED)}
                 className={historyFilter === HistoryFilter.COLLECTED ? "active" : ""}
                 value={HistoryFilter.COLLECTED}
                 disabled={isFetchingHistory || !account}
@@ -75,7 +75,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
               </Tab>
               <Tab
                 as="button"
-                onClick={handleChangeTab(HistoryFilter.UNCOLLECTED)}
+                onClick={() => handleChangeTab(HistoryFilter.UNCOLLECTED)}
                 className={historyFilter === HistoryFilter.UNCOLLECTED ? "active" : ""}
                 value={HistoryFilter.UNCOLLECTED}
                 disabled={isFetchingHistory || !account}
