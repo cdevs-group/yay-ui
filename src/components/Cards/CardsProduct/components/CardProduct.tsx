@@ -35,10 +35,12 @@ export default CardProduct;
 export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   position: relative;
   padding: 14px 24px;
-  height: 100%;
+  /* height: 100%;
   width: 100%;
   max-width: 137px;
-  height: 136px;
+  height: 136px; */
+  height: 30vw;
+  width: 30vw;
   background: ${setColor};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
@@ -56,7 +58,7 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
     top: -1px;
     left: -1px;
     opacity: 0;
-    z-index: -1;
+    z-index: 0;
     filter: drop-shadow(${({ theme }) => theme.colors.boxShadow2});
     border-radius: 15px;
     transition: 0.3s;
@@ -100,11 +102,19 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
     display: none;
   }
   ${({ theme }) => theme.mediaQueries.sm} {
-    max-width: 220px;
-    height: 220px;
+    height: 30vw;
+    width: 30vw;
     &:nth-child(5) {
       display: grid;
     }
+  }
+  ${({ theme }) => theme.mediaQueries.xl} {
+    height: 18vw;
+    width: 18vw
+  }
+  ${({ theme }) => theme.mediaQueries.xxl} {
+    max-width: 220px;
+    height: 220px;    
   }
 `;
 export const CardTitle = styled(Text)`

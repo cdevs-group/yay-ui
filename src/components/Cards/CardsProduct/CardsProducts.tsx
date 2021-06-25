@@ -31,13 +31,18 @@ const CardsProducts = () => {
 };
 
 const Cards = styled.div`
-  gap: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  ${({ theme }) => theme.mediaQueries.md} {
+  grid-gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  ${({ theme }) => theme.mediaQueries.sm} {
     gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
   }
+  ${({ theme }) => theme.mediaQueries.xl} {
+    grid-gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
 `;
 
 CardsProducts.defaultProps = {};

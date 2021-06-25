@@ -35,15 +35,13 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
           onClick={() => {
             onPresentConnectModal();
           }}
+          className="notAuth"
         >
-          {/* <Avatar
-            className="notAuth"
-            onClick={() => {
-              onPresentConnectModal();
-            }}
+          <Avatar
+            className="notAuth"            
           >
             Connect
-          </Avatar> */}
+          </Avatar>
         </AccountBlock>
       )}
     </>
@@ -65,7 +63,10 @@ const AccountBlock = styled(Text)`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
-  border: none;
+  border: none;  
+  &.notAuth {
+    background: ${({ theme }) => theme.colors.green};
+  }
   ${({ theme }) => theme.mediaQueries.lg} {
     min-height: 43px;
     min-width: 160px;
