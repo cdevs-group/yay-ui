@@ -31,5 +31,5 @@ export {
   Winner,
   Win,
   AccountIcon,
-  ADA
+  ADA,
 };
