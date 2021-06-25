@@ -57,7 +57,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
             <TabsWrap>
               <Tab
                 as="button"
-                onClick={() => handleChangeTab(HistoryFilter.ALL)}
+                onClick={handleChangeTab(HistoryFilter.ALL)}
                 className={historyFilter === HistoryFilter.ALL ? "active" : ""}
                 value={HistoryFilter.ALL}
                 disabled={isFetchingHistory || !account}
