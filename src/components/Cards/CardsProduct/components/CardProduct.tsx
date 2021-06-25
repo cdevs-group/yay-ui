@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CardProductProp } from "../../types";
 import Text from "../../../Text/Text";
@@ -20,9 +21,9 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, position }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, position, href }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg} className={position || ""}>
+    <CardWrap closed={closed} bg={bg} className={position || ""} to={href || ''}>
       <CardTitle size="lg">{title}</CardTitle>
       <img src={img} alt="some img" />
     </CardWrap>
@@ -31,7 +32,7 @@ const CardProduct = ({ title, img, bg, closed, position }: CardProductProp) => {
 
 export default CardProduct;
 
-export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
+export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   position: relative;
   padding: 14px 24px;
   height: 100%;
@@ -43,6 +44,7 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
+  cursor: ${({closed}) => (closed ? 'default' : 'pointer')};
   &::after {
     display: block;
     content: "";

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import CardsBalance from "./CardBalance/CardsBalance";
 import CardsProducts from "./CardsProduct/CardsProducts";
 import CardFlip from "./CardNext/CardFlip";
@@ -133,8 +134,8 @@ export const CardsBalancePreview: React.FC = () => {
 
 export const CardsProductsPreciew: React.FC = () => {
   return (
-    <div>
+    <BrowserRouter>
       <CardsProducts />
-    </div>
+    </BrowserRouter>
   );
 };

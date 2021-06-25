@@ -56,6 +56,7 @@ const AccountBlock = styled(Text)`
   height: 30px;
   min-width: 120px;
   align-items: center;
+  justify-content: center;
   font-size: 11px;
   line-height: 14px;
   padding: 12px 26px 12px 10px;
@@ -79,7 +80,7 @@ const Avatar = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  right: 2px;
+  right: 4px;
   &.notAuth {
     width: calc(100% - 4px);
   }

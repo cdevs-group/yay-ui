@@ -73,6 +73,7 @@ const Img = styled.div`
     height: calc(100% + 6px);
     margin-right: 2px;
     margin-top: 2px;
+    max-width: none;
   }
 `;
 

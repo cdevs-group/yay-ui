@@ -8,13 +8,13 @@ import { Winner } from "../../../constants/images";
 import { CompleteIcon } from "../../Svg";
 
 const Wrap = styled.div<{ live?: boolean }>`
-  width: 308px;
+  width: 278px;
   opacity: ${({ live }) => (live ? "1" : "0.5")};
   &:hover {
     opacity: 1;
   }
-  @media (max-width: 400px) {
-    width: 278px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 308px;
   }
 `;
 
@@ -123,7 +123,7 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   position: relative;
   z-index: 2;
   padding: 23px 35px 25px 32px;
-  width: 335px;
+  width: 308px;  
   height: 193px;
   background: #26262d;
   border: 2px solid
@@ -131,9 +131,10 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   box-sizing: border-box;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);
   border-radius: 15px;
-  @media (max-width: 400px) {
-    width: 308px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
   }
+  
 `;
 
 const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`

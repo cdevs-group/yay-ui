@@ -63,7 +63,7 @@ const LoadingTimer = () => {
 const Timer: React.FC<TimerProps> = ({ time, color, isLoad }) => {
   return (
     <div>
-      {(time || time === 0) && !isLoad ? <MyTimer expiryTimestamp={time} color={color || "text"} /> : <LoadingTimer />}
+      <MyTimer expiryTimestamp={time || 0} color={color || "text"} /> 
     </div>
   );
 };

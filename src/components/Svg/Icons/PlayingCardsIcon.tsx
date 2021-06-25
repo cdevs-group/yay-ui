@@ -5,7 +5,7 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="88" height="78" viewBox="0 0 88 78" fill="none" {...props}>
-      <g filter="url(#filter0_d)">
+      <g filter="url(#filter0_dplaying)">
         <path
           d="M65 61.2967L37.473 72.3874L37.1864 72.5032C33.866 73.8751 30.0576 72.3087 28.6802 69.0002L12.4995 30.1851C11.1205 26.8781 12.6948 23.0851 16.0152 21.7132L40.7207 11.4975C44.0426 10.1241 47.8511 11.692 49.2285 14.9974L51.1854 19.1762L62.676 43.7046L65 61.2967Z"
           fill="#C0C0C0"
@@ -20,7 +20,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         d="M87.7203 32.0767L75.4893 72.38C74.4475 75.8129 70.8027 77.7574 67.3492 76.7217L45.913 70.2932L41.6478 69.0134C38.1929 67.9779 36.2382 64.3564 37.2801 60.9218L49.5111 20.62C50.5529 17.1871 54.1961 15.2426 57.6496 16.2783L83.3524 23.9866C83.5872 24.0577 83.8158 24.1397 84.0366 24.2354C87.0578 25.5154 88.6906 28.8772 87.7203 32.0767Z"
         fill="white"
       />
-      <g filter="url(#filter1_i)">
+      <g filter="url(#filter1_iplaying)">
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -30,7 +30,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       </g>
       <defs>
         <filter
-          id="filter0_d"
+          id="filter0_dplaying"
           x="0"
           y="0"
           width="69"
@@ -47,7 +47,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
         <filter
-          id="filter1_i"
+          id="filter1_iplaying"
           x="50.5273"
           y="34"
           width="23.5377"
