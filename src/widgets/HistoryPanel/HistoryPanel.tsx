@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowPanel, BtnPanel } from "../../components/Svg";
+import { SimpleTabs } from "../../components/Tabs";
 
 interface Props {
   isHistoryPaneOpen: boolean;

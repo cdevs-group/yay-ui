@@ -88,6 +88,7 @@ export declare type Colors = {
     bgCard: string;
     yellow: string;
     bgHeader: string;
+    buttonBg2: string;
     gradients: Gradients;
     binance: string;
 };

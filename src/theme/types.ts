@@ -95,6 +95,7 @@ export type Colors = {
   bgCard: string;
   yellow: string;
   bgHeader: string;
+  buttonBg2: string;
   // Gradients
   gradients: Gradients;
 

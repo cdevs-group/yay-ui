@@ -30,6 +30,7 @@ export const baseColors = {
   cardShadow: "box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31)",
   yellow: "#FFEA2C",
   bgHeader: "#2B2B32",
+  buttonBg2: "#1B1B20",
 };
 
 export const brandColors = {

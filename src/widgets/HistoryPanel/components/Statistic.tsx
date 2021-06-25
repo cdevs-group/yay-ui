@@ -86,7 +86,7 @@ const Wrap = styled.div`
   margin-top: 20px;
 `;
 const Row = styled.div`
-  margin: 17px 0;
+  padding: 17px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;

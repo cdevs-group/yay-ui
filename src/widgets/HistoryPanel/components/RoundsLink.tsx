@@ -4,7 +4,7 @@ import { Button } from "../../../components/Button";
 import { OpenNewIcon } from "../../../components/Svg";
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   href: string;
 }
 
