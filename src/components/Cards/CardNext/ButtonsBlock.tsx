@@ -8,7 +8,7 @@ const ButtonsBlock = ({ children, pool, betMethod }: ButtonsBlockRops) => {
   return (
     <ButtonsBlockWrap>
       <PrizeBlock>
-        <p>PRIZE POOL</p>
+        <p>PRIZE POoL</p>
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
@@ -39,13 +39,15 @@ const ButtonsBlock = ({ children, pool, betMethod }: ButtonsBlockRops) => {
 export default ButtonsBlock;
 
 const ButtonsBlockWrap = styled.div`
+  height: 193px;
+  width: 335px;
   padding-bottom: 17px;
   background: ${({ theme }) => theme.colors.bgGray};
   position: relative;
   left: -10%;
   z-index: 2;
   padding: 0 13px;
-  width: 335px;
+  top: -13px;
   box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.colors.cardShadow};
   border-radius: 15px;
@@ -71,8 +73,8 @@ const PrizeBlock = styled.div`
 `;
 const ButtonWrap = styled.div`
   position: relative;
-  margin-top: 14px;
-  margin-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 11px;
   &.unCoise {
     opacity: 0.25;
   }

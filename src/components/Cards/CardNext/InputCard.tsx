@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BnbIcon } from "../../Svg";
 import { InputProps } from "../types";
 
-const InputCard = ({ value, onChange, isWarning }: InputProps) => {
+const InputCard = ({ value, onChange, isWarning, inputProps }: InputProps) => {
   return (
     <InputWrap>
       <TitleInput>Commit</TitleInput>

@@ -7,8 +7,15 @@ import { SetPositionCardProps } from "../types";
 import InputCard from "./InputCard";
 import Tabs from "./TabsCard";
 
-const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, handleBetMethod, isWarning }) => {
-  const [inputValue, setInputValue] = useState("");
+const SetPositionCard: React.FC<SetPositionCardProps> = ({
+  onBack,
+  position,
+  handleBetMethod,
+  inputValue,
+  handleInputChange,
+  showFieldWarning,
+  inputProps,
+}) => {
   const [tabValue, setTabValue] = useState(0);
   const account = true;
 
@@ -16,17 +23,13 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({ onBack, position, han
     setTabValue(+e.currentTarget.value);
   };
 
-  const handleInputChange = (e: any) => {
-    e.preventDefault();
-    setInputValue(e.target.value);
-  };
   return (
     <Wrap>
       <ButtonBack onClick={onBack}>
         <ArrowIcon />
       </ButtonBack>
       <Title>Set Position</Title>
-      <InputCard value={inputValue} onChange={handleInputChange} isWarning={isWarning} />
+      <InputCard value={inputValue} onChange={handleInputChange} isWarning={showFieldWarning} inputProps={inputProps} />
       <TabsBlock>
         <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
       </TabsBlock>

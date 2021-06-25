@@ -17,6 +17,7 @@ export default {
 };
 
 export const CardsBalancePreview: React.FC = () => {
+  const [inputValue, setInputValue] = useState("");
   const text = { text1: "2000 YAY", title1: "Ready to harvest", text2: "Your Balance", title2: "3`000 YAY" };
 
   enum BetPosition {
@@ -31,6 +32,11 @@ export const CardsBalancePreview: React.FC = () => {
   });
 
   const { isSettingPosition, position } = state;
+
+  const handleInputChange = (e: any) => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
 
   const handleBetMethod = () => {
     const newBetmethod = position === BetPosition.BULL ? "betBull" : "betBear";
@@ -88,10 +94,15 @@ export const CardsBalancePreview: React.FC = () => {
             <ValueRow vector="DOWN" value="2.23x" />
           </>
           <SetPositionCard
+            inputValue={inputValue}
+            handleBetMethod={handleBetMethod}
+            handleInputChange={handleInputChange}
+            showFieldWarning={false}
             onBack={handleBack}
             // onSuccess={()=>alert('ok')}
+            inputProps={{ disabled: false }}
+            // {{ disabled: !account || isTxPending }}
             position={position}
-            handleBetMethod={handleBetMethod}
           />
         </CardFlip>
       </div>

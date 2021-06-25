@@ -46,12 +46,20 @@ export interface InputProps {
     value: string;
     isWarning?: boolean;
     onChange: (e: any) => void;
+    inputProps: {
+        disabled: boolean;
+    };
 }
 export interface SetPositionCardProps {
     onBack: (e: any) => void;
     position: any;
     handleBetMethod: () => void;
-    isWarning: boolean;
+    inputValue: string;
+    handleInputChange: (e: any) => void;
+    showFieldWarning: boolean;
+    inputProps: {
+        disabled: boolean;
+    };
 }
 export interface ButtonsBlockRops {
     children: Array<ReactNode>;
