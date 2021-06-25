@@ -67,7 +67,7 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   }
   &.left {
     & img {
-      width: 100%;
+      width: 105%;
       left: auto;
       right: 0;
       bottom: -15px;

@@ -27,7 +27,11 @@ const HelpLink = styled(Link)`
 
 const Wrap = styled.div`
   text-align: center;
-  padding: 0 20px 0 27px;
+  padding: 0 14px;
+  min-width: 303px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: 0 20px 0 27px;
+  }
 `;
 
 export const Button = styled.button`
