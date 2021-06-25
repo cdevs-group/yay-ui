@@ -13,7 +13,7 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
-        <ButtonWrap style={{ marginBottom: 14 }} className={hasEnteredDown ? 'unCoise' : ''}>
+        <ButtonWrap style={{ marginBottom: 14 }} className={hasEnteredDown ? "unCoise" : ""}>
           <Button
             width="100%"
             variant="green"
@@ -26,7 +26,7 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
             <CompleteIcon fill="#FFB72C" />
           </IconComplete>
         </ButtonWrap>
-        <ButtonWrap className={hasEnteredUp ? 'unCoise' : ''}>
+        <ButtonWrap className={hasEnteredUp ? "unCoise" : ""}>
           <Button
             width="100%"
             variant="pink"

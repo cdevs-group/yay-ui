@@ -49,7 +49,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
           Тут текст и стиль для неавторизованного пользователя
         </Button>
       )}
-      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock> */}     
+      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock> */}
     </Wrap>
   );
 };
