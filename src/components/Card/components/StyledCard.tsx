@@ -22,6 +22,7 @@ const TopContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 `;
 
 const LeftContent = styled.div`
@@ -43,6 +44,9 @@ const RightContent = styled(LeftContent)`
 `;
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 28px;
   background: ${({ theme }) => theme.colors.cardBg};
   border-radius: 15px;
@@ -55,6 +59,7 @@ const UpContent = styled.div<{ negative?: boolean; showUp?: boolean; colorNone?:
   align-items: center;
   max-height: 50px;
   height: 100%;
+  width: 100%;
   padding: 18px 20px 13px;
   background: ${({ theme, negative, colorNone }) =>
     negative ? theme.colors.cardBg : colorNone ? "none" : theme.colors.greenText};
@@ -73,6 +78,7 @@ const UpContentWin = styled.div<{ show?: boolean }>`
   display: ${({ show }) => (show ? "flex" : "none")};
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 `;
 
 const ButtonBnb = styled.div`
@@ -116,7 +122,6 @@ const IconCompleteDown = styled.div<{ showIcon?: boolean }>`
 
 const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   position: relative;
-  left: -5%;
   z-index: 2;
   padding: 23px 35px 25px 32px;
   width: 335px;
@@ -137,6 +142,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   justify-content: ${({ displayNone }) => (displayNone ? "center" : "space-between")};
   max-height: 50px;
   height: 100%;
+  width: 100%;
   padding: 18px 20px 13px;
   background: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.cardBg)};
   border-top-left-radius: 0;

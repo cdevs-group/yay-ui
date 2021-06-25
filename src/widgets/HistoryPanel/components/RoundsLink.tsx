@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../components/Button";
-import { ArrowIcon } from "../../../components/Svg";
+import { OpenNewIcon } from "../../../components/Svg";
 
 interface Props {
   children: React.ReactNode;
@@ -15,8 +15,8 @@ const RoundsLink = ({ children, href }: Props) => {
         {children}
         <a href={href}>
           <ButtonBlock width="100%" variant="green" scale="md">
-            View Reclaimed & Wonv
-            <ArrowIcon fill="rgba(0,0,0,0)" />
+            View Reclaimed & Won
+            <OpenNewIcon fill="rgba(0,0,0,0)" />
           </ButtonBlock>
         </a>
       </Wrap>

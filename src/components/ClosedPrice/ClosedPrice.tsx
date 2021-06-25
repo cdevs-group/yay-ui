@@ -7,10 +7,14 @@ import { ClosedPriceProp } from "./types";
 import { GreenArrow } from "../Svg";
 
 const PriceBlock = styled.div`
-  padding: 17px 13px 14px 25px;
+  padding: 17px 13px 14px 13px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.darkGreyBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 17px 13px 14px 25px;
+  }
 `;
 
 const Price = styled.div<{ negative?: boolean }>`

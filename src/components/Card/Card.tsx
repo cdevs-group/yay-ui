@@ -6,6 +6,8 @@ import StyledCard from "./components/StyledCard";
 interface CardProps extends StyledCardProps {}
 
 const Wrap = styled.div`
+  display: flex;
+  justify-content: center;
   width: 335px;
 `;
 

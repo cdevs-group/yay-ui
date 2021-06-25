@@ -28,8 +28,6 @@ import {
   ArrowCardDown,
   ArrowBigDownIcon,
 } from ".";
-import Flex from "../Box/Flex";
-import Text from "../Text/Text";
 
 export default {
   title: "Components/Svg New",

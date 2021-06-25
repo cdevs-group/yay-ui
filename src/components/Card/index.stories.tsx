@@ -3,7 +3,7 @@ import ExpiredCard from "./ExpiredCard";
 import LiveCard from "./LiveCard";
 import LoaderCard from "./Loader";
 import Card from "./Card";
-import { IconCircle } from "../Svg";
+import { CercleIcon } from "../Svg";
 import { Button } from "../Button";
 
 export default {
@@ -116,7 +116,7 @@ export const CardLoader: React.FC = () => {
     <div style={{ padding: "32px", width: "500px" }}>
       <Card
         live
-        leftContent={<IconCircle />}
+        leftContent={<CercleIcon fill="none" spin />}
         rightContent="#001"
         payoutUp={1.03}
         payoutDown={5.03}
