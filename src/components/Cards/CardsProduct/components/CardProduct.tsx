@@ -39,8 +39,8 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   width: 100%;
   max-width: 137px;
   height: 136px; */
-  height: 30vw;
-  width: 30vw;
+  height: 46vw;
+  width: 46vw;
   background: ${setColor};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
