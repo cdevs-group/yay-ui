@@ -9,7 +9,7 @@ export { default as TabsCard } from "./CardNext/TabsCard";
 export { default as TopContent } from "./CardNext/TopContent";
 export { default as ValueRow } from "./CardNext/ValueRow";
 export { default as CardForLater } from "./CardLater/Card";
-export { default as LaterCard } from "./CardLater/LaterCard21";
+export { default as LaterCard } from "./CardLater/LaterCard";
 export { default as StyledCardForlater } from "./CardLater/StyledCard";
 export { default as CardNext } from "./CardNext/CardNext";
 
