@@ -56,7 +56,7 @@ const CardNext: React.FC<IProps> = ({
             disabled
             startIcon={
               <Arrow negative={negative}>
-                <ArrowCardDown color={negative ? "#FF6161" : "#4AE43D"} />
+                <ArrowCardDown color="white" />
               </Arrow>
             }
             width="100%"

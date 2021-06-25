@@ -21,13 +21,13 @@ export { default as CompleteIcon } from "./Icons/CompleteIcon";
 export { default as CercleIcon } from "./Icons/CercleIcon";
 export { default as WatchIcon } from "./Icons/WatchIcon";
 export { default as PlayIcon } from "./Icons/PlayIcon";
-export { default as ArrowDownIcon } from "./Icons/ArrowDown";
+export { default as ArrowBigDownIcon } from "./Icons/ArrowBigDown";
 export { default as ArrowCardDown } from "./Icons/ArrowCardDown";
 
 export { default as ArrowRight } from "./Icons/ArrowRight";
 export { default as ArrowTopRight } from "./Icons/ArrowTopRight";
 export { default as MenuIcon } from "./Icons/MenuIcon";
-export { default as DownArrow } from "./Icons/DownArrow";
+export { default as ArrowDownIcon } from "./Icons/ArrowDownIcon";
 export { default as HelpIcon } from "./Icons/HelpIcon";
 
 export { default as Svg } from "./Svg";

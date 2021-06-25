@@ -17,7 +17,6 @@ import {
   SearchIcon,
   SquaresIcon,
   PenIcon,
-  DownArrow,
   ArrowLeft,
   BnbIcon,
   BtnPanel,
@@ -27,6 +26,7 @@ import {
   PlayIcon,
   WatchIcon,
   ArrowCardDown,
+  ArrowBigDownIcon,
 } from ".";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
@@ -51,7 +51,6 @@ export default {
     SearchIcon,
     SquaresIcon,
     PenIcon,
-    DownArrow,
     ArrowLeft,
     BnbIcon,
     BtnPanel,
@@ -120,7 +119,7 @@ export const Default: React.FC = () => {
           <HistoryIcon />
         </div>
         <div style={{ marginRight: 20 }}>
-          <DownArrow />
+          <ArrowBigDownIcon />
         </div>
         <div style={{ marginRight: 20 }}>
           <ArrowLeft />

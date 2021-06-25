@@ -30,16 +30,24 @@ const Panel = styled.div<{ open: boolean }>`
   right: 0;
   top: 0;
   padding-left: 20px;
-  width: ${({ open }) => (open ? "436px" : "8px")};
+  width: ${({ open }) => (open ? "310px" : "8px")};
   transition: all 0.3s ease, overflow-y 0ms;
   overflow-y: ${({ open }) => (open ? "auto" : "hidden")};
   z-index: 11;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: ${({ open }) => (open ? "436px" : "8px")};
+  }
 `;
 const Wrap = styled.div`
   position: relative;
   background: ${({ theme }) => theme.colors.panel};
   height: 100vh;
-  width: 416px;
+  width: 290px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 416px;
+  }
 `;
 
 const ButtonToggle = styled.button<{ open: boolean; color: string }>`

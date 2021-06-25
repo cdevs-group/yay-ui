@@ -99,7 +99,12 @@ const SimpleTabsWrap = styled.div`
 const Title = styled.div`
   display: flex;
   margin-bottom: 22px;
+  margin-top: -40px;
   padding: 0 20px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 0;
+  }
 `;
 const TabsBaseWrap = styled.div`
   margin-bottom: 30px;
@@ -133,9 +138,11 @@ const Tab = styled(Text)`
 const ButtonClose = styled.button`
   display: block;
   margin-left: auto;
-  margin-bottom: 50px;
   padding: 13px 13px 0;
   border: none;
   background: none;
   cursor: pointer;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 50px;
+  }
 `;

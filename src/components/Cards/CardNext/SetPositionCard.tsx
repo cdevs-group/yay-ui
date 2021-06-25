@@ -32,24 +32,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
       <TabsBlock>
         <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
       </TabsBlock>
-      {children}
-      {/* {account ? (
-        <Button
-          width="100%"
-          variant="green"
-          mb="20px"
-          // disabled={!account || disabled}
-          onClick={handleBetMethod}
-          // isLoading={isTxPending}
-        >
-          {position === BetPosition.BULL ? "Confirm UP" : "Confirm DOWN"}
-        </Button>
-      ) : (
-        <Button disabled mb="20px" width="100%">
-          Тут текст и стиль для неавторизованного пользователя
-        </Button>
-      )}
-      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock> */}     
+      {children}         
     </Wrap>
   );
 };
@@ -85,7 +68,7 @@ const Title = styled.div`
 `;
 const TabsBlock = styled.div`
   margin-top: 35px;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
 `;
 const NoteBlock = styled.div`
   font-size: 11px;
