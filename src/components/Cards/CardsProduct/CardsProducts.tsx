@@ -33,8 +33,11 @@ const CardsProducts = () => {
 const Cards = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0 12px;
+  grid-template-columns: repeat(2, 1fr);
+  ${({ theme }) => theme.mediaQueries.xl} {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 12px;
+  }
 `;
 
 CardsProducts.defaultProps = {};

@@ -5,7 +5,7 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "rgb(58,58,64)"} />
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "#4BE43E"} />
       <g filter="url(#filter110_d112)">
         <path
           fillRule="evenodd"

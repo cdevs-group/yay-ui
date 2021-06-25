@@ -7,7 +7,7 @@ export interface CardBalanceProps {
 }
 export interface CardFlipProps {
     isFlipped: boolean;
-    children: [ReactNode, ReactNode];
+    children: Array<ReactNode>;
 }
 export interface ValueProps {
     vector: string;
@@ -46,18 +46,32 @@ export interface InputProps {
     value: string;
     isWarning?: boolean;
     onChange: (e: any) => void;
+    inputProps: {
+        disabled: boolean;
+    };
 }
 export interface SetPositionCardProps {
     onBack: (e: any) => void;
     position: any;
     handleBetMethod: () => void;
+    inputValue: string;
+    handleInputChange: (e: any) => void;
+    showFieldWarning: boolean;
+    inputProps: {
+        disabled: boolean;
+    };
 }
 export interface ButtonsBlockRops {
-    children: [ReactNode, ReactNode];
+    children: Array<ReactNode>;
     pool: string;
     betMethod: string;
 }
 export interface TopContentProps {
     children: ReactNode;
     rightContent: string;
+}
+export interface LaterCardProps {
+    time: number;
+    rightContent: string;
+    color: string;
 }

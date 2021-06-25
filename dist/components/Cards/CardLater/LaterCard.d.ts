@@ -1,3 +1,4 @@
 /// <reference types="react" />
-declare const LaterCard: () => JSX.Element;
+import { LaterCardProps } from "../types";
+declare const LaterCard: ({ time, rightContent, color }: LaterCardProps) => JSX.Element;
 export default LaterCard;

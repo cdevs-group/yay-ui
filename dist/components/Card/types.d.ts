@@ -21,6 +21,7 @@ export interface StyledCardProps {
     textTooltip?: string;
     time?: number;
     btnWinnings?: ReactNode;
+    color?: string;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
     isReturn: string;

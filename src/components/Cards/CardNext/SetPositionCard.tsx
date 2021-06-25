@@ -33,7 +33,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
       <TabsBlock>
         <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
       </TabsBlock>
-      {account ? (
+      {/* {account ? (
         <Button
           width="100%"
           variant="green"
@@ -49,7 +49,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
           Тут текст и стиль для неавторизованного пользователя
         </Button>
       )}
-      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock>
+      <NoteBlock>You won`t be able to remove or change your position once you enter it</NoteBlock> */}
     </Wrap>
   );
 };
