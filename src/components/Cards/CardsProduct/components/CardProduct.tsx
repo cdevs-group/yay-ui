@@ -110,11 +110,11 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     height: 18vw;
-    width: 18vw
+    width: 18vw;
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
     max-width: 220px;
-    height: 220px;    
+    height: 220px;
   }
 `;
 export const CardTitle = styled(Text)`

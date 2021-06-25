@@ -42,7 +42,6 @@ const Cards = styled.div`
     grid-gap: 15px;
     grid-template-columns: repeat(5, 1fr);
   }
-  
 `;
 
 CardsProducts.defaultProps = {};

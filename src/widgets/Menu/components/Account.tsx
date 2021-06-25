@@ -37,11 +37,7 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
           }}
           className="notAuth"
         >
-          <Avatar
-            className="notAuth"            
-          >
-            Connect
-          </Avatar>
+          <Avatar className="notAuth">Connect</Avatar>
         </AccountBlock>
       )}
     </>
@@ -63,7 +59,7 @@ const AccountBlock = styled(Text)`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
-  border: none;  
+  border: none;
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
