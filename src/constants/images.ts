@@ -13,6 +13,7 @@ import COINS2 from "../../public/images/coins2.png";
 import Winner from "../../public/images/winner.png";
 import Win from "../../public/images/win.png";
 import AccountIcon from "../../public/images/account-logo.png";
+import ADA from "../../public/images/cardano-white.png";
 
 export {
   BG_IMG,
@@ -30,4 +31,5 @@ export {
   Winner,
   Win,
   AccountIcon,
+  ADA
 };

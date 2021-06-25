@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ADA } from "../../../constants/images";
 import { BnbIcon } from "../../Svg";
 import { InputProps } from "../types";
 
@@ -8,8 +9,12 @@ const InputCard = ({ value, onChange, isWarning, inputProps }: InputProps) => {
     <InputWrap>
       <TitleInput>Commit</TitleInput>
       <InputIcon>
-        <BnbIcon />
-        BNB
+        <div>
+          <img src={ADA} alt="" />
+        </div>
+        {/* <BnbIcon /> */}
+        {/* BNB */}
+        ADA
       </InputIcon>
       <Input className={isWarning ? "warning" : ""} value={value} onChange={onChange} placeholder="0.0" />
     </InputWrap>
@@ -61,5 +66,15 @@ const InputIcon = styled.div`
   color: #ffffff;
   & svg {
     margin-bottom: 7px;
+  }
+  & div {
+    width: 29px;
+    height: 29px;
+    border-radius: 7px;
+    background: #335cbe;
+    margin-bottom: 7px;
+  }
+  & img {
+    max-width: 100%;
   }
 `;
