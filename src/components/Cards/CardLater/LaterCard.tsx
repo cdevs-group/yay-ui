@@ -1,10 +1,11 @@
 import React from "react";
+import { LaterCardProps } from "../types";
 import CardForLater from "./Card";
 import LoaderCard from "./Loader";
 
-const LaterCard = () => {
+const LaterCard = ({ time, rightContent, color }: LaterCardProps) => {
   return (
-    <CardForLater time={200} rightContent="#003">
+    <CardForLater color={color} time={time} rightContent={rightContent}>
       <LoaderCard />
     </CardForLater>
   );

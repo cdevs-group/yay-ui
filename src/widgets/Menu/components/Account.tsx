@@ -53,16 +53,25 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
 const AccountBlock = styled(Text)`
   position: relative;
   display: flex;
-  min-height: 43px;
-  min-width: 160px;
+  height: 30px;
+  min-width: 120px;
   align-items: center;
-  padding: 12px 56px 12px 20px;
+  font-size: 11px;
+  line-height: 14px;
+  padding: 12px 26px 12px 10px;
   background: ${({ theme }) => theme.colors.bgOpacity};
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
   border: none;
+  ${({ theme }) => theme.mediaQueries.lg} {
+    min-height: 43px;
+    min-width: 160px;
+    font-size: 15px;
+    line-height: 19px;
+    padding: 12px 56px 12px 20px;
+  }
 `;
 const Avatar = styled.div`
   position: absolute;
@@ -73,6 +82,12 @@ const Avatar = styled.div`
   right: 2px;
   &.notAuth {
     width: calc(100% - 4px);
+  }
+  & img {
+    width: 80%;
+    ${({ theme }) => theme.mediaQueries.lg} {
+      width: 100%;
+    }
   }
 `;
 

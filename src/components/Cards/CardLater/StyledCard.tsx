@@ -64,12 +64,12 @@ const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
   }
 `;
 
-const StyledCardForlater: React.FC<StyledCardProps> = ({ children, rightContent }) => {
+const StyledCardForlater: React.FC<StyledCardProps> = ({ children, rightContent, color, time }) => {
   return (
     <Wrap>
       <TopContent>
-        <LeftContent>NEXT</LeftContent>
-        <Timer time={2000} color="#fff" />
+        <LeftContent>LATER</LeftContent>
+        <Timer time={time} color={color} />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
       <Content>

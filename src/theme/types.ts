@@ -93,6 +93,7 @@ export type Colors = {
   cardShadow: string;
   bgCard: string;
   yellow: string;
+  bgHeader: string;
   // Gradients
   gradients: Gradients;
 

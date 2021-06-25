@@ -18,7 +18,7 @@ const Link = styled(NavLink)``;
 const LinkItem = styled(Text)`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
-  margin: 0 35px;
+  margin: 0 0 20px;
   transition: 0.3s;
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
@@ -27,7 +27,7 @@ const LinkItem = styled(Text)`
   }
   &::after {
     display: block;
-    bottom: -28px;
+    bottom: -30px;
     width: 0;
     height: 2px;
     content: "";
@@ -40,5 +40,11 @@ const LinkItem = styled(Text)`
       width: 100%;
       opacity: 1;
     }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin: 0 20px;
+  }
+  ${({ theme }) => theme.mediaQueries.xl} {
+    margin: 0 35px;
   }
 `;
