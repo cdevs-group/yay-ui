@@ -30,10 +30,17 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
-        {/* <linearGradient id="paint0_linear" x1="13.3698" y1="12.3702" x2="6.82172" y2="5.82208" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4CEE3E"/>
-      <stop offset="1" stop-color="#47DA3B"/>
-      </linearGradient> */}
+        <linearGradient
+          id="paint0_linear"
+          x1="13.3698"
+          y1="12.3702"
+          x2="6.82172"
+          y2="5.82208"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#4CEE3E" />
+          <stop offset="1" stop-color="#47DA3B" />
+        </linearGradient>
       </defs>
     </svg>
   );

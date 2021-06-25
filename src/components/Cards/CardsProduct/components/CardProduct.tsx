@@ -33,11 +33,11 @@ export default CardProduct;
 
 export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   position: relative;
+  padding: 14px 24px;
   height: 100%;
   width: 100%;
-  max-width: 220px;
-  height: 220px;
-  padding: 20px 24px;
+  max-width: 137px;
+  height: 136px;
   background: ${setColor};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
@@ -67,7 +67,7 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   }
   &.left {
     & img {
-      width: 105%;
+      width: 100%;
       left: auto;
       right: 0;
       bottom: -15px;
@@ -75,18 +75,18 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   }
   &.right {
     & img {
-      width: 110%;
+      width: 100%;
       left: auto;
-      right: -40px;
+      right: -10px;
       bottom: -15px;
     }
   }
   &.rightCenter {
     & img {
-      width: 120%;
+      width: 110%;
       left: auto;
-      right: -70px;
-      bottom: -35px;
+      right: -25px;
+      bottom: -25px;
     }
   }
   &:hover {
@@ -94,8 +94,22 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
       opacity: ${(props) => (props.closed ? 0 : 1)};
     }
   }
+  &:nth-child(5) {
+    display: none;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    max-width: 220px;
+    height: 220px;
+    &:nth-child(5) {
+      display: grid;
+    }
+  }
 `;
 export const CardTitle = styled(Text)`
+  font-size: 15px;
   letter-spacing: 0.02em;
   text-shadow: ${({ theme }) => theme.colors.textShadow2};
+  ${({ theme }) => theme.mediaQueries.xl} {
+    font-size: 19px;
+  }
 `;
