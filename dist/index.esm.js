@@ -1638,7 +1638,7 @@ var Title$2 = styled.div(templateObject_3$m || (templateObject_3$m = __makeTempl
     var theme = _a.theme;
     return theme.colors.text;
 });
-var TabsBlock = styled.div(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  margin-top: 35px;\n  margin-bottom: 25px;\n"], ["\n  margin-top: 35px;\n  margin-bottom: 25px;\n"])));
+var TabsBlock = styled.div(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  margin-top: 35px;\n  margin-bottom: 16px;\n"], ["\n  margin-top: 35px;\n  margin-bottom: 16px;\n"])));
 styled.div(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
@@ -1772,7 +1772,7 @@ var CardNext = function (_a) {
         React__default.createElement(ValueRow, { vector: "UP", value: payoutWin }),
         canEnterPosition ? (React__default.createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton })) : (React__default.createElement("div", { style: { marginTop: 70 } },
             React__default.createElement(Button$4, { disabled: true, startIcon: React__default.createElement(Arrow$1, { negative: negative },
-                    React__default.createElement(Icon$5, { color: negative ? "#FF6161" : "#4AE43D" })), width: "100%", mb: "8px", variant: "green" }, "Entered"))),
+                    React__default.createElement(Icon$5, { color: "white" })), width: "100%", mb: "8px", variant: "green" }, "Entered"))),
         React__default.createElement(ValueRow, { vector: "DOWN", value: payoutLose })));
 };
 var Arrow$1 = styled.div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"])), function (_a) {
@@ -2790,16 +2790,25 @@ var HistoryPanel = function (_a) {
                 React__default.createElement(Icon$e, { className: "arrow" })),
             children)));
 };
-var Panel = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"], ["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"])), function (_a) {
+var Panel = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n\n  ", " {\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n\n  ", " {\n    width: ", ";\n  }\n"])), function (_a) {
     var open = _a.open;
-    return (open ? "436px" : "8px");
+    return (open ? "310px" : "8px");
 }, function (_a) {
     var open = _a.open;
     return (open ? "auto" : "hidden");
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var open = _a.open;
+    return (open ? "436px" : "8px");
 });
-var Wrap$3 = styled.div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 416px;\n"], ["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 416px;\n"])), function (_a) {
+var Wrap$3 = styled.div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 290px;\n\n  ", " {\n    width: 416px;\n  }\n"], ["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 290px;\n\n  ", " {\n    width: 416px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.panel;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 var ButtonToggle = styled.button(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"], ["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
     var open = _a.open;
@@ -2866,7 +2875,10 @@ var HeaderHistory = function (_a) {
                     React__default.createElement(Tab, { as: "button", onClick: handleChangeTab(HistoryFilter.UNCOLLECTED), className: historyFilter === HistoryFilter.UNCOLLECTED ? "active" : "", value: HistoryFilter.UNCOLLECTED, disabled: isFetchingHistory || !account }, "Uncollected")))))));
 };
 var SimpleTabsWrap = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  margin-bottom: 33px;\n  padding: 0 20px;\n"], ["\n  margin-bottom: 33px;\n  padding: 0 20px;\n"])));
-var Title = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 22px;\n  padding: 0 20px;\n"], ["\n  display: flex;\n  margin-bottom: 22px;\n  padding: 0 20px;\n"])));
+var Title = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 22px;\n  margin-top: -40px;\n  padding: 0 20px;\n\n  ", " {\n    margin-top: 0;\n  }\n"], ["\n  display: flex;\n  margin-bottom: 22px;\n  margin-top: -40px;\n  padding: 0 20px;\n\n  ", " {\n    margin-top: 0;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
 var TabsBaseWrap = styled.div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  margin-bottom: 30px;\n  padding: 0 20px;\n"], ["\n  margin-bottom: 30px;\n  padding: 0 20px;\n"])));
 styled.div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"])));
 var TabsWrap = styled.div(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
@@ -2883,7 +2895,10 @@ var Tab = styled(Text)(templateObject_6$3 || (templateObject_6$3 = __makeTemplat
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ButtonClose = styled.button(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-bottom: 50px;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-bottom: 50px;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n"])));
+var ButtonClose = styled.button(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n  ", " {\n    margin-bottom: 50px;\n  }\n"], ["\n  display: block;\n  margin-left: auto;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n  ", " {\n    margin-bottom: 50px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
 var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$4, templateObject_5$3, templateObject_6$3, templateObject_7$1;
 
 var NoHistory = function () { return (React__default.createElement(NoHistoryBlock, null,
@@ -3047,7 +3062,7 @@ var AccordeonCard = function (_a) {
                 collectOrReclaim && collectOrReclaim,
                 React__default.createElement(Flex, { alignItems: "center" },
                     betLabel,
-                    icon || React__default.createElement(Icon$6, null))),
+                    icon || React__default.createElement(Icon$1, null))),
             React__default.createElement(HiddenBlockWrap, { style: {
                     height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
                 } },
@@ -3478,4 +3493,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Accordeon, AccordeonCard, Icon$t as AddIcon, Alert, Icon$5 as ArrowCardDown, Icon$6 as ArrowDownIcon, Icon$f as ArrowIcon, Icon$q as ArrowLeft, Icon$e as ArrowPanel, Icon$4 as ArrowRight, ArrowSlider, Icon$3 as ArrowTopRight, BackgroundImage, BaseLayout, Icon$p as BnbIcon, Box, Icon$d as BtnPanel, Button$4 as Button, ButtonsBlock, Card$1 as Card, CardFlip, CardForLater, CardNext, CardProduct, CardsBalance, CardsProducts, Icon$9 as CercleIcon, Icon$o as ChartIcon, Icon$s as CloseIcon, Icon$a as CompleteIcon, ConnectorNames, Icon$l as CopyIcon, Icon$1 as DownArrow, ExpiredCardNA as ExpiredCard, Icon$g as EyeClose, Icon$h as EyeOpen, Flex, Icon$m as GreenArrow, Header, HeaderHistory, Icon as HelpIcon, HiddenItemAccordeonCard, Icon$n as HistoryIcon, HistoryPanel, IconButton, Image, Input$1 as Input, InputCard, LaterCard, Link$1 as Link, LinkExternal, LiveCard, Loader, LoaderCard$1 as LoaderCard, Icon$2 as MenuIcon, Modal, ModalProvider, NoHistory, Icon$r as OpenNewIcon, Icon$c as PenIcon, Icon$7 as PlayIcon, ProgressBar, ResetCSS, RoundHistory, Rounds, RoundsLink, Icon$k as SearchIcon, SetPositionCard, SimpleTabs, Icon$i as SquaresIcon, Statistic, Icon$j as StrikeIcon, Icon$b as StrikesWideIcon, StyledCardForlater, Svg, Tabs, TabsCard, Text, Timer, TitleBlock, Toggle, TopContent$1 as TopContent, ValueRow, Icon$8 as WatchIcon, YourHistory, variants as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, useAccordeon, useKonamiCheatCode, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletModal };
+export { Accordeon, AccordeonCard, Icon$t as AddIcon, Alert, Icon$6 as ArrowBigDownIcon, Icon$5 as ArrowCardDown, Icon$1 as ArrowDownIcon, Icon$f as ArrowIcon, Icon$q as ArrowLeft, Icon$e as ArrowPanel, Icon$4 as ArrowRight, ArrowSlider, Icon$3 as ArrowTopRight, BackgroundImage, BaseLayout, Icon$p as BnbIcon, Box, Icon$d as BtnPanel, Button$4 as Button, ButtonsBlock, Card$1 as Card, CardFlip, CardForLater, CardNext, CardProduct, CardsBalance, CardsProducts, Icon$9 as CercleIcon, Icon$o as ChartIcon, Icon$s as CloseIcon, Icon$a as CompleteIcon, ConnectorNames, Icon$l as CopyIcon, ExpiredCardNA as ExpiredCard, Icon$g as EyeClose, Icon$h as EyeOpen, Flex, Icon$m as GreenArrow, Header, HeaderHistory, Icon as HelpIcon, HiddenItemAccordeonCard, Icon$n as HistoryIcon, HistoryPanel, IconButton, Image, Input$1 as Input, InputCard, LaterCard, Link$1 as Link, LinkExternal, LiveCard, Loader, LoaderCard$1 as LoaderCard, Icon$2 as MenuIcon, Modal, ModalProvider, NoHistory, Icon$r as OpenNewIcon, Icon$c as PenIcon, Icon$7 as PlayIcon, ProgressBar, ResetCSS, RoundHistory, Rounds, RoundsLink, Icon$k as SearchIcon, SetPositionCard, SimpleTabs, Icon$i as SquaresIcon, Statistic, Icon$j as StrikeIcon, Icon$b as StrikesWideIcon, StyledCardForlater, Svg, Tabs, TabsCard, Text, Timer, TitleBlock, Toggle, TopContent$1 as TopContent, ValueRow, Icon$8 as WatchIcon, YourHistory, variants as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, useAccordeon, useKonamiCheatCode, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletModal };

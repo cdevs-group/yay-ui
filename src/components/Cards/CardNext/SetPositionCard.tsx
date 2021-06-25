@@ -32,7 +32,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
       <TabsBlock>
         <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
       </TabsBlock>
-      {children}         
+      {children}
     </Wrap>
   );
 };

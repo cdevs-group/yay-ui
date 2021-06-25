@@ -1669,7 +1669,7 @@ var Title$2 = styled__default['default'].div(templateObject_3$m || (templateObje
     var theme = _a.theme;
     return theme.colors.text;
 });
-var TabsBlock = styled__default['default'].div(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  margin-top: 35px;\n  margin-bottom: 25px;\n"], ["\n  margin-top: 35px;\n  margin-bottom: 25px;\n"])));
+var TabsBlock = styled__default['default'].div(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  margin-top: 35px;\n  margin-bottom: 16px;\n"], ["\n  margin-top: 35px;\n  margin-bottom: 16px;\n"])));
 styled__default['default'].div(templateObject_5$a || (templateObject_5$a = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
@@ -1803,7 +1803,7 @@ var CardNext = function (_a) {
         React__default['default'].createElement(ValueRow, { vector: "UP", value: payoutWin }),
         canEnterPosition ? (React__default['default'].createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton })) : (React__default['default'].createElement("div", { style: { marginTop: 70 } },
             React__default['default'].createElement(Button$4, { disabled: true, startIcon: React__default['default'].createElement(Arrow$1, { negative: negative },
-                    React__default['default'].createElement(Icon$5, { color: negative ? "#FF6161" : "#4AE43D" })), width: "100%", mb: "8px", variant: "green" }, "Entered"))),
+                    React__default['default'].createElement(Icon$5, { color: "white" })), width: "100%", mb: "8px", variant: "green" }, "Entered"))),
         React__default['default'].createElement(ValueRow, { vector: "DOWN", value: payoutLose })));
 };
 var Arrow$1 = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"])), function (_a) {
@@ -2821,16 +2821,25 @@ var HistoryPanel = function (_a) {
                 React__default['default'].createElement(Icon$e, { className: "arrow" })),
             children)));
 };
-var Panel = styled__default['default'].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"], ["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n"])), function (_a) {
+var Panel = styled__default['default'].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n\n  ", " {\n    width: ", ";\n  }\n"], ["\n  position: fixed;\n  right: 0;\n  top: 0;\n  padding-left: 20px;\n  width: ", ";\n  transition: all 0.3s ease, overflow-y 0ms;\n  overflow-y: ", ";\n  z-index: 11;\n\n  ", " {\n    width: ", ";\n  }\n"])), function (_a) {
     var open = _a.open;
-    return (open ? "436px" : "8px");
+    return (open ? "310px" : "8px");
 }, function (_a) {
     var open = _a.open;
     return (open ? "auto" : "hidden");
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var open = _a.open;
+    return (open ? "436px" : "8px");
 });
-var Wrap$3 = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 416px;\n"], ["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 416px;\n"])), function (_a) {
+var Wrap$3 = styled__default['default'].div(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 290px;\n\n  ", " {\n    width: 416px;\n  }\n"], ["\n  position: relative;\n  background: ", ";\n  height: 100vh;\n  width: 290px;\n\n  ", " {\n    width: 416px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.panel;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 var ButtonToggle = styled__default['default'].button(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"], ["\n  position: absolute;\n  left: -20px;\n  top: 380px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100px;\n  padding: 10px 8px 10px;\n  background: none;\n  border: none;\n  cursor: pointer;\n  & .arrow {\n    transform: ", ";\n    transition: 0.3s;\n    margin-left: 5px;\n  }\n  & .button {\n    position: absolute;\n    left: 4px;\n    & path {\n      transition: 0.3s;\n      fill: ", ";\n    }\n  }\n"])), function (_a) {
     var open = _a.open;
@@ -2897,7 +2906,10 @@ var HeaderHistory = function (_a) {
                     React__default['default'].createElement(Tab, { as: "button", onClick: handleChangeTab(HistoryFilter.UNCOLLECTED), className: historyFilter === HistoryFilter.UNCOLLECTED ? "active" : "", value: HistoryFilter.UNCOLLECTED, disabled: isFetchingHistory || !account }, "Uncollected")))))));
 };
 var SimpleTabsWrap = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  margin-bottom: 33px;\n  padding: 0 20px;\n"], ["\n  margin-bottom: 33px;\n  padding: 0 20px;\n"])));
-var Title = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 22px;\n  padding: 0 20px;\n"], ["\n  display: flex;\n  margin-bottom: 22px;\n  padding: 0 20px;\n"])));
+var Title = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 22px;\n  margin-top: -40px;\n  padding: 0 20px;\n\n  ", " {\n    margin-top: 0;\n  }\n"], ["\n  display: flex;\n  margin-bottom: 22px;\n  margin-top: -40px;\n  padding: 0 20px;\n\n  ", " {\n    margin-top: 0;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
 var TabsBaseWrap = styled__default['default'].div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  margin-bottom: 30px;\n  padding: 0 20px;\n"], ["\n  margin-bottom: 30px;\n  padding: 0 20px;\n"])));
 styled__default['default'].div(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"])));
 var TabsWrap = styled__default['default'].div(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
@@ -2914,7 +2926,10 @@ var Tab = styled__default['default'](Text)(templateObject_6$3 || (templateObject
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ButtonClose = styled__default['default'].button(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-bottom: 50px;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-bottom: 50px;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n"])));
+var ButtonClose = styled__default['default'].button(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n  ", " {\n    margin-bottom: 50px;\n  }\n"], ["\n  display: block;\n  margin-left: auto;\n  padding: 13px 13px 0;\n  border: none;\n  background: none;\n  cursor: pointer;\n  ", " {\n    margin-bottom: 50px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
 var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$4, templateObject_5$3, templateObject_6$3, templateObject_7$1;
 
 var NoHistory = function () { return (React__default['default'].createElement(NoHistoryBlock, null,
@@ -3078,7 +3093,7 @@ var AccordeonCard = function (_a) {
                 collectOrReclaim && collectOrReclaim,
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     betLabel,
-                    icon || React__default['default'].createElement(Icon$6, null))),
+                    icon || React__default['default'].createElement(Icon$1, null))),
             React__default['default'].createElement(HiddenBlockWrap, { style: {
                     height: valueAccordeon && valueAccordeon === item.id ? heightActiveBlock : 0,
                 } },
@@ -3513,8 +3528,9 @@ exports.Accordeon = Accordeon;
 exports.AccordeonCard = AccordeonCard;
 exports.AddIcon = Icon$t;
 exports.Alert = Alert;
+exports.ArrowBigDownIcon = Icon$6;
 exports.ArrowCardDown = Icon$5;
-exports.ArrowDownIcon = Icon$6;
+exports.ArrowDownIcon = Icon$1;
 exports.ArrowIcon = Icon$f;
 exports.ArrowLeft = Icon$q;
 exports.ArrowPanel = Icon$e;
@@ -3540,7 +3556,6 @@ exports.ChartIcon = Icon$o;
 exports.CloseIcon = Icon$s;
 exports.CompleteIcon = Icon$a;
 exports.CopyIcon = Icon$l;
-exports.DownArrow = Icon$1;
 exports.ExpiredCard = ExpiredCardNA;
 exports.EyeClose = Icon$g;
 exports.EyeOpen = Icon$h;
