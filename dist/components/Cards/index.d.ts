@@ -11,4 +11,4 @@ export { default as ValueRow } from "./CardNext/ValueRow";
 export { default as CardForLater } from "./CardLater/Card";
 export { default as LaterCard } from "./CardLater/LaterCard";
 export { default as StyledCardForlater } from "./CardLater/StyledCard";
-export type { CardBalanceProps, CardProductProp, ArrowProps, TextCardsProps, CardButtonsProps, TabsProps, InputProps, SetPositionCardProps, ButtonsBlockRops, TopContentProps, } from "./types";
+export type { CardBalanceProps, CardProductProp, ArrowProps, TextCardsProps, CardButtonsProps, TabsProps, InputProps, SetPositionCardProps, ButtonsBlockRops, TopContentProps, LaterCardProps, } from "./types";

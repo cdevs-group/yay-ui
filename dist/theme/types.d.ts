@@ -87,6 +87,7 @@ export declare type Colors = {
     cardShadow: string;
     bgCard: string;
     yellow: string;
+    bgHeader: string;
     gradients: Gradients;
     binance: string;
 };

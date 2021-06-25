@@ -62,3 +62,8 @@ export interface TopContentProps {
     children: ReactNode;
     rightContent: string;
 }
+export interface LaterCardProps {
+    time: number;
+    rightContent: string;
+    color: string;
+}

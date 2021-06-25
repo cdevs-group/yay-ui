@@ -27,6 +27,7 @@ export declare const baseColors: {
     bgCard: string;
     cardShadow: string;
     yellow: string;
+    bgHeader: string;
 };
 export declare const brandColors: {
     binance: string;
