@@ -5,9 +5,9 @@ import { StyledCardProps } from "../../Card/types";
 import { transparentize } from "polished";
 
 const Wrap = styled.div<{ live?: boolean }>`
-  width: 308px;
-  @media (max-width: 400px) {
-    width: 278px;
+  width: 278px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 308px;
   }
 `;
 
@@ -36,31 +36,28 @@ const RightContent = styled(LeftContent)`
 `;
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 28px;
-  border-radius: 15px;
-  height: 292px;
   background: ${({ theme }) => theme.colors.bgCard};
-  position: relative;
+  border-radius: 15px;
 `;
 
 const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
-  position: absolute;
-  left: -5%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 50px;
+  position: relative;
   z-index: 2;
-  width: 335px;
+  padding: 23px 35px 25px 32px;
+  width: 308px;
   height: 193px;
   background: #26262d;
+  border: 2px solid
+    ${({ theme, negative, colorNone }) => (negative ? theme.colors.redBg : colorNone ? "none" : theme.colors.greenText)};
   box-sizing: border-box;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);
   border-radius: 15px;
-  @media (max-width: 400px) {
-    width: 308px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
   }
 `;
 

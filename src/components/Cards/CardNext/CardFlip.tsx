@@ -38,6 +38,9 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
     height: 293px;
     bottom: 0;
     top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   ${Back} {
@@ -53,10 +56,10 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 const StyledCardFlip = styled.div`
   perspective: 1000px;
   height: 367px;
-  width: 308px;
+  width: 278px;
   border-radius: 15px;
-  @media (max-width: 767px) {
-    width: 278px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 308px;
   }
 `;
 const getComponents = (children: CardFlipProps["children"]) => {

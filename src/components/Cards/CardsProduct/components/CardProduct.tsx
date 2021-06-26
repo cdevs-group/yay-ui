@@ -39,8 +39,8 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   width: 100%;
   max-width: 137px;
   height: 136px; */
-  height: 46vw;
-  width: 46vw;
+  height: 43vw;
+  width: 100%;
   background: ${setColor};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
@@ -103,14 +103,14 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 30vw;
-    width: 30vw;
+    width: 100%;
     &:nth-child(5) {
       display: grid;
     }
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     height: 18vw;
-    width: 18vw;
+    width: 100%
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
     max-width: 220px;
