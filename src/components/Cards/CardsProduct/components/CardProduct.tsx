@@ -110,7 +110,7 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     height: 18vw;
-    width: 100%
+    width: 100%;
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
     max-width: 220px;

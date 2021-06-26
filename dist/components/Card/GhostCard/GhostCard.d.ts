@@ -1,5 +1,7 @@
-/// <reference types="react" />
-declare const GhostCard: ({ href }: {
+import React from "react";
+interface IProps {
     href: string;
-}) => JSX.Element;
+    children?: React.ReactNode;
+}
+declare const GhostCard: ({ href, children }: IProps) => JSX.Element;
 export default GhostCard;
