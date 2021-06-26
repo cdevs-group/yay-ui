@@ -1,10 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { ADA } from "../../../constants/images";
-import { BnbIcon } from "../../Svg";
-import { InputProps } from "../types";
+import { ADA } from "../../constants/images";
+import { Input } from "../Input";
+import { BalanceInputProps } from "./types";
 
-const InputCard = ({ value, onChange, isWarning, inputProps }: InputProps) => {
+const BalanceInput: React.FC<BalanceInputProps> = ({
+  value,
+  placeholder = "0.0",
+  onUserInput,
+  inputProps,
+  isWarning = false,
+  decimals = 18,
+}) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.currentTarget.validity.valid) {
+      onUserInput(e.currentTarget.value.replace(/,/g, "."));
+    }
+  };
+
   return (
     <InputWrap>
       <TitleInput>Commit</TitleInput>
@@ -16,24 +29,22 @@ const InputCard = ({ value, onChange, isWarning, inputProps }: InputProps) => {
         {/* BNB */}
         ADA
       </InputIcon>
-      <Input className={isWarning ? "warning" : ""} value={value} onChange={onChange} placeholder="0.0" />
+      <Input
+        className={isWarning ? "warning" : ""}
+        pattern={`^[0-9]*[.,]? [0-9]{0,${decimals}}$`}
+        inputMode="decimal"
+        min="0"
+        value={value}
+        onChange={handleOnChange}
+        placeholder={placeholder}
+        {...inputProps}
+      />
     </InputWrap>
   );
 };
 
-export default InputCard;
+export default BalanceInput;
 
-const Input = styled.input`
-  background: none;
-  border: none;
-  width: 100%;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: 0.5px;
-  color: #a3a3a3;
-  outline: none;
-`;
 const InputWrap = styled.div`
   position: relative;
   padding: 17px 100px 20px 20px;
@@ -68,13 +79,13 @@ const InputIcon = styled.div`
     margin-bottom: 7px;
   }
   & div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 29px;
     height: 29px;
     border-radius: 7px;
-    background: #335cbe;
+    background: ${({ theme }) => theme.colors.blueGradient};
     margin-bottom: 7px;
-  }
-  & img {
-    max-width: 100%;
   }
 `;
