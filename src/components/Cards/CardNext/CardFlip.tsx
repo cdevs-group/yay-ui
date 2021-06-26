@@ -51,12 +51,10 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 const StyledCardFlip = styled.div`
   perspective: 1000px;
   height: 369px;
-  width: 308px;
-  border-radius: 15px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 335px;
-  }
+  width: 335px;
+  border-radius: 15px;  
 `;
+
 const getComponents = (children: CardFlipProps["children"]) => {
   if (children.length !== 2) {
     throw new Error("CardFlip: Two children are required");
