@@ -66,6 +66,8 @@ export interface ButtonsBlockRops {
   hasEnteredDown: boolean;
   handleSetPosition: (newPosition: BetPosition) => void;
   disabledButton: boolean;
+  ethButton?: string;
+  btcButton?: string;
 }
 export interface TopContentProps {
   children: ReactNode;

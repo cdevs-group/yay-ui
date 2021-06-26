@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpiredCardBTC from "./ExpiredCardBTC";
 import CardBTC from "./components/CardBTC";
 import LiveCardBTC from "./LiveCardBTC";
 import GhostCard from "../Card/GhostCard/GhostCard";
+import CardFlipBTC from "./CardNext/CardFlipBTC";
+import CardNextBTC from "./CardNext/CardNextBTC";
+import SetPositionCardBTC from "./CardNext/SetPositionCardBTC";
+import Loader from "../Card/Loader";
+import LoaderCard from "../Card/Loader";
 
 export default {
   title: "Components/CardBTC",
-  component: [ExpiredCardBTC, LiveCardBTC],
+  component: [ExpiredCardBTC, LiveCardBTC, SetPositionCardBTC, CardFlipBTC, CardNextBTC],
   argTypes: {},
 };
 
@@ -108,7 +113,7 @@ export const ExpiredCardBTCBlocETHkWin: React.FC = () => {
 export const LiveCardBTCBlock: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <CardBTC live leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
+      <CardBTC live leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
         <LiveCardBTC clodedBTC="400'597" lockedBRC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btc />
       </CardBTC>
     </div>
@@ -118,7 +123,7 @@ export const LiveCardBTCBlock: React.FC = () => {
 export const LiveCardBTCBlockETH: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <CardBTC live negative leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
+      <CardBTC live negative leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
         <LiveCardBTC clodedBTC="400'597" lockedBRC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" />
       </CardBTC>
     </div>
@@ -131,8 +136,9 @@ export const CancelCardBTC: React.FC = () => {
       <CardBTC
         live
         colorNone
+        loader
         displayNone
-        leftContent="EXPIRED"
+        leftContent="CANCEL"
         rightContent="#001"
         payoutUp={1.03}
         payoutDown={5.03}
@@ -141,5 +147,102 @@ export const CancelCardBTC: React.FC = () => {
         <GhostCard href="#" />
       </CardBTC>
     </div>
+  );
+};
+
+export const WithLoaderBTC: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <CardBTC
+        loader
+        live
+        colorNone
+        displayNone
+        leftContent="CANCEL"
+        rightContent="#001"
+        payoutUp={1.03}
+        payoutDown={5.03}
+        time={2000}
+      >
+        <Loader textTooltip="This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation" />
+      </CardBTC>
+    </div>
+  );
+};
+
+export const NextCardBTC: React.FC = () => {
+  const [inputValue, setInputValue] = useState("");
+  const text = { text1: "2000 YAY", title1: "Ready to harvest", text2: "Your Balance", title2: "3`000 YAY" };
+
+  enum BetPosition {
+    BULL = "Bull",
+    BEAR = "Bear",
+    HOUSE = "House",
+  }
+  const [state, setState] = useState({
+    isSettingPosition: false,
+    position: BetPosition.BULL,
+    betMethod: "",
+  });
+
+  const { isSettingPosition, position } = state;
+
+  const handleInputChange = (e: any) => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
+
+  const handleBetMethod = () => {
+    const newBetmethod = position === BetPosition.BULL ? "betBull" : "betBear";
+    setState((prevState) => ({
+      ...prevState,
+      betMethod: newBetmethod,
+      isSettingPosition: false,
+    }));
+  };
+
+  const handleSetPosition = (newPosition) => {
+    setState((prevState) => ({
+      ...prevState,
+      isSettingPosition: true,
+      position: newPosition,
+    }));
+  };
+
+  const handleBack = () =>
+    setState((prevState) => ({
+      ...prevState,
+      isSettingPosition: false,
+    }));
+
+  return (
+    <CardFlipBTC isFlipped={state.isSettingPosition}>
+      <CardNextBTC
+        roundEpoch="round"
+        time={200}
+        payoutWin="payoutWin"
+        payoutLose="payoutLose"
+        pool="pool"
+        hasEnteredUp
+        hasEnteredDown={false}
+        handleSetPosition={handleSetPosition}
+        disabledButton={false}
+        canEnterPosition
+        negative
+        ethButton="$ 128271123"
+        btcButton="$232112"
+      />
+      <SetPositionCardBTC
+        inputValue={inputValue}
+        handleInputChange={handleInputChange}
+        showFieldWarning={false}
+        onBack={handleBack}
+        // onSuccess={()=>alert('ok')}
+        inputProps={{ disabled: false }}
+        // {{ disabled: !account || isTxPending }}
+      >
+        <></>
+      </SetPositionCardBTC>
+    </CardFlipBTC>
   );
 };

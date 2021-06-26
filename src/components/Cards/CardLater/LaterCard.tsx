@@ -8,7 +8,7 @@ const LaterCard = ({ time, rightContent, color }: LaterCardProps) => {
     <Card
       live
       hide
-      leftContent="CANCEL"
+      leftContent="LATER"
       rightContent="#001"
       payoutUp={1.03}
       payoutDown={5.03}
