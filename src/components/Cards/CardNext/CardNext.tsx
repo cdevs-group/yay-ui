@@ -40,34 +40,35 @@ const CardNext: React.FC<IProps> = ({
       <TopContent rightContent={roundEpoch}>
         <Timer color="white" time={time} />
       </TopContent>
-      <ValueRow vector="UP" value={payoutWin} />
-
-      {canEnterPosition ? (
-        <ButtonsBlock
-          pool={pool}
-          hasEnteredUp={hasEnteredUp}
-          hasEnteredDown={hasEnteredDown}
-          handleSetPosition={handleSetPosition}
-          disabledButton={disabledButton}
-        />
-      ) : (
-        <div style={{ marginTop: 70 }}>
-          <Button
-            disabled
-            startIcon={
-              <Arrow negative={negative}>
-                <ArrowCardDown color="white" />
-              </Arrow>
-            }
-            width="100%"
-            mb="8px"
-            variant="green"
-          >
-            Entered
-          </Button>
-        </div>
-      )}
-      <ValueRow vector="DOWN" value={payoutLose} />
+      <WrapContent>
+        <ValueRow vector="UP" value={payoutWin} />
+        {canEnterPosition ? (
+          <ButtonsBlock
+            pool={pool}
+            hasEnteredUp={hasEnteredUp}
+            hasEnteredDown={hasEnteredDown}
+            handleSetPosition={handleSetPosition}
+            disabledButton={disabledButton}
+          />
+        ) : (
+          <div style={{ marginTop: 70 }}>
+            <Button
+              disabled
+              startIcon={
+                <Arrow negative={negative}>
+                  <ArrowCardDown color="white" />
+                </Arrow>
+              }
+              width="100%"
+              mb="8px"
+              variant="green"
+            >
+              Entered
+            </Button>
+          </div>
+        )}
+        <ValueRow vector="DOWN" value={payoutLose} />
+      </WrapContent>
     </>
   );
 };
@@ -81,4 +82,13 @@ const Arrow = styled.div<{ negative?: boolean }>`
   width: 30px;
   height: 30px;
   transform: ${({ negative }) => (!negative ? "scale(1,-1)" : "none")};
+`;
+
+const WrapContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.colors.bgCard};
+  margin-top: 28px; 
 `;
