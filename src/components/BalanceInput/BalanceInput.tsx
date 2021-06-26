@@ -13,8 +13,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   decimals = 18,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    
-    if (e.currentTarget.validity.valid) {      
+    if (e.currentTarget.validity.valid) {
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
   };
