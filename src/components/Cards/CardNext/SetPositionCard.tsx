@@ -9,15 +9,12 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
   onBack,
   children,
   inputValue,
-  handleInputChange,
+  onUserInput,
   showFieldWarning,
   inputProps,
-}) => {
-  const [tabValue, setTabValue] = useState(0);
-
-  const handleToggleTabs = (e: any) => {
-    setTabValue(+e.currentTarget.value);
-  };
+  handlePercentChange,
+  disabledTab
+}) => { 
 
   return (
     <Wrap>
@@ -27,12 +24,12 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
       <Title>Set Position</Title>
       <BalanceInput
         value={inputValue}
-        onUserInput={handleInputChange}
+        onUserInput={onUserInput}
         isWarning={showFieldWarning}
         inputProps={inputProps}
       />
       <TabsBlock>
-        <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
+        <Tabs handlePercentChange={handlePercentChange} disabledTab={disabledTab} />
       </TabsBlock>
       {children}
     </Wrap>

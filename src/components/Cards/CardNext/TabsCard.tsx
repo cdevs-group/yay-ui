@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
 import { TabsProps } from "../types";
@@ -27,16 +27,25 @@ const Tab = styled.button`
     transition: 0.3s;
   }
 `;
-const tabsList = ["10%", "25%", "50%", "75%", "Max"];
+const tabsList = [10, 25, 50, 75];
 
-const TabsCard = ({ tabValue, handleToggleTabs }: TabsProps) => {
+const TabsCard = ({ handlePercentChange, disabledTab }: TabsProps) => {
   return (
     <TabsBlock>
-      {tabsList.map((item, i) => (
-        <Tab key={i} value={i} onClick={handleToggleTabs} className={tabValue === i ? "active" : ""}>
-          {item}
-        </Tab>
-      ))}
+      {tabsList.map((percentShortcut) => {
+        const handleClick = () => {
+          handlePercentChange(percentShortcut);
+        };
+
+        return (
+          <Tab key={percentShortcut} onClick={handleClick} disabled={disabledTab} style={{ flex: 1 }}>
+            {`${percentShortcut}%`}
+          </Tab>
+        );
+      })}
+      <Tab onClick={() => handlePercentChange(100)} disabled={disabledTab}>
+        Max
+      </Tab>
     </TabsBlock>
   );
 };
