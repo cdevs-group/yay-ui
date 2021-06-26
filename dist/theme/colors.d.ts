@@ -7,6 +7,7 @@ export declare const baseColors: {
     secondary: string;
     success: string;
     warning: string;
+    blueGradient: string;
     green: string;
     textShadow: string;
     textShadow2: string;

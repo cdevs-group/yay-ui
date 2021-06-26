@@ -3,12 +3,18 @@ import styled from "styled-components";
 import { LinkExternal } from "../../Link";
 import GHOST from "./ghost.png";
 
-const GhostCard = ({ href }: { href: string }) => {
+interface IProps {
+  href: string;
+  children?: React.ReactNode;
+}
+
+const GhostCard = ({ href, children }: IProps) => {
   return (
     <Wrap>
       <Image>
         <img src={GHOST} alt="some img" />
       </Image>
+      {children}
       <LinkExternal color="#47DA3B" small href={href} mr="16px">
         Learn More
       </LinkExternal>

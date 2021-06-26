@@ -1,9 +1,4 @@
-/// <reference types="react" />
-import { InputProp } from "./types";
-declare const Input: {
-    ({ placeholder, value, onChange }: InputProp): JSX.Element;
-    defaultProps: {
-        placeholder: string;
-    };
-};
+import { DefaultTheme } from "styled-components";
+import { InputProps } from "./types";
+declare const Input: import("styled-components").StyledComponent<"input", DefaultTheme, InputProps, never>;
 export default Input;

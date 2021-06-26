@@ -20,7 +20,6 @@ const ValueRowBlock = styled.div<{ vector: string }>`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-self: ${({ vector }) => (vector === "down" ? "baseline" : "")};
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.text};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
@@ -32,4 +31,11 @@ const ValueRowBlock = styled.div<{ vector: string }>`
     font-weight: normal;
     color: ${({ theme }) => theme.colors.textGray};
   }
+
+  max-height: 50px;
+  height: 100%;
+  padding: 18px 20px 13px;
+  background: ${({ theme }) => theme.colors.bgCard};
+  border-radius: ${({ vector }) => (vector === "DOWN" ? "0 0 12px 12px" : "12px 12px 0 0")};
+  color: ${({ theme }) => theme.colors.text};
 `;

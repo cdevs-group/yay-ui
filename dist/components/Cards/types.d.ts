@@ -44,14 +44,6 @@ export interface TabsProps {
     tabValue: number;
     tabsList?: Array<string>;
 }
-export interface InputProps {
-    value: string;
-    isWarning?: boolean;
-    onChange: (e: any) => void;
-    inputProps: {
-        disabled: boolean;
-    };
-}
 export interface SetPositionCardProps {
     onBack: (e: any) => void;
     children: ReactNode;

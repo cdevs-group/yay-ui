@@ -90,6 +90,7 @@ export declare type Colors = {
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
+    blueGradient: string;
     gradients: Gradients;
     binance: string;
 };

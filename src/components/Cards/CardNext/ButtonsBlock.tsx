@@ -48,19 +48,17 @@ export default ButtonsBlock;
 
 const ButtonsBlockWrap = styled.div`
   height: 193px;
-  width: 335px;
+  width: 308px;
   padding-bottom: 17px;
   background: ${({ theme }) => theme.colors.bgGray};
   position: relative;
-  left: -10%;
   z-index: 2;
   padding: 0 13px;
-  top: 0px;
   box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.colors.cardShadow};
   border-radius: 15px;
-  @media (max-width: 767px) {
-    width: 303px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
   }
 `;
 const Buttons = styled.div`
