@@ -1122,7 +1122,10 @@ var Wrap$f = styled.div(templateObject_5$d || (templateObject_5$d = __makeTempla
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Loader$2 = styled.div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject([""], [""])));
+var Loader$2 = styled.div(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: ", ";\n  top: 50%;\n"], ["\n  position: ", ";\n  top: 50%;\n"])), function (_a) {
+    var textTooltip = _a.textTooltip;
+    return (textTooltip ? "static" : "absolute");
+});
 var OrangeCircle$1 = styled.div(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), orangeAnimation$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.orangeBg;
@@ -1146,7 +1149,7 @@ var BottomText = styled.div(templateObject_11 || (templateObject_11 = __makeTemp
 var LoaderCard$1 = function (_a) {
     var textTooltip = _a.textTooltip;
     return (React__default.createElement(Wrap$f, null,
-        React__default.createElement(Loader$2, null,
+        React__default.createElement(Loader$2, { textTooltip: textTooltip },
             React__default.createElement(OrangeCircle$1, null),
             React__default.createElement(GreenCircle$1, null),
             React__default.createElement(RedCircle$1, null),
@@ -1720,26 +1723,29 @@ var Tab$3 = styled.button(templateObject_2$A || (templateObject_2$A = __makeTemp
     var theme = _a.theme;
     return theme.colors.text;
 });
-var tabsList = ["10%", "25%", "50%", "75%", "Max"];
+var tabsList = [10, 25, 50, 75];
 var TabsCard = function (_a) {
-    var tabValue = _a.tabValue, handleToggleTabs = _a.handleToggleTabs;
-    return (React__default.createElement(TabsBlock$1, null, tabsList.map(function (item, i) { return (React__default.createElement(Tab$3, { key: i, value: i, onClick: handleToggleTabs, className: tabValue === i ? "active" : "" }, item)); })));
+    var handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab;
+    return (React__default.createElement(TabsBlock$1, null,
+        tabsList.map(function (percentShortcut) {
+            var handleClick = function () {
+                handlePercentChange(percentShortcut);
+            };
+            return (React__default.createElement(Tab$3, { key: percentShortcut, onClick: handleClick, disabled: disabledTab, style: { flex: 1 } }, percentShortcut + "%"));
+        }),
+        React__default.createElement(Tab$3, { onClick: function () { return handlePercentChange(100); }, disabled: disabledTab }, "Max")));
 };
 var templateObject_1$H, templateObject_2$A;
 
 var SetPositionCard = function (_a) {
-    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, handleInputChange = _a.handleInputChange, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps;
-    var _b = useState(0), tabValue = _b[0], setTabValue = _b[1];
-    var handleToggleTabs = function (e) {
-        setTabValue(+e.currentTarget.value);
-    };
+    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab;
     return (React__default.createElement(Wrap$d, null,
         React__default.createElement(ButtonBack, { onClick: onBack },
             React__default.createElement(ArrowIcon$1, null)),
         React__default.createElement(Title$2, null, "Set Position"),
-        React__default.createElement(BalanceInput, { value: inputValue, onUserInput: handleInputChange, isWarning: showFieldWarning, inputProps: inputProps }),
+        React__default.createElement(BalanceInput, { value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
         React__default.createElement(TabsBlock, null,
-            React__default.createElement(TabsCard, { handleToggleTabs: handleToggleTabs, tabValue: tabValue })),
+            React__default.createElement(TabsCard, { handlePercentChange: handlePercentChange, disabledTab: disabledTab })),
         children));
 };
 var Wrap$d = styled.div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
