@@ -1884,7 +1884,7 @@ var templateObject_1$B, templateObject_2$v, templateObject_3$m, templateObject_4
 
 var LaterCard = function (_a) {
     _a.time; _a.rightContent; _a.color;
-    return (React__default.createElement(Card$1, { live: true, hide: true, leftContent: "CANCEL", rightContent: "#001", payoutUp: 1.03, payoutDown: 5.03, displayNone: true, colorNone: true, time: 2000 },
+    return (React__default.createElement(Card$1, { live: true, hide: true, leftContent: "CANCEL", rightContent: "#001", payoutUp: 1.03, payoutDown: 5.03, displayNone: true, colorNone: true, time: 2000, color: "green" },
         React__default.createElement(LoaderCard, null)));
 };
 
@@ -2476,11 +2476,14 @@ var baseColors = {
     yellow: "#FFEA2C",
     bgHeader: "#2B2B32",
     buttonBg2: "#1B1B20",
+    bgCardBtc: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
+    colorCardBtc: "#8A92B2",
+    bgCardBtc2: "#FFAC01",
 };
 var brandColors = {
     binance: "#F0B90B",
 };
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", blackColor: "#000", greenText2: "47DA3B", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", blackColor: "#000", greenText2: "#47DA3B", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
         greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });

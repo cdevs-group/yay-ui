@@ -23,6 +23,8 @@ export interface StyledCardProps {
     btnWinnings?: ReactNode;
     color?: string;
     hide?: boolean;
+    btcWon?: boolean;
+    ethWon?: boolean;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
     isReturn: string;
