@@ -17,7 +17,7 @@ const CardForLater: React.FC<CardProps> = ({ children, ...props }) => {
     <Wrap>
       <Block>
         <StyledCardForlater {...props}>{children}</StyledCardForlater>
-      </Block>      
+      </Block>
     </Wrap>
   );
 };
