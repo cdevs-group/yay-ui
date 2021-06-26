@@ -90,5 +90,5 @@ const WrapContent = styled.div`
   align-items: center;
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.bgCard};
-  margin-top: 28px; 
+  margin-top: 28px;
 `;

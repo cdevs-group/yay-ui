@@ -16,7 +16,7 @@ const TopContent = ({ children, rightContent }: TopContentProps) => {
 export default TopContent;
 
 const Wrap = styled.div`
-  width: 100%; 
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

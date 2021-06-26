@@ -29,12 +29,12 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 
   ${Front} {
     z-index: ${({ isFlipped }) => (isFlipped ? 5 : 10)};
-    backface-visibility: hidden;    
+    backface-visibility: hidden;
     transition: 0;
     width: 278px;
     ${({ theme }) => theme.mediaQueries.sm} {
       width: 308px;
-    }       
+    }
   }
 
   ${Back} {

@@ -36,6 +36,6 @@ const ValueRowBlock = styled.div<{ vector: string }>`
   height: 100%;
   padding: 18px 20px 13px;
   background: ${({ theme }) => theme.colors.bgCard};
-  border-radius: ${({ vector }) => (vector === "DOWN" ? "0 0 12px 12px" : "12px 12px 0 0")};  
+  border-radius: ${({ vector }) => (vector === "DOWN" ? "0 0 12px 12px" : "12px 12px 0 0")};
   color: ${({ theme }) => theme.colors.text};
 `;
