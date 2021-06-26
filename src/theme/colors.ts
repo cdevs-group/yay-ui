@@ -32,6 +32,9 @@ export const baseColors = {
   yellow: "#FFEA2C",
   bgHeader: "#2B2B32",
   buttonBg2: "#1B1B20",
+  bgCardBtc: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
+  colorCardBtc: "#8A92B2",
+  bgCardBtc2: "#FFAC01",
 };
 
 export const brandColors = {
@@ -66,7 +69,7 @@ export const darkColors: Colors = {
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
   blackColor: "#000",
-  greenText2: "47DA3B",
+  greenText2: "#47DA3B",
 
   backgroundDisabled: "#3c3742",
   contrast: "#FFFFFF",

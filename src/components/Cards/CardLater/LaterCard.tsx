@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "../../Card/Card";
 import { LaterCardProps } from "../types";
-import CardForLater from "./Card";
 import LoaderCard from "./Loader";
 
 const LaterCard = ({ time, rightContent, color }: LaterCardProps) => {
@@ -16,6 +15,7 @@ const LaterCard = ({ time, rightContent, color }: LaterCardProps) => {
       displayNone
       colorNone
       time={2000}
+      color="green"
     >
       <LoaderCard />
     </Card>
