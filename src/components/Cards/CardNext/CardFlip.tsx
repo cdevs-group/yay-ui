@@ -52,7 +52,7 @@ const StyledCardFlip = styled.div`
   perspective: 1000px;
   height: 369px;
   width: 335px;
-  border-radius: 15px;  
+  border-radius: 15px;
 `;
 
 const getComponents = (children: CardFlipProps["children"]) => {

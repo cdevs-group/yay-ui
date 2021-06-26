@@ -5,7 +5,6 @@ interface StyledInputProps extends InputProps {
   theme: DefaultTheme;
 }
 
-
 const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
   switch (scale) {
     case scales.SM:

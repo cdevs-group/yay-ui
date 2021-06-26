@@ -22,12 +22,7 @@ export const Default: React.FC = () => {
 
   return (
     <Box width="300px">
-      <BalanceInput
-        onUserInput={handleDecimalChange}
-        value={decimalValue}
-        placeholder="0.0"
-        mb="32px"
-      />
+      <BalanceInput onUserInput={handleDecimalChange} value={decimalValue} placeholder="0.0" mb="32px" />
       <BalanceInput
         value={decimalValue * 1.5}
         onUserInput={handleDecimalChange}
@@ -45,4 +40,3 @@ export const Default: React.FC = () => {
     </Box>
   );
 };
-
