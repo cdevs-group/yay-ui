@@ -13,7 +13,8 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   decimals = 18,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.currentTarget.validity.valid) {
+    
+    if (e.currentTarget.validity.valid) {      
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
   };
@@ -31,7 +32,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
       </InputIcon>
       <Input
         className={isWarning ? "warning" : ""}
-        pattern={`^[0-9]*[.,]? [0-9]{0,${decimals}}$`}
+        pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
         inputMode="decimal"
         min="0"
         value={value}

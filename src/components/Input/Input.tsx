@@ -18,7 +18,6 @@ const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
 };
 
 const Input = styled.input<InputProps>`
-  border-radius: 16px;
   color: ${({ theme }) => theme.colors.text};
   display: block;
   font-size: 16px;

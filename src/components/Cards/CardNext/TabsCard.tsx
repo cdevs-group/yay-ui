@@ -11,7 +11,8 @@ const TabsBlock = styled.div`
 `;
 
 const Tab = styled.button`
-  padding: 7px 10px;
+  padding: 7px;
+  width: 50px;
   border: none;
   background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
   border-radius: 7px;
@@ -38,7 +39,7 @@ const TabsCard = ({ handlePercentChange, disabledTab }: TabsProps) => {
         };
 
         return (
-          <Tab key={percentShortcut} onClick={handleClick} disabled={disabledTab} style={{ flex: 1 }}>
+          <Tab key={percentShortcut} onClick={handleClick} disabled={disabledTab}>
             {`${percentShortcut}%`}
           </Tab>
         );
