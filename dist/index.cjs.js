@@ -1454,11 +1454,11 @@ var CardWrap$1 = styled__default['default'](reactRouterDom.NavLink)(templateObje
     var closed = _a.closed;
     return (closed ? "default" : "pointer");
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, closed = _a.closed;
+    return (closed ? "transparent" : theme.colors.green);
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.boxShadow6;
+    var theme = _a.theme, closed = _a.closed;
+    return (closed ? "" : theme.colors.boxShadow6);
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -1997,10 +1997,10 @@ var Dots = styled__default['default'].div(templateObject_4$b || (templateObject_
 var templateObject_1$A, templateObject_2$u, templateObject_3$l, templateObject_4$b;
 
 var CardNext = function (_a) {
-    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, canEnterPosition = _a.canEnterPosition, negative = _a.negative;
+    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, canEnterPosition = _a.canEnterPosition, negative = _a.negative, disabledTimer = _a.disabledTimer;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(TopContent$1, { rightContent: roundEpoch },
-            React__default['default'].createElement(Timer$1, { color: "white", time: time })),
+            React__default['default'].createElement(Timer$1, { color: "white", time: time, disabled: disabledTimer })),
         React__default['default'].createElement(WrapContent, null,
             React__default['default'].createElement(ValueRow, { vector: "UP", value: payoutWin }),
             canEnterPosition ? (React__default['default'].createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton })) : (React__default['default'].createElement("div", { style: { marginTop: 70 } },

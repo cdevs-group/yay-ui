@@ -12,6 +12,7 @@ interface IProps {
     disabledButton: boolean;
     canEnterPosition: boolean;
     negative: boolean;
+    disabledTimer?: boolean;
 }
 declare const CardNext: React.FC<IProps>;
 export default CardNext;
