@@ -7,7 +7,7 @@ import { ButtonsBlockRops } from "../types";
 
 const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, disabledButton }: ButtonsBlockRops) => {
   return (
-    <ButtonsBlockWrap>
+    <>
       <PrizeBlock>
         <p>PRIZE POOL</p>
         <p>{pool}</p>
@@ -40,27 +40,13 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
           </IconComplete>
         </ButtonWrap>
       </Buttons>
-    </ButtonsBlockWrap>
+    </>
   );
 };
 
 export default ButtonsBlock;
 
-const ButtonsBlockWrap = styled.div`
-  height: 193px;
-  width: 308px;
-  padding-bottom: 17px;
-  background: ${({ theme }) => theme.colors.bgGray};
-  position: relative;
-  z-index: 2;
-  padding: 0 13px;
-  box-sizing: border-box;
-  box-shadow: ${({ theme }) => theme.colors.cardShadow};
-  border-radius: 15px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 335px;
-  }
-`;
+
 const Buttons = styled.div`
   position: relative;
   &.unChoiced {

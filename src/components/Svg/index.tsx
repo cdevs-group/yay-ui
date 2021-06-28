@@ -1,5 +1,6 @@
 export { default as AddIcon } from "./Icons/AddIcon";
 export { default as CloseIcon } from "./Icons/CloseIcon";
+export { default as CloseSimpleIcon } from "./Icons/CloseSimpleIcon";
 export { default as OpenNewIcon } from "./Icons/OpenNewIcon";
 export { default as ArrowLeft } from "./Icons/ArrowLeft";
 export { default as BnbIcon } from "./Icons/BnbIcon";

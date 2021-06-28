@@ -44,31 +44,36 @@ const CardNext: React.FC<IProps> = ({
       </TopContent>
       <WrapContent>
         <ValueRow vector="UP" value={payoutWin} />
-        {canEnterPosition ? (
-          <ButtonsBlock
-            pool={pool}
-            hasEnteredUp={hasEnteredUp}
-            hasEnteredDown={hasEnteredDown}
-            handleSetPosition={handleSetPosition}
-            disabledButton={disabledButton}
-          />
-        ) : (
-          <div style={{ marginTop: 70 }}>
-            <Button
-              disabled
-              startIcon={
-                <Arrow negative={negative}>
-                  <ArrowCardDown color="white" />
-                </Arrow>
-              }
-              width="100%"
-              mb="8px"
-              variant="green"
-            >
-              Entered
-            </Button>
-          </div>
-        )}
+        <ButtonsBlockWrap>
+          {canEnterPosition ? (
+            <ButtonsBlock
+              pool={pool}
+              hasEnteredUp={hasEnteredUp}
+              hasEnteredDown={hasEnteredDown}
+              handleSetPosition={handleSetPosition}
+              disabledButton={disabledButton}
+            />
+          ) : (
+            <div style={{ marginTop: 70 }}>
+              <Button
+                disabled
+                startIcon={
+                  <Arrow negative={negative}>
+                    <ArrowCardDown color="white" />
+                  </Arrow>
+                }
+                width="100%"
+                mb="8px"
+                variant="green"
+              >
+                {negative ? "DOWN" : "UP"} Entered
+              </Button>
+              <Prize>
+                Prize Pool: <span>{pool}</span>
+              </Prize>
+            </div>
+          )}
+        </ButtonsBlockWrap>
         <ValueRow vector="DOWN" value={payoutLose} />
       </WrapContent>
     </>
@@ -93,4 +98,34 @@ const WrapContent = styled.div`
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.bgCard};
   margin-top: 28px;
+`;
+
+const ButtonsBlockWrap = styled.div`
+  height: 193px;
+  width: 308px;
+  padding-bottom: 17px;
+  background: ${({ theme }) => theme.colors.bgGray};
+  position: relative;
+  z-index: 2;
+  padding: 0 13px;
+  box-sizing: border-box;
+  box-shadow: ${({ theme }) => theme.colors.cardShadow};
+  border-radius: 15px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
+  }
+`;
+
+const Prize = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: ${({ theme }) => theme.colors.text};
+  & span {
+    font-size: 15px;
+  }
 `;
