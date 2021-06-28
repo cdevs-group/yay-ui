@@ -63,7 +63,7 @@ const UpContent = styled.div<{ negative?: boolean; showUp?: boolean; colorNone?:
   width: 100%;
   padding: 18px 20px 13px;
   background: ${({ theme, negative, colorNone }) =>
-    negative ? theme.colors.cardBg : colorNone ? "none" : theme.colors.bgCardBtc2};
+    negative ? theme.colors.bgCard : colorNone ? "none" : theme.colors.bgCardBtc2};
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border-bottom-left-radius: 0;
@@ -121,10 +121,10 @@ const IconCompleteDown = styled.div<{ showIcon?: boolean }>`
   margin-left: 7px;
 `;
 
-const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean }>`
+const MainBlock = styled.div<{ negative?: boolean; colorNone?: boolean; loader?: boolean }>`
   position: relative;
   z-index: 2;
-  padding: 23px 35px 25px 32px;
+  padding: ${({ loader }) => (loader ? "23px 12px 25px" : "23px 35px 25px 32px")};
   width: 308px;
   height: 193px;
   background: #26262d;
@@ -156,14 +156,14 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   line-height: 19px;
   color: ${({ theme }) => theme.colors.text};
 `;
-const Currency = styled.div`
+const Currency = styled.div<{ loader?: boolean }>`
   display: flex;
   align-items: center;
   & img {
     display: none;
     margin-right: 10px;
     ${({ theme }) => theme.mediaQueries.sm} {
-      display: block;
+      display: ${({ loader }) => (loader ? "none" : "block")};
     }
   }
 `;
@@ -196,6 +196,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
   btnWinnings,
   btcWon,
   ethWon,
+  loader,
 }) => {
   return (
     <Wrap live={live}>
@@ -213,7 +214,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
             </WonBlcok>
           ) : (
             <>
-              <Currency>
+              <Currency loader={loader}>
                 <img src={BTC} alt="btc" />
                 BTC
               </Currency>
@@ -233,7 +234,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
             <img src={Winner} />
           </WinnerImg>
         </UpContentWin>
-        <MainBlock negative={negative} colorNone={colorNone}>
+        <MainBlock loader={loader} negative={negative} colorNone={colorNone}>
           {children}
         </MainBlock>
         <DownContent negative={negative} displayNone={displayNone}>
@@ -244,7 +245,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
             </WonBlcok>
           ) : (
             <>
-              <Currency>
+              <Currency loader={loader}>
                 <img src={ETH} alt="eth" />
                 ETH
               </Currency>

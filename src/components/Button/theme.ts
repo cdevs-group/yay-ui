@@ -73,4 +73,14 @@ export const styleVariants = {
     color: "#fff",
     boxShadow: "none",
   },
+  [variants.YELLOW]: {
+    background: " linear-gradient(180deg, #FFB001 -16%, #FFA201 100%)",
+    color: "#fff",
+    boxShadow: "none",
+  },
+  [variants.GRAY]: {
+    background: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
+    color: "#fff",
+    boxShadow: "none",
+  },
 };
