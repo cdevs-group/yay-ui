@@ -46,8 +46,8 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   border: 2px solid transparent;
   transition: 0.3s;
   &:hover {
-    border: 2px solid ${({ theme }) => theme.colors.green};
-    box-shadow: ${({ theme }) => theme.colors.boxShadow6};
+    border: 2px solid ${({ theme, closed }) => (closed ? "transparent" : theme.colors.green)};
+    box-shadow: ${({ theme, closed }) => (closed ? "" : theme.colors.boxShadow6)};
     transition: 0.3s;
   }
   &:nth-child(5) {
@@ -76,7 +76,7 @@ const Img = styled.img<ImageProps>`
   right: ${({ right }) => right || 0};
   left: ${({ left }) => left || "auto"};
   top: ${({ top }) => top || "auto"};
-  max-width:  ${({ maxWidth }) => maxWidth || "100%"};
+  max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
 export const CardTitle = styled(Text)`

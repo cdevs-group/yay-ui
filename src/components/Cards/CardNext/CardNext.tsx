@@ -20,6 +20,7 @@ interface IProps {
   disabledButton: boolean;
   canEnterPosition: boolean;
   negative: boolean;
+  disabledTimer?: boolean;
 }
 
 const CardNext: React.FC<IProps> = ({
@@ -34,11 +35,12 @@ const CardNext: React.FC<IProps> = ({
   disabledButton,
   canEnterPosition,
   negative,
+  disabledTimer,
 }) => {
   return (
     <>
       <TopContent rightContent={roundEpoch}>
-        <Timer color="white" time={time} />
+        <Timer color="white" time={time} disabled={disabledTimer} />
       </TopContent>
       <WrapContent>
         <ValueRow vector="UP" value={payoutWin} />
