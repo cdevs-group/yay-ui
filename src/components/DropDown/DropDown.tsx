@@ -64,9 +64,10 @@ const Dropdown = styled.div`
   opacity: 0;
   overflow-y: auto;
   pointer-events: none;
+  max-height: 260px;
   &.open {
     transition: 0.3s;
-    z-index: 3;
+    z-index: 10;
     opacity: 1;
     margin-top: 4px;
     pointer-events: all;

@@ -38,7 +38,7 @@ const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
 export default Languages;
 
 const Wrap = styled.div`
-  width: 40px;
+  min-width: 50px;
   margin-right: 30px;
 `;
 const SelectList = styled.div`
@@ -59,21 +59,23 @@ const Select = styled.button`
   text-align: center;
   letter-spacing: 0.08em;
   color: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
   &:last-child {
     margin-bottom: 0;
   }
 `;
-const Button = styled.button<{ open: boolean }>`
+const Button = styled.div<{ open: boolean }>`
   padding: 0;
   background: ${({ theme, open }) => (open ? theme.colors.buttonBg2 : theme.colors.buttonBg)};
   border: none;
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
+  width: 100%;
 `;
 
 const ButtonText = styled(Text)`
-  padding: 13px 11px;
+  padding: 13px 6px;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
