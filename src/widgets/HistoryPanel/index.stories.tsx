@@ -14,6 +14,7 @@ import YourHistory from "./components/YourHistory";
 import ProgressBar from "./components/ProgressBar";
 import Rounds from "./components/Rounds";
 import RoundsLink from "./components/RoundsLink";
+import HiddenItemAccordeonCard from "./components/HiddenItemAccordeonCard";
 
 export default {
   title: "Components/HistoryPanel",
@@ -30,7 +31,7 @@ export const Panel: React.FC = () => {
     COLLECTED = "collected",
     UNCOLLECTED = "uncollected",
   }
-  const [activeTab, setActiveTab] = useState(HistoryTabs.PNL);
+  const [activeTab, setActiveTab] = useState(HistoryTabs.ROUNDS);
   const [historyFilter, setHistoryFilter] = useState("all");
   const [isHistoryPaneOpen, setIsHistoryPaneOpen] = useState(true);
   // const toggleHistoryFilter = (e) => {
@@ -121,7 +122,7 @@ export const Panel: React.FC = () => {
     {
       id: "2",
       number: "#0023",
-      color: "green",
+      color: "#4BE43E",
       text: "Live now",
       icon: <PlayIcon />,
       content: [
@@ -138,7 +139,7 @@ export const Panel: React.FC = () => {
     {
       id: "3",
       number: "#0024",
-      color: "redBg",
+      color: "#FF6161",
       text: "-0,001 BNB",
       icon: <ArrowDownIcon />,
       content: [
@@ -147,7 +148,7 @@ export const Panel: React.FC = () => {
           priceRightText="$1,57"
           up="2x Playout  0,281 BNB"
           down="2x Playout  0,791 BNB"
-          prizePool="$ 3`500"
+          prizePool="$ 3`600"
           openingBlock="483029"
           closingBlock="457442"
           negative
@@ -165,7 +166,7 @@ export const Panel: React.FC = () => {
     {
       id: "4",
       number: "#0025",
-      color: "green",
+      color: "#4BE43E",
       text: "+2,001 BNB",
       icon: <ArrowDownIcon />,
       collect: true,
@@ -185,7 +186,7 @@ export const Panel: React.FC = () => {
   ];
   const { valueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden } =
     useAccordeon(cardsAccordeon);
-
+  console.log(heightActiveBlock);
   const hasBetHistory = true;
   return (
     <HistoryPanel isHistoryPaneOpen={isHistoryPaneOpen} handleToggle={handleToggle} valueAccordeon={valueAccordeon}>
@@ -208,14 +209,20 @@ export const Panel: React.FC = () => {
                   <AccordeonCard
                     key={item.id}
                     item={item}
-                    round="24234234"
+                    detail={
+                      <>
+                        <HiddenItemAccordeonCard>{item.content[0]}</HiddenItemAccordeonCard>
+                        <HiddenItemAccordeonCard>{item.content[1]}</HiddenItemAccordeonCard>
+                      </>
+                    }
                     icon={item.icon}
                     valueAccordeon={valueAccordeon}
                     heightActiveBlock={heightActiveBlock}
                     handleToggle={handleToggleAccordeon}
                     active={active}
                     refHidden={refHidden}
-                    detail={"detail" + item.id}
+                    betLabel={<p style={{ color: item.color, marginRight: "15px" }}>{item.text}</p>}
+                    round={item.number}
                   />
                 ))}
               </Accordeon>
@@ -229,14 +236,20 @@ export const Panel: React.FC = () => {
                   <AccordeonCard
                     key={item.id}
                     item={item}
-                    round={item.id}
+                    detail={
+                      <>
+                        <HiddenItemAccordeonCard>{item.content[0]}</HiddenItemAccordeonCard>
+                        <HiddenItemAccordeonCard>{item.content[1]}</HiddenItemAccordeonCard>
+                      </>
+                    }
                     icon={item.icon}
                     valueAccordeon={valueAccordeon}
                     heightActiveBlock={heightActiveBlock}
                     handleToggle={handleToggleAccordeon}
                     active={active}
                     refHidden={refHidden}
-                    detail={"detail" + item.id}
+                    betLabel={<p style={{ color: item.color, marginRight: "15px" }}>{item.text}</p>}
+                    round={item.number}
                   />
                 ))}
               </Accordeon>
