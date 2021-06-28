@@ -23,8 +23,6 @@ const Header: React.FC<NavProps> = ({
 }) => {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(false);
-  const languages = ["EN", "RU", "BG"];
-  const [select, setSelect] = useState<string>(languages[0]);
 
   return (
     <HeaderWrap>
@@ -43,12 +41,12 @@ const Header: React.FC<NavProps> = ({
             />
           ))}
           <LanguageBlockMob>
-            <Languages select={select} setSelect={setSelect} list={languages} />
+            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
           </LanguageBlockMob>
         </Nav>
         <RightContent>
           <LanguageBlockDesk>
-            <Languages select={select} setSelect={setSelect} list={languages} />
+            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
           </LanguageBlockDesk>
           <Account account={account} login={login} logout={logout} />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />

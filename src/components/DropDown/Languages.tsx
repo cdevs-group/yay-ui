@@ -4,11 +4,11 @@ import { Text } from "../Text";
 import DropdownLayout from "./DropDown";
 import { LanguagesProps } from "./types";
 
-const Languages = ({ select, setSelect, list }: LanguagesProps) => {
+const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const handleSelect = (e: any) => {
-    setSelect(e.target.value);
+  const handleSelect = (lang: any) => {
+    setLang(lang);
     setOpen(false);
   };
 
@@ -19,14 +19,14 @@ const Languages = ({ select, setSelect, list }: LanguagesProps) => {
         setOpen={setOpen}
         icon={
           <Button open={open}>
-            <ButtonText>{select}</ButtonText>
+            <ButtonText>{currentLang?.toUpperCase()}</ButtonText>
           </Button>
         }
       >
         <SelectList>
-          {list.map((item, i) => (
-            <Select value={item} onClick={handleSelect}>
-              {item}
+          {langs.map((lang) => (
+            <Select onClick={() => handleSelect(lang)} key={lang.code}>
+              {lang.code?.toUpperCase()}
             </Select>
           ))}
         </SelectList>

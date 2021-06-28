@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { LangType } from "../../widgets/Menu/types";
 
 export interface LanguagesProps {
-  list: Array<string>;
-  setSelect: (e: any) => void;
-  select: string;
+  currentLang: string;
+  langs: LangType[];
+  setLang: (lang: LangType) => void;
 }
 
 export interface DropDownProps {
