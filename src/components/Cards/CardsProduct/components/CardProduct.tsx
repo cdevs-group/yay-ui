@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { CardProductProp } from "../../types";
+import { CardProductProp, ImageProps } from "../../types";
 import Text from "../../../Text/Text";
 
 export const setColor = (param: { bg?: string }) => {
@@ -21,11 +21,11 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, position, href }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg} className={position || ""} to={href || ""}>
+    <CardWrap closed={closed} bg={bg} to={href || ""}>
       <CardTitle size="lg">{title}</CardTitle>
-      <img src={img} alt="some img" />
+      <Img src={img} alt="some img" {...props} />
     </CardWrap>
   );
 };
@@ -35,68 +35,20 @@ export default CardProduct;
 export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   position: relative;
   padding: 14px 24px;
-  /* height: 100%;
-  width: 100%;
-  max-width: 137px;
-  height: 136px; */
   height: 43vw;
   width: 100%;
   background: ${setColor};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow2};
+  
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
   cursor: ${({ closed }) => (closed ? "default" : "pointer")};
-  &::after {
-    display: block;
-    content: "";
-    position: absolute;
-    width: calc(100% + 2px);
-    min-height: calc(100% + 2px);
-    border: 1.5px solid ${({ theme }) => theme.colors.green};
-    box-sizing: border-box;
-    top: -1px;
-    left: -1px;
-    opacity: 0;
-    z-index: 0;
-    filter: drop-shadow(${({ theme }) => theme.colors.boxShadow2});
-    border-radius: 15px;
-    transition: 0.3s;
-  }
-  & img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-  &.left {
-    & img {
-      width: 105%;
-      left: auto;
-      right: 0;
-      bottom: -15px;
-    }
-  }
-  &.right {
-    & img {
-      width: 100%;
-      left: auto;
-      right: -10px;
-      bottom: -15px;
-    }
-  }
-  &.rightCenter {
-    & img {
-      width: 110%;
-      left: auto;
-      right: -25px;
-      bottom: -25px;
-    }
-  }
+  border: 2px solid transparent;
+  transition: 0.3s;  
   &:hover {
-    &::after {
-      opacity: ${(props) => (props.closed ? 0 : 1)};
-    }
+    border: 2px solid ${({ theme }) => theme.colors.green};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow6};
+    transition: 0.3s;  
   }
   &:nth-child(5) {
     display: none;
@@ -117,6 +69,15 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
     height: 220px;
   }
 `;
+
+const Img = styled.img<ImageProps>`
+  position: absolute;
+  bottom: ${({ bottom }) => bottom || 0};
+  right: ${({ right }) => right || 0};
+  left: ${({ left }) => left || "auto"};
+  top: ${({ top }) => top || "auto"};
+`;
+
 export const CardTitle = styled(Text)`
   font-size: 15px;
   letter-spacing: 0.02em;

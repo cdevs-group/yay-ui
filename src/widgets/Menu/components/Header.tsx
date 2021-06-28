@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo";
 import { NavProps } from "../types";
@@ -28,12 +28,10 @@ const Header: React.FC<NavProps> = ({
 
   return (
     <HeaderWrap>
-      {/* <Link> */}
       <Line>
-        <LogoWrap>
+        <LogoWrap to="/">
           <Logo />
         </LogoWrap>
-        {/* </Link> */}
         <Nav className={openMenu ? "open" : ""}>
           {links.map((item, i) => (
             <MenuLink
@@ -127,7 +125,7 @@ const LanguageBlockDesk = styled.div`
     display: block;
   }
 `;
-const LogoWrap = styled.div`
+const LogoWrap = styled(Link)`
   & svg {
     width: 133px;
     ${({ theme }) => theme.mediaQueries.lg} {

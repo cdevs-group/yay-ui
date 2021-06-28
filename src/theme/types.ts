@@ -100,6 +100,7 @@ export type Colors = {
   colorCardBtc: string;
   bgCardBtc2: string;
   blueGradient: string;
+  boxShadow6: string;
 
   // Gradients
   gradients: Gradients;

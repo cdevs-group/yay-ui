@@ -27,6 +27,7 @@ export interface StyledCardProps {
   btcWon?: boolean;
   ethWon?: boolean;
   loader?: boolean;
+  disabledTimer?: boolean;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;

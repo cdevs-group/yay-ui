@@ -10,12 +10,13 @@ interface ThemedProps extends TimerColorProps {
 interface MyTimerProps {
   expiryTimestamp: any;
   color: string;
+  disabled?: boolean;
 }
 const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
+function MyTimer({ expiryTimestamp, color, disabled }: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
   const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
@@ -30,7 +31,7 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
 
   return (
     <Wrap>
-      <Block color={color}>
+      <Block color={color} disabled={disabled}>
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
             {handleDigit(item).leftDigit}
@@ -60,10 +61,10 @@ const LoadingTimer = () => {
   );
 };
 
-const Timer: React.FC<TimerProps> = ({ time, color, isLoad }) => {
+const Timer: React.FC<TimerProps> = ({ time, color, isLoad, disabled }) => {
   return (
     <div>
-      <MyTimer expiryTimestamp={time || 0} color={color || "text"} />
+      <MyTimer expiryTimestamp={time || 0} color={color || "text"} disabled={disabled} />
     </div>
   );
 };
@@ -85,7 +86,7 @@ const Block = styled.div<TimerColorProps>`
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  color: ${getColor};
+  color: ${({ theme, disabled }) => (disabled ? transparentize(0.5, theme.colors.text) : getColor)};
   font-weight: 500;
   font-size: 15px;
   letter-spacing: 0.05em;
