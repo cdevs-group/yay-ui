@@ -46,12 +46,10 @@ const ComingSoon = ({ href, text, backText }: ComingSoonProps) => {
       <SoonImg>
         <img src={ComingSoonIcon} />
       </SoonImg>
-      <TextBottom size="sm">
-        {text}
-      </TextBottom>
+      <TextBottom size="sm">{text}</TextBottom>
       <BackLink>
         <Link color="#47DA3B" href={href}>
-          {backText}          
+          {backText}
         </Link>
       </BackLink>
     </Wrap>
