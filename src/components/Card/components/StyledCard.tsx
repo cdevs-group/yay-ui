@@ -170,7 +170,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
   time,
   btnWinnings,
   hide,
-  disabledTimer
+  disabledTimer,
 }) => {
   return (
     <Wrap live={live}>

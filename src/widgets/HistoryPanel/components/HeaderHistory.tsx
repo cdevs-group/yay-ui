@@ -42,7 +42,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
       <Title>
         <Text size="lg" mr={1}>
           History
-        </Text>       
+        </Text>
       </Title>
       <TabsBaseWrap>
         <TabsHistory tabValue={activeTab} onClick={switchTab} />

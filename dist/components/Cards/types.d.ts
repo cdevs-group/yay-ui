@@ -19,8 +19,11 @@ export interface CardProductProp {
     img: string;
     bg: string;
     closed?: boolean;
-    position?: string;
     href?: string;
+    left?: string;
+    top?: string;
+    right?: string;
+    bottom?: string;
 }
 export interface ArrowProps {
     center?: boolean;
@@ -72,4 +75,10 @@ export interface LaterCardProps {
     time: number;
     rightContent: string;
     color: string;
+}
+export interface ImageProps {
+    top?: string;
+    left?: string;
+    right?: string;
+    bottom?: string;
 }

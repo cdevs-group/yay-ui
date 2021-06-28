@@ -38,17 +38,17 @@ export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
   height: 43vw;
   width: 100%;
   background: ${setColor};
-  
+
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
   cursor: ${({ closed }) => (closed ? "default" : "pointer")};
   border: 2px solid transparent;
-  transition: 0.3s;  
+  transition: 0.3s;
   &:hover {
     border: 2px solid ${({ theme }) => theme.colors.green};
     box-shadow: ${({ theme }) => theme.colors.boxShadow6};
-    transition: 0.3s;  
+    transition: 0.3s;
   }
   &:nth-child(5) {
     display: none;
