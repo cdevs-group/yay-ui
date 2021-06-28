@@ -3716,16 +3716,19 @@ var Dropdown = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTemp
 var templateObject_1$3, templateObject_2$2, templateObject_3$2;
 
 var Languages = function (_a) {
-    var select = _a.select, setSelect = _a.setSelect, list = _a.list;
+    var currentLang = _a.currentLang, setLang = _a.setLang, langs = _a.langs;
     var _b = useState(false), open = _b[0], setOpen = _b[1];
-    var handleSelect = function (e) {
-        setSelect(e.target.value);
+    var handleSelect = function (lang) {
+        setLang(lang);
         setOpen(false);
     };
     return (React__default.createElement(Wrap, null,
         React__default.createElement(DropdownLayout, { open: open, setOpen: setOpen, icon: React__default.createElement(Button, { open: open },
-                React__default.createElement(ButtonText, null, select)) },
-            React__default.createElement(SelectList, null, list.map(function (item, i) { return (React__default.createElement(Select, { value: item, onClick: handleSelect }, item)); })))));
+                React__default.createElement(ButtonText, null, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) },
+            React__default.createElement(SelectList, null, langs.map(function (lang) {
+                var _a;
+                return (React__default.createElement(Select, { onClick: function () { return handleSelect(lang); }, key: lang.code }, (_a = lang.code) === null || _a === void 0 ? void 0 : _a.toUpperCase()));
+            })))));
 };
 var Wrap = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  width: 40px;\n  margin-right: 30px;\n"], ["\n  width: 40px;\n  margin-right: 30px;\n"])));
 var SelectList = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  padding: 12px 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n"], ["\n  padding: 12px 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n"])), function (_a) {
@@ -3750,11 +3753,9 @@ var ButtonText = styled(Text)(templateObject_5$1 || (templateObject_5$1 = __make
 var templateObject_1$2, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5$1;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; _a.langs; _a.setLang; _a.currentLang; var links = _a.links; _a.profile; _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links; _a.profile; _a.children;
     useLocation();
     var _b = useState(false), openMenu = _b[0], setOpenMenu = _b[1];
-    var languages = ["EN", "RU", "BG"];
-    var _c = useState(languages[0]), select = _c[0], setSelect = _c[1];
     return (React__default.createElement(HeaderWrap, null,
         React__default.createElement(Line, null,
             React__default.createElement(LogoWrap, { to: "/" },
@@ -3764,10 +3765,10 @@ var Header = function (_a) {
                     // className={item.url === location.pathname ? "active" : ""}
                     size: "md", name: item.name, url: item.url })); }),
                 React__default.createElement(LanguageBlockMob, null,
-                    React__default.createElement(Languages, { select: select, setSelect: setSelect, list: languages }))),
+                    React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default.createElement(RightContent, null,
                 React__default.createElement(LanguageBlockDesk, null,
-                    React__default.createElement(Languages, { select: select, setSelect: setSelect, list: languages })),
+                    React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
                 React__default.createElement(Account, { account: account, login: login, logout: logout }),
                 React__default.createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } })))));
 };

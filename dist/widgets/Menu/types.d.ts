@@ -31,12 +31,16 @@ export interface MenuEntry {
     name: string;
     url: string;
 }
+export interface LangType {
+    code: string;
+    language: string;
+}
 export interface PanelProps {
     isDark: boolean;
     toggleTheme: (isDark: boolean) => void;
     currentLang: string;
-    langs: Language[];
-    setLang: (lang: Language) => void;
+    langs: LangType[];
+    setLang: (lang: LangType) => void;
     links: Array<MenuEntry>;
 }
 export interface NavProps extends PanelProps {
