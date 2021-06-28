@@ -142,14 +142,7 @@ export const LiveUpDownCard: React.FC = () => {
 export const CardLoader: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card
-        live
-        leftContent={<CercleIcon fill="none" spin />}
-        rightContent="#001"
-        displayNone
-        colorNone
-        time={2000}
-      >
+      <Card live leftContent={<CercleIcon fill="none" spin />} rightContent="#001" displayNone colorNone time={2000}>
         <LoaderCard />
       </Card>
     </div>

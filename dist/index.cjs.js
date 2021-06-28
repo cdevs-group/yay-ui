@@ -1023,7 +1023,7 @@ var StyledCard = function (_a) {
             React__default['default'].createElement(RightContent$3, null, rightContent)),
         React__default['default'].createElement(Content$1, null,
             React__default['default'].createElement(UpContent, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone },
-                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, displayNone ? "BTC" : "UP"),
+                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, "UP"),
                 React__default['default'].createElement(RightText$1, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, "Payout"),
                     React__default['default'].createElement("div", null, payoutUp),
@@ -1035,7 +1035,7 @@ var StyledCard = function (_a) {
                     React__default['default'].createElement("img", { src: Winner }))),
             React__default['default'].createElement(MainBlock$1, { negative: negative, colorNone: colorNone }, children),
             React__default['default'].createElement(DownContent, { negative: negative, displayNone: displayNone },
-                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, displayNone ? "ETH" : "DOWN"),
+                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, "DOWN"),
                 React__default['default'].createElement(RightText$1, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, "Payout"),
                     React__default['default'].createElement("div", null, payoutDown),
@@ -1469,7 +1469,7 @@ var CardWrap$1 = styled__default['default'](reactRouterDom.NavLink)(templateObje
     var theme = _a.theme;
     return theme.mediaQueries.xxl;
 });
-var Img$1 = styled__default['default'].img(templateObject_2$G || (templateObject_2$G = __makeTemplateObject(["\n  position: absolute;\n  bottom: ", ";\n  right: ", ";\n  left: ", ";\n  top: ", ";\n"], ["\n  position: absolute;\n  bottom: ", ";\n  right: ", ";\n  left: ", ";\n  top: ", ";\n"])), function (_a) {
+var Img$1 = styled__default['default'].img(templateObject_2$G || (templateObject_2$G = __makeTemplateObject(["\n  position: absolute;\n  bottom: ", ";\n  right: ", ";\n  left: ", ";\n  top: ", ";\n  max-width: ", ";\n"], ["\n  position: absolute;\n  bottom: ", ";\n  right: ", ";\n  left: ", ";\n  top: ", ";\n  max-width: ", ";\n"])), function (_a) {
     var bottom = _a.bottom;
     return bottom || 0;
 }, function (_a) {
@@ -1481,6 +1481,9 @@ var Img$1 = styled__default['default'].img(templateObject_2$G || (templateObject
 }, function (_a) {
     var top = _a.top;
     return top || "auto";
+}, function (_a) {
+    var maxWidth = _a.maxWidth;
+    return maxWidth || "100%";
 });
 var CardTitle = styled__default['default'](Text)(templateObject_3$v || (templateObject_3$v = __makeTemplateObject(["\n  font-size: 15px;\n  letter-spacing: 0.02em;\n  text-shadow: ", ";\n  ", " {\n    font-size: 19px;\n  }\n"], ["\n  font-size: 15px;\n  letter-spacing: 0.02em;\n  text-shadow: ", ";\n  ", " {\n    font-size: 19px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
