@@ -14,6 +14,7 @@ import Winner from "../../public/images/winner.png";
 import Win from "../../public/images/win.png";
 import AccountIcon from "../../public/images/account-logo.png";
 import ADA from "../../public/images/cardano-white.png";
+import ComingSoonIcon from "../../public/images/comingSoon.png";
 
 export {
   BG_IMG,
@@ -32,4 +33,5 @@ export {
   Win,
   AccountIcon,
   ADA,
+  ComingSoonIcon,
 };
