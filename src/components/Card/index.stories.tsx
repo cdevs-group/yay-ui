@@ -138,8 +138,6 @@ export const CardLoader: React.FC = () => {
         live
         leftContent={<CercleIcon fill="none" spin />}
         rightContent="#001"
-        payoutUp={1.03}
-        payoutDown={5.03}
         displayNone
         colorNone
         time={2000}

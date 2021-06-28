@@ -25,6 +25,7 @@ export interface CardProductProp {
   top?: string;
   right?: string;
   bottom?: string;
+  maxWidth?: string;
 }
 
 export interface ArrowProps {
@@ -82,4 +83,5 @@ export interface ImageProps {
   left?: string;
   right?: string;
   bottom?: string;
+  maxWidth?: string;
 }

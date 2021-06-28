@@ -181,7 +181,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
       </TopContent>
       <Content>
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
-          <p style={{ opacity: hide ? "0" : "1" }}>{displayNone ? "BTC" : "UP"}</p>
+          <p style={{ opacity: hide ? "0" : "1" }}>UP</p>
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
             <div>{payoutUp}</div>
@@ -200,7 +200,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
           {children}
         </MainBlock>
         <DownContent negative={negative} displayNone={displayNone}>
-          <p style={{ opacity: hide ? "0" : "1" }}>{displayNone ? "ETH" : "DOWN"}</p>
+          <p style={{ opacity: hide ? "0" : "1" }}>DOWN</p>
           <RightText displayNone={displayNone}>
             <div className="payout">Payout</div>
             <div>{payoutDown}</div>
