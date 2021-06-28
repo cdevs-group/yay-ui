@@ -9,6 +9,7 @@ interface Props extends InjectedProps {
   hideCloseButton?: boolean;
   onBack?: () => void;
   bodyPadding?: string;
+  welcome?: boolean;
 }
 
 const StyledModal = styled.div`
@@ -32,10 +33,15 @@ const StyledModal = styled.div`
 const ModalHeader = styled.div`
   display: flex;
   align-items: center;
-  align-items: center;
   padding: 20px 14px 24px;
+  &.welcome {
+    padding-bottom: 0;
+  }
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 27px 20px 40px 27px;
+    &.welcome {
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -58,15 +64,22 @@ const Overlay = styled.div`
   width: 100%;
 `;
 
-const Heading = styled.div``;
+const Heading = styled.div`
+  &.welcome {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+  }
+`;
 
-const Modal: React.FC<Props> = ({ title, onDismiss, onBack, children, hideCloseButton = false }) => (
+const Modal: React.FC<Props> = ({ welcome, title, onDismiss, onBack, children, hideCloseButton = false }) => (
   <div>
     <Overlay />
     <StyledModal>
-      <ModalHeader>
+      <ModalHeader className={welcome ? "welcome" : ""}>
         <ModalTitle>
-          <Heading>{title}</Heading>
+          <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
         </ModalTitle>
         {!hideCloseButton && (
           <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">

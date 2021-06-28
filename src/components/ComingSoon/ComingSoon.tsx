@@ -13,7 +13,7 @@ const Wrap = styled.div`
   padding: 0 55px;
   width: 404px;
   height: 335px;
-  background: #26262d;
+  background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 15px;
   color: ${({ theme }) => theme.colors.text};
   text-align: center;
