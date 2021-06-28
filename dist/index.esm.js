@@ -2264,10 +2264,10 @@ var SoonImg = styled.div(templateObject_2$n || (templateObject_2$n = __makeTempl
 var TextBottom = styled(Text)(templateObject_3$h || (templateObject_3$h = __makeTemplateObject(["\n  margin-bottom: 26px;\n  padding-top: 220px;\n  line-height: 16px;\n"], ["\n  margin-bottom: 26px;\n  padding-top: 220px;\n  line-height: 16px;\n"])));
 var BackLink = styled.div(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  justify-content: center;\n  cursor: pointer;\n"])));
 var ComingSoon = function (_a) {
-    var href = _a.href, text = _a.text, backText = _a.backText;
+    var href = _a.href, text = _a.text, backText = _a.backText, img = _a.img;
     return (React__default.createElement(Wrap$8, null,
         React__default.createElement(SoonImg, null,
-            React__default.createElement("img", { src: ComingSoonIcon })),
+            React__default.createElement("img", { src: img || ComingSoonIcon })),
         React__default.createElement(TextBottom, { size: "sm" }, text),
         React__default.createElement(BackLink, null,
             React__default.createElement(Link$1, { color: "#47DA3B", href: href }, backText))));
@@ -3861,7 +3861,7 @@ var Wrap = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplate
 var Ghosts = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n"], ["\n  display: flex;\n  justify-content: center;\n"])));
 var Beta = styled(Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  letter-spacing: 0.05em;\n  text-align: center;\n"], ["\n  display: flex;\n  justify-content: center;\n  letter-spacing: 0.05em;\n  text-align: center;\n"])));
 var CheckboxInputBlock = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  cursor: pointer;\n  &.top {\n    display: grid;\n    grid-template-columns: 1fr 9fr;\n    margin-top: 37px;\n  }\n  &.bottom {\n    display: grid;\n    grid-template-columns: 1fr 9fr;\n    margin: 22px 0 38px;\n  }\n"], ["\n  cursor: pointer;\n  &.top {\n    display: grid;\n    grid-template-columns: 1fr 9fr;\n    margin-top: 37px;\n  }\n  &.bottom {\n    display: grid;\n    grid-template-columns: 1fr 9fr;\n    margin: 22px 0 38px;\n  }\n"])));
-var Label = styled.label(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var Label = styled.label(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
