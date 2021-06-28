@@ -5,10 +5,20 @@ import Text from "../../components/Text/Text";
 import { GhostsIcon } from "../../constants/images";
 import { CheckboxInput } from "../../components/CheckboxInput";
 import { Button } from "../../components/Button";
-import BottomSlider from "../../components/CardsBottomSlider/BottomSlider";
 
 interface Props {
   onDismiss?: () => void;
+  title: string;
+  textCheckbox1: string;
+  textCheckbox2: string;
+  continueText: string;
+  description: string;
+  handleConfirm?: () => void;
+  disabledButton?: boolean;
+  handleChangeCheckbox1?: () => void;
+  handleChangeCheckbox2?: () => void;
+  checkedCheckbox1?: boolean;
+  checkedCheckbox2?: boolean;
 }
 
 const Wrap = styled.div`
@@ -24,9 +34,11 @@ const Beta = styled(Text)`
   display: flex;
   justify-content: center;
   letter-spacing: 0.05em;
+  text-align: center;
 `;
 
 const CheckboxInputBlock = styled.div`
+  cursor: pointer;
   &.top {
     display: grid;
     grid-template-columns: 1fr 9fr;
@@ -48,35 +60,40 @@ const Label = styled.label`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const WelcomeModal: React.FC<Props> = ({ onDismiss = () => null }) => (
+const WelcomeModal: React.FC<Props> = ({
+  onDismiss = () => null,
+  title,
+  textCheckbox1,
+  textCheckbox2,
+  continueText,
+  description,
+  handleConfirm,
+  disabledButton,
+  handleChangeCheckbox1,
+  handleChangeCheckbox2,
+  checkedCheckbox1,
+  checkedCheckbox2,
+}) => (
   <>
-    <Modal title="Welcome" onDismiss={onDismiss} welcome>
+    <Modal title={title} onDismiss={onDismiss} welcome>
       <Wrap>
         <Ghosts>
           <img src={GhostsIcon} />
         </Ghosts>
-        <Beta>
-          This product is in beta. Once you enter a <br /> position, you cannot cancel or adjust it.{" "}
-        </Beta>
+        <Beta>{description}</Beta>
         <CheckboxInputBlock className="top">
-          <CheckboxInput id="top" />
-          <Label htmlFor="top">
-            I understand that this product is still in beta. I am participating at my own risk.
-          </Label>
+          <CheckboxInput id="top" onChange={handleChangeCheckbox1} checked={checkedCheckbox1} />
+          <Label htmlFor="top">{textCheckbox1}</Label>
         </CheckboxInputBlock>
         <CheckboxInputBlock className="bottom">
-          <CheckboxInput id="bottom" />
-          <Label htmlFor="bottom">
-            I understand that I am using this product at my own risk. Any losses incurred due to my actions are my own
-            responsibillity.
-          </Label>
+          <CheckboxInput id="bottom" onChange={handleChangeCheckbox2} checked={checkedCheckbox2} />
+          <Label htmlFor="bottom">{textCheckbox2}</Label>
         </CheckboxInputBlock>
-        <Button width="100%" variant="green">
-          Continue
+        <Button width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
+          {continueText}
         </Button>
       </Wrap>
     </Modal>
-    {/* <BottomSlider/> */}
   </>
 );
 

@@ -6,6 +6,8 @@ import { Link } from "../Link";
 
 interface ComingSoonProps {
   href: string;
+  text: string;
+  backText: string;
 }
 
 const Wrap = styled.div`
@@ -38,18 +40,18 @@ const BackLink = styled.div`
   cursor: pointer;
 `;
 
-const ComingSoon = ({ href }: ComingSoonProps) => {
+const ComingSoon = ({ href, text, backText }: ComingSoonProps) => {
   return (
     <Wrap>
       <SoonImg>
         <img src={ComingSoonIcon} />
       </SoonImg>
       <TextBottom size="sm">
-        Coming soon. The function will be available very soon, we are already working on it
+        {text}
       </TextBottom>
       <BackLink>
         <Link color="#47DA3B" href={href}>
-          Back home page
+          {backText}          
         </Link>
       </BackLink>
     </Wrap>

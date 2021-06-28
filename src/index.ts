@@ -19,6 +19,7 @@ export * from "./components/Toggle";
 export * from "./components/Loader";
 export * from "./components/ArrowSlider";
 export * from "./components/TitleBlock";
+export * from "./components/ComingSoon";
 
 // Hooks
 export * from "./hooks";
@@ -28,6 +29,7 @@ export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
+export * from "./widgets/WelcomeModal";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
