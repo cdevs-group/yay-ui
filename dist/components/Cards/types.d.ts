@@ -40,27 +40,20 @@ export interface CardButtonsProps {
     pool: string;
 }
 export interface TabsProps {
-    handleToggleTabs: (e: any) => void;
-    tabValue: number;
-    tabsList?: Array<string>;
-}
-export interface InputProps {
-    value: string;
-    isWarning?: boolean;
-    onChange: (e: any) => void;
-    inputProps: {
-        disabled: boolean;
-    };
+    handlePercentChange: (sliderPercent: number) => void;
+    disabledTab: boolean;
 }
 export interface SetPositionCardProps {
     onBack: (e: any) => void;
     children: ReactNode;
     inputValue: string;
-    handleInputChange: (e: any) => void;
+    onUserInput: (input: string) => void;
     showFieldWarning: boolean;
     inputProps: {
         disabled: boolean;
     };
+    handlePercentChange: (sliderPercent: number) => void;
+    disabledTab: boolean;
 }
 export interface ButtonsBlockRops {
     pool: string;

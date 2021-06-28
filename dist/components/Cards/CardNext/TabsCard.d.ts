@@ -1,4 +1,4 @@
 /// <reference types="react" />
 import { TabsProps } from "../types";
-declare const TabsCard: ({ tabValue, handleToggleTabs }: TabsProps) => JSX.Element;
+declare const TabsCard: ({ handlePercentChange, disabledTab }: TabsProps) => JSX.Element;
 export default TabsCard;

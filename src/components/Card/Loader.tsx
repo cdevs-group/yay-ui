@@ -41,7 +41,10 @@ const Wrap = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const Loader = styled.div``;
+const Loader = styled.div<{ textTooltip?: string }>`
+  position: ${({ textTooltip }) => (textTooltip ? "static" : "absolute")};
+  top: 50%;
+`;
 
 const OrangeCircle = styled.div`
   position: absolute;
@@ -92,7 +95,7 @@ const BottomText = styled.div`
 const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
   return (
     <Wrap>
-      <Loader>
+      <Loader textTooltip={textTooltip}>
         <OrangeCircle />
         <GreenCircle />
         <RedCircle />

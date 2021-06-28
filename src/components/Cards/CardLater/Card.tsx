@@ -18,24 +18,6 @@ const CardForLater: React.FC<CardProps> = ({ children, ...props }) => {
       <Block>
         <StyledCardForlater {...props}>{children}</StyledCardForlater>
       </Block>
-      {/* <BottomContent>
-        <Button>
-          <ChartIcon />
-        </Button>
-        <CenterBlock>
-          <button className="arrowLeft">
-            <GreenArrow color="#47DA3B" />
-          </button>
-          <BottomCard />
-          <TopCard />
-          <button className="arrowRight">
-            <GreenArrow color="#47DA3B" />
-          </button>
-        </CenterBlock>
-        <Button>
-          <HistoryIcon />
-        </Button>
-      </BottomContent> */}
     </Wrap>
   );
 };

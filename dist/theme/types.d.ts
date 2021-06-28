@@ -90,6 +90,10 @@ export declare type Colors = {
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
+    bgCardBtc: string;
+    colorCardBtc: string;
+    bgCardBtc2: string;
+    blueGradient: string;
     gradients: Gradients;
     binance: string;
 };

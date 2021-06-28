@@ -1,36 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
-import { Text } from "../../Text";
+import { BalanceInput } from "../../BalanceInput";
 import ArrowIcon from "../ArrowIcon";
 import { SetPositionCardProps } from "../types";
-import InputCard from "./InputCard";
 import Tabs from "./TabsCard";
 
 const SetPositionCard: React.FC<SetPositionCardProps> = ({
   onBack,
   children,
   inputValue,
-  handleInputChange,
+  onUserInput,
   showFieldWarning,
   inputProps,
+  handlePercentChange,
+  disabledTab,
 }) => {
-  const [tabValue, setTabValue] = useState(0);
-
-  const handleToggleTabs = (e: any) => {
-    setTabValue(+e.currentTarget.value);
-  };
-
   return (
     <Wrap>
       <ButtonBack onClick={onBack}>
         <ArrowIcon />
       </ButtonBack>
       <Title>Set Position</Title>
-      <InputCard value={inputValue} onChange={handleInputChange} isWarning={showFieldWarning} inputProps={inputProps} />
+      <BalanceInput value={inputValue} onUserInput={onUserInput} isWarning={showFieldWarning} inputProps={inputProps} />
       <TabsBlock>
-        <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
+        <Tabs handlePercentChange={handlePercentChange} disabledTab={disabledTab} />
       </TabsBlock>
       {children}
     </Wrap>
@@ -69,11 +62,4 @@ const Title = styled.div`
 const TabsBlock = styled.div`
   margin-top: 35px;
   margin-bottom: 16px;
-`;
-const NoteBlock = styled.div`
-  font-size: 11px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: ${({ theme }) => theme.colors.textGray};
 `;

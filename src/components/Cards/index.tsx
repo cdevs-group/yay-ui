@@ -3,7 +3,6 @@ export { default as CardsProducts } from "./CardsProduct/CardsProducts";
 export { default as CardsBalance } from "./CardBalance/CardsBalance";
 export { default as ButtonsBlock } from "./CardNext/ButtonsBlock";
 export { default as CardFlip } from "./CardNext/CardFlip";
-export { default as InputCard } from "./CardNext/InputCard";
 export { default as SetPositionCard } from "./CardNext/SetPositionCard";
 export { default as TabsCard } from "./CardNext/TabsCard";
 export { default as TopContent } from "./CardNext/TopContent";
@@ -20,7 +19,6 @@ export type {
   TextCardsProps,
   CardButtonsProps,
   TabsProps,
-  InputProps,
   SetPositionCardProps,
   ButtonsBlockRops,
   TopContentProps,

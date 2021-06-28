@@ -7,6 +7,7 @@ export declare const baseColors: {
     secondary: string;
     success: string;
     warning: string;
+    blueGradient: string;
     green: string;
     textShadow: string;
     textShadow2: string;
@@ -29,6 +30,9 @@ export declare const baseColors: {
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
+    bgCardBtc: string;
+    colorCardBtc: string;
+    bgCardBtc2: string;
 };
 export declare const brandColors: {
     binance: string;

@@ -6,8 +6,10 @@ import GhostCard from "../Card/GhostCard/GhostCard";
 import CardFlipBTC from "./CardNext/CardFlipBTC";
 import CardNextBTC from "./CardNext/CardNextBTC";
 import SetPositionCardBTC from "./CardNext/SetPositionCardBTC";
-import Loader from "../Card/Loader";
 import LoaderCard from "../Card/Loader";
+import Loader from "../Card/Loader";
+import Card from "../Card/Card";
+import { CercleIcon } from "../Svg";
 
 export default {
   title: "Components/CardBTC",
@@ -244,5 +246,25 @@ export const NextCardBTC: React.FC = () => {
         <></>
       </SetPositionCardBTC>
     </CardFlipBTC>
+  );
+};
+          
+export const LaterCardTextBTC: React.FC = () => {
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Card
+        live
+        colorNone
+        displayNone
+        hide
+        leftContent="LATER"
+        rightContent="#001"
+        payoutUp={1.03}
+        payoutDown={5.03}
+        time={2000}
+      >
+        <Loader />
+      </Card>
+    </div>
   );
 };

@@ -16,10 +16,7 @@ const TopContent = ({ children, rightContent }: TopContentProps) => {
 export default TopContent;
 
 const Wrap = styled.div`
-  top: -76px;
   width: 100%;
-  left: -0.1%;
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
