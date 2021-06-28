@@ -14,4 +14,6 @@ import Winner from "../../public/images/winner.png";
 import Win from "../../public/images/win.png";
 import AccountIcon from "../../public/images/account-logo.png";
 import ADA from "../../public/images/cardano-white.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, };
+import ComingSoonIcon from "../../public/images/comingSoon.png";
+import GhostsIcon from "../../public/images/ghost-img.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, };

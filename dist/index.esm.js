@@ -2813,7 +2813,7 @@ var StyledModal = styled.div(templateObject_1$p || (templateObject_1$p = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ModalHeader = styled.div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: 20px 14px 24px;\n  ", " {\n    padding: 27px 20px 40px 27px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  align-items: center;\n  padding: 20px 14px 24px;\n  ", " {\n    padding: 27px 20px 40px 27px;\n  }\n"])), function (_a) {
+var ModalHeader = styled.div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 20px 14px 24px;\n  &.welcome {\n    padding-bottom: 0;\n  }\n  ", " {\n    padding: 27px 20px 40px 27px;\n    &.welcome {\n      padding-bottom: 0;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 20px 14px 24px;\n  &.welcome {\n    padding-bottom: 0;\n  }\n  ", " {\n    padding: 27px 20px 40px 27px;\n    &.welcome {\n      padding-bottom: 0;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -2825,15 +2825,15 @@ var Overlay = styled.div(templateObject_4$7 || (templateObject_4$7 = __makeTempl
     var theme = _a.theme;
     return theme.colors.overlayBg;
 });
-var Heading = styled.div(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject([""], [""])));
+var Heading = styled.div(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  &.welcome {\n    font-weight: 500;\n    font-size: 21px;\n    line-height: 27px;\n    letter-spacing: 0.5px;\n  }\n"], ["\n  &.welcome {\n    font-weight: 500;\n    font-size: 21px;\n    line-height: 27px;\n    letter-spacing: 0.5px;\n  }\n"])));
 var Modal = function (_a) {
-    var title = _a.title, onDismiss = _a.onDismiss; _a.onBack; var children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b;
+    var welcome = _a.welcome, title = _a.title, onDismiss = _a.onDismiss; _a.onBack; var children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b;
     return (React__default.createElement("div", null,
         React__default.createElement(Overlay, null),
         React__default.createElement(StyledModal, null,
-            React__default.createElement(ModalHeader, null,
+            React__default.createElement(ModalHeader, { className: welcome ? "welcome" : "" },
                 React__default.createElement(ModalTitle, null,
-                    React__default.createElement(Heading, null, title)),
+                    React__default.createElement(Heading, { className: welcome ? "welcome" : "" }, title)),
                 !hideCloseButton && (React__default.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
                     React__default.createElement(Icon$u, null)))),
             children)));
@@ -3712,7 +3712,7 @@ var DropdownLayout = function (_a) {
 };
 var Block = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var Button$1 = styled.button(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  padding: 0;\n"], ["\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  background: none;\n  padding: 0;\n"])));
-var Dropdown = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  &.open {\n    transition: 0.3s;\n    z-index: 3;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  &.open {\n    transition: 0.3s;\n    z-index: 3;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n"])));
+var Dropdown = styled.div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n"])));
 var templateObject_1$3, templateObject_2$2, templateObject_3$2;
 
 var Languages = function (_a) {
@@ -3730,7 +3730,7 @@ var Languages = function (_a) {
                 return (React__default.createElement(Select, { onClick: function () { return handleSelect(lang); }, key: lang.code }, (_a = lang.code) === null || _a === void 0 ? void 0 : _a.toUpperCase()));
             })))));
 };
-var Wrap = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  width: 40px;\n  margin-right: 30px;\n"], ["\n  width: 40px;\n  margin-right: 30px;\n"])));
+var Wrap = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  min-width: 50px;\n  margin-right: 30px;\n"], ["\n  min-width: 50px;\n  margin-right: 30px;\n"])));
 var SelectList = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  padding: 12px 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n"], ["\n  padding: 12px 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacity;
@@ -3738,18 +3738,18 @@ var SelectList = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTe
     var theme = _a.theme;
     return theme.colors.boxShadow;
 });
-var Select = styled.button(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 100%;\n  outline: none;\n  margin-bottom: 7px;\n  background: none;\n  border: none;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.08em;\n  color: ", ";\n  &:last-child {\n    margin-bottom: 0;\n  }\n"], ["\n  width: 100%;\n  outline: none;\n  margin-bottom: 7px;\n  background: none;\n  border: none;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.08em;\n  color: ", ";\n  &:last-child {\n    margin-bottom: 0;\n  }\n"])), function (_a) {
+var Select = styled.button(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 100%;\n  outline: none;\n  margin-bottom: 7px;\n  background: none;\n  border: none;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.08em;\n  color: ", ";\n  cursor: pointer;\n  &:last-child {\n    margin-bottom: 0;\n  }\n"], ["\n  width: 100%;\n  outline: none;\n  margin-bottom: 7px;\n  background: none;\n  border: none;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.08em;\n  color: ", ";\n  cursor: pointer;\n  &:last-child {\n    margin-bottom: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Button = styled.button(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  padding: 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n  cursor: pointer;\n"], ["\n  padding: 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n  cursor: pointer;\n"])), function (_a) {
+var Button = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  padding: 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n  cursor: pointer;\n  width: 100%;\n"], ["\n  padding: 0;\n  background: ", ";\n  border: none;\n  border-radius: 12px;\n  box-shadow: ", ";\n  cursor: pointer;\n  width: 100%;\n"])), function (_a) {
     var theme = _a.theme, open = _a.open;
     return (open ? theme.colors.buttonBg2 : theme.colors.buttonBg);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow;
 });
-var ButtonText = styled(Text)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  padding: 13px 11px;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 15px;\n  letter-spacing: 0.08em;\n  pointer-events: none; ;\n"], ["\n  padding: 13px 11px;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 15px;\n  letter-spacing: 0.08em;\n  pointer-events: none; ;\n"])));
+var ButtonText = styled(Text)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  padding: 13px 6px;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 15px;\n  letter-spacing: 0.08em;\n  pointer-events: none; ;\n"], ["\n  padding: 13px 6px;\n  font-weight: 500;\n  font-size: 12px;\n  line-height: 15px;\n  letter-spacing: 0.08em;\n  pointer-events: none; ;\n"])));
 var templateObject_1$2, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5$1;
 
 var Header = function (_a) {
