@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowIcon from "../../Cards/ArrowIcon";
 import { SetPositionCardBTCProps } from "../types";
-import InputCard from "../../Cards/CardNext/InputCard";
 import Tabs from "../../Cards/CardNext/TabsCard";
+import { BalanceInput } from "../../BalanceInput";
 
 const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
   onBack,
   children,
   inputValue,
-  handleInputChange,
+  onUserInput,
   showFieldWarning,
   inputProps,
+  handlePercentChange,
+  disabledTab,
 }) => {
   const [tabValue, setTabValue] = useState(0);
 
@@ -25,9 +27,9 @@ const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
         <ArrowIcon />
       </ButtonBack>
       <Title>Set Position</Title>
-      <InputCard value={inputValue} onChange={handleInputChange} isWarning={showFieldWarning} inputProps={inputProps} />
+      <BalanceInput value={inputValue} onUserInput={onUserInput} isWarning={showFieldWarning} inputProps={inputProps} />
       <TabsBlock>
-        <Tabs handleToggleTabs={handleToggleTabs} tabValue={tabValue} />
+        <Tabs handlePercentChange={handlePercentChange} disabledTab={disabledTab} />
       </TabsBlock>
       {children}
     </Wrap>

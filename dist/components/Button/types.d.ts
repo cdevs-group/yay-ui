@@ -17,6 +17,8 @@ export declare const variants: {
     readonly GREEN: "green";
     readonly PINK: "pink";
     readonly OPTION: "option";
+    readonly YELLOW: "yellow";
+    readonly GRAY: "gray";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];

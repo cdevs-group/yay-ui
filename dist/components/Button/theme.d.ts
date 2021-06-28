@@ -70,4 +70,14 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
+    yellow: {
+        background: string;
+        color: string;
+        boxShadow: string;
+    };
+    gray: {
+        background: string;
+        color: string;
+        boxShadow: string;
+    };
 };

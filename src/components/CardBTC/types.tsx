@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { InputHTMLAttributes, ReactNode, ReactText } from "react";
 
 export interface ExpireCardBTCProps {
   clodedBTC: string;
@@ -12,8 +12,10 @@ export interface ExpireCardBTCProps {
 export interface SetPositionCardBTCProps {
   onBack: (e: any) => void;
   children: ReactNode;
-  inputValue: string;
-  handleInputChange: (e: any) => void;
-  showFieldWarning: boolean;
-  inputProps: { disabled: boolean };
+  inputValue: ReactText;
+  showFieldWarning?: boolean;
+  onUserInput: (input: string) => void;
+  inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
+  handlePercentChange: (sliderPercent: number) => void;
+  disabledTab: boolean;
 }

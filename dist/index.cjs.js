@@ -709,6 +709,8 @@ var variants$1 = {
     GREEN: "green",
     PINK: "pink",
     OPTION: "option",
+    YELLOW: "yellow",
+    GRAY: "gray",
 };
 
 var _a$1, _b;
@@ -781,6 +783,16 @@ var styleVariants = (_b = {},
     },
     _b[variants$1.OPTION] = {
         backgroundColor: "rgba(255, 255, 255, 0.15)",
+        color: "#fff",
+        boxShadow: "none",
+    },
+    _b[variants$1.YELLOW] = {
+        background: " linear-gradient(180deg, #FFB001 -16%, #FFA201 100%)",
+        color: "#fff",
+        boxShadow: "none",
+    },
+    _b[variants$1.GRAY] = {
+        background: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
         color: "#fff",
         boxShadow: "none",
     },
@@ -1918,7 +1930,7 @@ var templateObject_1$B, templateObject_2$v, templateObject_3$m, templateObject_4
 
 var LaterCard = function (_a) {
     _a.time; _a.rightContent; _a.color;
-    return (React__default['default'].createElement(Card$1, { live: true, hide: true, leftContent: "CANCEL", rightContent: "#001", payoutUp: 1.03, payoutDown: 5.03, displayNone: true, colorNone: true, time: 2000, color: "green" },
+    return (React__default['default'].createElement(Card$1, { live: true, hide: true, leftContent: "LATER", rightContent: "#001", payoutUp: 1.03, payoutDown: 5.03, displayNone: true, colorNone: true, time: 2000, color: "green" },
         React__default['default'].createElement(LoaderCard, null)));
 };
 

@@ -248,7 +248,7 @@ export const NextCardBTC: React.FC = () => {
     </CardFlipBTC>
   );
 };
-          
+
 export const LaterCardTextBTC: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
