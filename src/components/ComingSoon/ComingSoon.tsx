@@ -8,6 +8,7 @@ interface ComingSoonProps {
   href: string;
   text: string;
   backText: string;
+  img?: string;
 }
 
 const Wrap = styled.div`
@@ -40,11 +41,11 @@ const BackLink = styled.div`
   cursor: pointer;
 `;
 
-const ComingSoon = ({ href, text, backText }: ComingSoonProps) => {
+const ComingSoon = ({ href, text, backText, img }: ComingSoonProps) => {
   return (
     <Wrap>
       <SoonImg>
-        <img src={ComingSoonIcon} />
+        <img src={img || ComingSoonIcon} />
       </SoonImg>
       <TextBottom size="sm">{text}</TextBottom>
       <BackLink>

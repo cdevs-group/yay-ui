@@ -58,6 +58,7 @@ const Label = styled.label`
   line-height: 16px;
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
 `;
 
 const WelcomeModal: React.FC<Props> = ({
