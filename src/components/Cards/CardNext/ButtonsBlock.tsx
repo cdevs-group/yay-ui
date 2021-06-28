@@ -46,7 +46,6 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
 
 export default ButtonsBlock;
 
-
 const Buttons = styled.div`
   position: relative;
   &.unChoiced {
