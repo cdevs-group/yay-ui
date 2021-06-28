@@ -76,7 +76,7 @@ const Img = styled.img<ImageProps>`
   right: ${({ right }) => right || 0};
   left: ${({ left }) => left || "auto"};
   top: ${({ top }) => top || "auto"};
-  max-width:  ${({ maxWidth }) => maxWidth || "100%"};
+  max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
 export const CardTitle = styled(Text)`
