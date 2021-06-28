@@ -35,7 +35,15 @@ export const GhostCardBlock: React.FC = () => {
 export const ExpiredNAuth: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
-      <Card disabledTimer leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} negative time={2000}>
+      <Card
+        disabledTimer
+        leftContent="EXPIRED"
+        rightContent="#001"
+        payoutUp={1.03}
+        payoutDown={5.03}
+        negative
+        time={2000}
+      >
         <ExpiredCard negative closedCount="400`597" linePrice="0`654" lockedPrice="1`200" prize="0`678" />
       </Card>
     </div>
