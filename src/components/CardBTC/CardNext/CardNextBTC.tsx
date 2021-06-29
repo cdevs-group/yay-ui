@@ -19,9 +19,7 @@ interface IProps {
   pool: string;
   hasEnteredUp: boolean;
   hasEnteredDown: boolean;
-  disabledButton: boolean;
-  canEnterPosition: boolean;
-  negative: boolean;
+  disabledButton: boolean;  
   disabledTimer?: boolean;
   ethButton: string;
   btcButton: string;
@@ -40,8 +38,6 @@ const CardNext: React.FC<IProps> = ({
   hasEnteredDown,
   handleSetPosition,
   disabledButton,
-  canEnterPosition,
-  negative,
   disabledTimer,
   texts,
   textRow,
@@ -55,35 +51,14 @@ const CardNext: React.FC<IProps> = ({
       <WrapContent>
         <ValueRow texts={textRow} vector="BTC" value={payoutWin} />
         <ButtonsBlockWrap>
-          {canEnterPosition ? (
-            <ButtonsBlock
-              texts={textsButtons}
-              pool={pool}
-              hasEnteredUp={hasEnteredUp}
-              hasEnteredDown={hasEnteredDown}
-              handleSetPosition={handleSetPosition}
-              disabledButton={disabledButton}
-            />
-          ) : (
-            <div style={{ marginTop: 70 }}>
-              <Button
-                disabled
-                startIcon={
-                  <Arrow negative={negative}>
-                    <ArrowCardDown color="white" />
-                  </Arrow>
-                }
-                width="100%"
-                mb="8px"
-                variant="green"
-              >
-                {negative ? "DOWN" : "UP"} {texts?.entered || "Entered"}
-              </Button>
-              <Prize>
-                {texts?.prize || "Prize Pool"}: <span>{pool}</span>
-              </Prize>
-            </div>
-          )}
+          <ButtonsBlock
+            texts={textsButtons}
+            pool={pool}
+            hasEnteredUp={hasEnteredUp}
+            hasEnteredDown={hasEnteredDown}
+            handleSetPosition={handleSetPosition}
+            disabledButton={disabledButton}
+          />
         </ButtonsBlockWrap>
         <ValueRow texts={textRow} vector="ETH" value={payoutLose} />
       </WrapContent>

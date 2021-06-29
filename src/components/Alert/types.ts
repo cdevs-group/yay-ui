@@ -9,6 +9,7 @@ export const variants = {
   SUCCESS: "success",
   WINNING: "winning",
   INFO: "info",
+  ERROR: "error",
 } as const;
 
 export type Variants = typeof variants[keyof typeof variants];

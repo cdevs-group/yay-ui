@@ -8,6 +8,8 @@ const alertTypeMap = {
   [types.COLLECTION]: alertVariants.COLLECTION,
   [types.SUCCESS]: alertVariants.SUCCESS,
   [types.WINNING]: alertVariants.WINNING,
+  [types.INFO]: alertVariants.INFO,
+  [types.ERROR]: alertVariants.ERROR,
 };
 
 const StyledToast = styled.div`

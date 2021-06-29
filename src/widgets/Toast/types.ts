@@ -5,6 +5,7 @@ export const types = {
   SUCCESS: "success",
   WINNING: "winning",
   INFO: "info",
+  ERROR: "error",
 };
 
 export type Types = typeof types[keyof typeof types];

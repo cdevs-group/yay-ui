@@ -3,7 +3,7 @@ import * as React from "react";
 function ArrowIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <g filter="url(#prefix__filter0_d)">
+      <g filter="url(#prefix__filter0_dArrowIcon)">
         <path
           d="M14.485 5.272l5.656 5.657m0 0l-5.656 5.657m5.656-5.657H6"
           stroke="#fff"
@@ -13,7 +13,7 @@ function ArrowIcon(props: React.SVGProps<SVGSVGElement>) {
       </g>
       <defs>
         <filter
-          id="prefix__filter0_d"
+          id="prefix__filter0_dArrowIcon"
           x={0.586}
           y={0.444}
           width={24.971}

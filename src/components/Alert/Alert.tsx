@@ -1,12 +1,14 @@
 import React from "react";
 import styled, { DefaultTheme } from "styled-components";
 import Text from "../Text/Text";
-import { CloseIcon, CercleIcon, CompleteIcon } from "../Svg";
+import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
 import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
 import LinkExternal from "../Link/LinkExternal";
 
-const StyledAlert = styled(Flex)`
+const StyledAlert = styled.div`
+  display: flex;
+  align-items: baseline;
   width: fit-content;
   position: absolute;
   z-index: 5;
@@ -17,8 +19,6 @@ const StyledAlert = styled(Flex)`
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: inset ${({ theme }) => theme.colors.textShadow};
   border-radius: 12px;
-  align-items: self-end;
-  justify-content: space-between;
   color: ${({ theme }) => theme.colors.text};
 `;
 
@@ -32,6 +32,8 @@ const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
       return <CompleteIcon fill="#47DA3B" />;
     case variants.INFO:
       return <></>;
+    case variants.ERROR:
+      return <ErrorIcon />;  
     default:
       return <></>;
   }
@@ -79,6 +81,11 @@ const SetButton = ({ variant, onClick }: AlertProps) => {
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
   return (
     <StyledAlert>
+      {title && (
+        <Text fontWeight={600} marginRight="5px">
+          {title}
+        </Text>
+      )}
       <div>{children}</div>
       <SetButton variant={variant} onClick={onClick} />
     </StyledAlert>
