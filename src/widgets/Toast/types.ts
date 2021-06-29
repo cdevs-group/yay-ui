@@ -27,5 +27,5 @@ export interface ToastProps {
   toast: Toast;
   onRemove: ToastContainerProps["onRemove"];
   ttl: number;
-  style: Partial<CSSStyleDeclaration>;
+  style?: Partial<CSSStyleDeclaration>;
 }

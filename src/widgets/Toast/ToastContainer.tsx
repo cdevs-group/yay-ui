@@ -34,11 +34,14 @@ const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onRemove, ttl =
     <StyledToastContainer>
       <TransitionGroup>
         {toasts.map((toast, index) => {
-          const zIndex = (ZINDEX - index).toString();
-          const top = TOP_POSITION + index * stackSpacing;
+          // const zIndex = (ZINDEX - index).toString();
+          // const top = TOP_POSITION + index * stackSpacing;
 
           return (
-            <Toast key={toast.id} toast={toast} onRemove={onRemove} ttl={ttl} style={{ top: `${top}px`, zIndex }} />
+            <Toast key={toast.id} toast={toast} onRemove={onRemove} ttl={ttl} 
+            // style={{ top: `${top}px`, zIndex }} 
+            style={{ position: "static"}}
+            />
           );
         })}
       </TransitionGroup>

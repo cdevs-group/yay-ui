@@ -6,7 +6,6 @@ import { OneGhost } from "../../constants/images";
 import { Button } from "../../components/Button";
 
 interface Props {
-  onDismiss?: () => void;
   title: string;
   buttonText: string;
   descriptionTop: string;
@@ -37,7 +36,6 @@ const Description = styled(Text)`
 `;
 
 const PausedErrorModals: React.FC<Props> = ({
-  onDismiss = () => null,
   title,
   buttonText,
   descriptionTop,
@@ -47,7 +45,7 @@ const PausedErrorModals: React.FC<Props> = ({
   errorPadding,
 }) => (
   <>
-    <Modal title={title} onDismiss={onDismiss} welcome>
+    <Modal title={title} welcome hideCloseButton>
       <Wrap>
         <Ghosts>
           <img src={OneGhost} />
