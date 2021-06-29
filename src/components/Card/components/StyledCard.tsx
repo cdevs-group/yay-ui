@@ -22,6 +22,12 @@ const TopContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: -8px;
+  margin-right: -8px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;
 
 const LeftContent = styled.div`

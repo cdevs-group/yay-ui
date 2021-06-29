@@ -10,7 +10,7 @@ const StyledAlert = styled(Flex)`
   width: fit-content;
   position: absolute;
   z-index: 5;
-  top: 160px;
+  bottom: 0px;
   right: 0px;
   transition: 0.3s ease;
   padding: 15px 90px 15px 23px;
@@ -19,6 +19,7 @@ const StyledAlert = styled(Flex)`
   border-radius: 12px;
   align-items: self-end;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colors.text};
 `;
 
 const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
