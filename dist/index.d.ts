@@ -19,6 +19,7 @@ export * from "./components/Loader";
 export * from "./components/ArrowSlider";
 export * from "./components/TitleBlock";
 export * from "./components/ComingSoon";
+export * from "./components/CardBTC";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
