@@ -10,10 +10,7 @@ const StyledAlert = styled.div`
   display: flex;
   align-items: baseline;
   width: fit-content;
-  position: absolute;
   z-index: 5;
-  bottom: 0px;
-  right: 0px;
   transition: 0.3s ease;
   padding: 15px 90px 15px 23px;
   background: ${({ theme }) => theme.colors.buttonBg};
