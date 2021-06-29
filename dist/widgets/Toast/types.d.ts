@@ -4,6 +4,7 @@ export declare const types: {
     SUCCESS: string;
     WINNING: string;
     INFO: string;
+    ERROR: string;
 };
 export declare type Types = typeof types[keyof typeof types];
 export interface Toast {

@@ -7,6 +7,7 @@ export declare const variants: {
     readonly SUCCESS: "success";
     readonly WINNING: "winning";
     readonly INFO: "info";
+    readonly ERROR: "error";
 };
 export declare type Variants = typeof variants[keyof typeof variants];
 export interface AlertProps {

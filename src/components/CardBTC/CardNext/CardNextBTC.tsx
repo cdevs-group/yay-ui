@@ -19,7 +19,7 @@ interface IProps {
   pool: string;
   hasEnteredUp: boolean;
   hasEnteredDown: boolean;
-  disabledButton: boolean;  
+  disabledButton: boolean;
   disabledTimer?: boolean;
   ethButton: string;
   btcButton: string;

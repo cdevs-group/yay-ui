@@ -33,7 +33,7 @@ const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
     case variants.INFO:
       return <></>;
     case variants.ERROR:
-      return <ErrorIcon />;  
+      return <ErrorIcon />;
     default:
       return <></>;
   }

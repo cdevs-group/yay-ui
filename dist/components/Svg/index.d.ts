@@ -30,5 +30,6 @@ export { default as MenuIcon } from "./Icons/MenuIcon";
 export { default as ArrowDownIcon } from "./Icons/ArrowDownIcon";
 export { default as HelpIcon } from "./Icons/HelpIcon";
 export { default as PlayingCardsIcon } from "./Icons/PlayingCardsIcon";
+export { default as ErrorIcon } from "./Icons/ErrorIcon";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
