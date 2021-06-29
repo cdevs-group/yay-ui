@@ -54,7 +54,7 @@ const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, pri
     <Wrap>
       <Line>
         <Closed>
-          {texts?.closed || "CLOSED PRICE"} BTC <p>$ {clodedBTC}</p>
+          {texts?.closed || "CLOSED PRICE"} BTC <p> {clodedBTC}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="btc">
@@ -64,16 +64,16 @@ const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, pri
             />
             {texts?.locked || "Locked Price"} BTC
           </ArrowBlock>
-          <p>$ {lockedBRC}</p>
+          <p>{lockedBRC}</p>
         </Locked>
       </Line>
       <Middle>
         {texts?.prize || "PRIZE POLL"}
-        <p>{prize} BNB</p>
+        <p>{prize}</p>
       </Middle>
       <Line>
         <Closed>
-          {texts?.closed || "CLOSED PRICE"} ETH <p>$ {closedETH}</p>
+          {texts?.closed || "CLOSED PRICE"} ETH <p> {closedETH}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="eth">
@@ -83,7 +83,7 @@ const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, pri
             />
             {texts?.locked || "Locked Price"} ETH
           </ArrowBlock>
-          <p>$ {lockedETH}</p>
+          <p>{lockedETH}</p>
         </Locked>
       </Line>
     </Wrap>

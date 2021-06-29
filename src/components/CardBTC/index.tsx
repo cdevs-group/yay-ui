@@ -9,5 +9,6 @@ export { default as SetPositionCardBTC } from "./CardNext/SetPositionCardBTC";
 export { default as WINIMG } from "./components/win.png";
 export { default as ETHIMG } from "./components/eth.png";
 export { default as BTCIMG } from "./components/btc.png";
+export { default as LoaderCardText } from "./components/LoaderCardText";
 
 export type { ExpireCardBTCProps, SetPositionCardBTCProps, Itext, ItextExpired } from "./types";
