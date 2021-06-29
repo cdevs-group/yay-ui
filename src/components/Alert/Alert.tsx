@@ -10,6 +10,7 @@ const StyledAlert = styled.div`
   display: flex;
   align-items: baseline;
   width: fit-content;
+  position: relative;
   z-index: 5;
   transition: 0.3s ease;
   padding: 15px 90px 15px 23px;
