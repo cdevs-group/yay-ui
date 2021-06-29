@@ -16,6 +16,7 @@ import AccountIcon from "../../public/images/account-logo.png";
 import ADA from "../../public/images/cardano-white.png";
 import ComingSoonIcon from "../../public/images/comingSoon.png";
 import GhostsIcon from "../../public/images/ghost-img.png";
+import OneGhost from "../../public/images/one-ghost.png";
 
 export {
   BG_IMG,
@@ -36,4 +37,5 @@ export {
   ADA,
   ComingSoonIcon,
   GhostsIcon,
+  OneGhost,
 };
