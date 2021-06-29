@@ -68,7 +68,6 @@ const Heading = styled.div`
   &.welcome {
     font-weight: 500;
     font-size: 21px;
-    line-height: 27px;
     letter-spacing: 0.5px;
   }
 `;
