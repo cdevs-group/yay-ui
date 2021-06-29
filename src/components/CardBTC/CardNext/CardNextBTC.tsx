@@ -4,7 +4,7 @@ import { Button } from "../../Button";
 import { BetPosition } from "../../Card/types";
 import { ArrowCardDown } from "../../Svg";
 import { Timer } from "../../Timer";
-import ButtonsBlock from "./ButtonsBlock";
+import ButtonsBlock from "./ButtonsBlockBTC";
 import TopContent from "../../Cards/CardNext/TopContent";
 import ValueRow from "../../Cards/CardNext/ValueRow";
 import { Itext } from "../types";

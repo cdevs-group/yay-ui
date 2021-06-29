@@ -20,6 +20,7 @@ export * from "./components/Loader";
 export * from "./components/ArrowSlider";
 export * from "./components/TitleBlock";
 export * from "./components/ComingSoon";
+export * from "./components/CardBTC";
 
 // Hooks
 export * from "./hooks";

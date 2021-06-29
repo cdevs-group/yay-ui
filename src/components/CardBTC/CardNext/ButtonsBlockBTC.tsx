@@ -7,7 +7,7 @@ import { ButtonsBlockRops } from "../../Cards/types";
 import BTC from "../components/btc.png";
 import ETH from "../components/eth.png";
 
-const ButtonsBlock = ({
+const ButtonsBlockBTC = ({
   ethButton,
   btcButton,
   pool,
@@ -72,7 +72,7 @@ const ButtonsBlock = ({
   );
 };
 
-export default ButtonsBlock;
+export default ButtonsBlockBTC;
 
 const Currency = styled.div`
   display: flex;
