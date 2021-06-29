@@ -8,6 +8,7 @@ import ButtonsBlock from "./ButtonsBlock";
 import TopContent from "../../Cards/CardNext/TopContent";
 import ValueRow from "../../Cards/CardNext/ValueRow";
 import { Itext } from "../types";
+import { ITextsButtons } from "../../Cards/types";
 
 interface IProps {
   roundEpoch: string;
@@ -25,6 +26,8 @@ interface IProps {
   ethButton: string;
   btcButton: string;
   texts?: Itext;
+  textRow?: string;
+  textsButtons?: ITextsButtons;
 }
 
 const CardNext: React.FC<IProps> = ({
@@ -41,6 +44,8 @@ const CardNext: React.FC<IProps> = ({
   negative,
   disabledTimer,
   texts,
+  textRow,
+  textsButtons,
 }) => {
   return (
     <>
@@ -48,11 +53,11 @@ const CardNext: React.FC<IProps> = ({
         <Timer color="white" time={time} disabled={disabledTimer} />
       </TopContent>
       <WrapContent>
-        <ValueRow texts={texts} vector="BTC" value={payoutWin} />
+        <ValueRow texts={textRow} vector="BTC" value={payoutWin} />
         <ButtonsBlockWrap>
           {canEnterPosition ? (
             <ButtonsBlock
-              texts={texts}
+              texts={textsButtons}
               pool={pool}
               hasEnteredUp={hasEnteredUp}
               hasEnteredDown={hasEnteredDown}
@@ -80,7 +85,7 @@ const CardNext: React.FC<IProps> = ({
             </div>
           )}
         </ButtonsBlockWrap>
-        <ValueRow texts={texts} vector="ETH" value={payoutLose} />
+        <ValueRow texts={textRow} vector="ETH" value={payoutLose} />
       </WrapContent>
     </>
   );

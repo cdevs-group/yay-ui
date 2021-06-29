@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import WIN from "./img/win.png";
 import LOSE from "./img/lose.png";
-import { ITexts } from "../types";
 
 interface Props {
   type: string;
@@ -11,7 +10,7 @@ interface Props {
   roundsInPercents: string;
   roundValue: string;
   roundPrice: String;
-  texts?: ITexts;
+  texts?: string;
 }
 
 const Rounds = ({ texts, type, rounds, roundsInPercents, roundValue, roundPrice }: Props) => {
@@ -45,7 +44,7 @@ const Rounds = ({ texts, type, rounds, roundsInPercents, roundValue, roundPrice 
           <img style={{ float: "left" }} src={values().src} alt="img" />
           <div>
             <Round color={values().colorValue}>
-              {rounds} {texts?.rounds || "rounds"}
+              {rounds} {texts || "rounds"}
             </Round>
             <Value fontSize="13px" color={values().colorRound}>
               {roundsInPercents}

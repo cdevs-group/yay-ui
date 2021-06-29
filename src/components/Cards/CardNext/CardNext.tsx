@@ -20,7 +20,9 @@ interface IProps {
   hasEnteredDown: boolean;
   disabledButton: boolean;
   disabledTimer?: boolean;
-  texts?: Itexts;
+  canEnterPosition?: boolean;
+  texts?: string;
+  negative?: boolean;
 }
 
 const CardNext: React.FC<IProps> = ({

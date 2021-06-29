@@ -251,13 +251,13 @@ export const NextCardBTC: React.FC = () => {
     prize: "Prize Pool",
     payout: "Payout",
     setPosition: "Set Position",
-    commit: "Commit",
   };
 
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardFlipBTC isFlipped={state.isSettingPosition}>
         <CardNextBTC
+          textRow="Payout"
           texts={texts}
           roundEpoch="round"
           time={200}
@@ -274,7 +274,9 @@ export const NextCardBTC: React.FC = () => {
           btcButton="$232112"
         />
         <SetPositionCardBTC
-          texts={texts}
+          texts="Set Pdosition"
+          inputText="Commit"
+          textsButtons={{ prize: "PRIZE POOL" }}
           inputValue={inputValue}
           handleInputChange={handleInputChange}
           showFieldWarning={false}

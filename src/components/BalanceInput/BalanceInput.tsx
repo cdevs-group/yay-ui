@@ -22,7 +22,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
   return (
     <InputWrap>
-      <TitleInput>{texts?.commit || "Commit"}</TitleInput>
+      <TitleInput>{texts || "Commit"}</TitleInput>
       <InputIcon>
         {/* <div>
           <img src={ADA} alt="" />

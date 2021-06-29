@@ -15,15 +15,16 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
   handlePercentChange,
   disabledTab,
   texts,
+  inputText,
 }) => {
   return (
     <Wrap>
       <ButtonBack onClick={onBack}>
         <ArrowIcon />
       </ButtonBack>
-      <Title>{texts?.setPosition || "Set Position"}</Title>
+      <Title>{texts || "Set Position"}</Title>
       <BalanceInput
-        texts={texts}
+        texts={inputText}
         value={inputValue}
         onUserInput={onUserInput}
         isWarning={showFieldWarning}

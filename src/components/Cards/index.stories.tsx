@@ -63,12 +63,10 @@ export const CardsBalancePreview: React.FC = () => {
       isSettingPosition: false,
     }));
 
-  const texts = {
+  const textsButtons = {
     entered: "Entered",
     prize: "Prize Pool",
-    payout: "Payout",
-    setPosition: "Set Position",
-    commit: "Commit",
+    enter: "Enter",
   };
 
   return (
@@ -83,6 +81,7 @@ export const CardsBalancePreview: React.FC = () => {
             </TopContent>
             <ValueRow vector="UP" value="1.23x" />
             <ButtonsBlock
+              texts={textsButtons}
               pool="$ 12536145"
               hasEnteredDown
               hasEnteredUp={false}
@@ -94,6 +93,8 @@ export const CardsBalancePreview: React.FC = () => {
           </>
           <SetPositionCard
             inputValue={inputValue}
+            texts="Set Position"
+            inputText="Commit"
             handleInputChange={handleInputChange}
             showFieldWarning={false}
             onBack={handleBack}
@@ -111,7 +112,7 @@ export const CardsBalancePreview: React.FC = () => {
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
         <CardFlip isFlipped={state.isSettingPosition}>
           <CardNext
-            texts={texts}
+            texts="Payout"
             roundEpoch="round"
             time={200}
             payoutWin="payoutWin"
@@ -129,6 +130,8 @@ export const CardsBalancePreview: React.FC = () => {
             handleInputChange={handleInputChange}
             showFieldWarning={false}
             onBack={handleBack}
+            texts="Set Position"
+            inputText="Commit"
             // onSuccess={()=>alert('ok')}
             inputProps={{ disabled: false }}
             // {{ disabled: !account || isTxPending }}

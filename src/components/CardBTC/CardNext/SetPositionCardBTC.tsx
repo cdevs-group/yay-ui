@@ -15,6 +15,7 @@ const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
   handlePercentChange,
   disabledTab,
   texts,
+  inputText,
 }) => {
   const [tabValue, setTabValue] = useState(0);
 
@@ -27,9 +28,9 @@ const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
       <ButtonBack onClick={onBack}>
         <ArrowIcon />
       </ButtonBack>
-      <Title>{texts?.setPosition || "Set Pdosition"}</Title>
+      <Title>{texts || "Set Pdosition"}</Title>
       <BalanceInput
-        texts={texts}
+        texts={inputText}
         value={inputValue}
         onUserInput={onUserInput}
         isWarning={showFieldWarning}

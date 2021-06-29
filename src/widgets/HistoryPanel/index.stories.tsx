@@ -100,12 +100,14 @@ export const Panel: React.FC = () => {
       roundPrice: "String3",
     },
   ];
-  const textsRound = {
+  const textsRoundHistory = {
     rounds: "Round History",
     locked: "Locked Price",
     prize: "Prize Pool",
     open: "Opening Block",
     closing: "Closing Block",
+  };
+  const textsYourHistory = {
     position: "Your Position",
     lose: "LOSE",
     win: "WIN",
@@ -126,7 +128,7 @@ export const Panel: React.FC = () => {
           up="2x Playout  0,281 BNB"
           down="2x Playout  0,791 BNB"
           prizePool="$ 3`500"
-          texts={textsRound}
+          texts={textsRoundHistory}
         />,
       ],
     },
@@ -144,7 +146,7 @@ export const Panel: React.FC = () => {
           down="2x Playout  0,791 BNB"
           prizePool="$ 3`500"
           openingBlock="4542"
-          texts={textsRound}
+          texts={textsRoundHistory}
         />,
       ],
     },
@@ -164,7 +166,7 @@ export const Panel: React.FC = () => {
           openingBlock="483029"
           closingBlock="457442"
           negative
-          texts={textsRound}
+          texts={textsRoundHistory}
         />,
         <YourHistory
           price="+0,001 BNB"
@@ -173,7 +175,7 @@ export const Panel: React.FC = () => {
           yourPosition="0,001 BNB"
           win={false}
           negative
-          texts={textsRound}
+          texts={textsYourHistory}
         />,
       ],
     },
@@ -193,14 +195,14 @@ export const Panel: React.FC = () => {
           prizePool="$ 3`500"
           openingBlock="483029"
           closingBlock="457442"
-          texts={textsRound}
+          texts={textsRoundHistory}
         />,
         <YourHistory
           price="+0,001 BNB"
           priceRightText="UP"
           result="$0.391"
           yourPosition="0,001 BNB"
-          texts={textsRound}
+          texts={textsYourHistory}
           win
           collect
         />,
@@ -210,16 +212,17 @@ export const Panel: React.FC = () => {
   const { valueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden } =
     useAccordeon(cardsAccordeon);
 
-  const texts = {
+  const textNoHistory = {
+    ifYouSure:
+      "If you are sure you should see history here, make sure you`re connected to the correct wallet and try again",
+    noPredict: "No prediction history available",
+  };
+
+  const textHeader = {
     history: "History",
     all: "All history",
     collected: "Collected",
     uncollected: "Uncollected",
-    ifYouSure:
-      "If you are sure you should see history here, make sure you`re connected to the correct wallet and try again",
-    noPredict: "No prediction history available",
-    rounds: "Rounds",
-    link: "View Reclaimed & Won",
   };
   const textsStatistic = {
     average: "Average",
@@ -236,7 +239,7 @@ export const Panel: React.FC = () => {
       <HeaderHistory
         activeTab={activeTab}
         tabsList={tabsList}
-        texts={texts}
+        texts={textHeader}
         setActiveTab={setActiveTab}
         handleClose={handleToggle}
         switchTab={toggleBaseTab}
@@ -266,7 +269,7 @@ export const Panel: React.FC = () => {
                 ))}
               </Accordeon>
             ) : (
-              <NoHistory texts={texts} />
+              <NoHistory texts={textNoHistory} />
             ))}
           {historyFilter === HistoryFilter.COLLECTED &&
             (hasBetHistory ? (
@@ -287,7 +290,7 @@ export const Panel: React.FC = () => {
                 ))}
               </Accordeon>
             ) : (
-              <NoHistory texts={texts} />
+              <NoHistory texts={textNoHistory} />
             ))}
           {historyFilter === HistoryFilter.UNCOLLECTED && <div>No result</div>}
         </>
@@ -317,14 +320,14 @@ export const Panel: React.FC = () => {
                   roundsInPercents={item.roundsInPercents}
                   roundValue={item.roundValue}
                   roundPrice={item.roundPrice}
-                  texts={texts}
+                  texts="Rounds"
                 />
               </React.Fragment>
             ))}
-            <RoundsLink href="#" />
+            <RoundsLink texts="View Reclaimed & Won" href="#" />
           </PnlHistoryPanel>
         ) : (
-          <NoHistory texts={texts} />
+          <NoHistory texts={textNoHistory} />
         ))}
     </HistoryPanel>
   );

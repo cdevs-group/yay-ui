@@ -5,7 +5,7 @@ import { Text } from "../../../components/Text";
 import WIN from "./img/win.png";
 import LOSE from "./img/lose.png";
 import { Button } from "../../../components/Button";
-import { ITextsRound } from "../types";
+import { ITextsYourHistory } from "../types";
 
 interface IYourHistory {
   price: string;
@@ -15,7 +15,7 @@ interface IYourHistory {
   negative?: boolean;
   win: boolean;
   collect?: React.ReactNode;
-  texts?: ITextsRound;
+  texts?: ITextsYourHistory;
 }
 
 const YourHistory = (props: IYourHistory) => {

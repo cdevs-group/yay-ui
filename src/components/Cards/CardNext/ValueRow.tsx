@@ -7,7 +7,7 @@ const ValueRow = ({ vector, value, texts }: ValueProps) => {
     <ValueRowBlock vector={vector}>
       {vector}
       <div>
-        <span>{texts?.payout || "Payout"}</span>
+        <span>{texts || "Payout"}</span>
         {value}
       </div>
     </ValueRowBlock>
