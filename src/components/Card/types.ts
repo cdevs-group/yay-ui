@@ -42,7 +42,7 @@ export interface StyledCardUpDownProps extends StyledCardProps {
   handleToggleTabs: (e: any) => void;
   tabsList: Array<string>;
   inputValue: string;
-  handleInputChange: (e: any) => void;
+  handleInputChange?: (e: any) => void;
   time: number;
 }
 
@@ -74,7 +74,7 @@ export interface CardUpDownProps extends CardProps {
   handleToggleTabs: (e: any) => void;
   tabsList: Array<string>;
   inputValue: string;
-  handleInputChange: (e: any) => void;
+  handleInputChange?: (e: any) => void;
   leftContent?: string | ReactNode;
   rightContent?: string | ReactNode;
   time: number;

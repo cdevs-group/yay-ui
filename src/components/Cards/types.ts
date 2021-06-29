@@ -58,7 +58,6 @@ export interface SetPositionCardProps {
   inputProps: { disabled: boolean };
   handlePercentChange: (sliderPercent: number) => void;
   disabledTab: boolean;
-  handleInputChange: (e: any) => void;
   texts?: string;
   inputText?: string;
 }
