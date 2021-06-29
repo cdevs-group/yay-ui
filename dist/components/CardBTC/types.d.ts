@@ -34,7 +34,6 @@ export interface SetPositionCardBTCProps {
     inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
     handlePercentChange: (sliderPercent: number) => void;
     disabledTab?: boolean;
-    handleInputChange?: (e: any) => void;
     texts?: string;
     inputText?: string;
     textsButtons?: ITextsButtons;
