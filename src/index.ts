@@ -30,6 +30,8 @@ export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
 export * from "./widgets/WelcomeModal";
+export * from "./widgets/Toast";
+export * from "./widgets/PausedErrorModals";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 export declare type AlertTheme = {
     background: string;
 };
@@ -6,15 +6,12 @@ export declare const variants: {
     readonly COLLECTION: "collection";
     readonly SUCCESS: "success";
     readonly WINNING: "winning";
+    readonly INFO: "info";
 };
 export declare type Variants = typeof variants[keyof typeof variants];
 export interface AlertProps {
     variant?: Variants;
-    title: string;
-    value?: string;
-    subtitle?: string;
+    title?: string;
     children?: ReactNode;
-    isLoad?: boolean;
-    onClick?: () => void;
-    showAlert?: boolean;
+    onClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
 }
