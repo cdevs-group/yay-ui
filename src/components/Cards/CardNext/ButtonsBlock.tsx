@@ -27,7 +27,7 @@ const ButtonsBlock = ({
             onClick={() => handleSetPosition(BetPosition.BULL)}
             disabled={disabledButton}
           >
-            {texts?.enter || "Enter"} UP
+            {texts?.entered || "Enter"} UP
           </Button>
           <IconComplete className="completeIcon" hasEntered={hasEnteredUp}>
             <CompleteIcon fill="#FFB72C" />
@@ -40,7 +40,7 @@ const ButtonsBlock = ({
             onClick={() => handleSetPosition(BetPosition.BEAR)}
             disabled={disabledButton}
           >
-            {texts?.enter || "Enter"} DOWN
+            {texts?.entered || "Enter"} DOWN
           </Button>
           <IconComplete className="completeIcon" hasEntered={hasEnteredDown}>
             <CompleteIcon fill="#FFB72C" />

@@ -1,4 +1,5 @@
 import React from "react";
+import { ITextsRound } from "../types";
 interface IYourHistory {
     price: string;
     priceRightText: string;
@@ -7,6 +8,7 @@ interface IYourHistory {
     negative?: boolean;
     win: boolean;
     collect?: React.ReactNode;
+    texts?: ITextsRound;
 }
 declare const YourHistory: (props: IYourHistory) => JSX.Element;
 export default YourHistory;

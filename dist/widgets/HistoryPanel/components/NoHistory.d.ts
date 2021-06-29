@@ -1,3 +1,6 @@
 /// <reference types="react" />
-declare const NoHistory: () => JSX.Element;
+import { ITexts } from "../types";
+declare const NoHistory: ({ texts }: {
+    texts: ITexts;
+}) => JSX.Element;
 export default NoHistory;

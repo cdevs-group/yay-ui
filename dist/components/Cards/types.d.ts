@@ -13,6 +13,7 @@ export interface CardFlipProps {
 export interface ValueProps {
     vector: string;
     value: string;
+    texts?: Itexts;
 }
 export interface CardProductProp {
     title: string;
@@ -45,7 +46,7 @@ export interface CardButtonsProps {
 }
 export interface TabsProps {
     handlePercentChange: (sliderPercent: number) => void;
-    disabledTab: boolean;
+    disabledTab?: boolean;
 }
 export interface SetPositionCardProps {
     onBack: (e: any) => void;
@@ -57,7 +58,16 @@ export interface SetPositionCardProps {
         disabled: boolean;
     };
     handlePercentChange: (sliderPercent: number) => void;
-    disabledTab: boolean;
+    disabledTab?: boolean;
+    handleInputChange?: (e: any) => void;
+    texts?: Itexts;
+}
+export interface Itexts {
+    payout?: string;
+    entered?: string;
+    prize?: string;
+    setPosition?: string;
+    commit?: string;
 }
 export interface ButtonsBlockRops {
     pool: string;
@@ -67,6 +77,7 @@ export interface ButtonsBlockRops {
     disabledButton: boolean;
     ethButton?: string;
     btcButton?: string;
+    texts?: Itexts;
 }
 export interface TopContentProps {
     children: ReactNode;

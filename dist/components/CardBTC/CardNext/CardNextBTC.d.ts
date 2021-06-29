@@ -1,5 +1,6 @@
 import React from "react";
 import { BetPosition } from "../../Card/types";
+import { Itext } from "../types";
 interface IProps {
     roundEpoch: string;
     time: number;
@@ -12,8 +13,10 @@ interface IProps {
     disabledButton: boolean;
     canEnterPosition: boolean;
     negative: boolean;
-    ethButton?: string;
-    btcButton?: string;
+    disabledTimer?: boolean;
+    ethButton: string;
+    btcButton: string;
+    texts?: Itext;
 }
-declare const CardNextBTC: React.FC<IProps>;
-export default CardNextBTC;
+declare const CardNext: React.FC<IProps>;
+export default CardNext;

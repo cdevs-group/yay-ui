@@ -30,7 +30,6 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
         inputProps={inputProps}
       />
       <TabsBlock>
-        ч
         <Tabs handlePercentChange={handlePercentChange} disabledTab={disabledTab} />
       </TabsBlock>
       {children}

@@ -17,6 +17,8 @@ interface HeaderProps {
     historyFilter: string;
     isFetchingHistory: boolean;
     account: string;
+    tabsList: Array<string>;
+    texts: any;
 }
 declare const HeaderHistory: React.FC<HeaderProps>;
 export default HeaderHistory;

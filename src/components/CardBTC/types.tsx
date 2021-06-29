@@ -30,9 +30,9 @@ export interface SetPositionCardBTCProps {
   children: ReactNode;
   inputValue: ReactText;
   showFieldWarning?: boolean;
-  onUserInput?: (input: string) => void;
+  onUserInput: (input: string) => void;
   inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
-  handlePercentChange?: (sliderPercent: number) => void;
+  handlePercentChange: (sliderPercent: number) => void;
   disabledTab?: boolean;
   handleInputChange?: (e: any) => void;
   texts?: Itext;

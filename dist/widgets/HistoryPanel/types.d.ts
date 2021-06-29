@@ -1,5 +1,33 @@
 import { ReactNode } from "react";
 export declare type Handler = (boolean: boolean) => void;
+export interface ITextsRound {
+    rounds: string;
+    locked: string;
+    prize: string;
+    open: string;
+    closing: string;
+    position: string;
+    lose: string;
+    win: string;
+    history: string;
+}
+export interface ITexts {
+    history: string;
+    all: string;
+    collected: string;
+    uncollected: string;
+    ifYouSure: string;
+    noPredict: string;
+    rounds: string;
+    link: string;
+}
+export interface ITextsStatistic {
+    average: string;
+    return: string;
+    best: string;
+    averagePosition: string;
+    entered: string;
+}
 export interface InjectedProps {
     setOpen?: Handler;
     open: boolean;

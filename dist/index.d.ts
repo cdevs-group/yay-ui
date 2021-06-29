@@ -26,5 +26,6 @@ export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
 export * from "./widgets/WelcomeModal";
 export * from "./widgets/Toast";
+export * from "./widgets/PausedErrorModals";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

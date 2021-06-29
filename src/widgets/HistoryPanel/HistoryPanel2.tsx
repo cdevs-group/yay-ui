@@ -194,7 +194,7 @@ const HistoryPanel: React.FC<Props> = ({
                     ))}
                   </Accordeon>
                 ) : (
-                  <NoHistory />
+                  <></>
                 ))}
               {historyFilter === HistoryFilter.COLLECTED &&
                 (hasBetHistory ? (
@@ -214,13 +214,13 @@ const HistoryPanel: React.FC<Props> = ({
                     ))}
                   </Accordeon>
                 ) : (
-                  <NoHistory />
+                  <></>
                 ))}
               {historyFilter === HistoryFilter.UNCOLLECTED && <div>No result</div>}
             </>
           </>
         )}
-        {activeTab === HistoryTabs.PNL && (hasBetHistory ? <PnlHistoryPanel>d</PnlHistoryPanel> : <NoHistory />)}
+        {/* {activeTab === HistoryTabs.PNL && (hasBetHistory ? <PnlHistoryPanel>d</PnlHistoryPanel> : <NoHistory />)} */}
       </Wrap>
     </Panel>
   );

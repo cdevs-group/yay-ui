@@ -11,4 +11,4 @@ export { default as CardForLater } from "./CardLater/Card";
 export { default as LaterCard } from "./CardLater/LaterCard";
 export { default as StyledCardForlater } from "./CardLater/StyledCard";
 export { default as CardNext } from "./CardNext/CardNext";
-export type { CardBalanceProps, CardProductProp, ArrowProps, TextCardsProps, CardButtonsProps, TabsProps, SetPositionCardProps, ButtonsBlockRops, TopContentProps, LaterCardProps, } from "./types";
+export type { CardBalanceProps, CardProductProp, ArrowProps, TextCardsProps, CardButtonsProps, TabsProps, SetPositionCardProps, ButtonsBlockRops, TopContentProps, LaterCardProps, Itexts, } from "./types";

@@ -6,4 +6,7 @@ export { default as CardFlipBTC } from "./CardNext/CardFlipBTC";
 export { default as ButtonsBlock } from "./CardNext/ButtonsBlock";
 export { default as CardNextBTC } from "./CardNext/CardNextBTC";
 export { default as SetPositionCardBTC } from "./CardNext/SetPositionCardBTC";
-export type { ExpireCardBTCProps, SetPositionCardBTCProps } from "./types";
+export { default as WINIMG } from "./components/win.png";
+export { default as ETHIMG } from "./components/eth.png";
+export { default as BTCIMG } from "./components/btc.png";
+export type { ExpireCardBTCProps, SetPositionCardBTCProps, Itext, ItextExpired } from "./types";
