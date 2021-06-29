@@ -3,10 +3,10 @@ import React from "react";
 import styled from "styled-components";
 import { TopContentProps } from "../types";
 
-const TopContent = ({ children, rightContent }: TopContentProps) => {
+const TopContent = ({ children, rightContent, texts }: TopContentProps) => {
   return (
     <Wrap>
-      <LeftContent>NEXT</LeftContent>
+      <LeftContent>{texts || "NEXT"}</LeftContent>
       {children}
       <RightContent>{rightContent}</RightContent>
     </Wrap>

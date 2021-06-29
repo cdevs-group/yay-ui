@@ -27,7 +27,7 @@ const ButtonsBlock = ({
             onClick={() => handleSetPosition(BetPosition.BULL)}
             disabled={disabledButton}
           >
-            {texts?.entered || "Enter"} UP
+            {texts?.enter || "Enter"} UP
           </Button>
           <IconComplete className="completeIcon" hasEntered={hasEnteredUp}>
             <CompleteIcon fill="#FFB72C" />

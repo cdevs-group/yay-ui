@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ClosedPrice } from "../../../components/ClosedPrice";
 import { Text } from "../../../components/Text";
-import { ITextsRound } from "../types";
+import { ITextRounHistory } from "../types";
 
 interface IRoundHistory {
   price: string;
@@ -16,7 +16,7 @@ interface IRoundHistory {
   negative?: boolean;
   lockPrice?: string;
   roundFailed?: boolean;
-  texts?: ITextsRound;
+  texts?: ITextRounHistory;
 }
 
 const RoundHistory = (props: IRoundHistory) => {

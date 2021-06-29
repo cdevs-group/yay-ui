@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../components/Button";
-import { ITexts } from "../types";
 import { OpenNewIcon } from "../../../components/Svg";
 
 interface Props {
   children?: React.ReactNode;
   href: string;
-  texts?: ITexts;
+  texts?: string;
 }
 
 const RoundsLink = ({ texts, children, href }: Props) => {

@@ -14,7 +14,7 @@ export interface CardFlipProps {
 export interface ValueProps {
   vector: string;
   value: string;
-  texts?: Itexts;
+  texts?: string;
 }
 export interface CardProductProp {
   title: string;
@@ -34,7 +34,7 @@ export interface ArrowProps {
 }
 
 export interface TextCardsProps {
-  text: { text1: string; title1: string; text2: string; title2: string };
+  text: { text1?: string; title1?: string; text2?: string; title2?: string };
 }
 
 export interface CardButtonsProps {
@@ -57,9 +57,10 @@ export interface SetPositionCardProps {
   showFieldWarning: boolean;
   inputProps: { disabled: boolean };
   handlePercentChange: (sliderPercent: number) => void;
-  disabledTab?: boolean;
-  handleInputChange?: (e: any) => void;
-  texts?: Itexts;
+  disabledTab: boolean;
+  handleInputChange: (e: any) => void;
+  texts?: string;
+  inputText?: string;
 }
 export interface Itexts {
   payout?: string;
@@ -67,6 +68,11 @@ export interface Itexts {
   prize?: string;
   setPosition?: string;
   commit?: string;
+}
+export interface ITextsButtons {
+  entered?: string;
+  prize?: string;
+  enter?: string;
 }
 
 export interface ButtonsBlockRops {
@@ -77,11 +83,12 @@ export interface ButtonsBlockRops {
   disabledButton: boolean;
   ethButton?: string;
   btcButton?: string;
-  texts?: Itexts;
+  texts?: ITextsButtons;
 }
 export interface TopContentProps {
   children: ReactNode;
   rightContent: string;
+  texts?: string;
 }
 export interface LaterCardProps {
   time: number;

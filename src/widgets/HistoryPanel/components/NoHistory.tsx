@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
-import { ITexts } from "../types";
+import { ITextNoHistory } from "../types";
 
-const NoHistory = ({ texts }: { texts: ITexts }) => (
+const NoHistory = ({ texts }: { texts: ITextNoHistory }) => (
   <NoHistoryBlock>
     <Text mb={15}>{texts?.noPredict || "No prediction history available"}</Text>
     <Text size="sm" fontWeight={400} letterSpacing="0.05em">

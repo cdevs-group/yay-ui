@@ -1,12 +1,17 @@
 import { InputHTMLAttributes, ReactNode, ReactText } from "react";
+import { ITextsButtons } from "../Cards/types";
 
 export interface ItextExpired {
-  collection?: string;
+  prize?: string;
   payout?: string;
   locked?: string;
   closed?: string;
-  prize?: string;
+}
+export interface ITextActive {
+  closed?: string;
+  locked?: string;
   last?: string;
+  prize?: string;
 }
 export interface ExpireCardBTCProps {
   clodedBTC: string;
@@ -15,14 +20,11 @@ export interface ExpireCardBTCProps {
   lockedETH: string;
   prize: string;
   btc?: boolean;
-  texts?: ItextExpired;
+  texts?: ITextActive;
 }
 export interface Itext {
-  payout?: string;
   entered?: string;
   prize?: string;
-  setPosition?: string;
-  commit?: string;
 }
 
 export interface SetPositionCardBTCProps {
@@ -30,10 +32,12 @@ export interface SetPositionCardBTCProps {
   children: ReactNode;
   inputValue: ReactText;
   showFieldWarning?: boolean;
-  onUserInput: (input: string) => void;
+  onUserInput?: (input: string) => void;
   inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
   handlePercentChange: (sliderPercent: number) => void;
   disabledTab?: boolean;
   handleInputChange?: (e: any) => void;
-  texts?: Itext;
+  texts?: string;
+  inputText?: string;
+  textsButtons?: ITextsButtons;
 }

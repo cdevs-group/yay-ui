@@ -9,12 +9,12 @@ import CardBalance from "./components/CardBalance";
 const CardsBalance = ({ text }: TextCardsProps) => {
   return (
     <Cards>
-      <CardBalance title={text.title1} text={text.text1}>
+      <CardBalance title={text?.title1 || "Ready to harvest"} text={text.text1 || "2000 YAY"}>
         <CoinIconBalance>
           <CoinIcon />
         </CoinIconBalance>
       </CardBalance>
-      <CardBalance right title={text.title2} text={text.text2}>
+      <CardBalance right title={text.title2 || "Your Balance"} text={text.text2 || "3`000 YAY"}>
         <DualShockBalance>
           <DualshockIcon />
         </DualShockBalance>
@@ -44,14 +44,12 @@ const CoinIconBalance = styled.div`
   bottom: 0;
   z-index: -1;
 `;
-
 const DualShockBalance = styled.div`
   position: absolute;
   right: 0%;
   bottom: 0;
   z-index: -1;
 `;
-
 const ArrowIcon = styled.div`
   position: absolute;
   z-index: 2;
