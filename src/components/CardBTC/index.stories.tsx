@@ -6,7 +6,7 @@ import GhostCard from "../Card/GhostCard/GhostCard";
 import CardFlipBTC from "./CardNext/CardFlipBTC";
 import CardNextBTC from "./CardNext/CardNextBTC";
 import SetPositionCardBTC from "./CardNext/SetPositionCardBTC";
-import LoaderCard from "../Card/Loader";
+import LoaderCardText from "./components/LoaderCardText";
 import Loader from "../Card/Loader";
 import Card from "../Card/Card";
 
@@ -195,7 +195,7 @@ export const WithLoaderBTC: React.FC = () => {
         payoutDown={5.03}
         time={2000}
       >
-        <Loader textTooltip="This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation" />
+        <LoaderCardText textTooltip="This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation" />
       </CardBTC>
     </div>
   );
