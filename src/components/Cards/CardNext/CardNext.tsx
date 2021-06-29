@@ -18,8 +18,6 @@ interface IProps {
   hasEnteredUp: boolean;
   hasEnteredDown: boolean;
   disabledButton: boolean;
-  canEnterPosition: boolean;
-  negative: boolean;
   disabledTimer?: boolean;
 }
 
@@ -32,9 +30,7 @@ const CardNext: React.FC<IProps> = ({
   hasEnteredUp,
   hasEnteredDown,
   handleSetPosition,
-  disabledButton,
-  canEnterPosition,
-  negative,
+  disabledButton,  
   disabledTimer,
 }) => {
   return (
@@ -45,34 +41,13 @@ const CardNext: React.FC<IProps> = ({
       <WrapContent>
         <ValueRow vector="UP" value={payoutWin} />
         <ButtonsBlockWrap>
-          {canEnterPosition ? (
-            <ButtonsBlock
-              pool={pool}
-              hasEnteredUp={hasEnteredUp}
-              hasEnteredDown={hasEnteredDown}
-              handleSetPosition={handleSetPosition}
-              disabledButton={disabledButton}
-            />
-          ) : (
-            <div style={{ marginTop: 70 }}>
-              <Button
-                disabled
-                startIcon={
-                  <Arrow negative={negative}>
-                    <ArrowCardDown color="white" />
-                  </Arrow>
-                }
-                width="100%"
-                mb="8px"
-                variant="green"
-              >
-                {negative ? "DOWN" : "UP"} Entered
-              </Button>
-              <Prize>
-                Prize Pool: <span>{pool}</span>
-              </Prize>
-            </div>
-          )}
+          <ButtonsBlock
+            pool={pool}
+            hasEnteredUp={hasEnteredUp}
+            hasEnteredDown={hasEnteredDown}
+            handleSetPosition={handleSetPosition}
+            disabledButton={disabledButton}
+          />
         </ButtonsBlockWrap>
         <ValueRow vector="DOWN" value={payoutLose} />
       </WrapContent>
@@ -81,15 +56,6 @@ const CardNext: React.FC<IProps> = ({
 };
 
 export default CardNext;
-
-const Arrow = styled.div<{ negative?: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  transform: ${({ negative }) => (!negative ? "scale(1,-1)" : "none")};
-`;
 
 const WrapContent = styled.div`
   display: flex;
@@ -113,19 +79,5 @@ const ButtonsBlockWrap = styled.div`
   border-radius: 15px;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 335px;
-  }
-`;
-
-const Prize = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  color: ${({ theme }) => theme.colors.text};
-  & span {
-    font-size: 15px;
   }
 `;
