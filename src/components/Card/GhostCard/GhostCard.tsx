@@ -6,9 +6,10 @@ import GHOST from "./ghost.png";
 interface IProps {
   href: string;
   children?: React.ReactNode;
+  text?: string;
 }
 
-const GhostCard = ({ href, children }: IProps) => {
+const GhostCard = ({ href, children, text }: IProps) => {
   return (
     <Wrap>
       <Image>
@@ -16,7 +17,7 @@ const GhostCard = ({ href, children }: IProps) => {
       </Image>
       {children}
       <LinkExternal color="#47DA3B" small href={href} mr="16px">
-        Learn More
+        {text || "Learn More"}
       </LinkExternal>
     </Wrap>
   );

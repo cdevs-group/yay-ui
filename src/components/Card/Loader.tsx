@@ -101,7 +101,10 @@ const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
         <RedCircle />
         <YellowCircle />
       </Loader>
-      <BottomText>{textTooltip}</BottomText>
+      <BottomText>
+        {textTooltip ||
+          "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation"}
+      </BottomText>
     </Wrap>
   );
 };

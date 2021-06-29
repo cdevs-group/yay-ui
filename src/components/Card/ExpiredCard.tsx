@@ -96,11 +96,12 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
   lockedPrice,
   prize,
   colorIcon,
+  texts,
 }) => {
   return (
     <Wrap>
       <Closed>
-        <div className="closed">Closed Price</div>
+        <div className="closed">{texts?.closed || "Closed Price"}</div>
         <ClosedCount negative={negative}> {closedCount}</ClosedCount>
       </Closed>
       <Line>
@@ -111,10 +112,10 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
       </Line>
       <Info>
         <LockedPrice>
-          Locked Price BNB: <div> {lockedPrice}</div>
+          {texts?.locked || "Locked Price "} BNB: <div> {lockedPrice}</div>
         </LockedPrice>
         <Prize>
-          Prize Pool: <div>{prize} </div>
+          {texts?.prize || "Prize Pool"}: <div>{prize} </div>
         </Prize>
       </Info>
     </Wrap>

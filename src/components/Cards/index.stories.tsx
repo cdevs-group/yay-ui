@@ -63,6 +63,14 @@ export const CardsBalancePreview: React.FC = () => {
       isSettingPosition: false,
     }));
 
+  const texts = {
+    entered: "Entered",
+    prize: "Prize Pool",
+    payout: "Payout",
+    setPosition: "Set Position",
+    commit: "Commit",
+  };
+
   return (
     <div>
       <CardsBalance text={text} />
@@ -103,6 +111,7 @@ export const CardsBalancePreview: React.FC = () => {
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
         <CardFlip isFlipped={state.isSettingPosition}>
           <CardNext
+            texts={texts}
             roundEpoch="round"
             time={200}
             payoutWin="payoutWin"

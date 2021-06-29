@@ -33,6 +33,8 @@ export const GhostCardBlock: React.FC = () => {
 };
 
 export const ExpiredNAuth: React.FC = () => {
+  const texts = {};
+
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Card

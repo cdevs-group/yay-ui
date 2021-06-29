@@ -7,6 +7,7 @@ import { Timer } from "../../Timer";
 import ButtonsBlock from "./ButtonsBlock";
 import TopContent from "../../Cards/CardNext/TopContent";
 import ValueRow from "../../Cards/CardNext/ValueRow";
+import { Itext } from "../types";
 
 interface IProps {
   roundEpoch: string;
@@ -20,11 +21,13 @@ interface IProps {
   disabledButton: boolean;
   canEnterPosition: boolean;
   negative: boolean;
-  ethButton?: string;
-  btcButton?: string;
+  disabledTimer?: boolean;
+  ethButton: string;
+  btcButton: string;
+  texts?: Itext;
 }
 
-const CardNextBTC: React.FC<IProps> = ({
+const CardNext: React.FC<IProps> = ({
   roundEpoch,
   time,
   payoutWin,
@@ -36,49 +39,54 @@ const CardNextBTC: React.FC<IProps> = ({
   disabledButton,
   canEnterPosition,
   negative,
-  btcButton,
-  ethButton,
+  disabledTimer,
+  texts,
 }) => {
   return (
     <>
       <TopContent rightContent={roundEpoch}>
-        <Timer color="white" time={time} />
+        <Timer color="white" time={time} disabled={disabledTimer} />
       </TopContent>
-      <ValueRow vector="BTC" value={payoutWin} />
-
-      {canEnterPosition ? (
-        <ButtonsBlock
-          pool={pool}
-          hasEnteredUp={hasEnteredUp}
-          hasEnteredDown={hasEnteredDown}
-          handleSetPosition={handleSetPosition}
-          disabledButton={disabledButton}
-          ethButton={ethButton}
-          btcButton={btcButton}
-        />
-      ) : (
-        <div style={{ marginTop: 70 }}>
-          <Button
-            disabled
-            startIcon={
-              <Arrow negative={negative}>
-                <ArrowCardDown color="white" />
-              </Arrow>
-            }
-            width="100%"
-            mb="8px"
-            variant="green"
-          >
-            Entered
-          </Button>
-        </div>
-      )}
-      <ValueRow vector="ETH" value={payoutLose} />
+      <WrapContent>
+        <ValueRow texts={texts} vector="BTC" value={payoutWin} />
+        <ButtonsBlockWrap>
+          {canEnterPosition ? (
+            <ButtonsBlock
+              texts={texts}
+              pool={pool}
+              hasEnteredUp={hasEnteredUp}
+              hasEnteredDown={hasEnteredDown}
+              handleSetPosition={handleSetPosition}
+              disabledButton={disabledButton}
+            />
+          ) : (
+            <div style={{ marginTop: 70 }}>
+              <Button
+                disabled
+                startIcon={
+                  <Arrow negative={negative}>
+                    <ArrowCardDown color="white" />
+                  </Arrow>
+                }
+                width="100%"
+                mb="8px"
+                variant="green"
+              >
+                {negative ? "DOWN" : "UP"} {texts?.entered || "Entered"}
+              </Button>
+              <Prize>
+                {texts?.prize || "Prize Pool"}: <span>{pool}</span>
+              </Prize>
+            </div>
+          )}
+        </ButtonsBlockWrap>
+        <ValueRow texts={texts} vector="ETH" value={payoutLose} />
+      </WrapContent>
     </>
   );
 };
 
-export default CardNextBTC;
+export default CardNext;
 
 const Arrow = styled.div<{ negative?: boolean }>`
   display: flex;
@@ -87,4 +95,43 @@ const Arrow = styled.div<{ negative?: boolean }>`
   width: 30px;
   height: 30px;
   transform: ${({ negative }) => (!negative ? "scale(1,-1)" : "none")};
+`;
+
+const WrapContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.colors.bgCard};
+  margin-top: 28px;
+`;
+
+const ButtonsBlockWrap = styled.div`
+  height: 193px;
+  width: 308px;
+  padding-bottom: 17px;
+  background: ${({ theme }) => theme.colors.bgGray};
+  position: relative;
+  z-index: 2;
+  padding: 0 13px;
+  box-sizing: border-box;
+  box-shadow: ${({ theme }) => theme.colors.cardShadow};
+  border-radius: 15px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
+  }
+`;
+
+const Prize = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: ${({ theme }) => theme.colors.text};
+  & span {
+    font-size: 15px;
+  }
 `;

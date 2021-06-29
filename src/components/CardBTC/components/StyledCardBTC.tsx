@@ -197,6 +197,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
   btcWon,
   ethWon,
   loader,
+  texts,
 }) => {
   return (
     <Wrap live={live}>
@@ -209,7 +210,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
           {btcWon ? (
             <WonBlcok>
-              Collect Winnings
+              {texts?.collection || "Collect Winnings"}
               <img src={WIN} alt="win" />
             </WonBlcok>
           ) : (
@@ -219,7 +220,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
                 BTC
               </Currency>
               <RightText displayNone={displayNone}>
-                <div className="payout">Payout</div>
+                <div className="payout">{texts?.payout || "Payout"}</div>
                 <div>{payoutUp}</div>
                 <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
                   <CompleteIcon fill="#FFB72C" />
@@ -240,7 +241,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
         <DownContent negative={negative} displayNone={displayNone}>
           {ethWon ? (
             <WonBlcok>
-              Collect Winnings
+              {texts?.collection || "Collect Winnings"}
               <img src={WIN} alt="win" />
             </WonBlcok>
           ) : (
@@ -250,7 +251,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
                 ETH
               </Currency>
               <RightText displayNone={displayNone}>
-                <div className="payout">Payout</div>
+                <div className="payout">{texts?.payout || "Payout"}</div>
                 <div>{payoutDown}</div>
                 <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
                   <CompleteIcon fill="#FFB72C" />

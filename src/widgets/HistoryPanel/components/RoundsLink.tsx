@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../components/Button";
+import { ITexts } from "../types";
 import { OpenNewIcon } from "../../../components/Svg";
 
 interface Props {
   children?: React.ReactNode;
   href: string;
+  texts?: ITexts;
 }
 
-const RoundsLink = ({ children, href }: Props) => {
+const RoundsLink = ({ texts, children, href }: Props) => {
   return (
     <>
       <Wrap>
         {children}
         <a href={href}>
           <ButtonBlock width="100%" variant="green" scale="md">
-            View Reclaimed & Won
+            {texts?.link || "View Reclaimed & Won"}
             <OpenNewIcon fill="rgba(0,0,0,0)" />
           </ButtonBlock>
         </a>

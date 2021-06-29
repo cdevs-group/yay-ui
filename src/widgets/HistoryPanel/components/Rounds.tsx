@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import WIN from "./img/win.png";
 import LOSE from "./img/lose.png";
+import { ITexts } from "../types";
 
 interface Props {
   type: string;
@@ -10,9 +11,10 @@ interface Props {
   roundsInPercents: string;
   roundValue: string;
   roundPrice: String;
+  texts?: ITexts;
 }
 
-const Rounds = ({ type, rounds, roundsInPercents, roundValue, roundPrice }: Props) => {
+const Rounds = ({ texts, type, rounds, roundsInPercents, roundValue, roundPrice }: Props) => {
   const values = () => {
     switch (type) {
       case "won":
@@ -42,7 +44,9 @@ const Rounds = ({ type, rounds, roundsInPercents, roundValue, roundPrice }: Prop
         <Column>
           <img style={{ float: "left" }} src={values().src} alt="img" />
           <div>
-            <Round color={values().colorValue}>{rounds} rounds</Round>
+            <Round color={values().colorValue}>
+              {rounds} {texts?.rounds || "rounds"}
+            </Round>
             <Value fontSize="13px" color={values().colorRound}>
               {roundsInPercents}
             </Value>
@@ -80,7 +84,6 @@ const Wrap = styled.div`
     background: ${({ theme }) => theme.colors.cardBg};
   }
 `;
-
 const Row = styled.div`
   padding: 17px 0;
   display: flex;
@@ -88,16 +91,13 @@ const Row = styled.div`
   z-index: 2;
   justify-content: space-between;
 `;
-
 const Round = styled(Text)<{ color: string }>`
   margin-bottom: 5px;
   color: ${({ color }) => color};
 `;
-
 const Value = styled(Text)<{ color?: string }>`
   color: ${({ color }) => color || "white"};
 `;
-
 const Column = styled.div`
   display: flex;
   & img {

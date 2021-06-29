@@ -1,20 +1,23 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components";
 import { CardFlipProps } from "../../Cards/types";
 
 const Front = styled.div`
   height: 100%;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   position: absolute;
   top: 0;
   width: 100%;
 `;
 
 const Back = styled(Front)`
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateX(50%);
 `;
 
 const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
+  display: flex;
+  justify-content: center;
   height: 100%;
   position: relative;
   transform: rotateY(${({ isFlipped }) => (isFlipped ? 180 : 0)}deg);
@@ -26,18 +29,12 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 
   ${Front} {
     z-index: ${({ isFlipped }) => (isFlipped ? 5 : 10)};
-    padding: 18px 15px 14px;
-    justify-content: space-between;
-    flex-direction: column;
     backface-visibility: hidden;
-    display: flex;
-    border-radius: 15px;
     transition: 0;
-    background: ${({ theme }) => theme.colors.bgCard};
-    position: absolute;
-    height: 293px;
-    bottom: 0;
-    top: auto;
+    width: 278px;
+    ${({ theme }) => theme.mediaQueries.sm} {
+      width: 308px;
+    }
   }
 
   ${Back} {
@@ -47,18 +44,17 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
     background: ${({ theme }) => theme.colors.cardBg};
     border-radius: 15px;
     height: 100%;
+    width: 100%;
   }
 `;
 
 const StyledCardFlip = styled.div`
   perspective: 1000px;
-  height: 367px;
-  width: 308px;
+  height: 369px;
+  width: 335px;
   border-radius: 15px;
-  @media (max-width: 767px) {
-    width: 278px;
-  }
 `;
+
 const getComponents = (children: CardFlipProps["children"]) => {
   if (children.length !== 2) {
     throw new Error("CardFlip: Two children are required");

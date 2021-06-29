@@ -49,12 +49,12 @@ const ArrowBlock = styled.div<{ btc?: boolean }>`
   }
 `;
 
-const ExpiredCardBTC = ({ clodedBTC, lockedBRC, closedETH, lockedETH, prize, btc }: ExpireCardBTCProps) => {
+const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, prize, btc }: ExpireCardBTCProps) => {
   return (
     <Wrap>
       <Line>
         <Closed>
-          CLOSED PRICE BTC <p>$ {clodedBTC}</p>
+          {texts?.closed || "CLOSED PRICE"} BTC <p>$ {clodedBTC}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="btc">
@@ -62,18 +62,18 @@ const ExpiredCardBTC = ({ clodedBTC, lockedBRC, closedETH, lockedETH, prize, btc
               stroke={btc ? "#47DA3B" : "#FF6161"}
               fill={btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
             />
-            Locked Price BTC
+            {texts?.locked || "Locked Price"} BTC
           </ArrowBlock>
           <p>$ {lockedBRC}</p>
         </Locked>
       </Line>
       <Middle>
-        PRIZE POLL
+        {texts?.prize || "PRIZE POLL"}
         <p>{prize} BNB</p>
       </Middle>
       <Line>
         <Closed>
-          LOSED PRICE ETH <p>$ {closedETH}</p>
+          {texts?.closed || "CLOSED PRICE"} ETH <p>$ {closedETH}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="eth">
@@ -81,7 +81,7 @@ const ExpiredCardBTC = ({ clodedBTC, lockedBRC, closedETH, lockedETH, prize, btc
               stroke={!btc ? "#47DA3B" : "#FF6161"}
               fill={!btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
             />
-            Locked Price ETH
+            {texts?.locked || "Locked Price"} ETH
           </ArrowBlock>
           <p>$ {lockedETH}</p>
         </Locked>
