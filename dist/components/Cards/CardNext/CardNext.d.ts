@@ -1,6 +1,5 @@
 import React from "react";
 import { BetPosition } from "../../Card/types";
-import { Itexts } from "../types";
 interface IProps {
     roundEpoch: string;
     time: number;
@@ -12,7 +11,9 @@ interface IProps {
     hasEnteredDown: boolean;
     disabledButton: boolean;
     disabledTimer?: boolean;
-    texts?: Itexts;
+    canEnterPosition?: boolean;
+    texts?: string;
+    negative?: boolean;
 }
 declare const CardNext: React.FC<IProps>;
 export default CardNext;

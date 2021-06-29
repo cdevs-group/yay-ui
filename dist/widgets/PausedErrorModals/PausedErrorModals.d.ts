@@ -1,6 +1,5 @@
 import React from "react";
 interface Props {
-    onDismiss?: () => void;
     title: string;
     buttonText: string;
     descriptionTop: string;

@@ -1597,10 +1597,10 @@ var templateObject_1$T, templateObject_2$I, templateObject_3$x;
 var CardsBalance = function (_a) {
     var text = _a.text;
     return (React__default.createElement(Cards, null,
-        React__default.createElement(CardBalance, { title: text.title1, text: text.text1 },
+        React__default.createElement(CardBalance, { title: (text === null || text === void 0 ? void 0 : text.title1) || "Ready to harvest", text: text.text1 || "2000 YAY" },
             React__default.createElement(CoinIconBalance, null,
                 React__default.createElement(CoinIcon, null))),
-        React__default.createElement(CardBalance, { right: true, title: text.title2, text: text.text2 },
+        React__default.createElement(CardBalance, { right: true, title: text.title2 || "Your Balance", text: text.text2 || "3`000 YAY" },
             React__default.createElement(DualShockBalance, null,
                 React__default.createElement(DualshockIcon, null))),
         React__default.createElement(ArrowIcon, null,
@@ -1643,7 +1643,7 @@ var ButtonsBlock = function (_a) {
         React__default.createElement(Buttons, null,
             React__default.createElement(ButtonWrap, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
                 React__default.createElement(Button$5, { width: "100%", variant: "green", onClick: function () { return handleSetPosition(BetPosition.BULL); }, disabled: disabledButton },
-                    (texts === null || texts === void 0 ? void 0 : texts.entered) || "Enter",
+                    (texts === null || texts === void 0 ? void 0 : texts.enter) || "Enter",
                     " UP"),
                 React__default.createElement(IconComplete, { className: "completeIcon", hasEntered: hasEnteredUp },
                     React__default.createElement(Icon$b, { fill: "#FFB72C" }))),
@@ -1750,7 +1750,7 @@ var BalanceInput = function (_a) {
         }
     };
     return (React__default.createElement(InputWrap, null,
-        React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
+        React__default.createElement(TitleInput, null, texts || "Commit"),
         React__default.createElement(InputIcon, null,
             React__default.createElement(Icon$q, null),
             "BNB"),
@@ -1787,12 +1787,12 @@ var TabsCard = function (_a) {
 var templateObject_1$N, templateObject_2$D;
 
 var SetPositionCard = function (_a) {
-    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts;
+    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts, inputText = _a.inputText;
     return (React__default.createElement(Wrap$g, null,
         React__default.createElement(ButtonBack, { onClick: onBack },
             React__default.createElement(ArrowIcon$1, null)),
-        React__default.createElement(Title$2, null, (texts === null || texts === void 0 ? void 0 : texts.setPosition) || "Set Position"),
-        React__default.createElement(BalanceInput, { texts: texts, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
+        React__default.createElement(Title$2, null, texts || "Set Position"),
+        React__default.createElement(BalanceInput, { texts: inputText, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
         React__default.createElement(TabsBlock, null,
             React__default.createElement(TabsCard, { handlePercentChange: handlePercentChange, disabledTab: disabledTab })),
         children));
@@ -1810,9 +1810,9 @@ var TabsBlock = styled.div(templateObject_4$g || (templateObject_4$g = __makeTem
 var templateObject_1$M, templateObject_2$C, templateObject_3$s, templateObject_4$g;
 
 var TopContent$1 = function (_a) {
-    var children = _a.children, rightContent = _a.rightContent;
+    var children = _a.children, rightContent = _a.rightContent, texts = _a.texts;
     return (React__default.createElement(Wrap$f, null,
-        React__default.createElement(LeftContent$1, null, "NEXT"),
+        React__default.createElement(LeftContent$1, null, texts || "NEXT"),
         children,
         React__default.createElement(RightContent$2, null, rightContent)));
 };
@@ -1832,7 +1832,7 @@ var ValueRow = function (_a) {
     return (React__default.createElement(ValueRowBlock, { vector: vector },
         vector,
         React__default.createElement("div", null,
-            React__default.createElement("span", null, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
+            React__default.createElement("span", null, texts || "Payout"),
             value)));
 };
 var ValueRowBlock = styled.div(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"], ["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"])), function (_a) {
@@ -3330,7 +3330,7 @@ var Rounds = function (_a) {
                     React__default.createElement(Round, { color: values().colorValue },
                         rounds,
                         " ",
-                        (texts === null || texts === void 0 ? void 0 : texts.rounds) || "rounds"),
+                        texts || "rounds"),
                     React__default.createElement(Value, { fontSize: "13px", color: values().colorRound }, roundsInPercents))),
             React__default.createElement("div", null,
                 React__default.createElement(Round, { color: values().colorRound, textAlign: "right" }, roundValue),
@@ -3964,16 +3964,16 @@ var Toast = function (_a) {
 };
 var templateObject_1$3;
 
-var ZINDEX = 1000;
-var TOP_POSITION = 80; // Initial position from the top
 var StyledToastContainer = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n"])));
 var ToastContainer = function (_a) {
-    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 6000 : _b, _c = _a.stackSpacing, stackSpacing = _c === void 0 ? 24 : _c;
+    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 6000 : _b; _a.stackSpacing;
     return (React__default.createElement(StyledToastContainer, null,
         React__default.createElement(TransitionGroup, null, toasts.map(function (toast, index) {
-            var zIndex = (ZINDEX - index).toString();
-            var top = TOP_POSITION + index * stackSpacing;
-            return (React__default.createElement(Toast, { key: toast.id, toast: toast, onRemove: onRemove, ttl: ttl, style: { top: top + "px", zIndex: zIndex } }));
+            // const zIndex = (ZINDEX - index).toString();
+            // const top = TOP_POSITION + index * stackSpacing;
+            return (React__default.createElement(Toast, { key: toast.id, toast: toast, onRemove: onRemove, ttl: ttl, 
+                // style={{ top: `${top}px`, zIndex }}
+                style: { position: "static" } }));
         }))));
 };
 var templateObject_1$2;
@@ -3982,9 +3982,9 @@ var Wrap = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplate
 var Ghosts = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n"], ["\n  display: flex;\n  justify-content: center;\n"])));
 var Description = styled(Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"])));
 var PausedErrorModals = function (_a) {
-    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding;
+    var title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding;
     return (React__default.createElement(React__default.Fragment, null,
-        React__default.createElement(Modal, { title: title, onDismiss: onDismiss, welcome: true },
+        React__default.createElement(Modal, { title: title, welcome: true, hideCloseButton: true },
             React__default.createElement(Wrap, null,
                 React__default.createElement(Ghosts, null,
                     React__default.createElement("img", { src: OneGhost })),

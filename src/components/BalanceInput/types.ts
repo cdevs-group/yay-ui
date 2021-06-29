@@ -10,7 +10,7 @@ interface Itext {
 }
 export interface BalanceInputProps extends BoxProps {
   value: ReactText;
-  onUserInput?: (input: string) => void;
+  onUserInput: (input: string) => void;
   placeholder?: string;
   inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
   isWarning?: boolean;
