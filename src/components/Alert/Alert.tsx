@@ -6,12 +6,12 @@ import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
 import LinkExternal from "../Link/LinkExternal";
 
-const StyledAlert = styled(Flex)<{ showAlert?: boolean }>`
+const StyledAlert = styled(Flex)`
   width: fit-content;
-  position: fixed;
+  position: absolute;
   z-index: 5;
-  top: 100px;
-  right: ${({ showAlert }) => (showAlert ? "50px" : "-100%")};
+  top: 160px;
+  right: 0px;
   transition: 0.3s ease;
   padding: 15px 90px 15px 23px;
   background: ${({ theme }) => theme.colors.buttonBg};
@@ -29,40 +29,43 @@ const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
       return <CloseIcon />;
     case variants.SUCCESS:
       return <CompleteIcon fill="#47DA3B" />;
+    case variants.INFO:
+      return <></>;
     default:
-      return <CercleIcon spin />;
+      return <></>;
   }
 };
 
 const Button = styled.button`
   position: absolute;
+  padding: 0;
   background: none;
   border: none;
   top: 4px;
-  right: 10px;
+  right: 4px;
   cursor: pointer;
   &:disabled {
     cursor: default;
   }
 `;
 
-const SetContent = ({ title, value, variant, subtitle }: AlertProps) => {
-  return (
-    <>
-      <Text fontWeight={400}>
-        <b>{title}</b> {value}
-      </Text>
-      {variant === "winning" ? (
-        <>
-          <Text fontSize="13px">{subtitle}</Text>
-          <LinkExternal fontSize="13px" color="#47DA3B" small href={`https://bscscan.com/address/`} mr="16px">
-            View on BscScan
-          </LinkExternal>{" "}
-        </>
-      ) : null}
-    </>
-  );
-};
+// const SetContent = ({ title, value, variant, subtitle }: AlertProps) => {
+//   return (
+//     <>
+//       <Text fontWeight={400}>
+//         <b>{title}</b> {value}
+//       </Text>
+//       {variant === "winning" ? (
+//         <>
+//           <Text fontSize="13px">{subtitle}</Text>
+//           <LinkExternal fontSize="13px" color="#47DA3B" small href={`https://bscscan.com/address/`} mr="16px">
+//             View on BscScan
+//           </LinkExternal>{" "}
+//         </>
+//       ) : null}
+//     </>
+//   );
+// };
 const SetButton = ({ variant, onClick }: AlertProps) => {
   const Icon = getIcon(variant);
   return (
@@ -72,13 +75,13 @@ const SetButton = ({ variant, onClick }: AlertProps) => {
   );
 };
 
-const Alert: React.FC<AlertProps> = (props) => {
+const Alert: React.FC<AlertProps> = ({title, children, variant, onClick}) => {
   return (
-    <StyledAlert showAlert={props.showAlert}>
+    <StyledAlert>
       <div>
-        <SetContent {...props} />
+        {children}
       </div>
-      <SetButton {...props} />
+      <SetButton variant={variant} onClick={onClick} />
     </StyledAlert>
   );
 };
