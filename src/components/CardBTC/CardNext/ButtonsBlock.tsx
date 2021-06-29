@@ -15,11 +15,12 @@ const ButtonsBlock = ({
   hasEnteredDown,
   handleSetPosition,
   disabledButton,
+  texts,
 }: ButtonsBlockRops) => {
   return (
     <ButtonsBlockWrap>
       <PrizeBlock>
-        <p>PRIZE POOL</p>
+        <p>{texts?.prize?.toUpperCase() || "PRIZE POOL"}</p>
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
@@ -90,7 +91,7 @@ const ButtonsBlockWrap = styled.div`
   padding-bottom: 17px;
   background: ${({ theme }) => theme.colors.bgGray};
   position: relative;
-  left: -10%;
+  left: -5%;
   z-index: 2;
   padding: 0 13px;
   top: 0px;

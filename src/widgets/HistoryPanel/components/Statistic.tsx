@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
+import { ITextsStatistic } from "../types";
 
 interface Props {
   averageReturn: string;
@@ -13,6 +14,7 @@ interface Props {
   bestRoundPrice: string;
   averagePosition: string;
   averagePositionPrice: string;
+  texts?: ITextsStatistic;
 }
 
 const Statistic = ({
@@ -26,20 +28,21 @@ const Statistic = ({
   bestRoundPrice,
   averagePosition,
   averagePositionPrice,
+  texts,
 }: Props) => {
   return (
     <Wrap>
       <Row>
-        <Text>Average</Text>
+        <Text>{texts?.average || "Average"}</Text>
         <Best fontSize="13px" textAlign="right" color={colorAverage}>
           {averageReturn}
         </Best>
-        <Text>return / round</Text>
+        <Text>{texts?.return || "return / round"}</Text>
         <Text textAlign="right">{averageReturnPrice}</Text>
       </Row>
       {hasBestRound && (
         <Row>
-          <Text>Best round: </Text>
+          <Text>{texts?.best || "Best round"}: </Text>
           <Best fontSize="13px" textAlign="right" color="#4BE43E">
             <Text color="#A3A3A3" fontSize="13px">
               {multiplierBestRound} &nbsp;
@@ -51,11 +54,11 @@ const Statistic = ({
         </Row>
       )}
       <Row>
-        <Text>Average position</Text>
+        <Text>{texts?.averagePosition || "Average position"}</Text>
         <Best fontSize="13px" textAlign="right" color="white">
           {averagePosition}
         </Best>
-        <Text>entered / round</Text>
+        <Text>{texts?.entered || "entered / round"}</Text>
         <Text textAlign="right">{averagePositionPrice}</Text>
       </Row>
       {/* 

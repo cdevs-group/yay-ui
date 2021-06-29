@@ -100,6 +100,17 @@ export const Panel: React.FC = () => {
       roundPrice: "String3",
     },
   ];
+  const textsRound = {
+    rounds: "Round History",
+    locked: "Locked Price",
+    prize: "Prize Pool",
+    open: "Opening Block",
+    closing: "Closing Block",
+    position: "Your Position",
+    lose: "LOSE",
+    win: "WIN",
+    history: "Your History",
+  };
 
   const cardsAccordeon: Array<ICardAccordeon> = [
     {
@@ -115,6 +126,7 @@ export const Panel: React.FC = () => {
           up="2x Playout  0,281 BNB"
           down="2x Playout  0,791 BNB"
           prizePool="$ 3`500"
+          texts={textsRound}
         />,
       ],
     },
@@ -132,6 +144,7 @@ export const Panel: React.FC = () => {
           down="2x Playout  0,791 BNB"
           prizePool="$ 3`500"
           openingBlock="4542"
+          texts={textsRound}
         />,
       ],
     },
@@ -151,6 +164,7 @@ export const Panel: React.FC = () => {
           openingBlock="483029"
           closingBlock="457442"
           negative
+          texts={textsRound}
         />,
         <YourHistory
           price="+0,001 BNB"
@@ -159,6 +173,7 @@ export const Panel: React.FC = () => {
           yourPosition="0,001 BNB"
           win={false}
           negative
+          texts={textsRound}
         />,
       ],
     },
@@ -178,19 +193,50 @@ export const Panel: React.FC = () => {
           prizePool="$ 3`500"
           openingBlock="483029"
           closingBlock="457442"
+          texts={textsRound}
         />,
-        <YourHistory price="+0,001 BNB" priceRightText="UP" result="$0.391" yourPosition="0,001 BNB" win collect />,
+        <YourHistory
+          price="+0,001 BNB"
+          priceRightText="UP"
+          result="$0.391"
+          yourPosition="0,001 BNB"
+          texts={textsRound}
+          win
+          collect
+        />,
       ],
     },
   ];
   const { valueAccordeon, heightActiveBlock, handleToggleAccordeon, newCards, active, refHidden } =
     useAccordeon(cardsAccordeon);
 
+  const texts = {
+    history: "History",
+    all: "All history",
+    collected: "Collected",
+    uncollected: "Uncollected",
+    ifYouSure:
+      "If you are sure you should see history here, make sure you`re connected to the correct wallet and try again",
+    noPredict: "No prediction history available",
+    rounds: "Rounds",
+    link: "View Reclaimed & Won",
+  };
+  const textsStatistic = {
+    average: "Average",
+    return: "return / round",
+    best: "Best round",
+    averagePosition: "Average position",
+    entered: "entered / round",
+  };
+  const tabsList = ["Rounds", "PNL"];
+
   const hasBetHistory = true;
   return (
     <HistoryPanel isHistoryPaneOpen={isHistoryPaneOpen} handleToggle={handleToggle} valueAccordeon={valueAccordeon}>
       <HeaderHistory
         activeTab={activeTab}
+        tabsList={tabsList}
+        texts={texts}
         setActiveTab={setActiveTab}
         handleClose={handleToggle}
         switchTab={toggleBaseTab}
@@ -220,7 +266,7 @@ export const Panel: React.FC = () => {
                 ))}
               </Accordeon>
             ) : (
-              <NoHistory />
+              <NoHistory texts={texts} />
             ))}
           {historyFilter === HistoryFilter.COLLECTED &&
             (hasBetHistory ? (
@@ -241,7 +287,7 @@ export const Panel: React.FC = () => {
                 ))}
               </Accordeon>
             ) : (
-              <NoHistory />
+              <NoHistory texts={texts} />
             ))}
           {historyFilter === HistoryFilter.UNCOLLECTED && <div>No result</div>}
         </>
@@ -251,7 +297,7 @@ export const Panel: React.FC = () => {
           <PnlHistoryPanel>
             <ProgressBar won={3} lost={5} percentageWon="+121" result="+0012 BNB" price="$ 66" />
             <Statistic
-              averageReturn="foo1"
+              averageReturn="foo"
               averageReturnPrice="fooo2"
               colorAverage="#4BE43E"
               bestRound="foo4"
@@ -261,6 +307,7 @@ export const Panel: React.FC = () => {
               bestRoundPrice="foo7"
               averagePosition="foo0"
               averagePositionPrice="fooo89"
+              texts={textsStatistic}
             />
             {roundsData.map((item, i) => (
               <React.Fragment key={i}>
@@ -270,13 +317,14 @@ export const Panel: React.FC = () => {
                   roundsInPercents={item.roundsInPercents}
                   roundValue={item.roundValue}
                   roundPrice={item.roundPrice}
+                  texts={texts}
                 />
               </React.Fragment>
             ))}
             <RoundsLink href="#" />
           </PnlHistoryPanel>
         ) : (
-          <NoHistory />
+          <NoHistory texts={texts} />
         ))}
     </HistoryPanel>
   );

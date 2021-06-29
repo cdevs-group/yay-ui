@@ -5,11 +5,18 @@ import { BetPosition } from "../../Card/types";
 import { CompleteIcon } from "../../Svg";
 import { ButtonsBlockRops } from "../types";
 
-const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, disabledButton }: ButtonsBlockRops) => {
+const ButtonsBlock = ({
+  texts,
+  pool,
+  hasEnteredUp,
+  hasEnteredDown,
+  handleSetPosition,
+  disabledButton,
+}: ButtonsBlockRops) => {
   return (
     <>
       <PrizeBlock>
-        <p>PRIZE POOL</p>
+        <p>{texts?.prize?.toUpperCase() || "PRIZE POOL"}</p>
         <p>{pool}</p>
       </PrizeBlock>
       <Buttons>
@@ -20,7 +27,7 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
             onClick={() => handleSetPosition(BetPosition.BULL)}
             disabled={disabledButton}
           >
-            Enter UP
+            {texts?.enter || "Enter"} UP
           </Button>
           <IconComplete className="completeIcon" hasEntered={hasEnteredUp}>
             <CompleteIcon fill="#FFB72C" />
@@ -33,7 +40,7 @@ const ButtonsBlock = ({ pool, hasEnteredUp, hasEnteredDown, handleSetPosition, d
             onClick={() => handleSetPosition(BetPosition.BEAR)}
             disabled={disabledButton}
           >
-            Enter DOWN
+            {texts?.enter || "Enter"} DOWN
           </Button>
           <IconComplete className="completeIcon" hasEntered={hasEnteredDown}>
             <CompleteIcon fill="#FFB72C" />

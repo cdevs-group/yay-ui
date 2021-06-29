@@ -177,6 +177,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
   btnWinnings,
   hide,
   disabledTimer,
+  texts,
 }) => {
   return (
     <Wrap live={live}>
@@ -189,7 +190,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
           <p style={{ opacity: hide ? "0" : "1" }}>UP</p>
           <RightText displayNone={displayNone}>
-            <div className="payout">Payout</div>
+            <div className="payout">{texts?.payout || "Payout"}</div>
             <div>{payoutUp}</div>
             <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
               <CompleteIcon fill="#FFB72C" />
@@ -208,7 +209,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
         <DownContent negative={negative} displayNone={displayNone}>
           <p style={{ opacity: hide ? "0" : "1" }}>DOWN</p>
           <RightText displayNone={displayNone}>
-            <div className="payout">Payout</div>
+            <div className="payout">{texts?.payout || "Payout"}</div>
             <div>{payoutDown}</div>
             <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
               <CompleteIcon fill="#FFB72C" />

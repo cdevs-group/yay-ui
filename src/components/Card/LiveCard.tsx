@@ -93,11 +93,11 @@ const Prize = styled.div`
   }
 `;
 
-const LiveCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice, lockedPrice, prize }) => {
+const LiveCard: React.FC<StyledCardProps> = ({ texts, negative, closedCount, linePrice, lockedPrice, prize }) => {
   return (
     <Wrap>
       <Closed>
-        <div className="closed">LAST PRICE</div>
+        <div className="closed">{texts?.lats || "LAST PRICE"}</div>
         <ClosedCount negative={negative}>{closedCount}</ClosedCount>
       </Closed>
       <Line>
@@ -108,10 +108,10 @@ const LiveCard: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice,
       </Line>
       <Info>
         <LockedPrice>
-          Locked Price BNB: <div>{lockedPrice}</div>
+          {texts?.locked || "Locked Price"} BNB: <div>{lockedPrice}</div>
         </LockedPrice>
         <Prize>
-          Prize Pool: <div>{prize}</div>
+          {texts?.prize || "Prize Pool"}: <div>{prize}</div>
         </Prize>
       </Info>
     </Wrap>

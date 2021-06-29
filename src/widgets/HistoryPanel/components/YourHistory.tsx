@@ -5,6 +5,7 @@ import { Text } from "../../../components/Text";
 import WIN from "./img/win.png";
 import LOSE from "./img/lose.png";
 import { Button } from "../../../components/Button";
+import { ITextsRound } from "../types";
 
 interface IYourHistory {
   price: string;
@@ -14,20 +15,21 @@ interface IYourHistory {
   negative?: boolean;
   win: boolean;
   collect?: React.ReactNode;
+  texts?: ITextsRound;
 }
 
 const YourHistory = (props: IYourHistory) => {
-  const { price, priceRightText, yourPosition, win, negative, result, collect } = props;
+  const { texts, price, priceRightText, yourPosition, win, negative, result, collect } = props;
 
   return (
     <Block>
       <Line>
-        <Text mb={17}>Your History </Text>
+        <Text mb={17}>{texts?.history || "Your History"} </Text>
         <Line>
           {win && (
             <>
               <Text color="green" mr="6px">
-                WIN
+                {texts?.win || "WIN"}
               </Text>
               <img src={WIN} alt="" />
             </>
@@ -35,7 +37,7 @@ const YourHistory = (props: IYourHistory) => {
           {!win && (
             <>
               <Text color="greyText" mr="6px">
-                LOSE
+                {texts?.lose || "LOSE"}
               </Text>
               <img src={LOSE} alt="" />
             </>
@@ -45,7 +47,7 @@ const YourHistory = (props: IYourHistory) => {
       <ClosedPrice price={price} rightText={priceRightText} result={result} negative={negative} />
       <LineMargin>
         <Text size="sm" fontWeight={400}>
-          Your Position
+          {texts?.position || "Your Position"}
         </Text>
         <Text size="sm">{yourPosition}</Text>
       </LineMargin>

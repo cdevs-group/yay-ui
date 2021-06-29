@@ -9,7 +9,6 @@ import SetPositionCardBTC from "./CardNext/SetPositionCardBTC";
 import LoaderCard from "../Card/Loader";
 import Loader from "../Card/Loader";
 import Card from "../Card/Card";
-import { CercleIcon } from "../Svg";
 
 export default {
   title: "Components/CardBTC",
@@ -18,6 +17,14 @@ export default {
 };
 
 export const ExpiredCardBTCBlockETH: React.FC = () => {
+  const texts = {
+    collection: "Collect Winnings",
+    payout: "Payout",
+    locked: "Locked Price",
+    closed: "CLOSED PRICE",
+    prize: "PRIZE POLL",
+  };
+
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardBTC
@@ -28,8 +35,16 @@ export const ExpiredCardBTCBlockETH: React.FC = () => {
         payoutDown={5.03}
         colorNone
         time={2000}
+        texts={texts}
       >
-        <ExpiredCardBTC clodedBTC="400'597" lockedBRC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" />
+        <ExpiredCardBTC
+          texts={texts}
+          clodedBTC="400'597"
+          lockedBRC="3200"
+          closedETH="25'100"
+          lockedETH="1200"
+          prize="0'005"
+        />
       </CardBTC>
     </div>
   );
@@ -113,10 +128,24 @@ export const ExpiredCardBTCBlocETHkWin: React.FC = () => {
 };
 
 export const LiveCardBTCBlock: React.FC = () => {
+  const texts = {
+    last: "LAST PRICE",
+    locked: "Locked Price",
+    prize: "PRIZE POLL",
+  };
+
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardBTC live leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
-        <LiveCardBTC clodedBTC="400'597" lockedBRC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btc />
+        <LiveCardBTC
+          texts={texts}
+          clodedBTC="400'597"
+          lockedBRC="3200"
+          closedETH="25'100"
+          lockedETH="1200"
+          prize="0'005"
+          btc
+        />
       </CardBTC>
     </div>
   );
@@ -146,7 +175,7 @@ export const CancelCardBTC: React.FC = () => {
         payoutDown={5.03}
         time={2000}
       >
-        <GhostCard href="#" />
+        <GhostCard text="Learn More" href="#" />
       </CardBTC>
     </div>
   );
@@ -217,35 +246,47 @@ export const NextCardBTC: React.FC = () => {
       isSettingPosition: false,
     }));
 
+  const texts = {
+    entered: "Entered",
+    prize: "Prize Pool",
+    payout: "Payout",
+    setPosition: "Set Position",
+    commit: "Commit",
+  };
+
   return (
-    <CardFlipBTC isFlipped={state.isSettingPosition}>
-      <CardNextBTC
-        roundEpoch="round"
-        time={200}
-        payoutWin="payoutWin"
-        payoutLose="payoutLose"
-        pool="pool"
-        hasEnteredUp
-        hasEnteredDown={false}
-        handleSetPosition={handleSetPosition}
-        disabledButton={false}
-        canEnterPosition
-        negative
-        ethButton="$ 128271123"
-        btcButton="$232112"
-      />
-      <SetPositionCardBTC
-        inputValue={inputValue}
-        handleInputChange={handleInputChange}
-        showFieldWarning={false}
-        onBack={handleBack}
-        // onSuccess={()=>alert('ok')}
-        inputProps={{ disabled: false }}
-        // {{ disabled: !account || isTxPending }}
-      >
-        <></>
-      </SetPositionCardBTC>
-    </CardFlipBTC>
+    <div style={{ padding: "32px", width: "500px" }}>
+      <CardFlipBTC isFlipped={state.isSettingPosition}>
+        <CardNextBTC
+          texts={texts}
+          roundEpoch="round"
+          time={200}
+          payoutWin="payoutWin"
+          payoutLose="payoutLose"
+          pool="pool"
+          hasEnteredUp
+          hasEnteredDown={false}
+          handleSetPosition={handleSetPosition}
+          disabledButton={false}
+          canEnterPosition
+          negative
+          ethButton="$ 128271123"
+          btcButton="$232112"
+        />
+        <SetPositionCardBTC
+          texts={texts}
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          showFieldWarning={false}
+          onBack={handleBack}
+          // onSuccess={()=>alert('ok')}
+          inputProps={{ disabled: false }}
+          // {{ disabled: !account || isTxPending }}
+        >
+          <></>
+        </SetPositionCardBTC>
+      </CardFlipBTC>
+    </div>
   );
 };
 

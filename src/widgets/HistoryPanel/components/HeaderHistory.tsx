@@ -23,6 +23,8 @@ interface HeaderProps {
   historyFilter: string;
   isFetchingHistory: boolean;
   account: string;
+  tabsList: Array<string>;
+  texts: any;
 }
 
 const HeaderHistory: React.FC<HeaderProps> = ({
@@ -33,6 +35,8 @@ const HeaderHistory: React.FC<HeaderProps> = ({
   historyFilter,
   isFetchingHistory,
   account,
+  texts,
+  tabsList,
 }) => {
   return (
     <>
@@ -41,11 +45,11 @@ const HeaderHistory: React.FC<HeaderProps> = ({
       </ButtonClose>
       <Title>
         <Text size="lg" mr={1}>
-          History
+          {texts?.history || "History"}
         </Text>
       </Title>
       <TabsBaseWrap>
-        <TabsHistory tabValue={activeTab} onClick={switchTab} />
+        <TabsHistory tabsList={tabsList} tabValue={activeTab} onClick={switchTab} />
       </TabsBaseWrap>
 
       {activeTab === HistoryTabs.ROUNDS && (
@@ -59,7 +63,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
                 value={HistoryFilter.ALL}
                 disabled={isFetchingHistory || !account}
               >
-                All history
+                {texts.all || "All history"}
               </Tab>{" "}
               <Tab
                 as="button"
@@ -68,7 +72,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
                 value={HistoryFilter.COLLECTED}
                 disabled={isFetchingHistory || !account}
               >
-                Collected
+                {texts.collected || "Collected"}
               </Tab>
               <Tab
                 as="button"
@@ -77,7 +81,7 @@ const HeaderHistory: React.FC<HeaderProps> = ({
                 value={HistoryFilter.UNCOLLECTED}
                 disabled={isFetchingHistory || !account}
               >
-                Uncollected
+                {texts?.uncollected || "Uncollected"}
               </Tab>
             </TabsWrap>
           </SimpleTabsWrap>

@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
+import { ITexts } from "../types";
 
-const NoHistory = () => (
+const NoHistory = ({ texts }: { texts: ITexts }) => (
   <NoHistoryBlock>
-    <Text mb={15}>No prediction history available</Text>
+    <Text mb={15}>{texts?.noPredict || "No prediction history available"}</Text>
     <Text size="sm" fontWeight={400} letterSpacing="0.05em">
-      If you are sure you should see history here, make sure you`re connected to the correct wallet and try again
+      {texts?.ifYouSure ||
+        "If you are sure you should see history here, make sure you`re connected to the correct wallet and try again"}
     </Text>
   </NoHistoryBlock>
 );

@@ -28,6 +28,7 @@ export interface StyledCardProps {
   ethWon?: boolean;
   loader?: boolean;
   disabledTimer?: boolean;
+  texts?: any;
 }
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;

@@ -12,6 +12,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   inputProps,
   isWarning = false,
   decimals = 18,
+  texts,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
@@ -21,7 +22,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
   return (
     <InputWrap>
-      <TitleInput>Commit</TitleInput>
+      <TitleInput>{texts?.commit || "Commit"}</TitleInput>
       <InputIcon>
         {/* <div>
           <img src={ADA} alt="" />

@@ -23,4 +23,5 @@ export type {
   ButtonsBlockRops,
   TopContentProps,
   LaterCardProps,
+  Itexts,
 } from "./types";

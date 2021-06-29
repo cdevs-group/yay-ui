@@ -5,14 +5,13 @@ import { transparentize } from "polished";
 interface TabsProp {
   tabValue: number;
   onClick: (e: any) => Promise<void>;
+  tabsList: Array<string>;
 }
 
-const TabsHistory = ({ tabValue, onClick }: TabsProp) => {
-  const tabsList = ["Rounds", "PNL"];
-
+const TabsHistory = ({ tabValue, onClick, tabsList }: TabsProp) => {
   return (
     <TabsWrap>
-      {tabsList.map((item, i) => (
+      {tabsList?.map((item, i) => (
         <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
           {item}
         </Tab>

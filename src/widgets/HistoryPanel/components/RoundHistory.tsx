@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ClosedPrice } from "../../../components/ClosedPrice";
 import { Text } from "../../../components/Text";
+import { ITextsRound } from "../types";
 
 interface IRoundHistory {
   price: string;
@@ -15,6 +16,7 @@ interface IRoundHistory {
   negative?: boolean;
   lockPrice?: string;
   roundFailed?: boolean;
+  texts?: ITextsRound;
 }
 
 const RoundHistory = (props: IRoundHistory) => {
@@ -30,11 +32,12 @@ const RoundHistory = (props: IRoundHistory) => {
     result,
     lockPrice,
     roundFailed,
+    texts,
   } = props;
 
   return (
     <>
-      <Text mb={17}>Round History </Text>
+      <Text mb={17}>{texts?.rounds || "Round History"} </Text>
       <ClosedPrice
         price={price}
         rightText={priceRightText}
@@ -58,18 +61,18 @@ const RoundHistory = (props: IRoundHistory) => {
         {lockPrice && (
           <Line>
             <Text size="sm" fontWeight={400}>
-              Locked Price:
+              {texts?.locked || "Locked Price"}:
             </Text>
             <Text size="sm">{lockPrice}</Text>
           </Line>
         )}
         <LineMargin>
-          <Text size="sm">Prize Pool:</Text>
+          <Text size="sm">{texts?.prize || "Prize Pool"}:</Text>
           <Text>{prizePool}</Text>
         </LineMargin>
         <Line>
           <Text size="sm" fontWeight={400}>
-            Opening Block
+            {texts?.open || "Opening Block"}
           </Text>
           <Text size="sm" color={negative ? "redBg" : "green"}>
             {openingBlock}
@@ -77,7 +80,7 @@ const RoundHistory = (props: IRoundHistory) => {
         </Line>
         <Line>
           <Text size="sm" fontWeight={400}>
-            Closing Block
+            {texts?.closing || "Closing Block"}
           </Text>
           <Text size="sm" color={negative ? "redBg" : "green"}>
             {closingBlock}
