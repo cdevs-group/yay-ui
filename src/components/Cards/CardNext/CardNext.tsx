@@ -30,7 +30,7 @@ const CardNext: React.FC<IProps> = ({
   hasEnteredUp,
   hasEnteredDown,
   handleSetPosition,
-  disabledButton,  
+  disabledButton,
   disabledTimer,
 }) => {
   return (
