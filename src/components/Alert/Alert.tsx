@@ -75,12 +75,10 @@ const SetButton = ({ variant, onClick }: AlertProps) => {
   );
 };
 
-const Alert: React.FC<AlertProps> = ({title, children, variant, onClick}) => {
+const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
   return (
     <StyledAlert>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
       <SetButton variant={variant} onClick={onClick} />
     </StyledAlert>
   );

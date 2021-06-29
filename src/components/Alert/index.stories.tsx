@@ -45,13 +45,11 @@ export const WithHandler: React.FC = () => {
   }, [showAlertLoader]);
 
   return (
-    <div style={{ padding: "32px", width: "1000px" }}>     
+    <div style={{ padding: "32px", width: "1000px" }}>
       <Row>
-        <Alert
-          onClick={closeAlert}
-          variant="winning"
-          title="Winnings collected!"
-        >Your prizes have been sent to your wallet</Alert>
+        <Alert onClick={closeAlert} variant="winning" title="Winnings collected!">
+          Your prizes have been sent to your wallet
+        </Alert>
       </Row>
       <Row onClick={() => setShowAlert(true)}>
         <button>нажми на меня winning</button>
