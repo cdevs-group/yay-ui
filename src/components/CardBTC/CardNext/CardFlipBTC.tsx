@@ -50,7 +50,7 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
 
 const StyledCardFlip = styled.div`
   perspective: 1000px;
-  height: 369px;
+  height: 371px;
   width: 335px;
   border-radius: 15px;
 `;
