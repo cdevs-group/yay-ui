@@ -105,4 +105,5 @@ const LoaderCardText: React.FC<StyledCardProps> = ({ textTooltip }) => {
     </Wrap>
   );
 };
+
 export default LoaderCardText;
