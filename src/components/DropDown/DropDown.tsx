@@ -5,26 +5,23 @@ import { DropDownProps } from "./types";
 const DropdownLayout = ({ children, open, setOpen, icon }: DropDownProps) => {
   const refSelect = useRef(null);
 
-  // const handleClickOutside = useCallback(
-  //   (e) => {
-  //     if (
-  //       refSelect.current !== e.target &&
-  //       refSelect?.current?.contains!==(e.target)
-  //     ) {
-  //       setOpen(false);
-  //     }
-  //   },
-  //   [setOpen]
-  // );
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (refSelect.current !== e.target) {
+        setOpen(false);
+      }
+    },
+    [setOpen]
+  );
 
-  // useEffect(() => {
-  //   if (document && refSelect && refSelect.current) {
-  //     document.addEventListener("mouseup", handleClickOutside, false);
-  //   }
-  //   return () => {
-  //     document.removeEventListener("mouseup", handleClickOutside, false);
-  //   };
-  // }, [refSelect, handleClickOutside]);
+  useEffect(() => {
+    if (document && refSelect && refSelect.current) {
+      document.addEventListener("mouseup", handleClickOutside, false);
+    }
+    return () => {
+      document.removeEventListener("mouseup", handleClickOutside, false);
+    };
+  }, [refSelect, handleClickOutside]);
 
   const handleClickOpen = (e: any) => {
     e.preventDefault();

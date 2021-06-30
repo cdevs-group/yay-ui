@@ -225,8 +225,7 @@ export const Panel: React.FC = () => {
     uncollected: "Uncollected",
   };
   const textsStatistic = {
-    average: "Average",
-    return: "return / round",
+    average: "Average  return / round",
     best: "Best round",
     averagePosition: "Average position",
     entered: "entered / round",

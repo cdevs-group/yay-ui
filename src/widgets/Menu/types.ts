@@ -39,7 +39,7 @@ export interface MenuEntry {
 
 export interface LangType {
   code: string;
-  language: string;
+  language: [];
 }
 export interface PanelProps {
   isDark: boolean;

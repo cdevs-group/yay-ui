@@ -193,6 +193,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
   displayNone,
   colorNone,
   time,
+  disabledTimer,
   btnWinnings,
   btcWon,
   ethWon,
@@ -203,7 +204,7 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
     <Wrap live={live}>
       <TopContent>
         <LeftContent>{leftContent}</LeftContent>
-        <Timer time={time} color="#fff" />
+        <Timer time={time} color="#fff" disabled={disabledTimer} />
         <RightContent>{rightContent}</RightContent>
       </TopContent>
       <Content>

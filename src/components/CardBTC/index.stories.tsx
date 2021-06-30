@@ -275,7 +275,7 @@ export const NextCardBTC: React.FC = () => {
           btcButton="$ 121221232112"
         />
         <SetPositionCardBTC
-          texts="Set Pdosition"
+          texts="Set Position"
           inputText="Commit"
           textsButtons={{ prize: "PRIZE POOL" }}
           inputValue={inputValue}

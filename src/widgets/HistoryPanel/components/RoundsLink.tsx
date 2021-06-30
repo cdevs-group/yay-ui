@@ -36,8 +36,8 @@ const Wrap = styled.div`
     position: absolute;
     display: block;
     content: "";
-    width: 408px;
-    left: -20px;
+    width: calc(100% + 32px);
+    left: -16px;
     top: 0;
     z-index: 0;
     height: 100%;

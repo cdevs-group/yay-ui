@@ -1237,8 +1237,7 @@ var LoaderCard$1 = function (_a) {
                 React__default['default'].createElement(GreenCircle$2, null),
                 React__default['default'].createElement(RedCircle$2, null),
                 React__default['default'].createElement(YellowCircle$2, null)),
-            React__default['default'].createElement(BottomText$1, null, textTooltip ||
-                "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation"))));
+            textTooltip && React__default['default'].createElement(BottomText$1, null, textTooltip))));
 };
 var templateObject_1$1a, templateObject_2$V, templateObject_3$H, templateObject_4$s, templateObject_5$j, templateObject_6$e, templateObject_7$6, templateObject_8$4, templateObject_9$3, templateObject_10$3, templateObject_11$2, templateObject_12$1;
 
@@ -1696,15 +1695,11 @@ var ButtonsBlock = function (_a) {
             React__default['default'].createElement("p", null, pool)),
         React__default['default'].createElement(Buttons$1, null,
             React__default['default'].createElement(ButtonWrap$1, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
-                React__default['default'].createElement(Button$5, { width: "100%", variant: "green", onClick: function () { return handleSetPosition(BetPosition.BULL); }, disabled: disabledButton },
-                    (texts === null || texts === void 0 ? void 0 : texts.enter) || "Enter",
-                    " UP"),
+                React__default['default'].createElement(Button$5, { width: "100%", variant: "green", onClick: function () { return handleSetPosition(BetPosition.BULL); }, disabled: disabledButton }, (texts === null || texts === void 0 ? void 0 : texts.enterUp) || "Enter UP"),
                 React__default['default'].createElement(IconComplete$2, { className: "completeIcon", hasEntered: hasEnteredUp },
                     React__default['default'].createElement(Icon$c, { fill: "#FFB72C" }))),
             React__default['default'].createElement(ButtonWrap$1, { className: hasEnteredUp ? "unCoise" : "" },
-                React__default['default'].createElement(Button$5, { width: "100%", variant: "pink", onClick: function () { return handleSetPosition(BetPosition.BEAR); }, disabled: disabledButton },
-                    (texts === null || texts === void 0 ? void 0 : texts.entered) || "Enter",
-                    " DOWN"),
+                React__default['default'].createElement(Button$5, { width: "100%", variant: "pink", onClick: function () { return handleSetPosition(BetPosition.BEAR); }, disabled: disabledButton }, (texts === null || texts === void 0 ? void 0 : texts.enterDown) || "Enter DOWN"),
                 React__default['default'].createElement(IconComplete$2, { className: "completeIcon", hasEntered: hasEnteredDown },
                     React__default['default'].createElement(Icon$c, { fill: "#FFB72C" }))))));
 };
@@ -1741,7 +1736,7 @@ var Inner$1 = styled__default['default'].div(templateObject_3$C || (templateObje
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
-var StyledCardFlip$1 = styled__default['default'].div(templateObject_4$p || (templateObject_4$p = __makeTemplateObject(["\n  perspective: 1000px;\n  height: 369px;\n  width: 335px;\n  border-radius: 15px;\n"], ["\n  perspective: 1000px;\n  height: 369px;\n  width: 335px;\n  border-radius: 15px;\n"])));
+var StyledCardFlip$1 = styled__default['default'].div(templateObject_4$p || (templateObject_4$p = __makeTemplateObject(["\n  perspective: 1000px;\n  height: 371px;\n  width: 335px;\n  border-radius: 15px;\n"], ["\n  perspective: 1000px;\n  height: 371px;\n  width: 335px;\n  border-radius: 15px;\n"])));
 var getComponents$1 = function (children) {
     if (children.length !== 2) {
         throw new Error("CardFlip: Two children are required");
@@ -2426,11 +2421,11 @@ var Currency$1 = styled__default['default'].div(templateObject_15 || (templateOb
 });
 var WonBlcok = styled__default['default'].div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  position: relative;\n  text-align: center;\n  width: 100%;\n  & img {\n    position: absolute;\n    top: -95px;\n    right: -70px;\n    z-index: 10;\n  }\n"], ["\n  position: relative;\n  text-align: center;\n  width: 100%;\n  & img {\n    position: absolute;\n    top: -95px;\n    right: -70px;\n    z-index: 10;\n  }\n"])));
 var StyledCardBTC = function (_a) {
-    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, showBtnWinnings = _a.showBtnWinnings, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone, time = _a.time, btnWinnings = _a.btnWinnings, btcWon = _a.btcWon, ethWon = _a.ethWon, loader = _a.loader, texts = _a.texts;
+    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, showBtnWinnings = _a.showBtnWinnings, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone, time = _a.time, disabledTimer = _a.disabledTimer, btnWinnings = _a.btnWinnings, btcWon = _a.btcWon, ethWon = _a.ethWon, loader = _a.loader, texts = _a.texts;
     return (React__default['default'].createElement(Wrap$e, { live: live },
         React__default['default'].createElement(TopContent, null,
             React__default['default'].createElement(LeftContent, null, leftContent),
-            React__default['default'].createElement(Timer$1, { time: time, color: "#fff" }),
+            React__default['default'].createElement(Timer$1, { time: time, color: "#fff", disabled: disabledTimer }),
             React__default['default'].createElement(RightContent$1, null, rightContent)),
         React__default['default'].createElement(Content, null,
             React__default['default'].createElement(UpContent, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone }, btcWon ? (React__default['default'].createElement(WonBlcok, null,
@@ -2608,7 +2603,7 @@ var Inner = styled__default['default'].div(templateObject_3$m || (templateObject
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
-var StyledCardFlip = styled__default['default'].div(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  perspective: 1000px;\n  height: 369px;\n  width: 335px;\n  border-radius: 15px;\n"], ["\n  perspective: 1000px;\n  height: 369px;\n  width: 335px;\n  border-radius: 15px;\n"])));
+var StyledCardFlip = styled__default['default'].div(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  perspective: 1000px;\n  height: 371px;\n  width: 335px;\n  border-radius: 15px;\n"], ["\n  perspective: 1000px;\n  height: 371px;\n  width: 335px;\n  border-radius: 15px;\n"])));
 var getComponents = function (children) {
     if (children.length !== 2) {
         throw new Error("CardFlip: Two children are required");
@@ -2677,14 +2672,14 @@ var IconComplete = styled__default['default'].div(templateObject_8$1 || (templat
 var templateObject_1$z, templateObject_2$r, templateObject_3$l, templateObject_4$c, templateObject_5$a, templateObject_6$5, templateObject_7$3, templateObject_8$1;
 
 var CardNext = function (_a) {
-    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer; _a.texts; var textRow = _a.textRow, textsButtons = _a.textsButtons;
+    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer; _a.texts; var textRow = _a.textRow, textsButtons = _a.textsButtons, ethButton = _a.ethButton, btcButton = _a.btcButton;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(TopContent$2, { rightContent: roundEpoch },
             React__default['default'].createElement(Timer$1, { color: "white", time: time, disabled: disabledTimer })),
         React__default['default'].createElement(WrapContent, null,
             React__default['default'].createElement(ValueRow, { texts: textRow, vector: "BTC", value: payoutWin }),
             React__default['default'].createElement(ButtonsBlockWrap, null,
-                React__default['default'].createElement(ButtonsBlockBTC, { texts: textsButtons, pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton })),
+                React__default['default'].createElement(ButtonsBlockBTC, { ethButton: ethButton, btcButton: btcButton, texts: textsButtons, pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton })),
             React__default['default'].createElement(ValueRow, { texts: textRow, vector: "ETH", value: payoutLose }))));
 };
 styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  transform: ", ";\n"])), function (_a) {
@@ -2717,7 +2712,7 @@ var SetPositionCardBTC = function (_a) {
     return (React__default['default'].createElement(Wrap$a, null,
         React__default['default'].createElement(ButtonBack, { onClick: onBack },
             React__default['default'].createElement(ArrowIcon$1, null)),
-        React__default['default'].createElement(Title$1, null, texts || "Set Pdosition"),
+        React__default['default'].createElement(Title$1, null, texts || "Set Position"),
         React__default['default'].createElement(BalanceInput, { texts: inputText, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
         React__default['default'].createElement(TabsBlock, null,
             React__default['default'].createElement(TabsCard, { handlePercentChange: handlePercentChange, disabledTab: disabledTab })),
