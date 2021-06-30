@@ -20,7 +20,8 @@ interface IProps {
   hasEnteredDown: boolean;
   disabledButton: boolean;
   disabledTimer?: boolean;
-  texts?: string;
+  textsButton?: any;
+  textsRow?:string;
 }
 
 const CardNext: React.FC<IProps> = ({
@@ -34,7 +35,8 @@ const CardNext: React.FC<IProps> = ({
   handleSetPosition,
   disabledButton,
   disabledTimer,
-  texts,
+  textsRow,
+  textsButton
 }) => {
   return (
     <>
@@ -42,7 +44,7 @@ const CardNext: React.FC<IProps> = ({
         <Timer color="white" time={time} disabled={disabledTimer} />
       </TopContent>
       <WrapContent>
-        <ValueRow texts={texts} vector="UP" value={payoutWin} />
+        <ValueRow texts={textsRow} vector="UP" value={payoutWin} />
         <ButtonsBlockWrap>
           <ButtonsBlock
             pool={pool}
@@ -50,9 +52,10 @@ const CardNext: React.FC<IProps> = ({
             hasEnteredDown={hasEnteredDown}
             handleSetPosition={handleSetPosition}
             disabledButton={disabledButton}
+            texts={textsButton}
           />
         </ButtonsBlockWrap>
-        <ValueRow texts={texts} vector="DOWN" value={payoutLose} />
+        <ValueRow texts={textsRow} vector="DOWN" value={payoutLose} />
       </WrapContent>
     </>
   );

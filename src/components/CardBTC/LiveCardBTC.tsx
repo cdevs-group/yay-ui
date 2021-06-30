@@ -73,7 +73,7 @@ const LiveCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, prize,
       </Middle>
       <Line>
         <Closed>
-          {texts?.last || "LAST PRICE"} BTC <p> {closedETH}</p>
+          {texts?.last || "LAST PRICE"} ETH <p> {closedETH}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="eth">
