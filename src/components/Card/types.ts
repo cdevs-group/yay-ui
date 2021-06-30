@@ -146,3 +146,70 @@ export interface IProps {
   children?: React.ReactNode;
   text?: string;
 }
+export interface ButtonsBlockRops {
+  pool: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  disabledButton: boolean;
+  ethButton?: string;
+  btcButton?: string;
+  texts?: Itexts;
+}
+export interface Itexts {
+  payout?: string;
+  entered?: string;
+  prize?: string;
+  setPosition?: string;
+  commit?: string;
+  enterUp?: string;
+  enterDown?: string;
+}
+export interface IPropsTopAndGhost {
+  children?: ReactNode;
+  rightContent?: string;
+  texts?: string;
+  href?: string;
+  text?: string;
+}
+
+export interface CardFlipProps {
+  isFlipped: boolean;
+  children: Array<ReactNode>;
+}
+export interface ValueProps {
+  vector: string;
+  value: string;
+  texts?: string;
+}
+
+export interface CardButtonsProps {
+  handleTurn: (e: any) => void;
+  confirm: boolean;
+  choise?: null | string;
+  pool: string;
+}
+
+export interface TabsProps {
+  handlePercentChange: (sliderPercent: number) => void;
+  disabledTab?: boolean;
+}
+export interface IProps {
+  roundEpoch: string;
+  time: number;
+  payoutWin: string;
+  payoutLose: string;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  pool: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  disabledButton: boolean;
+  disabledTimer?: boolean;
+  textsButton?: any;
+  textsRow?: string;
+}
+export interface LaterCardProps {
+  time: number;
+  rightContent: string;
+  color: string;
+}

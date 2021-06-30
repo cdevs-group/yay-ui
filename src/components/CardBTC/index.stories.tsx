@@ -9,10 +9,11 @@ import SetPositionCardBTC from "./CardNext/SetPositionCardBTC";
 import LoaderCardText from "./components/LoaderCardText";
 import Loader from "../Card/Loader";
 import Card from "../Card/Card";
+import BalanceBlock from "./components/BalanceBlock";
 
 export default {
   title: "Components/CardBTC",
-  component: [ExpiredCardBTC, LiveCardBTC, SetPositionCardBTC, CardFlipBTC, CardNextBTC],
+  component: [ExpiredCardBTC, LiveCardBTC, SetPositionCardBTC, CardFlipBTC, CardNextBTC, BalanceBlock],
   argTypes: {},
 };
 
@@ -311,3 +312,7 @@ export const LaterCardTextBTC: React.FC = () => {
     </div>
   );
 };
+
+export const BalanceBlockItem = () => <BalanceBlock btc value="$ 213213123" />;
+
+export const BalanceBlockItemETH = () => <BalanceBlock value="$ 213123" />;

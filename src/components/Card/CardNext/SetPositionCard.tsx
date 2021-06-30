@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BalanceInput } from "../../BalanceInput";
 import { SetPositionCardProps } from "../../CardBTC/types";
-import ArrowIcon from "../ArrowIcon";
+import ArrowIcon from "../../Cards/ArrowIcon";
 import Tabs from "./TabsCard";
 
 const SetPositionCard: React.FC<SetPositionCardProps> = ({

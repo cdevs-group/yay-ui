@@ -1,6 +1,5 @@
 import { InputHTMLAttributes, ReactNode, ReactText } from "react";
-import { BetPosition } from "../Card/types";
-import { Itexts } from "../Cards/types";
+import { BetPosition, Itexts } from "../Card/types";
 
 export interface ItextExpired {
   prize?: string;
@@ -50,4 +49,8 @@ export interface SetPositionCardProps {
   texts?: string;
   inputText?: string;
   textsButtons?: Itexts;
+}
+export interface BalanceBlockProps {
+  btc?: boolean;
+  value: string;
 }

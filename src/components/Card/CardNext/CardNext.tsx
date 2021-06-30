@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
-import { ArrowCardDown } from "../../Svg";
 import { Timer } from "../../Timer";
 import { IProps } from "../types";
 import ButtonsBlock from "./ButtonsBlock";

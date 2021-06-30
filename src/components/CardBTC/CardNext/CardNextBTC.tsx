@@ -5,8 +5,8 @@ import { BetPosition } from "../../Card/types";
 import { ArrowCardDown } from "../../Svg";
 import { Timer } from "../../Timer";
 import ButtonsBlock from "./ButtonsBlockBTC";
-import TopContent from "../../Cards/CardNext/TopContent";
-import ValueRow from "../../Cards/CardNext/ValueRow";
+import TopContent from "../../Card/CardNext/TopContent";
+import ValueRow from "../../Card/CardNext/ValueRow";
 import { IProps } from "../types";
 
 const CardNext: React.FC<IProps> = ({
