@@ -112,7 +112,8 @@ export const CardsBalancePreview: React.FC = () => {
       <div style={{ marginTop: "100px", marginLeft: "100px" }}>
         <CardFlip isFlipped={state.isSettingPosition}>
           <CardNext
-            texts="Payout"
+            textsRow="Payout"
+            textsButton={textsButtons}
             roundEpoch="round"
             time={200}
             payoutWin="payoutWin"
