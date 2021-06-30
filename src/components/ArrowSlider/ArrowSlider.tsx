@@ -18,13 +18,10 @@ const CenterBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
+  width: 186px;
   padding: 17px;
   background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
-  border-radius: 12px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: 198px;
-  }
+  border-radius: 12px; 
 `;
 const ArrowLeft = styled.button`
   display: flex;
@@ -49,15 +46,19 @@ const ArrowRight = styled.button`
 
 const Center = styled.button`
   position: absolute;
-  left: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  display: flex;
+  justify-content: center;
   top: -20px;
   background: none;
   border: none;
   width: 76px;
   height: 76px;
-  cursor: pointer;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    left: 46px;
+  cursor: pointer;  
+  & svg {
+    margin-left: -10px;
   }
 `;
 

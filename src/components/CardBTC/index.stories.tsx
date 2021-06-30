@@ -264,7 +264,7 @@ export const NextCardBTC: React.FC = () => {
           payoutWin="payoutWin"
           payoutLose="payoutLose"
           pool="pool"
-          hasEnteredUp
+          hasEnteredUp={false}
           hasEnteredDown={false}
           handleSetPosition={handleSetPosition}
           disabledButton={false}

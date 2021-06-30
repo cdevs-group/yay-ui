@@ -16,7 +16,6 @@ const TopContent = ({ children, rightContent, texts }: TopContentProps) => {
 export default TopContent;
 
 const Wrap = styled.div`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,8 +31,8 @@ const LeftContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
