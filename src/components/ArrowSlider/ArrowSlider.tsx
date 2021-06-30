@@ -21,7 +21,7 @@ const CenterBlock = styled.div`
   width: 186px;
   padding: 17px;
   background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
-  border-radius: 12px; 
+  border-radius: 12px;
 `;
 const ArrowLeft = styled.button`
   display: flex;
@@ -56,7 +56,7 @@ const Center = styled.button`
   border: none;
   width: 76px;
   height: 76px;
-  cursor: pointer;  
+  cursor: pointer;
   & svg {
     margin-left: -10px;
   }

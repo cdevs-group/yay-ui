@@ -11,7 +11,8 @@ interface IProps {
     hasEnteredDown: boolean;
     disabledButton: boolean;
     disabledTimer?: boolean;
-    texts?: string;
+    textsButton?: any;
+    textsRow?: string;
 }
 declare const CardNext: React.FC<IProps>;
 export default CardNext;

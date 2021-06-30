@@ -21,7 +21,7 @@ interface IProps {
   disabledButton: boolean;
   disabledTimer?: boolean;
   textsButton?: any;
-  textsRow?:string;
+  textsRow?: string;
 }
 
 const CardNext: React.FC<IProps> = ({
@@ -36,7 +36,7 @@ const CardNext: React.FC<IProps> = ({
   disabledButton,
   disabledTimer,
   textsRow,
-  textsButton
+  textsButton,
 }) => {
   return (
     <>
