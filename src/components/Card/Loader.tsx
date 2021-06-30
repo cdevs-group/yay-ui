@@ -112,11 +112,7 @@ const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
           <RedCircle />
           <YellowCircle />
         </Loader>
-        {textTooltip && (
-          <BottomText>
-            {textTooltip}
-          </BottomText>
-        )}
+        {textTooltip && <BottomText>{textTooltip}</BottomText>}
       </Content>
     </Wrap>
   );
