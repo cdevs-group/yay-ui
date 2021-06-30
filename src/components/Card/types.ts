@@ -141,11 +141,11 @@ export interface PredictionUser {
   totalBets: number;
   totalBNB: number;
 }
-export interface IProps {
-  href: string;
-  children?: React.ReactNode;
-  text?: string;
-}
+// export interface IProps {
+//   href: string;
+//   children?: React.ReactNode;
+//   text?: string;
+// }
 export interface ButtonsBlockRops {
   pool: string;
   hasEnteredUp: boolean;
