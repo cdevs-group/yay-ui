@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
+import { BetPosition, ButtonsBlockRops } from "../../Card/types";
 import { CompleteIcon } from "../../Svg";
-import { ButtonsBlockRops } from "../../Cards/types";
 import BTC from "../components/btc.png";
 import ETH from "../components/eth.png";
 

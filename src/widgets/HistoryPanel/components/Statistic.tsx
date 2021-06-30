@@ -62,7 +62,7 @@ const Statistic = ({
           </Best>
           <Text textAlign="right">{averagePositionPrice}</Text>
         </div>
-      </Row>      
+      </Row>
     </Wrap>
   );
 };

@@ -1,8 +1,4 @@
-import React from "react";
-interface IProps {
-    href: string;
-    children?: React.ReactNode;
-    text?: string;
-}
-declare const GhostCard: ({ href, children, text }: IProps) => JSX.Element;
+/// <reference types="react" />
+import { IPropsTopAndGhost } from "../types";
+declare const GhostCard: ({ href, children, text }: IPropsTopAndGhost) => JSX.Element;
 export default GhostCard;

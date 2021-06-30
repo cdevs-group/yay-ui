@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { IPropsTopAndGhost } from "../../Cards/types";
 import { LinkExternal } from "../../Link";
+import { IPropsTopAndGhost } from "../types";
 import GHOST from "./ghost.png";
 
 const GhostCard = ({ href, children, text }: IPropsTopAndGhost) => {

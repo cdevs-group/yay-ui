@@ -70,7 +70,7 @@ const Wrap = styled.div`
   background: ${({ theme }) => theme.colors.cardBg};
   padding-bottom: 30px;
   position: relative;
-  z-index: 1; 
+  z-index: 1;
 `;
 const Row = styled.div`
   padding: 17px 0;

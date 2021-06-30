@@ -95,6 +95,7 @@ export declare type Colors = {
     bgCardBtc2: string;
     blueGradient: string;
     boxShadow6: string;
+    yellowGradient: string;
     gradients: Gradients;
     binance: string;
 };

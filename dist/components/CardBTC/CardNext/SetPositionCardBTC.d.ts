@@ -1,4 +1,4 @@
 import React from "react";
-import { SetPositionCardBTCProps } from "../types";
-declare const SetPositionCardBTC: React.FC<SetPositionCardBTCProps>;
+import { SetPositionCardProps } from "../types";
+declare const SetPositionCardBTC: React.FC<SetPositionCardProps>;
 export default SetPositionCardBTC;

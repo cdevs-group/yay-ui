@@ -21,8 +21,8 @@ export interface ITextNoHistory {
 }
 export interface ITextsStatistic {
   average?: string | ReactNode;
-  best?: string| ReactNode;
-  averagePosition?: string| ReactNode;
+  best?: string | ReactNode;
+  averagePosition?: string | ReactNode;
 }
 
 export interface InjectedProps {

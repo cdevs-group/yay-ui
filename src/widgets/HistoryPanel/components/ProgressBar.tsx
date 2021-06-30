@@ -45,7 +45,7 @@ const Progress = styled.div`
   width: 100%;
   overflow: hidden;
 `;
-const Step = styled.div<{ color: string; width: number;}>`
+const Step = styled.div<{ color: string; width: number }>`
   height: 9px;
   width: ${({ width }) => `${width}%`};
   background: ${({ color }) => color};

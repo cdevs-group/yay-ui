@@ -10,4 +10,5 @@ export { default as WINIMG } from "./components/win.png";
 export { default as ETHIMG } from "./components/eth.png";
 export { default as BTCIMG } from "./components/btc.png";
 export { default as LoaderCardText } from "./components/LoaderCardText";
-export type { ExpireCardBTCProps, SetPositionCardBTCProps, Itext, ItextExpired } from "./types";
+export { default as BalanceBlock } from "./components/BalanceBlock";
+export type { ExpireCardBTCProps, ItextExpired, BalanceBlockProps } from "./types";
