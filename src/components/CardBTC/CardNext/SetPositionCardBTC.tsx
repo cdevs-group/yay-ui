@@ -28,7 +28,7 @@ const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
       <ButtonBack onClick={onBack}>
         <ArrowIcon />
       </ButtonBack>
-      <Title>{texts || "Set Pdosition"}</Title>
+      <Title>{texts || "Set Position"}</Title>
       <BalanceInput
         texts={inputText}
         value={inputValue}
