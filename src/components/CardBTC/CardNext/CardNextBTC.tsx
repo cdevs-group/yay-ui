@@ -42,6 +42,8 @@ const CardNext: React.FC<IProps> = ({
   texts,
   textRow,
   textsButtons,
+  ethButton,
+  btcButton,
 }) => {
   return (
     <>
@@ -52,6 +54,8 @@ const CardNext: React.FC<IProps> = ({
         <ValueRow texts={textRow} vector="BTC" value={payoutWin} />
         <ButtonsBlockWrap>
           <ButtonsBlock
+            ethButton={ethButton}
+            btcButton={btcButton}
             texts={textsButtons}
             pool={pool}
             hasEnteredUp={hasEnteredUp}

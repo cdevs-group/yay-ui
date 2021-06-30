@@ -69,9 +69,9 @@ export interface Itexts {
   commit?: string;
 }
 export interface ITextsButtons {
-  entered?: string;
+  enterUp?: string;
   prize?: string;
-  enter?: string;
+  enterDown?: string;
 }
 
 export interface ButtonsBlockRops {
