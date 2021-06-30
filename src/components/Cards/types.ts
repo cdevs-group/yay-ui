@@ -34,7 +34,12 @@ export interface ArrowProps {
 }
 
 export interface TextCardsProps {
-  text: { text1?: string; title1?: string; text2?: string; title2?: string };
+  text: {
+    text1?: string;
+    title1?: string;
+    text2?: string;
+    title2?: string;
+  };
 }
 
 export interface CardButtonsProps {
@@ -48,29 +53,28 @@ export interface TabsProps {
   handlePercentChange: (sliderPercent: number) => void;
   disabledTab?: boolean;
 }
-
-export interface SetPositionCardProps {
-  onBack: (e: any) => void;
-  children: ReactNode;
-  inputValue: string;
-  onUserInput: (input: string) => void;
-  showFieldWarning: boolean;
-  inputProps: { disabled: boolean };
-  handlePercentChange: (sliderPercent: number) => void;
-  disabledTab: boolean;
-  texts?: string;
-  inputText?: string;
+export interface IProps {
+  roundEpoch: string;
+  time: number;
+  payoutWin: string;
+  payoutLose: string;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  pool: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  disabledButton: boolean;
+  disabledTimer?: boolean;
+  textsButton?: any;
+  textsRow?: string;
 }
+
 export interface Itexts {
   payout?: string;
   entered?: string;
   prize?: string;
   setPosition?: string;
   commit?: string;
-}
-export interface ITextsButtons {
   enterUp?: string;
-  prize?: string;
   enterDown?: string;
 }
 
@@ -82,12 +86,14 @@ export interface ButtonsBlockRops {
   disabledButton: boolean;
   ethButton?: string;
   btcButton?: string;
-  texts?: ITextsButtons;
+  texts?: Itexts;
 }
-export interface TopContentProps {
-  children: ReactNode;
-  rightContent: string;
+export interface IPropsTopAndGhost {
+  children?: ReactNode;
+  rightContent?: string;
   texts?: string;
+  href?: string;
+  text?: string;
 }
 export interface LaterCardProps {
   time: number;

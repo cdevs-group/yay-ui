@@ -19,9 +19,8 @@ export type {
   TextCardsProps,
   CardButtonsProps,
   TabsProps,
-  SetPositionCardProps,
   ButtonsBlockRops,
-  TopContentProps,
+  IPropsTopAndGhost,
   LaterCardProps,
   Itexts,
 } from "./types";

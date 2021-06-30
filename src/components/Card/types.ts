@@ -30,6 +30,7 @@ export interface StyledCardProps {
   disabledTimer?: boolean;
   texts?: any;
 }
+
 export interface StyledCardUpDownProps extends StyledCardProps {
   isReturn: string;
   setIsReturn: (value: string) => void;
@@ -139,4 +140,9 @@ export interface PredictionUser {
   block: number;
   totalBets: number;
   totalBNB: number;
+}
+export interface IProps {
+  href: string;
+  children?: React.ReactNode;
+  text?: string;
 }
