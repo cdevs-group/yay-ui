@@ -33,12 +33,13 @@ const Statistic = ({
   return (
     <Wrap>
       <Row>
-        <Text>{texts?.average || "Average"}</Text>
-        <Best fontSize="13px" textAlign="right" color={colorAverage}>
-          {averageReturn}
-        </Best>
-        <Text>{texts?.return || "return / round"}</Text>
-        <Text textAlign="right">{averageReturnPrice}</Text>
+        <Text>{texts?.average || "Average return / round"}</Text>
+        <div>
+          <Best fontSize="13px" textAlign="right" color={colorAverage}>
+            {averageReturn}
+          </Best>
+          <Text textAlign="right">{averageReturnPrice}</Text>{" "}
+        </div>
       </Row>
       {hasBestRound && (
         <Row>
@@ -54,31 +55,14 @@ const Statistic = ({
         </Row>
       )}
       <Row>
-        <Text>{texts?.averagePosition || "Average position"}</Text>
-        <Best fontSize="13px" textAlign="right" color="white">
-          {averagePosition}
-        </Best>
-        <Text>{texts?.entered || "entered / round"}</Text>
-        <Text textAlign="right">{averagePositionPrice}</Text>
-      </Row>
-      {/* 
-      {best.map((item, i) => (
-        <Row key={i}>
-          <Text>{nameRow(i).first}</Text>
-
-          <Best fontSize="13px" textAlign="right" color={i !== 2 ? "#4BE43E" : "white"}>
-            {i === 1 ? (
-              <Text color="#A3A3A3" fontSize="13px">
-                ({bestNumber?.kef}X)
-              </Text>
-            ) : null}
-            +{item.average}BNB
+        <Text>{texts?.averagePosition || "Average position entered / round"}</Text>
+        <div>
+          <Best fontSize="13px" textAlign="right" color="white">
+            {averagePosition}
           </Best>
-
-          <Text>{nameRow(i).second}</Text>
-          <Text textAlign="right">{item.round}</Text>
-        </Row>
-      ))} */}
+          <Text textAlign="right">{averagePositionPrice}</Text>
+        </div>
+      </Row>      
     </Wrap>
   );
 };

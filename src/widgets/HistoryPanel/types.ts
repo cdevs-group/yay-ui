@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 export type Handler = (boolean: boolean) => void;
 
 export interface ITextsYourHistory {
@@ -19,11 +19,9 @@ export interface ITextNoHistory {
   noPredict?: string;
 }
 export interface ITextsStatistic {
-  average?: string;
-  return?: string;
-  best?: string;
-  averagePosition?: string;
-  entered?: string;
+  average?: string | ReactNode;
+  best?: string| ReactNode;
+  averagePosition?: string| ReactNode;
 }
 
 export interface InjectedProps {
