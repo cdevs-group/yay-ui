@@ -64,9 +64,9 @@ export const CardsBalancePreview: React.FC = () => {
     }));
 
   const textsButtons = {
-    entered: "Entered",
+    enterUp: "Enter UP",
     prize: "Prize Pool",
-    enter: "Enter",
+    enterDown: "Enter DOWN",
   };
 
   return (

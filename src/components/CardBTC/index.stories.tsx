@@ -271,7 +271,7 @@ export const NextCardBTC: React.FC = () => {
           canEnterPosition
           negative
           ethButton="$ 128271123"
-          btcButton="$232112"
+          btcButton="$ 121221232112"
         />
         <SetPositionCardBTC
           texts="Set Pdosition"
