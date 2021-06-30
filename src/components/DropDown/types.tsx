@@ -3,8 +3,8 @@ import { LangType } from "../../widgets/Menu/types";
 
 export interface LanguagesProps {
   currentLang: string;
-  langs: Array<string>;
-  setLang: any;
+  langs: LangType[];
+  setLang: (lang: LangType) => void;
 }
 
 export interface DropDownProps {

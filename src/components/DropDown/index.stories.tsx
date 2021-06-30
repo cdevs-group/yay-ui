@@ -8,11 +8,11 @@ export default {
 
 export const InputMain: React.FC = () => {
   const languages = ["EN", "RU", "BG"];
-  const [select, setSelect] = useState(languages[0]);
+  const [select, setSelect] = useState<string>(languages[0]);
 
   return (
     <div>
-      <Languages langs={languages} setLang={setSelect} currentLang={select} />
+      <Languages list={languages} setSelect={setSelect} select={select} />
     </div>
   );
 };

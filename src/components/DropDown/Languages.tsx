@@ -19,14 +19,14 @@ const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
         setOpen={setOpen}
         icon={
           <Button open={open}>
-            <ButtonText>{currentLang}</ButtonText>
+            <ButtonText>{currentLang?.toUpperCase()}</ButtonText>
           </Button>
         }
       >
         <SelectList>
-          {langs.map((lang, item) => (
-            <Select onClick={() => handleSelect(lang)} key={item}>
-              {lang}
+          {langs.map((lang) => (
+            <Select onClick={() => handleSelect(lang)} key={lang.code}>
+              {lang.code?.toUpperCase()}
             </Select>
           ))}
         </SelectList>
