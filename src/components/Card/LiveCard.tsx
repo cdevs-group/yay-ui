@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { ArrowCardDown } from "../Svg";
 import { StyledCardProps } from "./types";
@@ -97,7 +97,7 @@ const LiveCard: React.FC<StyledCardProps> = ({ texts, negative, closedCount, lin
   return (
     <Wrap>
       <Closed>
-        <div className="closed">{texts?.lats || "LAST PRICE"}</div>
+        <div className="closed">{texts?.last || "LAST PRICE"}</div>
         <ClosedCount negative={negative}>{closedCount}</ClosedCount>
       </Closed>
       <Line>

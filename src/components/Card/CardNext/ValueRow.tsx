@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ValueProps } from "../types";
+import { ValueProps } from "..//types";
 
 const ValueRow = ({ vector, value, texts }: ValueProps) => {
   return (

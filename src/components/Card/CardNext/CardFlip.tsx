@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { CardFlipProps } from "../types";
+import { CardFlipProps } from "../../Cards/types";
 
 const Front = styled.div`
   height: 100%;

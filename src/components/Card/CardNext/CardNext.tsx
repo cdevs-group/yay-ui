@@ -1,28 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
-import { ArrowCardDown } from "../../Svg";
 import { Timer } from "../../Timer";
+import { IProps } from "../types";
 import ButtonsBlock from "./ButtonsBlock";
 import TopContent from "./TopContent";
 import ValueRow from "./ValueRow";
-import { Itexts } from "../types";
-
-interface IProps {
-  roundEpoch: string;
-  time: number;
-  payoutWin: string;
-  payoutLose: string;
-  handleSetPosition: (newPosition: BetPosition) => void;
-  pool: string;
-  hasEnteredUp: boolean;
-  hasEnteredDown: boolean;
-  disabledButton: boolean;
-  disabledTimer?: boolean;
-  textsButton?: any;
-  textsRow?: string;
-}
 
 const CardNext: React.FC<IProps> = ({
   roundEpoch,

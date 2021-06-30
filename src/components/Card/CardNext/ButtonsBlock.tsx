@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
+import { BetPosition } from "../types";
 import { CompleteIcon } from "../../Svg";
 import { ButtonsBlockRops } from "../types";
 

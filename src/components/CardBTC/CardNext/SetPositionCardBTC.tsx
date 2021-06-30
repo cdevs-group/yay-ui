@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowIcon from "../../Cards/ArrowIcon";
-import { SetPositionCardBTCProps } from "../types";
-import Tabs from "../../Cards/CardNext/TabsCard";
+import { SetPositionCardProps } from "../types";
+import Tabs from "../../Card/CardNext/TabsCard";
 import { BalanceInput } from "../../BalanceInput";
 
-const SetPositionCardBTC: React.FC<SetPositionCardBTCProps> = ({
+const SetPositionCardBTC: React.FC<SetPositionCardProps> = ({
   onBack,
   children,
   inputValue,

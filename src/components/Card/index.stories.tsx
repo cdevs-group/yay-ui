@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpiredCard from "./ExpiredCard";
 import LiveCard from "./LiveCard";
 import LoaderCard from "./Loader";
@@ -6,6 +6,9 @@ import Card from "./Card";
 import { CercleIcon } from "../Svg";
 import { Button } from "../Button";
 import GhostCard from "./GhostCard/GhostCard";
+import CardFlip from "./CardNext/CardFlip";
+import CardNext from "./CardNext/CardNext";
+import SetPositionCard from "./CardNext/SetPositionCard";
 
 export default {
   title: "Components/Card",
@@ -148,5 +151,111 @@ export const CardLoader: React.FC = () => {
         <LoaderCard />
       </Card>
     </div>
+  );
+};
+
+export const CardNxetUpOrDown: React.FC = () => {
+  const [inputValue, setInputValue] = useState("");
+  const text = { text1: "2000 YAY", title1: "Ready to harvest", text2: "Your Balance", title2: "3`000 YAY" };
+
+  enum BetPosition {
+    BULL = "Bull",
+    BEAR = "Bear",
+    HOUSE = "House",
+  }
+  const [state, setState] = useState({
+    isSettingPosition: false,
+    position: BetPosition.BULL,
+    betMethod: "",
+  });
+
+  const { isSettingPosition, position } = state;
+
+  const handleInputChange = (e: any) => {
+    e.preventDefault();
+    setInputValue(e.target.value);
+  };
+
+  const handleBetMethod = () => {
+    const newBetmethod = position === BetPosition.BULL ? "betBull" : "betBear";
+    setState((prevState) => ({
+      ...prevState,
+      betMethod: newBetmethod,
+      isSettingPosition: false,
+    }));
+  };
+
+  const handleSetPosition = (newPosition) => {
+    setState((prevState) => ({
+      ...prevState,
+      isSettingPosition: true,
+      position: newPosition,
+    }));
+  };
+
+  const handleBack = () =>
+    setState((prevState) => ({
+      ...prevState,
+      isSettingPosition: false,
+    }));
+
+  const textsButtons = {
+    enterUp: "Enter UP",
+    prize: "Prize Pool",
+    enterDown: "Enter DOWN",
+  };
+
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <CardFlip isFlipped={state.isSettingPosition}>
+        <CardNext
+          textsRow="Payout"
+          textsButton={textsButtons}
+          roundEpoch="round"
+          time={200}
+          payoutWin="payoutWin"
+          payoutLose="payoutLose"
+          pool="pool"
+          hasEnteredUp
+          hasEnteredDown={false}
+          handleSetPosition={handleSetPosition}
+          disabledButton={false}
+          canEnterPosition
+          negative
+        />
+        <SetPositionCard
+          inputValue={inputValue}
+          handleInputChange={handleInputChange}
+          showFieldWarning={false}
+          onBack={handleBack}
+          texts="Set Position"
+          inputText="Commit"
+          // onSuccess={()=>alert('ok')}
+          inputProps={{ disabled: false }}
+          // {{ disabled: !account || isTxPending }}
+        >
+          <></>
+        </SetPositionCard>
+      </CardFlip>
+    </div>
+  );
+};
+
+export const CardLaterBlock: React.FC = () => {
+  return (
+    <Card
+      live
+      hide
+      leftContent="LATER"
+      rightContent="#001"
+      payoutUp={1.03}
+      payoutDown={5.03}
+      displayNone
+      colorNone
+      time={2000}
+      color="green"
+    >
+      <LoaderCard />
+    </Card>
   );
 };

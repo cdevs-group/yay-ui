@@ -9,12 +9,12 @@ import CardBalance from "./components/CardBalance";
 const CardsBalance = ({ text }: TextCardsProps) => {
   return (
     <Cards>
-      <CardBalance title={text?.title1 || "Ready to harvest"} text={text.text1 || "2000 YAY"}>
+      <CardBalance title={text?.title1 || "Ready to harvest"} text={text?.text1 || "2000 YAY"}>
         <CoinIconBalance>
           <CoinIcon />
         </CoinIconBalance>
       </CardBalance>
-      <CardBalance right title={text.title2 || "Your Balance"} text={text.text2 || "3`000 YAY"}>
+      <CardBalance right title={text?.title2 || "Your Balance"} text={text?.text2 || "3`000 YAY"}>
         <DualShockBalance>
           <DualshockIcon />
         </DualShockBalance>

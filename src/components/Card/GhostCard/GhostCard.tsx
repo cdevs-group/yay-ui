@@ -1,15 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { IPropsTopAndGhost } from "../../Cards/types";
 import { LinkExternal } from "../../Link";
 import GHOST from "./ghost.png";
 
-interface IProps {
-  href: string;
-  children?: React.ReactNode;
-  text?: string;
-}
-
-const GhostCard = ({ href, children, text }: IProps) => {
+const GhostCard = ({ href, children, text }: IPropsTopAndGhost) => {
   return (
     <Wrap>
       <Image>

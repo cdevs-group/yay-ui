@@ -1,9 +1,9 @@
 import { transparentize } from "polished";
 import React from "react";
 import styled from "styled-components";
-import { TopContentProps } from "../types";
+import { IPropsTopAndGhost } from "../types";
 
-const TopContent = ({ children, rightContent, texts }: TopContentProps) => {
+const TopContent = ({ children, rightContent, texts }: IPropsTopAndGhost) => {
   return (
     <Wrap>
       <LeftContent>{texts || "NEXT"}</LeftContent>

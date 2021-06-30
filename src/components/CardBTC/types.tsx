@@ -1,17 +1,29 @@
 import { InputHTMLAttributes, ReactNode, ReactText } from "react";
-import { ITextsButtons } from "../Cards/types";
+import { BetPosition, Itexts } from "../Card/types";
 
 export interface ItextExpired {
   prize?: string;
+  closed?: string;
+  locked?: string;
   payout?: string;
-  locked?: string;
-  closed?: string;
-}
-export interface ITextActive {
-  closed?: string;
-  locked?: string;
   last?: string;
-  prize?: string;
+  entered?: string;
+}
+export interface IProps {
+  roundEpoch: string;
+  time: number;
+  payoutWin: string;
+  payoutLose: string;
+  handleSetPosition: (newPosition: BetPosition) => void;
+  pool: string;
+  hasEnteredUp: boolean;
+  hasEnteredDown: boolean;
+  disabledButton: boolean;
+  disabledTimer?: boolean;
+  ethButton: string;
+  btcButton: string;
+  textRow?: string;
+  textsButtons?: Itexts;
 }
 export interface ExpireCardBTCProps {
   clodedBTC: string;
@@ -20,23 +32,25 @@ export interface ExpireCardBTCProps {
   lockedETH: string;
   prize: string;
   btc?: boolean;
-  texts?: ITextActive;
-}
-export interface Itext {
-  entered?: string;
-  prize?: string;
+  texts?: ItextExpired;
 }
 
-export interface SetPositionCardBTCProps {
+export interface SetPositionCardProps {
   onBack: (e: any) => void;
   children: ReactNode;
   inputValue: ReactText;
-  showFieldWarning?: boolean;
   onUserInput: (input: string) => void;
-  inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
+  showFieldWarning?: boolean;
+  inputProps?:
+    | Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">
+    | { disabled: boolean };
   handlePercentChange: (sliderPercent: number) => void;
   disabledTab?: boolean;
   texts?: string;
   inputText?: string;
-  textsButtons?: ITextsButtons;
+  textsButtons?: Itexts;
+}
+export interface BalanceBlockProps {
+  btc?: boolean;
+  value: string;
 }
