@@ -82,7 +82,7 @@ const Block = styled.div<TimerColorProps>`
   align-items: center;
   justify-content: center;
   width: 186px;
-  height: 48px;
+  height: 50px;
   border-radius: 12px;
   color: ${getColor};
   font-weight: 500;
@@ -92,8 +92,8 @@ const Block = styled.div<TimerColorProps>`
 const Item = styled.div`
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 48px;
-  width: 48px;
+  height: 50px;
+  width: 50px;
   border-radius: 12px;
   display: flex;
   align-items: center;

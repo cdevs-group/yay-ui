@@ -36,14 +36,24 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.text};
+  height: 100%;
 `;
 
-const Loader = styled.div<{ textTooltip?: string }>`
-  position: ${({ textTooltip }) => (textTooltip ? "static" : "absolute")};
-  top: 50%;
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
+
+const Loader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  flex-grow: 1;
 `;
 
 const OrangeCircle = styled.div`
@@ -83,7 +93,7 @@ const YellowCircle = styled.div`
 `;
 
 const BottomText = styled.div`
-  margin-top: 75px;
+  margin-top: auto;
   text-align: center;
   font-weight: normal;
   font-size: 11px;
@@ -95,16 +105,18 @@ const BottomText = styled.div`
 const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
   return (
     <Wrap>
-      <Loader textTooltip={textTooltip}>
-        <OrangeCircle />
-        <GreenCircle />
-        <RedCircle />
-        <YellowCircle />
-      </Loader>
-      <BottomText>
-        {textTooltip ||
-          "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation"}
-      </BottomText>
+      <Content>
+        <Loader>
+          <OrangeCircle />
+          <GreenCircle />
+          <RedCircle />
+          <YellowCircle />
+        </Loader>
+        <BottomText>
+          {textTooltip ||
+            "This round`s closing transactions has been submitted to the blockchain, and is awaiting confirmation"}
+        </BottomText>
+      </Content>
     </Wrap>
   );
 };

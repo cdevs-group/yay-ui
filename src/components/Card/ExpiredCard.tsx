@@ -112,7 +112,7 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
       </Line>
       <Info>
         <LockedPrice>
-          {texts?.locked || "Locked Price "} BNB: <div> {lockedPrice}</div>
+          {texts?.locked || "Locked Price "} ADA: <div> {lockedPrice}</div>
         </LockedPrice>
         <Prize>
           {texts?.prize || "Prize Pool"}: <div>{prize} </div>
