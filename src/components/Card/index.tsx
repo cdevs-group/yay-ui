@@ -10,6 +10,7 @@ export { default as SetPositionCard } from "./CardNext/SetPositionCard";
 export { default as TabsCard } from "./CardNext/TabsCard";
 export { default as TopContent } from "./CardNext/TopContent";
 export { default as ValueRow } from "./CardNext/ValueRow";
+export { default as CardNext } from "./CardNext/CardNext";
 
 export type {
   CardProps,
