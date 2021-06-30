@@ -14,6 +14,7 @@ export interface ITextRounHistory {
   open?: string;
   closing?: string;
 }
+
 export interface ITextNoHistory {
   ifYouSure?: string;
   noPredict?: string;
