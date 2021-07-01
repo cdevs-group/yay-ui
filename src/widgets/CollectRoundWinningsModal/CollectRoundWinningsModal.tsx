@@ -4,7 +4,7 @@ import { Box, Flex } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { CercleIcon } from "../../components/Svg";
-import { Winner } from "../../constants/images";
+import { WINNER2 } from "../../constants/images";
 
 interface CollectRoundWinningsModalProps {
   onDismiss?: () => void;
@@ -12,8 +12,8 @@ interface CollectRoundWinningsModalProps {
   handleClick?: () => void;
   title: string;
   collectText?: string;
-  bnbText?: object;
-  convert?: object;
+  bnbText?: string;
+  convert?: string;
   buttonText: string;
 }
 
@@ -30,7 +30,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
   return (
     <Modal title={title} onDismiss={onDismiss}>
       <Box display="flex" style={{ justifyContent: "center" }} marginTop="-40px" marginBottom="-20px">
-        <img src={Winner} alt="" />
+        <img src={WINNER2} alt="" />
       </Box>
       <Box padding="20px">
         <Flex alignItems="start" justifyContent="space-between" mb="24px">

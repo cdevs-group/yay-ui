@@ -11,6 +11,7 @@ import SafepackWallet from "../../public/images/safepack-wallet.png";
 import BNB from "../../public/images/bnb.png";
 import COINS2 from "../../public/images/coins2.png";
 import Winner from "../../public/images/winner.png";
+import WINNER2 from "../../public/images/winner2.png";
 import Win from "../../public/images/win.png";
 import AccountIcon from "../../public/images/account-logo.png";
 import ADA from "../../public/images/cardano-white.png";
@@ -38,4 +39,5 @@ export {
   ComingSoonIcon,
   GhostsIcon,
   OneGhost,
+  WINNER2
 };
