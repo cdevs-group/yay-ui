@@ -15,6 +15,7 @@ interface CollectRoundWinningsModalProps {
   bnbText?: string;
   convert?: string;
   buttonText: string;
+  img?: string;
 }
 
 const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
@@ -26,11 +27,12 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
   bnbText,
   convert,
   buttonText,
+  img
 }) => {
   return (
     <Modal title={title} onDismiss={onDismiss}>
       <Box display="flex" style={{ justifyContent: "center" }} marginTop="-40px" marginBottom="-20px">
-        <img src={WINNER2} alt="" />
+        <img src={img || WINNER2} alt="" />
       </Box>
       <Box padding="20px">
         <Flex alignItems="start" justifyContent="space-between" mb="24px">

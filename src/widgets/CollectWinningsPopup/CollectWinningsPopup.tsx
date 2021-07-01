@@ -10,7 +10,7 @@ interface CollectWinningsPopupProps {
   handleOpenHistory?: () => void;
   handleClick?: () => void;
   btnText: string;
-  className?: string;
+  img?: string;
 }
 
 const bounceInKeyframe = keyframes`
@@ -137,26 +137,24 @@ const CollectWinningsPopup: React.FC<CollectWinningsPopupProps> = ({
   handleOpenHistory,
   handleClick,
   btnText,
-  className,
+  img
 }) => {
   const ref = useRef(null);
 
   return (
-    <CSSTransition nodeRef={ref} timeout={1000} classNames={className}>
-      <Wrapper>
-        <Popup>
-          <Button style={{ flex: 1 }} onClick={handleOpenHistory} variant="green">
-            {btnText}
-          </Button>{" "}
-          <Img>
-            <img src={Winner} alt="" />
-          </Img>
-          <CloseBtn variant="text" onClick={handleClick}>
-            <CloseIcon fill="none" />
-          </CloseBtn>
-        </Popup>
-      </Wrapper>
-    </CSSTransition>
+    <Wrapper>
+      <Popup>
+        <Button style={{ flex: 1 }} onClick={handleOpenHistory} variant="green">
+          {btnText}
+        </Button>{" "}
+        <Img>
+          <img src={img || Winner} alt="" />
+        </Img>
+        <CloseBtn variant="text" onClick={handleClick}>
+          <CloseIcon fill="none" />
+        </CloseBtn>
+      </Popup>
+    </Wrapper>
   );
 };
 
