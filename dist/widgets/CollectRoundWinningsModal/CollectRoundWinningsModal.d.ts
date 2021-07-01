@@ -5,8 +5,8 @@ interface CollectRoundWinningsModalProps {
     handleClick?: () => void;
     title: string;
     collectText?: string;
-    bnbText?: object;
-    convert?: object;
+    bnbText?: string;
+    convert?: string;
     buttonText: string;
 }
 declare const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps>;
