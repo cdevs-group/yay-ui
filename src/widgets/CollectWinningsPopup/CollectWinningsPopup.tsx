@@ -130,9 +130,8 @@ const CollectWinningsPopup: React.FC<CollectWinningsPopupProps> = ({
   handleClick,
   btnText,
   img,
-  ref
+  ref,
 }) => {
-
   return (
     <Wrapper ref={ref}>
       <Popup>
