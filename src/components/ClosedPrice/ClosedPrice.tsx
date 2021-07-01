@@ -45,12 +45,12 @@ const RightText = styled.div<{ negative?: boolean }>`
   }
 `;
 
-const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative, roundFailed }) => {
+const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative, roundFailed, textPrice }) => {
   return (
     <PriceBlock>
       <div style={{ position: "relative", zIndex: 3 }}>
         <Text color="greyText" mb={18} fontWeight={400}>
-          {!result ? "Closed Price" : "Your Result"}
+          {textPrice || (!result ? "Closed Price" : "Your Result")}
         </Text>
         {((!roundFailed && !result) || result) && (
           <Flex justifyContent="space-between" alignItems="center">

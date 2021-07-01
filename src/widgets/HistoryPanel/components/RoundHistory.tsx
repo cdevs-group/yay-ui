@@ -44,6 +44,7 @@ const RoundHistory = (props: IRoundHistory) => {
         result={result}
         negative={negative}
         roundFailed={roundFailed}
+        textPrice={texts?.textPrice}
       />
       <Block>
         <Line>

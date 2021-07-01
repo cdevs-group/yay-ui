@@ -44,7 +44,13 @@ const YourHistory = (props: IYourHistory) => {
           )}
         </Line>
       </Line>
-      <ClosedPrice price={price} rightText={priceRightText} result={result} negative={negative} />
+      <ClosedPrice
+        textPrice={texts?.textPrice}
+        price={price}
+        rightText={priceRightText}
+        result={result}
+        negative={negative}
+      />
       <LineMargin>
         <Text size="sm" fontWeight={400}>
           {texts?.position || "Your Position"}

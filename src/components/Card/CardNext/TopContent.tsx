@@ -19,8 +19,8 @@ const Wrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: -12px;
-  margin-right: -12px;
+  margin-left: -11px;
+  margin-right: -11px;
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-left: 0;
     margin-right: 0;

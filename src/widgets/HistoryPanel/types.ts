@@ -6,6 +6,7 @@ export interface ITextsYourHistory {
   lose?: string;
   win?: string;
   history?: string;
+  textPrice?: string;
 }
 export interface ITextRounHistory {
   rounds?: string;
@@ -13,6 +14,7 @@ export interface ITextRounHistory {
   prize?: string;
   open?: string;
   closing?: string;
+  textPrice?: string;
 }
 
 export interface ITextNoHistory {
