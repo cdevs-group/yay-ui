@@ -28,5 +28,8 @@ export * from "./widgets/Menu";
 export * from "./widgets/WelcomeModal";
 export * from "./widgets/Toast";
 export * from "./widgets/PausedErrorModals";
+export * from "./widgets/CollectRoundWinningsModal";
+export * from "./widgets/CollectWinningsPopup";
+export * from "./widgets/ChartDisclaimer";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
