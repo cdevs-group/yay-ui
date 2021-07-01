@@ -20,6 +20,8 @@ export * from "./components/ArrowSlider";
 export * from "./components/TitleBlock";
 export * from "./components/ComingSoon";
 export * from "./components/CardBTC";
+export * from "./components/FallingBunnies";
+export * from "./components/Skeleton";
 export * from "./hooks";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
