@@ -47,7 +47,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
           mb="8px"
           onClick={handleClick}
           isLoading={isLoading}
-          endIcon={<CercleIcon spin fill="none" />}
+          endIcon={isLoading ? <CercleIcon spin fill="none" /> : null}
           variant="green"
         >
           {buttonText}

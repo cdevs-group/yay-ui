@@ -41,7 +41,7 @@ const RightText = styled.div<{ negative?: boolean }>`
   }
   & svg {
     margin-right: 10px;
-    transform: ${({ theme, negative }) => (negative ? "rotate(270deg)" : "rotate(90deg)")};
+    transform: ${({ negative }) => (negative ? "rotate(270deg)" : "rotate(90deg)")};
   }
 `;
 
