@@ -16,7 +16,7 @@ const RoundsLink = ({ texts, children, href }: Props) => {
         {children}
         <a href={href}>
           <ButtonBlock width="100%" variant="green" scale="md">
-            {texts || "View Reclaimed & Won"}
+            {texts || "View Reclaimed & Won"} &nbsp;
             <OpenNewIcon fill="rgba(0,0,0,0)" />
           </ButtonBlock>
         </a>
