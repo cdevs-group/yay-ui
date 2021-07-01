@@ -1,10 +1,10 @@
 import React from "react";
-interface IProps {
+interface IPropsIcon {
     active: boolean;
     children: React.ReactNode;
 }
 declare const IconBlock: {
-    ({ active, children }: IProps): JSX.Element;
+    ({ active, children }: IPropsIcon): JSX.Element;
     defaultProps: {};
 };
 export default IconBlock;

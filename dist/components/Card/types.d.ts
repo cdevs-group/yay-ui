@@ -177,7 +177,7 @@ export interface TabsProps {
     handlePercentChange: (sliderPercent: number) => void;
     disabledTab?: boolean;
 }
-export interface IProps {
+export interface IPropsCardNext {
     roundEpoch: string;
     time: number;
     payoutWin: string;

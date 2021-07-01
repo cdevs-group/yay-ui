@@ -11,4 +11,4 @@ export { default as TabsCard } from "./CardNext/TabsCard";
 export { default as TopContent } from "./CardNext/TopContent";
 export { default as ValueRow } from "./CardNext/ValueRow";
 export { default as CardNext } from "./CardNext/CardNext";
-export type { CardProps, CardHeaderProps, CardTheme, CardUpDownProps, StyledCardProps, StyledCardUpDownProps, ButtonsBlockRops, Itexts, LaterCardProps, IProps, TabsProps, CardButtonsProps, ValueProps, CardFlipProps, IPropsTopAndGhost, } from "./types";
+export type { CardProps, CardHeaderProps, CardTheme, CardUpDownProps, StyledCardProps, StyledCardUpDownProps, ButtonsBlockRops, Itexts, LaterCardProps, IPropsCardNext, TabsProps, CardButtonsProps, ValueProps, CardFlipProps, IPropsTopAndGhost, } from "./types";

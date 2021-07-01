@@ -982,7 +982,7 @@ var Wrap$q = styled__default['default'].div(templateObject_1$1c || (templateObje
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TopContent$2 = styled__default['default'].div(templateObject_2$W || (templateObject_2$W = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
+var TopContent$2 = styled__default['default'].div(templateObject_2$W || (templateObject_2$W = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -1040,7 +1040,7 @@ var MainBlock$1 = styled__default['default'].div(templateObject_13$1 || (templat
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var DownContent$1 = styled__default['default'].div(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var DownContent$1 = styled__default['default'].div(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 13px 20px 18px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 13px 20px 18px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var displayNone = _a.displayNone;
     return (displayNone ? "center" : "space-between");
 }, function (_a) {
@@ -1050,8 +1050,15 @@ var DownContent$1 = styled__default['default'].div(templateObject_14$1 || (templ
     var theme = _a.theme;
     return theme.colors.text;
 });
+var Vector = styled__default['default'].p(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  opacity: ", ";\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  opacity: ", ";\n"])), function (_a) {
+    var theme = _a.theme, loader = _a.loader;
+    return (loader ? theme.colors.greyText2 : theme.colors.text);
+}, function (_a) {
+    var hide = _a.hide;
+    return (hide ? "0" : "1");
+});
 var StyledCard = function (_a) {
-    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, showBtnWinnings = _a.showBtnWinnings, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone, time = _a.time, btnWinnings = _a.btnWinnings, hide = _a.hide, disabledTimer = _a.disabledTimer, texts = _a.texts;
+    var children = _a.children, leftContent = _a.leftContent, rightContent = _a.rightContent, payoutUp = _a.payoutUp, payoutDown = _a.payoutDown, negative = _a.negative, showBtnWinnings = _a.showBtnWinnings, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, live = _a.live, displayNone = _a.displayNone, colorNone = _a.colorNone, time = _a.time, btnWinnings = _a.btnWinnings, hide = _a.hide, disabledTimer = _a.disabledTimer, texts = _a.texts, loader = _a.loader;
     return (React__default['default'].createElement(Wrap$q, { live: live },
         React__default['default'].createElement(TopContent$2, null,
             React__default['default'].createElement(LeftContent$2, null, leftContent),
@@ -1059,7 +1066,7 @@ var StyledCard = function (_a) {
             React__default['default'].createElement(RightContent$3, null, rightContent)),
         React__default['default'].createElement(Content$2, null,
             React__default['default'].createElement(UpContent$1, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone },
-                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, "UP"),
+                React__default['default'].createElement(Vector, { hide: hide, loader: loader }, "UP"),
                 React__default['default'].createElement(RightText$2, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
                     React__default['default'].createElement("div", null, payoutUp),
@@ -1071,14 +1078,14 @@ var StyledCard = function (_a) {
                     React__default['default'].createElement("img", { src: Winner }))),
             React__default['default'].createElement(MainBlock$1, { negative: negative, colorNone: colorNone }, children),
             React__default['default'].createElement(DownContent$1, { negative: negative, displayNone: displayNone },
-                React__default['default'].createElement("p", { style: { opacity: hide ? "0" : "1" } }, "DOWN"),
+                React__default['default'].createElement(Vector, { hide: hide, loader: loader, style: { opacity: hide ? "0" : "1" } }, "DOWN"),
                 React__default['default'].createElement(RightText$2, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
                     React__default['default'].createElement("div", null, payoutDown),
                     React__default['default'].createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                         React__default['default'].createElement(Icon$d, { fill: "#FFB72C" })))))));
 };
-var templateObject_1$1c, templateObject_2$W, templateObject_3$I, templateObject_4$t, templateObject_5$k, templateObject_6$f, templateObject_7$8, templateObject_8$6, templateObject_9$5, templateObject_10$4, templateObject_11$4, templateObject_12$2, templateObject_13$1, templateObject_14$1;
+var templateObject_1$1c, templateObject_2$W, templateObject_3$I, templateObject_4$t, templateObject_5$k, templateObject_6$f, templateObject_7$8, templateObject_8$6, templateObject_9$5, templateObject_10$4, templateObject_11$4, templateObject_12$2, templateObject_13$1, templateObject_14$1, templateObject_15$1;
 
 var Wrap$p = styled__default['default'].div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  width: 335px;\n"], ["\n  display: flex;\n  justify-content: center;\n  width: 335px;\n"])));
 var Card$1 = function (_a) {
@@ -1337,9 +1344,9 @@ var GhostCard = function (_a) {
         React__default['default'].createElement(Image$1, null,
             React__default['default'].createElement("img", { src: GHOST, alt: "some img" })),
         children,
-        React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: href, mr: "16px" }, text || "Learn More")));
+        React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: href }, text || "Learn More")));
 };
-var Wrap$l = styled__default['default'].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n"], ["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n"])));
+var Wrap$l = styled__default['default'].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  padding: 5px 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-direction: column;\n"], ["\n  padding: 5px 0;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex-direction: column;\n"])));
 var Image$1 = styled__default['default'].div(templateObject_2$S || (templateObject_2$S = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])));
 var templateObject_1$15, templateObject_2$S;
 
@@ -1551,7 +1558,7 @@ var TopContent$1 = function (_a) {
         children,
         React__default['default'].createElement(RightContent$2, null, rightContent)));
 };
-var Wrap$j = styled__default['default'].div(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
+var Wrap$j = styled__default['default'].div(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2256,7 +2263,7 @@ var Wrap$f = styled__default['default'].div(templateObject_1$F || (templateObjec
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TopContent = styled__default['default'].div(templateObject_2$w || (templateObject_2$w = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -12px;\n  margin-right: -12px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
+var TopContent = styled__default['default'].div(templateObject_2$w || (templateObject_2$w = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: -11px;\n  margin-right: -11px;\n  ", " {\n    margin-left: 0;\n    margin-right: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2318,7 +2325,7 @@ var MainBlock = styled__default['default'].div(templateObject_13 || (templateObj
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var DownContent = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var DownContent = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 13px 20px 18px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: ", ";\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 13px 20px 18px;\n  background: ", ";\n  border-top-left-radius: 0;\n  border-top-right-radius: 0;\n  border-bottom-left-radius: 12px;\n  border-bottom-right-radius: 12px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var displayNone = _a.displayNone;
     return (displayNone ? "center" : "space-between");
 }, function (_a) {
@@ -2328,7 +2335,10 @@ var DownContent = styled__default['default'].div(templateObject_14 || (templateO
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Currency$1 = styled__default['default'].div(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & img {\n    display: none;\n    margin-right: 10px;\n    ", " {\n      display: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & img {\n    display: none;\n    margin-right: 10px;\n    ", " {\n      display: ", ";\n    }\n  }\n"])), function (_a) {
+var Currency$1 = styled__default['default'].div(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  & img {\n    display: none;\n    margin-right: 10px;\n    ", " {\n      display: ", ";\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  color: ", ";\n  & img {\n    display: none;\n    margin-right: 10px;\n    ", " {\n      display: ", ";\n    }\n  }\n"])), function (_a) {
+    var theme = _a.theme, loader = _a.loader;
+    return (loader ? theme.colors.greyText2 : theme.colors.text);
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -3715,7 +3725,7 @@ var RoundsLink = function (_a) {
             children,
             React__default['default'].createElement("a", { href: href },
                 React__default['default'].createElement(ButtonBlock, { width: "100%", variant: "green", scale: "md" },
-                    (texts === null || texts === void 0 ? void 0 : texts.link) || "View Reclaimed & Won",
+                    texts || "View Reclaimed & Won",
                     React__default['default'].createElement(Icon$u, { fill: "rgba(0,0,0,0)" }))))));
 };
 var Wrap$5 = styled__default['default'].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  background: ", ";\n  padding-bottom: 30px;\n  position: relative;\n  z-index: 1;\n  &::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: calc(100% + 32px);\n    left: -16px;\n    top: 0;\n    z-index: 0;\n    height: 100%;\n    background: ", ";\n  }\n"], ["\n  background: ", ";\n  padding-bottom: 30px;\n  position: relative;\n  z-index: 1;\n  &::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: calc(100% + 32px);\n    left: -16px;\n    top: 0;\n    z-index: 0;\n    height: 100%;\n    background: ", ";\n  }\n"])), function (_a) {
@@ -3846,10 +3856,10 @@ var RightText = styled__default['default'].div(templateObject_3$8 || (templateOb
     return (negative ? "rotate(270deg)" : "rotate(90deg)");
 });
 var ClosedPrice = function (_a) {
-    var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative, roundFailed = _a.roundFailed;
+    var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative, roundFailed = _a.roundFailed, textPrice = _a.textPrice;
     return (React__default['default'].createElement(PriceBlock, null,
         React__default['default'].createElement("div", { style: { position: "relative", zIndex: 3 } },
-            React__default['default'].createElement(Text, { color: "greyText", mb: 18, fontWeight: 400 }, !result ? "Closed Price" : "Your Result"),
+            React__default['default'].createElement(Text, { color: "greyText", mb: 18, fontWeight: 400 }, textPrice || (!result ? "Closed Price" : "Your Result")),
             ((!roundFailed && !result) || result) && (React__default['default'].createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
                 React__default['default'].createElement(Price, { negative: negative }, price),
                 React__default['default'].createElement(Text, { size: "sm", fontWeight: 400, mr: "auto", ml: 9 }, result),
@@ -3866,7 +3876,7 @@ var RoundHistory = function (props) {
         React__default['default'].createElement(Text, { mb: 17 },
             (texts === null || texts === void 0 ? void 0 : texts.rounds) || "Round History",
             " "),
-        React__default['default'].createElement(ClosedPrice, { price: price, rightText: priceRightText, result: result, negative: negative, roundFailed: roundFailed }),
+        React__default['default'].createElement(ClosedPrice, { price: price, rightText: priceRightText, result: result, negative: negative, roundFailed: roundFailed, textPrice: texts === null || texts === void 0 ? void 0 : texts.textPrice }),
         React__default['default'].createElement(Block$2, null,
             React__default['default'].createElement(Line$2, null,
                 React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, "Up"),
@@ -3910,7 +3920,7 @@ var YourHistory = function (props) {
                 !win && (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(Text, { color: "greyText", mr: "6px" }, (texts === null || texts === void 0 ? void 0 : texts.lose) || "LOSE"),
                     React__default['default'].createElement("img", { src: LOSE, alt: "" }))))),
-        React__default['default'].createElement(ClosedPrice, { price: price, rightText: priceRightText, result: result, negative: negative }),
+        React__default['default'].createElement(ClosedPrice, { textPrice: texts === null || texts === void 0 ? void 0 : texts.textPrice, price: price, rightText: priceRightText, result: result, negative: negative }),
         React__default['default'].createElement(LineMargin, null,
             React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, (texts === null || texts === void 0 ? void 0 : texts.position) || "Your Position"),
             React__default['default'].createElement(Text, { size: "sm" }, yourPosition)),

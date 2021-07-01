@@ -4,4 +4,5 @@ export interface ClosedPriceProp {
     result?: string;
     negative?: boolean;
     roundFailed?: boolean;
+    textPrice?: string;
 }
