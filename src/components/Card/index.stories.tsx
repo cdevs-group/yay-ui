@@ -28,6 +28,7 @@ export const GhostCardBlock: React.FC = () => {
         displayNone
         colorNone
         time={2000}
+        loader
       >
         <GhostCard href="#" />
       </Card>

@@ -148,7 +148,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   max-height: 50px;
   height: 100%;
   width: 100%;
-  padding: 18px 20px 13px;
+  padding: 13px 20px 18px;
   background: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.bgCard)};
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -158,6 +158,14 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   font-size: 15px;
   line-height: 19px;
   color: ${({ theme }) => theme.colors.text};
+`;
+const Vector = styled.p<{ loader?: boolean; hide?: boolean }>`
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: ${({ theme, loader }) => (loader ? theme.colors.greyText2 : theme.colors.text)};
+  opacity: ${({ hide }) => (hide ? "0" : "1")};
 `;
 
 const StyledCard: React.FC<StyledCardProps> = ({
@@ -178,6 +186,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
   hide,
   disabledTimer,
   texts,
+  loader,
 }) => {
   return (
     <Wrap live={live}>
@@ -188,7 +197,9 @@ const StyledCard: React.FC<StyledCardProps> = ({
       </TopContent>
       <Content>
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
-          <p style={{ opacity: hide ? "0" : "1" }}>UP</p>
+          <Vector hide={hide} loader={loader}>
+            UP
+          </Vector>
           <RightText displayNone={displayNone}>
             <div className="payout">{texts?.payout || "Payout"}</div>
             <div>{payoutUp}</div>
@@ -207,7 +218,9 @@ const StyledCard: React.FC<StyledCardProps> = ({
           {children}
         </MainBlock>
         <DownContent negative={negative} displayNone={displayNone}>
-          <p style={{ opacity: hide ? "0" : "1" }}>DOWN</p>
+          <Vector hide={hide} loader={loader} style={{ opacity: hide ? "0" : "1" }}>
+            DOWN
+          </Vector>
           <RightText displayNone={displayNone}>
             <div className="payout">{texts?.payout || "Payout"}</div>
             <div>{payoutDown}</div>

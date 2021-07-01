@@ -11,7 +11,7 @@ const GhostCard = ({ href, children, text }: IPropsTopAndGhost) => {
         <img src={GHOST} alt="some img" />
       </Image>
       {children}
-      <LinkExternal color="#47DA3B" small href={href} mr="16px">
+      <LinkExternal color="#47DA3B" small href={href}>
         {text || "Learn More"}
       </LinkExternal>
     </Wrap>
@@ -21,11 +21,12 @@ const GhostCard = ({ href, children, text }: IPropsTopAndGhost) => {
 export default GhostCard;
 
 const Wrap = styled.div`
+  padding: 5px 0;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
 `;
 const Image = styled.div`

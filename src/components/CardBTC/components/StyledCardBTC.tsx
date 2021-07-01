@@ -151,7 +151,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   max-height: 50px;
   height: 100%;
   width: 100%;
-  padding: 18px 20px 13px;
+  padding: 13px 20px 18px;
   background: ${({ theme, negative }) => (negative ? theme.colors.bgCardBtc : theme.colors.bgCard)};
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -165,6 +165,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
 const Currency = styled.div<{ loader?: boolean }>`
   display: flex;
   align-items: center;
+  color: ${({ theme, loader }) => (loader ? theme.colors.greyText2 : theme.colors.text)};
   & img {
     display: none;
     margin-right: 10px;
