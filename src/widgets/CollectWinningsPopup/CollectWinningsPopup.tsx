@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { RefObject, useEffect, useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import styled, { css, keyframes } from "styled-components";
 import { Box } from "../../components/Box";
@@ -11,6 +11,7 @@ interface CollectWinningsPopupProps {
   handleClick?: () => void;
   btnText: string;
   img?: string;
+  ref?: RefObject<HTMLDivElement>;
 }
 
 const bounceInKeyframe = keyframes`
@@ -94,15 +95,6 @@ const Wrapper = styled.div`
   &.popup-exit-active {
     ${bounceOutAnimation}
   }
-
-  /* ${({ theme }) => theme.mediaQueries.md} {
-    top: 16px;
-    justify-content: flex-end;
-
-    &.popup-enter-done {
-      top: 16px;
-    }
-  } */
 `;
 
 const Popup = styled.div`
@@ -138,11 +130,11 @@ const CollectWinningsPopup: React.FC<CollectWinningsPopupProps> = ({
   handleClick,
   btnText,
   img,
+  ref
 }) => {
-  const ref = useRef(null);
 
   return (
-    <Wrapper>
+    <Wrapper ref={ref}>
       <Popup>
         <Button style={{ flex: 1 }} onClick={handleOpenHistory} variant="green">
           {btnText}
