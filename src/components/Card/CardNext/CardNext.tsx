@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Timer } from "../../Timer";
-import { IProps } from "../types";
+import { IPropsCardNext } from "../types";
 import ButtonsBlock from "./ButtonsBlock";
 import TopContent from "./TopContent";
 import ValueRow from "./ValueRow";
 
-const CardNext: React.FC<IProps> = ({
+const CardNext: React.FC<IPropsCardNext> = ({
   roundEpoch,
   time,
   payoutWin,
