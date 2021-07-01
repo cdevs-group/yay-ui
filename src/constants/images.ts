@@ -39,5 +39,5 @@ export {
   ComingSoonIcon,
   GhostsIcon,
   OneGhost,
-  WINNER2
+  WINNER2,
 };
