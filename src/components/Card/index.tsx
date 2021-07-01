@@ -22,7 +22,7 @@ export type {
   ButtonsBlockRops,
   Itexts,
   LaterCardProps,
-  IProps,
+  IPropsCardNext,
   TabsProps,
   CardButtonsProps,
   ValueProps,
