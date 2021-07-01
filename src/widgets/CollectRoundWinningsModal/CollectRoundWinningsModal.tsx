@@ -27,7 +27,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({
   bnbText,
   convert,
   buttonText,
-  img
+  img,
 }) => {
   return (
     <Modal title={title} onDismiss={onDismiss}>

@@ -8,6 +8,7 @@ interface CollectRoundWinningsModalProps {
     bnbText?: string;
     convert?: string;
     buttonText: string;
+    img?: string;
 }
 declare const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps>;
 export default CollectRoundWinningsModal;

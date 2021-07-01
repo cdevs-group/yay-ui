@@ -4408,10 +4408,10 @@ var PausedErrorModals = function (_a) {
 var templateObject_1$2, templateObject_2$1, templateObject_3$1;
 
 var CollectRoundWinningsModal = function (_a) {
-    var isLoading = _a.isLoading, handleClick = _a.handleClick, onDismiss = _a.onDismiss, title = _a.title, collectText = _a.collectText, bnbText = _a.bnbText, convert = _a.convert, buttonText = _a.buttonText;
+    var isLoading = _a.isLoading, handleClick = _a.handleClick, onDismiss = _a.onDismiss, title = _a.title, collectText = _a.collectText, bnbText = _a.bnbText, convert = _a.convert, buttonText = _a.buttonText, img = _a.img;
     return (React__default.createElement(Modal, { title: title, onDismiss: onDismiss },
         React__default.createElement(Box, { display: "flex", style: { justifyContent: "center" }, marginTop: "-40px", marginBottom: "-20px" },
-            React__default.createElement("img", { src: WINNER2, alt: "" })),
+            React__default.createElement("img", { src: img || WINNER2, alt: "" })),
         React__default.createElement(Box, { padding: "20px" },
             React__default.createElement(Flex, { alignItems: "start", justifyContent: "space-between", mb: "24px" },
                 React__default.createElement(Text, null, collectText),
@@ -4436,17 +4436,16 @@ var Popup = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObj
 var Img = styled(Box)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  position: relative;\n  & img {\n    position: absolute;\n    max-width: none;\n    left: -67px;\n    top: -70px;\n    pointer-events: none;\n  }\n"], ["\n  position: relative;\n  & img {\n    position: absolute;\n    max-width: none;\n    left: -67px;\n    top: -70px;\n    pointer-events: none;\n  }\n"])));
 var CloseBtn = styled(IconButton)(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n"], ["\n  position: absolute;\n  right: 0;\n"])));
 var CollectWinningsPopup = function (_a) {
-    var handleOpenHistory = _a.handleOpenHistory, handleClick = _a.handleClick, btnText = _a.btnText, className = _a.className;
-    var ref = useRef(null);
-    return (React__default.createElement(CSSTransition, { nodeRef: ref, timeout: 1000, classNames: className },
-        React__default.createElement(Wrapper, null,
-            React__default.createElement(Popup, null,
-                React__default.createElement(Button$5, { style: { flex: 1 }, onClick: handleOpenHistory, variant: "green" }, btnText),
-                " ",
-                React__default.createElement(Img, null,
-                    React__default.createElement("img", { src: Winner, alt: "" })),
-                React__default.createElement(CloseBtn, { variant: "text", onClick: handleClick },
-                    React__default.createElement(Icon$w, { fill: "none" }))))));
+    var handleOpenHistory = _a.handleOpenHistory, handleClick = _a.handleClick, btnText = _a.btnText, img = _a.img;
+    useRef(null);
+    return (React__default.createElement(Wrapper, null,
+        React__default.createElement(Popup, null,
+            React__default.createElement(Button$5, { style: { flex: 1 }, onClick: handleOpenHistory, variant: "green" }, btnText),
+            " ",
+            React__default.createElement(Img, null,
+                React__default.createElement("img", { src: img || Winner, alt: "" })),
+            React__default.createElement(CloseBtn, { variant: "text", onClick: handleClick },
+                React__default.createElement(Icon$w, { fill: "none" })))));
 };
 var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
 

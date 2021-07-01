@@ -3,7 +3,7 @@ interface CollectWinningsPopupProps {
     handleOpenHistory?: () => void;
     handleClick?: () => void;
     btnText: string;
-    className?: string;
+    img?: string;
 }
 declare const CollectWinningsPopup: React.FC<CollectWinningsPopupProps>;
 export default CollectWinningsPopup;

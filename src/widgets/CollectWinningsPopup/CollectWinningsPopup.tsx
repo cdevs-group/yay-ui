@@ -137,7 +137,7 @@ const CollectWinningsPopup: React.FC<CollectWinningsPopupProps> = ({
   handleOpenHistory,
   handleClick,
   btnText,
-  img
+  img,
 }) => {
   const ref = useRef(null);
 
