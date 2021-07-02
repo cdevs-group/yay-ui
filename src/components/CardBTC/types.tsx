@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, ReactNode, ReactText } from "react";
-import { BetPosition, Itexts } from "../Card/types";
+import { BetPosition, Itexts, ValueRowText } from "../Card/types";
 
 export interface ItextExpired {
   prize?: string;
@@ -22,7 +22,7 @@ export interface IProps {
   disabledTimer?: boolean;
   ethButton: string;
   btcButton: string;
-  textRow?: string;
+  textRow?: ValueRowText;
   textsButtons?: Itexts;
 }
 export interface ExpireCardBTCProps {

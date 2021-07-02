@@ -5,9 +5,9 @@ import { ValueProps } from "..//types";
 const ValueRow = ({ vector, value, texts }: ValueProps) => {
   return (
     <ValueRowBlock vector={vector}>
-      {vector}
+      {texts?.vectorText || vector}
       <div>
-        <span>{texts || "Payout"}</span>
+        <span>{texts?.payout || "Payout"}</span>
         {value}
       </div>
     </ValueRowBlock>
