@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
 import { ChartIcon, GreenArrow, HistoryIcon } from "../Svg";
 
 const BottomContent = styled.div`
@@ -13,11 +12,13 @@ const BottomContent = styled.div`
     width: 278px;
   }
 `;
+
 const ButtonIcon = styled.button`
   background: none;
   border: none;
   cursor: pointer;
 `;
+
 const CenterBlock = styled.div`
   position: relative;
   display: flex;
@@ -50,6 +51,7 @@ const CenterBlock = styled.div`
     cursor: pointer;
   }
 `;
+
 const BottomCard = styled.div`
   position: absolute;
   left: 35%;
@@ -61,6 +63,7 @@ const BottomCard = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow3};
   border-radius: 10px;
 `;
+
 const TopCard = styled(BottomCard)`
   position: absolute;
   left: 45%;

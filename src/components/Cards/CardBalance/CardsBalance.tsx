@@ -44,12 +44,14 @@ const CoinIconBalance = styled.div`
   bottom: 0;
   z-index: -1;
 `;
+
 const DualShockBalance = styled.div`
   position: absolute;
   right: 0%;
   bottom: 0;
   z-index: -1;
 `;
+
 const ArrowIcon = styled.div`
   position: absolute;
   z-index: 2;

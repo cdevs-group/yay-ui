@@ -4,10 +4,6 @@ import { ArrowSliderProps } from "./types";
 import { transparentize } from "polished";
 import { GreenArrow, PlayingCardsIcon } from "../Svg";
 
-const Wrap = styled.div`
-  /* height: 470px; */
-`;
-
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
@@ -70,21 +66,19 @@ const ArrowSlider: React.FC<ArrowSliderProps> = ({
   handleSlideToLive,
 }) => {
   return (
-    <Wrap>
-      <BottomContent>
-        <CenterBlock>
-          <ArrowLeft className={clsNameLeft || ""} onClick={handlePrevSlide}>
-            <GreenArrow stroke="#47DA3B" />
-          </ArrowLeft>
-          <Center onClick={handleSlideToLive}>
-            <PlayingCardsIcon />
-          </Center>
-          <ArrowRight className={clsNameRight || ""} onClick={handleNextSlide}>
-            <GreenArrow stroke="#47DA3B" />
-          </ArrowRight>
-        </CenterBlock>
-      </BottomContent>
-    </Wrap>
+    <BottomContent>
+      <CenterBlock>
+        <ArrowLeft className={clsNameLeft || ""} onClick={handlePrevSlide}>
+          <GreenArrow stroke="#47DA3B" />
+        </ArrowLeft>
+        <Center onClick={handleSlideToLive}>
+          <PlayingCardsIcon />
+        </Center>
+        <ArrowRight className={clsNameRight || ""} onClick={handleNextSlide}>
+          <GreenArrow stroke="#47DA3B" />
+        </ArrowRight>
+      </CenterBlock>
+    </BottomContent>
   );
 };
 

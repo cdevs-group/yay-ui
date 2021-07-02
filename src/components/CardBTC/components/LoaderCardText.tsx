@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { transparentize } from "polished";
 import { StyledCardProps } from "../../Card/types";
 
 let orangeAnimation = keyframes`

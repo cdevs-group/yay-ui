@@ -95,7 +95,6 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
   linePrice,
   lockedPrice,
   prize,
-  colorIcon,
   texts,
 }) => {
   return (
@@ -121,4 +120,5 @@ const ExpiredCardNA: React.FC<StyledCardProps> = ({
     </Wrap>
   );
 };
+
 export default ExpiredCardNA;

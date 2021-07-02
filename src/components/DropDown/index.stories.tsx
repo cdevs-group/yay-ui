@@ -7,12 +7,15 @@ export default {
 };
 
 export const InputMain: React.FC = () => {
-  const languages = ["EN", "RU", "BG"];
-  const [select, setSelect] = useState<string>(languages[0]);
+  const languages = [
+    { locale: "en-US", language: "English", code: "en" },
+    { locale: "de-DE", language: "Deutsch", code: "de" },
+  ];
+  const [select, setSelect] = useState<any>(languages[0]);
 
   return (
-    <div>
-      <Languages list={languages} setSelect={setSelect} select={select} />
+    <div style={{ maxWidth: 160 }}>
+      <Languages langs={languages} setLang={setSelect} currentLang={select.code} />
     </div>
   );
 };

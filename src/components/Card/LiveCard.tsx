@@ -27,10 +27,6 @@ const ClosedCount = styled.div<{ negative?: boolean }>`
   color: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.greenText)};
 `;
 
-const Title = styled.div``;
-
-const Count = styled.div``;
-
 const Line = styled.div`
   display: flex;
   align-items: center;

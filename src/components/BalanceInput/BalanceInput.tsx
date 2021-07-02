@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ADA } from "../../constants/images";
 import { Input } from "../Input";
 import { BnbIcon } from "../Svg";
 import { BalanceInputProps } from "./types";
@@ -24,12 +23,8 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
     <InputWrap>
       <TitleInput>{texts || "Commit"}</TitleInput>
       <InputIcon>
-        {/* <div>
-          <img src={ADA} alt="" />
-        </div> */}
         <BnbIcon />
         BNB
-        {/* ADA */}
       </InputIcon>
       <Input
         className={isWarning ? "warning" : ""}

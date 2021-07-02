@@ -37,7 +37,6 @@ export const Default: React.FC = () => {
       <div>
         <Link href="/">
           With icon
-          {/* <PancakesIcon /> */}
         </Link>
       </div>
       <div>

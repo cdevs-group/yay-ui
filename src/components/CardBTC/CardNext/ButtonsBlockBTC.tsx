@@ -80,10 +80,12 @@ const Currency = styled.div`
     margin-right: 7px;
   }
 `;
+
 const ButtonItem = styled(Button)`
   padding: 0 18px;
   justify-content: space-between;
 `;
+
 const ButtonsBlockWrap = styled.div`
   height: 193px;
   width: 335px;
@@ -101,12 +103,14 @@ const ButtonsBlockWrap = styled.div`
     width: 303px;
   }
 `;
+
 const Buttons = styled.div`
   position: relative;
   &.unChoiced {
     opacity: 0.25;
   }
 `;
+
 const PrizeBlock = styled.div`
   padding: 23px 18px 18px;
   display: flex;
@@ -117,16 +121,19 @@ const PrizeBlock = styled.div`
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.text};
 `;
+
 const ButtonWrap = styled.div`
   position: relative;
   &.unCoise {
     opacity: 0.25;
   }
 `;
+
 const ButtonRightBlock = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const IconComplete = styled.div<{ hasEntered?: boolean }>`
   display: ${({ hasEntered }) => (hasEntered ? "flex" : "none")};
   margin-left: 7px;

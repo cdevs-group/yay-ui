@@ -72,12 +72,14 @@ export default Statistic;
 const Wrap = styled.div`
   margin-top: 20px;
 `;
+
 const Row = styled.div`
   padding: 17px 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 `;
+
 const Best = styled(Text)`
   display: flex;
   justify-content: flex-end;

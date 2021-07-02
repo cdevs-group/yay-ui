@@ -1,5 +1,4 @@
-import React, { RefObject, useEffect, useRef, useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { RefObject } from "react";
 import styled, { css, keyframes } from "styled-components";
 import { Box } from "../../components/Box";
 import { Button, IconButton } from "../../components/Button";

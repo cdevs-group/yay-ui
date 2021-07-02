@@ -9,6 +9,7 @@ export interface ItextExpired {
   last?: string;
   entered?: string;
 }
+
 export interface IProps {
   roundEpoch: string;
   time: number;
@@ -25,6 +26,7 @@ export interface IProps {
   textRow?: ValueRowText;
   textsButtons?: Itexts;
 }
+
 export interface ExpireCardBTCProps {
   clodedBTC: string;
   lockedBRC: string;
@@ -50,6 +52,7 @@ export interface SetPositionCardProps {
   inputText?: string;
   textsButtons?: Itexts;
 }
+
 export interface BalanceBlockProps {
   btc?: boolean;
   value: string;

@@ -89,6 +89,7 @@ const Block = styled.div<TimerColorProps>`
   font-size: 15px;
   letter-spacing: 0.05em;
 `;
+
 const Item = styled.div`
   background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);

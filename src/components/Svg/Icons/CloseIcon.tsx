@@ -1,5 +1,4 @@
 import React from "react";
-import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
@@ -12,7 +11,6 @@ const Icon: React.FC<SvgProps> = (props) => {
         height={30}
         rx={7}
         fill={props.fill || "rgb(58,58,64)"}
-        // fillOpacity={0.15}
       />
       <g filter="url(#prefix__filter0_d)" stroke="#fff" strokeWidth={2} strokeLinecap="round">
         <path d="M17.465 17.465l7.07 7.07M24.537 17.465l-7.071 7.07" />

@@ -112,6 +112,7 @@ const Subtitle = styled.span`
     margin-bottom: 26px;
   }
 `;
+
 const Timer = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.sm} {

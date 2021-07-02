@@ -16,4 +16,5 @@ const CardBTC: React.FC<StyledCardProps> = ({ children, ...props }) => {
     </Wrap>
   );
 };
+
 export default CardBTC;

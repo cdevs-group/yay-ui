@@ -41,6 +41,7 @@ const Wrap = styled.div`
     text-align: center;
   }
 `;
+
 const Icon = styled.div`
   width: 38px;
   height: 38px;

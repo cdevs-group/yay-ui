@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../Logo";
 import { NavProps } from "../types";
@@ -21,7 +21,6 @@ const Header: React.FC<NavProps> = ({
   profile,
   children,
 }) => {
-  const location = useLocation();
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -34,7 +33,6 @@ const Header: React.FC<NavProps> = ({
           {links.map((item, i) => (
             <MenuLink
               key={i}
-              // className={item.url === location.pathname ? "active" : ""}
               size="md"
               name={item.name}
               url={item.url}
@@ -68,6 +66,7 @@ const HeaderWrap = styled.div`
     flex-shrink: 0;
   }
 `;
+
 const Line = styled.div`
   padding: 3px 10px;
   display: flex;
@@ -80,6 +79,7 @@ const Line = styled.div`
     padding: 14px;
   }
 `;
+
 const Nav = styled.div`
   display: flex;
   flex-direction: column;
@@ -110,6 +110,7 @@ const Nav = styled.div`
 
 const RightContent = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const LanguageBlockMob = styled.div`
@@ -117,12 +118,14 @@ const LanguageBlockMob = styled.div`
     display: none;
   }
 `;
+
 const LanguageBlockDesk = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
   }
 `;
+
 const LogoWrap = styled(Link)`
   & svg {
     width: 133px;
@@ -131,4 +134,5 @@ const LogoWrap = styled(Link)`
     }
   }
 `;
+
 export default Header;

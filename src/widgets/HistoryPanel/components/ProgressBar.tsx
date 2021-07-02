@@ -40,11 +40,13 @@ const ProgressWrap = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 5px;
 `;
+
 const Progress = styled.div`
   display: flex;
   width: 100%;
   overflow: hidden;
 `;
+
 const Step = styled.div<{ color: string; width: number }>`
   height: 9px;
   width: ${({ width }) => `${width}%`};
@@ -52,15 +54,18 @@ const Step = styled.div<{ color: string; width: number }>`
   transition: none.3s;
   border-radius: 3px;
 `;
+
 const Counter = styled.div`
   margin-top: 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 `;
+
 const TextProfit = styled(Text)`
   color: ${({ theme }) => theme.colors.green};
 `;
+
 const TextPercents = styled(Text)`
   color: ${({ theme }) => theme.colors.textGray2};
 `;

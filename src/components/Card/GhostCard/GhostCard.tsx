@@ -29,6 +29,7 @@ const Wrap = styled.div`
   justify-content: space-between;
   flex-direction: column;
 `;
+
 const Image = styled.div`
   display: flex;
   justify-content: center;

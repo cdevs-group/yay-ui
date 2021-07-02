@@ -29,6 +29,7 @@ const TabsWrap = styled.div`
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
 `;
+
 const Tab = styled.button`
   padding: 15px 30px;
   border: none;

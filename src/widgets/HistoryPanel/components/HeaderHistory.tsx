@@ -97,6 +97,7 @@ const SimpleTabsWrap = styled.div`
   margin-bottom: 33px;
   padding: 0 20px;
 `;
+
 const Title = styled.div`
   display: flex;
   margin-bottom: 22px;
@@ -107,20 +108,17 @@ const Title = styled.div`
     margin-top: 0;
   }
 `;
+
 const TabsBaseWrap = styled.div`
   margin-bottom: 30px;
   padding: 0 20px;
 `;
 
-const Flex = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 const TabsWrap = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 const Tab = styled(Text)`
   border: none;
   padding-bottom: 5px;

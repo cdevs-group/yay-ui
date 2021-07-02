@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styled from "styled-components";
 import { CardHeaderProps } from "../types";
 
@@ -13,12 +13,10 @@ const TextLeft = styled.div`
   font-weight: 500;
   font-size: 21px;
   line-height: 27px;
-  /* background: ${({ theme }) => theme.colors.linkColor};
-  -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
   & div:nth-child(2) {
     margin: 0 5px 0 16px;
     background: ${({ theme }) => theme.colors.text};
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

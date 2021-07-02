@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { StyledCardProps } from "./types";
-import { transparentize } from "polished";
 
 let orangeAnimation = keyframes`
   0%, 100% { transform: translate(0, 0); }
@@ -117,4 +116,5 @@ const LoaderCard: React.FC<StyledCardProps> = ({ textTooltip }) => {
     </Wrap>
   );
 };
+
 export default LoaderCard;

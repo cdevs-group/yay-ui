@@ -50,6 +50,7 @@ export const ExpiredCardBTCBlockETH: React.FC = () => {
     </div>
   );
 };
+
 export const ExpiredCardBTCBlockCheck: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
@@ -69,6 +70,7 @@ export const ExpiredCardBTCBlockCheck: React.FC = () => {
     </div>
   );
 };
+
 export const ExpiredCardBTCBlockETрCheck: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
@@ -204,7 +206,6 @@ export const WithLoaderBTC: React.FC = () => {
 
 export const NextCardBTC: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
-  const text = { text1: "2000 YAY", title1: "Ready to harvest", text2: "Your Balance", title2: "3`000 YAY" };
 
   enum BetPosition {
     BULL = "Bull",
@@ -217,20 +218,9 @@ export const NextCardBTC: React.FC = () => {
     betMethod: "",
   });
 
-  const { isSettingPosition, position } = state;
-
   const handleInputChange = (e: any) => {
     e.preventDefault();
     setInputValue(e.target.value);
-  };
-
-  const handleBetMethod = () => {
-    const newBetmethod = position === BetPosition.BULL ? "betBull" : "betBear";
-    setState((prevState) => ({
-      ...prevState,
-      betMethod: newBetmethod,
-      isSettingPosition: false,
-    }));
   };
 
   const handleSetPosition = (newPosition) => {
@@ -258,8 +248,6 @@ export const NextCardBTC: React.FC = () => {
     <div style={{ padding: "32px", width: "500px" }}>
       <CardFlipBTC isFlipped={state.isSettingPosition}>
         <CardNextBTC
-          textRow="Payout"
-          texts={texts}
           roundEpoch="round"
           time={200}
           payoutWin="payoutWin"
@@ -269,8 +257,6 @@ export const NextCardBTC: React.FC = () => {
           hasEnteredDown={false}
           handleSetPosition={handleSetPosition}
           disabledButton={false}
-          canEnterPosition
-          negative
           ethButton="$ 128271123"
           btcButton="$ 121221232112"
         />
@@ -279,12 +265,11 @@ export const NextCardBTC: React.FC = () => {
           inputText="Commit"
           textsButtons={{ prize: "PRIZE POOL" }}
           inputValue={inputValue}
-          handleInputChange={handleInputChange}
+          onUserInput={handleInputChange}
           showFieldWarning={false}
           onBack={handleBack}
-          // onSuccess={()=>alert('ok')}
+          handlePercentChange={() => ({})}
           inputProps={{ disabled: false }}
-          // {{ disabled: !account || isTxPending }}
         >
           <></>
         </SetPositionCardBTC>

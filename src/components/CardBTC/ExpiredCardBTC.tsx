@@ -10,7 +10,9 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+
 const Line = styled.div``;
+
 const Closed = styled.div`
   display: flex;
   justify-content: space-between;
@@ -20,12 +22,14 @@ const Closed = styled.div`
   letter-spacing: 1px;
   color: ${({ theme }) => theme.colors.text};
 `;
+
 const Middle = styled(Closed)`
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 1px;
   color: ${({ theme }) => theme.colors.greenText2};
 `;
+
 const Locked = styled(Closed)`
   margin-top: 8px;
   font-size: 13px;
@@ -33,6 +37,7 @@ const Locked = styled(Closed)`
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.greyText};
 `;
+
 const ArrowBlock = styled.div<{ btc?: boolean }>`
   display: flex;
   align-items: center;

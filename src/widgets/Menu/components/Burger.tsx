@@ -34,6 +34,7 @@ const BurgerWrap = styled.button`
     display: none;
   }
 `;
+
 const RoundWrap = styled.div`
   position: absolute;
   width: 100%;
@@ -46,6 +47,7 @@ const RoundWrap = styled.div`
     transform: rotate(180deg);
   }
 `;
+
 const BurgerRound1 = styled.div`
   position: absolute;
   width: 6px;
@@ -55,16 +57,19 @@ const BurgerRound1 = styled.div`
   top: calc(50% - 3px);
   left: 6px;
 `;
+
 const BurgerRound2 = styled(BurgerRound1)`
   top: 6px;
   left: calc(50% - 3px);
 `;
+
 const BurgerRound3 = styled(BurgerRound1)`
   left: auto;
   right: 6px;
   top: calc(50% - 3px);
   background: ${({ theme }) => theme.colors.green};
 `;
+
 const BurgerRound4 = styled(BurgerRound2)`
   top: auto;
   left: calc(50% - 3px);

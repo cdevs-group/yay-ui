@@ -57,12 +57,7 @@ const YourHistory = (props: IYourHistory) => {
         </Text>
         <Text size="sm">{yourPosition}</Text>
       </LineMargin>
-      {collect}
-      {/* {collect && (
-        <Button width="100%" scale="md" variant="green" disabled>
-          Collect Winnings
-        </Button>
-      )} */}
+      {collect}      
     </Block>
   );
 };
@@ -75,9 +70,11 @@ const Line = styled.div`
   align-items: center;
   margin-bottom: 8px;
 `;
+
 const Block = styled.div`
   margin-top: 3px;
 `;
+
 const LineMargin = styled(Line)`
   margin-top: 31px;
   margin-bottom: 23px;

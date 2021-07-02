@@ -64,7 +64,7 @@ const AccountBlock = styled(Text)`
     background: ${({ theme }) => theme.colors.green};
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-    min-height: 43px;
+    min-height: 41px;
     min-width: 160px;
     font-size: 15px;
     line-height: 19px;

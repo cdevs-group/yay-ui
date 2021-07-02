@@ -1,10 +1,8 @@
 import React from "react";
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
-import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
-import LinkExternal from "../Link/LinkExternal";
 
 const StyledAlert = styled.div`
   display: flex;
@@ -50,23 +48,6 @@ const Button = styled.button`
   }
 `;
 
-// const SetContent = ({ title, value, variant, subtitle }: AlertProps) => {
-//   return (
-//     <>
-//       <Text fontWeight={400}>
-//         <b>{title}</b> {value}
-//       </Text>
-//       {variant === "winning" ? (
-//         <>
-//           <Text fontSize="13px">{subtitle}</Text>
-//           <LinkExternal fontSize="13px" color="#47DA3B" small href={`https://bscscan.com/address/`} mr="16px">
-//             View on BscScan
-//           </LinkExternal>{" "}
-//         </>
-//       ) : null}
-//     </>
-//   );
-// };
 const SetButton = ({ variant, onClick }: AlertProps) => {
   const Icon = getIcon(variant);
   return (
