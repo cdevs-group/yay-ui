@@ -13,7 +13,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-
 export const WithHandler: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [showAlertLoader, setShowAlertLoader] = useState(false);
@@ -48,7 +47,7 @@ export const WithHandler: React.FC = () => {
         <Alert onClick={closeAlert} variant="winning" title="Winnings collected!">
           Your prizes have been sent to your wallet
         </Alert>
-      </Row>      
+      </Row>
     </div>
   );
 };

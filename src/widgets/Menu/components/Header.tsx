@@ -31,12 +31,7 @@ const Header: React.FC<NavProps> = ({
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
           {links.map((item, i) => (
-            <MenuLink
-              key={i}
-              size="md"
-              name={item.name}
-              url={item.url}
-            />
+            <MenuLink key={i} size="md" name={item.name} url={item.url} />
           ))}
           <LanguageBlockMob>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

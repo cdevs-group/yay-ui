@@ -57,7 +57,7 @@ const YourHistory = (props: IYourHistory) => {
         </Text>
         <Text size="sm">{yourPosition}</Text>
       </LineMargin>
-      {collect}      
+      {collect}
     </Block>
   );
 };

@@ -5,7 +5,6 @@ export * from "./components/Alert";
 export * from "./components/Image";
 export * from "./components/Cards";
 export * from "./components/Layouts";
-export * from "./components/Tabs";
 export * from "./components/Timer";
 export * from "./components/Svg";
 export * from "./components/Text";

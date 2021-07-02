@@ -89,14 +89,7 @@ const Prize = styled.div`
   }
 `;
 
-const ExpiredCardNA: React.FC<StyledCardProps> = ({
-  negative,
-  closedCount,
-  linePrice,
-  lockedPrice,
-  prize,
-  texts,
-}) => {
+const ExpiredCardNA: React.FC<StyledCardProps> = ({ negative, closedCount, linePrice, lockedPrice, prize, texts }) => {
   return (
     <Wrap>
       <Closed>

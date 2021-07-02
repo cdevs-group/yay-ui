@@ -35,9 +35,7 @@ export const Default: React.FC = () => {
         </Link>
       </div>
       <div>
-        <Link href="/">
-          With icon
-        </Link>
+        <Link href="/">With icon</Link>
       </div>
       <div>
         <LinkExternal href="/">LinkExternal</LinkExternal>
