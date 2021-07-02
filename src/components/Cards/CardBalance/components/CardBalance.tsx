@@ -2,12 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { CardBalanceProps } from "../../types";
 import Text from "../../../Text/Text";
+import GHOST from "../../image/ghost.png";
 
-const CardBalance = ({ right, title, children, text }: CardBalanceProps) => {
+const CardBalance = ({ right, children, texts, account }: CardBalanceProps) => {
   return (
     <CardWrap right={right}>
-      <CardHeader size="xl">{title}</CardHeader>
-      <CardText>{text}</CardText>
+      {account ? (
+        <CardHeader size="xl">{texts.title}</CardHeader>
+      ) : (
+        <Ghost>
+          <img alt="" src={GHOST} />
+        </Ghost>
+      )}
+      <CardText>{account ? texts.text : texts.connect}</CardText>
       {children}
     </CardWrap>
   );
@@ -37,11 +44,15 @@ const CardWrap = styled.div<{ right?: boolean }>`
 const CardHeader = styled(Text)`
   text-align: center;
   letter-spacing: 0.05em;
+  margin-bottom: 14px;
 `;
 
 const CardText = styled(Text)`
-  margin-top: 14px;
   text-align: center;
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.textGray};
+`;
+
+const Ghost = styled.div`
+  text-align: center;
 `;

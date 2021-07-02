@@ -9,7 +9,8 @@ export default {
   argTypes: {},
 };
 
-export const CardBalanceBlock: React.FC = () => <CardsBalance />;
+export const CardBalanceBlock: React.FC = () => <CardsBalance account="fghfgh" />;
+export const CardBalanceBlockNoAuth: React.FC = () => <CardsBalance account="" />;
 
 export const CardsProductsPreciew: React.FC = () => {
   return (

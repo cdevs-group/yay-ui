@@ -6,15 +6,30 @@ import { TextCardsProps } from "../types";
 import Arrow from "./components/Arrow";
 import CardBalance from "./components/CardBalance";
 
-const CardsBalance = ({ text }: TextCardsProps) => {
+const CardsBalance = ({ texts, account }: TextCardsProps) => {
   return (
     <Cards>
-      <CardBalance title={text?.title1 || "Ready to harvest"} text={text?.text1 || "2000 YAY"}>
+      <CardBalance
+        texts={{
+          title: texts?.title1 || "2`000 YAY",
+          text: texts?.text1 || "Ready to harvest",
+          connect: texts?.connect || "Сonnect wallet",
+        }}
+        account={account}
+      >
         <CoinIconBalance>
           <CoinIcon />
         </CoinIconBalance>
       </CardBalance>
-      <CardBalance right title={text?.title2 || "Your Balance"} text={text?.text2 || "3`000 YAY"}>
+      <CardBalance
+        right
+        texts={{
+          title: texts?.title2 || "3`000 YAY",
+          text: texts?.text2 || "Your Balance",
+          connect: texts?.connect || "Сonnect wallet",
+        }}
+        account={account}
+      >
         <DualShockBalance>
           <DualshockIcon />
         </DualShockBalance>

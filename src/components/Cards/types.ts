@@ -3,9 +3,13 @@ import { BetPosition } from "../Card/types";
 
 export interface CardBalanceProps {
   right?: boolean;
-  title: string;
-  text: string;
   children?: ReactNode;
+  account: string;
+  texts: {
+    title: string;
+    text: string;
+    connect?: string;
+  };
 }
 export interface ImageProps {
   top?: string;
@@ -19,12 +23,14 @@ export interface ArrowProps {
 }
 
 export interface TextCardsProps {
-  text?: {
+  texts?: {
     text1?: string;
     title1?: string;
     text2?: string;
     title2?: string;
+    connect?: string;
   };
+  account: string;
 }
 export interface CardProductProp {
   title: string;
