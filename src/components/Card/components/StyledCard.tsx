@@ -198,7 +198,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
       <Content>
         <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
           <Vector hide={hide} loader={loader}>
-            UP
+            {texts?.up || "UP"}
           </Vector>
           <RightText displayNone={displayNone}>
             <div className="payout">{texts?.payout || "Payout"}</div>
@@ -219,7 +219,7 @@ const StyledCard: React.FC<StyledCardProps> = ({
         </MainBlock>
         <DownContent negative={negative} displayNone={displayNone}>
           <Vector hide={hide} loader={loader} style={{ opacity: hide ? "0" : "1" }}>
-            DOWN
+            {texts?.down || "DOWN"}
           </Vector>
           <RightText displayNone={displayNone}>
             <div className="payout">{texts?.payout || "Payout"}</div>

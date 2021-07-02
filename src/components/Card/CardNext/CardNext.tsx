@@ -17,8 +17,7 @@ const CardNext: React.FC<IPropsCardNext> = ({
   handleSetPosition,
   disabledButton,
   disabledTimer,
-  textsRow,
-  textsButton,
+  texts,
 }) => {
   return (
     <>
@@ -26,7 +25,7 @@ const CardNext: React.FC<IPropsCardNext> = ({
         <Timer color="white" time={time} disabled={disabledTimer} />
       </TopContent>
       <WrapContent>
-        <ValueRow texts={textsRow} vector="UP" value={payoutWin} />
+        <ValueRow texts={texts?.payout} vector={texts?.up?.toLocaleUpperCase() || "UP"} value={payoutWin} />
         <ButtonsBlockWrap>
           <ButtonsBlock
             pool={pool}
@@ -34,10 +33,10 @@ const CardNext: React.FC<IPropsCardNext> = ({
             hasEnteredDown={hasEnteredDown}
             handleSetPosition={handleSetPosition}
             disabledButton={disabledButton}
-            texts={textsButton}
+            texts={texts}
           />
         </ButtonsBlockWrap>
-        <ValueRow texts={textsRow} vector="DOWN" value={payoutLose} />
+        <ValueRow texts={texts?.payout} vector={texts?.down?.toLocaleUpperCase() || "DOWN"} value={payoutLose} />
       </WrapContent>
     </>
   );

@@ -8,13 +8,15 @@ export interface ITextsYourHistory {
   history?: string;
   textPrice?: string;
 }
-export interface ITextRounHistory {
+export interface ITextRoundHistory {
   rounds?: string;
   locked?: string;
   prize?: string;
   open?: string;
   closing?: string;
   textPrice?: string;
+  up?: string;
+  down?: string;
 }
 
 export interface ITextNoHistory {
