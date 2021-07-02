@@ -1544,12 +1544,12 @@ var templateObject_1$10, templateObject_2$O, templateObject_3$C;
 var ValueRow = function (_a) {
     var vector = _a.vector, value = _a.value, texts = _a.texts;
     return (React__default.createElement(ValueRowBlock, { vector: vector },
-        vector,
+        (texts === null || texts === void 0 ? void 0 : texts.vectorText) || vector,
         React__default.createElement("div", null,
-            React__default.createElement("span", null, texts || "Payout"),
+            React__default.createElement("span", null, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
             value)));
 };
-var ValueRowBlock = styled.div(templateObject_1$$ || (templateObject_1$$ = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"], ["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"])), function (_a) {
+var ValueRowBlock = styled.div(templateObject_1$$ || (templateObject_1$$ = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: ", ";\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"], ["\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  letter-spacing: 0.05em;\n  color: ", ";\n  text-shadow: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  & span {\n    margin-right: 10px;\n    font-weight: normal;\n    color: ", ";\n  }\n\n  max-height: 50px;\n  height: 100%;\n  padding: ", ";\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
@@ -1558,6 +1558,9 @@ var ValueRowBlock = styled.div(templateObject_1$$ || (templateObject_1$$ = __mak
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
+}, function (_a) {
+    var vector = _a.vector;
+    return (vector === "DOWN" || vector === "ETH" ? "13px 20px 18px" : "18px 20px 13px");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard;
@@ -1617,16 +1620,15 @@ var Dots = styled.div(templateObject_4$o || (templateObject_4$o = __makeTemplate
 var templateObject_1$_, templateObject_2$N, templateObject_3$B, templateObject_4$o;
 
 var CardNext$1 = function (_a) {
-    var _b, _c;
     var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, texts = _a.texts;
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(TopContent$1, { rightContent: roundEpoch },
             React__default.createElement(Timer$1, { color: "white", time: time, disabled: disabledTimer })),
         React__default.createElement(WrapContent$1, null,
-            React__default.createElement(ValueRow, { texts: texts === null || texts === void 0 ? void 0 : texts.payout, vector: ((_b = texts === null || texts === void 0 ? void 0 : texts.up) === null || _b === void 0 ? void 0 : _b.toLocaleUpperCase()) || "UP", value: payoutWin }),
+            React__default.createElement(ValueRow, { texts: { payout: texts === null || texts === void 0 ? void 0 : texts.payout, vectorText: texts === null || texts === void 0 ? void 0 : texts.up }, vector: "UP", value: payoutWin }),
             React__default.createElement(ButtonsBlockWrap$2, null,
                 React__default.createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton, texts: texts })),
-            React__default.createElement(ValueRow, { texts: texts === null || texts === void 0 ? void 0 : texts.payout, vector: ((_c = texts === null || texts === void 0 ? void 0 : texts.down) === null || _c === void 0 ? void 0 : _c.toLocaleUpperCase()) || "DOWN", value: payoutLose }))));
+            React__default.createElement(ValueRow, { texts: { payout: texts === null || texts === void 0 ? void 0 : texts.payout, vectorText: texts === null || texts === void 0 ? void 0 : texts.down }, vector: "DOWN", value: payoutLose }))));
 };
 var WrapContent$1 = styled.div(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  background: ", ";\n  margin-top: 28px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  background: ", ";\n  margin-top: 28px;\n"])), function (_a) {
     var theme = _a.theme;

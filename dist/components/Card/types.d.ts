@@ -165,7 +165,11 @@ export interface CardFlipProps {
 export interface ValueProps {
     vector: string;
     value: string;
-    texts?: string;
+    texts?: ValueRowText;
+}
+export interface ValueRowText {
+    payout?: string;
+    vectorText?: string;
 }
 export interface CardButtonsProps {
     handleTurn: (e: any) => void;
