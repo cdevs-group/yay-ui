@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import noop from "lodash/noop";
+import React from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import ArrowSlider from "./ArrowSlider";
 

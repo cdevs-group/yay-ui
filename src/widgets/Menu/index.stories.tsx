@@ -1,9 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
-// import { ReactComponent as LogoIcon } from './logo.svg';
 import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
-import { Language } from "./types";
 import { links } from "./config";
 
 export default {
@@ -13,7 +11,10 @@ export default {
 };
 
 export const HeaderDefault: React.FC = () => {
-  const langs: Language[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
+  const langs = [
+    { locale: "en-US", language: "English", code: "en" },
+    { locale: "de-DE", language: "Deutsch", code: "de" },
+  ];
 
   return (
     <BrowserRouter>

@@ -18,8 +18,4 @@ const Block = styled.div<{ active: boolean }>`
   border-radius: 7px;
 `;
 
-IconBlock.defaultProps = {
-  // active:true
-};
-
 export default IconBlock;

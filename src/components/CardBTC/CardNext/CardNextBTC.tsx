@@ -1,8 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../Button";
-import { BetPosition } from "../../Card/types";
-import { ArrowCardDown } from "../../Svg";
 import { Timer } from "../../Timer";
 import ButtonsBlock from "./ButtonsBlockBTC";
 import TopContent from "../../Card/CardNext/TopContent";
@@ -52,15 +49,6 @@ const CardNext: React.FC<IProps> = ({
 
 export default CardNext;
 
-const Arrow = styled.div<{ negative?: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  transform: ${({ negative }) => (!negative ? "scale(1,-1)" : "none")};
-`;
-
 const WrapContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -83,19 +71,5 @@ const ButtonsBlockWrap = styled.div`
   border-radius: 15px;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 335px;
-  }
-`;
-
-const Prize = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  color: ${({ theme }) => theme.colors.text};
-  & span {
-    font-size: 15px;
   }
 `;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import noop from "lodash/noop";
 import { Meta } from "@storybook/react/types-6-0";
 import Alert from "./Alert";
 
@@ -14,7 +13,6 @@ export default {
   argTypes: {},
 } as Meta;
 
-const handleClick = noop;
 
 export const WithHandler: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -50,13 +48,7 @@ export const WithHandler: React.FC = () => {
         <Alert onClick={closeAlert} variant="winning" title="Winnings collected!">
           Your prizes have been sent to your wallet
         </Alert>
-      </Row>
-      <Row onClick={() => setShowAlert(true)}>
-        <button>нажми на меня winning</button>
-      </Row>
-      <Row onClick={() => setShowAlertLoader(true)}>
-        <button>нажми на меня with loader</button>
-      </Row>
+      </Row>      
     </div>
   );
 };

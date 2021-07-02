@@ -100,9 +100,11 @@ const Line = styled.div`
   align-items: center;
   margin-bottom: 8px;
 `;
+
 const Block = styled.div`
   margin-top: 31px;
 `;
+
 const LineMargin = styled(Line)`
   margin-bottom: 17px;
 `;

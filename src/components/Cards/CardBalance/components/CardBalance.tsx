@@ -33,10 +33,12 @@ const CardWrap = styled.div<{ right?: boolean }>`
     margin-bottom: 0px;
   }
 `;
+
 const CardHeader = styled(Text)`
   text-align: center;
   letter-spacing: 0.05em;
 `;
+
 const CardText = styled(Text)`
   margin-top: 14px;
   text-align: center;

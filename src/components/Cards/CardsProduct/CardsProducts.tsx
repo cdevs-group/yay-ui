@@ -6,9 +6,6 @@ import COINS from "../image/coins.png";
 import CHESS from "../image/chess.png";
 import BALANCE from "../image/balance.png";
 import CardProduct from "./components/CardProduct";
-import CardProductLeft from "./components/CardProductLeft";
-import CardProductRight from "./components/CardProductRight";
-import CardProductRcket from "./components/CardProductRcket";
 
 const data = [
   { name: "BTC vs ETH", img: BALANCE, color: "pink" },

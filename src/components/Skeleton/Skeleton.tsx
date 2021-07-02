@@ -4,12 +4,12 @@ import { space, layout } from "styled-system";
 import { SkeletonProps, animation as ANIMATION, variant as VARIANT } from "./types";
 
 const waves = keyframes`
-   from {
-        left: -150px;
-    }
-    to   {
-        left: 100%;
-    }
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
 `;
 
 const pulse = keyframes`
@@ -29,7 +29,6 @@ const Root = styled.div<SkeletonProps>`
   display: block;
   background-color: ${({ theme }) => theme.colors.backgroundDisabled};
   border-radius: ${({ variant, theme }) => (variant === VARIANT.CIRCLE ? theme.radii.circle : theme.radii.small)};
-
   ${layout}
   ${space}
 `;

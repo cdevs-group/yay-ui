@@ -37,8 +37,6 @@ export const GhostCardBlock: React.FC = () => {
 };
 
 export const ExpiredNAuth: React.FC = () => {
-  const texts = {};
-
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Card
@@ -157,7 +155,6 @@ export const CardLoader: React.FC = () => {
 
 export const CardNxetUpOrDown: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
-  const text = { text1: "2000 YAY", title1: "Ready to harvest", text2: "Your Balance", title2: "3`000 YAY" };
 
   enum BetPosition {
     BULL = "Bull",
@@ -170,20 +167,9 @@ export const CardNxetUpOrDown: React.FC = () => {
     betMethod: "",
   });
 
-  const { isSettingPosition, position } = state;
-
   const handleInputChange = (e: any) => {
     e.preventDefault();
     setInputValue(e.target.value);
-  };
-
-  const handleBetMethod = () => {
-    const newBetmethod = position === BetPosition.BULL ? "betBull" : "betBear";
-    setState((prevState) => ({
-      ...prevState,
-      betMethod: newBetmethod,
-      isSettingPosition: false,
-    }));
   };
 
   const handleSetPosition = (newPosition) => {
@@ -200,18 +186,18 @@ export const CardNxetUpOrDown: React.FC = () => {
       isSettingPosition: false,
     }));
 
-  const textsButtons = {
+  const texts = {
     enterUp: "Enter UP",
     prize: "Prize Pool",
     enterDown: "Enter DOWN",
+    payout: "Payout",
   };
 
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardFlip isFlipped={state.isSettingPosition}>
         <CardNext
-          textsRow="Payout"
-          textsButton={textsButtons}
+          texts={texts}
           roundEpoch="round"
           time={200}
           payoutWin="payoutWin"
@@ -221,19 +207,16 @@ export const CardNxetUpOrDown: React.FC = () => {
           hasEnteredDown={false}
           handleSetPosition={handleSetPosition}
           disabledButton={false}
-          canEnterPosition
-          negative
         />
         <SetPositionCard
           inputValue={inputValue}
-          handleInputChange={handleInputChange}
+          onUserInput={handleInputChange}
           showFieldWarning={false}
           onBack={handleBack}
           texts="Set Position"
           inputText="Commit"
-          // onSuccess={()=>alert('ok')}
+          handlePercentChange={() => ({})}
           inputProps={{ disabled: false }}
-          // {{ disabled: !account || isTxPending }}
         >
           <></>
         </SetPositionCard>
@@ -244,18 +227,7 @@ export const CardNxetUpOrDown: React.FC = () => {
 
 export const CardLaterBlock: React.FC = () => {
   return (
-    <Card
-      live
-      hide
-      leftContent="LATER"
-      rightContent="#001"
-      payoutUp={1.03}
-      payoutDown={5.03}
-      displayNone
-      colorNone
-      time={2000}
-      color="green"
-    >
+    <Card live hide leftContent="LATER" rightContent="#001" displayNone colorNone time={2000} color="green">
       <LoaderCard />
     </Card>
   );

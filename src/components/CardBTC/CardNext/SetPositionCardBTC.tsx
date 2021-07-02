@@ -17,12 +17,6 @@ const SetPositionCardBTC: React.FC<SetPositionCardProps> = ({
   texts,
   inputText,
 }) => {
-  const [tabValue, setTabValue] = useState(0);
-
-  const handleToggleTabs = (e: any) => {
-    setTabValue(+e.currentTarget.value);
-  };
-
   return (
     <Wrap>
       <ButtonBack onClick={onBack}>
@@ -49,6 +43,7 @@ export default SetPositionCardBTC;
 const Wrap = styled.div`
   position: relative;
 `;
+
 const ButtonBack = styled.button`
   height: 30px;
   width: 30px;
@@ -65,6 +60,7 @@ const ButtonBack = styled.button`
   border-radius: 7px;
   cursor: pointer;
 `;
+
 const Title = styled.div`
   margin-bottom: 22px;
   font-weight: 500;
@@ -73,14 +69,8 @@ const Title = styled.div`
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.text};
 `;
+
 const TabsBlock = styled.div`
   margin-top: 35px;
   margin-bottom: 16px;
-`;
-const NoteBlock = styled.div`
-  font-size: 11px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: ${({ theme }) => theme.colors.textGray};
 `;

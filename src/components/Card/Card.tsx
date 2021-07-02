@@ -18,4 +18,5 @@ const Card: React.FC<CardProps> = ({ children, ...props }) => {
     </Wrap>
   );
 };
+
 export default Card;

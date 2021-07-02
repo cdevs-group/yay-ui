@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import { SearchIcon } from "../Svg";
+import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
 const InputSearch = ({ placeholder, value, onChange }: InputSearchProp) => {
@@ -17,7 +17,7 @@ const InputSearch = ({ placeholder, value, onChange }: InputSearchProp) => {
         placeholder={placeholder}
       />
       <Button>
-        <SearchIcon color={focus ? "#47DA3B" : "white"} />
+        <SearchIcon2 color={focus ? "green" : "text"} />
       </Button>
     </InputBlock>
   );
@@ -33,6 +33,7 @@ const InputBlock = styled.div`
   position: relative;
   width: fit-content;
 `;
+
 const InputItem = styled.input`
   position: relative;
   display: block;
@@ -59,6 +60,7 @@ const InputItem = styled.input`
     }
   }
 `;
+
 const Button = styled.button`
   padding: 0;
   border: none;
@@ -66,5 +68,5 @@ const Button = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 15px;
+  right: 21px;
 `;

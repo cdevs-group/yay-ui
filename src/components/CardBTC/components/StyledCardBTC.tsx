@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Timer from "../../Timer/Timer";
 import { StyledCardProps } from "../../Card/types";
@@ -162,6 +162,7 @@ const DownContent = styled.div<{ negative?: boolean; displayNone?: boolean }>`
   line-height: 19px;
   color: ${({ theme }) => theme.colors.text};
 `;
+
 const Currency = styled.div<{ loader?: boolean }>`
   display: flex;
   align-items: center;
@@ -174,6 +175,7 @@ const Currency = styled.div<{ loader?: boolean }>`
     }
   }
 `;
+
 const WonBlcok = styled.div`
   position: relative;
   text-align: center;

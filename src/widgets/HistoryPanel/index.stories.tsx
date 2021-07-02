@@ -33,13 +33,6 @@ export const Panel: React.FC = () => {
   const [activeTab, setActiveTab] = useState(HistoryTabs.PNL);
   const [historyFilter, setHistoryFilter] = useState("all");
   const [isHistoryPaneOpen, setIsHistoryPaneOpen] = useState(true);
-  // const toggleHistoryFilter = (e) => {
-  //   console.log(e.target)
-  //   if (e.target?.value !== historyFilter) {
-  //     setHistoryFilter(e.target?.value);
-  //   }
-  // };
-  // console.log(historyFilter)
 
   const toggleBaseTab = async (e: any) => {
     setActiveTab(+e.target.value);
@@ -73,7 +66,6 @@ export const Panel: React.FC = () => {
       break;
     case HistoryTabs.ROUNDS:
     default:
-      // activeTabComponent = <RoundsTab hasBetHistory={hasBetHistory} bets={results} />;
       break;
   }
 

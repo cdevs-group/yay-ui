@@ -9,6 +9,7 @@ export { default as HistoryIcon } from "./Icons/HistoryIcon";
 export { default as GreenArrow } from "./Icons/GreenArrow";
 export { default as CopyIcon } from "./Icons/CopyIcon";
 export { default as SearchIcon } from "./Icons/SearchIcon";
+export { default as SearchIcon2 } from "./Icons/SearchIcon2";
 export { default as StrikeIcon } from "./Icons/StrikeIcon";
 export { default as SquaresIcon } from "./Icons/SquaresIcon";
 export { default as EyeOpen } from "./Icons/EyeOpen";

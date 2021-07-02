@@ -22,10 +22,9 @@ const Inner = styled.div<{ isFlipped: CardFlipProps["isFlipped"] }>`
   position: relative;
   transform: rotateY(${({ isFlipped }) => (isFlipped ? 180 : 0)}deg);
   transform-style: preserve-3d;
-  transition: transform 600ms, background 0.6s;
+  transition: transform 600ms;
   border-radius: 15px;
   box-sizing: border-box;
-  /* background: ${({ theme, isFlipped }) => (isFlipped ? theme.colors.cardBg : theme.colors.bgCard)}; */
 
   ${Front} {
     z-index: ${({ isFlipped }) => (isFlipped ? 5 : 10)};

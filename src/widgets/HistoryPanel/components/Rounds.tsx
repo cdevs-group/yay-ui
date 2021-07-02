@@ -72,6 +72,7 @@ const Wrap = styled.div`
   position: relative;
   z-index: 1;
 `;
+
 const Row = styled.div`
   padding: 17px 0;
   display: flex;
@@ -79,13 +80,16 @@ const Row = styled.div`
   z-index: 2;
   justify-content: space-between;
 `;
+
 const Round = styled(Text)<{ color: string }>`
   margin-bottom: 5px;
   color: ${({ color }) => color};
 `;
+
 const Value = styled(Text)<{ color?: string }>`
   color: ${({ color }) => color || "white"};
 `;
+
 const Column = styled.div`
   display: flex;
   & img {

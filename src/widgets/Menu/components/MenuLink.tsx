@@ -15,6 +15,7 @@ const MenuLink = ({ name, url, size }: LinkHeaderProps) => {
 export default MenuLink;
 
 const Link = styled(NavLink)``;
+
 const LinkItem = styled(Text)`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
