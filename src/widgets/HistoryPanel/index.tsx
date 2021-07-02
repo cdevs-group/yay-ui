@@ -17,7 +17,7 @@ export type {
   bestProps,
   InjectedProps,
   bestData,
-  ITextRounHistory,
+  ITextRoundHistory,
   ITextsYourHistory,
   ITextNoHistory,
 } from "./types";

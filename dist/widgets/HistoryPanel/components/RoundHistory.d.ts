@@ -1,5 +1,5 @@
 import React from "react";
-import { ITextRounHistory } from "../types";
+import { ITextRoundHistory } from "../types";
 interface IRoundHistory {
     price: string;
     priceRightText: string;
@@ -12,7 +12,7 @@ interface IRoundHistory {
     negative?: boolean;
     lockPrice?: string;
     roundFailed?: boolean;
-    texts?: ITextRounHistory;
+    texts?: ITextRoundHistory;
 }
 declare const RoundHistory: (props: IRoundHistory) => JSX.Element;
 export default RoundHistory;

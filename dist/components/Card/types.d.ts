@@ -177,6 +177,14 @@ export interface TabsProps {
     handlePercentChange: (sliderPercent: number) => void;
     disabledTab?: boolean;
 }
+export interface ITextCardNext {
+    payout?: string;
+    up?: string;
+    down?: string;
+    prize?: string;
+    enterUp?: string;
+    enterDown?: string;
+}
 export interface IPropsCardNext {
     roundEpoch: string;
     time: number;
@@ -188,8 +196,7 @@ export interface IPropsCardNext {
     hasEnteredDown: boolean;
     disabledButton: boolean;
     disabledTimer?: boolean;
-    textsButton?: any;
-    textsRow?: string;
+    texts?: ITextCardNext;
 }
 export interface LaterCardProps {
     time: number;

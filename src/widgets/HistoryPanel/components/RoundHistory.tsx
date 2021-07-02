@@ -49,13 +49,13 @@ const RoundHistory = (props: IRoundHistory) => {
       <Block>
         <Line>
           <Text size="sm" fontWeight={400}>
-            {texts?.up || 'Up'}
+            {texts?.up || "Up"}
           </Text>
           <Text size="sm">{up}</Text>
         </Line>
         <Line>
           <Text size="sm" fontWeight={400}>
-            {texts?.down || 'Down'}
+            {texts?.down || "Down"}
           </Text>
           <Text size="sm">{down}</Text>
         </Line>

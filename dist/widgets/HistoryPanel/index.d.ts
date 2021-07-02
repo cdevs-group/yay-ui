@@ -10,4 +10,4 @@ export { default as Accordeon } from "./components/Accordeon";
 export { default as RoundHistory } from "./components/RoundHistory";
 export { default as YourHistory } from "./components/YourHistory";
 export { default as HiddenItemAccordeonCard } from "./components/HiddenItemAccordeonCard";
-export type { ICardAccordeon, PnlProp, bestProps, InjectedProps, bestData, ITextRounHistory, ITextsYourHistory, ITextNoHistory, } from "./types";
+export type { ICardAccordeon, PnlProp, bestProps, InjectedProps, bestData, ITextRoundHistory, ITextsYourHistory, ITextNoHistory, } from "./types";

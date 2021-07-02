@@ -1066,7 +1066,7 @@ var StyledCard = function (_a) {
             React__default['default'].createElement(RightContent$3, null, rightContent)),
         React__default['default'].createElement(Content$2, null,
             React__default['default'].createElement(UpContent$1, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone },
-                React__default['default'].createElement(Vector, { hide: hide, loader: loader }, "UP"),
+                React__default['default'].createElement(Vector, { hide: hide, loader: loader }, (texts === null || texts === void 0 ? void 0 : texts.up) || "UP"),
                 React__default['default'].createElement(RightText$2, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
                     React__default['default'].createElement("div", null, payoutUp),
@@ -1078,7 +1078,7 @@ var StyledCard = function (_a) {
                     React__default['default'].createElement("img", { src: Winner }))),
             React__default['default'].createElement(MainBlock$1, { negative: negative, colorNone: colorNone }, children),
             React__default['default'].createElement(DownContent$1, { negative: negative, displayNone: displayNone },
-                React__default['default'].createElement(Vector, { hide: hide, loader: loader, style: { opacity: hide ? "0" : "1" } }, "DOWN"),
+                React__default['default'].createElement(Vector, { hide: hide, loader: loader, style: { opacity: hide ? "0" : "1" } }, (texts === null || texts === void 0 ? void 0 : texts.down) || "DOWN"),
                 React__default['default'].createElement(RightText$2, { displayNone: displayNone },
                     React__default['default'].createElement("div", { className: "payout" }, (texts === null || texts === void 0 ? void 0 : texts.payout) || "Payout"),
                     React__default['default'].createElement("div", null, payoutDown),
@@ -1648,15 +1648,16 @@ var Dots = styled__default['default'].div(templateObject_4$o || (templateObject_
 var templateObject_1$_, templateObject_2$N, templateObject_3$B, templateObject_4$o;
 
 var CardNext$1 = function (_a) {
-    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, textsRow = _a.textsRow, textsButton = _a.textsButton;
+    var _b, _c;
+    var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, texts = _a.texts;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(TopContent$1, { rightContent: roundEpoch },
             React__default['default'].createElement(Timer$1, { color: "white", time: time, disabled: disabledTimer })),
         React__default['default'].createElement(WrapContent$1, null,
-            React__default['default'].createElement(ValueRow, { texts: textsRow, vector: "UP", value: payoutWin }),
+            React__default['default'].createElement(ValueRow, { texts: texts === null || texts === void 0 ? void 0 : texts.payout, vector: ((_b = texts === null || texts === void 0 ? void 0 : texts.up) === null || _b === void 0 ? void 0 : _b.toLocaleUpperCase()) || "UP", value: payoutWin }),
             React__default['default'].createElement(ButtonsBlockWrap$2, null,
-                React__default['default'].createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton, texts: textsButton })),
-            React__default['default'].createElement(ValueRow, { texts: textsRow, vector: "DOWN", value: payoutLose }))));
+                React__default['default'].createElement(ButtonsBlock, { pool: pool, hasEnteredUp: hasEnteredUp, hasEnteredDown: hasEnteredDown, handleSetPosition: handleSetPosition, disabledButton: disabledButton, texts: texts })),
+            React__default['default'].createElement(ValueRow, { texts: texts === null || texts === void 0 ? void 0 : texts.payout, vector: ((_c = texts === null || texts === void 0 ? void 0 : texts.down) === null || _c === void 0 ? void 0 : _c.toLocaleUpperCase()) || "DOWN", value: payoutLose }))));
 };
 var WrapContent$1 = styled__default['default'].div(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  background: ", ";\n  margin-top: 28px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  border-radius: 15px;\n  background: ", ";\n  margin-top: 28px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -3676,10 +3677,10 @@ var RoundHistory = function (props) {
         React__default['default'].createElement(ClosedPrice, { price: price, rightText: priceRightText, result: result, negative: negative, roundFailed: roundFailed, textPrice: texts === null || texts === void 0 ? void 0 : texts.textPrice }),
         React__default['default'].createElement(Block$2, null,
             React__default['default'].createElement(Line$2, null,
-                React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, "Up"),
+                React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, (texts === null || texts === void 0 ? void 0 : texts.up) || "Up"),
                 React__default['default'].createElement(Text, { size: "sm" }, up)),
             React__default['default'].createElement(Line$2, null,
-                React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, "Down"),
+                React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 }, (texts === null || texts === void 0 ? void 0 : texts.down) || "Down"),
                 React__default['default'].createElement(Text, { size: "sm" }, down)),
             lockPrice && (React__default['default'].createElement(Line$2, null,
                 React__default['default'].createElement(Text, { size: "sm", fontWeight: 400 },
