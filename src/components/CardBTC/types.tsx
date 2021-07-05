@@ -28,7 +28,7 @@ export interface IProps {
 }
 
 export interface ExpireCardBTCProps {
-  clodedBTC: string;
+  closedBTC: string;
   lockedBTC: string;
   closedETH: string;
   lockedETH: string;
