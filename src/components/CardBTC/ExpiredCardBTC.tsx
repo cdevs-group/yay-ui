@@ -47,10 +47,10 @@ const ArrowBlock = styled.div<{ btc?: boolean }>`
     height: 20px;
   }
   &.btc svg {
-    transform: rotate ${({ btc }) => (btc ? "(-90deg)" : "(90deg)")};
+    transform: ${({ btc }) => (btc ? "rotate(-90deg)" : "rotate(90deg)")};
   }
   &.eth svg {
-    transform: rotate ${({ btc }) => (btc ? "(90deg)" : "(-90deg)")};
+    transform: ${({ btc }) => (btc ? "rotate(90deg)" : "rotate(-90deg)")};
   }
 `;
 
