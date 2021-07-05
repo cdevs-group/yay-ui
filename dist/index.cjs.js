@@ -2339,12 +2339,12 @@ var Locked$1 = styled__default['default'](Closed$1)(templateObject_5$d || (templ
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var ArrowBlock$1 = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: rotate ", ";\n  }\n  &.eth svg {\n    transform: rotate ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: rotate ", ";\n  }\n  &.eth svg {\n    transform: rotate ", ";\n  }\n"])), function (_a) {
+var ArrowBlock$1 = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
     var btc = _a.btc;
-    return (btc ? "(-90deg)" : "(90deg)");
+    return (btc ? "rotate(-90deg)" : "rotate(90deg)");
 }, function (_a) {
     var btc = _a.btc;
-    return (btc ? "(90deg)" : "(-90deg)");
+    return (btc ? "rotate(90deg)" : "rotate(-90deg)");
 });
 var ExpiredCardBTC = function (_a) {
     var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
@@ -2395,12 +2395,12 @@ var Locked = styled__default['default'](Closed)(templateObject_5$c || (templateO
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var ArrowBlock = styled__default['default'].div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: rotate ", ";\n  }\n  &.eth svg {\n    transform: rotate ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: rotate ", ";\n  }\n  &.eth svg {\n    transform: rotate ", ";\n  }\n"])), function (_a) {
+var ArrowBlock = styled__default['default'].div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
     var btc = _a.btc;
-    return (btc ? "(-90deg)" : "(90deg)");
+    return (btc ? "rotate(-90deg)" : "rotate(90deg)");
 }, function (_a) {
     var btc = _a.btc;
-    return (btc ? "(90deg)" : "(-90deg)");
+    return (btc ? "rotate(90deg)" : "rotate(-90deg)");
 });
 var LiveCardBTC = function (_a) {
     var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
