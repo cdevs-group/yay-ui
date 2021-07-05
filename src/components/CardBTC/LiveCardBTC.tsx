@@ -38,7 +38,7 @@ const Locked = styled(Closed)`
   color: ${({ theme }) => theme.colors.greyText};
 `;
 
-const ArrowBlock = styled.div<{ btc?: boolean }>`
+const ArrowBlock = styled.div<{ btcUp?: boolean; ethUp?: boolean }>`
   display: flex;
   align-items: center;
   & svg {
@@ -47,14 +47,24 @@ const ArrowBlock = styled.div<{ btc?: boolean }>`
     height: 20px;
   }
   &.btc svg {
-    transform: ${({ btc }) => (btc ? "rotate(-90deg)" : "rotate(90deg)")};
+    transform: ${({ btcUp }) => (btcUp ? "rotate(-90deg)" : "rotate(90deg)")};
   }
   &.eth svg {
-    transform: ${({ btc }) => (btc ? "rotate(90deg)" : "rotate(-90deg)")};
+    transform: ${({ ethUp }) => (ethUp ? "rotate(-90deg)" : "rotate(90deg)")};
   }
 `;
 
-const LiveCardBTC = ({ texts, closedBTC, lockedBTC, closedETH, lockedETH, prize, btc }: ExpireCardBTCProps) => {
+const LiveCardBTC = ({
+  texts,
+  closedBTC,
+  lockedBTC,
+  closedETH,
+  lockedETH,
+  prize,
+  btcUp,
+  ethUp,
+  btcLider,
+}: ExpireCardBTCProps) => {
   return (
     <Wrap>
       <Line>
@@ -62,10 +72,10 @@ const LiveCardBTC = ({ texts, closedBTC, lockedBTC, closedETH, lockedETH, prize,
           {texts?.last || "LAST PRICE"} BTC <p> {closedBTC}</p>
         </Closed>
         <Locked>
-          <ArrowBlock btc={btc} className="btc">
+          <ArrowBlock btcUp={btcUp} className="btc">
             <ArrowRight
-              stroke={btc ? "#47DA3B" : "#FF6161"}
-              fill={btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
+              stroke={btcLider ? "#47DA3B" : "#FF6161"}
+              fill={btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
             />
             {texts?.locked || "Locked Price"} BTC
           </ArrowBlock>
@@ -81,10 +91,10 @@ const LiveCardBTC = ({ texts, closedBTC, lockedBTC, closedETH, lockedETH, prize,
           {texts?.last || "LAST PRICE"} ETH <p> {closedETH}</p>
         </Closed>
         <Locked>
-          <ArrowBlock btc={btc} className="eth">
+          <ArrowBlock ethUp={ethUp} className="eth">
             <ArrowRight
-              stroke={!btc ? "#47DA3B" : "#FF6161"}
-              fill={!btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
+              stroke={!btcLider ? "#47DA3B" : "#FF6161"}
+              fill={!btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
             />
             {texts?.locked || "Locked Price"} ETH
           </ArrowBlock>
