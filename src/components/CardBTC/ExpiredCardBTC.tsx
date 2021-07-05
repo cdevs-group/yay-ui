@@ -54,12 +54,12 @@ const ArrowBlock = styled.div<{ btc?: boolean }>`
   }
 `;
 
-const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, prize, btc }: ExpireCardBTCProps) => {
+const ExpiredCardBTC = ({ texts, closedBTC, lockedBTC, closedETH, lockedETH, prize, btc }: ExpireCardBTCProps) => {
   return (
     <Wrap>
       <Line>
         <Closed>
-          {texts?.closed || "CLOSED PRICE"} BTC <p> {clodedBTC}</p>
+          {texts?.closed || "CLOSED PRICE"} BTC <p> {closedBTC}</p>
         </Closed>
         <Locked>
           <ArrowBlock btc={btc} className="btc">
@@ -69,7 +69,7 @@ const ExpiredCardBTC = ({ texts, clodedBTC, lockedBRC, closedETH, lockedETH, pri
             />
             {texts?.locked || "Locked Price"} BTC
           </ArrowBlock>
-          <p>{lockedBRC}</p>
+          <p>{lockedBTC}</p>
         </Locked>
       </Line>
       <Middle>
