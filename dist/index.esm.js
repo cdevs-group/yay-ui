@@ -2316,7 +2316,7 @@ var ArrowBlock$1 = styled.div(templateObject_6$8 || (templateObject_6$8 = __make
     return (btc ? "(90deg)" : "(-90deg)");
 });
 var ExpiredCardBTC = function (_a) {
-    var texts = _a.texts, clodedBTC = _a.clodedBTC, lockedBRC = _a.lockedBRC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
     return (React__default.createElement(Wrap$d, null,
         React__default.createElement(Line$4, null,
             React__default.createElement(Closed$1, null,
@@ -2324,13 +2324,13 @@ var ExpiredCardBTC = function (_a) {
                 " BTC ",
                 React__default.createElement("p", null,
                     " ",
-                    clodedBTC)),
+                    closedBTC)),
             React__default.createElement(Locked$1, null,
                 React__default.createElement(ArrowBlock$1, { btc: btc, className: "btc" },
                     React__default.createElement(Icon$7, { stroke: btc ? "#47DA3B" : "#FF6161", fill: btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " BTC"),
-                React__default.createElement("p", null, lockedBRC))),
+                React__default.createElement("p", null, lockedBTC))),
         React__default.createElement(Middle$1, null,
             (texts === null || texts === void 0 ? void 0 : texts.prize) || "PRIZE POLL",
             React__default.createElement("p", null, prize)),
@@ -2372,7 +2372,7 @@ var ArrowBlock = styled.div(templateObject_6$7 || (templateObject_6$7 = __makeTe
     return (btc ? "(90deg)" : "(-90deg)");
 });
 var LiveCardBTC = function (_a) {
-    var texts = _a.texts, clodedBTC = _a.clodedBTC, lockedBRC = _a.lockedBRC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
     return (React__default.createElement(Wrap$c, null,
         React__default.createElement(Line$3, null,
             React__default.createElement(Closed, null,
@@ -2380,7 +2380,7 @@ var LiveCardBTC = function (_a) {
                 " BTC ",
                 React__default.createElement("p", null,
                     " ",
-                    clodedBTC)),
+                    closedBTC)),
             React__default.createElement(Locked, null,
                 React__default.createElement(ArrowBlock, { btc: btc, className: "btc" },
                     React__default.createElement(Icon$7, { stroke: btc ? "#47DA3B" : "#FF6161", fill: btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
@@ -2388,7 +2388,7 @@ var LiveCardBTC = function (_a) {
                     " BTC"),
                 React__default.createElement("p", null,
                     " ",
-                    lockedBRC))),
+                    lockedBTC))),
         React__default.createElement(Middle, null,
             (texts === null || texts === void 0 ? void 0 : texts.prize) || "PRIZE POLL",
             React__default.createElement("p", null, prize)),

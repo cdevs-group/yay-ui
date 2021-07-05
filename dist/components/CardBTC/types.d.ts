@@ -25,8 +25,8 @@ export interface IProps {
     textsButtons?: Itexts;
 }
 export interface ExpireCardBTCProps {
-    clodedBTC: string;
-    lockedBRC: string;
+    closedBTC: string;
+    lockedBTC: string;
     closedETH: string;
     lockedETH: string;
     prize: string;
