@@ -45,9 +45,9 @@ const Header: React.FC<NavProps> = ({
   }, [refSelect, handleClickOutside]);
 
   const handleLink = (url: string) => {
-    history.push(url)
-    setOpenMenu(false)
-  }
+    history.push(url);
+    setOpenMenu(false);
+  };
 
   return (
     <HeaderWrap ref={refSelect}>
