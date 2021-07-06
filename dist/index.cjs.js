@@ -10,7 +10,6 @@ var polished = require('polished');
 var reactRouterDom = require('react-router-dom');
 var debounce = require('lodash/debounce');
 var reactFlipToolkit = require('react-flip-toolkit');
-var history = require('history');
 var reactTransitionGroup = require('react-transition-group');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -3830,10 +3829,10 @@ var templateObject_1$c, templateObject_2$8;
 
 var MenuLink = function (_a) {
     var name = _a.name, url = _a.url, size = _a.size, onClick = _a.onClick;
-    return (React__default['default'].createElement(Link, { onClick: function () { return onClick(url); } },
+    return (React__default['default'].createElement(Link, { to: url, exact: true, onClick: onClick },
         React__default['default'].createElement(LinkItem, { size: size }, name)));
 };
-var Link = styled__default['default'].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject([""], [""])));
+var Link = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject([""], [""])));
 var LinkItem = styled__default['default'](Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -3953,7 +3952,6 @@ var templateObject_1$8, templateObject_2$4, templateObject_3$4, templateObject_4
 var Header = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links; _a.profile; _a.children;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
-    var history$1 = history.createBrowserHistory();
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
         if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
@@ -3968,8 +3966,7 @@ var Header = function (_a) {
             document.removeEventListener("mousedown", handleClickOutside, false);
         };
     }, [refSelect, handleClickOutside]);
-    var handleLink = function (url) {
-        history$1.push(url);
+    var handleLink = function () {
         setOpenMenu(false);
     };
     return (React__default['default'].createElement(HeaderWrap, { ref: refSelect },

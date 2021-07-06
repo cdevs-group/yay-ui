@@ -5,7 +5,6 @@ import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
- 
   return (
     <Link to={url} exact onClick={onClick}>
       <LinkItem size={size}>{name}</LinkItem>
