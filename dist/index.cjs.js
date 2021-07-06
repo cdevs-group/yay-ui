@@ -3956,16 +3956,16 @@ var Header = function (_a) {
     var history$1 = history.createBrowserHistory();
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
-        if (refSelect.current !== e.target) {
+        if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
             setOpenMenu(false);
         }
     }, [setOpenMenu]);
     React.useEffect(function () {
         if (document && refSelect && refSelect.current) {
-            document.addEventListener("mouseup", handleClickOutside, false);
+            document.addEventListener("mousedown", handleClickOutside, false);
         }
         return function () {
-            document.removeEventListener("mouseup", handleClickOutside, false);
+            document.removeEventListener("mousedown", handleClickOutside, false);
         };
     }, [refSelect, handleClickOutside]);
     var handleLink = function (url) {
