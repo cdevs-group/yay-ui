@@ -1,6 +1,5 @@
-import React, { RefObject, useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { createBrowserHistory } from "history";
 import styled from "styled-components";
 import Logo from "../Logo";
 import { NavProps } from "../types";
@@ -23,7 +22,6 @@ const Header: React.FC<NavProps> = ({
   children,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const history = createBrowserHistory();
   const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
@@ -34,6 +32,7 @@ const Header: React.FC<NavProps> = ({
     },
     [setOpenMenu]
   );
+
   useEffect(() => {
     if (document && refSelect && refSelect.current) {
       document.addEventListener("mousedown", handleClickOutside, false);
@@ -43,8 +42,7 @@ const Header: React.FC<NavProps> = ({
     };
   }, [refSelect, handleClickOutside]);
 
-  const handleLink = (url: string) => {
-    history.push(url);
+  const handleLink = () => {
     setOpenMenu(false);
   };
 

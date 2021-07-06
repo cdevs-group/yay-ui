@@ -12,7 +12,7 @@ export interface LinkHeaderProps {
   size?: string;
   className?: string;
   url: string;
-  onClick: (url: string) => void;
+  onClick: () => void;
 }
 
 export interface AccProps {

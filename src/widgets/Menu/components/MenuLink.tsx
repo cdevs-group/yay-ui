@@ -1,11 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
+ 
   return (
-    <Link onClick={() => onClick(url)}>
+    <Link to={url} exact onClick={onClick}>
       <LinkItem size={size}>{name}</LinkItem>
     </Link>
   );
@@ -13,7 +15,7 @@ const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
 
 export default MenuLink;
 
-const Link = styled.div``;
+const Link = styled(NavLink)``;
 
 const LinkItem = styled(Text)`
   position: relative;
