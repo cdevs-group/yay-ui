@@ -9,9 +9,10 @@ export const sizes = {
 
 export interface LinkHeaderProps {
   name: string;
-  url: string;
   size?: string;
   className?: string;
+  url: string;
+  onClick: (url: string) => void;
 }
 
 export interface AccProps {

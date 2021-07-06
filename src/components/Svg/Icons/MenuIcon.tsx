@@ -5,7 +5,7 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "white"} fill-opacity="0.15" />
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "white"} fillOpacity="0.15" />
       <g filter="url(#filter00)">
         <rect x="14" y="14" width="6" height="6" rx="1" fill="#F3F3F3" />
       </g>
@@ -26,9 +26,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="14"
           height="14"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -43,9 +43,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="14"
           height="14"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -60,9 +60,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="14"
           height="14"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -77,9 +77,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="14"
           height="14"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import styled from "styled-components";
 import Logo from "../Logo";
 import { NavProps } from "../types";
@@ -22,16 +23,41 @@ const Header: React.FC<NavProps> = ({
   children,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const history = createBrowserHistory();
+  const refSelect = useRef(null);
+
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (refSelect.current !== e.target) {
+        setOpenMenu(false);
+      }
+    },
+    [setOpenMenu]
+  );
+
+  useEffect(() => {
+    if (document && refSelect && refSelect.current) {
+      document.addEventListener("mouseup", handleClickOutside, false);
+    }
+    return () => {
+      document.removeEventListener("mouseup", handleClickOutside, false);
+    };
+  }, [refSelect, handleClickOutside]);
+
+  const handleLink = (url: string) => {
+    history.push(url)
+    setOpenMenu(false)
+  }
 
   return (
-    <HeaderWrap>
+    <HeaderWrap ref={refSelect}>
       <Line>
         <LogoWrap to="/">
           <Logo />
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
           {links.map((item, i) => (
-            <MenuLink key={i} size="md" name={item.name} url={item.url} />
+            <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
           ))}
           <LanguageBlockMob>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
