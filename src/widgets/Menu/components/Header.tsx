@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { RefObject, useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import styled from "styled-components";
@@ -24,30 +24,29 @@ const Header: React.FC<NavProps> = ({
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const history = createBrowserHistory();
-  const refSelect = useRef(null);
+  const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
     (e) => {
-      if (refSelect.current !== e.target) {
+      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
         setOpenMenu(false);
       }
     },
     [setOpenMenu]
   );
-
   useEffect(() => {
     if (document && refSelect && refSelect.current) {
-      document.addEventListener("mouseup", handleClickOutside, false);
+      document.addEventListener("mousedown", handleClickOutside, false);
     }
     return () => {
-      document.removeEventListener("mouseup", handleClickOutside, false);
+      document.removeEventListener("mousedown", handleClickOutside, false);
     };
   }, [refSelect, handleClickOutside]);
 
   const handleLink = (url: string) => {
-    history.push(url)
-    setOpenMenu(false)
-  }
+    history.push(url);
+    setOpenMenu(false);
+  };
 
   return (
     <HeaderWrap ref={refSelect}>
