@@ -7,6 +7,7 @@ import { transparentize } from 'polished';
 import { NavLink, Link as Link$2 } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { Flipped, Flipper } from 'react-flip-toolkit';
+import { createBrowserHistory } from 'history';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 /*! *****************************************************************************
@@ -180,7 +181,7 @@ var Icon$s = function (props) {
 
 var Icon$r = function (props) {
     return (React__default.createElement(Svg, __assign({ width: "50", height: "50", viewBox: "0 0 50 50" }, props),
-        React__default.createElement("rect", { width: "50", height: "50", rx: "12", fill: props.fill || "white", "fill-opacity": "0.15" }),
+        React__default.createElement("rect", { width: "50", height: "50", rx: "12", fill: props.fill || "white", fillOpacity: "0.15" }),
         React__default.createElement("g", { filter: "url(#fil44444)" },
             React__default.createElement("path", { d: "M16 25.5C16 30.7467 20.2533 35 25.5 35C30.7467 35 35 30.7467 35 25.5C35 20.2533 30.7467 16 25.5 16C23.4503 16 21.5521 16.6492 20 17.7531", stroke: "#F3F3F3", fill: "none", strokeWidth: "2", strokeLinecap: "round" })),
         React__default.createElement("g", { filter: "url(#filter1_d)" },
@@ -590,7 +591,7 @@ var Icon$6 = function (props) {
 
 var Icon$5 = function (props) {
     return (React__default.createElement("svg", { width: "42", height: "42", viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default.createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "white", "fill-opacity": "0.15" }),
+        React__default.createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "white", fillOpacity: "0.15" }),
         React__default.createElement("g", { filter: "url(#filter00)" },
             React__default.createElement("rect", { x: "14", y: "14", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
         React__default.createElement("g", { filter: "url(#filter11)" },
@@ -600,32 +601,32 @@ var Icon$5 = function (props) {
         React__default.createElement("g", { filter: "url(#filter3_d)" },
             React__default.createElement("rect", { x: "22", y: "22", width: "6", height: "6", rx: "1", fill: "#F3F3F3" })),
         React__default.createElement("defs", null,
-            React__default.createElement("filter", { id: "filter00", x: "10", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default.createElement("filter", { id: "filter00", x: "10", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default.createElement("feOffset", { dy: "2" }),
                 React__default.createElement("feGaussianBlur", { stdDeviation: "2" }),
                 React__default.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
                 React__default.createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default.createElement("filter", { id: "filter11", x: "18", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default.createElement("filter", { id: "filter11", x: "18", y: "12", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default.createElement("feOffset", { dy: "2" }),
                 React__default.createElement("feGaussianBlur", { stdDeviation: "2" }),
                 React__default.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
                 React__default.createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default.createElement("filter", { id: "filter22", x: "10", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default.createElement("filter", { id: "filter22", x: "10", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default.createElement("feOffset", { dy: "2" }),
                 React__default.createElement("feGaussianBlur", { stdDeviation: "2" }),
                 React__default.createElement("feColorMatrix", { type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" }),
                 React__default.createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default.createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
-            React__default.createElement("filter", { id: "filter3_d", x: "18", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default.createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default.createElement("filter", { id: "filter3_d", x: "18", y: "20", width: "14", height: "14", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default.createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default.createElement("feOffset", { dy: "2" }),
                 React__default.createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -648,10 +649,10 @@ var Icon$2 = function (props) {
     return (React__default.createElement(Svg, __assign({ width: "88", height: "78", viewBox: "0 0 88 78", fill: "none" }, props),
         React__default.createElement("g", { filter: "url(#filter0_dplaying)" },
             React__default.createElement("path", { d: "M65 61.2967L37.473 72.3874L37.1864 72.5032C33.866 73.8751 30.0576 72.3087 28.6802 69.0002L12.4995 30.1851C11.1205 26.8781 12.6948 23.0851 16.0152 21.7132L40.7207 11.4975C44.0426 10.1241 47.8511 11.692 49.2285 14.9974L51.1854 19.1762L62.676 43.7046L65 61.2967Z", fill: "#C0C0C0" })),
-        React__default.createElement("path", { d: "M65 60.9621L37.6792 72L36.5966 71.6745C33.1811 70.6455 31.2465 67.0471 32.2769 63.6345L44.3733 23.5899C45.2899 20.5552 48.2425 18.6907 51.2889 19.0424L62.6934 43.4539L65 60.9621Z", fill: "black", "fill-opacity": "0.12" }),
+        React__default.createElement("path", { d: "M65 60.9621L37.6792 72L36.5966 71.6745C33.1811 70.6455 31.2465 67.0471 32.2769 63.6345L44.3733 23.5899C45.2899 20.5552 48.2425 18.6907 51.2889 19.0424L62.6934 43.4539L65 60.9621Z", fill: "black", fillOpacity: "0.12" }),
         React__default.createElement("path", { d: "M87.7203 32.0767L75.4893 72.38C74.4475 75.8129 70.8027 77.7574 67.3492 76.7217L45.913 70.2932L41.6478 69.0134C38.1929 67.9779 36.2382 64.3564 37.2801 60.9218L49.5111 20.62C50.5529 17.1871 54.1961 15.2426 57.6496 16.2783L83.3524 23.9866C83.5872 24.0577 83.8158 24.1397 84.0366 24.2354C87.0578 25.5154 88.6906 28.8772 87.7203 32.0767Z", fill: "white" }),
         React__default.createElement("g", { filter: "url(#filter1_iplaying)" },
-            React__default.createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M72.6292 43.2513L65.1785 46.802L69.8907 53.9568C67.3913 56.2529 63.7967 57.2413 60.2886 56.2579C54.8978 54.7468 51.7527 49.1517 53.2638 43.7609C54.775 38.3701 60.3701 35.225 65.7609 36.7362C69.1093 37.6748 71.5913 40.1891 72.6292 43.2513Z", fill: "#EFEFEF" })),
+            React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M72.6292 43.2513L65.1785 46.802L69.8907 53.9568C67.3913 56.2529 63.7967 57.2413 60.2886 56.2579C54.8978 54.7468 51.7527 49.1517 53.2638 43.7609C54.775 38.3701 60.3701 35.225 65.7609 36.7362C69.1093 37.6748 71.5913 40.1891 72.6292 43.2513Z", fill: "#EFEFEF" })),
         React__default.createElement("defs", null,
             React__default.createElement("filter", { id: "filter0_dplaying", x: "0", y: "0", width: "69", height: "78", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
                 React__default.createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
@@ -3797,11 +3798,11 @@ var Avatar = styled.div(templateObject_2$8 || (templateObject_2$8 = __makeTempla
 var templateObject_1$c, templateObject_2$8;
 
 var MenuLink = function (_a) {
-    var name = _a.name, url = _a.url, size = _a.size;
-    return (React__default.createElement(Link, { to: url, exact: true },
+    var name = _a.name, url = _a.url, size = _a.size, onClick = _a.onClick;
+    return (React__default.createElement(Link, { onClick: function () { return onClick(url); } },
         React__default.createElement(LinkItem, { size: size }, name)));
 };
-var Link = styled(NavLink)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject([""], [""])));
+var Link = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject([""], [""])));
 var LinkItem = styled(Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -3921,12 +3922,31 @@ var templateObject_1$8, templateObject_2$4, templateObject_3$4, templateObject_4
 var Header = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links; _a.profile; _a.children;
     var _b = useState(false), openMenu = _b[0], setOpenMenu = _b[1];
-    return (React__default.createElement(HeaderWrap, null,
+    var history = createBrowserHistory();
+    var refSelect = useRef(null);
+    var handleClickOutside = useCallback(function (e) {
+        if (refSelect.current !== e.target) {
+            setOpenMenu(false);
+        }
+    }, [setOpenMenu]);
+    useEffect(function () {
+        if (document && refSelect && refSelect.current) {
+            document.addEventListener("mouseup", handleClickOutside, false);
+        }
+        return function () {
+            document.removeEventListener("mouseup", handleClickOutside, false);
+        };
+    }, [refSelect, handleClickOutside]);
+    var handleLink = function (url) {
+        history.push(url);
+        setOpenMenu(false);
+    };
+    return (React__default.createElement(HeaderWrap, { ref: refSelect },
         React__default.createElement(Line, null,
             React__default.createElement(LogoWrap, { to: "/" },
                 React__default.createElement(Logo, null)),
             React__default.createElement(Nav, { className: openMenu ? "open" : "" },
-                links.map(function (item, i) { return (React__default.createElement(MenuLink, { key: i, size: "md", name: item.name, url: item.url })); }),
+                links.map(function (item, i) { return (React__default.createElement(MenuLink, { key: i, size: "md", name: item.name, url: item.url, onClick: handleLink })); }),
                 React__default.createElement(LanguageBlockMob, null,
                     React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default.createElement(RightContent, null,
