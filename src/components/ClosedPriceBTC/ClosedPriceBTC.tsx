@@ -59,14 +59,14 @@ const ClosedPriceBTC: React.FC<ClosedPriceBTCProp> = ({
   lockedPrice,
   textTitle,
   isBTCWon,
-  btc
+  btc,
 }) => {
   return (
     <PriceBlockWrap negative={negative || false} roundFailed={roundFailed || false} isBTCWon={isBTCWon || false}>
       <PriceBlock>
         <Flex justifyContent="space-between" alignItems="center" marginBottom="6px">
           <Text color="text" fontWeight={500} fontSize="13px" textTransform="uppercase">
-            {textPrice || "Closed Price"} {btc ? 'BTC' : "ETH"}
+            {textPrice || "Closed Price"} {btc ? "BTC" : "ETH"}
           </Text>
           {!roundFailed && <Text fontSize="17px">{price}</Text>}
         </Flex>

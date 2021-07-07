@@ -14,8 +14,7 @@ const getColorBg = (negative: boolean, roundFailed: boolean, result: string, the
 
 const PriceBlockWrap = styled.div<{ negative: boolean; roundFailed: boolean; result: string }>`
   padding: 1px;
-  background: ${({ theme, negative, roundFailed, result }) =>
-    getColorBg(negative, roundFailed, result, theme)};
+  background: ${({ theme, negative, roundFailed, result }) => getColorBg(negative, roundFailed, result, theme)};
   border-radius: 12px;
 `;
 
@@ -47,23 +46,12 @@ const RightText = styled.div<{ negative?: boolean }>`
     negative ? transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient};
   border-radius: 7px;
   font-size: 15px;
-  line-height: 19px;  
+  line-height: 19px;
 `;
 
-const ClosedPrice: React.FC<ClosedPriceProp> = ({
-  price,
-  rightText,
-  result,
-  negative,
-  roundFailed,
-  textPrice,
-}) => {
+const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative, roundFailed, textPrice }) => {
   return (
-    <PriceBlockWrap
-      negative={negative || false}
-      roundFailed={roundFailed || false}
-      result={result || ""}
-    >
+    <PriceBlockWrap negative={negative || false} roundFailed={roundFailed || false} result={result || ""}>
       <PriceBlock>
         <Text color="text" mb={18} fontWeight={500} fontSize="13px" textTransform="uppercase">
           {textPrice || (!result ? "Closed Price" : "Your Result")}
@@ -75,7 +63,9 @@ const ClosedPrice: React.FC<ClosedPriceProp> = ({
               {result}
             </Text>
             <RightText negative={rightText === "UP" ? false : negative}>
-              <Price negative={rightText === "UP" ? false : negative}><Text>{rightText}</Text></Price>
+              <Price negative={rightText === "UP" ? false : negative}>
+                <Text>{rightText}</Text>
+              </Price>
             </RightText>
           </Flex>
         )}

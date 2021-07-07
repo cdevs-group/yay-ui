@@ -35,6 +35,7 @@ export declare const baseColors: {
     colorCardBtc: string;
     bgCardBtc2: string;
     yellowGradient: string;
+    yellowGradient2: string;
 };
 export declare const brandColors: {
     binance: string;

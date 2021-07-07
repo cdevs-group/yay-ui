@@ -12,7 +12,14 @@ export const ClosedPriceBlock: React.FC = () => {
     <>
       <div>
         <div style={{ marginTop: 20, maxWidth: 300 }}>
-          <ClosedPrice price="$ 400`597" rightText="$1,57" result="" negative roundFailed={false} textPrice="Closed Price" />
+          <ClosedPrice
+            price="$ 400`597"
+            rightText="$1,57"
+            result=""
+            negative
+            roundFailed={false}
+            textPrice="Closed Price"
+          />
         </div>
       </div>
       <div>
@@ -29,7 +36,7 @@ export const ClosedPriceBlock: React.FC = () => {
         <div style={{ marginTop: 20, maxWidth: 300 }}>
           <ClosedPrice price="$ 400`597" rightText="$1,57" result="" roundFailed textPrice="Closed Price" />
         </div>
-      </div>      
+      </div>
     </>
   );
 };

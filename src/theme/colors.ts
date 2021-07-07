@@ -37,7 +37,7 @@ export const baseColors = {
   colorCardBtc: "#8A92B2",
   bgCardBtc2: "#FFAC01",
   yellowGradient: "linear-gradient(180deg, #FFC700 -23.33%, #FF8A00 118.33%);",
-  yellowGradient2: "linear-gradient(180deg, #FFB601 -16%, #FF9B01 100%)"
+  yellowGradient2: "linear-gradient(180deg, #FFB601 -16%, #FF9B01 100%)",
 };
 
 export const brandColors = {
