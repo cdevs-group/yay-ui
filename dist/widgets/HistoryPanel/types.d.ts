@@ -63,7 +63,29 @@ export interface Bet {
     claimed: boolean;
     claimedHash: string;
     user?: PredictionUser;
-    round: Round;
+    round: Round | RoundBtcVsEth;
+}
+export interface RoundBtcVsEth {
+    id: string;
+    epoch: number;
+    failed?: boolean;
+    startBlock: number;
+    startAt: number;
+    lockAt: number;
+    lockBlock: number;
+    lockFirstPrice: number;
+    lockSecondPrice: number;
+    endBlock: number;
+    closeFirstPrice: number;
+    closeSecondPrice: number;
+    totalBets: number;
+    totalAmount: number;
+    bullBets: number;
+    bearBets: number;
+    bearAmount: number;
+    bullAmount: number;
+    position: BetPosition;
+    bets?: Bet[];
 }
 export interface PredictionUser {
     id: string;
