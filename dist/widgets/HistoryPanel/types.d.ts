@@ -63,7 +63,7 @@ export interface Bet {
     claimed: boolean;
     claimedHash: string;
     user?: PredictionUser;
-    round: Round | RoundBtcVsEth;
+    round: any;
 }
 export interface RoundBtcVsEth {
     id: string;
