@@ -15,8 +15,8 @@ const Icon: React.FC<SvgProps> = (props) => {
         <path
           d="M16.6237 9C19.1545 9.75321 21 12.0977 21 14.8731C21 18.2569 18.2569 21 14.8731 21C12.0977 21 9.75321 19.1545 9 16.6237"
           stroke="white"
-          stroke-width="1.8"
-          stroke-linecap="round"
+          strokeWidth="1.8"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -27,9 +27,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="21.8002"
           height="21.8002"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />

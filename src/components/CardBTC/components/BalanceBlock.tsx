@@ -27,18 +27,24 @@ export default BalanceBlock;
 const Wrap = styled.div`
   display: flex;
   align-items: center;
-  width: 180px;
+  width: 140px;
   padding: 5px;
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
   & p {
     width: 100%;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 19px;
     text-align: center;
     letter-spacing: 0.05em;
     color: ${({ theme }) => theme.colors.text};
     text-align: center;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 180px;
+    & p {
+      font-size: 15px;
+    }
   }
 `;
 

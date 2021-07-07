@@ -18,9 +18,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="17.9014"
           height="17.8995"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -29,8 +29,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
         <linearGradient id="paint0_linear" x1="21" y1="6" x2="21" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#FF6161" />
-          <stop offset="1" stop-color="#F45555" />
+          <stop stopColor="#FF6161" />
+          <stop offset="1" stopColor="#F45555" />
         </linearGradient>
       </defs>
     </Svg>

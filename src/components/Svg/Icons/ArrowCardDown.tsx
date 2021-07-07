@@ -8,8 +8,8 @@ const Icon: React.FC<SvgProps> = (props) => {
         <path
           d="M14.1601 9.77351L9.64417 14.2894M9.64417 14.2894L5.12825 9.77351M9.64417 14.2894L9.64417 2.99964"
           stroke={props.color}
-          stroke-width="1.5"
-          stroke-linecap="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -20,9 +20,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="18.5318"
           height="21.1004"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />
@@ -38,8 +38,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           y2="5.82208"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#4CEE3E" />
-          <stop offset="1" stop-color="#47DA3B" />
+          <stop stopColor="#4CEE3E" />
+          <stop offset="1" stopColor="#47DA3B" />
         </linearGradient>
       </defs>
     </svg>
