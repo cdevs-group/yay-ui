@@ -19,6 +19,16 @@ export interface ITextRoundHistory {
   down?: string;
 }
 
+export interface ITextRoundBTCHistory {
+  rounds?: string;
+  locked?: string;
+  prize?: string;
+  open?: string;
+  closing?: string;
+  textPrice?: string;
+  btcPayout?: string;
+  ethPayout?: string;
+}
 export interface ITextNoHistory {
   ifYouSure?: string;
   noPredict?: string;

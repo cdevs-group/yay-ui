@@ -9,6 +9,7 @@ import HeaderHistory from "./components/HeaderHistory";
 import Statistic from "./components/Statistic";
 import NoHistory from "./components/NoHistory";
 import RoundHistory from "./components/RoundHistory";
+import RoundHistoryBTC from "./components/RoundHistoryBTC";
 import { ICardAccordeon } from "./types";
 import YourHistory from "./components/YourHistory";
 import ProgressBar from "./components/ProgressBar";
@@ -30,7 +31,7 @@ export const Panel: React.FC = () => {
     COLLECTED = "collected",
     UNCOLLECTED = "uncollected",
   }
-  const [activeTab, setActiveTab] = useState(HistoryTabs.PNL);
+  const [activeTab, setActiveTab] = useState(HistoryTabs.ROUNDS);
   const [historyFilter, setHistoryFilter] = useState("all");
   const [isHistoryPaneOpen, setIsHistoryPaneOpen] = useState(true);
 
@@ -114,13 +115,16 @@ export const Panel: React.FC = () => {
       text: "Starting soon",
       icon: <WatchIcon />,
       content: [
-        <RoundHistory
-          price="$ 400`597"
-          priceRightText="56.3%"
-          up="2x Playout  0,281 BNB"
-          down="2x Playout  0,791 BNB"
+        <RoundHistoryBTC
+          closeFirstPrice="$ 400`597"
+          lockFirstPrice="dsdsd"
+          changeTitleFirst="56.3%"
+          btcPayout="2x Playout  0,281 BNB"
+          ethPayout="2x Playout  0,791 BNB"
           prizePool="$ 3`500"
           texts={textsRoundHistory}
+          isBTCWon={false}
+          negativeFirst
         />,
       ],
     },
@@ -241,27 +245,23 @@ export const Panel: React.FC = () => {
       />
       {activeTab === HistoryTabs.ROUNDS && (
         <>
-          {historyFilter === HistoryFilter.ALL &&
-            (hasBetHistory ? (
-              <Accordeon cards={newCards}>
-                {newCards.map((item: any) => (
-                  <AccordeonCard
-                    key={item.id}
-                    item={item}
-                    round="24234234"
-                    icon={item.icon}
-                    valueAccordeon={valueAccordeon}
-                    heightActiveBlock={heightActiveBlock}
-                    handleToggle={handleToggleAccordeon}
-                    active={active}
-                    refHidden={refHidden}
-                    detail={"detail" + item.id}
-                  />
-                ))}
-              </Accordeon>
-            ) : (
-              <NoHistory texts={textNoHistory} />
+          <Accordeon cards={newCards}>
+            {newCards.map((item: any) => (
+              <AccordeonCard
+                key={item.id}
+                item={item}
+                round="24234234"
+                icon={item.icon}
+                valueAccordeon={valueAccordeon}
+                heightActiveBlock={heightActiveBlock}
+                handleToggle={handleToggleAccordeon}
+                active={active}
+                refHidden={refHidden}
+                detail={item.content}
+              />
             ))}
+          </Accordeon>
+
           {historyFilter === HistoryFilter.COLLECTED &&
             (hasBetHistory ? (
               <Accordeon cards={newCards}>
