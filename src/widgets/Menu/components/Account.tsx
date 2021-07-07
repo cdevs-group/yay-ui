@@ -47,17 +47,17 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
 const AccountBlock = styled(Text)`
   position: relative;
   display: flex;
-  height: 30px;
+  min-height: 30px;
+  height: 100%;
   min-width: 120px;
   align-items: center;
   justify-content: center;
   font-size: 11px;
   line-height: 14px;
-  padding: 12px 26px 12px 10px;
+  padding: 0 26px 0 10px;
   background: ${({ theme }) => theme.colors.bgOpacity};
-  border-radius: 12px;
+  border-radius: 7px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
-  text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
   border: none;
   &.notAuth {
@@ -68,7 +68,8 @@ const AccountBlock = styled(Text)`
     min-width: 160px;
     font-size: 15px;
     line-height: 19px;
-    padding: 12px 56px 12px 20px;
+    padding: 0 56px 0 20px;
+    border-radius: 12px;
   }
 `;
 const Avatar = styled.div`
@@ -77,14 +78,21 @@ const Avatar = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  right: 4px;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  & img {
+    width: 26px;
+    height: 26px;
+  }
   &.notAuth {
     width: calc(100% - 4px);
   }
-  & img {
-    width: 80%;
-    ${({ theme }) => theme.mediaQueries.lg} {
-      width: 100%;
+  ${({ theme }) => theme.mediaQueries.lg} {
+    right: 4px;
+    & img {
+      width: 32px;
+      height: 32px;
     }
   }
 `;
