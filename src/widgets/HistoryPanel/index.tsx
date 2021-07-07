@@ -8,6 +8,7 @@ export { default as Rounds } from "./components/Rounds";
 export { default as AccordeonCard } from "./components/AccordeonCard";
 export { default as Accordeon } from "./components/Accordeon";
 export { default as RoundHistory } from "./components/RoundHistory";
+export { default as RoundHistoryBTC } from "./components/RoundHistoryBTC";
 export { default as YourHistory } from "./components/YourHistory";
 export { default as HiddenItemAccordeonCard } from "./components/HiddenItemAccordeonCard";
 
