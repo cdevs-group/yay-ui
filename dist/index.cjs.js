@@ -492,10 +492,10 @@ var Icon$d = function (props) {
     return (React__default['default'].createElement("svg", { width: "42", height: "42", viewBox: "0 0 42 42", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("rect", { x: "6", y: "6", width: "30", height: "30", rx: "7", fill: props.fill || "#4BE43E" }),
         React__default['default'].createElement("g", null,
-            React__default['default'].createElement("path", { d: "M15 20L20 25L27 16", stroke: "white", "stroke-width": "2", "stroke-linecap": "round" })),
+            React__default['default'].createElement("path", { d: "M15 20L20 25L27 16", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "10", y: "13", width: "22", height: "19.5082", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter0_d", x: "10", y: "13", width: "22", height: "19.5082", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -503,8 +503,8 @@ var Icon$d = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
             React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "6", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { "stop-color": "#FFEA2C" }),
-                React__default['default'].createElement("stop", { offset: "1", "stop-color": "#FFB72C" })))));
+                React__default['default'].createElement("stop", { stopColor: "#FFEA2C" }),
+                React__default['default'].createElement("stop", { offset: "1", stopColor: "#FFB72C" })))));
 };
 
 var Icon$c = function (props) {
@@ -512,10 +512,10 @@ var Icon$c = function (props) {
         React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: props.fill || "white", fillOpacity: "0.15" }),
         React__default['default'].createElement("path", { d: "M13.3102 8.0011C13.4534 8.0011 13.5934 8.04357 13.7125 8.12313C13.8316 8.20269 13.9244 8.31578 13.9792 8.44808C14.034 8.58039 14.0483 8.72598 14.0204 8.86644C13.9925 9.0069 13.9235 9.13591 13.8222 9.23718C13.7209 9.33844 13.5919 9.4074 13.4514 9.43534C13.311 9.46328 13.1654 9.44894 13.0331 9.39414C12.9007 9.33933 12.7876 9.24653 12.7081 9.12745C12.6285 9.00838 12.586 8.86839 12.586 8.72518C12.586 8.53314 12.6623 8.34897 12.7981 8.21318C12.9339 8.07739 13.1181 8.0011 13.3102 8.0011ZM8.24121 13.0696C8.24121 13.2129 8.28368 13.3529 8.36325 13.4719C8.44282 13.591 8.55591 13.6838 8.68823 13.7386C8.82055 13.7934 8.96615 13.8078 9.10662 13.7798C9.24709 13.7519 9.37612 13.6829 9.47739 13.5816C9.57866 13.4804 9.64763 13.3514 9.67557 13.2109C9.70351 13.0705 9.68917 12.9249 9.63436 12.7926C9.57956 12.6602 9.48674 12.5472 9.36766 12.4676C9.24857 12.388 9.10857 12.3456 8.96535 12.3456C8.7733 12.3456 8.58911 12.4219 8.45331 12.5576C8.3175 12.6934 8.24121 12.8776 8.24121 13.0696ZM9.84035 10.3242C9.84035 10.4674 9.88282 10.6074 9.96239 10.7265C10.042 10.8455 10.1551 10.9383 10.2874 10.9931C10.4197 11.0479 10.5653 11.0623 10.7058 11.0343C10.8462 11.0064 10.9753 10.9374 11.0765 10.8362C11.1778 10.7349 11.2468 10.6059 11.2747 10.4654C11.3026 10.325 11.2883 10.1794 11.2335 10.0471C11.1787 9.91478 11.0859 9.8017 10.9668 9.72213C10.8477 9.64257 10.7077 9.60011 10.5645 9.60011C10.3724 9.60011 10.1882 9.67639 10.0524 9.81218C9.91664 9.94797 9.84035 10.1321 9.84035 10.3242Z", fill: "white" }),
         React__default['default'].createElement("g", { filter: "url(#filter5674)" },
-            React__default['default'].createElement("path", { d: "M16.6237 9C19.1545 9.75321 21 12.0977 21 14.8731C21 18.2569 18.2569 21 14.8731 21C12.0977 21 9.75321 19.1545 9 16.6237", stroke: "white", "stroke-width": "1.8", "stroke-linecap": "round" })),
+            React__default['default'].createElement("path", { d: "M16.6237 9C19.1545 9.75321 21 12.0977 21 14.8731C21 18.2569 18.2569 21 14.8731 21C12.0977 21 9.75321 19.1545 9 16.6237", stroke: "white", strokeWidth: "1.8", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter5674", x: "4.09961", y: "6.09973", width: "21.8002", height: "21.8002", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter5674", x: "4.09961", y: "6.09973", width: "21.8002", height: "21.8002", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -548,12 +548,12 @@ var Icon$a = function (props) {
 
 var Icon$9 = function (props) {
     return (React__default['default'].createElement("svg", { width: "55", height: "55", viewBox: "0 0 55 55", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-        React__default['default'].createElement("circle", { cx: "27.5", cy: "27.5", r: "25", fill: props.fill || "#1C1C22", stroke: props.fill || "#26262D", "stroke-width": "5" }),
+        React__default['default'].createElement("circle", { cx: "27.5", cy: "27.5", r: "25", fill: props.fill || "#1C1C22", stroke: props.fill || "#26262D", strokeWidth: "5" }),
         React__default['default'].createElement("g", null,
-            React__default['default'].createElement("path", { d: "M32.7284 28.4855L27.0715 34.1424M27.0715 34.1424L21.4147 28.4855M27.0715 34.1424V20.0002", stroke: "white", "stroke-width": "2", "stroke-linecap": "round" })),
+            React__default['default'].createElement("path", { d: "M32.7284 28.4855L27.0715 34.1424M27.0715 34.1424L21.4147 28.4855M27.0715 34.1424V20.0002", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "14.5859", y: "16.5859", width: "24.9706", height: "24.9706", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter0_d", x: "14.5859", y: "16.5859", width: "24.9706", height: "24.9706", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -565,10 +565,10 @@ var Icon$9 = function (props) {
 var Icon$8 = function (props) {
     return (React__default['default'].createElement("svg", { width: "19", height: "22", viewBox: "0 0 19 19", fill: "#fff", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("g", { filter: "url(#filter0_d12)" },
-            React__default['default'].createElement("path", { d: "M14.1601 9.77351L9.64417 14.2894M9.64417 14.2894L5.12825 9.77351M9.64417 14.2894L9.64417 2.99964", stroke: props.color, "stroke-width": "1.5", "stroke-linecap": "round" })),
+            React__default['default'].createElement("path", { d: "M14.1601 9.77351L9.64417 14.2894M9.64417 14.2894L5.12825 9.77351M9.64417 14.2894L9.64417 2.99964", stroke: props.color, strokeWidth: "1.5", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d12", x: "0.378906", y: "0.25", width: "18.5318", height: "21.1004", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter0_d12", x: "0.378906", y: "0.25", width: "18.5318", height: "21.1004", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -576,18 +576,18 @@ var Icon$8 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
             React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "13.3698", y1: "12.3702", x2: "6.82172", y2: "5.82208", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { "stop-color": "#4CEE3E" }),
-                React__default['default'].createElement("stop", { offset: "1", "stop-color": "#47DA3B" })))));
+                React__default['default'].createElement("stop", { stopColor: "#4CEE3E" }),
+                React__default['default'].createElement("stop", { offset: "1", stopColor: "#47DA3B" })))));
 };
 
 var Icon$7 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "46", height: "46", viewBox: "0 0 46 46", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
         React__default['default'].createElement("rect", { x: "0.5", y: "0.5", width: "45", height: "45", rx: "9.5", fill: props.fill || "#4BE43E", stroke: props.fill || "url(#paint0_linear)" }),
         React__default['default'].createElement("g", { filter: props.fill || "url(#filter0_d)" },
-            React__default['default'].createElement("path", { d: "M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15", stroke: props.stroke || "white", "stroke-width": "2" })),
+            React__default['default'].createElement("path", { d: "M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15", stroke: props.stroke || "white", strokeWidth: "2" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "11", y: "15.2859", width: "26.4284", height: "24.4281", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter0_d", x: "11", y: "15.2859", width: "26.4284", height: "24.4281", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "4" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -595,8 +595,8 @@ var Icon$7 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
             React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "23", y1: "0", x2: "23", y2: "46", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { "stop-color": "#8EFF85", "stop-opacity": "0" }),
-                React__default['default'].createElement("stop", { offset: "1", "stop-color": "#A5FF9D" })))));
+                React__default['default'].createElement("stop", { stopColor: "#8EFF85", stopOpacity: "0" }),
+                React__default['default'].createElement("stop", { offset: "1", stopColor: "#A5FF9D" })))));
 };
 
 var Icon$6 = function (props) {
@@ -710,8 +710,8 @@ var Icon$1 = function (props) {
             React__default['default'].createElement("path", { d: "M17.5352 17.4648L24.6062 24.5359", stroke: "white", strokeWidth: "2", strokeLinecap: "round" }),
             React__default['default'].createElement("path", { d: "M24.6074 17.4648L17.5364 24.5359", stroke: "white", strokeWidth: "2", strokeLinecap: "round" })),
         React__default['default'].createElement("defs", null,
-            React__default['default'].createElement("filter", { id: "filter0_d", x: "12.1211", y: "14.0508", width: "17.9014", height: "17.8995", filterUnits: "userSpaceOnUse", "color-interpolation-filters": "sRGB" },
-                React__default['default'].createElement("feFlood", { "flood-opacity": "0", result: "BackgroundImageFix" }),
+            React__default['default'].createElement("filter", { id: "filter0_d", x: "12.1211", y: "14.0508", width: "17.9014", height: "17.8995", filterUnits: "userSpaceOnUse", colorInterpolationFilters: "sRGB" },
+                React__default['default'].createElement("feFlood", { floodOpacity: "0", result: "BackgroundImageFix" }),
                 React__default['default'].createElement("feColorMatrix", { in: "SourceAlpha", type: "matrix", values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" }),
                 React__default['default'].createElement("feOffset", { dy: "2" }),
                 React__default['default'].createElement("feGaussianBlur", { stdDeviation: "2" }),
@@ -719,8 +719,8 @@ var Icon$1 = function (props) {
                 React__default['default'].createElement("feBlend", { mode: "normal", in2: "BackgroundImageFix", result: "effect1_dropShadow" }),
                 React__default['default'].createElement("feBlend", { mode: "normal", in: "SourceGraphic", in2: "effect1_dropShadow", result: "shape" })),
             React__default['default'].createElement("linearGradient", { id: "paint0_linear", x1: "21", y1: "6", x2: "21", y2: "36", gradientUnits: "userSpaceOnUse" },
-                React__default['default'].createElement("stop", { "stop-color": "#FF6161" }),
-                React__default['default'].createElement("stop", { offset: "1", "stop-color": "#F45555" })))));
+                React__default['default'].createElement("stop", { stopColor: "#FF6161" }),
+                React__default['default'].createElement("stop", { offset: "1", stopColor: "#F45555" })))));
 };
 
 var scales$3 = {
@@ -2630,12 +2630,15 @@ var BalanceBlock = function (_a) {
         btc || (React__default['default'].createElement(Icon, { className: "eth" },
             React__default['default'].createElement("img", { src: ETH, alt: "eth" })))));
 };
-var Wrap$9 = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: 180px;\n  padding: 5px;\n  background: ", ";\n  border-radius: 12px;\n  & p {\n    width: 100%;\n    font-size: 15px;\n    line-height: 19px;\n    text-align: center;\n    letter-spacing: 0.05em;\n    color: ", ";\n    text-align: center;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: 180px;\n  padding: 5px;\n  background: ", ";\n  border-radius: 12px;\n  & p {\n    width: 100%;\n    font-size: 15px;\n    line-height: 19px;\n    text-align: center;\n    letter-spacing: 0.05em;\n    color: ", ";\n    text-align: center;\n  }\n"])), function (_a) {
+var Wrap$9 = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: 140px;\n  padding: 5px;\n  background: ", ";\n  border-radius: 12px;\n  & p {\n    width: 100%;\n    font-size: 12px;\n    line-height: 19px;\n    text-align: center;\n    letter-spacing: 0.05em;\n    color: ", ";\n    text-align: center;\n  }\n  ", " {\n    width: 180px;\n    & p {\n      font-size: 15px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: 140px;\n  padding: 5px;\n  background: ", ";\n  border-radius: 12px;\n  & p {\n    width: 100%;\n    font-size: 12px;\n    line-height: 19px;\n    text-align: center;\n    letter-spacing: 0.05em;\n    color: ", ";\n    text-align: center;\n  }\n  ", " {\n    width: 180px;\n    & p {\n      font-size: 15px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
 });
 var Icon = styled__default['default'].div(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 9px;\n  flex: none;\n  &.btc {\n    background: ", ";\n  }\n  &.eth {\n    background: ", ";\n  }\n"], ["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 9px;\n  flex: none;\n  &.btc {\n    background: ", ";\n  }\n  &.eth {\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
