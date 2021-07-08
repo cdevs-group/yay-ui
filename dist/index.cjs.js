@@ -2340,14 +2340,14 @@ var Locked$1 = styled__default['default'](Closed$1)(templateObject_5$d || (templ
     return theme.colors.greyText;
 });
 var ArrowBlock$1 = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
-    var btc = _a.btc;
-    return (btc ? "rotate(-90deg)" : "rotate(90deg)");
+    var btcUp = _a.btcUp;
+    return (btcUp ? "rotate(-90deg)" : "rotate(90deg)");
 }, function (_a) {
-    var btc = _a.btc;
-    return (btc ? "rotate(90deg)" : "rotate(-90deg)");
+    var ethUp = _a.ethUp;
+    return (ethUp ? "rotate(-90deg)" : "rotate(90deg)");
 });
 var ExpiredCardBTC = function (_a) {
-    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btcUp = _a.btcUp, ethUp = _a.ethUp, btcLider = _a.btcLider;
     return (React__default['default'].createElement(Wrap$d, null,
         React__default['default'].createElement(Line$5, null,
             React__default['default'].createElement(Closed$1, null,
@@ -2357,8 +2357,8 @@ var ExpiredCardBTC = function (_a) {
                     " ",
                     closedBTC)),
             React__default['default'].createElement(Locked$1, null,
-                React__default['default'].createElement(ArrowBlock$1, { btc: btc, className: "btc" },
-                    React__default['default'].createElement(Icon$7, { stroke: btc ? "#47DA3B" : "#FF6161", fill: btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(ArrowBlock$1, { btcUp: btcUp, className: "btc" },
+                    React__default['default'].createElement(Icon$7, { stroke: btcLider ? "#47DA3B" : "#FF6161", fill: btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " BTC"),
                 React__default['default'].createElement("p", null, lockedBTC))),
@@ -2373,8 +2373,8 @@ var ExpiredCardBTC = function (_a) {
                     " ",
                     closedETH)),
             React__default['default'].createElement(Locked$1, null,
-                React__default['default'].createElement(ArrowBlock$1, { btc: btc, className: "eth" },
-                    React__default['default'].createElement(Icon$7, { stroke: !btc ? "#47DA3B" : "#FF6161", fill: !btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(ArrowBlock$1, { ethUp: ethUp, className: "eth" },
+                    React__default['default'].createElement(Icon$7, { stroke: !btcLider ? "#47DA3B" : "#FF6161", fill: !btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " ETH"),
                 React__default['default'].createElement("p", null, lockedETH)))));
@@ -2396,14 +2396,14 @@ var Locked = styled__default['default'](Closed)(templateObject_5$c || (templateO
     return theme.colors.greyText;
 });
 var ArrowBlock = styled__default['default'].div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
-    var btc = _a.btc;
-    return (btc ? "rotate(-90deg)" : "rotate(90deg)");
+    var btcUp = _a.btcUp;
+    return (btcUp ? "rotate(-90deg)" : "rotate(90deg)");
 }, function (_a) {
-    var btc = _a.btc;
-    return (btc ? "rotate(90deg)" : "rotate(-90deg)");
+    var ethUp = _a.ethUp;
+    return (ethUp ? "rotate(-90deg)" : "rotate(90deg)");
 });
 var LiveCardBTC = function (_a) {
-    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btc = _a.btc;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btcUp = _a.btcUp, ethUp = _a.ethUp, btcLider = _a.btcLider;
     return (React__default['default'].createElement(Wrap$c, null,
         React__default['default'].createElement(Line$4, null,
             React__default['default'].createElement(Closed, null,
@@ -2413,8 +2413,8 @@ var LiveCardBTC = function (_a) {
                     " ",
                     closedBTC)),
             React__default['default'].createElement(Locked, null,
-                React__default['default'].createElement(ArrowBlock, { btc: btc, className: "btc" },
-                    React__default['default'].createElement(Icon$7, { stroke: btc ? "#47DA3B" : "#FF6161", fill: btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(ArrowBlock, { btcUp: btcUp, className: "btc" },
+                    React__default['default'].createElement(Icon$7, { stroke: btcLider ? "#47DA3B" : "#FF6161", fill: btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " BTC"),
                 React__default['default'].createElement("p", null,
@@ -2431,8 +2431,8 @@ var LiveCardBTC = function (_a) {
                     " ",
                     closedETH)),
             React__default['default'].createElement(Locked, null,
-                React__default['default'].createElement(ArrowBlock, { btc: btc, className: "eth" },
-                    React__default['default'].createElement(Icon$7, { stroke: !btc ? "#47DA3B" : "#FF6161", fill: !btc ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(ArrowBlock, { ethUp: ethUp, className: "eth" },
+                    React__default['default'].createElement(Icon$7, { stroke: !btcLider ? "#47DA3B" : "#FF6161", fill: !btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " ETH"),
                 React__default['default'].createElement("p", null,

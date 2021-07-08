@@ -30,7 +30,9 @@ export interface ExpireCardBTCProps {
     closedETH: string;
     lockedETH: string;
     prize: string;
-    btc?: boolean;
+    btcUp?: boolean;
+    ethUp?: boolean;
+    btcLider?: boolean;
     texts?: ItextExpired;
 }
 export interface SetPositionCardProps {
