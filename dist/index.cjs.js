@@ -970,7 +970,7 @@ var Winner = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJIAAACSCAYAAACue5OO
 
 var WINNER2 = "81b61168ca96adcf.png";
 
-var AccountIcon = "data:image/png;base64,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";
+var AccountIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUESURBVHgBrVfNbxw1FP/ZO/udD1KEWioBqZKmoQUpoUAPXJIjLVLChQMgISSOSIg/AakHVCFxQIIDh/JxQ0iEU0/QIFS+Ll0hVAWSoEWoVUnSZrfZzX7NjHn2jGc9npkG0Vra9dh+H7/3/Oz3zJDSZqenF3whXmOcL0CISdxbqwkhatR//cfm5oq9yGKKZ2cnhetepM+FiIANSUgQ/k/TMoTv15nnLa7V6/UEgJPHj895Qlymzwdwn1qk2ABOXw3B2OL6+notAhBaftVWzgKGAwVzGgv8dw9JENx156UnuJrwvFTLs8RJRZZVCeUSJEN8C6M10iUc56L6npmaWiairyyChHItUBggzLU06/W83Rt6Fjk4X7IZhQVGM/pSyAHKNdCYvHDdBilPGmdCzCHD2nAQm/fjFmRarhWmbYHmpd+CQ/2cbYVmZMYYacqk8HDOVCoOAKjoAqZJbgrORGvN28BsGRF9hjyz8SylmVYbgpPAWOyE2IalnQqe5npjwhCOSFjqvktyxIMxmteAkDTISQiqMhw9/6AMUXh3fHhNH+0fu5h4aUT6S9G0r3TR/LKNiZerKJ0uYvezPTiHHYw/X4G764GPcLS+7SD/iIPCMQe8yJQttz5qorfhxj1gA/BbPv55dxd8lKNMwpsrbXR/6yvK0pN5tH/o4M6lNjgBPfTGGMqnCqg8UyJQHWx/0ETpZIHufIHW9x0FovxEEc6RnFI+uOkljik33aWbR4Q7HzbBywxjZFWOLMofddD9tY/mF22INlB+ugjRE+jXBxhfqsBvC/Q2B2j/1EX1TAnF6TxGniuDlYDbn7eU5X5LxE5JBCBxsVDfudpHt9bH2NkKJl4dBa8wbF9oRvs4vlxV9A0JqC9Qniuq8e2P99TWPfTmOEbPltH/y8Xepf2sKzn0gPzg4W4Y8Lbeb6q9G3uhQopayoWy5R92UDqVR4tiYf+XHjyybOKVEaXEoy2UMZF/1EGOtvHmO7swjYyldxgxMIzUIYLBdVd5Qrb2lV5EI/ecOQyFxxwcOX8InNxcfqpIcRHw7X3TASsw9G8MMPjbTdQU5gnhGknWjcUL4Q3XH14yY+fKtOc+bry9g+tv7WDrvSa8Wx5Gz1WHivrJS8p2v/KAuTPRLWYg9kmQv0ekThBA5dMFFGfyAX0hcKC/L5RHxl+skneKIXI5j0Ri0veIhuRAHwsTpc56gNr7/OEc1QyhXNrXrQuNgD4fCs0xipcGHDotGJDwjlBHsjJfhJafdbMyKkBFLHmY3gjHlWcL6P3pwt32kOVK0zrdKmeK2P+5l6CL8T8+MyPSkkpWk+WXLxlDN6bVfcgAZM/Lnvu+HyWQu2VF8wbTNWAaaGYmqqxUbBQ2MhvWdfCZqdQe68ARwSBaE8a3CYYZINMMCtdqMoxXFZOwLNIeSbHODKgoqs16AOm1gtk443K+Jv8/DRANlUoRzCrFYsCgSyqWXnZZnmEp9YOUQqMVNXNievoyjNeQqThiEjJD+8iikbEUUyLBWrWh2UOw+u+b68eCXOA4r1PXsIWrSpgEq1+a8rCX67FY0fGSUh2FfYN5g0X5oQCsra3Vc/RcSgNhWmpaHDolmrtbdWy1htSl34dRMrpGbzXyxDxx1U1FdrSnvQnsgjRSa9DyAMwqoyfZtfBdqHjSIJ6Ymlqip/kysc8hfDdk3WS2xWZQiiAO6vQqXvUZ+2RjY+M7m+dfyVDtXfJvT4gAAAAASUVORK5CYII=";
 
 var ComingSoonIcon = "84fff8c4a2a6fbf1.png";
 
@@ -2326,30 +2326,31 @@ var CardBTC = function (_a) {
 var templateObject_1$I;
 
 var Wrap$d = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"], ["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"])));
-var Line$5 = styled__default['default'].div(templateObject_2$z || (templateObject_2$z = __makeTemplateObject([""], [""])));
-var Closed$1 = styled__default['default'].div(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
+var Closed$1 = styled__default['default'].div(templateObject_2$z || (templateObject_2$z = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Middle$1 = styled__default['default'](Closed$1)(templateObject_4$i || (templateObject_4$i = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
+var Middle$1 = styled__default['default'](Closed$1)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var Locked$1 = styled__default['default'](Closed$1)(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var Locked$1 = styled__default['default'](Closed$1)(templateObject_4$i || (templateObject_4$i = __makeTemplateObject(["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var ArrowBlock$1 = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
-    var btcUp = _a.btcUp;
-    return (btcUp ? "rotate(-90deg)" : "rotate(90deg)");
+var Line$5 = styled__default['default'].div(templateObject_5$d || (templateObject_5$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var Percent$1 = styled__default['default'].div(templateObject_6$8 || (templateObject_6$8 = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ",
+    ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+    var theme = _a.theme, btcLider = _a.btcLider;
+    return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
-    var ethUp = _a.ethUp;
-    return (ethUp ? "rotate(-90deg)" : "rotate(90deg)");
+    var theme = _a.theme, btcLider = _a.btcLider;
+    return btcLider ? polished.transparentize(0.75, theme.colors.green) : polished.transparentize(0.75, theme.colors.redBg);
 });
 var ExpiredCardBTC = function (_a) {
-    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btcUp = _a.btcUp, ethUp = _a.ethUp, btcLider = _a.btcLider;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btcLider = _a.btcLider, percentBTC = _a.percentBTC, percentETH = _a.percentETH;
     return (React__default['default'].createElement(Wrap$d, null,
-        React__default['default'].createElement(Line$5, null,
+        React__default['default'].createElement("div", null,
             React__default['default'].createElement(Closed$1, null,
                 (texts === null || texts === void 0 ? void 0 : texts.closed) || "CLOSED PRICE",
                 " BTC ",
@@ -2357,15 +2358,15 @@ var ExpiredCardBTC = function (_a) {
                     " ",
                     closedBTC)),
             React__default['default'].createElement(Locked$1, null,
-                React__default['default'].createElement(ArrowBlock$1, { btcUp: btcUp, className: "btc" },
-                    React__default['default'].createElement(Icon$7, { stroke: btcLider ? "#47DA3B" : "#FF6161", fill: btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(Line$5, null,
+                    React__default['default'].createElement(Percent$1, { btcLider: btcLider }, percentBTC),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " BTC"),
                 React__default['default'].createElement("p", null, lockedBTC))),
         React__default['default'].createElement(Middle$1, null,
             (texts === null || texts === void 0 ? void 0 : texts.prize) || "PRIZE POLL",
             React__default['default'].createElement("p", null, prize)),
-        React__default['default'].createElement(Line$5, null,
+        React__default['default'].createElement("div", null,
             React__default['default'].createElement(Closed$1, null,
                 (texts === null || texts === void 0 ? void 0 : texts.closed) || "CLOSED PRICE",
                 " ETH ",
@@ -2373,8 +2374,8 @@ var ExpiredCardBTC = function (_a) {
                     " ",
                     closedETH)),
             React__default['default'].createElement(Locked$1, null,
-                React__default['default'].createElement(ArrowBlock$1, { ethUp: ethUp, className: "eth" },
-                    React__default['default'].createElement(Icon$7, { stroke: !btcLider ? "#47DA3B" : "#FF6161", fill: !btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(Line$5, null,
+                    React__default['default'].createElement(Percent$1, { btcLider: !btcLider }, percentETH),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " ETH"),
                 React__default['default'].createElement("p", null, lockedETH)))));
@@ -2382,30 +2383,31 @@ var ExpiredCardBTC = function (_a) {
 var templateObject_1$H, templateObject_2$z, templateObject_3$r, templateObject_4$i, templateObject_5$d, templateObject_6$8;
 
 var Wrap$c = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"], ["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"])));
-var Line$4 = styled__default['default'].div(templateObject_2$y || (templateObject_2$y = __makeTemplateObject([""], [""])));
-var Closed = styled__default['default'].div(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
+var Closed = styled__default['default'].div(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Middle = styled__default['default'](Closed)(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
+var Middle = styled__default['default'](Closed)(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var Locked = styled__default['default'](Closed)(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var Locked = styled__default['default'](Closed)(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  margin-top: 8px;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var ArrowBlock = styled__default['default'].div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & svg {\n    margin-right: 10px;\n    width: 20px;\n    height: 20px;\n  }\n  &.btc svg {\n    transform: ", ";\n  }\n  &.eth svg {\n    transform: ", ";\n  }\n"])), function (_a) {
-    var btcUp = _a.btcUp;
-    return (btcUp ? "rotate(-90deg)" : "rotate(90deg)");
+var Line$4 = styled__default['default'].div(templateObject_5$c || (templateObject_5$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
+var Percent = styled__default['default'].div(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ",
+    ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+    var theme = _a.theme, btcLider = _a.btcLider;
+    return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
-    var ethUp = _a.ethUp;
-    return (ethUp ? "rotate(-90deg)" : "rotate(90deg)");
+    var theme = _a.theme, btcLider = _a.btcLider;
+    return btcLider ? polished.transparentize(0.75, theme.colors.green) : polished.transparentize(0.75, theme.colors.redBg);
 });
 var LiveCardBTC = function (_a) {
-    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, btcUp = _a.btcUp, ethUp = _a.ethUp, btcLider = _a.btcLider;
+    var texts = _a.texts, closedBTC = _a.closedBTC, lockedBTC = _a.lockedBTC, closedETH = _a.closedETH, lockedETH = _a.lockedETH, prize = _a.prize, percentBTC = _a.percentBTC, percentETH = _a.percentETH, btcLider = _a.btcLider;
     return (React__default['default'].createElement(Wrap$c, null,
-        React__default['default'].createElement(Line$4, null,
+        React__default['default'].createElement("div", null,
             React__default['default'].createElement(Closed, null,
                 (texts === null || texts === void 0 ? void 0 : texts.last) || "LAST PRICE",
                 " BTC ",
@@ -2413,8 +2415,8 @@ var LiveCardBTC = function (_a) {
                     " ",
                     closedBTC)),
             React__default['default'].createElement(Locked, null,
-                React__default['default'].createElement(ArrowBlock, { btcUp: btcUp, className: "btc" },
-                    React__default['default'].createElement(Icon$7, { stroke: btcLider ? "#47DA3B" : "#FF6161", fill: btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(Line$4, null,
+                    React__default['default'].createElement(Percent, { btcLider: btcLider }, percentBTC),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " BTC"),
                 React__default['default'].createElement("p", null,
@@ -2423,7 +2425,7 @@ var LiveCardBTC = function (_a) {
         React__default['default'].createElement(Middle, null,
             (texts === null || texts === void 0 ? void 0 : texts.prize) || "PRIZE POLL",
             React__default['default'].createElement("p", null, prize)),
-        React__default['default'].createElement(Line$4, null,
+        React__default['default'].createElement("div", null,
             React__default['default'].createElement(Closed, null,
                 (texts === null || texts === void 0 ? void 0 : texts.last) || "LAST PRICE",
                 " ETH ",
@@ -2431,8 +2433,8 @@ var LiveCardBTC = function (_a) {
                     " ",
                     closedETH)),
             React__default['default'].createElement(Locked, null,
-                React__default['default'].createElement(ArrowBlock, { ethUp: ethUp, className: "eth" },
-                    React__default['default'].createElement(Icon$7, { stroke: !btcLider ? "#47DA3B" : "#FF6161", fill: !btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)" }),
+                React__default['default'].createElement(Line$4, null,
+                    React__default['default'].createElement(Percent, { btcLider: !btcLider }, percentETH),
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
                     " ETH"),
                 React__default['default'].createElement("p", null,
@@ -3774,7 +3776,7 @@ var Account = function (_a) {
         }, className: "notAuth" },
         React__default['default'].createElement(Avatar, { className: "notAuth" }, "Connect")))));
 };
-var AccountBlock = styled__default['default'](Text)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 41px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 41px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
+var AccountBlock = styled__default['default'](Text)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacity;
 }, function (_a) {
