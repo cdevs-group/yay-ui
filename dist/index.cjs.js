@@ -2360,8 +2360,7 @@ var ExpiredCardBTC = function (_a) {
             React__default['default'].createElement(Locked$1, null,
                 React__default['default'].createElement(Line$5, null,
                     React__default['default'].createElement(Percent$1, { btcLider: btcLider }, percentBTC),
-                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
-                    " BTC"),
+                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price"),
                 React__default['default'].createElement("p", null, lockedBTC))),
         React__default['default'].createElement(Middle$1, null,
             (texts === null || texts === void 0 ? void 0 : texts.prize) || "PRIZE POLL",
@@ -2376,8 +2375,7 @@ var ExpiredCardBTC = function (_a) {
             React__default['default'].createElement(Locked$1, null,
                 React__default['default'].createElement(Line$5, null,
                     React__default['default'].createElement(Percent$1, { btcLider: !btcLider }, percentETH),
-                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
-                    " ETH"),
+                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price"),
                 React__default['default'].createElement("p", null, lockedETH)))));
 };
 var templateObject_1$H, templateObject_2$z, templateObject_3$r, templateObject_4$i, templateObject_5$d, templateObject_6$8;
@@ -2417,8 +2415,7 @@ var LiveCardBTC = function (_a) {
             React__default['default'].createElement(Locked, null,
                 React__default['default'].createElement(Line$4, null,
                     React__default['default'].createElement(Percent, { btcLider: btcLider }, percentBTC),
-                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
-                    " BTC"),
+                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price"),
                 React__default['default'].createElement("p", null,
                     " ",
                     lockedBTC))),
@@ -2435,8 +2432,7 @@ var LiveCardBTC = function (_a) {
             React__default['default'].createElement(Locked, null,
                 React__default['default'].createElement(Line$4, null,
                     React__default['default'].createElement(Percent, { btcLider: !btcLider }, percentETH),
-                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price",
-                    " ETH"),
+                    (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price"),
                 React__default['default'].createElement("p", null,
                     " ",
                     lockedETH)))));
