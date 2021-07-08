@@ -45,7 +45,9 @@ export const ExpiredCardBTCBlockETH: React.FC = () => {
           closedETH="25'100"
           lockedETH="1200"
           prize="0'005"
-          btc
+          btcUp
+          ethUp
+          btcLider
         />
       </CardBTC>
     </div>
@@ -96,7 +98,15 @@ export const ExpiredCardBTCBlock: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardBTC leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
-        <ExpiredCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btc />
+        <ExpiredCardBTC
+          closedBTC="400'597"
+          lockedBTC="3200"
+          closedETH="25'100"
+          lockedETH="1200"
+          prize="0'005"
+          ethUp
+          btcLider
+        />
       </CardBTC>
     </div>
   );
@@ -106,7 +116,7 @@ export const ExpiredCardBTCBlockWin: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardBTC live leftContent="EXPIRED" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000} btcWon>
-        <ExpiredCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btc />
+        <ExpiredCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btcUp />
       </CardBTC>
     </div>
   );
@@ -125,7 +135,7 @@ export const ExpiredCardBTCBlocETHkWin: React.FC = () => {
         time={2000}
         ethWon
       >
-        <ExpiredCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" btc />
+        <ExpiredCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" ethUp />
       </CardBTC>
     </div>
   );
@@ -148,6 +158,9 @@ export const LiveCardBTCBlock: React.FC = () => {
           closedETH="25'100"
           lockedETH="1200"
           prize="0'005"
+          btcUp
+          ethUp
+          btcLider
         />
       </CardBTC>
     </div>
