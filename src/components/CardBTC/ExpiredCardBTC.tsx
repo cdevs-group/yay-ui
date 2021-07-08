@@ -75,7 +75,7 @@ const ExpiredCardBTC = ({
         <Locked>
           <Line>
             <Percent btcLider={btcLider}>{percentBTC}</Percent>
-            {texts?.locked || "Locked Price"} BTC
+            {texts?.locked || "Locked Price"}
           </Line>
           <p>{lockedBTC}</p>
         </Locked>
@@ -91,7 +91,7 @@ const ExpiredCardBTC = ({
         <Locked>
           <Line>
             <Percent btcLider={!btcLider}>{percentETH}</Percent>
-            {texts?.locked || "Locked Price"} ETH
+            {texts?.locked || "Locked Price"}
           </Line>
           <p>{lockedETH}</p>
         </Locked>
