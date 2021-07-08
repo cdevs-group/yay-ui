@@ -6,12 +6,23 @@ import { Text } from "../Text";
 import { ClosedPriceProp } from "./types";
 import { GreenArrow } from "../Svg";
 
+const getColorBg = (negative: boolean, roundFailed: boolean, result: string, theme: any) => {
+  if (roundFailed || result) return theme.colors.darkGreyBg;
+  if (negative) return theme.colors.redBg;
+  if (!negative) return theme.colors.greenGradient;
+};
+
+const PriceBlockWrap = styled.div<{ negative: boolean; roundFailed: boolean; result: string }>`
+  padding: 1px;
+  background: ${({ theme, negative, roundFailed, result }) => getColorBg(negative, roundFailed, result, theme)};
+  border-radius: 12px;
+`;
+
 const PriceBlock = styled.div`
   padding: 17px 13px 14px 13px;
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.darkGreyBg};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
-
+  /* box-shadow: ${({ theme }) => theme.colors.boxShadow4}; */
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 17px 13px 14px 25px;
   }
@@ -36,37 +47,31 @@ const RightText = styled.div<{ negative?: boolean }>`
   border-radius: 7px;
   font-size: 15px;
   line-height: 19px;
-  & path {
-    stroke: ${({ theme, negative }) => (negative ? theme.colors.redBg : theme.colors.green)};
-  }
-  & svg {
-    margin-right: 10px;
-    transform: ${({ negative }) => (negative ? "rotate(270deg)" : "rotate(90deg)")};
-  }
 `;
 
 const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative, roundFailed, textPrice }) => {
   return (
-    <PriceBlock>
-      <div style={{ position: "relative", zIndex: 3 }}>
-        <Text color="greyText" mb={18} fontWeight={400}>
+    <PriceBlockWrap negative={negative || false} roundFailed={roundFailed || false} result={result || ""}>
+      <PriceBlock>
+        <Text color="text" mb={18} fontWeight={500} fontSize="13px" textTransform="uppercase">
           {textPrice || (!result ? "Closed Price" : "Your Result")}
         </Text>
         {((!roundFailed && !result) || result) && (
           <Flex justifyContent="space-between" alignItems="center">
             <Price negative={negative}>{price}</Price>
-            <Text size="sm" fontWeight={400} mr="auto" ml={9}>
+            <Text fontWeight={400} mr="auto" ml={9}>
               {result}
             </Text>
             <RightText negative={rightText === "UP" ? false : negative}>
-              <GreenArrow />
-              <Price negative={rightText === "UP" ? false : negative}>{rightText}</Price>
+              <Price negative={rightText === "UP" ? false : negative}>
+                <Text>{rightText}</Text>
+              </Price>
             </RightText>
           </Flex>
         )}
-        {roundFailed && !result && <Text>CANCELED</Text>}
-      </div>
-    </PriceBlock>
+        {roundFailed && !result && <Text color="greyText">CANCELED</Text>}
+      </PriceBlock>
+    </PriceBlockWrap>
   );
 };
 

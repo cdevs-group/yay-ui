@@ -9,14 +9,14 @@ const Icon: React.FC<any> = (props) => {
         r="25"
         fill={props.fill || "#1C1C22"}
         stroke={props.fill || "#26262D"}
-        stroke-width="5"
+        strokeWidth="5"
       />
       <g>
         <path
           d="M32.7284 28.4855L27.0715 34.1424M27.0715 34.1424L21.4147 28.4855M27.0715 34.1424V20.0002"
           stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -27,9 +27,9 @@ const Icon: React.FC<any> = (props) => {
           width="24.9706"
           height="24.9706"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />
           <feGaussianBlur stdDeviation="2" />

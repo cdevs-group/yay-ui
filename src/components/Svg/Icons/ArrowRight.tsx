@@ -15,7 +15,7 @@ const Icon: React.FC<SvgProps> = (props) => {
         stroke={props.fill || "url(#paint0_linear)"}
       />
       <g filter={props.fill || "url(#filter0_d)"}>
-        <path d="M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15" stroke={props.stroke || "white"} stroke-width="2" />
+        <path d="M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15" stroke={props.stroke || "white"} strokeWidth="2" />
       </g>
       <defs>
         <filter
@@ -25,9 +25,9 @@ const Icon: React.FC<SvgProps> = (props) => {
           width="26.4284"
           height="24.4281"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="4" />
           <feGaussianBlur stdDeviation="2" />
@@ -36,8 +36,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
         <linearGradient id="paint0_linear" x1="23" y1="0" x2="23" y2="46" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#8EFF85" stop-opacity="0" />
-          <stop offset="1" stop-color="#A5FF9D" />
+          <stop stopColor="#8EFF85" stopOpacity="0" />
+          <stop offset="1" stopColor="#A5FF9D" />
         </linearGradient>
       </defs>
     </svg>

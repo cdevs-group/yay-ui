@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Logo from "../Logo";
 import { NavProps } from "../types";
 import Account from "./Account";
 import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
+import Logo from "../image/Logo.png";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -22,16 +22,39 @@ const Header: React.FC<NavProps> = ({
   children,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const refSelect = useRef<any>(null);
+
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
+        setOpenMenu(false);
+      }
+    },
+    [setOpenMenu]
+  );
+
+  useEffect(() => {
+    if (document && refSelect && refSelect.current) {
+      document.addEventListener("mousedown", handleClickOutside, false);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside, false);
+    };
+  }, [refSelect, handleClickOutside]);
+
+  const handleLink = () => {
+    setOpenMenu(false);
+  };
 
   return (
-    <HeaderWrap>
+    <HeaderWrap ref={refSelect}>
       <Line>
         <LogoWrap to="/">
-          <Logo />
+          <img src={Logo} alt="" />
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
           {links.map((item, i) => (
-            <MenuLink key={i} size="md" name={item.name} url={item.url} />
+            <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
           ))}
           <LanguageBlockMob>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
@@ -63,7 +86,7 @@ const HeaderWrap = styled.div`
 `;
 
 const Line = styled.div`
-  padding: 3px 10px;
+  padding: 15px 15px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +94,7 @@ const Line = styled.div`
   margin-right: auto;
   max-width: 1200px;
   ${({ theme }) => theme.mediaQueries.lg} {
-    padding: 14px;
+    padding: 21px 15px 15px;
   }
 `;
 
@@ -122,10 +145,22 @@ const LanguageBlockDesk = styled.div`
 `;
 
 const LogoWrap = styled(Link)`
+  display: flex;
+  align-items: center;
+  & img {
+    width: 79px;
+    height: 34px;
+  }
   & svg {
     width: 133px;
     ${({ theme }) => theme.mediaQueries.lg} {
       width: 153px;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    & img {
+      width: auto;
+      height: auto;
     }
   }
 `;
