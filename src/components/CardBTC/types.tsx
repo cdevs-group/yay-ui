@@ -33,9 +33,9 @@ export interface ExpireCardBTCProps {
   closedETH: string;
   lockedETH: string;
   prize: string;
-  btcUp?: boolean;
-  ethUp?: boolean;
-  btcLider?: boolean;
+  percentBTC?: string;
+  percentETH?: string;
+  btcLider: boolean;
   texts?: ItextExpired;
 }
 

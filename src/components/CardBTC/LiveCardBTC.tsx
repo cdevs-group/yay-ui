@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ArrowRight } from "../Svg";
+import { transparentize } from "polished";
 import { ExpireCardBTCProps } from "./types";
 
 const Wrap = styled.div`
@@ -10,8 +10,6 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-
-const Line = styled.div``;
 
 const Closed = styled.div`
   display: flex;
@@ -38,20 +36,23 @@ const Locked = styled(Closed)`
   color: ${({ theme }) => theme.colors.greyText};
 `;
 
-const ArrowBlock = styled.div<{ btcUp?: boolean; ethUp?: boolean }>`
+const Line = styled.div`
   display: flex;
   align-items: center;
-  & svg {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
-  }
-  &.btc svg {
-    transform: ${({ btcUp }) => (btcUp ? "rotate(-90deg)" : "rotate(90deg)")};
-  }
-  &.eth svg {
-    transform: ${({ ethUp }) => (ethUp ? "rotate(-90deg)" : "rotate(90deg)")};
-  }
+`;
+
+const Percent = styled.div<{ btcLider: boolean }>`
+  color: ${({ theme, btcLider }) => (btcLider ? theme.colors.green : theme.colors.redBg)};
+  background: ${({ theme, btcLider }) =>
+    btcLider ? transparentize(0.75, theme.colors.green) : transparentize(0.75, theme.colors.redBg)};
+  border-radius: 5px;
+  padding: 3px 7px;
+  margin-right: 9px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.05em;
 `;
 
 const LiveCardBTC = ({
@@ -61,46 +62,40 @@ const LiveCardBTC = ({
   closedETH,
   lockedETH,
   prize,
-  btcUp,
-  ethUp,
+  percentBTC,
+  percentETH,
   btcLider,
 }: ExpireCardBTCProps) => {
   return (
     <Wrap>
-      <Line>
+      <div>
         <Closed>
           {texts?.last || "LAST PRICE"} BTC <p> {closedBTC}</p>
         </Closed>
         <Locked>
-          <ArrowBlock btcUp={btcUp} className="btc">
-            <ArrowRight
-              stroke={btcLider ? "#47DA3B" : "#FF6161"}
-              fill={btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
-            />
+          <Line>
+            <Percent btcLider={btcLider}>{percentBTC}</Percent>
             {texts?.locked || "Locked Price"} BTC
-          </ArrowBlock>
+          </Line>
           <p> {lockedBTC}</p>
         </Locked>
-      </Line>
+      </div>
       <Middle>
         {texts?.prize || "PRIZE POLL"}
         <p>{prize}</p>
       </Middle>
-      <Line>
+      <div>
         <Closed>
           {texts?.last || "LAST PRICE"} ETH <p> {closedETH}</p>
         </Closed>
         <Locked>
-          <ArrowBlock ethUp={ethUp} className="eth">
-            <ArrowRight
-              stroke={!btcLider ? "#47DA3B" : "#FF6161"}
-              fill={!btcLider ? "rgba(71, 218, 59,0.15)" : "rgba(255, 97, 97,0.15)"}
-            />
+          <Line>
+            <Percent btcLider={!btcLider}>{percentETH}</Percent>
             {texts?.locked || "Locked Price"} ETH
-          </ArrowBlock>
+          </Line>
           <p> {lockedETH}</p>
         </Locked>
-      </Line>
+      </div>
     </Wrap>
   );
 };

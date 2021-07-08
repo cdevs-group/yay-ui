@@ -45,8 +45,8 @@ export const ExpiredCardBTCBlockETH: React.FC = () => {
           closedETH="25'100"
           lockedETH="1200"
           prize="0'005"
-          btcUp
-          ethUp
+          percentBTC="+3,5%"
+          percentETH="+3,5%"
           btcLider
         />
       </CardBTC>
@@ -171,7 +171,16 @@ export const LiveCardBTCBlockETH: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <CardBTC live negative leftContent="LIVE" rightContent="#001" payoutUp={1.03} payoutDown={5.03} time={2000}>
-        <LiveCardBTC closedBTC="400'597" lockedBTC="3200" closedETH="25'100" lockedETH="1200" prize="0'005" />
+        <LiveCardBTC
+          closedBTC="400'597"
+          lockedBTC="3200"
+          closedETH="25'100"
+          lockedETH="1200"
+          prize="0'005"
+          percentBTC="+3,5%"
+          percentETH="+3,5%"
+          btcLider
+        />
       </CardBTC>
     </div>
   );
