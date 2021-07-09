@@ -19,7 +19,7 @@ export const HeaderDefault: React.FC = () => {
   return (
     <BrowserRouter>
       <div>
-        <Header
+        {/* <Header
           account={null}
           login={noop}
           logout={noop}
@@ -29,7 +29,7 @@ export const HeaderDefault: React.FC = () => {
           setLang={noop}
           currentLang="EN"
           links={links}
-        />
+        /> */}
       </div>
       <div style={{ marginTop: "50px" }}>
         <Header
