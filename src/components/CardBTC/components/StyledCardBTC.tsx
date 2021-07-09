@@ -9,12 +9,22 @@ import BTC from "./btc.png";
 import ETH from "./eth.png";
 import WIN from "./win.png";
 
-const Wrap = styled.div<{ live?: boolean }>`
-  width: 278px;
+const WrapOpacity = styled.div<{ live?: boolean }>`
+  width: 308px;
   opacity: ${({ live }) => (live ? "1" : "0.5")};
+  transition: 0.3s;
   &:hover {
     opacity: 1;
+    transition: 0.3s;
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
+  }
+`;
+
+const Wrap = styled.div`
+  width: 278px;
+  margin: 0 auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 308px;
   }
@@ -210,68 +220,70 @@ const StyledCardBTC: React.FC<StyledCardProps> = ({
   texts,
 }) => {
   return (
-    <Wrap live={live}>
-      <TopContent>
-        <LeftContent>{leftContent}</LeftContent>
-        <Timer time={time} color="#fff" disabled={disabledTimer} />
-        <RightContent>{rightContent}</RightContent>
-      </TopContent>
-      <Content>
-        <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
-          {btcWon ? (
-            <WonBlcok>
-              {texts?.collection || "Collect Winnings"}
-              <img src={WIN} alt="win" />
-            </WonBlcok>
-          ) : (
-            <>
-              <Currency loader={loader}>
-                <img src={BTC} alt="btc" />
-                BTC
-              </Currency>
-              <RightText displayNone={displayNone}>
-                <div className="payout">{texts?.payout || "Payout"}</div>
-                <div>{payoutUp}</div>
-                <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
-                  <CompleteIcon fill="#FFB72C" />
-                </IconComplete>
-              </RightText>
-            </>
-          )}
-        </UpContent>
-        <UpContentWin show={showBtnWinnings}>
-          <ButtonBnb>{btnWinnings}</ButtonBnb>
-          <WinnerImg>
-            <img src={Winner} />
-          </WinnerImg>
-        </UpContentWin>
-        <MainBlock loader={loader} negative={negative} colorNone={colorNone}>
-          {children}
-        </MainBlock>
-        <DownContent negative={negative} displayNone={displayNone}>
-          {ethWon ? (
-            <WonBlcok>
-              {texts?.collection || "Collect Winnings"}
-              <img src={WIN} alt="win" />
-            </WonBlcok>
-          ) : (
-            <>
-              <Currency loader={loader}>
-                <img src={ETH} alt="eth" />
-                ETH
-              </Currency>
-              <RightText displayNone={displayNone}>
-                <div className="payout">{texts?.payout || "Payout"}</div>
-                <div>{payoutDown}</div>
-                <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
-                  <CompleteIcon fill="#FFB72C" />
-                </IconCompleteDown>
-              </RightText>
-            </>
-          )}
-        </DownContent>
-      </Content>
-    </Wrap>
+    <WrapOpacity live={live}>
+      <Wrap>
+        <TopContent>
+          <LeftContent>{leftContent}</LeftContent>
+          <Timer time={time} color="#fff" disabled={disabledTimer} />
+          <RightContent>{rightContent}</RightContent>
+        </TopContent>
+        <Content>
+          <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
+            {btcWon ? (
+              <WonBlcok>
+                {texts?.collection || "Collect Winnings"}
+                <img src={WIN} alt="win" />
+              </WonBlcok>
+            ) : (
+              <>
+                <Currency loader={loader}>
+                  <img src={BTC} alt="btc" />
+                  BTC
+                </Currency>
+                <RightText displayNone={displayNone}>
+                  <div className="payout">{texts?.payout || "Payout"}</div>
+                  <div>{payoutUp}</div>
+                  <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
+                    <CompleteIcon fill="#FFB72C" />
+                  </IconComplete>
+                </RightText>
+              </>
+            )}
+          </UpContent>
+          <UpContentWin show={showBtnWinnings}>
+            <ButtonBnb>{btnWinnings}</ButtonBnb>
+            <WinnerImg>
+              <img src={Winner} />
+            </WinnerImg>
+          </UpContentWin>
+          <MainBlock loader={loader} negative={negative} colorNone={colorNone}>
+            {children}
+          </MainBlock>
+          <DownContent negative={negative} displayNone={displayNone}>
+            {ethWon ? (
+              <WonBlcok>
+                {texts?.collection || "Collect Winnings"}
+                <img src={WIN} alt="win" />
+              </WonBlcok>
+            ) : (
+              <>
+                <Currency loader={loader}>
+                  <img src={ETH} alt="eth" />
+                  ETH
+                </Currency>
+                <RightText displayNone={displayNone}>
+                  <div className="payout">{texts?.payout || "Payout"}</div>
+                  <div>{payoutDown}</div>
+                  <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
+                    <CompleteIcon fill="#FFB72C" />
+                  </IconCompleteDown>
+                </RightText>
+              </>
+            )}
+          </DownContent>
+        </Content>
+      </Wrap>
+    </WrapOpacity>
   );
 };
 

@@ -6,12 +6,22 @@ import { transparentize } from "polished";
 import { Winner } from "../../../constants/images";
 import { CompleteIcon } from "../../Svg";
 
-const Wrap = styled.div<{ live?: boolean }>`
-  width: 278px;
+const WrapOpacity = styled.div<{ live?: boolean }>`
+  width: 308px;
   opacity: ${({ live }) => (live ? "1" : "0.5")};
+  transition: 0.3s;
   &:hover {
     opacity: 1;
+    transition: 0.3s;
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 335px;
+  }
+`;
+
+const Wrap = styled.div`
+  width: 278px;
+  margin: 0 auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 308px;
   }
@@ -188,48 +198,50 @@ const StyledCard: React.FC<StyledCardProps> = ({
   loader,
 }) => {
   return (
-    <Wrap live={live}>
-      <TopContent>
-        <LeftContent>{leftContent}</LeftContent>
-        <Timer time={time} color="#fff" disabled={disabledTimer} />
-        <RightContent>{rightContent}</RightContent>
-      </TopContent>
-      <Content>
-        <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
-          <Vector hide={hide} loader={loader}>
-            {texts?.up || "UP"}
-          </Vector>
-          <RightText displayNone={displayNone}>
-            <div className="payout">{texts?.payout || "Payout"}</div>
-            <div>{payoutUp}</div>
-            <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
-              <CompleteIcon fill="#FFB72C" />
-            </IconComplete>
-          </RightText>
-        </UpContent>
-        <UpContentWin show={showBtnWinnings}>
-          <ButtonBnb>{btnWinnings}</ButtonBnb>
-          <WinnerImg>
-            <img src={Winner} />
-          </WinnerImg>
-        </UpContentWin>
-        <MainBlock negative={negative} colorNone={colorNone}>
-          {children}
-        </MainBlock>
-        <DownContent negative={negative} displayNone={displayNone}>
-          <Vector hide={hide} loader={loader} style={{ opacity: hide ? "0" : "1" }}>
-            {texts?.down || "DOWN"}
-          </Vector>
-          <RightText displayNone={displayNone}>
-            <div className="payout">{texts?.payout || "Payout"}</div>
-            <div>{payoutDown}</div>
-            <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
-              <CompleteIcon fill="#FFB72C" />
-            </IconCompleteDown>
-          </RightText>
-        </DownContent>
-      </Content>
-    </Wrap>
+    <WrapOpacity live={live}>
+      <Wrap>
+        <TopContent>
+          <LeftContent>{leftContent}</LeftContent>
+          <Timer time={time} color="#fff" disabled={disabledTimer} />
+          <RightContent>{rightContent}</RightContent>
+        </TopContent>
+        <Content>
+          <UpContent negative={negative} showUp={showBtnWinnings} colorNone={colorNone} displayNone={displayNone}>
+            <Vector hide={hide} loader={loader}>
+              {texts?.up || "UP"}
+            </Vector>
+            <RightText displayNone={displayNone}>
+              <div className="payout">{texts?.payout || "Payout"}</div>
+              <div>{payoutUp}</div>
+              <IconComplete className="completeIcon" showIcon={hasEnteredUp}>
+                <CompleteIcon fill="#FFB72C" />
+              </IconComplete>
+            </RightText>
+          </UpContent>
+          <UpContentWin show={showBtnWinnings}>
+            <ButtonBnb>{btnWinnings}</ButtonBnb>
+            <WinnerImg>
+              <img src={Winner} />
+            </WinnerImg>
+          </UpContentWin>
+          <MainBlock negative={negative} colorNone={colorNone}>
+            {children}
+          </MainBlock>
+          <DownContent negative={negative} displayNone={displayNone}>
+            <Vector hide={hide} loader={loader} style={{ opacity: hide ? "0" : "1" }}>
+              {texts?.down || "DOWN"}
+            </Vector>
+            <RightText displayNone={displayNone}>
+              <div className="payout">{texts?.payout || "Payout"}</div>
+              <div>{payoutDown}</div>
+              <IconCompleteDown className="completeIcon" showIcon={hasEnteredDown}>
+                <CompleteIcon fill="#FFB72C" />
+              </IconCompleteDown>
+            </RightText>
+          </DownContent>
+        </Content>
+      </Wrap>
+    </WrapOpacity>
   );
 };
 

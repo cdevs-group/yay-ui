@@ -13,9 +13,8 @@ interface Props {
 }
 
 const HelpLink = styled(Link)`
-  display: flex;
+  display: block;
   align-self: center;
-  align-items: center;
   margin: 0 auto;
   padding: 24px 0 26px 0;
   background: ${({ theme }) => theme.colors.linkColor};

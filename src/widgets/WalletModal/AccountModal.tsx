@@ -20,9 +20,9 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
     <ModalWrap>
       <Text bold style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}>
         <AccountWrap as="div">
-          <Text fontSize="13px" fontWeight={500} color="text">
+          <AccountText fontWeight={500} color="text">
             {account}
-          </Text>
+          </AccountText>
         </AccountWrap>
       </Text>
       <Flex mb="32px">
@@ -58,12 +58,22 @@ const ModalWrap = styled.div`
   padding: 0 20px 20px;
 `;
 const AccountWrap = styled(Input)`
-  padding: 17px 20px;
+  padding: 17px 15px;
   width: 100%;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 17px 20px;
+  }
 `;
 const CopyText = styled(Text)`
   transition: none.2s;
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+const AccountText = styled(Text)`
+  font-size: 10px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 11px;
   }
 `;

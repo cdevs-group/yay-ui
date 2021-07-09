@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { DropDownProps } from "./types";
 
 const DropdownLayout = ({ children, open, setOpen, icon }: DropDownProps) => {
-  const refSelect = useRef(null);
+  const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
     (e) => {
-      if (refSelect.current !== e.target) {
+      if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
         setOpen(false);
       }
     },
@@ -23,11 +23,10 @@ const DropdownLayout = ({ children, open, setOpen, icon }: DropDownProps) => {
     };
   }, [refSelect, handleClickOutside]);
 
-  const handleClickOpen = (e: any) => {
-    e.preventDefault();
+  const handleClickOpen = () => {
     setOpen(!open);
   };
-
+  console.log(open);
   return (
     <Block ref={refSelect}>
       <Button onClick={handleClickOpen}>{icon}</Button>

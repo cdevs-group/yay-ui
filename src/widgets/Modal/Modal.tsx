@@ -12,8 +12,11 @@ interface Props extends InjectedProps {
   welcome?: boolean;
 }
 
+const ModalContent = styled.div``;
+
 const StyledModal = styled.div`
   max-width: 404px;
+  max-height: 100vh;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
@@ -76,17 +79,19 @@ const Modal: React.FC<Props> = ({ welcome, title, onDismiss, onBack, children, h
   <div>
     <Overlay />
     <StyledModal>
-      <ModalHeader className={welcome ? "welcome" : ""}>
-        <ModalTitle>
-          <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
-        </ModalTitle>
-        {!hideCloseButton && (
-          <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-            <CloseIcon />
-          </IconButton>
-        )}
-      </ModalHeader>
-      {children}
+      <ModalContent>
+        <ModalHeader className={welcome ? "welcome" : ""}>
+          <ModalTitle>
+            <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
+          </ModalTitle>
+          {!hideCloseButton && (
+            <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+              <CloseIcon />
+            </IconButton>
+          )}
+        </ModalHeader>
+        {children}
+      </ModalContent>
     </StyledModal>
   </div>
 );
