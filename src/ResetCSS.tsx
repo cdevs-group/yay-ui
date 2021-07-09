@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { BG_IMG } from "./constants/images";
 
-const ResetCSS = createGlobalStyle<{url1: string, url2: string}>`
+const ResetCSS = createGlobalStyle`
   /* prettier-ignore */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -28,22 +28,11 @@ const ResetCSS = createGlobalStyle<{url1: string, url2: string}>`
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  * {
-    font-family: 'Stapel', sans-serif;
-  }
   body {
-    background-color: ${({ theme }) => theme.colors.background};
-    overflow-x: hidden;
-    img {
-      height: auto;
-      max-width: 100%;
-    }
-  }  
-  #root {
-    overflow-x: hidden;
-  }
-  html {
-    overflow-x: hidden;
+    line-height: 1;
+    font-size: 16px;
+    min-height: 100vh;
+    background: url(${BG_IMG}) no-repeat center center /cover;
   }
   ol,
   ul {
@@ -110,20 +99,6 @@ const ResetCSS = createGlobalStyle<{url1: string, url2: string}>`
     border-color: transparent;
     color: transparent;
   }    
-  @font-face {
-    font-family: "Stapel";
-    font-weight: 400;
-    font-style: normal;
-    src: ${({url1}) => `url(${url1})`};
-    src: ${({url1}) => `url(${url1}) format("woff")`},
-  }
-  @font-face {
-    font-family: "Stapel";
-    font-weight: 500;
-    font-style: normal;
-    src: ${({url2}) => `url(${url2})`};
-    src: ${({url2}) => `url(${url2}) format("woff")`},
-  }
 `;
 
 export default ResetCSS;
