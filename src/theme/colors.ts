@@ -45,7 +45,7 @@ export const brandColors = {
 };
 
 // export const darkColors: Colors = {
-  export const lightColors: Colors = {
+export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
 
@@ -93,7 +93,7 @@ export const brandColors = {
   },
 };
 // export const lightColors: Colors = {
-  export const darkColors: Colors = {
+export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
 
