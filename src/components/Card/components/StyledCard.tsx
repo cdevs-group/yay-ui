@@ -10,6 +10,7 @@ const WrapOpacity = styled.div<{ live?: boolean }>`
   width: 308px;
   opacity: ${({ live }) => (live ? "1" : "0.5")};
   transition: 0.3s;
+  margin: 0 auto;
   &:hover {
     opacity: 1;
     transition: 0.3s;
