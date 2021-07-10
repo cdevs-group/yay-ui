@@ -44,8 +44,8 @@ export const brandColors = {
   binance: "#F0B90B",
 };
 
-export const darkColors: Colors = {
-  // export const lightColors: Colors = {
+// export const darkColors: Colors = {
+  export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
 
@@ -92,8 +92,8 @@ export const darkColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 };
-export const lightColors: Colors = {
-  // export const darkColors: Colors = {
+// export const lightColors: Colors = {
+  export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
 
