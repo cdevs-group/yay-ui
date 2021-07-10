@@ -41,7 +41,7 @@ const Header: React.FC<NavProps> = ({
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
           </LanguageBlockDesk>
-          <Account account={account} login={login} logout={logout} />
+          <Account text="Connect" account={account} login={login} logout={logout} />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
         </RightContent>
       </Line>

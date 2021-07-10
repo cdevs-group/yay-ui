@@ -13,10 +13,16 @@ interface Props {
   account: string;
   logout: () => void;
   onDismiss?: () => void;
+  texts: {
+    title: string;
+    copy: string;
+    button: string;
+    view: string;
+  };
 }
 
-const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null }) => (
-  <Modal title="Your wallet" onDismiss={onDismiss}>
+const AccountModal: React.FC<Props> = ({ texts, account, logout, onDismiss = () => null }) => (
+  <Modal title={texts.title} onDismiss={onDismiss}>
     <ModalWrap>
       <Text bold style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" }}>
         <AccountWrap as="div">
@@ -27,10 +33,10 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
       </Text>
       <Flex mb="32px">
         <LinkExternal color="#47DA3B" small href={`https://bscscan.com/address/${account}`} mr="16px">
-          View on BscScan
+          {texts.view}
         </LinkExternal>
         <CopyText color="#47DA3B">
-          <CopyToClipboard toCopy={account}>Copy</CopyToClipboard>
+          <CopyToClipboard toCopy={account}>{texts.copy}</CopyToClipboard>
         </CopyText>
       </Flex>
       <Flex justifyContent="center">
@@ -45,7 +51,7 @@ const AccountModal: React.FC<Props> = ({ account, logout, onDismiss = () => null
             onDismiss();
           }}
         >
-          Logout
+          {texts.button}
         </Button>
       </Flex>
     </ModalWrap>

@@ -9,10 +9,11 @@ import { AccountIcon } from "../../../constants/images";
 interface Props {
   account?: string;
   login: Login;
+  text: string;
   logout: () => void;
 }
 
-const Account: React.FC<Props> = ({ account, login, logout }) => {
+const Account: React.FC<Props> = ({ text, account, login, logout }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
 
   return (
@@ -37,7 +38,7 @@ const Account: React.FC<Props> = ({ account, login, logout }) => {
           }}
           className="notAuth"
         >
-          <Avatar className="notAuth">Connect</Avatar>
+          <Avatar className="notAuth">{text}</Avatar>
         </AccountBlock>
       )}
     </>

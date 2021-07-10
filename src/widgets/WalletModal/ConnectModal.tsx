@@ -10,6 +10,10 @@ import config, { connectorLocalStorageKey } from "./config";
 interface Props {
   login: Login;
   onDismiss?: () => void;
+  texts: {
+    title: string;
+    link: string;
+  };
 }
 
 const HelpLink = styled(Link)`
@@ -65,8 +69,8 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
-  <Modal title="Connect Wallet" onDismiss={onDismiss}>
+const ConnectModal: React.FC<Props> = ({ texts, login, onDismiss = () => null }) => (
+  <Modal title={texts.title} onDismiss={onDismiss}>
     {config.map((entry, index) => (
       <Wrap key={index}>
         <Button
@@ -86,7 +90,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
       </Wrap>
     ))}
     <HelpLink href="#" external>
-      Learn how connect
+      {texts.link}
     </HelpLink>
   </Modal>
 );
