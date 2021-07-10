@@ -4299,7 +4299,7 @@ var dark = {
 
 var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$3, colors: darkColors, card: dark$2, toggle: dark$1, modal: dark });
 
-var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$3, colors: darkColors, card: light$2, toggle: light$1, modal: light });
+var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$3, colors: lightColors, card: light$2, toggle: light$1, modal: light });
 
 exports.Accordeon = Accordeon;
 exports.AccordeonCard = AccordeonCard;
