@@ -8,6 +8,7 @@ export interface TextsAccount {
     copy: string;
     button: string;
     view: string;
+    copied: string;
 }
 export interface TextsConnect {
     title: string;

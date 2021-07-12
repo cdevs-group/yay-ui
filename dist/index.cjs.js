@@ -3190,7 +3190,7 @@ var Tooltip = styled__default['default'].div(templateObject_2$n || (templateObje
     return theme.colors.invertedContrast;
 });
 var CopyToClipboard = function (_a) {
-    var toCopy = _a.toCopy, children = _a.children, props = __rest(_a, ["toCopy", "children"]);
+    var toCopy = _a.toCopy, textCopied = _a.textCopied, children = _a.children, props = __rest(_a, ["toCopy", "textCopied", "children"]);
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default['default'].createElement(StyleButton, __assign({ small: true, bold: true, onClick: function () {
             if (navigator.clipboard) {
@@ -3203,7 +3203,7 @@ var CopyToClipboard = function (_a) {
         } }, props),
         children,
         React__default['default'].createElement(Icon$p, { width: "20px", color: "#47DA3B", ml: "4px" }),
-        React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, "Copied")));
+        React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, textCopied)));
 };
 var templateObject_1$u, templateObject_2$n;
 
@@ -3217,7 +3217,7 @@ var AccountModal = function (_a) {
             React__default['default'].createElement(Flex, { mb: "32px" },
                 React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, texts.view),
                 React__default['default'].createElement(CopyText, { color: "#47DA3B" },
-                    React__default['default'].createElement(CopyToClipboard, { toCopy: account }, texts.copy))),
+                    React__default['default'].createElement(CopyToClipboard, { toCopy: account, textCopied: texts.copied }, texts.copy))),
             React__default['default'].createElement(Flex, { justifyContent: "center" },
                 React__default['default'].createElement(Button$5, { mt: "60px", scale: "md", width: "100%", variant: "green", onClick: function () {
                         logout();
@@ -3592,7 +3592,7 @@ var RightText$1 = styled__default['default'].div(templateObject_4$6 || (template
     return negative ? polished.transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 });
 var ClosedPrice = function (_a) {
-    var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative, roundFailed = _a.roundFailed, textPrice = _a.textPrice;
+    var price = _a.price, rightText = _a.rightText, result = _a.result, negative = _a.negative, roundFailed = _a.roundFailed, textPrice = _a.textPrice, textCanceled = _a.textCanceled;
     return (React__default['default'].createElement(PriceBlockWrap$1, { negative: negative || false, roundFailed: roundFailed || false, result: result || "" },
         React__default['default'].createElement(PriceBlock$1, null,
             React__default['default'].createElement(Text, { color: "text", mb: 18, fontWeight: 500, fontSize: "13px", textTransform: "uppercase" }, textPrice || (!result ? "Closed Price" : "Your Result")),
@@ -3602,7 +3602,7 @@ var ClosedPrice = function (_a) {
                 React__default['default'].createElement(RightText$1, { negative: rightText === "UP" ? false : negative },
                     React__default['default'].createElement(Price$1, { negative: rightText === "UP" ? false : negative },
                         React__default['default'].createElement(Text, null, rightText))))),
-            roundFailed && !result && React__default['default'].createElement(Text, { color: "greyText" }, "CANCELED"))));
+            roundFailed && !result && React__default['default'].createElement(Text, { color: "greyText" }, textCanceled || "CANCELED"))));
 };
 var templateObject_1$i, templateObject_2$d, templateObject_3$b, templateObject_4$6;
 
@@ -3675,7 +3675,7 @@ var RightText = styled__default['default'].div(templateObject_4$5 || (templateOb
     return negative ? polished.transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 });
 var ClosedPriceBTC = function (_a) {
-    var price = _a.price, rightText = _a.rightText, negative = _a.negative, roundFailed = _a.roundFailed, textPrice = _a.textPrice, textLockedPrice = _a.textLockedPrice, lockedPrice = _a.lockedPrice, textTitle = _a.textTitle, isBTCWon = _a.isBTCWon, btc = _a.btc;
+    var price = _a.price, rightText = _a.rightText, negative = _a.negative, roundFailed = _a.roundFailed, textPrice = _a.textPrice, textLockedPrice = _a.textLockedPrice, lockedPrice = _a.lockedPrice, textTitle = _a.textTitle, isBTCWon = _a.isBTCWon, btc = _a.btc, textCanceled = _a.textCanceled;
     return (React__default['default'].createElement(PriceBlockWrap, { negative: negative || false, roundFailed: roundFailed || false, isBTCWon: isBTCWon || false },
         React__default['default'].createElement(PriceBlock, null,
             React__default['default'].createElement(Flex, { justifyContent: "space-between", alignItems: "center", marginBottom: "6px" },
@@ -3692,7 +3692,7 @@ var ClosedPriceBTC = function (_a) {
                     React__default['default'].createElement(Text, { color: "textGray", fontWeight: 500 }, textTitle || "Title"),
                     React__default['default'].createElement(RightText, { negative: rightText === "UP" ? false : negative },
                         React__default['default'].createElement(Price, { negative: rightText === "UP" ? false : negative }, rightText))))),
-            roundFailed && (React__default['default'].createElement(Text, { color: "greyText", marginTop: "40px" }, "CANCELED")))));
+            roundFailed && (React__default['default'].createElement(Text, { color: "greyText", marginTop: "40px" }, textCanceled || "CANCELED")))));
 };
 var templateObject_1$g, templateObject_2$b, templateObject_3$9, templateObject_4$5;
 
@@ -3813,7 +3813,7 @@ var MenuLink = function (_a) {
         React__default['default'].createElement(LinkItem, { size: size }, name)));
 };
 var Link = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject([""], [""])));
-var LinkItem = styled__default['default'](Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
+var LinkItem = styled__default['default'](Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {

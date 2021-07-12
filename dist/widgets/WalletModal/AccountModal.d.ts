@@ -1,14 +1,10 @@
 import React from "react";
+import { TextsAccount } from "./useWalletModal";
 interface Props {
     account: string;
     logout: () => void;
     onDismiss?: () => void;
-    texts: {
-        title: string;
-        copy: string;
-        button: string;
-        view: string;
-    };
+    texts: TextsAccount;
 }
 declare const AccountModal: React.FC<Props>;
 export default AccountModal;
