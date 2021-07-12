@@ -10,8 +10,8 @@ interface TextsAccount {
     view: string;
 }
 interface TextConnect {
-    title: "Сonnect wallet";
-    link: "Learn how connect";
+    title: string;
+    link: string;
 }
 declare const useWalletModal: (login: Login, logout: () => void, account?: string | undefined, textsAccount?: TextsAccount | undefined, textConnect?: TextConnect | undefined) => ReturnType;
 export default useWalletModal;
