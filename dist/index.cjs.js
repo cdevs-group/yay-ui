@@ -3160,8 +3160,8 @@ var ImgWrap = styled__default['default'].div(templateObject_4$b || (templateObje
     return polished.transparentize(0.95, theme.colors.text);
 });
 var ConnectModal = function (_a) {
-    var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React__default['default'].createElement(Modal, { title: "Connect Wallet", onDismiss: onDismiss },
+    var texts = _a.texts, login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    return (React__default['default'].createElement(Modal, { title: texts.title, onDismiss: onDismiss },
         connectors.map(function (entry, index) { return (React__default['default'].createElement(Wrap$8, { key: index },
             React__default['default'].createElement(Button$2, { onClick: function () {
                     login(entry.connectorId);
@@ -3171,7 +3171,7 @@ var ConnectModal = function (_a) {
                 React__default['default'].createElement(Text, { fontWeight: 500, color: "text", mr: "16px", fontSize: "15px" }, entry.title),
                 React__default['default'].createElement(ImgWrap, null,
                     React__default['default'].createElement("img", { src: entry.icon }))))); }),
-        React__default['default'].createElement(HelpLink, { href: "#", external: true }, "Learn how connect")));
+        React__default['default'].createElement(HelpLink, { href: "#", external: true }, texts.link)));
 };
 var templateObject_1$v, templateObject_2$o, templateObject_3$j, templateObject_4$b;
 
@@ -3208,22 +3208,22 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$u, templateObject_2$n;
 
 var AccountModal = function (_a) {
-    var account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    return (React__default['default'].createElement(Modal, { title: "Your wallet", onDismiss: onDismiss },
+    var texts = _a.texts, account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    return (React__default['default'].createElement(Modal, { title: texts.title, onDismiss: onDismiss },
         React__default['default'].createElement(ModalWrap, null,
             React__default['default'].createElement(Text, { bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } },
                 React__default['default'].createElement(AccountWrap, { as: "div" },
                     React__default['default'].createElement(AccountText, { fontWeight: 500, color: "text" }, account))),
             React__default['default'].createElement(Flex, { mb: "32px" },
-                React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, "View on BscScan"),
+                React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, texts.view),
                 React__default['default'].createElement(CopyText, { color: "#47DA3B" },
-                    React__default['default'].createElement(CopyToClipboard, { toCopy: account }, "Copy"))),
+                    React__default['default'].createElement(CopyToClipboard, { toCopy: account }, texts.copy))),
             React__default['default'].createElement(Flex, { justifyContent: "center" },
                 React__default['default'].createElement(Button$5, { mt: "60px", scale: "md", width: "100%", variant: "green", onClick: function () {
                         logout();
                         window.localStorage.removeItem(connectorLocalStorageKey);
                         onDismiss();
-                    } }, "Logout")))));
+                    } }, texts.button)))));
 };
 var ModalWrap = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  padding: 0 20px 20px;\n"], ["\n  padding: 0 20px 20px;\n"])));
 var AccountWrap = styled__default['default'](Button$2)(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"], ["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"])), function (_a) {
@@ -3238,8 +3238,18 @@ var AccountText = styled__default['default'](Text)(templateObject_4$a || (templa
 var templateObject_1$t, templateObject_2$m, templateObject_3$i, templateObject_4$a;
 
 var useWalletModal = function (login, logout, account) {
-    var onPresentConnectModal = useModal(React__default['default'].createElement(ConnectModal, { login: login }))[0];
-    var onPresentAccountModal = useModal(React__default['default'].createElement(AccountModal, { account: account || "", logout: logout }))[0];
+    var textsAccount = {
+        copy: "Copy",
+        title: "Your wallet",
+        button: "Logout",
+        view: "View on BscScan",
+    };
+    var textConnect = {
+        title: "Сonnect wallet",
+        link: "Learn how connect",
+    };
+    var onPresentConnectModal = useModal(React__default['default'].createElement(ConnectModal, { texts: textConnect, login: login }))[0];
+    var onPresentAccountModal = useModal(React__default['default'].createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout }))[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
@@ -3776,7 +3786,7 @@ var truncateWalletAddress = function (address, startLength, endLength) {
 };
 
 var Account = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
@@ -3786,7 +3796,7 @@ var Account = function (_a) {
             React__default['default'].createElement("img", { src: AccountIcon })))) : (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
         }, className: "notAuth" },
-        React__default['default'].createElement(Avatar, { className: "notAuth" }, "Connect")))));
+        React__default['default'].createElement(Avatar, { className: "notAuth" }, text)))));
 };
 var AccountBlock = styled__default['default'](Text)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 26px 0 10px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 56px 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -3962,7 +3972,7 @@ var Header = function (_a) {
             React__default['default'].createElement(RightContent, null,
                 React__default['default'].createElement(LanguageBlockDesk, null,
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
-                React__default['default'].createElement(Account, { account: account, login: login, logout: logout }),
+                React__default['default'].createElement(Account, { text: "Connect", account: account, login: login, logout: logout }),
                 React__default['default'].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } })))));
 };
 var HeaderWrap = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  z-index: 10;\n  & svg {\n    flex-shrink: 0;\n  }\n"], ["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n  z-index: 10;\n  & svg {\n    flex-shrink: 0;\n  }\n"])), function (_a) {
