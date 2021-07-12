@@ -9,21 +9,40 @@ interface ReturnType {
   onPresentAccountModal: () => void;
 }
 
-const useWalletModal = (login: Login, logout: () => void, account?: string): ReturnType => {
-  const textsAccount = {
+interface TextsAccount {
+  title: string;
+  copy: string;
+  button: string;
+  view: string;
+}
+
+interface TextConnect {
+  title: "Сonnect wallet";
+  link: "Learn how connect";
+}
+
+const useWalletModal = (
+  login: Login,
+  logout: () => void,
+  account?: string,
+  textsAccount?: TextsAccount,
+  textConnect?: TextConnect
+): ReturnType => {
+  const textsAccountDefault = {
     copy: "Copy",
     title: "Your wallet",
     button: "Logout",
     view: "View on BscScan",
   };
-  const textConnect = {
+  
+  const textConnectDefault = {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
 
-  const [onPresentConnectModal] = useModal(<ConnectModal texts={textConnect} login={login} />);
+  const [onPresentConnectModal] = useModal(<ConnectModal texts={textConnect || textConnectDefault} login={login} />);
   const [onPresentAccountModal] = useModal(
-    <AccountModal texts={textsAccount} account={account || ""} logout={logout} />
+    <AccountModal texts={textsAccount || textsAccountDefault} account={account || ""} logout={logout} />
   );
   return { onPresentConnectModal, onPresentAccountModal };
 };

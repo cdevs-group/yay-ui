@@ -18,8 +18,7 @@ const Header: React.FC<NavProps> = ({
   setLang,
   currentLang,
   links,
-  profile,
-  children,
+  textConnect,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -64,7 +63,7 @@ const Header: React.FC<NavProps> = ({
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
           </LanguageBlockDesk>
-          <Account text="Connect" account={account} login={login} logout={logout} />
+          <Account text={textConnect || "Connect"} account={account} login={login} logout={logout} />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
         </RightContent>
       </Line>
