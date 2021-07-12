@@ -17,8 +17,8 @@ interface TextsAccount {
 }
 
 interface TextConnect {
-  title: "Сonnect wallet";
-  link: "Learn how connect";
+  title: string;
+  link: string;
 }
 
 const useWalletModal = (
