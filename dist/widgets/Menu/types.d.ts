@@ -1,4 +1,5 @@
 import { Login } from "../WalletModal/types";
+import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
 export declare const sizes: {
     readonly MD: "md";
     readonly LG: "lg";
@@ -50,4 +51,6 @@ export interface NavProps extends PanelProps {
     profile?: Profile;
     logout: () => void;
     textConnect?: string;
+    textsConnect: TextsConnect;
+    textsAccount: TextsAccount;
 }

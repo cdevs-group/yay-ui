@@ -3,15 +3,15 @@ interface ReturnType {
     onPresentConnectModal: () => void;
     onPresentAccountModal: () => void;
 }
-interface TextsAccount {
+export interface TextsAccount {
     title: string;
     copy: string;
     button: string;
     view: string;
 }
-interface TextConnect {
+export interface TextsConnect {
     title: string;
     link: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, account?: string | undefined, textsAccount?: TextsAccount | undefined, textConnect?: TextConnect | undefined) => ReturnType;
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined) => ReturnType;
 export default useWalletModal;
