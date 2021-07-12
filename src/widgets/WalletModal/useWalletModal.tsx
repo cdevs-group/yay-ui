@@ -34,7 +34,7 @@ const useWalletModal = (
     button: "Logout",
     view: "View on BscScan",
   };
-  
+
   const textConnectDefault = {
     title: "Сonnect wallet",
     link: "Learn how connect",
