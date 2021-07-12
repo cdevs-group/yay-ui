@@ -49,7 +49,15 @@ const RightText = styled.div<{ negative?: boolean }>`
   line-height: 19px;
 `;
 
-const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, negative, roundFailed, textPrice }) => {
+const ClosedPrice: React.FC<ClosedPriceProp> = ({
+  price,
+  rightText,
+  result,
+  negative,
+  roundFailed,
+  textPrice,
+  textCanceled,
+}) => {
   return (
     <PriceBlockWrap negative={negative || false} roundFailed={roundFailed || false} result={result || ""}>
       <PriceBlock>
@@ -69,7 +77,7 @@ const ClosedPrice: React.FC<ClosedPriceProp> = ({ price, rightText, result, nega
             </RightText>
           </Flex>
         )}
-        {roundFailed && !result && <Text color="greyText">CANCELED</Text>}
+        {roundFailed && !result && <Text color="greyText">{textCanceled || "CANCELED"}</Text>}
       </PriceBlock>
     </PriceBlockWrap>
   );

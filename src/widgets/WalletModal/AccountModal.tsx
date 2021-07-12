@@ -8,17 +8,13 @@ import CopyToClipboard from "./CopyToClipboard";
 import styled from "styled-components";
 import { Button as Input } from "./ConnectModal";
 import { connectorLocalStorageKey } from "./config";
+import { TextsAccount } from "./useWalletModal";
 
 interface Props {
   account: string;
   logout: () => void;
   onDismiss?: () => void;
-  texts: {
-    title: string;
-    copy: string;
-    button: string;
-    view: string;
-  };
+  texts: TextsAccount;
 }
 
 const AccountModal: React.FC<Props> = ({ texts, account, logout, onDismiss = () => null }) => (
@@ -36,7 +32,7 @@ const AccountModal: React.FC<Props> = ({ texts, account, logout, onDismiss = () 
           {texts.view}
         </LinkExternal>
         <CopyText color="#47DA3B">
-          <CopyToClipboard toCopy={account}>{texts.copy}</CopyToClipboard>
+          <CopyToClipboard toCopy={account} textCopied={texts.copied}>{texts.copy}</CopyToClipboard>
         </CopyText>
       </Flex>
       <Flex justifyContent="center">

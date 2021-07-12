@@ -36,6 +36,7 @@ const LinkItem = styled(Text)`
       position: absolute;
       background: #4be43e;
       transition: all.3s;
+      opacity: 0;
     }
     margin: 0 20px;
     ${Link}.active & {

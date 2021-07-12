@@ -9,11 +9,12 @@ interface ReturnType {
   onPresentAccountModal: () => void;
 }
 
-interface TextsAccount {
+export interface TextsAccount {
   title: string;
   copy: string;
   button: string;
   view: string;
+  copied: string;
 }
 
 interface TextConnect {

@@ -9,4 +9,5 @@ export interface ClosedPriceBTCProp {
   textTitle?: string;
   isBTCWon?: boolean;
   btc?: boolean;
+  textCanceled?: string;
 }
