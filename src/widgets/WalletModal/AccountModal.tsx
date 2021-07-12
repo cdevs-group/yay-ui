@@ -32,7 +32,9 @@ const AccountModal: React.FC<Props> = ({ texts, account, logout, onDismiss = () 
           {texts.view}
         </LinkExternal>
         <CopyText color="#47DA3B">
-          <CopyToClipboard toCopy={account} textCopied={texts.copied}>{texts.copy}</CopyToClipboard>
+          <CopyToClipboard toCopy={account} textCopied={texts.copied}>
+            {texts.copy}
+          </CopyToClipboard>
         </CopyText>
       </Flex>
       <Flex justifyContent="center">

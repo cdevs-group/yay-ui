@@ -5,4 +5,5 @@ export interface ClosedPriceProp {
     negative?: boolean;
     roundFailed?: boolean;
     textPrice?: string;
+    textCanceled?: string;
 }

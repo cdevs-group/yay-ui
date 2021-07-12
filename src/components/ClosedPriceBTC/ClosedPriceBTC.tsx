@@ -60,7 +60,7 @@ const ClosedPriceBTC: React.FC<ClosedPriceBTCProp> = ({
   textTitle,
   isBTCWon,
   btc,
-  textCanceled
+  textCanceled,
 }) => {
   return (
     <PriceBlockWrap negative={negative || false} roundFailed={roundFailed || false} isBTCWon={isBTCWon || false}>
@@ -94,7 +94,7 @@ const ClosedPriceBTC: React.FC<ClosedPriceBTCProp> = ({
         )}
         {roundFailed && (
           <Text color="greyText" marginTop="40px">
-            {textCanceled || 'CANCELED'}
+            {textCanceled || "CANCELED"}
           </Text>
         )}
       </PriceBlock>
