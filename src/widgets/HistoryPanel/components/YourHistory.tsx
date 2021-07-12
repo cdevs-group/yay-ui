@@ -46,6 +46,7 @@ const YourHistory = (props: IYourHistory) => {
       </Line>
       <ClosedPrice
         textPrice={texts?.textPrice}
+        textCanceled={texts?.textCanceled}
         price={price}
         rightText={priceRightText}
         result={result}

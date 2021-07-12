@@ -66,6 +66,7 @@ const RoundHistoryBTC = (props: IRoundHistory) => {
           textLockedPrice={textLockedPrice}
           btc
           lockedPrice={lockFirstPrice}
+          textCanceled={texts?.textCanceled}
         />
       </div>
       <ClosedPriceBTC

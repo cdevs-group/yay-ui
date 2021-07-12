@@ -7,6 +7,7 @@ export interface ITextsYourHistory {
   win?: string;
   history?: string;
   textPrice?: string;
+  textCanceled?:string;
 }
 export interface ITextRoundHistory {
   rounds?: string;
@@ -17,6 +18,7 @@ export interface ITextRoundHistory {
   textPrice?: string;
   up?: string;
   down?: string;
+  textCanceled?:string;
 }
 
 export interface ITextRoundBTCHistory {
@@ -28,6 +30,7 @@ export interface ITextRoundBTCHistory {
   textPrice?: string;
   btcPayout?: string;
   ethPayout?: string;
+  textCanceled?:string;
 }
 export interface ITextNoHistory {
   ifYouSure?: string;
