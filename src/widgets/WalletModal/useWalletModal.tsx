@@ -9,14 +9,14 @@ interface ReturnType {
   onPresentAccountModal: () => void;
 }
 
-interface TextsAccount {
+export interface TextsAccount {
   title: string;
   copy: string;
   button: string;
   view: string;
 }
 
-interface TextConnect {
+export interface TextsConnect {
   title: string;
   link: string;
 }
@@ -25,10 +25,10 @@ const useWalletModal = (
   login: Login,
   logout: () => void,
   textsAccount: TextsAccount,
-  textConnect: TextConnect,
-  account?: string,
+  textsConnect: TextsConnect,
+  account?: string
 ): ReturnType => {
-  const [onPresentConnectModal] = useModal(<ConnectModal texts={textConnect} login={login} />);
+  const [onPresentConnectModal] = useModal(<ConnectModal texts={textsConnect} login={login} />);
   const [onPresentAccountModal] = useModal(
     <AccountModal texts={textsAccount} account={account || ""} logout={logout} />
   );

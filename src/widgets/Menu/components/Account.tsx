@@ -5,16 +5,25 @@ import truncateWalletAddress from "../../../helpers/truncateWalletAddress";
 import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
 import { AccountIcon } from "../../../constants/images";
+import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 
 interface Props {
   account?: string;
   login: Login;
   text: string;
   logout: () => void;
+  textsConnect: TextsConnect;
+  textsAccount: TextsAccount;
 }
 
-const Account: React.FC<Props> = ({ text, account, login, logout }) => {
-  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
+const Account: React.FC<Props> = ({ text, account, login, logout, textsAccount, textsConnect }) => {
+  const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
+    login,
+    logout,
+    textsAccount,
+    textsConnect,
+    account
+  );
 
   return (
     <>
