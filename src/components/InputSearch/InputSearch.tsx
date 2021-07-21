@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
-const InputSearch = ({ placeholder, value, onChange }: InputSearchProp) => {
+const InputSearch = ({ placeholder, value, onChange, width }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
-    <InputBlock>
+    <InputBlock width={width}>
       <InputItem
         value={value}
         onChange={onChange}
@@ -29,12 +29,13 @@ InputSearch.defaultProps = {
 
 export default InputSearch;
 
-const InputBlock = styled.div`
+const InputBlock = styled.div<{ width?: string }>`
   position: relative;
-  width: fit-content;
+  width: ${({ width }) => (width ? width : "fit-content")};
 `;
 
 const InputItem = styled.input`
+  width: 100%;
   position: relative;
   display: block;
   padding: 16px 25px;

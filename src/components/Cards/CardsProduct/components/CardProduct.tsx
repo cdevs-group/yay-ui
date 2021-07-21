@@ -9,7 +9,7 @@ export const setColor = (param: { bg?: string }) => {
     case "red":
       return "linear-gradient(180deg, #FF8383 0%, #EF5D5D 100%);";
     case "blue":
-      return "linear-gradient(180deg, #95D0FF 0%, #78C2FD 100%);";
+      return "linear-gradient(180deg, #a6b5c2 0%, #78C2FD 100%);";
     case "green":
       return "linear-gradient(180deg, #BDFF00 0%, #95CA00 100%);";
     case "purple":
@@ -33,9 +33,12 @@ const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp
 export default CardProduct;
 
 export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
+  display: inline-block;
   position: relative;
-  padding: 14px 24px;
+  /* padding: 14px 24px; */
+  padding: 10px 15px;
   height: 43vw;
+  height: 118px !important;
   width: 100%;
   background: ${setColor};
 
@@ -80,7 +83,8 @@ const Img = styled.img<ImageProps>`
 `;
 
 export const CardTitle = styled(Text)`
-  font-size: 15px;
+  /* font-size: 15px ; */
+  font-size: 11px !important;
   letter-spacing: 0.02em;
   text-shadow: ${({ theme }) => theme.colors.textShadow2};
   ${({ theme }) => theme.mediaQueries.xl} {

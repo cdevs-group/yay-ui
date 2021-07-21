@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { transparentize } from "polished";
 
 interface TabsProp {
-  tabValue: number;
-  onClick: (e: any) => Promise<void>;
-  tabsList: Array<string>;
+  tabValue?: number;
+  onClick?: (e: any) => Promise<void>;
+  tabsList?: Array<string>;
 }
 
 const TabsHistory = ({ tabValue, onClick, tabsList }: TabsProp) => {
   return (
-    <TabsWrap>
+    <TabsWrap length={tabsList?.length}>
       {tabsList?.map((item, i) => (
         <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
           {item}
@@ -22,9 +22,9 @@ const TabsHistory = ({ tabValue, onClick, tabsList }: TabsProp) => {
 
 export default TabsHistory;
 
-const TabsWrap = styled.div`
+const TabsWrap = styled.div<{ length?: number }>`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(${({ length }) => length || 2}, 1fr);
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
