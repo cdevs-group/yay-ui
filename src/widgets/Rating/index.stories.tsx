@@ -8,6 +8,8 @@ import COINS from "../../components/Cards/image/coins.png";
 import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
 import TOKEN from "./img/token.svg";
+import PaginationPlayersList from "./components/PaginationPlayersList";
+import TabsTypeList from "./components/TabsTypeList";
 
 export default {
   title: "Widgets/GamesTable",
@@ -25,15 +27,15 @@ export const GamesTableBlock: React.FC = () => {
   const typeTabsList = ["table", "list"];
   const gamesList = [
     {
-      img: <CardProduct title="BTC vs ETH" bg="pink" img={BALANCE} />,
+      img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} />,
       value: "BTCvsETH",
     },
     {
-      img: <CardProduct title="Up or DOwn" bg="green" img={COINS} />,
+      img: <CardProduct small title="Up or DOwn" bg="green" img={COINS} />,
       value: "UpOrDown",
     },
     {
-      img: <CardProduct title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
+      img: <CardProduct small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
       value: "Bold",
     },
   ];
@@ -145,4 +147,30 @@ export const PlayerListBlock: React.FC = () => {
       <PlayerList playersList={playersList} texts={texts} />
     </ListWrap>
   );
+};
+
+export const PaginationBlock: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const togglePage = async (e: any) => {
+    setCurrentPage(+e.target.value);
+  };
+
+  return <PaginationPlayersList currentPage={currentPage} length={10} togglePage={togglePage} />;
+};
+
+export const TabsTypeListBlock = () => {
+  enum TypeList {
+    TABLE,
+    LIST,
+  }
+  const [typeList, setTypeList] = useState(TypeList.LIST);
+
+  const typeTabsList = ["table", "list"];
+
+  const toggleTypeList = (e: any) => {
+    setTypeList(e.target.value);
+  };
+
+  return <TabsTypeList toggleTypeList={toggleTypeList} typeTabsList={typeTabsList} />;
 };

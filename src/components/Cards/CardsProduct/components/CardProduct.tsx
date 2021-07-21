@@ -21,10 +21,12 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, small, ...props }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg} to={href || ""}>
-      <CardTitle size="lg">{title}</CardTitle>
+    <CardWrap small={small} closed={closed} bg={bg} to={href || ""}>
+      <CardTitle small={small} size="lg">
+        {title}
+      </CardTitle>
       <Img src={img} alt="some img" {...props} />
     </CardWrap>
   );
@@ -32,13 +34,11 @@ const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp
 
 export default CardProduct;
 
-export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
+export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string; small?: boolean }>`
   display: inline-block;
   position: relative;
-  /* padding: 14px 24px; */
-  padding: 10px 15px;
-  height: 43vw;
-  height: 118px !important;
+  padding: ${({ small }) => (small ? "10px 15px" : "14px 24px")};
+  height: ${({ small }) => (small ? "118px !important" : "43vw")};
   width: 100%;
   background: ${setColor};
 
@@ -82,9 +82,8 @@ const Img = styled.img<ImageProps>`
   max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
-export const CardTitle = styled(Text)`
-  /* font-size: 15px ; */
-  font-size: 11px !important;
+export const CardTitle = styled(Text)<{ small?: boolean }>`
+  font-size: ${({ small }) => (small ? "11px !important" : "15px")};
   letter-spacing: 0.02em;
   text-shadow: ${({ theme }) => theme.colors.textShadow2};
   ${({ theme }) => theme.mediaQueries.xl} {

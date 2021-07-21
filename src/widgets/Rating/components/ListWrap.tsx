@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "../../../components/Button";
 import { InputSearch } from "../../../components/InputSearch";
 import TabsHistory from "../../HistoryPanel/components/TabsHistory";
 import { ListWrapProps } from "../types";
@@ -36,7 +37,9 @@ const ListWrap: React.FC<ListWrapProps> = ({
       <BottomContent>
         {players ? (
           <>
-            <ButtonMyPossition onClick={myPosstionButton}>{texts?.button}</ButtonMyPossition>
+            <Button width="130px" scale="sm" variant="option" height="30px" onClick={myPosstionButton}>
+              {texts?.button}
+            </Button>
             <PaginationPlayersList currentPage={currentPage} length={length} togglePage={togglePage} />
           </>
         ) : (
@@ -66,22 +69,4 @@ const BottomContent = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 35px;
-`;
-const ButtonMyPossition = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  min-width: 146px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 7px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: 0.5px;
-  color: ${({ theme }) => theme.colors.text};
-  text-shadow: ${({ theme }) => theme.colors.boxShadow5};
-  border: none;
-  cursor: pointer;
 `;
