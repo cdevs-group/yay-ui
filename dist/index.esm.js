@@ -3859,7 +3859,6 @@ var DropdownLayout = function (_a) {
     var handleClickOpen = function () {
         setOpen(!open);
     };
-    console.log(open);
     return (React__default.createElement(Block, { ref: refSelect },
         React__default.createElement(Button$1, { onClick: handleClickOpen }, icon),
         React__default.createElement(Dropdown, { className: open ? "open" : "" }, children)));
