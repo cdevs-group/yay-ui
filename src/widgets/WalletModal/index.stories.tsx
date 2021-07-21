@@ -12,6 +12,8 @@ export const Wallet: React.FC = () => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     () => null,
     () => null,
+    { title: "Your wallet", copy: "Copy", button: "Logout", view: "View on BscScan", copied: "copied" },
+    { title: "Сonnect wallet", link: "Learn how connect" },
     "0x88259603-2f58ee92039d357307e325"
   );
   return (
