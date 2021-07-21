@@ -18,4 +18,5 @@ import ADA from "../../public/images/cardano-white.png";
 import ComingSoonIcon from "../../public/images/comingSoon.png";
 import GhostsIcon from "../../public/images/ghost-img.png";
 import OneGhost from "../../public/images/one-ghost.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, };
+import Coin98 from "../../public/images/coin98-wallet.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, };
