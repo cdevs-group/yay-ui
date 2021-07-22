@@ -23,16 +23,18 @@ export const setColor = (param: { bg?: string }) => {
 
 const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp) => {
   return (
-    <CardWrap closed={closed} bg={bg} to={href || ""}>
-      <CardTitle size="lg">{title}</CardTitle>
-      <Img src={img} alt="some img" {...props} />
-    </CardWrap>
+    <NavLink to={href || ""}>
+      <CardWrap closed={closed} bg={bg}>
+        <CardTitle size="lg">{title}</CardTitle>
+        <Img src={img} alt="some img" {...props} />
+      </CardWrap>
+    </NavLink>
   );
 };
 
 export default CardProduct;
 
-export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string }>`
+export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   position: relative;
   padding: 14px 24px;
   height: 43vw;
