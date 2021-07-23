@@ -3,7 +3,6 @@ import { InjectedProps } from "./types";
 interface Props extends InjectedProps {
     title: string;
     hideCloseButton?: boolean;
-    onBack?: () => void;
     bodyPadding?: string;
     welcome?: boolean;
 }

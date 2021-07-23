@@ -28,14 +28,14 @@ const Description = styled(Text)`
   justify-content: center;
   padding: 16px 26px 30px;
   letter-spacing: 0.05em;
-  text-align: center;  
+  text-align: center;
 `;
 const StyledModal = styled(Modal)`
   display: flex;
   justify-content: center;
   padding: 16px 26px 30px;
   letter-spacing: 0.05em;
-  text-align: center;  
+  text-align: center;
 `;
 const CongratulateModal: React.FC<Props> = ({
   title,
@@ -51,9 +51,7 @@ const CongratulateModal: React.FC<Props> = ({
         <Ghosts>
           <img src={GhostsIcon} />
         </Ghosts>
-        <Description size="sm">
-          {description}          
-        </Description>
+        <Description size="sm">{description}</Description>
         <Button width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
           {buttonText}
         </Button>

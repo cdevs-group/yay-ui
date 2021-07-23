@@ -112,22 +112,17 @@ const StyledButton = styled(Button)`
     margin: 0 10px 0 -16px;
     left: 0px;
     bottom: 16px;
-    pointer-events: none;    
+    pointer-events: none;
   }
 `;
 
-const GiftPopup: React.FC<GiftPopupProps> = ({
-  handleOpenForm,
-  btnText,
-  img,
-  ref,
-}) => {
+const GiftPopup: React.FC<GiftPopupProps> = ({ handleOpenForm, btnText, img, ref }) => {
   return (
     <Wrapper ref={ref}>
-        <StyledButton style={{ flex: 1 }} onClick={handleOpenForm} width="100%">
-          <img src={img || Gift} alt="" />
-          <Text fontSize="21px">{btnText}</Text>
-        </StyledButton>              
+      <StyledButton style={{ flex: 1 }} onClick={handleOpenForm} width="100%">
+        <img src={img || Gift} alt="" />
+        <Text fontSize="21px">{btnText}</Text>
+      </StyledButton>
     </Wrapper>
   );
 };

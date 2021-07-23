@@ -13,10 +13,14 @@ export const Welcome: React.FC = () => {
       <div style={{ marginRight: 50 }}>
         <CongratulateModal
           title="Congratulate"
-          description={<>You're on the list of the first! <br></br> See you soon, our friend!</>}
+          description={
+            <>
+              You're on the list of the first! <br></br> See you soon, our friend!
+            </>
+          }
           buttonText="Let’s play!"
         />
-      </div>      
+      </div>
     </Flex>
   );
 };
