@@ -7,7 +7,6 @@ import { InjectedProps } from "./types";
 interface Props extends InjectedProps {
   title: string;
   hideCloseButton?: boolean;
-  onBack?: () => void;
   bodyPadding?: string;
   welcome?: boolean;
 }
@@ -75,7 +74,7 @@ const Heading = styled.div`
   }
 `;
 
-const Modal: React.FC<Props> = ({ welcome, title, onDismiss, onBack, children, hideCloseButton = false }) => (
+const Modal: React.FC<Props> = ({ welcome, title, onDismiss, children, hideCloseButton = false }) => (
   <div>
     <Overlay />
     <StyledModal>

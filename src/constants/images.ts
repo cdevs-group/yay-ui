@@ -19,6 +19,7 @@ import ComingSoonIcon from "../../public/images/comingSoon.png";
 import GhostsIcon from "../../public/images/ghost-img.png";
 import OneGhost from "../../public/images/one-ghost.png";
 import Coin98 from "../../public/images/coin98-wallet.png";
+import Gift from "../../public/images/Gift.png";
 
 export {
   BG_IMG,
@@ -42,4 +43,5 @@ export {
   OneGhost,
   WINNER2,
   Coin98,
+  Gift,
 };
