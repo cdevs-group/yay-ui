@@ -32,6 +32,7 @@ export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
 export * from "./widgets/WelcomeModal";
+export * from "./widgets/GiftFormModal";
 export * from "./widgets/Toast";
 export * from "./widgets/PausedErrorModals";
 export * from "./widgets/CollectRoundWinningsModal";
