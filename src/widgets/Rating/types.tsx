@@ -43,9 +43,3 @@ export interface TabsTypeListPops {
   toggleTypeList?: (e: any) => void;
   typeTabsList?: Array<string>;
 }
-
-export interface PaginationPlayersListProps {
-  length?: number;
-  togglePage?: (e: any) => Promise<void>;
-  currentPage?: number;
-}

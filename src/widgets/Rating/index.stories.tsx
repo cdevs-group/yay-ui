@@ -8,7 +8,6 @@ import COINS from "../../components/Cards/image/coins.png";
 import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
 import TOKEN from "./img/token.svg";
-import PaginationPlayersList from "./components/PaginationPlayersList";
 import TabsTypeList from "./components/TabsTypeList";
 
 export default {
@@ -147,16 +146,6 @@ export const PlayerListBlock: React.FC = () => {
       <PlayerList playersList={playersList} texts={texts} />
     </ListWrap>
   );
-};
-
-export const PaginationBlock: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
-  const togglePage = async (e: any) => {
-    setCurrentPage(+e.target.value);
-  };
-
-  return <PaginationPlayersList currentPage={currentPage} length={10} togglePage={togglePage} />;
 };
 
 export const TabsTypeListBlock = () => {

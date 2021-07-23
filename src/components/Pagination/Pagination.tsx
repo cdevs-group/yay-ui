@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { PaginationPlayersListProps } from "../types";
+import { PaginationProps } from "./types";
 
-const PaginationPlayersList: React.FC<PaginationPlayersListProps> = ({ length, currentPage, togglePage }) => {
+const Pagination: React.FC<PaginationProps> = ({ length, currentPage, togglePage }) => {
   const paginationRender = () => {
     const pagination = [];
     if (length && currentPage && length < 6)
@@ -18,7 +18,6 @@ const PaginationPlayersList: React.FC<PaginationPlayersListProps> = ({ length, c
         }
       }
     }
-    console.log(pagination);
     return pagination;
   };
 
@@ -41,7 +40,7 @@ const PaginationPlayersList: React.FC<PaginationPlayersListProps> = ({ length, c
   );
 };
 
-export default PaginationPlayersList;
+export default Pagination;
 
 const PaginationWrap = styled.div`
   display: flex;

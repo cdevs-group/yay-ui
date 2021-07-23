@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../components/Button";
 import { InputSearch } from "../../../components/InputSearch";
-import TabsHistory from "../../HistoryPanel/components/TabsHistory";
+import { Pagination } from "../../../components/Pagination";
+import { Tabs } from "../../../components/Tabs";
 import { ListWrapProps } from "../types";
-import PaginationPlayersList from "./PaginationPlayersList";
 import TabsTypeList from "./TabsTypeList";
 
 const ListWrap: React.FC<ListWrapProps> = ({
@@ -28,7 +28,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
     <Wrapper>
       <TopContent players={players}>
         {players ? (
-          <TabsHistory tabValue={activeTab} onClick={toggleTab} tabsList={tabsList} />
+          <Tabs tabValue={activeTab} onClick={toggleTab} tabsList={tabsList} />
         ) : (
           <InputSearch placeholder={placeholder} value={inputValue} onChange={handleInput} width="272px" />
         )}
@@ -40,7 +40,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
             <Button width="130px" scale="sm" variant="option" height="30px" onClick={myPosstionButton}>
               {texts?.button}
             </Button>
-            <PaginationPlayersList currentPage={currentPage} length={length} togglePage={togglePage} />
+            <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
           </>
         ) : (
           <TabsTypeList toggleTypeList={toggleTypeList} typeTabsList={typeTabsList} />
