@@ -14,7 +14,7 @@ interface PropsGiftFormModal {
   description: string;
   handleConfirm?: () => void;
   disabledButton?: boolean;
-  handleChangeCheckbox?: () => void;
+  handleChangeCheckbox?: (e: any) => void;
   checkedCheckbox?: boolean;
   labelInput1: string;
   labelInput2: string;
@@ -25,6 +25,10 @@ interface PropsGiftFormModal {
   valueInput1?: string | number;
   valueInput2?: string | number;
   linkText: string;
+  hrefLink: string;
+  nameInput1?: string;
+  nameInput2?: string;
+  nameCheckbox?: string;
 }
 
 const Wrap = styled.div`
@@ -97,6 +101,10 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
   valueInput1,
   valueInput2,
   linkText,
+  hrefLink,
+  nameInput1,
+  nameInput2,
+  nameCheckbox,
 }) => (
   <>
     <Modal title={title} onDismiss={onDismiss} welcome>
@@ -112,6 +120,7 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
               iconLess
               onChange={onChangeInput1}
               value={valueInput1}
+              name={nameInput1 || "email"}
             />
           </InputBlock>
           <InputBlock>
@@ -123,13 +132,19 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
               iconLess
               onChange={onChangeInput2}
               value={valueInput2}
+              name={nameInput2 || "wallet"}
             />
           </InputBlock>
-          <Link size="sm" as="a">
+          <Link size="sm" as="a" href={hrefLink}>
             {linkText}
           </Link>
           <CheckboxInputBlock className="bottom">
-            <CheckboxInput id="bottom" onChange={handleChangeCheckbox} checked={checkedCheckbox} />
+            <CheckboxInput
+              id="bottom"
+              onChange={handleChangeCheckbox}
+              checked={checkedCheckbox}
+              name={nameCheckbox || "check"}
+            />
             <Label htmlFor="bottom">{textCheckbox}</Label>
           </CheckboxInputBlock>
         </FormWrap>
