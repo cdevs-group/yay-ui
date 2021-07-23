@@ -21,14 +21,25 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, ...props }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, externalLink, ...props }: CardProductProp) => {
   return (
-    <NavLink to={href || ""}>
-      <CardWrap closed={closed} bg={bg}>
-        <CardTitle size="lg">{title}</CardTitle>
-        <Img src={img} alt="some img" {...props} />
-      </CardWrap>
-    </NavLink>
+    <>
+      {!externalLink ? (
+        <NavLink to={href || ""}>
+          <CardWrap closed={closed} bg={bg}>
+            <CardTitle size="lg">{title}</CardTitle>
+            <Img src={img} alt="some img" {...props} />
+          </CardWrap>
+        </NavLink>
+      ) : (
+        <a href={href || ""}>
+          <CardWrap closed={closed} bg={bg}>
+            <CardTitle size="lg">{title}</CardTitle>
+            <Img src={img} alt="some img" {...props} />
+          </CardWrap>
+        </a>
+      )}
+    </>
   );
 };
 
