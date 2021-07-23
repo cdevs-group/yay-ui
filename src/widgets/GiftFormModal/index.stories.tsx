@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Flex from "../../components/Box/Flex";
-import useGiftFromModal from "./useGiftFromModal";
+import useGiftFormModal from "./useGiftFormModal";
 
 export default {
   title: "Widgets/ModalFromGift",
@@ -9,7 +9,7 @@ export default {
 };
 
 export const Gift: React.FC = () => {
-  const { onPresentWelcomeModal } = useGiftFromModal();
+  const { onPresentWelcomeModal } = useGiftFormModal();
   return (
     <Flex>
       <Button onClick={onPresentWelcomeModal}>A Gift for you!</Button>
