@@ -103,6 +103,7 @@ export type Colors = {
   boxShadow6: string;
   yellowGradient: string;
   yellowGradient2: string;
+  yellowGradient3: string;
   // Gradients
   gradients: Gradients;
 
