@@ -6,7 +6,7 @@ import { CheckboxInput } from "../../components/CheckboxInput";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
 
-interface PropsGiftModal {
+interface PropsGiftFromModal {
   onDismiss?: () => void;
   title: string;
   textCheckbox: string;
@@ -76,7 +76,7 @@ const Link = styled(Text)`
   text-decoration: underline;
 `;
 
-const GiftModal: React.FC<PropsGiftModal> = ({
+const GiftFromModal: React.FC<PropsGiftFromModal> = ({
   onDismiss = () => null,
   title,
   textCheckbox,
@@ -139,4 +139,4 @@ const GiftModal: React.FC<PropsGiftModal> = ({
   </>
 );
 
-export default GiftModal;
+export default GiftFromModal;

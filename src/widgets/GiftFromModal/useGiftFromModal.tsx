@@ -1,14 +1,14 @@
 import React from "react";
 import { useModal } from "../Modal";
-import GiftModal from "./GiftModal";
+import GiftFromModal from "./GiftFromModal";
 
 interface ReturnType {
   onPresentWelcomeModal: () => void;
 }
 
-const useGigtModal = (): ReturnType => {
+const useGiftFromModal = (): ReturnType => {
   const [onPresentWelcomeModal] = useModal(
-    <GiftModal
+    <GiftFromModal
       title="You're one of the first"
       textCheckbox="I givE my consent to the processing of personal data."
       continueText="Send"
@@ -23,4 +23,4 @@ const useGigtModal = (): ReturnType => {
   return { onPresentWelcomeModal };
 };
 
-export default useGigtModal;
+export default useGiftFromModal;
