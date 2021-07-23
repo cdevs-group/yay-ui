@@ -9,6 +9,7 @@ interface ReturnType {
 const useGiftFormModal = (): ReturnType => {
   const [onPresentWelcomeModal] = useModal(
     <GiftFormModal
+      hrefLink="#"
       title="You're one of the first"
       textCheckbox="I givE my consent to the processing of personal data."
       continueText="Send"

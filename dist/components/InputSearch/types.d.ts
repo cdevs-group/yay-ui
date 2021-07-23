@@ -6,4 +6,5 @@ export interface InputSearchProp {
     iconLess?: boolean;
     width?: string;
     height?: string;
+    name: string;
 }

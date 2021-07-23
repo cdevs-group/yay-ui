@@ -2005,10 +2005,10 @@ var BaseLayout = function (_a) {
 var templateObject_1$S;
 
 var InputSearch = function (_a) {
-    var height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width;
+    var height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width, name = _a.name;
     var _b = React.useState(false), focus = _b[0], setFocus = _b[1];
     return (React__default['default'].createElement(InputBlock$1, { height: height, width: width },
-        React__default['default'].createElement(InputItem, { width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder }),
+        React__default['default'].createElement(InputItem, { width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder, name: name }),
         React__default['default'].createElement(Button$3, { iconLess: iconLess },
             React__default['default'].createElement(Icon$n, { color: focus ? "green" : "text" }))));
 };
@@ -4093,7 +4093,7 @@ var InputBlock = styled__default['default'].div(templateObject_6$2 || (templateO
 var LabelInput = styled__default['default'](Text)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  margin-bottom: 12px;\n"], ["\n  margin-bottom: 12px;\n"])));
 var Link = styled__default['default'](Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n  font-weight: 400;\n"], ["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n  font-weight: 400;\n"])));
 var GiftFormModal = function (_a) {
-    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, title = _a.title, textCheckbox = _a.textCheckbox, continueText = _a.continueText, description = _a.description, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, handleChangeCheckbox = _a.handleChangeCheckbox, checkedCheckbox = _a.checkedCheckbox, labelInput1 = _a.labelInput1, labelInput2 = _a.labelInput2, placeholderInput1 = _a.placeholderInput1, placeholderInput2 = _a.placeholderInput2, onChangeInput1 = _a.onChangeInput1, onChangeInput2 = _a.onChangeInput2, valueInput1 = _a.valueInput1, valueInput2 = _a.valueInput2, linkText = _a.linkText;
+    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, title = _a.title, textCheckbox = _a.textCheckbox, continueText = _a.continueText, description = _a.description, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, handleChangeCheckbox = _a.handleChangeCheckbox, checkedCheckbox = _a.checkedCheckbox, labelInput1 = _a.labelInput1, labelInput2 = _a.labelInput2, placeholderInput1 = _a.placeholderInput1, placeholderInput2 = _a.placeholderInput2, onChangeInput1 = _a.onChangeInput1, onChangeInput2 = _a.onChangeInput2, valueInput1 = _a.valueInput1, valueInput2 = _a.valueInput2, linkText = _a.linkText, hrefLink = _a.hrefLink, nameInput1 = _a.nameInput1, nameInput2 = _a.nameInput2, nameCheckbox = _a.nameCheckbox;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(Modal, { title: title, onDismiss: onDismiss, welcome: true },
             React__default['default'].createElement(Wrap$2, null,
@@ -4101,20 +4101,20 @@ var GiftFormModal = function (_a) {
                     React__default['default'].createElement(Beta, null, description),
                     React__default['default'].createElement(InputBlock, null,
                         React__default['default'].createElement(LabelInput, { size: "md" }, labelInput1),
-                        React__default['default'].createElement(InputSearch, { placeholder: placeholderInput1, width: "100%", height: "50px", iconLess: true, onChange: onChangeInput1, value: valueInput1 })),
+                        React__default['default'].createElement(InputSearch, { placeholder: placeholderInput1, width: "100%", height: "50px", iconLess: true, onChange: onChangeInput1, value: valueInput1, name: nameInput1 || "email" })),
                     React__default['default'].createElement(InputBlock, null,
                         React__default['default'].createElement(LabelInput, { size: "md" }, labelInput2),
-                        React__default['default'].createElement(InputSearch, { placeholder: placeholderInput2, width: "100%", height: "50px", iconLess: true, onChange: onChangeInput2, value: valueInput2 })),
-                    React__default['default'].createElement(Link, { size: "sm", as: "a" }, linkText),
+                        React__default['default'].createElement(InputSearch, { placeholder: placeholderInput2, width: "100%", height: "50px", iconLess: true, onChange: onChangeInput2, value: valueInput2, name: nameInput2 || "wallet" })),
+                    React__default['default'].createElement(Link, { size: "sm", as: "a", href: hrefLink }, linkText),
                     React__default['default'].createElement(CheckboxInputBlock, { className: "bottom" },
-                        React__default['default'].createElement(CheckboxInput, { id: "bottom", onChange: handleChangeCheckbox, checked: checkedCheckbox }),
+                        React__default['default'].createElement(CheckboxInput, { id: "bottom", onChange: handleChangeCheckbox, checked: checkedCheckbox, name: nameCheckbox || "check" }),
                         React__default['default'].createElement(Label, { htmlFor: "bottom" }, textCheckbox))),
                 React__default['default'].createElement(Button$5, { width: "100%", variant: "green", onClick: handleConfirm, disabled: disabledButton }, continueText)))));
 };
 var templateObject_1$7, templateObject_2$4, templateObject_3$4, templateObject_4$3, templateObject_5$2, templateObject_6$2, templateObject_7$1, templateObject_8$1;
 
 var useGiftFormModal = function () {
-    var onPresentWelcomeModal = useModal(React__default['default'].createElement(GiftFormModal, { title: "You're one of the first", textCheckbox: "I givE my consent to the processing of personal data.", continueText: "Send", description: "Enter your Email and BSC address and get YAY one of the first", labelInput1: "Email", labelInput2: "BSC wallet address", linkText: "How do I create a BSC wallet?", placeholderInput1: "Email", placeholderInput2: "BSC wallet address" }))[0];
+    var onPresentWelcomeModal = useModal(React__default['default'].createElement(GiftFormModal, { hrefLink: "#", title: "You're one of the first", textCheckbox: "I givE my consent to the processing of personal data.", continueText: "Send", description: "Enter your Email and BSC address and get YAY one of the first", labelInput1: "Email", labelInput2: "BSC wallet address", linkText: "How do I create a BSC wallet?", placeholderInput1: "Email", placeholderInput2: "BSC wallet address" }))[0];
     return { onPresentWelcomeModal: onPresentWelcomeModal };
 };
 
