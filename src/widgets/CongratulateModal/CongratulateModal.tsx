@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Modal } from "../Modal";
 import Text from "../../components/Text/Text";
-import { GhostsIcon } from "../../constants/images";
+import { Gift3 } from "../../constants/images";
 import { Button } from "../../components/Button";
 
 interface Props {
@@ -13,13 +13,19 @@ interface Props {
   disabledButton?: boolean;
   errorPadding?: boolean;
   onDismiss?: () => void;
+  hrefLink?: string;
 }
 
 const Wrap = styled.div`
   padding: 0 20px 26px;
 `;
 
-const Ghosts = styled.div`
+const GiftImg = styled.div`
+  /* position: absolute;
+  left: 50%;
+  transform: translateX(-50%); */
+  margin-top: -55px;
+  top: 0;
   display: flex;
   justify-content: center;
 `;
@@ -30,14 +36,21 @@ const Description = styled(Text)`
   padding: 16px 26px 30px;
   letter-spacing: 0.05em;
   text-align: center;
+  font-weight: normal;
 `;
-const StyledModal = styled(Modal)`
-  display: flex;
-  justify-content: center;
-  padding: 16px 26px 30px;
-  letter-spacing: 0.05em;
+
+const Title = styled(Text)`
   text-align: center;
+  margin-top: 15px;
 `;
+
+const LinkBlock = styled.div`
+  margin-top: 28px;
+  text-align: center;
+  margin: 28px auto 0;
+`;
+const Link = styled(Text)``;
+
 const CongratulateModal: React.FC<Props> = ({
   title,
   buttonText,
@@ -45,18 +58,25 @@ const CongratulateModal: React.FC<Props> = ({
   handleConfirm,
   disabledButton,
   onDismiss,
+  hrefLink,
   ...props
 }) => (
   <>
-    <Modal title={title} welcome onDismiss={onDismiss} {...props}>
+    <Modal welcome onDismiss={onDismiss} {...props}>
       <Wrap>
-        <Ghosts>
-          <img src={GhostsIcon} />
-        </Ghosts>
+        <GiftImg>
+          <img src={Gift3} />
+        </GiftImg>
+        <Title>{title}</Title>
         <Description size="sm">{description}</Description>
-        <Button width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
+        <LinkBlock>
+          <Link color="#47DA3B" as="a" href={hrefLink} target="_blank">
+            {buttonText}
+          </Link>
+        </LinkBlock>
+        {/* <Button width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
           {buttonText}
-        </Button>
+        </Button> */}
       </Wrap>
     </Modal>
   </>
