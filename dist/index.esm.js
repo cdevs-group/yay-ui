@@ -1783,11 +1783,14 @@ var setColor = function (param) {
     }
 };
 var CardProduct = function (_a) {
-    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, props = __rest(_a, ["title", "img", "bg", "closed", "href"]);
-    return (React__default.createElement(NavLink, { to: href || "" },
+    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, externalLink = _a.externalLink, props = __rest(_a, ["title", "img", "bg", "closed", "href", "externalLink"]);
+    return (React__default.createElement(React__default.Fragment, null, !externalLink ? (React__default.createElement(NavLink, { to: href || "" },
         React__default.createElement(CardWrap$1, { closed: closed, bg: bg },
             React__default.createElement(CardTitle, { size: "lg" }, title),
-            React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
+            React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props))))) : (React__default.createElement("a", { href: href || "" },
+        React__default.createElement(CardWrap$1, { closed: closed, bg: bg },
+            React__default.createElement(CardTitle, { size: "lg" }, title),
+            React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))))));
 };
 var CardWrap$1 = styled.div(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  position: relative;\n  padding: 14px 24px;\n  height: 43vw;\n  width: 100%;\n  background: ", ";\n\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: 14px 24px;\n  height: 43vw;\n  width: 100%;\n  background: ", ";\n\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), setColor, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
     var closed = _a.closed;
