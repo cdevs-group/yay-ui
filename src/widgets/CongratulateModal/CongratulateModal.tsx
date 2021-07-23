@@ -12,6 +12,7 @@ interface Props {
   handleConfirm?: () => void;
   disabledButton?: boolean;
   errorPadding?: boolean;
+  onDismiss?: () => void;
 }
 
 const Wrap = styled.div`
@@ -43,10 +44,11 @@ const CongratulateModal: React.FC<Props> = ({
   description,
   handleConfirm,
   disabledButton,
+  onDismiss,
   ...props
 }) => (
   <>
-    <Modal title={title} welcome {...props}>
+    <Modal title={title} welcome onDismiss={onDismiss} {...props}>
       <Wrap>
         <Ghosts>
           <img src={GhostsIcon} />
