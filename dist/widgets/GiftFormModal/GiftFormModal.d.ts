@@ -9,8 +9,6 @@ interface PropsGiftFormModal {
     disabledButton?: boolean;
     handleChangeCheckbox?: (e: any) => void;
     checkedCheckbox?: boolean;
-    labelInput1: string;
-    labelInput2: string;
     placeholderInput1: string;
     placeholderInput2: string;
     onChangeInput1?: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -22,6 +20,7 @@ interface PropsGiftFormModal {
     nameInput1?: string;
     nameInput2?: string;
     nameCheckbox?: string;
+    image?: boolean;
 }
 declare const GiftFormModal: React.FC<PropsGiftFormModal>;
 export default GiftFormModal;

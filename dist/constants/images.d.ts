@@ -20,4 +20,6 @@ import GhostsIcon from "../../public/images/ghost-img.png";
 import OneGhost from "../../public/images/one-ghost.png";
 import Coin98 from "../../public/images/coin98-wallet.png";
 import Gift from "../../public/images/Gift.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, };
+import Gift2 from "../../public/images/gift2.png";
+import Gift3 from "../../public/images/gift3.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, };

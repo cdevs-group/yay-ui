@@ -7,6 +7,7 @@ interface Props {
     disabledButton?: boolean;
     errorPadding?: boolean;
     onDismiss?: () => void;
+    hrefLink?: string;
 }
 declare const CongratulateModal: React.FC<Props>;
 export default CongratulateModal;
