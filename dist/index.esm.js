@@ -4054,13 +4054,13 @@ var Wrap$2 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTempla
 var FormWrap = styled.div(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  margin: 0 auto 30px;\n  max-width: 270px;\n"], ["\n  margin: 0 auto 30px;\n  max-width: 270px;\n"])));
 var Beta = styled(Text)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  letter-spacing: 0.05em;\n  text-align: center;\n"], ["\n  display: flex;\n  justify-content: center;\n  letter-spacing: 0.05em;\n  text-align: center;\n"])));
 var CheckboxInputBlock = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  cursor: pointer;\n  display: grid;\n  grid-template-columns: 1fr 9fr;\n  margin-top: 33px;\n"], ["\n  cursor: pointer;\n  display: grid;\n  grid-template-columns: 1fr 9fr;\n  margin-top: 33px;\n"])));
-var Label = styled.label(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
+var Label = styled.label(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  margin-left: 22px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
 var InputBlock = styled.div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  margin-top: 23px;\n  &:last-child {\n    margin-top: 17px;\n  }\n"], ["\n  margin-top: 23px;\n  &:last-child {\n    margin-top: 17px;\n  }\n"])));
 var LabelInput = styled(Text)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  margin-bottom: 12px;\n"], ["\n  margin-bottom: 12px;\n"])));
-var Link = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n"], ["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n"])));
+var Link = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n  font-weight: 400;\n"], ["\n  display: block;\n  margin-top: 15px;\n  text-align: center;\n  text-decoration: underline;\n  font-weight: 400;\n"])));
 var GiftFormModal = function (_a) {
     var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, title = _a.title, textCheckbox = _a.textCheckbox, continueText = _a.continueText, description = _a.description, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, handleChangeCheckbox = _a.handleChangeCheckbox, checkedCheckbox = _a.checkedCheckbox, labelInput1 = _a.labelInput1, labelInput2 = _a.labelInput2, placeholderInput1 = _a.placeholderInput1, placeholderInput2 = _a.placeholderInput2, onChangeInput1 = _a.onChangeInput1, onChangeInput2 = _a.onChangeInput2, valueInput1 = _a.valueInput1, valueInput2 = _a.valueInput2, linkText = _a.linkText;
     return (React__default.createElement(React__default.Fragment, null,
@@ -4247,9 +4247,9 @@ var Ghosts = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateOb
 var Description = styled(Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n"])));
 styled(Modal)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n"])));
 var CongratulateModal = function (_a) {
-    var title = _a.title, buttonText = _a.buttonText, description = _a.description, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, props = __rest(_a, ["title", "buttonText", "description", "handleConfirm", "disabledButton"]);
+    var title = _a.title, buttonText = _a.buttonText, description = _a.description, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, onDismiss = _a.onDismiss, props = __rest(_a, ["title", "buttonText", "description", "handleConfirm", "disabledButton", "onDismiss"]);
     return (React__default.createElement(React__default.Fragment, null,
-        React__default.createElement(Modal, __assign({ title: title, welcome: true }, props),
+        React__default.createElement(Modal, __assign({ title: title, welcome: true, onDismiss: onDismiss }, props),
             React__default.createElement(Wrap, null,
                 React__default.createElement(Ghosts, null,
                     React__default.createElement("img", { src: GhostsIcon })),

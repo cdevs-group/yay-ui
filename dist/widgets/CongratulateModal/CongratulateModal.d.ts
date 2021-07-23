@@ -6,6 +6,7 @@ interface Props {
     handleConfirm?: () => void;
     disabledButton?: boolean;
     errorPadding?: boolean;
+    onDismiss?: () => void;
 }
 declare const CongratulateModal: React.FC<Props>;
 export default CongratulateModal;

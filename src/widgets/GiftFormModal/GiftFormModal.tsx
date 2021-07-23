@@ -125,7 +125,7 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
               value={valueInput2}
             />
           </InputBlock>
-          <Link  size="sm" as="a">
+          <Link size="sm" as="a">
             {linkText}
           </Link>
           <CheckboxInputBlock className="bottom">
