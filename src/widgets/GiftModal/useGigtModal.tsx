@@ -10,7 +10,7 @@ const useGigtModal = (): ReturnType => {
   const [onPresentWelcomeModal] = useModal(
     <GiftModal
       title="You're one of the first"
-      textCheckbox="I give my consent to the processing of personal data."
+      textCheckbox="I givE my consent to the processing of personal data."
       continueText="Send"
       description="Enter your Email and BSC address and get YAY one of the first"
       labelInput1="Email"
