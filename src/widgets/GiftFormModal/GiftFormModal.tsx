@@ -54,6 +54,7 @@ const Label = styled.label`
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.05em;
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
 `;
@@ -74,6 +75,7 @@ const Link = styled(Text)`
   margin-top: 15px;
   text-align: center;
   text-decoration: underline;
+  font-weight: 400;
 `;
 
 const GiftFormModal: React.FC<PropsGiftFormModal> = ({
@@ -123,7 +125,7 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
               value={valueInput2}
             />
           </InputBlock>
-          <Link size="sm" as="a">
+          <Link  size="sm" as="a">
             {linkText}
           </Link>
           <CheckboxInputBlock className="bottom">
