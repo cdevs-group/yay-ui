@@ -3,15 +3,19 @@ import styled from "styled-components";
 import { IconButton } from "../../components/Button";
 import { CloseIcon } from "../../components/Svg";
 import { InjectedProps } from "./types";
+import { Gift2 } from "../../constants/images";
 
 interface Props extends InjectedProps {
-  title: string;
+  title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
   welcome?: boolean;
+  image?: boolean;
 }
 
-const ModalContent = styled.div``;
+const ModalContent = styled.div`
+  position: relative;
+`;
 
 const StyledModal = styled.div`
   max-width: 404px;
@@ -74,7 +78,14 @@ const Heading = styled.div`
   }
 `;
 
-const Modal: React.FC<Props> = ({ welcome, title, onDismiss, children, hideCloseButton = false }) => (
+const Image = styled.div`
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
+const Modal: React.FC<Props> = ({ welcome, title, onDismiss, children, hideCloseButton = false, image }) => (
   <div>
     <Overlay />
     <StyledModal>
@@ -83,6 +94,11 @@ const Modal: React.FC<Props> = ({ welcome, title, onDismiss, children, hideClose
           <ModalTitle>
             <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
           </ModalTitle>
+          {image ? (
+            <Image>
+              <img src={Gift2} alt="" />
+            </Image>
+          ) : null}
           {!hideCloseButton && (
             <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
               <CloseIcon />

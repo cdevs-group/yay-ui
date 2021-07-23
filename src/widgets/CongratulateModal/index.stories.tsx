@@ -12,13 +12,14 @@ export const Welcome: React.FC = () => {
     <Flex>
       <div style={{ marginRight: 50 }}>
         <CongratulateModal
-          title="Congratulate"
+          title="YAAAAAY!"
           description={
             <>
-              You're on the list of the first! <br></br> See you soon, our friend!
+              You are on the first list! see you, <br></br>my dear friend!
             </>
           }
-          buttonText="Let’s play!"
+          buttonText="Go to Marketplace"
+          hrefLink="#"
         />
       </div>
     </Flex>
