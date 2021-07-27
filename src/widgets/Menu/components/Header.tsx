@@ -50,7 +50,7 @@ const Header: React.FC<NavProps> = ({
   return (
     <HeaderWrap ref={refSelect}>
       <Line>
-        <LogoWrap to="/">
+        <LogoWrap href="https://yay.games/">
           <img src={Logo} alt="" />
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
@@ -152,7 +152,7 @@ const LanguageBlockDesk = styled.div`
   }
 `;
 
-const LogoWrap = styled(Link)`
+const LogoWrap = styled.a`
   display: flex;
   align-items: center;
   & img {
