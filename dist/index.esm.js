@@ -4,7 +4,7 @@ import * as React from 'react';
 import React__default, { isValidElement, cloneElement, useRef, useEffect, useState, useCallback, useMemo, createContext, useContext } from 'react';
 import get from 'lodash/get';
 import { transparentize } from 'polished';
-import { NavLink, Link as Link$4 } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -3954,7 +3954,7 @@ var Header = function (_a) {
     };
     return (React__default.createElement(HeaderWrap, { ref: refSelect },
         React__default.createElement(Line, null,
-            React__default.createElement(LogoWrap, { to: "/" },
+            React__default.createElement(LogoWrap, { href: "https://yay.games/" },
                 React__default.createElement("img", { src: Logo, alt: "" })),
             React__default.createElement(Nav, { className: openMenu ? "open" : "" },
                 links.map(function (item, i) { return (React__default.createElement(MenuLink, { key: i, size: "md", name: item.name, url: item.url, onClick: handleLink })); }),
@@ -3990,7 +3990,7 @@ var LanguageBlockDesk = styled.div(templateObject_6$4 || (templateObject_6$4 = _
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var LogoWrap = styled(Link$4)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"])), function (_a) {
+var LogoWrap = styled.a(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 }, function (_a) {
