@@ -8,7 +8,7 @@ export default {
 export const PaginationBlock: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [currentPage2, setCurrentPage2] = useState<number>(1);
-  const [currentPage3, setCurrentPage3] = useState<number>(1);
+  const [currentPage3, setCurrentPage3] = useState<number>(5);
 
   const togglePage = async (e: any) => {
     setCurrentPage(+e.target.value);
@@ -25,13 +25,13 @@ export const PaginationBlock: React.FC = () => {
   return (
     <div>
       <div style={{ marginTop: "30px" }}>
-        <Pagination length={2} currentPage={currentPage} togglePage={togglePage} />
+        <Pagination length={3} currentPage={currentPage} togglePage={togglePage} />
       </div>
       <div style={{ marginTop: "30px" }}>
         <Pagination length={25} currentPage={currentPage2} togglePage={togglePage2} />
       </div>
       <div style={{ marginTop: "30px" }}>
-        <Pagination length={10} currentPage={currentPage3} togglePage={togglePage3} />
+        <Pagination length={12} currentPage={currentPage3} togglePage={togglePage3} />
       </div>
     </div>
   );

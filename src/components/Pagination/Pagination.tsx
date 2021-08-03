@@ -1,38 +1,79 @@
 import React from "react";
 import styled from "styled-components";
 import { PaginationProps } from "./types";
+import ARROWSINGL from "../Svg/Icons/arrow-singl.svg";
+import ARROWDOUBLE from "../Svg/Icons/arrow-double.svg";
 
 const Pagination: React.FC<PaginationProps> = ({ length, currentPage, togglePage }) => {
+  console.log(currentPage);
   const paginationRender = () => {
     const pagination = [];
-    if (length && currentPage && length < 6)
-      for (let i = 1; i < length + 1; i++) {
-        pagination.push(i);
-      }
-    if (length && currentPage && length > 5) {
-      for (let i = 1; i < length + 1; i++) {
-        if (i === 1 || i === length || i === currentPage + 1 || i === currentPage - 1 || i === currentPage) {
+    if (length && currentPage)
+      if (length < 4) {
+        for (let i = 1; i < length + 1; i++) {
           pagination.push(i);
-        } else if (i === currentPage + 2 || i === currentPage - 2) {
-          pagination.push("...");
+        }
+      } else {
+        for (let i = 1; i < length + 1; i++) {
+          if (currentPage === i + 1 || currentPage === i - 1 || currentPage === i) {
+            pagination.push(i);
+          }
+          if (i < currentPage - 1 && !pagination.includes("start") && !pagination.includes("prev")) {
+            pagination.push("start");
+            pagination.push("prev");
+          }
+          if (i > currentPage + 1 && !pagination.includes("next") && !pagination.includes("finish")) {
+            pagination.push("next");
+            pagination.push("finish");
+          }
         }
       }
-    }
     return pagination;
+  };
+
+  const itemValue = (item: string | number) => {
+    if (item && currentPage)
+      switch (item) {
+        case "next":
+          return currentPage + 1;
+        case "prev":
+          return currentPage - 1;
+        case "finish":
+          return length;
+        case "start":
+          return 1;
+        default:
+          return item;
+      }
+  };
+
+  const itemRender = (item: string | number) => {
+    switch (item) {
+      case "next":
+        return <img className="reverse" src={ARROWSINGL} />;
+      case "prev":
+        return <img src={ARROWSINGL} />;
+      case "finish":
+        return <img className="reverse" src={ARROWDOUBLE} />;
+      case "start":
+        return <img src={ARROWDOUBLE} />;
+      default:
+        return item;
+    }
   };
 
   return (
     <PaginationWrap>
-      {length && length > 1
+      {length && currentPage && length > 1
         ? paginationRender().map((item, i) => (
             <PageButton
-              disabled={item === "..."}
               onClick={togglePage}
               key={i}
-              value={item}
-              className={currentPage === item ? "active" : item === "..." ? "disabled" : ""}
+              value={itemValue(item)}
+              className={currentPage === item ? "active" : ""}
             >
-              {item}
+              {/* {item} */}
+              {itemRender(item)}
             </PageButton>
           ))
         : null}
@@ -65,6 +106,12 @@ const PageButton = styled.button`
   cursor: pointer;
   border: none;
   transition: 0.3s;
+  & img {
+    pointer-events: none;
+    &.reverse {
+      transform: rotateY(180deg);
+    }
+  }
   &:last-child {
     margin-right: 0;
   }

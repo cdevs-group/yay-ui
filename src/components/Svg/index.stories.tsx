@@ -28,6 +28,8 @@ import {
   WatchIcon,
   ArrowCardDown,
   ArrowBigDownIcon,
+  ArrowSingl,
+  ArrowDouble,
 } from ".";
 
 export default {
@@ -58,6 +60,9 @@ export default {
     OpenNewIcon,
     PlayIcon,
     WatchIcon,
+    ArrowDownIcon,
+    ArrowSingl,
+    ArrowDouble,
   ],
   argTypes: {},
 };
@@ -150,7 +155,13 @@ export const Default: React.FC = () => {
           <ArrowCardDown color="green" />
         </div>
         <div style={{ marginRight: 20 }}>
+          <ArrowDouble />
+        </div>
+        <div style={{ marginRight: 20 }}>
           <SearchIcon2 />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ArrowSingl />
         </div>
       </div>
     </div>

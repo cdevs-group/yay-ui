@@ -25,6 +25,8 @@ export { default as WatchIcon } from "./Icons/WatchIcon";
 export { default as PlayIcon } from "./Icons/PlayIcon";
 export { default as ArrowBigDownIcon } from "./Icons/ArrowBigDown";
 export { default as ArrowCardDown } from "./Icons/ArrowCardDown";
+export { default as ArrowSingl } from "./Icons/ArrowSingl";
+export { default as ArrowDouble } from "./Icons/ArrowDouble";
 
 export { default as ArrowRight } from "./Icons/ArrowRight";
 export { default as ArrowTopRight } from "./Icons/ArrowTopRight";
