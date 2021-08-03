@@ -21,7 +21,8 @@ const Header: React.FC<NavProps> = ({
   textConnect,
   textsAccount,
   textsConnect,
-  hrefLearnHow
+  hrefLearnHow,
+  linkLogo
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -51,7 +52,7 @@ const Header: React.FC<NavProps> = ({
   return (
     <HeaderWrap ref={refSelect}>
       <Line>
-        <LogoWrap href="https://yay.games/">
+        <LogoWrap href={linkLogo}>
           <img src={Logo} alt="" />
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
