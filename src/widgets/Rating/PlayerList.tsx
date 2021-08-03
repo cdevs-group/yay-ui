@@ -10,11 +10,12 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
         <span>(12647)</span>
       </Title>
       <Table>
-        <TableHeader>
+        <LineHeader>
           <p>№</p>
+          <p />
           <p className="middle">{texts.playerName}</p>
           <p>{texts.games}</p>
-        </TableHeader>
+        </LineHeader>
         {playersList.map((item, i) => (
           <Line key={i}>
             <Cell>{item.position}</Cell>
@@ -35,19 +36,27 @@ export default PlayerList;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 30px 0;
+  padding: 21px 0;
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.bgGray};
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: 30px 0;
+  }
 `;
 const Title = styled.div`
-  padding-left: 32px;
+  padding-left: 20px;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 19px;
+  font-size: 18px;
+  line-height: 23px;
   color: ${({ theme }) => theme.colors.text2};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   & span {
     opacity: 0.5;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 15px;
+    line-height: 19px;
+    padding-left: 32px;
   }
 `;
 const Table = styled.div`
@@ -55,24 +64,32 @@ const Table = styled.div`
 `;
 const Line = styled.div`
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 6fr 2fr;
-  opacity: 0.3s;
+  grid-template-columns: 13% 12% 55% 20%;
+  transition: 0.3s;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
   &:hover {
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
     background: #292930;
   }
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 15px;
+    line-height: 19px;
+    grid-template-columns: 15% 10% 55% 20%;
+  }
 `;
-const TableHeader = styled.div`
-  padding: 0 44px 0 32px;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: 0.05em;
-  color: ${({ theme }) => theme.colors.whiteRgba};
-  & p.middle {
-    margin-left: 40px;
+const LineHeader = styled.div`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: grid;
+    grid-template-columns: 15% 10% 55% 20%;
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: ${({ theme }) => theme.colors.whiteRgba};
+    text-align: center;
   }
 `;
 const Cell = styled.div`
@@ -80,22 +97,20 @@ const Cell = styled.div`
   align-items: center;
   justify-content: center;
   padding: 12px 0;
-  font-size: 15px;
-  line-height: 19px;
-  letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.text};
   transition: 0.3s;
-  &:nth-child(4n + 1) {
-    text-align: left;
-    padding-right: 40px;
-    padding-left: 32px;
-  }
-  &:nth-child(4n) {
-    padding-right: 44px;
-    justify-content: flex-end;
-  }
   ${Line}:hover & {
     color: ${({ theme }) => theme.colors.green};
+  }
+  & img {
+    width: 32px;
+    height: 32px;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    & img {
+      width: 36px;
+      height: 36px;
+    }
   }
 `;
 const Position = styled.div``;

@@ -60,9 +60,15 @@ const MainBlock = styled.div`
 `;
 const TopContent = styled.div<{ players?: boolean }>`
   height: 51px;
-  width: ${({ players }) => (players ? "408px" : "fit-content")};
+  width: fit-content;
   margin-left: ${({ players }) => (players ? "auto" : "0")};
-  margin-bottom: 40px;
+  margin-right: ${({ players }) => (players ? "auto" : "0")};
+  margin-bottom: 24px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-bottom: 40px;
+    width: ${({ players }) => (players ? "408px" : "fit-content")};
+    margin-right: 0;
+  }
 `;
 const BottomContent = styled.div`
   display: flex;

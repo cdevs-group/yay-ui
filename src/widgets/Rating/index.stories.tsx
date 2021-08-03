@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import CardProduct from "../../components/Cards/CardsProduct/components/CardProduct";
 import GamesTable from "./GamesTable";
@@ -27,15 +27,15 @@ export const GamesTableBlock: React.FC = () => {
   const gamesList = [
     {
       img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} />,
-      value: "BTCvsETH",
+      value: "btc vs eth",
     },
     {
       img: <CardProduct small title="Up or DOwn" bg="green" img={COINS} />,
-      value: "UpOrDown",
+      value: "up or down",
     },
     {
       img: <CardProduct small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
-      value: "Bold",
+      value: "bold point",
     },
   ];
 
@@ -46,6 +46,15 @@ export const GamesTableBlock: React.FC = () => {
   const toggleTypeList = (e: any) => {
     setTypeList(e.target.value);
   };
+
+  const newGamesList = useMemo(() => {
+    if (inputValue) {
+      return gamesList.filter((el) => el.value.toLowerCase().includes(inputValue.toString().toLowerCase()));
+    }
+
+    return gamesList;
+  }, [inputValue]);
+
   return (
     <BrowserRouter>
       <ListWrap
@@ -55,7 +64,7 @@ export const GamesTableBlock: React.FC = () => {
         toggleTypeList={toggleTypeList}
         typeTabsList={typeTabsList}
       >
-        <GamesTable texts="Choose Game" gamesList={gamesList} />
+        <GamesTable texts="Choose Game" gamesList={newGamesList} />
       </ListWrap>
     </BrowserRouter>
   );

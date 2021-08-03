@@ -28,33 +28,57 @@ const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList }) => {
 export default GamesTable;
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  border-radius: 10px;
-  background: ${({ theme }) => theme.colors.bgGray};
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    background: ${({ theme }) => theme.colors.bgGray};
+  }
 `;
 const Title = styled.div`
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 19px;
-  color: ${({ theme }) => theme.colors.text2};
-  text-shadow: ${({ theme }) => theme.colors.textShadow};
-  & span {
-    opacity: 0.5;
+  display: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    color: ${({ theme }) => theme.colors.text2};
+    text-shadow: ${({ theme }) => theme.colors.textShadow};
+    & span {
+      opacity: 0.5;
+    }
   }
 `;
 const Table = styled.div`
   margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  &::-webkit-scrollbar {
+    height: 0px;
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
 `;
 const ItemGame = styled.div`
   width: 100%;
   min-height: 118px;
   border-radius: 15px;
+  flex-shrink: 0;
+  max-width: 133px;
+  margin-right: 7px;
   &.empty {
     background: ${({ theme }) => theme.colors.bgOpacitY3};
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-right: 0;
   }
 `;
