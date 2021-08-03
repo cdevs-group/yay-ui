@@ -60,4 +60,5 @@ export interface NavProps extends PanelProps {
   textConnect?: string;
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
+  hrefLearnHow?: string;
 }
