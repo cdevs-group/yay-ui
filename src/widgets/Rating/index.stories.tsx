@@ -63,6 +63,7 @@ export const GamesTableBlock: React.FC = () => {
         placeholder="Search"
         toggleTypeList={toggleTypeList}
         typeTabsList={typeTabsList}
+        nameInput="search"
       >
         <GamesTable texts="Choose Game" gamesList={newGamesList} />
       </ListWrap>
@@ -151,6 +152,7 @@ export const PlayerListBlock: React.FC = () => {
       length={25}
       togglePage={togglePage}
       currentPage={currentPage}
+      nameInput="search"
     >
       <PlayerList playersList={playersList} texts={texts} />
     </ListWrap>

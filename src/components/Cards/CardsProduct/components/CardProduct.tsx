@@ -21,20 +21,20 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, externalLink, ...props }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, externalLink, small, ...props }: CardProductProp) => {
   return (
     <>
       {!externalLink ? (
         <NavLink to={href || ""}>
-          <CardWrap closed={closed} bg={bg}>
-            <CardTitle size="lg">{title}</CardTitle>
+          <CardWrap small={small} closed={closed} bg={bg}>
+            <CardTitle small={small} size="lg">{title}</CardTitle>
             <Img src={img} alt="some img" {...props} />
           </CardWrap>
         </NavLink>
       ) : (
         <a href={href || ""}>
-          <CardWrap closed={closed} bg={bg}>
-            <CardTitle size="lg">{title}</CardTitle>
+          <CardWrap small={small} closed={closed} bg={bg}>
+            <CardTitle small={small} size="lg">{title}</CardTitle>
             <Img src={img} alt="some img" {...props} />
           </CardWrap>
         </a>
@@ -45,10 +45,10 @@ const CardProduct = ({ title, img, bg, closed, href, externalLink, ...props }: C
 
 export default CardProduct;
 
-export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
+export const CardWrap = styled.div<{ closed?: boolean; bg: string; small?: boolean }>`
   position: relative;
-  padding: 14px 24px;
-  height: 43vw;
+  padding: ${({ small }) => (small ? "10px 15px" : "14px 24px")};
+  height: ${({ small }) => (small ? "118px !important" : "43vw")};
   width: 100%;
   background: ${setColor};
   border-radius: 15px;
@@ -91,8 +91,8 @@ const Img = styled.img<ImageProps>`
   max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
-export const CardTitle = styled(Text)`
-  font-size: 15px;
+export const CardTitle = styled(Text)<{ small?: boolean }>`
+  font-size: ${({ small }) => (small ? "11px !important" : "15px")};
   letter-spacing: 0.02em;
   text-shadow: ${({ theme }) => theme.colors.textShadow2};
   ${({ theme }) => theme.mediaQueries.xl} {

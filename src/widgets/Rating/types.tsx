@@ -37,6 +37,7 @@ export interface ListWrapProps {
   length?: number;
   togglePage?: (e: any) => Promise<void>;
   currentPage?: number;
+  nameInput: string;
 }
 
 export interface TabsTypeListPops {
