@@ -22,7 +22,7 @@ const Header: React.FC<NavProps> = ({
   textsAccount,
   textsConnect,
   hrefLearnHow,
-  linkLogo
+  linkLogo,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
