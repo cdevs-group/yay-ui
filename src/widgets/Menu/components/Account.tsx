@@ -14,15 +14,17 @@ interface Props {
   logout: () => void;
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
+  hrefLearnHow?: string;
 }
 
-const Account: React.FC<Props> = ({ text, account, login, logout, textsAccount, textsConnect }) => {
+const Account: React.FC<Props> = ({ text, account, login, logout, textsAccount, textsConnect, hrefLearnHow }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
     logout,
     textsAccount,
     textsConnect,
-    account
+    account,
+    hrefLearnHow
   );
 
   return (

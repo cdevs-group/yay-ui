@@ -21,6 +21,7 @@ const Header: React.FC<NavProps> = ({
   textConnect,
   textsAccount,
   textsConnect,
+  hrefLearnHow
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -72,6 +73,7 @@ const Header: React.FC<NavProps> = ({
             logout={logout}
             textsAccount={textsAccount}
             textsConnect={textsConnect}
+            hrefLearnHow={hrefLearnHow}
           />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
         </RightContent>
