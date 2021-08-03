@@ -27,14 +27,18 @@ const CardProduct = ({ title, img, bg, closed, href, externalLink, small, ...pro
       {!externalLink ? (
         <NavLink to={href || ""}>
           <CardWrap small={small} closed={closed} bg={bg}>
-            <CardTitle small={small} size="lg">{title}</CardTitle>
+            <CardTitle small={small} size="lg">
+              {title}
+            </CardTitle>
             <Img src={img} alt="some img" {...props} />
           </CardWrap>
         </NavLink>
       ) : (
         <a href={href || ""}>
           <CardWrap small={small} closed={closed} bg={bg}>
-            <CardTitle small={small} size="lg">{title}</CardTitle>
+            <CardTitle small={small} size="lg">
+              {title}
+            </CardTitle>
             <Img src={img} alt="some img" {...props} />
           </CardWrap>
         </a>

@@ -23,7 +23,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
   length,
   togglePage,
   currentPage,
-  nameInput
+  nameInput,
 }) => {
   return (
     <Wrapper>
@@ -31,7 +31,13 @@ const ListWrap: React.FC<ListWrapProps> = ({
         {players ? (
           <Tabs tabValue={activeTab} onClick={toggleTab} tabsList={tabsList} />
         ) : (
-          <InputSearch name={nameInput} placeholder={placeholder} value={inputValue} onChange={handleInput} width="272px" />
+          <InputSearch
+            name={nameInput}
+            placeholder={placeholder}
+            value={inputValue}
+            onChange={handleInput}
+            width="272px"
+          />
         )}
       </TopContent>
       <MainBlock>{children}</MainBlock>
