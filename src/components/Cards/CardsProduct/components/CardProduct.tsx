@@ -9,7 +9,7 @@ export const setColor = (param: { bg?: string }) => {
     case "red":
       return "linear-gradient(180deg, #FF8383 0%, #EF5D5D 100%);";
     case "blue":
-      return "linear-gradient(180deg, #a6b5c2 0%, #78C2FD 100%);";
+      return "linear-gradient(180deg, #95D0FF 0%, #78C2FD 100%);";
     case "green":
       return "linear-gradient(180deg, #BDFF00 0%, #95CA00 100%);";
     case "purple":
@@ -21,27 +21,36 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, small, ...props }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, externalLink, ...props }: CardProductProp) => {
   return (
-    <CardWrap small={small} closed={closed} bg={bg} to={href || ""}>
-      <CardTitle small={small} size="lg">
-        {title}
-      </CardTitle>
-      <Img src={img} alt="some img" {...props} />
-    </CardWrap>
+    <>
+      {!externalLink ? (
+        <NavLink to={href || ""}>
+          <CardWrap closed={closed} bg={bg}>
+            <CardTitle size="lg">{title}</CardTitle>
+            <Img src={img} alt="some img" {...props} />
+          </CardWrap>
+        </NavLink>
+      ) : (
+        <a href={href || ""}>
+          <CardWrap closed={closed} bg={bg}>
+            <CardTitle size="lg">{title}</CardTitle>
+            <Img src={img} alt="some img" {...props} />
+          </CardWrap>
+        </a>
+      )}
+    </>
   );
 };
 
 export default CardProduct;
 
-export const CardWrap = styled(NavLink)<{ closed?: boolean; bg: string; small?: boolean }>`
-  display: inline-block;
+export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   position: relative;
-  padding: ${({ small }) => (small ? "10px 15px" : "14px 24px")};
-  height: ${({ small }) => (small ? "118px !important" : "43vw")};
+  padding: 14px 24px;
+  height: 43vw;
   width: 100%;
   background: ${setColor};
-
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
@@ -82,8 +91,8 @@ const Img = styled.img<ImageProps>`
   max-width: ${({ maxWidth }) => maxWidth || "100%"};
 `;
 
-export const CardTitle = styled(Text)<{ small?: boolean }>`
-  font-size: ${({ small }) => (small ? "11px !important" : "15px")};
+export const CardTitle = styled(Text)`
+  font-size: 15px;
   letter-spacing: 0.02em;
   text-shadow: ${({ theme }) => theme.colors.textShadow2};
   ${({ theme }) => theme.mediaQueries.xl} {

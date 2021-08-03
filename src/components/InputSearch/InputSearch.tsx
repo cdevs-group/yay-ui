@@ -4,19 +4,21 @@ import styled from "styled-components";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
-const InputSearch = ({ placeholder, value, onChange, width }: InputSearchProp) => {
+const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
-    <InputBlock width={width}>
+    <InputBlock height={height} width={width}>
       <InputItem
+        width={width}
         value={value}
         onChange={onChange}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         placeholder={placeholder}
+        name={name}
       />
-      <Button>
+      <Button iconLess={iconLess}>
         <SearchIcon2 color={focus ? "green" : "text"} />
       </Button>
     </InputBlock>
@@ -29,13 +31,15 @@ InputSearch.defaultProps = {
 
 export default InputSearch;
 
-const InputBlock = styled.div<{ width?: string }>`
+const InputBlock = styled.div<{ width?: string; height?: string }>`
   position: relative;
   width: ${({ width }) => (width ? width : "fit-content")};
+  height: ${({ height }) => (height ? height : "auto")};
 `;
 
 const InputItem = styled.input`
-  width: 100%;
+  width: ${({ width }) => (width ? width : "fit-content")};
+  height: 100%;
   position: relative;
   display: block;
   padding: 16px 25px;
@@ -62,7 +66,8 @@ const InputItem = styled.input`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.button<{ iconLess?: boolean }>`
+  display: ${({ iconLess }) => (iconLess ? "none" : "block")};
   padding: 0;
   border: none;
   background: none;

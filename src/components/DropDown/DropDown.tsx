@@ -26,7 +26,7 @@ const DropdownLayout = ({ children, open, setOpen, icon }: DropDownProps) => {
   const handleClickOpen = () => {
     setOpen(!open);
   };
-  console.log(open);
+
   return (
     <Block ref={refSelect}>
       <Button onClick={handleClickOpen}>{icon}</Button>

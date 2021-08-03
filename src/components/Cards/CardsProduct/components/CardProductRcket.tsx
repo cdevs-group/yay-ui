@@ -1,14 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CardProductProp } from "../../types";
 import { CardWrap, CardTitle } from "./CardProduct";
 
 const CardProductRcket = ({ title, img, bg, closed, href }: CardProductProp) => {
   return (
-    <CardRocketWrap closed={closed} bg={bg} to={href || ""}>
-      <CardTitle size="lg">{title}</CardTitle>
-      <img src={img} alt="some img" />
-    </CardRocketWrap>
+    <NavLink to={href || ""}>
+      <CardRocketWrap closed={closed} bg={bg}>
+        <CardTitle size="lg">{title}</CardTitle>
+        <img src={img} alt="some img" />
+      </CardRocketWrap>
+    </NavLink>
   );
 };
 

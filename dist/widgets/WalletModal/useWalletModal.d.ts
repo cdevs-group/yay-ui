@@ -14,5 +14,5 @@ export interface TextsConnect {
     title: string;
     link: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined) => ReturnType;
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, account?: string | undefined, hrefLearnHow?: string | undefined) => ReturnType;
 export default useWalletModal;

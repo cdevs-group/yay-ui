@@ -14,6 +14,7 @@ interface Props {
     title: string;
     link: string;
   };
+  hrefLearnHow?: string;
 }
 
 const HelpLink = styled(Link)`
@@ -68,7 +69,7 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ texts, login, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
     {config.map((entry, index) => (
       <Wrap key={index}>
@@ -88,7 +89,7 @@ const ConnectModal: React.FC<Props> = ({ texts, login, onDismiss = () => null })
         </Button>
       </Wrap>
     ))}
-    <HelpLink href="#" external>
+    <HelpLink href={hrefLearnHow} external>
       {texts.link}
     </HelpLink>
   </Modal>

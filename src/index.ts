@@ -35,11 +35,14 @@ export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
 export * from "./widgets/Rating";
 export * from "./widgets/WelcomeModal";
+export * from "./widgets/GiftFormModal";
 export * from "./widgets/Toast";
 export * from "./widgets/PausedErrorModals";
 export * from "./widgets/CollectRoundWinningsModal";
 export * from "./widgets/CollectWinningsPopup";
 export * from "./widgets/ChartDisclaimer";
+export * from "./widgets/GiftPopup";
+export * from "./widgets/CongratulateModal";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

@@ -21,6 +21,8 @@ const Header: React.FC<NavProps> = ({
   textConnect,
   textsAccount,
   textsConnect,
+  hrefLearnHow,
+  linkLogo,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -50,7 +52,7 @@ const Header: React.FC<NavProps> = ({
   return (
     <HeaderWrap ref={refSelect}>
       <Line>
-        <LogoWrap to="/">
+        <LogoWrap href={linkLogo}>
           <img src={Logo} alt="" />
         </LogoWrap>
         <Nav className={openMenu ? "open" : ""}>
@@ -72,6 +74,7 @@ const Header: React.FC<NavProps> = ({
             logout={logout}
             textsAccount={textsAccount}
             textsConnect={textsConnect}
+            hrefLearnHow={hrefLearnHow}
           />
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
         </RightContent>
@@ -152,7 +155,7 @@ const LanguageBlockDesk = styled.div`
   }
 `;
 
-const LogoWrap = styled(Link)`
+const LogoWrap = styled.a`
   display: flex;
   align-items: center;
   & img {

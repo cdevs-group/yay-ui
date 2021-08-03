@@ -6,6 +6,7 @@ import {
   WalletConnect,
   BinanceWallet,
   SafepackWallet,
+  Coin98,
 } from "../../constants/images";
 import { Config, ConnectorNames } from "./types";
 
@@ -14,6 +15,11 @@ const connectors: Config[] = [
     title: "Metamask",
     icon: Metamask,
     connectorId: ConnectorNames.Injected,
+  },
+  {
+    title: "Coin98",
+    icon: Coin98,
+    connectorId: ConnectorNames.Coin98,
   },
   {
     title: "Trust Wallet",

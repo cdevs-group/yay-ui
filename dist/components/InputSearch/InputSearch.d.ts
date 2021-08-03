@@ -1,7 +1,7 @@
 /// <reference types="react" />
 import { InputSearchProp } from "./types";
 declare const InputSearch: {
-    ({ placeholder, value, onChange }: InputSearchProp): JSX.Element;
+    ({ height, placeholder, value, onChange, iconLess, width, name }: InputSearchProp): JSX.Element;
     defaultProps: {
         placeholder: string;
     };

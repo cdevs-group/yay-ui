@@ -18,6 +18,10 @@ import ADA from "../../public/images/cardano-white.png";
 import ComingSoonIcon from "../../public/images/comingSoon.png";
 import GhostsIcon from "../../public/images/ghost-img.png";
 import OneGhost from "../../public/images/one-ghost.png";
+import Coin98 from "../../public/images/coin98-wallet.png";
+import Gift from "../../public/images/Gift.png";
+import Gift2 from "../../public/images/gift2.png";
+import Gift3 from "../../public/images/gift3.png";
 
 export {
   BG_IMG,
@@ -40,4 +44,8 @@ export {
   GhostsIcon,
   OneGhost,
   WINNER2,
+  Coin98,
+  Gift,
+  Gift2,
+  Gift3,
 };
