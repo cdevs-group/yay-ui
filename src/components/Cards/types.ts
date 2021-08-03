@@ -44,4 +44,5 @@ export interface CardProductProp {
   bottom?: string;
   maxWidth?: string;
   externalLink?: boolean;
+  small?: boolean;
 }
