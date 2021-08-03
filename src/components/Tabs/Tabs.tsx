@@ -26,7 +26,7 @@ const TabsWrap = styled.div<{ length?: number }>`
 `;
 
 const Tab = styled.button`
-  padding: 15px 30px;
+  padding: 15px 16px;
   border: none;
   background: transparent;
   border-radius: 12px;
@@ -42,5 +42,8 @@ const Tab = styled.button`
   &.active {
     background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
     color: ${({ theme }) => theme.colors.text};
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: 15px 30px;
   }
 `;
