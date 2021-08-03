@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
+import { TabsProp } from "./types";
 
-interface TabsProp {
-  tabValue?: number;
-  onClick?: (e: any) => Promise<void>;
-  tabsList?: Array<string>;
-}
-
-const TabsHistory = ({ tabValue, onClick, tabsList }: TabsProp) => {
+const Tabs = ({ tabValue, onClick, tabsList }: TabsProp) => {
   return (
     <TabsWrap length={tabsList?.length}>
       {tabsList?.map((item, i) => (
@@ -20,7 +15,7 @@ const TabsHistory = ({ tabValue, onClick, tabsList }: TabsProp) => {
   );
 };
 
-export default TabsHistory;
+export default Tabs;
 
 const TabsWrap = styled.div<{ length?: number }>`
   display: grid;

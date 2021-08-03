@@ -22,6 +22,8 @@ export * from "./components/ComingSoon";
 export * from "./components/CardBTC";
 export * from "./components/FallingBunnies";
 export * from "./components/Skeleton";
+export * from "./components/Tabs";
+export * from "./components/Pagination";
 
 // Hooks
 export * from "./hooks";
@@ -31,6 +33,7 @@ export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
 export * from "./widgets/Menu";
+export * from "./widgets/Rating";
 export * from "./widgets/WelcomeModal";
 export * from "./widgets/GiftFormModal";
 export * from "./widgets/Toast";

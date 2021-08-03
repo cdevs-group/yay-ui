@@ -51,7 +51,6 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string }>`
   height: 43vw;
   width: 100%;
   background: ${setColor};
-
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
