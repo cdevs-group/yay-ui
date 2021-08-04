@@ -8,7 +8,7 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, handleMyPos
     <Wrapper>
       <Title>
         {texts.title}
-        <span>(12647)</span>
+        <span>({playersList.length})</span>
       </Title>
       <Table>
         <LineHeader>
