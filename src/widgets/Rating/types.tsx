@@ -10,6 +10,7 @@ export interface PlayerListProps {
     title: string;
     playerName: string;
     games: string;
+    button: string;
   };
   playersList: Array<{
     position: string;
@@ -17,6 +18,7 @@ export interface PlayerListProps {
     name: string;
     games: string;
   }>;
+  handleMyPosition: () => void;
 }
 
 export interface ListWrapProps {
@@ -33,11 +35,12 @@ export interface ListWrapProps {
   texts?: {
     button: string;
   };
-  myPosstionButton?: () => void;
+  myPositionButton?: () => void;
   length?: number;
   togglePage?: (e: any) => Promise<void>;
   currentPage?: number;
   nameInput: string;
+  handleShare?: () => void;
 }
 
 export interface TabsTypeListPops {

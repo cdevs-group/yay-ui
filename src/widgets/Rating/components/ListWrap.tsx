@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Button } from "../../../components/Button";
 import { InputSearch } from "../../../components/InputSearch";
 import { Pagination } from "../../../components/Pagination";
+import { ShareIcon } from "../../../components/Svg";
 import { Tabs } from "../../../components/Tabs";
 import { ListWrapProps } from "../types";
 import TabsTypeList from "./TabsTypeList";
@@ -19,11 +20,12 @@ const ListWrap: React.FC<ListWrapProps> = ({
   toggleTypeList,
   typeTabsList,
   texts,
-  myPosstionButton,
+  myPositionButton,
   length,
   togglePage,
   currentPage,
   nameInput,
+  handleShare
 }) => {
   return (
     <Wrapper>
@@ -44,9 +46,12 @@ const ListWrap: React.FC<ListWrapProps> = ({
       <BottomContent>
         {players ? (
           <>
-            <Button width="130px" scale="sm" variant="option" height="30px" onClick={myPosstionButton}>
-              {texts?.button}
-            </Button>
+            <Buttons>
+              <ButtonPosition width="146px" scale="sm" variant="option" height="30px" onClick={myPositionButton}>
+                {texts?.button}
+              </ButtonPosition>
+              <ShareIcon role="button" onClick={handleShare} />
+            </Buttons>
             <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
           </>
         ) : (
@@ -60,10 +65,17 @@ const ListWrap: React.FC<ListWrapProps> = ({
 export default ListWrap;
 
 const Wrapper = styled.div`
-  max-width: 568px;
+  max-width: 100%;
+  width: 100%;
+  ${({ theme }) => theme.mediaQueries.md} {
+    max-width: 568px;
+  }
 `;
 const MainBlock = styled.div`
-  height: 517px;
+  height: auto;
+  ${({ theme }) => theme.mediaQueries.md} {
+    height: 517px;
+  }
 `;
 const TopContent = styled.div<{ players?: boolean }>`
   height: 51px;
@@ -82,4 +94,18 @@ const BottomContent = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 35px;
+`;
+
+const ButtonPosition = styled(Button)`
+  display: block;
+  margin-right: 12px;
+  font-weight: 500;
+`;
+
+const Buttons = styled.div`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: flex;
+    align-items: center;
+  }
 `;

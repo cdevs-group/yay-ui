@@ -85,6 +85,7 @@ export const PlayerListBlock: React.FC = () => {
     title: "Players",
     playerName: "Player Name",
     games: "Games",
+    button: "My position"
   };
   const playersList = [
     {
@@ -139,7 +140,7 @@ export const PlayerListBlock: React.FC = () => {
     setCurrentPage(+e.target.value);
   };
 
-  const myPosstionButton = () => {};
+  const handleMyPosition = () => {};
 
   return (
     <ListWrap
@@ -147,14 +148,14 @@ export const PlayerListBlock: React.FC = () => {
       toggleTab={toggleTab}
       tabsList={tabsList}
       players
-      myPosstionButton={myPosstionButton}
+      myPositionButton={handleMyPosition}
       texts={{ button: "My position" }}
       length={25}
       togglePage={togglePage}
       currentPage={currentPage}
       nameInput="search"
     >
-      <PlayerList playersList={playersList} texts={texts} />
+      <PlayerList playersList={playersList} texts={texts} handleMyPosition={handleMyPosition} />
     </ListWrap>
   );
 };
