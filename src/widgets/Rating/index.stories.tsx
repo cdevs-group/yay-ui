@@ -85,7 +85,7 @@ export const PlayerListBlock: React.FC = () => {
     title: "Players",
     playerName: "Player Name",
     games: "Games",
-    button: "My position"
+    button: "My position",
   };
   const playersList = [
     {

@@ -5,7 +5,6 @@ import ARROWSINGL from "../Svg/Icons/arrow-singl.svg";
 import ARROWDOUBLE from "../Svg/Icons/arrow-double.svg";
 
 const Pagination: React.FC<PaginationProps> = ({ length, currentPage, togglePage }) => {
-
   const paginationRender = () => {
     const pagination = [];
     if (length && currentPage)

@@ -25,7 +25,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
   togglePage,
   currentPage,
   nameInput,
-  handleShare
+  handleShare,
 }) => {
   return (
     <Wrapper>
