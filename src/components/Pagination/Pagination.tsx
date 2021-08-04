@@ -5,7 +5,7 @@ import ARROWSINGL from "../Svg/Icons/arrow-singl.svg";
 import ARROWDOUBLE from "../Svg/Icons/arrow-double.svg";
 
 const Pagination: React.FC<PaginationProps> = ({ length, currentPage, togglePage }) => {
-  console.log(currentPage);
+
   const paginationRender = () => {
     const pagination = [];
     if (length && currentPage)
@@ -87,6 +87,10 @@ const PaginationWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin: 0;
+  }
 `;
 const PageButton = styled.button`
   margin-right: 12px;

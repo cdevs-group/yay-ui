@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "../../components/Button";
 import { PlayerListProps } from "./types";
 
-const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
+const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, handleMyPosition }) => {
   return (
     <Wrapper>
       <Title>
@@ -27,6 +28,9 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
           </Line>
         ))}
       </Table>
+      <ButtonPosition scale="sm" onClick={handleMyPosition}>
+        {texts.button}
+      </ButtonPosition>
     </Wrapper>
   );
 };
@@ -113,7 +117,17 @@ const Cell = styled.div`
     }
   }
 `;
-const Position = styled.div``;
-const Token = styled.div``;
-const Name = styled.div``;
-const Games = styled.div``;
+
+const ButtonPosition = styled(Button)`
+  display: block;
+  background: none;
+  margin: 30px auto 0;
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: ${({ theme }) => theme.colors.green};
+  box-shadow: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: none;
+  }
+`;
