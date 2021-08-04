@@ -10,7 +10,6 @@ export interface PlayerListProps {
     title: string;
     playerName: string;
     games: string;
-    button: string;
   };
   playersList: Array<{
     position: string;
@@ -18,7 +17,6 @@ export interface PlayerListProps {
     name: string;
     games: string;
   }>;
-  handleMyPosition: () => void;
 }
 
 export interface ListWrapProps {

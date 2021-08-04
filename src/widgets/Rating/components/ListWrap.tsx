@@ -47,7 +47,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
         {players ? (
           <>
             <Buttons>
-              <ButtonPosition width="146px" scale="sm" variant="option" height="30px" onClick={myPositionButton}>
+              <ButtonPosition scale="sm" variant="option" height="30px" onClick={myPositionButton}>
                 {texts?.button}
               </ButtonPosition>
               <ShareIcon role="button" onClick={handleShare} />
@@ -94,18 +94,28 @@ const BottomContent = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 35px;
+  flex-wrap: wrap;
 `;
 
 const ButtonPosition = styled(Button)`
   display: block;
   margin-right: 12px;
   font-weight: 500;
+  width: 198px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 146px;
+  }
 `;
 
 const Buttons = styled.div`
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 35px;
   ${({ theme }) => theme.mediaQueries.md} {
-    display: flex;
-    align-items: center;
+    width: auto;
+    justify-content: flex-start;
+    margin-bottom: 0px;
   }
 `;
