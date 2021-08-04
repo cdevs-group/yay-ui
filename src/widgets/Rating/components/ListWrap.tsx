@@ -67,13 +67,13 @@ export default ListWrap;
 const Wrapper = styled.div`
   max-width: 100%;
   width: 100%;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     max-width: 568px;
   }
 `;
 const MainBlock = styled.div`
   height: auto;
-  ${({ theme }) => theme.mediaQueries.md} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     height: 517px;
   }
 `;
