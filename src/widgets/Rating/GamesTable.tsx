@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GameTableProps } from "./types";
 
-const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList }) => {
+const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectValue }) => {
   const list = [];
   for (let i = 0; i < 12; i++) {
     list.push(gamesList[i] || {});
@@ -16,7 +16,11 @@ const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList }) => {
       </Title>
       <Table>
         {list.map((item, i) => (
-          <ItemGame className={item.img ? "" : "empty"} key={i}>
+          <ItemGame
+            className={item.img ? "" : "empty"}
+            key={i}
+            onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}
+          >
             {item.img}
           </ItemGame>
         ))}

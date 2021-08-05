@@ -34,8 +34,9 @@ export const GamesTableBlock: React.FC = () => {
       value: "up or down",
     },
     {
-      img: <CardProduct small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
+      img: <CardProduct closed small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
       value: "bold point",
+      disabled: true
     },
   ];
 
@@ -55,6 +56,10 @@ export const GamesTableBlock: React.FC = () => {
     return gamesList;
   }, [inputValue]);
 
+  const handleSelectValue = (val: string) => {    
+    console.log(val)
+  };
+
   return (
     <BrowserRouter>
       <ListWrap
@@ -65,7 +70,7 @@ export const GamesTableBlock: React.FC = () => {
         typeTabsList={typeTabsList}
         nameInput="search"
       >
-        <GamesTable texts="Choose Game" gamesList={newGamesList} />
+        <GamesTable texts="Choose Game" gamesList={newGamesList} handleSelectValue={handleSelectValue} />
       </ListWrap>
     </BrowserRouter>
   );
@@ -155,7 +160,7 @@ export const PlayerListBlock: React.FC = () => {
       currentPage={currentPage}
       nameInput="search"
     >
-      <PlayerList playersList={playersList} texts={texts} handleMyPosition={handleMyPosition} />
+      <PlayerList playersList={playersList} texts={texts} />
     </ListWrap>
   );
 };

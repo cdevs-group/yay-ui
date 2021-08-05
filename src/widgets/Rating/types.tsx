@@ -2,7 +2,8 @@ import React, { ChangeEvent, ReactNode } from "react";
 
 export interface GameTableProps {
   texts: string;
-  gamesList: Array<{ img: ReactNode; value: string }>;
+  gamesList: Array<{ img: ReactNode; value: string; disabled?: boolean }>;
+  handleSelectValue: (value?: string) => void;
 }
 
 export interface PlayerListProps {
