@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
-import truncateWalletAddress from "../../../helpers/truncateWalletAddress";
+import { ellipsis } from "../../../helpers/ellipsis";
 import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
 import { AccountIcon } from "../../../constants/images";
@@ -36,7 +36,7 @@ const Account: React.FC<Props> = ({ text, account, login, logout, textsAccount, 
             onPresentAccountModal();
           }}
         >
-          {truncateWalletAddress(account)}
+          {ellipsis(account)}
           <Avatar>
             <img src={AccountIcon} />
           </Avatar>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ellipsis } from "../../helpers/ellipsis";
 import { PlayerListProps } from "./types";
 
 const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
@@ -22,7 +23,7 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
             <Cell>
               <img src={item.token} />
             </Cell>
-            <Cell>{item.name}</Cell>
+            <Cell>{ellipsis(item.name)}</Cell>
             <Cell>{item.games}</Cell>
           </Line>
         ))}

@@ -21,29 +21,37 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, externalLink, small, ...props }: CardProductProp) => {
+const CardProduct = ({ title, img, bg, closed, href, externalLink, isNotLink, small, ...props }: CardProductProp) => {
+  if (isNotLink)
+    return (
+      <CardWrap small={small} closed={closed} bg={bg}>
+        <CardTitle small={small} size="lg">
+          {title}
+        </CardTitle>
+        <Img src={img} alt="some img" {...props} />
+      </CardWrap>
+    );
+  if (externalLink) {
+    return (
+      <a href={href || ""}>
+        <CardWrap small={small} closed={closed} bg={bg}>
+          <CardTitle small={small} size="lg">
+            {title}
+          </CardTitle>
+          <Img src={img} alt="some img" {...props} />
+        </CardWrap>
+      </a>
+    );
+  }
   return (
-    <>
-      {!externalLink ? (
-        <NavLink to={href || ""}>
-          <CardWrap small={small} closed={closed} bg={bg}>
-            <CardTitle small={small} size="lg">
-              {title}
-            </CardTitle>
-            <Img src={img} alt="some img" {...props} />
-          </CardWrap>
-        </NavLink>
-      ) : (
-        <a href={href || ""}>
-          <CardWrap small={small} closed={closed} bg={bg}>
-            <CardTitle small={small} size="lg">
-              {title}
-            </CardTitle>
-            <Img src={img} alt="some img" {...props} />
-          </CardWrap>
-        </a>
-      )}
-    </>
+    <NavLink to={href || ""}>
+      <CardWrap small={small} closed={closed} bg={bg}>
+        <CardTitle small={small} size="lg">
+          {title}
+        </CardTitle>
+        <Img src={img} alt="some img" {...props} />
+      </CardWrap>
+    </NavLink>
   );
 };
 

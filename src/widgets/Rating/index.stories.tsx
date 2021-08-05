@@ -26,11 +26,11 @@ export const GamesTableBlock: React.FC = () => {
   const typeTabsList = ["table", "list"];
   const gamesList = [
     {
-      img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} />,
+      img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} isNotLink/>,
       value: "btc vs eth",
     },
     {
-      img: <CardProduct small title="Up or DOwn" bg="green" img={COINS} />,
+      img: <CardProduct small title="Up or DOwn" bg="green" img={COINS} isNotLink/>,
       value: "up or down",
     },
     {
