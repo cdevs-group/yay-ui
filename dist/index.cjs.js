@@ -3707,9 +3707,10 @@ var AccordeonCard = function (_a) {
     return (React__default['default'].createElement(reactFlipToolkit.Flipped, { key: item.id, flipId: item.id, spring: "stiff" },
         React__default['default'].createElement("div", { key: item.id },
             React__default['default'].createElement(Card, { onClick: function () { return handleToggle(item); }, className: active && active.id === item.id && valueAccordeon ? "active" : "" },
-                React__default['default'].createElement(Text, null, round),
-                collectOrReclaim && collectOrReclaim,
                 React__default['default'].createElement(Flex, { alignItems: "center" },
+                    React__default['default'].createElement(Text, null, round)),
+                React__default['default'].createElement(Flex, { alignItems: "center" }, collectOrReclaim && collectOrReclaim),
+                React__default['default'].createElement(Flex, { alignItems: "center", justifyContent: "flex-end" },
                     betLabel,
                     icon || React__default['default'].createElement(Icon$5, null))),
             React__default['default'].createElement(HiddenBlockWrap, { style: {
@@ -3717,7 +3718,7 @@ var AccordeonCard = function (_a) {
                 } },
                 React__default['default'].createElement(HiddenBlock, { ref: active && active.id === item.id ? refHidden : null }, detail)))));
 };
-var Card = styled__default['default'].div(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 23px 20px;\n  cursor: pointer;\n  &.active {\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);\n  }\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 23px 20px;\n  cursor: pointer;\n  &.active {\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);\n  }\n"])));
+var Card = styled__default['default'].div(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 0 10px;\n  padding: 23px 20px;\n  cursor: pointer;\n  &.active {\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 0 10px;\n  padding: 23px 20px;\n  cursor: pointer;\n  &.active {\n    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);\n  }\n"])));
 var HiddenBlockWrap = styled__default['default'].div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  height: 0;\n  transition: 0.5s;\n  overflow: hidden;\n"], ["\n  height: 0;\n  transition: 0.5s;\n  overflow: hidden;\n"])));
 var HiddenBlock = styled__default['default'].div(templateObject_3$i || (templateObject_3$i = __makeTemplateObject(["\n  background: ", ";\n"], ["\n  background: ", ";\n"])), function (_a) {
     var theme = _a.theme;

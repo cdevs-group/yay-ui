@@ -43,9 +43,7 @@ const AccordeonCard = ({
           <Flex alignItems="center">
             <Text>{round}</Text>
           </Flex>
-          <Flex alignItems="center">
-            {collectOrReclaim && collectOrReclaim}
-          </Flex>
+          <Flex alignItems="center">{collectOrReclaim && collectOrReclaim}</Flex>
           <Flex alignItems="center" justifyContent="flex-end">
             {betLabel}
             {icon || <ArrowDownIcon />}

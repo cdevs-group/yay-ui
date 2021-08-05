@@ -259,7 +259,11 @@ export const Panel: React.FC = () => {
                 active={active}
                 refHidden={refHidden}
                 detail={item.content}
-                collectOrReclaim={<Button variant="green" size="xs">Collect</Button>}
+                collectOrReclaim={
+                  <Button variant="green" size="xs">
+                    Collect
+                  </Button>
+                }
               />
             ))}
           </Accordeon>
@@ -278,7 +282,7 @@ export const Panel: React.FC = () => {
                     handleToggle={handleToggleAccordeon}
                     active={active}
                     refHidden={refHidden}
-                    detail={"detail" + item.id}                   
+                    detail={"detail" + item.id}
                   />
                 ))}
               </Accordeon>
