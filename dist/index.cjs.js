@@ -3709,7 +3709,7 @@ var AccordeonCard = function (_a) {
             React__default['default'].createElement(Card, { onClick: function () { return handleToggle(item); }, className: active && active.id === item.id && valueAccordeon ? "active" : "" },
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     React__default['default'].createElement(Text, null, round)),
-                React__default['default'].createElement(Flex, { alignItems: "center" }, collectOrReclaim && collectOrReclaim),
+                React__default['default'].createElement(Flex, { alignItems: "center", justifyContent: "center" }, collectOrReclaim && collectOrReclaim),
                 React__default['default'].createElement(Flex, { alignItems: "center", justifyContent: "flex-end" },
                     betLabel,
                     icon || React__default['default'].createElement(Icon$5, null))),
