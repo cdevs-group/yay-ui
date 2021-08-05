@@ -4,7 +4,9 @@ export interface GameTableProps {
     gamesList: Array<{
         img: ReactNode;
         value: string;
+        disabled?: boolean;
     }>;
+    handleSelectValue: (value?: string) => void;
 }
 export interface PlayerListProps {
     texts: {

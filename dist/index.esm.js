@@ -4207,7 +4207,7 @@ var Cell = styled.div(templateObject_6$5 || (templateObject_6$5 = __makeTemplate
 var templateObject_1$d, templateObject_2$8, templateObject_3$8, templateObject_4$7, templateObject_5$6, templateObject_6$5;
 
 var GamesTable = function (_a) {
-    var texts = _a.texts, gamesList = _a.gamesList;
+    var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue;
     var list = [];
     for (var i = 0; i < 12; i++) {
         list.push(gamesList[i] || {});
@@ -4219,7 +4219,7 @@ var GamesTable = function (_a) {
                 "(",
                 gamesList.length,
                 ")")),
-        React__default.createElement(Table, null, list.map(function (item, i) { return (React__default.createElement(ItemGame, { className: item.img ? "" : "empty", key: i }, item.img)); }))));
+        React__default.createElement(Table, null, list.map(function (item, i) { return (React__default.createElement(ItemGame, { className: item.img ? "" : "empty", key: i, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); } }, item.img)); }))));
 };
 var Wrapper$3 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
