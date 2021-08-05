@@ -1837,14 +1837,21 @@ var setColor = function (param) {
     }
 };
 var CardProduct = function (_a) {
-    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, externalLink = _a.externalLink, small = _a.small, props = __rest(_a, ["title", "img", "bg", "closed", "href", "externalLink", "small"]);
-    return (React__default['default'].createElement(React__default['default'].Fragment, null, !externalLink ? (React__default['default'].createElement(reactRouterDom.NavLink, { to: href || "" },
+    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, externalLink = _a.externalLink, isNotLink = _a.isNotLink, small = _a.small, props = __rest(_a, ["title", "img", "bg", "closed", "href", "externalLink", "isNotLink", "small"]);
+    if (isNotLink)
+        return (React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+            React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
+            React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props))));
+    if (externalLink) {
+        return (React__default['default'].createElement("a", { href: href || "" },
+            React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+                React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
+                React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
+    }
+    return (React__default['default'].createElement(reactRouterDom.NavLink, { to: href || "" },
         React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
             React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
-            React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props))))) : (React__default['default'].createElement("a", { href: href || "" },
-        React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
-            React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
-            React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))))));
+            React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
 };
 var CardWrap$1 = styled__default['default'].div(templateObject_1$11 || (templateObject_1$11 = __makeTemplateObject(["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), function (_a) {
     var small = _a.small;
@@ -3946,10 +3953,12 @@ var HiddenItem = styled__default['default'].div(templateObject_1$k || (templateO
 });
 var templateObject_1$k;
 
-var truncateWalletAddress = function (address, startLength, endLength) {
-    if (startLength === void 0) { startLength = 4; }
-    if (endLength === void 0) { endLength = 4; }
-    return address.substring(0, startLength) + "..." + address.substring(address.length - endLength);
+var ellipsis = function (value, count) {
+    if (count === void 0) { count = 4; }
+    if (value.length > 10) {
+        return value.substr(0, count) + " ... " + value.substr(value.length - count, value.length);
+    }
+    return value;
 };
 
 var Account = function (_a) {
@@ -3958,7 +3967,7 @@ var Account = function (_a) {
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
         } },
-        truncateWalletAddress(account),
+        ellipsis(account),
         React__default['default'].createElement(Avatar, null,
             React__default['default'].createElement("img", { src: AccountIcon })))) : (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
@@ -4193,7 +4202,7 @@ var PlayerList = function (_a) {
                 React__default['default'].createElement(Cell, null, item.position),
                 React__default['default'].createElement(Cell, null,
                     React__default['default'].createElement("img", { src: item.token })),
-                React__default['default'].createElement(Cell, null, item.name),
+                React__default['default'].createElement(Cell, null, ellipsis(item.name)),
                 React__default['default'].createElement(Cell, null, item.games))); }))));
 };
 var Wrapper$4 = styled__default['default'].div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
