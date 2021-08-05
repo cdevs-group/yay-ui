@@ -15,6 +15,7 @@ import YourHistory from "./components/YourHistory";
 import ProgressBar from "./components/ProgressBar";
 import Rounds from "./components/Rounds";
 import RoundsLink from "./components/RoundsLink";
+import { Button } from "../../components/Button";
 
 export default {
   title: "Components/HistoryPanel",
@@ -258,6 +259,7 @@ export const Panel: React.FC = () => {
                 active={active}
                 refHidden={refHidden}
                 detail={item.content}
+                collectOrReclaim={<Button variant="green" size="xs">Collect</Button>}
               />
             ))}
           </Accordeon>
@@ -276,7 +278,7 @@ export const Panel: React.FC = () => {
                     handleToggle={handleToggleAccordeon}
                     active={active}
                     refHidden={refHidden}
-                    detail={"detail" + item.id}
+                    detail={"detail" + item.id}                   
                   />
                 ))}
               </Accordeon>

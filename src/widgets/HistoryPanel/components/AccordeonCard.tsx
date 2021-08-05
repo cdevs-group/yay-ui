@@ -40,9 +40,13 @@ const AccordeonCard = ({
           onClick={() => handleToggle(item)}
           className={active && active.id === item.id && valueAccordeon ? "active" : ""}
         >
-          <Text>{round}</Text>
-          {collectOrReclaim && collectOrReclaim}
           <Flex alignItems="center">
+            <Text>{round}</Text>
+          </Flex>
+          <Flex alignItems="center">
+            {collectOrReclaim && collectOrReclaim}
+          </Flex>
+          <Flex alignItems="center" justifyContent="flex-end">
             {betLabel}
             {icon || <ArrowDownIcon />}
           </Flex>
@@ -62,9 +66,9 @@ const AccordeonCard = ({
 export default AccordeonCard;
 
 const Card = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0 10px;
   padding: 23px 20px;
   cursor: pointer;
   &.active {
