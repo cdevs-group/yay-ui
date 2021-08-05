@@ -36,7 +36,7 @@ export const GamesTableBlock: React.FC = () => {
     {
       img: <CardProduct closed small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
       value: "bold point",
-      disabled: true
+      disabled: true,
     },
   ];
 
@@ -56,8 +56,8 @@ export const GamesTableBlock: React.FC = () => {
     return gamesList;
   }, [inputValue]);
 
-  const handleSelectValue = (val: string) => {    
-    console.log(val)
+  const handleSelectValue = (val: string) => {
+    console.log(val);
   };
 
   return (
