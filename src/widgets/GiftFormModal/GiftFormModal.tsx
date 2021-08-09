@@ -16,8 +16,7 @@ interface PropsGiftFormModal {
   disabledButton?: boolean;
   handleChangeCheckbox?: (e: any) => void;
   checkedCheckbox?: boolean;
-  // labelInput1: string;
-  // labelInput2: string;
+  textError?: string;
   placeholderInput1: string;
   placeholderInput2: string;
   onChangeInput1?: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -98,8 +97,6 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
   disabledButton,
   handleChangeCheckbox,
   checkedCheckbox,
-  // labelInput1,
-  // labelInput2,
   placeholderInput1,
   placeholderInput2,
   onChangeInput1,
@@ -112,6 +109,7 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
   nameInput2,
   nameCheckbox,
   image,
+  textError,
 }) => (
   <>
     <Modal image={image} onDismiss={onDismiss} welcome>
@@ -154,6 +152,7 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
           />
           <Label htmlFor="bottom">{textCheckbox}</Label>
         </CheckboxInputBlock>
+        {textError ? <Text marginTop={20} color="red">{textError}</Text> : null}
         <Button marginTop="30px" width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
           {continueText}
         </Button>
