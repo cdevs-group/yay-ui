@@ -49,7 +49,9 @@ const LinkBlock = styled.div`
   text-align: center;
   margin: 28px auto 0;
 `;
-const Link = styled(Text)``;
+const Link = styled(Text)`
+  cursor: pointer;
+`;
 
 const CongratulateModal: React.FC<Props> = ({
   title,
@@ -70,7 +72,7 @@ const CongratulateModal: React.FC<Props> = ({
         <Title>{title}</Title>
         <Description size="sm">{description}</Description>
         <LinkBlock>
-          <Link color="#47DA3B" as="a" href={hrefLink} target="_blank">
+          <Link color="#47DA3B" onClick={onDismiss}>
             {buttonText}
           </Link>
         </LinkBlock>
