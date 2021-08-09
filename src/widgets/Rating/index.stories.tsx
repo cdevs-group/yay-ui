@@ -9,6 +9,7 @@ import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
 import TOKEN from "./img/token.svg";
 import TabsTypeList from "./components/TabsTypeList";
+import GamesList from "./GamesList";
 
 export default {
   title: "Widgets/GamesTable",
@@ -17,8 +18,8 @@ export default {
 
 export const GamesTableBlock: React.FC = () => {
   enum TypeList {
-    TABLE,
-    LIST,
+    TABLE = "table",
+    LIST = "list",
   }
   const [inputValue, setInputValue] = useState<string | number>("");
   const [typeList, setTypeList] = useState(TypeList.LIST);
@@ -26,17 +27,26 @@ export const GamesTableBlock: React.FC = () => {
   const typeTabsList = ["table", "list"];
   const gamesList = [
     {
+      position: 1,
       img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} isNotLink />,
-      value: "btc vs eth",
+      value: "BTC vs ETH",
+      playedOnce: "565642",
+      imgSrc: BALANCE,
     },
     {
+      position: 2,
       img: <CardProduct small title="Up or DOwn" bg="green" img={COINS} isNotLink />,
-      value: "up or down",
+      value: "Up or Down",
+      playedOnce: "565642",
+      imgSrc: COINS,
     },
     {
+      position: 3,
       img: <CardProduct closed small title="Bold Point" bg="blue" right="-10px" bottom="-3px" img={HERO} />,
-      value: "bold point",
+      value: "Bold Point",
+      playedOnce: "565642",
       disabled: true,
+      imgSrc: HERO,
     },
   ];
 
@@ -70,7 +80,15 @@ export const GamesTableBlock: React.FC = () => {
         typeTabsList={typeTabsList}
         nameInput="search"
       >
-        <GamesTable texts="Choose Game" gamesList={newGamesList} handleSelectValue={handleSelectValue} />
+        {typeList === TypeList.TABLE ? (
+          <GamesTable texts={{ title: "Choose Game" }} gamesList={newGamesList} handleSelectValue={handleSelectValue} />
+        ) : (
+          <GamesList
+            texts={{ title: "Choose Game", gameName: "Game Name", playedOnce: "Played Once" }}
+            gamesList={newGamesList}
+            handleSelectValue={handleSelectValue}
+          />
+        )}
       </ListWrap>
     </BrowserRouter>
   );

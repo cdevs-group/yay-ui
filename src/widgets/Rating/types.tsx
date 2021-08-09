@@ -1,8 +1,19 @@
 import React, { ChangeEvent, ReactNode } from "react";
 
 export interface GameTableProps {
-  texts: string;
-  gamesList: Array<{ img: ReactNode; value: string; disabled?: boolean }>;
+  texts: {
+    title: string;
+    gameName?: string;
+    playedOnce?: string;
+  };
+  gamesList: Array<{
+    img: ReactNode;
+    value: string;
+    disabled?: boolean;
+    position: string | number;
+    playedOnce: string;
+    imgSrc?: string;
+  }>;
   handleSelectValue: (value?: string) => void;
 }
 
@@ -13,7 +24,7 @@ export interface PlayerListProps {
     games: string;
   };
   playersList: Array<{
-    position: string;
+    position: string | number;
     token: any;
     name: string;
     games: string;

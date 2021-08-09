@@ -11,7 +11,7 @@ const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVa
   return (
     <Wrapper>
       <Title>
-        {texts}
+        {texts.title}
         <span>({gamesList.length})</span>
       </Title>
       <Table>
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.md} {
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 30px 32px;
     border-radius: 10px;
     background: ${({ theme }) => theme.colors.bgGray};
   }
