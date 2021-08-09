@@ -17,7 +17,11 @@ const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVal
           <p>{texts.playedOnce}</p>
         </LineHeader>
         {gamesList.map((item, i) => (
-          <Line key={i} onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}>
+          <Line
+            key={i}
+            disabled={item.disabled}
+            onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}
+          >
             <Cell>{item.position}</Cell>
             <Cell>
               <img src={item.imgSrc} />
@@ -62,16 +66,21 @@ const Title = styled.div`
 const Table = styled.div`
   margin-top: 20px;
 `;
-const Line = styled.div`
+const Line = styled.div<{ disabled?: boolean }>`
   display: grid;
   grid-template-columns: 13% 12% 55% 20%;
   transition: 0.3s;
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.05em;
+  cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
+  opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
   &:hover {
-    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
-    background: #292930;
+    filter: ${({ disabled }) => (disabled ? "none" : "drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2))")};
+    background: ${({ theme, disabled }) => (disabled ? theme.colors.dark : "#292930")};
+    & div {
+      color: ${({ theme, disabled }) => (disabled ? theme.colors.text : theme.colors.green)} !important;
+    }
   }
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 15px;
