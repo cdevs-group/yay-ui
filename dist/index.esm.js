@@ -4275,7 +4275,7 @@ var GamesList = function (_a) {
                 React__default.createElement("p", null),
                 React__default.createElement("p", { className: "middle" }, texts.gameName),
                 React__default.createElement("p", null, texts.playedOnce)),
-            gamesList.map(function (item, i) { return (React__default.createElement(Line, { key: i, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); } },
+            gamesList.map(function (item, i) { return (React__default.createElement(Line, { key: i, disabled: item.disabled, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); } },
                 React__default.createElement(Cell, null, item.position),
                 React__default.createElement(Cell, null,
                     React__default.createElement("img", { src: item.imgSrc })),
@@ -4300,7 +4300,22 @@ var Title$2 = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTempl
     return theme.mediaQueries.md;
 });
 var Table = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 20px;\n"], ["\n  margin-top: 20px;\n"])));
-var Line = styled.div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &:hover {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &:hover {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
+var Line = styled.div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &:hover {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &:hover {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
+    var disabled = _a.disabled;
+    return (disabled ? "default" : "pointer");
+}, function (_a) {
+    var disabled = _a.disabled;
+    return (disabled ? 0.3 : 1);
+}, function (_a) {
+    var disabled = _a.disabled;
+    return (disabled ? "none" : "drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2))");
+}, function (_a) {
+    var theme = _a.theme, disabled = _a.disabled;
+    return (disabled ? theme.colors.dark : "#292930");
+}, function (_a) {
+    var theme = _a.theme, disabled = _a.disabled;
+    return (disabled ? theme.colors.text : theme.colors.green);
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
