@@ -4572,9 +4572,9 @@ var GiftImg = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateO
 var Description = styled(Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  font-weight: normal;\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  font-weight: normal;\n"])));
 var Title = styled(Text)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  text-align: center;\n  margin-top: 15px;\n"], ["\n  text-align: center;\n  margin-top: 15px;\n"])));
 var LinkBlock = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-top: 28px;\n  text-align: center;\n  margin: 28px auto 0;\n"], ["\n  margin-top: 28px;\n  text-align: center;\n  margin: 28px auto 0;\n"])));
-var Link = styled(Text)(templateObject_6 || (templateObject_6 = __makeTemplateObject([""], [""])));
+var Link = styled(Text)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
 var CongratulateModal = function (_a) {
-    var title = _a.title, buttonText = _a.buttonText, description = _a.description; _a.handleConfirm; _a.disabledButton; var onDismiss = _a.onDismiss, hrefLink = _a.hrefLink, props = __rest(_a, ["title", "buttonText", "description", "handleConfirm", "disabledButton", "onDismiss", "hrefLink"]);
+    var title = _a.title, buttonText = _a.buttonText, description = _a.description; _a.handleConfirm; _a.disabledButton; var onDismiss = _a.onDismiss, props = __rest(_a, ["title", "buttonText", "description", "handleConfirm", "disabledButton", "onDismiss"]);
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Modal, __assign({ welcome: true, onDismiss: onDismiss }, props),
             React__default.createElement(Wrap, null,
@@ -4583,7 +4583,7 @@ var CongratulateModal = function (_a) {
                 React__default.createElement(Title, null, title),
                 React__default.createElement(Description, { size: "sm" }, description),
                 React__default.createElement(LinkBlock, null,
-                    React__default.createElement(Link, { color: "#47DA3B", as: "a", href: hrefLink, target: "_blank" }, buttonText))))));
+                    React__default.createElement(Link, { color: "#47DA3B", onClick: onDismiss }, buttonText))))));
 };
 var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
 
