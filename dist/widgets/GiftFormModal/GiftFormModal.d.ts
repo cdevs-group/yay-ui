@@ -9,6 +9,7 @@ interface PropsGiftFormModal {
     disabledButton?: boolean;
     handleChangeCheckbox?: (e: any) => void;
     checkedCheckbox?: boolean;
+    textError?: string;
     placeholderInput1: string;
     placeholderInput2: string;
     onChangeInput1?: (e: ChangeEvent<HTMLInputElement>) => void;

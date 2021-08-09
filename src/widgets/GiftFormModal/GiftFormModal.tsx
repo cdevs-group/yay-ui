@@ -152,7 +152,11 @@ const GiftFormModal: React.FC<PropsGiftFormModal> = ({
           />
           <Label htmlFor="bottom">{textCheckbox}</Label>
         </CheckboxInputBlock>
-        {textError ? <Text marginTop={20} color="red">{textError}</Text> : null}
+        {textError ? (
+          <Text marginTop={20} color="red">
+            {textError}
+          </Text>
+        ) : null}
         <Button marginTop="30px" width="100%" variant="green" onClick={handleConfirm} disabled={disabledButton}>
           {continueText}
         </Button>
