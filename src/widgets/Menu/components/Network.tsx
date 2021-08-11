@@ -81,7 +81,7 @@ const TextStyled = styled(Text)`
 const AvatarNetwork = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   & img {
     width: 26px;
     height: 26px;
