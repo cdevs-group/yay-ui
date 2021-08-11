@@ -16,10 +16,10 @@ export const HeaderDefault: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-  const [network, setNetwork] = useState('Binance')
+  const [network, setNetwork] = useState("Binance");
   const handleChooseNetwork = (val) => {
-    setNetwork(val)
-  }
+    setNetwork(val);
+  };
   return (
     <BrowserRouter>
       <div>
