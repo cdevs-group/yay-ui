@@ -85,6 +85,7 @@ const Header: React.FC<NavProps> = ({
             textsAccount={textsAccount}
             textsConnect={textsConnect}
             hrefLearnHow={hrefLearnHow}
+            network={network}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

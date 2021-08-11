@@ -27,12 +27,13 @@ const useWalletModal = (
   logout: () => void,
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
+  network?: string,
   account?: string,
-  hrefLearnHow?: string
+  hrefLearnHow?: string,
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
-    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} />
-  );
+    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
+  ); 
   const [onPresentAccountModal] = useModal(
     <AccountModal texts={textsAccount} account={account || ""} logout={logout} />
   );

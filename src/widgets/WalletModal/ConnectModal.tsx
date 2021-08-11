@@ -5,7 +5,7 @@ import { Link } from "../../components/Link";
 import { Modal } from "../Modal";
 import { Login } from "./types";
 import { Text } from "../../components/Text";
-import config, { connectorLocalStorageKey } from "./config";
+import { connectorLocalStorageKey, connectorsBsc, connectorsAvalanche } from "./config";
 
 interface Props {
   login: Login;
@@ -15,6 +15,7 @@ interface Props {
     link: string;
   };
   hrefLearnHow?: string;
+  network?: string;
 }
 
 const HelpLink = styled(Link)`
@@ -69,9 +70,9 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network = "Binance", onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
-    {config.map((entry, index) => (
+    {(network === "Binance" ? connectorsBsc : connectorsAvalanche).map((entry, index) => (
       <Wrap key={index}>
         <Button
           onClick={() => {
