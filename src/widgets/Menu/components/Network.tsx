@@ -31,7 +31,7 @@ const Network: React.FC<Props> = ({ network, handleChooseNetwork, linkTextNetwor
         onPresentConnectModal();
       }}
     >
-      {network || "Binance"}
+      <TextStyled>{network || "Binance"}</TextStyled>
       <AvatarNetwork>
         <img src={network === "Binance" ? BNB2 : Avalanche} />
       </AvatarNetwork>
@@ -39,18 +39,18 @@ const Network: React.FC<Props> = ({ network, handleChooseNetwork, linkTextNetwor
   );
 };
 
-const NetworkBlock = styled(Text)`
+const NetworkBlock = styled.button`
   position: relative;
   display: flex;
   min-height: 30px;
   height: 100%;
-  min-width: 90px;
   align-items: center;
   justify-content: center;
-  margin-right: 11px;
+  margin-right: 6px;
+  margin-left: 6px;
+  padding: 0 2px;
   font-size: 11px;
   line-height: 14px;
-  padding: 0 26px 0 10px;
   background: ${({ theme }) => theme.colors.bgOpacity};
   border-radius: 7px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
@@ -61,22 +61,30 @@ const NetworkBlock = styled(Text)`
   }
   ${({ theme }) => theme.mediaQueries.lg} {
     min-height: 40px;
-    min-width: 130px;
+    margin-right: 11px;
+    margin-left: 11px;
     font-size: 15px;
     line-height: 19px;
-    padding: 0 56px 0 20px;
     border-radius: 12px;
   }
 `;
+
+const TextStyled = styled(Text)`
+  display: none;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    display: block;
+    padding: 0 17px;
+    flex-grow: 1;
+    text-align: center;
+  }
+`;
+
 const AvatarNetwork = styled.div`
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-right: 2px;
   & img {
     width: 26px;
     height: 26px;
@@ -85,7 +93,6 @@ const AvatarNetwork = styled.div`
     width: calc(100% - 4px);
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-    right: 4px;
     & img {
       width: 32px;
       height: 32px;

@@ -21,6 +21,7 @@ const ModalContent = styled.div`
 const StyledModal = styled.div`
   max-width: 404px;
   max-height: 100vh;
+  min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);

@@ -21,15 +21,11 @@ const BurgerWrap = styled.button`
   padding: 0;
   outline: none;
   position: relative;
-  margin-left: 10px;
   width: 30px;
   height: 30px;
   cursor: pointer;
   border-radius: 7px;
-  background: ${({ theme }) => theme.colors.bgOpacity};
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-left: 20px;
-  }
+  background: ${({ theme }) => theme.colors.bgOpacity};  
   ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
   }

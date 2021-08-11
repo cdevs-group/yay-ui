@@ -41,6 +41,20 @@ const TextStyled = styled(Text)`
   font-weight: 500;
   letter-spacing: 0.5px;
   text-align: center;
+  &.mobile {
+    display: block;
+  }
+  &.desktop {
+    display: none;
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: block;
+    }
+  }
 `;
 
 const NetworkModal: React.FC<Props> = ({
@@ -64,7 +78,8 @@ const NetworkModal: React.FC<Props> = ({
             <img src={BNB2} alt="" />
           </Button>
           <Button value="Avalanche" onClick={handleClick}>
-            <TextStyled>Avalanche</TextStyled>
+            <TextStyled className="desktop">Avalanche</TextStyled>
+            <TextStyled className="mobile">AVAX</TextStyled>
             <img src={Avalanche} alt="" />
           </Button>
         </Buttons>

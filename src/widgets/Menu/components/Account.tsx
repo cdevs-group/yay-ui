@@ -83,6 +83,7 @@ const AccountBlock = styled(Text)`
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
   border: none;
+  order: -1;
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
@@ -93,6 +94,7 @@ const AccountBlock = styled(Text)`
     line-height: 19px;
     padding: 0 56px 0 20px;
     border-radius: 12px;
+    order: 0;
   }
 `;
 const Avatar = styled.div`
