@@ -25,7 +25,7 @@ const BurgerWrap = styled.button`
   height: 30px;
   cursor: pointer;
   border-radius: 7px;
-  background: ${({ theme }) => theme.colors.bgOpacity};  
+  background: ${({ theme }) => theme.colors.bgOpacity};
   ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
   }
