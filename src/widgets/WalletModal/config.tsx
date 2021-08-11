@@ -10,7 +10,7 @@ import {
 } from "../../constants/images";
 import { Config, ConnectorNames } from "./types";
 
-const connectors: Config[] = [
+export const connectorsBsc: Config[] = [
   {
     title: "Metamask",
     icon: Metamask,
@@ -53,5 +53,12 @@ const connectors: Config[] = [
   },
 ];
 
-export default connectors;
+export const connectorsAvalanche: Config[] = [
+  {
+    title: "Metamask",
+    icon: Metamask,
+    connectorId: ConnectorNames.Injected,
+  },
+];
+
 export const connectorLocalStorageKey = "connectorId";

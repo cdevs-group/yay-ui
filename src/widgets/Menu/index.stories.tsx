@@ -20,21 +20,22 @@ export const HeaderDefault: React.FC = () => {
   const handleChooseNetwork = (val) => {
     setNetwork(val)
   }
+  const textsAccount = {
+    copy: ('Copy'),
+    title: ('Your wallet'),
+    button: ('Logout'),
+    view: ('View on BscScan'),
+    copied: ('Copied'),
+  }
+
+  const textsConnect = {
+    title: ('Сonnect wallet'),
+    link: ('Learn how connect'),
+  }
+
+
   return (
     <BrowserRouter>
-      <div>
-        {/* <Header
-          account={null}
-          login={noop}
-          logout={noop}
-          isDark
-          toggleTheme={noop}
-          langs={langs}
-          setLang={noop}
-          currentLang="EN"
-          links={links}
-        /> */}
-      </div>
       <div style={{ marginTop: "50px" }}>
         <Header
           account="0xbdda50183d817c3289f895a4472eb475967dc980"
@@ -55,6 +56,9 @@ export const HeaderDefault: React.FC = () => {
           linkTextNetwork="Learn how connect"
           linkHrefNetwork="http"
           titleNetwork="Choose network"
+          textsAccount={textsAccount}
+          textsConnect={textsConnect}
+          linkLogo="/"
         />
       </div>
     </BrowserRouter>
