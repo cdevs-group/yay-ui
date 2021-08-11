@@ -38,8 +38,7 @@ const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
 export default Languages;
 
 const Wrap = styled.div`
-  min-width: 60px;
-  margin-right: 30px;
+  min-width: 40px;
 `;
 const SelectList = styled.div`
   padding: 12px 0;
