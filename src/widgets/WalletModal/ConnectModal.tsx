@@ -15,7 +15,7 @@ interface Props {
     link: string;
   };
   hrefLearnHow?: string;
-  network: string;
+  network?: string;
 }
 
 const HelpLink = styled(Link)`
@@ -72,7 +72,6 @@ const ImgWrap = styled.div`
 
 const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network = "Binance", onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
-    {console.log(network)}
     {(network === "Binance" ? connectorsBsc : connectorsAvalanche).map((entry, index) => (
       <Wrap key={index}>
         <Button

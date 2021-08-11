@@ -7,11 +7,11 @@ import { BNB2 } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 
 interface Props {
-  network: string;
-  titleNetwork: string;
-  linkTextNetwork: string;
-  linkHrefNetwork: string;
-  handleChooseNetwork: (e: any) => void;
+  network?: string;
+  titleNetwork?: string;
+  linkTextNetwork?: string;
+  linkHrefNetwork?: string;
+  handleChooseNetwork?: (e: any) => void;
 }
 
 const Network: React.FC<Props> = ({ network, handleChooseNetwork, linkTextNetwork, linkHrefNetwork, titleNetwork }) => {
@@ -31,7 +31,7 @@ const Network: React.FC<Props> = ({ network, handleChooseNetwork, linkTextNetwor
         onPresentConnectModal();
       }}
     >
-      {network}
+      {network || "Binance"}
       <AvatarNetwork>
         <img src={network === "Binance" ? BNB2 : Avalanche} />
       </AvatarNetwork>

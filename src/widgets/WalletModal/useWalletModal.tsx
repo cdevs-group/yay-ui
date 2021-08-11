@@ -27,7 +27,7 @@ const useWalletModal = (
   logout: () => void,
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
-  network: string,
+  network?: string,
   account?: string,
   hrefLearnHow?: string,
 ): ReturnType => {

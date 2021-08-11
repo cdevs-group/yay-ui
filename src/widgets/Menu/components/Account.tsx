@@ -15,7 +15,7 @@ interface Props {
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
-  network: string;
+  network?: string;
 }
 
 const Account: React.FC<Props> = ({

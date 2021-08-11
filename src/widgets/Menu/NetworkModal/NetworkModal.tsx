@@ -8,10 +8,10 @@ import { BNB2 } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 
 interface Props {
-  title: string;
-  linkText: string;
-  linkHref: string;
-  handleChooseNetwork: (e: any) => void;
+  title?: string;
+  linkText?: string;
+  linkHref?: string;
+  handleChooseNetwork?: (e: any) => void;
   onDismiss?: () => void;
 }
 
@@ -43,7 +43,13 @@ const TextStyled = styled(Text)`
   text-align: center;
 `;
 
-const NetworkModal: React.FC<Props> = ({ title, linkText, linkHref, handleChooseNetwork, onDismiss = () => null }) => {
+const NetworkModal: React.FC<Props> = ({
+  title,
+  linkText,
+  linkHref,
+  handleChooseNetwork = (e) => null,
+  onDismiss = () => null,
+}) => {
   const handleClick = (e: any) => {
     handleChooseNetwork(e.currentTarget.value);
     onDismiss();
