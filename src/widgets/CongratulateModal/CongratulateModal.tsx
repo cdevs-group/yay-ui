@@ -13,7 +13,6 @@ interface Props {
   disabledButton?: boolean;
   errorPadding?: boolean;
   onDismiss?: () => void;
-  hrefLink?: string;
 }
 
 const Wrap = styled.div`
@@ -60,7 +59,6 @@ const CongratulateModal: React.FC<Props> = ({
   handleConfirm,
   disabledButton,
   onDismiss,
-  hrefLink,
   ...props
 }) => (
   <>

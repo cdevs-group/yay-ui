@@ -6,6 +6,7 @@ interface Props extends InjectedProps {
     bodyPadding?: string;
     welcome?: boolean;
     image?: boolean;
+    paddingTopHeader?: string;
 }
 declare const Modal: React.FC<Props>;
 export default Modal;
