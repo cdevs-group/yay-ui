@@ -70,13 +70,15 @@ const Header: React.FC<NavProps> = ({
           </LanguageBlockMob>
         </Nav>
         <RightContent>
-          <Network
-            titleNetwork={titleNetwork}
-            linkHrefNetwork={linkHrefNetwork}
-            linkTextNetwork={linkTextNetwork}
-            handleChooseNetwork={handleChooseNetwork}
-            network={network}
-          />
+          {network ? (
+            <Network
+              titleNetwork={titleNetwork}
+              linkHrefNetwork={linkHrefNetwork}
+              linkTextNetwork={linkTextNetwork}
+              handleChooseNetwork={handleChooseNetwork}
+              network={network}
+            />
+          ) : null}
           <Account
             text={textConnect || "Connect"}
             account={account}

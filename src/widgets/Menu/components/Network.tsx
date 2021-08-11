@@ -47,7 +47,6 @@ const NetworkBlock = styled.button`
   align-items: center;
   justify-content: center;
   margin-right: 6px;
-  margin-left: 6px;
   padding: 0 2px;
   font-size: 11px;
   line-height: 14px;
@@ -62,7 +61,6 @@ const NetworkBlock = styled.button`
   ${({ theme }) => theme.mediaQueries.lg} {
     min-height: 40px;
     margin-right: 11px;
-    margin-left: 11px;
     font-size: 15px;
     line-height: 19px;
     border-radius: 12px;

@@ -75,6 +75,7 @@ const AccountBlock = styled(Text)`
   min-width: 120px;
   align-items: center;
   justify-content: center;
+  margin-right: 6px;
   font-size: 11px;
   line-height: 14px;
   padding: 0 26px 0 10px;
@@ -90,6 +91,7 @@ const AccountBlock = styled(Text)`
   ${({ theme }) => theme.mediaQueries.lg} {
     min-height: 40px;
     min-width: 160px;
+    margin-right: 11px;
     font-size: 15px;
     line-height: 19px;
     padding: 0 56px 0 20px;

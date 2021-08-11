@@ -50,7 +50,7 @@ export const HeaderDefault: React.FC = () => {
             profileLink: "/profile",
             noProfileLink: "/no-profile",
           }}
-          network={network}
+          // network={network}
           handleChooseNetwork={handleChooseNetwork}
           linkTextNetwork="Learn how connect"
           linkHrefNetwork="http"
