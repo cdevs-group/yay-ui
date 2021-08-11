@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { links } from "./config";
+import { useState } from "react";
 
 export default {
   title: "Components/Header",
@@ -15,7 +16,10 @@ export const HeaderDefault: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-
+  const [network, setNetwork] = useState('Binance')
+  const handleChooseNetwork = (val) => {
+    setNetwork(val)
+  }
   return (
     <BrowserRouter>
       <div>
@@ -46,6 +50,11 @@ export const HeaderDefault: React.FC = () => {
             profileLink: "/profile",
             noProfileLink: "/no-profile",
           }}
+          network={network}
+          handleChooseNetwork={handleChooseNetwork}
+          linkTextNetwork="Learn how connect"
+          linkHrefNetwork="http"
+          titleNetwork="Choose network"
         />
       </div>
     </BrowserRouter>

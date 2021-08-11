@@ -11,6 +11,7 @@ interface Props extends InjectedProps {
   bodyPadding?: string;
   welcome?: boolean;
   image?: boolean;
+  paddingTopHeader?: string;
 }
 
 const ModalContent = styled.div`
@@ -36,15 +37,15 @@ const StyledModal = styled.div`
   }
 `;
 
-const ModalHeader = styled.div`
+const ModalHeader = styled.div<{ paddingTopHeader?: string }>`
   display: flex;
   align-items: center;
-  padding: 20px 14px 24px;
+  padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "20px"} 14px 24px`};
   &.welcome {
     padding-bottom: 0;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    padding: 27px 20px 40px 27px;
+    padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "27px"} 20px 40px 27px`};
     &.welcome {
       padding-bottom: 0;
     }
@@ -85,12 +86,20 @@ const Image = styled.div`
   transform: translateX(-50%);
 `;
 
-const Modal: React.FC<Props> = ({ welcome, title, onDismiss, children, hideCloseButton = false, image }) => (
+const Modal: React.FC<Props> = ({
+  welcome,
+  title,
+  onDismiss,
+  children,
+  hideCloseButton = false,
+  image,
+  paddingTopHeader,
+}) => (
   <div>
     <Overlay />
     <StyledModal>
       <ModalContent>
-        <ModalHeader className={welcome ? "welcome" : ""}>
+        <ModalHeader className={welcome ? "welcome" : ""} paddingTopHeader={paddingTopHeader}>
           <ModalTitle>
             <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
           </ModalTitle>

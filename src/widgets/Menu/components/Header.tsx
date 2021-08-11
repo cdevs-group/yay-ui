@@ -7,6 +7,7 @@ import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
 import Logo from "../image/Logo.png";
+import Network from "./Network";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -23,6 +24,11 @@ const Header: React.FC<NavProps> = ({
   textsConnect,
   hrefLearnHow,
   linkLogo,
+  network,
+  handleChooseNetwork,
+  linkTextNetwork,
+  linkHrefNetwork,
+  titleNetwork,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -64,9 +70,13 @@ const Header: React.FC<NavProps> = ({
           </LanguageBlockMob>
         </Nav>
         <RightContent>
-          <LanguageBlockDesk>
-            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-          </LanguageBlockDesk>
+          <Network
+            titleNetwork={titleNetwork}
+            linkHrefNetwork={linkHrefNetwork}
+            linkTextNetwork={linkTextNetwork}
+            handleChooseNetwork={handleChooseNetwork}
+            network={network}
+          />
           <Account
             text={textConnect || "Connect"}
             account={account}
@@ -76,6 +86,9 @@ const Header: React.FC<NavProps> = ({
             textsConnect={textsConnect}
             hrefLearnHow={hrefLearnHow}
           />
+          <LanguageBlockDesk>
+            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+          </LanguageBlockDesk>
           <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
         </RightContent>
       </Line>
@@ -152,6 +165,7 @@ const LanguageBlockDesk = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
+    margin-left: 11px;
   }
 `;
 

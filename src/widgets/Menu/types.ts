@@ -62,4 +62,9 @@ export interface NavProps extends PanelProps {
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
   linkLogo: string;
+  network: string;
+  titleNetwork: string;
+  linkTextNetwork: string;
+  linkHrefNetwork: string;
+  handleChooseNetwork: (e: any) => void;
 }

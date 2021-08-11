@@ -22,6 +22,8 @@ import Coin98 from "../../public/images/coin98-wallet.png";
 import Gift from "../../public/images/Gift.png";
 import Gift2 from "../../public/images/gift2.png";
 import Gift3 from "../../public/images/gift3.png";
+import BNB2 from "../../public/images/bnb.png";
+import Avalanche from "../../public/images/avalanche.png";
 
 export {
   BG_IMG,
@@ -48,4 +50,6 @@ export {
   Gift,
   Gift2,
   Gift3,
+  BNB2,
+  Avalanche,
 };
