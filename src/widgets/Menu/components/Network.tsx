@@ -83,8 +83,7 @@ const TextStyled = styled(Text)`
 const AvatarNetwork = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-right: 2px;
+  justify-content: center;  
   & img {
     width: 26px;
     height: 26px;
@@ -93,6 +92,7 @@ const AvatarNetwork = styled.div`
     width: calc(100% - 4px);
   }
   ${({ theme }) => theme.mediaQueries.lg} {
+    margin-right: 2px;
     & img {
       width: 32px;
       height: 32px;
