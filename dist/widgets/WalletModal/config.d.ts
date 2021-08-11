@@ -1,4 +1,4 @@
 import { Config } from "./types";
-declare const connectors: Config[];
-export default connectors;
+export declare const connectorsBsc: Config[];
+export declare const connectorsAvalanche: Config[];
 export declare const connectorLocalStorageKey = "connectorId";

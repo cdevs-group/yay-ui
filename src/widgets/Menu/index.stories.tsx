@@ -18,20 +18,20 @@ export const HeaderDefault: React.FC = () => {
   ];
   const [network, setNetwork] = useState("Binance");
   const handleChooseNetwork = (val) => {
-    setNetwork(val)
-  }
+    setNetwork(val);
+  };
   const textsAccount = {
-    copy: ('Copy'),
-    title: ('Your wallet'),
-    button: ('Logout'),
-    view: ('View on BscScan'),
-    copied: ('Copied'),
-  }
+    copy: "Copy",
+    title: "Your wallet",
+    button: "Logout",
+    view: "View on BscScan",
+    copied: "Copied",
+  };
 
   const textsConnect = {
-    title: ('Сonnect wallet'),
-    link: ('Learn how connect'),
-  }
+    title: "Сonnect wallet",
+    link: "Learn how connect",
+  };
 
   return (
     <BrowserRouter>

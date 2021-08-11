@@ -3252,7 +3252,7 @@ var ConnectorNames;
     ConnectorNames["Coin98"] = "coin98";
 })(ConnectorNames || (ConnectorNames = {}));
 
-var connectors = [
+var connectorsBsc = [
     {
         title: "Metamask",
         icon: Metamask,
@@ -3294,6 +3294,13 @@ var connectors = [
         connectorId: ConnectorNames.Injected,
     },
 ];
+var connectorsAvalanche = [
+    {
+        title: "Metamask",
+        icon: Metamask,
+        connectorId: ConnectorNames.Injected,
+    },
+];
 var connectorLocalStorageKey = "connectorId";
 
 var HelpLink = styled(Link$3)(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"], ["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"])), function (_a) {
@@ -3319,9 +3326,9 @@ var ImgWrap = styled.div(templateObject_4$j || (templateObject_4$j = __makeTempl
     return transparentize(0.95, theme.colors.text);
 });
 var ConnectModal = function (_a) {
-    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, _b = _a.network, network = _b === void 0 ? "Binance" : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
     return (React__default.createElement(Modal, { title: texts.title, onDismiss: onDismiss },
-        connectors.map(function (entry, index) { return (React__default.createElement(Wrap$b, { key: index },
+        (network === "Binance" ? connectorsBsc : connectorsAvalanche).map(function (entry, index) { return (React__default.createElement(Wrap$b, { key: index },
             React__default.createElement(Button$3, { onClick: function () {
                     login(entry.connectorId);
                     window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
@@ -3396,8 +3403,8 @@ var AccountText = styled(Text)(templateObject_4$i || (templateObject_4$i = __mak
 });
 var templateObject_1$D, templateObject_2$v, templateObject_3$q, templateObject_4$i;
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, account, hrefLearnHow) {
-    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow }))[0];
+var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow) {
+    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
     var onPresentAccountModal = useModal(React__default.createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout }))[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
@@ -3941,8 +3948,8 @@ var ellipsis = function (value, count) {
 };
 
 var Account = function (_a) {
-    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow;
-    var _b = useWalletModal(login, logout, textsAccount, textsConnect, account, hrefLearnHow), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network;
+    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     return (React__default.createElement(React__default.Fragment, null, account ? (React__default.createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
         } },
@@ -4103,7 +4110,7 @@ var Button = styled.button(templateObject_2$c || (templateObject_2$c = __makeTem
 var Buttons$1 = styled.div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  margin: 40px 0;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  margin: 40px 0;\n"])));
 var TextStyled = styled(Text)(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"], ["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"])));
 var NetworkModal = function (_a) {
-    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, handleChooseNetwork = _a.handleChooseNetwork, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, _b = _a.handleChooseNetwork, handleChooseNetwork = _b === void 0 ? function (e) { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
     var handleClick = function (e) {
         handleChooseNetwork(e.currentTarget.value);
         onDismiss();
@@ -4127,7 +4134,7 @@ var Network = function (_a) {
     return (React__default.createElement(NetworkBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
         } },
-        network,
+        network || "Binance",
         React__default.createElement(AvatarNetwork, null,
             React__default.createElement("img", { src: network === "Binance" ? BNB2 : Avalanche }))));
 };
@@ -4180,7 +4187,7 @@ var Header = function (_a) {
                     React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default.createElement(RightContent, null,
                 React__default.createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleChooseNetwork: handleChooseNetwork, network: network }),
-                React__default.createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow }),
+                React__default.createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network }),
                 React__default.createElement(LanguageBlockDesk, null,
                     React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
                 React__default.createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } })))));

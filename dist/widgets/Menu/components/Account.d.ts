@@ -9,6 +9,7 @@ interface Props {
     textsConnect: TextsConnect;
     textsAccount: TextsAccount;
     hrefLearnHow?: string;
+    network?: string;
 }
 declare const Account: React.FC<Props>;
 export default Account;

@@ -35,7 +35,7 @@ const Account: React.FC<Props> = ({
     textsConnect,
     network,
     account,
-    hrefLearnHow,
+    hrefLearnHow
   );
 
   return (

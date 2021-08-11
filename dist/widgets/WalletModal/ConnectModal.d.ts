@@ -8,6 +8,7 @@ interface Props {
         link: string;
     };
     hrefLearnHow?: string;
+    network?: string;
 }
 export declare const Button: import("styled-components").StyledComponent<"button", import("styled-components").DefaultTheme, {}, never>;
 declare const ConnectModal: React.FC<Props>;
