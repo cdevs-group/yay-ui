@@ -30,6 +30,10 @@ import {
   ArrowBigDownIcon,
   ArrowSingl,
   ArrowDouble,
+  CheckIcon,
+  TwitterIcon,
+  TelegramIcon,
+  InstagramIcon,
 } from ".";
 
 export default {
@@ -162,6 +166,18 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <ArrowSingl />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CheckIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <TwitterIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <TelegramIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <InstagramIcon />
         </div>
       </div>
     </div>

@@ -43,6 +43,7 @@ export * from "./widgets/CollectWinningsPopup";
 export * from "./widgets/ChartDisclaimer";
 export * from "./widgets/GiftPopup";
 export * from "./widgets/CongratulateModal";
+export * from "./widgets/Vesting";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

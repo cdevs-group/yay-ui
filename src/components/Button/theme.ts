@@ -83,4 +83,9 @@ export const styleVariants = {
     color: "#fff",
     boxShadow: "none",
   },
+  [variants.WHITE]: {
+    background: "#fff",
+    color: "#4BE43E",
+    boxShadow: "none",
+  },
 };

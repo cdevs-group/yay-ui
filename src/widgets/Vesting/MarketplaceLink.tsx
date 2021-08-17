@@ -1,0 +1,51 @@
+import React from "react";
+import styled from "styled-components";
+import { Text } from "../../components/Text";
+import BG from "./img/link-bg.png";
+import MP from "./img/mp.png";
+
+interface IProps {
+  link: string;
+  text: string;
+}
+
+const MarketplaceLink = ({ link, text }: IProps) => {
+  return (
+    <Card src={BG} href={link}>
+      <StyledTitle>{text}</StyledTitle>
+      <img alt="" src={MP} />
+    </Card>
+  );
+};
+
+const Card = styled.a<{ src: string }>`
+  position: relative;
+  display: block;
+  min-height: 250px;
+  padding: 18px 24px;
+  background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
+  background-color: ${({ theme }) => theme.colors.bgGray};
+  border-radius: 12px;
+  & img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    ${({ theme }) => theme.mediaQueries.sm} {
+      right: -41px;
+      left: auto;
+      transform: none;
+    }
+  }
+`;
+
+const StyledTitle = styled(Text)`
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 24px;
+  }
+`;
+
+export default MarketplaceLink;
