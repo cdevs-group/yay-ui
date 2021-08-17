@@ -3,6 +3,7 @@ import { useModal } from "../Modal";
 import ConnectModal from "./ConnectModal";
 import AccountModal from "./AccountModal";
 import { Login } from "./types";
+import AccountVestingModal from "./AccountVestingModal";
 
 interface ReturnType {
   onPresentConnectModal: () => void;
@@ -15,6 +16,11 @@ export interface TextsAccount {
   button: string;
   view: string;
   copied: string;
+  yayBalance?: string;
+  address?: string;
+  tabs?: Array<string>;
+  recentTransactions?: string;
+  claimed?: string;
 }
 
 export interface TextsConnect {
@@ -29,13 +35,26 @@ const useWalletModal = (
   textsConnect: TextsConnect,
   network?: string,
   account?: string,
-  hrefLearnHow?: string
+  hrefLearnHow?: string,
+  vesting?: boolean,
+  yayBalance?: string | number,
+  dataTransactions?: Array<any>
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
   );
   const [onPresentAccountModal] = useModal(
-    <AccountModal texts={textsAccount} account={account || ""} logout={logout} />
+    !vesting ? (
+      <AccountModal texts={textsAccount} account={account || ""} logout={logout} />
+    ) : (
+      <AccountVestingModal
+        texts={textsAccount}
+        account={account || ""}
+        logout={logout}
+        yayBalance={yayBalance}
+        dataTransactions={dataTransactions}
+      />
+    )
   );
   return { onPresentConnectModal, onPresentAccountModal };
 };

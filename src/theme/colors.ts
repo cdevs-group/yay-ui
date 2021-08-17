@@ -28,6 +28,7 @@ export const baseColors = {
   darkPink: "#FF6161",
   whiteRgba: "rgba(255, 255, 255, 0.15)",
   greenGradient2: "linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
+  greenGradient3: "linear-gradient(107.51deg, #9BE43E 26.63%, #39DB2C 73.7%)",
   textGray2: "#9A9191",
   bgCard: "#404047",
   cardShadow: "box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31)",
@@ -61,11 +62,14 @@ export const lightColors: Colors = {
   cardBg: "#26262D",
   greyText: "#A3A3A3",
   greyText2: "#9A9191",
+  greyText3: "#BCBCBC",
   darkGreyBg: "#1d1d22",
   text: "#fff",
   greenText: "#4AE43D",
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
+  greenBg2: "#56EF4B",
+
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
@@ -73,6 +77,7 @@ export const lightColors: Colors = {
   boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
+  boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)",
   blackColor: "#000",
   greenText2: "#47DA3B",
 
@@ -110,10 +115,13 @@ export const darkColors: Colors = {
   greyText: "#A3A3A3",
   darkGreyBg: "#1d1d22",
   greyText2: "#9A9191",
+  greyText3: "#BCBCBC",
   text: "#fff",
   greenText: "#4AE43D",
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
+  greenBg2: "#56EF4B",
+
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
@@ -121,9 +129,11 @@ export const darkColors: Colors = {
 
   boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
   boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)",
+
   blackColor: "#000",
   greenText2: "47DA3B",
-  boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)",
 
   backgroundDisabled: "rgba(255,255,255,.15)",
   contrast: "#000",

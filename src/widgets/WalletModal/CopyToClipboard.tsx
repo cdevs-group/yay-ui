@@ -6,6 +6,8 @@ import { CopyIcon } from "../../components/Svg";
 interface Props {
   toCopy: string;
   textCopied: string;
+  icon?: React.ReactNode;
+  left?: string;
 }
 
 const StyleButton = styled(Text).attrs({ role: "button" })`
@@ -15,12 +17,12 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
   color: ${({ theme }) => theme.colors.green};
 `;
 
-const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
+const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};
   position: absolute;
   bottom: -22px;
   right: 0;
-  left: 0;
+  left: ${({ left }) => left || 0};
   text-align: center;
   background-color: ${({ theme }) => theme.colors.contrast};
   color: ${({ theme }) => theme.colors.invertedContrast};
@@ -28,7 +30,7 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
   opacity: 0.7;
 `;
 
-const CopyToClipboard: React.FC<Props> = ({ toCopy, textCopied, children, ...props }) => {
+const CopyToClipboard: React.FC<Props> = ({ toCopy, textCopied, children, icon, left, ...props }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
@@ -47,8 +49,10 @@ const CopyToClipboard: React.FC<Props> = ({ toCopy, textCopied, children, ...pro
       {...props}
     >
       {children}
-      <CopyIcon width="20px" color="#47DA3B" ml="4px" />
-      <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopied}</Tooltip>
+      {icon || <CopyIcon width="20px" color="#47DA3B" ml="4px" />}
+      <Tooltip isTooltipDisplayed={isTooltipDisplayed} left={left}>
+        {textCopied}
+      </Tooltip>
     </StyleButton>
   );
 };

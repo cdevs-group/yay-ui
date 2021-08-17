@@ -28,10 +28,10 @@ export const styleVariants = {
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",
-    border: "2px solid",
-    borderColor: "primary",
+    border: "1px solid #4BE43E",
     boxShadow: "none",
-    color: "primary",
+    borderRadius: 10,
+    color: "#4BE43E",
     ":disabled": {
       backgroundColor: "transparent",
     },
@@ -81,6 +81,11 @@ export const styleVariants = {
   [variants.GRAY]: {
     background: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
     color: "#fff",
+    boxShadow: "none",
+  },
+  [variants.WHITE]: {
+    background: "#fff",
+    color: "#4BE43E",
     boxShadow: "none",
   },
 };

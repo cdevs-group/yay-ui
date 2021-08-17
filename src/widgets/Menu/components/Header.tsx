@@ -29,6 +29,9 @@ const Header: React.FC<NavProps> = ({
   linkTextNetwork,
   linkHrefNetwork,
   titleNetwork,
+  vesting,
+  yayBalance,
+  dataTransactions,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -88,6 +91,9 @@ const Header: React.FC<NavProps> = ({
             textsConnect={textsConnect}
             hrefLearnHow={hrefLearnHow}
             network={network}
+            vesting={vesting}
+            yayBalance={yayBalance}
+            dataTransactions={dataTransactions}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

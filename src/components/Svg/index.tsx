@@ -36,6 +36,12 @@ export { default as HelpIcon } from "./Icons/HelpIcon";
 export { default as PlayingCardsIcon } from "./Icons/PlayingCardsIcon";
 export { default as ErrorIcon } from "./Icons/ErrorIcon";
 export { default as ShareIcon } from "./Icons/ShareIcon";
+export { default as CheckIcon } from "./Icons/CheckIcon";
+export { default as TelegramIcon } from "./Icons/TelegramIcon";
+export { default as InstagramIcon } from "./Icons/InstagramIcon";
+export { default as TwitterIcon } from "./Icons/TwitterIcon";
+export { default as ArrowDownRightIcon } from "./Icons/ArrowDownRightIcon";
+export { default as CopyIcon2 } from "./Icons/CopyIcon2";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
