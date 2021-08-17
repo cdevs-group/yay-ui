@@ -26,12 +26,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       ))}
       <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
-      <TakeGift
-        texts={textsTakeGift}
-        handleTakeGift={handleTakeGift}
-        claimedGift={claimedGift}
-        images={imagesGift}
-      />
+      <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} images={imagesGift} />
     </Wrapper>
   );
 };

@@ -19,7 +19,7 @@ export interface VestingWidgetProps {
   imagesMarketplace?: {
     bg: string;
     mp: string;
-  }
+  };
   handleTakeGift: () => void;
   textsTakeGift: {
     title: string;

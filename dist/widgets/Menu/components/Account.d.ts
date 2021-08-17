@@ -13,6 +13,7 @@ interface Props {
     vesting?: boolean;
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
+    handleClaimed?: (value: string) => void;
 }
 declare const Account: React.FC<Props>;
 export default Account;

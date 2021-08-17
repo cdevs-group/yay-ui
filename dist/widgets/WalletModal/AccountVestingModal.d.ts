@@ -7,6 +7,7 @@ interface Props {
     texts: TextsAccount;
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
+    handleClaimed: (value: string) => void;
 }
 declare const AccountVestingModal: React.FC<Props>;
 export default AccountVestingModal;

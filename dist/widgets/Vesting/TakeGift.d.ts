@@ -7,6 +7,10 @@ interface IProps {
         claimed: string;
     };
     claimedGift: boolean;
+    images?: {
+        gift: string;
+        gift2: string;
+    };
 }
-declare const TakeGift: ({ handleTakeGift, texts, claimedGift }: IProps) => JSX.Element;
+declare const TakeGift: ({ handleTakeGift, texts, claimedGift, images }: IProps) => JSX.Element;
 export default TakeGift;

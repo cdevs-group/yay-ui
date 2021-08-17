@@ -3507,8 +3507,8 @@ var AccountText$1 = styled__default['default'](Text)(templateObject_4$l || (temp
 var templateObject_1$J, templateObject_2$z, templateObject_3$u, templateObject_4$l;
 
 var AccountVestingModal = function (_a) {
-    var texts = _a.texts, account = _a.account, logout = _a.logout, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    var _c = React.useState(0), tabValue = _c[0], setTabValue = _c[1];
+    var texts = _a.texts, account = _a.account, logout = _a.logout, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, _b = _a.handleClaimed, handleClaimed = _b === void 0 ? function () { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
+    var _d = React.useState(0), tabValue = _d[0], setTabValue = _d[1];
     var handleTab = function (e) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             setTabValue(+e.target.value);
@@ -3519,31 +3519,31 @@ var AccountVestingModal = function (_a) {
         React__default['default'].createElement(ModalWrap, null,
             React__default['default'].createElement(Tabs, { tabsList: texts.tabs, tabValue: tabValue, onClick: handleTab }),
             tabValue === 0 && (React__default['default'].createElement(React__default['default'].Fragment, null,
-                React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "7px", fontSize: "14px", lineHeight: "24px", marginTop: "37px" }, texts.address),
+                React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "7px", fontSize: "14px", lineHeight: "24px", marginTop: "37px", fontWeight: "400" }, texts.address),
                 React__default['default'].createElement(Text, { bold: true, style: { whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginBottom: "8px" } },
                     React__default['default'].createElement(AccountWrap, { as: "div" },
                         React__default['default'].createElement(AccountText, { fontWeight: 500, color: "text" }, account),
                         React__default['default'].createElement(CopyText, { color: "#47DA3B" },
                             React__default['default'].createElement(CopyToClipboard, { toCopy: account, textCopied: texts.copied, icon: React__default['default'].createElement(Icon$1, null), left: "auto" })))),
                 React__default['default'].createElement(Flex, { alignItems: "center", justifyContent: "space-between", mb: "30px" },
-                    React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray" }, texts.yayBalance),
-                    React__default['default'].createElement(Text, { letterSpacing: "-0.02em" }, yayBalance)),
+                    React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", fontWeight: "400" }, texts.yayBalance),
+                    React__default['default'].createElement(Text, { letterSpacing: "-0.02em", fontWeight: "400" }, yayBalance)),
                 React__default['default'].createElement(Flex, { mb: "30px" },
-                    React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px", icon: React__default['default'].createElement(Icon$2, { style: { marginLeft: 5 } }) }, texts.view)),
+                    React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px", icon: React__default['default'].createElement(Icon$2, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
                 React__default['default'].createElement(Flex, { justifyContent: "center" },
-                    React__default['default'].createElement(Button$6, { scale: "md", width: "100%", variant: "secondary", onClick: function () {
+                    React__default['default'].createElement(Button$6, { scale: "md", width: "100%", variant: "secondary", style: { fontWeight: 400 }, onClick: function () {
                             logout();
                             window.localStorage.removeItem(connectorLocalStorageKey);
                             onDismiss();
                         } }, texts.button)))),
             tabValue === 1 && (React__default['default'].createElement(React__default['default'].Fragment, null,
-                React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "21px", fontSize: "14px", lineHeight: "24px", marginTop: "26px" }, texts.recentTransactions),
+                React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "21px", fontSize: "14px", lineHeight: "24px", marginTop: "26px", fontWeight: 400 }, texts.recentTransactions),
                 React__default['default'].createElement(Table$3, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: el.id + "-" + i },
-                    React__default['default'].createElement(Text, { letterSpacing: "0.05em" }, el.id),
-                    React__default['default'].createElement(ButtonClaimed, null,
+                    React__default['default'].createElement(Text, { letterSpacing: "0.05em", fontWeight: 400 }, el.id),
+                    React__default['default'].createElement(ButtonClaimed, { onClick: function () { return handleClaimed(el.id); } },
                         texts.claimed,
                         React__default['default'].createElement(Icon$2, { stroke: "#fff", style: { marginLeft: 5 }, width: "8px" })),
-                    React__default['default'].createElement(Text, { letterSpacing: "0.05em", color: "green" }, el.value))); })))))));
+                    React__default['default'].createElement(Text, { letterSpacing: "0.05em", color: "green", fontWeight: 400 }, el.value))); })))))));
 };
 var ModalWrap = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  padding: 0 20px 20px;\n  min-height: 380px;\n"], ["\n  padding: 0 20px 20px;\n  min-height: 380px;\n"])));
 var AccountWrap = styled__default['default'](Button$3)(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"], ["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"])), function (_a) {
@@ -3556,7 +3556,7 @@ var AccountText = styled__default['default'](Text)(templateObject_4$k || (templa
     return theme.mediaQueries.sm;
 });
 var Table$3 = styled__default['default'].div(templateObject_5$f || (templateObject_5$f = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 10% 35% 44%;\n  grid-gap: 32px 20px;\n  align-items: center;\n"], ["\n  display: grid;\n  grid-template-columns: 10% 35% 44%;\n  grid-gap: 32px 20px;\n  align-items: center;\n"])));
-var ButtonClaimed = styled__default['default'].button(templateObject_6$c || (templateObject_6$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 7px 15px;\n  border-radius: 7px;\n  font-size: 13px;\n  line-height: 16px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  background: none;\n  border: 1px solid ", ";\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 7px 15px;\n  border-radius: 7px;\n  font-size: 13px;\n  line-height: 16px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  background: none;\n  border: 1px solid ", ";\n  color: ", ";\n"])), function (_a) {
+var ButtonClaimed = styled__default['default'].button(templateObject_6$c || (templateObject_6$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 7px 15px;\n  border-radius: 7px;\n  font-size: 13px;\n  line-height: 16px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  background: none;\n  border: 1px solid ", ";\n  color: ", ";\n  font-weight: 400;\n  cursor: pointer;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 7px 15px;\n  border-radius: 7px;\n  font-size: 13px;\n  line-height: 16px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  background: none;\n  border: 1px solid ", ";\n  color: ", ";\n  font-weight: 400;\n  cursor: pointer;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, function (_a) {
@@ -3565,9 +3565,9 @@ var ButtonClaimed = styled__default['default'].button(templateObject_6$c || (tem
 });
 var templateObject_1$I, templateObject_2$y, templateObject_3$t, templateObject_4$k, templateObject_5$f, templateObject_6$c;
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions) {
+var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed) {
     var onPresentConnectModal = useModal(React__default['default'].createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
-    var onPresentAccountModal = useModal(!vesting ? (React__default['default'].createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout })) : (React__default['default'].createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions })))[0];
+    var onPresentAccountModal = useModal(!vesting ? (React__default['default'].createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout })) : (React__default['default'].createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed })))[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
@@ -4108,8 +4108,8 @@ var ellipsis = function (value, count) {
 };
 
 var Account = function (_a) {
-    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions;
-    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed;
+    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
         } },
@@ -4323,7 +4323,7 @@ var AvatarNetwork = styled__default['default'].div(templateObject_3$d || (templa
 var templateObject_1$l, templateObject_2$e, templateObject_3$d;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleChooseNetwork = _a.handleChooseNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleChooseNetwork = _a.handleChooseNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
@@ -4352,7 +4352,7 @@ var Header = function (_a) {
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default['default'].createElement(RightContent, null,
                 network ? (React__default['default'].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleChooseNetwork: handleChooseNetwork, network: network })) : null,
-                React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, yayBalance: yayBalance, dataTransactions: dataTransactions }),
+                React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed }),
                 React__default['default'].createElement(LanguageBlockDesk, null,
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
                 React__default['default'].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } })))));
@@ -4906,8 +4906,8 @@ var templateObject_1$6, templateObject_2$3, templateObject_3$2, templateObject_4
 var CardsIndicators = function (_a) {
     var data = _a.data;
     return (React__default['default'].createElement(Card$3, null,
-        React__default['default'].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px" }, data.text),
-        React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em" }, data.value)));
+        React__default['default'].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.text),
+        React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "400" }, data.value)));
 };
 var Card$3 = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  padding: 18px 24px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n"], ["\n  padding: 18px 24px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4949,7 +4949,7 @@ var Card$2 = styled__default['default'].div(templateObject_1$4 || (templateObjec
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledTitle$2 = styled__default['default'](Text)(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  width: 100%;\n  margin-bottom: 22px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    width: auto;\n    margin-bottom: 0px;\n    font-size: 24px;\n  }\n"], ["\n  width: 100%;\n  margin-bottom: 22px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    width: auto;\n    margin-bottom: 0px;\n    font-size: 24px;\n  }\n"])), function (_a) {
+var StyledTitle$2 = styled__default['default'](Text)(templateObject_2$2 || (templateObject_2$2 = __makeTemplateObject(["\n  width: 100%;\n  margin-bottom: 22px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-bottom: 0px;\n    font-size: 24px;\n  }\n"], ["\n  width: 100%;\n  margin-bottom: 22px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-bottom: 0px;\n    font-size: 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -4994,8 +4994,8 @@ var TextHoverBlock = styled__default['default'].div(templateObject_10 || (templa
     var widthProgress = _a.widthProgress;
     return (widthProgress >= 50 ? "right" : "left");
 }, ProgressBar);
-var StyledText = styled__default['default'](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n"])));
-var StyledButton$1 = styled__default['default'](Button$6)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  width: 100%;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"], ["\n  width: 100%;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"])), function (_a) {
+var StyledText = styled__default['default'](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"])));
+var StyledButton$1 = styled__default['default'](Button$6)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -5006,10 +5006,10 @@ var BG = "4277beef4ce8429d.png";
 var MP = "e0d66030e20df009.png";
 
 var MarketplaceLink = function (_a) {
-    var link = _a.link, text = _a.text;
-    return (React__default['default'].createElement(Card$1, { src: BG, href: link },
+    var link = _a.link, text = _a.text, images = _a.images;
+    return (React__default['default'].createElement(Card$1, { src: (images === null || images === void 0 ? void 0 : images.bg) || BG, href: link },
         React__default['default'].createElement(StyledTitle$1, null, text),
-        React__default['default'].createElement("img", { alt: "", src: MP })));
+        React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.mp) || MP })));
 };
 var Card$1 = styled__default['default'].a(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 12px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 12px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
@@ -5021,7 +5021,7 @@ var Card$1 = styled__default['default'].a(templateObject_1$3 || (templateObject_
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledTitle$1 = styled__default['default'](Text)(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
+var StyledTitle$1 = styled__default['default'](Text)(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -5032,24 +5032,24 @@ var GIFT = "807ae577acdaa994.png";
 var GIFT2 = "13c5906f9a4df20c.png";
 
 var TakeGift = function (_a) {
-    var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift;
+    var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift, images = _a.images;
     return (React__default['default'].createElement(Card, null,
         React__default['default'].createElement(StyledTitle, null, texts.title),
-        React__default['default'].createElement("img", { alt: "", src: GIFT }),
+        React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift) || GIFT }),
         React__default['default'].createElement(StyledButton, { variant: "white", onClick: handleTakeGift }, texts.button),
         React__default['default'].createElement(Claimed, { claimedGift: claimedGift },
-            React__default['default'].createElement("img", { alt: "", src: GIFT2 }),
+            React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift2) || GIFT2 }),
             React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", textAlign: "center" }, texts.claimed))));
 };
 var Card = styled__default['default'].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 12px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"], ["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 12px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greenGradient3;
 });
-var StyledTitle = styled__default['default'](Text)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 7px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  margin-bottom: 7px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
+var StyledTitle = styled__default['default'](Text)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  margin-bottom: 7px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    font-size: 24px;\n  }\n"], ["\n  margin-bottom: 7px;\n  font-size: 22px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  font-weight: 400;\n  ", " {\n    font-size: 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledButton = styled__default['default'](Button$6)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+var StyledButton = styled__default['default'](Button$6)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n"], ["\n  width: 100%;\n  font-weight: 400;\n"])));
 var Claimed = styled__default['default'].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.5, theme.colors.bgGray);
@@ -5063,12 +5063,12 @@ var Claimed = styled__default['default'].div(templateObject_4 || (templateObject
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var VestingWidget = function (_a) {
-    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace;
     return (React__default['default'].createElement(Wrapper, null,
         dataCardsIndicators.map(function (el, i) { return (React__default['default'].createElement(CardsIndicators, { data: el, key: el.text + "-" + i })); }),
         React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens }),
-        React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace }),
-        React__default['default'].createElement(TakeGift, { texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift })));
+        React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace }),
+        React__default['default'].createElement(TakeGift, { texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
 };
 var Wrapper = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;

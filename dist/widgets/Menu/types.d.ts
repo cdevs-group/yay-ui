@@ -63,4 +63,5 @@ export interface NavProps extends PanelProps {
     vesting?: boolean;
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
+    handleClaimed?: (value: string) => void;
 }
