@@ -26,12 +26,24 @@ export const HeaderDefault: React.FC = () => {
     button: "Logout",
     view: "View on BscScan",
     copied: "Copied",
+    yayBalance: "$YAY balance",
+    address: "Your address",
+    tabs: ["Wallet", "Transactions"],
+    recentTransactions: "Recent transactions",
+    claimed: "Claimed",
   };
 
   const textsConnect = {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
+
+  const dataTransactions = [
+    { id: "001", value: "+12,000,00 $YAY" },
+    { id: "002", value: "+12,000,00 $YAY" },
+    { id: "003", value: "+12,000,00 $YAY" },
+    { id: "004", value: "+12,000,00 $YAY" },
+  ];
 
   return (
     <BrowserRouter>
@@ -58,6 +70,9 @@ export const HeaderDefault: React.FC = () => {
           textsAccount={textsAccount}
           textsConnect={textsConnect}
           linkLogo="/"
+          vesting
+          yayBalance="25000000"
+          dataTransactions={dataTransactions}
         />
       </div>
     </BrowserRouter>

@@ -16,6 +16,9 @@ interface Props {
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
   network?: string;
+  vesting?: boolean;
+  yayBalance?: string | number;
+  dataTransactions?: Array<any>;
 }
 
 const Account: React.FC<Props> = ({
@@ -27,6 +30,9 @@ const Account: React.FC<Props> = ({
   textsConnect,
   hrefLearnHow,
   network,
+  vesting,
+  yayBalance,
+  dataTransactions,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -35,7 +41,10 @@ const Account: React.FC<Props> = ({
     textsConnect,
     network,
     account,
-    hrefLearnHow
+    hrefLearnHow,
+    vesting,
+    yayBalance,
+    dataTransactions
   );
 
   return (
