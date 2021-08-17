@@ -26,8 +26,8 @@ export declare const styleVariants: {
     secondary: {
         backgroundColor: string;
         border: string;
-        borderColor: string;
         boxShadow: string;
+        borderRadius: number;
         color: string;
         ":disabled": {
             backgroundColor: string;
@@ -76,6 +76,11 @@ export declare const styleVariants: {
         boxShadow: string;
     };
     gray: {
+        background: string;
+        color: string;
+        boxShadow: string;
+    };
+    white: {
         background: string;
         color: string;
         boxShadow: string;

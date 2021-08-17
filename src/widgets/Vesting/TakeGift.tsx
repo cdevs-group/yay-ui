@@ -73,7 +73,7 @@ const Claimed = styled.div<{ claimedGift: boolean }>`
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
   opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
-  pointer-events: ${({ claimedGift }) => (claimedGift ? 'auto' : 'none')};
+  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")};
   border-radius: inherit;
 `;
 export default TakeGift;

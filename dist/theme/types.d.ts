@@ -54,12 +54,15 @@ export declare type Colors = {
     buttonShadow: string;
     green: string;
     greenGradient2: string;
+    greenGradient3: string;
     cardBg: string;
     greyText: string;
     greyText2: string;
+    greyText3: string;
     darkGreyBg: string;
     orangeBg: string;
     greenBg: string;
+    greenBg2: string;
     redBg: string;
     yellowBg: string;
     yellowBg2: string;
@@ -95,6 +98,7 @@ export declare type Colors = {
     bgCardBtc2: string;
     blueGradient: string;
     boxShadow6: string;
+    boxShadow7: string;
     yellowGradient: string;
     yellowGradient2: string;
     text2: string;

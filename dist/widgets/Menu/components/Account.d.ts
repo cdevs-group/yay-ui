@@ -10,6 +10,9 @@ interface Props {
     textsAccount: TextsAccount;
     hrefLearnHow?: string;
     network?: string;
+    vesting?: boolean;
+    yayBalance?: string | number;
+    dataTransactions?: Array<any>;
 }
 declare const Account: React.FC<Props>;
 export default Account;
