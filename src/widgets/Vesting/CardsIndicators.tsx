@@ -12,10 +12,17 @@ interface IProps {
 const CardsIndicators = ({ data }: IProps) => {
   return (
     <Card>
-      <Text color="greyText" fontSize="14px" lineHeight="24px" letterSpacing="-0.02em" marginBottom="2px">
+      <Text
+        color="greyText"
+        fontSize="14px"
+        lineHeight="24px"
+        letterSpacing="-0.02em"
+        marginBottom="2px"
+        fontWeight="400"
+      >
         {data.text}
       </Text>
-      <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em">
+      <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
         {data.value}
       </Text>
     </Card>

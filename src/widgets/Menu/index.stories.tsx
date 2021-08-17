@@ -73,6 +73,7 @@ export const HeaderDefault: React.FC = () => {
           vesting
           yayBalance="25000000"
           dataTransactions={dataTransactions}
+          handleClaimed={(value) => console.log(value)}
         />
       </div>
     </BrowserRouter>

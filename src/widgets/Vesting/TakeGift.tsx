@@ -14,18 +14,22 @@ interface IProps {
     claimed: string;
   };
   claimedGift: boolean;
+  images?: {
+    gift: string;
+    gift2: string;
+  };
 }
 
-const TakeGift = ({ handleTakeGift, texts, claimedGift }: IProps) => {
+const TakeGift = ({ handleTakeGift, texts, claimedGift, images }: IProps) => {
   return (
     <Card>
       <StyledTitle>{texts.title}</StyledTitle>
-      <img alt="" src={GIFT} />
+      <img alt="" src={images?.gift || GIFT} />
       <StyledButton variant="white" onClick={handleTakeGift}>
         {texts.button}
       </StyledButton>
       <Claimed claimedGift={claimedGift}>
-        <img alt="" src={GIFT2} />
+        <img alt="" src={images?.gift2 || GIFT2} />
         <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
           {texts.claimed}
         </Text>
@@ -51,6 +55,7 @@ const StyledTitle = styled(Text)`
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.02em;
+  font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 24px;
   }
@@ -58,6 +63,7 @@ const StyledTitle = styled(Text)`
 
 const StyledButton = styled(Button)`
   width: 100%;
+  font-weight: 400;
 `;
 const Claimed = styled.div<{ claimedGift: boolean }>`
   position: absolute;

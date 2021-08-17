@@ -32,6 +32,7 @@ const Header: React.FC<NavProps> = ({
   vesting,
   yayBalance,
   dataTransactions,
+  handleClaimed,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -94,6 +95,7 @@ const Header: React.FC<NavProps> = ({
             vesting={vesting}
             yayBalance={yayBalance}
             dataTransactions={dataTransactions}
+            handleClaimed={handleClaimed}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

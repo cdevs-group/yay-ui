@@ -16,6 +16,8 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   textsTakeGift,
   handleTakeGift,
   claimedGift,
+  imagesGift,
+  imagesMarketplace,
 }) => {
   return (
     <Wrapper>
@@ -23,8 +25,13 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
         <CardsIndicators data={el} key={`${el.text}-${i}`} />
       ))}
       <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
-      <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} />
-      <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} />
+      <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
+      <TakeGift
+        texts={textsTakeGift}
+        handleTakeGift={handleTakeGift}
+        claimedGift={claimedGift}
+        images={imagesGift}
+      />
     </Wrapper>
   );
 };

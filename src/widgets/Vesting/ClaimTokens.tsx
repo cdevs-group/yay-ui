@@ -73,6 +73,7 @@ const StyledTitle = styled(Text)`
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.02em;
+  font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-bottom: 0px;
@@ -172,10 +173,12 @@ const StyledText = styled(Text)`
   line-height: 19px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
+  font-weight: 400;
 `;
 
 const StyledButton = styled(Button)`
   width: 100%;
+  font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-left: 43px;

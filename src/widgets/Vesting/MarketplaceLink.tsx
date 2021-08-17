@@ -7,13 +7,17 @@ import MP from "./img/mp.png";
 interface IProps {
   link: string;
   text: string;
+  images?: {
+    bg: string;
+    mp: string;
+  };
 }
 
-const MarketplaceLink = ({ link, text }: IProps) => {
+const MarketplaceLink = ({ link, text, images }: IProps) => {
   return (
-    <Card src={BG} href={link}>
+    <Card src={images?.bg || BG} href={link}>
       <StyledTitle>{text}</StyledTitle>
-      <img alt="" src={MP} />
+      <img alt="" src={images?.mp || MP} />
     </Card>
   );
 };
@@ -43,6 +47,7 @@ const StyledTitle = styled(Text)`
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.02em;
+  font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 24px;
   }

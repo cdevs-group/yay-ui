@@ -16,6 +16,10 @@ export interface VestingWidgetProps {
   }[];
   textMarketplaceLink: string;
   linkMarketplace: string;
+  imagesMarketplace?: {
+    bg: string;
+    mp: string;
+  }
   handleTakeGift: () => void;
   textsTakeGift: {
     title: string;
@@ -23,4 +27,8 @@ export interface VestingWidgetProps {
     claimed: string;
   };
   claimedGift: boolean;
+  imagesGift?: {
+    gift: string;
+    gift2: string;
+  };
 }

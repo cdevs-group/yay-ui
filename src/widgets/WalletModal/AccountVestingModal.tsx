@@ -19,6 +19,7 @@ interface Props {
   texts: TextsAccount;
   yayBalance?: string | number;
   dataTransactions?: Array<any>;
+  handleClaimed: (value: string) => void;
 }
 
 const AccountVestingModal: React.FC<Props> = ({
@@ -27,6 +28,7 @@ const AccountVestingModal: React.FC<Props> = ({
   logout,
   yayBalance,
   dataTransactions,
+  handleClaimed = () => null,
   onDismiss = () => null,
 }) => {
   const [tabValue, setTabValue] = useState<number>(0);
@@ -48,6 +50,7 @@ const AccountVestingModal: React.FC<Props> = ({
               fontSize="14px"
               lineHeight="24px"
               marginTop="37px"
+              fontWeight="400"
             >
               {texts.address}
             </Text>
@@ -65,10 +68,12 @@ const AccountVestingModal: React.FC<Props> = ({
               </AccountWrap>
             </Text>
             <Flex alignItems="center" justifyContent="space-between" mb="30px">
-              <Text letterSpacing="-0.02em" color="textGray">
+              <Text letterSpacing="-0.02em" color="textGray" fontWeight="400">
                 {texts.yayBalance}
               </Text>
-              <Text letterSpacing="-0.02em">{yayBalance}</Text>
+              <Text letterSpacing="-0.02em" fontWeight="400">
+                {yayBalance}
+              </Text>
             </Flex>
             <Flex mb="30px">
               <LinkExternal
@@ -77,6 +82,7 @@ const AccountVestingModal: React.FC<Props> = ({
                 href={`https://bscscan.com/address/${account}`}
                 mr="16px"
                 icon={<ArrowDownRightIcon style={{ marginLeft: 5 }} />}
+                style={{ fontWeight: 400 }}
               >
                 {texts.view}
               </LinkExternal>
@@ -87,6 +93,7 @@ const AccountVestingModal: React.FC<Props> = ({
                 scale="md"
                 width="100%"
                 variant="secondary"
+                style={{ fontWeight: 400 }}
                 onClick={() => {
                   logout();
                   window.localStorage.removeItem(connectorLocalStorageKey);
@@ -107,18 +114,21 @@ const AccountVestingModal: React.FC<Props> = ({
               fontSize="14px"
               lineHeight="24px"
               marginTop="26px"
+              fontWeight={400}
             >
               {texts.recentTransactions}
             </Text>
             <Table>
               {dataTransactions?.map((el, i) => (
                 <React.Fragment key={`${el.id}-${i}`}>
-                  <Text letterSpacing="0.05em">{el.id}</Text>
-                  <ButtonClaimed>
+                  <Text letterSpacing="0.05em" fontWeight={400}>
+                    {el.id}
+                  </Text>
+                  <ButtonClaimed onClick={() => handleClaimed(el.id)}>
                     {texts.claimed}
                     <ArrowDownRightIcon stroke="#fff" style={{ marginLeft: 5 }} width="8px" />
                   </ButtonClaimed>
-                  <Text letterSpacing="0.05em" color="green">
+                  <Text letterSpacing="0.05em" color="green" fontWeight={400}>
                     {el.value}
                   </Text>
                 </React.Fragment>
@@ -175,4 +185,6 @@ const ButtonClaimed = styled.button`
   background: none;
   border: 1px solid ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.text};
+  font-weight: 400;
+  cursor: pointer;
 `;

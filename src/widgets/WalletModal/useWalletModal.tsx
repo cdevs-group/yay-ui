@@ -38,7 +38,8 @@ const useWalletModal = (
   hrefLearnHow?: string,
   vesting?: boolean,
   yayBalance?: string | number,
-  dataTransactions?: Array<any>
+  dataTransactions?: Array<any>,
+  handleClaimed?: any
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
@@ -53,6 +54,7 @@ const useWalletModal = (
         logout={logout}
         yayBalance={yayBalance}
         dataTransactions={dataTransactions}
+        handleClaimed={handleClaimed}
       />
     )
   );
