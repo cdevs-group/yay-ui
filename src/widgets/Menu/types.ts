@@ -77,14 +77,14 @@ export interface NavProps extends PanelProps {
 }
 
 export type BlockChainNetwork = {
-  name: string
-  chainId: string
-  chainName: string
+  name: string;
+  chainId: string;
+  chainName: string;
   nativeCurrency: {
-    name: string
-    symbol: string
-    decimals: number
-  }
-  rpcUrls: string[]
-  blockExplorerUrls: string[]
-}
+    name: string;
+    symbol: string;
+    decimals: number;
+  };
+  rpcUrls: string[];
+  blockExplorerUrls: string[];
+};

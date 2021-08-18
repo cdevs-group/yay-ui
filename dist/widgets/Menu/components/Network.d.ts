@@ -1,6 +1,7 @@
 import React from "react";
+import { BlockChainNetwork } from "../types";
 interface Props {
-    network?: string;
+    network?: BlockChainNetwork;
     titleNetwork?: string;
     linkTextNetwork?: string;
     linkHrefNetwork?: string;

@@ -3426,9 +3426,9 @@ var ImgWrap = styled__default['default'].div(templateObject_4$m || (templateObje
     return polished.transparentize(0.95, theme.colors.text);
 });
 var ConnectModal = function (_a) {
-    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, _b = _a.network, network = _b === void 0 ? "Binance" : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
+    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, network = _a.network, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React__default['default'].createElement(Modal, { title: texts.title, onDismiss: onDismiss },
-        (network === "Binance" ? connectorsBsc : connectorsAvalanche).map(function (entry, index) { return (React__default['default'].createElement(Wrap$b, { key: index },
+        ((network === null || network === void 0 ? void 0 : network.name) === "Binance" ? connectorsBsc : connectorsAvalanche).map(function (entry, index) { return (React__default['default'].createElement(Wrap$b, { key: index },
             React__default['default'].createElement(Button$3, { onClick: function () {
                     login(entry.connectorId);
                     window.localStorage.setItem(connectorLocalStorageKey, entry.connectorId);
@@ -4297,9 +4297,9 @@ var Network = function (_a) {
     return (React__default['default'].createElement(NetworkBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
         } },
-        React__default['default'].createElement(TextStyled, null, network || "Binance"),
+        React__default['default'].createElement(TextStyled, null, (network === null || network === void 0 ? void 0 : network.name) || "Binance"),
         React__default['default'].createElement(AvatarNetwork, null,
-            React__default['default'].createElement("img", { src: network === "Binance" ? BNB2 : Avalanche }))));
+            React__default['default'].createElement("img", { src: (network === null || network === void 0 ? void 0 : network.name) === "Binance" ? BNB2 : Avalanche }))));
 };
 var NetworkBlock = styled__default['default'].button(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  margin-right: 6px;\n  padding: 0 2px;\n  font-size: 11px;\n  line-height: 14px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    margin-right: 11px;\n    font-size: 15px;\n    line-height: 19px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  margin-right: 6px;\n  padding: 0 2px;\n  font-size: 11px;\n  line-height: 14px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  &.notAuth {\n    background: ", ";\n  }\n  ", " {\n    min-height: 40px;\n    margin-right: 11px;\n    font-size: 15px;\n    line-height: 19px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;

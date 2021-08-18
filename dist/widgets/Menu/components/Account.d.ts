@@ -1,6 +1,7 @@
 import React from "react";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
+import { BlockChainNetwork } from "../types";
 interface Props {
     account?: string;
     login: Login;
@@ -9,7 +10,7 @@ interface Props {
     textsConnect: TextsConnect;
     textsAccount: TextsAccount;
     hrefLearnHow?: string;
-    network?: string;
+    network?: BlockChainNetwork;
     vesting?: boolean;
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
