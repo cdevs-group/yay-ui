@@ -5,9 +5,10 @@ import { useModal } from "../../Modal";
 import NetworkModal from "./NetworkModal";
 import { BNB2 } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
+import { BlockChainNetwork } from "../types";
 
 interface Props {
-  network?: string;
+  network?: BlockChainNetwork;
   titleNetwork?: string;
   linkTextNetwork?: string;
   linkHrefNetwork?: string;
@@ -46,9 +47,9 @@ const Network: React.FC<Props> = ({
         onPresentConnectModal();
       }}
     >
-      <TextStyled>{network || "Binance"}</TextStyled>
+      <TextStyled>{network?.name || "Binance"}</TextStyled>
       <AvatarNetwork>
-        <img src={network === "Binance" ? BNB2 : Avalanche} />
+        <img src={network?.name === "Binance" ? BNB2 : Avalanche} />
       </AvatarNetwork>
     </NetworkBlock>
   );

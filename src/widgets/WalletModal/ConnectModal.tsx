@@ -6,6 +6,7 @@ import { Modal } from "../Modal";
 import { Login } from "./types";
 import { Text } from "../../components/Text";
 import { connectorLocalStorageKey, connectorsBsc, connectorsAvalanche } from "./config";
+import { BlockChainNetwork } from "../Menu/types";
 
 interface Props {
   login: Login;
@@ -15,7 +16,7 @@ interface Props {
     link: string;
   };
   hrefLearnHow?: string;
-  network?: string;
+  network?: BlockChainNetwork;
 }
 
 const HelpLink = styled(Link)`
@@ -70,9 +71,9 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network = "Binance", onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
-    {(network === "Binance" ? connectorsBsc : connectorsAvalanche).map((entry, index) => (
+    {(network?.name === "Binance" ? connectorsBsc : connectorsAvalanche).map((entry, index) => (
       <Wrap key={index}>
         <Button
           onClick={() => {

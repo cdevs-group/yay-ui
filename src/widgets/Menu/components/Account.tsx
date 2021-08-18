@@ -6,6 +6,7 @@ import { useWalletModal } from "../../WalletModal";
 import { Login } from "../../WalletModal/types";
 import { AccountIcon } from "../../../constants/images";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
+import { BlockChainNetwork } from "../types";
 
 interface Props {
   account?: string;
@@ -15,7 +16,7 @@ interface Props {
   textsConnect: TextsConnect;
   textsAccount: TextsAccount;
   hrefLearnHow?: string;
-  network?: string;
+  network?: BlockChainNetwork;
   vesting?: boolean;
   yayBalance?: string | number;
   dataTransactions?: Array<any>;

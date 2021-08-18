@@ -4,6 +4,7 @@ import ConnectModal from "./ConnectModal";
 import AccountModal from "./AccountModal";
 import { Login } from "./types";
 import AccountVestingModal from "./AccountVestingModal";
+import { BlockChainNetwork } from "../Menu/types";
 
 interface ReturnType {
   onPresentConnectModal: () => void;
@@ -34,7 +35,7 @@ const useWalletModal = (
   logout: () => void,
   textsAccount: TextsAccount,
   textsConnect: TextsConnect,
-  network?: string,
+  network?: BlockChainNetwork,
   account?: string,
   hrefLearnHow?: string,
   vesting?: boolean,
