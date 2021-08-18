@@ -7,8 +7,7 @@ interface Props {
     linkHrefNetwork?: string;
     handleToggleNetwork?: (e: any) => void;
     valuesNetworks?: string[];
-    network1Text?: string;
-    network2Text?: string;
+    listNetwork?: BlockChainNetwork[];
 }
 declare const Network: React.FC<Props>;
 export default Network;

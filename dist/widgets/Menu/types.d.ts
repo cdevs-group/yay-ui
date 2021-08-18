@@ -61,8 +61,7 @@ export interface NavProps extends PanelProps {
     linkHrefNetwork?: string;
     handleToggleNetwork?: (e: any) => void;
     valuesNetworks?: string[];
-    network1Text?: string;
-    network2Text?: string;
+    listNetwork?: BlockChainNetwork[];
     vesting?: boolean;
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
@@ -70,6 +69,7 @@ export interface NavProps extends PanelProps {
 }
 export declare type BlockChainNetwork = {
     name: string;
+    icon?: string;
     chainId: string;
     chainName: string;
     nativeCurrency: {
