@@ -29,7 +29,7 @@ const Card = styled.a<{ src: string }>`
   padding: 18px 24px;
   background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
   background-color: ${({ theme }) => theme.colors.bgGray};
-  border-radius: 12px;
+  border-radius: 20px;
   & img {
     position: absolute;
     left: 50%;

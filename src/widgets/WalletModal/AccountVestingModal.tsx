@@ -122,16 +122,12 @@ const AccountVestingModal: React.FC<Props> = ({
               <Table>
                 {dataTransactions?.map((el, i) => (
                   <React.Fragment key={`${el.id}-${i}`}>
-                    <Text letterSpacing="0.05em" fontWeight={400}>
-                      {el.id}
-                    </Text>
+                    <StyledText>{el.id}</StyledText>
                     <ButtonClaimed onClick={() => handleClaimed(el.id)}>
                       {texts.claimed}
                       <ArrowDownRightIcon stroke="#fff" style={{ marginLeft: 5 }} width="8px" />
                     </ButtonClaimed>
-                    <Text letterSpacing="0.05em" color="green" fontWeight={400}>
-                      {el.value}
-                    </Text>
+                    <StyledText color="green">{el.value}</StyledText>
                   </React.Fragment>
                 ))}
               </Table>
@@ -186,6 +182,7 @@ const Table = styled.div`
   grid-gap: 32px 20px;
   align-items: center;
 `;
+
 const ButtonClaimed = styled.button`
   display: flex;
   align-items: center;
@@ -202,4 +199,15 @@ const ButtonClaimed = styled.button`
   color: ${({ theme }) => theme.colors.text};
   font-weight: 400;
   cursor: pointer;
+`;
+
+const StyledText = styled(Text)`
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+    line-height: 19px;
+  }
 `;

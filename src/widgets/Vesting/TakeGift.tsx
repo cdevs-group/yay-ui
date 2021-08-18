@@ -43,7 +43,7 @@ const Card = styled.div`
   display: block;
   padding: 18px 24px;
   background: ${({ theme }) => theme.colors.greenGradient3};
-  border-radius: 12px;
+  border-radius: 20px;
   & img {
     display: block;
     margin: 0 auto 6px;
