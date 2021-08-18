@@ -118,22 +118,28 @@ const AccountVestingModal: React.FC<Props> = ({
             >
               {texts.recentTransactions}
             </Text>
-            <Table>
-              {dataTransactions?.map((el, i) => (
-                <React.Fragment key={`${el.id}-${i}`}>
-                  <Text letterSpacing="0.05em" fontWeight={400}>
-                    {el.id}
-                  </Text>
-                  <ButtonClaimed onClick={() => handleClaimed(el.id)}>
-                    {texts.claimed}
-                    <ArrowDownRightIcon stroke="#fff" style={{ marginLeft: 5 }} width="8px" />
-                  </ButtonClaimed>
-                  <Text letterSpacing="0.05em" color="green" fontWeight={400}>
-                    {el.value}
-                  </Text>
-                </React.Fragment>
-              ))}
-            </Table>
+            {dataTransactions?.length ? (
+              <Table>
+                {dataTransactions?.map((el, i) => (
+                  <React.Fragment key={`${el.id}-${i}`}>
+                    <Text letterSpacing="0.05em" fontWeight={400}>
+                      {el.id}
+                    </Text>
+                    <ButtonClaimed onClick={() => handleClaimed(el.id)}>
+                      {texts.claimed}
+                      <ArrowDownRightIcon stroke="#fff" style={{ marginLeft: 5 }} width="8px" />
+                    </ButtonClaimed>
+                    <Text letterSpacing="0.05em" color="green" fontWeight={400}>
+                      {el.value}
+                    </Text>
+                  </React.Fragment>
+                ))}
+              </Table>
+            ) : (
+              <Text fontSize="13px" letterSpacing="0.05em" textAlign="center" padding="16px 0">
+                {texts.noRecentTransactions}
+              </Text>
+            )}
           </>
         )}
       </ModalWrap>
@@ -146,22 +152,31 @@ export default AccountVestingModal;
 const ModalWrap = styled.div`
   padding: 0 20px 20px;
   min-height: 380px;
+  margin-top: -10px;
 `;
 const AccountWrap = styled(Input)`
-  padding: 17px 15px;
+  position: relative;
+  padding: 13px 15px;
   width: 100%;
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 17px 20px;
+    padding: 13px 20px;
   }
 `;
 const CopyText = styled(Text)`
-  margin-left: 10px;
+  padding-left: 10px;
+  margin-left: auto;
+  box-shadow: -10px 0px 10px ${({ theme }) => theme.colors.darkGreyBg};
 `;
 
 const AccountText = styled(Text)`
-  font-size: 10px;
+  font-size: 13px;
+  max-width: 226px;
+  overflow: hidden;
+  ${({ theme }) => theme.mediaQueries.xs} {
+    max-width: 250px;
+  }
   ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 11px;
+    max-width: 300px;
   }
 `;
 

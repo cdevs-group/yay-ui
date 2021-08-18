@@ -11,8 +11,11 @@ interface Props {
   title?: string;
   linkText?: string;
   linkHref?: string;
-  handleChooseNetwork?: (e: any) => void;
+  handleToggleNetwork?: (e: any) => void;
   onDismiss?: () => void;
+  valuesNetworks?: string[];
+  network1Text?: string;
+  network2Text?: string;
 }
 
 const Wrap = styled.div`
@@ -41,31 +44,20 @@ const TextStyled = styled(Text)`
   font-weight: 500;
   letter-spacing: 0.5px;
   text-align: center;
-  &.mobile {
-    display: block;
-  }
-  &.desktop {
-    display: none;
-  }
-  ${({ theme }) => theme.mediaQueries.lg} {
-    &.mobile {
-      display: none;
-    }
-    &.desktop {
-      display: block;
-    }
-  }
 `;
 
 const NetworkModal: React.FC<Props> = ({
   title,
   linkText,
   linkHref,
-  handleChooseNetwork = (e) => null,
+  handleToggleNetwork = (e) => null,
   onDismiss = () => null,
+  valuesNetworks,
+  network1Text,
+  network2Text,
 }) => {
   const handleClick = (e: any) => {
-    handleChooseNetwork(e.currentTarget.value);
+    handleToggleNetwork(e.currentTarget.value);
     onDismiss();
   };
 
@@ -73,13 +65,12 @@ const NetworkModal: React.FC<Props> = ({
     <Modal title={title} welcome paddingTopHeader="20px" onDismiss={onDismiss}>
       <Wrap>
         <Buttons>
-          <Button value="Binance" onClick={handleClick}>
-            <TextStyled>BSC</TextStyled>
+          <Button value={valuesNetworks?.[0]} onClick={handleClick}>
+            <TextStyled>{network1Text || "BSC"}</TextStyled>
             <img src={BNB2} alt="" />
           </Button>
-          <Button value="Avalanche" onClick={handleClick}>
-            <TextStyled className="desktop">Avalanche</TextStyled>
-            <TextStyled className="mobile">AVAX</TextStyled>
+          <Button value={valuesNetworks?.[1]} onClick={handleClick}>
+            <TextStyled>{network2Text || "Avalanche"}</TextStyled>
             <img src={Avalanche} alt="" />
           </Button>
         </Buttons>

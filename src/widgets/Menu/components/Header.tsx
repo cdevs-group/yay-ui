@@ -25,10 +25,13 @@ const Header: React.FC<NavProps> = ({
   hrefLearnHow,
   linkLogo,
   network,
-  handleChooseNetwork,
+  handleToggleNetwork,
   linkTextNetwork,
   linkHrefNetwork,
   titleNetwork,
+  valuesNetworks,
+  network1Text,
+  network2Text,
   vesting,
   yayBalance,
   dataTransactions,
@@ -79,8 +82,11 @@ const Header: React.FC<NavProps> = ({
               titleNetwork={titleNetwork}
               linkHrefNetwork={linkHrefNetwork}
               linkTextNetwork={linkTextNetwork}
-              handleChooseNetwork={handleChooseNetwork}
+              handleToggleNetwork={handleToggleNetwork}
               network={network}
+              valuesNetworks={valuesNetworks}
+              network1Text={network1Text}
+              network2Text={network2Text}
             />
           ) : null}
           <Account

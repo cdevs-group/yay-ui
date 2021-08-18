@@ -66,7 +66,10 @@ export interface NavProps extends PanelProps {
   titleNetwork?: string;
   linkTextNetwork?: string;
   linkHrefNetwork?: string;
-  handleChooseNetwork?: (e: any) => void;
+  handleToggleNetwork?: (e: any) => void;
+  valuesNetworks?: string[];
+  network1Text?: string;
+  network2Text?: string;
   vesting?: boolean;
   yayBalance?: string | number;
   dataTransactions?: Array<any>;

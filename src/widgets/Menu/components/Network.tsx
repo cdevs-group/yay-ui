@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { useModal } from "../../Modal";
-import NetworkModal from "../NetworkModal/NetworkModal";
+import NetworkModal from "./NetworkModal";
 import { BNB2 } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 
@@ -11,16 +11,31 @@ interface Props {
   titleNetwork?: string;
   linkTextNetwork?: string;
   linkHrefNetwork?: string;
-  handleChooseNetwork?: (e: any) => void;
+  handleToggleNetwork?: (e: any) => void;
+  valuesNetworks?: string[];
+  network1Text?: string;
+  network2Text?: string;
 }
 
-const Network: React.FC<Props> = ({ network, handleChooseNetwork, linkTextNetwork, linkHrefNetwork, titleNetwork }) => {
+const Network: React.FC<Props> = ({
+  network,
+  handleToggleNetwork,
+  linkTextNetwork,
+  linkHrefNetwork,
+  titleNetwork,
+  valuesNetworks,
+  network1Text,
+  network2Text,
+}) => {
   const [onPresentConnectModal] = useModal(
     <NetworkModal
       title={titleNetwork}
       linkHref={linkHrefNetwork}
       linkText={linkTextNetwork}
-      handleChooseNetwork={handleChooseNetwork}
+      handleToggleNetwork={handleToggleNetwork}
+      valuesNetworks={valuesNetworks}
+      network1Text={network1Text}
+      network2Text={network2Text}
     />
   );
 
