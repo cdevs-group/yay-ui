@@ -4,7 +4,10 @@ interface Props {
     titleNetwork?: string;
     linkTextNetwork?: string;
     linkHrefNetwork?: string;
-    handleChooseNetwork?: (e: any) => void;
+    handleToggleNetwork?: (e: any) => void;
+    valuesNetworks?: string[];
+    network1Text?: string;
+    network2Text?: string;
 }
 declare const Network: React.FC<Props>;
 export default Network;

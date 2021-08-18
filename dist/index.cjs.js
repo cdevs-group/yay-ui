@@ -3538,20 +3538,26 @@ var AccountVestingModal = function (_a) {
                         } }, texts.button)))),
             tabValue === 1 && (React__default['default'].createElement(React__default['default'].Fragment, null,
                 React__default['default'].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "21px", fontSize: "14px", lineHeight: "24px", marginTop: "26px", fontWeight: 400 }, texts.recentTransactions),
-                React__default['default'].createElement(Table$3, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: el.id + "-" + i },
+                (dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.length) ? (React__default['default'].createElement(Table$3, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: el.id + "-" + i },
                     React__default['default'].createElement(Text, { letterSpacing: "0.05em", fontWeight: 400 }, el.id),
                     React__default['default'].createElement(ButtonClaimed, { onClick: function () { return handleClaimed(el.id); } },
                         texts.claimed,
                         React__default['default'].createElement(Icon$2, { stroke: "#fff", style: { marginLeft: 5 }, width: "8px" })),
-                    React__default['default'].createElement(Text, { letterSpacing: "0.05em", color: "green", fontWeight: 400 }, el.value))); })))))));
+                    React__default['default'].createElement(Text, { letterSpacing: "0.05em", color: "green", fontWeight: 400 }, el.value))); }))) : (React__default['default'].createElement(Text, { fontSize: "13px", letterSpacing: "0.05em", textAlign: "center", padding: "16px 0" }, texts.noRecentTransactions)))))));
 };
-var ModalWrap = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  padding: 0 20px 20px;\n  min-height: 380px;\n"], ["\n  padding: 0 20px 20px;\n  min-height: 380px;\n"])));
-var AccountWrap = styled__default['default'](Button$3)(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"], ["\n  padding: 17px 15px;\n  width: 100%;\n  ", " {\n    padding: 17px 20px;\n  }\n"])), function (_a) {
+var ModalWrap = styled__default['default'].div(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  padding: 0 20px 20px;\n  min-height: 380px;\n  margin-top: -10px;\n"], ["\n  padding: 0 20px 20px;\n  min-height: 380px;\n  margin-top: -10px;\n"])));
+var AccountWrap = styled__default['default'](Button$3)(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  position: relative;\n  padding: 13px 15px;\n  width: 100%;\n  ", " {\n    padding: 13px 20px;\n  }\n"], ["\n  position: relative;\n  padding: 13px 15px;\n  width: 100%;\n  ", " {\n    padding: 13px 20px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var CopyText = styled__default['default'](Text)(templateObject_3$t || (templateObject_3$t = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
-var AccountText = styled__default['default'](Text)(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  font-size: 10px;\n  ", " {\n    font-size: 11px;\n  }\n"], ["\n  font-size: 10px;\n  ", " {\n    font-size: 11px;\n  }\n"])), function (_a) {
+var CopyText = styled__default['default'](Text)(templateObject_3$t || (templateObject_3$t = __makeTemplateObject(["\n  padding-left: 10px;\n  margin-left: auto;\n  box-shadow: -10px 0px 10px ", ";\n"], ["\n  padding-left: 10px;\n  margin-left: auto;\n  box-shadow: -10px 0px 10px ", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.darkGreyBg;
+});
+var AccountText = styled__default['default'](Text)(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  font-size: 13px;\n  max-width: 226px;\n  overflow: hidden;\n  ", " {\n    max-width: 250px;\n  }\n  ", " {\n    max-width: 300px;\n  }\n"], ["\n  font-size: 13px;\n  max-width: 226px;\n  overflow: hidden;\n  ", " {\n    max-width: 250px;\n  }\n  ", " {\n    max-width: 300px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.xs;
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -4265,33 +4271,29 @@ var Button = styled__default['default'].button(templateObject_2$f || (templateOb
     return polished.transparentize(0.85, theme.colors.contrast);
 });
 var Buttons$1 = styled__default['default'].div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  margin: 40px 0;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  margin: 40px 0;\n"])));
-var TextStyled$1 = styled__default['default'](Text)(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n  &.mobile {\n    display: block;\n  }\n  &.desktop {\n    display: none;\n  }\n  ", " {\n    &.mobile {\n      display: none;\n    }\n    &.desktop {\n      display: block;\n    }\n  }\n"], ["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n  &.mobile {\n    display: block;\n  }\n  &.desktop {\n    display: none;\n  }\n  ", " {\n    &.mobile {\n      display: none;\n    }\n    &.desktop {\n      display: block;\n    }\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.lg;
-});
+var TextStyled$1 = styled__default['default'](Text)(templateObject_4$c || (templateObject_4$c = __makeTemplateObject(["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"], ["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"])));
 var NetworkModal = function (_a) {
-    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, _b = _a.handleChooseNetwork, handleChooseNetwork = _b === void 0 ? function (e) { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
+    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, _b = _a.handleToggleNetwork, handleToggleNetwork = _b === void 0 ? function (e) { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, valuesNetworks = _a.valuesNetworks, network1Text = _a.network1Text, network2Text = _a.network2Text;
     var handleClick = function (e) {
-        handleChooseNetwork(e.currentTarget.value);
+        handleToggleNetwork(e.currentTarget.value);
         onDismiss();
     };
     return (React__default['default'].createElement(Modal, { title: title, welcome: true, paddingTopHeader: "20px", onDismiss: onDismiss },
         React__default['default'].createElement(Wrap$4, null,
             React__default['default'].createElement(Buttons$1, null,
-                React__default['default'].createElement(Button, { value: "Binance", onClick: handleClick },
-                    React__default['default'].createElement(TextStyled$1, null, "BSC"),
+                React__default['default'].createElement(Button, { value: valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[0], onClick: handleClick },
+                    React__default['default'].createElement(TextStyled$1, null, network1Text || "BSC"),
                     React__default['default'].createElement("img", { src: BNB2, alt: "" })),
-                React__default['default'].createElement(Button, { value: "Avalanche", onClick: handleClick },
-                    React__default['default'].createElement(TextStyled$1, { className: "desktop" }, "Avalanche"),
-                    React__default['default'].createElement(TextStyled$1, { className: "mobile" }, "AVAX"),
+                React__default['default'].createElement(Button, { value: valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[1], onClick: handleClick },
+                    React__default['default'].createElement(TextStyled$1, null, network2Text || "Avalanche"),
                     React__default['default'].createElement("img", { src: Avalanche, alt: "" }))),
             React__default['default'].createElement(Link$3, { href: linkHref, style: { margin: "0 auto" } }, linkText))));
 };
 var templateObject_1$m, templateObject_2$f, templateObject_3$e, templateObject_4$c;
 
 var Network = function (_a) {
-    var network = _a.network, handleChooseNetwork = _a.handleChooseNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork;
-    var onPresentConnectModal = useModal(React__default['default'].createElement(NetworkModal, { title: titleNetwork, linkHref: linkHrefNetwork, linkText: linkTextNetwork, handleChooseNetwork: handleChooseNetwork }))[0];
+    var network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, network1Text = _a.network1Text, network2Text = _a.network2Text;
+    var onPresentConnectModal = useModal(React__default['default'].createElement(NetworkModal, { title: titleNetwork, linkHref: linkHrefNetwork, linkText: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, valuesNetworks: valuesNetworks, network1Text: network1Text, network2Text: network2Text }))[0];
     return (React__default['default'].createElement(NetworkBlock, { as: "button", onClick: function () {
             onPresentConnectModal();
         } },
@@ -4323,7 +4325,7 @@ var AvatarNetwork = styled__default['default'].div(templateObject_3$d || (templa
 var templateObject_1$l, templateObject_2$e, templateObject_3$d;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleChooseNetwork = _a.handleChooseNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, network1Text = _a.network1Text, network2Text = _a.network2Text, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
@@ -4351,7 +4353,7 @@ var Header = function (_a) {
                 React__default['default'].createElement(LanguageBlockMob, null,
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default['default'].createElement(RightContent, null,
-                network ? (React__default['default'].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleChooseNetwork: handleChooseNetwork, network: network })) : null,
+                network ? (React__default['default'].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, network1Text: network1Text, network2Text: network2Text })) : null,
                 React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed }),
                 React__default['default'].createElement(LanguageBlockDesk, null,
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),

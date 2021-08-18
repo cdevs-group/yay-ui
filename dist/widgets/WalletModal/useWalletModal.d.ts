@@ -14,6 +14,7 @@ export interface TextsAccount {
     tabs?: Array<string>;
     recentTransactions?: string;
     claimed?: string;
+    noRecentTransactions?: string;
 }
 export interface TextsConnect {
     title: string;
