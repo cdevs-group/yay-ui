@@ -5,7 +5,7 @@ import { Link } from "../../components/Link";
 import { Modal } from "../Modal";
 import { Login } from "./types";
 import { Text } from "../../components/Text";
-import { connectorLocalStorageKey, connectorsBsc, connectorsAvalanche } from "./config";
+import { connectorLocalStorageKey, getNetwork } from "./config";
 import { BlockChainNetwork } from "../Menu/types";
 
 interface Props {
@@ -73,7 +73,7 @@ const ImgWrap = styled.div`
 
 const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, onDismiss = () => null }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
-    {(network?.name === "Binance" ? connectorsBsc : connectorsAvalanche).map((entry, index) => (
+    {getNetwork(network?.chainId)?.map((entry, index) => (
       <Wrap key={index}>
         <Button
           onClick={() => {

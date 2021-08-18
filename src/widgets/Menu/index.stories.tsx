@@ -4,6 +4,8 @@ import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { links } from "./config";
 import { useState } from "react";
+import { BNB2 } from "../../constants/images";
+import { Avalanche } from "../../constants/images";
 
 export default {
   title: "Components/Header",
@@ -16,10 +18,7 @@ export const HeaderDefault: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-  const [network, setNetwork] = useState("Binance");
-  const handleToggleNetwork = (val) => {
-    setNetwork(val);
-  };
+
   const textsAccount = {
     copy: "Copy",
     title: "Your wallet",
@@ -37,13 +36,6 @@ export const HeaderDefault: React.FC = () => {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
-
-  const dataTransactions = [
-    { id: "001", value: "+12,000,00 $YAY" },
-    { id: "002", value: "+12,000,00 $YAY" },
-    { id: "003", value: "+12,000,00 $YAY" },
-    { id: "004", value: "+12,000,00 $YAY" },
-  ];
 
   return (
     <BrowserRouter>
@@ -71,16 +63,51 @@ export const HeaderDefault: React.FC = () => {
   );
 };
 
+const NETWORK_CHAIN = [
+  {
+    name: "Binance",
+    icon: BNB2,
+    chainId: "56",
+    chainName: "Binance Smart Chain Mainnet",
+    nativeCurrency: {
+      name: "BNB",
+      symbol: "bnb",
+      decimals: 18,
+    },
+    rpcUrls: [
+      "https://bsc-dataseed1.ninicoin.io",
+      "https://bsc-dataseed1.defibit.io",
+      "https://bsc-dataseed.binance.org",
+    ],
+    blockExplorerUrls: ["https://bscscan.com"],
+  },
+  {
+    name: "AVAX",
+    icon: Avalanche,
+    chainId: "43114",
+    chainName: "AVAX Mainnet",
+    nativeCurrency: {
+      name: "AVAX",
+      symbol: "avax",
+      decimals: 18,
+    },
+    rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+    blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+  },
+];
+
 export const HeaderNetwork: React.FC = () => {
   const langs = [
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-  const [network, setNetwork] = useState("Binance");
+
+  const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
 
   const handleToggleNetwork = (val) => {
-    setNetwork(val);
+    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
   };
+
   const textsAccount = {
     copy: "Copy",
     title: "Your wallet",
@@ -98,13 +125,6 @@ export const HeaderNetwork: React.FC = () => {
     title: "Сonnect wallet",
     link: "Learn how connect",
   };
-
-  const dataTransactions = [
-    { id: "001", value: "+12,000,00 $YAY" },
-    { id: "002", value: "+12,000,00 $YAY" },
-    { id: "003", value: "+12,000,00 $YAY" },
-    { id: "004", value: "+12,000,00 $YAY" },
-  ];
 
   return (
     <BrowserRouter>
@@ -131,9 +151,8 @@ export const HeaderNetwork: React.FC = () => {
           textsAccount={textsAccount}
           textsConnect={textsConnect}
           linkLogo="/"
-          valuesNetworks={["BSC", "AVAX"]}
-          network1Text={"network1Text"}
-          network2Text={"network2Text"}
+          valuesNetworks={["56", "43114"]}
+          listNetwork={NETWORK_CHAIN}
         />
       </div>
     </BrowserRouter>
@@ -145,10 +164,12 @@ export const HeaderVesting: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-  const [network, setNetwork] = useState("Binance");
+   const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
+
   const handleToggleNetwork = (val) => {
-    setNetwork(val);
+    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
   };
+
   const textsAccount = {
     copy: "Copy",
     title: "Your wallet",
@@ -215,10 +236,12 @@ export const HeaderVestingNoTransactions: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-  const [network, setNetwork] = useState("Binance");
+   const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
+
   const handleToggleNetwork = (val) => {
-    setNetwork(val);
+    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
   };
+
   const textsAccount = {
     copy: "Copy",
     title: "Your wallet",

@@ -4,7 +4,6 @@ import Text from "../../../components/Text/Text";
 import { useModal } from "../../Modal";
 import NetworkModal from "./NetworkModal";
 import { BNB2 } from "../../../constants/images";
-import { Avalanche } from "../../../constants/images";
 import { BlockChainNetwork } from "../types";
 
 interface Props {
@@ -14,8 +13,7 @@ interface Props {
   linkHrefNetwork?: string;
   handleToggleNetwork?: (e: any) => void;
   valuesNetworks?: string[];
-  network1Text?: string;
-  network2Text?: string;
+  listNetwork?: BlockChainNetwork[];
 }
 
 const Network: React.FC<Props> = ({
@@ -25,8 +23,7 @@ const Network: React.FC<Props> = ({
   linkHrefNetwork,
   titleNetwork,
   valuesNetworks,
-  network1Text,
-  network2Text,
+  listNetwork,
 }) => {
   const [onPresentConnectModal] = useModal(
     <NetworkModal
@@ -35,8 +32,7 @@ const Network: React.FC<Props> = ({
       linkText={linkTextNetwork}
       handleToggleNetwork={handleToggleNetwork}
       valuesNetworks={valuesNetworks}
-      network1Text={network1Text}
-      network2Text={network2Text}
+      listNetwork={listNetwork}
     />
   );
 
@@ -49,7 +45,7 @@ const Network: React.FC<Props> = ({
     >
       <TextStyled>{network?.name || "Binance"}</TextStyled>
       <AvatarNetwork>
-        <img src={network?.name === "Binance" ? BNB2 : Avalanche} />
+        <img src={network?.icon || BNB2} />
       </AvatarNetwork>
     </NetworkBlock>
   );

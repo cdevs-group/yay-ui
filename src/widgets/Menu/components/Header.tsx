@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { NavProps } from "../types";
 import Account from "./Account";
@@ -30,8 +29,7 @@ const Header: React.FC<NavProps> = ({
   linkHrefNetwork,
   titleNetwork,
   valuesNetworks,
-  network1Text,
-  network2Text,
+  listNetwork,
   vesting,
   yayBalance,
   dataTransactions,
@@ -85,8 +83,7 @@ const Header: React.FC<NavProps> = ({
               handleToggleNetwork={handleToggleNetwork}
               network={network}
               valuesNetworks={valuesNetworks}
-              network1Text={network1Text}
-              network2Text={network2Text}
+              listNetwork={listNetwork}
             />
           ) : null}
           <Account
