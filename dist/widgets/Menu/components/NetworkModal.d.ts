@@ -1,4 +1,5 @@
 import React from "react";
+import { BlockChainNetwork } from "../types";
 interface Props {
     title?: string;
     linkText?: string;
@@ -6,8 +7,7 @@ interface Props {
     handleToggleNetwork?: (e: any) => void;
     onDismiss?: () => void;
     valuesNetworks?: string[];
-    network1Text?: string;
-    network2Text?: string;
+    listNetwork?: BlockChainNetwork[];
 }
 declare const NetworkModal: React.FC<Props>;
 export default NetworkModal;

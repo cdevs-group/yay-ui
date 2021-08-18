@@ -105,7 +105,7 @@ export const HeaderNetwork: React.FC = () => {
   const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
 
   const handleToggleNetwork = (val) => {
-    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
+    setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
 
   const textsAccount = {
@@ -164,10 +164,10 @@ export const HeaderVesting: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-   const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
+  const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
 
   const handleToggleNetwork = (val) => {
-    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
+    setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
 
   const textsAccount = {
@@ -236,10 +236,10 @@ export const HeaderVestingNoTransactions: React.FC = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
-   const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
+  const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
 
   const handleToggleNetwork = (val) => {
-    setNetwork(NETWORK_CHAIN.find(el => el.chainId === val));
+    setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
 
   const textsAccount = {
