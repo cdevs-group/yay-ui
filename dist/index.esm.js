@@ -2299,13 +2299,16 @@ var Wrap$i = styled.div(templateObject_1$10 || (templateObject_1$10 = __makeTemp
     var theme = _a.theme;
     return theme.colors.text;
 });
-var SoonImg = styled.div(templateObject_2$R || (templateObject_2$R = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  margin: -140px auto -20px;\n"], ["\n  display: flex;\n  justify-content: center;\n  margin: -140px auto -20px;\n"])));
+var SoonImg = styled.div(templateObject_2$R || (templateObject_2$R = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  margin: ", ";\n"], ["\n  display: flex;\n  justify-content: center;\n  margin: ", ";\n"])), function (_a) {
+    var margin = _a.margin;
+    return margin || "-120px auto -20px";
+});
 var TextBottom = styled(Text)(templateObject_3$G || (templateObject_3$G = __makeTemplateObject(["\n  margin-bottom: 26px;\n  line-height: 16px;\n"], ["\n  margin-bottom: 26px;\n  line-height: 16px;\n"])));
 var BackLink = styled.div(templateObject_4$x || (templateObject_4$x = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  cursor: pointer;\n"], ["\n  display: flex;\n  justify-content: center;\n  cursor: pointer;\n"])));
 var ComingSoonWithButton = function (_a) {
-    _a.href; var text = _a.text, buttonText = _a.buttonText, img = _a.img, handleClick = _a.handleClick;
+    var margin = _a.margin, text = _a.text, buttonText = _a.buttonText, img = _a.img, handleClick = _a.handleClick;
     return (React__default.createElement(Wrap$i, null,
-        React__default.createElement(SoonImg, null,
+        React__default.createElement(SoonImg, { margin: margin },
             React__default.createElement("img", { src: img || ComingSoonIcon })),
         React__default.createElement(TextBottom, { size: "sm" }, text),
         React__default.createElement(BackLink, null,
