@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { TitleBlockProps } from "./types";
 
-const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, children }) => {
+const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, margin, children }) => {
   return (
     <Block>
-      <Img>
+      <Img margin={margin}>
         <img src={src} alt="" />
       </Img>
       <div>
@@ -23,18 +23,7 @@ const Block = styled.div`
   align-items: center;
 `;
 
-const ImgWrap = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 186px;
-  height: 186px;
-  margin-right: 50px;
-  border-radius: 50%;
-`;
-
-const Img = styled.div`
+const Img = styled.div<{ margin?: string }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -44,7 +33,6 @@ const Img = styled.div`
   margin-right: 25px;
   border-radius: 50%;
   flex: none;
-  border: 2px solid ${({ theme }) => theme.colors.green};
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 120px;
     height: 120px;
@@ -69,10 +57,7 @@ const Img = styled.div`
     transform: translate(-50%, -50%);
   }
   & img {
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    margin-right: 2px;
-    margin-top: 2px;
+    margin: ${({ margin }) => margin || 0};
     max-width: none;
   }
 `;
