@@ -16,4 +16,6 @@ export interface BalanceInputProps extends BoxProps {
   isWarning?: boolean;
   decimals?: number;
   texts?: string;
+  token?: string;
+  toMax?: any;
 }

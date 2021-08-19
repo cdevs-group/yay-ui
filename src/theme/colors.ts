@@ -35,6 +35,7 @@ export const baseColors = {
   yellow: "#FFEA2C",
   bgHeader: "#2B2B32",
   buttonBg2: "#1B1B20",
+  buttonBg3: "#1C1C22",
   bgCardBtc: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
   colorCardBtc: "#8A92B2",
   bgCardBtc2: "#FFAC01",

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Input } from "../Input";
 import { BnbIcon } from "../Svg";
 import { BalanceInputProps } from "./types";
+import YAY from "../Svg/Icons/YAY.svg";
+import { Text } from "../Text";
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
   value,
@@ -12,6 +14,8 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   isWarning = false,
   decimals = 18,
   texts,
+  token,
+  toMax,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
@@ -22,9 +26,25 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   return (
     <InputWrap>
       <TitleInput>{texts || "Commit"}</TitleInput>
+      {toMax ? (
+        <ButtonToMax as="button" onClick={toMax}>
+          MAX
+        </ButtonToMax>
+      ) : null}
       <InputIcon>
-        <BnbIcon />
-        BNB
+        {token === "yay" ? (
+          <>
+            <YayLogo>
+              <img src={YAY} />
+            </YayLogo>
+            YAY
+          </>
+        ) : (
+          <>
+            <BnbIcon />
+            BNB
+          </>
+        )}
       </InputIcon>
       <Input
         className={isWarning ? "warning" : ""}
@@ -85,4 +105,18 @@ const InputIcon = styled.div`
     background: ${({ theme }) => theme.colors.blueGradient};
     margin-bottom: 7px;
   }
+`;
+const YayLogo = styled.div`
+  margin-bottom: 7px;
+`;
+const ButtonToMax = styled(Text)`
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
 `;

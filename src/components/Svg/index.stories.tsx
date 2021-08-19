@@ -34,6 +34,8 @@ import {
   TwitterIcon,
   TelegramIcon,
   InstagramIcon,
+  AvalancheIcon,
+  ReverseArrowsIcon,
 } from ".";
 
 export default {
@@ -67,6 +69,8 @@ export default {
     ArrowDownIcon,
     ArrowSingl,
     ArrowDouble,
+    AvalancheIcon,
+    ReverseArrowsIcon,
   ],
   argTypes: {},
 };
@@ -178,6 +182,12 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <InstagramIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <AvalancheIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ReverseArrowsIcon />
         </div>
       </div>
     </div>
