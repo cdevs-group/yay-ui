@@ -63,6 +63,19 @@ export const VestingWidgetComponent: React.FC = () => {
       handleTakeGift={handleTakeGift}
       textsTakeGift={textsTakeGift}
       claimedGift={claimedGift}
+      dataTimer={{
+        textFront: "Next stage after",
+        textBack: "Your vesting stage",
+        textStage: "Stage 1",
+        timeSecond: 1100,
+        totalSeconds: 50000,
+        textsTime: {
+          days: "d",
+          hours: "h",
+          minutes: "m",
+        },
+      }}
     />
   );
 };
+
