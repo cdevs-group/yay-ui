@@ -14,6 +14,8 @@ export const setColor = (param: { bg?: string }) => {
       return "linear-gradient(180deg, #BDFF00 0%, #95CA00 100%);";
     case "purple":
       return "linear-gradient(180deg, #CA61FB 0%, #B255DE 100%);";
+    case "purple2":
+      return "#9361FF";
     case "pink":
       return "#ECC2DD;";
     default:
