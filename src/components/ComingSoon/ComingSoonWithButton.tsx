@@ -5,11 +5,11 @@ import { Button } from "../Button";
 import Text from "../Text/Text";
 
 interface ComingSoonProps {
-  href: string;
   text: string;
   buttonText: string;
-  img?: string;
   handleClick: () => void;
+  margin?: string;
+  img?: string;
 }
 
 const Wrap = styled.div`
@@ -23,10 +23,10 @@ const Wrap = styled.div`
   letter-spacing: 0.5px;
 `;
 
-const SoonImg = styled.div`
+const SoonImg = styled.div<{ margin?: string }>`
   display: flex;
   justify-content: center;
-  margin: -140px auto -20px;
+  margin: ${({ margin }) => margin || "-120px auto -20px"};
 `;
 
 const TextBottom = styled(Text)`
@@ -40,10 +40,10 @@ const BackLink = styled.div`
   cursor: pointer;
 `;
 
-const ComingSoonWithButton = ({ href, text, buttonText, img, handleClick }: ComingSoonProps) => {
+const ComingSoonWithButton = ({ margin, text, buttonText, img, handleClick }: ComingSoonProps) => {
   return (
     <Wrap>
-      <SoonImg>
+      <SoonImg margin={margin}>
         <img src={img || ComingSoonIcon} />
       </SoonImg>
       <TextBottom size="sm">{text}</TextBottom>
