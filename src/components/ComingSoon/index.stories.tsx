@@ -20,7 +20,6 @@ export const SoonComming: React.FC = () => {
       </div>
       <div style={{ marginTop: 20 }}>
         <ComingSoonWithButton
-          href=""
           text="Coming soon. The function will be available very soon, we are already working on it"
           buttonText="Back home page"
           handleClick={() => {}}

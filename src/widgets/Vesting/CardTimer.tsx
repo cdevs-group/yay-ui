@@ -1,11 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
+import { TimerText } from "../../components/Timer";
 
 interface IProps {
-  data?: {
-    text: string;
-    value: string;
+  data: {
+    textFront: string;
+    textBack: string;
+    textStage: string;
+    timeSecond: number;
+    totalSeconds: number;
+    textsTime: {
+      days: string;
+      hours: string;
+      minutes: string;
+    };
   };
 }
 
@@ -22,11 +31,9 @@ const CardTimer = ({ data }: IProps) => {
             marginBottom="2px"
             fontWeight="400"
           >
-            1f
+            {data.textFront}
           </Text>
-          <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-            1f
-          </Text>
+          <TimerText color="green" time={data.timeSecond} texts={data.textsTime} />
         </CardFront>
         <CardBack>
           <Text
@@ -37,27 +44,28 @@ const CardTimer = ({ data }: IProps) => {
             marginBottom="2px"
             fontWeight="400"
           >
-            f
+            {data.textBack}
           </Text>
           <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-            f
+            {data.textStage}
           </Text>
         </CardBack>
       </Inner>
     </Wrapper>
   );
 };
+
 const CardFront = styled.div`
-  padding: 18px 24px;
+  width: 100%;
+  padding: 18px 24px 10px;
   background: ${({ theme }) => theme.colors.dark};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 20px;
-  height: 100%;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
   top: 0;
-  width: 100%;
+  transition: 0;
 `;
 
 const CardBack = styled(CardFront)`
@@ -66,8 +74,8 @@ const CardBack = styled(CardFront)`
 
 const Wrapper = styled.div`
   perspective: 1000px;
-  height: 371px;
-  width: 335px;
+  min-height: 97px;
+  width: 100%;
   border-radius: 20px;
 `;
 
@@ -80,26 +88,12 @@ const Inner = styled.div`
   transition: transform 600ms;
   border-radius: 15px;
   box-sizing: border-box;
-  &:hover {
+
+  ${Wrapper}:hover & {
     transform: rotateY(180deg);
   }
-
   ${CardFront} {
     backface-visibility: hidden;
-    transition: 0;
-    width: 278px;
-    ${({ theme }) => theme.mediaQueries.sm} {
-      width: 308px;
-    }
-  }
-
-  ${CardBack} {
-    padding: 18px 15px 20px;
-    transition: 0;
-    background: ${({ theme }) => theme.colors.cardBg};
-    border-radius: 15px;
-    height: 100%;
-    width: 100%;
   }
 `;
 
