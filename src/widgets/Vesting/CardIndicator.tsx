@@ -9,7 +9,7 @@ interface IProps {
   };
 }
 
-const CardsIndicators = ({ data }: IProps) => {
+const CardIndicator = ({ data }: IProps) => {
   return (
     <Card>
       <Text
@@ -36,4 +36,4 @@ const Card = styled.div`
   border-radius: 20px;
 `;
 
-export default CardsIndicators;
+export default CardIndicator;

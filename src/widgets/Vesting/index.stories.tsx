@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 import VestingWidget from "./VestingWidget";
 
 export default {
@@ -39,6 +39,7 @@ export const VestingWidgetComponent: React.FC = () => {
       value: "1,000,000 $YAY",
     },
   ];
+  
   const textsTakeGift = {
     title: "Take your gift",
     button: "Take gift",
