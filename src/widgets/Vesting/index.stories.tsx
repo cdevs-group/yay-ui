@@ -39,7 +39,7 @@ export const VestingWidgetComponent: React.FC = () => {
       value: "1,000,000 $YAY",
     },
   ];
-  
+
   const textsTakeGift = {
     title: "Take your gift",
     button: "Take gift",
