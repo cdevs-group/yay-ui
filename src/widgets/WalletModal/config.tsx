@@ -19,7 +19,7 @@ export const connectorsDefault: Config[] = [
   {
     title: "Coin98",
     icon: Coin98,
-    connectorId: ConnectorNames.Coin98,
+    connectorId: ConnectorNames.Injected,
   },
   {
     title: "Trust Wallet",
