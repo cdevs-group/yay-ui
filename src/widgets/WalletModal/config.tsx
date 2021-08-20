@@ -62,7 +62,7 @@ export const connectorsAvalanche: Config[] = [
   {
     title: "Coin98",
     icon: Coin98,
-    connectorId: ConnectorNames.Coin98,
+    connectorId: ConnectorNames.Injected,
   },
 ];
 
