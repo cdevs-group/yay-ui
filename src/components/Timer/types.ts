@@ -6,7 +6,7 @@ export interface TimerProps {
   color?: string;
   time?: number;
   isLoad?: boolean;
-  disabled?: boolean;  
+  disabled?: boolean;
 }
 
 export interface TimerSimpleProps {

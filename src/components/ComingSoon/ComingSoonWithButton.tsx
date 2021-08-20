@@ -13,7 +13,7 @@ interface ComingSoonProps {
 }
 
 const Wrap = styled.div`
-  position: relative; 
+  position: relative;
   padding: 26px 20px;
   max-width: 404px;
   background: ${({ theme }) => theme.colors.bgGray};

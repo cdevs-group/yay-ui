@@ -22,7 +22,7 @@ interface IProps {
 
 const CardTimer = ({ data }: IProps) => {
   const progress = 100 - (data.timeSecond * 100) / data.totalSeconds;
-  
+
   const Progress = () => (
     <ProgressTrack>
       <ProgressBar progress={progress} />

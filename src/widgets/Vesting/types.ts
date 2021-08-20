@@ -32,16 +32,16 @@ export interface VestingWidgetProps {
     gift2: string;
   };
   dataTimer: {
-    textFront:  string;
-    textBack:  string;
-    textStage:  string;
+    textFront: string;
+    textBack: string;
+    textStage: string;
     timeSecond: number;
-    totalSeconds: number; 
+    totalSeconds: number;
     textsTime: {
       days: string;
       hours: string;
       minutes: string;
       seconds: string;
-    },
-  }
+    };
+  };
 }

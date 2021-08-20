@@ -8,3 +8,13 @@ export interface TimerProps {
     isLoad?: boolean;
     disabled?: boolean;
 }
+export interface TimerSimpleProps {
+    time: number;
+    texts: {
+        days: string;
+        hours: string;
+        minutes: string;
+        seconds: string;
+    };
+    color?: string;
+}
