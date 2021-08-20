@@ -23,13 +23,13 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
 }) => {
   return (
     <Wrapper>
-      {dataCardsIndicators.map((el, i) => (
-        <CardIndicator data={el} key={`${el.text}-${i}`} />
-      ))}
+      <CardIndicator data={dataCardsIndicators[0]} />
+      <CardIndicator data={dataCardsIndicators[1]} />
+      <CardTimer data={dataTimer} />
+      <CardIndicator data={dataCardsIndicators[2]} />
       <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
       <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} images={imagesGift} />
-      <CardTimer data={dataTimer}/>
     </Wrapper>
   );
 };

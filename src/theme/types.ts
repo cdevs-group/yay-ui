@@ -66,6 +66,7 @@ export type Colors = {
   greyText2: string;
   greyText3: string;
   darkGreyBg: string;
+  greyBg2: string;
   orangeBg: string;
   greenBg: string;
   greenBg2: string;

@@ -69,7 +69,7 @@ export const lightColors: Colors = {
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
   greenBg2: "#56EF4B",
-
+  greyBg2: "#201e1e",
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
@@ -121,7 +121,7 @@ export const darkColors: Colors = {
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
   greenBg2: "#56EF4B",
-
+  greyBg2: "#201e1e",
   redBg: "#FF6161",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",

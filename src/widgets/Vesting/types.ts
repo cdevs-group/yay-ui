@@ -41,6 +41,7 @@ export interface VestingWidgetProps {
       days: string;
       hours: string;
       minutes: string;
+      seconds: string;
     },
   }
 }
