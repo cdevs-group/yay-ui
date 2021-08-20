@@ -43,7 +43,7 @@ function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
         <React.Fragment key={`item-${i}`}>
           {handleDigit(item).leftDigit}
           {handleDigit(item).rightDigit}
-          {timeTextArray[i]} &nbsp;
+          {timeTextArray[i]}{" "}
         </React.Fragment>
       ))}
     </Wrap>
@@ -60,12 +60,11 @@ const TimerSimple: React.FC<TimerSimpleProps> = ({ time, color, texts }) => {
 export default TimerSimple;
 
 const Wrap = styled.div<TimerColorProps>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 32px;
   color: ${getColor};
   font-weight: normal;
   font-size: 24px;
   line-height: 32px;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 `;
