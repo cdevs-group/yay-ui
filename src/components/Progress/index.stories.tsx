@@ -18,28 +18,26 @@ export const ProgressStepsBlock: React.FC = () => {
     error: "Fatal Error",
     confirmations: "confirmations",
     checkIt: "Check it",
-    start: "Start",
-    step1: "1/35",
-    step2: "2/35",
-    finish: "Final",
   };
+
+  const stepsText = ["start", "1/25", "3/32", "finish"];
 
   return (
     <div style={{ width: "200px" }}>
       <Block>
-        <ProgressSteps texts={texts} step={1} />
+        <ProgressSteps stepsText={stepsText} texts={texts} step={1} />
       </Block>
       <Block>
-        <ProgressSteps texts={texts} step={2} />
+        <ProgressSteps stepsText={stepsText} texts={texts} step={2} />
       </Block>
       <Block>
-        <ProgressSteps texts={texts} step={3} />
+        <ProgressSteps stepsText={stepsText} texts={texts} step={3} />
       </Block>
       <Block>
-        <ProgressSteps texts={texts} step={4} />
+        <ProgressSteps stepsText={stepsText} texts={texts} step={4} />
       </Block>
       <Block>
-        <ProgressSteps texts={texts} step={2} isError />
+        <ProgressSteps stepsText={stepsText} texts={texts} step={2} isError />
       </Block>
     </div>
   );

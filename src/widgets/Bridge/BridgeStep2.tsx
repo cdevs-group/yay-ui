@@ -7,6 +7,7 @@ import { Metamask } from "../../constants/images";
 import { BridgeStep2Props } from "./types";
 import { ProgressRange, ProgressSteps } from "../../components/Progress";
 import { Loader } from "../../components/Loader";
+import { baseColors } from "../../theme/colors";
 
 const BridgeStep2 = ({
   progress1,
@@ -18,6 +19,14 @@ const BridgeStep2 = ({
   isLoadGas,
   timer1,
   timer2,
+  transferredValue,
+  addTokenHandler,
+  WalletIcon,
+  TokenIcon,
+  gasPriceText,
+  BlockChainFrom,
+  BlockChainTo,
+  stepsText,
 }: BridgeStep2Props) => {
   return (
     <Wrapper>
@@ -28,62 +37,72 @@ const BridgeStep2 = ({
             {texts.token}
           </TopLineTitle>
           <Token>
-            <TokenImg>
-              <img src={YAY} />
-            </TokenImg>
-            <Text>YAY</Text>
+            {TokenIcon || (
+              <>
+                <TokenImg>
+                  <img src={YAY} />
+                </TokenImg>
+                <Text>YAY</Text>
+              </>
+            )}
           </Token>
         </TokenBlock>
         <AmountTransfer>
           <TopLineTitle marginBottom="16px">{texts.amount}</TopLineTitle>
-          <TokenValue size="lg">12,000 YAY</TokenValue>
-          <ApproximatelyPrice>~ $10.00</ApproximatelyPrice>
+          <TokenValue size="lg">{transferredValue.token}</TokenValue>
+          <ApproximatelyPrice>{transferredValue.fiat}</ApproximatelyPrice>
         </AmountTransfer>
         <TokenBlock>
           <TopLineTitle marginBottom="18px" textAlign="right">
             {texts.addToken}
           </TopLineTitle>
-          <MetamaskAdd onClick={() => {}} as="button">
-            <TokenImg className="last">
-              <img src={Metamask} />
-            </TokenImg>
+          <MetamaskAdd onClick={addTokenHandler} as="button">
+            {WalletIcon || (
+              <TokenImg className="last">
+                <img src={Metamask} />
+              </TokenImg>
+            )}
           </MetamaskAdd>
         </TokenBlock>
       </TopLineBlock>
       <BodyBlock>
         <HeadLine>
-          <Text size="sm" color="#A3A3A3">
+          <Text size="sm" color={baseColors.textGray}>
             {texts.network}
           </Text>
           <div></div>
-          <Text textAlign="center" size="sm" color="#A3A3A3">
+          <Text textAlign="center" size="sm" color={baseColors.textGray}>
             {texts.timer}
           </Text>
-          <Text textAlign="center" size="sm" color="#A3A3A3">
+          <Text textAlign="center" size="sm" color={baseColors.textGray}>
             {texts.coast}
           </Text>
         </HeadLine>
         <ProgressBlock>
           <Token>
-            <BnbIcon />
-            <Text marginLeft="10px">BSC</Text>
+            {BlockChainFrom || (
+              <>
+                <BnbIcon />
+                <Text marginLeft="10px">{texts.bsc}</Text>
+              </>
+            )}
           </Token>
           <Progress>
             <div style={{ maxWidth: "173px", width: "100%" }}>
-              <ProgressSteps isError={isError} texts={textsProgress1} step={progress1} />
+              <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
             </div>
           </Progress>
           <Text textAlign="center">{timer1}</Text>
           <GasCoast>
-            {isLoadGas ? (
+            {isLoadGas || !gasPriceText ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="22px">0.00015 BNB</Text>
-                <Text size="sm" color="#A3A3A3">
-                  ~ $0.15
+                <Text paddingTop="22px">{gasPriceText?.value}</Text>
+                <Text size="sm" color={baseColors.textGray}>
+                  {gasPriceText?.fiat}
                 </Text>
               </>
             )}
@@ -91,8 +110,12 @@ const BridgeStep2 = ({
         </ProgressBlock>
         <ProgressBlock>
           <Token>
-            <AvalancheIcon />
-            <Text marginLeft="10px">Avalanche</Text>
+            {BlockChainTo || (
+              <>
+                <AvalancheIcon />
+                <Text marginLeft="10px">{texts.avalanche}</Text>
+              </>
+            )}
           </Token>
           <Progress>
             <div style={{ maxWidth: "173px", width: "100%" }}>

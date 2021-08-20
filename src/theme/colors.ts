@@ -17,6 +17,7 @@ export const baseColors = {
   boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   boxShadow2: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   boxShadow6: "0px 4px 10px rgba(75, 228, 62, 0.25)",
+  boxShadow8: "0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05)",
   bgOpacity: "rgba(0, 0, 0, 0.3)",
   bgOpacity2: "rgba(0, 0, 0, 0.05)",
   bgOpacitY3: " rgba(255, 255, 255, 0.05)",

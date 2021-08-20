@@ -2,33 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../Text";
 import { ProgressStepsProps } from "./types";
+import { baseColors } from "../../theme/colors";
 
-const ProgressSteps = ({ isError, step, texts }: ProgressStepsProps) => {
+const ProgressSteps = ({ isError, step, texts, stepsText }: ProgressStepsProps) => {
   return (
     <ProgressWrap>
       <Title>
         <Text fontSize="10px">{isError ? texts.error : texts.waiting}</Text>
-        <CheckIt color={isError ? "#FF6161" : "#4BE43E"} as="button" fontSize="10px">
+        <CheckIt color={isError ? baseColors.darkPink : baseColors.green} as="button" fontSize="10px">
           {isError ? texts.checkIt : texts.confirmations}
         </CheckIt>
       </Title>
       <Steps>
-        <Step>
-          <Indicator complete={step === 1 || step === 2 || step === 3 || step === 4} isError={isError} />
-          <Text fontSize="10px">{texts.start}</Text>
-        </Step>
-        <Step>
-          <Indicator complete={step === 2 || step === 3 || step === 4} isError={isError} />
-          <Text fontSize="10px">{texts.step1}</Text>
-        </Step>
-        <Step>
-          <Indicator complete={step === 3 || step === 4} isError={isError} />
-          <Text fontSize="10px">{texts.step2}</Text>
-        </Step>
-        <Step>
-          <Indicator complete={step === 4} isError={isError} />
-          <Text fontSize="10px">{texts.finish}</Text>
-        </Step>
+        {stepsText.map((name, i) => (
+          <Step>
+            <Indicator complete={i < step} isError={isError} />
+            <Text fontSize="10px">{name}</Text>
+          </Step>
+        ))}
       </Steps>
     </ProgressWrap>
   );

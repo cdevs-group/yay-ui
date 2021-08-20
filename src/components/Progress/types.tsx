@@ -1,15 +1,12 @@
 export interface ProgressStepsProps {
   isError?: boolean;
   step: number;
+  stepsText: Array<string>;
   texts: {
     waiting: string;
     confirmations: string;
     checkIt: string;
     error: string;
-    start: string;
-    step1: string;
-    step2: string;
-    finish: string;
   };
 }
 

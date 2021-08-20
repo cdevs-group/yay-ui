@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { Button } from "../../components/Button";
@@ -6,14 +6,19 @@ import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import { BalanceInput } from "../../components/BalanceInput";
 import { SwapButton } from "../../components/Toggle";
 import { BridgeStep1Props } from "./types";
+import { lightColors, baseColors } from "../../theme/colors";
+import YAY from "../../components/Svg/Icons/YAY.svg";
 
+const Wrapper = styled.div`
+  width: fit-content;
+`;
 const BridgeWrapper = styled.div`
   max-width: 404px;
   max-height: 100vh;
   min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.colors.boxShadow8};
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
@@ -49,7 +54,7 @@ const InputWrap = styled.div`
   margin-top: 13px;
   position: relative;
 `;
-const ButonReverse = styled.div`
+const ButtonReverse = styled.div`
   width: fit-content;
   position: absolute;
   left: 50%;
@@ -68,9 +73,19 @@ const FeeInfo = styled(Text)`
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.greyText};
 `;
+const YayLogo = styled.div`
+  margin-bottom: 7px;
+`;
+const ButtonOpenProof = styled(Text)`
+  text-align: center;
+  margin: 32px auto 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
 
 const BridgeStep1: React.FC<BridgeStep1Props> = ({
-  toMax,
+  handleButtonToMax,
   texts,
   onUserInput,
   value,
@@ -80,58 +95,72 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   fromChange,
   switchHandler,
   handleButton,
-}) => (
-  <>
-    <BridgeWrapper>
-      <BridgeContent>
-        <Label size="lg">{texts.from}</Label>
-        {fromChange ? (
-          <Field>
-            <BnbIcon />
-            <NameChain margin="0 0 0 10px">Binance Smart Chain</NameChain>
-          </Field>
-        ) : (
-          <Field>
-            <AvalancheIcon />
-            <NameChain margin="0 0 0 10px">Avalanche</NameChain>
-          </Field>
-        )}
-        <InputWrap>
-          <BalanceInput toMax={toMax} token="yay" onUserInput={onUserInput} value={value} texts={texts.from} />
-          <ButonReverse>
-            <SwapButton onClick={switchHandler} />
-          </ButonReverse>
-          <MessageBox>
-            <MessageText color={inputError ? "#FF6161" : "white"} size="xs">
-              {balanceText.message1}{" "}
-            </MessageText>
-            <MessageText color={inputError ? "#FF6161" : "green"} size="xs">
-              {" "}
-              {balanceText.message2}
-            </MessageText>
-          </MessageBox>
-        </InputWrap>
-        <Label size="lg">{texts.to}</Label>
-        {fromChange ? (
-          <Field>
-            <AvalancheIcon />
-            <NameChain margin="0 0 0 10px">Avalanche</NameChain>
-          </Field>
-        ) : (
-          <Field>
-            <BnbIcon />
-            <NameChain margin="0 0 0 10px">Binance Smart Chain</NameChain>
-          </Field>
-        )}
-        <FeeInfo>
-          {texts.fee} {fee}
-        </FeeInfo>
-        <Button onClick={handleButton} width="100%" variant="green">
-          {texts.button}
-        </Button>
-      </BridgeContent>
-    </BridgeWrapper>
-  </>
-);
+}) => {
+  const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
+    return (
+      <Field>
+        {icon}
+        <NameChain margin="0 0 0 10px">{name}</NameChain>
+      </Field>
+    );
+  };
+
+  return (
+    <Wrapper>
+      <BridgeWrapper>
+        <BridgeContent>
+          <Label size="lg">{texts.from}</Label>
+          {fromChange ? (
+            <BlockChainName icon={<BnbIcon />} name={texts.bsc} />
+          ) : (
+            <BlockChainName icon={<AvalancheIcon />} name={texts.avalanche} />
+          )}
+          <InputWrap>
+            <BalanceInput
+              handleButtonToMax={handleButtonToMax}
+              token="yay"
+              onUserInput={onUserInput}
+              value={value}
+              texts={texts.from}
+              InputToken={
+                <>
+                  <YayLogo>
+                    <img src={YAY} />
+                  </YayLogo>
+                  YAY
+                </>
+              }
+            />
+            <ButtonReverse>
+              <SwapButton onClick={switchHandler} />
+            </ButtonReverse>
+            <MessageBox>
+              <MessageText color={inputError ? lightColors.redBg : lightColors.text} size="xs">
+                {balanceText.message1}{" "}
+              </MessageText>
+              <MessageText color={inputError ? lightColors.redBg : baseColors.green} size="xs">
+                {" "}
+                {balanceText.message2}
+              </MessageText>
+            </MessageBox>
+          </InputWrap>
+          <Label size="lg">{texts.to}</Label>
+          {fromChange ? (
+            <BlockChainName icon={<AvalancheIcon />} name={texts.avalanche} />
+          ) : (
+            <BlockChainName icon={<BnbIcon />} name={texts.bsc} />
+          )}
+          <FeeInfo>
+            {texts.fee} {fee}
+          </FeeInfo>
+          <Button onClick={handleButton} width="100%" variant="green">
+            {texts.button}
+          </Button>
+        </BridgeContent>
+      </BridgeWrapper>
+      <ButtonOpenProof>Proof of assets</ButtonOpenProof>
+    </Wrapper>
+  );
+};
 
 export default BridgeStep1;

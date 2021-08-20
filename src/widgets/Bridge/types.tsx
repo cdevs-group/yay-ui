@@ -1,9 +1,13 @@
+import { ReactNode } from "react";
+
 export interface BridgeStep1Props {
   onUserInput: (input: any) => void;
   value: string | number;
   inputError?: boolean;
-  toMax: any;
+  handleButtonToMax: any;
   texts: {
+    avalanche?: string;
+    bsc?: string;
     from: string;
     to: string;
     fee: string;
@@ -20,12 +24,21 @@ export interface BridgeStep1Props {
 }
 
 export interface BridgeStep2Props {
+  stepsText: Array<string>;
+  WalletIcon?: ReactNode;
+  BlockChainFrom?: ReactNode;
+  BlockChainTo?: ReactNode;
   isLoadGas?: boolean;
+  TokenIcon?: ReactNode;
   isErrorProgress?: boolean;
   progress1: number;
   isError?: boolean;
   timer1: string;
   timer2: string;
+  gasPriceText?: {
+    value: string;
+    fiat: string;
+  };
   textsProgress1: {
     waiting: string;
     confirmations: string;
@@ -50,5 +63,45 @@ export interface BridgeStep2Props {
     network: string;
     timer: string;
     coast: string;
+    bsc?: string;
+    avalanche?: string;
   };
+  transferredValue: {
+    fiat: string;
+    token: string;
+  };
+  addTokenHandler: () => void;
+}
+
+export interface BrightProofProps {
+  onDismiss: () => void | undefined;
+  texts: {
+    title: string;
+    description: string;
+  };
+  textsProof: {
+    proof: string;
+    wrapped: string;
+  };
+  ProofOfAssetsData: Array<{
+    proofData: proofData;
+    wrappedData: Array<proofData>;
+  }>;
+  tokenLogo?: ReactNode;
+}
+
+export interface InfoWrapperProps {
+  tokenLogo?: ReactNode;
+  proofData: proofData;
+  wrappedData: Array<proofData>;
+  textsProof: {
+    proof: string;
+    wrapped: string;
+  };
+}
+interface proofData {
+  address: string;
+  network: string;
+  token: string;
+  textCopy: string;
 }

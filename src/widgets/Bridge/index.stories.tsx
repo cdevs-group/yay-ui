@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import BridgeStep1 from "./BridgeStep1";
 import BridgeStep2 from "./BridgeStep2";
 import { Timer } from "../../components/Timer";
+import useBridgeModal from "./useBridgeModal";
+import { Text } from "../../components/Text";
+import styled from "styled-components";
 
 export default {
   title: "Widgets/Bridge",
@@ -16,6 +19,8 @@ export const BridgeStep1Block: React.FC = () => {
     to: "To",
     fee: "Estimated transfer fee:",
     button: "Transfer",
+    bsc: "Binance Smart Chain",
+    avalanche: "Avalanche",
   };
   const balanceText = {
     message1: "Available balance:",
@@ -34,7 +39,7 @@ export const BridgeStep1Block: React.FC = () => {
           switchHandler={switchHandler}
           balanceText={balanceText}
           fee="~0.00001BNB"
-          toMax={() => {}}
+          handleButtonToMax={() => {}}
           texts={texts}
           value={value}
           onUserInput={onUserInput}
@@ -48,7 +53,7 @@ export const BridgeStep1Block: React.FC = () => {
           balanceText={balanceText}
           fee="~0.00001BNB"
           inputError
-          toMax={() => {}}
+          handleButtonToMax={() => {}}
           texts={texts}
           value={value}
           onUserInput={onUserInput}
@@ -74,6 +79,14 @@ export const BridgeStep2Block = () => {
     start: "Start",
     final: "Final",
   };
+  const transferredValue = {
+    token: "12,000 YAY",
+    fiat: "~ $10.00",
+  };
+  const gasPriceText = {
+    value: "0.00015 BNB",
+    fiat: "~ $0.15",
+  };
 
   const texts = {
     title: "Transaction status",
@@ -83,11 +96,17 @@ export const BridgeStep2Block = () => {
     network: "Network",
     timer: "Timer",
     coast: "Coast of GAS",
+    bsc: "Binance Smart Chain",
+    avalanche: "Avalanche",
   };
+
+  const stepsText = ["start", "1/25", "3/32", "finish"];
+
   return (
     <div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          transferredValue={transferredValue}
           texts={texts}
           progress1={1}
           progress2={0}
@@ -96,10 +115,14 @@ export const BridgeStep2Block = () => {
           isLoadGas
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
+          addTokenHandler={() => {}}
+          stepsText={stepsText}
+          gasPriceText={gasPriceText}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          transferredValue={transferredValue}
           texts={texts}
           progress1={3}
           progress2={0}
@@ -107,10 +130,14 @@ export const BridgeStep2Block = () => {
           timer2="00:00"
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
+          addTokenHandler={() => {}}
+          stepsText={stepsText}
+          gasPriceText={gasPriceText}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          transferredValue={transferredValue}
           texts={texts}
           progress1={4}
           timer1="04:42"
@@ -119,8 +146,25 @@ export const BridgeStep2Block = () => {
           progress2={20}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
+          addTokenHandler={() => {}}
+          stepsText={stepsText}
+          gasPriceText={gasPriceText}
         />
       </div>
     </div>
   );
 };
+
+export const BrightProofBlock = () => {
+  const { onPresentBridgeModal } = useBridgeModal();
+  return (
+    <Button as="button">
+      <Button onClick={onPresentBridgeModal}>Proof of assets</Button>
+    </Button>
+  );
+};
+const Button = styled(Text)`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;

@@ -113,6 +113,7 @@ export type Colors = {
   buttonBg3: string;
   darkPink: string;
   greyRgba: string;
+  boxShadow8: string;
 
   // Gradients
   gradients: Gradients;

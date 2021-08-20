@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Input } from "../Input";
 import { BnbIcon } from "../Svg";
 import { BalanceInputProps } from "./types";
-import YAY from "../Svg/Icons/YAY.svg";
 import { Text } from "../Text";
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
@@ -15,9 +14,11 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   decimals = 18,
   texts,
   token,
-  toMax,
+  handleButtonToMax,
+  InputToken,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(InputToken);
     if (e.currentTarget.validity.valid) {
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
@@ -26,20 +27,13 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   return (
     <InputWrap>
       <TitleInput>{texts || "Commit"}</TitleInput>
-      {toMax ? (
-        <ButtonToMax as="button" onClick={toMax}>
+      {handleButtonToMax ? (
+        <ButtonToMax as="button" onClick={handleButtonToMax}>
           MAX
         </ButtonToMax>
       ) : null}
       <InputIcon>
-        {token === "yay" ? (
-          <>
-            <YayLogo>
-              <img src={YAY} />
-            </YayLogo>
-            YAY
-          </>
-        ) : (
+        {InputToken || (
           <>
             <BnbIcon />
             BNB
@@ -65,8 +59,8 @@ export default BalanceInput;
 const InputWrap = styled.div`
   position: relative;
   padding: 17px 100px 20px 20px;
-  background: rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+  background: ${({ theme }) => theme.colors.buttonBg};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 12px;
 `;
 const TitleInput = styled.div`
@@ -74,7 +68,7 @@ const TitleInput = styled.div`
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.5px;
-  color: #a3a3a3;
+  color: ${({ theme }) => theme.colors.greyText};
 `;
 const InputIcon = styled.div`
   display: flex;
@@ -83,7 +77,7 @@ const InputIcon = styled.div`
   flex-direction: column;
   padding: 7px 15px;
   position: absolute;
-  background: rgba(255, 255, 255, 0.05);
+  background: ${({ theme }) => theme.colors.bgOpacitY3};
   border-radius: 12px;
   right: 15px;
   top: 50%;
@@ -91,7 +85,7 @@ const InputIcon = styled.div`
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.text};
   & svg {
     margin-bottom: 7px;
   }
@@ -105,9 +99,6 @@ const InputIcon = styled.div`
     background: ${({ theme }) => theme.colors.blueGradient};
     margin-bottom: 7px;
   }
-`;
-const YayLogo = styled.div`
-  margin-bottom: 7px;
 `;
 const ButtonToMax = styled(Text)`
   padding: 0;

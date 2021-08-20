@@ -17,5 +17,6 @@ export interface BalanceInputProps extends BoxProps {
   decimals?: number;
   texts?: string;
   token?: string;
-  toMax?: any;
+  handleButtonToMax?: any;
+  InputToken?: ReactNode;
 }
