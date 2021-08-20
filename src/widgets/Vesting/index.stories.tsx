@@ -31,10 +31,6 @@ export const VestingWidgetComponent: React.FC = () => {
       value: "Seed sale",
     },
     {
-      text: "Your vesting stage",
-      value: "Stage 1",
-    },
-    {
       text: "Total raised",
       value: "1,000,000 $YAY",
     },
@@ -67,12 +63,13 @@ export const VestingWidgetComponent: React.FC = () => {
         textFront: "Next stage after",
         textBack: "Your vesting stage",
         textStage: "Stage 1",
-        timeSecond: 1100,
+        timeSecond: 30000,
         totalSeconds: 50000,
         textsTime: {
           days: "d",
           hours: "h",
           minutes: "m",
+          seconds: "s",
         },
       }}
     />

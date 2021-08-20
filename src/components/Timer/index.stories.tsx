@@ -1,11 +1,11 @@
 import React from "react";
 import { Timer } from ".";
 import TimerNotSolid from "./TimerNotSolid";
-import TimerText from "./TimerText";
+import TimerSimple from "./TimerSimple";
 
 export default {
   title: "Components/Timer",
-  component: [Timer, TimerText],
+  component: [Timer, TimerSimple],
 };
 
 export const TimerBlock: React.FC = () => {
@@ -15,13 +15,14 @@ export const TimerBlock: React.FC = () => {
       <Timer isLoad time={180} color="green" />;
       <TimerNotSolid time={180} color="white" />;
       <TimerNotSolid isLoad />
-      <TimerText
+      <TimerSimple
         time={180110}
         color="green"
         texts={{
           days: "d",
           hours: "h",
           minutes: "m",
+          seconds: "s",
         }}
       />
     </>

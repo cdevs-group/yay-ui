@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { transparentize } from "polished";
 import { Text } from "../../components/Text";
-import { TimerText } from "../../components/Timer";
+import { TimerSimple } from "../../components/Timer";
 
 interface IProps {
   data: {
@@ -14,11 +15,20 @@ interface IProps {
       days: string;
       hours: string;
       minutes: string;
+      seconds: string;
     };
   };
 }
 
 const CardTimer = ({ data }: IProps) => {
+  const progress = 100 - (data.timeSecond * 100) / data.totalSeconds;
+  
+  const Progress = () => (
+    <ProgressTrack>
+      <ProgressBar progress={progress} />
+    </ProgressTrack>
+  );
+
   return (
     <Wrapper>
       <Inner>
@@ -33,7 +43,8 @@ const CardTimer = ({ data }: IProps) => {
           >
             {data.textFront}
           </Text>
-          <TimerText color="green" time={data.timeSecond} texts={data.textsTime} />
+          <TimerSimple time={data.timeSecond} texts={data.textsTime} />
+          <Progress />
         </CardFront>
         <CardBack>
           <Text
@@ -49,6 +60,7 @@ const CardTimer = ({ data }: IProps) => {
           <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
             {data.textStage}
           </Text>
+          <Progress />
         </CardBack>
       </Inner>
     </Wrapper>
@@ -95,6 +107,22 @@ const Inner = styled.div`
   ${CardFront} {
     backface-visibility: hidden;
   }
+`;
+
+const ProgressTrack = styled.div`
+  height: 2px;
+  width: 100%;
+  margin-top: 8px;
+  background: ${({ theme }) => transparentize(0.9, theme.colors.greyBg2)};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow7};
+  border-radius: 6px;
+`;
+
+const ProgressBar = styled.div<{ progress: number }>`
+  height: 100%;
+  width: ${({ progress }) => `${progress}%`};
+  background: ${({ theme }) => theme.colors.greenBg2};
+  border-radius: inherit;
 `;
 
 export default CardTimer;

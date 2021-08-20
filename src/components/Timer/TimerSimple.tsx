@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { DefaultTheme } from "styled-components";
-import { TimerTextProps, TimerColorProps } from "./types";
+import { TimerSimpleProps, TimerColorProps } from "./types";
 import getThemeValue from "../../util/getThemeValue";
 
 interface ThemedProps extends TimerColorProps {
@@ -14,6 +14,7 @@ interface MyTimerProps {
     days: string;
     hours: string;
     minutes: string;
+    seconds: string;
   };
 }
 
@@ -25,6 +26,7 @@ function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
   const days = Math.floor(expiryTimestamp / 86400);
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
 
   const handleDigit = (value: number) => {
     const leftDigit = value >= 10 ? value.toString()[0] : "0";
@@ -32,8 +34,8 @@ function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
     return { leftDigit, rightDigit };
   };
 
-  const timeArray = [days, hours, minutes];
-  const timeTextArray = [texts.days, texts.hours, texts.minutes];
+  const timeArray = [days, hours, minutes, seconds];
+  const timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
 
   return (
     <Wrap color={color}>
@@ -48,14 +50,14 @@ function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
   );
 }
 
-const TimerText: React.FC<TimerTextProps> = ({ time, color, texts }) => {
+const TimerSimple: React.FC<TimerSimpleProps> = ({ time, color, texts }) => {
   return (
     <div>
       <MyTimer expiryTimestamp={time || 0} color={color || "text"} texts={texts} />
     </div>
   );
 };
-export default TimerText;
+export default TimerSimple;
 
 const Wrap = styled.div<TimerColorProps>`
   display: flex;

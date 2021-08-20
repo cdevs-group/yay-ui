@@ -98,6 +98,7 @@ const ProgressWrap = styled.div`
   margin-bottom: 10px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow7};
   border-radius: 10px;
+  background: ${({ theme }) => transparentize(0.9, theme.colors.greyBg2)};
 `;
 
 const ProgressTrack = styled.div`
