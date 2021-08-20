@@ -12,3 +12,12 @@ export interface ProgressStepsProps {
     finish: string;
   };
 }
+
+export interface ProgressRangeProps {
+  progress: number;
+  texts: {
+    waiting: string;
+    start: string;
+    final: string;
+  };
+}

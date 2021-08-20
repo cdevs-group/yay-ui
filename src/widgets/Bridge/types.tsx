@@ -20,8 +20,12 @@ export interface BridgeStep1Props {
 }
 
 export interface BridgeStep2Props {
+  isLoadGas?: boolean;
   isErrorProgress?: boolean;
-  step: number;
+  progress1: number;
+  isError?: boolean;
+  timer1: string;
+  timer2: string;
   textsProgress1: {
     waiting: string;
     confirmations: string;
@@ -31,5 +35,20 @@ export interface BridgeStep2Props {
     step1: string;
     step2: string;
     finish: string;
+  };
+  textsProgress2: {
+    waiting: string;
+    start: string;
+    final: string;
+  };
+  progress2: number;
+  texts: {
+    title: string;
+    token: string;
+    addToken: string;
+    amount: string;
+    network: string;
+    timer: string;
+    coast: string;
   };
 }

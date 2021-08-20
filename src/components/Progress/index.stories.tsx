@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ProgressSteps } from "./index";
+import { ProgressSteps, ProgressRange } from "./index";
 import styled from "styled-components";
 
 export default {
@@ -40,6 +40,28 @@ export const ProgressStepsBlock: React.FC = () => {
       </Block>
       <Block>
         <ProgressSteps texts={texts} step={2} isError />
+      </Block>
+    </div>
+  );
+};
+
+export const ProgressRangeBlock = () => {
+  const texts = {
+    waiting: "Waiting for Binance Smart Chain",
+    start: "Start",
+    final: "Final",
+  };
+
+  return (
+    <div style={{ padding: "32px", width: "500px" }}>
+      <Block>
+        <ProgressRange progress={10} texts={texts} />
+      </Block>
+      <Block>
+        <ProgressRange progress={60} texts={texts} />
+      </Block>
+      <Block>
+        <ProgressRange progress={90} texts={texts} />
       </Block>
     </div>
   );

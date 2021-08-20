@@ -5,7 +5,7 @@ import { ProgressStepsProps } from "./types";
 
 const ProgressSteps = ({ isError, step, texts }: ProgressStepsProps) => {
   return (
-    <>
+    <ProgressWrap>
       <Title>
         <Text fontSize="10px">{isError ? texts.error : texts.waiting}</Text>
         <CheckIt color={isError ? "#FF6161" : "#4BE43E"} as="button" fontSize="10px">
@@ -30,12 +30,17 @@ const ProgressSteps = ({ isError, step, texts }: ProgressStepsProps) => {
           <Text fontSize="10px">{texts.finish}</Text>
         </Step>
       </Steps>
-    </>
+    </ProgressWrap>
   );
 };
 
 export default ProgressSteps;
 
+const ProgressWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const Title = styled.div`
   display: flex;
   justify-content: center;

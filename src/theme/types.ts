@@ -112,6 +112,7 @@ export type Colors = {
   yellowGradient3: string;
   buttonBg3: string;
   darkPink: string;
+  greyRgba: string;
 
   // Gradients
   gradients: Gradients;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BridgeStep1 from "./BridgeStep1";
 import BridgeStep2 from "./BridgeStep2";
+import { Timer } from "../../components/Timer";
 
 export default {
   title: "Widgets/Bridge",
@@ -68,9 +69,58 @@ export const BridgeStep2Block = () => {
     step2: "2/35",
     finish: "Final",
   };
+  const textsProgress2 = {
+    waiting: "Waiting for Binance Smart Chain",
+    start: "Start",
+    final: "Final",
+  };
+
+  const texts = {
+    title: "Transaction status",
+    token: "Token",
+    addToken: "Add Token",
+    amount: "Amount transferred",
+    network: "Network",
+    timer: "Timer",
+    coast: "Coast of GAS",
+  };
   return (
     <div>
-      <BridgeStep2 step={2} textsProgress1={textsProgress1} />
+      <div style={{ marginTop: "20px" }}>
+        <BridgeStep2
+          texts={texts}
+          progress1={1}
+          progress2={0}
+          timer1="00:00"
+          timer2="00:00"
+          isLoadGas
+          textsProgress2={textsProgress2}
+          textsProgress1={textsProgress1}
+        />
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <BridgeStep2
+          texts={texts}
+          progress1={3}
+          progress2={0}
+          timer1="01:22"
+          timer2="00:00"
+          textsProgress2={textsProgress2}
+          textsProgress1={textsProgress1}
+        />
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <BridgeStep2
+          texts={texts}
+          progress1={4}
+          timer1="04:42"
+          timer2="01:10"
+          isError
+          progress2={20}
+          textsProgress2={textsProgress2}
+          textsProgress1={textsProgress1}
+        />
+      </div>
     </div>
   );
 };

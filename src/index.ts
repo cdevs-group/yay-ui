@@ -24,11 +24,13 @@ export * from "./components/FallingBunnies";
 export * from "./components/Skeleton";
 export * from "./components/Tabs";
 export * from "./components/Pagination";
+export * from "./components/Progress";
 
 // Hooks
 export * from "./hooks";
 
 // Widgets
+export * from "./widgets/Bridge";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";
 export * from "./widgets/HistoryPanel";
