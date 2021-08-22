@@ -116,10 +116,14 @@ function __generator(thisArg, body) {
     }
 }
 
-function __spreadArray(to, from) {
-    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-    return to;
+function __spreadArray(to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || from);
 }
 
 function __makeTemplateObject(cooked, raw) {
@@ -935,10 +939,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$3 = styled__default['default'].button(templateObject_1$1B || (templateObject_1$1B = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    box-shadow: ",
-    ";\n  }\n\n  ", "\n  ",
-    "\n  ",
-    "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$3 = styled__default['default'].button(templateObject_1$1B || (templateObject_1$1B = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
 }, function (_a) {
@@ -1111,8 +1112,7 @@ var Content$2 = styled__default['default'].div(templateObject_6$p || (templateOb
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
-var UpContent$1 = styled__default['default'].div(templateObject_7$d || (templateObject_7$d = __makeTemplateObject(["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ",
-    ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var UpContent$1 = styled__default['default'].div(templateObject_7$d || (templateObject_7$d = __makeTemplateObject(["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var showUp = _a.showUp;
     return (showUp ? "none" : "flex");
 }, function (_a) {
@@ -1216,16 +1216,14 @@ var ClosedCount$1 = styled__default['default'].div(templateObject_3$Z || (templa
     return (negative ? theme.colors.redBg : theme.colors.greenText);
 });
 var Line$9 = styled__default['default'].div(templateObject_4$L || (templateObject_4$L = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
-var Arrow$2 = styled__default['default'].div(templateObject_5$u || (templateObject_5$u = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
+var Arrow$2 = styled__default['default'].div(templateObject_5$u || (templateObject_5$u = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice$1 = styled__default['default'].div(templateObject_6$o || (templateObject_6$o = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
-    ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice$1 = styled__default['default'].div(templateObject_6$o || (templateObject_6$o = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1273,16 +1271,14 @@ var ClosedCount = styled__default['default'].div(templateObject_3$Y || (template
     return (negative ? theme.colors.redBg : theme.colors.greenText);
 });
 var Line$8 = styled__default['default'].div(templateObject_4$K || (templateObject_4$K = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-top: 13px;\n"])));
-var Arrow$1 = styled__default['default'].div(templateObject_5$t || (templateObject_5$t = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ",
-    ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
+var Arrow$1 = styled__default['default'].div(templateObject_5$t || (templateObject_5$t = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  transform: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice = styled__default['default'].div(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ",
-    ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice = styled__default['default'].div(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1712,7 +1708,7 @@ var getColor$1 = function (_a) {
     return getThemeValue("colors." + color, color)(theme);
 };
 function MyTimer$1(_a) {
-    var expiryTimestamp = _a.expiryTimestamp, color = _a.color;
+    var expiryTimestamp = _a.expiryTimestamp, color = _a.color, avax = _a.avax;
     var hours = Math.floor(expiryTimestamp / 3600);
     var minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
     var seconds = expiryTimestamp - hours * 3600 - minutes * 60;
@@ -1723,8 +1719,8 @@ function MyTimer$1(_a) {
     };
     var timeArray = [hours, minutes, seconds];
     return (React__default['default'].createElement(Wrap$l, null,
-        React__default['default'].createElement(Block$6, { color: color }, timeArray.map(function (item, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: "item-" + i },
-            React__default['default'].createElement(Item, null,
+        React__default['default'].createElement(Block$6, { avax: avax, color: color }, timeArray.map(function (item, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: "item-" + i },
+            React__default['default'].createElement(Item, { avax: avax },
                 handleDigit(item).leftDigit,
                 handleDigit(item).rightDigit,
                 " "),
@@ -1738,14 +1734,32 @@ var LoadingTimer = function () {
             i === 2 ? null : React__default['default'].createElement(Dots, null, ":"))); }))));
 };
 var TimerNotSolid = function (_a) {
-    var time = _a.time, color = _a.color, isLoad = _a.isLoad;
-    return (React__default['default'].createElement("div", null, (time || time === 0) && !isLoad ? React__default['default'].createElement(MyTimer$1, { expiryTimestamp: time, color: color || "text" }) : React__default['default'].createElement(LoadingTimer, null)));
+    var time = _a.time, color = _a.color, isLoad = _a.isLoad, avax = _a.avax;
+    return (React__default['default'].createElement("div", null, (time || time === 0) && !isLoad ? (React__default['default'].createElement(MyTimer$1, { avax: avax, expiryTimestamp: time, color: color || "text" })) : (React__default['default'].createElement(LoadingTimer, null))));
 };
 var Wrap$l = styled__default['default'].div(templateObject_1$1j || (templateObject_1$1j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"])));
-var Block$6 = styled__default['default'].div(templateObject_2$13 || (templateObject_2$13 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 186px;\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"])), getColor$1);
-var Item = styled__default['default'].div(templateObject_3$R || (templateObject_3$R = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  height: 50px;\n  width: 50px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"], ["\n  background: ", ";\n  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);\n  height: 50px;\n  width: 50px;\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"])), function (_a) {
-    var theme = _a.theme;
-    return polished.transparentize(0.75, theme.colors.invertedContrast);
+var Block$6 = styled__default['default'].div(templateObject_2$13 || (templateObject_2$13 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: ", ";\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: ", ";\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+    var avax = _a.avax;
+    return (avax ? "auto" : "186px");
+}, getColor$1);
+var Item = styled__default['default'].div(templateObject_3$R || (templateObject_3$R = __makeTemplateObject(["\n  background: ", ";\n  box-shadow: ", ";\n  height: ", ";\n  margin: ", ";\n  width: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: ", ";\n"], ["\n  background: ", ";\n  box-shadow: ", ";\n  height: ", ";\n  margin: ", ";\n  width: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: ", ";\n"])), function (_a) {
+    var avax = _a.avax, theme = _a.theme;
+    return (avax ? "none" : polished.transparentize(0.75, theme.colors.invertedContrast));
+}, function (_a) {
+    var avax = _a.avax, theme = _a.theme;
+    return (avax ? "none" : theme.colors.boxShadow10);
+}, function (_a) {
+    var avax = _a.avax;
+    return (avax ? "auto" : "50px");
+}, function (_a) {
+    var avax = _a.avax;
+    return (avax ? "0 5px" : "0");
+}, function (_a) {
+    var avax = _a.avax;
+    return (avax ? "15px" : "50px");
+}, function (_a) {
+    var avax = _a.avax;
+    return (avax ? "11px" : "15px");
 });
 var Dots = styled__default['default'].div(templateObject_4$F || (templateObject_4$F = __makeTemplateObject(["\n  margin: 0 6px;\n  color: ", ";\n"], ["\n  margin: 0 6px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -2421,8 +2435,7 @@ var Content = styled__default['default'].div(templateObject_6$k || (templateObje
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
-var UpContent = styled__default['default'].div(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ",
-    ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
+var UpContent = styled__default['default'].div(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"], ["\n  display: ", ";\n  justify-content: ", ";\n  text-align: center;\n  align-items: center;\n  max-height: 50px;\n  height: 100%;\n  width: 100%;\n  padding: 18px 20px 13px;\n  background: ", ";\n  border-top-left-radius: 12px;\n  border-top-right-radius: 12px;\n  border-bottom-left-radius: 0;\n  border-bottom-right-radius: 0;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n"])), function (_a) {
     var showUp = _a.showUp;
     return (showUp ? "none" : "flex");
 }, function (_a) {
@@ -2456,8 +2469,7 @@ var IconCompleteDown = styled__default['default'].div(templateObject_13 || (temp
     var showIcon = _a.showIcon;
     return (showIcon ? "flex" : "none");
 });
-var MainBlock$1 = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ",
-    ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
+var MainBlock$1 = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
     var loader = _a.loader;
     return (loader ? "23px 12px 25px" : "23px 35px 25px 32px");
 }, function (_a) {
@@ -2546,8 +2558,7 @@ var Locked$1 = styled__default['default'](Closed$1)(templateObject_4$w || (templ
     return theme.colors.greyText;
 });
 var Line$7 = styled__default['default'].div(templateObject_5$n || (templateObject_5$n = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var Percent$1 = styled__default['default'].div(templateObject_6$j || (templateObject_6$j = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ",
-    ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var Percent$1 = styled__default['default'].div(templateObject_6$j || (templateObject_6$j = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme, btcLider = _a.btcLider;
     return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
@@ -2601,8 +2612,7 @@ var Locked = styled__default['default'](Closed)(templateObject_4$v || (templateO
     return theme.colors.greyText;
 });
 var Line$6 = styled__default['default'].div(templateObject_5$m || (templateObject_5$m = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var Percent = styled__default['default'].div(templateObject_6$i || (templateObject_6$i = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ",
-    ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var Percent = styled__default['default'].div(templateObject_6$i || (templateObject_6$i = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme, btcLider = _a.btcLider;
     return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
@@ -3036,7 +3046,7 @@ var PageButton = styled__default['default'].button(templateObject_2$F || (templa
 var templateObject_1$Q, templateObject_2$F;
 
 var ProgressAVAX = function (_a) {
-    var blockFrom = _a.blockFrom, blockCurrent = _a.blockCurrent, blockTo = _a.blockTo, texts = _a.texts, hour = _a.hour, min = _a.min, sec = _a.sec;
+    var blockFrom = _a.blockFrom, blockCurrent = _a.blockCurrent, blockTo = _a.blockTo, texts = _a.texts, time = _a.time;
     var _b = React.useState(true), noteOpen = _b[0], setNoteOpen = _b[1];
     var progressHandler = function () {
         var from = blockCurrent - blockFrom;
@@ -3049,12 +3059,7 @@ var ProgressAVAX = function (_a) {
                 React__default['default'].createElement(Text, { size: "xs" }, blockCurrent)),
             React__default['default'].createElement(Timer, null,
                 React__default['default'].createElement("p", null, "\u2248"),
-                " ",
-                React__default['default'].createElement("p", null, hour),
-                ":",
-                React__default['default'].createElement("p", null, min),
-                ":",
-                React__default['default'].createElement("p", null, sec)),
+                React__default['default'].createElement(TimerNotSolid, { time: time, avax: true })),
             React__default['default'].createElement(Block$4, null,
                 React__default['default'].createElement(Text, { size: "xs" }, blockTo))),
         React__default['default'].createElement(Indicator, { progress: progressHandler() }),
@@ -3072,7 +3077,7 @@ var UnderProgress = styled__default['default'].div(templateObject_2$E || (templa
     return (open ? "none" : "flex");
 });
 var BlocksAndTimer = styled__default['default'].div(templateObject_3$y || (templateObject_3$y = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 13px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 13px;\n"])));
-var Timer = styled__default['default'].div(templateObject_4$p || (templateObject_4$p = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: 15px;\n    margin: 0 10px;\n    text-align: center;\n    &:first-child {\n      width: auto;\n      margin: 0 -5px 0 10px;\n    }\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: 15px;\n    margin: 0 10px;\n    text-align: center;\n    &:first-child {\n      width: auto;\n      margin: 0 -5px 0 10px;\n    }\n  }\n"])), function (_a) {
+var Timer = styled__default['default'].div(templateObject_4$p || (templateObject_4$p = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -4083,8 +4088,7 @@ var Price$1 = styled__default['default'].div(templateObject_3$n || (templateObje
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
-var RightText$1 = styled__default['default'].div(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ",
-    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
+var RightText$1 = styled__default['default'].div(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 });
@@ -4166,8 +4170,7 @@ var Price = styled__default['default'].div(templateObject_3$l || (templateObject
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
-var RightText = styled__default['default'].div(templateObject_4$g || (templateObject_4$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ",
-    ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
+var RightText = styled__default['default'].div(templateObject_4$g || (templateObject_4$g = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  display: flex;\n  align-items: center;\n  padding: 6px 12px;\n  background: ", ";\n  border-radius: 7px;\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? polished.transparentize(0.85, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 });
@@ -5313,6 +5316,7 @@ var baseColors = {
     boxShadow2: "0px 4px 10px rgba(0, 0, 0, 0.25)",
     boxShadow6: "0px 4px 10px rgba(75, 228, 62, 0.25)",
     boxShadow9: "0px 0px 20px rgba(86, 239, 75, 0.35)",
+    boxShadow10: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
     bgOpacity: "rgba(0, 0, 0, 0.3)",
     bgOpacity2: "rgba(0, 0, 0, 0.05)",
     bgOpacitY3: " rgba(255, 255, 255, 0.05)",
