@@ -12,7 +12,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   isWarning = false,
   decimals = 18,
   texts,
-  icon
+  icon,
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {

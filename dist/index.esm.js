@@ -1538,7 +1538,7 @@ Input$1.defaultProps = {
 var templateObject_1$1o;
 
 var BalanceInput = function (_a) {
-    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts;
+    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts, icon = _a.icon;
     var handleOnChange = function (e) {
         if (e.currentTarget.validity.valid) {
             onUserInput(e.currentTarget.value.replace(/,/g, "."));
@@ -1547,7 +1547,7 @@ var BalanceInput = function (_a) {
     return (React__default.createElement(InputWrap, null,
         React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
         React__default.createElement(InputIcon, null,
-            React__default.createElement(Icon$C, null),
+            icon || React__default.createElement(Icon$C, null),
             (texts === null || texts === void 0 ? void 0 : texts.currency) || "BNB"),
         React__default.createElement(Input$1, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder }, inputProps))));
 };
@@ -1597,12 +1597,12 @@ var TabsCard = function (_a) {
 var templateObject_1$1m, templateObject_2$15;
 
 var SetPositionCard = function (_a) {
-    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts, inputTexts = _a.inputTexts;
+    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts, inputTexts = _a.inputTexts, iconBalanceInput = _a.iconBalanceInput;
     return (React__default.createElement(Wrap$n, null,
         React__default.createElement(ButtonBack$1, { onClick: onBack },
             React__default.createElement(ArrowIcon$1, null)),
         React__default.createElement(Title$8, null, texts || "Set Position"),
-        React__default.createElement(BalanceInput, { texts: inputTexts, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
+        React__default.createElement(BalanceInput, { texts: inputTexts, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps, icon: iconBalanceInput }),
         React__default.createElement(TabsBlock$1, null,
             React__default.createElement(TabsCard, { handlePercentChange: handlePercentChange, disabledTab: disabledTab })),
         children));

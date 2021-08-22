@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactText } from "react";
+import React, { InputHTMLAttributes, ReactText } from "react";
 import { BoxProps } from "../Box";
 export interface BalanceInputProps extends BoxProps {
     value: ReactText;
@@ -11,4 +11,5 @@ export interface BalanceInputProps extends BoxProps {
         currency?: string;
         commit?: string;
     };
+    icon?: React.ReactNode;
 }
