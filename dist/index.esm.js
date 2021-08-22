@@ -1696,15 +1696,16 @@ function MyTimer$1(_a) {
             i === 2 ? null : React__default.createElement(Dots, null, ":"))); }))));
 }
 var LoadIcons = [React__default.createElement(Icon$l, { spin: true, fill: "none" }), React__default.createElement(Icon$l, { spin: true, fill: "none" }), React__default.createElement(Icon$l, { spin: true, fill: "none" })];
-var LoadingTimer = function () {
+var LoadingTimer = function (_a) {
+    var avax = _a.avax;
     return (React__default.createElement(Wrap$l, null,
-        React__default.createElement(Block$6, null, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
-            React__default.createElement(Item, null, item),
+        React__default.createElement(Block$6, { avax: avax }, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
+            React__default.createElement(Item, { avax: avax }, item),
             i === 2 ? null : React__default.createElement(Dots, null, ":"))); }))));
 };
 var TimerNotSolid = function (_a) {
     var time = _a.time, color = _a.color, isLoad = _a.isLoad, avax = _a.avax;
-    return (React__default.createElement("div", null, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer$1, { avax: avax, expiryTimestamp: time, color: color || "text" })) : (React__default.createElement(LoadingTimer, null))));
+    return (React__default.createElement("div", null, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer$1, { avax: avax, expiryTimestamp: time, color: color || "text" })) : (React__default.createElement(LoadingTimer, { avax: avax }))));
 };
 var Wrap$l = styled.div(templateObject_1$1j || (templateObject_1$1j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n"])));
 var Block$6 = styled.div(templateObject_2$13 || (templateObject_2$13 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: ", ";\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: ", ";\n  height: 50px;\n  border-radius: 12px;\n  color: ", ";\n  font-weight: 500;\n  font-size: 15px;\n  letter-spacing: 0.05em;\n"])), function (_a) {
@@ -3015,7 +3016,7 @@ var PageButton = styled.button(templateObject_2$F || (templateObject_2$F = __mak
 var templateObject_1$Q, templateObject_2$F;
 
 var ProgressAVAX = function (_a) {
-    var blockFrom = _a.blockFrom, blockCurrent = _a.blockCurrent, blockTo = _a.blockTo, texts = _a.texts, time = _a.time;
+    var blockFrom = _a.blockFrom, blockCurrent = _a.blockCurrent, blockTo = _a.blockTo, texts = _a.texts, time = _a.time, isLoad = _a.isLoad;
     var _b = useState(true), noteOpen = _b[0], setNoteOpen = _b[1];
     var progressHandler = function () {
         var from = blockCurrent - blockFrom;
@@ -3028,7 +3029,7 @@ var ProgressAVAX = function (_a) {
                 React__default.createElement(Text, { size: "xs" }, blockCurrent)),
             React__default.createElement(Timer, null,
                 React__default.createElement("p", null, "\u2248"),
-                React__default.createElement(TimerNotSolid, { time: time, avax: true })),
+                React__default.createElement(TimerNotSolid, { isLoad: isLoad, time: time, avax: true })),
             React__default.createElement(Block$4, null,
                 React__default.createElement(Text, { size: "xs" }, blockTo))),
         React__default.createElement(Indicator, { progress: progressHandler() }),

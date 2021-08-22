@@ -9,6 +9,7 @@ export interface ProgressAVAXProps {
   blockTo: number;
   blockCurrent: number;
   time: number;
+  isLoad?: boolean;
   texts: {
     start: string;
     end: string;
@@ -16,7 +17,7 @@ export interface ProgressAVAXProps {
   };
 }
 
-const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time }: ProgressAVAXProps) => {
+const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }: ProgressAVAXProps) => {
   const [noteOpen, setNoteOpen] = useState(true);
 
   const progressHandler = () => {
@@ -33,7 +34,7 @@ const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time }: Progres
         </Block>
         <Timer>
           <p>≈</p>
-          <TimerNotSolid time={time} avax />
+          <TimerNotSolid isLoad={isLoad} time={time} avax />
         </Timer>
         <Block>
           <Text size="xs">{blockTo}</Text>

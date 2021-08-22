@@ -48,13 +48,13 @@ function MyTimer({ expiryTimestamp, color, avax }: MyTimerProps) {
 
 const LoadIcons = [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />];
 
-const LoadingTimer = () => {
+const LoadingTimer = ({ avax }: { avax?: boolean }) => {
   return (
     <Wrap>
-      <Block>
+      <Block avax={avax}>
         {LoadIcons.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            <Item>{item}</Item>
+            <Item avax={avax}>{item}</Item>
             {i === 2 ? null : <Dots>:</Dots>}
           </React.Fragment>
         ))}
@@ -69,7 +69,7 @@ const TimerNotSolid: React.FC<TimerProps> = ({ time, color, isLoad, avax }) => {
       {(time || time === 0) && !isLoad ? (
         <MyTimer avax={avax} expiryTimestamp={time} color={color || "text"} />
       ) : (
-        <LoadingTimer />
+        <LoadingTimer avax={avax} />
       )}
     </div>
   );
