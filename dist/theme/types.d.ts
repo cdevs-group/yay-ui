@@ -105,6 +105,8 @@ export declare type Colors = {
     text2: string;
     bgOpacitY3: string;
     yellowGradient3: string;
+    boxShadow9: string;
+    greenRgba: string;
     gradients: Gradients;
     binance: string;
 };
