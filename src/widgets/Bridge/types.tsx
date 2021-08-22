@@ -74,6 +74,8 @@ export interface BridgeStep2Props {
 }
 
 export interface BrightProofProps {
+  addTokenHandler: () => void;
+  BSCSkanHandler: () => void;
   onDismiss: () => void | undefined;
   texts: {
     title: string;
@@ -98,6 +100,8 @@ export interface InfoWrapperProps {
     proof: string;
     wrapped: string;
   };
+  addTokenHandler: () => void;
+  BSCSkanHandler: () => void;
 }
 interface proofData {
   address: string;

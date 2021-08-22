@@ -135,6 +135,7 @@ const Title = styled(Text)`
   letter-spacing: 0.5px;
 `;
 const Wrapper = styled.div`
+  margin: 0 auto;
   overflow: hidden;
   max-width: 650px;
   padding: 33px 23px;
@@ -146,10 +147,14 @@ const TopLineBlock = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  padding: 17px 17px 18px 23px;
   padding: 17px 25px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 15px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 17px 25px;
+  } ;
 `;
 const TokenBlock = styled.div`
   display: flex;

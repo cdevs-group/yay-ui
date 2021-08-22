@@ -96,7 +96,7 @@ export const BridgeStep2Block = () => {
     network: "Network",
     timer: "Timer",
     coast: "Coast of GAS",
-    bsc: "Binance Smart Chain",
+    bsc: "BSC",
     avalanche: "Avalanche",
   };
 

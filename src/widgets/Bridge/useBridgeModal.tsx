@@ -86,7 +86,14 @@ const textsProof = {
 
 const useBridgeModal = (): ReturnType => {
   const [onPresentBridgeModal] = useModal(
-    <BridgeProof onDismiss={() => {}} texts={texts} textsProof={textsProof} ProofOfAssetsData={ProofOfAssetsData} />
+    <BridgeProof
+      addTokenHandler={() => {}}
+      BSCSkanHandler={() => {}}
+      onDismiss={() => {}}
+      texts={texts}
+      textsProof={textsProof}
+      ProofOfAssetsData={ProofOfAssetsData}
+    />
   );
   return { onPresentBridgeModal };
 };

@@ -5,7 +5,14 @@ import { Text } from "../../components/Text";
 import InfoWrapper from "./components/InfoWrapper";
 import { CloseIcon } from "../../components/Svg";
 
-const BridgeProof = ({ texts, textsProof, ProofOfAssetsData, onDismiss }: BrightProofProps) => {
+const BridgeProof = ({
+  texts,
+  textsProof,
+  ProofOfAssetsData,
+  onDismiss,
+  BSCSkanHandler,
+  addTokenHandler,
+}: BrightProofProps) => {
   return (
     <Wrapper>
       <Text size="lg">{texts.title}</Text>
@@ -17,7 +24,14 @@ const BridgeProof = ({ texts, textsProof, ProofOfAssetsData, onDismiss }: Bright
       </ButtonClose>
       <TokenList>
         {ProofOfAssetsData.map((item, i) => (
-          <InfoWrapper key={i} textsProof={textsProof} proofData={item.proofData} wrappedData={item.wrappedData} />
+          <InfoWrapper
+            BSCSkanHandler={BSCSkanHandler}
+            addTokenHandler={addTokenHandler}
+            key={i}
+            textsProof={textsProof}
+            proofData={item.proofData}
+            wrappedData={item.wrappedData}
+          />
         ))}
       </TokenList>
     </Wrapper>

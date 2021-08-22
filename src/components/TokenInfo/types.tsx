@@ -6,4 +6,6 @@ export interface TokenInfoProps {
     textCopy: string;
   };
   margin?: string;
+  addTokenHandler: () => void;
+  BSCSkanHandler: () => void;
 }

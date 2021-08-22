@@ -46,6 +46,7 @@ export * from "./widgets/ChartDisclaimer";
 export * from "./widgets/GiftPopup";
 export * from "./widgets/CongratulateModal";
 export * from "./widgets/Vesting";
+export * from "./widgets/WalletHistoryModal";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

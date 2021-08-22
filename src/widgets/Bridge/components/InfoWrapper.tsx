@@ -6,7 +6,14 @@ import { Text } from "../../../components/Text";
 import { TokenInfo } from "../../../components/TokenInfo";
 import { ClipIcon } from "../../../components/Svg";
 
-const InfoWrapper = ({ tokenLogo, textsProof, proofData, wrappedData }: InfoWrapperProps) => {
+const InfoWrapper = ({
+  tokenLogo,
+  textsProof,
+  proofData,
+  wrappedData,
+  BSCSkanHandler,
+  addTokenHandler,
+}: InfoWrapperProps) => {
   return (
     <Wrapper>
       {tokenLogo || (
@@ -20,7 +27,12 @@ const InfoWrapper = ({ tokenLogo, textsProof, proofData, wrappedData }: InfoWrap
       <MainBlock>
         <LeftColumn>
           <Text>{textsProof.proof}</Text>
-          <TokenInfo margin="10px 0 0" textsInfo={proofData} />
+          <TokenInfo
+            BSCSkanHandler={BSCSkanHandler}
+            addTokenHandler={addTokenHandler}
+            margin="10px 0 0"
+            textsInfo={proofData}
+          />
         </LeftColumn>
         <MiddleColumn>
           <ClipIcon />
@@ -28,7 +40,13 @@ const InfoWrapper = ({ tokenLogo, textsProof, proofData, wrappedData }: InfoWrap
         <RightColumn>
           <Text>{textsProof.wrapped}</Text>
           {wrappedData.map((item, i) => (
-            <TokenInfo key={i} margin="10px 0 0" textsInfo={item} />
+            <TokenInfo
+              BSCSkanHandler={BSCSkanHandler}
+              addTokenHandler={addTokenHandler}
+              key={i}
+              margin="10px 0 0"
+              textsInfo={item}
+            />
           ))}
         </RightColumn>
       </MainBlock>

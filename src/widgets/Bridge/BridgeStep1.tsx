@@ -11,6 +11,7 @@ import YAY from "../../components/Svg/Icons/YAY.svg";
 
 const Wrapper = styled.div`
   width: fit-content;
+  margin: 0 auto;
 `;
 const BridgeWrapper = styled.div`
   max-width: 404px;
@@ -65,7 +66,10 @@ const MessageBox = styled.div`
   width: fit-content;
 `;
 const MessageText = styled(Text)`
-  letter-spacing: 0.13em;
+  letter-spacing: 0.05em;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    letter-spacing: 0.13em;
+  } ;
 `;
 const FeeInfo = styled(Text)`
   margin: 33px 0 43px;
