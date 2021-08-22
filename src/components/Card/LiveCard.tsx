@@ -104,7 +104,7 @@ const LiveCard: React.FC<StyledCardProps> = ({ texts, negative, closedCount, lin
       </Line>
       <Info>
         <LockedPrice>
-          {texts?.locked || "Locked Price"} ADA: <div>{lockedPrice}</div>
+          {texts?.locked || "Locked Price ADA"}: <div>{lockedPrice}</div>
         </LockedPrice>
         <Prize>
           {texts?.prize || "Prize Pool"}: <div>{prize}</div>
