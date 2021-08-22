@@ -21,10 +21,10 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
   return (
     <InputWrap>
-      <TitleInput>{texts || "Commit"}</TitleInput>
+      <TitleInput>{texts?.commit || "Commit"}</TitleInput>
       <InputIcon>
         <BnbIcon />
-        BNB
+          {texts?.currency || 'BNB'}
       </InputIcon>
       <Input
         className={isWarning ? "warning" : ""}

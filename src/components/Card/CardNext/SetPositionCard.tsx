@@ -15,7 +15,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
   handlePercentChange,
   disabledTab,
   texts,
-  inputText,
+  inputTexts,
 }) => {
   return (
     <Wrap>
@@ -24,7 +24,7 @@ const SetPositionCard: React.FC<SetPositionCardProps> = ({
       </ButtonBack>
       <Title>{texts || "Set Position"}</Title>
       <BalanceInput
-        texts={inputText}
+        texts={inputTexts}
         value={inputValue}
         onUserInput={onUserInput}
         isWarning={showFieldWarning}
