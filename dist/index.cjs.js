@@ -1770,14 +1770,14 @@ function MyTimer(_a) {
         handleDigit(item).leftDigit,
         handleDigit(item).rightDigit,
         timeTextArray[i],
-        " \u00A0")); })));
+        " ")); })));
 }
 var TimerSimple = function (_a) {
     var time = _a.time, color = _a.color, texts = _a.texts;
     return (React__default['default'].createElement("div", null,
         React__default['default'].createElement(MyTimer, { expiryTimestamp: time || 0, color: color || "text", texts: texts })));
 };
-var Wrap$k = styled__default['default'].div(templateObject_1$1h || (templateObject_1$1h = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n"])), getColor);
+var Wrap$k = styled__default['default'].div(templateObject_1$1h || (templateObject_1$1h = __makeTemplateObject(["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"], ["\n  height: 32px;\n  color: ", ";\n  font-weight: normal;\n  font-size: 24px;\n  line-height: 32px;\n  letter-spacing: -0.02em;\n  white-space: nowrap;\n"])), getColor);
 var templateObject_1$1h;
 
 var CardNext$1 = function (_a) {
