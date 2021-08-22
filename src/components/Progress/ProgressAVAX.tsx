@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon } from "../Svg";
 
-interface ProgressAVAXProps {
+export interface ProgressAVAXProps {
   blockFrom: number;
   blockTo: number;
   blockCurrent: number;
