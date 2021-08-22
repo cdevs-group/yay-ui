@@ -14,25 +14,25 @@ const Wrap = styled.div`
 const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
   onDismiss = () => null,
   title,
-  tabValue,
-  setTabValue,
+  // tabValue,
+  // setTabValue,
   tabsList,
   textsWallet,
   disconnectHandler,
   transactionTitle,
   transactionsList,
 }) => {
-  // const [tabValue, setTabValue] = useState(0);
+  const [tabValue, setTabValue] = useState(0);
 
-  // const handleTabChange =  (e:any) =>{
-  //   setTabValue(+e.target.value);
-  // };
+  const handleTabChange =  (e:any) =>{
+    setTabValue(+e.target.value);
+  };
 
   return (
     <>
       <Modal welcome title={title} onDismiss={onDismiss}>
         <Wrap>
-          <Tabs tabValue={tabValue} onClick={setTabValue} tabsList={tabsList} />
+          <Tabs tabValue={tabValue} onClick={handleTabChange} tabsList={tabsList} />
           {tabValue === 0 ? (
             <WalletSide disconnectHandler={disconnectHandler} textsWallet={textsWallet} />
           ) : (

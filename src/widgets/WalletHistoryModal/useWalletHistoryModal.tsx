@@ -85,8 +85,8 @@ const useWalletHistoryModal = (): ReturnType => {
 
   const [onPresentWalletHistoryModal] = useModal(
     <WalletHistoryModal
-      tabValue={tabValue}
-      setTabValue={handleTabChange}
+      // tabValue={tabValue}
+      // setTabValue={handleTabChange}
       title="Your Wallet"
       tabsList={tabsList}
       textsWallet={textsWallet}

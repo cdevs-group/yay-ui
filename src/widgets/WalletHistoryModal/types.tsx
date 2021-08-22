@@ -22,8 +22,8 @@ export interface WalletHistoryModalProps {
     completeText: string;
   };
   transactionTitle: string;
-  tabValue: number;
-  setTabValue: (e: any) => void;
+  // tabValue: number;
+  // setTabValue: (e: any) => void;
   tabsList: Array<string>;
   disconnectHandler: () => void;
   transactionsList: Array<{
