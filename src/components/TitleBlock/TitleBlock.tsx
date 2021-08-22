@@ -49,16 +49,23 @@ const Img = styled.div<{ margin?: string }>`
     left: 50%;
     top: 50%;
     display: block;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
     background: ${({ theme }) => theme.colors.greenGradient2};
     border-radius: inherit;
     opacity: 0.15;
     transform: translate(-50%, -50%);
+    ${({ theme }) => theme.mediaQueries.xl} {
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+    }
   }
   & img {
     margin: ${({ margin }) => margin || 0};
-    max-width: none;
+    max-width: 100%;
+    ${({ theme }) => theme.mediaQueries.xl} {
+      max-width: none;
+    }
   }
 `;
 
