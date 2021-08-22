@@ -1,5 +1,5 @@
 /// <reference types="react" />
-interface ProgressAVAXProps {
+export interface ProgressAVAXProps {
     blockFrom: number;
     blockTo: number;
     blockCurrent: number;
