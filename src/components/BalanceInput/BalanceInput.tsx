@@ -12,6 +12,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   isWarning = false,
   decimals = 18,
   texts,
+  icon
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
@@ -23,7 +24,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
     <InputWrap>
       <TitleInput>{texts?.commit || "Commit"}</TitleInput>
       <InputIcon>
-        <BnbIcon />
+        {icon || <BnbIcon />}
         {texts?.currency || "BNB"}
       </InputIcon>
       <Input

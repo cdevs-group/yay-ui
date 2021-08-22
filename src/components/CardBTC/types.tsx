@@ -56,6 +56,7 @@ export interface SetPositionCardProps {
     commit?: string;
   };
   textsButtons?: Itexts;
+  iconBalanceInput?: React.ReactNode;
 }
 
 export interface BalanceBlockProps {
