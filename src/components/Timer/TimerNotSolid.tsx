@@ -10,12 +10,13 @@ interface ThemedProps extends TimerColorProps {
 interface MyTimerProps {
   expiryTimestamp: any;
   color: string;
+  avax?: boolean;
 }
 const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
+function MyTimer({ expiryTimestamp, color, avax }: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
   const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
@@ -30,10 +31,10 @@ function MyTimer({ expiryTimestamp, color }: MyTimerProps) {
 
   return (
     <Wrap>
-      <Block color={color}>
+      <Block avax={avax} color={color}>
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            <Item>
+            <Item avax={avax}>
               {handleDigit(item).leftDigit}
               {handleDigit(item).rightDigit}{" "}
             </Item>
@@ -62,10 +63,14 @@ const LoadingTimer = () => {
   );
 };
 
-const TimerNotSolid: React.FC<TimerProps> = ({ time, color, isLoad }) => {
+const TimerNotSolid: React.FC<TimerProps> = ({ time, color, isLoad, avax }) => {
   return (
     <div>
-      {(time || time === 0) && !isLoad ? <MyTimer expiryTimestamp={time} color={color || "text"} /> : <LoadingTimer />}
+      {(time || time === 0) && !isLoad ? (
+        <MyTimer avax={avax} expiryTimestamp={time} color={color || "text"} />
+      ) : (
+        <LoadingTimer />
+      )}
     </div>
   );
 };
@@ -81,7 +86,7 @@ const Block = styled.div<TimerColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 186px;
+  width: ${({ avax }) => (avax ? "auto" : "186px")};
   height: 50px;
   border-radius: 12px;
   color: ${getColor};
@@ -90,15 +95,17 @@ const Block = styled.div<TimerColorProps>`
   letter-spacing: 0.05em;
 `;
 
-const Item = styled.div`
-  background: ${({ theme }) => transparentize(0.75, theme.colors.invertedContrast)};
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 50px;
-  width: 50px;
+const Item = styled.div<{ avax?: boolean }>`
+  background: ${({ avax, theme }) => (avax ? "none" : transparentize(0.75, theme.colors.invertedContrast))};
+  box-shadow: ${({ avax, theme }) => (avax ? "none" : theme.colors.boxShadow10)};
+  height: ${({ avax }) => (avax ? "auto" : "50px")};
+  margin: ${({ avax }) => (avax ? "0 5px" : "0")};
+  width: ${({ avax }) => (avax ? "15px" : "50px")};
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: ${({ avax }) => (avax ? "11px" : "15px")};
 `;
 
 const Dots = styled.div`

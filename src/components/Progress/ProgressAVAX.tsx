@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon } from "../Svg";
+import TimerNotSolid from "../Timer/TimerNotSolid";
 
 export interface ProgressAVAXProps {
   blockFrom: number;
   blockTo: number;
   blockCurrent: number;
-  hour: number;
-  min: number;
-  sec: number;
+  time: number;
   texts: {
     start: string;
     end: string;
@@ -17,7 +16,7 @@ export interface ProgressAVAXProps {
   };
 }
 
-const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, hour, min, sec }: ProgressAVAXProps) => {
+const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time }: ProgressAVAXProps) => {
   const [noteOpen, setNoteOpen] = useState(true);
 
   const progressHandler = () => {
@@ -33,7 +32,8 @@ const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, hour, min, sec 
           <Text size="xs">{blockCurrent}</Text>
         </Block>
         <Timer>
-          <p>≈</p> <p>{hour}</p>:<p>{min}</p>:<p>{sec}</p>
+          <p>≈</p>
+          <TimerNotSolid time={time} avax />
         </Timer>
         <Block>
           <Text size="xs">{blockTo}</Text>
@@ -75,16 +75,12 @@ const Timer = styled.div`
   justify-content: center;
   font-size: 11px;
   line-height: 14px;
+  align-items: center;
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.text};
   & p {
-    width: 15px;
-    margin: 0 10px;
-    text-align: center;
-    &:first-child {
-      width: auto;
-      margin: 0 -5px 0 10px;
-    }
+    width: auto;
+    margin: 0 5px 0 10px;
   }
 `;
 const Block = styled.div`

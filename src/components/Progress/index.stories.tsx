@@ -15,16 +15,8 @@ export const ProgressAVAXBlock = () => {
   };
 
   return (
-    <div style={{ padding: "32px", width: "500px" }}>
-      <ProgressAVAX
-        hour={0}
-        min={20}
-        sec={10}
-        texts={texts}
-        blockFrom={112232}
-        blockCurrent={113930}
-        blockTo={115231}
-      />
+    <div>
+      <ProgressAVAX time={1232} texts={texts} blockFrom={112232} blockCurrent={113930} blockTo={115231} />
     </div>
   );
 };
