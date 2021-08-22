@@ -4,11 +4,12 @@ export interface ProgressAVAXProps {
     blockTo: number;
     blockCurrent: number;
     time: number;
+    isLoad?: boolean;
     texts: {
         start: string;
         end: string;
         note: string;
     };
 }
-declare const ProgressAVAX: ({ blockFrom, blockCurrent, blockTo, texts, time }: ProgressAVAXProps) => JSX.Element;
+declare const ProgressAVAX: ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }: ProgressAVAXProps) => JSX.Element;
 export default ProgressAVAX;
