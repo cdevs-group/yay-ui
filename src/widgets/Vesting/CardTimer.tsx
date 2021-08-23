@@ -41,9 +41,11 @@ const CardTimer = ({ data }: IProps) => {
             marginBottom="2px"
             fontWeight="400"
           >
-            {data.textFront}
+            {data.textBack}
           </Text>
-          <TimerSimple time={data.timeSecond} texts={data.textsTime} />
+          <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
+            {data.textStage}
+          </Text>
           <Progress />
         </CardFront>
         <CardBack>
@@ -55,11 +57,9 @@ const CardTimer = ({ data }: IProps) => {
             marginBottom="2px"
             fontWeight="400"
           >
-            {data.textBack}
+            {data.textFront}
           </Text>
-          <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-            {data.textStage}
-          </Text>
+          <TimerSimple time={data.timeSecond} texts={data.textsTime} />
           <Progress />
         </CardBack>
       </Inner>
