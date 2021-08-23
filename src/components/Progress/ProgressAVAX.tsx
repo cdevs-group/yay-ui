@@ -206,5 +206,5 @@ const Indicator = styled.div<{ progress?: number }>`
   &:hover ~ ${Note} > ${NoteContent} {
     opacity: 0;
     transition: 0.3s;
-  }  
+  }
 `;
