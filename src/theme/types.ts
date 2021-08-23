@@ -111,6 +111,10 @@ export type Colors = {
   text2: string;
   bgOpacitY3: string;
   yellowGradient3: string;
+  buttonBg3: string;
+  darkPink: string;
+  greyRgba: string;
+  boxShadow8: string;
   boxShadow9: string;
   greenRgba: string;
   boxShadow10: string;

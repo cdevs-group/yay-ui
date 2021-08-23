@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Toggle from "./Toggle";
+import SwapButton from "./SwapButton";
 
 export default {
   title: "Components/Toggle",
@@ -18,6 +19,9 @@ export const Default: React.FC = () => {
       </div>
       <div>
         <Toggle checked={isChecked} onChange={toggle} scale="sm" />
+      </div>
+      <div>
+        <SwapButton onClick={() => {}} />
       </div>
     </>
   );

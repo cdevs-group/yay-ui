@@ -17,6 +17,7 @@ export const baseColors = {
   boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
   boxShadow2: "0px 4px 10px rgba(0, 0, 0, 0.25)",
   boxShadow6: "0px 4px 10px rgba(75, 228, 62, 0.25)",
+  boxShadow8: "0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05)",
   boxShadow9: "0px 0px 20px rgba(86, 239, 75, 0.35)",
   boxShadow10: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
   bgOpacity: "rgba(0, 0, 0, 0.3)",
@@ -39,12 +40,14 @@ export const baseColors = {
   yellow: "#FFEA2C",
   bgHeader: "#2B2B32",
   buttonBg2: "#1B1B20",
+  buttonBg3: "#1C1C22",
   bgCardBtc: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
   colorCardBtc: "#8A92B2",
   bgCardBtc2: "#FFAC01",
   yellowGradient: "linear-gradient(180deg, #FFC700 -23.33%, #FF8A00 118.33%);",
   yellowGradient2: "linear-gradient(180deg, #FFB601 -16%, #FF9B01 100%)",
   yellowGradient3: "linear-gradient(180deg, #FFEA2C 0%, #FFB72C 100%)",
+  greyRgba: "rgba(0, 0, 0, 0.15)",
 };
 
 export const brandColors = {

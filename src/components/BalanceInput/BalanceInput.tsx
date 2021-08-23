@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Input } from "../Input";
 import { BnbIcon } from "../Svg";
 import { BalanceInputProps } from "./types";
+import { Text } from "../Text";
 
 const BalanceInput: React.FC<BalanceInputProps> = ({
   value,
@@ -12,9 +13,11 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   isWarning = false,
   decimals = 18,
   texts,
+  token,
+  handleButtonToMax,
   icon,
 }) => {
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {    
     if (e.currentTarget.validity.valid) {
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
@@ -23,6 +26,11 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   return (
     <InputWrap>
       <TitleInput>{texts?.commit || "Commit"}</TitleInput>
+      {handleButtonToMax ? (
+        <ButtonToMax as="button" onClick={handleButtonToMax}>
+          MAX
+        </ButtonToMax>
+      ) : null}     
       <InputIcon>
         {icon || <BnbIcon />}
         {texts?.currency || "BNB"}
@@ -46,8 +54,8 @@ export default BalanceInput;
 const InputWrap = styled.div`
   position: relative;
   padding: 17px 100px 20px 20px;
-  background: rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.2);
+  background: ${({ theme }) => theme.colors.buttonBg};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 12px;
 `;
 const TitleInput = styled.div`
@@ -55,7 +63,7 @@ const TitleInput = styled.div`
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.5px;
-  color: #a3a3a3;
+  color: ${({ theme }) => theme.colors.greyText};
 `;
 const InputIcon = styled.div`
   display: flex;
@@ -64,7 +72,7 @@ const InputIcon = styled.div`
   flex-direction: column;
   padding: 7px 15px;
   position: absolute;
-  background: rgba(255, 255, 255, 0.05);
+  background: ${({ theme }) => theme.colors.bgOpacitY3};
   border-radius: 12px;
   right: 15px;
   top: 50%;
@@ -72,7 +80,7 @@ const InputIcon = styled.div`
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.5px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.text};
   & svg {
     margin-bottom: 7px;
   }
@@ -86,4 +94,15 @@ const InputIcon = styled.div`
     background: ${({ theme }) => theme.colors.blueGradient};
     margin-bottom: 7px;
   }
+`;
+const ButtonToMax = styled(Text)`
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
 `;

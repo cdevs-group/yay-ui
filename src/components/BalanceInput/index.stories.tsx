@@ -12,11 +12,11 @@ export const Default: React.FC = () => {
   const [decimalValue, setDecimalValue] = useState(1.43333);
   const [numericValue, setNumericValue] = useState(5);
 
-  const handleDecimalChange = (input) => {
+  const handleDecimalChange = (input: any) => {
     setDecimalValue(input);
   };
 
-  const handleNumericChange = (input) => {
+  const handleNumericChange = (input: any) => {
     setNumericValue(input);
   };
 
