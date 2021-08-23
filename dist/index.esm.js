@@ -1077,7 +1077,7 @@ var LeftContent$2 = styled.div(templateObject_4$M || (templateObject_4$M = __mak
     return theme.colors.text;
 });
 var RightContent$3 = styled(LeftContent$2)(templateObject_5$v || (templateObject_5$v = __makeTemplateObject(["\n  font-size: 11px;\n"], ["\n  font-size: 11px;\n"])));
-var Content$2 = styled.div(templateObject_6$p || (templateObject_6$p = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
+var Content$2 = styled.div(templateObject_6$q || (templateObject_6$q = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
@@ -1168,7 +1168,7 @@ var StyledCard = function (_a) {
                         React__default.createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$m, { fill: "#FFB72C" }))))))));
 };
-var templateObject_1$1y, templateObject_2$1e, templateObject_3$_, templateObject_4$M, templateObject_5$v, templateObject_6$p, templateObject_7$d, templateObject_8$9, templateObject_9$7, templateObject_10$5, templateObject_11$5, templateObject_12$4, templateObject_13$2, templateObject_14$1, templateObject_15$1, templateObject_16$1;
+var templateObject_1$1y, templateObject_2$1e, templateObject_3$_, templateObject_4$M, templateObject_5$v, templateObject_6$q, templateObject_7$d, templateObject_8$9, templateObject_9$7, templateObject_10$5, templateObject_11$5, templateObject_12$4, templateObject_13$2, templateObject_14$1, templateObject_15$1, templateObject_16$1;
 
 var Card$5 = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -1192,7 +1192,7 @@ var Arrow$2 = styled.div(templateObject_5$u || (templateObject_5$u = __makeTempl
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice$1 = styled.div(templateObject_6$o || (templateObject_6$o = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice$1 = styled.div(templateObject_6$p || (templateObject_6$p = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1228,7 +1228,7 @@ var ExpiredCardNA = function (_a) {
                     prize,
                     " ")))));
 };
-var templateObject_1$1x, templateObject_2$1d, templateObject_3$Z, templateObject_4$L, templateObject_5$u, templateObject_6$o, templateObject_7$c, templateObject_8$8, templateObject_9$6;
+var templateObject_1$1x, templateObject_2$1d, templateObject_3$Z, templateObject_4$L, templateObject_5$u, templateObject_6$p, templateObject_7$c, templateObject_8$8, templateObject_9$6;
 
 var Wrap$q = styled.div(templateObject_1$1w || (templateObject_1$1w = __makeTemplateObject(["\n  font-weight: 500;\n  color: ", ";\n"], ["\n  font-weight: 500;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -1247,7 +1247,7 @@ var Arrow$1 = styled.div(templateObject_5$t || (templateObject_5$t = __makeTempl
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice = styled.div(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice = styled.div(templateObject_6$o || (templateObject_6$o = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1277,7 +1277,7 @@ var LiveCard = function (_a) {
                 ": ",
                 React__default.createElement("div", null, prize)))));
 };
-var templateObject_1$1w, templateObject_2$1c, templateObject_3$Y, templateObject_4$K, templateObject_5$t, templateObject_6$n, templateObject_7$b, templateObject_8$7, templateObject_9$5;
+var templateObject_1$1w, templateObject_2$1c, templateObject_3$Y, templateObject_4$K, templateObject_5$t, templateObject_6$o, templateObject_7$b, templateObject_8$7, templateObject_9$5;
 
 var orangeAnimation$1 = keyframes(templateObject_1$1v || (templateObject_1$1v = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"])));
 var redAnimation$1 = keyframes(templateObject_2$1b || (templateObject_2$1b = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"])));
@@ -1287,7 +1287,7 @@ var Wrap$p = styled.div(templateObject_5$s || (templateObject_5$s = __makeTempla
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Content$1 = styled.div(templateObject_6$m || (templateObject_6$m = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
+var Content$1 = styled.div(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
 var Loader$2 = styled.div(templateObject_7$a || (templateObject_7$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 50px;\n  flex-grow: 1;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 50px;\n  flex-grow: 1;\n"])));
 var OrangeCircle$1 = styled.div(templateObject_8$6 || (templateObject_8$6 = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), orangeAnimation$1, function (_a) {
     var theme = _a.theme;
@@ -1320,7 +1320,7 @@ var LoaderCard = function (_a) {
                 React__default.createElement(YellowCircle$1, null)),
             textTooltip && React__default.createElement(BottomText$1, null, textTooltip))));
 };
-var templateObject_1$1v, templateObject_2$1b, templateObject_3$X, templateObject_4$J, templateObject_5$s, templateObject_6$m, templateObject_7$a, templateObject_8$6, templateObject_9$4, templateObject_10$4, templateObject_11$4, templateObject_12$3;
+var templateObject_1$1v, templateObject_2$1b, templateObject_3$X, templateObject_4$J, templateObject_5$s, templateObject_6$n, templateObject_7$a, templateObject_8$6, templateObject_9$4, templateObject_10$4, templateObject_11$4, templateObject_12$3;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -2244,11 +2244,11 @@ var Loader$1 = function () {
     var loaderdot2 = keyframes(templateObject_3$L || (templateObject_3$L = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-6px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-6px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
     var loaderdot3 = keyframes(templateObject_4$C || (templateObject_4$C = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "])));
     var loaderdot4 = keyframes(templateObject_5$r || (templateObject_5$r = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
-    var LoaderBlock = styled.div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n    height: 70px;\n    width: 70px;\n    animation: ", " 3s linear 0s infinite normal;\n    &:before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: auto;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff9525;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &:after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: auto;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #69e35f;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    & span {\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      height: 70px;\n      width: 70px;\n      &::before {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: auto;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #ff6161;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n      &::after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: auto;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #eccb57;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n    }\n  "], ["\n    height: 70px;\n    width: 70px;\n    animation: ", " 3s linear 0s infinite normal;\n    &:before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: auto;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff9525;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &:after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: auto;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #69e35f;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    & span {\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      height: 70px;\n      width: 70px;\n      &::before {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: auto;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #ff6161;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n      &::after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: auto;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #eccb57;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n    }\n  "])), loader1, loaderdot1, loaderdot2, loaderdot3, loaderdot4);
+    var LoaderBlock = styled.div(templateObject_6$m || (templateObject_6$m = __makeTemplateObject(["\n    height: 70px;\n    width: 70px;\n    animation: ", " 3s linear 0s infinite normal;\n    &:before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: auto;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff9525;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &:after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: auto;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #69e35f;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    & span {\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      height: 70px;\n      width: 70px;\n      &::before {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: auto;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #ff6161;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n      &::after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: auto;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #eccb57;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n    }\n  "], ["\n    height: 70px;\n    width: 70px;\n    animation: ", " 3s linear 0s infinite normal;\n    &:before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: auto;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff9525;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &:after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: auto;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #69e35f;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    & span {\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      height: 70px;\n      width: 70px;\n      &::before {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: 0;\n        left: 0;\n        bottom: auto;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #ff6161;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n      &::after {\n        content: \"\";\n        display: block;\n        position: absolute;\n        top: auto;\n        left: 0;\n        bottom: 0;\n        right: 0;\n        margin: auto;\n        width: 22px;\n        height: 22px;\n        background: #eccb57;\n        border-radius: 50%;\n        animation: ", " 1s ease-out infinite;\n      }\n    }\n  "])), loader1, loaderdot1, loaderdot2, loaderdot3, loaderdot4);
     return (React__default.createElement(LoaderBlock, null,
         React__default.createElement("span", null)));
 };
-var templateObject_1$15, templateObject_2$W, templateObject_3$L, templateObject_4$C, templateObject_5$r, templateObject_6$l;
+var templateObject_1$15, templateObject_2$W, templateObject_3$L, templateObject_4$C, templateObject_5$r, templateObject_6$m;
 
 var BottomContent$1 = styled.div(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  justify-content: space-between;\n"])));
 var CenterBlock = styled.div(templateObject_2$V || (templateObject_2$V = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 186px;\n  padding: 17px;\n  background: ", ";\n  border-radius: 12px;\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 186px;\n  padding: 17px;\n  background: ", ";\n  border-radius: 12px;\n"])), function (_a) {
@@ -2272,14 +2272,16 @@ var ArrowSlider = function (_a) {
 var templateObject_1$14, templateObject_2$V, templateObject_3$K, templateObject_4$B, templateObject_5$q;
 
 var TitleBlock = function (_a) {
-    var src = _a.src, title = _a.title, subtitle = _a.subtitle, margin = _a.margin, children = _a.children;
-    return (React__default.createElement(Block$5, null,
-        React__default.createElement(Img$1, { margin: margin },
-            React__default.createElement("img", { src: src, alt: "" })),
-        React__default.createElement("div", null,
-            React__default.createElement(Title$7, null, title),
-            React__default.createElement(Subtitle, null, subtitle),
-            React__default.createElement(Timer$1, null, children))));
+    var src = _a.src, title = _a.title, subtitle = _a.subtitle, margin = _a.margin, children = _a.children, childrenVisibleModile = _a.childrenVisibleModile;
+    return (React__default.createElement(React__default.Fragment, null,
+        React__default.createElement(Block$5, null,
+            React__default.createElement(Img$1, { margin: margin },
+                React__default.createElement("img", { src: src, alt: "" })),
+            React__default.createElement("div", null,
+                React__default.createElement(Title$7, null, title),
+                React__default.createElement(Subtitle, null, subtitle),
+                React__default.createElement(Timer$1, null, children))),
+        React__default.createElement(VisibleTimer, { childrenVisibleModile: childrenVisibleModile }, children)));
 };
 var Block$5 = styled.div(templateObject_1$13 || (templateObject_1$13 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
 var Img$1 = styled.div(templateObject_2$U || (templateObject_2$U = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 70px;\n  height: 70px;\n  margin-right: 25px;\n  border-radius: 50%;\n  flex: none;\n  ", " {\n    width: 120px;\n    height: 120px;\n    margin-right: 30px;\n  }\n  ", " {\n    width: 170px;\n    height: 170px;\n    margin-right: 50px;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n    ", " {\n      width: calc(100% + 16px);\n      height: calc(100% + 16px);\n    }\n  }\n  & img {\n    margin: ", ";\n    max-width: 100%;\n    ", " {\n      max-width: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 70px;\n  height: 70px;\n  margin-right: 25px;\n  border-radius: 50%;\n  flex: none;\n  ", " {\n    width: 120px;\n    height: 120px;\n    margin-right: 30px;\n  }\n  ", " {\n    width: 170px;\n    height: 170px;\n    margin-right: 50px;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    background: ", ";\n    border-radius: inherit;\n    opacity: 0.15;\n    transform: translate(-50%, -50%);\n    ", " {\n      width: calc(100% + 16px);\n      height: calc(100% + 16px);\n    }\n  }\n  & img {\n    margin: ", ";\n    max-width: 100%;\n    ", " {\n      max-width: none;\n    }\n  }\n"])), function (_a) {
@@ -2325,7 +2327,14 @@ var Timer$1 = styled.div(templateObject_5$p || (templateObject_5$p = __makeTempl
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$13, templateObject_2$U, templateObject_3$J, templateObject_4$A, templateObject_5$p;
+var VisibleTimer = styled.div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+    var childrenVisibleModile = _a.childrenVisibleModile;
+    return (childrenVisibleModile ? "block" : "none");
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var templateObject_1$13, templateObject_2$U, templateObject_3$J, templateObject_4$A, templateObject_5$p, templateObject_6$l;
 
 var Wrap$j = styled.div(templateObject_1$12 || (templateObject_1$12 = __makeTemplateObject(["\n  position: relative;\n  padding: 0 55px;\n  width: 404px;\n  height: 335px;\n  background: ", ";\n  border-radius: 15px;\n  color: ", ";\n  text-align: center;\n  letter-spacing: 0.5px;\n"], ["\n  position: relative;\n  padding: 0 55px;\n  width: 404px;\n  height: 335px;\n  background: ", ";\n  border-radius: 15px;\n  color: ", ";\n  text-align: center;\n  letter-spacing: 0.5px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -3089,7 +3098,7 @@ var CurrentBlockText = styled(Text)(templateObject_12$1 || (templateObject_12$1 
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var Indicator = styled.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }  \n"], ["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }  \n"])), function (_a) {
+var Indicator = styled.div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greenRgba;
 }, function (_a) {
