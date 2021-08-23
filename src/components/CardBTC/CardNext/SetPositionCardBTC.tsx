@@ -16,6 +16,7 @@ const SetPositionCardBTC: React.FC<SetPositionCardProps> = ({
   disabledTab,
   texts,
   inputTexts,
+  iconBalanceInput,
 }) => {
   return (
     <Wrap>
@@ -29,6 +30,7 @@ const SetPositionCardBTC: React.FC<SetPositionCardProps> = ({
         onUserInput={onUserInput}
         isWarning={showFieldWarning}
         inputProps={inputProps}
+        icon={iconBalanceInput}
       />
       <TabsBlock>
         <Tabs handlePercentChange={handlePercentChange} disabledTab={disabledTab} />
