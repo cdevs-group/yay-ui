@@ -2,18 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { TitleBlockProps } from "./types";
 
-const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, margin, children }) => {
+const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, margin, children, childrenVisibleModile }) => {
   return (
-    <Block>
-      <Img margin={margin}>
-        <img src={src} alt="" />
-      </Img>
-      <div>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
-        <Timer>{children}</Timer>
-      </div>
-    </Block>
+    <>
+      <Block>
+        <Img margin={margin}>
+          <img src={src} alt="" />
+        </Img>
+        <div>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Timer>{children}</Timer>
+        </div>
+      </Block>
+      <VisibleTimer childrenVisibleModile={childrenVisibleModile}>{children}</VisibleTimer>
+    </>
   );
 };
 export default TitleBlock;
@@ -109,5 +112,13 @@ const Timer = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.sm} {
     display: block;
+  }
+`;
+
+const VisibleTimer = styled.div<{ childrenVisibleModile?: boolean }>`
+  display: ${({ childrenVisibleModile }) => (childrenVisibleModile ? "block" : "none")};
+  margin-top: 30px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: none;
   }
 `;
