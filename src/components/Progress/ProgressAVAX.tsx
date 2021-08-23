@@ -50,15 +50,17 @@ const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }:
           </TextUnderRound>
         </RoundCurrentBlock>
       </Indicator>
-      <UnderProgress open={noteOpen}>
-        <Text fontSize="10px">{texts.start}</Text>
-        <Text fontSize="10px">{texts.end}</Text>
-      </UnderProgress>
-      <Note open={noteOpen}>
-        <Text fontSize="10px">{texts.note}</Text>
-        <CloseButton onClick={() => setNoteOpen(!noteOpen)}>
-          <CloseIcon />
-        </CloseButton>
+      <Note>
+        <UnderProgress open={noteOpen}>
+          <Text fontSize="10px">{texts.start}</Text>
+          <Text fontSize="10px">{texts.end}</Text>
+        </UnderProgress>
+        <NoteContent open={noteOpen}>
+          <Text fontSize="10px">{texts.note}</Text>
+          <CloseButton onClick={() => setNoteOpen(!noteOpen)}>
+            <CloseIcon />
+          </CloseButton>
+        </NoteContent>
       </Note>
     </Wrapper>
   );
@@ -71,8 +73,13 @@ const Wrapper = styled.div`
   max-width: 360px;
 `;
 const UnderProgress = styled.div<{ open: boolean }>`
-  display: ${({ open }) => (open ? "none" : "flex")};
+  position: absolute;
+  top: 0;
+  display: flex;
   justify-content: space-between;
+  width: 100%;
+  opacity: ${({ open }) => (open ? 0 : 1)};
+  transition: 0.3s;
 `;
 const BlocksAndTimer = styled.div`
   display: flex;
@@ -105,7 +112,6 @@ const Block = styled.div`
 `;
 
 const RoundCurrentBlock = styled.div<{ progress?: number }>`
-  display: none;
   position: absolute;
   z-index: 3;
   top: -4px;
@@ -131,16 +137,21 @@ const Round = styled.div`
     border-radius: 25px;
   }
 `;
-const Note = styled.div<{ open: boolean }>`
-  display: ${({ open }) => (open ? "block" : "none")};
+const Note = styled.div`
   position: relative;
+  width: 100%;
+`;
+const NoteContent = styled.div<{ open: boolean }>`
   width: 100%;
   padding: 12px 57px 12px 20px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
   z-index: 4;
+  transition: 0.3s;
+  opacity: ${({ open }) => (open ? 1 : 0)};
 `;
+
 const CloseButton = styled.button`
   border: none;
   background: none;
@@ -152,8 +163,11 @@ const CloseButton = styled.button`
   transform: translateY(-50%);
 `;
 const TextUnderRound = styled.div`
+  display: none;
   position: relative;
   white-space: nowrap;
+  opacity: 0;
+  transition: 0.3s;
 `;
 const CurrentBlockText = styled(Text)`
   color: ${({ theme }) => theme.colors.greyText};
@@ -180,16 +194,18 @@ const Indicator = styled.div<{ progress?: number }>`
     box-shadow: ${({ theme }) => theme.colors.boxShadow9};
     border-radius: 6px;
   }
-  &:hover ${RoundCurrentBlock} {
-    display: block;
-  }
   &:hover ${TextUnderRound} {
     left: ${({ progress }) => (progress && progress > 50 ? "-100%" : 0)};
+    display: block;
+    opacity: 1;
+    transition: 0.3s;
   }
-  &:hover ~ ${Note} {
-    display: none;
+  &:hover ~ ${NoteContent} {
+    opacity: 0;
+    transition: 0.3s;
   }
   &:hover ~ ${UnderProgress} {
-    display: none;
+    opacity: 0;
+    transition: 0.3s;
   }
 `;
