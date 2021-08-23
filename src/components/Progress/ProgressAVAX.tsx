@@ -168,6 +168,9 @@ const TextUnderRound = styled.div`
   white-space: nowrap;
   opacity: 0;
   transition: 0.3s;
+  background: ${({ theme }) => theme.colors.background2};
+  border-radius: 6px;
+  padding: 4px 8px;
 `;
 const CurrentBlockText = styled(Text)`
   color: ${({ theme }) => theme.colors.greyText};
@@ -203,9 +206,5 @@ const Indicator = styled.div<{ progress?: number }>`
   &:hover ~ ${Note} > ${NoteContent} {
     opacity: 0;
     transition: 0.3s;
-  }
-  &:hover ~ ${Note} > ${UnderProgress} {
-    opacity: 0;
-    transition: 0.3s;
-  }
+  }  
 `;
