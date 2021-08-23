@@ -30,6 +30,7 @@ export declare const baseColors: {
     greenGradient2: string;
     greenGradient3: string;
     greenRgba: string;
+    greeanRgba2: string;
     textGray2: string;
     bgCard: string;
     cardShadow: string;

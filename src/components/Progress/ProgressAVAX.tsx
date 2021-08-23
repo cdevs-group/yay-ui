@@ -14,6 +14,7 @@ export interface ProgressAVAXProps {
     start: string;
     end: string;
     note: string;
+    currentBlock: string;
   };
 }
 
@@ -30,7 +31,7 @@ const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }:
     <Wrapper>
       <BlocksAndTimer>
         <Block>
-          <Text size="xs">{blockCurrent}</Text>
+          <Text size="xs">{blockFrom}</Text>
         </Block>
         <Timer>
           <p>≈</p>
@@ -40,7 +41,15 @@ const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }:
           <Text size="xs">{blockTo}</Text>
         </Block>
       </BlocksAndTimer>
-      <Indicator progress={progressHandler()} />
+      <Indicator progress={progressHandler()}>
+        <RoundCurrentBlock progress={progressHandler()}>
+          <Round />
+          <TextUnderRound>
+            <Text fontSize="10px">{texts.currentBlock}</Text>
+            <CurrentBlockText fontSize="10px">{blockCurrent}</CurrentBlockText>
+          </TextUnderRound>
+        </RoundCurrentBlock>
+      </Indicator>
       <UnderProgress open={noteOpen}>
         <Text fontSize="10px">{texts.start}</Text>
         <Text fontSize="10px">{texts.end}</Text>
@@ -94,6 +103,61 @@ const Block = styled.div`
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 6px;
 `;
+
+const RoundCurrentBlock = styled.div<{ progress?: number }>`
+  display: none;
+  position: absolute;
+  z-index: 3;
+  top: -4px;
+  left: ${({ progress }) => (progress ? `${progress}%` : 0)};
+`;
+const Round = styled.div`
+  position: relative;
+  margin-bottom: 5px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 25px;
+  background: ${({ theme }) => theme.colors.text};
+  &:before {
+    content: "";
+    display: block;
+    top: -5px;
+    left: -5px;
+    position: absolute;
+    border: 9px solid ${({ theme }) => theme.colors.greeanRgba2};
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+  }
+`;
+const Note = styled.div<{ open: boolean }>`
+  display: ${({ open }) => (open ? "block" : "none")};
+  position: relative;
+  width: 100%;
+  padding: 12px 57px 12px 20px;
+  box-sizing: border-box;
+  background: ${({ theme }) => theme.colors.buttonBg};
+  border-radius: 12px;
+  z-index: 4;
+`;
+const CloseButton = styled.button`
+  border: none;
+  background: none;
+  padding: 0;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+`;
+const TextUnderRound = styled.div`
+  position: relative;
+  white-space: nowrap;
+`;
+const CurrentBlockText = styled(Text)`
+  color: ${({ theme }) => theme.colors.greyText};
+`;
 const Indicator = styled.div<{ progress?: number }>`
   position: relative;
   width: 100%;
@@ -116,23 +180,16 @@ const Indicator = styled.div<{ progress?: number }>`
     box-shadow: ${({ theme }) => theme.colors.boxShadow9};
     border-radius: 6px;
   }
-`;
-const Note = styled.div<{ open: boolean }>`
-  display: ${({ open }) => (open ? "block" : "none")};
-  position: relative;
-  width: 100%;
-  padding: 12px 57px 12px 20px;
-  box-sizing: border-box;
-  background: ${({ theme }) => theme.colors.buttonBg};
-  border-radius: 12px;
-`;
-const CloseButton = styled.button`
-  border: none;
-  background: none;
-  padding: 0;
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  cursor: pointer;
-  transform: translateY(-50%);
+  &:hover ${RoundCurrentBlock} {
+    display: block;
+  }
+  &:hover ${TextUnderRound} {
+    left: ${({ progress }) => (progress && progress > 50 ? "-100%" : 0)};
+  }
+  &:hover ~ ${Note} {
+    display: none;
+  }
+  &:hover ~ ${UnderProgress} {
+    display: none;
+  }
 `;

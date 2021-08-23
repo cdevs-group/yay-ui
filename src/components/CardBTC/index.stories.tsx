@@ -10,6 +10,7 @@ import LoaderCardText from "./components/LoaderCardText";
 import Loader from "../Card/Loader";
 import Card from "../Card/Card";
 import BalanceBlock from "./components/BalanceBlock";
+import { CloseIcon } from "../Svg";
 
 export default {
   title: "Components/CardBTC",

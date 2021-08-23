@@ -32,6 +32,7 @@ export const baseColors = {
   greenGradient2: "linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
   greenGradient3: "linear-gradient(107.51deg, #9BE43E 26.63%, #39DB2C 73.7%)",
   greenRgba: "rgba(86, 239, 75, 0.5)",
+  greeanRgba2: "rgba(75, 228, 62, 0.08)",
   textGray2: "#9A9191",
   bgCard: "#404047",
   cardShadow: "box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31)",
