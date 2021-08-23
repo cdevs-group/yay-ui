@@ -5090,12 +5090,12 @@ var CardTimer = function (_a) {
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(Inner, null,
             React__default['default'].createElement(CardFront, null,
-                React__default['default'].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.textFront),
-                React__default['default'].createElement(TimerSimple, { time: data.timeSecond, texts: data.textsTime }),
-                React__default['default'].createElement(Progress, null)),
-            React__default['default'].createElement(CardBack, null,
                 React__default['default'].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.textBack),
                 React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "400" }, data.textStage),
+                React__default['default'].createElement(Progress, null)),
+            React__default['default'].createElement(CardBack, null,
+                React__default['default'].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.textFront),
+                React__default['default'].createElement(TimerSimple, { time: data.timeSecond, texts: data.textsTime }),
                 React__default['default'].createElement(Progress, null)))));
 };
 var CardFront = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n"], ["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n"])), function (_a) {
