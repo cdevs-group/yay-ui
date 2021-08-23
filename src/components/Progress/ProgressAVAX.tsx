@@ -196,6 +196,7 @@ const Indicator = styled.div<{ progress?: number }>`
     width: ${({ progress }) => (progress ? `${progress}%` : 0)};
     box-shadow: ${({ theme }) => theme.colors.boxShadow9};
     border-radius: 6px;
+    max-width: 100%;
   }
   &:hover ${TextUnderRound} {
     left: ${({ progress }) => (progress && progress > 50 ? "-100%" : 0)};
