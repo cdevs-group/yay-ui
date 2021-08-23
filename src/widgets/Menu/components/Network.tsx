@@ -66,7 +66,7 @@ const NetworkBlock = styled.button`
   border-radius: 7px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
-  border: none;
+  border: 1px solid ${({ theme }) => theme.colors.green};
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
