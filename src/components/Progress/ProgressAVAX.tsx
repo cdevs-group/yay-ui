@@ -9,7 +9,7 @@ export interface ProgressAVAXProps {
   blockTo: number;
   blockCurrent: number;
   time: number;
-  isLoad?: boolean;
+  isLoad: boolean;
   texts: {
     start: string;
     end: string;
