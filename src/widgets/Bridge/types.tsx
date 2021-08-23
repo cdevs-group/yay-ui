@@ -33,9 +33,14 @@ export interface BridgeStep2Props {
   isErrorProgress?: boolean;
   progress1: number;
   isError?: boolean;
-  timer1: string;
-  timer2: string;
-  gasPriceText?: {
+  timer1: number;
+  timer2: number;
+  isLoadTime: boolean;
+  gasPriceTextNetwork1?: {
+    value: string;
+    fiat: string;
+  };
+  gasPriceTextNetwork2?: {
     value: string;
     fiat: string;
   };

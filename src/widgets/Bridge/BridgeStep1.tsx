@@ -125,8 +125,8 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               token="yay"
               onUserInput={onUserInput}
               value={value}
-              texts={texts.from}
-              InputToken={
+              texts={{ commit: "From" }}
+              icon={
                 <>
                   <YayLogo>
                     <img src={YAY} />

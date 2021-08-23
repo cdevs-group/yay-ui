@@ -76,13 +76,13 @@ const TimerNotSolid: React.FC<TimerProps> = ({ time, color, isLoad, avax }) => {
 };
 export default TimerNotSolid;
 
-const Wrap = styled.div`
+export const Wrap = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
 `;
 
-const Block = styled.div<TimerColorProps>`
+export const Block = styled.div<TimerColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +95,7 @@ const Block = styled.div<TimerColorProps>`
   letter-spacing: 0.05em;
 `;
 
-const Item = styled.div<{ avax?: boolean }>`
+export const Item = styled.div<{ avax?: boolean }>`
   background: ${({ avax, theme }) => (avax ? "none" : transparentize(0.75, theme.colors.invertedContrast))};
   box-shadow: ${({ avax, theme }) => (avax ? "none" : theme.colors.boxShadow10)};
   height: ${({ avax }) => (avax ? "auto" : "50px")};
@@ -108,7 +108,7 @@ const Item = styled.div<{ avax?: boolean }>`
   font-size: ${({ avax }) => (avax ? "11px" : "15px")};
 `;
 
-const Dots = styled.div`
+export const Dots = styled.div`
   margin: 0 6px;
   color: ${({ theme }) => theme.colors.text};
 `;

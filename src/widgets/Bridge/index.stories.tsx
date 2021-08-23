@@ -75,7 +75,7 @@ export const BridgeStep2Block = () => {
     finish: "Final",
   };
   const textsProgress2 = {
-    waiting: "Waiting for Binance Smart Chain",
+    waiting: "Waiting for BSC",
     start: "Start",
     final: "Final",
   };
@@ -83,7 +83,11 @@ export const BridgeStep2Block = () => {
     token: "12,000 YAY",
     fiat: "~ $10.00",
   };
-  const gasPriceText = {
+  const gasPriceTextNetwork1 = {
+    value: "0.00015 BNB",
+    fiat: "~ $0.15",
+  };
+  const gasPriceTextNetwork2 = {
     value: "0.00015 BNB",
     fiat: "~ $0.15",
   };
@@ -110,14 +114,16 @@ export const BridgeStep2Block = () => {
           texts={texts}
           progress1={1}
           progress2={0}
-          timer1="00:00"
-          timer2="00:00"
+          timer1={435}
+          timer2={34534}
           isLoadGas
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
           addTokenHandler={() => {}}
           stepsText={stepsText}
-          gasPriceText={gasPriceText}
+          gasPriceTextNetwork1={gasPriceTextNetwork1}
+          gasPriceTextNetwork2={gasPriceTextNetwork2}
+          isLoadTime
         />
       </div>
       <div style={{ marginTop: "20px" }}>
@@ -126,13 +132,15 @@ export const BridgeStep2Block = () => {
           texts={texts}
           progress1={3}
           progress2={0}
-          timer1="01:22"
-          timer2="00:00"
+          timer1={342324}
+          timer2={23}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
           addTokenHandler={() => {}}
           stepsText={stepsText}
-          gasPriceText={gasPriceText}
+          gasPriceTextNetwork1={gasPriceTextNetwork1}
+          gasPriceTextNetwork2={gasPriceTextNetwork2}
+          isLoadTime={false}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
@@ -140,15 +148,17 @@ export const BridgeStep2Block = () => {
           transferredValue={transferredValue}
           texts={texts}
           progress1={4}
-          timer1="04:42"
-          timer2="01:10"
+          timer1={334}
+          timer2={100}
           isError
           progress2={20}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
           addTokenHandler={() => {}}
           stepsText={stepsText}
-          gasPriceText={gasPriceText}
+          gasPriceTextNetwork1={gasPriceTextNetwork1}
+          gasPriceTextNetwork2={gasPriceTextNetwork2}
+          isLoadTime={false}
         />
       </div>
     </div>

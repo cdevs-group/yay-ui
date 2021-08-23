@@ -5,9 +5,11 @@ import YAY from "../../components/Svg/Icons/YAY.svg";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import { Metamask } from "../../constants/images";
 import { BridgeStep2Props } from "./types";
-import { ProgressRange, ProgressSteps } from "../../components/Progress";
+import ProgressSteps from "../../components/Progress/ProgressSteps";
+import ProgressRange from "../../components/Progress/ProgressRange";
 import { Loader } from "../../components/Loader";
 import { baseColors } from "../../theme/colors";
+import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
 
 const BridgeStep2 = ({
   progress1,
@@ -23,10 +25,12 @@ const BridgeStep2 = ({
   addTokenHandler,
   WalletIcon,
   TokenIcon,
-  gasPriceText,
+  gasPriceTextNetwork1,
+  gasPriceTextNetwork2,
   BlockChainFrom,
   BlockChainTo,
   stepsText,
+  isLoadTime,
 }: BridgeStep2Props) => {
   return (
     <Wrapper>
@@ -85,23 +89,23 @@ const BridgeStep2 = ({
             )}
           </Token>
           <Progress>
-            <div style={{ maxWidth: "173px", width: "100%" }}>
+            <ProgressWrapper>
               <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
-            </div>
+            </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <Text textAlign="center">{timer1}</Text>
+          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer1} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceText ? (
+            {isLoadGas || !gasPriceTextNetwork1 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceText?.value}</Text>
+                <Text paddingTop="21px">{gasPriceTextNetwork1?.value}</Text>
                 <Text size="sm" color={baseColors.textGray}>
-                  {gasPriceText?.fiat}
+                  {gasPriceTextNetwork1?.fiat}
                 </Text>
               </>
             )}
@@ -118,23 +122,23 @@ const BridgeStep2 = ({
             )}
           </Token>
           <Progress>
-            <div style={{ maxWidth: "173px", width: "100%" }}>
+            <ProgressWrapper>
               <ProgressRange progress={progress2} texts={textsProgress2} />
-            </div>
+            </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <Text textAlign="center">{timer2}</Text>
+          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer2} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceText ? (
+            {isLoadGas || !gasPriceTextNetwork2 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceText?.value}</Text>
+                <Text paddingTop="21px">{gasPriceTextNetwork2?.value}</Text>
                 <Text size="sm" color={baseColors.textGray}>
-                  {gasPriceText?.fiat}
+                  {gasPriceTextNetwork2?.fiat}
                 </Text>
               </>
             )}
@@ -257,7 +261,6 @@ const Token = styled.div`
       margin-bottom: 0;
     }
     & div {
-      margin: 0 10px 0 0;
       &:first-child {
         margin: 0 10px 0 0;
       }
@@ -283,7 +286,7 @@ const MetamaskAdd = styled(Token)`
 const BodyBlock = styled.div`
   padding: 0;
   margin-top: 30px;
-  ${({ theme }) => theme.mediaQueries.sm} {
+  ${({ theme }) => theme.mediaQueries.lg} {
     padding: 0 15px 0 25px;
   } ;
 `;
@@ -291,8 +294,8 @@ const HeadLine = styled.div`
   position: relative;
   margin-bottom: 24px;
   display: none;
-  grid-template-columns: 0.7fr 1.5fr 0.4fr 0.7fr;
-  grid-column-gap: 25px;
+  grid-template-columns: 0.7fr 1.3fr 0.4fr 0.7fr;
+  grid-column-gap: 15px;
   &:last-child {
     margin-bottom: 0;
     margin-top: 24px;
@@ -354,4 +357,11 @@ const TitleMob = styled(Text)`
 `;
 const TitleMobTop = styled(TitleMob)`
   margin: 0 0 10px;
+`;
+const ProgressWrapper = styled.div`
+  width: 173px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    max-width: 173px;
+    width: 100%;
+  }
 `;
