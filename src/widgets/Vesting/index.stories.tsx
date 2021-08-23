@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useState } from "react";
 import VestingWidget from "./VestingWidget";
 
 export default {
@@ -31,14 +31,11 @@ export const VestingWidgetComponent: React.FC = () => {
       value: "Seed sale",
     },
     {
-      text: "Your vesting stage",
-      value: "Stage 1",
-    },
-    {
       text: "Total raised",
       value: "1,000,000 $YAY",
     },
   ];
+
   const textsTakeGift = {
     title: "Take your gift",
     button: "Take gift",
@@ -62,6 +59,19 @@ export const VestingWidgetComponent: React.FC = () => {
       handleTakeGift={handleTakeGift}
       textsTakeGift={textsTakeGift}
       claimedGift={claimedGift}
+      dataTimer={{
+        textFront: "Next stage after",
+        textBack: "Your vesting stage",
+        textStage: "Stage 1",
+        timeSecond: 30000,
+        totalSeconds: 50000,
+        textsTime: {
+          days: "d",
+          hours: "h",
+          minutes: "m",
+          seconds: "s",
+        },
+      }}
     />
   );
 };

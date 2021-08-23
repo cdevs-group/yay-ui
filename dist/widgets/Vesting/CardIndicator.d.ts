@@ -5,5 +5,5 @@ interface IProps {
         value: string;
     };
 }
-declare const CardsIndicators: ({ data }: IProps) => JSX.Element;
-export default CardsIndicators;
+declare const CardIndicator: ({ data }: IProps) => JSX.Element;
+export default CardIndicator;

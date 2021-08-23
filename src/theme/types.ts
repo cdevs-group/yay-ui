@@ -66,6 +66,7 @@ export type Colors = {
   greyText2: string;
   greyText3: string;
   darkGreyBg: string;
+  greyBg2: string;
   orangeBg: string;
   greenBg: string;
   greenBg2: string;
@@ -114,6 +115,10 @@ export type Colors = {
   darkPink: string;
   greyRgba: string;
   boxShadow8: string;
+  boxShadow9: string;
+  greenRgba: string;
+  boxShadow10: string;
+  greeanRgba2: string;
 
   // Gradients
   gradients: Gradients;

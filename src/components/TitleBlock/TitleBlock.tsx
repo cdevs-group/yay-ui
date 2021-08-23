@@ -2,18 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { TitleBlockProps } from "./types";
 
-const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, children }) => {
+const TitleBlock: React.FC<TitleBlockProps> = ({ src, title, subtitle, margin, children, childrenVisibleModile }) => {
   return (
-    <Block>
-      <Img>
-        <img src={src} alt="" />
-      </Img>
-      <div>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
-        <Timer>{children}</Timer>
-      </div>
-    </Block>
+    <>
+      <Block>
+        <Img margin={margin}>
+          <img src={src} alt="" />
+        </Img>
+        <div>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+          <Timer>{children}</Timer>
+        </div>
+      </Block>
+      <VisibleTimer childrenVisibleModile={childrenVisibleModile}>{children}</VisibleTimer>
+    </>
   );
 };
 export default TitleBlock;
@@ -23,18 +26,7 @@ const Block = styled.div`
   align-items: center;
 `;
 
-const ImgWrap = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 186px;
-  height: 186px;
-  margin-right: 50px;
-  border-radius: 50%;
-`;
-
-const Img = styled.div`
+const Img = styled.div<{ margin?: string }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -44,7 +36,6 @@ const Img = styled.div`
   margin-right: 25px;
   border-radius: 50%;
   flex: none;
-  border: 2px solid ${({ theme }) => theme.colors.green};
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 120px;
     height: 120px;
@@ -61,19 +52,23 @@ const Img = styled.div`
     left: 50%;
     top: 50%;
     display: block;
-    width: calc(100% + 16px);
-    height: calc(100% + 16px);
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
     background: ${({ theme }) => theme.colors.greenGradient2};
     border-radius: inherit;
     opacity: 0.15;
     transform: translate(-50%, -50%);
+    ${({ theme }) => theme.mediaQueries.xl} {
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+    }
   }
   & img {
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    margin-right: 2px;
-    margin-top: 2px;
-    max-width: none;
+    margin: ${({ margin }) => margin || 0};
+    max-width: 100%;
+    ${({ theme }) => theme.mediaQueries.xl} {
+      max-width: none;
+    }
   }
 `;
 
@@ -117,5 +112,13 @@ const Timer = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.sm} {
     display: block;
+  }
+`;
+
+const VisibleTimer = styled.div<{ childrenVisibleModile?: boolean }>`
+  display: ${({ childrenVisibleModile }) => (childrenVisibleModile ? "block" : "none")};
+  margin-top: 30px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: none;
   }
 `;

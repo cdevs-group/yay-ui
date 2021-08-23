@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import CardsIndicators from "./CardsIndicators";
+import CardIndicator from "./CardIndicator";
+import CardTimer from "./CardTimer";
 import ClaimTokens from "./ClaimTokens";
 import MarketplaceLink from "./MarketplaceLink";
 import TakeGift from "./TakeGift";
@@ -18,12 +19,14 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   claimedGift,
   imagesGift,
   imagesMarketplace,
+  dataTimer,
 }) => {
   return (
     <Wrapper>
-      {dataCardsIndicators.map((el, i) => (
-        <CardsIndicators data={el} key={`${el.text}-${i}`} />
-      ))}
+      <CardIndicator data={dataCardsIndicators[0]} />
+      <CardIndicator data={dataCardsIndicators[1]} />
+      <CardTimer data={dataTimer} />
+      <CardIndicator data={dataCardsIndicators[2]} />
       <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
       <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} images={imagesGift} />

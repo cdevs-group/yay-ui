@@ -15,10 +15,9 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   texts,
   token,
   handleButtonToMax,
-  InputToken,
+  icon,
 }) => {
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(InputToken);
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {    
     if (e.currentTarget.validity.valid) {
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
@@ -26,19 +25,15 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
   return (
     <InputWrap>
-      <TitleInput>{texts || "Commit"}</TitleInput>
+      <TitleInput>{texts?.commit || "Commit"}</TitleInput>
       {handleButtonToMax ? (
         <ButtonToMax as="button" onClick={handleButtonToMax}>
           MAX
         </ButtonToMax>
-      ) : null}
+      ) : null}     
       <InputIcon>
-        {InputToken || (
-          <>
-            <BnbIcon />
-            BNB
-          </>
-        )}
+        {icon || <BnbIcon />}
+        {texts?.currency || "BNB"}
       </InputIcon>
       <Input
         className={isWarning ? "warning" : ""}

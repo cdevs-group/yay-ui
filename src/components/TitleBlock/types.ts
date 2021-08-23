@@ -3,4 +3,6 @@ export interface TitleBlockProps {
   title: string;
   subtitle: string;
   children: React.ReactNode;
+  margin?: string;
+  childrenVisibleModile?: boolean;
 }

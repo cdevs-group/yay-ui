@@ -51,8 +51,12 @@ export interface SetPositionCardProps {
   handlePercentChange: (sliderPercent: number) => void;
   disabledTab?: boolean;
   texts?: string;
-  inputText?: string;
+  inputTexts?: {
+    currency?: string;
+    commit?: string;
+  };
   textsButtons?: Itexts;
+  iconBalanceInput?: React.ReactNode;
 }
 
 export interface BalanceBlockProps {
