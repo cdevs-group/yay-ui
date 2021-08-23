@@ -2740,12 +2740,12 @@ var ButtonsBlockWrap = styled.div(templateObject_2$M || (templateObject_2$M = __
 var templateObject_1$X, templateObject_2$M;
 
 var SetPositionCardBTC = function (_a) {
-    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts, inputTexts = _a.inputTexts;
+    var onBack = _a.onBack, children = _a.children, inputValue = _a.inputValue, onUserInput = _a.onUserInput, showFieldWarning = _a.showFieldWarning, inputProps = _a.inputProps, handlePercentChange = _a.handlePercentChange, disabledTab = _a.disabledTab, texts = _a.texts, inputTexts = _a.inputTexts, iconBalanceInput = _a.iconBalanceInput;
     return (React__default.createElement(Wrap$e, null,
         React__default.createElement(ButtonBack, { onClick: onBack },
             React__default.createElement(ArrowIcon$1, null)),
         React__default.createElement(Title$6, null, texts || "Set Position"),
-        React__default.createElement(BalanceInput, { texts: inputTexts, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps }),
+        React__default.createElement(BalanceInput, { texts: inputTexts, value: inputValue, onUserInput: onUserInput, isWarning: showFieldWarning, inputProps: inputProps, icon: iconBalanceInput }),
         React__default.createElement(TabsBlock, null,
             React__default.createElement(TabsCard, { handlePercentChange: handlePercentChange, disabledTab: disabledTab })),
         children));
