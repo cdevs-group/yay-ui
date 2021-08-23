@@ -33,9 +33,7 @@ const BridgeStep2 = ({
       <Title size="lg">{texts.title}</Title>
       <TopLineBlock>
         <TokenBlock>
-          <TopLineTitle textAlign="left" marginBottom="18px">
-            {texts.token}
-          </TopLineTitle>
+          <TopLineTitle textAlign="left">{texts.token}</TopLineTitle>
           <Token>
             {TokenIcon || (
               <>
@@ -48,14 +46,12 @@ const BridgeStep2 = ({
           </Token>
         </TokenBlock>
         <AmountTransfer>
-          <TopLineTitle marginBottom="16px">{texts.amount}</TopLineTitle>
-          <TokenValue size="lg">{transferredValue.token}</TokenValue>
+          <TopLineTitle className="middle">{texts.amount}</TopLineTitle>
+          <TokenValue>{transferredValue.token}</TokenValue>
           <ApproximatelyPrice>{transferredValue.fiat}</ApproximatelyPrice>
         </AmountTransfer>
         <TokenBlock>
-          <TopLineTitle marginBottom="18px" textAlign="right">
-            {texts.addToken}
-          </TopLineTitle>
+          <TopLineTitle textAlign="right">{texts.addToken}</TopLineTitle>
           <MetamaskAdd onClick={addTokenHandler} as="button">
             {WalletIcon || (
               <TokenImg className="last">
@@ -79,7 +75,8 @@ const BridgeStep2 = ({
           </Text>
         </HeadLine>
         <ProgressBlock>
-          <Token>
+          <TitleMobTop>{texts.network}</TitleMobTop>
+          <Token className="main">
             {BlockChainFrom || (
               <>
                 <BnbIcon />
@@ -92,7 +89,9 @@ const BridgeStep2 = ({
               <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
             </div>
           </Progress>
+          <TitleMob>{texts.timer}</TitleMob>
           <Text textAlign="center">{timer1}</Text>
+          <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
             {isLoadGas || !gasPriceText ? (
               <LoaderWrap>
@@ -100,7 +99,7 @@ const BridgeStep2 = ({
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="22px">{gasPriceText?.value}</Text>
+                <Text paddingTop="21px">{gasPriceText?.value}</Text>
                 <Text size="sm" color={baseColors.textGray}>
                   {gasPriceText?.fiat}
                 </Text>
@@ -109,7 +108,8 @@ const BridgeStep2 = ({
           </GasCoast>
         </ProgressBlock>
         <ProgressBlock>
-          <Token>
+          <TitleMobTop>{texts.network}</TitleMobTop>
+          <Token className="main">
             {BlockChainTo || (
               <>
                 <AvalancheIcon />
@@ -122,7 +122,23 @@ const BridgeStep2 = ({
               <ProgressRange progress={progress2} texts={textsProgress2} />
             </div>
           </Progress>
+          <TitleMob>{texts.timer}</TitleMob>
           <Text textAlign="center">{timer2}</Text>
+          <TitleMob className="last">{texts.coast}</TitleMob>
+          <GasCoast>
+            {isLoadGas || !gasPriceText ? (
+              <LoaderWrap>
+                <Loader />
+              </LoaderWrap>
+            ) : (
+              <>
+                <Text paddingTop="21px">{gasPriceText?.value}</Text>
+                <Text size="sm" color={baseColors.textGray}>
+                  {gasPriceText?.fiat}
+                </Text>
+              </>
+            )}
+          </GasCoast>
         </ProgressBlock>
       </BodyBlock>
     </Wrapper>
@@ -138,17 +154,20 @@ const Wrapper = styled.div`
   margin: 0 auto;
   overflow: hidden;
   max-width: 650px;
-  padding: 33px 23px;
+  padding: 33px 14px 12px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 10px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 33px 23px;
+  } ;
 `;
 const TopLineBlock = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
-  padding: 17px 17px 18px 23px;
-  padding: 17px 25px;
+  padding: 17px 21px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 15px;
@@ -160,25 +179,90 @@ const TokenBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  &:first-child {
+    align-items: baseline;
+  }
+  &:last-child {
+    align-items: flex-end;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    &:first-child {
+      align-items: center;
+    }
+    &:last-child {
+      align-items: center;
+    }
+  } ;
 `;
 const AmountTransfer = styled.div`
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  ${({ theme }) => theme.mediaQueries.sm} {
+    position: static;
+    transform: translate(0, 0);
+  }
 `;
 const TopLineTitle = styled(Text)`
+  margin-bottom: 10px;
   width: 100%;
   letter-spacing: 0.05em;
   opacity: 0.7;
+  &.middle {
+    display: none;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 18px;
+    &.middle {
+      display: block;
+    }
+  }
 `;
 const TokenValue = styled(Text)`
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 21px;
+  } ;
 `;
 const ApproximatelyPrice = styled(Text)`
   letter-spacing: 0.05em;
   color: ${({ theme }) => theme.colors.textGray};
+  font-size: 11px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  } ;
 `;
 const Token = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
+  &.main {
+    flex-direction: row;
+    margin-bottom: 25px;
+    & svg {
+      margin: 0 10px 0 0;
+    }
+  }
+  & div {
+    margin: 5px 0 0;
+    &:first-child {
+      margin: 0;
+    }
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+    &.main {
+      margin-bottom: 0;
+    }
+    & div {
+      margin: 0 10px 0 0;
+      &:first-child {
+        margin: 0 10px 0 0;
+      }
+    }
+  } ;
 `;
 const TokenImg = styled.div`
   width: 38px;
@@ -197,18 +281,24 @@ const MetamaskAdd = styled(Token)`
   background: none;
 `;
 const BodyBlock = styled.div`
-  padding: 0 15px 0 25px;
+  padding: 0;
   margin-top: 30px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 0 15px 0 25px;
+  } ;
 `;
 const HeadLine = styled.div`
   position: relative;
   margin-bottom: 24px;
-  display: grid;
+  display: none;
   grid-template-columns: 0.7fr 1.5fr 0.4fr 0.7fr;
   grid-column-gap: 25px;
   &:last-child {
     margin-bottom: 0;
-    margin-top: 49px;
+    margin-top: 24px;
+    ${({ theme }) => theme.mediaQueries.sm} {
+      margin-top: 49px;
+    }
     &::after {
       display: block;
       position: absolute;
@@ -220,9 +310,17 @@ const HeadLine = styled.div`
       background: ${({ theme }) => theme.colors.greyRgba};
     }
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: grid;
+  } ;
 `;
 const ProgressBlock = styled(HeadLine)`
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: grid;
+  } ;
 `;
 const Progress = styled.div`
   display: flex;
@@ -234,7 +332,26 @@ const GasCoast = styled.div`
   //justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 85px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: auto;
+  }
 `;
 const LoaderWrap = styled.div`
   transform: scale(0.45);
+`;
+const TitleMob = styled(Text)`
+  display: block;
+  font-size: 13px;
+  margin: 25px 0 20px;
+  &.last {
+    margin: 25px 0 0;
+  }
+  color: ${({ theme }) => theme.colors.greyText};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: none;
+  } ;
+`;
+const TitleMobTop = styled(TitleMob)`
+  margin: 0 0 10px;
 `;

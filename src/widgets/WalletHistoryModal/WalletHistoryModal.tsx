@@ -7,8 +7,24 @@ import TransactionSide from "./components/TransactionSide";
 import { WalletHistoryModalProps } from "./types";
 
 const Wrap = styled.div`
-  height: 408px;
-  padding: 30px 20px 29px 27px;
+  padding: 21px 13px;
+  max-height: 100vh;
+  min-width: 303px;
+  box-sizing: border-box;
+  width: 100%;
+  background: ${({ theme }) => theme.colors.bgGray};
+  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  z-index: ${({ theme }) => theme.zIndices.modal};
+  ${({ theme }) => theme.mediaQueries.xs} {
+    min-width: 360px;
+    width: 100%;
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    min-width: 404px;
+    width: 100%;
+    padding: 30px 20px 29px 27px;
+  }
 `;
 
 const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
@@ -24,7 +40,7 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
 }) => {
   const [tabValue, setTabValue] = useState(0);
 
-  const handleTabChange =  (e:any) =>{
+  const handleTabChange = (e: any) => {
     setTabValue(+e.target.value);
   };
 

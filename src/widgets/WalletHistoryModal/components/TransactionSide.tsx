@@ -12,12 +12,12 @@ const TransactionSide = ({ transactionsList, transactionTitle }: TransactionSide
       <TransactionsBlock>
         {transactionsList.map((item, i) => (
           <Transaction key={i}>
-            <Text>{item.number}</Text>
+            <TextBlock>{item.number}</TextBlock>
             <LinkBlock status={item.status}>
               <Text size="xs">{item.link}</Text>
               <ArrowLeft />
             </LinkBlock>
-            <Text color={item.status ? lightColors.greenText2 : lightColors.redBg}>{item.profit}</Text>
+            <TextBlock color={item.status ? lightColors.greenText2 : lightColors.redBg}>{item.profit}</TextBlock>
           </Transaction>
         ))}
       </TransactionsBlock>
@@ -50,7 +50,7 @@ const Transaction = styled.div`
 `;
 const LinkBlock = styled.div<{ status: boolean }>`
   position: relative;
-  max-width: 144px;
+  width: 144px;
   padding: 8px 15px;
   border-radius: 7px;
   border: 1.5px solid ${({ status, theme }) => (status ? theme.colors.greenText2 : theme.colors.redBg)};
@@ -60,4 +60,10 @@ const LinkBlock = styled.div<{ status: boolean }>`
     top: 50%;
     transform: translateY(-60%) rotate(225deg);
   }
+`;
+const TextBlock = styled(Text)`
+  font-size: 11px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  } ;
 `;

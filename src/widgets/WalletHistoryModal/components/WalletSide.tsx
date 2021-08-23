@@ -29,10 +29,10 @@ const WalletSide = ({ textsWallet }: WalletSideProps) => {
       </Address>
       <Line>
         <Key size="sm">{textsWallet.network}</Key>
-        <Text size="sm">{textsWallet.wallet}</Text>
+        <Text size="sm">{textsWallet.newtworkName}</Text>
       </Line>
       <Line>
-        <Key size="sm">{textsWallet.newtworkName}</Key>
+        <Key size="sm">{textsWallet.wallet}</Key>
         <Text size="sm">{textsWallet.walletName}</Text>
       </Line>
       <DisconnetButton>{textsWallet.button}</DisconnetButton>
@@ -69,6 +69,10 @@ const Address = styled.div`
 `;
 const AdressText = styled(Text)`
   white-space: nowrap;
+  font-size: 11px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  } ;
 `;
 const Line = styled.div`
   display: flex;
