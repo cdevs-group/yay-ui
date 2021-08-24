@@ -101,8 +101,10 @@ const BridgeStep2 = ({
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceTextNetwork1?.value}</Text>
-                <Text size="sm" color={baseColors.textGray}>
+                <Text size="sm" paddingTop="21px">
+                  {gasPriceTextNetwork1?.value}
+                </Text>
+                <Text size="xs" color={baseColors.textGray}>
                   {gasPriceTextNetwork1?.fiat}
                 </Text>
               </>
@@ -134,8 +136,10 @@ const BridgeStep2 = ({
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceTextNetwork2?.value}</Text>
-                <Text size="sm" color={baseColors.textGray}>
+                <Text size="sm" paddingTop="21px">
+                  {gasPriceTextNetwork2?.value}
+                </Text>
+                <Text size="xs" color={baseColors.textGray}>
                   {gasPriceTextNetwork2?.fiat}
                 </Text>
               </>
@@ -293,7 +297,7 @@ const HeadLine = styled.div`
   margin-bottom: 24px;
   display: none;
   grid-template-columns: 0.7fr 1.3fr 0.4fr 0.7fr;
-  grid-column-gap: 15px;
+  grid-column-gap: 25px;
   &:last-child {
     margin-bottom: 0;
     margin-top: 24px;
@@ -355,6 +359,7 @@ const TitleMob = styled(Text)`
 `;
 const TitleMobTop = styled(TitleMob)`
   margin: 0 0 10px;
+  font-size: 13px;
 `;
 const ProgressWrapper = styled.div`
   width: 173px;
