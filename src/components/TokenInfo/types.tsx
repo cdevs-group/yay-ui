@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface TokenInfoProps {
   textsInfo: {
     address: string;
@@ -5,6 +7,7 @@ export interface TokenInfoProps {
     network: string;
     textCopy: string;
   };
+  addTokenIcon?: ReactNode;
   margin?: string;
   addTokenHandler: () => void;
   BSCSkanHandler: () => void;

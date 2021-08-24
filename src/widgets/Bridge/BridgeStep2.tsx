@@ -18,7 +18,8 @@ const BridgeStep2 = ({
   textsProgress2,
   isError,
   texts,
-  isLoadGas,
+  isLoadGasNetwork1,
+  isLoadGasNetwork2,
   timer1,
   timer2,
   transferredValue,
@@ -30,7 +31,8 @@ const BridgeStep2 = ({
   BlockChainFrom,
   BlockChainTo,
   stepsText,
-  isLoadTime,
+  isLoadTimeNetwork1,
+  isLoadTimeNetwork2,
 }: BridgeStep2Props) => {
   return (
     <Wrapper>
@@ -57,11 +59,7 @@ const BridgeStep2 = ({
         <TokenBlock>
           <TopLineTitle textAlign="right">{texts.addToken}</TopLineTitle>
           <MetamaskAdd onClick={addTokenHandler} as="button">
-            {WalletIcon || (
-              <TokenImg className="last">
-                <img src={Metamask} />
-              </TokenImg>
-            )}
+            <TokenImg className="last">{WalletIcon || <img src={Metamask} />}</TokenImg>
           </MetamaskAdd>
         </TokenBlock>
       </TopLineBlock>
@@ -94,10 +92,10 @@ const BridgeStep2 = ({
             </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer1} />
+          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork1} time={timer1} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceTextNetwork1 ? (
+            {isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
@@ -127,10 +125,10 @@ const BridgeStep2 = ({
             </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer2} />
+          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceTextNetwork2 ? (
+            {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
