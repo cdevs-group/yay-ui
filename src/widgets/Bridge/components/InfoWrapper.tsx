@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { InfoWrapperProps } from "../types";
-import YAY from "../../../components/Svg/Icons/YAY.svg";
+import YAYIcon from "../../../components/Svg/Icons/YAYIcon";
 import { Text } from "../../../components/Text";
 import { TokenInfo } from "../../../components/TokenInfo";
 import { ClipIcon } from "../../../components/Svg";
@@ -21,7 +21,7 @@ const InfoWrapper = ({
         {tokenLogo || (
           <>
             <TokenImg>
-              <img src={YAY} />
+              <YAYIcon />
             </TokenImg>
             <Text marginLeft="10px">YAY</Text>
           </>

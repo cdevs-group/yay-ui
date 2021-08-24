@@ -6,7 +6,9 @@ import { Text } from "../Text";
 const ProgressRange = ({ texts, progress }: ProgressRangeProps) => {
   return (
     <ProgressWrap>
-      <Text fontSize="10px">{texts.waiting}</Text>
+      <Text fontSize="10px">
+        {texts.waiting} {texts.networkWaiting}
+      </Text>
       <RangeTrack progress={progress} />
       <RangeTexts>
         <Text fontSize="10px">{texts.start}</Text>

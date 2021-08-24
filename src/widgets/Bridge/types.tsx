@@ -6,6 +6,7 @@ export interface BridgeStep1Props {
   inputError?: boolean;
   handleButtonToMax: any;
   iconBalanceInput?: ReactNode;
+  handleOpenProofOfAssets: () => void;
   iconNetwork1?: ReactNode;
   iconNetwork2?: ReactNode;
   texts: {
@@ -67,6 +68,7 @@ export interface BridgeStep2Props {
     waiting: string;
     start: string;
     final: string;
+    networkWaiting: string;
   };
   progress2: number;
   texts: {

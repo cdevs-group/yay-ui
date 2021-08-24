@@ -5,8 +5,8 @@ import BridgeStep2 from "./BridgeStep2";
 import { Timer } from "../../components/Timer";
 import useBridgeModal from "./useBridgeModal";
 import { Text } from "../../components/Text";
-import YAY from "../../components/Svg/Icons/YAY.svg";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
+import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 
 export default {
   title: "Widgets/Bridge",
@@ -50,11 +50,7 @@ export const BridgeStep1Block: React.FC = () => {
           onUserInput={onUserInput}
           iconNetwork1={<BnbIcon />}
           iconNetwork2={<AvalancheIcon />}
-          iconBalanceInput={
-            <YayLogo>
-              <img src={YAY} />
-            </YayLogo>
-          }
+          handleOpenProofOfAssets={() => {}}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>
@@ -67,24 +63,17 @@ export const BridgeStep1Block: React.FC = () => {
           inputError
           iconNetwork1={<BnbIcon />}
           iconNetwork2={<AvalancheIcon />}
+          handleOpenProofOfAssets={() => {}}
           handleButtonToMax={() => {}}
           texts={texts}
           value={value}
           onUserInput={onUserInput}
-          iconBalanceInput={
-            <YayLogo>
-              <img src={YAY} />
-            </YayLogo>
-          }
+          iconBalanceInput={<YAYIcon />}
         />
       </div>
     </div>
   );
 };
-
-const YayLogo = styled.div`
-  margin-bottom: 7px;
-`;
 
 export const BridgeStep2Block = () => {
   const textsProgress1 = {
@@ -98,9 +87,10 @@ export const BridgeStep2Block = () => {
     finish: "Final",
   };
   const textsProgress2 = {
-    waiting: "Waiting for BSC",
+    waiting: "Waiting for",
     start: "Start",
     final: "Final",
+    networkWaiting: "BSC",
   };
   const transferredValue = {
     token: "12,000 YAY",
