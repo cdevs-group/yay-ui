@@ -9,7 +9,7 @@ import { ellipsis } from "../../helpers/ellipsis";
 const TokenInfo = ({ addTokenIcon, textsInfo, margin, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
-  const ButtonsBlock = ({ type }: { type?: "string" }) => (
+  const ButtonsBlock = ({ type }: { type?: string }) => (
     <RightColumn className={type}>
       <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
       <Button
