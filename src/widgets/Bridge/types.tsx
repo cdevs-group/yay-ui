@@ -68,6 +68,7 @@ export interface BridgeStep2Props {
     waiting: string;
     start: string;
     final: string;
+    networkWaiting: string;
   };
   progress2: number;
   texts: {

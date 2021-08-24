@@ -87,9 +87,10 @@ export const BridgeStep2Block = () => {
     finish: "Final",
   };
   const textsProgress2 = {
-    waiting: "Waiting for BSC",
+    waiting: "Waiting for",
     start: "Start",
     final: "Final",
+    networkWaiting: "BSC",
   };
   const transferredValue = {
     token: "12,000 YAY",
