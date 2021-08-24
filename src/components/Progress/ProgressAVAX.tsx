@@ -3,20 +3,7 @@ import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon } from "../Svg";
 import TimerNotSolid from "../Timer/TimerNotSolid";
-
-export interface ProgressAVAXProps {
-  blockFrom: number;
-  blockTo: number;
-  blockCurrent: number;
-  time: number;
-  isLoad: boolean;
-  texts: {
-    start: string;
-    end: string;
-    note: string;
-    currentBlock: string;
-  };
-}
+import { ProgressAVAXProps } from "./types";
 
 const ProgressAVAX = ({ blockFrom, blockCurrent, blockTo, texts, time, isLoad }: ProgressAVAXProps) => {
   const [noteOpen, setNoteOpen] = useState(true);

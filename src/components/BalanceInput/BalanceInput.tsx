@@ -17,7 +17,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   handleButtonToMax,
   icon,
 }) => {
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {    
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
       onUserInput(e.currentTarget.value.replace(/,/g, "."));
     }
@@ -30,7 +30,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
         <ButtonToMax as="button" onClick={handleButtonToMax}>
           MAX
         </ButtonToMax>
-      ) : null}     
+      ) : null}
       <InputIcon>
         {icon || <BnbIcon />}
         {texts?.currency || "BNB"}

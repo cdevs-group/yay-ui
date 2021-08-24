@@ -15,6 +15,7 @@ export declare const baseColors: {
     boxShadow: string;
     boxShadow2: string;
     boxShadow6: string;
+    boxShadow8: string;
     boxShadow9: string;
     boxShadow10: string;
     bgOpacity: string;
@@ -37,12 +38,14 @@ export declare const baseColors: {
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
+    buttonBg3: string;
     bgCardBtc: string;
     colorCardBtc: string;
     bgCardBtc2: string;
     yellowGradient: string;
     yellowGradient2: string;
     yellowGradient3: string;
+    greyRgba: string;
 };
 export declare const brandColors: {
     binance: string;

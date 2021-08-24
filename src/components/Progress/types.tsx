@@ -18,3 +18,17 @@ export interface ProgressRangeProps {
     final: string;
   };
 }
+
+export interface ProgressAVAXProps {
+  blockFrom: number;
+  blockTo: number;
+  blockCurrent: number;
+  time: number;
+  isLoad: boolean;
+  texts: {
+    start: string;
+    end: string;
+    note: string;
+    currentBlock: string;
+  };
+}
