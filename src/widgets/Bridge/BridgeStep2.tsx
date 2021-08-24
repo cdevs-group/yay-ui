@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
-import YAY from "../../components/Svg/Icons/YAY.svg";
+import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import { Metamask } from "../../constants/images";
 import { BridgeStep2Props } from "./types";
@@ -44,7 +44,7 @@ const BridgeStep2 = ({
             {TokenIcon || (
               <>
                 <TokenImg>
-                  <img src={YAY} />
+                  <YAYIcon />
                 </TokenImg>
                 <Text>YAY</Text>
               </>
