@@ -13,7 +13,6 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   isWarning = false,
   decimals = 18,
   texts,
-  token,
   handleButtonToMax,
   icon,
 }) => {
@@ -25,26 +24,30 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
   return (
     <InputWrap>
-      <TitleInput>{texts?.commit || "Commit"}</TitleInput>
-      {handleButtonToMax ? (
-        <ButtonToMax as="button" onClick={handleButtonToMax}>
-          MAX
-        </ButtonToMax>
-      ) : null}
-      <InputIcon>
-        {icon || <BnbIcon />}
-        {texts?.currency || "BNB"}
-      </InputIcon>
-      <Input
-        className={isWarning ? "warning" : ""}
-        pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
-        inputMode="decimal"
-        min="0"
-        value={value}
-        onChange={handleOnChange}
-        placeholder={placeholder}
-        {...inputProps}
-      />
+      <LeftBlock>
+        <TitleInput>{texts?.commit || "Commit"}</TitleInput>
+        <Input
+          className={isWarning ? "warning" : ""}
+          pattern={`^[0-9]*[.,]?[0-9]{0,${decimals}}$`}
+          inputMode="decimal"
+          min="0"
+          value={value}
+          onChange={handleOnChange}
+          placeholder={placeholder}
+          {...inputProps}
+        />
+      </LeftBlock>
+      <RightBlock>
+        {handleButtonToMax ? (
+          <ButtonToMax as="button" onClick={handleButtonToMax}>
+            MAX
+          </ButtonToMax>
+        ) : null}
+        <InputIcon>
+          {icon || <BnbIcon />}
+          {texts?.currency || "BNB"}
+        </InputIcon>
+      </RightBlock>
     </InputWrap>
   );
 };
@@ -53,10 +56,13 @@ export default BalanceInput;
 
 const InputWrap = styled.div`
   position: relative;
-  padding: 17px 100px 20px 20px;
+  padding: 17px 20px 20px 20px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 const TitleInput = styled.div`
   margin-bottom: 15px;
@@ -71,12 +77,8 @@ const InputIcon = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 7px 15px;
-  position: absolute;
   background: ${({ theme }) => theme.colors.bgOpacitY3};
   border-radius: 12px;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.5px;
@@ -97,12 +99,17 @@ const InputIcon = styled.div`
 `;
 const ButtonToMax = styled(Text)`
   padding: 0;
-  position: absolute;
-  top: 50%;
-  right: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
   transform: translateY(-50%);
   border: none;
   background: none;
   text-decoration: underline;
   cursor: pointer;
 `;
+const RightBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
+const LeftBlock = styled.div``;

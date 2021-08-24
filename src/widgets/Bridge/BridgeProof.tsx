@@ -12,6 +12,7 @@ const BridgeProof = ({
   onDismiss,
   BSCSkanHandler,
   addTokenHandler,
+  addTokenIcon,
 }: BrightProofProps) => {
   return (
     <Wrapper>
@@ -23,6 +24,7 @@ const BridgeProof = ({
       <TokenList>
         {ProofOfAssetsData.map((item, i) => (
           <InfoWrapper
+            addTokenIcon={addTokenIcon}
             BSCSkanHandler={BSCSkanHandler}
             addTokenHandler={addTokenHandler}
             key={i}
