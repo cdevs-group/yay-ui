@@ -5764,7 +5764,7 @@ var alertTypeMap = (_a = {},
     _a[types.INFO] = variants.INFO,
     _a[types.ERROR] = variants.ERROR,
     _a);
-var StyledToast = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 600px;\n  }\n"], ["\n  max-width: calc(100% - 32px);\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 600px;\n  }\n"])), function (_a) {
+var StyledToast = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 600px;\n  }\n"], ["\n  transition: all 250ms ease-in;\n  width: 100%;\n\n  ", " {\n    max-width: 600px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
