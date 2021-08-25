@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CercleIcon } from "../../components/Svg";
 import VestingWidget from "./VestingWidget";
 
 export default {
@@ -57,7 +58,7 @@ export const VestingWidgetComponent: React.FC = () => {
 
   return (
     <VestingWidget
-      // canClaim
+      canClaim={false}
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
@@ -82,6 +83,8 @@ export const VestingWidgetComponent: React.FC = () => {
         },
       }}
       disabledButtonClaimTokens
+      isLoadingButtonClaimTokens
+      endIconButtonClaimTokens={<CercleIcon spin  fill="none"/>}
     />
   );
 };

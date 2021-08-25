@@ -26,6 +26,8 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   textsPoolz,
   linkClaimTokens,
   disabledButtonClaimTokens,
+  isLoadingButtonClaimTokens,
+  endIconButtonClaimTokens,
 }) => {
   return (
     <Wrapper>
@@ -41,6 +43,8 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
           texts={textsClaimTokens}
           handleClaimTokens={handleClaimTokens}
           disabledButton={disabledButtonClaimTokens}
+          isLoading={isLoadingButtonClaimTokens}
+          endIcon={endIconButtonClaimTokens}
         />
       )}
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />

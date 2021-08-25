@@ -52,4 +52,6 @@ export interface VestingWidgetProps {
   };
   linkClaimTokens?: string;
   disabledButtonClaimTokens?: boolean;
+  isLoadingButtonClaimTokens?: boolean;
+  endIconButtonClaimTokens?: React.ReactNode | null;
 }

@@ -18,9 +18,11 @@ interface IProps {
     total: string;
   };
   disabledButton?: boolean;
+  isLoading?: boolean;
+  endIcon?: React.ReactNode | null;
 }
 
-const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton }: IProps) => {
+const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading, endIcon }: IProps) => {
   const [widthProgress, setWidthProgress] = useState(0);
   const numberConverter = (string: string) => +string.replace(/[^\d.]/g, "");
 
@@ -32,7 +34,13 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton }: IProps)
     <Card>
       <Row>
         <StyledTitle>{texts.title}</StyledTitle>
-        <StyledButton variant="green" onClick={handleClaimTokens} disabled={disabledButton}>
+        <StyledButton
+          variant="green"
+          onClick={handleClaimTokens}
+          disabled={disabledButton}
+          isLoading={isLoading}
+          endIcon={endIcon}
+        >
           {texts.button}
         </StyledButton>
       </Row>
