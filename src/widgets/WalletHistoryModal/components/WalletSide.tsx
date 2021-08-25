@@ -75,6 +75,8 @@ const AddressText = styled(Text)`
   white-space: nowrap;
   font-size: 13px;
   position: absolute;
+  letter-spacing: 0.05em;
+  font-weight: 400;
 `;
 const Line = styled.div`
   display: flex;
