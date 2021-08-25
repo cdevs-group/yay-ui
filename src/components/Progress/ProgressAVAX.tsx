@@ -57,7 +57,9 @@ export default ProgressAVAX;
 
 const Wrapper = styled.div`
   position: relative;
-  max-width: 360px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    max-width: 360px;
+  }
 `;
 const UnderProgress = styled.div<{ open: boolean }>`
   position: absolute;
