@@ -9,6 +9,7 @@ import { WalletHistoryModalProps } from "./types";
 const Wrap = styled.div`
   padding: 21px 13px;
   max-height: 100vh;
+  height: 400px;
   min-width: 303px;
   box-sizing: border-box;
   width: 100%;
