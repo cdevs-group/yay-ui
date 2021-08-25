@@ -13,7 +13,6 @@ const alertTypeMap = {
 };
 
 const StyledToast = styled.div`
-  max-width: calc(100% - 32px);
   transition: all 250ms ease-in;
   width: 100%;
 
