@@ -12,8 +12,10 @@ interface IProps {
         total: string;
     };
     disabledButton?: boolean;
+    isLoading?: boolean;
+    endIcon?: React.ReactNode | null;
 }
-declare const ClaimTokens: ({ data, texts, handleClaimTokens, disabledButton }: IProps) => JSX.Element;
+declare const ClaimTokens: ({ data, texts, handleClaimTokens, disabledButton, isLoading, endIcon }: IProps) => JSX.Element;
 export declare const Card: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const StyledTitle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Text").TextProps, never>;
 export declare const StyledButton: import("styled-components").StyledComponent<{

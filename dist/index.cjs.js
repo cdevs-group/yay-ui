@@ -6040,7 +6040,7 @@ var Claimed$1 = styled__default['default'].div(templateObject_7$1 || (templateOb
 var templateObject_1$6, templateObject_2$4, templateObject_3$3, templateObject_4$2, templateObject_5$1, templateObject_6$1, templateObject_7$1;
 
 var ClaimTokens = function (_a) {
-    var data = _a.data, texts = _a.texts, handleClaimTokens = _a.handleClaimTokens, disabledButton = _a.disabledButton;
+    var data = _a.data, texts = _a.texts, handleClaimTokens = _a.handleClaimTokens, disabledButton = _a.disabledButton, isLoading = _a.isLoading, endIcon = _a.endIcon;
     var _b = React.useState(0), widthProgress = _b[0], setWidthProgress = _b[1];
     var numberConverter = function (string) { return +string.replace(/[^\d.]/g, ""); };
     React.useEffect(function () {
@@ -6049,7 +6049,7 @@ var ClaimTokens = function (_a) {
     return (React__default['default'].createElement(Card$2, null,
         React__default['default'].createElement(Row, null,
             React__default['default'].createElement(StyledTitle$2, null, texts.title),
-            React__default['default'].createElement(StyledButton$2, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton }, texts.button)),
+            React__default['default'].createElement(StyledButton$2, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, isLoading: isLoading, endIcon: endIcon }, texts.button)),
         React__default['default'].createElement(ProgressWrap, null,
             React__default['default'].createElement(ProgressTrack, null,
                 React__default['default'].createElement(ProgressBar, { widthProgress: widthProgress || 0 },
@@ -6217,13 +6217,13 @@ var StyledButton = styled__default['default'](Button$7)(templateObject_3 || (tem
 var templateObject_1$2, templateObject_2, templateObject_3;
 
 var VestingWidget = function (_a) {
-    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens, isLoadingButtonClaimTokens = _a.isLoadingButtonClaimTokens, endIconButtonClaimTokens = _a.endIconButtonClaimTokens;
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[0] }),
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[1] }),
         React__default['default'].createElement(CardTimer, { canClaim: canClaim, data: dataTimer }),
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[2] }),
-        canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens })),
+        canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens, isLoading: isLoadingButtonClaimTokens, endIcon: endIconButtonClaimTokens })),
         React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace }),
         React__default['default'].createElement(TakeGift, { texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
 };
