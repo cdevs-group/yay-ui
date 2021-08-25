@@ -45,6 +45,7 @@ const InfoWrapper = ({
           <Text>{textsProof.wrapped}</Text>
           {wrappedData.map((item, i) => (
             <TokenInfo
+              addTokenIcon={addTokenIcon}
               BSCSkanHandler={BSCSkanHandler}
               addTokenHandler={addTokenHandler}
               key={i}

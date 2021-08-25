@@ -35,11 +35,7 @@ const Header: React.FC<NavProps> = ({
   dataTransactions,
   handleClaimed,
   bridge,
-  titleBridge,
-  tabsList,
-  textsWallet,
-  disconnectHandler,
-  transactionTitle,
+  textsBridge,
   transactionsList,
   handleAddToken,
 }) => {
@@ -108,11 +104,7 @@ const Header: React.FC<NavProps> = ({
             yayBalance={yayBalance}
             dataTransactions={dataTransactions}
             handleClaimed={handleClaimed}
-            titleBridge={titleBridge}
-            tabsList={tabsList}
-            textsWallet={textsWallet}
-            disconnectHandler={disconnectHandler}
-            transactionTitle={transactionTitle}
+            textsBridge={textsBridge}
             transactionsList={transactionsList}
             handleAddToken={handleAddToken}
           />

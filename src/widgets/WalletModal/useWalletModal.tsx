@@ -32,15 +32,17 @@ export interface TextsConnect {
   link: string;
 }
 
-interface textsWallet {
+interface textsBridge {
+  titleModal: string;
   title: string;
   network: string;
   wallet: string;
   newtworkName: string;
   walletName: string;
-  address: string;
   button: string;
   completeText: string;
+  transactionTitle?: string;
+  tabsList?: Array<string> | any;
 }
 
 interface Itransactions {
@@ -63,11 +65,7 @@ const useWalletModal = (
   dataTransactions?: Array<any>,
   handleClaimed?: any,
   bridge?: boolean,
-  titleBridge?: string,
-  tabsList?: Array<string>,
-  textsWallet?: textsWallet,
-  disconnectHandler?: () => void,
-  transactionTitle?: string,
+  textsBridge?: textsBridge,
   transactionsList?: Array<Itransactions>,
   handleAddToken?: any
 ): ReturnType => {
@@ -87,11 +85,9 @@ const useWalletModal = (
     } else if (bridge) {
       return (
         <WalletHistoryModal
-          title={titleBridge}
-          tabsList={tabsList}
-          textsWallet={textsWallet}
-          disconnectHandler={disconnectHandler}
-          transactionTitle={transactionTitle}
+          account={account}
+          textsBridge={textsBridge}
+          disconnectHandler={logout}
           transactionsList={transactionsList}
         />
       );
