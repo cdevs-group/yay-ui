@@ -26,6 +26,7 @@ export interface VestingWidgetProps {
         button: string;
         claimed: string;
     };
+    canClaim: boolean;
     claimedGift: boolean;
     imagesGift?: {
         gift: string;
@@ -43,5 +44,10 @@ export interface VestingWidgetProps {
             minutes: string;
             seconds: string;
         };
+    };
+    textsPoolz: {
+        title: string;
+        description: string;
+        button: string;
     };
 }
