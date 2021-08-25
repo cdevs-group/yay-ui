@@ -66,7 +66,7 @@ const useWalletModal = (
   handleClaimed?: any,
   bridge?: boolean,
   textsBridge?: textsBridge,
-  transactionsList?: Array<Itransactions>,
+  transactionsList?: Array<Itransactions> | [],
   handleAddToken?: any
 ): ReturnType => {
   const pageModal = () => {

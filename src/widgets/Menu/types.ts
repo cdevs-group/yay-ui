@@ -63,7 +63,7 @@ interface textsBridge {
   completeText: string;
   noRecentTransactions?: string;
   transactionTitle?: string;
-  tabsList?: Array<string> | [];
+  tabsList?: Array<string>;
 }
 
 interface Itransactions {

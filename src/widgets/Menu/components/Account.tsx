@@ -9,7 +9,7 @@ import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
 
 interface textsBridge {
-  titleBridge: string;
+  titleModal: string;
   title: string;
   network: string;
   wallet: string;
@@ -19,7 +19,7 @@ interface textsBridge {
   completeText: string;
   noRecentTransactions?: string;
   transactionTitle?: string;
-  tabsList?: Array<string> | [];
+  tabsList?: Array<string>;
 }
 
 interface Itransactions {
