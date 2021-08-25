@@ -46,10 +46,17 @@ const Wrapper = styled.div`
 `;
 
 const StyledButton = styled(Button)`
+  display: block;
   width: 100%;
+  padding: 14px;
+  margin: 0 auto;
   font-weight: 400;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    width: auto;
-    margin-left: 43px;
-  }
+  color: ${({ theme }) => theme.colors.text};
+  background: ${({ theme }) => theme.colors.green};
+  border-radius: 10px;
+  max-width: 204px;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.04em;
 `;
