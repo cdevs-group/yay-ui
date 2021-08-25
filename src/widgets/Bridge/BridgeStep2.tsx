@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
-import YAY from "../../components/Svg/Icons/YAY.svg";
+import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import { Metamask } from "../../constants/images";
 import { BridgeStep2Props } from "./types";
@@ -18,7 +18,8 @@ const BridgeStep2 = ({
   textsProgress2,
   isError,
   texts,
-  isLoadGas,
+  isLoadGasNetwork1,
+  isLoadGasNetwork2,
   timer1,
   timer2,
   transferredValue,
@@ -30,7 +31,8 @@ const BridgeStep2 = ({
   BlockChainFrom,
   BlockChainTo,
   stepsText,
-  isLoadTime,
+  isLoadTimeNetwork1,
+  isLoadTimeNetwork2,
 }: BridgeStep2Props) => {
   return (
     <Wrapper>
@@ -42,7 +44,7 @@ const BridgeStep2 = ({
             {TokenIcon || (
               <>
                 <TokenImg>
-                  <img src={YAY} />
+                  <YAYIcon />
                 </TokenImg>
                 <Text>YAY</Text>
               </>
@@ -57,11 +59,7 @@ const BridgeStep2 = ({
         <TokenBlock>
           <TopLineTitle textAlign="right">{texts.addToken}</TopLineTitle>
           <MetamaskAdd onClick={addTokenHandler} as="button">
-            {WalletIcon || (
-              <TokenImg className="last">
-                <img src={Metamask} />
-              </TokenImg>
-            )}
+            <TokenImg className="last">{WalletIcon || <img src={Metamask} />}</TokenImg>
           </MetamaskAdd>
         </TokenBlock>
       </TopLineBlock>
@@ -94,17 +92,19 @@ const BridgeStep2 = ({
             </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer1} />
+          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork1} time={timer1} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceTextNetwork1 ? (
+            {isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceTextNetwork1?.value}</Text>
-                <Text size="sm" color={baseColors.textGray}>
+                <Text size="sm" paddingTop="21px">
+                  {gasPriceTextNetwork1?.value}
+                </Text>
+                <Text size="xs" color={baseColors.textGray}>
                   {gasPriceTextNetwork1?.fiat}
                 </Text>
               </>
@@ -127,17 +127,19 @@ const BridgeStep2 = ({
             </ProgressWrapper>
           </Progress>
           <TitleMob>{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTime} time={timer2} />
+          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
           <TitleMob className="last">{texts.coast}</TitleMob>
           <GasCoast>
-            {isLoadGas || !gasPriceTextNetwork2 ? (
+            {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
               <LoaderWrap>
                 <Loader />
               </LoaderWrap>
             ) : (
               <>
-                <Text paddingTop="21px">{gasPriceTextNetwork2?.value}</Text>
-                <Text size="sm" color={baseColors.textGray}>
+                <Text size="sm" paddingTop="21px">
+                  {gasPriceTextNetwork2?.value}
+                </Text>
+                <Text size="xs" color={baseColors.textGray}>
                   {gasPriceTextNetwork2?.fiat}
                 </Text>
               </>
@@ -295,7 +297,7 @@ const HeadLine = styled.div`
   margin-bottom: 24px;
   display: none;
   grid-template-columns: 0.7fr 1.3fr 0.4fr 0.7fr;
-  grid-column-gap: 15px;
+  grid-column-gap: 25px;
   &:last-child {
     margin-bottom: 0;
     margin-top: 24px;
@@ -357,6 +359,7 @@ const TitleMob = styled(Text)`
 `;
 const TitleMobTop = styled(TitleMob)`
   margin: 0 0 10px;
+  font-size: 13px;
 `;
 const ProgressWrapper = styled.div`
   width: 173px;

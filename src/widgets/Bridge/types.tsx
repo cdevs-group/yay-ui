@@ -5,13 +5,20 @@ export interface BridgeStep1Props {
   value: string | number;
   inputError?: boolean;
   handleButtonToMax: any;
+  iconBalanceInput?: ReactNode;
+  handleOpenProofOfAssets: () => void;
+  iconNetwork1?: ReactNode;
+  iconNetwork2?: ReactNode;
   texts: {
-    avalanche?: string;
-    bsc?: string;
+    nameNetwork1?: string;
+    nameNetwork2?: string;
     from: string;
     to: string;
     fee: string;
     button: string;
+    buttonProofOfState?: string;
+    currencyInput: string;
+    commit: string;
   };
   balanceText: {
     message1: string;
@@ -35,7 +42,10 @@ export interface BridgeStep2Props {
   isError?: boolean;
   timer1: number;
   timer2: number;
-  isLoadTime: boolean;
+  isLoadGasNetwork1: boolean;
+  isLoadGasNetwork2: boolean;
+  isLoadTimeNetwork2: boolean;
+  isLoadTimeNetwork1: boolean;
   gasPriceTextNetwork1?: {
     value: string;
     fiat: string;
@@ -58,6 +68,7 @@ export interface BridgeStep2Props {
     waiting: string;
     start: string;
     final: string;
+    networkWaiting: string;
   };
   progress2: number;
   texts: {
@@ -79,6 +90,7 @@ export interface BridgeStep2Props {
 }
 
 export interface BrightProofProps {
+  addTokenIcon?: ReactNode;
   addTokenHandler: () => void;
   BSCSkanHandler: () => void;
   onDismiss: () => void | undefined;
@@ -98,6 +110,7 @@ export interface BrightProofProps {
 }
 
 export interface InfoWrapperProps {
+  addTokenIcon?: ReactNode;
   tokenLogo?: ReactNode;
   proofData: proofData;
   wrappedData: Array<proofData>;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { InfoWrapperProps } from "../types";
-import YAY from "../../../components/Svg/Icons/YAY.svg";
+import YAYIcon from "../../../components/Svg/Icons/YAYIcon";
 import { Text } from "../../../components/Text";
 import { TokenInfo } from "../../../components/TokenInfo";
 import { ClipIcon } from "../../../components/Svg";
@@ -13,21 +13,25 @@ const InfoWrapper = ({
   wrappedData,
   BSCSkanHandler,
   addTokenHandler,
+  addTokenIcon,
 }: InfoWrapperProps) => {
   return (
     <Wrapper>
-      {tokenLogo || (
-        <TokenLogo>
-          <TokenImg>
-            <img src={YAY} />
-          </TokenImg>
-          <Text marginLeft="10px">YAY</Text>
-        </TokenLogo>
-      )}
+      <TokenLogo>
+        {tokenLogo || (
+          <>
+            <TokenImg>
+              <YAYIcon />
+            </TokenImg>
+            <Text marginLeft="10px">YAY</Text>
+          </>
+        )}
+      </TokenLogo>
       <MainBlock>
         <LeftColumn>
           <Text>{textsProof.proof}</Text>
           <TokenInfo
+            addTokenIcon={addTokenIcon}
             BSCSkanHandler={BSCSkanHandler}
             addTokenHandler={addTokenHandler}
             margin="10px 0 0"
@@ -116,6 +120,6 @@ const MiddleColumn = styled.div`
   }
   ${({ theme }) => theme.mediaQueries.md} {
     margin: 0 15px;
-    top: 55px;
+    top: 65px;
   } ;
 `;

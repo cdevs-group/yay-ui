@@ -2,12 +2,10 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { Button } from "../../components/Button";
-import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import { BalanceInput } from "../../components/BalanceInput";
 import { SwapButton } from "../../components/Toggle";
 import { BridgeStep1Props } from "./types";
 import { lightColors, baseColors } from "../../theme/colors";
-import YAY from "../../components/Svg/Icons/YAY.svg";
 
 const Wrapper = styled.div`
   width: fit-content;
@@ -77,9 +75,6 @@ const FeeInfo = styled(Text)`
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.greyText};
 `;
-const YayLogo = styled.div`
-  margin-bottom: 7px;
-`;
 const ButtonOpenProof = styled(Text)`
   text-align: center;
   margin: 32px auto 0;
@@ -99,6 +94,10 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   fromChange,
   switchHandler,
   handleButton,
+  iconNetwork1,
+  iconNetwork2,
+  iconBalanceInput,
+  handleOpenProofOfAssets,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -115,25 +114,17 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
         <BridgeContent>
           <Label size="lg">{texts.from}</Label>
           {fromChange ? (
-            <BlockChainName icon={<BnbIcon />} name={texts.bsc} />
+            <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
           ) : (
-            <BlockChainName icon={<AvalancheIcon />} name={texts.avalanche} />
+            <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
           )}
           <InputWrap>
             <BalanceInput
               handleButtonToMax={handleButtonToMax}
-              token="yay"
               onUserInput={onUserInput}
               value={value}
-              texts={{ commit: "From" }}
-              icon={
-                <>
-                  <YayLogo>
-                    <img src={YAY} />
-                  </YayLogo>
-                  YAY
-                </>
-              }
+              icon={iconBalanceInput}
+              texts={{ commit: texts.commit, currency: texts.currencyInput }}
             />
             <ButtonReverse>
               <SwapButton onClick={switchHandler} />
@@ -150,9 +141,9 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           </InputWrap>
           <Label size="lg">{texts.to}</Label>
           {fromChange ? (
-            <BlockChainName icon={<AvalancheIcon />} name={texts.avalanche} />
+            <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
           ) : (
-            <BlockChainName icon={<BnbIcon />} name={texts.bsc} />
+            <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
           )}
           <FeeInfo>
             {texts.fee} {fee}
@@ -162,7 +153,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           </Button>
         </BridgeContent>
       </BridgeWrapper>
-      <ButtonOpenProof>Proof of assets</ButtonOpenProof>
+      <ButtonOpenProof onClick={handleOpenProofOfAssets}>{texts.buttonProofOfState}</ButtonOpenProof>
     </Wrapper>
   );
 };

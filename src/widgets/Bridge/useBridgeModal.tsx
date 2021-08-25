@@ -1,6 +1,7 @@
 import React from "react";
 import { useModal } from "../Modal";
 import BridgeProof from "./BridgeProof";
+import { Metamask } from "../../constants/images";
 
 interface ReturnType {
   onPresentBridgeModal: () => void;
@@ -93,6 +94,7 @@ const useBridgeModal = (): ReturnType => {
       texts={texts}
       textsProof={textsProof}
       ProofOfAssetsData={ProofOfAssetsData}
+      addTokenIcon={<img src={Metamask} />}
     />
   );
   return { onPresentBridgeModal };

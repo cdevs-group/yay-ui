@@ -10,11 +10,12 @@ export const TokenInfoBlock: React.FC = () => {
     token: "3,836.537598 YAY",
     address: "0xe78388b4...6b9ab0e9d0",
     network: "bscan.ru",
+    textCopy: "copied",
   };
 
   return (
     <div>
-      <TokenInfo textsInfo={textsInfo} />
+      <TokenInfo addTokenHandler={() => {}} BSCSkanHandler={() => {}} textsInfo={textsInfo} />
     </div>
   );
 };

@@ -11,7 +11,9 @@ const WalletSide = ({ textsWallet }: WalletSideProps) => {
     <Wrapper>
       <Title>{textsWallet.title}</Title>
       <Address>
-        <AdressText>{textsWallet.address}</AdressText>
+        <AddressTextWrapper>
+          <AddressText>{textsWallet.address}</AddressText>
+        </AddressTextWrapper>
         <CopyButton
           onClick={() => {
             if (navigator.clipboard) {
@@ -50,29 +52,29 @@ const Title = styled(Text)`
 `;
 const Key = styled(Title)``;
 const Address = styled.div`
+  height: 50px;
   position: relative;
   margin-top: 7px;
-  padding: 17px 50px 17px 24px;
+  padding: 17px 24px 17px 24px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 12px;
   &::after {
     position: absolute;
     content: "";
-    top: 13px;
-    right: 50px;
+    top: 0;
+    right: 0;
     display: block;
-    width: 41px;
-    height: 27px;
-    background: linear-gradient(270deg, #1d1d22 23.44%, rgba(27, 27, 32, 0) 100%);
+    background: linear-gradient(270deg, #1d1d22 53.6%, rgba(27, 27, 32, 0) 100%);
+    height: 100%;
+    width: 76px;
+    border-radius: 0px 12px 12px 0;
   }
 `;
-const AdressText = styled(Text)`
+const AddressText = styled(Text)`
   white-space: nowrap;
-  font-size: 11px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 15px;
-  } ;
+  font-size: 13px;
+  position: absolute;
 `;
 const Line = styled.div`
   display: flex;
@@ -93,7 +95,7 @@ const CopyButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 25px;
+  right: 10px;
   cursor: pointer;
   margin-left: 12px;
   width: 30px;
@@ -104,6 +106,7 @@ const CopyButton = styled.button`
   background: none;
   align-items: center;
   justify-content: center;
+  z-index: 2;
   & svg {
     fill: ${({ theme }) => theme.colors.greenText2};
   }
@@ -119,4 +122,8 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   color: ${({ theme }) => theme.colors.invertedContrast};
   border-radius: 16px;
   opacity: 0.7;
+`;
+const AddressTextWrapper = styled.div`
+  overflow: hidden;
+  width: 100%;
 `;

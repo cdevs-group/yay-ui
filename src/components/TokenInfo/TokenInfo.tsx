@@ -6,8 +6,31 @@ import { Metamask } from "../../constants/images";
 import { ArrowLeft, CopyIcon } from "../Svg";
 import { ellipsis } from "../../helpers/ellipsis";
 
-const TokenInfo = ({ textsInfo, margin, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
+const TokenInfo = ({ addTokenIcon, textsInfo, margin, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
+
+  const ButtonsBlock = ({ type }: { type?: string }) => (
+    <RightColumn className={type}>
+      <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
+      <Button
+        onClick={() => {
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(textsInfo.address);
+            setIsTooltipDisplayed(true);
+            setTimeout(() => {
+              setIsTooltipDisplayed(false);
+            }, 1000);
+          }
+        }}
+      >
+        <CopyIcon />
+      </Button>
+      <Button onClick={BSCSkanHandler} className="arrow">
+        <ArrowLeft />
+      </Button>
+    </RightColumn>
+  );
+
   return (
     <>
       <Wrapper margin={margin}>
@@ -18,49 +41,9 @@ const TokenInfo = ({ textsInfo, margin, BSCSkanHandler, addTokenHandler }: Token
           <Text size="xs">{ellipsis(textsInfo.address, 10)}</Text>
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsInfo.textCopy}</Tooltip>
         </LeftColumn>
-        <RightColumn>
-          <Button onClick={addTokenHandler}>
-            <img src={Metamask} />
-          </Button>
-          <Button
-            onClick={() => {
-              if (navigator.clipboard) {
-                navigator.clipboard.writeText(textsInfo.address);
-                setIsTooltipDisplayed(true);
-                setTimeout(() => {
-                  setIsTooltipDisplayed(false);
-                }, 1000);
-              }
-            }}
-          >
-            <CopyIcon />
-          </Button>
-          <Button onClick={BSCSkanHandler} className="arrow">
-            <ArrowLeft />
-          </Button>
-        </RightColumn>
+        <ButtonsBlock />
       </Wrapper>
-      <ButtonMob>
-        <Button onClick={addTokenHandler}>
-          <img src={Metamask} />
-        </Button>
-        <Button
-          onClick={() => {
-            if (navigator.clipboard) {
-              navigator.clipboard.writeText(textsInfo.address);
-              setIsTooltipDisplayed(true);
-              setTimeout(() => {
-                setIsTooltipDisplayed(false);
-              }, 1000);
-            }
-          }}
-        >
-          <CopyIcon />
-        </Button>
-        <Button onClick={BSCSkanHandler} className="arrow">
-          <ArrowLeft />
-        </Button>
-      </ButtonMob>
+      <ButtonsBlock type="mob" />
     </>
   );
 };
@@ -101,7 +84,15 @@ const RightColumn = styled.div`
   justify-content: flex-end;
   ${({ theme }) => theme.mediaQueries.xs} {
     display: flex;
-  } ;
+  }
+  &.mob {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    ${({ theme }) => theme.mediaQueries.xs} {
+      display: none;
+    }
+  }
 `;
 const Button = styled.button`
   cursor: pointer;
@@ -119,7 +110,7 @@ const Button = styled.button`
   }
   &.arrow {
     & svg {
-      transform: rotate(125deg) translate(-2px, 3px);
+      transform: rotate(135deg) translate(-1px, 2px);
     }
   }
   ${({ theme }) => theme.mediaQueries.xs} {
@@ -138,11 +129,6 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   border-radius: 16px;
   opacity: 0.7;
 `;
-const ButtonMob = styled.div`
-  display: flex;
-  margin-top: 15px;
-  justify-content: space-between;
-  ${({ theme }) => theme.mediaQueries.xs} {
-    display: none;
-  } ;
-`;
+// const ButtonMob = styled(RightColumn)`
+//
+// `;

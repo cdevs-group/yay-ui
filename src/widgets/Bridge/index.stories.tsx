@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import BridgeStep1 from "./BridgeStep1";
 import BridgeStep2 from "./BridgeStep2";
 import { Timer } from "../../components/Timer";
 import useBridgeModal from "./useBridgeModal";
 import { Text } from "../../components/Text";
-import styled from "styled-components";
+import { AvalancheIcon, BnbIcon } from "../../components/Svg";
+import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 
 export default {
   title: "Widgets/Bridge",
@@ -19,8 +21,11 @@ export const BridgeStep1Block: React.FC = () => {
     to: "To",
     fee: "Estimated transfer fee:",
     button: "Transfer",
-    bsc: "Binance Smart Chain",
-    avalanche: "Avalanche",
+    nameNetwork1: "Binance Smart Chain",
+    nameNetwork2: "Avalanche",
+    buttonProofOfState: "Proof of State",
+    currencyInput: "YAY",
+    commit: "From",
   };
   const balanceText = {
     message1: "Available balance:",
@@ -43,6 +48,9 @@ export const BridgeStep1Block: React.FC = () => {
           texts={texts}
           value={value}
           onUserInput={onUserInput}
+          iconNetwork1={<BnbIcon />}
+          iconNetwork2={<AvalancheIcon />}
+          handleOpenProofOfAssets={() => {}}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>
@@ -53,10 +61,14 @@ export const BridgeStep1Block: React.FC = () => {
           balanceText={balanceText}
           fee="~0.00001BNB"
           inputError
+          iconNetwork1={<BnbIcon />}
+          iconNetwork2={<AvalancheIcon />}
+          handleOpenProofOfAssets={() => {}}
           handleButtonToMax={() => {}}
           texts={texts}
           value={value}
           onUserInput={onUserInput}
+          iconBalanceInput={<YAYIcon />}
         />
       </div>
     </div>
@@ -75,9 +87,10 @@ export const BridgeStep2Block = () => {
     finish: "Final",
   };
   const textsProgress2 = {
-    waiting: "Waiting for BSC",
+    waiting: "Waiting for",
     start: "Start",
     final: "Final",
+    networkWaiting: "BSC",
   };
   const transferredValue = {
     token: "12,000 YAY",
@@ -123,7 +136,10 @@ export const BridgeStep2Block = () => {
           stepsText={stepsText}
           gasPriceTextNetwork1={gasPriceTextNetwork1}
           gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadTime
+          isLoadGasNetwork2
+          isLoadTimeNetwork1
+          isLoadGasNetwork1
+          isLoadTimeNetwork2
         />
       </div>
       <div style={{ marginTop: "20px" }}>
@@ -140,7 +156,10 @@ export const BridgeStep2Block = () => {
           stepsText={stepsText}
           gasPriceTextNetwork1={gasPriceTextNetwork1}
           gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadTime={false}
+          isLoadGasNetwork2={false}
+          isLoadTimeNetwork1
+          isLoadGasNetwork1
+          isLoadTimeNetwork2={false}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
@@ -158,7 +177,10 @@ export const BridgeStep2Block = () => {
           stepsText={stepsText}
           gasPriceTextNetwork1={gasPriceTextNetwork1}
           gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadTime={false}
+          isLoadGasNetwork2
+          isLoadTimeNetwork1={false}
+          isLoadGasNetwork1={false}
+          isLoadTimeNetwork2
         />
       </div>
     </div>
