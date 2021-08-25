@@ -8,6 +8,25 @@ import { AccountIcon } from "../../../constants/images";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
 
+interface textsWallet {
+  title: string;
+  network: string;
+  wallet: string;
+  newtworkName: string;
+  walletName: string;
+  address: string;
+  button: string;
+  completeText: string;
+  noRecentTransactions?: string;
+}
+
+interface Itransactions {
+  number: string;
+  link: string;
+  status: boolean;
+  profit: string;
+}
+
 interface Props {
   account?: string;
   login: Login;
@@ -21,7 +40,14 @@ interface Props {
   yayBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed?: (value: string) => void;
-  handleAddToken?: () => void;
+  bridge?: boolean;
+  titleBridge?: string;
+  textsWallet?: textsWallet;
+  disconnectHandler?: () => void;
+  transactionTitle?: string;
+  transactionsList?: Array<Itransactions>;
+  tabsList?: Array<string>;
+   handleAddToken?: () => void;
 }
 
 const Account: React.FC<Props> = ({
@@ -37,6 +63,13 @@ const Account: React.FC<Props> = ({
   yayBalance,
   dataTransactions,
   handleClaimed,
+  bridge,
+  titleBridge,
+  tabsList,
+  textsWallet,
+  disconnectHandler,
+  transactionTitle,
+  transactionsList,
   handleAddToken,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
@@ -51,6 +84,13 @@ const Account: React.FC<Props> = ({
     yayBalance,
     dataTransactions,
     handleClaimed,
+    bridge,
+    titleBridge,
+    tabsList,
+    textsWallet,
+    disconnectHandler,
+    transactionTitle,
+    transactionsList
     handleAddToken
   );
 

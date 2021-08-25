@@ -300,3 +300,142 @@ export const HeaderVestingNoTransactions: React.FC = () => {
     </BrowserRouter>
   );
 };
+
+export const HeaderBridge = () => {
+  const textsAccount = {
+    copy: "Copy",
+    title: "Your wallet",
+    button: "Logout",
+    view: "View on BscScan",
+    copied: "Copied",
+    yayBalance: "$YAY balance",
+    address: "Your address",
+    tabs: ["Wallet", "Transactions"],
+    recentTransactions: "Recent transactions",
+    claimed: "Claimed",
+    noRecentTransactions: "No recent transactions",
+  };
+  const langs = [
+    { locale: "en-US", language: "English", code: "en" },
+    { locale: "de-DE", language: "Deutsch", code: "de" },
+  ];
+  const [network, setNetwork] = useState(NETWORK_CHAIN[0]);
+
+  const handleToggleNetwork = (val) => {
+    setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
+  };
+  const textsWallet = {
+    title: "Your address",
+    network: "Network",
+    wallet: "Wallet",
+    newtworkName: "Binance Smart Chain",
+    walletName: "Metamask",
+    address: "0x88259603-2f58ee92039d357307e3",
+    button: "Disconnect Wallet",
+    completeText: "Copied",
+    noRecentTransactions: "No recent transactions",
+  };
+
+  const transactionsList = [
+    {
+      number: "#001",
+      link: "BSC to Avalanche",
+      profit: "12,000,00 $YAY",
+      status: true,
+    },
+    {
+      number: "#002",
+      link: "Avalanche to BSC",
+      status: false,
+      profit: "Error",
+    },
+    {
+      number: "#003",
+      link: "Avalanche to BSC",
+      status: true,
+      profit: "12,000,00 $YAY",
+    },
+    {
+      number: "#002",
+      link: "Avalanche to BSC",
+      status: false,
+      profit: "Error",
+    },
+    {
+      number: "#003",
+      link: "Avalanche to BSC",
+      status: true,
+      profit: "12,000,00 $YAY",
+    },
+    {
+      number: "#002",
+      link: "Avalanche to BSC",
+      status: false,
+      profit: "Error",
+    },
+    {
+      number: "#003",
+      link: "Avalanche to BSC",
+      status: true,
+      profit: "12,000,00 $YAY",
+    },
+    {
+      number: "#002",
+      link: "Avalanche to BSC",
+      status: false,
+      profit: "Error",
+    },
+    {
+      number: "#003",
+      link: "Avalanche to BSC",
+      status: true,
+      profit: "12,000,00 $YAY",
+    },
+  ];
+  const textsConnect = {
+    title: "Сonnect wallet",
+    link: "Learn how connect",
+  };
+
+  const tabsList = ["Wallet", "Transactions"];
+  return (
+    <div>
+      <BrowserRouter>
+        <div style={{ marginTop: "50px" }}>
+          <Header
+            account="0xbdda50183d817c3289f895a4472eb475967dc980"
+            login={noop}
+            logout={noop}
+            isDark={false}
+            toggleTheme={noop}
+            langs={langs}
+            setLang={noop}
+            currentLang="EN"
+            links={links}
+            profile={{
+              profileLink: "/profile",
+              noProfileLink: "/no-profile",
+            }}
+            network={network}
+            handleToggleNetwork={handleToggleNetwork}
+            linkTextNetwork="Learn how connect"
+            linkHrefNetwork="http"
+            titleNetwork="Choose network"
+            textsAccount={textsAccount}
+            textsConnect={textsConnect}
+            linkLogo="/"
+            bridge
+            yayBalance="25000000"
+            handleClaimed={(value) => console.log(value)}
+            titleBridge="Your wallet"
+            tabsList={tabsList}
+            textsWallet={textsWallet}
+            disconnectHandler={() => {}}
+            transactionTitle="Recent transactions"
+            transactionsList={transactionsList}
+          />
+        </div>
+      </BrowserRouter>
+    </div>
+  );
+};

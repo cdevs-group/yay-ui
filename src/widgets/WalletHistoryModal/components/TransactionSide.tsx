@@ -5,21 +5,27 @@ import { Text } from "../../../components/Text";
 import { ArrowLeft } from "../../../components/Svg";
 import { lightColors } from "../../../theme/colors";
 
-const TransactionSide = ({ transactionsList, transactionTitle }: TransactionSideProps) => {
+const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransactions }: TransactionSideProps) => {
   return (
     <Wrapper>
       <Title>{transactionTitle}</Title>
       <TransactionsBlock>
-        {transactionsList.map((item, i) => (
-          <Transaction key={i}>
-            <TextBlock>{item.number}</TextBlock>
-            <LinkBlock status={item.status}>
-              <Text size="xs">{item.link}</Text>
-              <ArrowLeft />
-            </LinkBlock>
-            <TextBlock color={item.status ? lightColors.greenText2 : lightColors.redBg}>{item.profit}</TextBlock>
-          </Transaction>
-        ))}
+        {transactionsList ? (
+          transactionsList?.map((item, i) => (
+            <Transaction key={i}>
+              <TextBlock>{item.number}</TextBlock>
+              <LinkBlock status={item.status}>
+                <Text size="xs">{item.link}</Text>
+                <ArrowLeft />
+              </LinkBlock>
+              <TextBlock color={item.status ? lightColors.greenText2 : lightColors.redBg}>{item.profit}</TextBlock>
+            </Transaction>
+          ))
+        ) : (
+          <Text fontSize="13px" letterSpacing="0.05em" textAlign="center" padding="16px 0">
+            {noRecentTransactions}
+          </Text>
+        )}
       </TransactionsBlock>
     </Wrapper>
   );

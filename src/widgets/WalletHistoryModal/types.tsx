@@ -1,17 +1,18 @@
 export interface TransactionSideProps {
-  transactionTitle: string;
-  transactionsList: Array<{
+  transactionTitle?: string;
+  transactionsList?: Array<{
     number: string;
     link: string;
     status: boolean;
     profit: string;
   }>;
+  noRecentTransactions?: string;
 }
 
 export interface WalletHistoryModalProps {
   onDismiss?: () => void;
-  title: string;
-  textsWallet: {
+  title?: string;
+  textsWallet?: {
     title: string;
     network: string;
     wallet: string;
@@ -20,13 +21,12 @@ export interface WalletHistoryModalProps {
     address: string;
     button: string;
     completeText: string;
+    noRecentTransactions?: string;
   };
-  transactionTitle: string;
-  // tabValue: number;
-  // setTabValue: (e: any) => void;
-  tabsList: Array<string>;
-  disconnectHandler: () => void;
-  transactionsList: Array<{
+  transactionTitle?: string;
+  tabsList?: Array<string>;
+  disconnectHandler?: () => void;
+  transactionsList?: Array<{
     number: string;
     link: string;
     status: boolean;
@@ -35,7 +35,7 @@ export interface WalletHistoryModalProps {
 }
 
 export interface WalletSideProps {
-  textsWallet: {
+  textsWallet?: {
     title: string;
     network: string;
     wallet: string;
@@ -45,5 +45,5 @@ export interface WalletSideProps {
     button: string;
     completeText: string;
   };
-  disconnectHandler: () => void;
+  disconnectHandler?: () => void;
 }

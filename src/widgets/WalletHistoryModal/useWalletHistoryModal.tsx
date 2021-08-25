@@ -16,6 +16,7 @@ const useWalletHistoryModal = (): ReturnType => {
     address: "0x88259603-2f58ee92039d357307e3",
     button: "Disconnect Wallet",
     completeText: "Copied",
+    noRecentTransactions: "No recent transactions",
   };
 
   const transactionsList = [
@@ -76,17 +77,9 @@ const useWalletHistoryModal = (): ReturnType => {
   ];
 
   const tabsList = ["Wallet", "Transactions"];
-  const [tabValue, setTabValue] = useState(0);
-
-  const handleTabChange = (e: any) => {
-    console.log(tabValue);
-    setTabValue(+e.target.value);
-  };
 
   const [onPresentWalletHistoryModal] = useModal(
     <WalletHistoryModal
-      // tabValue={tabValue}
-      // setTabValue={handleTabChange}
       title="Your Wallet"
       tabsList={tabsList}
       textsWallet={textsWallet}
