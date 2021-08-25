@@ -57,7 +57,7 @@ export const VestingWidgetComponent: React.FC = () => {
 
   return (
     <VestingWidget
-      canClaim
+      // canClaim
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
@@ -81,6 +81,7 @@ export const VestingWidgetComponent: React.FC = () => {
           seconds: "s",
         },
       }}
+      disabledButtonClaimTokens
     />
   );
 };

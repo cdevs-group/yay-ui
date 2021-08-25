@@ -51,4 +51,5 @@ export interface VestingWidgetProps {
     button: string;
   };
   linkClaimTokens?: string;
+  disabledButtonClaimTokens?: boolean;
 }

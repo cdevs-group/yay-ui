@@ -17,9 +17,10 @@ interface IProps {
     totalRaised: string;
     total: string;
   };
+  disabledButton?: boolean;
 }
 
-const ClaimTokens = ({ data, texts, handleClaimTokens }: IProps) => {
+const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton }: IProps) => {
   const [widthProgress, setWidthProgress] = useState(0);
   const numberConverter = (string: string) => +string.replace(/[^\d.]/g, "");
 
@@ -31,7 +32,7 @@ const ClaimTokens = ({ data, texts, handleClaimTokens }: IProps) => {
     <Card>
       <Row>
         <StyledTitle>{texts.title}</StyledTitle>
-        <StyledButton variant="green" onClick={handleClaimTokens}>
+        <StyledButton variant="green" onClick={handleClaimTokens} disabled={disabledButton}>
           {texts.button}
         </StyledButton>
       </Row>
@@ -183,6 +184,10 @@ export const StyledButton = styled(Button)`
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-left: 43px;
+  }
+  &:disabled {
+    opacity: 1;
+    background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
   }
 `;
 

@@ -25,6 +25,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   canClaim,
   textsPoolz,
   linkClaimTokens,
+  disabledButtonClaimTokens,
 }) => {
   return (
     <Wrapper>
@@ -35,7 +36,12 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       {canClaim ? (
         <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} />
       ) : (
-        <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
+        <ClaimTokens
+          data={dataClaimTokens}
+          texts={textsClaimTokens}
+          handleClaimTokens={handleClaimTokens}
+          disabledButton={disabledButtonClaimTokens}
+        />
       )}
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
       <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} images={imagesGift} />
