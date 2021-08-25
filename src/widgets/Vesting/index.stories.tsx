@@ -42,6 +42,13 @@ export const VestingWidgetComponent: React.FC = () => {
     claimed: "Claimed",
   };
 
+  const textsPoolz = {
+    title: "You can claim your token on Poolz",
+    description:
+      "It seems, you’ve bought your tokens at Poolz Launchpad. Its not a big deal, just claim your tokens at Poolz ",
+    button: "Claim tokens",
+  };
+
   const [claimedGift, setClaimedGift] = useState(false);
 
   const handleTakeGift = () => {
@@ -50,6 +57,7 @@ export const VestingWidgetComponent: React.FC = () => {
 
   return (
     <VestingWidget
+      canClaim
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
@@ -58,6 +66,7 @@ export const VestingWidgetComponent: React.FC = () => {
       linkMarketplace="http"
       handleTakeGift={handleTakeGift}
       textsTakeGift={textsTakeGift}
+      textsPoolz={textsPoolz}
       claimedGift={claimedGift}
       dataTimer={{
         textFront: "Next stage after",

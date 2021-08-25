@@ -51,14 +51,14 @@ const ClaimTokens = ({ data, texts, handleClaimTokens }: IProps) => {
       <Texts>
         <TextBlock>
           <StyledText>{texts.total}</StyledText>
-          <StyledText color="greyText3">{data.total}</StyledText>
+          {/*<StyledText color="greyText3">{data.total}</StyledText>*/}
         </TextBlock>
       </Texts>
     </Card>
   );
 };
 
-const Card = styled.div`
+export const Card = styled.div`
   padding: 35px 25px;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 20px;
@@ -67,7 +67,7 @@ const Card = styled.div`
   }
 `;
 
-const StyledTitle = styled(Text)`
+export const StyledTitle = styled(Text)`
   width: 100%;
   margin-bottom: 22px;
   font-size: 22px;
@@ -177,7 +177,7 @@ const StyledText = styled(Text)`
   font-weight: 400;
 `;
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
   width: 100%;
   font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {

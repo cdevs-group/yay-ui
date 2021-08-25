@@ -6,6 +6,8 @@ import ClaimTokens from "./ClaimTokens";
 import MarketplaceLink from "./MarketplaceLink";
 import TakeGift from "./TakeGift";
 import { VestingWidgetProps } from "./types";
+import { transparentize } from "polished";
+import TokenOnPoolz from "./TokenOnPoolz";
 
 const VestingWidget: React.FC<VestingWidgetProps> = ({
   dataClaimTokens,
@@ -20,14 +22,20 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   imagesGift,
   imagesMarketplace,
   dataTimer,
+  canClaim,
+  textsPoolz,
 }) => {
   return (
     <Wrapper>
-      <CardIndicator data={dataCardsIndicators[0]} />
-      <CardIndicator data={dataCardsIndicators[1]} />
-      <CardTimer data={dataTimer} />
-      <CardIndicator data={dataCardsIndicators[2]} />
-      <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
+      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[0]} />
+      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[1]} />
+      <CardTimer canClaim={canClaim} data={dataTimer} />
+      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[2]} />
+      {canClaim ? (
+        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} />
+      ) : (
+        <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
+      )}
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
       <TakeGift texts={textsTakeGift} handleTakeGift={handleTakeGift} claimedGift={claimedGift} images={imagesGift} />
     </Wrapper>
