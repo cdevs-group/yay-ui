@@ -48,6 +48,12 @@ const Button = styled.button`
   }
 `;
 
+const Row = styled.div`
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+`;
+
 const SetButton = ({ variant, onClick }: AlertProps) => {
   const Icon = getIcon(variant);
   return (
@@ -60,12 +66,14 @@ const SetButton = ({ variant, onClick }: AlertProps) => {
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
   return (
     <StyledAlert>
-      {title && (
-        <Text fontWeight={600} marginRight="5px">
-          {title}
-        </Text>
-      )}
-      <div>{children}</div>
+      <Row>
+        {title && (
+          <Text fontWeight={600} marginRight="5px">
+            {title}
+          </Text>
+        )}
+        <div>{children}</div>
+      </Row>
       <SetButton variant={variant} onClick={onClick} />
     </StyledAlert>
   );
