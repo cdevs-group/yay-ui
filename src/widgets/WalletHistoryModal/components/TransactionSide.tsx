@@ -41,7 +41,7 @@ const TransactionsBlock = styled.div`
 const Transaction = styled.div`
   margin-top: 27px;
   display: grid;
-  gap: 0 20px;
+  gap: 0 15px;
   align-items: center;
   grid-template-columns: 1fr 3fr 2.5fr;
   &:first-child {
