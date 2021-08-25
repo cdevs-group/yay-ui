@@ -3,24 +3,25 @@ import styled from "styled-components";
 import BG from "./img/link-bg.png";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
-import { StyledButton, StyledTitle } from "./ClaimTokens";
+import { StyledTitle } from "./ClaimTokens";
 
-interface Ipros {
+interface Iprops {
   images?: { bg: string };
   texts: {
     title: string;
     button: string;
     description: string;
   };
+  linkClaimTokens?: string;
 }
 
-const TokenOnPoolz = ({ images, texts }: Ipros) => {
+const TokenOnPoolz = ({ images, texts, linkClaimTokens }: Iprops) => {
   return (
     <Wrapper>
       <CardStyle src={images?.bg || BG}>
         <StyledTitle size="xl">{texts.title}</StyledTitle>
         <Text margin="42px 0">{texts.description}</Text>
-        <StyledButton margin="0 auto" minWidth="204px" variant="green">
+        <StyledButton as="a" margin="0 auto" minWidth="204px" variant="green" href={linkClaimTokens || "#"}>
           {texts.button}
         </StyledButton>
       </CardStyle>
@@ -41,5 +42,14 @@ const Wrapper = styled.div`
   border-radius: 20px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-column: 1/3;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  width: 100%;
+  font-weight: 400;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: auto;
+    margin-left: 43px;
   }
 `;

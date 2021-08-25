@@ -24,6 +24,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   dataTimer,
   canClaim,
   textsPoolz,
+  linkClaimTokens,
 }) => {
   return (
     <Wrapper>
@@ -32,7 +33,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       <CardTimer canClaim={canClaim} data={dataTimer} />
       <CardIndicator canClaim={canClaim} data={dataCardsIndicators[2]} />
       {canClaim ? (
-        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} />
+        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} />
       ) : (
         <ClaimTokens data={dataClaimTokens} texts={textsClaimTokens} handleClaimTokens={handleClaimTokens} />
       )}

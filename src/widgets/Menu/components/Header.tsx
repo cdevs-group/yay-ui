@@ -34,6 +34,7 @@ const Header: React.FC<NavProps> = ({
   yayBalance,
   dataTransactions,
   handleClaimed,
+  handleAddToken,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -99,6 +100,7 @@ const Header: React.FC<NavProps> = ({
             yayBalance={yayBalance}
             dataTransactions={dataTransactions}
             handleClaimed={handleClaimed}
+            handleAddToken={handleAddToken}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

@@ -21,6 +21,7 @@ interface Props {
   yayBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed?: (value: string) => void;
+  handleAddToken?: () => void;
 }
 
 const Account: React.FC<Props> = ({
@@ -36,6 +37,7 @@ const Account: React.FC<Props> = ({
   yayBalance,
   dataTransactions,
   handleClaimed,
+  handleAddToken
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -48,7 +50,8 @@ const Account: React.FC<Props> = ({
     vesting,
     yayBalance,
     dataTransactions,
-    handleClaimed
+    handleClaimed,
+    handleAddToken
   );
 
   return (

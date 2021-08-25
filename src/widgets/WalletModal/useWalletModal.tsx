@@ -23,6 +23,7 @@ export interface TextsAccount {
   recentTransactions?: string;
   claimed?: string;
   noRecentTransactions?: string;
+  addToken?: string;
 }
 
 export interface TextsConnect {
@@ -41,7 +42,8 @@ const useWalletModal = (
   vesting?: boolean,
   yayBalance?: string | number,
   dataTransactions?: Array<any>,
-  handleClaimed?: any
+  handleClaimed?: any,
+  handleAddToken?: any
 ): ReturnType => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
@@ -57,6 +59,7 @@ const useWalletModal = (
         yayBalance={yayBalance}
         dataTransactions={dataTransactions}
         handleClaimed={handleClaimed}
+        handleAddToken={handleAddToken}
       />
     )
   );
