@@ -37,7 +37,7 @@ const Account: React.FC<Props> = ({
   yayBalance,
   dataTransactions,
   handleClaimed,
-  handleAddToken
+  handleAddToken,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,

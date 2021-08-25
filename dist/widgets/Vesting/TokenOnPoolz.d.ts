@@ -1,5 +1,5 @@
 /// <reference types="react" />
-interface Ipros {
+interface Iprops {
     images?: {
         bg: string;
     };
@@ -8,6 +8,7 @@ interface Ipros {
         button: string;
         description: string;
     };
+    linkClaimTokens?: string;
 }
-declare const TokenOnPoolz: ({ images, texts }: Ipros) => JSX.Element;
+declare const TokenOnPoolz: ({ images, texts, linkClaimTokens }: Iprops) => JSX.Element;
 export default TokenOnPoolz;
