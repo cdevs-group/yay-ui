@@ -4,6 +4,7 @@ interface IProps {
         text: string;
         value: string;
     };
+    canClaim: boolean;
 }
-declare const CardIndicator: ({ data }: IProps) => JSX.Element;
+declare const CardIndicator: ({ data, canClaim }: IProps) => JSX.Element;
 export default CardIndicator;

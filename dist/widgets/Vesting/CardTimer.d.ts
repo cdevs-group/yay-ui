@@ -13,6 +13,7 @@ interface IProps {
             seconds: string;
         };
     };
+    canClaim: boolean;
 }
-declare const CardTimer: ({ data }: IProps) => JSX.Element;
+declare const CardTimer: ({ data, canClaim }: IProps) => JSX.Element;
 export default CardTimer;

@@ -24,6 +24,7 @@ export interface TextsAccount {
   recentTransactions?: string;
   claimed?: string;
   noRecentTransactions?: string;
+  addToken?: string;
 }
 
 export interface TextsConnect {
@@ -68,7 +69,9 @@ const useWalletModal = (
   disconnectHandler?: () => void,
   transactionTitle?: string,
   transactionsList?: Array<Itransactions>
+  handleAddToken?: any
 ): ReturnType => {
+  
   const pageModal = () => {
     if (vesting) {
       return (
@@ -101,6 +104,7 @@ const useWalletModal = (
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
   );
   const [onPresentAccountModal] = useModal(pageModal());
+
   return { onPresentConnectModal, onPresentAccountModal };
 };
 

@@ -41,6 +41,7 @@ const Header: React.FC<NavProps> = ({
   disconnectHandler,
   transactionTitle,
   transactionsList,
+  handleAddToken,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -113,6 +114,7 @@ const Header: React.FC<NavProps> = ({
             disconnectHandler={disconnectHandler}
             transactionTitle={transactionTitle}
             transactionsList={transactionsList}
+            handleAddToken={handleAddToken}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

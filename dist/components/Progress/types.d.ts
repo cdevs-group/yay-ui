@@ -15,6 +15,7 @@ export interface ProgressRangeProps {
         waiting: string;
         start: string;
         final: string;
+        networkWaiting: string;
     };
 }
 export interface ProgressAVAXProps {

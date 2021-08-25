@@ -66,6 +66,7 @@ export interface NavProps extends PanelProps {
     yayBalance?: string | number;
     dataTransactions?: Array<any>;
     handleClaimed?: (value: string) => void;
+    handleAddToken?: () => void;
 }
 export declare type BlockChainNetwork = {
     name: string;

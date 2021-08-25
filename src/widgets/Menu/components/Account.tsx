@@ -47,6 +47,7 @@ interface Props {
   transactionTitle?: string;
   transactionsList?: Array<Itransactions>;
   tabsList?: Array<string>;
+   handleAddToken?: () => void;
 }
 
 const Account: React.FC<Props> = ({
@@ -69,6 +70,7 @@ const Account: React.FC<Props> = ({
   disconnectHandler,
   transactionTitle,
   transactionsList,
+  handleAddToken,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -89,6 +91,7 @@ const Account: React.FC<Props> = ({
     disconnectHandler,
     transactionTitle,
     transactionsList
+    handleAddToken
   );
 
   return (

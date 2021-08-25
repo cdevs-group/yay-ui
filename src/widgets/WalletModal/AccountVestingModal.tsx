@@ -20,6 +20,7 @@ interface Props {
   yayBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed: (value: string) => void;
+  handleAddToken: () => void;
 }
 
 const AccountVestingModal: React.FC<Props> = ({
@@ -30,6 +31,7 @@ const AccountVestingModal: React.FC<Props> = ({
   dataTransactions,
   handleClaimed = () => null,
   onDismiss = () => null,
+  handleAddToken,
 }) => {
   const [tabValue, setTabValue] = useState<number>(0);
 
@@ -74,6 +76,7 @@ const AccountVestingModal: React.FC<Props> = ({
               <Text letterSpacing="-0.02em" fontWeight="400">
                 {yayBalance}
               </Text>
+              <ButtonAddToken onClick={handleAddToken}>{texts.addToken}</ButtonAddToken>
             </Flex>
             <Flex mb="30px">
               <LinkExternal
@@ -210,4 +213,19 @@ const StyledText = styled(Text)`
     font-size: 15px;
     line-height: 19px;
   }
+`;
+
+const ButtonAddToken = styled(Button)`
+  height: auto;
+  padding: 9px 16px;
+  border: 1px solid ${({ theme }) => theme.colors.green};
+  color: ${({ theme }) => theme.colors.green};
+  border-radius: 10px;
+  background: none;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.02em;
 `;

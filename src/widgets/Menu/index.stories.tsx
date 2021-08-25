@@ -30,6 +30,7 @@ export const HeaderDefault: React.FC = () => {
     tabs: ["Wallet", "Transactions"],
     recentTransactions: "Recent transactions",
     claimed: "Claimed",
+    addToken: "Add token",
   };
 
   const textsConnect = {
@@ -182,6 +183,7 @@ export const HeaderVesting: React.FC = () => {
     recentTransactions: "Recent transactions",
     claimed: "Claimed",
     noRecentTransactions: "No recent transactions",
+    addToken: "Add token",
   };
 
   const textsConnect = {
@@ -254,6 +256,7 @@ export const HeaderVestingNoTransactions: React.FC = () => {
     recentTransactions: "Recent transactions",
     claimed: "Claimed",
     noRecentTransactions: "No recent transactions",
+    addToken: "Add token",
   };
 
   const textsConnect = {
