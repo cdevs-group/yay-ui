@@ -73,6 +73,7 @@ const FeeInfo = styled(Text)`
   margin: 33px 0 43px;
   text-align: center;
   letter-spacing: 0.5px;
+  font-weight: 400;
   color: ${({ theme }) => theme.colors.greyText};
 `;
 const ButtonOpenProof = styled(Text)`
