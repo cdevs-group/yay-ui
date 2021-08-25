@@ -18,9 +18,10 @@ interface IProps {
       seconds: string;
     };
   };
+  canClaim: boolean;
 }
 
-const CardTimer = ({ data }: IProps) => {
+const CardTimer = ({ data, canClaim }: IProps) => {
   const progress = 100 - (data.timeSecond * 100) / data.totalSeconds;
 
   const Progress = () => (
@@ -31,7 +32,7 @@ const CardTimer = ({ data }: IProps) => {
 
   return (
     <Wrapper>
-      <Inner>
+      <Inner canClaim={canClaim}>
         <CardFront>
           <Text
             color="greyText"
@@ -63,6 +64,7 @@ const CardTimer = ({ data }: IProps) => {
           <Progress />
         </CardBack>
       </Inner>
+      <Claimed canClaim={canClaim} />
     </Wrapper>
   );
 };
@@ -85,13 +87,14 @@ const CardBack = styled(CardFront)`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   perspective: 1000px;
   min-height: 97px;
   width: 100%;
   border-radius: 20px;
 `;
 
-const Inner = styled.div`
+const Inner = styled.div<{ canClaim: boolean }>`
   display: flex;
   justify-content: center;
   height: 100%;
@@ -102,10 +105,10 @@ const Inner = styled.div`
   box-sizing: border-box;
 
   ${Wrapper}:hover & {
-    transform: rotateY(180deg);
+    transform: ${({ canClaim }) => (canClaim ? "" : "rotateY(180deg)")};
   }
   ${CardFront} {
-    backface-visibility: hidden;
+    backface-visibility: ${({ canClaim }) => (canClaim ? "" : "hidden")};
   }
 `;
 
@@ -122,6 +125,23 @@ const ProgressBar = styled.div<{ progress: number }>`
   height: 100%;
   width: ${({ progress }) => `${progress}%`};
   background: ${({ theme }) => theme.colors.greenBg2};
+  border-radius: inherit;
+`;
+const Claimed = styled.div<{ canClaim: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+  transition: 0.3s;
+  opacity: ${({ canClaim }) => (canClaim ? 1 : 0)};
+  pointer-events: ${({ canClaim }) => (canClaim ? "auto" : "none")};
   border-radius: inherit;
 `;
 

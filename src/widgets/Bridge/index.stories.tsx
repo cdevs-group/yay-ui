@@ -93,7 +93,7 @@ export const BridgeStep2Block = () => {
     networkWaiting: "BSC",
   };
   const transferredValue = {
-    token: "12,000 YAY",
+    token: "12,001 YAY",
     fiat: "~ $10.00",
   };
   const gasPriceTextNetwork1 = {
