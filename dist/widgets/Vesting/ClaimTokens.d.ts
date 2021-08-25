@@ -11,8 +11,9 @@ interface IProps {
         totalRaised: string;
         total: string;
     };
+    disabledButton?: boolean;
 }
-declare const ClaimTokens: ({ data, texts, handleClaimTokens }: IProps) => JSX.Element;
+declare const ClaimTokens: ({ data, texts, handleClaimTokens, disabledButton }: IProps) => JSX.Element;
 export declare const Card: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const StyledTitle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Text").TextProps, never>;
 export declare const StyledButton: import("styled-components").StyledComponent<{

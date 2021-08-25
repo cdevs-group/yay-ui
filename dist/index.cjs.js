@@ -6038,7 +6038,7 @@ var Claimed$1 = styled__default['default'].div(templateObject_7$1 || (templateOb
 var templateObject_1$6, templateObject_2$4, templateObject_3$3, templateObject_4$2, templateObject_5$1, templateObject_6$1, templateObject_7$1;
 
 var ClaimTokens = function (_a) {
-    var data = _a.data, texts = _a.texts, handleClaimTokens = _a.handleClaimTokens;
+    var data = _a.data, texts = _a.texts, handleClaimTokens = _a.handleClaimTokens, disabledButton = _a.disabledButton;
     var _b = React.useState(0), widthProgress = _b[0], setWidthProgress = _b[1];
     var numberConverter = function (string) { return +string.replace(/[^\d.]/g, ""); };
     React.useEffect(function () {
@@ -6047,7 +6047,7 @@ var ClaimTokens = function (_a) {
     return (React__default['default'].createElement(Card$2, null,
         React__default['default'].createElement(Row, null,
             React__default['default'].createElement(StyledTitle$2, null, texts.title),
-            React__default['default'].createElement(StyledButton$2, { variant: "green", onClick: handleClaimTokens }, texts.button)),
+            React__default['default'].createElement(StyledButton$2, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton }, texts.button)),
         React__default['default'].createElement(ProgressWrap, null,
             React__default['default'].createElement(ProgressTrack, null,
                 React__default['default'].createElement(ProgressBar, { widthProgress: widthProgress || 0 },
@@ -6116,9 +6116,12 @@ var TextHoverBlock = styled__default['default'].div(templateObject_10 || (templa
     return (widthProgress >= 50 ? "right" : "left");
 }, ProgressBar);
 var StyledText = styled__default['default'](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"])));
-var StyledButton$2 = styled__default['default'](Button$7)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n"])), function (_a) {
+var StyledButton$2 = styled__default['default'](Button$7)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return polished.transparentize(0.85, theme.colors.text);
 });
 var templateObject_1$5, templateObject_2$3, templateObject_3$2, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
 
@@ -6212,13 +6215,13 @@ var StyledButton = styled__default['default'](Button$7)(templateObject_3 || (tem
 var templateObject_1$2, templateObject_2, templateObject_3;
 
 var VestingWidget = function (_a) {
-    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens;
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[0] }),
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[1] }),
         React__default['default'].createElement(CardTimer, { canClaim: canClaim, data: dataTimer }),
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[2] }),
-        canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens })),
+        canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens })),
         React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace }),
         React__default['default'].createElement(TakeGift, { texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
 };
