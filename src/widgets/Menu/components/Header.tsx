@@ -34,6 +34,13 @@ const Header: React.FC<NavProps> = ({
   yayBalance,
   dataTransactions,
   handleClaimed,
+  bridge,
+  titleBridge,
+  tabsList,
+  textsWallet,
+  disconnectHandler,
+  transactionTitle,
+  transactionsList,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -96,9 +103,16 @@ const Header: React.FC<NavProps> = ({
             hrefLearnHow={hrefLearnHow}
             network={network}
             vesting={vesting}
+            bridge={bridge}
             yayBalance={yayBalance}
             dataTransactions={dataTransactions}
             handleClaimed={handleClaimed}
+            titleBridge={titleBridge}
+            tabsList={tabsList}
+            textsWallet={textsWallet}
+            disconnectHandler={disconnectHandler}
+            transactionTitle={transactionTitle}
+            transactionsList={transactionsList}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

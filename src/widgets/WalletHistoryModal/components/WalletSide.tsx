@@ -9,15 +9,15 @@ const WalletSide = ({ textsWallet }: WalletSideProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
   return (
     <Wrapper>
-      <Title>{textsWallet.title}</Title>
+      <Title>{textsWallet?.title}</Title>
       <Address>
         <AddressTextWrapper>
-          <AddressText>{textsWallet.address}</AddressText>
+          <AddressText>{textsWallet?.address}</AddressText>
         </AddressTextWrapper>
         <CopyButton
           onClick={() => {
             if (navigator.clipboard) {
-              navigator.clipboard.writeText(textsWallet.address);
+              navigator.clipboard.writeText(textsWallet?.address || "");
               setIsTooltipDisplayed(true);
               setTimeout(() => {
                 setIsTooltipDisplayed(false);
@@ -27,17 +27,17 @@ const WalletSide = ({ textsWallet }: WalletSideProps) => {
         >
           <CopyIcon />
         </CopyButton>
-        <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsWallet.completeText}</Tooltip>
+        <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsWallet?.completeText}</Tooltip>
       </Address>
       <Line>
-        <Key size="sm">{textsWallet.network}</Key>
-        <Text size="sm">{textsWallet.newtworkName}</Text>
+        <Key size="sm">{textsWallet?.network}</Key>
+        <Text size="sm">{textsWallet?.newtworkName}</Text>
       </Line>
       <Line>
-        <Key size="sm">{textsWallet.wallet}</Key>
-        <Text size="sm">{textsWallet.walletName}</Text>
+        <Key size="sm">{textsWallet?.wallet}</Key>
+        <Text size="sm">{textsWallet?.walletName}</Text>
       </Line>
-      <DisconnetButton>{textsWallet.button}</DisconnetButton>
+      <DisconnetButton>{textsWallet?.button}</DisconnetButton>
     </Wrapper>
   );
 };

@@ -52,6 +52,24 @@ export interface PanelProps {
   links: Array<MenuEntry>;
 }
 
+interface textsWallet {
+  title: string;
+  network: string;
+  wallet: string;
+  newtworkName: string;
+  walletName: string;
+  address: string;
+  button: string;
+  completeText: string;
+  noRecentTransactions?: string;
+}
+
+interface Itransactions {
+  number: string;
+  link: string;
+  status: boolean;
+  profit: string;
+}
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
@@ -73,6 +91,13 @@ export interface NavProps extends PanelProps {
   yayBalance?: string | number;
   dataTransactions?: Array<any>;
   handleClaimed?: (value: string) => void;
+  bridge?: boolean;
+  titleBridge?: string;
+  textsWallet?: textsWallet;
+  disconnectHandler?: () => void;
+  transactionTitle?: string;
+  transactionsList?: Array<Itransactions>;
+  tabsList?: Array<string>;
 }
 
 export type BlockChainNetwork = {

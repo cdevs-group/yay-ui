@@ -53,7 +53,11 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
           {tabValue === 0 ? (
             <WalletSide disconnectHandler={disconnectHandler} textsWallet={textsWallet} />
           ) : (
-            <TransactionSide transactionsList={transactionsList} transactionTitle={transactionTitle} />
+            <TransactionSide
+              noRecentTransactions={textsWallet?.noRecentTransactions}
+              transactionsList={transactionsList}
+              transactionTitle={transactionTitle}
+            />
           )}
         </Wrap>
       </Modal>
