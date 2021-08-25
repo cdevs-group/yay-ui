@@ -47,7 +47,7 @@ interface Props {
   transactionTitle?: string;
   transactionsList?: Array<Itransactions>;
   tabsList?: Array<string>;
-   handleAddToken?: () => void;
+  handleAddToken?: () => void;
 }
 
 const Account: React.FC<Props> = ({
@@ -90,7 +90,7 @@ const Account: React.FC<Props> = ({
     textsWallet,
     disconnectHandler,
     transactionTitle,
-    transactionsList
+    transactionsList,
     handleAddToken
   );
 

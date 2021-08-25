@@ -68,10 +68,9 @@ const useWalletModal = (
   textsWallet?: textsWallet,
   disconnectHandler?: () => void,
   transactionTitle?: string,
-  transactionsList?: Array<Itransactions>
+  transactionsList?: Array<Itransactions>,
   handleAddToken?: any
 ): ReturnType => {
-  
   const pageModal = () => {
     if (vesting) {
       return (
@@ -82,6 +81,7 @@ const useWalletModal = (
           yayBalance={yayBalance}
           dataTransactions={dataTransactions}
           handleClaimed={handleClaimed}
+          handleAddToken={handleAddToken}
         />
       );
     } else if (bridge) {

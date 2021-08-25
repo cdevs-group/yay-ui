@@ -22,5 +22,21 @@ export interface TextsConnect {
     title: string;
     link: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, network?: BlockChainNetwork | undefined, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, handleAddToken?: any) => ReturnType;
+interface textsWallet {
+    title: string;
+    network: string;
+    wallet: string;
+    newtworkName: string;
+    walletName: string;
+    address: string;
+    button: string;
+    completeText: string;
+}
+interface Itransactions {
+    number: string;
+    link: string;
+    status: boolean;
+    profit: string;
+}
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, network?: BlockChainNetwork | undefined, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, bridge?: boolean | undefined, titleBridge?: string | undefined, tabsList?: string[] | undefined, textsWallet?: textsWallet | undefined, disconnectHandler?: (() => void) | undefined, transactionTitle?: string | undefined, transactionsList?: Itransactions[] | undefined, handleAddToken?: any) => ReturnType;
 export default useWalletModal;
