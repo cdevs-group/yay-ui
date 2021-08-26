@@ -35,7 +35,6 @@ const useWalletHistoryModal = (): ReturnType => {
     <WalletHistoryModal
       account="hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34"
       textsBridge={textsBridge}
-      disconnectHandler={() => {}}
       transactionsList={transactionsList}
     />
   );

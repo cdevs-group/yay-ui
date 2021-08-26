@@ -47,11 +47,7 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
         <Wrap>
           <Tabs tabValue={tabValue} onClick={handleTabChange} tabsList={textsBridge?.tabsList} />
           {tabValue === 0 ? (
-            <WalletSide
-              logout={logout}
-              account={account}
-              textsBridge={textsBridge}
-            />
+            <WalletSide logout={logout} account={account} textsBridge={textsBridge} />
           ) : (
             <TransactionSide
               noRecentTransactions={textsBridge?.noRecentTransactions}

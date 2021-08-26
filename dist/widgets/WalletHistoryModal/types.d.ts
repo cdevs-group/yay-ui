@@ -27,7 +27,6 @@ export interface WalletHistoryModalProps {
         titleModal?: string;
     };
     transactionTitle?: string;
-    disconnectHandler?: () => void;
     transactionsList?: Array<{
         number: string;
         link: string;
