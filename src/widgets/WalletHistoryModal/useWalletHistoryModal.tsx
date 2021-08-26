@@ -36,6 +36,7 @@ const useWalletHistoryModal = (): ReturnType => {
       account="hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34"
       textsBridge={textsBridge}
       transactionsList={transactionsList}
+      logout={() => {}}
     />
   );
   return { onPresentWalletHistoryModal };
