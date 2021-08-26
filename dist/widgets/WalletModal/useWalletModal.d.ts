@@ -22,15 +22,17 @@ export interface TextsConnect {
     title: string;
     link: string;
 }
-interface textsWallet {
+interface textsBridge {
+    titleModal: string;
     title: string;
     network: string;
     wallet: string;
     newtworkName: string;
     walletName: string;
-    address: string;
     button: string;
     completeText: string;
+    transactionTitle?: string;
+    tabsList?: Array<string> | any;
 }
 interface Itransactions {
     number: string;
@@ -38,5 +40,5 @@ interface Itransactions {
     status: boolean;
     profit: string;
 }
-declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, network?: BlockChainNetwork | undefined, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, bridge?: boolean | undefined, titleBridge?: string | undefined, tabsList?: string[] | undefined, textsWallet?: textsWallet | undefined, disconnectHandler?: (() => void) | undefined, transactionTitle?: string | undefined, transactionsList?: Itransactions[] | undefined, handleAddToken?: any) => ReturnType;
+declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, network?: BlockChainNetwork | undefined, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, bridge?: boolean | undefined, textsBridge?: textsBridge | undefined, transactionsList?: [] | Itransactions[] | undefined, handleAddToken?: any) => ReturnType;
 export default useWalletModal;

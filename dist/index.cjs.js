@@ -3763,25 +3763,25 @@ var BridgeStep2 = function (_a) {
         React__default['default'].createElement(Title$8, { size: "lg" }, texts.title),
         React__default['default'].createElement(TopLineBlock, null,
             React__default['default'].createElement(TokenBlock, null,
-                React__default['default'].createElement(TopLineTitle, { textAlign: "left" }, texts.token),
+                React__default['default'].createElement(TopLineTitle, { fontWeight: "400", textAlign: "left" }, texts.token),
                 React__default['default'].createElement(Token, null, TokenIcon || (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(TokenImg$1, null,
                         React__default['default'].createElement(Icon$1, null)),
                     React__default['default'].createElement(Text, null, "YAY"))))),
             React__default['default'].createElement(AmountTransfer, null,
-                React__default['default'].createElement(TopLineTitle, { className: "middle" }, texts.amount),
+                React__default['default'].createElement(TopLineTitle, { fontWeight: "400", className: "middle" }, texts.amount),
                 React__default['default'].createElement(TokenValue, null, transferredValue.token),
                 React__default['default'].createElement(ApproximatelyPrice, null, transferredValue.fiat)),
             React__default['default'].createElement(TokenBlock, null,
-                React__default['default'].createElement(TopLineTitle, { textAlign: "right" }, texts.addToken),
+                React__default['default'].createElement(TopLineTitle, { fontWeight: "400", textAlign: "right" }, texts.addToken),
                 React__default['default'].createElement(MetamaskAdd, { onClick: addTokenHandler, as: "button" },
                     React__default['default'].createElement(TokenImg$1, { className: "last" }, WalletIcon || React__default['default'].createElement("img", { src: Metamask }))))),
         React__default['default'].createElement(BodyBlock, null,
             React__default['default'].createElement(HeadLine, null,
-                React__default['default'].createElement(Text, { size: "sm", color: baseColors.textGray }, texts.network),
+                React__default['default'].createElement(Text, { size: "sm", fontWeight: "400", color: baseColors.textGray }, texts.network),
                 React__default['default'].createElement("div", null),
-                React__default['default'].createElement(Text, { textAlign: "center", size: "sm", color: baseColors.textGray }, texts.timer),
-                React__default['default'].createElement(Text, { textAlign: "center", size: "sm", color: baseColors.textGray }, texts.coast)),
+                React__default['default'].createElement(Text, { textAlign: "center", fontWeight: "400", size: "sm", color: baseColors.textGray }, texts.timer),
+                React__default['default'].createElement(Text, { textAlign: "center", fontWeight: "400", size: "sm", color: baseColors.textGray }, texts.coast)),
             React__default['default'].createElement(ProgressBlock, null,
                 React__default['default'].createElement(TitleMobTop, null, texts.network),
                 React__default['default'].createElement(Token, { className: "main" }, BlockChainFrom || (React__default['default'].createElement(React__default['default'].Fragment, null,
@@ -3798,16 +3798,16 @@ var BridgeStep2 = function (_a) {
                     React__default['default'].createElement(Text, { size: "sm", paddingTop: "21px" }, gasPriceTextNetwork1 === null || gasPriceTextNetwork1 === void 0 ? void 0 : gasPriceTextNetwork1.value),
                     React__default['default'].createElement(Text, { size: "xs", color: baseColors.textGray }, gasPriceTextNetwork1 === null || gasPriceTextNetwork1 === void 0 ? void 0 : gasPriceTextNetwork1.fiat))))),
             React__default['default'].createElement(ProgressBlock, null,
-                React__default['default'].createElement(TitleMobTop, null, texts.network),
+                React__default['default'].createElement(TitleMobTop, { fontWeight: "400" }, texts.network),
                 React__default['default'].createElement(Token, { className: "main" }, BlockChainTo || (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(Icon$4, null),
                     React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.avalanche)))),
                 React__default['default'].createElement(Progress$1, null,
                     React__default['default'].createElement(ProgressWrapper, null,
                         React__default['default'].createElement(ProgressRange, { progress: progress2, texts: textsProgress2 }))),
-                React__default['default'].createElement(TitleMob, null, texts.timer),
+                React__default['default'].createElement(TitleMob, { fontWeight: "400" }, texts.timer),
                 React__default['default'].createElement(TimerNotSolidWithoutBg, { isLoad: isLoadTimeNetwork2, time: timer2 }),
-                React__default['default'].createElement(TitleMob, { className: "last" }, texts.coast),
+                React__default['default'].createElement(TitleMob, { fontWeight: "400", className: "last" }, texts.coast),
                 React__default['default'].createElement(GasCoast, null, isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (React__default['default'].createElement(LoaderWrap, null,
                     React__default['default'].createElement(Loader$1, null))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
                     React__default['default'].createElement(Text, { size: "sm", paddingTop: "21px" }, gasPriceTextNetwork2 === null || gasPriceTextNetwork2 === void 0 ? void 0 : gasPriceTextNetwork2.value),
@@ -4002,7 +4002,7 @@ var InfoWrapper = function (_a) {
                 React__default['default'].createElement(Icon$2, null)),
             React__default['default'].createElement(RightColumn, null,
                 React__default['default'].createElement(Text, null, textsProof.wrapped),
-                wrappedData.map(function (item, i) { return (React__default['default'].createElement(TokenInfo, { BSCSkanHandler: BSCSkanHandler, addTokenHandler: addTokenHandler, key: i, margin: "10px 0 0", textsInfo: item })); })))));
+                wrappedData.map(function (item, i) { return (React__default['default'].createElement(TokenInfo, { addTokenIcon: addTokenIcon, BSCSkanHandler: BSCSkanHandler, addTokenHandler: addTokenHandler, key: i, margin: "10px 0 0", textsInfo: item })); })))));
 };
 var Wrapper$c = styled__default['default'].div(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4418,16 +4418,16 @@ var ButtonAddToken = styled__default['default'](Button$7)(templateObject_8$3 || 
 var templateObject_1$N, templateObject_2$D, templateObject_3$x, templateObject_4$n, templateObject_5$i, templateObject_6$f, templateObject_7$6, templateObject_8$3;
 
 var WalletSide = function (_a) {
-    var textsWallet = _a.textsWallet;
+    var textsBridge = _a.textsBridge, account = _a.account;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default['default'].createElement(Wrapper$a, null,
-        React__default['default'].createElement(Title$7, null, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.title),
+        React__default['default'].createElement(Title$7, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.title),
         React__default['default'].createElement(Address, null,
             React__default['default'].createElement(AddressTextWrapper, null,
-                React__default['default'].createElement(AddressText, null, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.address)),
+                React__default['default'].createElement(AddressText, null, account)),
             React__default['default'].createElement(CopyButton, { onClick: function () {
                     if (navigator.clipboard) {
-                        navigator.clipboard.writeText((textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.address) || "");
+                        navigator.clipboard.writeText(account || "");
                         setIsTooltipDisplayed(true);
                         setTimeout(function () {
                             setIsTooltipDisplayed(false);
@@ -4435,14 +4435,14 @@ var WalletSide = function (_a) {
                     }
                 } },
                 React__default['default'].createElement(Icon$C, null)),
-            React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.completeText)),
+            React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.completeText)),
         React__default['default'].createElement(Line$6, null,
-            React__default['default'].createElement(Key, { size: "sm" }, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.network),
-            React__default['default'].createElement(Text, { size: "sm" }, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.newtworkName)),
+            React__default['default'].createElement(Key, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.network),
+            React__default['default'].createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.newtworkName)),
         React__default['default'].createElement(Line$6, null,
-            React__default['default'].createElement(Key, { size: "sm" }, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.wallet),
-            React__default['default'].createElement(Text, { size: "sm" }, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.walletName)),
-        React__default['default'].createElement(DisconnetButton, null, textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.button)));
+            React__default['default'].createElement(Key, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.wallet),
+            React__default['default'].createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.walletName)),
+        React__default['default'].createElement(DisconnetButton, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
 };
 var Wrapper$a = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
 var Title$7 = styled__default['default'](Text)(templateObject_2$C || (templateObject_2$C = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
@@ -4457,7 +4457,7 @@ var Address = styled__default['default'].div(templateObject_4$m || (templateObje
     var theme = _a.theme;
     return theme.colors.boxShadow4;
 });
-var AddressText = styled__default['default'](Text)(templateObject_5$h || (templateObject_5$h = __makeTemplateObject(["\n  white-space: nowrap;\n  font-size: 13px;\n  position: absolute;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n"], ["\n  white-space: nowrap;\n  font-size: 13px;\n  position: absolute;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n"])));
+var AddressText = styled__default['default'](Text)(templateObject_5$h || (templateObject_5$h = __makeTemplateObject(["\n  white-space: nowrap;\n  font-size: 13px;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n"], ["\n  white-space: nowrap;\n  font-size: 13px;\n  letter-spacing: 0.05em;\n  font-weight: 400;\n"])));
 var Line$6 = styled__default['default'].div(templateObject_6$e || (templateObject_6$e = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 20px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  margin-top: 20px;\n"])));
 var DisconnetButton = styled__default['default'](Button$7)(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  display: block;\n  margin: 50px auto 0;\n  width: 270px;\n  color: ", ";\n  border: 1px solid ", ";\n  box-sizing: border-box;\n  border-radius: 10px;\n  background: none;\n"], ["\n  display: block;\n  margin: 50px auto 0;\n  width: 270px;\n  color: ", ";\n  border: 1px solid ", ";\n  box-sizing: border-box;\n  border-radius: 10px;\n  background: none;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4490,7 +4490,7 @@ var TransactionSide = function (_a) {
     var transactionsList = _a.transactionsList, transactionTitle = _a.transactionTitle, noRecentTransactions = _a.noRecentTransactions;
     return (React__default['default'].createElement(Wrapper$9, null,
         React__default['default'].createElement(Title$6, null, transactionTitle),
-        React__default['default'].createElement(TransactionsBlock, null, transactionsList ? (transactionsList === null || transactionsList === void 0 ? void 0 : transactionsList.map(function (item, i) { return (React__default['default'].createElement(Transaction, { key: i },
+        React__default['default'].createElement(TransactionsBlock, null, transactionsList && transactionsList.length > 0 ? (transactionsList === null || transactionsList === void 0 ? void 0 : transactionsList.map(function (item, i) { return (React__default['default'].createElement(Transaction, { key: i },
             React__default['default'].createElement(TextBlock$1, null, item.number),
             React__default['default'].createElement(LinkBlock$1, { status: item.status },
                 React__default['default'].createElement(Text, { size: "xs" }, item.link),
@@ -4528,34 +4528,20 @@ var Wrap$b = styled__default['default'].div(templateObject_1$K || (templateObjec
     return theme.mediaQueries.sm;
 });
 var WalletHistoryModal = function (_a) {
-    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, title = _a.title, 
-    // tabValue,
-    // setTabValue,
-    tabsList = _a.tabsList, textsWallet = _a.textsWallet, disconnectHandler = _a.disconnectHandler, transactionTitle = _a.transactionTitle, transactionsList = _a.transactionsList;
+    var account = _a.account, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, disconnectHandler = _a.disconnectHandler, transactionsList = _a.transactionsList, textsBridge = _a.textsBridge;
     var _c = React.useState(0), tabValue = _c[0], setTabValue = _c[1];
     var handleTabChange = function (e) {
         setTabValue(+e.target.value);
     };
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement(Modal, { welcome: true, title: title, onDismiss: onDismiss },
+        React__default['default'].createElement(Modal, { welcome: true, title: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.titleModal, onDismiss: onDismiss },
             React__default['default'].createElement(Wrap$b, null,
-                React__default['default'].createElement(Tabs, { tabValue: tabValue, onClick: handleTabChange, tabsList: tabsList }),
-                tabValue === 0 ? (React__default['default'].createElement(WalletSide, { disconnectHandler: disconnectHandler, textsWallet: textsWallet })) : (React__default['default'].createElement(TransactionSide, { noRecentTransactions: textsWallet === null || textsWallet === void 0 ? void 0 : textsWallet.noRecentTransactions, transactionsList: transactionsList, transactionTitle: transactionTitle }))))));
+                React__default['default'].createElement(Tabs, { tabValue: tabValue, onClick: handleTabChange, tabsList: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.tabsList }),
+                tabValue === 0 ? (React__default['default'].createElement(WalletSide, { disconnectHandler: disconnectHandler, account: account, textsBridge: textsBridge })) : (React__default['default'].createElement(TransactionSide, { noRecentTransactions: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.noRecentTransactions, transactionsList: transactionsList, transactionTitle: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.transactionTitle }))))));
 };
 var templateObject_1$K;
 
 var useWalletHistoryModal = function () {
-    var textsWallet = {
-        title: "Your address",
-        network: "Network",
-        wallet: "Wallet",
-        newtworkName: "Binance Smart Chain",
-        walletName: "Metamask",
-        address: "0x88259603-2f58ee92039d357307e3",
-        button: "Disconnect Wallet",
-        completeText: "Copied",
-        noRecentTransactions: "No recent transactions",
-    };
     var transactionsList = [
         {
             number: "#001",
@@ -4612,18 +4598,30 @@ var useWalletHistoryModal = function () {
             profit: "12,000,00 $YAY",
         },
     ];
-    var tabsList = ["Wallet", "Transactions"];
-    var onPresentWalletHistoryModal = useModal(React__default['default'].createElement(WalletHistoryModal, { title: "Your Wallet", tabsList: tabsList, textsWallet: textsWallet, disconnectHandler: function () { }, transactionTitle: "Recent transactions", transactionsList: transactionsList }))[0];
+    var textsBridge = {
+        titleModal: "Your wallet",
+        title: "Your address",
+        network: "Network",
+        wallet: "Wallet",
+        newtworkName: "Binance Smart Chain",
+        walletName: "Metamask",
+        button: "Disconnect Wallet",
+        completeText: "Copied",
+        noRecentTransactions: "No recent transactions",
+        transactionTitle: "Recent transactions",
+        tabsList: ["Wallet", "Transactions"],
+    };
+    var onPresentWalletHistoryModal = useModal(React__default['default'].createElement(WalletHistoryModal, { account: "hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34", textsBridge: textsBridge, disconnectHandler: function () { }, transactionsList: transactionsList }))[0];
     return { onPresentWalletHistoryModal: onPresentWalletHistoryModal };
 };
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, titleBridge, tabsList, textsWallet, disconnectHandler, transactionTitle, transactionsList, handleAddToken) {
+var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken) {
     var pageModal = function () {
         if (vesting) {
             return (React__default['default'].createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, handleAddToken: handleAddToken }));
         }
         else if (bridge) {
-            return (React__default['default'].createElement(WalletHistoryModal, { title: titleBridge, tabsList: tabsList, textsWallet: textsWallet, disconnectHandler: disconnectHandler, transactionTitle: transactionTitle, transactionsList: transactionsList }));
+            return (React__default['default'].createElement(WalletHistoryModal, { account: account, textsBridge: textsBridge, disconnectHandler: logout, transactionsList: transactionsList }));
         }
         else {
             return React__default['default'].createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout });
@@ -5163,8 +5161,8 @@ var HiddenItem = styled__default['default'].div(templateObject_1$u || (templateO
 var templateObject_1$u;
 
 var Account = function (_a) {
-    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, titleBridge = _a.titleBridge, tabsList = _a.tabsList, textsWallet = _a.textsWallet, disconnectHandler = _a.disconnectHandler, transactionTitle = _a.transactionTitle, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken;
-    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, titleBridge, tabsList, textsWallet, disconnectHandler, transactionTitle, transactionsList, handleAddToken), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken;
+    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
         } },
@@ -5374,7 +5372,7 @@ var AvatarNetwork = styled__default['default'].div(templateObject_3$f || (templa
 var templateObject_1$n, templateObject_2$h, templateObject_3$f;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, titleBridge = _a.titleBridge, tabsList = _a.tabsList, textsWallet = _a.textsWallet, disconnectHandler = _a.disconnectHandler, transactionTitle = _a.transactionTitle, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
@@ -5403,7 +5401,7 @@ var Header = function (_a) {
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
             React__default['default'].createElement(RightContent, null,
                 network ? (React__default['default'].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
-                React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, titleBridge: titleBridge, tabsList: tabsList, textsWallet: textsWallet, disconnectHandler: disconnectHandler, transactionTitle: transactionTitle, transactionsList: transactionsList, handleAddToken: handleAddToken }),
+                React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken }),
                 React__default['default'].createElement(LanguageBlockDesk, null,
                     React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
                 React__default['default'].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } })))));

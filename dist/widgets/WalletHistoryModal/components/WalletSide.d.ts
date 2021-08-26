@@ -1,4 +1,4 @@
 /// <reference types="react" />
-import { WalletSideProps } from "../types";
-declare const WalletSide: ({ textsWallet }: WalletSideProps) => JSX.Element;
+import { WalletHistoryModalProps } from "../types";
+declare const WalletSide: ({ textsBridge, account }: WalletHistoryModalProps) => JSX.Element;
 export default WalletSide;

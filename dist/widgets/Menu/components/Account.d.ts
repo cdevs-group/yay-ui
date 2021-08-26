@@ -2,16 +2,18 @@ import React from "react";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
-interface textsWallet {
+interface textsBridge {
+    titleModal: string;
     title: string;
     network: string;
     wallet: string;
     newtworkName: string;
     walletName: string;
-    address: string;
     button: string;
     completeText: string;
     noRecentTransactions?: string;
+    transactionTitle?: string;
+    tabsList?: Array<string>;
 }
 interface Itransactions {
     number: string;
@@ -33,12 +35,8 @@ interface Props {
     dataTransactions?: Array<any>;
     handleClaimed?: (value: string) => void;
     bridge?: boolean;
-    titleBridge?: string;
-    textsWallet?: textsWallet;
-    disconnectHandler?: () => void;
-    transactionTitle?: string;
-    transactionsList?: Array<Itransactions>;
-    tabsList?: Array<string>;
+    textsBridge?: textsBridge;
+    transactionsList?: Array<Itransactions> | [];
     handleAddToken?: () => void;
 }
 declare const Account: React.FC<Props>;
