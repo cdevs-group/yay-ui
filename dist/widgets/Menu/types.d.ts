@@ -63,6 +63,7 @@ interface Itransactions {
     link: string;
     status: boolean;
     profit: string;
+    linkHref: string;
 }
 export interface NavProps extends PanelProps {
     account?: string;

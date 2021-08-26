@@ -39,6 +39,7 @@ interface Itransactions {
     link: string;
     status: boolean;
     profit: string;
+    linkHref: string;
 }
 declare const useWalletModal: (login: Login, logout: () => void, textsAccount: TextsAccount, textsConnect: TextsConnect, network?: BlockChainNetwork | undefined, account?: string | undefined, hrefLearnHow?: string | undefined, vesting?: boolean | undefined, yayBalance?: string | number | undefined, dataTransactions?: any[] | undefined, handleClaimed?: any, bridge?: boolean | undefined, textsBridge?: textsBridge | undefined, transactionsList?: [] | Itransactions[] | undefined, handleAddToken?: any) => ReturnType;
 export default useWalletModal;
