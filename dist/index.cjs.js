@@ -4418,8 +4418,8 @@ var ButtonAddToken = styled__default['default'](Button$7)(templateObject_8$3 || 
 var templateObject_1$N, templateObject_2$D, templateObject_3$x, templateObject_4$n, templateObject_5$i, templateObject_6$f, templateObject_7$6, templateObject_8$3;
 
 var WalletSide = function (_a) {
-    var textsBridge = _a.textsBridge, account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    var _c = React.useState(false), isTooltipDisplayed = _c[0], setIsTooltipDisplayed = _c[1];
+    var textsBridge = _a.textsBridge, account = _a.account, handleDisconnect = _a.handleDisconnect;
+    var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default['default'].createElement(Wrapper$a, null,
         React__default['default'].createElement(Title$7, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.title),
         React__default['default'].createElement(Address, null,
@@ -4442,11 +4442,7 @@ var WalletSide = function (_a) {
         React__default['default'].createElement(Line$6, null,
             React__default['default'].createElement(Key, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.wallet),
             React__default['default'].createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.walletName)),
-        React__default['default'].createElement(DisconnetButton, { onClick: function () {
-                logout();
-                window.localStorage.removeItem(connectorLocalStorageKey);
-                onDismiss();
-            } }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
+        React__default['default'].createElement(DisconnetButton, { onClick: handleDisconnect }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
 };
 var Wrapper$a = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
 var Title$7 = styled__default['default'](Text)(templateObject_2$C || (templateObject_2$C = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
@@ -4537,11 +4533,16 @@ var WalletHistoryModal = function (_a) {
     var handleTabChange = function (e) {
         setTabValue(+e.target.value);
     };
+    var handleDisconnect = function () {
+        logout();
+        window.localStorage.removeItem(connectorLocalStorageKey);
+        onDismiss();
+    };
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(Modal, { welcome: true, title: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.titleModal, onDismiss: onDismiss },
             React__default['default'].createElement(Wrap$b, null,
                 React__default['default'].createElement(Tabs, { tabValue: tabValue, onClick: handleTabChange, tabsList: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.tabsList }),
-                tabValue === 0 ? (React__default['default'].createElement(WalletSide, { logout: logout, account: account, textsBridge: textsBridge })) : (React__default['default'].createElement(TransactionSide, { noRecentTransactions: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.noRecentTransactions, transactionsList: transactionsList, transactionTitle: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.transactionTitle }))))));
+                tabValue === 0 ? (React__default['default'].createElement(WalletSide, { logout: logout, handleDisconnect: handleDisconnect, account: account, textsBridge: textsBridge })) : (React__default['default'].createElement(TransactionSide, { noRecentTransactions: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.noRecentTransactions, transactionsList: transactionsList, transactionTitle: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.transactionTitle }))))));
 };
 var templateObject_1$K;
 

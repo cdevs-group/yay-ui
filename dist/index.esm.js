@@ -4387,8 +4387,8 @@ var ButtonAddToken = styled(Button$7)(templateObject_8$3 || (templateObject_8$3 
 var templateObject_1$N, templateObject_2$D, templateObject_3$x, templateObject_4$n, templateObject_5$i, templateObject_6$f, templateObject_7$6, templateObject_8$3;
 
 var WalletSide = function (_a) {
-    var textsBridge = _a.textsBridge, account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
-    var _c = useState(false), isTooltipDisplayed = _c[0], setIsTooltipDisplayed = _c[1];
+    var textsBridge = _a.textsBridge, account = _a.account, handleDisconnect = _a.handleDisconnect;
+    var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default.createElement(Wrapper$a, null,
         React__default.createElement(Title$7, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.title),
         React__default.createElement(Address, null,
@@ -4411,11 +4411,7 @@ var WalletSide = function (_a) {
         React__default.createElement(Line$6, null,
             React__default.createElement(Key, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.wallet),
             React__default.createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.walletName)),
-        React__default.createElement(DisconnetButton, { onClick: function () {
-                logout();
-                window.localStorage.removeItem(connectorLocalStorageKey);
-                onDismiss();
-            } }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
+        React__default.createElement(DisconnetButton, { onClick: handleDisconnect }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
 };
 var Wrapper$a = styled.div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
 var Title$7 = styled(Text)(templateObject_2$C || (templateObject_2$C = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
@@ -4506,11 +4502,16 @@ var WalletHistoryModal = function (_a) {
     var handleTabChange = function (e) {
         setTabValue(+e.target.value);
     };
+    var handleDisconnect = function () {
+        logout();
+        window.localStorage.removeItem(connectorLocalStorageKey);
+        onDismiss();
+    };
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Modal, { welcome: true, title: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.titleModal, onDismiss: onDismiss },
             React__default.createElement(Wrap$b, null,
                 React__default.createElement(Tabs, { tabValue: tabValue, onClick: handleTabChange, tabsList: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.tabsList }),
-                tabValue === 0 ? (React__default.createElement(WalletSide, { logout: logout, account: account, textsBridge: textsBridge })) : (React__default.createElement(TransactionSide, { noRecentTransactions: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.noRecentTransactions, transactionsList: transactionsList, transactionTitle: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.transactionTitle }))))));
+                tabValue === 0 ? (React__default.createElement(WalletSide, { logout: logout, handleDisconnect: handleDisconnect, account: account, textsBridge: textsBridge })) : (React__default.createElement(TransactionSide, { noRecentTransactions: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.noRecentTransactions, transactionsList: transactionsList, transactionTitle: textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.transactionTitle }))))));
 };
 var templateObject_1$K;
 

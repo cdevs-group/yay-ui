@@ -34,4 +34,5 @@ export interface WalletHistoryModalProps {
         linkHref: string;
         profit: string;
     }> | [];
+    handleDisconnect?: () => void;
 }
