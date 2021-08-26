@@ -324,16 +324,18 @@ export const HeaderBridge = () => {
   const handleToggleNetwork = (val) => {
     setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
-  const textsWallet = {
+  const textsBridge = {
+    titleModal: "Your wallet",
     title: "Your address",
     network: "Network",
     wallet: "Wallet",
     newtworkName: "Binance Smart Chain",
     walletName: "Metamask",
-    address: "0x88259603-2f58ee92039d357307e3",
     button: "Disconnect Wallet",
     completeText: "Copied",
     noRecentTransactions: "No recent transactions",
+    transactionTitle: "Recent transactions",
+    tabsList: ["Wallet", "Transactions"],
   };
 
   const transactionsList = [
@@ -397,7 +399,6 @@ export const HeaderBridge = () => {
     link: "Learn how connect",
   };
 
-  const tabsList = ["Wallet", "Transactions"];
   return (
     <div>
       <BrowserRouter>
@@ -427,11 +428,7 @@ export const HeaderBridge = () => {
             bridge
             yayBalance="25000000"
             handleClaimed={(value) => console.log(value)}
-            titleBridge="Your wallet"
-            tabsList={tabsList}
-            textsWallet={textsWallet}
-            disconnectHandler={() => {}}
-            transactionTitle="Recent transactions"
+            textsBridge={textsBridge}
             transactionsList={transactionsList}
           />
         </div>

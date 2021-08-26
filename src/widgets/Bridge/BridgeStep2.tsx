@@ -39,7 +39,9 @@ const BridgeStep2 = ({
       <Title size="lg">{texts.title}</Title>
       <TopLineBlock>
         <TokenBlock>
-          <TopLineTitle textAlign="left">{texts.token}</TopLineTitle>
+          <TopLineTitle fontWeight="400" textAlign="left">
+            {texts.token}
+          </TopLineTitle>
           <Token>
             {TokenIcon || (
               <>
@@ -52,12 +54,16 @@ const BridgeStep2 = ({
           </Token>
         </TokenBlock>
         <AmountTransfer>
-          <TopLineTitle className="middle">{texts.amount}</TopLineTitle>
+          <TopLineTitle fontWeight="400" className="middle">
+            {texts.amount}
+          </TopLineTitle>
           <TokenValue>{transferredValue.token}</TokenValue>
           <ApproximatelyPrice>{transferredValue.fiat}</ApproximatelyPrice>
         </AmountTransfer>
         <TokenBlock>
-          <TopLineTitle textAlign="right">{texts.addToken}</TopLineTitle>
+          <TopLineTitle fontWeight="400" textAlign="right">
+            {texts.addToken}
+          </TopLineTitle>
           <MetamaskAdd onClick={addTokenHandler} as="button">
             <TokenImg className="last">{WalletIcon || <img src={Metamask} />}</TokenImg>
           </MetamaskAdd>
@@ -65,14 +71,14 @@ const BridgeStep2 = ({
       </TopLineBlock>
       <BodyBlock>
         <HeadLine>
-          <Text size="sm" color={baseColors.textGray}>
+          <Text size="sm" fontWeight="400" color={baseColors.textGray}>
             {texts.network}
           </Text>
           <div></div>
-          <Text textAlign="center" size="sm" color={baseColors.textGray}>
+          <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
             {texts.timer}
           </Text>
-          <Text textAlign="center" size="sm" color={baseColors.textGray}>
+          <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
             {texts.coast}
           </Text>
         </HeadLine>
@@ -112,7 +118,7 @@ const BridgeStep2 = ({
           </GasCoast>
         </ProgressBlock>
         <ProgressBlock>
-          <TitleMobTop>{texts.network}</TitleMobTop>
+          <TitleMobTop fontWeight="400">{texts.network}</TitleMobTop>
           <Token className="main">
             {BlockChainTo || (
               <>
@@ -126,9 +132,11 @@ const BridgeStep2 = ({
               <ProgressRange progress={progress2} texts={textsProgress2} />
             </ProgressWrapper>
           </Progress>
-          <TitleMob>{texts.timer}</TitleMob>
+          <TitleMob fontWeight="400">{texts.timer}</TitleMob>
           <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
-          <TitleMob className="last">{texts.coast}</TitleMob>
+          <TitleMob fontWeight="400" className="last">
+            {texts.coast}
+          </TitleMob>
           <GasCoast>
             {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
               <LoaderWrap>

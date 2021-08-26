@@ -3,21 +3,21 @@ import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Button } from "../../../components/Button";
 import { CopyIcon } from "../../../components/Svg";
-import { WalletSideProps } from "../types";
+import { WalletHistoryModalProps } from "../types";
 
-const WalletSide = ({ textsWallet }: WalletSideProps) => {
+const WalletSide = ({ textsBridge, account }: WalletHistoryModalProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
   return (
     <Wrapper>
-      <Title>{textsWallet?.title}</Title>
+      <Title>{textsBridge?.title}</Title>
       <Address>
         <AddressTextWrapper>
-          <AddressText>{textsWallet?.address}</AddressText>
+          <AddressText>{account}</AddressText>
         </AddressTextWrapper>
         <CopyButton
           onClick={() => {
             if (navigator.clipboard) {
-              navigator.clipboard.writeText(textsWallet?.address || "");
+              navigator.clipboard.writeText(account || "");
               setIsTooltipDisplayed(true);
               setTimeout(() => {
                 setIsTooltipDisplayed(false);
@@ -27,17 +27,17 @@ const WalletSide = ({ textsWallet }: WalletSideProps) => {
         >
           <CopyIcon />
         </CopyButton>
-        <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsWallet?.completeText}</Tooltip>
+        <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsBridge?.completeText}</Tooltip>
       </Address>
       <Line>
-        <Key size="sm">{textsWallet?.network}</Key>
-        <Text size="sm">{textsWallet?.newtworkName}</Text>
+        <Key size="sm">{textsBridge?.network}</Key>
+        <Text size="sm">{textsBridge?.newtworkName}</Text>
       </Line>
       <Line>
-        <Key size="sm">{textsWallet?.wallet}</Key>
-        <Text size="sm">{textsWallet?.walletName}</Text>
+        <Key size="sm">{textsBridge?.wallet}</Key>
+        <Text size="sm">{textsBridge?.walletName}</Text>
       </Line>
-      <DisconnetButton>{textsWallet?.button}</DisconnetButton>
+      <DisconnetButton>{textsBridge?.button}</DisconnetButton>
     </Wrapper>
   );
 };
@@ -74,7 +74,6 @@ const Address = styled.div`
 const AddressText = styled(Text)`
   white-space: nowrap;
   font-size: 13px;
-  position: absolute;
   letter-spacing: 0.05em;
   font-weight: 400;
 `;

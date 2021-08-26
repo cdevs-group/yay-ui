@@ -10,7 +10,7 @@ const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransacti
     <Wrapper>
       <Title>{transactionTitle}</Title>
       <TransactionsBlock>
-        {transactionsList ? (
+        {transactionsList && transactionsList.length > 0 ? (
           transactionsList?.map((item, i) => (
             <Transaction key={i}>
               <TextBlock>{item.number}</TextBlock>
