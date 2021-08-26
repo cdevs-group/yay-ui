@@ -1,4 +1,4 @@
 export { default as useWalletHistoryModal } from "./useWalletHistoryModal";
 export { default as WalletHistoryModal } from "./WalletHistoryModal";
 
-export type { TransactionSideProps, WalletHistoryModalProps, WalletSideProps } from "./types";
+export type { TransactionSideProps, WalletHistoryModalProps } from "./types";
