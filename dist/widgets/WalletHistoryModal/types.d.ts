@@ -5,10 +5,12 @@ export interface TransactionSideProps {
         link: string;
         status: boolean;
         profit: string;
+        linkHref: string;
     }> | [];
     noRecentTransactions?: string;
 }
 export interface WalletHistoryModalProps {
+    logout?: () => void;
     account?: string;
     onDismiss?: () => void;
     textsBridge?: {
@@ -30,6 +32,7 @@ export interface WalletHistoryModalProps {
         number: string;
         link: string;
         status: boolean;
+        linkHref: string;
         profit: string;
     }> | [];
 }

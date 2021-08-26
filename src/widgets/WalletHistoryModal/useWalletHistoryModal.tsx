@@ -13,54 +13,7 @@ const useWalletHistoryModal = (): ReturnType => {
       link: "BSC to Avalanche",
       profit: "12,000,00 $YAY",
       status: true,
-    },
-    {
-      number: "#002",
-      link: "Avalanche to BSC",
-      status: false,
-      profit: "Error",
-    },
-    {
-      number: "#003",
-      link: "Avalanche to BSC",
-      status: true,
-      profit: "12,000,00 $YAY",
-    },
-    {
-      number: "#002",
-      link: "Avalanche to BSC",
-      status: false,
-      profit: "Error",
-    },
-    {
-      number: "#003",
-      link: "Avalanche to BSC",
-      status: true,
-      profit: "12,000,00 $YAY",
-    },
-    {
-      number: "#002",
-      link: "Avalanche to BSC",
-      status: false,
-      profit: "Error",
-    },
-    {
-      number: "#003",
-      link: "Avalanche to BSC",
-      status: true,
-      profit: "12,000,00 $YAY",
-    },
-    {
-      number: "#002",
-      link: "Avalanche to BSC",
-      status: false,
-      profit: "Error",
-    },
-    {
-      number: "#003",
-      link: "Avalanche to BSC",
-      status: true,
-      profit: "12,000,00 $YAY",
+      linkHref: "asdfsf",
     },
   ];
 
