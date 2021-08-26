@@ -7,18 +7,6 @@ interface ReturnType {
 }
 
 const useWalletHistoryModal = (): ReturnType => {
-  const textsWallet = {
-    title: "Your address",
-    network: "Network",
-    wallet: "Wallet",
-    newtworkName: "Binance Smart Chain",
-    walletName: "Metamask",
-    address: "0x88259603-2f58ee92039d357307e3",
-    button: "Disconnect Wallet",
-    completeText: "Copied",
-    noRecentTransactions: "No recent transactions",
-  };
-
   const transactionsList = [
     {
       number: "#001",
@@ -76,15 +64,25 @@ const useWalletHistoryModal = (): ReturnType => {
     },
   ];
 
-  const tabsList = ["Wallet", "Transactions"];
+  const textsBridge = {
+    titleModal: "Your wallet",
+    title: "Your address",
+    network: "Network",
+    wallet: "Wallet",
+    newtworkName: "Binance Smart Chain",
+    walletName: "Metamask",
+    button: "Disconnect Wallet",
+    completeText: "Copied",
+    noRecentTransactions: "No recent transactions",
+    transactionTitle: "Recent transactions",
+    tabsList: ["Wallet", "Transactions"],
+  };
 
   const [onPresentWalletHistoryModal] = useModal(
     <WalletHistoryModal
-      title="Your Wallet"
-      tabsList={tabsList}
-      textsWallet={textsWallet}
+      account="hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34"
+      textsBridge={textsBridge}
       disconnectHandler={() => {}}
-      transactionTitle="Recent transactions"
       transactionsList={transactionsList}
     />
   );
