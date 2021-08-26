@@ -11,8 +11,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           <use href="#image0" transform="translate(-0.448276 -0.0467986) scale(0.00167169)" />
         </pattern>
         <linearGradient id="paint0_linear" x1="14.5" y1="-4.64" x2="14.5" y2="29" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#4CEE3E" />
-          <stop offset="1" stop-color="#3FBF35" />
+          <stop stopColor="#4CEE3E" />
+          <stop offset="1" stopColor="#3FBF35" />
         </linearGradient>
         <image
           id="image0"

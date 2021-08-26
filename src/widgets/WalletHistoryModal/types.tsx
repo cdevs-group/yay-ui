@@ -1,5 +1,6 @@
 export interface TransactionSideProps {
   transactionTitle?: string;
+  handleClickTransactions?: () => void;
   transactionsList?:
     | Array<{
         number: string;
@@ -12,6 +13,8 @@ export interface TransactionSideProps {
 }
 
 export interface WalletHistoryModalProps {
+  handleClickTransactions?: () => void;
+  logout?: () => void;
   account?: string;
   onDismiss?: () => void;
   textsBridge?: {

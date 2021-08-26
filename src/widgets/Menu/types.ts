@@ -97,6 +97,7 @@ export interface NavProps extends PanelProps {
   textsBridge?: textsBridge;
   transactionsList?: Array<Itransactions> | [];
   handleAddToken?: () => void;
+  handleClickTransactions?: () => {};
 }
 
 export type BlockChainNetwork = {

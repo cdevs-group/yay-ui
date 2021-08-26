@@ -5,7 +5,12 @@ import { Text } from "../../../components/Text";
 import { ArrowLeft } from "../../../components/Svg";
 import { lightColors } from "../../../theme/colors";
 
-const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransactions }: TransactionSideProps) => {
+const TransactionSide = ({
+  handleClickTransactions,
+  transactionsList,
+  transactionTitle,
+  noRecentTransactions,
+}: TransactionSideProps) => {
   return (
     <Wrapper>
       <Title>{transactionTitle}</Title>
@@ -14,7 +19,7 @@ const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransacti
           transactionsList?.map((item, i) => (
             <Transaction key={i}>
               <TextBlock>{item.number}</TextBlock>
-              <LinkBlock status={item.status}>
+              <LinkBlock onClick={handleClickTransactions} as="button" status={item.status}>
                 <Text size="xs">{item.link}</Text>
                 <ArrowLeft />
               </LinkBlock>
@@ -55,10 +60,15 @@ const Transaction = styled.div`
   }
 `;
 const LinkBlock = styled.div<{ status: boolean }>`
+  display: flex;
+  justify-content: space-between;
   position: relative;
   width: 144px;
   padding: 8px 15px;
   border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  background: none;
   border: 1.5px solid ${({ status, theme }) => (status ? theme.colors.greenText2 : theme.colors.redBg)};
   & svg {
     position: absolute;
