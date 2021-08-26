@@ -4418,8 +4418,8 @@ var ButtonAddToken = styled__default['default'](Button$7)(templateObject_8$3 || 
 var templateObject_1$N, templateObject_2$D, templateObject_3$x, templateObject_4$n, templateObject_5$i, templateObject_6$f, templateObject_7$6, templateObject_8$3;
 
 var WalletSide = function (_a) {
-    var textsBridge = _a.textsBridge, account = _a.account, logout = _a.logout;
-    var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
+    var textsBridge = _a.textsBridge, account = _a.account, logout = _a.logout, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
+    var _c = React.useState(false), isTooltipDisplayed = _c[0], setIsTooltipDisplayed = _c[1];
     return (React__default['default'].createElement(Wrapper$a, null,
         React__default['default'].createElement(Title$7, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.title),
         React__default['default'].createElement(Address, null,
@@ -4442,7 +4442,11 @@ var WalletSide = function (_a) {
         React__default['default'].createElement(Line$6, null,
             React__default['default'].createElement(Key, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.wallet),
             React__default['default'].createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.walletName)),
-        React__default['default'].createElement(DisconnetButton, { onClick: logout }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
+        React__default['default'].createElement(DisconnetButton, { onClick: function () {
+                logout();
+                window.localStorage.removeItem(connectorLocalStorageKey);
+                onDismiss();
+            } }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
 };
 var Wrapper$a = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
 var Title$7 = styled__default['default'](Text)(templateObject_2$C || (templateObject_2$C = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
@@ -4564,7 +4568,7 @@ var useWalletHistoryModal = function () {
         transactionTitle: "Recent transactions",
         tabsList: ["Wallet", "Transactions"],
     };
-    var onPresentWalletHistoryModal = useModal(React__default['default'].createElement(WalletHistoryModal, { account: "hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34", textsBridge: textsBridge, transactionsList: transactionsList }))[0];
+    var onPresentWalletHistoryModal = useModal(React__default['default'].createElement(WalletHistoryModal, { account: "hjwebfuy2438fbiu34bgouy34bfuyob34fouyb34", textsBridge: textsBridge, transactionsList: transactionsList, logout: function () { } }))[0];
     return { onPresentWalletHistoryModal: onPresentWalletHistoryModal };
 };
 
