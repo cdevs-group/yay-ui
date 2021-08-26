@@ -5,12 +5,7 @@ import { Text } from "../../../components/Text";
 import { ArrowLeft } from "../../../components/Svg";
 import { lightColors } from "../../../theme/colors";
 
-const TransactionSide = ({
-  handleClickTransactions,
-  transactionsList,
-  transactionTitle,
-  noRecentTransactions,
-}: TransactionSideProps) => {
+const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransactions }: TransactionSideProps) => {
   return (
     <Wrapper>
       <Title>{transactionTitle}</Title>
