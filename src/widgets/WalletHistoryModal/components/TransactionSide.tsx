@@ -19,7 +19,7 @@ const TransactionSide = ({
           transactionsList?.map((item, i) => (
             <Transaction key={i}>
               <TextBlock>{item.number}</TextBlock>
-              <LinkBlock onClick={handleClickTransactions} as="button" status={item.status}>
+              <LinkBlock href={item.link} as="a" status={item.status}>
                 <Text size="xs">{item.link}</Text>
                 <ArrowLeft />
               </LinkBlock>

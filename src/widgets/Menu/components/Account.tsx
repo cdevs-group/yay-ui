@@ -46,7 +46,6 @@ interface Props {
   textsBridge?: textsBridge;
   transactionsList?: Array<Itransactions> | [];
   handleAddToken?: () => void;
-  handleClickTransactions?: () => void;
 }
 
 const Account: React.FC<Props> = ({
@@ -66,7 +65,6 @@ const Account: React.FC<Props> = ({
   textsBridge,
   transactionsList,
   handleAddToken,
-  handleClickTransactions,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -83,8 +81,7 @@ const Account: React.FC<Props> = ({
     bridge,
     textsBridge,
     transactionsList,
-    handleAddToken,
-    handleClickTransactions
+    handleAddToken
   );
 
   return (

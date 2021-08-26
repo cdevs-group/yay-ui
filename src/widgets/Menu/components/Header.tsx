@@ -38,7 +38,6 @@ const Header: React.FC<NavProps> = ({
   textsBridge,
   transactionsList,
   handleAddToken,
-  handleClickTransactions,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -108,7 +107,6 @@ const Header: React.FC<NavProps> = ({
             textsBridge={textsBridge}
             transactionsList={transactionsList}
             handleAddToken={handleAddToken}
-            handleClickTransactions={handleClickTransactions}
           />
           <LanguageBlockDesk>
             <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

@@ -430,7 +430,6 @@ export const HeaderBridge = () => {
             handleClaimed={(value) => console.log(value)}
             textsBridge={textsBridge}
             transactionsList={transactionsList}
-            handleClickTransactions={() => {}}
           />
         </div>
       </BrowserRouter>

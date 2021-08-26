@@ -67,8 +67,7 @@ const useWalletModal = (
   bridge?: boolean,
   textsBridge?: textsBridge,
   transactionsList?: Array<Itransactions> | [],
-  handleAddToken?: any,
-  handleClickTransactions: () => void
+  handleAddToken?: any
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {
@@ -86,7 +85,6 @@ const useWalletModal = (
     } else if (bridge) {
       return (
         <WalletHistoryModal
-          handleClickTransactions={handleClickTransactions}
           account={account}
           textsBridge={textsBridge}
           disconnectHandler={logout}
