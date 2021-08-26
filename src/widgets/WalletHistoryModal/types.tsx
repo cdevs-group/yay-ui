@@ -6,6 +6,7 @@ export interface TransactionSideProps {
         link: string;
         status: boolean;
         profit: string;
+        linkHref: string;
       }>
     | [];
   noRecentTransactions?: string;
@@ -35,6 +36,7 @@ export interface WalletHistoryModalProps {
         number: string;
         link: string;
         status: boolean;
+        linkHref: string;
         profit: string;
       }>
     | [];
