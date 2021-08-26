@@ -4004,13 +4004,13 @@ var MiddleColumn = styled.div(templateObject_7$8 || (templateObject_7$8 = __make
 var templateObject_1$U, templateObject_2$J, templateObject_3$C, templateObject_4$s, templateObject_5$k, templateObject_6$h, templateObject_7$8;
 
 var BridgeProof = function (_a) {
-    var texts = _a.texts, textsProof = _a.textsProof, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, BSCSkanHandler = _a.BSCSkanHandler, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon;
+    var texts = _a.texts, textsProof = _a.textsProof, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, BSCSkanHandler = _a.BSCSkanHandler, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo;
     return (React__default.createElement(Wrapper$b, null,
         React__default.createElement(Text, { size: "lg" }, texts.title),
         React__default.createElement(Description$2, { marginTop: "10px" }, texts.description),
         React__default.createElement(ButtonClose$1, { onClick: onDismiss },
             React__default.createElement(Icon$K, { fill: "transparent" })),
-        React__default.createElement(TokenList, null, ProofOfAssetsData.map(function (item, i) { return (React__default.createElement(InfoWrapper, { addTokenIcon: addTokenIcon, BSCSkanHandler: BSCSkanHandler, addTokenHandler: addTokenHandler, key: i, textsProof: textsProof, proofData: item.proofData, wrappedData: item.wrappedData })); }))));
+        React__default.createElement(TokenList, null, ProofOfAssetsData.map(function (item, i) { return (React__default.createElement(InfoWrapper, { addTokenIcon: addTokenIcon, BSCSkanHandler: BSCSkanHandler, addTokenHandler: addTokenHandler, key: i, textsProof: textsProof, proofData: item.proofData, wrappedData: item.wrappedData, tokenLogo: tokenLogo })); }))));
 };
 var Wrapper$b = styled.div(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
