@@ -13,7 +13,7 @@ export interface TransactionSideProps {
 }
 
 export interface WalletHistoryModalProps {
-  logout?: () => void;
+  logout: () => void;
   account?: string;
   onDismiss?: () => void;
   textsBridge?: {

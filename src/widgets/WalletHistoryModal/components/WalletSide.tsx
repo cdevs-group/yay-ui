@@ -4,8 +4,9 @@ import { Text } from "../../../components/Text";
 import { Button } from "../../../components/Button";
 import { CopyIcon } from "../../../components/Svg";
 import { WalletHistoryModalProps } from "../types";
+import { connectorLocalStorageKey } from "../../WalletModal";
 
-const WalletSide = ({ textsBridge, account, logout }: WalletHistoryModalProps) => {
+const WalletSide = ({ textsBridge, account, logout, onDismiss = () => null }: WalletHistoryModalProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
   return (
     <Wrapper>
@@ -37,7 +38,15 @@ const WalletSide = ({ textsBridge, account, logout }: WalletHistoryModalProps) =
         <Key size="sm">{textsBridge?.wallet}</Key>
         <Text size="sm">{textsBridge?.walletName}</Text>
       </Line>
-      <DisconnetButton onClick={logout}>{textsBridge?.button}</DisconnetButton>
+      <DisconnetButton
+        onClick={() => {
+          logout();
+          window.localStorage.removeItem(connectorLocalStorageKey);
+          onDismiss();
+        }}
+      >
+        {textsBridge?.button}
+      </DisconnetButton>
     </Wrapper>
   );
 };
