@@ -34,6 +34,7 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
   disconnectHandler,
   transactionsList,
   textsBridge,
+  logout,
 }) => {
   const [tabValue, setTabValue] = useState(0);
 
@@ -47,7 +48,12 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
         <Wrap>
           <Tabs tabValue={tabValue} onClick={handleTabChange} tabsList={textsBridge?.tabsList} />
           {tabValue === 0 ? (
-            <WalletSide disconnectHandler={disconnectHandler} account={account} textsBridge={textsBridge} />
+            <WalletSide
+              logout={logout}
+              disconnectHandler={disconnectHandler}
+              account={account}
+              textsBridge={textsBridge}
+            />
           ) : (
             <TransactionSide
               noRecentTransactions={textsBridge?.noRecentTransactions}

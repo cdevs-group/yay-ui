@@ -14,7 +14,7 @@ const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransacti
           transactionsList?.map((item, i) => (
             <Transaction key={i}>
               <TextBlock>{item.number}</TextBlock>
-              <LinkBlock status={item.status}>
+              <LinkBlock href={item.link} as="a" status={item.status}>
                 <Text size="xs">{item.link}</Text>
                 <ArrowLeft />
               </LinkBlock>
@@ -55,10 +55,15 @@ const Transaction = styled.div`
   }
 `;
 const LinkBlock = styled.div<{ status: boolean }>`
+  display: flex;
+  justify-content: space-between;
   position: relative;
   width: 144px;
   padding: 8px 15px;
   border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  background: none;
   border: 1.5px solid ${({ status, theme }) => (status ? theme.colors.greenText2 : theme.colors.redBg)};
   & svg {
     position: absolute;

@@ -5,7 +5,7 @@ import { Button } from "../../../components/Button";
 import { CopyIcon } from "../../../components/Svg";
 import { WalletHistoryModalProps } from "../types";
 
-const WalletSide = ({ textsBridge, account }: WalletHistoryModalProps) => {
+const WalletSide = ({ textsBridge, account, logout }: WalletHistoryModalProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
   return (
     <Wrapper>
@@ -37,7 +37,7 @@ const WalletSide = ({ textsBridge, account }: WalletHistoryModalProps) => {
         <Key size="sm">{textsBridge?.wallet}</Key>
         <Text size="sm">{textsBridge?.walletName}</Text>
       </Line>
-      <DisconnetButton>{textsBridge?.button}</DisconnetButton>
+      <DisconnetButton onClick={logout}>{textsBridge?.button}</DisconnetButton>
     </Wrapper>
   );
 };
