@@ -27,6 +27,7 @@ interface Itransactions {
   link: string;
   status: boolean;
   profit: string;
+  linkHref: string;
 }
 
 interface Props {
