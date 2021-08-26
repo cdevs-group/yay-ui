@@ -88,7 +88,7 @@ const useWalletModal = (
         <WalletHistoryModal
           account={account}
           textsBridge={textsBridge}
-          disconnectHandler={logout}
+          logout={logout}
           transactionsList={transactionsList}
         />
       );

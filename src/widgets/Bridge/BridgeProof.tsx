@@ -13,6 +13,7 @@ const BridgeProof = ({
   BSCSkanHandler,
   addTokenHandler,
   addTokenIcon,
+  tokenLogo,
 }: BrightProofProps) => {
   return (
     <Wrapper>
@@ -31,6 +32,7 @@ const BridgeProof = ({
             textsProof={textsProof}
             proofData={item.proofData}
             wrappedData={item.wrappedData}
+            tokenLogo={tokenLogo}
           />
         ))}
       </TokenList>

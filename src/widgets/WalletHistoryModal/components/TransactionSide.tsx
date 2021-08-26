@@ -14,7 +14,7 @@ const TransactionSide = ({ transactionsList, transactionTitle, noRecentTransacti
           transactionsList?.map((item, i) => (
             <Transaction key={i}>
               <TextBlock>{item.number}</TextBlock>
-              <LinkBlock href={item.linkHref} as="a" status={item.status}>
+              <LinkBlock href={item.linkHref} as="a" target="_blank" status={item.status}>
                 <Text size="xs">{item.link}</Text>
                 <ArrowLeft />
               </LinkBlock>

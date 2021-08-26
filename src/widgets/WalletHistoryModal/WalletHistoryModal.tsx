@@ -31,7 +31,6 @@ const Wrap = styled.div`
 const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
   account,
   onDismiss = () => null,
-  disconnectHandler,
   transactionsList,
   textsBridge,
   logout,
@@ -50,7 +49,6 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
           {tabValue === 0 ? (
             <WalletSide
               logout={logout}
-              disconnectHandler={disconnectHandler}
               account={account}
               textsBridge={textsBridge}
             />
