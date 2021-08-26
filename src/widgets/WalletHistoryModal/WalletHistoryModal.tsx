@@ -5,6 +5,7 @@ import { Tabs } from "../../components/Tabs";
 import WalletSide from "./components/WalletSide";
 import TransactionSide from "./components/TransactionSide";
 import { WalletHistoryModalProps } from "./types";
+import { connectorLocalStorageKey } from "../WalletModal";
 
 const Wrap = styled.div`
   padding: 21px 13px;
@@ -41,13 +42,24 @@ const WalletHistoryModal: React.FC<WalletHistoryModalProps> = ({
     setTabValue(+e.target.value);
   };
 
+  const handleDisconnect = () => {
+    logout();
+    window.localStorage.removeItem(connectorLocalStorageKey);
+    onDismiss();
+  };
+
   return (
     <>
       <Modal welcome title={textsBridge?.titleModal} onDismiss={onDismiss}>
         <Wrap>
           <Tabs tabValue={tabValue} onClick={handleTabChange} tabsList={textsBridge?.tabsList} />
           {tabValue === 0 ? (
-            <WalletSide logout={logout} account={account} textsBridge={textsBridge} />
+            <WalletSide
+              logout={logout}
+              handleDisconnect={handleDisconnect}
+              account={account}
+              textsBridge={textsBridge}
+            />
           ) : (
             <TransactionSide
               noRecentTransactions={textsBridge?.noRecentTransactions}
