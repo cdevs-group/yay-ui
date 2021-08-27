@@ -123,6 +123,7 @@ export const BridgeStep2Block = () => {
     <div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
           progress1={1}
@@ -144,6 +145,7 @@ export const BridgeStep2Block = () => {
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
           progress1={3}
@@ -164,6 +166,7 @@ export const BridgeStep2Block = () => {
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
           progress1={4}
