@@ -14,6 +14,7 @@ const ProofOfAssetsData = [
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
       textCopy: "Copied",
+      title: "Proof of Asset",
     },
     wrappedData: [
       {
@@ -21,12 +22,14 @@ const ProofOfAssetsData = [
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Supply token",
       },
     ],
   },
@@ -36,6 +39,7 @@ const ProofOfAssetsData = [
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
       textCopy: "Copied",
+      title: "Proof of Asset",
     },
     wrappedData: [
       {
@@ -43,12 +47,14 @@ const ProofOfAssetsData = [
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Supply token",
       },
     ],
   },
@@ -58,6 +64,7 @@ const ProofOfAssetsData = [
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
       textCopy: "Copied",
+      title: "Proof of Asset",
     },
     wrappedData: [
       {
@@ -65,12 +72,14 @@ const ProofOfAssetsData = [
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
         textCopy: "Copied",
+        title: "Supply token",
       },
     ],
   },
@@ -80,11 +89,6 @@ const texts = {
   description: "You can view all on-chain behaviors of AVAX token and locked native token assets on this page",
 };
 
-const textsProof = {
-  proof: "Proof of Asset",
-  wrapped: "Wrapped Token",
-};
-
 const useBridgeModal = (): ReturnType => {
   const [onPresentBridgeModal] = useModal(
     <BridgeProof
@@ -92,7 +96,6 @@ const useBridgeModal = (): ReturnType => {
       BSCSkanHandler={() => {}}
       onDismiss={() => {}}
       texts={texts}
-      textsProof={textsProof}
       ProofOfAssetsData={ProofOfAssetsData}
       addTokenIcon={<img src={Metamask} />}
     />

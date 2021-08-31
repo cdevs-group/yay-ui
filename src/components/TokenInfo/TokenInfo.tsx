@@ -6,12 +6,14 @@ import { Metamask } from "../../constants/images";
 import { ArrowLeft, CopyIcon } from "../Svg";
 import { ellipsis } from "../../helpers/ellipsis";
 
-const TokenInfo = ({ addTokenIcon, textsInfo, margin, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
+const TokenInfo = ({ addTokenIcon, textsInfo, supple, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   const ButtonsBlock = ({ type }: { type?: string }) => (
-    <RightColumn className={type}>
-      <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
+    <RightColumn className={`${type} ${supple ? "supple" : ""}`}>
+      <Button className={supple ? "supple" : ""} onClick={addTokenHandler}>
+        {addTokenIcon || <img src={Metamask} />}
+      </Button>
       <Button
         onClick={() => {
           if (navigator.clipboard) {
@@ -32,8 +34,9 @@ const TokenInfo = ({ addTokenIcon, textsInfo, margin, BSCSkanHandler, addTokenHa
   );
 
   return (
-    <>
-      <Wrapper margin={margin}>
+    <WrapBlock supple={supple}>
+      <Text>{textsInfo.title}</Text>
+      <Wrapper>
         <LeftColumn>
           <Text marginBottom="10px" size="xs">
             {textsInfo.token}
@@ -44,15 +47,18 @@ const TokenInfo = ({ addTokenIcon, textsInfo, margin, BSCSkanHandler, addTokenHa
         <ButtonsBlock />
       </Wrapper>
       <ButtonsBlock type="mob" />
-    </>
+    </WrapBlock>
   );
 };
 
 export default TokenInfo;
 
-const Wrapper = styled.div<{ margin?: string }>`
+const WrapBlock = styled.div<{ supple?: boolean }>`
+  margin: ${({ supple }) => (supple ? "20px 0 0" : 0)};
+`;
+const Wrapper = styled.div`
   width: 206px;
-  margin: 25px 0 0;
+  margin: 7px 0 0;
   padding: 19px 12px 19px 11px;
   max-width: 331px;
   min-height: 77px;
@@ -69,7 +75,6 @@ const Wrapper = styled.div<{ margin?: string }>`
   }
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 19px 22px 19px 16px;
-    margin: ${({ margin }) => (margin ? margin : 0)};
   }
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
@@ -89,6 +94,9 @@ const RightColumn = styled.div`
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
+    &.supple {
+      justify-content: space-around;
+    }
     ${({ theme }) => theme.mediaQueries.xs} {
       display: none;
     }
@@ -115,7 +123,10 @@ const Button = styled.button`
   }
   ${({ theme }) => theme.mediaQueries.xs} {
     margin-left: 12px;
-  } ;
+  }
+  &.supple {
+    display: none;
+  }
 `;
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};
@@ -129,6 +140,3 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean; left?: string }>`
   border-radius: 16px;
   opacity: 0.7;
 `;
-// const ButtonMob = styled(RightColumn)`
-//
-// `;

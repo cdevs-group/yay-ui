@@ -98,10 +98,6 @@ export interface BrightProofProps {
     title: string;
     description: string;
   };
-  textsProof: {
-    proof: string;
-    wrapped: string;
-  };
   ProofOfAssetsData: Array<{
     proofData: proofData;
     wrappedData: Array<proofData>;
@@ -114,10 +110,6 @@ export interface InfoWrapperProps {
   tokenLogo?: ReactNode;
   proofData: proofData;
   wrappedData: Array<proofData>;
-  textsProof: {
-    proof: string;
-    wrapped: string;
-  };
   addTokenHandler: () => void;
   BSCSkanHandler: () => void;
 }
@@ -126,4 +118,5 @@ interface proofData {
   network: string;
   token: string;
   textCopy: string;
+  title: string;
 }

@@ -7,6 +7,8 @@ import useBridgeModal from "./useBridgeModal";
 import { Text } from "../../components/Text";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
+import { BridgeProof } from "./index";
+import { Metamask } from "../../constants/images";
 
 export default {
   title: "Widgets/Bridge",
@@ -200,3 +202,97 @@ const Button = styled(Text)`
   border: none;
   cursor: pointer;
 `;
+export const TransactionHistoryBlock = () => {
+  const ProofOfAssetsData = [
+    {
+      proofData: {
+        token: "3,836.537598 YAY",
+        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+        network: "bscan.ru",
+        textCopy: "Copied",
+        title: "Proof of Asset",
+      },
+      wrappedData: [
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Wrapped Token",
+        },
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Supply token",
+        },
+      ],
+    },
+    {
+      proofData: {
+        token: "3,836.537598 YAY",
+        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+        network: "bscan.ru",
+        textCopy: "Copied",
+        title: "Proof of Asset",
+      },
+      wrappedData: [
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Wrapped Token",
+        },
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Supply token",
+        },
+      ],
+    },
+    {
+      proofData: {
+        token: "3,836.537598 YAY",
+        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+        network: "bscan.ru",
+        textCopy: "Copied",
+        title: "Proof of Asset",
+      },
+      wrappedData: [
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Wrapped Token",
+        },
+        {
+          token: "3,836.537598 YAY",
+          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
+          network: "bscan.ru",
+          textCopy: "Copied",
+          title: "Supply token",
+        },
+      ],
+    },
+  ];
+  const texts = {
+    title: "Transactions History",
+    description: "Here you can view the history of your transactions",
+  };
+
+  return (
+    <BridgeProof
+      addTokenHandler={() => {}}
+      BSCSkanHandler={() => {}}
+      onDismiss={() => {}}
+      texts={texts}
+      ProofOfAssetsData={ProofOfAssetsData}
+      addTokenIcon={<img src={Metamask} />}
+    />
+  );
+};

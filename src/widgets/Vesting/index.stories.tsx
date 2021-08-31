@@ -68,6 +68,7 @@ export const VestingWidgetComponent: React.FC = () => {
       handleTakeGift={handleTakeGift}
       textsTakeGift={textsTakeGift}
       textsPoolz={textsPoolz}
+      linkClaimTokens="sdfsdf"
       claimedGift={claimedGift}
       dataTimer={{
         textFront: "Next stage after",
