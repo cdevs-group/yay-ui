@@ -6,6 +6,7 @@ export interface BridgeStep1Props {
     handleButtonToMax: any;
     iconBalanceInput?: ReactNode;
     handleOpenProofOfAssets: () => void;
+    handleOpenTransactionsHistory: () => void;
     iconNetwork1?: ReactNode;
     iconNetwork2?: ReactNode;
     texts: {
@@ -16,6 +17,7 @@ export interface BridgeStep1Props {
         fee: string;
         button: string;
         buttonProofOfState?: string;
+        buttonTransactionsHistory?: string;
         currencyInput: string;
         commit: string;
     };
@@ -29,6 +31,7 @@ export interface BridgeStep1Props {
     handleButton: any;
 }
 export interface BridgeStep2Props {
+    onDismiss?: () => void;
     stepsText: Array<string>;
     WalletIcon?: ReactNode;
     BlockChainFrom?: ReactNode;
@@ -89,15 +92,11 @@ export interface BridgeStep2Props {
 export interface BrightProofProps {
     addTokenIcon?: ReactNode;
     addTokenHandler: () => void;
-    BSCSkanHandler: () => void;
+    textCopy: string;
     onDismiss: () => void | undefined;
     texts: {
         title: string;
         description: string;
-    };
-    textsProof: {
-        proof: string;
-        wrapped: string;
     };
     ProofOfAssetsData: Array<{
         proofData: proofData;
@@ -110,17 +109,14 @@ export interface InfoWrapperProps {
     tokenLogo?: ReactNode;
     proofData: proofData;
     wrappedData: Array<proofData>;
-    textsProof: {
-        proof: string;
-        wrapped: string;
-    };
     addTokenHandler: () => void;
-    BSCSkanHandler: () => void;
+    textCopy: string;
 }
 interface proofData {
     address: string;
     network: string;
     token: string;
-    textCopy: string;
+    link: string;
+    title: string;
 }
 export {};
