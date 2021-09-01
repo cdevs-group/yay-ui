@@ -3865,7 +3865,7 @@ var TokenImg$1 = styled__default['default'].div(templateObject_10$2 || (template
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 });
-var MetamaskAdd = styled__default['default'](Token)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"], ["\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"])));
+var MetamaskAdd = styled__default['default'](Token)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"], ["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"])));
 var BodyBlock = styled__default['default'].div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  padding: 0;\n  margin-top: 30px;\n  ", " {\n    padding: 0 15px 0 25px;\n  } ;\n"], ["\n  padding: 0;\n  margin-top: 30px;\n  ", " {\n    padding: 0 15px 0 25px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
