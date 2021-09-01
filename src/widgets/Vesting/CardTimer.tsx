@@ -32,8 +32,8 @@ const CardTimer = ({ data, canClaim }: IProps) => {
 
   return (
     <Wrapper canClaim={canClaim}>
-      <Inner canClaim={canClaim} className="card-inner">
-        <CardFront>
+      <Inner className="card-inner">
+        <CardFront canClaim={canClaim}>
           <Text
             color="greyText"
             fontSize="14px"
@@ -49,7 +49,7 @@ const CardTimer = ({ data, canClaim }: IProps) => {
           </Text>
           <Progress />
         </CardFront>
-        <CardBack>
+        <CardBack canClaim={canClaim}>
           <Text
             color="greyText"
             fontSize="14px"
@@ -100,7 +100,7 @@ const Wrapper = styled.div<{ canClaim: boolean }>`
   }
 `;
 
-const Inner = styled.div<{ canClaim: boolean }>`
+const Inner = styled.div`
   display: flex;
   justify-content: center;
   height: 100%;
