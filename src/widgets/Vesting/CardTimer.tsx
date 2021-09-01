@@ -31,8 +31,8 @@ const CardTimer = ({ data, canClaim }: IProps) => {
   );
 
   return (
-    <Wrapper>
-      <Inner canClaim={canClaim}>
+    <Wrapper canClaim={canClaim}>
+      <Inner canClaim={canClaim} className="card-inner">
         <CardFront>
           <Text
             color="greyText"
@@ -69,7 +69,7 @@ const CardTimer = ({ data, canClaim }: IProps) => {
   );
 };
 
-const CardFront = styled.div`
+const CardFront = styled.div<{ canClaim: boolean }>`
   width: 100%;
   padding: 18px 24px 10px;
   background: ${({ theme }) => theme.colors.dark};
@@ -80,18 +80,24 @@ const CardFront = styled.div`
   position: absolute;
   top: 0;
   transition: 0;
+  backface-visibility: ${({ canClaim }) => (!canClaim ? "" : "hidden")};
 `;
 
 const CardBack = styled(CardFront)`
   transform: rotateY(180deg) translateX(50%);
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ canClaim: boolean }>`
   position: relative;
   perspective: 1000px;
   min-height: 97px;
   width: 100%;
   border-radius: 20px;
+  &:hover {
+    & .card-inner {
+      transform: ${({ canClaim }) => (!canClaim ? "none" : "rotateY(180deg)")};
+    }
+  }
 `;
 
 const Inner = styled.div<{ canClaim: boolean }>`
@@ -103,13 +109,6 @@ const Inner = styled.div<{ canClaim: boolean }>`
   transition: transform 600ms;
   border-radius: 15px;
   box-sizing: border-box;
-
-  ${Wrapper}:hover & {
-    transform: ${({ canClaim }) => (!canClaim ? "none" : "rotateY(180deg)")};
-  }
-  ${CardFront} {
-    backface-visibility: ${({ canClaim }) => (!canClaim ? "" : "hidden")};
-  }
 `;
 
 const ProgressTrack = styled.div`
