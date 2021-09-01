@@ -6,7 +6,6 @@ import ClaimTokens from "./ClaimTokens";
 import MarketplaceLink from "./MarketplaceLink";
 import TakeGift from "./TakeGift";
 import { VestingWidgetProps } from "./types";
-import { transparentize } from "polished";
 import TokenOnPoolz from "./TokenOnPoolz";
 
 const VestingWidget: React.FC<VestingWidgetProps> = ({
@@ -35,7 +34,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       <CardIndicator canClaim={canClaim} data={dataCardsIndicators[1]} />
       <CardTimer canClaim={canClaim} data={dataTimer} />
       <CardIndicator canClaim={canClaim} data={dataCardsIndicators[2]} />
-      {canClaim ? (
+      {!canClaim ? (
         <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} />
       ) : (
         <ClaimTokens

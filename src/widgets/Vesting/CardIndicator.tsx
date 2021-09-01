@@ -52,8 +52,8 @@ const Claimed = styled.div<{ canClaim: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  opacity: ${({ canClaim }) => (canClaim ? 1 : 0)};
-  pointer-events: ${({ canClaim }) => (canClaim ? "auto" : "none")};
+  opacity: ${({ canClaim }) => (!canClaim ? 1 : 0)};
+  pointer-events: ${({ canClaim }) => (!canClaim ? "auto" : "none")};
   border-radius: inherit;
 `;
 
