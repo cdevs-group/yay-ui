@@ -8,10 +8,9 @@ import { ClipIcon } from "../../../components/Svg";
 
 const InfoWrapper = ({
   tokenLogo,
-  textsProof,
   proofData,
   wrappedData,
-  BSCSkanHandler,
+  textCopy,
   addTokenHandler,
   addTokenIcon,
 }: InfoWrapperProps) => {
@@ -23,18 +22,16 @@ const InfoWrapper = ({
             <TokenImg>
               <YAYIcon />
             </TokenImg>
-            <Text marginLeft="10px">YAY</Text>
+            <Text>YAY</Text>
           </>
         )}
       </TokenLogo>
       <MainBlock>
         <LeftColumn>
-          <Text>{textsProof.proof}</Text>
           <TokenInfo
             addTokenIcon={addTokenIcon}
-            BSCSkanHandler={BSCSkanHandler}
+            textCopy={textCopy}
             addTokenHandler={addTokenHandler}
-            margin="10px 0 0"
             textsInfo={proofData}
           />
         </LeftColumn>
@@ -42,14 +39,13 @@ const InfoWrapper = ({
           <ClipIcon />
         </MiddleColumn>
         <RightColumn>
-          <Text>{textsProof.wrapped}</Text>
           {wrappedData.map((item, i) => (
             <TokenInfo
               addTokenIcon={addTokenIcon}
-              BSCSkanHandler={BSCSkanHandler}
+              textCopy={textCopy}
               addTokenHandler={addTokenHandler}
               key={i}
-              margin="10px 0 0"
+              supple={i === 1}
               textsInfo={item}
             />
           ))}
@@ -94,12 +90,11 @@ const MainBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 17px;
   flex-direction: column;
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
-    align-items: baseline;
-    margin-top: 23px;
+    align-items: center;
+    margin-top: -38px;
   } ;
 `;
 const LeftColumn = styled.div``;
@@ -111,7 +106,6 @@ const MiddleColumn = styled.div`
   height: 30px;
   display: flex;
   margin: 30px 0 20px;
-
   justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.colors.whiteRgba};
@@ -121,6 +115,6 @@ const MiddleColumn = styled.div`
   }
   ${({ theme }) => theme.mediaQueries.md} {
     margin: 0 15px;
-    top: 65px;
+    top: 15px;
   } ;
 `;

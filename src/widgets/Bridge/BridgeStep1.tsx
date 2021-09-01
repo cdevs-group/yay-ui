@@ -99,6 +99,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   iconNetwork2,
   iconBalanceInput,
   handleOpenProofOfAssets,
+  handleOpenTransactionsHistory,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -155,6 +156,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
         </BridgeContent>
       </BridgeWrapper>
       <ButtonOpenProof onClick={handleOpenProofOfAssets}>{texts.buttonProofOfState}</ButtonOpenProof>
+      <ButtonOpenProof onClick={handleOpenTransactionsHistory}>{texts.buttonTransactionsHistory}</ButtonOpenProof>
     </Wrapper>
   );
 };

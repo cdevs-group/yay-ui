@@ -7,10 +7,9 @@ import { CloseIcon } from "../../components/Svg";
 
 const BridgeProof = ({
   texts,
-  textsProof,
   ProofOfAssetsData,
   onDismiss,
-  BSCSkanHandler,
+  textCopy,
   addTokenHandler,
   addTokenIcon,
   tokenLogo,
@@ -26,10 +25,9 @@ const BridgeProof = ({
         {ProofOfAssetsData.map((item, i) => (
           <InfoWrapper
             addTokenIcon={addTokenIcon}
-            BSCSkanHandler={BSCSkanHandler}
+            textCopy={textCopy}
             addTokenHandler={addTokenHandler}
             key={i}
-            textsProof={textsProof}
             proofData={item.proofData}
             wrappedData={item.wrappedData}
             tokenLogo={tokenLogo}
@@ -52,6 +50,7 @@ const Wrapper = styled.div`
   border-radius: 10px;
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 38px 44px 0 34px;
+    width: 100%;
   } ;
 `;
 const TokenList = styled.div`
