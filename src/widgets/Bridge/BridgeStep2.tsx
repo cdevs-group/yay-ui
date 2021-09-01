@@ -293,6 +293,7 @@ const TokenImg = styled.div`
   margin: 0 10px 0 0;
 `;
 const MetamaskAdd = styled(Token)`
+  cursor: pointer;
   padding: 0;
   margin: 0;
   border: none;
