@@ -31,6 +31,7 @@ export interface BridgeStep1Props {
 }
 
 export interface BridgeStep2Props {
+  onDismiss?: () => void;
   stepsText: Array<string>;
   WalletIcon?: ReactNode;
   BlockChainFrom?: ReactNode;

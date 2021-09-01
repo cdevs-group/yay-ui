@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
-import { AvalancheIcon, BnbIcon } from "../../components/Svg";
+import { AvalancheIcon, BnbIcon, CloseIcon } from "../../components/Svg";
 import { Metamask } from "../../constants/images";
 import { BridgeStep2Props } from "./types";
 import ProgressSteps from "../../components/Progress/ProgressSteps";
@@ -12,6 +12,7 @@ import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
 
 const BridgeStep2 = ({
+  onDismiss,
   progress1,
   progress2,
   textsProgress1,
@@ -34,9 +35,13 @@ const BridgeStep2 = ({
   isLoadTimeNetwork1,
   isLoadTimeNetwork2,
 }: BridgeStep2Props) => {
+  console.log(onDismiss);
   return (
     <Wrapper>
       <Title size="lg">{texts.title}</Title>
+      <ButtonClose onClick={onDismiss}>
+        <CloseIcon />
+      </ButtonClose>
       <TopLineBlock>
         <TokenBlock>
           <TopLineTitle fontWeight="400" textAlign="left">
@@ -165,6 +170,7 @@ const Title = styled(Text)`
   letter-spacing: 0.5px;
 `;
 const Wrapper = styled.div`
+  position: relative;
   margin: 0 auto;
   overflow: hidden;
   max-width: 650px;
@@ -374,5 +380,21 @@ const ProgressWrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     max-width: 173px;
     width: 100%;
+  }
+`;
+const ButtonClose = styled.button`
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: none;
+  background: none;
+  top: 40px;
+  right: 25px;
+  cursor: pointer;
+  & svg {
+    position: absolute;
+    top: -8px;
+    left: -8px;
   }
 `;
