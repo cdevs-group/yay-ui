@@ -3760,7 +3760,6 @@ var templateObject_1$X, templateObject_2$M, templateObject_3$F;
 
 var BridgeStep2 = function (_a) {
     var onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isError = _a.isError, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, timer1 = _a.timer1, timer2 = _a.timer2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, BlockChainFrom = _a.BlockChainFrom, BlockChainTo = _a.BlockChainTo, stepsText = _a.stepsText, isLoadTimeNetwork1 = _a.isLoadTimeNetwork1, isLoadTimeNetwork2 = _a.isLoadTimeNetwork2;
-    console.log(onDismiss);
     return (React__default['default'].createElement(Wrapper$e, null,
         React__default['default'].createElement(Title$8, { size: "lg" }, texts.title),
         React__default['default'].createElement(ButtonClose$2, { onClick: onDismiss },
@@ -5930,10 +5929,10 @@ var Claimed$2 = styled__default['default'].div(templateObject_2$5 || (templateOb
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? 1 : 0);
+    return (!canClaim ? 1 : 0);
 }, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? "auto" : "none");
+    return (!canClaim ? "auto" : "none");
 });
 var templateObject_1$7, templateObject_2$5;
 
@@ -5965,10 +5964,10 @@ var CardBack = styled__default['default'](CardFront)(templateObject_2$4 || (temp
 var Wrapper$2 = styled__default['default'].div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n"], ["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n"])));
 var Inner = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", ":hover & {\n    transform: ", ";\n  }\n  ", " {\n    backface-visibility: ", ";\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", ":hover & {\n    transform: ", ";\n  }\n  ", " {\n    backface-visibility: ", ";\n  }\n"])), Wrapper$2, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? "" : "rotateY(180deg)");
+    return (!canClaim ? "none" : "rotateY(180deg)");
 }, CardFront, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? "" : "hidden");
+    return (!canClaim ? "" : "hidden");
 });
 var ProgressTrack$1 = styled__default['default'].div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  height: 2px;\n  width: 100%;\n  margin-top: 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"], ["\n  height: 2px;\n  width: 100%;\n  margin-top: 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -5989,10 +5988,10 @@ var Claimed$1 = styled__default['default'].div(templateObject_7$1 || (templateOb
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? 1 : 0);
+    return (!canClaim ? 1 : 0);
 }, function (_a) {
     var canClaim = _a.canClaim;
-    return (canClaim ? "auto" : "none");
+    return (!canClaim ? "auto" : "none");
 });
 var templateObject_1$6, templateObject_2$4, templateObject_3$3, templateObject_4$2, templateObject_5$1, templateObject_6$1, templateObject_7$1;
 
@@ -6180,7 +6179,7 @@ var VestingWidget = function (_a) {
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[1] }),
         React__default['default'].createElement(CardTimer, { canClaim: canClaim, data: dataTimer }),
         React__default['default'].createElement(CardIndicator, { canClaim: canClaim, data: dataCardsIndicators[2] }),
-        canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens, isLoading: isLoadingButtonClaimTokens, endIcon: endIconButtonClaimTokens })),
+        !canClaim ? (React__default['default'].createElement(TokenOnPoolz, { texts: textsPoolz, images: imagesMarketplace, linkClaimTokens: linkClaimTokens })) : (React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, disabledButton: disabledButtonClaimTokens, isLoading: isLoadingButtonClaimTokens, endIcon: endIconButtonClaimTokens })),
         React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace }),
         React__default['default'].createElement(TakeGift, { texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
 };
