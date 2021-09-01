@@ -9,7 +9,7 @@ const BridgeProof = ({
   texts,
   ProofOfAssetsData,
   onDismiss,
-  BSCSkanHandler,
+  textCopy,
   addTokenHandler,
   addTokenIcon,
   tokenLogo,
@@ -25,7 +25,7 @@ const BridgeProof = ({
         {ProofOfAssetsData.map((item, i) => (
           <InfoWrapper
             addTokenIcon={addTokenIcon}
-            BSCSkanHandler={BSCSkanHandler}
+            textCopy={textCopy}
             addTokenHandler={addTokenHandler}
             key={i}
             proofData={item.proofData}

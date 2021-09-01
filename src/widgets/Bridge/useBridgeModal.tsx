@@ -13,7 +13,7 @@ const ProofOfAssetsData = [
       token: "3,836.537598 YAY",
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
-      textCopy: "Copied",
+      link: "#",
       title: "Proof of Asset",
     },
     wrappedData: [
@@ -21,14 +21,14 @@ const ProofOfAssetsData = [
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Supply token",
       },
     ],
@@ -38,7 +38,7 @@ const ProofOfAssetsData = [
       token: "3,836.537598 YAY",
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
-      textCopy: "Copied",
+      link: "#",
       title: "Proof of Asset",
     },
     wrappedData: [
@@ -46,14 +46,14 @@ const ProofOfAssetsData = [
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Supply token",
       },
     ],
@@ -63,7 +63,7 @@ const ProofOfAssetsData = [
       token: "3,836.537598 YAY",
       address: "0xbdda50183d817c3289f895a4472eb475967dc980",
       network: "bscan.ru",
-      textCopy: "Copied",
+      link: "#",
       title: "Proof of Asset",
     },
     wrappedData: [
@@ -71,14 +71,14 @@ const ProofOfAssetsData = [
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Wrapped Token",
       },
       {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Supply token",
       },
     ],
@@ -93,7 +93,7 @@ const useBridgeModal = (): ReturnType => {
   const [onPresentBridgeModal] = useModal(
     <BridgeProof
       addTokenHandler={() => {}}
-      BSCSkanHandler={() => {}}
+      textCopy={"Copied"}
       onDismiss={() => {}}
       texts={texts}
       ProofOfAssetsData={ProofOfAssetsData}

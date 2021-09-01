@@ -6,7 +6,7 @@ import { Metamask } from "../../constants/images";
 import { ArrowLeft, CopyIcon } from "../Svg";
 import { ellipsis } from "../../helpers/ellipsis";
 
-const TokenInfo = ({ addTokenIcon, textsInfo, supple, BSCSkanHandler, addTokenHandler }: TokenInfoProps) => {
+const TokenInfo = ({ addTokenIcon, textsInfo, supple, textCopy, addTokenHandler }: TokenInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   const ButtonsBlock = ({ type }: { type?: string }) => (
@@ -27,7 +27,7 @@ const TokenInfo = ({ addTokenIcon, textsInfo, supple, BSCSkanHandler, addTokenHa
       >
         <CopyIcon />
       </Button>
-      <Button onClick={BSCSkanHandler} className="arrow">
+      <Button as="a" href={textsInfo.link} className="arrow">
         <ArrowLeft />
       </Button>
     </RightColumn>
@@ -42,7 +42,7 @@ const TokenInfo = ({ addTokenIcon, textsInfo, supple, BSCSkanHandler, addTokenHa
             {textsInfo.token}
           </Text>
           <Text size="xs">{ellipsis(textsInfo.address, 10)}</Text>
-          <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textsInfo.textCopy}</Tooltip>
+          <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>
         </LeftColumn>
         <ButtonsBlock />
       </Wrapper>

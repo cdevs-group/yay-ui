@@ -10,7 +10,7 @@ const InfoWrapper = ({
   tokenLogo,
   proofData,
   wrappedData,
-  BSCSkanHandler,
+  textCopy,
   addTokenHandler,
   addTokenIcon,
 }: InfoWrapperProps) => {
@@ -30,7 +30,7 @@ const InfoWrapper = ({
         <LeftColumn>
           <TokenInfo
             addTokenIcon={addTokenIcon}
-            BSCSkanHandler={BSCSkanHandler}
+            textCopy={textCopy}
             addTokenHandler={addTokenHandler}
             textsInfo={proofData}
           />
@@ -42,7 +42,7 @@ const InfoWrapper = ({
           {wrappedData.map((item, i) => (
             <TokenInfo
               addTokenIcon={addTokenIcon}
-              BSCSkanHandler={BSCSkanHandler}
+              textCopy={textCopy}
               addTokenHandler={addTokenHandler}
               key={i}
               supple={i === 1}
@@ -115,6 +115,6 @@ const MiddleColumn = styled.div`
   }
   ${({ theme }) => theme.mediaQueries.md} {
     margin: 0 15px;
-    top: 20px;
+    top: 15px;
   } ;
 `;

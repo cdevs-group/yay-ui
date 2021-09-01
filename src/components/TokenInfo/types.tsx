@@ -5,11 +5,11 @@ export interface TokenInfoProps {
     address: string;
     token: string;
     network: string;
-    textCopy: string;
+    link: string;
     title: string;
   };
   addTokenIcon?: ReactNode;
   supple?: boolean;
   addTokenHandler: () => void;
-  BSCSkanHandler: () => void;
+  textCopy: string;
 }

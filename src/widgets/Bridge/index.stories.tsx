@@ -26,6 +26,7 @@ export const BridgeStep1Block: React.FC = () => {
     nameNetwork1: "Binance Smart Chain",
     nameNetwork2: "Avalanche",
     buttonProofOfState: "Proof of State",
+    buttonTransactionsHistory: "Transactions history",
     currencyInput: "YAY",
     commit: "From",
   };
@@ -53,6 +54,7 @@ export const BridgeStep1Block: React.FC = () => {
           iconNetwork1={<BnbIcon />}
           iconNetwork2={<AvalancheIcon />}
           handleOpenProofOfAssets={() => {}}
+          handleOpenTransactionsHistory={() => {}}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>
@@ -71,6 +73,7 @@ export const BridgeStep1Block: React.FC = () => {
           value={value}
           onUserInput={onUserInput}
           iconBalanceInput={<YAYIcon />}
+          handleOpenTransactionsHistory={() => {}}
         />
       </div>
     </div>
@@ -209,7 +212,7 @@ export const TransactionHistoryBlock = () => {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Proof of Asset",
       },
       wrappedData: [
@@ -217,14 +220,14 @@ export const TransactionHistoryBlock = () => {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Wrapped Token",
         },
         {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Supply token",
         },
       ],
@@ -234,7 +237,7 @@ export const TransactionHistoryBlock = () => {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Proof of Asset",
       },
       wrappedData: [
@@ -242,14 +245,14 @@ export const TransactionHistoryBlock = () => {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Wrapped Token",
         },
         {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Supply token",
         },
       ],
@@ -259,7 +262,7 @@ export const TransactionHistoryBlock = () => {
         token: "3,836.537598 YAY",
         address: "0xbdda50183d817c3289f895a4472eb475967dc980",
         network: "bscan.ru",
-        textCopy: "Copied",
+        link: "#",
         title: "Proof of Asset",
       },
       wrappedData: [
@@ -267,14 +270,14 @@ export const TransactionHistoryBlock = () => {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Wrapped Token",
         },
         {
           token: "3,836.537598 YAY",
           address: "0xbdda50183d817c3289f895a4472eb475967dc980",
           network: "bscan.ru",
-          textCopy: "Copied",
+          link: "#",
           title: "Supply token",
         },
       ],
@@ -288,7 +291,7 @@ export const TransactionHistoryBlock = () => {
   return (
     <BridgeProof
       addTokenHandler={() => {}}
-      BSCSkanHandler={() => {}}
+      textCopy={"Copied"}
       onDismiss={() => {}}
       texts={texts}
       ProofOfAssetsData={ProofOfAssetsData}
