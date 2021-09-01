@@ -35,7 +35,6 @@ const BridgeStep2 = ({
   isLoadTimeNetwork1,
   isLoadTimeNetwork2,
 }: BridgeStep2Props) => {
-  console.log(onDismiss);
   return (
     <Wrapper>
       <Title size="lg">{texts.title}</Title>
@@ -294,6 +293,7 @@ const TokenImg = styled.div`
   margin: 0 10px 0 0;
 `;
 const MetamaskAdd = styled(Token)`
+  cursor: pointer;
   padding: 0;
   margin: 0;
   border: none;
