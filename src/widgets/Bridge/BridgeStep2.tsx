@@ -35,7 +35,7 @@ const BridgeStep2 = ({
   isLoadTimeNetwork1,
   isLoadTimeNetwork2,
 }: BridgeStep2Props) => {
-  console.log(onDismiss);
+ 
   return (
     <Wrapper>
       <Title size="lg">{texts.title}</Title>
