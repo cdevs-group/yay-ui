@@ -60,7 +60,7 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading
       <Texts>
         <TextBlock>
           <StyledText>{texts.total}</StyledText>
-          {/*<StyledText color="greyText3">{data.total}</StyledText>*/}
+          <StyledText color="greyText3">{data.total}</StyledText>
         </TextBlock>
       </Texts>
     </Card>
