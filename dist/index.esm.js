@@ -5985,7 +5985,8 @@ var ClaimTokens = function (_a) {
                         React__default.createElement(StyledText, { color: "greyText3" }, data.totalRaised))))),
         React__default.createElement(Texts, null,
             React__default.createElement(TextBlock, null,
-                React__default.createElement(StyledText, null, texts.total)))));
+                React__default.createElement(StyledText, null, texts.total),
+                React__default.createElement(StyledText, { color: "greyText3" }, data.total)))));
 };
 var Card$2 = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
