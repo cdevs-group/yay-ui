@@ -383,6 +383,8 @@ export const HeaderBridge = () => {
             handleClaimed={(value) => console.log(value)}
             textsBridge={textsBridge}
             transactionsList={transactionsList}
+            disclaimer
+            disclaimerText="Always make sure the URL is https://www.yay.games/ - Press to bookmark it to be safe. Telegram: https://t.me/yay_games"
           />
         </div>
       </BrowserRouter>
