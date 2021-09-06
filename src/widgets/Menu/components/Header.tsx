@@ -69,7 +69,7 @@ const Header: React.FC<NavProps> = ({
 
   return (
     <HeaderWrap ref={refSelect}>
-      {disclaimer ? <Disclaimer text={disclaimerText || ''} /> : null}
+      {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
       <Content>
         <Line>
           <LogoWrap href={linkLogo}>
