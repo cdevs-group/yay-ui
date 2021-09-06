@@ -7,6 +7,7 @@ import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
 import Logo from "../image/Logo.png";
 import Network from "./Network";
+import Disclaimer from "../../../components/Disclaimer/Disclaimer";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -38,6 +39,8 @@ const Header: React.FC<NavProps> = ({
   textsBridge,
   transactionsList,
   handleAddToken,
+  disclaimer,
+  disclaimerText,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -66,54 +69,57 @@ const Header: React.FC<NavProps> = ({
 
   return (
     <HeaderWrap ref={refSelect}>
-      <Line>
-        <LogoWrap href={linkLogo}>
-          <img src={Logo} alt="" />
-        </LogoWrap>
-        <Nav className={openMenu ? "open" : ""}>
-          {links.map((item, i) => (
-            <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
-          ))}
-          <LanguageBlockMob>
-            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-          </LanguageBlockMob>
-        </Nav>
-        <RightContent>
-          {network ? (
-            <Network
-              titleNetwork={titleNetwork}
-              linkHrefNetwork={linkHrefNetwork}
-              linkTextNetwork={linkTextNetwork}
-              handleToggleNetwork={handleToggleNetwork}
+      {disclaimer ? <Disclaimer text={disclaimerText || ''} /> : null}
+      <Content>
+        <Line>
+          <LogoWrap href={linkLogo}>
+            <img src={Logo} alt="" />
+          </LogoWrap>
+          <Nav className={openMenu ? "open" : ""}>
+            {links.map((item, i) => (
+              <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
+            ))}
+            <LanguageBlockMob>
+              <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+            </LanguageBlockMob>
+          </Nav>
+          <RightContent>
+            {network ? (
+              <Network
+                titleNetwork={titleNetwork}
+                linkHrefNetwork={linkHrefNetwork}
+                linkTextNetwork={linkTextNetwork}
+                handleToggleNetwork={handleToggleNetwork}
+                network={network}
+                valuesNetworks={valuesNetworks}
+                listNetwork={listNetwork}
+              />
+            ) : null}
+            <Account
+              text={textConnect || "Connect"}
+              account={account}
+              login={login}
+              logout={logout}
+              textsAccount={textsAccount}
+              textsConnect={textsConnect}
+              hrefLearnHow={hrefLearnHow}
               network={network}
-              valuesNetworks={valuesNetworks}
-              listNetwork={listNetwork}
+              vesting={vesting}
+              bridge={bridge}
+              yayBalance={yayBalance}
+              dataTransactions={dataTransactions}
+              handleClaimed={handleClaimed}
+              textsBridge={textsBridge}
+              transactionsList={transactionsList}
+              handleAddToken={handleAddToken}
             />
-          ) : null}
-          <Account
-            text={textConnect || "Connect"}
-            account={account}
-            login={login}
-            logout={logout}
-            textsAccount={textsAccount}
-            textsConnect={textsConnect}
-            hrefLearnHow={hrefLearnHow}
-            network={network}
-            vesting={vesting}
-            bridge={bridge}
-            yayBalance={yayBalance}
-            dataTransactions={dataTransactions}
-            handleClaimed={handleClaimed}
-            textsBridge={textsBridge}
-            transactionsList={transactionsList}
-            handleAddToken={handleAddToken}
-          />
-          <LanguageBlockDesk>
-            <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-          </LanguageBlockDesk>
-          <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-        </RightContent>
-      </Line>
+            <LanguageBlockDesk>
+              <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+            </LanguageBlockDesk>
+            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+          </RightContent>
+        </Line>
+      </Content>
     </HeaderWrap>
   );
 };
@@ -123,12 +129,14 @@ const HeaderWrap = styled.div`
   width: 100%;
   left: 0;
   top: 0;
-  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
   z-index: 10;
   & svg {
     flex-shrink: 0;
   }
+`;
+const Content = styled.div`
+  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
 `;
 
 const Line = styled.div`
