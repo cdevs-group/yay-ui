@@ -2,6 +2,10 @@ export interface TimerColorProps {
   color?: string;
   disabled?: boolean;
   avax?: boolean;
+  height?: string;
+  width?: string;
+  background?: string;
+  borderRadius?: string;
 }
 export interface TimerProps {
   color?: string;
@@ -9,6 +13,11 @@ export interface TimerProps {
   isLoad?: boolean;
   disabled?: boolean;
   avax?: boolean;
+  height?: string;
+  borderRadius?: string;
+  background?: string;
+  width?: string;
+  marginPoint?: string;
 }
 
 export interface TimerSimpleProps {

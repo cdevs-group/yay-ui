@@ -23,6 +23,10 @@ import Gift from "../../public/images/Gift.png";
 import Gift2 from "../../public/images/gift2.png";
 import Gift3 from "../../public/images/gift3.png";
 import BNB2 from "../../public/images/bnb.png";
+import CONTROLLER from "../../public/images/controller.png";
+import COINS from "../../public/images/coins.png";
+import AVATAR_PLAYER from "../../public/images/avatar-player.png";
+import AVATAR_PLAYER_2 from "../../public/images/avatar-player2.png";
 import Avalanche from "../../public/images/avalanche.png";
 
 export {
@@ -52,4 +56,8 @@ export {
   Gift3,
   BNB2,
   Avalanche,
+  CONTROLLER,
+  COINS,
+  AVATAR_PLAYER,
+  AVATAR_PLAYER_2,
 };
