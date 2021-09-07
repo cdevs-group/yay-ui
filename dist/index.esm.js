@@ -6398,7 +6398,7 @@ var templateObject_1$3;
 
 var TabsSmall = function (_a) {
     var tabValue = _a.tabValue, onClick = _a.onClick, tabsList = _a.tabsList;
-    return (React__default.createElement(TabsWrap, { length: tabsList === null || tabsList === void 0 ? void 0 : tabsList.length }, tabsList === null || tabsList === void 0 ? void 0 : tabsList.map(function (item, i) { return (React__default.createElement(Tab, { onClick: onClick, className: tabValue === i ? "active" : "", key: i, value: i }, item)); })));
+    return (React__default.createElement(TabsWrap, { length: tabsList === null || tabsList === void 0 ? void 0 : tabsList.length }, tabsList === null || tabsList === void 0 ? void 0 : tabsList.map(function (item, i) { return (React__default.createElement(Tab, { onClick: onClick, className: tabValue === item ? "active" : "", key: i, value: item }, item)); })));
 };
 var TabsWrap = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(", ", 1fr);\n  border-radius: 12px;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(", ", 1fr);\n  border-radius: 12px;\n"])), function (_a) {
     var length = _a.length;
@@ -6417,7 +6417,7 @@ var Tab = styled.button(templateObject_2$1 || (templateObject_2$1 = __makeTempla
 var templateObject_1$2, templateObject_2$1;
 
 var LobbyCreatModal = function (_a) {
-    var texts = _a.texts, onDismiss = _a.onDismiss, activeTab = _a.activeTab, toggleTab = _a.toggleTab, tabsList = _a.tabsList, handleCreate = _a.handleCreate, handleJoin = _a.handleJoin;
+    var texts = _a.texts, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, activeTab = _a.activeTab, toggleTab = _a.toggleTab, tabsList = _a.tabsList, handleCreate = _a.handleCreate, handleJoin = _a.handleJoin;
     return (React__default.createElement(Modal, { title: texts.title, onDismiss: onDismiss },
         React__default.createElement(Content, null,
             React__default.createElement(TitleTabs, null, texts.tabsTitle),
