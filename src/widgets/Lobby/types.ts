@@ -5,6 +5,8 @@ export interface LobbyNavProps {
   };
   handleJoin: () => void;
   handleCreate: () => void;
+  imgJoin?: string;
+  imgCreate?: string;
 }
 
 export interface LobbyCreatModalProps {
@@ -43,9 +45,8 @@ interface LobbyTextsProps {
   waitResult: string;
   winner?: string;
   winnerMob?: string;
-  play: string;
-  waitPlayer: string;
   withApponent: string;
+  waitPlayer: string;
   join: string;
 }
 export interface LobbyListProps {
