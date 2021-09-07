@@ -24,10 +24,12 @@ export declare const baseColors: {
     bgBlackRgba: string;
     textGray: string;
     bgGray: string;
+    bgGrey2: string;
     greenGradient: string;
     text2: string;
     darkPink: string;
     whiteRgba: string;
+    whiteRgba2: string;
     greenGradient2: string;
     greenGradient3: string;
     greenRgba: string;
