@@ -6315,7 +6315,7 @@ var LobbyListItem = function (_a) {
         }
     };
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement(TimerMob, { type: (data === null || data === void 0 ? void 0 : data.type) === "join" },
+        React__default['default'].createElement(TimerMob, { type: (data.timer !== undefined && data.timer < 1) || (data === null || data === void 0 ? void 0 : data.type) === "join" },
             React__default['default'].createElement(TimerNotSolidWithoutBg, { color: data.timer !== undefined && data.timer < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: data.timer, margin: "0 auto" })),
         React__default['default'].createElement(Wrapper$1, null,
             React__default['default'].createElement(Icons, null,
