@@ -8,9 +8,7 @@ const Disclaimer: React.FC<{ text: string }> = ({ text }) => {
 
   return (
     <Block open={open}>
-      <StyledText>
-        <div>{text}</div>
-      </StyledText>
+      <StyledText>{text}</StyledText>
       <Button onClick={() => setOpen(false)}>
         <CloseIcon2 role="button" />
       </Button>
@@ -33,7 +31,7 @@ const Block = styled.div<{ open: boolean }>`
   overflow: hidden;
   max-height: ${({ open }) => (!open ? 0 : 100)};
   ${({ theme }) => theme.mediaQueries.lg} {
-    padding: ${({ open }) => (!open ? 0 : "13px")};
+    padding: ${({ open }) => (!open ? 0 : "13px 46px")};
   }
   & svg {
     position: absolute;
@@ -47,14 +45,24 @@ const Block = styled.div<{ open: boolean }>`
   }
 `;
 const StyledText = styled(Text)`
-  max-width: 851px;
+  max-width: 1200px;
   margin: 0 auto;
   font-weight: 500;
   font-size: 11px;
   line-height: 14px;
   text-align: left;
+  & br {
+    display: block;
+  }
   ${({ theme }) => theme.mediaQueries.lg} {
     text-align: center;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.5;
+    & br {
+      display: none;
+    }
   }
 `;
 const Button = styled.button`
