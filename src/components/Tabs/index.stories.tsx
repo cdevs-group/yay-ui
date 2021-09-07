@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Tabs from "./Tabs";
+import TabsSmall from "./TabsSmall";
 
 export default {
   title: "Components/Tabs",
@@ -30,4 +31,15 @@ export const TabsBlock: React.FC = () => {
       </div>
     </>
   );
+};
+
+export const TabsSmallBlock = () => {
+  const tabsList = ["0.01", "0.1", "0.5", "1"];
+
+  const [activeTab, setActiveTab] = useState(0);
+
+  const toggleTab = async (e: any) => {
+    setActiveTab(+e.target.value);
+  };
+  return <TabsSmall tabValue={activeTab} tabsList={tabsList} onClick={toggleTab} />;
 };
