@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 const ButtonAdd = styled.button`
-  margin: 0 12px 12px 0;
+  margin: 0 12px 16px;
   max-width: 220px;
   min-height: 220px;
   width: 100%;
