@@ -8,7 +8,7 @@ import { Button } from "../../../components/Button";
 
 const LobbyCreatModal = ({
   texts,
-  onDismiss,
+  onDismiss = () => null,
   activeTab,
   toggleTab,
   tabsList,

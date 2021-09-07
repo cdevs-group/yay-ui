@@ -6,7 +6,7 @@ const TabsSmall = ({ tabValue, onClick, tabsList }: TabsSmallProp) => {
   return (
     <TabsWrap length={tabsList?.length}>
       {tabsList?.map((item, i) => (
-        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
+        <Tab onClick={onClick} className={tabValue === item ? "active" : ""} key={i} value={item}>
           {item}
         </Tab>
       ))}
