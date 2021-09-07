@@ -12,16 +12,27 @@ interface MyTimerProps {
   width?: string;
   background?: string;
   marginPoint?: string;
+  margin?: string;
 }
 interface MyLoaderProps {
   height?: string;
   borderRadius?: string;
   width?: string;
   marginPoint?: string;
+  margin?: string;
   background?: string;
 }
 
-function MyTimer({ expiryTimestamp, color, height, width, marginPoint, background, borderRadius }: MyTimerProps) {
+function MyTimer({
+  expiryTimestamp,
+  color,
+  height,
+  width,
+  marginPoint,
+  background,
+  borderRadius,
+  margin,
+}: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
   const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
@@ -35,7 +46,7 @@ function MyTimer({ expiryTimestamp, color, height, width, marginPoint, backgroun
   const timeArray = [hours, minutes, seconds];
 
   return (
-    <Wrap>
+    <Wrapper margin={margin}>
       <BlockWithoutBg borderRadius={borderRadius} background={background} width={width} height={height} color={color}>
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
@@ -51,15 +62,15 @@ function MyTimer({ expiryTimestamp, color, height, width, marginPoint, backgroun
           </React.Fragment>
         ))}
       </BlockWithoutBg>
-    </Wrap>
+    </Wrapper>
   );
 }
 
 const LoadIcons = [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />];
 
-const LoadingTimer = ({ height, width, borderRadius, background, marginPoint }: MyLoaderProps) => {
+const LoadingTimer = ({ margin, height, width, borderRadius, background, marginPoint }: MyLoaderProps) => {
   return (
-    <Wrap>
+    <Wrapper margin={margin}>
       <BlockWithoutBg borderRadius={borderRadius} background={background} width={width} height={height}>
         {LoadIcons.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
@@ -68,7 +79,7 @@ const LoadingTimer = ({ height, width, borderRadius, background, marginPoint }: 
           </React.Fragment>
         ))}
       </BlockWithoutBg>
-    </Wrap>
+    </Wrapper>
   );
 };
 
@@ -81,6 +92,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
   width,
   background,
   marginPoint,
+  margin,
 }) => {
   return (
     <div>
@@ -93,6 +105,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           height={height}
           expiryTimestamp={time}
           color={color || "text"}
+          margin={margin}
         />
       ) : (
         <LoadingTimer
@@ -101,6 +114,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           background={background}
           height={height}
           marginPoint={marginPoint}
+          margin={margin}
         />
       )}
     </div>
@@ -108,13 +122,12 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
 };
 export default TimerNotSolidWithoutBg;
 
-// const Wrap = styled.div`
-//   display: flex;
-//   align-items: center;
-//   width: fit-content;
-// `;
+const Wrapper = styled(Wrap)<{ margin?: string }>`
+  margin: ${({ margin }) => (margin ? margin : 0)};
+`;
 
 const BlockWithoutBg = styled(Block)<TimerColorProps>`
+  margin: ${({ margin }) => (margin ? margin : "auto")};
   width: ${({ width }) => (width ? width : "auto")};
   height: ${({ height }) => (height ? height : "50px")};
   background: ${({ background }) => (background ? background : "none")};

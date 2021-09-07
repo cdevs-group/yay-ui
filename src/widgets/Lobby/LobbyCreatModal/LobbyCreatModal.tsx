@@ -22,10 +22,10 @@ const LobbyCreatModal = ({
         <TabsSmall tabValue={activeTab} tabsList={tabsList} onClick={toggleTab} />
         <Buttons>
           <Button onClick={handleJoin} width="100%" marginRight="15px" variant="option">
-            {texts.join}
+            <ButtonText>{texts.join}</ButtonText>
           </Button>
           <Button onClick={handleCreate} width="100%" variant="green">
-            {texts.create}
+            <ButtonText>{texts.create}</ButtonText>
           </Button>
         </Buttons>
       </Content>
@@ -49,4 +49,11 @@ const Buttons = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  font-size: 11px;
+`;
+const ButtonText = styled(Text)`
+  font-size: 11px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  }
 `;

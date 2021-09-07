@@ -3,18 +3,11 @@ import styled from "styled-components";
 import LobbyListItem from "./LobbyListItem";
 import { LobbyListProps } from "../types";
 
-const LobbyList = ({ data, texts, handleWin, handleJoin, handlePlay }: LobbyListProps) => {
+const LobbyList = ({ data, texts, handleButton }: LobbyListProps) => {
   return (
     <Wrapper>
       {data.map((item, i) => (
-        <LobbyListItem
-          handleWin={handleWin}
-          handleJoin={handleJoin}
-          handlePlay={handlePlay}
-          key={i}
-          texts={texts}
-          data={item}
-        />
+        <LobbyListItem handleButton={handleButton} key={i} texts={texts} data={item} />
       ))}
     </Wrapper>
   );

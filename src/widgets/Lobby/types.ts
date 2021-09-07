@@ -25,18 +25,14 @@ export interface LobbyCreatModalProps {
 export interface LobbyListItemProps {
   data: DataLobbyProps;
   texts: LobbyTextsProps;
-  handleWin: () => void;
-  handleJoin: () => void;
-  handlePlay: () => void;
+  handleButton: (param: any) => void;
 }
 interface DataLobbyProps {
   playerImg1?: string;
   playerImg2?: string;
   player: string;
   bet: string | number;
-  button?: string;
-  result?: string;
-  ready: boolean;
+  type: string;
   timer?: number;
   gameAddress: string;
 }
@@ -46,11 +42,14 @@ interface LobbyTextsProps {
   time: string;
   waitResult: string;
   winner?: string;
+  winnerMob?: string;
+  play: string;
+  waitPlayer: string;
+  withApponent: string;
+  join: string;
 }
 export interface LobbyListProps {
   data: Array<DataLobbyProps>;
   texts: LobbyTextsProps;
-  handleWin: () => void;
-  handleJoin: () => void;
-  handlePlay: () => void;
+  handleButton: (param: any) => void;
 }

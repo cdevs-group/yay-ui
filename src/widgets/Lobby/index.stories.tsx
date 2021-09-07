@@ -59,7 +59,8 @@ export const LobbyListBlock = () => {
       playerImg2: AVATAR_PLAYER_2,
       player: "0xbdda50183d817c3289f895a4472eb475967dc980",
       bet: "5",
-      button: "Collect Winnings",
+      // button: "Collect Winnings",
+      type: "winner",
       ready: true,
       timer: 11723,
       result: "win",
@@ -70,8 +71,8 @@ export const LobbyListBlock = () => {
       playerImg2: AVATAR_PLAYER_2,
       player: "0xbdda50183d817c3289f895a4472eb475967dc980",
       bet: "1",
-      result: "win",
-      button: "Join now",
+      // button: "Join now",
+      type: "join",
       ready: true,
       timer: 0,
       gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
@@ -81,7 +82,8 @@ export const LobbyListBlock = () => {
       playerImg2: AVATAR_PLAYER_2,
       player: "0xbdda50183d817c3289f895a4472eb475967dc980",
       bet: "0.1",
-      button: "Waiting for player",
+      // button: "Waiting for player",
+      type: "waitPlayer",
       ready: false,
       gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
     },
@@ -90,9 +92,9 @@ export const LobbyListBlock = () => {
       playerImg2: AVATAR_PLAYER_2,
       player: "0xbdda50183d817c3289f895a4472eb475967dc980",
       bet: "0.1",
-      button: "Waiting for results",
+      // button: "Waiting for results",
+      type: "waitResult",
       ready: false,
-      finish: true,
       timer: 0,
       gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
     },
@@ -101,7 +103,8 @@ export const LobbyListBlock = () => {
       playerImg2: AVATAR_PLAYER_2,
       player: "0xbdda50183d817c3289f895a4472eb475967dc980",
       bet: "0.1",
-      button: "Play",
+      // button: "Play",
+      type: "withApponent",
       ready: true,
       timer: 1111,
       gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
@@ -114,11 +117,13 @@ export const LobbyListBlock = () => {
     time: "Still time",
     waitResult: "Waiting for results",
     winner: "Collect Winnings",
+    winnerMob: "Collect",
+    withApponent: "Play",
+    waitPlayer: "Waiting for player",
+    join: "Join now",
   };
 
-  const handleWin = () => {};
-  const handleJoin = () => {};
-  const handlePlay = () => {};
+  const handleButton = (param: any) => {};
 
-  return <LobbyList handleWin={handleWin} handleJoin={handleJoin} handlePlay={handlePlay} texts={texts} data={data} />;
+  return <LobbyList handleButton={handleButton} texts={texts} data={data} />;
 };
