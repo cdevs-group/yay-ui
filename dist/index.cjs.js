@@ -5349,8 +5349,7 @@ var Disclaimer = function (_a) {
     var text = _a.text;
     var _b = React.useState(true), open = _b[0], setOpen = _b[1];
     return (React__default['default'].createElement(Block, { open: open },
-        React__default['default'].createElement(StyledText$1, null,
-            React__default['default'].createElement("div", null, text)),
+        React__default['default'].createElement(StyledText$1, null, text),
         React__default['default'].createElement(Button, { onClick: function () { return setOpen(false); } },
             React__default['default'].createElement(Icon$K, { role: "button" }))));
 };
@@ -5368,9 +5367,9 @@ var Block = styled__default['default'].div(templateObject_1$n || (templateObject
     return theme.mediaQueries.lg;
 }, function (_a) {
     var open = _a.open;
-    return (!open ? 0 : "13px");
+    return (!open ? 0 : "13px 46px");
 });
-var StyledText$1 = styled__default['default'](Text)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  max-width: 851px;\n  margin: 0 auto;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: left;\n  ", " {\n    text-align: center;\n  }\n"], ["\n  max-width: 851px;\n  margin: 0 auto;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: left;\n  ", " {\n    text-align: center;\n  }\n"])), function (_a) {
+var StyledText$1 = styled__default['default'](Text)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  max-width: 1200px;\n  margin: 0 auto;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: left;\n  & br {\n    display: block;\n  }\n  ", " {\n    text-align: center;\n    font-size: 15px;\n    color: #fff;\n    font-weight: 500;\n    line-height: 1.5;\n    & br {\n      display: none;\n    }\n  }\n"], ["\n  max-width: 1200px;\n  margin: 0 auto;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: left;\n  & br {\n    display: block;\n  }\n  ", " {\n    text-align: center;\n    font-size: 15px;\n    color: #fff;\n    font-weight: 500;\n    line-height: 1.5;\n    & br {\n      display: none;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
