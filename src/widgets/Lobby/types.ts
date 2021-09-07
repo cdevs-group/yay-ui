@@ -5,6 +5,8 @@ export interface LobbyNavProps {
   };
   handleJoin: () => void;
   handleCreate: () => void;
+  imgJoin?: string;
+  imgCreate?: string;
 }
 
 export interface LobbyCreatModalProps {
