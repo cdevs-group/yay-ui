@@ -28,7 +28,7 @@ const LobbyListItem = ({ data, texts, handleButton }: LobbyListItemProps) => {
 
   return (
     <>
-      <TimerMob type={data?.type === "join"}>
+      <TimerMob type={(data.timer !== undefined && data.timer < 1) || data?.type === "join"}>
         <TimerNotSolidWithoutBg
           color={data.timer !== undefined && data.timer < 1 ? baseColors.whiteRgba2 : lightColors.text}
           marginPoint="0 18px"
