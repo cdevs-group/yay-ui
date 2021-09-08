@@ -5,8 +5,12 @@ import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
 const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
+  const isHttpLink = url?.startsWith("http");
+  const Link: any = isHttpLink ? "a" : StyledLink;
+  const props = isHttpLink ? { href: url } : { to: url };
+
   return (
-    <Link to={url} exact onClick={onClick}>
+    <Link {...props} exact onClick={onClick}>
       <LinkItem size={size}>{name}</LinkItem>
     </Link>
   );
@@ -14,7 +18,7 @@ const MenuLink = ({ name, url, size, onClick }: LinkHeaderProps) => {
 
 export default MenuLink;
 
-const Link = styled(NavLink)``;
+const StyledLink = styled(NavLink)``;
 
 const LinkItem = styled(Text)`
   position: relative;
@@ -39,7 +43,7 @@ const LinkItem = styled(Text)`
       opacity: 0;
     }
     margin: 0 20px;
-    ${Link}.active & {
+    ${StyledLink}.active & {
       &::after {
         width: 100%;
         opacity: 1;

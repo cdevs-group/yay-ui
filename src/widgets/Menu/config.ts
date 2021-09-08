@@ -1,7 +1,7 @@
 export const links = [
   {
     name: "Gaming Marketplace",
-    url: "/",
+    url: "http:/gf",
   },
   {
     name: "Swap",
