@@ -6193,17 +6193,13 @@ var templateObject_1$a, templateObject_2$7;
 
 var GIFT = "807ae577acdaa994.png";
 
-var GIFT2 = "13c5906f9a4df20c.png";
-
 var TakeGift = function (_a) {
     var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift, images = _a.images;
     return (React__default['default'].createElement(Card, null,
         React__default['default'].createElement(StyledTitle, null, texts.title),
         React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift) || GIFT }),
         React__default['default'].createElement(StyledButton$1, { variant: "white", onClick: handleTakeGift }, texts.button),
-        React__default['default'].createElement(Claimed, { claimedGift: claimedGift },
-            React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift2) || GIFT2 }),
-            React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", textAlign: "center" }, texts.claimed))));
+        React__default['default'].createElement(Claimed, { claimedGift: claimedGift })));
 };
 var Card = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 20px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"], ["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 20px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
