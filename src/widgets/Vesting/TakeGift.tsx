@@ -80,7 +80,7 @@ const Claimed = styled.div<{ claimedGift: boolean }>`
   transition: 0.3s;
   /* opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
   pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")}; */
-  opacity: 1;  
+  opacity: 1;
   border-radius: inherit;
 `;
 export default TakeGift;
