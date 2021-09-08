@@ -1494,23 +1494,23 @@ Text.defaultProps = {
 };
 var templateObject_1$1O;
 
-var StyledLink = styled__default['default'](Text)(templateObject_1$1N || (templateObject_1$1N = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
+var StyledLink$1 = styled__default['default'](Text)(templateObject_1$1N || (templateObject_1$1N = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Link$3 = function (_a) {
+var Link$2 = function (_a) {
     var external = _a.external, props = __rest(_a, ["external"]);
     var internalProps = external ? getExternalLinkProps() : {};
-    return React__default['default'].createElement(StyledLink, __assign({ as: "a", bold: true }, internalProps, props));
+    return React__default['default'].createElement(StyledLink$1, __assign({ as: "a", bold: true }, internalProps, props));
 };
-Link$3.defaultProps = {
+Link$2.defaultProps = {
     color: "green",
 };
 var templateObject_1$1N;
 
 var LinkExternal = function (_a) {
     var children = _a.children, icon = _a.icon, props = __rest(_a, ["children", "icon"]);
-    return (React__default['default'].createElement(Link$3, __assign({ external: true }, props),
+    return (React__default['default'].createElement(Link$2, __assign({ external: true }, props),
         children,
         icon || React__default['default'].createElement(Icon$I, { ml: "4px" })));
 };
@@ -2495,7 +2495,7 @@ var ComingSoon = function (_a) {
             React__default['default'].createElement("img", { src: img || ComingSoonIcon })),
         React__default['default'].createElement(TextBottom$1, { size: "sm" }, text),
         React__default['default'].createElement(BackLink$1, null,
-            React__default['default'].createElement(Link$3, { color: "#47DA3B", href: href }, backText))));
+            React__default['default'].createElement(Link$2, { color: "#47DA3B", href: href }, backText))));
 };
 var templateObject_1$1l, templateObject_2$19, templateObject_3$Y, templateObject_4$L;
 
@@ -4283,7 +4283,7 @@ var getNetwork = function (network) {
     }
 };
 
-var HelpLink = styled__default['default'](Link$3)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"], ["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"])), function (_a) {
+var HelpLink = styled__default['default'](Link$2)(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"], ["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.linkColor;
 });
@@ -5199,10 +5199,13 @@ var templateObject_1$A, templateObject_2$t;
 
 var MenuLink = function (_a) {
     var name = _a.name, url = _a.url, size = _a.size, onClick = _a.onClick;
-    return (React__default['default'].createElement(Link$2, { to: url, exact: true, onClick: onClick },
+    var isHttpLink = url === null || url === void 0 ? void 0 : url.startsWith("http");
+    var Link = isHttpLink ? "a" : StyledLink;
+    var props = isHttpLink ? { href: url } : { to: url };
+    return (React__default['default'].createElement(Link, __assign({}, props, { exact: true, onClick: onClick }),
         React__default['default'].createElement(LinkItem, { size: size }, name)));
 };
-var Link$2 = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$z || (templateObject_1$z = __makeTemplateObject([""], [""])));
+var StyledLink = styled__default['default'](reactRouterDom.NavLink)(templateObject_1$z || (templateObject_1$z = __makeTemplateObject([""], [""])));
 var LinkItem = styled__default['default'](Text)(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -5215,7 +5218,7 @@ var LinkItem = styled__default['default'](Text)(templateObject_2$s || (templateO
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
-}, Link$2, function (_a) {
+}, StyledLink, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
@@ -5336,7 +5339,7 @@ var NetworkModal = function (_a) {
                 React__default['default'].createElement(Button$2, { value: (valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[i]) || el.chainId, onClick: handleClick },
                     React__default['default'].createElement(TextStyled$2, null, el.name),
                     React__default['default'].createElement("img", { src: el.icon, alt: "" })))); })),
-            React__default['default'].createElement(Link$3, { href: linkHref, style: { margin: "0 auto" } }, linkText))));
+            React__default['default'].createElement(Link$2, { href: linkHref, style: { margin: "0 auto" } }, linkText))));
 };
 var templateObject_1$v, templateObject_2$o, templateObject_3$l, templateObject_4$g;
 
@@ -6475,7 +6478,7 @@ var ModalPlatform = function (_a) {
                 React__default['default'].createElement(Button, { target: "_blank", as: "a", href: el.link },
                     React__default['default'].createElement(TextStyled, null, el.name),
                     React__default['default'].createElement("img", { src: el.icon, alt: "" })))); })),
-            linkAbout ? (React__default['default'].createElement(Link$3, { href: linkAbout, style: { margin: "0 auto" } }, linkAbout)) : null)));
+            linkAbout ? (React__default['default'].createElement(Link$2, { href: linkAbout, style: { margin: "0 auto" } }, linkAbout)) : null)));
 };
 var Wrap = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 0 20px 26px;\n"], ["\n  padding: 0 20px 26px;\n"])));
 var Button = styled__default['default'].button(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 9px 10px;\n  border-radius: 12px;\n  background: ", ";\n  cursor: pointer;\n  border: none;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 9px 10px;\n  border-radius: 12px;\n  background: ", ";\n  cursor: pointer;\n  border: none;\n"])), function (_a) {
@@ -6622,7 +6625,7 @@ exports.InfoWrapper = InfoWrapper;
 exports.Input = Input$1;
 exports.InputSearch = InputSearch;
 exports.InstagramIcon = Icon$8;
-exports.Link = Link$3;
+exports.Link = Link$2;
 exports.LinkExternal = LinkExternal;
 exports.ListWrap = ListWrap;
 exports.LiveCard = LiveCard;
