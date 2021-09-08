@@ -78,8 +78,9 @@ const Claimed = styled.div<{ claimedGift: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
-  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")};
+  /* opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
+  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")}; */
+  opacity: 1;
   border-radius: inherit;
 `;
 export default TakeGift;
