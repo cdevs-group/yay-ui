@@ -29,10 +29,10 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images }: IProps) => {
         {texts.button}
       </StyledButton>
       <Claimed claimedGift={claimedGift}>
-        <img alt="" src={images?.gift2 || GIFT2} />
+        {/* <img alt="" src={images?.gift2 || GIFT2} />
         <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
           {texts.claimed}
-        </Text>
+        </Text> */}
       </Claimed>
     </Card>
   );
