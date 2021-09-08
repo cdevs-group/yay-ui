@@ -29,6 +29,8 @@ import AVATAR_PLAYER from "../../public/images/avatar-player.png";
 import AVATAR_PLAYER_2 from "../../public/images/avatar-player2.png";
 import Avalanche from "../../public/images/avalanche.png";
 import UNIT from "../../public/images/unit.png";
+import PANCAKE from "../../public/images/pancake.png";
+import PANGOLIN from "../../public/images/pangolin.png";
 
 export {
   BG_IMG,
@@ -62,4 +64,6 @@ export {
   AVATAR_PLAYER,
   AVATAR_PLAYER_2,
   UNIT,
+  PANCAKE,
+  PANGOLIN,
 };
