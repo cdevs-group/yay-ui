@@ -59,8 +59,10 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading
       </ProgressWrap>
       <Texts>
         <TextBlock>
-          <StyledText>{texts.total}</StyledText>
-          <StyledText color="greyText3">{data.total}</StyledText>
+          <StyledText color="greyText3">{`${texts.total} ${numberConverter(data.total)} $YAY`}</StyledText>
+          <StyledText color="greyText3">{`${texts.totalRaised} ${
+            numberConverter(data.total) - numberConverter(data.totalRaised)
+          } $YAY`}</StyledText>
         </TextBlock>
       </Texts>
     </Card>
