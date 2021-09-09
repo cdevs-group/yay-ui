@@ -6100,8 +6100,8 @@ var ClaimTokens = function (_a) {
                         React__default['default'].createElement(StyledText, { color: "greyText3" }, data.totalRaised))))),
         React__default['default'].createElement(Texts, null,
             React__default['default'].createElement(TextBlock, null,
-                React__default['default'].createElement(StyledText, null, texts.total),
-                React__default['default'].createElement(StyledText, { color: "greyText3" }, data.total)))));
+                React__default['default'].createElement(StyledText, { color: "greyText3" }, texts.total + " " + numberConverter(data.total) + " $YAY"),
+                React__default['default'].createElement(StyledText, { color: "greyText3" }, texts.totalRaised + " " + (numberConverter(data.total) - numberConverter(data.totalRaised)) + " $YAY")))));
 };
 var Card$2 = styled__default['default'].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6196,13 +6196,17 @@ var templateObject_1$a, templateObject_2$7;
 
 var GIFT = "807ae577acdaa994.png";
 
+var GIFT2 = "13c5906f9a4df20c.png";
+
 var TakeGift = function (_a) {
     var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift, images = _a.images;
     return (React__default['default'].createElement(Card, null,
         React__default['default'].createElement(StyledTitle, null, texts.title),
         React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift) || GIFT }),
         React__default['default'].createElement(StyledButton$1, { variant: "white", onClick: handleTakeGift }, texts.button),
-        React__default['default'].createElement(Claimed, { claimedGift: claimedGift })));
+        React__default['default'].createElement(Claimed, { claimedGift: claimedGift },
+            React__default['default'].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift2) || GIFT2 }),
+            React__default['default'].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", textAlign: "center" }, texts.claimed))));
 };
 var Card = styled__default['default'].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 20px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"], ["\n  position: relative;\n  display: block;\n  padding: 18px 24px;\n  background: ", ";\n  border-radius: 20px;\n  & img {\n    display: block;\n    margin: 0 auto 6px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6213,7 +6217,7 @@ var StyledTitle = styled__default['default'](Text)(templateObject_2$6 || (templa
     return theme.mediaQueries.sm;
 });
 var StyledButton$1 = styled__default['default'](Button$9)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n"], ["\n  width: 100%;\n  font-weight: 400;\n"])));
-var Claimed = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  /* opacity: ", ";\n  pointer-events: ", "; */\n  opacity: 1;\n  border-radius: inherit;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  /* opacity: ", ";\n  pointer-events: ", "; */\n  opacity: 1;\n  border-radius: inherit;\n"])), function (_a) {
+var Claimed = styled__default['default'].div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
