@@ -1,7 +1,7 @@
 export interface VestingWidgetProps {
   dataClaimTokens: {
     totalRaised: string;
-    total?: string;
+    total: string;
   };
   handleClaimTokens: () => void;
   textsClaimTokens: {
