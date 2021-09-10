@@ -47,6 +47,9 @@ interface Props {
   textsBridge?: textsBridge;
   transactionsList?: Array<Itransactions> | [];
   handleAddToken?: () => void;
+  marginContent?: string;
+  minHeight?: string;
+  buttonLogoutType?: string;
 }
 
 const Account: React.FC<Props> = ({
@@ -66,6 +69,9 @@ const Account: React.FC<Props> = ({
   textsBridge,
   transactionsList,
   handleAddToken,
+  marginContent,
+  minHeight,
+  buttonLogoutType,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -82,7 +88,10 @@ const Account: React.FC<Props> = ({
     bridge,
     textsBridge,
     transactionsList,
-    handleAddToken
+    handleAddToken,
+    marginContent,
+    minHeight,
+    buttonLogoutType
   );
 
   return (
