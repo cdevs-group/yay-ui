@@ -9,12 +9,14 @@ export default {
 
 export const VestingWidgetComponent: React.FC = () => {
   const dataClaimTokens = {
-    totalRaised: "120000",
-    total: "12000000",
+    totalRaised: "10M YAY",
+    total: "30M YAY",
+    left: "20M YAY",
   };
 
   const textsClaimTokens = {
-    totalRaised: " left",
+    left: "Left",
+    totalRaised: "Total raised",
     total: "Total ",
     title: "You can claim tokens",
     button: "Claim tokens",

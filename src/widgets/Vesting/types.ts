@@ -2,6 +2,7 @@ export interface VestingWidgetProps {
   dataClaimTokens: {
     totalRaised: string;
     total: string;
+    left?: string;
   };
   handleClaimTokens: () => void;
   textsClaimTokens: {
@@ -9,6 +10,7 @@ export interface VestingWidgetProps {
     button: string;
     totalRaised: string;
     total: string;
+    left?: string;
   };
   dataCardsIndicators: {
     text: string;

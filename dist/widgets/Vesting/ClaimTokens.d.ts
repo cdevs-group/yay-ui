@@ -3,6 +3,7 @@ interface IProps {
     data: {
         totalRaised: string;
         total: string;
+        left?: string;
     };
     handleClaimTokens: () => void;
     texts: {
@@ -10,6 +11,7 @@ interface IProps {
         button: string;
         totalRaised: string;
         total: string;
+        left?: string;
     };
     disabledButton?: boolean;
     isLoading?: boolean;
