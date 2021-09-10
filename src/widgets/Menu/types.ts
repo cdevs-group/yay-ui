@@ -1,3 +1,4 @@
+import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
 
@@ -102,7 +103,7 @@ export interface NavProps extends PanelProps {
   disclaimerText?: string;
   marginContent?: string;
   minHeight?: string;
-  buttonLogoutType?: string;
+  buttonLogoutType?: Variant;
 }
 
 export type BlockChainNetwork = {

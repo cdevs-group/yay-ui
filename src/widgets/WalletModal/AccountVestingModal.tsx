@@ -11,6 +11,7 @@ import { connectorLocalStorageKey } from "./config";
 import { TextsAccount } from "./useWalletModal";
 import { ArrowDownRightIcon, CopyIcon2 } from "../../components/Svg";
 import { Tabs } from "../../components/Tabs";
+import { Variant, variants } from "../../components/Button/types";
 
 interface Props {
   account: string;
@@ -23,7 +24,7 @@ interface Props {
   handleAddToken: () => void;
   marginContent?: string;
   minHeight?: string;
-  buttonLogoutType?: string;
+  buttonLogoutType?: Variant;
 }
 
 const AccountVestingModal: React.FC<Props> = ({
@@ -100,7 +101,7 @@ const AccountVestingModal: React.FC<Props> = ({
               <Button
                 scale="md"
                 width="100%"
-                variant={buttonLogoutType || "secondary"}
+                variant={buttonLogoutType || variants.SECONDARY}
                 style={{ fontWeight: 400 }}
                 onClick={() => {
                   logout();

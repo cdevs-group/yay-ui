@@ -7,6 +7,7 @@ import { Login } from "../../WalletModal/types";
 import { AccountIcon } from "../../../constants/images";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
+import { Variant } from "../../../components/Button/types";
 
 interface textsBridge {
   titleModal: string;
@@ -49,7 +50,7 @@ interface Props {
   handleAddToken?: () => void;
   marginContent?: string;
   minHeight?: string;
-  buttonLogoutType?: string;
+  buttonLogoutType?: Variant;
 }
 
 const Account: React.FC<Props> = ({

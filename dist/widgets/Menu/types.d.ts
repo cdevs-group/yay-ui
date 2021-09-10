@@ -1,3 +1,4 @@
+import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
 export declare const sizes: {
@@ -92,6 +93,9 @@ export interface NavProps extends PanelProps {
     handleAddToken?: () => void;
     disclaimer?: boolean;
     disclaimerText?: string;
+    marginContent?: string;
+    minHeight?: string;
+    buttonLogoutType?: Variant;
 }
 export declare type BlockChainNetwork = {
     name: string;

@@ -6,6 +6,7 @@ import { Login } from "./types";
 import AccountVestingModal from "./AccountVestingModal";
 import { BlockChainNetwork } from "../Menu/types";
 import { WalletHistoryModal } from "../WalletHistoryModal";
+import { Variant } from "../../components/Button/types";
 
 interface ReturnType {
   onPresentConnectModal: () => void;
@@ -71,7 +72,7 @@ const useWalletModal = (
   handleAddToken?: any,
   marginContent?: string,
   minHeight?: string,
-  buttonLogoutType?: string
+  buttonLogoutType?: Variant
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {

@@ -2,6 +2,7 @@ import React from "react";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
+import { Variant } from "../../../components/Button/types";
 interface textsBridge {
     titleModal: string;
     title: string;
@@ -39,6 +40,9 @@ interface Props {
     textsBridge?: textsBridge;
     transactionsList?: Array<Itransactions> | [];
     handleAddToken?: () => void;
+    marginContent?: string;
+    minHeight?: string;
+    buttonLogoutType?: Variant;
 }
 declare const Account: React.FC<Props>;
 export default Account;
