@@ -41,6 +41,9 @@ const Header: React.FC<NavProps> = ({
   handleAddToken,
   disclaimer,
   disclaimerText,
+  marginContent,
+  minHeight,
+  buttonLogoutType,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -112,6 +115,9 @@ const Header: React.FC<NavProps> = ({
               textsBridge={textsBridge}
               transactionsList={transactionsList}
               handleAddToken={handleAddToken}
+              marginContent={marginContent}
+              minHeight={minHeight}
+              buttonLogoutType={buttonLogoutType}
             />
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

@@ -100,6 +100,9 @@ export interface NavProps extends PanelProps {
   handleAddToken?: () => void;
   disclaimer?: boolean;
   disclaimerText?: string;
+  marginContent?: string;
+  minHeight?: string;
+  buttonLogoutType?: string;
 }
 
 export type BlockChainNetwork = {

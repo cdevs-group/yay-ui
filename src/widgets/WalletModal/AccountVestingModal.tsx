@@ -21,6 +21,9 @@ interface Props {
   dataTransactions?: Array<any>;
   handleClaimed: (value: string) => void;
   handleAddToken: () => void;
+  marginContent?: string;
+  minHeight?: string;
+  buttonLogoutType?: string;
 }
 
 const AccountVestingModal: React.FC<Props> = ({
@@ -32,17 +35,19 @@ const AccountVestingModal: React.FC<Props> = ({
   handleClaimed = () => null,
   onDismiss = () => null,
   handleAddToken,
+  minHeight,
+  marginContent,
+  buttonLogoutType,
 }) => {
   const [tabValue, setTabValue] = useState<number>(0);
-
   const handleTab = async (e: any) => {
     setTabValue(+e.target.value);
   };
 
   return (
     <Modal title={texts.title} onDismiss={onDismiss}>
-      <ModalWrap>
-        <Tabs tabsList={texts.tabs} tabValue={tabValue} onClick={handleTab} />
+      <ModalWrap minHeight={minHeight}>
+        {texts.tabs && <Tabs tabsList={texts.tabs} tabValue={tabValue} onClick={handleTab} />}
         {tabValue === 0 && (
           <>
             <Text
@@ -51,7 +56,7 @@ const AccountVestingModal: React.FC<Props> = ({
               marginBottom="7px"
               fontSize="14px"
               lineHeight="24px"
-              marginTop="37px"
+              marginTop={marginContent || "37px"}
               fontWeight="400"
             >
               {texts.address}
@@ -95,7 +100,7 @@ const AccountVestingModal: React.FC<Props> = ({
               <Button
                 scale="md"
                 width="100%"
-                variant="secondary"
+                variant={buttonLogoutType || "secondary"}
                 style={{ fontWeight: 400 }}
                 onClick={() => {
                   logout();
@@ -148,9 +153,9 @@ const AccountVestingModal: React.FC<Props> = ({
 
 export default AccountVestingModal;
 
-const ModalWrap = styled.div`
+const ModalWrap = styled.div<{ minHeight?: string }>`
   padding: 0 20px 20px;
-  min-height: 380px;
+  min-height: ${({ minHeight }) => minHeight || "380px"};
   margin-top: -10px;
 `;
 const AccountWrap = styled(Input)`

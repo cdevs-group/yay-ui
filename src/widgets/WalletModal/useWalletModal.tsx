@@ -68,7 +68,10 @@ const useWalletModal = (
   bridge?: boolean,
   textsBridge?: textsBridge,
   transactionsList?: Array<Itransactions> | [],
-  handleAddToken?: any
+  handleAddToken?: any,
+  marginContent?: string,
+  minHeight?: string,
+  buttonLogoutType?: string
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {
@@ -81,6 +84,9 @@ const useWalletModal = (
           dataTransactions={dataTransactions}
           handleClaimed={handleClaimed}
           handleAddToken={handleAddToken}
+          marginContent={marginContent}
+          minHeight={minHeight}
+          buttonLogoutType={buttonLogoutType}
         />
       );
     } else if (bridge) {

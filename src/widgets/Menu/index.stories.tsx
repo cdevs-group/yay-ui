@@ -179,10 +179,10 @@ export const HeaderVesting: React.FC = () => {
     copied: "Copied",
     yayBalance: "$YAY balance",
     address: "Your address",
-    tabs: ["Wallet", "Transactions"],
-    recentTransactions: "Recent transactions",
+    // tabs: ["Wallet", "Transactions"],
+    // recentTransactions: "Recent transactions",
     claimed: "Claimed",
-    noRecentTransactions: "No recent transactions",
+    // noRecentTransactions: "No recent transactions",
     addToken: "Add token",
   };
 
@@ -191,12 +191,12 @@ export const HeaderVesting: React.FC = () => {
     link: "Learn how connect",
   };
 
-  const dataTransactions = [
-    { id: "001", value: "+12,000,00 $YAY" },
-    { id: "002", value: "+12,000,00 $YAY" },
-    { id: "003", value: "+12,000,00 $YAY" },
-    { id: "004", value: "+12,000,00 $YAY" },
-  ];
+  // const dataTransactions = [
+  //   { id: "001", value: "+12,000,00 $YAY" },
+  //   { id: "002", value: "+12,000,00 $YAY" },
+  //   { id: "003", value: "+12,000,00 $YAY" },
+  //   { id: "004", value: "+12,000,00 $YAY" },
+  // ];
 
   return (
     <BrowserRouter>
@@ -225,8 +225,11 @@ export const HeaderVesting: React.FC = () => {
           linkLogo="/"
           vesting
           yayBalance="25000000"
-          dataTransactions={dataTransactions}
+          // dataTransactions={dataTransactions}
           handleClaimed={(value) => console.log(value)}
+          marginContent="0"
+          minHeight="313px"
+          buttonLogoutType="green"
         />
       </div>
     </BrowserRouter>
