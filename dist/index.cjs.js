@@ -4388,7 +4388,7 @@ var AccountText$1 = styled__default['default'](Text)(templateObject_4$r || (temp
 var templateObject_1$V, templateObject_2$K, templateObject_3$D, templateObject_4$r;
 
 var AccountVestingModal = function (_a) {
-    var texts = _a.texts, account = _a.account, logout = _a.logout, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, _b = _a.handleClaimed, handleClaimed = _b === void 0 ? function () { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, handleAddToken = _a.handleAddToken, minHeight = _a.minHeight, marginContent = _a.marginContent, buttonLogoutType = _a.buttonLogoutType;
+    var texts = _a.texts, account = _a.account, logout = _a.logout, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, _b = _a.handleClaimed, handleClaimed = _b === void 0 ? function () { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, handleAddToken = _a.handleAddToken, minHeight = _a.minHeight, marginContent = _a.marginContent, buttonLogoutType = _a.buttonLogoutType, linkExternalWalletModal = _a.linkExternalWalletModal;
     var _d = React.useState(0), tabValue = _d[0], setTabValue = _d[1];
     var handleTab = function (e) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -4411,7 +4411,7 @@ var AccountVestingModal = function (_a) {
                     React__default['default'].createElement(Text, { letterSpacing: "-0.02em", fontWeight: "400" }, yayBalance),
                     React__default['default'].createElement(ButtonAddToken, { onClick: handleAddToken }, texts.addToken)),
                 React__default['default'].createElement(Flex, { mb: "30px" },
-                    React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px", icon: React__default['default'].createElement(Icon$6, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
+                    React__default['default'].createElement(LinkExternal, { color: "#47DA3B", small: true, href: linkExternalWalletModal || "https://bscscan.com/address/" + account, mr: "16px", icon: React__default['default'].createElement(Icon$6, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
                 React__default['default'].createElement(Flex, { justifyContent: "center" },
                     React__default['default'].createElement(Button$9, { scale: "md", width: "100%", variant: buttonLogoutType || variants$1.SECONDARY, style: { fontWeight: 400 }, onClick: function () {
                             logout();
@@ -4623,10 +4623,10 @@ var useWalletHistoryModal = function () {
     return { onPresentWalletHistoryModal: onPresentWalletHistoryModal };
 };
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType) {
+var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType, linkExternalWalletModal) {
     var pageModal = function () {
         if (vesting) {
-            return (React__default['default'].createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType }));
+            return (React__default['default'].createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, linkExternalWalletModal: linkExternalWalletModal }));
         }
         else if (bridge) {
             return (React__default['default'].createElement(WalletHistoryModal, { account: account, textsBridge: textsBridge, logout: logout, transactionsList: transactionsList }));
@@ -5169,8 +5169,8 @@ var HiddenItem = styled__default['default'].div(templateObject_1$B || (templateO
 var templateObject_1$B;
 
 var Account = function (_a) {
-    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType;
-    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
+    var text = _a.text, account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType, linkExternalWalletModal = _a.linkExternalWalletModal;
+    var _b = useWalletModal(login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType, linkExternalWalletModal), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     return (React__default['default'].createElement(React__default['default'].Fragment, null, account ? (React__default['default'].createElement(AccountBlock, { as: "button", onClick: function () {
             onPresentAccountModal();
         } },
@@ -5414,7 +5414,7 @@ var Button$1 = styled__default['default'].button(templateObject_3$j || (template
 var templateObject_1$t, templateObject_2$m, templateObject_3$j;
 
 var Header = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType;
+    var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType, linkExternalWalletModal = _a.linkExternalWalletModal;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
@@ -5445,7 +5445,7 @@ var Header = function (_a) {
                         React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
                 React__default['default'].createElement(RightContent, null,
                     network ? (React__default['default'].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
-                    React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType }),
+                    React__default['default'].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, linkExternalWalletModal: linkExternalWalletModal }),
                     React__default['default'].createElement(LanguageBlockDesk, null,
                         React__default['default'].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })),
                     React__default['default'].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));

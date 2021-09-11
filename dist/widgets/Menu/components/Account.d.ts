@@ -43,6 +43,7 @@ interface Props {
     marginContent?: string;
     minHeight?: string;
     buttonLogoutType?: Variant;
+    linkExternalWalletModal?: string;
 }
 declare const Account: React.FC<Props>;
 export default Account;
