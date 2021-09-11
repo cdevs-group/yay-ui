@@ -25,6 +25,7 @@ interface Props {
   marginContent?: string;
   minHeight?: string;
   buttonLogoutType?: Variant;
+  linkExternalWalletModal?: string;
 }
 
 const AccountVestingModal: React.FC<Props> = ({
@@ -39,6 +40,7 @@ const AccountVestingModal: React.FC<Props> = ({
   minHeight,
   marginContent,
   buttonLogoutType,
+  linkExternalWalletModal,
 }) => {
   const [tabValue, setTabValue] = useState<number>(0);
   const handleTab = async (e: any) => {
@@ -88,7 +90,7 @@ const AccountVestingModal: React.FC<Props> = ({
               <LinkExternal
                 color="#47DA3B"
                 small
-                href={`https://bscscan.com/address/${account}`}
+                href={linkExternalWalletModal || `https://bscscan.com/address/${account}`}
                 mr="16px"
                 icon={<ArrowDownRightIcon style={{ marginLeft: 5 }} />}
                 style={{ fontWeight: 400 }}

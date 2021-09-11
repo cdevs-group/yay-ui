@@ -72,7 +72,8 @@ const useWalletModal = (
   handleAddToken?: any,
   marginContent?: string,
   minHeight?: string,
-  buttonLogoutType?: Variant
+  buttonLogoutType?: Variant,
+  linkExternalWalletModal?: string
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {
@@ -88,6 +89,7 @@ const useWalletModal = (
           marginContent={marginContent}
           minHeight={minHeight}
           buttonLogoutType={buttonLogoutType}
+          linkExternalWalletModal={linkExternalWalletModal}
         />
       );
     } else if (bridge) {

@@ -44,6 +44,7 @@ const Header: React.FC<NavProps> = ({
   marginContent,
   minHeight,
   buttonLogoutType,
+  linkExternalWalletModal,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const refSelect = useRef<any>(null);
@@ -118,6 +119,7 @@ const Header: React.FC<NavProps> = ({
               marginContent={marginContent}
               minHeight={minHeight}
               buttonLogoutType={buttonLogoutType}
+              linkExternalWalletModal={linkExternalWalletModal}
             />
             <LanguageBlockDesk>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />

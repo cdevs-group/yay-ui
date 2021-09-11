@@ -104,6 +104,7 @@ export interface NavProps extends PanelProps {
   marginContent?: string;
   minHeight?: string;
   buttonLogoutType?: Variant;
+  linkExternalWalletModal?: string;
 }
 
 export type BlockChainNetwork = {

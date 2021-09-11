@@ -51,6 +51,7 @@ interface Props {
   marginContent?: string;
   minHeight?: string;
   buttonLogoutType?: Variant;
+  linkExternalWalletModal?: string;
 }
 
 const Account: React.FC<Props> = ({
@@ -73,6 +74,7 @@ const Account: React.FC<Props> = ({
   marginContent,
   minHeight,
   buttonLogoutType,
+  linkExternalWalletModal,
 }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(
     login,
@@ -92,7 +94,8 @@ const Account: React.FC<Props> = ({
     handleAddToken,
     marginContent,
     minHeight,
-    buttonLogoutType
+    buttonLogoutType,
+    linkExternalWalletModal
   );
 
   return (
