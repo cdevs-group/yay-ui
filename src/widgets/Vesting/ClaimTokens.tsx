@@ -9,6 +9,7 @@ interface IProps {
   data: {
     totalRaised: string;
     total: string;
+    left?: string;
   };
   handleClaimTokens: () => void;
   texts: {
@@ -16,6 +17,7 @@ interface IProps {
     button: string;
     totalRaised: string;
     total: string;
+    left?: string;
   };
   disabledButton?: boolean;
   isLoading?: boolean;
@@ -59,10 +61,14 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading
       </ProgressWrap>
       <Texts>
         <TextBlock>
-          <StyledText color="greyText3">{`${texts.total} ${numberConverter(data.total)} $YAY`}</StyledText>
-          <StyledText color="greyText3">{`${texts.totalRaised} ${
-            numberConverter(data.total) - numberConverter(data.totalRaised)
-          } $YAY`}</StyledText>
+          <StyledText>
+            {texts.total} {data.total}
+          </StyledText>
+          {data.left && (
+            <StyledText color="greyText3">
+              {texts.left} {data.left}
+            </StyledText>
+          )}
         </TextBlock>
       </Texts>
     </Card>

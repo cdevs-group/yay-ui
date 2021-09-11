@@ -6103,8 +6103,14 @@ var ClaimTokens = function (_a) {
                         React__default['default'].createElement(StyledText, { color: "greyText3" }, data.totalRaised))))),
         React__default['default'].createElement(Texts, null,
             React__default['default'].createElement(TextBlock, null,
-                React__default['default'].createElement(StyledText, { color: "greyText3" }, texts.total + " " + numberConverter(data.total) + " $YAY"),
-                React__default['default'].createElement(StyledText, { color: "greyText3" }, texts.totalRaised + " " + (numberConverter(data.total) - numberConverter(data.totalRaised)) + " $YAY")))));
+                React__default['default'].createElement(StyledText, null,
+                    texts.total,
+                    " ",
+                    data.total),
+                data.left && (React__default['default'].createElement(StyledText, { color: "greyText3" },
+                    texts.left,
+                    " ",
+                    data.left))))));
 };
 var Card$2 = styled__default['default'].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  padding: 35px 25px;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
