@@ -20,7 +20,7 @@ export const StyledBalanceInput = styled(Box)<{ isWarning: BalanceInputInversion
   border: 1px solid ${({ theme, isWarning }) => theme.colors[isWarning ? "darkPink" : "bgOpacity"]};
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
-  padding: 8px 16px;  
+  padding: 8px 16px;
 `;
 
 export const StyledInput = styled(Input)<{ textAlign?: string }>`

@@ -46,5 +46,6 @@ export { default as AvalancheIcon } from "./Icons/AvalancheIcon";
 export { default as ReverseArrowsIcon } from "./Icons/ReverseArrowsIcon";
 export { default as ClipIcon } from "./Icons/ClipIcon";
 export { default as YAYIcon } from "./Icons/YAYIcon";
+export { default as SwapVertIcon } from "./Icons/SwapVertIcon";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
