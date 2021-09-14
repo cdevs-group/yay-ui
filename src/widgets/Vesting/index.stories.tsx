@@ -60,7 +60,7 @@ export const VestingWidgetComponent: React.FC = () => {
 
   return (
     <VestingWidget
-      canClaim={true}
+      canClaim={!true}
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
@@ -89,7 +89,7 @@ export const VestingWidgetComponent: React.FC = () => {
       isLoadingButtonClaimTokens
       endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
       disabledTopCards
-      disabledCardClaimTokens
+      // disabledCardClaimTokens
     />
   );
 };

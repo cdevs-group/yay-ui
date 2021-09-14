@@ -25,6 +25,9 @@ export * from "./components/Skeleton";
 export * from "./components/Tabs";
 export * from "./components/Pagination";
 export * from "./components/Progress";
+export * from "./components/BalanceInputInversion";
+export * from "./components/CheckboxInput";
+export * from "./components/ButtonMenu";
 
 // Hooks
 export * from "./hooks";
