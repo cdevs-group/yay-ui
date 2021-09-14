@@ -5,6 +5,7 @@ interface IProps {
         value: string;
     };
     canClaim: boolean;
+    disabledTopCards?: boolean;
 }
-declare const CardIndicator: ({ data, canClaim }: IProps) => JSX.Element;
+declare const CardIndicator: ({ data, canClaim, disabledTopCards }: IProps) => JSX.Element;
 export default CardIndicator;

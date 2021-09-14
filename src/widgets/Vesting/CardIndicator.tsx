@@ -40,7 +40,7 @@ const Card = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 20px;
 `;
-const Claimed = styled.div<{ canClaim: boolean, disabledTopCards: boolean }>`
+const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   position: absolute;
   top: 0;
   left: 0;

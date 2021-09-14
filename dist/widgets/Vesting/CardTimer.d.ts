@@ -14,6 +14,7 @@ interface IProps {
         };
     };
     canClaim: boolean;
+    disabledTopCards?: boolean;
 }
-declare const CardTimer: ({ data, canClaim }: IProps) => JSX.Element;
+declare const CardTimer: ({ data, canClaim, disabledTopCards }: IProps) => JSX.Element;
 export default CardTimer;

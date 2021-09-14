@@ -9,6 +9,7 @@ interface Iprops {
         description: string;
     };
     linkClaimTokens?: string;
+    disabledCardClaimTokens?: boolean;
 }
-declare const TokenOnPoolz: ({ images, texts, linkClaimTokens }: Iprops) => JSX.Element;
+declare const TokenOnPoolz: ({ images, texts, linkClaimTokens, disabledCardClaimTokens }: Iprops) => JSX.Element;
 export default TokenOnPoolz;

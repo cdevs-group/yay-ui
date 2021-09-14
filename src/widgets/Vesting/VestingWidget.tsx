@@ -28,7 +28,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   isLoadingButtonClaimTokens,
   endIconButtonClaimTokens,
   disabledTopCards,
-  disabledCardClaimTokens
+  disabledCardClaimTokens,
 }) => {
   return (
     <Wrapper>
@@ -37,7 +37,12 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
       <CardTimer canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataTimer} />
       <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[2]} />
       {!canClaim ? (
-        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} disabledCardClaimTokens={disabledCardClaimTokens} />
+        <TokenOnPoolz
+          texts={textsPoolz}
+          images={imagesMarketplace}
+          linkClaimTokens={linkClaimTokens}
+          disabledCardClaimTokens={disabledCardClaimTokens}
+        />
       ) : (
         <ClaimTokens
           data={dataClaimTokens}
