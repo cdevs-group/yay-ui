@@ -19,9 +19,10 @@ interface IProps {
     };
   };
   canClaim: boolean;
+  disabledTopCards?: boolean;
 }
 
-const CardTimer = ({ data, canClaim }: IProps) => {
+const CardTimer = ({ data, canClaim, disabledTopCards }: IProps) => {
   const progress = 100 - (data.timeSecond * 100) / data.totalSeconds;
 
   const Progress = () => (
@@ -31,9 +32,9 @@ const CardTimer = ({ data, canClaim }: IProps) => {
   );
 
   return (
-    <Wrapper canClaim={canClaim}>
+    <Wrapper canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
       <Inner className="card-inner">
-        <CardFront canClaim={canClaim}>
+        <CardFront canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
           <Text
             color="greyText"
             fontSize="14px"
@@ -49,7 +50,7 @@ const CardTimer = ({ data, canClaim }: IProps) => {
           </Text>
           <Progress />
         </CardFront>
-        <CardBack canClaim={canClaim}>
+        <CardBack canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
           <Text
             color="greyText"
             fontSize="14px"
@@ -64,12 +65,12 @@ const CardTimer = ({ data, canClaim }: IProps) => {
           <Progress />
         </CardBack>
       </Inner>
-      <Claimed canClaim={canClaim} />
+      <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} />
     </Wrapper>
   );
 };
 
-const CardFront = styled.div<{ canClaim: boolean }>`
+const CardFront = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   width: 100%;
   padding: 18px 24px 10px;
   background: ${({ theme }) => theme.colors.dark};
@@ -80,14 +81,14 @@ const CardFront = styled.div<{ canClaim: boolean }>`
   position: absolute;
   top: 0;
   transition: 0;
-  backface-visibility: ${({ canClaim }) => (!canClaim ? "" : "hidden")};
+  backface-visibility: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "" : "hidden")};
 `;
 
 const CardBack = styled(CardFront)`
   transform: rotateY(180deg) translateX(50%);
 `;
 
-const Wrapper = styled.div<{ canClaim: boolean }>`
+const Wrapper = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   position: relative;
   perspective: 1000px;
   min-height: 97px;
@@ -95,7 +96,7 @@ const Wrapper = styled.div<{ canClaim: boolean }>`
   border-radius: 20px;
   &:hover {
     & .card-inner {
-      transform: ${({ canClaim }) => (!canClaim ? "none" : "rotateY(180deg)")};
+      transform: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "none" : "rotateY(180deg)")};
     }
   }
 `;
@@ -126,7 +127,7 @@ const ProgressBar = styled.div<{ progress: number }>`
   background: ${({ theme }) => theme.colors.greenBg2};
   border-radius: inherit;
 `;
-const Claimed = styled.div<{ canClaim: boolean }>`
+const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -139,8 +140,8 @@ const Claimed = styled.div<{ canClaim: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  opacity: ${({ canClaim }) => (!canClaim ? 1 : 0)};
-  pointer-events: ${({ canClaim }) => (!canClaim ? "auto" : "none")};
+  opacity: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? 1 : 0)};
+  pointer-events: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "auto" : "none")};
   border-radius: inherit;
 `;
 

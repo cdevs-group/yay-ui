@@ -56,4 +56,6 @@ export interface VestingWidgetProps {
   disabledButtonClaimTokens?: boolean;
   isLoadingButtonClaimTokens?: boolean;
   endIconButtonClaimTokens?: React.ReactNode | null;
+  disabledTopCards?: boolean;
+  disabledCardClaimTokens?: boolean;
 }

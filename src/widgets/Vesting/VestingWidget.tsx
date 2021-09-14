@@ -27,15 +27,17 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   disabledButtonClaimTokens,
   isLoadingButtonClaimTokens,
   endIconButtonClaimTokens,
+  disabledTopCards,
+  disabledCardClaimTokens
 }) => {
   return (
     <Wrapper>
-      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[0]} />
-      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[1]} />
-      <CardTimer canClaim={canClaim} data={dataTimer} />
-      <CardIndicator canClaim={canClaim} data={dataCardsIndicators[2]} />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[0]} />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[1]} />
+      <CardTimer canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataTimer} />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[2]} />
       {!canClaim ? (
-        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} />
+        <TokenOnPoolz texts={textsPoolz} images={imagesMarketplace} linkClaimTokens={linkClaimTokens} disabledCardClaimTokens={disabledCardClaimTokens} />
       ) : (
         <ClaimTokens
           data={dataClaimTokens}
@@ -44,6 +46,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
           disabledButton={disabledButtonClaimTokens}
           isLoading={isLoadingButtonClaimTokens}
           endIcon={endIconButtonClaimTokens}
+          disabledCardClaimTokens={disabledCardClaimTokens}
         />
       )}
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />

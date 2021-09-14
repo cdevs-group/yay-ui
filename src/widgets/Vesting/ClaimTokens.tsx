@@ -22,9 +22,18 @@ interface IProps {
   disabledButton?: boolean;
   isLoading?: boolean;
   endIcon?: React.ReactNode | null;
+  disabledCardClaimTokens?: boolean;
 }
 
-const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading, endIcon }: IProps) => {
+const ClaimTokens = ({
+  data,
+  texts,
+  handleClaimTokens,
+  disabledButton,
+  isLoading,
+  endIcon,
+  disabledCardClaimTokens,
+}: IProps) => {
   const [widthProgress, setWidthProgress] = useState(0);
   const numberConverter = (string: string) => +string.replace(/[^\d.]/g, "");
 
@@ -33,7 +42,7 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading
   }, [data.totalRaised, data.total]);
 
   return (
-    <Card>
+    <Card disabledCard={disabledCardClaimTokens}>
       <Row>
         <StyledTitle>{texts.title}</StyledTitle>
         <StyledButton
@@ -75,12 +84,27 @@ const ClaimTokens = ({ data, texts, handleClaimTokens, disabledButton, isLoading
   );
 };
 
-export const Card = styled.div`
+export const Card = styled.div<{ disabledCard?: boolean }>`
+  position: relative;
   padding: 35px 25px;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 20px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-column: 1/3;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+    transition: 0.3s;
+    opacity: ${({ disabledCard }) => (disabledCard ? 1 : 0)};
+    pointer-events: ${({ disabledCard }) => (disabledCard ? "auto" : "none")};
+    border-radius: inherit;
   }
 `;
 

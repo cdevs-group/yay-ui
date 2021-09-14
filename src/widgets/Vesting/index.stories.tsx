@@ -88,6 +88,8 @@ export const VestingWidgetComponent: React.FC = () => {
       disabledButtonClaimTokens
       isLoadingButtonClaimTokens
       endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
+      disabledTopCards
+      disabledCardClaimTokens
     />
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { transparentize } from "polished";
 import BG from "./img/link-bg.png";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
@@ -13,11 +14,12 @@ interface Iprops {
     description: string;
   };
   linkClaimTokens?: string;
+  disabledCardClaimTokens?: boolean;
 }
 
-const TokenOnPoolz = ({ images, texts, linkClaimTokens }: Iprops) => {
+const TokenOnPoolz = ({ images, texts, linkClaimTokens, disabledCardClaimTokens }: Iprops) => {
   return (
-    <Wrapper>
+    <Wrapper disabledCard={disabledCardClaimTokens}>
       <CardStyle src={images?.bg || BG}>
         <StyledTitle size="xl">{texts.title}</StyledTitle>
         <Text margin="42px 0">{texts.description}</Text>
@@ -37,11 +39,26 @@ const CardStyle = styled.div<{ src?: string }>`
   height: 100%;
   background: ${({ src }) => `url(${src}) no-repeat left center /cover`};
 `;
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ disabledCard?: boolean }>`
+  position: relative;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 20px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-column: 1/3;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+    transition: 0.3s;
+    opacity: ${({ disabledCard }) => (disabledCard ? 1 : 0)};
+    pointer-events: ${({ disabledCard }) => (disabledCard ? "auto" : "none")};
+    border-radius: inherit;
   }
 `;
 

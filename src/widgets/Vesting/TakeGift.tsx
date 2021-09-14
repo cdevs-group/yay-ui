@@ -29,10 +29,10 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images }: IProps) => {
         {texts.button}
       </StyledButton>
       <Claimed claimedGift={claimedGift}>
-        {/* <img alt="" src={images?.gift2 || GIFT2} />
+        <img alt="" src={images?.gift2 || GIFT2} />
         <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
           {texts.claimed}
-        </Text> */}
+        </Text>
       </Claimed>
     </Card>
   );
@@ -78,9 +78,8 @@ const Claimed = styled.div<{ claimedGift: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  /* opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
-  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")}; */
-  opacity: 1;
+  opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
+  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")};
   border-radius: inherit;
 `;
 export default TakeGift;

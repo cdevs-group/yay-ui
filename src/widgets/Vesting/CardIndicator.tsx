@@ -9,9 +9,10 @@ interface IProps {
     value: string;
   };
   canClaim: boolean;
+  disabledTopCards?: boolean;
 }
 
-const CardIndicator = ({ data, canClaim }: IProps) => {
+const CardIndicator = ({ data, canClaim, disabledTopCards }: IProps) => {
   return (
     <Card>
       <Text
@@ -27,7 +28,7 @@ const CardIndicator = ({ data, canClaim }: IProps) => {
       <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
         {data.value}
       </Text>
-      <Claimed canClaim={canClaim} />
+      <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} />
     </Card>
   );
 };
@@ -39,7 +40,7 @@ const Card = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 20px;
 `;
-const Claimed = styled.div<{ canClaim: boolean }>`
+const Claimed = styled.div<{ canClaim: boolean, disabledTopCards: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -52,8 +53,8 @@ const Claimed = styled.div<{ canClaim: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  opacity: ${({ canClaim }) => (!canClaim ? 1 : 0)};
-  pointer-events: ${({ canClaim }) => (!canClaim ? "auto" : "none")};
+  opacity: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? 1 : 0)};
+  pointer-events: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "auto" : "none")};
   border-radius: inherit;
 `;
 
