@@ -38,6 +38,11 @@ import {
   ReverseArrowsIcon,
   ClipIcon,
   YAYIcon,
+  CalculateIcon,
+  PlusIcon,
+  MinusIcon,
+  VerifideIcon,
+  ComunityIcon,
 } from ".";
 
 export default {
@@ -75,6 +80,11 @@ export default {
     ReverseArrowsIcon,
     ClipIcon,
     YAYIcon,
+    CalculateIcon,
+    PlusIcon,
+    MinusIcon,
+    VerifideIcon,
+    ComunityIcon,
   ],
   argTypes: {},
 };
@@ -198,6 +208,21 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <YAYIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CalculateIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <PlusIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <MinusIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <VerifideIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ComunityIcon />
         </div>
       </div>
     </div>
