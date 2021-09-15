@@ -19,6 +19,7 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+  font-weight: 400;
   & > button,
   & > a {
     flex: ${({ fullWidth }) => (fullWidth ? 1 : "auto")};

@@ -1,6 +1,6 @@
 import { ComponentProps, ElementType, ReactElement, ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { LayoutProps, SpaceProps } from "styled-system";
+import { LayoutProps, SpaceProps, TypographyProps } from "styled-system";
 
 export const scales = {
   MD: "md",
@@ -42,7 +42,7 @@ export type PolymorphicComponent<P, D extends ElementType = "button"> = <E exten
   props: PolymorphicComponentProps<E, P>
 ) => ReactElement | null;
 
-export interface BaseButtonProps extends LayoutProps, SpaceProps {
+export interface BaseButtonProps extends LayoutProps, SpaceProps, TypographyProps {
   as?: "a" | "button" | typeof Link;
   external?: boolean;
   isLoading?: boolean;

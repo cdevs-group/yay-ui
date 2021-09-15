@@ -26,7 +26,7 @@ const BalanceInputInversion: React.FC<BalanceInputInversionProps> = ({
 
   return (
     <StyledBalanceInput isWarning={isWarning} {...props}>
-      <Flex justifyContent="flex-end">
+      <Flex justifyContent="space-between">
         <Box>
           <Flex alignItems="center">
             {unit && <UnitContainer>{unit}</UnitContainer>}
