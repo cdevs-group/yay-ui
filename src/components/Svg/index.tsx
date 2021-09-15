@@ -48,6 +48,11 @@ export { default as ReverseArrowsIcon } from "./Icons/ReverseArrowsIcon";
 export { default as ClipIcon } from "./Icons/ClipIcon";
 export { default as YAYIcon } from "./Icons/YAYIcon";
 export { default as SwapVertIcon } from "./Icons/SwapVertIcon";
+export { default as CalculateIcon } from "./Icons/CalculateIcon";
+export { default as PlusIcon } from "./Icons/PlusIcon";
+export { default as MinusIcon } from "./Icons/MinusIcon";
+export { default as VerifideIcon } from "./Icons/VerifideIcon";
+export { default as ComunityIcon } from "./Icons/ComunityIcon";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
