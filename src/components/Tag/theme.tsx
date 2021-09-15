@@ -21,7 +21,7 @@ export const styleVariants = {
     backgroundColor: "secondary",
   },
   [variants.SUCCESS]: {
-    backgroundColor: "success",
+    backgroundColor: "green",
   },
   [variants.TEXTDISABLED]: {
     backgroundColor: "textDisabled",
@@ -33,6 +33,6 @@ export const styleVariants = {
     backgroundColor: "binance",
   },
   [variants.FAILURE]: {
-    backgroundColor: "failure",
+    backgroundColor: "redBg",
   },
 };

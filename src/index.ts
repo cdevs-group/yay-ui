@@ -28,6 +28,9 @@ export * from "./components/Progress";
 export * from "./components/BalanceInputInversion";
 export * from "./components/CheckboxInput";
 export * from "./components/ButtonMenu";
+export * from "./components/Tag";
+export * from "./components/Heading";
+export * from "./components/NotificationDot";
 
 // Hooks
 export * from "./hooks";
