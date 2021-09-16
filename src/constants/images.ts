@@ -31,6 +31,7 @@ import Avalanche from "../../public/images/avalanche.png";
 import UNIT from "../../public/images/unit.png";
 import PANCAKE from "../../public/images/pancake.png";
 import PANGOLIN from "../../public/images/pangolin.png";
+import YAY_TOKEN from "../../public/images/logo.png";
 
 export {
   BG_IMG,
@@ -66,4 +67,5 @@ export {
   UNIT,
   PANCAKE,
   PANGOLIN,
+  YAY_TOKEN,
 };

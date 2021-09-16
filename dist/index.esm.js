@@ -3187,6 +3187,7 @@ var baseColors = {
     boxShadow8: "0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05)",
     boxShadow9: "0px 0px 20px rgba(86, 239, 75, 0.35)",
     boxShadow10: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+    filterShadow: "drop-shadow(-3px 0px 8px rgba(0, 0, 0, 0.25))",
     bgOpacity: "rgba(0, 0, 0, 0.3)",
     bgOpacity2: "rgba(0, 0, 0, 0.05)",
     bgOpacitY3: " rgba(255, 255, 255, 0.05)",

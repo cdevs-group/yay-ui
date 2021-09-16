@@ -121,6 +121,7 @@ export type Colors = {
   greeanRgba2: string;
   bgGrey2: string;
   whiteRgba2: string;
+  filterShadow: string;
 
   // Gradients
   gradients: Gradients;
