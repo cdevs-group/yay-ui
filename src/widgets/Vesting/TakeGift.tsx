@@ -83,6 +83,7 @@ const Claimed = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
   width: 100%;
   height: 100%;
   backdrop-filter: blur(15px);
+  -webkit-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
   opacity: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? 1 : 0)};
