@@ -5,6 +5,7 @@ import { Button } from "../../components/Button";
 import { Text } from "../../components/Text";
 import GIFT from "./img/gift.png";
 import GIFT2 from "./img/gift2.png";
+import { Loader } from "../../components/Loader";
 
 interface IProps {
   handleTakeGift: () => void;
@@ -18,9 +19,10 @@ interface IProps {
     gift: string;
     gift2: string;
   };
+  giftLoader?: boolean;
 }
 
-const TakeGift = ({ handleTakeGift, texts, claimedGift, images }: IProps) => {
+const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
     <Card>
       <StyledTitle>{texts.title}</StyledTitle>
@@ -28,6 +30,9 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images }: IProps) => {
       <StyledButton variant="white" onClick={handleTakeGift}>
         {texts.button}
       </StyledButton>
+      <Claimed giftLoader={giftLoader}>
+        <Loader />
+      </Claimed>
       <Claimed claimedGift={claimedGift}>
         <img alt="" src={images?.gift2 || GIFT2} />
         <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
@@ -65,7 +70,7 @@ const StyledButton = styled(Button)`
   width: 100%;
   font-weight: 400;
 `;
-const Claimed = styled.div<{ claimedGift: boolean }>`
+const Claimed = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -78,8 +83,8 @@ const Claimed = styled.div<{ claimedGift: boolean }>`
   backdrop-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
-  opacity: ${({ claimedGift }) => (claimedGift ? 1 : 0)};
-  pointer-events: ${({ claimedGift }) => (claimedGift ? "auto" : "none")};
+  opacity: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? 1 : 0)};
+  pointer-events: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? "auto" : "none")};
   border-radius: inherit;
 `;
 export default TakeGift;

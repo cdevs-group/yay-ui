@@ -31,6 +31,7 @@ export * from "./components/ButtonMenu";
 export * from "./components/Tag";
 export * from "./components/Heading";
 export * from "./components/NotificationDot";
+export * from "./components/TokenPair";
 
 // Hooks
 export * from "./hooks";
