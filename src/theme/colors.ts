@@ -51,6 +51,7 @@ export const baseColors = {
   yellowGradient2: "linear-gradient(180deg, #FFB601 -16%, #FF9B01 100%)",
   yellowGradient3: "linear-gradient(180deg, #FFEA2C 0%, #FFB72C 100%)",
   greyRgba: "rgba(0, 0, 0, 0.15)",
+  greyRgba2: "rgba(38, 38, 45, .5)",
 };
 
 export const brandColors = {
