@@ -43,6 +43,7 @@ const Wrapper = styled.div<{ disabledCard?: boolean }>`
   position: relative;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 20px;
+  ${({ disabledCard, theme }) => disabledCard && theme.colors.blur};
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-column: 1/3;
   }

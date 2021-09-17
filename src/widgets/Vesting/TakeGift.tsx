@@ -25,11 +25,13 @@ interface IProps {
 const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
     <Card>
-      <StyledTitle>{texts.title}</StyledTitle>
-      <img alt="" src={images?.gift || GIFT} />
-      <StyledButton variant="white" onClick={handleTakeGift}>
-        {texts.button}
-      </StyledButton>
+      <BlurWrapper claimedGift={claimedGift}>
+        <StyledTitle>{texts.title}</StyledTitle>
+        <img alt="" src={images?.gift || GIFT} />
+        <StyledButton variant="white" onClick={handleTakeGift}>
+          {texts.button}
+        </StyledButton>
+      </BlurWrapper>
       <Claimed giftLoader={giftLoader}>
         <Loader />
       </Claimed>
@@ -86,5 +88,8 @@ const Claimed = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
   opacity: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? 1 : 0)};
   pointer-events: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? "auto" : "none")};
   border-radius: inherit;
+`;
+const BlurWrapper = styled.div<{ claimedGift?: boolean }>`
+  ${({ claimedGift, theme }) => claimedGift && theme.colors.blur};
 `;
 export default TakeGift;

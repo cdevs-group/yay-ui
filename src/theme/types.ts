@@ -123,6 +123,7 @@ export type Colors = {
   whiteRgba2: string;
   filterShadow: string;
   greyRgba2: string;
+  blur: string;
 
   // Gradients
   gradients: Gradients;
