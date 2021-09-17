@@ -11,6 +11,7 @@ interface IProps {
         gift: string;
         gift2: string;
     };
+    giftLoader?: boolean;
 }
-declare const TakeGift: ({ handleTakeGift, texts, claimedGift, images }: IProps) => JSX.Element;
+declare const TakeGift: ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => JSX.Element;
 export default TakeGift;

@@ -30,6 +30,7 @@ export * from "./components/ButtonMenu";
 export * from "./components/Tag";
 export * from "./components/Heading";
 export * from "./components/NotificationDot";
+export * from "./components/TokenPair";
 export * from "./hooks";
 export * from "./widgets/Bridge";
 export * from "./widgets/Modal";
