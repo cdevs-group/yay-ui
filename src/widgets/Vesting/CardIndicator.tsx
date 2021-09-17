@@ -14,7 +14,7 @@ interface IProps {
 
 const CardIndicator = ({ data, canClaim, disabledTopCards }: IProps) => {
   return (
-    <Card>
+    <Card blurTop={disabledTopCards} blur={canClaim}>
       <Text
         color="greyText"
         fontSize="14px"
@@ -33,12 +33,14 @@ const CardIndicator = ({ data, canClaim, disabledTopCards }: IProps) => {
   );
 };
 
-const Card = styled.div`
+const Card = styled.div<{ blur?: boolean; blurTop?: boolean }>`
   position: relative;
   padding: 18px 24px;
   background: ${({ theme }) => theme.colors.dark};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 20px;
+  ${({ blur, theme }) => blur && theme.colors.blur};
+  ${({ blurTop, theme }) => blurTop && theme.colors.blur};
 `;
 const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   position: absolute;

@@ -94,6 +94,8 @@ const Wrapper = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   min-height: 97px;
   width: 100%;
   border-radius: 20px;
+  ${({ canClaim, theme }) => canClaim && theme.colors.blur};
+  ${({ disabledTopCards, theme }) => disabledTopCards && theme.colors.blur};
   &:hover {
     & .card-inner {
       transform: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "none" : "rotateY(180deg)")};
