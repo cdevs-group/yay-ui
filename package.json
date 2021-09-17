@@ -9,6 +9,7 @@
     "dist"
   ],
   "dependencies": {
+    "@popperjs/core": "^2.10.1",
     "@types/lodash": "^4.14.162",
     "@types/styled-system": "^5.1.10",
     "lodash": "^4.17.20",
