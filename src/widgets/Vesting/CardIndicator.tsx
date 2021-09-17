@@ -10,26 +10,29 @@ interface IProps {
   };
   canClaim: boolean;
   disabledTopCards?: boolean;
+  id: string;
 }
 
-const CardIndicator = ({ data, canClaim, disabledTopCards }: IProps) => {
+const CardIndicator = ({ data, canClaim, disabledTopCards, id }: IProps) => {
   return (
-    <Card blurTop={disabledTopCards} blur={canClaim}>
-      <Text
-        color="greyText"
-        fontSize="14px"
-        lineHeight="24px"
-        letterSpacing="-0.02em"
-        marginBottom="2px"
-        fontWeight="400"
-      >
-        {data.text}
-      </Text>
-      <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-        {data.value}
-      </Text>
-      <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} />
-    </Card>
+    <div style={{ position: "relative" }}>
+      <Card blurTop={disabledTopCards} blur={canClaim} id={id}>
+        <Text
+          color="greyText"
+          fontSize="14px"
+          lineHeight="24px"
+          letterSpacing="-0.02em"
+          marginBottom="2px"
+          fontWeight="400"
+        >
+          {data.text}
+        </Text>
+        <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
+          {data.value}
+        </Text>
+      </Card>{" "}
+      <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} id={id} />
+    </div>
   );
 };
 
@@ -39,10 +42,8 @@ const Card = styled.div<{ blur?: boolean; blurTop?: boolean }>`
   background: ${({ theme }) => theme.colors.dark};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 20px;
-  ${({ blur, theme }) => blur && theme.colors.blur};
-  ${({ blurTop, theme }) => blurTop && theme.colors.blur};
 `;
-const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
+const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean; id: string }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -57,7 +58,12 @@ const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   transition: 0.3s;
   opacity: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? 1 : 0)};
   pointer-events: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "auto" : "none")};
-  border-radius: inherit;
+  border-radius: 20px;
+  z-index: 1;
+  background-image: ${({ id }) => `-moz-element(#${id})`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(10px);
 `;
 
 export default CardIndicator;

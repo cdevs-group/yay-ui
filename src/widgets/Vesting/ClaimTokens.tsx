@@ -104,7 +104,7 @@ export const Card = styled.div<{ disabledCard?: boolean }>`
     transition: 0.3s;
     opacity: ${({ disabledCard }) => (disabledCard ? 1 : 0)};
     pointer-events: ${({ disabledCard }) => (disabledCard ? "auto" : "none")};
-    border-radius: inherit;z
+    border-radius: inherit;
   }
 `;
 

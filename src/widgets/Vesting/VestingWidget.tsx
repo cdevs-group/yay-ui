@@ -33,10 +33,10 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
 }) => {
   return (
     <Wrapper>
-      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[0]} />
-      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[1]} />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[0]} id="CardIndicator-1" />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[1]} id="CardIndicator-2" />
       <CardTimer canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataTimer} />
-      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[2]} />
+      <CardIndicator canClaim={canClaim} disabledTopCards={disabledTopCards} data={dataCardsIndicators[2]} id="CardIndicator-3" />
       {!canClaim ? (
         <TokenOnPoolz
           texts={textsPoolz}
