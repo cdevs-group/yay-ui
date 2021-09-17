@@ -32,41 +32,43 @@ const CardTimer = ({ data, canClaim, disabledTopCards }: IProps) => {
   );
 
   return (
-    <Wrapper canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
-      <Inner className="card-inner">
-        <CardFront canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
-          <Text
-            color="greyText"
-            fontSize="14px"
-            lineHeight="24px"
-            letterSpacing="-0.02em"
-            marginBottom="2px"
-            fontWeight="400"
-          >
-            {data.textBack}
-          </Text>
-          <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
-            {data.textStage}
-          </Text>
-          <Progress />
-        </CardFront>
-        <CardBack canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
-          <Text
-            color="greyText"
-            fontSize="14px"
-            lineHeight="24px"
-            letterSpacing="-0.02em"
-            marginBottom="2px"
-            fontWeight="400"
-          >
-            {data.textFront}
-          </Text>
-          <TimerSimple time={data.timeSecond} texts={data.textsTime} />
-          <Progress />
-        </CardBack>
-      </Inner>
+    <div style={{ position: "relative" }}>
+      <Wrapper canClaim={canClaim} disabledTopCards={!!disabledTopCards} id="CardTimer">
+        <Inner className="card-inner">
+          <CardFront canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
+            <Text
+              color="greyText"
+              fontSize="14px"
+              lineHeight="24px"
+              letterSpacing="-0.02em"
+              marginBottom="2px"
+              fontWeight="400"
+            >
+              {data.textBack}
+            </Text>
+            <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" fontWeight="400">
+              {data.textStage}
+            </Text>
+            <Progress />
+          </CardFront>
+          <CardBack canClaim={canClaim} disabledTopCards={!!disabledTopCards}>
+            <Text
+              color="greyText"
+              fontSize="14px"
+              lineHeight="24px"
+              letterSpacing="-0.02em"
+              marginBottom="2px"
+              fontWeight="400"
+            >
+              {data.textFront}
+            </Text>
+            <TimerSimple time={data.timeSecond} texts={data.textsTime} />
+            <Progress />
+          </CardBack>
+        </Inner>
+      </Wrapper>
       <Claimed canClaim={canClaim} disabledTopCards={!!disabledTopCards} />
-    </Wrapper>
+    </div>
   );
 };
 
@@ -94,8 +96,6 @@ const Wrapper = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   min-height: 97px;
   width: 100%;
   border-radius: 20px;
-  ${({ canClaim, theme }) => canClaim && theme.colors.blur};
-  ${({ disabledTopCards, theme }) => disabledTopCards && theme.colors.blur};
   &:hover {
     & .card-inner {
       transform: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "none" : "rotateY(180deg)")};
@@ -144,7 +144,12 @@ const Claimed = styled.div<{ canClaim: boolean; disabledTopCards: boolean }>`
   transition: 0.3s;
   opacity: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? 1 : 0)};
   pointer-events: ${({ canClaim, disabledTopCards }) => (disabledTopCards || !canClaim ? "auto" : "none")};
-  border-radius: inherit;
+  border-radius: 20px;
+  z-index: 1;
+  background-image: ${`-moz-element(#CardTimer)`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(10px);
 `;
 
 export default CardTimer;

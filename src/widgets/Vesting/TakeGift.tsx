@@ -24,14 +24,15 @@ interface IProps {
 
 const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
-    <Card>
-      <BlurWrapper claimedGift={claimedGift}>
+    <div style={{ position: "relative" }}>
+      <Card id="TakeGift">
         <StyledTitle>{texts.title}</StyledTitle>
         <img alt="" src={images?.gift || GIFT} />
         <StyledButton variant="white" onClick={handleTakeGift}>
           {texts.button}
         </StyledButton>
-      </BlurWrapper>
+      </Card>
+      <BlurWrapper claimedGift={claimedGift} giftLoader={giftLoader}></BlurWrapper>
       <Claimed giftLoader={giftLoader}>
         <Loader />
       </Claimed>
@@ -41,7 +42,7 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IP
           {texts.claimed}
         </Text>
       </Claimed>
-    </Card>
+    </div>
   );
 };
 
@@ -72,6 +73,7 @@ const StyledButton = styled(Button)`
   width: 100%;
   font-weight: 400;
 `;
+
 const Claimed = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
   position: absolute;
   top: 0;
@@ -82,15 +84,34 @@ const Claimed = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(15px);
-  -webkit-filter: blur(15px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
   opacity: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? 1 : 0)};
   pointer-events: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? "auto" : "none")};
-  border-radius: inherit;
+  border-radius: 20px;
+  z-index: 2;
 `;
-const BlurWrapper = styled.div<{ claimedGift?: boolean }>`
-  ${({ claimedGift, theme }) => claimedGift && theme.colors.blur};
+
+const BlurWrapper = styled.div<{ claimedGift?: boolean; giftLoader?: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+  transition: 0.3s;
+  opacity: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? 1 : 0)};
+  pointer-events: ${({ claimedGift, giftLoader }) => (claimedGift || giftLoader ? "auto" : "none")};
+  border-radius: 20px;
+  z-index: 1;
+  background-image: ${`-moz-element(#TakeGift)`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(6px);
 `;
 export default TakeGift;
