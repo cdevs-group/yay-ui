@@ -52,7 +52,7 @@ export const baseColors = {
   yellowGradient3: "linear-gradient(180deg, #FFEA2C 0%, #FFB72C 100%)",
   greyRgba: "rgba(0, 0, 0, 0.15)",
   greyRgba2: "rgba(38, 38, 45, .5)",
-  blur: "filter: blur(15px);\n  -webkit-filter: blur(15px);\n  -ms-filter: blur(15px);\n  filter: url(\"data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='3'%20/></filter></svg>#blur\");\n  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15');",
+  blur: "-webkit-filter: blur(15px);\n filter: blur(15px); \n  -ms-filter: blur(15px);",
 };
 
 export const brandColors = {
