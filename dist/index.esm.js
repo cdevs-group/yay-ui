@@ -3221,7 +3221,7 @@ var baseColors = {
     yellowGradient3: "linear-gradient(180deg, #FFEA2C 0%, #FFB72C 100%)",
     greyRgba: "rgba(0, 0, 0, 0.15)",
     greyRgba2: "rgba(38, 38, 45, .5)",
-    blur: "filter: blur(15px);\n  -webkit-filter: blur(15px);\n  -ms-filter: blur(15px);\n  filter: url(\"data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='3'%20/></filter></svg>#blur\");\n  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='15');",
+    blur: "-webkit-filter: blur(15px);\n filter: blur(15px); \n  -ms-filter: blur(15px);",
 };
 var brandColors = {
     binance: "#F0B90B",
@@ -6770,7 +6770,7 @@ var StyledTitle = styled(Text)(templateObject_2$6 || (templateObject_2$6 = __mak
     return theme.mediaQueries.sm;
 });
 var StyledButton$1 = styled(Button$9)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n"], ["\n  width: 100%;\n  font-weight: 400;\n"])));
-var Claimed = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"])), function (_a) {
+var Claimed = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  -webkit-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  -webkit-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: inherit;\n"])), function (_a) {
     var theme = _a.theme;
     return transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
