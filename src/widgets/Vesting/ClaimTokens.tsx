@@ -42,47 +42,74 @@ const ClaimTokens = ({
   }, [data.totalRaised, data.total]);
 
   return (
-    <Card disabledCard={disabledCardClaimTokens}>
-      <Row>
-        <StyledTitle>{texts.title}</StyledTitle>
-        <StyledButton
-          variant="green"
-          onClick={handleClaimTokens}
-          disabled={disabledButton}
-          isLoading={isLoading}
-          endIcon={endIcon}
-        >
-          {texts.button}
-        </StyledButton>
-      </Row>
-      <ProgressWrap>
-        <ProgressTrack>
-          <ProgressBar widthProgress={widthProgress || 0}>
-            <ProgressThumb>
-              <CheckIcon />
-            </ProgressThumb>
-            <TextHoverBlock widthProgress={widthProgress || 0}>
-              <StyledText>{texts.totalRaised}</StyledText>
-              <StyledText color="greyText3">{data.totalRaised}</StyledText>
-            </TextHoverBlock>
-          </ProgressBar>
-        </ProgressTrack>
-      </ProgressWrap>
-      <Texts>
-        <TextBlock>
-          <StyledText>
-            {texts.total} {data.total}
-          </StyledText>
-          {data.left && (
-            <StyledText color="greyText3">
-              {texts.left} {data.left}
+    <Wrap style={{ position: "relative" }}>
+      <Card disabledCard={disabledCardClaimTokens} id="ClaimTokens">
+        <Row>
+          <StyledTitle>{texts.title}</StyledTitle>
+          <StyledButton
+            variant="green"
+            onClick={handleClaimTokens}
+            disabled={disabledButton}
+            isLoading={isLoading}
+            endIcon={endIcon}
+          >
+            {texts.button}
+          </StyledButton>
+        </Row>
+        <ProgressWrap>
+          <ProgressTrack>
+            <ProgressBar widthProgress={widthProgress || 0}>
+              <ProgressThumb>
+                <CheckIcon />
+              </ProgressThumb>
+              <TextHoverBlock widthProgress={widthProgress || 0}>
+                <StyledText>{texts.totalRaised}</StyledText>
+                <StyledText color="greyText3">{data.totalRaised}</StyledText>
+              </TextHoverBlock>
+            </ProgressBar>
+          </ProgressTrack>
+        </ProgressWrap>
+        <Texts>
+          <TextBlock>
+            <StyledText>
+              {texts.total} {data.total}
             </StyledText>
-          )}
-        </TextBlock>
-      </Texts>
-    </Card>
+            {data.left && (
+              <StyledText color="greyText3">
+                {texts.left} {data.left}
+              </StyledText>
+            )}
+          </TextBlock>
+        </Texts>
+      </Card>
+      <Blur disabledCard={disabledCardClaimTokens} />
+    </Wrap>
   );
 };
+export const Wrap = styled.div`
+  ${({ theme }) => theme.mediaQueries.sm} {
+    grid-column: 1/3;
+  }
+`;
+
+export const Blur = styled.div<{ disabledCard?: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+  transition: 0.3s;
+  opacity: ${({ disabledCard }) => (disabledCard ? 1 : 0)};
+  pointer-events: ${({ disabledCard }) => (disabledCard ? "auto" : "none")};
+  border-radius: 20px;
+  z-index: 1;
+  background-image: ${`-moz-element(#ClaimTokens)`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(10px);
+`;
 
 export const Card = styled.div<{ disabledCard?: boolean }>`
   position: relative;
@@ -91,20 +118,6 @@ export const Card = styled.div<{ disabledCard?: boolean }>`
   border-radius: 20px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-column: 1/3;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(15px);
-    background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
-    transition: 0.3s;
-    opacity: ${({ disabledCard }) => (disabledCard ? 1 : 0)};
-    pointer-events: ${({ disabledCard }) => (disabledCard ? "auto" : "none")};
-    border-radius: inherit;
   }
 `;
 
