@@ -1,6 +1,7 @@
 import React, { InputHTMLAttributes, ReactText } from "react";
+import { SpaceProps } from "styled-system";
 import { BoxProps } from "../Box";
-export interface BalanceInputProps extends BoxProps {
+export interface BalanceInputProps extends BoxProps, SpaceProps {
     value: ReactText;
     onUserInput: (input: string) => void;
     placeholder?: string;

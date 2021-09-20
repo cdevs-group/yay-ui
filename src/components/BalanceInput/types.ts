@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes, ReactNode, ReactText } from "react";
+import { SpaceProps } from "styled-system";
 import { BoxProps } from "../Box";
 
 interface Itext {
@@ -8,7 +9,7 @@ interface Itext {
   setPosition?: string;
   commit?: string;
 }
-export interface BalanceInputProps extends BoxProps {
+export interface BalanceInputProps extends BoxProps, SpaceProps {
   value: ReactText;
   onUserInput: (input: string) => void;
   placeholder?: string;
