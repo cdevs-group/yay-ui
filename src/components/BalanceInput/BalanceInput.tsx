@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { space } from "styled-system";
 import { Input } from "../Input";
 import { BnbIcon } from "../Svg";
 import { BalanceInputProps } from "./types";
@@ -15,6 +16,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   texts,
   handleButtonToMax,
   icon,
+  ...props
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.validity.valid) {
@@ -23,7 +25,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   };
 
   return (
-    <InputWrap>
+    <InputWrap {...props}>
       <LeftBlock>
         <TitleInput>{texts?.commit || "Commit"}</TitleInput>
         <Input
@@ -63,6 +65,7 @@ const InputWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${space}
 `;
 const TitleInput = styled.div`
   margin-bottom: 15px;
