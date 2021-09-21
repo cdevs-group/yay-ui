@@ -18,7 +18,7 @@ import RoundsLink from "./components/RoundsLink";
 import { Button } from "../../components/Button";
 
 export default {
-  title: "Components/HistoryPanel",
+  title: "Widgets/HistoryPanel",
   component: [HistoryPanel, PnlHistoryPanel],
 };
 

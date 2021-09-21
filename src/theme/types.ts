@@ -97,6 +97,7 @@ export type Colors = {
   whiteRgba: string;
   cardShadow: string;
   bgCard: string;
+  bgCard2: string;
   yellow: string;
   bgHeader: string;
   buttonBg2: string;
