@@ -1,42 +1,25 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
+import { TabsWithMovingLine } from "../../..";
 
-interface Props {
+interface Props   {
   children: React.ReactNode;
 }
 
 const HistoryBlock: React.FC<Props> = ({ children }) => {
   const tabsList = ["Live", "Round", "Your History"];
   const [tabActive, setTabActive] = useState<number>(0);
-  const [prevTabActive, setPrevTabActive] = useState<number>(1);
 
   const handleToggleTab = (e: any) => {
-    setPrevTabActive(tabActive);
     setTabActive(+e.target.value);
   };
-
-  console.log(prevTabActive);
+ 
   return (
     <Block>
-      <TopLine>
-        <Title>History</Title>
-        <Tabs>
-          {tabsList.map((el, i) => (
-            <Tab
-              active={tabActive === i}
-              value={i}
-              prev={prevTabActive}
-              valueActive={tabActive}
-              key={i}
-              onClick={handleToggleTab}
-            >
-              {el}
-            </Tab>
-          ))}
-        </Tabs>
-      </TopLine>
+      <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title="History" />
+      
       {children}
     </Block>
   );
@@ -50,7 +33,10 @@ const Block = styled.div`
   background: ${({ theme }) => theme.colors.bgCard2};
 `;
 
-const TopLine = styled(Flex)``;
+const TopLine = styled(Flex)`
+  padding-bottom: 17px;
+  border-bottom: 2px solid #1c1c1c;
+`;
 const Title = styled(Text)`
   flex-grow: 1;
   margin-right: 20px;
@@ -59,9 +45,13 @@ const Title = styled(Text)`
   line-height: 26px;
 `;
 
-const Tabs = styled(Flex)``;
+const Tabs = styled(Flex)`
+  position: relative;
+`;
 
-const Tab = styled.button<{ active: boolean; value: number; prev: number; valueActive: number }>`
+const Tab = styled.button<{
+  active: boolean;
+}>`
   position: relative;
   padding: 0 13px;
   background: none;
@@ -71,18 +61,16 @@ const Tab = styled.button<{ active: boolean; value: number; prev: number; valueA
   line-height: 17px;
   color: ${({ theme, active }) => (active ? theme.colors.green : theme.colors.textGray)};
   cursor: pointer;
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: ${({ value, valueActive, prev, active }) =>
-      (active && prev < value) || (!active && valueActive < value) ? 0 : "auto"};
-    right: ${({ value, prev, active }) => ((active && value < prev) || (!active && prev === value) ? 0 : "auto")};
+  transition: 0.3s;
+`;
 
-    bottom: -19px;
-    width: ${({ active }) => (active ? "100%" : 0)};
-    height: 1.5px;
-    background: ${({ theme }) => theme.colors.green};
-    transition: 0.3s;
-  }
+const LineTab = styled.span<{ widthTabActive?: number; left: number }>`
+  position: absolute;
+  display: block;
+  height: 1.5px;
+  background: ${({ theme }) => theme.colors.green};
+  transition: 0.3s;
+  width: ${({ widthTabActive }) => `${widthTabActive}px`};
+  left: ${({ left }) => `${left}px`};
+  bottom: -19px;
 `;
