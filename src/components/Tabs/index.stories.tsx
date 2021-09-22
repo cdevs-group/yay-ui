@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import Tabs from "./Tabs";
 import TabsSmall from "./TabsSmall";
+import TabsWithMovingLine from "./TabsWithMovingLine";
 
 export default {
   title: "Components/Tabs",
@@ -43,3 +45,25 @@ export const TabsSmallBlock = () => {
   };
   return <TabsSmall tabValue={activeTab} tabsList={tabsList} onClick={toggleTab} />;
 };
+
+export const TabsWithMovingLineBlock = () => {
+  const tabsList = ["Live", "Round", "Your History"];
+  const [tabActive, setTabActive] = useState<number>(0);
+
+  const handleToggleTab = (e: any) => {
+    setTabActive(+e.target.value);
+  };
+
+  return (
+    <Block>
+      <TabsWithMovingLine tabsList={tabsList} tabActive={tabActive} handleToggleTab={handleToggleTab} title="History" />
+    </Block>
+  );
+};
+
+const Block = styled.div`
+  padding: 21px;
+  max-width: 500px;
+  border-radius: 15px;
+  background: ${({ theme }) => theme.colors.bgCard2};
+`;
