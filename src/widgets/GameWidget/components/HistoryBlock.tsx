@@ -1,26 +1,27 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { TabsWithMovingLine } from "../../..";
+import Live from "./Live";
+import { TabsWithMovingLineProps } from "../../../components/Tabs/types";
+import { LiveTabProps } from "./types";
 
-interface Props   {
-  children: React.ReactNode;
-}
+interface Props extends TabsWithMovingLineProps, LiveTabProps {}
 
-const HistoryBlock: React.FC<Props> = ({ children }) => {
-  const tabsList = ["Live", "Round", "Your History"];
-  const [tabActive, setTabActive] = useState<number>(0);
-
-  const handleToggleTab = (e: any) => {
-    setTabActive(+e.target.value);
-  };
- 
+const HistoryBlock: React.FC<Props> = ({
+  handleToggleTab,
+  tabsList,
+  tabActive,
+  title,
+  dataLive,
+  prizePoolText,
+  prizePool,
+}) => {
   return (
     <Block>
-      <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title="History" />
-      
-      {children}
+      <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title={title} />
+      {tabActive === 0 && <Live dataLive={dataLive} prizePoolText={prizePoolText} prizePool={prizePool} />}
     </Block>
   );
 };
