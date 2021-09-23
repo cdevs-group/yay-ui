@@ -23,25 +23,21 @@ const TabsWithMovingLine: React.FC<TabsWithMovingLineProps> = ({ title, tabsList
             {el}
           </Tab>
         ))}
-        <LineTab
-          widthTabActive={widthTabsActive[tabActive] || 0}
-          left={widthTabsActive.slice(0, tabActive).reduce((prev, acc) => prev + acc, 0)}
-        />
       </Tabs>
+      <LineTab
+        widthTabActive={widthTabsActive[tabActive] || 0}
+        right={widthTabsActive.slice(tabActive + 1, tabsList.length).reduce((prev, acc) => prev + acc, 0)}
+      />
     </TopLine>
   );
 };
 
 export default TabsWithMovingLine;
 
-const Block = styled.div`
-  padding: 21px;
-  border-radius: 15px;
-  background: ${({ theme }) => theme.colors.bgCard2};
-`;
-
 const TopLine = styled(Flex)`
-  padding-bottom: 17px;
+  position: relative;
+  align-items: center;
+  padding-bottom: 15px;
   border-bottom: 2px solid #1c1c1c;
 `;
 const Title = styled(Text)`
@@ -52,15 +48,13 @@ const Title = styled(Text)`
   line-height: 26px;
 `;
 
-const Tabs = styled(Flex)`
-  position: relative;
-`;
+const Tabs = styled(Flex)``;
 
 const Tab = styled.button<{
   active: boolean;
 }>`
   position: relative;
-  padding: 0 13px;
+  padding: 0 10px;
   background: none;
   border: none;
   font-weight: 600;
@@ -71,13 +65,13 @@ const Tab = styled.button<{
   transition: 0.3s;
 `;
 
-const LineTab = styled.span<{ widthTabActive?: number; left: number }>`
+const LineTab = styled.span<{ widthTabActive?: number; right: number }>`
   position: absolute;
   display: block;
   height: 1.5px;
   background: ${({ theme }) => theme.colors.green};
   transition: 0.3s;
   width: ${({ widthTabActive }) => `${widthTabActive}px`};
-  left: ${({ left }) => `${left}px`};
-  bottom: -19px;
+  right: ${({ right }) => `${right}px`};
+  bottom: -1px;
 `;
