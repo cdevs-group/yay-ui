@@ -5,3 +5,7 @@ export interface LiveTabProps {
   prizePoolText: string;
   prizePool: string;
 }
+
+export interface TodayTabProps {
+  dataToday: { id: number | string; icon: React.ReactNode; value1: string; value2: string; address: string }[];
+}
