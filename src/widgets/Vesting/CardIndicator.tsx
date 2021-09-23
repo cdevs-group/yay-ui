@@ -16,7 +16,7 @@ interface IProps {
 const CardIndicator = ({ data, canClaim, disabledTopCards, id }: IProps) => {
   return (
     <div style={{ position: "relative" }}>
-      <Card blurTop={disabledTopCards} blur={canClaim} id={id}>
+      <Card id={id}>
         <Text
           color="greyText"
           fontSize="14px"

@@ -1647,13 +1647,13 @@ Input$1.defaultProps = {
 var templateObject_1$1R;
 
 var BalanceInput = function (_a) {
-    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts, handleButtonToMax = _a.handleButtonToMax, icon = _a.icon;
+    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts, handleButtonToMax = _a.handleButtonToMax, icon = _a.icon, props = __rest(_a, ["value", "placeholder", "onUserInput", "inputProps", "isWarning", "decimals", "texts", "handleButtonToMax", "icon"]);
     var handleOnChange = function (e) {
         if (e.currentTarget.validity.valid) {
             onUserInput(e.currentTarget.value.replace(/,/g, "."));
         }
     };
-    return (React__default.createElement(InputWrap$1, null,
+    return (React__default.createElement(InputWrap$1, __assign({}, props),
         React__default.createElement(LeftBlock, null,
             React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
             React__default.createElement(Input$1, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder }, inputProps))),
@@ -1663,13 +1663,13 @@ var BalanceInput = function (_a) {
                 icon || React__default.createElement(Icon$M, null),
                 (texts === null || texts === void 0 ? void 0 : texts.currency) || "BNB"))));
 };
-var InputWrap$1 = styled.div(templateObject_1$1Q || (templateObject_1$1Q = __makeTemplateObject(["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"], ["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])), function (_a) {
+var InputWrap$1 = styled.div(templateObject_1$1Q || (templateObject_1$1Q = __makeTemplateObject(["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"], ["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow4;
-});
+}, space);
 var TitleInput = styled.div(templateObject_2$1t || (templateObject_2$1t = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;

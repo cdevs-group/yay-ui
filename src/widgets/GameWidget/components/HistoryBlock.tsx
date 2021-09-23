@@ -16,6 +16,7 @@ const HistoryBlock: React.FC<Props> = ({
   prizePoolText,
   prizePool,
 }) => {
+
   return (
     <>
     <Block>

@@ -1,4 +1,5 @@
 import { Colors } from "./types";
+import { boxShadow } from "styled-system";
 
 export const baseColors = {
   failure: "#ED4B9E",
@@ -9,6 +10,7 @@ export const baseColors = {
   success: "#31D0AA",
   warning: "#FFB237",
   blueGradient: "linear-gradient(180deg, #0064C0 0%, #0056A5 100%)",
+  dark2: "#1C1C1C",
 
   green: "#4BE43E",
   textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -41,6 +43,7 @@ export const baseColors = {
   bgCard: "#404047",
   bgCard2: "#232323",
   bgCard3: "#1C1C1C",
+  bgCard3: "#393939",
   cardShadow: "box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31)",
   yellow: "#FFEA2C",
   bgHeader: "#2B2B32",
