@@ -13,6 +13,8 @@ interface MyTimerProps {
   background?: string;
   marginPoint?: string;
   margin?: string;
+  widthWrapper?: string;
+  fontSize?: string;
 }
 interface MyLoaderProps {
   height?: string;
@@ -21,6 +23,8 @@ interface MyLoaderProps {
   marginPoint?: string;
   margin?: string;
   background?: string;
+  widthWrapper?: string;
+  fontSize?: string;
 }
 
 function MyTimer({
@@ -32,6 +36,8 @@ function MyTimer({
   background,
   borderRadius,
   margin,
+  widthWrapper,
+  fontSize,
 }: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
@@ -46,11 +52,18 @@ function MyTimer({
   const timeArray = [hours, minutes, seconds];
 
   return (
-    <Wrapper margin={margin}>
-      <BlockWithoutBg borderRadius={borderRadius} background={background} width={width} height={height} color={color}>
+    <Wrapper widthWrapper={widthWrapper} margin={margin}>
+      <BlockWithoutBg
+        fontSize={fontSize}
+        borderRadius={borderRadius}
+        background={background}
+        width={width}
+        height={height}
+        color={color}
+      >
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            <ItemWithoutBg color={color}>
+            <ItemWithoutBg fontSize={fontSize} color={color}>
               {handleDigit(item).leftDigit}
               {handleDigit(item).rightDigit}{" "}
             </ItemWithoutBg>
@@ -68,10 +81,25 @@ function MyTimer({
 
 const LoadIcons = [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />];
 
-const LoadingTimer = ({ margin, height, width, borderRadius, background, marginPoint }: MyLoaderProps) => {
+const LoadingTimer = ({
+  margin,
+  height,
+  width,
+  borderRadius,
+  background,
+  marginPoint,
+  widthWrapper,
+  fontSize,
+}: MyLoaderProps) => {
   return (
-    <Wrapper margin={margin}>
-      <BlockWithoutBg borderRadius={borderRadius} background={background} width={width} height={height}>
+    <Wrapper margin={margin} widthWrapper={widthWrapper}>
+      <BlockWithoutBg
+        fontSize={fontSize}
+        borderRadius={borderRadius}
+        background={background}
+        width={width}
+        height={height}
+      >
         {LoadIcons.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
             <ItemWithoutBg>{item}</ItemWithoutBg>
@@ -93,9 +121,11 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
   background,
   marginPoint,
   margin,
+  widthWrapper,
+  fontSize,
 }) => {
   return (
-    <div>
+    <div style={{ width: `${widthWrapper ? widthWrapper : "auto"}` }}>
       {(time || time === 0) && !isLoad ? (
         <MyTimer
           marginPoint={marginPoint}
@@ -106,6 +136,8 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           expiryTimestamp={time}
           color={color || "text"}
           margin={margin}
+          widthWrapper={widthWrapper}
+          fontSize={fontSize}
         />
       ) : (
         <LoadingTimer
@@ -115,6 +147,8 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           height={height}
           marginPoint={marginPoint}
           margin={margin}
+          widthWrapper={widthWrapper}
+          fontSize={fontSize}
         />
       )}
     </div>
@@ -122,8 +156,9 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
 };
 export default TimerNotSolidWithoutBg;
 
-const Wrapper = styled(Wrap)<{ margin?: string }>`
+const Wrapper = styled(Wrap)<{ margin?: string; widthWrapper?: string }>`
   margin: ${({ margin }) => (margin ? margin : 0)};
+  width: ${({ widthWrapper }) => (widthWrapper ? widthWrapper : "auto")};
 `;
 
 const BlockWithoutBg = styled(Block)<TimerColorProps>`
@@ -132,16 +167,17 @@ const BlockWithoutBg = styled(Block)<TimerColorProps>`
   height: ${({ height }) => (height ? height : "50px")};
   background: ${({ background }) => (background ? background : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "none")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "11px")};
 `;
 
-const ItemWithoutBg = styled(Item)<{ color?: string }>`
+const ItemWithoutBg = styled(Item)<{ color?: string; fontSize?: string }>`
   box-shadow: none;
   background: none;
   margin: 0;
   height: auto;
   width: 15px;
   display: flex;
-  font-size: 11px;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "11px")};
   color: ${({ color }) => (color ? color : "#fff")};
 `;
 

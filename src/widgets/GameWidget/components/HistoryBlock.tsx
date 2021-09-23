@@ -4,7 +4,7 @@ import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { TabsWithMovingLine } from "../../..";
 
-interface Props   {
+interface Props {
   children: React.ReactNode;
 }
 
@@ -15,11 +15,11 @@ const HistoryBlock: React.FC<Props> = ({ children }) => {
   const handleToggleTab = (e: any) => {
     setTabActive(+e.target.value);
   };
- 
+
   return (
     <Block>
       <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title="History" />
-      
+
       {children}
     </Block>
   );
