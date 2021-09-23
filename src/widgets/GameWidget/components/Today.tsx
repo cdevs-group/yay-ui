@@ -44,7 +44,7 @@ const Row = styled.div`
 const Block = styled.div`
   padding: 20px;
   margin-bottom: 19px;
-  background: ${({ theme }) => theme.colors.bgCard3};
+  background: ${({ theme }) => theme.colors.bgCard4};
   border-radius: 10px;
 `;
 

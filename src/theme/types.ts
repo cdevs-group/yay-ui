@@ -99,6 +99,7 @@ export type Colors = {
   bgCard: string;
   bgCard2: string;
   bgCard3: string;
+  bgCard4: string;
   yellow: string;
   bgHeader: string;
   buttonBg2: string;
