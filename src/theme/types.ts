@@ -127,7 +127,6 @@ export type Colors = {
   filterShadow: string;
   greyRgba2: string;
   blur: string;
-  bgCard3: string;
   dark2: string;
 
   // Gradients

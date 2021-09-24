@@ -8,6 +8,7 @@ export declare const baseColors: {
     success: string;
     warning: string;
     blueGradient: string;
+    dark2: string;
     green: string;
     textShadow: string;
     textShadow2: string;
@@ -37,6 +38,9 @@ export declare const baseColors: {
     greeanRgba2: string;
     textGray2: string;
     bgCard: string;
+    bgCard2: string;
+    bgCard3: string;
+    bgCard4: string;
     cardShadow: string;
     yellow: string;
     bgHeader: string;

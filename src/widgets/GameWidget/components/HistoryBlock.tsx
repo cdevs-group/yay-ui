@@ -16,13 +16,12 @@ const HistoryBlock: React.FC<Props> = ({
   prizePoolText,
   prizePool,
 }) => {
-
   return (
     <>
-    <Block>
-      <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title={title} />
-      {tabActive === 0 && <Live dataLive={dataLive} prizePoolText={prizePoolText} prizePool={prizePool} />}
-    </Block>
+      <Block>
+        <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title={title} />
+        {tabActive === 0 && <Live dataLive={dataLive} prizePoolText={prizePoolText} prizePool={prizePool} />}
+      </Block>
     </>
   );
 };
