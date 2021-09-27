@@ -9,7 +9,6 @@ interface WrapProps extends BackgroundProps {
   closed?: boolean;
   bg?: string;
   small?: boolean;
-  backgroundImage?: string;
 }
 
 export const setColor = (param: { bg?: string }) => {
@@ -46,7 +45,7 @@ const CardProduct = ({
 }: CardProductProp) => {
   if (isNotLink)
     return (
-      <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
+      <CardWrap small={small} closed={closed} bg={bg} {...propsWrapperCard}>
         <CardTitle small={small} size="lg">
           {title}
         </CardTitle>
@@ -56,7 +55,7 @@ const CardProduct = ({
   if (externalLink) {
     return (
       <a href={href || ""}>
-        <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
+        <CardWrap small={small} closed={closed} bg={bg} {...propsWrapperCard}>
           <CardTitle small={small} size="lg">
             {title}
           </CardTitle>
@@ -67,7 +66,7 @@ const CardProduct = ({
   }
   return (
     <NavLink to={href || ""}>
-      <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
+      <CardWrap small={small} closed={closed} bg={bg} {...propsWrapperCard}>
         <CardTitle small={small} size="lg">
           {title}
         </CardTitle>
