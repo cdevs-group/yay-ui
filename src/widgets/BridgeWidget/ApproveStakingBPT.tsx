@@ -6,29 +6,7 @@ import ApproveCell from "./components/ApproveCell";
 import { LinkExternal } from "../../components/Link";
 import { OpenNewIcon } from "../../components/Svg";
 import { Text } from "../../components/Text";
-
-interface ApproveStakingBPTProps {
-  texts: {
-    titleToken: string;
-    nameToken: string;
-    totalStake: string;
-    totalBPT: string;
-    totalAVAX: string;
-    buttonApprove: string;
-    waitingApprove: string;
-    infoLink: string;
-    contactLink: string;
-    addTokenLink: string;
-  };
-  isLoad: boolean;
-  handleApprove: () => void;
-  handleAddToken: () => void;
-  imgToken1?: string;
-  imgToken2?: string;
-  stakingBalance?: string;
-  BPTBalance?: string;
-  AVAXBalance?: string;
-}
+import { ApproveStakingBPTProps } from "./types";
 
 const ApproveStakingBPT = ({
   handleAddToken,

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BridgeWidgetStep1 from "./BridgeWidgetStep1";
 import { AvalancheIcon, BnbIcon, YAYIcon } from "../../components/Svg";
+import ApproveStakingBPTBlock from "./ApproveStakingBPT";
 
 export default {
   title: "Widgets/BridgeNew",
@@ -39,5 +40,34 @@ export const BridgeWidgetStep1Block: React.FC = () => {
         />
       </div>
     </div>
+  );
+};
+
+export const ApproveStakingBPT = () => {
+  const [isLoad, setIsLoad] = useState(false);
+
+  const texts = {
+    titleToken: "Token",
+    nameToken: "YAY",
+    totalStake: "Total staked",
+    totalBPT: "Total BP Tokens",
+    totalAVAX: "Total AVAX Tokens",
+    buttonApprove: "Approve",
+    waitingApprove: "Waiting for approval",
+    infoLink: "See Token Info",
+    contactLink: "View Contract",
+    addTokenLink: "Add to Metamask",
+  };
+
+  return (
+    <ApproveStakingBPTBlock
+      isLoad={isLoad}
+      handleApprove={() => setIsLoad(!isLoad)}
+      handleAddToken={() => {}}
+      texts={texts}
+      stakingBalance="1000 $ YAY"
+      BPTBalance="1000 $BPT"
+      AVAXBalance="0.1 $AVAX"
+    />
   );
 };
