@@ -3,11 +3,11 @@ import BridgeWidgetStep1 from "./BridgeWidgetStep1";
 import { AvalancheIcon, BnbIcon, YAYIcon } from "../../components/Svg";
 
 export default {
-  title: "Widgets/Bridge",
+  title: "Widgets/BridgeNew",
   argTypes: {},
 };
 
-export const BridgeStep1Block: React.FC = () => {
+export const BridgeWidgetStep1Block: React.FC = () => {
   const [value, onUserInput] = useState<string | number>("");
 
   const texts = {

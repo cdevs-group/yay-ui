@@ -48,6 +48,7 @@ export const LobbyCreatModalBlock = () => {
       activeTab={activeTab}
       texts={texts}
       tabsList={tabsList}
+      propsCreateButton={{ spin: true }}
     />
   );
 };

@@ -14,6 +14,7 @@ const LobbyCreatModal = ({
   tabsList,
   handleCreate,
   handleJoin,
+  propsCreateButton
 }: LobbyCreatModalProps) => {
   return (
     <Modal title={texts.title} onDismiss={onDismiss}>
@@ -24,7 +25,7 @@ const LobbyCreatModal = ({
           <Button onClick={handleJoin} width="100%" marginRight="15px" variant="option">
             <ButtonText>{texts.join}</ButtonText>
           </Button>
-          <Button onClick={handleCreate} width="100%" variant="green">
+          <Button onClick={handleCreate} width="100%" variant="green" padding="0 10px" {...propsCreateButton}>
             <ButtonText>{texts.create}</ButtonText>
           </Button>
         </Buttons>
