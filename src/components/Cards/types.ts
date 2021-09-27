@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { BetPosition } from "../Card/types";
+import { BackgroundProps } from "styled-system";
+import { TextProps } from "../Text";
 
 export interface CardBalanceProps {
   right?: boolean;
@@ -32,10 +33,10 @@ export interface TextCardsProps {
   };
   account: string;
 }
-export interface CardProductProp {
+export interface CardProductProp{
   title: string;
-  img: string;
-  bg: string;
+  img?: string;
+  bg?: string;
   closed?: boolean;
   href?: string;
   left?: string;
@@ -46,4 +47,6 @@ export interface CardProductProp {
   externalLink?: boolean;
   small?: boolean;
   isNotLink?: boolean;
+  backgroundImage?: string;
+  propsWrapperCard?: BackgroundProps;
 }

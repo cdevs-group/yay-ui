@@ -64,6 +64,7 @@ const Tab = styled(Button)`
 
 const StyledButton = styled(Button)`
   width: 48%;
+  padding: 0 10px;
   &:disabled {
     background: ${({ theme }) => theme.colors.whiteRgba};
     opacity: 1;

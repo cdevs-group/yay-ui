@@ -18,13 +18,13 @@ const ApproveStakingBPT = ({
   BPTBalance,
   AVAXBalance,
   handleApprove,
+  hrefSeeTokenInfo,
+  hrefViewContract,
 }: ApproveStakingBPTProps) => {
   return (
     <div>
       <StyledRow>
-        <NameCell title={texts.titleToken} tokenName={texts.nameToken} token1={imgToken1} token2={imgToken2}>
-          s
-        </NameCell>
+        <NameCell title={texts.titleToken} tokenName={texts.nameToken} token1={imgToken1} token2={imgToken2} />
         <TotalStakedCell title={texts.totalStake} balance={stakingBalance} />
         <TotalStakedCell title={texts.totalBPT} balance={BPTBalance} />
         <TotalStakedCell title={texts.totalAVAX} balance={AVAXBalance} />
@@ -36,10 +36,10 @@ const ApproveStakingBPT = ({
         />
       </StyledRow>
       <StyledActionPanel>
-        <LinkItem href="" bold={false}>
+        <LinkItem href={hrefSeeTokenInfo} bold={false} target="_blank">
           {texts.infoLink}
         </LinkItem>
-        <LinkItem href="" bold={false}>
+        <LinkItem href={hrefViewContract} bold={false} target="_blank">
           {texts.contactLink}
         </LinkItem>
         <AddToMetamask as="button" onClick={handleAddToken}>
