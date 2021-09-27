@@ -58,6 +58,7 @@ export * from "./widgets/Lobby";
 export * from "./widgets/ModalPlatform";
 export * from "./widgets/BPTSaking";
 export * from "./widgets/GameWidget";
+export * from "./widgets/B";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
