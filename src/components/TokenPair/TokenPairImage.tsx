@@ -1,16 +1,16 @@
 import React from "react";
 import { TokenPairImageProps } from "./types";
 import styled from "styled-components";
-import { YAY_TOKEN } from "../../constants/images";
+import { YAY_TOKEN_GREEN } from "../../constants/images";
 
 const TokenPairImage = ({ token1, token2, simpleFarm }: TokenPairImageProps) => {
   return (
     <TokenPairImageWrap>
       <Image1 simpleFarm={simpleFarm}>
-        <img src={token1 || YAY_TOKEN} alt="token1" />
+        <img src={token1 || YAY_TOKEN_GREEN} alt="token1" />
       </Image1>
       <Image2 simpleFarm={simpleFarm}>
-        <img src={token2 || YAY_TOKEN} alt="token2" />
+        <img src={token2 || YAY_TOKEN_GREEN} alt="token2" />
       </Image2>
     </TokenPairImageWrap>
   );
