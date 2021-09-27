@@ -44,4 +44,6 @@ export interface ApproveStakingBPTProps {
   stakingBalance?: string;
   BPTBalance?: string;
   AVAXBalance?: string;
+  hrefSeeTokenInfo: string;
+  hrefViewContract: string;
 }

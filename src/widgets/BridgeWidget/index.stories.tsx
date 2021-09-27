@@ -68,6 +68,8 @@ export const ApproveStakingBPT = () => {
       stakingBalance="1000 $ YAY"
       BPTBalance="1000 $BPT"
       AVAXBalance="0.1 $AVAX"
+      hrefSeeTokenInfo="#"
+      hrefViewContract="#"
     />
   );
 };
