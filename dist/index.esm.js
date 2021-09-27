@@ -2065,37 +2065,43 @@ var setColor = function (param) {
     }
 };
 var CardProduct = function (_a) {
-    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, externalLink = _a.externalLink, isNotLink = _a.isNotLink, small = _a.small, props = __rest(_a, ["title", "img", "bg", "closed", "href", "externalLink", "isNotLink", "small"]);
+    var title = _a.title, img = _a.img, bg = _a.bg; _a.backgroundImage; var closed = _a.closed, href = _a.href, externalLink = _a.externalLink, isNotLink = _a.isNotLink, small = _a.small, propsWrapperCard = _a.propsWrapperCard, props = __rest(_a, ["title", "img", "bg", "backgroundImage", "closed", "href", "externalLink", "isNotLink", "small", "propsWrapperCard"]);
     if (isNotLink)
-        return (React__default.createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+        return (React__default.createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
             React__default.createElement(CardTitle, { small: small, size: "lg" }, title),
             React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props))));
     if (externalLink) {
         return (React__default.createElement("a", { href: href || "" },
-            React__default.createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+            React__default.createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
                 React__default.createElement(CardTitle, { small: small, size: "lg" }, title),
                 React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
     }
     return (React__default.createElement(NavLink, { to: href || "" },
-        React__default.createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+        React__default.createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
             React__default.createElement(CardTitle, { small: small, size: "lg" }, title),
             React__default.createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
 };
-var CardWrap$1 = styled.div(templateObject_1$1S || (templateObject_1$1S = __makeTemplateObject(["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), function (_a) {
+var CardWrap$1 = styled.div(templateObject_1$1S || (templateObject_1$1S = __makeTemplateObject(["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  ", ";\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  & img {\n    display: ", ";\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  ", ";\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  & img {\n    display: ", ";\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), function (_a) {
     var small = _a.small;
     return (small ? "10px 15px" : "14px 24px");
 }, function (_a) {
     var small = _a.small;
     return (small ? "118px !important" : "43vw");
-}, setColor, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
+}, function (_a) {
+    var backgroundImage = _a.backgroundImage;
+    return (backgroundImage ? "url(" + backgroundImage + ")" : setColor);
+}, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
     var closed = _a.closed;
     return (closed ? "default" : "pointer");
-}, function (_a) {
+}, background, function (_a) {
     var theme = _a.theme, closed = _a.closed;
     return (closed ? "transparent" : theme.colors.green);
 }, function (_a) {
     var theme = _a.theme, closed = _a.closed;
     return (closed ? "" : theme.colors.boxShadow6);
+}, function (_a) {
+    var backgroundImage = _a.backgroundImage;
+    return (backgroundImage ? "none" : "block");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -2144,6 +2150,8 @@ var CHESS = "e529146445a6e6ff.png";
 
 var BALANCE = "6dd90f1628bb1be2.png";
 
+var DOODLE = "6e089338c82aef92.png";
+
 var data = [
     { name: "BTC vs ETH", img: BALANCE, color: "pink" },
     { name: "UP or Down", img: COINS, color: "green" },
@@ -2157,7 +2165,8 @@ var CardsProducts = function () {
         React__default.createElement(CardProduct, { title: data[1].name, bg: data[1].color, img: data[1].img, href: "/games/up-or-down" }),
         React__default.createElement(CardProduct, { title: data[2].name, closed: true, bg: data[2].color, img: data[2].img }),
         React__default.createElement(CardProduct, { title: data[3].name, closed: true, bg: data[3].color, img: data[3].img, left: "20px" }),
-        React__default.createElement(CardProduct, { title: data[4].name, closed: true, bg: data[4].color, img: data[4].img })));
+        React__default.createElement(CardProduct, { title: data[4].name, closed: true, bg: data[4].color, img: data[4].img }),
+        React__default.createElement(CardProduct, { title: data[4].name, propsWrapperCard: { backgroundSize: "cover", backgroundImage: DOODLE } })));
 };
 var Cards$1 = styled.div(templateObject_1$1R || (templateObject_1$1R = __makeTemplateObject(["\n  grid-gap: 8px;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  ", " {\n    gap: 15px;\n    grid-template-columns: repeat(3, 1fr);\n  }\n  ", " {\n    grid-gap: 15px;\n    grid-template-columns: repeat(5, 1fr);\n  }\n"], ["\n  grid-gap: 8px;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  ", " {\n    gap: 15px;\n    grid-template-columns: repeat(3, 1fr);\n  }\n  ", " {\n    grid-gap: 15px;\n    grid-template-columns: repeat(5, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6952,8 +6961,8 @@ var LobbyListItem = function (_a) {
                 React__default.createElement(BetValue, null, bet)),
             React__default.createElement(Time, null,
                 React__default.createElement(TextTitle, null, texts.time),
-                React__default.createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: 0, widthWrapper: '186px' })),
-            React__default.createElement(ButtonStyle, { onClick: handleButton, variant: 'green' },
+                React__default.createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: 0, widthWrapper: "186px" })),
+            React__default.createElement(ButtonStyle, { onClick: handleButton, variant: "green" },
                 React__default.createElement(TextButton, null, texts.join)))));
 };
 var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
@@ -7293,13 +7302,13 @@ var Tab = styled(Button$9)(templateObject_6 || (templateObject_6 = __makeTemplat
     var theme = _a.theme;
     return theme.colors.green;
 });
-var StyledButton = styled(Button$9)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 48%;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"], ["\n  width: 48%;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"])), function (_a) {
+var StyledButton = styled(Button$9)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"], ["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 });
 var BlockChainWrap = styled.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var StyledArrow = styled.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
-var BridgeWidgetStep1 = function (_a) {
+var BridgeWidgetStep = function (_a) {
     var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
@@ -7406,17 +7415,17 @@ var StyledCell = styled(BaseCell)(templateObject_2$2 || (templateObject_2$2 = __
 var templateObject_1$3, templateObject_2$2;
 
 var ApproveStakingBPT = function (_a) {
-    var handleAddToken = _a.handleAddToken, texts = _a.texts, isLoad = _a.isLoad, imgToken1 = _a.imgToken1, imgToken2 = _a.imgToken2, stakingBalance = _a.stakingBalance, BPTBalance = _a.BPTBalance, AVAXBalance = _a.AVAXBalance, handleApprove = _a.handleApprove;
+    var handleAddToken = _a.handleAddToken, texts = _a.texts, isLoad = _a.isLoad, imgToken1 = _a.imgToken1, imgToken2 = _a.imgToken2, stakingBalance = _a.stakingBalance, BPTBalance = _a.BPTBalance, AVAXBalance = _a.AVAXBalance, handleApprove = _a.handleApprove, hrefSeeTokenInfo = _a.hrefSeeTokenInfo, hrefViewContract = _a.hrefViewContract;
     return (React__default.createElement("div", null,
         React__default.createElement(StyledRow, null,
-            React__default.createElement(NameCell, { title: texts.titleToken, tokenName: texts.nameToken, token1: imgToken1, token2: imgToken2 }, "s"),
+            React__default.createElement(NameCell, { title: texts.titleToken, tokenName: texts.nameToken, token1: imgToken1, token2: imgToken2 }),
             React__default.createElement(TotalStakedCell, { title: texts.totalStake, balance: stakingBalance }),
             React__default.createElement(TotalStakedCell, { title: texts.totalBPT, balance: BPTBalance }),
             React__default.createElement(TotalStakedCell, { title: texts.totalAVAX, balance: AVAXBalance }),
             React__default.createElement(ApproveCell, { handleApprove: handleApprove, textWaiting: texts.waitingApprove, isLoad: isLoad, textButton: texts.buttonApprove })),
         React__default.createElement(StyledActionPanel, null,
-            React__default.createElement(LinkItem, { href: "", bold: false }, texts.infoLink),
-            React__default.createElement(LinkItem, { href: "", bold: false }, texts.contactLink),
+            React__default.createElement(LinkItem, { href: hrefSeeTokenInfo, bold: false, target: "_blank" }, texts.infoLink),
+            React__default.createElement(LinkItem, { href: hrefViewContract, bold: false, target: "_blank" }, texts.contactLink),
             React__default.createElement(AddToMetamask, { as: "button", onClick: handleAddToken },
                 React__default.createElement(Text, null, texts.addTokenLink),
                 React__default.createElement(Icon$O, { ml: "4px" })))));
@@ -7485,4 +7494,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { Accordeon, AccordeonCard, Icon$S as AddIcon, Alert, ApproveStakingBPT, Icon$s as ArrowBigDownIcon, Icon$r as ArrowCardDown, Icon$p as ArrowDouble, Icon$l as ArrowDownIcon, Icon$c as ArrowDownRightIcon, Icon$B as ArrowIcon, Icon$N as ArrowLeft, Icon$A as ArrowPanel, Icon$o as ArrowRight, Icon$q as ArrowSingl, ArrowSlider, Icon$n as ArrowTopRight, Icon$a as AvalancheIcon, BTC as BTCIMG, BackgroundImage, BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, Icon$M as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep1, Icon$z as BtnPanel, Button$9 as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, Icon$5 as CalculateIcon, Card$5 as Card, CardBTC, CardFlip, CardFlipBTC, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardsBalance, CardsProducts, Icon$v as CercleIcon, ChartDisclaimer, Icon$L as ChartIcon, Icon$g as CheckIcon, CheckboxInput, Icon$8 as ClipIcon, Icon$R as CloseIcon, Icon$Q as CloseIcon2, Icon$P as CloseSimpleIcon, CollectRoundWinningsModal, CollectWinningsPopup, ComingSoon, ComingSoonWithButton, Icon$w as CompleteIcon, Icon$1 as ComunityIcon, CongratulateModal, ConnectorNames, Icon$I as CopyIcon, Icon$b as CopyIcon2, ETH as ETHIMG, Icon$i as ErrorIcon, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$C as EyeClose, Icon$D as EyeOpen, FallingBunnies, Flex, GHOST$1 as GHOST, GamesList, GamesTable, GhostCard, GiftFormModal, GiftPopup, Icon$J as GreenArrow, Header, HeaderBridgeStaking, HeaderHistory, Heading$1 as Heading, Icon$k as HelpIcon, HiddenItemAccordeonCard, HistoryBlock, Icon$K as HistoryIcon, HistoryPanel, IconButton, Image$1 as Image, InfoWrapper, Input$1 as Input, InputSearch, Icon$e as InstagramIcon, Link$2 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, Icon$m as MenuIcon, Icon$3 as MinusIcon, Modal, ModalPlatform, ModalProvider, NetworkModal, NoHistory, NotificationDot, Icon$O as OpenNewIcon, Pagination, PausedErrorModals, Icon$y as PenIcon, Icon$t as PlayIcon, PlayerList, Icon$j as PlayingCardsIcon, Icon$4 as PlusIcon, PrizePoolBlock, ProgressAVAX, ProgressBar$2 as ProgressBar, ProgressRange, ProgressSteps, ResetCSS, Icon$9 as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, Icon$H as SearchIcon, Icon$G as SearchIcon2, SetPositionCard, SetPositionCardBTC, Icon$h as ShareIcon, Skeleton, Icon$E as SquaresIcon, Statistic, Icon$F as StrikeIcon, Icon$x as StrikesWideIcon, StyledCardBTC, Svg, SwapButton, Icon$6 as SwapVertIcon, Tabs$1 as Tabs, TabsCard, TabsWithMovingLine, Tag, Icon$f as TelegramIcon, Text, Textfield as TextField, Timer$2 as Timer, TimerNotSolid, TimerSimple, TitleBlock, ToastContainer, Toggle, TokenPairImage, TopContent$3 as TopContent, Icon$d as TwitterIcon, ValueRow, Icon$2 as VerifideIcon, VestingWidget, WIN$1 as WINIMG, WalletHistoryModal, Icon$u as WatchIcon, WelcomeModal, WinnersBlock, Icon$7 as YAYIcon, YourHistory, variants$1 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };
+export { Accordeon, AccordeonCard, Icon$S as AddIcon, Alert, ApproveStakingBPT, Icon$s as ArrowBigDownIcon, Icon$r as ArrowCardDown, Icon$p as ArrowDouble, Icon$l as ArrowDownIcon, Icon$c as ArrowDownRightIcon, Icon$B as ArrowIcon, Icon$N as ArrowLeft, Icon$A as ArrowPanel, Icon$o as ArrowRight, Icon$q as ArrowSingl, ArrowSlider, Icon$n as ArrowTopRight, Icon$a as AvalancheIcon, BTC as BTCIMG, BackgroundImage, BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, Icon$M as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep, Icon$z as BtnPanel, Button$9 as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, Icon$5 as CalculateIcon, Card$5 as Card, CardBTC, CardFlip, CardFlipBTC, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardsBalance, CardsProducts, Icon$v as CercleIcon, ChartDisclaimer, Icon$L as ChartIcon, Icon$g as CheckIcon, CheckboxInput, Icon$8 as ClipIcon, Icon$R as CloseIcon, Icon$Q as CloseIcon2, Icon$P as CloseSimpleIcon, CollectRoundWinningsModal, CollectWinningsPopup, ComingSoon, ComingSoonWithButton, Icon$w as CompleteIcon, Icon$1 as ComunityIcon, CongratulateModal, ConnectorNames, Icon$I as CopyIcon, Icon$b as CopyIcon2, ETH as ETHIMG, Icon$i as ErrorIcon, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$C as EyeClose, Icon$D as EyeOpen, FallingBunnies, Flex, GHOST$1 as GHOST, GamesList, GamesTable, GhostCard, GiftFormModal, GiftPopup, Icon$J as GreenArrow, Header, HeaderBridgeStaking, HeaderHistory, Heading$1 as Heading, Icon$k as HelpIcon, HiddenItemAccordeonCard, HistoryBlock, Icon$K as HistoryIcon, HistoryPanel, IconButton, Image$1 as Image, InfoWrapper, Input$1 as Input, InputSearch, Icon$e as InstagramIcon, Link$2 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, Icon$m as MenuIcon, Icon$3 as MinusIcon, Modal, ModalPlatform, ModalProvider, Network, NetworkModal, NoHistory, NotificationDot, Icon$O as OpenNewIcon, Pagination, PausedErrorModals, Icon$y as PenIcon, Icon$t as PlayIcon, PlayerList, Icon$j as PlayingCardsIcon, Icon$4 as PlusIcon, PrizePoolBlock, ProgressAVAX, ProgressBar$2 as ProgressBar, ProgressRange, ProgressSteps, ResetCSS, Icon$9 as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, Icon$H as SearchIcon, Icon$G as SearchIcon2, SetPositionCard, SetPositionCardBTC, Icon$h as ShareIcon, Skeleton, Icon$E as SquaresIcon, Statistic, Icon$F as StrikeIcon, Icon$x as StrikesWideIcon, StyledCardBTC, Svg, SwapButton, Icon$6 as SwapVertIcon, Tabs$1 as Tabs, TabsCard, TabsWithMovingLine, Tag, Icon$f as TelegramIcon, Text, Textfield as TextField, Timer$2 as Timer, TimerNotSolid, TimerSimple, TitleBlock, ToastContainer, Toggle, TokenPairImage, TopContent$3 as TopContent, Icon$d as TwitterIcon, ValueRow, Icon$2 as VerifideIcon, VestingWidget, WIN$1 as WINIMG, WalletHistoryModal, Icon$u as WatchIcon, WelcomeModal, WinnersBlock, Icon$7 as YAYIcon, YourHistory, variants$1 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };

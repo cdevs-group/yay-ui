@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { BackgroundProps } from "styled-system";
 export interface CardBalanceProps {
     right?: boolean;
     children?: ReactNode;
@@ -31,8 +32,8 @@ export interface TextCardsProps {
 }
 export interface CardProductProp {
     title: string;
-    img: string;
-    bg: string;
+    img?: string;
+    bg?: string;
     closed?: boolean;
     href?: string;
     left?: string;
@@ -43,4 +44,6 @@ export interface CardProductProp {
     externalLink?: boolean;
     small?: boolean;
     isNotLink?: boolean;
+    backgroundImage?: string;
+    propsWrapperCard?: BackgroundProps;
 }

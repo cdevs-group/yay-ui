@@ -2096,37 +2096,43 @@ var setColor = function (param) {
     }
 };
 var CardProduct = function (_a) {
-    var title = _a.title, img = _a.img, bg = _a.bg, closed = _a.closed, href = _a.href, externalLink = _a.externalLink, isNotLink = _a.isNotLink, small = _a.small, props = __rest(_a, ["title", "img", "bg", "closed", "href", "externalLink", "isNotLink", "small"]);
+    var title = _a.title, img = _a.img, bg = _a.bg; _a.backgroundImage; var closed = _a.closed, href = _a.href, externalLink = _a.externalLink, isNotLink = _a.isNotLink, small = _a.small, propsWrapperCard = _a.propsWrapperCard, props = __rest(_a, ["title", "img", "bg", "backgroundImage", "closed", "href", "externalLink", "isNotLink", "small", "propsWrapperCard"]);
     if (isNotLink)
-        return (React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+        return (React__default['default'].createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
             React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
             React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props))));
     if (externalLink) {
         return (React__default['default'].createElement("a", { href: href || "" },
-            React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+            React__default['default'].createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
                 React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
                 React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
     }
     return (React__default['default'].createElement(reactRouterDom.NavLink, { to: href || "" },
-        React__default['default'].createElement(CardWrap$1, { small: small, closed: closed, bg: bg },
+        React__default['default'].createElement(CardWrap$1, __assign({ small: small, closed: closed, bg: bg }, propsWrapperCard),
             React__default['default'].createElement(CardTitle, { small: small, size: "lg" }, title),
             React__default['default'].createElement(Img$2, __assign({ src: img, alt: "some img" }, props)))));
 };
-var CardWrap$1 = styled__default['default'].div(templateObject_1$1S || (templateObject_1$1S = __makeTemplateObject(["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), function (_a) {
+var CardWrap$1 = styled__default['default'].div(templateObject_1$1S || (templateObject_1$1S = __makeTemplateObject(["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  ", ";\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  & img {\n    display: ", ";\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"], ["\n  position: relative;\n  padding: ", ";\n  height: ", ";\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  opacity: ", ";\n  box-sizing: border-box;\n  cursor: ", ";\n  border: 2px solid transparent;\n  transition: 0.3s;\n  ", ";\n  &:hover {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  &:nth-child(5) {\n    display: none;\n  }\n  & img {\n    display: ", ";\n  }\n  ", " {\n    height: 30vw;\n    width: 100%;\n    &:nth-child(5) {\n      display: grid;\n    }\n  }\n  ", " {\n    height: 18vw;\n    width: 100%;\n  }\n  ", " {\n    max-width: 220px;\n    height: 220px;\n  }\n"])), function (_a) {
     var small = _a.small;
     return (small ? "10px 15px" : "14px 24px");
 }, function (_a) {
     var small = _a.small;
     return (small ? "118px !important" : "43vw");
-}, setColor, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
+}, function (_a) {
+    var backgroundImage = _a.backgroundImage;
+    return (backgroundImage ? "url(" + backgroundImage + ")" : setColor);
+}, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
     var closed = _a.closed;
     return (closed ? "default" : "pointer");
-}, function (_a) {
+}, styledSystem.background, function (_a) {
     var theme = _a.theme, closed = _a.closed;
     return (closed ? "transparent" : theme.colors.green);
 }, function (_a) {
     var theme = _a.theme, closed = _a.closed;
     return (closed ? "" : theme.colors.boxShadow6);
+}, function (_a) {
+    var backgroundImage = _a.backgroundImage;
+    return (backgroundImage ? "none" : "block");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -2175,6 +2181,8 @@ var CHESS = "e529146445a6e6ff.png";
 
 var BALANCE = "6dd90f1628bb1be2.png";
 
+var DOODLE = "6e089338c82aef92.png";
+
 var data = [
     { name: "BTC vs ETH", img: BALANCE, color: "pink" },
     { name: "UP or Down", img: COINS, color: "green" },
@@ -2188,7 +2196,8 @@ var CardsProducts = function () {
         React__default['default'].createElement(CardProduct, { title: data[1].name, bg: data[1].color, img: data[1].img, href: "/games/up-or-down" }),
         React__default['default'].createElement(CardProduct, { title: data[2].name, closed: true, bg: data[2].color, img: data[2].img }),
         React__default['default'].createElement(CardProduct, { title: data[3].name, closed: true, bg: data[3].color, img: data[3].img, left: "20px" }),
-        React__default['default'].createElement(CardProduct, { title: data[4].name, closed: true, bg: data[4].color, img: data[4].img })));
+        React__default['default'].createElement(CardProduct, { title: data[4].name, closed: true, bg: data[4].color, img: data[4].img }),
+        React__default['default'].createElement(CardProduct, { title: data[4].name, propsWrapperCard: { backgroundSize: "cover", backgroundImage: DOODLE } })));
 };
 var Cards$1 = styled__default['default'].div(templateObject_1$1R || (templateObject_1$1R = __makeTemplateObject(["\n  grid-gap: 8px;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  ", " {\n    gap: 15px;\n    grid-template-columns: repeat(3, 1fr);\n  }\n  ", " {\n    grid-gap: 15px;\n    grid-template-columns: repeat(5, 1fr);\n  }\n"], ["\n  grid-gap: 8px;\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  ", " {\n    gap: 15px;\n    grid-template-columns: repeat(3, 1fr);\n  }\n  ", " {\n    grid-gap: 15px;\n    grid-template-columns: repeat(5, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6983,8 +6992,8 @@ var LobbyListItem = function (_a) {
                 React__default['default'].createElement(BetValue, null, bet)),
             React__default['default'].createElement(Time, null,
                 React__default['default'].createElement(TextTitle, null, texts.time),
-                React__default['default'].createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: 0, widthWrapper: '186px' })),
-            React__default['default'].createElement(ButtonStyle, { onClick: handleButton, variant: 'green' },
+                React__default['default'].createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: 0, widthWrapper: "186px" })),
+            React__default['default'].createElement(ButtonStyle, { onClick: handleButton, variant: "green" },
                 React__default['default'].createElement(TextButton, null, texts.join)))));
 };
 var Wrapper$2 = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
@@ -7324,13 +7333,13 @@ var Tab = styled__default['default'](Button$9)(templateObject_6 || (templateObje
     var theme = _a.theme;
     return theme.colors.green;
 });
-var StyledButton = styled__default['default'](Button$9)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 48%;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"], ["\n  width: 48%;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"])), function (_a) {
+var StyledButton = styled__default['default'](Button$9)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"], ["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 });
 var BlockChainWrap = styled__default['default'].div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var StyledArrow = styled__default['default'].div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
-var BridgeWidgetStep1 = function (_a) {
+var BridgeWidgetStep = function (_a) {
     var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
@@ -7437,17 +7446,17 @@ var StyledCell = styled__default['default'](BaseCell)(templateObject_2$2 || (tem
 var templateObject_1$3, templateObject_2$2;
 
 var ApproveStakingBPT = function (_a) {
-    var handleAddToken = _a.handleAddToken, texts = _a.texts, isLoad = _a.isLoad, imgToken1 = _a.imgToken1, imgToken2 = _a.imgToken2, stakingBalance = _a.stakingBalance, BPTBalance = _a.BPTBalance, AVAXBalance = _a.AVAXBalance, handleApprove = _a.handleApprove;
+    var handleAddToken = _a.handleAddToken, texts = _a.texts, isLoad = _a.isLoad, imgToken1 = _a.imgToken1, imgToken2 = _a.imgToken2, stakingBalance = _a.stakingBalance, BPTBalance = _a.BPTBalance, AVAXBalance = _a.AVAXBalance, handleApprove = _a.handleApprove, hrefSeeTokenInfo = _a.hrefSeeTokenInfo, hrefViewContract = _a.hrefViewContract;
     return (React__default['default'].createElement("div", null,
         React__default['default'].createElement(StyledRow, null,
-            React__default['default'].createElement(NameCell, { title: texts.titleToken, tokenName: texts.nameToken, token1: imgToken1, token2: imgToken2 }, "s"),
+            React__default['default'].createElement(NameCell, { title: texts.titleToken, tokenName: texts.nameToken, token1: imgToken1, token2: imgToken2 }),
             React__default['default'].createElement(TotalStakedCell, { title: texts.totalStake, balance: stakingBalance }),
             React__default['default'].createElement(TotalStakedCell, { title: texts.totalBPT, balance: BPTBalance }),
             React__default['default'].createElement(TotalStakedCell, { title: texts.totalAVAX, balance: AVAXBalance }),
             React__default['default'].createElement(ApproveCell, { handleApprove: handleApprove, textWaiting: texts.waitingApprove, isLoad: isLoad, textButton: texts.buttonApprove })),
         React__default['default'].createElement(StyledActionPanel, null,
-            React__default['default'].createElement(LinkItem, { href: "", bold: false }, texts.infoLink),
-            React__default['default'].createElement(LinkItem, { href: "", bold: false }, texts.contactLink),
+            React__default['default'].createElement(LinkItem, { href: hrefSeeTokenInfo, bold: false, target: "_blank" }, texts.infoLink),
+            React__default['default'].createElement(LinkItem, { href: hrefViewContract, bold: false, target: "_blank" }, texts.contactLink),
             React__default['default'].createElement(AddToMetamask, { as: "button", onClick: handleAddToken },
                 React__default['default'].createElement(Text, null, texts.addTokenLink),
                 React__default['default'].createElement(Icon$O, { ml: "4px" })))));
@@ -7545,7 +7554,7 @@ exports.Box = Box;
 exports.BridgeProof = BridgeProof;
 exports.BridgeStep1 = BridgeStep1;
 exports.BridgeStep2 = BridgeStep2;
-exports.BridgeWidgetStep1 = BridgeWidgetStep1;
+exports.BridgeWidgetStep = BridgeWidgetStep;
 exports.BtnPanel = Icon$z;
 exports.Button = Button$9;
 exports.ButtonMenu = ButtonMenu;
@@ -7627,6 +7636,7 @@ exports.MinusIcon = Icon$3;
 exports.Modal = Modal;
 exports.ModalPlatform = ModalPlatform;
 exports.ModalProvider = ModalProvider;
+exports.Network = Network;
 exports.NetworkModal = NetworkModal;
 exports.NoHistory = NoHistory;
 exports.NotificationDot = NotificationDot;

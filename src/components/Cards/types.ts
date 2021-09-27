@@ -33,7 +33,7 @@ export interface TextCardsProps {
   };
   account: string;
 }
-export interface CardProductProp{
+export interface CardProductProp {
   title: string;
   img?: string;
   bg?: string;
