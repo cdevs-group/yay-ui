@@ -32,6 +32,7 @@ import UNIT from "../../public/images/unit.png";
 import PANCAKE from "../../public/images/pancake.png";
 import PANGOLIN from "../../public/images/pangolin.png";
 import YAY_TOKEN from "../../public/images/logo.png";
+import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
 
 export {
   BG_IMG,
@@ -68,4 +69,5 @@ export {
   PANCAKE,
   PANGOLIN,
   YAY_TOKEN,
+  YAY_TOKEN_GREEN,
 };
