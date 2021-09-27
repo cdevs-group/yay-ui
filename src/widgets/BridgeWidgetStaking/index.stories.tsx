@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import BridgeWidgetStep1 from "./BridgeWidgetStep1";
+import BridgeWidgetStep from "./BridgeWidgetStep";
 import { AvalancheIcon, BnbIcon, YAYIcon } from "../../components/Svg";
 import ApproveStakingBPTBlock from "./ApproveStakingBPT";
+import HeaderBridgeStaking from "./components/HeaderBridgeStaking";
+import { Text } from "../../components/Text";
 
 export default {
   title: "Widgets/BridgeNew",
   argTypes: {},
 };
 
-export const BridgeWidgetStep1Block: React.FC = () => {
+export const BridgeWidgetStepBlock: React.FC = () => {
   const [value, onUserInput] = useState<string | number>("");
 
   const texts = {
@@ -25,7 +27,7 @@ export const BridgeWidgetStep1Block: React.FC = () => {
   return (
     <div>
       <div style={{ marginBottom: "50px" }}>
-        <BridgeWidgetStep1
+        <BridgeWidgetStep
           tabs={["5000", "25000", "50000"]}
           texts={texts}
           iconNetwork1={<BnbIcon />}
@@ -71,5 +73,24 @@ export const ApproveStakingBPT = () => {
       hrefSeeTokenInfo="#"
       hrefViewContract="#"
     />
+  );
+};
+
+export const HeaderBridgeStakingBlock = () => {
+  return (
+    <div>
+      <HeaderBridgeStaking maxWidth="516px" margin="0 auto 25px" title="Step 1">
+        <Text>
+          Join{" "}
+          <Text color="green" as="span">
+            more than 80 talented
+          </Text>{" "}
+          people around the world. Our opportunities are all{" "}
+          <Text color="green" as="span">
+            100% remote.
+          </Text>
+        </Text>
+      </HeaderBridgeStaking>
+    </div>
   );
 };
