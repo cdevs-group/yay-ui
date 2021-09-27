@@ -1,3 +1,4 @@
+import { ButtonProps } from "../../components/Button/types";
 export interface LobbyNavProps {
     texts: {
         create: string;
@@ -21,6 +22,7 @@ export interface LobbyCreatModalProps {
     tabsList: Array<string | number>;
     handleCreate: () => void;
     handleJoin: () => void;
+    propsCreateButton?: ButtonProps;
 }
 export interface LobbyListItemProps {
     data: DataLobbyProps;

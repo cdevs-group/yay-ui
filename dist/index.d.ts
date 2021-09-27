@@ -51,6 +51,8 @@ export * from "./widgets/Vesting";
 export * from "./widgets/WalletHistoryModal";
 export * from "./widgets/Lobby";
 export * from "./widgets/ModalPlatform";
+export * from "./widgets/BPTSaking";
 export * from "./widgets/GameWidget";
+export * from "./widgets/B";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
