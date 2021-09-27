@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import BridgeWidgetStep1 from "./BridgeWidgetStep1";
 import { AvalancheIcon, BnbIcon, YAYIcon } from "../../components/Svg";
 import ApproveStakingBPTBlock from "./ApproveStakingBPT";
+import HeaderBridgeStaking from "./components/HeaderBridgeStaking";
+import { Text } from "../../components/Text";
 
 export default {
   title: "Widgets/BridgeNew",
@@ -69,5 +71,24 @@ export const ApproveStakingBPT = () => {
       BPTBalance="1000 $BPT"
       AVAXBalance="0.1 $AVAX"
     />
+  );
+};
+
+export const HeaderBridgeStakingBlock = () => {
+  return (
+    <div>
+      <HeaderBridgeStaking maxWidth="516px" margin="0 auto 25px" title="Step 1">
+        <Text>
+          Join{" "}
+          <Text color="green" as="span">
+            more than 80 talented
+          </Text>{" "}
+          people around the world. Our opportunities are all{" "}
+          <Text color="green" as="span">
+            100% remote.
+          </Text>
+        </Text>
+      </HeaderBridgeStaking>
+    </div>
   );
 };

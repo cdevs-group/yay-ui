@@ -33,13 +33,11 @@ export interface LobbyListItemProps {
   handleButton: (param: any) => void;
 }
 interface DataLobbyProps {
-  playerImg1?: string;
-  playerImg2?: string;
-  player: string;
-  bet: string | number;
-  type: string;
-  timer?: number;
-  gameAddress: string;
+  epoch: number;
+  creator: string;
+  bet: number | bigint | string;
+  startTime: null | number;
+  status: string;
 }
 interface LobbyTextsProps {
   player: string;

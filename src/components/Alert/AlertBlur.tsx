@@ -1,0 +1,75 @@
+import React from "react";
+import styled from "styled-components";
+import Text from "../Text/Text";
+import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
+import { AlertProps, variants } from "./types";
+import { Flex } from "../Box";
+
+const StyledAlert = styled.div`
+  width: fit-content;
+  position: relative;
+  z-index: 5;
+  transition: 0.3s ease;
+  padding: 15px 90px 15px 23px;
+  background: ${({ theme }) => theme.colors.buttonBg};
+  box-shadow: inset ${({ theme }) => theme.colors.textShadow};
+  border-radius: 12px;
+  color: ${({ theme }) => theme.colors.text};
+`;
+
+const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
+  switch (variant) {
+    case variants.COLLECTION:
+      return <CercleIcon spin={true} />;
+    case variants.WINNING:
+      return <CloseIcon />;
+    case variants.SUCCESS:
+      return <CompleteIcon fill="#47DA3B" />;
+    case variants.INFO:
+      return <></>;
+    case variants.ERROR:
+      return <ErrorIcon />;
+    default:
+      return <></>;
+  }
+};
+
+const Button = styled.button`
+  position: absolute;
+  padding: 0;
+  background: none;
+  border: none;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+  &:disabled {
+    cursor: default;
+  }
+`;
+
+const SetButton = ({ variant, onClick }: AlertProps) => {
+  const Icon = getIcon(variant);
+  return (
+    <Button disabled={variant !== "winning"} onClick={onClick}>
+      {Icon}
+    </Button>
+  );
+};
+
+const AlertBlur: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
+  return (
+    <StyledAlert>
+      <div>
+        <Flex justifyContent="space-between">
+          <Text fontWeight={600} mb="7px">
+            {title}
+          </Text>
+        </Flex>
+
+        <div>{children}</div>
+      </div>
+    </StyledAlert>
+  );
+};
+
+export default AlertBlur;
