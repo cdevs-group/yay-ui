@@ -7,6 +7,7 @@ export interface TimerColorProps {
     background?: string;
     borderRadius?: string;
     margin?: string;
+    fontSize?: string;
 }
 export interface TimerProps {
     color?: string;
@@ -20,6 +21,8 @@ export interface TimerProps {
     width?: string;
     marginPoint?: string;
     margin?: string;
+    widthWrapper?: string;
+    fontSize?: string;
 }
 export interface TimerSimpleProps {
     time: number;

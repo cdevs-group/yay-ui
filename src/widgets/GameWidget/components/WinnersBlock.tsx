@@ -1,32 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { TabsWithMovingLine } from "../../..";
-import Live from "./Live";
 import { TabsWithMovingLineProps } from "../../../components/Tabs/types";
-import { LiveTabProps } from "./types";
+import Today from "./Today";
+import { TodayTabProps } from "./types";
 
-interface Props extends TabsWithMovingLineProps, LiveTabProps {}
+interface Props extends TabsWithMovingLineProps, TodayTabProps {}
 
-const HistoryBlock: React.FC<Props> = ({
-  handleToggleTab,
-  tabsList,
-  tabActive,
-  title,
-  dataLive,
-  prizePoolText,
-  prizePool,
-}) => {
+const WinnersBlock: React.FC<Props> = ({ handleToggleTab, tabsList, tabActive, title, dataToday }) => {
   return (
     <>
       <Block>
         <TabsWithMovingLine handleToggleTab={handleToggleTab} tabsList={tabsList} tabActive={tabActive} title={title} />
-        {tabActive === 0 && <Live dataLive={dataLive} prizePoolText={prizePoolText} prizePool={prizePool} />}
+        {tabActive === 0 && <Today dataToday={dataToday} />}
       </Block>
     </>
   );
 };
 
-export default HistoryBlock;
+export default WinnersBlock;
 
 const Block = styled.div`
   width: 100%;

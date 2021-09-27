@@ -91,6 +91,9 @@ export declare type Colors = {
     whiteRgba: string;
     cardShadow: string;
     bgCard: string;
+    bgCard2: string;
+    bgCard3: string;
+    bgCard4: string;
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
@@ -118,6 +121,7 @@ export declare type Colors = {
     filterShadow: string;
     greyRgba2: string;
     blur: string;
+    dark2: string;
     gradients: Gradients;
     binance: string;
 };

@@ -98,6 +98,8 @@ export type Colors = {
   cardShadow: string;
   bgCard: string;
   bgCard2: string;
+  bgCard3: string;
+  bgCard4: string;
   yellow: string;
   bgHeader: string;
   buttonBg2: string;
@@ -125,7 +127,6 @@ export type Colors = {
   filterShadow: string;
   greyRgba2: string;
   blur: string;
-  bgCard3: string;
   dark2: string;
 
   // Gradients
