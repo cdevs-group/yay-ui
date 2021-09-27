@@ -5,6 +5,7 @@ import MAJONG from "../image/majong.png";
 import COINS from "../image/coins.png";
 import CHESS from "../image/chess.png";
 import BALANCE from "../image/balance.png";
+import DOODLE from "../image/doodle.png";
 import CardProduct from "./components/CardProduct";
 
 const data = [
@@ -23,6 +24,7 @@ const CardsProducts = () => {
       <CardProduct title={data[2].name} closed bg={data[2].color} img={data[2].img} />
       <CardProduct title={data[3].name} closed bg={data[3].color} img={data[3].img} left="20px" />
       <CardProduct title={data[4].name} closed bg={data[4].color} img={data[4].img} />
+      <CardProduct title={data[4].name} backgroundImage={DOODLE} propsWrapperCard={{ backgroundSize: "cover" }} />
     </Cards>
   );
 };

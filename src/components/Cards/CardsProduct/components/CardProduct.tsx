@@ -1,8 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { background, BackgroundProps } from "styled-system";
 import { CardProductProp, ImageProps } from "../../types";
 import Text from "../../../Text/Text";
+
+interface WrapProps extends BackgroundProps {
+  closed?: boolean;
+  bg?: string;
+  small?: boolean;
+  backgroundImage?: string;
+}
 
 export const setColor = (param: { bg?: string }) => {
   switch (param.bg) {
@@ -23,10 +31,22 @@ export const setColor = (param: { bg?: string }) => {
   }
 };
 
-const CardProduct = ({ title, img, bg, closed, href, externalLink, isNotLink, small, ...props }: CardProductProp) => {
+const CardProduct = ({
+  title,
+  img,
+  bg,
+  backgroundImage,
+  closed,
+  href,
+  externalLink,
+  isNotLink,
+  small,
+  propsWrapperCard,
+  ...props
+}: CardProductProp) => {
   if (isNotLink)
     return (
-      <CardWrap small={small} closed={closed} bg={bg}>
+      <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
         <CardTitle small={small} size="lg">
           {title}
         </CardTitle>
@@ -36,7 +56,7 @@ const CardProduct = ({ title, img, bg, closed, href, externalLink, isNotLink, sm
   if (externalLink) {
     return (
       <a href={href || ""}>
-        <CardWrap small={small} closed={closed} bg={bg}>
+        <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
           <CardTitle small={small} size="lg">
             {title}
           </CardTitle>
@@ -47,7 +67,7 @@ const CardProduct = ({ title, img, bg, closed, href, externalLink, isNotLink, sm
   }
   return (
     <NavLink to={href || ""}>
-      <CardWrap small={small} closed={closed} bg={bg}>
+      <CardWrap small={small} closed={closed} bg={bg} backgroundImage={backgroundImage} {...propsWrapperCard}>
         <CardTitle small={small} size="lg">
           {title}
         </CardTitle>
@@ -59,18 +79,19 @@ const CardProduct = ({ title, img, bg, closed, href, externalLink, isNotLink, sm
 
 export default CardProduct;
 
-export const CardWrap = styled.div<{ closed?: boolean; bg: string; small?: boolean }>`
+export const CardWrap = styled.div<WrapProps>`
   position: relative;
   padding: ${({ small }) => (small ? "10px 15px" : "14px 24px")};
   height: ${({ small }) => (small ? "118px !important" : "43vw")};
   width: 100%;
-  background: ${setColor};
+  background: ${({ backgroundImage }) => (backgroundImage ? `url(${backgroundImage})` : setColor)};
   border-radius: 15px;
   opacity: ${(props) => (props.closed ? 0.3 : 1)};
   box-sizing: border-box;
   cursor: ${({ closed }) => (closed ? "default" : "pointer")};
   border: 2px solid transparent;
   transition: 0.3s;
+  ${background};
   &:hover {
     border: 2px solid ${({ theme, closed }) => (closed ? "transparent" : theme.colors.green)};
     box-shadow: ${({ theme, closed }) => (closed ? "" : theme.colors.boxShadow6)};
@@ -78,6 +99,9 @@ export const CardWrap = styled.div<{ closed?: boolean; bg: string; small?: boole
   }
   &:nth-child(5) {
     display: none;
+  }
+  & img {
+    display: ${({ backgroundImage }) => (backgroundImage ? "none" : "block")};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 30vw;
