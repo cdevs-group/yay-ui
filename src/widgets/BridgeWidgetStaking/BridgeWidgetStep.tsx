@@ -83,7 +83,7 @@ const StyledArrow = styled.div`
   z-index: 1;
 `;
 
-const BridgeWidgetStep1: React.FC<BridgeStep1Props> = ({
+const BridgeWidgetStep: React.FC<BridgeStep1Props> = ({
   texts,
   onUserInput,
   tabs,
@@ -143,4 +143,4 @@ const BridgeWidgetStep1: React.FC<BridgeStep1Props> = ({
   );
 };
 
-export default BridgeWidgetStep1;
+export default BridgeWidgetStep;
