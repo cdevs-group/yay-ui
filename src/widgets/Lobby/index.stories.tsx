@@ -3,6 +3,7 @@ import LobbyNav from "./LobbyNav/LobbyNav";
 import LobbyCreatModal from "./LobbyCreatModal/LobbyCreatModal";
 import LobbyList from "./LobbyList/LobbyList";
 import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../constants/images";
+import LobbyListItem from "./LobbyList/LobbyListItem";
 
 export default {
   title: "Widgets/Lobby",
@@ -56,59 +57,53 @@ export const LobbyCreatModalBlock = () => {
 export const LobbyListBlock = () => {
   const data = [
     {
-      playerImg1: AVATAR_PLAYER,
-      playerImg2: AVATAR_PLAYER_2,
-      player: "0xbdda50183d817c3289f895a4472eb475967dc980",
-      bet: "5",
-      // button: "Collect Winnings",
-      type: "winner",
-      ready: true,
-      timer: 11723,
-      result: "win",
-      gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
     },
     {
-      playerImg1: AVATAR_PLAYER,
-      playerImg2: AVATAR_PLAYER_2,
-      player: "0xbdda50183d817c3289f895a4472eb475967dc980",
-      bet: "1",
-      // button: "Join now",
-      type: "join",
-      ready: true,
-      timer: 0,
-      gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
     },
     {
-      playerImg1: AVATAR_PLAYER,
-      playerImg2: AVATAR_PLAYER_2,
-      player: "0xbdda50183d817c3289f895a4472eb475967dc980",
-      bet: "0.1",
-      // button: "Waiting for player",
-      type: "waitPlayer",
-      ready: false,
-      gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
     },
     {
-      playerImg1: AVATAR_PLAYER,
-      playerImg2: AVATAR_PLAYER_2,
-      player: "0xbdda50183d817c3289f895a4472eb475967dc980",
-      bet: "0.1",
-      // button: "Waiting for results",
-      type: "waitResult",
-      ready: false,
-      timer: 0,
-      gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
     },
     {
-      playerImg1: AVATAR_PLAYER,
-      playerImg2: AVATAR_PLAYER_2,
-      player: "0xbdda50183d817c3289f895a4472eb475967dc980",
-      bet: "0.1",
-      // button: "Play",
-      type: "withApponent",
-      ready: true,
-      timer: 1111,
-      gameAddress: "0xbdda50183d817c3289f895a4472eb475967dc980",
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
+    },
+    {
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
+    },
+    {
+      epoch: 4,
+      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      bet: "10000000000000000",
+      startTime: null,
+      status: "CREATED",
     },
   ];
 
@@ -127,4 +122,34 @@ export const LobbyListBlock = () => {
   const handleButton = (param: any) => {};
 
   return <LobbyList handleButton={handleButton} texts={texts} data={data} />;
+};
+
+export const LobyItem = () => {
+  const texts = {
+    player: "Player",
+    bet: "Bet",
+    time: "Still time",
+    waitResult: "Waiting for results",
+    winner: "Collect Winnings",
+    winnerMob: "Collect",
+    withApponent: "Play",
+    waitPlayer: "Waiting for player",
+    join: "Join now",
+  };
+
+  const handleButton = (param: any) => {};
+
+  return (
+    <div>
+      <LobbyListItem
+        epoch={4}
+        creator="0x049900f4204604c52BF76Ba61e72a43e04B0AA54"
+        bet={10000000000000000}
+        startTime={null}
+        status="CREATED"
+        texts={texts}
+        handleButton={handleButton}
+      />
+    </div>
+  );
 };

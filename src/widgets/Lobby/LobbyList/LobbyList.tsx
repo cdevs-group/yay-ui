@@ -7,7 +7,16 @@ const LobbyList = ({ data, texts, handleButton }: LobbyListProps) => {
   return (
     <Wrapper>
       {data.map((item, i) => (
-        <LobbyListItem handleButton={handleButton} key={i} texts={texts} data={item} />
+        <LobbyListItem
+          epoch={item.epoch}
+          creator={item.creator}
+          bet={item.bet}
+          startTime={item.startTime}
+          status={item.status}
+          handleButton={handleButton}
+          key={i}
+          texts={texts}
+        />
       ))}
     </Wrapper>
   );

@@ -15,4 +15,6 @@ export interface AlertProps {
     title?: string;
     children?: ReactNode;
     onClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
+    buttonText?: string;
+    handleClose?: (evt: MouseEvent<HTMLButtonElement>) => void;
 }

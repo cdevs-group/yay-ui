@@ -10,7 +10,7 @@ import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWitho
 import { Loader } from "../../../components/Loader";
 import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../../constants/images";
 
-const LobbyListItem = ({ data, texts, handleButton }: LobbyListItemProps) => {
+const LobbyListItem = ({ epoch, creator, bet, startTime, status, texts, handleButton }: LobbyListItemProps) => {
   const textButton = (mob: string, type: string) => {
     switch (type) {
       case "winner":
@@ -26,71 +26,83 @@ const LobbyListItem = ({ data, texts, handleButton }: LobbyListItemProps) => {
     }
   };
 
+  // {
+  //   "epoch": 4,
+  //   "creator": "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+  //   "bet": "10000000000000000",
+  //   "startTime": null,
+  //   "status": "CREATED"
+  // },
+
   return (
     <>
-      <TimerMob type={(data.timer !== undefined && data.timer < 1) || data?.type === "join"}>
-        <TimerNotSolidWithoutBg
-          color={data.timer !== undefined && data.timer < 1 ? baseColors.whiteRgba2 : lightColors.text}
-          marginPoint="0 18px"
-          width="186px"
-          borderRadius="7px"
-          background={lightColors.buttonBg}
-          height="30px"
-          time={data.timer}
-          margin="0 auto"
-        />
-      </TimerMob>
+      {/*<TimerMob type={(data.startTime !== undefined && data.startTime < 1) || data?.type === "join"}>*/}
+      {/*  <TimerNotSolidWithoutBg*/}
+      {/*    color={data.startTime && data.startTime < 1 ? baseColors.whiteRgba2 : lightColors.text}*/}
+      {/*    marginPoint="0 18px"*/}
+      {/*    width="186px"*/}
+      {/*    borderRadius="7px"*/}
+      {/*    background={lightColors.buttonBg}*/}
+      {/*    height="30px"*/}
+      {/*    time={data.timer}*/}
+      {/*    widthWrapper='186px'*/}
+      {/*  />*/}
+      {/*</TimerMob>*/}
       <Wrapper>
         <Icons>
           <Icon1>
-            <img src={data.playerImg1 || AVATAR_PLAYER} />
+            <img src={AVATAR_PLAYER} />
           </Icon1>
           <Icon2>
-            <img src={data.playerImg2 || AVATAR_PLAYER_2} />
+            <img src={AVATAR_PLAYER_2} />
           </Icon2>
         </Icons>
         <Player>
           <TextTitle>{texts.player}</TextTitle>
-          <TextStyle>{ellipsis(data.player)}</TextStyle>
+          <TextStyle>{ellipsis(creator)}</TextStyle>
         </Player>
         <Bet>
           <TextTitle>{texts.bet}</TextTitle>
-          <BetValue>{data.bet}</BetValue>
+          <BetValue>{bet}</BetValue>
         </Bet>
         <Time>
           <TextTitle>{texts.time}</TextTitle>
           <TimerNotSolidWithoutBg
-            color={data.timer !== undefined && data.timer < 1 ? baseColors.whiteRgba2 : lightColors.text}
+            color={!startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text}
             marginPoint="0 18px"
             width="186px"
             borderRadius="7px"
             background={lightColors.buttonBg}
             height="30px"
-            time={data.type === "join" ? 14400 : data.timer}
+            time={0}
+            widthWrapper="186px"
           />
         </Time>
-        {data.type === "waitResult" ? (
-          <LoadResult>
-            <TextStyle>{texts.waitResult}</TextStyle>
-            <LoaderWrap>
-              <Loader />
-            </LoaderWrap>
-          </LoadResult>
-        ) : (
-          <WinWrapper win={data.type === "winner"}>
-            <img src={Winner} />
-            <ButtonStyle
-              onClick={handleButton}
-              width="100%"
-              variant={
-                data.type === "winner" || data.type === "withApponent" || data.type === "join" ? "green" : "option"
-              }
-            >
-              <TextButton>{textButton("desc", data.type)}</TextButton>
-              <TextButtonMob>{textButton("mob", data.type)}</TextButtonMob>
-            </ButtonStyle>
-          </WinWrapper>
-        )}
+        <ButtonStyle onClick={handleButton} variant="green">
+          <TextButton>{texts.join}</TextButton>
+        </ButtonStyle>
+        {/*{data.type === "waitResult" ? (*/}
+        {/*  <LoadResult>*/}
+        {/*    <TextStyle>{texts.waitResult}</TextStyle>*/}
+        {/*    <LoaderWrap>*/}
+        {/*      <Loader />*/}
+        {/*    </LoaderWrap>*/}
+        {/*  </LoadResult>*/}
+        {/*) : (*/}
+        {/*  <WinWrapper win={data.type === "winner"}>*/}
+        {/*    <img src={Winner} />*/}
+        {/*    <ButtonStyle*/}
+        {/*      onClick={handleButton}*/}
+        {/*      width="100%"*/}
+        {/*      variant={*/}
+        {/*        data.type === "winner" || data.type === "withApponent" || data.type === "join" ? "green" : "option"*/}
+        {/*      }*/}
+        {/*    >*/}
+        {/*      <TextButton>{textButton("desc", data.type)}</TextButton>*/}
+        {/*      <TextButtonMob>{textButton("mob", data.type)}</TextButtonMob>*/}
+        {/*    </ButtonStyle>*/}
+        {/*  </WinWrapper>*/}
+        {/*)}*/}
       </Wrapper>
     </>
   );

@@ -51,13 +51,15 @@ export const WithHandler: React.FC = () => {
         </Alert>
       </Row>
       <Row>
-        <AlertBlur title="STEP 1">
+        <AlertBlur onClick={() => {}} handleClose={closeAlert} buttonText="Stake it" title="STEP 1">
           <Text fontSize="14px" color="#8B8B8B">
             You have{" "}
             <Text fontSize="14px" as="span" color="green">
               9.000 e.Yay
             </Text>{" "}
-            in AVAX. <br /> you want stake it?
+            in AVAX.
+            <br />
+            Do you want stake it?
           </Text>
         </AlertBlur>
       </Row>
