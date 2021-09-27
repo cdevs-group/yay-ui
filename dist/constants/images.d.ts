@@ -32,4 +32,5 @@ import UNIT from "../../public/images/unit.png";
 import PANCAKE from "../../public/images/pancake.png";
 import PANGOLIN from "../../public/images/pangolin.png";
 import YAY_TOKEN from "../../public/images/logo.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, };
+import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, YAY_TOKEN_GREEN, };

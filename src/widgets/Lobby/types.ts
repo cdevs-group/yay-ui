@@ -24,7 +24,7 @@ export interface LobbyCreatModalProps {
   tabsList: Array<string | number>;
   handleCreate: () => void;
   handleJoin: () => void;
-  propsCreateButton?: ButtonProps
+  propsCreateButton?: ButtonProps;
 }
 
 export interface LobbyListItemProps {
