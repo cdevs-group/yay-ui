@@ -14,12 +14,15 @@ export const LobbyNavBlock = () => {
   const texts = {
     create: "Create Lobby",
     join: "Join Lobby",
+    approve: "Approve token",
   };
 
   const handleJoin = () => alert("join");
   const handleCreate = () => alert("creat");
 
-  return <LobbyNav handleCreate={handleCreate} handleJoin={handleJoin} texts={texts} />;
+  return (
+    <LobbyNav handleApprove={() => {}} isApprove handleCreate={handleCreate} handleJoin={handleJoin} texts={texts} />
+  );
 };
 
 export const LobbyCreatModalBlock = () => {
