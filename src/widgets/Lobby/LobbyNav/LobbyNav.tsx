@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { UNIT, CONTROLLER } from "../../../constants/images";
 import { Button } from "../../../components/Button";
+import { transparentize } from "polished";
 
 const LobbyNav = ({ texts, handleJoin, handleCreate, imgJoin, imgCreate, isApprove, handleApprove }: LobbyNavProps) => {
   return (
     <NavBlock>
-      <Wrapper id="join">
+      <Wrapper id="LobbyNav">
         <ButtonAdd onClick={handleJoin}>
           <Text fontSize="19px">{texts.join}</Text>
           <img src={imgJoin || UNIT} alt="avatar" />
@@ -18,10 +19,14 @@ const LobbyNav = ({ texts, handleJoin, handleCreate, imgJoin, imgCreate, isAppro
           <img className="right" src={imgCreate || CONTROLLER} alt="avatar" />
         </ButtonCreate>
       </Wrapper>
-      <ButtonStyle onClick={handleApprove} variant="green" maxWidth="175px" width="100%">
-        {texts.approve}
-      </ButtonStyle>
-      <BlurBlock blur={isApprove} />
+      {isApprove && (
+        <>
+          <BlurBlock />
+          <ButtonStyle onClick={handleApprove} variant="green" maxWidth="175px" width="100%">
+            {texts.approve}
+          </ButtonStyle>
+        </>
+      )}
     </NavBlock>
   );
 };
@@ -37,7 +42,7 @@ const NavBlock = styled.div`
     max-width: 452px;
   }
 `;
-const Wrapper = styled.div<{ isApprove: boolean }>`
+const Wrapper = styled.div`
   position: relative;
   max-width: 222px;
   margin: 0 auto;
@@ -90,15 +95,20 @@ const ButtonStyle = styled(Button)`
   transform: translate(-50%, -50%);
   z-index: 2;
 `;
-const BlurBlock = styled.div<{ blur: boolean }>`
-  top: 0;
-  backdrop-filter: ${({ blur }) => (blur ? "blur(20px)" : "none")};
+const BlurBlock = styled.div`
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  backdrop-filter: blur(20px);
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+  transition: 0.3s;
+  opacity: 1;
   border-radius: 15px;
-  position: absolute;
-  background-image: ${`-moz-element(#join)`};
-  -webkit-filter: blur(20px);
-  filter: ${({ blur }) => (blur ? "blur(20px)" : "none")};
+  z-index: 1;
+  background-image: ${`-moz-element(#LobbyNav)`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(10px);
 `;
