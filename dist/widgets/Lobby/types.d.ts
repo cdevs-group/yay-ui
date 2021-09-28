@@ -3,11 +3,14 @@ export interface LobbyNavProps {
     texts: {
         create: string;
         join: string;
+        approve: string;
     };
     handleJoin: () => void;
     handleCreate: () => void;
     imgJoin?: string;
     imgCreate?: string;
+    isApprove: boolean;
+    handleApprove: () => void;
 }
 export interface LobbyCreatModalProps {
     texts: {
