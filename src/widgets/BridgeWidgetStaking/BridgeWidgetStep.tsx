@@ -4,7 +4,7 @@ import Text from "../../components/Text/Text";
 import { Button } from "../../components/Button";
 import { BalanceInput } from "../../components/BalanceInput";
 import { BridgeStepProps } from "./types";
-import { Flex } from "../../components/Box";
+import { Flex, Box } from "../../components/Box";
 import { ArrowBigDownIcon } from "../../components/Svg";
 
 const BridgeWrapper = styled.div`
@@ -52,7 +52,7 @@ const InputWrap = styled.div`
 `;
 
 const Tab = styled(Button)`
-  width: 23%;
+  width: 31%;
   padding: 4px 16px;
   border-radius: 9px;
   font-weight: 400;
@@ -118,7 +118,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
           texts={{ commit: texts.commit, currency: texts.currency }}
         />
       </InputWrap>
-      <Flex justifyContent="space-between" mt="15px" mb="36px">
+      <Flex justifyContent="space-between" mt="15px" mb={!hiddenToBlock ? "36px" : "22px"}>
         {tabs.map((el: string, i: number) => (
           <Tab key={i} scale="sm" variant="green" onClick={() => onUserInput(el)}>
             {+el / 1000}K
@@ -126,7 +126,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
         ))}
       </Flex>
       {!hiddenToBlock && (
-        <>
+        <Box mb="39px">
           <Label size="lg">{texts.to}</Label>
           <BlockChainWrap>
             <StyledArrow>
@@ -134,9 +134,9 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
             </StyledArrow>
             <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
           </BlockChainWrap>
-        </>
+        </Box>
       )}
-      <Flex mt="39px" justifyContent="space-between">
+      <Flex justifyContent="space-between">
         <StyledButton onClick={handleButtonLeft} variant="green" disabled={disabledBtnLeft}>
           {texts.buttonLeft}
         </StyledButton>

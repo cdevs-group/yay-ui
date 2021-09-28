@@ -41,6 +41,22 @@ export const BridgeWidgetStepBlock: React.FC = () => {
           disabledBtnTransfer
         />
       </div>
+      <div style={{ marginBottom: "50px" }}>
+        <BridgeWidgetStep
+          tabs={["5000", "25000", "50000"]}
+          texts={texts}
+          iconNetwork1={<BnbIcon />}
+          iconNetwork2={<AvalancheIcon />}
+          iconBalanceInput={<YAYIcon />}
+          onUserInput={onUserInput}
+          value={value}
+          handleButtonLeft={() => {}}
+          handleButtonTransfer={() => {}}
+          disabledBtnLeft
+          disabledBtnTransfer={false}
+          hiddenToBlock
+        />
+      </div>
     </div>
   );
 };
