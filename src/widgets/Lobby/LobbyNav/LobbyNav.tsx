@@ -1,14 +1,24 @@
 import React from "react";
-import { LobbyNavProps } from "../types";
 import styled from "styled-components";
+import { space } from "styled-system";
+import { transparentize } from "polished";
+import { LobbyNavProps } from "../types";
 import { Text } from "../../../components/Text";
 import { UNIT, CONTROLLER } from "../../../constants/images";
 import { Button } from "../../../components/Button";
-import { transparentize } from "polished";
 
-const LobbyNav = ({ texts, handleJoin, handleCreate, imgJoin, imgCreate, isApprove, handleApprove }: LobbyNavProps) => {
+const LobbyNav = ({
+  texts,
+  handleJoin,
+  handleCreate,
+  imgJoin,
+  imgCreate,
+  isApprove,
+  handleApprove,
+  propsWrapper,
+}: LobbyNavProps) => {
   return (
-    <NavBlock>
+    <NavBlock {...propsWrapper}>
       <Wrapper id="LobbyNav">
         <ButtonAdd onClick={handleJoin}>
           <Text fontSize="19px">{texts.join}</Text>
@@ -38,6 +48,7 @@ const NavBlock = styled.div`
   max-width: 222px;
   overflow: hidden;
   border-radius: 15px;
+  ${space}
   ${({ theme }) => theme.mediaQueries.md} {
     max-width: 452px;
   }
