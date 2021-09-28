@@ -12,7 +12,7 @@ const StyledAlert = styled.div`
   position: relative;
   z-index: 5;
   transition: 0.3s ease;
-  padding: 15px 60px 15px 23px;
+  padding: 15px 60px 25px 23px;
   color: ${({ theme }) => theme.colors.text};
   background: ${({ theme }) => theme.colors.bgOpacitY3};
   overflow: hidden;
@@ -78,7 +78,7 @@ const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, child
           </ButtonClose>
         </Flex>
         <div>{children}</div>
-        <ButtonNext onClick={onClick}>
+        <ButtonNext height="auto" onClick={onClick}>
           {buttonText}
           <GreenArrow color="#4BE43E" />
         </ButtonNext>
