@@ -7295,7 +7295,7 @@ var Field = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplat
 var NameChain = styled(Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  letter-spacing: 0.5px;\n"], ["\n  letter-spacing: 0.5px;\n"])));
 var Label = styled(Text)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject([""], [""])));
 var InputWrap = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-top: 13px;\n  margin-bottom: 15px;\n"], ["\n  margin-top: 13px;\n  margin-bottom: 15px;\n"])));
-var Tab = styled(Button$9)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 23%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  background: ", ";\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  width: 23%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  background: ", ";\n  &:hover {\n    background: ", ";\n  }\n"])), function (_a) {
+var Tab = styled(Button$9)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  width: 31%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  background: ", ";\n  &:hover {\n    background: ", ";\n  }\n"], ["\n  width: 31%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  background: ", ";\n  &:hover {\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 }, function (_a) {
@@ -7321,16 +7321,16 @@ var BridgeWidgetStep = function (_a) {
         React__default.createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 }),
         React__default.createElement(InputWrap, null,
             React__default.createElement(BalanceInput, { onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currency } })),
-        React__default.createElement(Flex, { justifyContent: "space-between", mt: "15px", mb: "36px" }, tabs.map(function (el, i) { return (React__default.createElement(Tab, { key: i, scale: "sm", variant: "green", onClick: function () { return onUserInput(el); } },
+        React__default.createElement(Flex, { justifyContent: "space-between", mt: "15px", mb: !hiddenToBlock ? "36px" : "22px" }, tabs.map(function (el, i) { return (React__default.createElement(Tab, { key: i, scale: "sm", variant: "green", onClick: function () { return onUserInput(el); } },
             +el / 1000,
             "K")); })),
-        !hiddenToBlock && (React__default.createElement(React__default.Fragment, null,
+        !hiddenToBlock && (React__default.createElement(Box, { mb: "39px" },
             React__default.createElement(Label, { size: "lg" }, texts.to),
             React__default.createElement(BlockChainWrap, null,
                 React__default.createElement(StyledArrow, null,
                     React__default.createElement(Icon$s, null)),
                 React__default.createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })))),
-        React__default.createElement(Flex, { mt: "39px", justifyContent: "space-between" },
+        React__default.createElement(Flex, { justifyContent: "space-between" },
             React__default.createElement(StyledButton, { onClick: handleButtonLeft, variant: "green", disabled: disabledBtnLeft }, texts.buttonLeft),
             React__default.createElement(StyledButton, { onClick: handleButtonTransfer, variant: "green", disabled: disabledBtnTransfer }, texts.buttonTransfer))));
 };
