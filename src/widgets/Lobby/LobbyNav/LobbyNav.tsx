@@ -101,7 +101,7 @@ const BlurBlock = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
   transition: 0.3s;
   opacity: 1;
