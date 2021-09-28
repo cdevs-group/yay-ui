@@ -6945,8 +6945,8 @@ var Wrapper$4 = styled__default['default'].div(templateObject_1$j || (templateOb
 var templateObject_1$j;
 
 var LobbyNav = function (_a) {
-    var texts = _a.texts, handleJoin = _a.handleJoin, handleCreate = _a.handleCreate, imgJoin = _a.imgJoin, imgCreate = _a.imgCreate, isApprove = _a.isApprove, handleApprove = _a.handleApprove;
-    return (React__default['default'].createElement(NavBlock, null,
+    var texts = _a.texts, handleJoin = _a.handleJoin, handleCreate = _a.handleCreate, imgJoin = _a.imgJoin, imgCreate = _a.imgCreate, isApprove = _a.isApprove, handleApprove = _a.handleApprove, propsWrapper = _a.propsWrapper;
+    return (React__default['default'].createElement(NavBlock, __assign({}, propsWrapper),
         React__default['default'].createElement(Wrapper$3, { id: "LobbyNav" },
             React__default['default'].createElement(ButtonAdd, { onClick: handleJoin },
                 React__default['default'].createElement(Text, { fontSize: "19px" }, texts.join),
@@ -6958,7 +6958,7 @@ var LobbyNav = function (_a) {
             React__default['default'].createElement(BlurBlock, null),
             React__default['default'].createElement(ButtonStyle$1, { onClick: handleApprove, variant: "green", maxWidth: "175px", width: "100%" }, texts.approve)))));
 };
-var NavBlock = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", " {\n    max-width: 452px;\n  }\n"], ["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", " {\n    max-width: 452px;\n  }\n"])), function (_a) {
+var NavBlock = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", "\n  ", " {\n    max-width: 452px;\n  }\n"], ["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", "\n  ", " {\n    max-width: 452px;\n  }\n"])), styledSystem.space, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -7552,6 +7552,7 @@ exports.Accordeon = Accordeon;
 exports.AccordeonCard = AccordeonCard;
 exports.AddIcon = Icon$S;
 exports.Alert = Alert;
+exports.AlertBlur = Alert;
 exports.ApproveStakingBPT = ApproveStakingBPT;
 exports.ArrowBigDownIcon = Icon$s;
 exports.ArrowCardDown = Icon$r;
