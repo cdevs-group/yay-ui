@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { Button } from "../../components/Button";
 import { BalanceInput } from "../../components/BalanceInput";
-import { BridgeStep1Props } from "./types";
+import { BridgeStepProps } from "./types";
 import { Flex } from "../../components/Box";
 import { ArrowBigDownIcon } from "../../components/Svg";
 
@@ -83,7 +83,7 @@ const StyledArrow = styled.div`
   z-index: 1;
 `;
 
-const BridgeWidgetStep: React.FC<BridgeStep1Props> = ({
+const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
   texts,
   onUserInput,
   tabs,
@@ -95,6 +95,7 @@ const BridgeWidgetStep: React.FC<BridgeStep1Props> = ({
   handleButtonTransfer,
   disabledBtnLeft,
   disabledBtnTransfer,
+  hiddenToBlock,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -124,13 +125,17 @@ const BridgeWidgetStep: React.FC<BridgeStep1Props> = ({
           </Tab>
         ))}
       </Flex>
-      <Label size="lg">{texts.to}</Label>
-      <BlockChainWrap>
-        <StyledArrow>
-          <ArrowBigDownIcon />
-        </StyledArrow>
-        <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
-      </BlockChainWrap>
+      {!hiddenToBlock && (
+        <>
+          <Label size="lg">{texts.to}</Label>
+          <BlockChainWrap>
+            <StyledArrow>
+              <ArrowBigDownIcon />
+            </StyledArrow>
+            <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
+          </BlockChainWrap>
+        </>
+      )}
       <Flex mt="39px" justifyContent="space-between">
         <StyledButton onClick={handleButtonLeft} variant="green" disabled={disabledBtnLeft}>
           {texts.buttonLeft}
