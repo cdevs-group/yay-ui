@@ -7340,7 +7340,7 @@ var StyledButton = styled__default['default'](Button$9)(templateObject_7 || (tem
 var BlockChainWrap = styled__default['default'].div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var StyledArrow = styled__default['default'].div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
 var BridgeWidgetStep = function (_a) {
-    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer;
+    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer, hiddenToBlock = _a.hiddenToBlock;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default['default'].createElement(Field, null,
@@ -7355,11 +7355,12 @@ var BridgeWidgetStep = function (_a) {
         React__default['default'].createElement(Flex, { justifyContent: "space-between", mt: "15px", mb: "36px" }, tabs.map(function (el, i) { return (React__default['default'].createElement(Tab, { key: i, scale: "sm", variant: "green", onClick: function () { return onUserInput(el); } },
             +el / 1000,
             "K")); })),
-        React__default['default'].createElement(Label, { size: "lg" }, texts.to),
-        React__default['default'].createElement(BlockChainWrap, null,
-            React__default['default'].createElement(StyledArrow, null,
-                React__default['default'].createElement(Icon$s, null)),
-            React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })),
+        !hiddenToBlock && (React__default['default'].createElement(React__default['default'].Fragment, null,
+            React__default['default'].createElement(Label, { size: "lg" }, texts.to),
+            React__default['default'].createElement(BlockChainWrap, null,
+                React__default['default'].createElement(StyledArrow, null,
+                    React__default['default'].createElement(Icon$s, null)),
+                React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })))),
         React__default['default'].createElement(Flex, { mt: "39px", justifyContent: "space-between" },
             React__default['default'].createElement(StyledButton, { onClick: handleButtonLeft, variant: "green", disabled: disabledBtnLeft }, texts.buttonLeft),
             React__default['default'].createElement(StyledButton, { onClick: handleButtonTransfer, variant: "green", disabled: disabledBtnTransfer }, texts.buttonTransfer))));

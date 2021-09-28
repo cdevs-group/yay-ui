@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-export interface BridgeStep1Props {
+export interface BridgeStepProps {
     tabs: string[];
     onUserInput: (input: any) => void;
     value: string | number;
@@ -20,6 +20,7 @@ export interface BridgeStep1Props {
     };
     disabledBtnLeft: boolean;
     disabledBtnTransfer: boolean;
+    hiddenToBlock?: boolean;
 }
 export interface ApproveStakingBPTProps {
     texts: {
