@@ -4372,7 +4372,7 @@ var Error$1 = styled__default['default'](Text)(templateObject_11$3 || (templateO
 });
 var ButtonOpenProof = styled__default['default'](Text)(templateObject_12$3 || (templateObject_12$3 = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 var BridgeStep1 = function (_a) {
-    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, fromChange = _a.fromChange, switchHandler = _a.switchHandler, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput;
+    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default['default'].createElement(Field$1, null,
@@ -4383,11 +4383,11 @@ var BridgeStep1 = function (_a) {
         React__default['default'].createElement(BridgeWrapper$1, null,
             React__default['default'].createElement(BridgeContent, null,
                 React__default['default'].createElement(Label$3, { size: "lg" }, texts.from),
-                fromChange ? (React__default['default'].createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 })) : (React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })),
+                React__default['default'].createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 }),
                 React__default['default'].createElement(InputWrap$1, null,
                     React__default['default'].createElement(BalanceInput, { handleButtonToMax: handleButtonToMax, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currencyInput }, disabled: disabledInput }),
                     React__default['default'].createElement(ButtonReverse, null,
-                        React__default['default'].createElement(SwapButton, { onClick: switchHandler })),
+                        React__default['default'].createElement(SwapButton, { onClick: handleToggleNetwork })),
                     React__default['default'].createElement(MessageBox, null,
                         React__default['default'].createElement(MessageText, { color: inputError ? lightColors.redBg : lightColors.text, size: "xs" },
                             balanceText.message1,
@@ -4396,7 +4396,7 @@ var BridgeStep1 = function (_a) {
                             " ",
                             balanceText.message2))),
                 React__default['default'].createElement(Label$3, { size: "lg" }, texts.to),
-                fromChange ? (React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })) : (React__default['default'].createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 })),
+                React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 }),
                 React__default['default'].createElement(Error$1, null,
                     React__default['default'].createElement("p", { style: { minHeight: 22.5 } }, texts.error)),
                 React__default['default'].createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button))),
@@ -7193,7 +7193,7 @@ var ModalPlatform = function (_a) {
     var onDismiss = _a.onDismiss, title = _a.title, platforms = _a.platforms, linkAbout = _a.linkAbout;
     return (React__default['default'].createElement(Modal, { title: title, welcome: true, paddingTopHeader: "20px", onDismiss: onDismiss },
         React__default['default'].createElement(Wrap, null,
-            React__default['default'].createElement(Buttons, null, platforms === null || platforms === void 0 ? void 0 : platforms.map(function (el, i) { return (React__default['default'].createElement(React__default['default'].Fragment, null,
+            React__default['default'].createElement(Buttons, null, platforms === null || platforms === void 0 ? void 0 : platforms.map(function (el, i) { return (React__default['default'].createElement(React__default['default'].Fragment, { key: i },
                 React__default['default'].createElement(Button, { target: "_blank", as: "a", href: el.link },
                     React__default['default'].createElement(TextStyled$1, null, el.name),
                     React__default['default'].createElement("img", { src: el.icon, alt: "" })))); })),
