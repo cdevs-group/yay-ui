@@ -21,7 +21,7 @@ const LobbyNav = ({ texts, handleJoin, handleCreate, imgJoin, imgCreate, isAppro
       <ButtonStyle onClick={handleApprove} variant="green" maxWidth="175px" width="100%">
         {texts.approve}
       </ButtonStyle>
-      <BlurBlock blur={isApprove} />
+      <BlurBlock blur={!isApprove}/>
     </NavBlock>
   );
 };
