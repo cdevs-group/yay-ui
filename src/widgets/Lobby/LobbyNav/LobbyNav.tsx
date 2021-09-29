@@ -5,7 +5,7 @@ import { transparentize } from "polished";
 import { LobbyNavProps } from "../types";
 import { Text } from "../../../components/Text";
 import { UNIT, CONTROLLER } from "../../../constants/images";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 
 const LobbyNav = ({
   texts,
@@ -16,6 +16,7 @@ const LobbyNav = ({
   isApprove,
   handleApprove,
   propsWrapper,
+  propsCreateButton,
 }: LobbyNavProps) => {
   return (
     <NavBlock {...propsWrapper}>
@@ -32,7 +33,14 @@ const LobbyNav = ({
       {!isApprove && (
         <>
           <BlurBlock />
-          <ButtonStyle onClick={handleApprove} variant="green" maxWidth="175px" width="100%">
+          <ButtonStyle
+            disabled={!!propsCreateButton}
+            {...propsCreateButton}
+            onClick={handleApprove}
+            variant="green"
+            maxWidth="200px"
+            width="100%"
+          >
             {texts.approve}
           </ButtonStyle>
         </>
@@ -100,6 +108,7 @@ const ButtonCreate = styled(ButtonAdd)`
   }
 `;
 const ButtonStyle = styled(Button)`
+  opacity: 1 !important;
   position: absolute;
   top: 50%;
   left: 50%;

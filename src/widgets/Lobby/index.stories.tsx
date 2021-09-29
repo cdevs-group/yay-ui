@@ -21,7 +21,13 @@ export const LobbyNavBlock = () => {
   const handleCreate = () => alert("creat");
 
   return (
-    <LobbyNav handleApprove={() => {}} isApprove handleCreate={handleCreate} handleJoin={handleJoin} texts={texts} />
+    <LobbyNav
+      handleApprove={() => {}}
+      isApprove={false}
+      handleCreate={handleCreate}
+      handleJoin={handleJoin}
+      texts={texts}
+    />
   );
 };
 
@@ -48,7 +54,7 @@ export const LobbyCreatModalBlock = () => {
   return (
     <LobbyCreatModal
       balance="50 YAY"
-      isError={false}
+      isError
       handleCreate={handleCreate}
       handleJoin={handleJoin}
       onDismiss={onDismiss}
@@ -56,7 +62,7 @@ export const LobbyCreatModalBlock = () => {
       activeTab={activeTab}
       texts={texts}
       tabsList={tabsList}
-      propsCreateButton={{ spin: true }}
+      // propsCreateButton={{ spin: true }}
     />
   );
 };
