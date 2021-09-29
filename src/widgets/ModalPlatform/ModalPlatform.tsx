@@ -22,12 +22,12 @@ const ModalPlatform = ({ onDismiss, title, platforms, linkAbout }: IProps) => {
       <Wrap>
         <Buttons>
           {platforms?.map((el, i) => (
-            <>
+            <React.Fragment key={i}>
               <Button target="_blank" as="a" href={el.link}>
                 <TextStyled>{el.name}</TextStyled>
                 <img src={el.icon} alt="" />
               </Button>
-            </>
+            </React.Fragment>
           ))}
         </Buttons>
         {linkAbout ? (
