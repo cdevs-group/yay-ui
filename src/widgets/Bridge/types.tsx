@@ -29,6 +29,7 @@ export interface BridgeStep1Props {
   fromChange: boolean;
   switchHandler: (val: any) => void;
   handleButton: any;
+  disabledInput?: boolean;
 }
 
 export interface BridgeStep2Props {

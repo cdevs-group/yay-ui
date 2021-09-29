@@ -99,6 +99,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   iconBalanceInput,
   handleOpenProofOfAssets,
   handleOpenTransactionsHistory,
+  disabledInput
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -126,6 +127,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               value={value}
               icon={iconBalanceInput}
               texts={{ commit: texts.commit, currency: texts.currencyInput }}
+              disabled={disabledInput}
               
             />
             <ButtonReverse>
