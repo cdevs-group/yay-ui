@@ -126,7 +126,6 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               value={value}
               icon={iconBalanceInput}
               texts={{ commit: texts.commit, currency: texts.currencyInput }}
-              
             />
             <ButtonReverse>
               <SwapButton onClick={switchHandler} />

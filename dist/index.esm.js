@@ -1634,7 +1634,7 @@ var Input$1 = styled.input(templateObject_1$23 || (templateObject_1$23 = __makeT
     return theme.colors.text;
 }, getHeight, function (_a) {
     var theme = _a.theme;
-    return theme.colors.greyText;
+    return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textDisabled;
@@ -1647,13 +1647,13 @@ Input$1.defaultProps = {
 var templateObject_1$23;
 
 var BalanceInput = function (_a) {
-    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts, handleButtonToMax = _a.handleButtonToMax, icon = _a.icon, props = __rest(_a, ["value", "placeholder", "onUserInput", "inputProps", "isWarning", "decimals", "texts", "handleButtonToMax", "icon"]);
+    var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, inputProps = _a.inputProps, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, texts = _a.texts, handleButtonToMax = _a.handleButtonToMax, icon = _a.icon, disabled = _a.disabled, props = __rest(_a, ["value", "placeholder", "onUserInput", "inputProps", "isWarning", "decimals", "texts", "handleButtonToMax", "icon", "disabled"]);
     var handleOnChange = function (e) {
         if (e.currentTarget.validity.valid) {
             onUserInput(e.currentTarget.value.replace(/,/g, "."));
         }
     };
-    return (React__default.createElement(InputWrap$2, __assign({}, props),
+    return (React__default.createElement(InputWrap$2, __assign({ disabled: disabled }, props),
         React__default.createElement(LeftBlock, null,
             React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
             React__default.createElement(Input$1, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder }, inputProps))),
@@ -1663,7 +1663,13 @@ var BalanceInput = function (_a) {
                 icon || React__default.createElement(Icon$M, null),
                 (texts === null || texts === void 0 ? void 0 : texts.currency) || "BNB"))));
 };
-var InputWrap$2 = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"], ["\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"])), function (_a) {
+var InputWrap$2 = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  opacity: ", ";\n  pointer-events: ", ";\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"], ["\n  opacity: ", ";\n  pointer-events: ", ";\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"])), function (_a) {
+    var disabled = _a.disabled;
+    return disabled ? 0.5 : 1;
+}, function (_a) {
+    var disabled = _a.disabled;
+    return disabled ? 'none' : 'auto';
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -1684,7 +1690,13 @@ var InputIcon = styled.div(templateObject_3$1k || (templateObject_3$1k = __makeT
     var theme = _a.theme;
     return theme.colors.blueGradient;
 });
-var ButtonToMax = styled(Text)(templateObject_4$11 || (templateObject_4$11 = __makeTemplateObject(["\n  padding: 0;\n  margin-right: 20px;\n  margin-top: 20px;\n  transform: translateY(-50%);\n  border: none;\n  background: none;\n  text-decoration: underline;\n  cursor: pointer;\n"], ["\n  padding: 0;\n  margin-right: 20px;\n  margin-top: 20px;\n  transform: translateY(-50%);\n  border: none;\n  background: none;\n  text-decoration: underline;\n  cursor: pointer;\n"])));
+var ButtonToMax = styled(Text)(templateObject_4$11 || (templateObject_4$11 = __makeTemplateObject(["\n  padding: 0;\n  margin-right: 20px;\n  margin-top: 20px;\n  transform: translateY(-50%);\n  border: none;\n  background: none;\n  text-decoration: underline;\n  cursor: pointer;\n  transition: 0.3s;\n  color: ", ";\n  &:hover {\n    color: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  padding: 0;\n  margin-right: 20px;\n  margin-top: 20px;\n  transform: translateY(-50%);\n  border: none;\n  background: none;\n  text-decoration: underline;\n  cursor: pointer;\n  transition: 0.3s;\n  color: ", ";\n  &:hover {\n    color: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.textGray;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
+});
 var RightBlock = styled.div(templateObject_5$I || (templateObject_5$I = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n"])));
 var LeftBlock = styled.div(templateObject_6$y || (templateObject_6$y = __makeTemplateObject([""], [""])));
 var templateObject_1$22, templateObject_2$1F, templateObject_3$1k, templateObject_4$11, templateObject_5$I, templateObject_6$y;
@@ -4323,13 +4335,13 @@ var MessageText = styled(Text)(templateObject_10$4 || (templateObject_10$4 = __m
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var FeeInfo = styled(Text)(templateObject_11$3 || (templateObject_11$3 = __makeTemplateObject(["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"], ["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"])), function (_a) {
+var Error$1 = styled(Text)(templateObject_11$3 || (templateObject_11$3 = __makeTemplateObject(["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"], ["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.greyText;
+    return theme.colors.redBg;
 });
 var ButtonOpenProof = styled(Text)(templateObject_12$3 || (templateObject_12$3 = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 var BridgeStep1 = function (_a) {
-    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, fee = _a.fee, balanceText = _a.balanceText, fromChange = _a.fromChange, switchHandler = _a.switchHandler, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory;
+    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, fromChange = _a.fromChange, switchHandler = _a.switchHandler, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default.createElement(Field$1, null,
@@ -4354,10 +4366,8 @@ var BridgeStep1 = function (_a) {
                             balanceText.message2))),
                 React__default.createElement(Label$3, { size: "lg" }, texts.to),
                 fromChange ? (React__default.createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })) : (React__default.createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 })),
-                React__default.createElement(FeeInfo, null,
-                    texts.fee,
-                    " ",
-                    fee),
+                React__default.createElement(Error$1, null,
+                    React__default.createElement("p", { style: { minHeight: 22.5 } }, texts.error)),
                 React__default.createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button))),
         React__default.createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
         React__default.createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory)));
