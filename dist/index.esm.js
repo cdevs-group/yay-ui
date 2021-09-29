@@ -1665,10 +1665,10 @@ var BalanceInput = function (_a) {
 };
 var InputWrap$2 = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  opacity: ", ";\n  pointer-events: ", ";\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"], ["\n  opacity: ", ";\n  pointer-events: ", ";\n  position: relative;\n  padding: 17px 20px 20px 20px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  ", "\n"])), function (_a) {
     var disabled = _a.disabled;
-    return disabled ? 0.5 : 1;
+    return (disabled ? 0.5 : 1);
 }, function (_a) {
     var disabled = _a.disabled;
-    return disabled ? 'none' : 'auto';
+    return (disabled ? "none" : "auto");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
@@ -4341,7 +4341,7 @@ var Error$1 = styled(Text)(templateObject_11$3 || (templateObject_11$3 = __makeT
 });
 var ButtonOpenProof = styled(Text)(templateObject_12$3 || (templateObject_12$3 = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 var BridgeStep1 = function (_a) {
-    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, fromChange = _a.fromChange, switchHandler = _a.switchHandler, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory;
+    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, fromChange = _a.fromChange, switchHandler = _a.switchHandler, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default.createElement(Field$1, null,
@@ -4354,7 +4354,7 @@ var BridgeStep1 = function (_a) {
                 React__default.createElement(Label$3, { size: "lg" }, texts.from),
                 fromChange ? (React__default.createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 })) : (React__default.createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })),
                 React__default.createElement(InputWrap$1, null,
-                    React__default.createElement(BalanceInput, { handleButtonToMax: handleButtonToMax, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currencyInput } }),
+                    React__default.createElement(BalanceInput, { handleButtonToMax: handleButtonToMax, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currencyInput }, disabled: disabledInput }),
                     React__default.createElement(ButtonReverse, null,
                         React__default.createElement(SwapButton, { onClick: switchHandler })),
                     React__default.createElement(MessageBox, null,
