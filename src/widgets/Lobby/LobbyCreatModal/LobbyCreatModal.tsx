@@ -36,10 +36,17 @@ const LobbyCreatModal = ({
           )}
         </BalanceBlock>
         <Buttons>
-          <Button onClick={handleJoin} width="100%" marginRight="15px" variant="option">
+          <Button disabled={!!propsCreateButton} onClick={handleJoin} width="100%" marginRight="15px" variant="option">
             <ButtonText>{texts.join}</ButtonText>
           </Button>
-          <Button onClick={handleCreate} width="100%" variant="green" padding="0 10px" {...propsCreateButton}>
+          <Button
+            disabled={isError}
+            onClick={handleCreate}
+            width="100%"
+            variant="green"
+            padding="0 10px"
+            {...propsCreateButton}
+          >
             <ButtonText>{texts.create}</ButtonText>
           </Button>
         </Buttons>

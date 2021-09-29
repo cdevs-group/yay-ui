@@ -14,6 +14,7 @@ export interface LobbyNavProps {
   isApprove: boolean;
   handleApprove: () => void;
   propsWrapper?: SpaceProps;
+  propsCreateButton?: ButtonProps;
 }
 
 export interface LobbyCreatModalProps {
