@@ -33,7 +33,7 @@ const Input = styled.input<InputProps>`
   letter-spacing: 0.5px;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.greyText};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   &:disabled {

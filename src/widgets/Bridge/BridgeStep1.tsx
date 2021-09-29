@@ -69,12 +69,12 @@ const MessageText = styled(Text)`
     letter-spacing: 0.13em;
   } ;
 `;
-const FeeInfo = styled(Text)`
+const Error = styled(Text)`
   margin: 33px 0 43px;
   text-align: center;
   letter-spacing: 0.5px;
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.greyText};
+  color: ${({ theme }) => theme.colors.redBg};
 `;
 const ButtonOpenProof = styled(Text)`
   text-align: center;
@@ -90,7 +90,6 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   onUserInput,
   value,
   inputError,
-  fee,
   balanceText,
   fromChange,
   switchHandler,
@@ -127,6 +126,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               value={value}
               icon={iconBalanceInput}
               texts={{ commit: texts.commit, currency: texts.currencyInput }}
+              
             />
             <ButtonReverse>
               <SwapButton onClick={switchHandler} />
@@ -147,9 +147,9 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           ) : (
             <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
           )}
-          <FeeInfo>
-            {texts.fee} {fee}
-          </FeeInfo>
+          <Error>
+            <p style={{ minHeight: 22.5 }}>{texts.error}</p>
+          </Error>
           <Button onClick={handleButton} width="100%" variant="green">
             {texts.button}
           </Button>

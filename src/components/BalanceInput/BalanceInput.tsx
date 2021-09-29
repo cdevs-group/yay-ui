@@ -16,6 +16,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   texts,
   handleButtonToMax,
   icon,
+  disabled,
   ...props
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +26,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   };
 
   return (
-    <InputWrap {...props}>
+    <InputWrap disabled={disabled}  {...props}>
       <LeftBlock>
         <TitleInput>{texts?.commit || "Commit"}</TitleInput>
         <Input
@@ -56,7 +57,9 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
 export default BalanceInput;
 
-const InputWrap = styled.div`
+const InputWrap = styled.div<{disabled?: boolean}>`
+  opacity: ${({ disabled }) => disabled ? 0.5 : 1};
+  pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
   position: relative;
   padding: 17px 20px 20px 20px;
   background: ${({ theme }) => theme.colors.buttonBg};
@@ -109,6 +112,12 @@ const ButtonToMax = styled(Text)`
   background: none;
   text-decoration: underline;
   cursor: pointer;
+  transition: 0.3s;
+  color: ${({ theme }) => theme.colors.textGray};
+  &:hover {
+    color: ${({ theme }) => theme.colors.text};
+    transition: 0.3s;
+  }
 `;
 const RightBlock = styled.div`
   display: flex;

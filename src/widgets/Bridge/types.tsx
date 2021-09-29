@@ -15,7 +15,7 @@ export interface BridgeStep1Props {
     nameNetwork2?: string;
     from: string;
     to: string;
-    fee: string;
+    error: string;
     button: string;
     buttonProofOfState?: string;
     buttonTransactionsHistory?: string;
@@ -26,9 +26,8 @@ export interface BridgeStep1Props {
     message1: string;
     message2: string;
   };
-  fee: string;
   fromChange: boolean;
-  switchHandler: () => void;
+  switchHandler: (val: any) => void;
   handleButton: any;
 }
 

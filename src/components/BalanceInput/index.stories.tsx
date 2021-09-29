@@ -36,6 +36,7 @@ export const Default: React.FC = () => {
         inputProps={{ inputMode: "numeric" }}
         placeholder="0"
         mb="32px"
+        disabled
       />
     </Box>
   );

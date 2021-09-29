@@ -23,4 +23,5 @@ export interface BalanceInputProps extends BoxProps, SpaceProps {
     commit?: string;
   };
   icon?: React.ReactNode;
+  disabled?: boolean;
 }

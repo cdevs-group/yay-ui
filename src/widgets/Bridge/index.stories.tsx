@@ -21,7 +21,7 @@ export const BridgeStep1Block: React.FC = () => {
   const texts = {
     from: "From",
     to: "To",
-    fee: "Estimated transfer fee:",
+    error: "",
     button: "Transfer",
     nameNetwork1: "Binance Smart Chain",
     nameNetwork2: "Avalanche",
@@ -46,7 +46,6 @@ export const BridgeStep1Block: React.FC = () => {
           fromChange={fromChange}
           switchHandler={switchHandler}
           balanceText={balanceText}
-          fee="~0.00001BNB"
           handleButtonToMax={() => {}}
           texts={texts}
           value={value}
@@ -63,7 +62,6 @@ export const BridgeStep1Block: React.FC = () => {
           fromChange={fromChange}
           switchHandler={switchHandler}
           balanceText={balanceText}
-          fee="~0.00001BNB"
           inputError
           iconNetwork1={<BnbIcon />}
           iconNetwork2={<AvalancheIcon />}
