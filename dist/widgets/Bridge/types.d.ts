@@ -28,6 +28,7 @@ export interface BridgeStep1Props {
     handleToggleNetwork: (val: any) => void;
     handleButton: any;
     disabledInput?: boolean;
+    disabledButton?: boolean;
 }
 export interface BridgeStep2Props {
     onDismiss?: () => void;
