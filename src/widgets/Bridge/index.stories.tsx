@@ -34,7 +34,7 @@ export const BridgeStep1Block: React.FC = () => {
     message1: "Available balance:",
     message2: "12,200,000 YAY",
   };
-  const switchHandler = () => {
+  const handleToggleNetwork = () => {
     setFromChange(!fromChange);
   };
 
@@ -43,8 +43,7 @@ export const BridgeStep1Block: React.FC = () => {
       <div style={{ marginBottom: "50px" }}>
         <BridgeStep1
           handleButton={() => {}}
-          fromChange={fromChange}
-          switchHandler={switchHandler}
+          handleToggleNetwork={handleToggleNetwork}
           balanceText={balanceText}
           handleButtonToMax={() => {}}
           texts={texts}
@@ -59,8 +58,7 @@ export const BridgeStep1Block: React.FC = () => {
       <div style={{ marginBottom: "50px" }}>
         <BridgeStep1
           handleButton={() => {}}
-          fromChange={fromChange}
-          switchHandler={switchHandler}
+          handleToggleNetwork={handleToggleNetwork}
           balanceText={balanceText}
           inputError
           iconNetwork1={<BnbIcon />}

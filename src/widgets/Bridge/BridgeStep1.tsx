@@ -91,15 +91,14 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   value,
   inputError,
   balanceText,
-  fromChange,
-  switchHandler,
+  handleToggleNetwork,
   handleButton,
   iconNetwork1,
   iconNetwork2,
   iconBalanceInput,
   handleOpenProofOfAssets,
   handleOpenTransactionsHistory,
-  disabledInput
+  disabledInput,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -115,11 +114,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
       <BridgeWrapper>
         <BridgeContent>
           <Label size="lg">{texts.from}</Label>
-          {fromChange ? (
-            <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
-          ) : (
-            <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
-          )}
+          <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
           <InputWrap>
             <BalanceInput
               handleButtonToMax={handleButtonToMax}
@@ -127,10 +122,10 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               value={value}
               icon={iconBalanceInput}
               texts={{ commit: texts.commit, currency: texts.currencyInput }}
-              disabled={disabledInput}              
+              disabled={disabledInput}
             />
             <ButtonReverse>
-              <SwapButton onClick={switchHandler} />
+              <SwapButton onClick={handleToggleNetwork} />
             </ButtonReverse>
             <MessageBox>
               <MessageText color={inputError ? lightColors.redBg : lightColors.text} size="xs">
@@ -143,11 +138,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
             </MessageBox>
           </InputWrap>
           <Label size="lg">{texts.to}</Label>
-          {fromChange ? (
-            <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
-          ) : (
-            <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
-          )}
+          <BlockChainName icon={iconNetwork2} name={texts.nameNetwork2} />
           <Error>
             <p style={{ minHeight: 22.5 }}>{texts.error}</p>
           </Error>

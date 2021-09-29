@@ -26,8 +26,7 @@ export interface BridgeStep1Props {
     message1: string;
     message2: string;
   };
-  fromChange: boolean;
-  switchHandler: (val: any) => void;
+  handleToggleNetwork: (val: any) => void;
   handleButton: any;
   disabledInput?: boolean;
 }
