@@ -24,7 +24,6 @@ export const LobbyNavBlock = () => {
     <LobbyNav
       handleApprove={() => {}}
       isApprove={false}
-      propsCreateButton={{ spin: true }}
       handleCreate={handleCreate}
       handleJoin={handleJoin}
       texts={texts}
