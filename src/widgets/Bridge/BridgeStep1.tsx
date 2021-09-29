@@ -99,6 +99,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   handleOpenProofOfAssets,
   handleOpenTransactionsHistory,
   disabledInput,
+  disabledButton,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -142,7 +143,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           <Error>
             <p style={{ minHeight: 22.5 }}>{texts.error}</p>
           </Error>
-          <Button onClick={handleButton} width="100%" variant="green">
+          <Button onClick={handleButton} width="100%" variant="green" disabled={disabledButton}>
             {texts.button}
           </Button>
         </BridgeContent>
