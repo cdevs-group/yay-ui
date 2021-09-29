@@ -26,7 +26,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   };
 
   return (
-    <InputWrap disabled={disabled}  {...props}>
+    <InputWrap disabled={disabled} {...props}>
       <LeftBlock>
         <TitleInput>{texts?.commit || "Commit"}</TitleInput>
         <Input
@@ -57,9 +57,9 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
 
 export default BalanceInput;
 
-const InputWrap = styled.div<{disabled?: boolean}>`
-  opacity: ${({ disabled }) => disabled ? 0.5 : 1};
-  pointer-events: ${({ disabled }) => disabled ? 'none' : 'auto'};
+const InputWrap = styled.div<{ disabled?: boolean }>`
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
   position: relative;
   padding: 17px 20px 20px 20px;
   background: ${({ theme }) => theme.colors.buttonBg};
