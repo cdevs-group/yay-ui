@@ -29,7 +29,7 @@ const LobbyNav = ({
           <img className="right" src={imgCreate || CONTROLLER} alt="avatar" />
         </ButtonCreate>
       </Wrapper>
-      {isApprove && (
+      {!isApprove && (
         <>
           <BlurBlock />
           <ButtonStyle onClick={handleApprove} variant="green" maxWidth="175px" width="100%">

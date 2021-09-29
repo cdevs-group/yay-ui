@@ -5,6 +5,8 @@ import { Text } from "../../../components/Text";
 import styled from "styled-components";
 import TabsSmall from "../../../components/Tabs/TabsSmall";
 import { Button } from "../../../components/Button";
+import { baseColors } from "../../../theme/colors";
+import { Flex } from "../../../components/Box";
 
 const LobbyCreatModal = ({
   texts,
@@ -15,12 +17,24 @@ const LobbyCreatModal = ({
   handleCreate,
   handleJoin,
   propsCreateButton,
+  balance,
+  isError,
 }: LobbyCreatModalProps) => {
   return (
     <Modal title={texts.title} onDismiss={onDismiss}>
       <Content>
         <TitleTabs>{texts.tabsTitle}</TitleTabs>
         <TabsSmall tabValue={activeTab} tabsList={tabsList} onClick={toggleTab} />
+        <BalanceBlock>
+          {isError ? (
+            <Text color={baseColors.darkPink}>{texts.error}</Text>
+          ) : (
+            <Flex>
+              <Text mr="10px">{texts.balance}</Text>
+              <Text color={baseColors.green}>{balance}</Text>
+            </Flex>
+          )}
+        </BalanceBlock>
         <Buttons>
           <Button onClick={handleJoin} width="100%" marginRight="15px" variant="option">
             <ButtonText>{texts.join}</ButtonText>
@@ -38,6 +52,7 @@ export default LobbyCreatModal;
 
 const Content = styled.div`
   padding: 0 22px 30px 27px;
+  margin-top: -17px;
 `;
 const TitleTabs = styled(Text)`
   margin-bottom: 10px;
@@ -47,7 +62,7 @@ const TitleTabs = styled(Text)`
   color: ${({ theme }) => theme.colors.textGray};
 `;
 const Buttons = styled.div`
-  margin-top: 50px;
+  margin-top: 29px;
   display: flex;
   justify-content: center;
   font-size: 11px;
@@ -56,5 +71,12 @@ const ButtonText = styled(Text)`
   font-size: 11px;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 15px;
+  }
+`;
+
+const BalanceBlock = styled(Flex)`
+  margin-top: 29px;
+  ${Text} {
+    font-size: 11px;
   }
 `;
