@@ -1,3 +1,4 @@
+import { SpaceProps } from "styled-system";
 import { ButtonProps } from "../../components/Button/types";
 export interface LobbyNavProps {
     texts: {
@@ -11,6 +12,7 @@ export interface LobbyNavProps {
     imgCreate?: string;
     isApprove: boolean;
     handleApprove: () => void;
+    propsWrapper?: SpaceProps;
 }
 export interface LobbyCreatModalProps {
     texts: {
