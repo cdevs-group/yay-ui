@@ -20,6 +20,8 @@ export interface LobbyCreatModalProps {
         tabsTitle: string;
         create: string;
         join: string;
+        error: string;
+        balance: string;
     };
     onDismiss?: () => void;
     activeTab: string | number;
@@ -28,6 +30,8 @@ export interface LobbyCreatModalProps {
     handleCreate: () => void;
     handleJoin: () => void;
     propsCreateButton?: ButtonProps;
+    balance: string;
+    isError: boolean;
 }
 export interface LobbyListItemProps {
     epoch: number;

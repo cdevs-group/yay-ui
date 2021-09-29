@@ -31,6 +31,8 @@ export const LobbyCreatModalBlock = () => {
     tabsTitle: "Your bet",
     create: "Create Lobby",
     join: "Join Lobby",
+    balance: "Available balance: ",
+    error: "Insufficient balance to make bet",
   };
   const tabsList = ["0.01", "0.1", "0.5", "1"];
   const [activeTab, setActiveTab] = useState(0);
@@ -45,6 +47,8 @@ export const LobbyCreatModalBlock = () => {
 
   return (
     <LobbyCreatModal
+      balance="50 YAY"
+      isError={false}
       handleCreate={handleCreate}
       handleJoin={handleJoin}
       onDismiss={onDismiss}
