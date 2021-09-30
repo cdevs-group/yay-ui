@@ -25,6 +25,7 @@ const LobbyListItem = ({
   winner,
   isLoad,
   lose,
+  propsButtonJoin,
 }: LobbyListItemProps) => {
   return (
     <>
@@ -87,7 +88,7 @@ const LobbyListItem = ({
           </Time>
         )}
         {!history ? (
-          <ButtonStyle onClick={handleButton} variant="green">
+          <ButtonStyle onClick={handleButton} variant="green" {...propsButtonJoin}>
             <TextButton style={{ display: "block" }}>{texts.join}</TextButton>
           </ButtonStyle>
         ) : (
@@ -226,23 +227,23 @@ const ImgWrapper = styled.div<{ claimed?: boolean | undefined }>`
   position: ${({ claimed }) => (claimed ? "relative" : "absolute")};
   right: -10px;
   z-index: 2;
-     ${({ theme }) => theme.mediaQueries.md} {
-       display: block;
-}
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: block;
+  }
   &:after {
     display: ${({ claimed }) => (claimed ? "block" : "none")};
     width: 60%;
     height: 60%;
     top: 15px;
     left: 11px;
-    content: '';
+    content: "";
     position: absolute;
     background: ${({ theme }) => theme.colors.green};
     border-radius: 7px;
     z-index: -1;
   }
-}
 `;
+
 const ButtonStyle = styled(Button)`
   padding: 8px;
   height: 30px;

@@ -52,6 +52,7 @@ export interface LobbyListItemProps {
   claimed?: boolean;
   lose?: boolean;
   isLoad?: boolean;
+  propsButtonJoin?: ButtonProps;
 }
 interface DataLobbyProps {
   epoch: number;
