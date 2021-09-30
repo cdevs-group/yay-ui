@@ -37,6 +37,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
           value={value}
           onChange={handleOnChange}
           placeholder={placeholder}
+          disabled={disabled}
           {...inputProps}
         />
       </LeftBlock>
