@@ -53,7 +53,7 @@ export const BridgeStep1Block: React.FC = () => {
           iconNetwork2={<AvalancheIcon />}
           handleOpenProofOfAssets={() => {}}
           handleOpenTransactionsHistory={() => {}}
-          propsButton={{spin: true}}
+          propsButton={{ spin: true }}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>

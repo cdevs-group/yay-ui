@@ -31,7 +31,7 @@ export interface BridgeStep1Props {
   handleButton: any;
   disabledInput?: boolean;
   disabledButton?: boolean;
-  propsButton?: ButtonProps
+  propsButton?: ButtonProps;
 }
 
 export interface BridgeStep2Props {
