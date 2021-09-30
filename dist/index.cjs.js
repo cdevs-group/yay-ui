@@ -4372,7 +4372,7 @@ var Error$1 = styled__default['default'](Text)(templateObject_11$3 || (templateO
 });
 var ButtonOpenProof = styled__default['default'](Text)(templateObject_12$3 || (templateObject_12$3 = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 var BridgeStep1 = function (_a) {
-    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput;
+    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput, disabledButton = _a.disabledButton;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default['default'].createElement(Field$1, null,
@@ -4399,7 +4399,7 @@ var BridgeStep1 = function (_a) {
                 React__default['default'].createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 }),
                 React__default['default'].createElement(Error$1, null,
                     React__default['default'].createElement("p", { style: { minHeight: 22.5 } }, texts.error)),
-                React__default['default'].createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button))),
+                React__default['default'].createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green", disabled: disabledButton }, texts.button))),
         React__default['default'].createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
         React__default['default'].createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory)));
 };
@@ -6982,7 +6982,7 @@ var Wrapper$4 = styled__default['default'].div(templateObject_1$j || (templateOb
 var templateObject_1$j;
 
 var LobbyNav = function (_a) {
-    var texts = _a.texts, handleJoin = _a.handleJoin, handleCreate = _a.handleCreate, imgJoin = _a.imgJoin, imgCreate = _a.imgCreate, isApprove = _a.isApprove, handleApprove = _a.handleApprove, propsWrapper = _a.propsWrapper;
+    var texts = _a.texts, handleJoin = _a.handleJoin, handleCreate = _a.handleCreate, imgJoin = _a.imgJoin, imgCreate = _a.imgCreate, isApprove = _a.isApprove, handleApprove = _a.handleApprove, propsWrapper = _a.propsWrapper, propsCreateButton = _a.propsCreateButton;
     return (React__default['default'].createElement(NavBlock, __assign({}, propsWrapper),
         React__default['default'].createElement(Wrapper$3, { id: "LobbyNav" },
             React__default['default'].createElement(ButtonAdd, { onClick: handleJoin },
@@ -6993,7 +6993,7 @@ var LobbyNav = function (_a) {
                 React__default['default'].createElement("img", { className: "right", src: imgCreate || CONTROLLER, alt: "avatar" }))),
         !isApprove && (React__default['default'].createElement(React__default['default'].Fragment, null,
             React__default['default'].createElement(BlurBlock, null),
-            React__default['default'].createElement(ButtonStyle$1, { onClick: handleApprove, variant: "green", maxWidth: "175px", width: "100%" }, texts.approve)))));
+            React__default['default'].createElement(ButtonStyle$1, __assign({ disabled: !!propsCreateButton }, propsCreateButton, { onClick: handleApprove, variant: "green", maxWidth: "200px", width: "100%" }), texts.approve)))));
 };
 var NavBlock = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", "\n  ", " {\n    max-width: 452px;\n  }\n"], ["\n  position: relative;\n  max-width: 222px;\n  overflow: hidden;\n  border-radius: 15px;\n  ", "\n  ", " {\n    max-width: 452px;\n  }\n"])), styledSystem.space, function (_a) {
     var theme = _a.theme;
@@ -7020,7 +7020,7 @@ var ButtonCreate = styled__default['default'](ButtonAdd)(templateObject_4$9 || (
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var ButtonStyle$1 = styled__default['default'](Button$9)(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 2;\n"])));
+var ButtonStyle$1 = styled__default['default'](Button$9)(templateObject_5$6 || (templateObject_5$6 = __makeTemplateObject(["\n  opacity: 1 !important;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 2;\n"], ["\n  opacity: 1 !important;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  z-index: 2;\n"])));
 var BlurBlock = styled__default['default'].div(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(10px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: 1;\n  border-radius: 15px;\n  z-index: 1;\n  background-image: ", ";\n  background-repeat: no-repeat;\n  background-position: 50% 0;\n  filter: blur(10px);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(10px);\n  background: ", ";\n  transition: 0.3s;\n  opacity: 1;\n  border-radius: 15px;\n  z-index: 1;\n  background-image: ", ";\n  background-repeat: no-repeat;\n  background-position: 50% 0;\n  filter: blur(10px);\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.5, theme.colors.bgGray);
@@ -7171,9 +7171,9 @@ var LobbyCreatModal = function (_a) {
                 React__default['default'].createElement(Text, { mr: "10px" }, texts.balance),
                 React__default['default'].createElement(Text, { color: baseColors.green }, balance)))),
             React__default['default'].createElement(Buttons$1, null,
-                React__default['default'].createElement(Button$9, { onClick: handleJoin, width: "100%", marginRight: "15px", variant: "option" },
+                React__default['default'].createElement(Button$9, { disabled: !!propsCreateButton, onClick: handleJoin, width: "100%", marginRight: "15px", variant: "option" },
                     React__default['default'].createElement(ButtonText, null, texts.join)),
-                React__default['default'].createElement(Button$9, __assign({ onClick: handleCreate, width: "100%", variant: "green", padding: "0 10px" }, propsCreateButton),
+                React__default['default'].createElement(Button$9, __assign({ disabled: isError, onClick: handleCreate, width: "100%", variant: "green", padding: "0 10px" }, propsCreateButton),
                     React__default['default'].createElement(ButtonText, null, texts.create))))));
 };
 var Content$1 = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  padding: 0 22px 30px 27px;\n  margin-top: -17px;\n"], ["\n  padding: 0 22px 30px 27px;\n  margin-top: -17px;\n"])));
