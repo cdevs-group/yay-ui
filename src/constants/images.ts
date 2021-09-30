@@ -32,7 +32,9 @@ import UNIT from "../../public/images/unit.png";
 import PANCAKE from "../../public/images/pancake.png";
 import PANGOLIN from "../../public/images/pangolin.png";
 import YAY_TOKEN from "../../public/images/logo.png";
+import LOSE from "../../public/images/lose-gift.png";
 import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
+import WINNER_MIN from "../../public/images/winnerMin.png";
 
 export {
   BG_IMG,
@@ -70,4 +72,6 @@ export {
   PANGOLIN,
   YAY_TOKEN,
   YAY_TOKEN_GREEN,
+  LOSE,
+  WINNER_MIN,
 };

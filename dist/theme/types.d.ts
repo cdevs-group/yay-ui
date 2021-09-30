@@ -122,6 +122,7 @@ export declare type Colors = {
     greyRgba2: string;
     blur: string;
     dark2: string;
+    redRgba: string;
     gradients: Gradients;
     binance: string;
 };
