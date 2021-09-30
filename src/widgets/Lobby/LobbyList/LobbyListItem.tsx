@@ -5,50 +5,45 @@ import { Text } from "../../../components/Text";
 import { ellipsis } from "../../../helpers/ellipsis";
 import { darkColors, lightColors, baseColors } from "../../../theme/colors";
 import { Button } from "../../../components/Button";
-import { Winner } from "../../../constants/images";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import { Loader } from "../../../components/Loader";
-import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../../constants/images";
+import { AVATAR_PLAYER, AVATAR_PLAYER_2, WINNER_MIN, LOSE, Winner } from "../../../constants/images";
+import { Flex } from "../../../components/Box";
 
-const LobbyListItem = ({ epoch, creator, bet, startTime, status, texts, handleButton }: LobbyListItemProps) => {
-  const textButton = (mob: string, type: string) => {
-    switch (type) {
-      case "winner":
-        return mob === "mob" ? texts.winnerMob : texts.winner;
-      case "join":
-        return texts.join;
-      case "waitPlayer":
-        return texts.waitPlayer;
-      case "withApponent":
-        return texts.withApponent;
-      default:
-        return texts.waitPlayer;
-    }
-  };
-
-  // {
-  //   "epoch": 4,
-  //   "creator": "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-  //   "bet": "10000000000000000",
-  //   "startTime": null,
-  //   "status": "CREATED"
-  // },
-
+const LobbyListItem = ({
+  epoch,
+  creator,
+  bet,
+  startTime,
+  claimed,
+  status,
+  texts,
+  handleButton,
+  history,
+  yourScore,
+  apponentScore,
+  winner,
+  isLoad,
+  lose,
+}: LobbyListItemProps) => {
   return (
     <>
-      {/*<TimerMob type={(data.startTime !== undefined && data.startTime < 1) || data?.type === "join"}>*/}
-      {/*  <TimerNotSolidWithoutBg*/}
-      {/*    color={data.startTime && data.startTime < 1 ? baseColors.whiteRgba2 : lightColors.text}*/}
-      {/*    marginPoint="0 18px"*/}
-      {/*    width="186px"*/}
-      {/*    borderRadius="7px"*/}
-      {/*    background={lightColors.buttonBg}*/}
-      {/*    height="30px"*/}
-      {/*    time={data.timer}*/}
-      {/*    widthWrapper='186px'*/}
-      {/*  />*/}
-      {/*</TimerMob>*/}
-      <Wrapper>
+      {startTime !== 0 && (
+        <TimerMob show={startTime !== undefined && startTime === 0}>
+          <TimerNotSolidWithoutBg
+            color={startTime && startTime === 0 ? baseColors.whiteRgba2 : lightColors.text}
+            marginPoint="0 18px"
+            width="186px"
+            borderRadius="7px"
+            background={lightColors.buttonBg}
+            height="30px"
+            time={startTime || 0}
+            widthWrapper="100%"
+            margin="0 auto"
+          />
+        </TimerMob>
+      )}
+      <Wrapper history={history && !startTime}>
         <Icons>
           <Icon1>
             <img src={AVATAR_PLAYER} />
@@ -59,50 +54,87 @@ const LobbyListItem = ({ epoch, creator, bet, startTime, status, texts, handleBu
         </Icons>
         <Player>
           <TextTitle>{texts.player}</TextTitle>
-          <TextStyle>{ellipsis(creator)}</TextStyle>
+          <TextStyle mb="5px">{ellipsis(creator)}</TextStyle>
         </Player>
         <Bet>
           <TextTitle>{texts.bet}</TextTitle>
-          <BetValue>{bet}</BetValue>
+          <BetValue lose={lose}>{bet}</BetValue>
         </Bet>
-        <Time>
-          <TextTitle>{texts.time}</TextTitle>
-          <TimerNotSolidWithoutBg
-            color={!startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text}
-            marginPoint="0 18px"
-            width="186px"
-            borderRadius="7px"
-            background={lightColors.buttonBg}
-            height="30px"
-            time={0}
-            widthWrapper="186px"
-          />
-        </Time>
-        <ButtonStyle onClick={handleButton} variant="green">
-          <TextButton>{texts.join}</TextButton>
-        </ButtonStyle>
-        {/*{data.type === "waitResult" ? (*/}
-        {/*  <LoadResult>*/}
-        {/*    <TextStyle>{texts.waitResult}</TextStyle>*/}
-        {/*    <LoaderWrap>*/}
-        {/*      <Loader />*/}
-        {/*    </LoaderWrap>*/}
-        {/*  </LoadResult>*/}
-        {/*) : (*/}
-        {/*  <WinWrapper win={data.type === "winner"}>*/}
-        {/*    <img src={Winner} />*/}
-        {/*    <ButtonStyle*/}
-        {/*      onClick={handleButton}*/}
-        {/*      width="100%"*/}
-        {/*      variant={*/}
-        {/*        data.type === "winner" || data.type === "withApponent" || data.type === "join" ? "green" : "option"*/}
-        {/*      }*/}
-        {/*    >*/}
-        {/*      <TextButton>{textButton("desc", data.type)}</TextButton>*/}
-        {/*      <TextButtonMob>{textButton("mob", data.type)}</TextButtonMob>*/}
-        {/*    </ButtonStyle>*/}
-        {/*  </WinWrapper>*/}
-        {/*)}*/}
+        {history && !startTime ? (
+          <>
+            <ScroreBlock>
+              <TextTitle>{texts.yourScore}</TextTitle>
+              <TextStyle>{yourScore}</TextStyle>
+            </ScroreBlock>
+            <ScroreBlock>
+              <TextTitle>{texts.opportunScore}</TextTitle>
+              <TextStyle>{apponentScore === "" ? "-" : apponentScore}</TextStyle>
+            </ScroreBlock>
+          </>
+        ) : (
+          <Time>
+            <TextTitle>{texts.time}</TextTitle>
+            <TimerNotSolidWithoutBg
+              color={!startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text}
+              marginPoint="0 18px"
+              width="186px"
+              borderRadius="7px"
+              background={lightColors.buttonBg}
+              height="30px"
+              time={startTime || 0}
+              widthWrapper="186px"
+            />
+          </Time>
+        )}
+        {!history ? (
+          <ButtonStyle onClick={handleButton} variant="green">
+            <TextButton style={{ display: "block" }}>{texts.join}</TextButton>
+          </ButtonStyle>
+        ) : (
+          <>
+            {isLoad ? (
+              <WaitingBlock>
+                <TextStyle>{texts.waitResult}</TextStyle>
+                <LoaderWrap>
+                  <Loader />
+                </LoaderWrap>
+              </WaitingBlock>
+            ) : (
+              <>
+                {winner && (
+                  <WinWrapper>
+                    <ImgWrapper claimed={claimed}>
+                      <img src={WINNER_MIN} />
+                    </ImgWrapper>
+                    {!claimed ? (
+                      <ButtonStyle onClick={handleButton} width="100%" variant="green">
+                        <TextButton>{texts.winner}</TextButton>
+                        <TextButtonMob>{texts.winnerMob}</TextButtonMob>
+                      </ButtonStyle>
+                    ) : (
+                      <TextStyle mt="10px" textAlign="center" color={baseColors.green} textTransform="uppercase">
+                        {texts.win}
+                      </TextStyle>
+                    )}
+                  </WinWrapper>
+                )}
+                {!apponentScore && (
+                  <ButtonStyle style={{ opacity: 1 }} disabled variant="option">
+                    <TextStyle>{texts.waitPlayer}</TextStyle>
+                  </ButtonStyle>
+                )}
+                {lose && (
+                  <LoseBlock>
+                    <TextStyle mt="10px" textAlign="center" color={baseColors.textGray} textTransform="uppercase">
+                      {texts.lose}
+                    </TextStyle>
+                    <img src={LOSE} />
+                  </LoseBlock>
+                )}
+              </>
+            )}
+          </>
+        )}
       </Wrapper>
     </>
   );
@@ -110,10 +142,10 @@ const LobbyListItem = ({ epoch, creator, bet, startTime, status, texts, handleBu
 
 export default LobbyListItem;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ history?: boolean }>`
   display: grid;
-  grid-template-columns: 2.5fr 2fr 2.5fr;
-  gap: 0 20px;
+  grid-template-columns: 2fr 1.5fr 3fr;
+  gap: 0 10px;
   align-items: flex-end;
   padding: 10px 14px 14px;
   background: ${({ theme }) => lightColors.cardBg};
@@ -127,13 +159,15 @@ const Wrapper = styled.div`
     padding: 18px 33px 18px 38px;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;
+    gap: 0 20px;
+    grid-template-columns: ${({ history }) => (history ? " 1.5fr 1fr 1fr 1fr 2fr" : " 1.5fr 1fr 2fr 2fr")};
     gap: 0 15px;
     align-items: flex-start;
     margin-bottom: 10px;
   }
   ${({ theme }) => theme.mediaQueries.lg} {
-    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;
+    grid-template-columns: ${({ history }) =>
+      history ? " 0.7fr 2fr 2fr 1.7fr 1.7fr 2.5fr" : " 0.7fr 2fr 2fr 3.5fr 2.5fr"};
     gap: 0 15px;
   } ;
 `;
@@ -159,7 +193,11 @@ const Icon2 = styled(Icon1)`
   top: auto;
   right: 0;
 `;
-const Player = styled.div``;
+const Player = styled(Flex)`
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
 const TextTitle = styled(Text)`
   font-size: 13px;
   line-height: 16px;
@@ -174,27 +212,36 @@ const Time = styled.div`
     display: block;
   } ;
 `;
-const WinWrapper = styled.div<{ win?: boolean | "" | undefined }>`
-  min-width: 120px;
+const WinWrapper = styled.div<{ win?: boolean | undefined }>`
   width: 100%;
   position: relative;
   justify-self: end;
-  & img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+`;
+const ImgWrapper = styled.div<{ claimed?: boolean | undefined }>`
+  display: ${({ claimed }) => (claimed ? "block" : "none")};
+  position: ${({ claimed }) => (claimed ? "relative" : "absolute")};
+  right: -10px;
+  z-index: 2;
+     ${({ theme }) => theme.mediaQueries.md} {
+       display: block;
+}
+  &:after {
+    display: ${({ claimed }) => (claimed ? "block" : "none")};
+    width: 60%;
+    height: 60%;
+    top: 15px;
+    left: 11px;
+    content: '';
     position: absolute;
-    top: -40px;
-    right: -30px;
-    display: ${({ win }) => (win ? "block" : "none")};
-    pointer-events: none;
-    width: 90px;
+    background: ${({ theme }) => theme.colors.green};
+    border-radius: 7px;
+    z-index: -1;
   }
-  ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 210px;
-    & img {
-      width: auto;
-      right: -50px;
-      top: -65px;
-    }
-  }
+}
 `;
 const ButtonStyle = styled(Button)`
   padding: 8px;
@@ -211,12 +258,12 @@ const TextStyle = styled(Text)`
     font-size: 15px;
   } ;
 `;
-const BetValue = styled(TextStyle)`
+const BetValue = styled(TextStyle)<{ lose?: boolean }>`
   padding: 6px;
   width: 57px;
   height: 30px;
-  background: ${({ theme }) => darkColors.gradients.greenGradient};
-  color: ${({ theme }) => theme.colors.green};
+  background: ${({ lose, theme }) => (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient)};
+  color: ${({ lose, theme }) => (lose ? theme.colors.darkPink : theme.colors.green)};
   border-radius: 7px;
   text-align: center;
 `;
@@ -249,8 +296,9 @@ const LoadResult = styled.div`
 `;
 const LoaderWrap = styled.div`
   width: 0;
-  margin-left: 0;
+  margin-left: -20px;
   height: 40px;
+  margin-top: -10px;
   transform: scale(0.4);
   align-self: center;
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -258,12 +306,34 @@ const LoaderWrap = styled.div`
     margin-left: 10px;
   }
 `;
-const TimerMob = styled.div<{ type?: boolean }>`
+const TimerMob = styled.div<{ show?: boolean }>`
   display: flex;
   justify-content: center;
-  display: ${({ type }) => (type ? "none" : "block")};
+  display: ${({ show }) => (show ? "none" : "block")};
   margin: 0 auto 7px;
   ${({ theme }) => theme.mediaQueries.md} {
     display: none;
   }
+`;
+const WaitingBlock = styled(Flex)`
+  flex-direction: column-reverse;
+  align-items: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+    font-weight: normal;
+    text-shadow: ${({ theme }) => theme.colors.textShadow3};
+  }
+`;
+const ScroreBlock = styled(Bet)`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.md} {
+    display: block;
+  }
+`;
+const LoseBlock = styled(Flex)`
+  justify-content: center;
+  align-items: center;
 `;

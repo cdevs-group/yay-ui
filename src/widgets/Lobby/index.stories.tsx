@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import LobbyNav from "./LobbyNav/LobbyNav";
 import LobbyCreatModal from "./LobbyCreatModal/LobbyCreatModal";
 import LobbyList from "./LobbyList/LobbyList";
-import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../constants/images";
 import LobbyListItem from "./LobbyList/LobbyListItem";
 
 export default {
@@ -54,7 +53,7 @@ export const LobbyCreatModalBlock = () => {
   return (
     <LobbyCreatModal
       balance="50 YAY"
-      isError
+      isError={false}
       handleCreate={handleCreate}
       handleJoin={handleJoin}
       onDismiss={onDismiss}
@@ -163,6 +162,192 @@ export const LobyItem = () => {
         texts={texts}
         handleButton={handleButton}
       />
+    </div>
+  );
+};
+
+export const LobyHistoryItem = () => {
+  const texts = {
+    player: "Player",
+    bet: "Bet",
+    time: "Still time",
+    waitResult: "Waiting for results",
+    winner: "Collect Winnings",
+    winnerMob: "Collect",
+    withApponent: "Play",
+    waitPlayer: "Waiting for player",
+    win: "win",
+    join: "Join now",
+    yourScore: "Your score",
+    opportunScore: "Opponent score",
+    lose: "Lose",
+  };
+
+  const handleButton = (param: any) => {};
+  const account = "0x213123123";
+
+  const data = [
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "10",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "121212",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "10",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: true,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "1123210",
+      winner: "0x213123123",
+      bet: "10",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 1212,
+      scoreCreator: "2323",
+      scoreJoiner: "",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+    {
+      epoch: "2",
+      gameName: "bla",
+      open: false,
+      creator: "0x213123123",
+      joiner: "0xhsdgafkgds",
+      joinerJoin: true,
+      joinerJoinBlockTimeStamp: 124312,
+      scoreCreator: "2323",
+      scoreJoiner: "",
+      winner: "0x213123123",
+      bet: "100",
+      claimed: false,
+      blockNumber: "100500",
+      timestampBlock: 121221,
+      creatorStartedGame: false,
+      joinerStartedGame: false,
+    },
+  ];
+
+  return (
+    <div>
+      {data.map(
+        (item, i) => (
+          // <div key={i} style={{marginTop: '20px'}}>
+          <LobbyListItem
+            history
+            epoch={item.epoch}
+            creator={item.creator}
+            bet={item.bet}
+            // текущее время - (joinerJoinBlockTimeStamp + 4 часа)
+            startTime={item.joinerJoinBlockTimeStamp + 14400 - 15612}
+            texts={texts}
+            handleButton={handleButton}
+            yourScore={account === item.creator ? item.scoreCreator : item.scoreJoiner}
+            apponentScore={account === item.creator ? item.scoreJoiner : item.scoreCreator}
+            winner={
+              item.scoreCreator !== "" &&
+              item.scoreJoiner !== "" &&
+              account === item.creator &&
+              +item.scoreCreator > +item.scoreJoiner
+            }
+            claimed={item.claimed}
+            lose={
+              item.scoreCreator !== "" &&
+              item.scoreJoiner !== "" &&
+              account === item.creator &&
+              +item.scoreCreator < +item.scoreJoiner
+            }
+          />
+        )
+        // </div>
+      )}
     </div>
   );
 };

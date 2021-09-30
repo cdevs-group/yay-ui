@@ -35,13 +35,20 @@ export interface LobbyCreatModalProps {
     isError: boolean;
 }
 export interface LobbyListItemProps {
-    epoch: number;
+    epoch: number | string;
     creator: string;
     bet: number | bigint | string;
     startTime: null | number;
-    status: string;
+    status?: string;
     texts: LobbyTextsProps;
     handleButton: (param: any) => void;
+    history?: boolean;
+    yourScore?: string;
+    apponentScore?: string;
+    winner?: boolean;
+    claimed?: boolean;
+    lose?: boolean;
+    isLoad?: boolean;
 }
 interface DataLobbyProps {
     epoch: number;
@@ -51,15 +58,19 @@ interface DataLobbyProps {
     status: string;
 }
 interface LobbyTextsProps {
-    player: string;
-    bet: string;
-    time: string;
-    waitResult: string;
+    player?: string;
+    bet?: string;
+    time?: string;
+    waitResult?: string;
     winner?: string;
     winnerMob?: string;
-    withApponent: string;
-    waitPlayer: string;
-    join: string;
+    withApponent?: string;
+    waitPlayer?: string;
+    join?: string;
+    yourScore?: string;
+    opportunScore?: string;
+    win?: string;
+    lose?: string;
 }
 export interface LobbyListProps {
     data: Array<DataLobbyProps>;
