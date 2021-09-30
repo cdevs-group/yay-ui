@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ButtonProps } from "../../components/Button";
 
 export interface BridgeStep1Props {
   onUserInput: (input: any) => void;
@@ -30,6 +31,7 @@ export interface BridgeStep1Props {
   handleButton: any;
   disabledInput?: boolean;
   disabledButton?: boolean;
+  propsButton?: ButtonProps
 }
 
 export interface BridgeStep2Props {
