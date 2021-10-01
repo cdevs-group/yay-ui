@@ -90,6 +90,19 @@ export interface BridgeStep2Props {
         token: string;
     };
     addTokenHandler: () => void;
+    noticeVisible?: boolean;
+    noticeImg?: React.ReactNode;
+    noticeType?: NoticeBridgeType;
+    noticeTitle?: string;
+    noticeText?: React.ReactNode;
+    noticeButton1Text?: string;
+    noticeButton2Text?: string;
+    noticeButton1Props?: ButtonProps;
+    noticeButton2Props?: ButtonProps;
+}
+export declare enum NoticeBridgeType {
+    ERROR = "error",
+    SUCCESS = "success"
 }
 export interface BrightProofProps {
     addTokenIcon?: ReactNode;
