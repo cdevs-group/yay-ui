@@ -50,7 +50,7 @@ const LobbyListItem = ({
             titleYou={texts.yourScore}
             titleOpponent={texts.opportunScore}
             yourScore={yourScore}
-            opponentScore={opponentScore}
+            opponentScore={status === Status.WAITINGOPPONENT ? "-" : opponentScore}
           />
         ) : (
           <Timer

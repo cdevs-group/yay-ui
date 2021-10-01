@@ -308,7 +308,7 @@ export const LobyHistoryItem = () => {
             account === item.creator &&
             +item.scoreCreator < +item.scoreJoiner
           }
-          status={Status.PLAY}
+          status={Status.WAITINGOPPONENT}
         />
       ))}
     </div>
