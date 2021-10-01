@@ -28,6 +28,7 @@ const LobbyListItem = ({
   isEnoughYay,
   propsButtonJoin,
 }: LobbyListItemProps) => {
+  console.log(history, !startTime, yourScore !== "");
   return (
     <>
       {startTime !== 0 && (
@@ -45,7 +46,7 @@ const LobbyListItem = ({
           />
         </TimerMob>
       )}
-      <Wrapper history={history && !startTime}>
+      <Wrapper history={history && yourScore !== ""}>
         <Icons>
           <Icon1>
             <img src={AVATAR_PLAYER} />
@@ -62,7 +63,7 @@ const LobbyListItem = ({
           <TextTitle>{texts.bet}</TextTitle>
           <BetValue lose={lose}>{bet}</BetValue>
         </Bet>
-        {history && !startTime ? (
+        {history && yourScore !== "" ? (
           <>
             <ScroreBlock>
               <TextTitle>{texts.yourScore}</TextTitle>
@@ -140,6 +141,11 @@ const LobbyListItem = ({
                     </TextStyle>
                     <img src={LOSE} />
                   </LoseBlock>
+                )}
+                {yourScore === "" && (
+                  <ButtonStyle variant="green">
+                    <TextStyle>{texts.play}</TextStyle>
+                  </ButtonStyle>
                 )}
               </>
             )}
