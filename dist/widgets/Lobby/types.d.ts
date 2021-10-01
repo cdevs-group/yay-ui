@@ -75,6 +75,7 @@ interface LobbyTextsProps {
     opportunScore?: string;
     win?: string;
     lose?: string;
+    play?: string;
 }
 export interface LobbyListProps {
     data: Array<DataLobbyProps>;

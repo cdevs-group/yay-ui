@@ -7034,10 +7034,11 @@ var templateObject_1$i, templateObject_2$e, templateObject_3$a, templateObject_4
 
 var LobbyListItem = function (_a) {
     _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime, claimed = _a.claimed; _a.status; var texts = _a.texts, handleButton = _a.handleButton, history = _a.history, yourScore = _a.yourScore, apponentScore = _a.apponentScore, winner = _a.winner, isLoad = _a.isLoad, lose = _a.lose, isEnoughYay = _a.isEnoughYay, propsButtonJoin = _a.propsButtonJoin;
+    console.log(history, !startTime, yourScore !== "");
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         startTime !== 0 && (React__default['default'].createElement(TimerMob, { show: startTime !== undefined && startTime === 0 },
             React__default['default'].createElement(TimerNotSolidWithoutBg, { color: startTime && startTime === 0 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "100%", margin: "0 auto" }))),
-        React__default['default'].createElement(Wrapper$2, { history: history && !startTime },
+        React__default['default'].createElement(Wrapper$2, { history: history && yourScore !== "" },
             React__default['default'].createElement(Icons, null,
                 React__default['default'].createElement(Icon1, null,
                     React__default['default'].createElement("img", { src: AVATAR_PLAYER })),
@@ -7049,7 +7050,7 @@ var LobbyListItem = function (_a) {
             React__default['default'].createElement(Bet, null,
                 React__default['default'].createElement(TextTitle, null, texts.bet),
                 React__default['default'].createElement(BetValue, { lose: lose }, bet)),
-            history && !startTime ? (React__default['default'].createElement(React__default['default'].Fragment, null,
+            history && yourScore !== "" ? (React__default['default'].createElement(React__default['default'].Fragment, null,
                 React__default['default'].createElement(ScroreBlock, null,
                     React__default['default'].createElement(TextTitle, null, texts.yourScore),
                     React__default['default'].createElement(TextStyle, null, yourScore)),
@@ -7075,7 +7076,9 @@ var LobbyListItem = function (_a) {
                     React__default['default'].createElement(TextStyle, null, texts.waitPlayer))),
                 lose && (React__default['default'].createElement(LoseBlock, null,
                     React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, texts.lose),
-                    React__default['default'].createElement("img", { src: LOSE$1 }))))))))));
+                    React__default['default'].createElement("img", { src: LOSE$1 }))),
+                yourScore === "" && (React__default['default'].createElement(ButtonStyle, { variant: "green" },
+                    React__default['default'].createElement(TextStyle, null, texts.play))))))))));
 };
 var Wrapper$2 = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
     _a.theme;
