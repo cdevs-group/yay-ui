@@ -43,7 +43,7 @@ export interface LobbyListItemProps {
   bet: number | bigint | string;
   startTime: number;
   status?: string;
-  open: boolean;
+  open?: boolean;
   texts: LobbyTextsProps;
   handleButton?: (param: any) => void;
   history?: boolean;
@@ -61,7 +61,7 @@ interface DataLobbyProps {
   epoch: number;
   creator: string;
   bet: number | bigint | string;
-  startTime: null | number;
+  startTime: number;
   status: string;
 }
 interface LobbyTextsProps {
@@ -85,6 +85,7 @@ export interface LobbyListProps {
   data: Array<DataLobbyProps>;
   texts: LobbyTextsProps;
   handleButton: (param: any) => void;
+  open?: boolean;
 }
 
 export enum Status {
