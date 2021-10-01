@@ -108,6 +108,7 @@ export interface BrightProofProps {
     wrappedData: Array<proofData>;
   }>;
   tokenLogo?: ReactNode;
+  tokenName?: string;
 }
 
 export interface InfoWrapperProps {
@@ -117,6 +118,7 @@ export interface InfoWrapperProps {
   wrappedData: Array<proofData>;
   addTokenHandler: () => void;
   textCopy: string;
+  tokenName?: string;
 }
 interface proofData {
   address: string;

@@ -13,18 +13,13 @@ const InfoWrapper = ({
   textCopy,
   addTokenHandler,
   addTokenIcon,
+  tokenName,
 }: InfoWrapperProps) => {
   return (
     <Wrapper>
       <TokenLogo>
-        {tokenLogo || (
-          <>
-            <TokenImg>
-              <YAYIcon />
-            </TokenImg>
-            <Text>YAY</Text>
-          </>
-        )}
+        <TokenImg>{tokenLogo || <YAYIcon />}</TokenImg>
+        <Text>{tokenName || "YAY"}</Text>
       </TokenLogo>
       <MainBlock>
         <LeftColumn>
