@@ -3,6 +3,7 @@ import LobbyNav from "./LobbyNav/LobbyNav";
 import LobbyCreatModal from "./LobbyCreatModal/LobbyCreatModal";
 import LobbyList from "./LobbyList/LobbyList";
 import LobbyListItem from "./LobbyList/LobbyListItem";
+import { Status } from "./types";
 
 export default {
   title: "Widgets/Lobby",
@@ -85,7 +86,7 @@ export const LobbyListBlock = () => {
     waitResult: "Waiting for results",
     winner: "Collect Winnings",
     winnerMob: "Collect",
-    withApponent: "Play",
+    withOpponent: "Play",
     waitPlayer: "Waiting for player",
     join: "Join now",
     notEnoughYAY: "Not enough YAY",
@@ -104,7 +105,7 @@ export const LobyItem = () => {
     waitResult: "Waiting for results",
     winner: "Collect Winnings",
     winnerMob: "Collect",
-    withApponent: "Play",
+    withOpponent: "Play",
     waitPlayer: "Waiting for player",
     join: "Join now",
   };
@@ -135,7 +136,7 @@ export const LobyHistoryItem = () => {
     waitResult: "Waiting for results",
     winner: "Collect Winnings",
     winnerMob: "Collect",
-    withApponent: "Play",
+    withOpponent: "Play",
     waitPlayer: "Waiting for player",
     win: "win",
     join: "Join now",
@@ -143,6 +144,7 @@ export const LobyHistoryItem = () => {
     opportunScore: "Opponent score",
     lose: "Lose",
     play: "Play",
+    notEnoughYAY: "Not enough YAY",
   };
 
   const handleButton = (param: any) => {};
@@ -279,38 +281,36 @@ export const LobyHistoryItem = () => {
 
   return (
     <div>
-      {data.map(
-        (item, i) => (
-          // <div key={i} style={{marginTop: '20px'}}>
-          <LobbyListItem
-            history
-            isEnoughYay={true}
-            epoch={item.epoch}
-            creator={item.creator}
-            bet={item.bet}
-            // текущее время - (joinerJoinBlockTimeStamp + 4 часа)
-            startTime={item.joinerJoinBlockTimeStamp + 14400 - 15612}
-            texts={texts}
-            handleButton={handleButton}
-            yourScore={account === item.creator ? item.scoreCreator : item.scoreJoiner}
-            apponentScore={account === item.creator ? item.scoreJoiner : item.scoreCreator}
-            winner={
-              item.scoreCreator !== "" &&
-              item.scoreJoiner !== "" &&
-              account === item.creator &&
-              +item.scoreCreator > +item.scoreJoiner
-            }
-            claimed={item.claimed}
-            lose={
-              item.scoreCreator !== "" &&
-              item.scoreJoiner !== "" &&
-              account === item.creator &&
-              +item.scoreCreator < +item.scoreJoiner
-            }
-          />
-        )
-        // </div>
-      )}
+      {data.map((item, i) => (
+        // <div key={i} style={{marginTop: '20px'}}>
+        <LobbyListItem
+          history
+          isEnoughYay={true}
+          epoch={item.epoch}
+          creator={item.creator}
+          bet={item.bet}
+          // текущее время - (joinerJoinBlockTimeStamp + 4 часа)
+          startTime={item.joinerJoinBlockTimeStamp + 14400 - 15612}
+          texts={texts}
+          handleButton={handleButton}
+          yourScore={account === item.creator ? item.scoreCreator : item.scoreJoiner}
+          opponentScore={account === item.creator ? item.scoreJoiner : item.scoreCreator}
+          winner={
+            item.scoreCreator !== "" &&
+            item.scoreJoiner !== "" &&
+            account === item.creator &&
+            +item.scoreCreator > +item.scoreJoiner
+          }
+          claimed={item.claimed}
+          lose={
+            item.scoreCreator !== "" &&
+            item.scoreJoiner !== "" &&
+            account === item.creator &&
+            +item.scoreCreator < +item.scoreJoiner
+          }
+          status={Status.PLAY}
+        />
+      ))}
     </div>
   );
 };

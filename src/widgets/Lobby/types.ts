@@ -41,19 +41,20 @@ export interface LobbyListItemProps {
   epoch: number | string;
   creator: string;
   bet: number | bigint | string;
-  startTime: null | number;
+  startTime: number;
   status?: string;
+  open: boolean;
   texts: LobbyTextsProps;
-  handleButton: (param: any) => void;
+  handleButton?: (param: any) => void;
   history?: boolean;
   yourScore?: string;
-  apponentScore?: string;
+  opponentScore?: string;
   winner?: boolean;
   claimed?: boolean;
   lose?: boolean;
   isLoad?: boolean;
   isEnoughYay: boolean;
-  propsButtonJoin?: ButtonProps;
+  propsButton?: ButtonProps;
 }
 interface DataLobbyProps {
   isEnoughYay: boolean;
@@ -70,7 +71,7 @@ interface LobbyTextsProps {
   waitResult?: string;
   winner?: string;
   winnerMob?: string;
-  withApponent?: string;
+  withOpponent?: string;
   waitPlayer?: string;
   notEnoughYAY?: string;
   join?: string;
@@ -84,4 +85,15 @@ export interface LobbyListProps {
   data: Array<DataLobbyProps>;
   texts: LobbyTextsProps;
   handleButton: (param: any) => void;
+}
+
+export enum Status {
+  JOIN = "join",
+  WAITINGJOIN = "waitingJoin",
+  PLAY = "play",
+  ENOUGH = "enough",
+  WAITINGOPPONENT = "waitingOpponent",
+  LOSE = "lose",
+  WIN = "win",
+  COLLECT = "collect",
 }
