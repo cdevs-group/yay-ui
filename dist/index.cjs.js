@@ -4716,12 +4716,11 @@ var Tooltip$2 = styled__default['default'].div(templateObject_6$m || (templateOb
 var templateObject_1$1b, templateObject_2$_, templateObject_3$P, templateObject_4$E, templateObject_5$u, templateObject_6$m;
 
 var InfoWrapper = function (_a) {
-    var tokenLogo = _a.tokenLogo, proofData = _a.proofData, wrappedData = _a.wrappedData, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon;
+    var tokenLogo = _a.tokenLogo, proofData = _a.proofData, wrappedData = _a.wrappedData, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenName = _a.tokenName;
     return (React__default['default'].createElement(Wrapper$g, null,
-        React__default['default'].createElement(TokenLogo, null, tokenLogo || (React__default['default'].createElement(React__default['default'].Fragment, null,
-            React__default['default'].createElement(TokenImg, null,
-                React__default['default'].createElement(Icon$7, null)),
-            React__default['default'].createElement(Text, null, "YAY")))),
+        React__default['default'].createElement(TokenLogo, null,
+            React__default['default'].createElement(TokenImg, null, tokenLogo || React__default['default'].createElement(Icon$7, null)),
+            React__default['default'].createElement(Text, null, tokenName || "YAY")),
         React__default['default'].createElement(MainBlock$1, null,
             React__default['default'].createElement(LeftColumn, null,
                 React__default['default'].createElement(TokenInfo, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, textsInfo: proofData })),
@@ -4760,13 +4759,13 @@ var MiddleColumn = styled__default['default'].div(templateObject_7$b || (templat
 var templateObject_1$1a, templateObject_2$Z, templateObject_3$O, templateObject_4$D, templateObject_5$t, templateObject_6$l, templateObject_7$b;
 
 var BridgeProof = function (_a) {
-    var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo;
+    var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     return (React__default['default'].createElement(Wrapper$f, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$2, { marginTop: "10px" }, texts.description),
         React__default['default'].createElement(ButtonClose$1, { onClick: onDismiss },
             React__default['default'].createElement(Icon$R, { fill: "transparent" })),
-        React__default['default'].createElement(TokenList, null, ProofOfAssetsData.map(function (item, i) { return (React__default['default'].createElement(InfoWrapper, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, proofData: item.proofData, wrappedData: item.wrappedData, tokenLogo: tokenLogo })); }))));
+        React__default['default'].createElement(TokenList, null, ProofOfAssetsData.map(function (item, i) { return (React__default['default'].createElement(InfoWrapper, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, proofData: item.proofData, wrappedData: item.wrappedData, tokenLogo: tokenLogo, tokenName: tokenName })); }))));
 };
 var Wrapper$f = styled__default['default'].div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
