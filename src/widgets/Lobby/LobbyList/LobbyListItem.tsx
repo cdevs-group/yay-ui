@@ -25,6 +25,7 @@ const LobbyListItem = ({
   winner,
   isLoad,
   lose,
+  isEnoughYay,
   propsButtonJoin,
 }: LobbyListItemProps) => {
   return (
@@ -87,7 +88,8 @@ const LobbyListItem = ({
             />
           </Time>
         )}
-        {!history ? (
+
+        {!history && isEnoughYay ? (
           <ButtonStyle onClick={handleButton} variant="green" {...propsButtonJoin}>
             <TextButton style={{ display: "block" }}>{texts.join}</TextButton>
           </ButtonStyle>
@@ -102,6 +104,12 @@ const LobbyListItem = ({
               </WaitingBlock>
             ) : (
               <>
+                {!isEnoughYay && (
+                  <ButtonStyle style={{ opacity: 1 }} disabled variant="option">
+                    <TextStyle color={baseColors.darkPink}>{texts.notEnoughYAY}</TextStyle>
+                  </ButtonStyle>
+                )}
+
                 {winner && (
                   <WinWrapper>
                     <ImgWrapper claimed={claimed}>
@@ -119,11 +127,12 @@ const LobbyListItem = ({
                     )}
                   </WinWrapper>
                 )}
-                {!apponentScore && (
+                {!apponentScore && isEnoughYay && (
                   <ButtonStyle style={{ opacity: 1 }} disabled variant="option">
                     <TextStyle>{texts.waitPlayer}</TextStyle>
                   </ButtonStyle>
                 )}
+
                 {lose && (
                   <LoseBlock>
                     <TextStyle mt="10px" textAlign="center" color={baseColors.textGray} textTransform="uppercase">

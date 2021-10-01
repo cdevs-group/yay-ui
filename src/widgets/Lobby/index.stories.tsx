@@ -74,48 +74,7 @@ export const LobbyListBlock = () => {
       bet: "10000000000000000",
       startTime: null,
       status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
+      isEnoughYay: false,
     },
   ];
 
@@ -129,6 +88,7 @@ export const LobbyListBlock = () => {
     withApponent: "Play",
     waitPlayer: "Waiting for player",
     join: "Join now",
+    notEnoughYAY: "Not enough YAY",
   };
 
   const handleButton = (param: any) => {};
@@ -154,6 +114,7 @@ export const LobyItem = () => {
   return (
     <div>
       <LobbyListItem
+        isEnoughYay={true}
         epoch={4}
         creator="0x049900f4204604c52BF76Ba61e72a43e04B0AA54"
         bet={10000000000000000}
@@ -322,6 +283,7 @@ export const LobyHistoryItem = () => {
           // <div key={i} style={{marginTop: '20px'}}>
           <LobbyListItem
             history
+            isEnoughYay={true}
             epoch={item.epoch}
             creator={item.creator}
             bet={item.bet}
