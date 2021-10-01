@@ -8,6 +8,7 @@ const LobbyList = ({ data, texts, handleButton }: LobbyListProps) => {
     <Wrapper>
       {data.map((item, i) => (
         <LobbyListItem
+          isEnoughYay={item.isEnoughYay}
           epoch={item.epoch}
           creator={item.creator}
           bet={item.bet}
