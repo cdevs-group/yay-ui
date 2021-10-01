@@ -52,9 +52,11 @@ export interface LobbyListItemProps {
   claimed?: boolean;
   lose?: boolean;
   isLoad?: boolean;
+  isEnoughYay: boolean;
   propsButtonJoin?: ButtonProps;
 }
 interface DataLobbyProps {
+  isEnoughYay: boolean;
   epoch: number;
   creator: string;
   bet: number | bigint | string;
@@ -70,11 +72,13 @@ interface LobbyTextsProps {
   winnerMob?: string;
   withApponent?: string;
   waitPlayer?: string;
+  notEnoughYAY?: string;
   join?: string;
   yourScore?: string;
   opportunScore?: string;
   win?: string;
   lose?: string;
+  play?: string;
 }
 export interface LobbyListProps {
   data: Array<DataLobbyProps>;

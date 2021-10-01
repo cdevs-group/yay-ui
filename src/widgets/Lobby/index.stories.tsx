@@ -74,48 +74,7 @@ export const LobbyListBlock = () => {
       bet: "10000000000000000",
       startTime: null,
       status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
-    },
-    {
-      epoch: 4,
-      creator: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      bet: "10000000000000000",
-      startTime: null,
-      status: "CREATED",
+      isEnoughYay: false,
     },
   ];
 
@@ -129,6 +88,7 @@ export const LobbyListBlock = () => {
     withApponent: "Play",
     waitPlayer: "Waiting for player",
     join: "Join now",
+    notEnoughYAY: "Not enough YAY",
   };
 
   const handleButton = (param: any) => {};
@@ -154,6 +114,7 @@ export const LobyItem = () => {
   return (
     <div>
       <LobbyListItem
+        isEnoughYay={true}
         epoch={4}
         creator="0x049900f4204604c52BF76Ba61e72a43e04B0AA54"
         bet={10000000000000000}
@@ -181,6 +142,7 @@ export const LobyHistoryItem = () => {
     yourScore: "Your score",
     opportunScore: "Opponent score",
     lose: "Lose",
+    play: "Play",
   };
 
   const handleButton = (param: any) => {};
@@ -230,8 +192,8 @@ export const LobyHistoryItem = () => {
       creator: "0x213123123",
       joiner: "0xhsdgafkgds",
       joinerJoin: true,
-      joinerJoinBlockTimeStamp: 1212,
-      scoreCreator: "2323",
+      joinerJoinBlockTimeStamp: 12112,
+      scoreCreator: "",
       scoreJoiner: "10",
       winner: "0x213123123",
       bet: "100",
@@ -284,7 +246,7 @@ export const LobyHistoryItem = () => {
       creator: "0x213123123",
       joiner: "0xhsdgafkgds",
       joinerJoin: true,
-      joinerJoinBlockTimeStamp: 1212,
+      joinerJoinBlockTimeStamp: 12112,
       scoreCreator: "2323",
       scoreJoiner: "",
       winner: "0x213123123",
@@ -302,12 +264,12 @@ export const LobyHistoryItem = () => {
       creator: "0x213123123",
       joiner: "0xhsdgafkgds",
       joinerJoin: true,
-      joinerJoinBlockTimeStamp: 124312,
+      joinerJoinBlockTimeStamp: 12112,
       scoreCreator: "2323",
-      scoreJoiner: "",
+      scoreJoiner: "10",
       winner: "0x213123123",
       bet: "100",
-      claimed: false,
+      claimed: true,
       blockNumber: "100500",
       timestampBlock: 121221,
       creatorStartedGame: false,
@@ -322,6 +284,7 @@ export const LobyHistoryItem = () => {
           // <div key={i} style={{marginTop: '20px'}}>
           <LobbyListItem
             history
+            isEnoughYay={true}
             epoch={item.epoch}
             creator={item.creator}
             bet={item.bet}

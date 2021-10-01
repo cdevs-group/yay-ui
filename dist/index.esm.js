@@ -1161,7 +1161,11 @@ var AVATAR_PLAYER_2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAY
 
 var UNIT = "data:image/png;base64,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";
 
+var LOSE$1 = "data:image/png;base64,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";
+
 var YAY_TOKEN_GREEN = "data:image/png;base64,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";
+
+var WINNER_MIN = "data:image/png;base64,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";
 
 var WrapOpacity$1 = styled.div(templateObject_1$2c || (templateObject_1$2c = __makeTemplateObject(["\n  width: 308px;\n  opacity: ", ";\n  transition: 0.3s;\n  margin: 0 auto;\n  &:hover {\n    opacity: 1;\n    transition: 0.3s;\n  }\n  ", " {\n    width: 335px;\n  }\n"], ["\n  width: 308px;\n  opacity: ", ";\n  transition: 0.3s;\n  margin: 0 auto;\n  &:hover {\n    opacity: 1;\n    transition: 0.3s;\n  }\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
     var live = _a.live;
@@ -3288,6 +3292,7 @@ var baseColors = {
     greenGradient3: "linear-gradient(107.51deg, #9BE43E 26.63%, #39DB2C 73.7%)",
     greenRgba: "rgba(86, 239, 75, 0.5)",
     greeanRgba2: "rgba(75, 228, 62, 0.08)",
+    redRgba: "rgba(255, 97, 97, 0.15)",
     textGray2: "#9A9191",
     bgCard: "#404047",
     bgCard2: "#232323",
@@ -4485,7 +4490,7 @@ var BridgeStep2 = function (_a) {
                 React__default.createElement(TitleMob, null, texts.timer),
                 React__default.createElement(TimerNotSolidWithoutBg, { isLoad: isLoadTimeNetwork1, time: timer1 }),
                 React__default.createElement(TitleMob, { className: "last" }, texts.coast),
-                React__default.createElement(GasCoast, null, isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (React__default.createElement(LoaderWrap, null,
+                React__default.createElement(GasCoast, null, isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (React__default.createElement(LoaderWrap$1, null,
                     React__default.createElement(Loader$1, null))) : (React__default.createElement(React__default.Fragment, null,
                     React__default.createElement(Text, { size: "sm", paddingTop: "21px" }, gasPriceTextNetwork1 === null || gasPriceTextNetwork1 === void 0 ? void 0 : gasPriceTextNetwork1.value),
                     React__default.createElement(Text, { size: "xs", color: baseColors.textGray }, gasPriceTextNetwork1 === null || gasPriceTextNetwork1 === void 0 ? void 0 : gasPriceTextNetwork1.fiat))))),
@@ -4500,7 +4505,7 @@ var BridgeStep2 = function (_a) {
                 React__default.createElement(TitleMob, { fontWeight: "400" }, texts.timer),
                 React__default.createElement(TimerNotSolidWithoutBg, { isLoad: isLoadTimeNetwork2, time: timer2 }),
                 React__default.createElement(TitleMob, { fontWeight: "400", className: "last" }, texts.coast),
-                React__default.createElement(GasCoast, null, isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (React__default.createElement(LoaderWrap, null,
+                React__default.createElement(GasCoast, null, isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (React__default.createElement(LoaderWrap$1, null,
                     React__default.createElement(Loader$1, null))) : (React__default.createElement(React__default.Fragment, null,
                     React__default.createElement(Text, { size: "sm", paddingTop: "21px" }, gasPriceTextNetwork2 === null || gasPriceTextNetwork2 === void 0 ? void 0 : gasPriceTextNetwork2.value),
                     React__default.createElement(Text, { size: "xs", color: baseColors.textGray }, gasPriceTextNetwork2 === null || gasPriceTextNetwork2 === void 0 ? void 0 : gasPriceTextNetwork2.fiat))))))));
@@ -4578,21 +4583,21 @@ var GasCoast = styled.div(templateObject_16$1 || (templateObject_16$1 = __makeTe
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var LoaderWrap = styled.div(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  transform: scale(0.45);\n"], ["\n  transform: scale(0.45);\n"])));
-var TitleMob = styled(Text)(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: block;\n  font-size: 13px;\n  margin: 25px 0 20px;\n  &.last {\n    margin: 25px 0 0;\n  }\n  color: ", ";\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 13px;\n  margin: 25px 0 20px;\n  &.last {\n    margin: 25px 0 0;\n  }\n  color: ", ";\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
+var LoaderWrap$1 = styled.div(templateObject_17$1 || (templateObject_17$1 = __makeTemplateObject(["\n  transform: scale(0.45);\n"], ["\n  transform: scale(0.45);\n"])));
+var TitleMob = styled(Text)(templateObject_18$1 || (templateObject_18$1 = __makeTemplateObject(["\n  display: block;\n  font-size: 13px;\n  margin: 25px 0 20px;\n  &.last {\n    margin: 25px 0 0;\n  }\n  color: ", ";\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 13px;\n  margin: 25px 0 20px;\n  &.last {\n    margin: 25px 0 0;\n  }\n  color: ", ";\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TitleMobTop = styled(TitleMob)(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  margin: 0 0 10px;\n  font-size: 13px;\n"], ["\n  margin: 0 0 10px;\n  font-size: 13px;\n"])));
-var ProgressWrapper = styled.div(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  width: 173px;\n  ", " {\n    max-width: 173px;\n    width: 100%;\n  }\n"], ["\n  width: 173px;\n  ", " {\n    max-width: 173px;\n    width: 100%;\n  }\n"])), function (_a) {
+var TitleMobTop = styled(TitleMob)(templateObject_19$1 || (templateObject_19$1 = __makeTemplateObject(["\n  margin: 0 0 10px;\n  font-size: 13px;\n"], ["\n  margin: 0 0 10px;\n  font-size: 13px;\n"])));
+var ProgressWrapper = styled.div(templateObject_20$1 || (templateObject_20$1 = __makeTemplateObject(["\n  width: 173px;\n  ", " {\n    max-width: 173px;\n    width: 100%;\n  }\n"], ["\n  width: 173px;\n  ", " {\n    max-width: 173px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ButtonClose$2 = styled.button(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  border: none;\n  background: none;\n  top: 40px;\n  right: 25px;\n  cursor: pointer;\n  & svg {\n    position: absolute;\n    top: -8px;\n    left: -8px;\n  }\n"], ["\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  border: none;\n  background: none;\n  top: 40px;\n  right: 25px;\n  cursor: pointer;\n  & svg {\n    position: absolute;\n    top: -8px;\n    left: -8px;\n  }\n"])));
-var templateObject_1$1c, templateObject_2$$, templateObject_3$Q, templateObject_4$F, templateObject_5$v, templateObject_6$n, templateObject_7$c, templateObject_8$8, templateObject_9$5, templateObject_10$3, templateObject_11$2, templateObject_12$2, templateObject_13$2, templateObject_14$2, templateObject_15$1, templateObject_16$1, templateObject_17$1, templateObject_18, templateObject_19, templateObject_20, templateObject_21;
+var ButtonClose$2 = styled.button(templateObject_21$1 || (templateObject_21$1 = __makeTemplateObject(["\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  border: none;\n  background: none;\n  top: 40px;\n  right: 25px;\n  cursor: pointer;\n  & svg {\n    position: absolute;\n    top: -8px;\n    left: -8px;\n  }\n"], ["\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  position: absolute;\n  border: none;\n  background: none;\n  top: 40px;\n  right: 25px;\n  cursor: pointer;\n  & svg {\n    position: absolute;\n    top: -8px;\n    left: -8px;\n  }\n"])));
+var templateObject_1$1c, templateObject_2$$, templateObject_3$Q, templateObject_4$F, templateObject_5$v, templateObject_6$n, templateObject_7$c, templateObject_8$8, templateObject_9$5, templateObject_10$3, templateObject_11$2, templateObject_12$2, templateObject_13$2, templateObject_14$2, templateObject_15$1, templateObject_16$1, templateObject_17$1, templateObject_18$1, templateObject_19$1, templateObject_20$1, templateObject_21$1;
 
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
@@ -6997,16 +7002,12 @@ var BlurBlock = styled.div(templateObject_6$3 || (templateObject_6$3 = __makeTem
 var templateObject_1$i, templateObject_2$e, templateObject_3$a, templateObject_4$9, templateObject_5$6, templateObject_6$3;
 
 var LobbyListItem = function (_a) {
-    _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime; _a.status; var texts = _a.texts, handleButton = _a.handleButton;
-    // {
-    //   "epoch": 4,
-    //   "creator": "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-    //   "bet": "10000000000000000",
-    //   "startTime": null,
-    //   "status": "CREATED"
-    // },
+    _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime, claimed = _a.claimed; _a.status; var texts = _a.texts, handleButton = _a.handleButton, history = _a.history, yourScore = _a.yourScore, apponentScore = _a.apponentScore, winner = _a.winner, isLoad = _a.isLoad, lose = _a.lose, isEnoughYay = _a.isEnoughYay, propsButtonJoin = _a.propsButtonJoin;
+    console.log(history, !startTime, yourScore !== "");
     return (React__default.createElement(React__default.Fragment, null,
-        React__default.createElement(Wrapper$2, null,
+        startTime !== 0 && (React__default.createElement(TimerMob, { show: startTime !== undefined && startTime === 0 },
+            React__default.createElement(TimerNotSolidWithoutBg, { color: startTime && startTime === 0 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "100%", margin: "0 auto" }))),
+        React__default.createElement(Wrapper$2, { history: history && yourScore !== "" },
             React__default.createElement(Icons, null,
                 React__default.createElement(Icon1, null,
                     React__default.createElement("img", { src: AVATAR_PLAYER })),
@@ -7014,17 +7015,41 @@ var LobbyListItem = function (_a) {
                     React__default.createElement("img", { src: AVATAR_PLAYER_2 }))),
             React__default.createElement(Player, null,
                 React__default.createElement(TextTitle, null, texts.player),
-                React__default.createElement(TextStyle, null, ellipsis(creator))),
+                React__default.createElement(TextStyle, { mb: "5px" }, ellipsis(creator))),
             React__default.createElement(Bet, null,
                 React__default.createElement(TextTitle, null, texts.bet),
-                React__default.createElement(BetValue, null, bet)),
-            React__default.createElement(Time, null,
+                React__default.createElement(BetValue, { lose: lose }, bet)),
+            history && yourScore !== "" ? (React__default.createElement(React__default.Fragment, null,
+                React__default.createElement(ScroreBlock, null,
+                    React__default.createElement(TextTitle, null, texts.yourScore),
+                    React__default.createElement(TextStyle, null, yourScore)),
+                React__default.createElement(ScroreBlock, null,
+                    React__default.createElement(TextTitle, null, texts.opportunScore),
+                    React__default.createElement(TextStyle, null, apponentScore === "" ? "-" : apponentScore)))) : (React__default.createElement(Time, null,
                 React__default.createElement(TextTitle, null, texts.time),
-                React__default.createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: 0, widthWrapper: "186px" })),
-            React__default.createElement(ButtonStyle, { onClick: handleButton, variant: "green" },
-                React__default.createElement(TextButton, null, texts.join)))));
+                React__default.createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "186px" }))),
+            !history && isEnoughYay ? (React__default.createElement(ButtonStyle, __assign({ onClick: handleButton, variant: "green" }, propsButtonJoin),
+                React__default.createElement(TextButton, { style: { display: "block" } }, texts.join))) : (React__default.createElement(React__default.Fragment, null, isLoad ? (React__default.createElement(WaitingBlock, null,
+                React__default.createElement(TextStyle, null, texts.waitResult),
+                React__default.createElement(LoaderWrap, null,
+                    React__default.createElement(Loader$1, null)))) : (React__default.createElement(React__default.Fragment, null,
+                !isEnoughYay && (React__default.createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                    React__default.createElement(TextStyle, { color: baseColors.darkPink }, texts.notEnoughYAY))),
+                winner && (React__default.createElement(WinWrapper, null,
+                    React__default.createElement(ImgWrapper, { claimed: claimed },
+                        React__default.createElement("img", { src: WINNER_MIN })),
+                    !claimed ? (React__default.createElement(ButtonStyle, { onClick: handleButton, width: "100%", variant: "green" },
+                        React__default.createElement(TextButton, null, texts.winner),
+                        React__default.createElement(TextButtonMob, null, texts.winnerMob))) : (React__default.createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, texts.win)))),
+                !apponentScore && isEnoughYay && (React__default.createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                    React__default.createElement(TextStyle, null, texts.waitPlayer))),
+                lose && (React__default.createElement(LoseBlock, null,
+                    React__default.createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, texts.lose),
+                    React__default.createElement("img", { src: LOSE$1 }))),
+                yourScore === "" && (React__default.createElement(ButtonStyle, { variant: "green" },
+                    React__default.createElement(TextStyle, null, texts.play))))))))));
 };
-var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2.5fr 2fr 2.5fr;\n  gap: 0 20px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    grid-template-columns: 1.5fr 1fr 2fr 2.5fr;\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: 0.7fr 2fr 2fr 3.5fr 2.5fr;\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
+var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
     _a.theme;
     return lightColors.cardBg;
 }, function (_a) {
@@ -7034,8 +7059,14 @@ var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
+    var history = _a.history;
+    return (history ? " 1.5fr 1fr 1fr 1fr 2fr" : " 1.5fr 1fr 2fr 2fr");
+}, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
+}, function (_a) {
+    var history = _a.history;
+    return history ? " 0.7fr 2fr 2fr 1.7fr 1.7fr 2.5fr" : " 0.7fr 2fr 2fr 3.5fr 2.5fr";
 });
 var Icons = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -7046,7 +7077,7 @@ var Icon1 = styled.div(templateObject_3$9 || (templateObject_3$9 = __makeTemplat
     return lightColors.boxShadow3;
 });
 var Icon2 = styled(Icon1)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"], ["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"])));
-var Player = styled.div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject([""], [""])));
+var Player = styled(Flex)(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
 var TextTitle = styled(Text)(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
@@ -7056,56 +7087,78 @@ var Time = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplate
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  min-width: 120px;\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  & img {\n    position: absolute;\n    top: -40px;\n    right: -30px;\n    display: ", ";\n    pointer-events: none;\n    width: 90px;\n  }\n  ", " {\n    min-width: 210px;\n    & img {\n      width: auto;\n      right: -50px;\n      top: -65px;\n    }\n  }\n"], ["\n  min-width: 120px;\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  & img {\n    position: absolute;\n    top: -40px;\n    right: -30px;\n    display: ", ";\n    pointer-events: none;\n    width: 90px;\n  }\n  ", " {\n    min-width: 210px;\n    & img {\n      width: auto;\n      right: -50px;\n      top: -65px;\n    }\n  }\n"])), function (_a) {
-    var win = _a.win;
-    return (win ? "block" : "none");
+var WinWrapper = styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"], ["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"])));
+var ImgWrapper = styled.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"], ["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"])), function (_a) {
+    var claimed = _a.claimed;
+    return (claimed ? "block" : "none");
+}, function (_a) {
+    var claimed = _a.claimed;
+    return (claimed ? "relative" : "absolute");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var ButtonStyle = styled(Button$9)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"], ["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var TextStyle = styled(Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var BetValue = styled(TextStyle)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"])), function (_a) {
-    _a.theme;
-    return darkColors.gradients.greenGradient;
+    return theme.mediaQueries.md;
+}, function (_a) {
+    var claimed = _a.claimed;
+    return (claimed ? "block" : "none");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
-var TextButton = styled(Text)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
+var ButtonStyle = styled(Button$9)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"], ["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled(Text)(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
+var TextStyle = styled(Text)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled.div(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
+var BetValue = styled(TextStyle)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"])), function (_a) {
+    var lose = _a.lose, theme = _a.theme;
+    return (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient);
+}, function (_a) {
+    var lose = _a.lose, theme = _a.theme;
+    return (lose ? theme.colors.darkPink : theme.colors.green);
+});
+var TextButton = styled(Text)(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled.div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  width: 0;\n  margin-left: 0;\n  height: 40px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: 0;\n  height: 40px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
+var TextButtonMob = styled(Text)(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
-    var type = _a.type;
-    return (type ? "none" : "block");
+styled.div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var LoaderWrap = styled.div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var TimerMob = styled.div(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+    var show = _a.show;
+    return (show ? "none" : "block");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$8, templateObject_5$5, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17;
+var WaitingBlock = styled(Flex)(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"], ["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.textShadow3;
+});
+var ScroreBlock = styled(Bet)(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.md;
+});
+var LoseBlock = styled(Flex)(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  justify-content: center;\n  align-items: center;\n"], ["\n  justify-content: center;\n  align-items: center;\n"])));
+var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$8, templateObject_5$5, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21;
 
 var LobbyList = function (_a) {
     var data = _a.data, texts = _a.texts, handleButton = _a.handleButton;
-    return (React__default.createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default.createElement(LobbyListItem, { epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts })); })));
+    return (React__default.createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default.createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts })); })));
 };
 var Wrapper$1 = styled.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  max-width: 986px;\n"], ["\n  max-width: 986px;\n"])));
 var templateObject_1$g;
