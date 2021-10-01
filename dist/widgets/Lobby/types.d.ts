@@ -38,6 +38,7 @@ export interface LobbyListItemProps {
     epoch: number | string;
     creator: string;
     joiner?: string;
+    joinerJoin?: boolean;
     bet: number | bigint | string;
     startTime: number;
     status?: string;
