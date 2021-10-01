@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Text } from "../../components/Text";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { AvalancheIcon, BnbIcon, CloseIcon } from "../../components/Svg";
-import { Metamask } from "../../constants/images";
-import { BridgeStep2Props } from "./types";
+import { GhostsIcon, Metamask } from "../../constants/images";
+import { BridgeStep2Props, NoticeBridgeType } from "./types";
 import ProgressSteps from "../../components/Progress/ProgressSteps";
 import ProgressRange from "../../components/Progress/ProgressRange";
 import { Loader } from "../../components/Loader";
 import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
+import { Button } from "../../components/Button";
 
 const BridgeStep2 = ({
   onDismiss,
@@ -34,149 +35,254 @@ const BridgeStep2 = ({
   stepsText,
   isLoadTimeNetwork1,
   isLoadTimeNetwork2,
+  noticeVisible,
+  noticeImg,
+  noticeType,
+  noticeTitle,
+  noticeText,
+  noticeButton1Text,
+  noticeButton2Text,
+  noticeButton1Props,
+  noticeButton2Props,
 }: BridgeStep2Props) => {
   return (
-    <Wrapper>
-      <Title size="lg">{texts.title}</Title>
-      <ButtonClose onClick={onDismiss}>
-        <CloseIcon />
-      </ButtonClose>
-      <TopLineBlock>
-        <TokenBlock>
-          <TopLineTitle fontWeight="400" textAlign="left">
-            {texts.token}
-          </TopLineTitle>
-          <Token>
-            {TokenIcon || (
-              <>
-                <TokenImg>
-                  <YAYIcon />
-                </TokenImg>
-                <Text>YAY</Text>
-              </>
-            )}
-          </Token>
-        </TokenBlock>
-        <AmountTransfer>
-          <TopLineTitle fontWeight="400" className="middle">
-            {texts.amount}
-          </TopLineTitle>
-          <TokenValue>{transferredValue.token}</TokenValue>
-          <ApproximatelyPrice>{transferredValue.fiat}</ApproximatelyPrice>
-        </AmountTransfer>
-        <TokenBlock>
-          <TopLineTitle fontWeight="400" textAlign="right">
-            {texts.addToken}
-          </TopLineTitle>
-          <MetamaskAdd onClick={addTokenHandler} as="button">
-            <TokenImg className="last">{WalletIcon || <img src={Metamask} />}</TokenImg>
-          </MetamaskAdd>
-        </TokenBlock>
-      </TopLineBlock>
-      <BodyBlock>
-        <HeadLine>
-          <Text size="sm" fontWeight="400" color={baseColors.textGray}>
-            {texts.network}
-          </Text>
-          <div></div>
-          <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
-            {texts.timer}
-          </Text>
-          <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
-            {texts.coast}
-          </Text>
-        </HeadLine>
-        <ProgressBlock>
-          <TitleMobTop>{texts.network}</TitleMobTop>
-          <Token className="main">
-            {BlockChainFrom || (
-              <>
-                <BnbIcon />
-                <Text marginLeft="10px">{texts.bsc}</Text>
-              </>
-            )}
-          </Token>
-          <Progress>
-            <ProgressWrapper>
-              <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
-            </ProgressWrapper>
-          </Progress>
-          <TitleMob>{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork1} time={timer1} />
-          <TitleMob className="last">{texts.coast}</TitleMob>
-          <GasCoast>
-            {isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (
-              <LoaderWrap>
-                <Loader />
-              </LoaderWrap>
-            ) : (
-              <>
-                <Text size="sm" paddingTop="21px">
-                  {gasPriceTextNetwork1?.value}
-                </Text>
-                <Text size="xs" color={baseColors.textGray}>
-                  {gasPriceTextNetwork1?.fiat}
-                </Text>
-              </>
-            )}
-          </GasCoast>
-        </ProgressBlock>
-        <ProgressBlock>
-          <TitleMobTop fontWeight="400">{texts.network}</TitleMobTop>
-          <Token className="main">
-            {BlockChainTo || (
-              <>
-                <AvalancheIcon />
-                <Text marginLeft="10px">{texts.avalanche}</Text>
-              </>
-            )}
-          </Token>
-          <Progress>
-            <ProgressWrapper>
-              <ProgressRange progress={progress2} texts={textsProgress2} />
-            </ProgressWrapper>
-          </Progress>
-          <TitleMob fontWeight="400">{texts.timer}</TitleMob>
-          <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
-          <TitleMob fontWeight="400" className="last">
-            {texts.coast}
-          </TitleMob>
-          <GasCoast>
-            {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
-              <LoaderWrap>
-                <Loader />
-              </LoaderWrap>
-            ) : (
-              <>
-                <Text size="sm" paddingTop="21px">
-                  {gasPriceTextNetwork2?.value}
-                </Text>
-                <Text size="xs" color={baseColors.textGray}>
-                  {gasPriceTextNetwork2?.fiat}
-                </Text>
-              </>
-            )}
-          </GasCoast>
-        </ProgressBlock>
-      </BodyBlock>
-    </Wrapper>
+    <Content>
+      <Wrapper blur={noticeVisible}>
+        <Title size="lg">{texts.title}</Title>
+        <ButtonClose onClick={onDismiss}>
+          <CloseIcon />
+        </ButtonClose>
+        <TopLineBlock>
+          <TokenBlock>
+            <TopLineTitle fontWeight="400" textAlign="left">
+              {texts.token}
+            </TopLineTitle>
+            <Token>
+              {TokenIcon || (
+                <>
+                  <TokenImg>
+                    <YAYIcon />
+                  </TokenImg>
+                  <Text>YAY</Text>
+                </>
+              )}
+            </Token>
+          </TokenBlock>
+          <AmountTransfer>
+            <TopLineTitle fontWeight="400" className="middle">
+              {texts.amount}
+            </TopLineTitle>
+            <TokenValue>{transferredValue.token}</TokenValue>
+            <ApproximatelyPrice>{transferredValue.fiat}</ApproximatelyPrice>
+          </AmountTransfer>
+          <TokenBlock>
+            <TopLineTitle fontWeight="400" textAlign="right">
+              {texts.addToken}
+            </TopLineTitle>
+            <MetamaskAdd onClick={addTokenHandler} as="button">
+              <TokenImg className="last">{WalletIcon || <img src={Metamask} />}</TokenImg>
+            </MetamaskAdd>
+          </TokenBlock>
+        </TopLineBlock>
+        <BodyBlock>
+          <HeadLine>
+            <Text size="sm" fontWeight="400" color={baseColors.textGray}>
+              {texts.network}
+            </Text>
+            <div></div>
+            <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+              {texts.timer}
+            </Text>
+            <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+              {texts.coast}
+            </Text>
+          </HeadLine>
+          <ProgressBlock>
+            <TitleMobTop>{texts.network}</TitleMobTop>
+            <Token className="main">
+              {BlockChainFrom || (
+                <>
+                  <BnbIcon />
+                  <Text marginLeft="10px">{texts.bsc}</Text>
+                </>
+              )}
+            </Token>
+            <Progress>
+              <ProgressWrapper>
+                <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
+              </ProgressWrapper>
+            </Progress>
+            <TitleMob>{texts.timer}</TitleMob>
+            <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork1} time={timer1} />
+            <TitleMob className="last">{texts.coast}</TitleMob>
+            <GasCoast>
+              {isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (
+                <LoaderWrap>
+                  <Loader />
+                </LoaderWrap>
+              ) : (
+                <>
+                  <Text size="sm" paddingTop="21px">
+                    {gasPriceTextNetwork1?.value}
+                  </Text>
+                  <Text size="xs" color={baseColors.textGray}>
+                    {gasPriceTextNetwork1?.fiat}
+                  </Text>
+                </>
+              )}
+            </GasCoast>
+          </ProgressBlock>
+          <ProgressBlock>
+            <TitleMobTop fontWeight="400">{texts.network}</TitleMobTop>
+            <Token className="main">
+              {BlockChainTo || (
+                <>
+                  <AvalancheIcon />
+                  <Text marginLeft="10px">{texts.avalanche}</Text>
+                </>
+              )}
+            </Token>
+            <Progress>
+              <ProgressWrapper>
+                <ProgressRange progress={progress2} texts={textsProgress2} />
+              </ProgressWrapper>
+            </Progress>
+            <TitleMob fontWeight="400">{texts.timer}</TitleMob>
+            <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
+            <TitleMob fontWeight="400" className="last">
+              {texts.coast}
+            </TitleMob>
+            <GasCoast>
+              {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
+                <LoaderWrap>
+                  <Loader />
+                </LoaderWrap>
+              ) : (
+                <>
+                  <Text size="sm" paddingTop="21px">
+                    {gasPriceTextNetwork2?.value}
+                  </Text>
+                  <Text size="xs" color={baseColors.textGray}>
+                    {gasPriceTextNetwork2?.fiat}
+                  </Text>
+                </>
+              )}
+            </GasCoast>
+          </ProgressBlock>
+        </BodyBlock>
+      </Wrapper>
+      {noticeVisible && (
+        <>
+          <Notice>
+            {noticeImg || <img src={GhostsIcon} alt="" style={{ display: "block", margin: "0 auto 13px" }} />}
+            <Text
+              textAlign="center"
+              fontSize="26px"
+              letterSpacing="0.5px"
+              mb="10px"
+              color={getBgNotice(noticeType)?.color}
+            >
+              {noticeTitle}
+            </Text>
+            <Text fontSize="18px" letterSpacing="0.5px" mb="17px" textAlign="center">
+              {noticeText}
+            </Text>
+            <Button variant="green" maxWidth="362px" width="100%" mb="14px" {...noticeButton1Props}>
+              {noticeButton1Text}
+            </Button>
+            <Button variant="gray" maxWidth="362px" width="100%" {...noticeButton2Props}>
+              {noticeButton2Text}
+            </Button>
+          </Notice>
+          <Border noticeType={noticeType} />
+        </>
+      )}
+    </Content>
   );
 };
 
 export default BridgeStep2;
 
+const getBgNotice = (type: any) => {
+  switch (type) {
+    case NoticeBridgeType.SUCCESS:
+      return {
+        color: "green",
+        bg: `
+      radial-gradient(98% 49.86% at 100.03% 100%, #4BE43E 0%, rgba(75, 228, 62, 0.05) 100%),
+      radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
+      radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+      `,
+      };
+    case NoticeBridgeType.ERROR:
+      return {
+        color: "redBg",
+        bg: `
+      radial-gradient(98% 49.86% at 100.03% 100%, #F03A00 0%, rgba(240, 58, 0, 0.05) 100%),
+      radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
+      radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+      `,
+      };
+    default:
+      return { color: "green", bg: "none" };
+  }
+};
+
+const Content = styled.div`
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  border-radius: 10px;
+`;
+const Border = styled.div<{ noticeType?: NoticeBridgeType }>`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1px;
+  background: ${({ noticeType }) => getBgNotice(noticeType)?.bg};
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  border-radius: 10px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: ${({ theme }) => theme.colors.dark};
+    border-radius: inherit;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    display: block;
+  }
+`;
+const Notice = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 50px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Title = styled(Text)`
   letter-spacing: 0.5px;
 `;
-const Wrapper = styled.div`
+
+const Wrapper = styled.div<{ blur?: boolean }>`
   position: relative;
-  margin: 0 auto;
   overflow: hidden;
-  max-width: 650px;
   padding: 33px 14px 12px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.dark};
   border-radius: 10px;
+  filter: ${({ blur }) => (blur ? `blur(5px)` : "none")};
+  z-index: 1;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 33px 23px;
   } ;

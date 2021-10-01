@@ -9,6 +9,7 @@ import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { BridgeProof } from "./index";
 import { Metamask } from "../../constants/images";
+import { NoticeBridgeType } from "./types";
 
 export default {
   title: "Widgets/Bridge",
@@ -143,6 +144,13 @@ export const BridgeStep2Block = () => {
           isLoadTimeNetwork1
           isLoadGasNetwork1
           isLoadTimeNetwork2
+          noticeVisible
+          noticeType={NoticeBridgeType.ERROR}
+          noticeTitle="Something went wrong"
+          noticeText={<>Your request was successfully completed. Check details here</>}
+          noticeButton1Text="Try again"
+          noticeButton2Text="Go to marketplace"
+          noticeButton1Props={{ spin: true, onClick: () => console.log("Click") }}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
