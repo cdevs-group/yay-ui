@@ -1127,7 +1127,7 @@ function MyTimer$3(_a) {
             i === 2 ? null : React__default['default'].createElement(Dots$1, null, ":"))); }))));
 }
 [React__default['default'].createElement(Icon$v, { spin: true, fill: "none" }), React__default['default'].createElement(Icon$v, { spin: true, fill: "none" }), React__default['default'].createElement(Icon$v, { spin: true, fill: "none" })];
-var Timer$2 = function (_a) {
+var Timer$3 = function (_a) {
     var time = _a.time, color = _a.color; _a.isLoad; var disabled = _a.disabled;
     return (React__default['default'].createElement("div", null,
         React__default['default'].createElement(MyTimer$3, { expiryTimestamp: time || 0, color: color || "text", disabled: disabled })));
@@ -1289,7 +1289,7 @@ var StyledCard = function (_a) {
         React__default['default'].createElement(Wrap$w, null,
             React__default['default'].createElement(TopContent$4, null,
                 React__default['default'].createElement(LeftContent$3, null, leftContent),
-                React__default['default'].createElement(Timer$2, { time: time, color: "#fff", disabled: disabledTimer }),
+                React__default['default'].createElement(Timer$3, { time: time, color: "#fff", disabled: disabledTimer }),
                 React__default['default'].createElement(RightContent$4, null, rightContent)),
             React__default['default'].createElement(Content$5, null,
                 React__default['default'].createElement(UpContent$1, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone },
@@ -1949,7 +1949,7 @@ var CardNext$1 = function (_a) {
     var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, texts = _a.texts;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(TopContent$3, { rightContent: roundEpoch },
-            React__default['default'].createElement(Timer$2, { color: "white", time: time, disabled: disabledTimer })),
+            React__default['default'].createElement(Timer$3, { color: "white", time: time, disabled: disabledTimer })),
         React__default['default'].createElement(WrapContent$1, null,
             React__default['default'].createElement(ValueRow, { texts: { payout: texts === null || texts === void 0 ? void 0 : texts.payout, vectorText: texts === null || texts === void 0 ? void 0 : texts.up }, vector: "UP", value: payoutWin }),
             React__default['default'].createElement(ButtonsBlockWrap$2, null,
@@ -2509,7 +2509,7 @@ var TitleBlock = function (_a) {
             React__default['default'].createElement("div", null,
                 React__default['default'].createElement(Title$d, null, title),
                 React__default['default'].createElement(Subtitle, null, subtitle),
-                React__default['default'].createElement(Timer$1, null, children))),
+                React__default['default'].createElement(Timer$2, null, children))),
         React__default['default'].createElement(VisibleTimer, { childrenVisibleModile: childrenVisibleModile }, children)));
 };
 var Block$a = styled__default['default'].div(templateObject_1$1H || (templateObject_1$1H = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
@@ -2552,7 +2552,7 @@ var Subtitle = styled__default['default'].span(templateObject_4$W || (templateOb
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-var Timer$1 = styled__default['default'].div(templateObject_5$G || (templateObject_5$G = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
+var Timer$2 = styled__default['default'].div(templateObject_5$G || (templateObject_5$G = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -2714,7 +2714,7 @@ var StyledCardBTC = function (_a) {
         React__default['default'].createElement(Wrap$l, null,
             React__default['default'].createElement(TopContent$2, null,
                 React__default['default'].createElement(LeftContent$1, null, leftContent),
-                React__default['default'].createElement(Timer$2, { time: time, color: "#fff", disabled: disabledTimer }),
+                React__default['default'].createElement(Timer$3, { time: time, color: "#fff", disabled: disabledTimer }),
                 React__default['default'].createElement(RightContent$2, null, rightContent)),
             React__default['default'].createElement(Content$3, null,
                 React__default['default'].createElement(UpContent, { negative: negative, showUp: showBtnWinnings, colorNone: colorNone, displayNone: displayNone }, btcWon ? (React__default['default'].createElement(WonBlcok, null,
@@ -2954,7 +2954,7 @@ var CardNext = function (_a) {
     var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, textRow = _a.textRow, textsButtons = _a.textsButtons, ethButton = _a.ethButton, btcButton = _a.btcButton;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(TopContent$3, { rightContent: roundEpoch },
-            React__default['default'].createElement(Timer$2, { color: "white", time: time, disabled: disabledTimer })),
+            React__default['default'].createElement(Timer$3, { color: "white", time: time, disabled: disabledTimer })),
         React__default['default'].createElement(WrapContent, null,
             React__default['default'].createElement(ValueRow, { texts: textRow, vector: "BTC", value: payoutWin }),
             React__default['default'].createElement(ButtonsBlockWrap, null,
@@ -3426,7 +3426,7 @@ var ProgressAVAX = function (_a) {
         React__default['default'].createElement(BlocksAndTimer, null,
             React__default['default'].createElement(Block$9, null,
                 React__default['default'].createElement(Text, { size: "xs" }, blockFrom)),
-            React__default['default'].createElement(Timer, null,
+            React__default['default'].createElement(Timer$1, null,
                 React__default['default'].createElement("p", null, "\u2248"),
                 React__default['default'].createElement(TimerNotSolid, { isLoad: isLoad, time: time, avax: true })),
             React__default['default'].createElement(Block$9, null,
@@ -3455,7 +3455,7 @@ var UnderProgress = styled__default['default'].div(templateObject_2$16 || (templ
     return (open ? 0 : 1);
 });
 var BlocksAndTimer = styled__default['default'].div(templateObject_3$V || (templateObject_3$V = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 13px;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 13px;\n"])));
-var Timer = styled__default['default'].div(templateObject_4$J || (templateObject_4$J = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"])), function (_a) {
+var Timer$1 = styled__default['default'].div(templateObject_4$J || (templateObject_4$J = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  font-size: 11px;\n  line-height: 14px;\n  align-items: center;\n  letter-spacing: 0.05em;\n  color: ", ";\n  & p {\n    width: auto;\n    margin: 0 5px 0 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -7031,54 +7031,18 @@ var BlurBlock = styled__default['default'].div(templateObject_6$3 || (templateOb
 }, "-moz-element(#LobbyNav)");
 var templateObject_1$i, templateObject_2$e, templateObject_3$a, templateObject_4$9, templateObject_5$6, templateObject_6$3;
 
-var LobbyListItem = function (_a) {
-    _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime, claimed = _a.claimed; _a.status; var texts = _a.texts, handleButton = _a.handleButton, history = _a.history, yourScore = _a.yourScore, apponentScore = _a.apponentScore, winner = _a.winner, isLoad = _a.isLoad, lose = _a.lose, isEnoughYay = _a.isEnoughYay, propsButtonJoin = _a.propsButtonJoin;
-    console.log(history, !startTime, yourScore !== "");
-    return (React__default['default'].createElement(React__default['default'].Fragment, null,
-        startTime !== 0 && (React__default['default'].createElement(TimerMob, { show: startTime !== undefined && startTime === 0 },
-            React__default['default'].createElement(TimerNotSolidWithoutBg, { color: startTime && startTime === 0 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "100%", margin: "0 auto" }))),
-        React__default['default'].createElement(Wrapper$2, { history: history && yourScore !== "" },
-            React__default['default'].createElement(Icons, null,
-                React__default['default'].createElement(Icon1, null,
-                    React__default['default'].createElement("img", { src: AVATAR_PLAYER })),
-                React__default['default'].createElement(Icon2, null,
-                    React__default['default'].createElement("img", { src: AVATAR_PLAYER_2 }))),
-            React__default['default'].createElement(Player, null,
-                React__default['default'].createElement(TextTitle, null, texts.player),
-                React__default['default'].createElement(TextStyle, { mb: "5px" }, ellipsis(creator))),
-            React__default['default'].createElement(Bet, null,
-                React__default['default'].createElement(TextTitle, null, texts.bet),
-                React__default['default'].createElement(BetValue, { lose: lose }, bet)),
-            history && yourScore !== "" ? (React__default['default'].createElement(React__default['default'].Fragment, null,
-                React__default['default'].createElement(ScroreBlock, null,
-                    React__default['default'].createElement(TextTitle, null, texts.yourScore),
-                    React__default['default'].createElement(TextStyle, null, yourScore)),
-                React__default['default'].createElement(ScroreBlock, null,
-                    React__default['default'].createElement(TextTitle, null, texts.opportunScore),
-                    React__default['default'].createElement(TextStyle, null, apponentScore === "" ? "-" : apponentScore)))) : (React__default['default'].createElement(Time, null,
-                React__default['default'].createElement(TextTitle, null, texts.time),
-                React__default['default'].createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "186px" }))),
-            !history && isEnoughYay ? (React__default['default'].createElement(ButtonStyle, __assign({ onClick: handleButton, variant: "green" }, propsButtonJoin),
-                React__default['default'].createElement(TextButton, { style: { display: "block" } }, texts.join))) : (React__default['default'].createElement(React__default['default'].Fragment, null, isLoad ? (React__default['default'].createElement(WaitingBlock, null,
-                React__default['default'].createElement(TextStyle, null, texts.waitResult),
-                React__default['default'].createElement(LoaderWrap, null,
-                    React__default['default'].createElement(Loader$1, null)))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
-                !isEnoughYay && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
-                    React__default['default'].createElement(TextStyle, { color: baseColors.darkPink }, texts.notEnoughYAY))),
-                winner && (React__default['default'].createElement(WinWrapper, null,
-                    React__default['default'].createElement(ImgWrapper, { claimed: claimed },
-                        React__default['default'].createElement("img", { src: WINNER_MIN })),
-                    !claimed ? (React__default['default'].createElement(ButtonStyle, { onClick: handleButton, width: "100%", variant: "green" },
-                        React__default['default'].createElement(TextButton, null, texts.winner),
-                        React__default['default'].createElement(TextButtonMob, null, texts.winnerMob))) : (React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, texts.win)))),
-                !apponentScore && isEnoughYay && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
-                    React__default['default'].createElement(TextStyle, null, texts.waitPlayer))),
-                lose && (React__default['default'].createElement(LoseBlock, null,
-                    React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, texts.lose),
-                    React__default['default'].createElement("img", { src: LOSE$1 }))),
-                yourScore === "" && (React__default['default'].createElement(ButtonStyle, { variant: "green" },
-                    React__default['default'].createElement(TextStyle, null, texts.play))))))))));
-};
+var Status;
+(function (Status) {
+    Status["JOIN"] = "join";
+    Status["WAITINGJOIN"] = "waitingJoin";
+    Status["PLAY"] = "play";
+    Status["ENOUGH"] = "enough";
+    Status["WAITINGOPPONENT"] = "waitingOpponent";
+    Status["LOSE"] = "lose";
+    Status["WIN"] = "win";
+    Status["COLLECT"] = "collect";
+})(Status || (Status = {}));
+
 var Wrapper$2 = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
     _a.theme;
     return lightColors.cardBg;
@@ -7098,27 +7062,17 @@ var Wrapper$2 = styled__default['default'].div(templateObject_1$h || (templateOb
     var history = _a.history;
     return history ? " 0.7fr 2fr 2fr 1.7fr 1.7fr 2.5fr" : " 0.7fr 2fr 2fr 3.5fr 2.5fr";
 });
-var Icons = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.lg;
-});
-var Icon1 = styled__default['default'].div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  position: absolute;\n  left: 0;\n  top: 0;\n  box-shadow: ", ";\n  border-radius: 9px;\n"], ["\n  position: absolute;\n  left: 0;\n  top: 0;\n  box-shadow: ", ";\n  border-radius: 9px;\n"])), function (_a) {
-    _a.theme;
-    return lightColors.boxShadow3;
-});
-var Icon2 = styled__default['default'](Icon1)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"], ["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"])));
-var Player = styled__default['default'](Flex)(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
-var TextTitle = styled__default['default'](Text)(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"])), function (_a) {
+var TextTitle = styled__default['default'](Text)(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var Bet = styled__default['default'].div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject([""], [""])));
-var Time = styled__default['default'].div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
+var BetWrap = styled__default['default'].div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject([""], [""])));
+var Time = styled__default['default'].div(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var WinWrapper = styled__default['default'].div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"], ["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"])));
-var ImgWrapper = styled__default['default'].div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"], ["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"])), function (_a) {
+var WinWrapper = styled__default['default'].div(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"], ["\n  width: 100%;\n  position: relative;\n  justify-self: end;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row-reverse;\n"])));
+var ImgWrapper = styled__default['default'].div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"], ["\n  display: ", ";\n  position: ", ";\n  right: -10px;\n  z-index: 2;\n  ", " {\n    display: block;\n  }\n  &:after {\n    display: ", ";\n    width: 60%;\n    height: 60%;\n    top: 15px;\n    left: 11px;\n    content: \"\";\n    position: absolute;\n    background: ", ";\n    border-radius: 7px;\n    z-index: -1;\n  }\n"])), function (_a) {
     var claimed = _a.claimed;
     return (claimed ? "block" : "none");
 }, function (_a) {
@@ -7134,61 +7088,166 @@ var ImgWrapper = styled__default['default'].div(templateObject_10 || (templateOb
     var theme = _a.theme;
     return theme.colors.green;
 });
-var ButtonStyle = styled__default['default'](Button$9)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"], ["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"])), function (_a) {
+var ButtonStyle = styled__default['default'](Button$9)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"], ["\n  padding: 8px;\n  height: 30px;\n  width: 100%;\n  ", " {\n    padding: 16px;\n    height: 50px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextStyle = styled__default['default'](Text)(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
+var TextStyle = styled__default['default'](Text)(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BetValue = styled__default['default'](TextStyle)(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"])), function (_a) {
+var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"])), function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient);
 }, function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.darkPink : theme.colors.green);
 });
-var TextButton = styled__default['default'](Text)(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
+var TextButton = styled__default['default'](Text)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextButtonMob = styled__default['default'](Text)(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
+var TextButtonMob = styled__default['default'](Text)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled__default['default'].div(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
+styled__default['default'].div(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var LoaderWrap = styled__default['default'].div(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
+var LoaderWrap = styled__default['default'].div(templateObject_13 || (templateObject_13 = __makeTemplateObject(["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TimerMob = styled__default['default'].div(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var TimerMob = styled__default['default'].div(templateObject_14 || (templateObject_14 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  display: ", ";\n  margin: 0 auto 7px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? "none" : "block");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var WaitingBlock = styled__default['default'](Flex)(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"], ["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"])), function (_a) {
+var WaitingBlock = styled__default['default'](Flex)(templateObject_15 || (templateObject_15 = __makeTemplateObject(["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"], ["\n  flex-direction: column-reverse;\n  align-items: center;\n  ", " {\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-top: 10px;\n    font-weight: normal;\n    text-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textShadow3;
 });
-var ScroreBlock = styled__default['default'](Bet)(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
+var ScroreBlock = styled__default['default'](BetWrap)(templateObject_16 || (templateObject_16 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var LoseBlock = styled__default['default'](Flex)(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  justify-content: center;\n  align-items: center;\n"], ["\n  justify-content: center;\n  align-items: center;\n"])));
+var LoseBlock = styled__default['default'](Flex)(templateObject_17 || (templateObject_17 = __makeTemplateObject(["\n  justify-content: center;\n  align-items: center;\n"], ["\n  justify-content: center;\n  align-items: center;\n"])));
+var Icons = styled__default['default'].div(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  width: 48px;\n  height: 48px;\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.lg;
+});
+var Icon1 = styled__default['default'].div(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  position: absolute;\n  left: 0;\n  top: 0;\n  box-shadow: ", ";\n  border-radius: 9px;\n"], ["\n  position: absolute;\n  left: 0;\n  top: 0;\n  box-shadow: ", ";\n  border-radius: 9px;\n"])), function (_a) {
+    _a.theme;
+    return lightColors.boxShadow3;
+});
+var Icon2 = styled__default['default'](Icon1)(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"], ["\n  left: auto;\n  bottom: 0;\n  top: auto;\n  right: 0;\n"])));
+var PlayerWrap = styled__default['default'](Flex)(templateObject_21 || (templateObject_21 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
 var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4$8, templateObject_5$5, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21;
 
+var Bet = function (_a) {
+    var title = _a.title, red = _a.red, bet = _a.bet;
+    return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        React__default['default'].createElement(BetWrap, null,
+            React__default['default'].createElement(TextTitle, null, title),
+            React__default['default'].createElement(BetValue, { lose: red }, bet))));
+};
+
+var Collect = function (_a) {
+    var title = _a.title, titleMob = _a.titleMob, handleButton = _a.handleButton, propsButton = _a.propsButton;
+    return (React__default['default'].createElement(WinWrapper, null,
+        React__default['default'].createElement(ImgWrapper, { claimed: false },
+            React__default['default'].createElement("img", { src: WINNER_MIN })),
+        React__default['default'].createElement(ButtonStyle, __assign({ onClick: handleButton }, propsButton, { width: "100%", variant: "green" }),
+            React__default['default'].createElement(TextButton, null, title),
+            React__default['default'].createElement(TextButtonMob, null, titleMob))));
+};
+
+var Lose = function (_a) {
+    var title = _a.title;
+    return (React__default['default'].createElement(LoseBlock, null,
+        React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, title),
+        React__default['default'].createElement("img", { src: LOSE$1 })));
+};
+
+var Player = function (_a) {
+    var title = _a.title, gamer = _a.gamer;
+    return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        React__default['default'].createElement(Icons, null,
+            React__default['default'].createElement(Icon1, null,
+                React__default['default'].createElement("img", { src: AVATAR_PLAYER })),
+            React__default['default'].createElement(Icon2, null,
+                React__default['default'].createElement("img", { src: AVATAR_PLAYER_2 }))),
+        React__default['default'].createElement(PlayerWrap, null,
+            React__default['default'].createElement(TextTitle, null, title),
+            React__default['default'].createElement(TextStyle, { mb: "5px" }, ellipsis(gamer)))));
+};
+
+var Scores = function (_a) {
+    var titleYou = _a.titleYou, titleOpponent = _a.titleOpponent, yourScore = _a.yourScore, opponentScore = _a.opponentScore;
+    return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        React__default['default'].createElement(ScroreBlock, null,
+            React__default['default'].createElement(TextTitle, null, titleYou),
+            React__default['default'].createElement(TextStyle, null, yourScore)),
+        React__default['default'].createElement(ScroreBlock, null,
+            React__default['default'].createElement(TextTitle, null, titleOpponent),
+            React__default['default'].createElement(TextStyle, null, opponentScore))));
+};
+
+var Timer = function (_a) {
+    var title = _a.title, color = _a.color, time = _a.time;
+    return (React__default['default'].createElement(Time, null,
+        React__default['default'].createElement(TextTitle, null, title),
+        React__default['default'].createElement(TimerNotSolidWithoutBg, { color: color, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: time, widthWrapper: "186px" })));
+};
+
+var WaitingOpponent = function (_a) {
+    var title = _a.title;
+    return (React__default['default'].createElement(WaitingBlock, null,
+        React__default['default'].createElement(TextStyle, null, title),
+        React__default['default'].createElement(LoaderWrap, null,
+            React__default['default'].createElement(Loader$1, null))));
+};
+
+var Win = function (_a) {
+    var title = _a.title;
+    return (React__default['default'].createElement(WinWrapper, null,
+        React__default['default'].createElement(ImgWrapper, { claimed: true },
+            React__default['default'].createElement("img", { src: WINNER_MIN })),
+        React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, title)));
+};
+
+var LobbyListItem = function (_a) {
+    _a.epoch; var creator = _a.creator; _a.open; var bet = _a.bet, startTime = _a.startTime; _a.claimed; var status = _a.status, texts = _a.texts, handleButton = _a.handleButton; _a.history; var yourScore = _a.yourScore, opponentScore = _a.opponentScore; _a.winner; _a.isLoad; _a.lose; _a.isEnoughYay; var propsButton = _a.propsButton;
+    return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        React__default['default'].createElement(TimerMob, { show: ![Status.PLAY].find(function (el) { return el === status; }) },
+            React__default['default'].createElement(TimerNotSolidWithoutBg, { color: lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime, widthWrapper: "100%", margin: "0 auto" })),
+        React__default['default'].createElement(Wrapper$2, { history: !![Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.LOSE].find(function (el) { return el === status; }) },
+            React__default['default'].createElement(Player, { title: texts.player, gamer: creator }),
+            React__default['default'].createElement(Bet, { title: texts.bet, red: status === Status.LOSE, bet: bet }),
+            [Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.LOSE].find(function (el) { return el === status; }) ? (React__default['default'].createElement(Scores, { titleYou: texts.yourScore, titleOpponent: texts.opportunScore, yourScore: yourScore, opponentScore: opponentScore })) : (React__default['default'].createElement(Timer, { title: texts.time, color: ![Status.PLAY].find(function (el) { return el === status; }) ? baseColors.whiteRgba2 : lightColors.text, time: startTime })),
+            status === Status.PLAY && (React__default['default'].createElement(ButtonStyle, __assign({ variant: "green", onClick: handleButton }, propsButton),
+                React__default['default'].createElement(TextStyle, null, texts.play))),
+            status === Status.WAITINGJOIN && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                React__default['default'].createElement(TextStyle, null, texts.waitPlayer))),
+            status === Status.JOIN && (React__default['default'].createElement(ButtonStyle, __assign({ onClick: handleButton, variant: "green" }, propsButton),
+                React__default['default'].createElement(TextButton, { style: { display: "block" } }, texts.join))),
+            status === Status.ENOUGH && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                React__default['default'].createElement(TextStyle, { color: baseColors.darkPink }, texts.notEnoughYAY))),
+            status === Status.COLLECT && (React__default['default'].createElement(Collect, { title: texts.winner, titleMob: texts.winnerMob, handleButton: handleButton, propsButton: propsButton })),
+            status === Status.WAITINGOPPONENT && React__default['default'].createElement(WaitingOpponent, { title: texts.waitResult }),
+            status === Status.WIN && React__default['default'].createElement(Win, { title: texts.win }),
+            status === Status.LOSE && React__default['default'].createElement(Lose, { title: texts.lose }))));
+};
+
 var LobbyList = function (_a) {
-    var data = _a.data, texts = _a.texts, handleButton = _a.handleButton;
-    return (React__default['default'].createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default['default'].createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts })); })));
+    var data = _a.data, texts = _a.texts, handleButton = _a.handleButton, open = _a.open;
+    return (React__default['default'].createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default['default'].createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts, open: open })); })));
 };
 var Wrapper$1 = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  max-width: 986px;\n"], ["\n  max-width: 986px;\n"])));
 var templateObject_1$g;
@@ -7797,7 +7856,7 @@ exports.Tag = Tag;
 exports.TelegramIcon = Icon$f;
 exports.Text = Text;
 exports.TextField = Textfield;
-exports.Timer = Timer$2;
+exports.Timer = Timer$3;
 exports.TimerNotSolid = TimerNotSolid;
 exports.TimerSimple = TimerSimple;
 exports.TitleBlock = TitleBlock;
