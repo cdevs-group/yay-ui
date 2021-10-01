@@ -7033,7 +7033,7 @@ var BlurBlock = styled__default['default'].div(templateObject_6$3 || (templateOb
 var templateObject_1$i, templateObject_2$e, templateObject_3$a, templateObject_4$9, templateObject_5$6, templateObject_6$3;
 
 var LobbyListItem = function (_a) {
-    _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime, claimed = _a.claimed; _a.status; var texts = _a.texts, handleButton = _a.handleButton, history = _a.history, yourScore = _a.yourScore, apponentScore = _a.apponentScore, winner = _a.winner, isLoad = _a.isLoad, lose = _a.lose, propsButtonJoin = _a.propsButtonJoin;
+    _a.epoch; var creator = _a.creator, bet = _a.bet, startTime = _a.startTime, claimed = _a.claimed; _a.status; var texts = _a.texts, handleButton = _a.handleButton, history = _a.history, yourScore = _a.yourScore, apponentScore = _a.apponentScore, winner = _a.winner, isLoad = _a.isLoad, lose = _a.lose, isEnoughYay = _a.isEnoughYay, propsButtonJoin = _a.propsButtonJoin;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         startTime !== 0 && (React__default['default'].createElement(TimerMob, { show: startTime !== undefined && startTime === 0 },
             React__default['default'].createElement(TimerNotSolidWithoutBg, { color: startTime && startTime === 0 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "100%", margin: "0 auto" }))),
@@ -7058,18 +7058,20 @@ var LobbyListItem = function (_a) {
                     React__default['default'].createElement(TextStyle, null, apponentScore === "" ? "-" : apponentScore)))) : (React__default['default'].createElement(Time, null,
                 React__default['default'].createElement(TextTitle, null, texts.time),
                 React__default['default'].createElement(TimerNotSolidWithoutBg, { color: !startTime || startTime < 1 ? baseColors.whiteRgba2 : lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime || 0, widthWrapper: "186px" }))),
-            !history ? (React__default['default'].createElement(ButtonStyle, __assign({ onClick: handleButton, variant: "green" }, propsButtonJoin),
+            !history && isEnoughYay ? (React__default['default'].createElement(ButtonStyle, __assign({ onClick: handleButton, variant: "green" }, propsButtonJoin),
                 React__default['default'].createElement(TextButton, { style: { display: "block" } }, texts.join))) : (React__default['default'].createElement(React__default['default'].Fragment, null, isLoad ? (React__default['default'].createElement(WaitingBlock, null,
                 React__default['default'].createElement(TextStyle, null, texts.waitResult),
                 React__default['default'].createElement(LoaderWrap, null,
                     React__default['default'].createElement(Loader$1, null)))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
+                !isEnoughYay && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                    React__default['default'].createElement(TextStyle, { color: baseColors.darkPink }, texts.notEnoughYAY))),
                 winner && (React__default['default'].createElement(WinWrapper, null,
                     React__default['default'].createElement(ImgWrapper, { claimed: claimed },
                         React__default['default'].createElement("img", { src: WINNER_MIN })),
                     !claimed ? (React__default['default'].createElement(ButtonStyle, { onClick: handleButton, width: "100%", variant: "green" },
                         React__default['default'].createElement(TextButton, null, texts.winner),
                         React__default['default'].createElement(TextButtonMob, null, texts.winnerMob))) : (React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, texts.win)))),
-                !apponentScore && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
+                !apponentScore && isEnoughYay && (React__default['default'].createElement(ButtonStyle, { style: { opacity: 1 }, disabled: true, variant: "option" },
                     React__default['default'].createElement(TextStyle, null, texts.waitPlayer))),
                 lose && (React__default['default'].createElement(LoseBlock, null,
                     React__default['default'].createElement(TextStyle, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, texts.lose),
@@ -7184,7 +7186,7 @@ var templateObject_1$h, templateObject_2$d, templateObject_3$9, templateObject_4
 
 var LobbyList = function (_a) {
     var data = _a.data, texts = _a.texts, handleButton = _a.handleButton;
-    return (React__default['default'].createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default['default'].createElement(LobbyListItem, { epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts })); })));
+    return (React__default['default'].createElement(Wrapper$1, null, data.map(function (item, i) { return (React__default['default'].createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts })); })));
 };
 var Wrapper$1 = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  max-width: 986px;\n"], ["\n  max-width: 986px;\n"])));
 var templateObject_1$g;
