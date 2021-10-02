@@ -145,6 +145,7 @@ export const LobyHistoryItem = () => {
     lose: "Lose",
     play: "Play",
     notEnoughYAY: "Not enough YAY",
+    connect: "Connect",
   };
 
   const handleButton = (param: any) => {};
@@ -308,7 +309,7 @@ export const LobyHistoryItem = () => {
             account === item.creator &&
             +item.scoreCreator < +item.scoreJoiner
           }
-          status={Status.WAITINGOPPONENT}
+          status={Status.CONNECT}
         />
       ))}
     </div>
