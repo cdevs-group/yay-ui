@@ -7055,6 +7055,7 @@ var Status;
     Status["LOSE"] = "lose";
     Status["WIN"] = "win";
     Status["COLLECT"] = "collect";
+    Status["CONNECT"] = "connect";
 })(Status || (Status = {}));
 
 var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
@@ -7256,7 +7257,8 @@ var LobbyListItem = function (_a) {
             status === Status.COLLECT && (React__default.createElement(Collect, { title: texts.winner, titleMob: texts.winnerMob, handleButton: handleButton, propsButton: propsButton })),
             status === Status.WAITINGOPPONENT && React__default.createElement(WaitingOpponent, { title: texts.waitResult }),
             status === Status.WIN && React__default.createElement(Win, { title: texts.win }),
-            status === Status.LOSE && React__default.createElement(Lose, { title: texts.lose }))));
+            status === Status.LOSE && React__default.createElement(Lose, { title: texts.lose }),
+            status === Status.CONNECT && (React__default.createElement(Button$9, { variant: "green", onClick: handleButton }, texts.connect)))));
 };
 
 var LobbyList = function (_a) {
