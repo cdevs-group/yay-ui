@@ -10,6 +10,7 @@ export declare const WinWrapper: import("styled-components").StyledComponent<"di
 }, never>;
 export declare const ImgWrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     claimed?: boolean | undefined;
+    hide?: boolean | undefined;
 }, never>;
 export declare const ButtonStyle: import("styled-components").StyledComponent<{
     <E extends import("react").ElementType<any> = "button">(props: import("../../../components/Button").ButtonProps<E>): JSX.Element;
