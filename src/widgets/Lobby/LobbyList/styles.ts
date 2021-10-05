@@ -56,7 +56,7 @@ export const WinWrapper = styled.div<{ win?: boolean | undefined }>`
   align-items: center;
   flex-direction: row-reverse;
 `;
-export const ImgWrapper = styled.div<{ claimed?: boolean | undefined }>`
+export const ImgWrapper = styled.div<{ claimed?: boolean | undefined; hide?: boolean }>`
   display: ${({ claimed }) => (claimed ? "block" : "none")};
   position: ${({ claimed }) => (claimed ? "relative" : "absolute")};
   right: -10px;
@@ -64,6 +64,7 @@ export const ImgWrapper = styled.div<{ claimed?: boolean | undefined }>`
   ${({ theme }) => theme.mediaQueries.md} {
     display: block;
   }
+  opacity: ${({ hide }) => (hide ? "0" : "1")};
   &:after {
     display: ${({ claimed }) => (claimed ? "block" : "none")};
     width: 60%;

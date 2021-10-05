@@ -6,7 +6,7 @@ import { ButtonProps } from "../../../../components/Button";
 const Collect = ({ title, titleMob, handleButton, propsButton }: CollectInterface) => {
   return (
     <WinWrapper>
-      <ImgWrapper claimed={false}>
+      <ImgWrapper hide={propsButton?.spin} claimed={false}>
         <img src={WINNER_MIN} />
       </ImgWrapper>
       <ButtonStyle onClick={handleButton} {...propsButton} width="100%" variant="green">
