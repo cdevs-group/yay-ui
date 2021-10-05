@@ -4,6 +4,10 @@ import LobbyCreatModal from "./LobbyCreatModal/LobbyCreatModal";
 import LobbyList from "./LobbyList/LobbyList";
 import LobbyListItem from "./LobbyList/LobbyListItem";
 import { Status } from "./types";
+import useWalletModal from "../WalletModal/useWalletModal";
+import { Button } from "@storybook/react/demo";
+import useLobbyResultModal from "./LobbyresultModal/useLobbyResultModal";
+import { OneGhost } from "../../constants/images";
 
 export default {
   title: "Widgets/Lobby",
@@ -310,8 +314,35 @@ export const LobyHistoryItem = () => {
             +item.scoreCreator < +item.scoreJoiner
           }
           status={Status.CONNECT}
+          propsButton={{ spin: true }}
         />
       ))}
     </div>
   );
+};
+
+export const LobbyResultModalBlock = () => {
+  const texts = {
+    title: "YAAAY!",
+    content: "Congratulations, winner, yaygang is proud of you😎",
+    textButton: "Play again!\n",
+  };
+  const handleButton = () => console.log("click");
+
+  const { onLobbyResultModal } = useLobbyResultModal(texts, handleButton, "");
+
+  return <Button onClick={onLobbyResultModal}>Result Lobby Modal</Button>;
+};
+
+export const LobbyResultModalLoseBlock = () => {
+  const texts = {
+    title: "So close!",
+    content: "No time to give up, show them who's the best jumper😎",
+    textButton: "Play again!\n",
+  };
+  const handleButton = () => console.log("click");
+
+  const { onLobbyResultModal } = useLobbyResultModal(texts, handleButton, OneGhost);
+
+  return <Button onClick={onLobbyResultModal}>Result Lobby Modal</Button>;
 };
