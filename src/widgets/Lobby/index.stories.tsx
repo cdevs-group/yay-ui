@@ -313,8 +313,8 @@ export const LobyHistoryItem = () => {
             account === item.creator &&
             +item.scoreCreator < +item.scoreJoiner
           }
-          status={Status.CONNECT}
-          propsButton={{ spin: true }}
+          status={Status.COLLECT}
+          propsButton={{ spin: true, disabled: true }}
         />
       ))}
     </div>

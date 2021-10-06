@@ -3,6 +3,7 @@ import { TitleBlock } from ".";
 import { COINS2 } from "../../constants/images";
 import ProgressAVAX from "../Progress/ProgressAVAX";
 import TimerNotSolid from "../Timer/TimerNotSolid";
+import { Text } from "../Text";
 
 export default {
   title: "Components/TitleBlock",
@@ -12,6 +13,28 @@ export default {
 export const Title: React.FC = () => {
   return (
     <TitleBlock src={COINS2} title="Up or Down?" subtitle="Which coin will have better price perfomace in">
+      <TimerNotSolid time={2000} color="green" />
+    </TitleBlock>
+  );
+};
+
+export const TitleWithNode: React.FC = () => {
+  return (
+    <TitleBlock
+      src={COINS2}
+      title="Up or Down?"
+      subtitle={
+        <>
+          <Text>
+            This is a Beta version for the bravest gangsters, make sure to check our
+            <Text target="blank" color="green" as="a" href="https://docs.yay.games/products/doodle">
+              {" "}
+              guide{" "}
+            </Text>{" "}
+          </Text>
+        </>
+      }
+    >
       <TimerNotSolid time={2000} color="green" />
     </TitleBlock>
   );
