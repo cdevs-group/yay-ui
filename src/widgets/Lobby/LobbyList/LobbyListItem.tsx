@@ -98,6 +98,7 @@ const LobbyListItem = ({
             {texts.connect}
           </Button>
         )}
+        {status === Status.DRAW && <Win title={texts.draw} />}
       </Wrapper>
     </>
   );
