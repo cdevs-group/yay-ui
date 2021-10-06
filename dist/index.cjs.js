@@ -7145,12 +7145,15 @@ var TextStyle = styled__default['default'](Text)(templateObject_8$2 || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])), function (_a) {
+var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"], ["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"])), function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient);
 }, function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.darkPink : theme.colors.green);
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.md;
 });
 var TextButton = styled__default['default'](Text)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
