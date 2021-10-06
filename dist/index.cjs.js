@@ -7108,7 +7108,7 @@ var Wrapper$2 = styled__default['default'].div(templateObject_1$i || (templateOb
     var history = _a.history;
     return history ? " 0.7fr 2fr 2fr 1.7fr 1.7fr 2.5fr" : " 0.7fr 2fr 2fr 3.5fr 2.5fr";
 });
-var TextTitle = styled__default['default'](Text)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 3px;\n  color: ", ";\n"])), function (_a) {
+var TextTitle = styled__default['default'](Text)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 7px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  margin-bottom: 7px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
@@ -7145,7 +7145,7 @@ var TextStyle = styled__default['default'](Text)(templateObject_8$2 || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n"])), function (_a) {
+var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"], ["\n  padding: 6px;\n  width: 57px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"])), function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient);
 }, function (_a) {
@@ -7203,7 +7203,7 @@ var Bet = function (_a) {
     var title = _a.title, red = _a.red, bet = _a.bet;
     return (React__default['default'].createElement(React__default['default'].Fragment, null,
         React__default['default'].createElement(BetWrap, null,
-            React__default['default'].createElement(TextTitle, null, title),
+            React__default['default'].createElement(TextTitle, { mb: "3px !important" }, title),
             React__default['default'].createElement(BetValue, { lose: red }, bet))));
 };
 
