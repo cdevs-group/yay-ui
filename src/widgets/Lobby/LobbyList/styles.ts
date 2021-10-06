@@ -96,7 +96,7 @@ export const TextStyle = styled(Text)`
 `;
 export const BetValue = styled(TextStyle)<{ lose?: boolean }>`
   padding: 6px;
-  width: 57px;
+  width: 65px;
   height: 30px;
   background: ${({ lose, theme }) => (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient)};
   color: ${({ lose, theme }) => (lose ? theme.colors.darkPink : theme.colors.green)};
@@ -105,6 +105,9 @@ export const BetValue = styled(TextStyle)<{ lose?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${({theme})=>theme.mediaQueries.md}{
+    width: 83px;
+  }
 `;
 export const TextButton = styled(Text)`
   display: none;
