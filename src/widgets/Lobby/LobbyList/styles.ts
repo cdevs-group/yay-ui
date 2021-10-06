@@ -37,7 +37,7 @@ export const TextTitle = styled(Text)`
   font-size: 13px;
   line-height: 16px;
   letter-spacing: 0.05em;
-  margin-bottom: 3px;
+  margin-bottom: 7px;
   color: ${({ theme }) => theme.colors.greyText};
 `;
 export const BetWrap = styled.div``;
@@ -102,6 +102,9 @@ export const BetValue = styled(TextStyle)<{ lose?: boolean }>`
   color: ${({ lose, theme }) => (lose ? theme.colors.darkPink : theme.colors.green)};
   border-radius: 7px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const TextButton = styled(Text)`
   display: none;

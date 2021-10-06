@@ -5,7 +5,7 @@ const Bet = ({ title, red, bet }: BetInterface) => {
   return (
     <>
       <BetWrap>
-        <TextTitle>{title}</TextTitle>
+        <TextTitle mb="3px !important">{title}</TextTitle>
         <BetValue lose={red}>{bet}</BetValue>
       </BetWrap>
     </>
