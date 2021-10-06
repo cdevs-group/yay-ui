@@ -7088,6 +7088,7 @@ var Status;
     Status["COLLECT"] = "collect";
     Status["CONNECT"] = "connect";
     Status["DRAW"] = "draw";
+    Status["REVERT"] = "revert";
 })(Status || (Status = {}));
 
 var Wrapper$2 = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
@@ -7154,7 +7155,7 @@ var BetValue = styled__default['default'](TextStyle)(templateObject_9$2 || (temp
     return (lose ? theme.colors.darkPink : theme.colors.green);
 }, function (_a) {
     var theme = _a.theme;
-    return theme.mediaQueries.md;
+    return theme.mediaQueries.sm;
 });
 var TextButton = styled__default['default'](Text)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
@@ -7293,6 +7294,7 @@ var LobbyListItem = function (_a) {
             status === Status.ENOUGH && (React__default['default'].createElement(ButtonStyle$1, { style: { opacity: 1 }, disabled: true, variant: "option" },
                 React__default['default'].createElement(TextStyle, { color: baseColors.darkPink }, texts.notEnoughYAY))),
             status === Status.COLLECT && (React__default['default'].createElement(Collect, { title: texts.winner, titleMob: texts.winnerMob, handleButton: handleButton, propsButton: propsButton })),
+            status === Status.REVERT && (React__default['default'].createElement(Button$9, __assign({ variant: "green", onClick: handleButton }, propsButton), texts.revert)),
             status === Status.WAITINGOPPONENT && React__default['default'].createElement(WaitingOpponent, { title: texts.waitResult }),
             status === Status.WIN && React__default['default'].createElement(Win, { title: texts.win }),
             status === Status.LOSE && React__default['default'].createElement(Lose, { title: texts.lose }),
