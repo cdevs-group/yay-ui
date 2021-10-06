@@ -105,7 +105,7 @@ export const BetValue = styled(TextStyle)<{ lose?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${({theme})=>theme.mediaQueries.md}{
+  ${({ theme }) => theme.mediaQueries.md} {
     width: 83px;
   }
 `;
