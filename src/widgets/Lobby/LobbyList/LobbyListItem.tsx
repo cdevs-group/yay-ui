@@ -90,6 +90,11 @@ const LobbyListItem = ({
             propsButton={propsButton}
           />
         )}
+        {status === Status.REVERT && (
+          <Button variant="green" onClick={handleButton} {...propsButton}>
+            {texts.revert}
+          </Button>
+        )}
         {status === Status.WAITINGOPPONENT && <WaitingOpponent title={texts.waitResult} />}
         {status === Status.WIN && <Win title={texts.win} />}
         {status === Status.LOSE && <Lose title={texts.lose} />}

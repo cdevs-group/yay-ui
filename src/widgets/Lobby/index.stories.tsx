@@ -151,6 +151,7 @@ export const LobyHistoryItem = () => {
     notEnoughYAY: "Not enough YAY",
     connect: "Connect",
     draw: "Draw",
+    revert: "revert",
   };
 
   const handleButton = (param: any) => {};
@@ -294,7 +295,7 @@ export const LobyHistoryItem = () => {
           isEnoughYay={true}
           epoch={item.epoch}
           creator={item.creator}
-          bet={item.bet}
+          bet={`${item.bet} YAY`}
           // текущее время - (joinerJoinBlockTimeStamp + 4 часа)
           startTime={item.joinerJoinBlockTimeStamp + 14400 - 15612}
           texts={texts}
@@ -314,7 +315,7 @@ export const LobyHistoryItem = () => {
             account === item.creator &&
             +item.scoreCreator < +item.scoreJoiner
           }
-          status={Status.DRAW}
+          status={Status.REVERT}
           propsButton={{ spin: true, disabled: true }}
         />
       ))}
