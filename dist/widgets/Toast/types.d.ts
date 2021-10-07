@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { SpaceProps } from "styled-system";
 export declare const types: {
     COLLECTION: string;
     SUCCESS: string;
@@ -18,6 +19,7 @@ export interface ToastContainerProps {
     stackSpacing?: number;
     ttl?: number;
     onRemove: (id: string) => void;
+    propsWrapper?: SpaceProps;
 }
 export interface ToastProps {
     toast: Toast;
