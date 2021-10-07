@@ -53,6 +53,7 @@ export { default as PlusIcon } from "./Icons/PlusIcon";
 export { default as MinusIcon } from "./Icons/MinusIcon";
 export { default as VerifideIcon } from "./Icons/VerifideIcon";
 export { default as ComunityIcon } from "./Icons/ComunityIcon";
+export { default as CloseRed } from "./Icons/CloseRed";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

@@ -54,16 +54,16 @@ const Row = styled.div`
   flex-wrap: wrap;
 `;
 
-const SetButton = ({ variant, onClick }: AlertProps) => {
+const SetButton = ({ variant, onClick, icon }: AlertProps) => {
   const Icon = getIcon(variant);
   return (
     <Button disabled={variant !== "winning"} onClick={onClick}>
-      {Icon}
+      {icon || Icon}
     </Button>
   );
 };
 
-const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
+const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, icon }) => {
   return (
     <StyledAlert>
       <Row>
@@ -74,7 +74,7 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
         )}
         <div>{children}</div>
       </Row>
-      <SetButton variant={variant} onClick={onClick} />
+      <SetButton icon={icon} variant={variant} onClick={onClick} />
     </StyledAlert>
   );
 };

@@ -4,6 +4,7 @@ import { Meta } from "@storybook/react/types-6-0";
 import Alert from "./Alert";
 import AlertBlur from "./AlertBlur";
 import { Text } from "../Text";
+import { CloseRed } from "../Svg";
 
 const Row = styled.div`
   margin-bottom: 32px;
@@ -46,7 +47,7 @@ export const WithHandler: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "1000px" }}>
       <Row>
-        <Alert onClick={closeAlert} variant="winning" title="Winnings collected!">
+        <Alert icon={<CloseRed />} onClick={closeAlert} variant="winning" title="Winnings collected!">
           Your prizes have been sent to your wallet
         </Alert>
       </Row>

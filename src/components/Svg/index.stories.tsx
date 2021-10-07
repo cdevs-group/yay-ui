@@ -43,6 +43,7 @@ import {
   MinusIcon,
   VerifideIcon,
   ComunityIcon,
+  CloseRed,
 } from ".";
 
 export default {
@@ -85,6 +86,7 @@ export default {
     MinusIcon,
     VerifideIcon,
     ComunityIcon,
+    CloseRed,
   ],
   argTypes: {},
 };
@@ -223,6 +225,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <ComunityIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CloseRed />
         </div>
       </div>
     </div>
