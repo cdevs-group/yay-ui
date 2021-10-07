@@ -1,5 +1,5 @@
 import { MouseEvent, ReactNode } from "react";
-import { SpaceProps } from "styled-system";
+import { SpaceProps, BackgroundProps } from "styled-system";
 
 export type AlertTheme = {
   background: string;
@@ -15,6 +15,7 @@ export const variants = {
 
 export type Variants = typeof variants[keyof typeof variants];
 
+interface AlertWrapperProps extends SpaceProps, BackgroundProps {}
 export interface AlertProps {
   variant?: Variants;
   title?: string;
@@ -23,5 +24,5 @@ export interface AlertProps {
   buttonText?: string;
   handleClose?: (evt: MouseEvent<HTMLButtonElement>) => void;
   icon?: ReactNode;
-  propsWrapper?: SpaceProps;
+  propsWrapper?: AlertWrapperProps;
 }

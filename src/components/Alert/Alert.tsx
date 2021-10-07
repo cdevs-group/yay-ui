@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { space } from "styled-system";
+import { space, background } from "styled-system";
 import Text from "../Text/Text";
 import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
 import { AlertProps, variants } from "./types";
@@ -17,6 +17,7 @@ const StyledAlert = styled.div`
   box-shadow: inset ${({ theme }) => theme.colors.textShadow};
   border-radius: 12px;
   color: ${({ theme }) => theme.colors.text};
+  ${background}
   ${space}
 `;
 
