@@ -49,6 +49,7 @@ export const Time = styled.div`
 `;
 export const WinWrapper = styled.div<{ win?: boolean | undefined }>`
   width: 100%;
+  height: 53px;
   position: relative;
   justify-self: end;
   display: flex;
