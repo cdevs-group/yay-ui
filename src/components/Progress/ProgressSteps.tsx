@@ -15,7 +15,7 @@ const ProgressSteps = ({ isError, step, texts, stepsText }: ProgressStepsProps) 
       </Title>
       <Steps>
         {stepsText.map((name, i) => (
-          <Step>
+          <Step key={i}>
             <Indicator complete={i < step} isError={isError} />
             <Text fontSize="10px">{name}</Text>
           </Step>
