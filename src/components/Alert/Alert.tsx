@@ -65,9 +65,9 @@ const SetButton = ({ variant, onClick, icon }: AlertProps) => {
   );
 };
 
-const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, icon, propsWrapper}) => {
+const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, icon, propsWrapper }) => {
   return (
-    <StyledAlert  {...propsWrapper}>
+    <StyledAlert {...propsWrapper}>
       <Row>
         {title && (
           <Text fontWeight={600} marginRight="5px">

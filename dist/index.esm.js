@@ -1969,7 +1969,7 @@ var variants$1 = {
     ERROR: "error",
 };
 
-var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n"])), function (_a) {
+var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -1978,7 +1978,7 @@ var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __m
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
-});
+}, space);
 var getIcon = function (variant) {
     if (variant === void 0) { variant = variants$1.COLLECTION; }
     switch (variant) {
@@ -2004,8 +2004,8 @@ var SetButton = function (_a) {
     return (React__default.createElement(Button$8, { disabled: variant !== "winning", onClick: onClick }, icon || Icon));
 };
 var Alert = function (_a) {
-    var title = _a.title, children = _a.children, variant = _a.variant, onClick = _a.onClick, icon = _a.icon;
-    return (React__default.createElement(StyledAlert$1, null,
+    var title = _a.title, children = _a.children, variant = _a.variant, onClick = _a.onClick, icon = _a.icon, propsWrapper = _a.propsWrapper;
+    return (React__default.createElement(StyledAlert$1, __assign({}, propsWrapper),
         React__default.createElement(Row$5, null,
             title && (React__default.createElement(Text, { fontWeight: 600, marginRight: "5px" }, title)),
             React__default.createElement("div", null, children)),
