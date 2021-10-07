@@ -1,4 +1,5 @@
 import { MouseEvent, ReactNode } from "react";
+import { SpaceProps } from "styled-system";
 
 export type AlertTheme = {
   background: string;
@@ -22,4 +23,5 @@ export interface AlertProps {
   buttonText?: string;
   handleClose?: (evt: MouseEvent<HTMLButtonElement>) => void;
   icon?: ReactNode;
+  propsWrapper?: SpaceProps;
 }
