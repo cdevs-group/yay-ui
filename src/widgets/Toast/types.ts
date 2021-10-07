@@ -17,6 +17,7 @@ export interface Toast {
   type: Types;
   title: string;
   description?: ReactNode;
+  icon?: ReactNode;
 }
 
 export interface ToastContainerProps {
@@ -33,5 +34,6 @@ export interface ToastProps {
   onRemove: ToastContainerProps["onRemove"];
   ttl: number;
   style?: Partial<CSSStyleDeclaration>;
+  icon?: ReactNode;
   propsWrapperAlert?: AlertWrapperProps;
 }

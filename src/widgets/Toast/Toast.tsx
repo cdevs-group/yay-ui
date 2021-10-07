@@ -25,7 +25,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onRemove, style, ttl, propsWrapper
   const timer = useRef<number>();
   const ref = useRef(null);
   const removeHandler = useRef(onRemove);
-  const { id, title, description, type } = toast;
+  const { id, title, description, type, icon } = toast;
 
   const handleRemove = useCallback(() => removeHandler.current(id), [id, removeHandler]);
 
@@ -60,7 +60,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onRemove, style, ttl, propsWrapper
   return (
     <CSSTransition nodeRef={ref} timeout={250} style={style} {...props}>
       <StyledToast ref={ref} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <Alert title={title} variant={alertTypeMap[type]} onClick={handleRemove} propsWrapper={propsWrapperAlert}>
+        <Alert title={title} icon={icon} variant={alertTypeMap[type]} onClick={handleRemove} propsWrapper={propsWrapperAlert}>
           {description}
         </Alert>
       </StyledToast>
