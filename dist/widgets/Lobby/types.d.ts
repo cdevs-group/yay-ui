@@ -79,6 +79,9 @@ interface LobbyTextsProps {
     win?: string;
     lose?: string;
     play?: string;
+    connect?: string;
+    draw?: string;
+    revert?: string;
 }
 export interface LobbyListProps {
     data: Array<DataLobbyProps>;
@@ -94,6 +97,9 @@ export declare enum Status {
     WAITINGOPPONENT = "waitingOpponent",
     LOSE = "lose",
     WIN = "win",
-    COLLECT = "collect"
+    COLLECT = "collect",
+    CONNECT = "connect",
+    DRAW = "draw",
+    REVERT = "revert"
 }
 export {};

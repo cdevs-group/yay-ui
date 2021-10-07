@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { space, background } from "styled-system";
 import Text from "../Text/Text";
 import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
 import { AlertProps, variants } from "./types";
@@ -16,6 +17,8 @@ const StyledAlert = styled.div`
   box-shadow: inset ${({ theme }) => theme.colors.textShadow};
   border-radius: 12px;
   color: ${({ theme }) => theme.colors.text};
+  ${background}
+  ${space}
 `;
 
 const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {
@@ -63,9 +66,9 @@ const SetButton = ({ variant, onClick, icon }: AlertProps) => {
   );
 };
 
-const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, icon }) => {
+const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick, icon, propsWrapper }) => {
   return (
-    <StyledAlert>
+    <StyledAlert {...propsWrapper}>
       <Row>
         {title && (
           <Text fontWeight={600} marginRight="5px">

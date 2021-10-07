@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { SpaceProps } from "styled-system";
+import { AlertWrapperProps } from "../../components/Alert/types";
 export declare const types: {
     COLLECTION: string;
     SUCCESS: string;
@@ -18,10 +20,13 @@ export interface ToastContainerProps {
     stackSpacing?: number;
     ttl?: number;
     onRemove: (id: string) => void;
+    propsWrapper?: SpaceProps;
+    propsWrapperAlert?: AlertWrapperProps;
 }
 export interface ToastProps {
     toast: Toast;
     onRemove: ToastContainerProps["onRemove"];
     ttl: number;
     style?: Partial<CSSStyleDeclaration>;
+    propsWrapperAlert?: AlertWrapperProps;
 }

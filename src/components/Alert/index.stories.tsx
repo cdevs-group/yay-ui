@@ -47,7 +47,13 @@ export const WithHandler: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "1000px" }}>
       <Row>
-        <Alert icon={<CloseRed />} onClick={closeAlert} variant="winning" title="Winnings collected!">
+        <Alert
+          icon={<CloseRed />}
+          onClick={closeAlert}
+          variant="winning"
+          title="Winnings collected!"
+          propsWrapper={{ background: "red" }}
+        >
           Your prizes have been sent to your wallet
         </Alert>
       </Row>
