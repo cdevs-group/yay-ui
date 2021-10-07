@@ -15,7 +15,7 @@ export const variants = {
 
 export type Variants = typeof variants[keyof typeof variants];
 
-interface AlertWrapperProps extends SpaceProps, BackgroundProps {}
+export interface AlertWrapperProps extends SpaceProps, BackgroundProps {}
 export interface AlertProps {
   variant?: Variants;
   title?: string;

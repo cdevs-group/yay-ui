@@ -36,6 +36,7 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
   ttl = 6000,
   stackSpacing = 24,
   propsWrapper,
+  propsWrapperAlert,
 }) => {
   return (
     <StyledToastContainer {...propsWrapper}>
@@ -52,6 +53,7 @@ const ToastContainer: React.FC<ToastContainerProps> = ({
               ttl={ttl}
               // style={{ top: `${top}px`, zIndex }}
               style={{ position: "static" }}
+              propsWrapperAlert={propsWrapperAlert}
             />
           );
         })}
