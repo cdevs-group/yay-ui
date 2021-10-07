@@ -1969,7 +1969,7 @@ var variants$1 = {
     ERROR: "error",
 };
 
-var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n"])), function (_a) {
+var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -1978,7 +1978,7 @@ var StyledAlert$1 = styled.div(templateObject_1$1X || (templateObject_1$1X = __m
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
-}, space);
+}, background, space);
 var getIcon = function (variant) {
     if (variant === void 0) { variant = variants$1.COLLECTION; }
     switch (variant) {
@@ -6526,7 +6526,7 @@ var StyledToast = styled.div(templateObject_1$w || (templateObject_1$w = __makeT
     return theme.mediaQueries.sm;
 });
 var Toast = function (_a) {
-    var toast = _a.toast, onRemove = _a.onRemove, style = _a.style, ttl = _a.ttl, props = __rest(_a, ["toast", "onRemove", "style", "ttl"]);
+    var toast = _a.toast, onRemove = _a.onRemove, style = _a.style, ttl = _a.ttl, propsWrapperAlert = _a.propsWrapperAlert, props = __rest(_a, ["toast", "onRemove", "style", "ttl", "propsWrapperAlert"]);
     var timer = useRef();
     var ref = useRef(null);
     var removeHandler = useRef(onRemove);
@@ -6556,20 +6556,20 @@ var Toast = function (_a) {
     }, [timer, ttl, handleRemove]);
     return (React__default.createElement(CSSTransition, __assign({ nodeRef: ref, timeout: 250, style: style }, props),
         React__default.createElement(StyledToast, { ref: ref, onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
-            React__default.createElement(Alert, { title: title, variant: alertTypeMap[type], onClick: handleRemove }, description))));
+            React__default.createElement(Alert, { title: title, variant: alertTypeMap[type], onClick: handleRemove, propsWrapper: propsWrapperAlert }, description))));
 };
 var templateObject_1$w;
 
 var StyledToastContainer = styled.div(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n  ", "\n"], ["\n  .enter,\n  .appear {\n    opacity: 0.01;\n  }\n\n  .enter.enter-active,\n  .appear.appear-active {\n    opacity: 1;\n    transition: opacity 250ms ease-in;\n  }\n\n  .exit {\n    opacity: 1;\n  }\n\n  .exit.exit-active {\n    opacity: 0.01;\n    transition: opacity 250ms ease-out;\n  }\n  ", "\n"])), space);
 var ToastContainer = function (_a) {
-    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 6000 : _b; _a.stackSpacing; var propsWrapper = _a.propsWrapper;
+    var toasts = _a.toasts, onRemove = _a.onRemove, _b = _a.ttl, ttl = _b === void 0 ? 6000 : _b; _a.stackSpacing; var propsWrapper = _a.propsWrapper, propsWrapperAlert = _a.propsWrapperAlert;
     return (React__default.createElement(StyledToastContainer, __assign({}, propsWrapper),
         React__default.createElement(TransitionGroup, null, toasts.map(function (toast, index) {
             // const zIndex = (ZINDEX - index).toString();
             // const top = TOP_POSITION + index * stackSpacing;
             return (React__default.createElement(Toast, { key: toast.id, toast: toast, onRemove: onRemove, ttl: ttl, 
                 // style={{ top: `${top}px`, zIndex }}
-                style: { position: "static" } }));
+                style: { position: "static" }, propsWrapperAlert: propsWrapperAlert }));
         }))));
 };
 var templateObject_1$v;
