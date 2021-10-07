@@ -1,9 +1,9 @@
 import React from "react";
 import { TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
+import { space } from "styled-system";
 import Toast from "./Toast";
 import { ToastContainerProps } from "./types";
-
 const ZINDEX = 1000;
 const TOP_POSITION = 80; // Initial position from the top
 
@@ -27,11 +27,18 @@ const StyledToastContainer = styled.div`
     opacity: 0.01;
     transition: opacity 250ms ease-out;
   }
+  ${space}
 `;
 
-const ToastContainer: React.FC<ToastContainerProps> = ({ toasts, onRemove, ttl = 6000, stackSpacing = 24 }) => {
+const ToastContainer: React.FC<ToastContainerProps> = ({
+  toasts,
+  onRemove,
+  ttl = 6000,
+  stackSpacing = 24,
+  propsWrapper,
+}) => {
   return (
-    <StyledToastContainer>
+    <StyledToastContainer {...propsWrapper}>
       <TransitionGroup>
         {toasts.map((toast, index) => {
           // const zIndex = (ZINDEX - index).toString();
