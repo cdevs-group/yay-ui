@@ -6,11 +6,11 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "rgb(58,58,64)"} />
-      <g filter="url(#filter0_d)">
+      <g filter="url(#filter0_dArrowIcon)">
         <path d="M19 16H27M27 16V24M27 16L17 26" stroke="white" strokeWidth="2" strokeLinecap="round" />
       </g>
       <defs>
-        <filter id="filter0_d" x="12" y="13" width="20" height="20" filterUnits="userSpaceOnUse">
+        <filter id="filter0_dArrowIcon" x="12" y="13" width="20" height="20" filterUnits="userSpaceOnUse">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
           <feOffset dy="2" />

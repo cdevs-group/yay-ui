@@ -6,7 +6,7 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "#4BE43E"} />
-      <g filter="url(#filter0_d111)">
+      <g filter="url(#filter0_d111SearchIcon)">
         <circle
           fill={props.fill || "rgba(0,0,0,0)"}
           cx="20.5"
@@ -19,7 +19,7 @@ const Icon: React.FC<SvgProps> = (props) => {
       </g>
       <defs>
         <filter
-          id="filter0_d111"
+          id="filter0_d111SearchIcon"
           x="11"
           y="13"
           width="19.8996"
