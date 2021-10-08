@@ -53,5 +53,7 @@ export { default as MinusIcon } from "./Icons/MinusIcon";
 export { default as VerifideIcon } from "./Icons/VerifideIcon";
 export { default as ComunityIcon } from "./Icons/ComunityIcon";
 export { default as CloseRed } from "./Icons/CloseRed";
+export { default as ControllerMouse } from "./Icons/ControllerMouse";
+export { default as ArrowBorder } from "./Icons/ArrowBorder";
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
