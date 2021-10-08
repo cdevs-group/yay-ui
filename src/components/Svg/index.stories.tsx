@@ -44,6 +44,8 @@ import {
   VerifideIcon,
   ComunityIcon,
   CloseRed,
+  ControllerMouse,
+  ArrowBorder,
 } from ".";
 
 export default {
@@ -87,6 +89,8 @@ export default {
     VerifideIcon,
     ComunityIcon,
     CloseRed,
+    ControllerMouse,
+    ArrowBorder,
   ],
   argTypes: {},
 };
@@ -228,6 +232,12 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <CloseRed />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ControllerMouse />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ArrowBorder />
         </div>
       </div>
     </div>
