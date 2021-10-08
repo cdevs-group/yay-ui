@@ -3353,7 +3353,7 @@ var ProgressSteps = function (_a) {
         React__default.createElement(Title$a, null,
             React__default.createElement(Text, { fontSize: "10px" }, isError ? texts.error : texts.waiting),
             React__default.createElement(CheckIt, { color: isError ? baseColors.darkPink : baseColors.green, as: "button", fontSize: "10px" }, isError ? texts.checkIt : texts.confirmations)),
-        React__default.createElement(Steps, null, stepsText.map(function (name, i) { return (React__default.createElement(Step$1, null,
+        React__default.createElement(Steps, null, stepsText.map(function (name, i) { return (React__default.createElement(Step$1, { key: i },
             React__default.createElement(Indicator$1, { complete: i < step, isError: isError }),
             React__default.createElement(Text, { fontSize: "10px" }, name))); }))));
 };
@@ -6530,7 +6530,7 @@ var Toast = function (_a) {
     var timer = useRef();
     var ref = useRef(null);
     var removeHandler = useRef(onRemove);
-    var id = toast.id, title = toast.title, description = toast.description, type = toast.type;
+    var id = toast.id, title = toast.title, description = toast.description, type = toast.type, icon = toast.icon;
     var handleRemove = useCallback(function () { return removeHandler.current(id); }, [id, removeHandler]);
     var handleMouseEnter = function () {
         clearTimeout(timer.current);
@@ -6556,7 +6556,7 @@ var Toast = function (_a) {
     }, [timer, ttl, handleRemove]);
     return (React__default.createElement(CSSTransition, __assign({ nodeRef: ref, timeout: 250, style: style }, props),
         React__default.createElement(StyledToast, { ref: ref, onMouseEnter: handleMouseEnter, onMouseLeave: handleMouseLeave },
-            React__default.createElement(Alert, { title: title, variant: alertTypeMap[type], onClick: handleRemove, propsWrapper: propsWrapperAlert }, description))));
+            React__default.createElement(Alert, { title: title, icon: icon, variant: alertTypeMap[type], onClick: handleRemove, propsWrapper: propsWrapperAlert }, description))));
 };
 var templateObject_1$w;
 
