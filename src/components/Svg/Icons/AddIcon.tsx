@@ -6,13 +6,13 @@ const Icon: React.FC<SvgProps> = (props) => {
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "#4BE43E"} />
-      <g filter={props.fill || "url(#filter0_d)"}>
+      <g filter={props.fill || "url(#filter0_dAddIcon)"}>
         <path d="M21 16V26" stroke="white" strokeWidth="2" strokeLinecap="round" />
         <path d="M26 21L16 21" stroke="white" strokeWidth="2" strokeLinecap="round" />
       </g>
       <defs>
         <filter
-          id="filter0_d"
+          id="filter0_dAddIcon"
           x="11"
           y="13"
           width="20"

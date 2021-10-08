@@ -12,14 +12,14 @@ const Icon: React.FC<SvgProps> = (props) => {
         height="45"
         rx="9.5"
         fill={props.fill || "#4BE43E"}
-        stroke={props.fill || "url(#paint0_linear)"}
+        stroke={props.fill || "url(#paint0_linearArrowRight)"}
       />
-      <g filter={props.fill || "url(#filter0_d)"}>
+      <g filter={props.fill || "url(#filter0_dArrowRight)"}>
         <path d="M24.35 16L32 23.5M32 23.5L24.35 31M32 23.5H15" stroke={props.stroke || "white"} strokeWidth="2" />
       </g>
       <defs>
         <filter
-          id="filter0_d"
+          id="filter0_dArrowRight"
           x="11"
           y="15.2859"
           width="26.4284"
@@ -35,7 +35,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
-        <linearGradient id="paint0_linear" x1="23" y1="0" x2="23" y2="46" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linearArrowRight" x1="23" y1="0" x2="23" y2="46" gradientUnits="userSpaceOnUse">
           <stop stopColor="#8EFF85" stopOpacity="0" />
           <stop offset="1" stopColor="#A5FF9D" />
         </linearGradient>

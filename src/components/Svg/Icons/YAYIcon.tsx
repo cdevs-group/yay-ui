@@ -4,13 +4,13 @@ import { SvgProps } from "../types";
 const Icon: React.FC<SvgProps> = (props) => {
   return (
     <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <rect width="29" height="29" rx="7" fill="url(#paint0_linear)" />
+      <rect width="29" height="29" rx="7" fill="url(#paint0_linearYAYIcon)" />
       <rect width="29" height="28" fill="url(#pattern0)" />
       <defs>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use href="#image0" transform="translate(-0.448276 -0.0467986) scale(0.00167169)" />
         </pattern>
-        <linearGradient id="paint0_linear" x1="14.5" y1="-4.64" x2="14.5" y2="29" gradientUnits="userSpaceOnUse">
+        <linearGradient id="paint0_linearYAYIcon" x1="14.5" y1="-4.64" x2="14.5" y2="29" gradientUnits="userSpaceOnUse">
           <stop stopColor="#4CEE3E" />
           <stop offset="1" stopColor="#3FBF35" />
         </linearGradient>
