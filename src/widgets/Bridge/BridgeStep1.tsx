@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import Text from "../../components/Text/Text";
-import { Button } from "../../components/Button";
 import { BalanceInput } from "../../components/BalanceInput";
 import { SwapButton } from "../../components/Toggle";
 import { BridgeStep1Props } from "./types";
@@ -92,15 +91,13 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   inputError,
   balanceText,
   handleToggleNetwork,
-  handleButton,
   iconNetwork1,
   iconNetwork2,
   iconBalanceInput,
   handleOpenProofOfAssets,
   handleOpenTransactionsHistory,
   disabledInput,
-  disabledButton,
-  propsButton,
+  actionButton
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -144,9 +141,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           <Error>
             <p style={{ minHeight: 22.5 }}>{texts.error}</p>
           </Error>
-          <Button onClick={handleButton} width="100%" variant="green" disabled={disabledButton} {...propsButton}>
-            {texts.button}
-          </Button>
+          {actionButton}
         </BridgeContent>
       </BridgeWrapper>
       <ButtonOpenProof onClick={handleOpenProofOfAssets}>{texts.buttonProofOfState}</ButtonOpenProof>
