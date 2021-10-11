@@ -10,6 +10,7 @@ import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { BridgeProof } from "./index";
 import { Metamask } from "../../constants/images";
 import { NoticeBridgeType } from "./types";
+import { Button } from "../../components/Button";
 
 export default {
   title: "Widgets/Bridge",
@@ -23,7 +24,6 @@ export const BridgeStep1Block: React.FC = () => {
     from: "From",
     to: "To",
     error: "",
-    button: "Transfer",
     nameNetwork1: "Binance Smart Chain",
     nameNetwork2: "Avalanche",
     buttonProofOfState: "Proof of State",
@@ -43,7 +43,6 @@ export const BridgeStep1Block: React.FC = () => {
     <div>
       <div style={{ marginBottom: "50px" }}>
         <BridgeStep1
-          handleButton={() => {}}
           handleToggleNetwork={handleToggleNetwork}
           balanceText={balanceText}
           handleButtonToMax={() => {}}
@@ -54,12 +53,11 @@ export const BridgeStep1Block: React.FC = () => {
           iconNetwork2={<AvalancheIcon />}
           handleOpenProofOfAssets={() => {}}
           handleOpenTransactionsHistory={() => {}}
-          propsButton={{ spin: true }}
+          actionButton={<Button variant="green" width="100%">Transfer</Button>}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>
         <BridgeStep1
-          handleButton={() => {}}
           handleToggleNetwork={handleToggleNetwork}
           balanceText={balanceText}
           inputError
@@ -72,6 +70,7 @@ export const BridgeStep1Block: React.FC = () => {
           onUserInput={onUserInput}
           iconBalanceInput={<YAYIcon />}
           handleOpenTransactionsHistory={() => {}}
+          actionButton={<Button>Transfer</Button>}
         />
       </div>
     </div>
@@ -207,12 +206,12 @@ export const BridgeStep2Block = () => {
 export const BrightProofBlock = () => {
   const { onPresentBridgeModal } = useBridgeModal();
   return (
-    <Button as="button">
-      <Button onClick={onPresentBridgeModal}>Proof of assets</Button>
-    </Button>
+    <Btn as="button">
+      <Btn onClick={onPresentBridgeModal}>Proof of assets</Btn>
+    </Btn>
   );
 };
-const Button = styled(Text)`
+const Btn = styled(Text)`
   background: none;
   border: none;
   cursor: pointer;

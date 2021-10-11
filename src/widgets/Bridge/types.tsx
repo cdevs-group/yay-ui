@@ -17,7 +17,6 @@ export interface BridgeStep1Props {
     from: string;
     to: string;
     error: string;
-    button: string;
     buttonProofOfState?: string;
     buttonTransactionsHistory?: string;
     currencyInput: string;
@@ -28,10 +27,8 @@ export interface BridgeStep1Props {
     message2: string;
   };
   handleToggleNetwork: (val: any) => void;
-  handleButton: any;
-  disabledInput?: boolean;
-  disabledButton?: boolean;
-  propsButton?: ButtonProps;
+  disabledInput?: boolean;  
+  actionButton: React.ReactNode;
 }
 
 export interface BridgeStep2Props {
