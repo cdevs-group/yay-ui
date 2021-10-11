@@ -4524,7 +4524,13 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 
 var BridgeStep2 = function (_a) {
     var _b;
-    var onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isError = _a.isError, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, timer1 = _a.timer1, timer2 = _a.timer2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, BlockChainFrom = _a.BlockChainFrom, BlockChainTo = _a.BlockChainTo, stepsText = _a.stepsText, isLoadTimeNetwork1 = _a.isLoadTimeNetwork1, isLoadTimeNetwork2 = _a.isLoadTimeNetwork2, noticeVisible = _a.noticeVisible, noticeImg = _a.noticeImg, noticeType = _a.noticeType, noticeTitle = _a.noticeTitle, noticeText = _a.noticeText, noticeButton1Text = _a.noticeButton1Text, noticeButton2Text = _a.noticeButton2Text, noticeButton1Props = _a.noticeButton1Props, noticeButton2Props = _a.noticeButton2Props;
+    var network1 = _a.network1, network2 = _a.network2, onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isError = _a.isError, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, timer1 = _a.timer1, timer2 = _a.timer2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, avalancheIcon = _a.avalancheIcon, bscIcon = _a.bscIcon, stepsText = _a.stepsText, isLoadTimeNetwork1 = _a.isLoadTimeNetwork1, isLoadTimeNetwork2 = _a.isLoadTimeNetwork2, noticeVisible = _a.noticeVisible, noticeImg = _a.noticeImg, noticeType = _a.noticeType, noticeTitle = _a.noticeTitle, noticeText = _a.noticeText, noticeButton1Text = _a.noticeButton1Text, noticeButton2Text = _a.noticeButton2Text, noticeButton1Props = _a.noticeButton1Props, noticeButton2Props = _a.noticeButton2Props;
+    var AvaxNetwork = function () { return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        avalancheIcon || React__default['default'].createElement(Icon$d, null),
+        React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.avalanche || 'Avalanche'))); };
+    var BscNetwork = function () { return (React__default['default'].createElement(React__default['default'].Fragment, null,
+        bscIcon || React__default['default'].createElement(Icon$P, null),
+        React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.bsc || 'BSC'))); };
     return (React__default['default'].createElement(Content$4, null,
         React__default['default'].createElement(Wrapper$i, { blur: noticeVisible },
             React__default['default'].createElement(Title$9, { size: "lg" }, texts.title),
@@ -4553,9 +4559,7 @@ var BridgeStep2 = function (_a) {
                     React__default['default'].createElement(Text, { textAlign: "center", fontWeight: "400", size: "sm", color: baseColors.textGray }, texts.coast)),
                 React__default['default'].createElement(ProgressBlock, null,
                     React__default['default'].createElement(TitleMobTop, null, texts.network),
-                    React__default['default'].createElement(Token, { className: "main" }, BlockChainFrom || (React__default['default'].createElement(React__default['default'].Fragment, null,
-                        React__default['default'].createElement(Icon$P, null),
-                        React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.bsc)))),
+                    React__default['default'].createElement(Token, { className: "main" }, network1 === "avax" ? React__default['default'].createElement(AvaxNetwork, null) : React__default['default'].createElement(BscNetwork, null)),
                     React__default['default'].createElement(Progress$1, null,
                         React__default['default'].createElement(ProgressWrapper, null,
                             React__default['default'].createElement(ProgressSteps, { stepsText: stepsText, isError: isError, texts: textsProgress1, step: progress1 }))),
@@ -4568,9 +4572,7 @@ var BridgeStep2 = function (_a) {
                         React__default['default'].createElement(Text, { size: "xs", color: baseColors.textGray }, gasPriceTextNetwork1 === null || gasPriceTextNetwork1 === void 0 ? void 0 : gasPriceTextNetwork1.fiat))))),
                 React__default['default'].createElement(ProgressBlock, null,
                     React__default['default'].createElement(TitleMobTop, { fontWeight: "400" }, texts.network),
-                    React__default['default'].createElement(Token, { className: "main" }, BlockChainTo || (React__default['default'].createElement(React__default['default'].Fragment, null,
-                        React__default['default'].createElement(Icon$d, null),
-                        React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.avalanche)))),
+                    React__default['default'].createElement(Token, { className: "main" }, network2 === "avax" ? React__default['default'].createElement(AvaxNetwork, null) : React__default['default'].createElement(BscNetwork, null)),
                     React__default['default'].createElement(Progress$1, null,
                         React__default['default'].createElement(ProgressWrapper, null,
                             React__default['default'].createElement(ProgressRange, { progress: progress2, texts: textsProgress2 }))),

@@ -33,11 +33,13 @@ export interface BridgeStep1Props {
     propsButton?: ButtonProps;
 }
 export interface BridgeStep2Props {
+    network1: string;
+    network2: string;
     onDismiss?: () => void;
     stepsText: Array<string>;
     WalletIcon?: ReactNode;
-    BlockChainFrom?: ReactNode;
-    BlockChainTo?: ReactNode;
+    avalancheIcon?: ReactNode;
+    bscIcon?: ReactNode;
     isLoadGas?: boolean;
     TokenIcon?: ReactNode;
     isErrorProgress?: boolean;
