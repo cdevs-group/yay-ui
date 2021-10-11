@@ -50,14 +50,14 @@ const BridgeStep2 = ({
   const AvaxNetwork = () => (
     <>
       {avalancheIcon || <AvalancheIcon />}
-      <Text marginLeft="10px">{texts.avalanche}</Text>
+      <Text marginLeft="10px">{texts.avalanche || 'Avalanche'}</Text>
     </>
   );
 
   const BscNetwork = () => (
     <>
       {bscIcon || <BnbIcon />}
-      <Text marginLeft="10px">{texts.bsc}</Text>
+      <Text marginLeft="10px">{texts.bsc || 'BSC'}</Text>
     </>
   );
 

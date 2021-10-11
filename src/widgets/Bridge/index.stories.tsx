@@ -116,8 +116,6 @@ export const BridgeStep2Block = () => {
     network: "Network",
     timer: "Timer",
     coast: "Coast of GAS",
-    bsc: "BSC",
-    avalanche: "Avalanche",
   };
 
   const stepsText = ["start", "1/25", "3/32", "finish"];
