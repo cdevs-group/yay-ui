@@ -27,7 +27,7 @@ export interface BridgeStep1Props {
     message2: string;
   };
   handleToggleNetwork: (val: any) => void;
-  disabledInput?: boolean;  
+  disabledInput?: boolean;
   actionButton: React.ReactNode;
 }
 

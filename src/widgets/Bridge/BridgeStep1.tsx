@@ -97,7 +97,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   handleOpenProofOfAssets,
   handleOpenTransactionsHistory,
   disabledInput,
-  actionButton
+  actionButton,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (

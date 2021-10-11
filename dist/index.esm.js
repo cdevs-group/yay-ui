@@ -4379,7 +4379,7 @@ var Error$1 = styled(Text)(templateObject_11$3 || (templateObject_11$3 = __makeT
 });
 var ButtonOpenProof = styled(Text)(templateObject_12$3 || (templateObject_12$3 = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
 var BridgeStep1 = function (_a) {
-    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, handleButton = _a.handleButton, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput, disabledButton = _a.disabledButton, propsButton = _a.propsButton;
+    var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput, actionButton = _a.actionButton;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default.createElement(Field$1, null,
@@ -4406,7 +4406,7 @@ var BridgeStep1 = function (_a) {
                 React__default.createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 }),
                 React__default.createElement(Error$1, null,
                     React__default.createElement("p", { style: { minHeight: 22.5 } }, texts.error)),
-                React__default.createElement(Button$9, __assign({ onClick: handleButton, width: "100%", variant: "green", disabled: disabledButton }, propsButton), texts.button))),
+                actionButton)),
         React__default.createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
         React__default.createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory)));
 };
@@ -4496,10 +4496,10 @@ var BridgeStep2 = function (_a) {
     var network1 = _a.network1, network2 = _a.network2, onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isError = _a.isError, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, timer1 = _a.timer1, timer2 = _a.timer2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, avalancheIcon = _a.avalancheIcon, bscIcon = _a.bscIcon, stepsText = _a.stepsText, isLoadTimeNetwork1 = _a.isLoadTimeNetwork1, isLoadTimeNetwork2 = _a.isLoadTimeNetwork2, noticeVisible = _a.noticeVisible, noticeImg = _a.noticeImg, noticeType = _a.noticeType, noticeTitle = _a.noticeTitle, noticeText = _a.noticeText, noticeButton1Text = _a.noticeButton1Text, noticeButton2Text = _a.noticeButton2Text, noticeButton1Props = _a.noticeButton1Props, noticeButton2Props = _a.noticeButton2Props;
     var AvaxNetwork = function () { return (React__default.createElement(React__default.Fragment, null,
         avalancheIcon || React__default.createElement(Icon$d, null),
-        React__default.createElement(Text, { marginLeft: "10px" }, texts.avalanche || 'Avalanche'))); };
+        React__default.createElement(Text, { marginLeft: "10px" }, texts.avalanche || "Avalanche"))); };
     var BscNetwork = function () { return (React__default.createElement(React__default.Fragment, null,
         bscIcon || React__default.createElement(Icon$P, null),
-        React__default.createElement(Text, { marginLeft: "10px" }, texts.bsc || 'BSC'))); };
+        React__default.createElement(Text, { marginLeft: "10px" }, texts.bsc || "BSC"))); };
     return (React__default.createElement(Content$4, null,
         React__default.createElement(Wrapper$i, { blur: noticeVisible },
             React__default.createElement(Title$9, { size: "lg" }, texts.title),
