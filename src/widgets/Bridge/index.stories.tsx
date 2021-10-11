@@ -126,6 +126,8 @@ export const BridgeStep2Block = () => {
     <div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          network1="avax"
+          network2="bsc"
           onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
@@ -155,6 +157,8 @@ export const BridgeStep2Block = () => {
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          network1="bsc"
+          network2="avax"
           onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
@@ -176,6 +180,8 @@ export const BridgeStep2Block = () => {
       </div>
       <div style={{ marginTop: "20px" }}>
         <BridgeStep2
+          network1="bsc"
+          network2="avax"
           onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}

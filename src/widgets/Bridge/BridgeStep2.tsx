@@ -13,6 +13,8 @@ import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutB
 import { Button } from "../../components/Button";
 
 const BridgeStep2 = ({
+  network1,
+  network2,
   onDismiss,
   progress1,
   progress2,
@@ -30,8 +32,8 @@ const BridgeStep2 = ({
   TokenIcon,
   gasPriceTextNetwork1,
   gasPriceTextNetwork2,
-  BlockChainFrom,
-  BlockChainTo,
+  avalancheIcon,
+  bscIcon,
   stepsText,
   isLoadTimeNetwork1,
   isLoadTimeNetwork2,
@@ -45,6 +47,20 @@ const BridgeStep2 = ({
   noticeButton1Props,
   noticeButton2Props,
 }: BridgeStep2Props) => {
+  const AvaxNetwork = () => (
+    <>
+      {avalancheIcon || <AvalancheIcon />}
+      <Text marginLeft="10px">{texts.avalanche}</Text>
+    </>
+  );
+
+  const BscNetwork = () => (
+    <>
+      {bscIcon || <BnbIcon />}
+      <Text marginLeft="10px">{texts.bsc}</Text>
+    </>
+  );
+
   return (
     <Content>
       <Wrapper blur={noticeVisible}>
@@ -99,14 +115,7 @@ const BridgeStep2 = ({
           </HeadLine>
           <ProgressBlock>
             <TitleMobTop>{texts.network}</TitleMobTop>
-            <Token className="main">
-              {BlockChainFrom || (
-                <>
-                  <BnbIcon />
-                  <Text marginLeft="10px">{texts.bsc}</Text>
-                </>
-              )}
-            </Token>
+            <Token className="main">{network1 === "avax" ? <AvaxNetwork /> : <BscNetwork />}</Token>
             <Progress>
               <ProgressWrapper>
                 <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
@@ -134,14 +143,7 @@ const BridgeStep2 = ({
           </ProgressBlock>
           <ProgressBlock>
             <TitleMobTop fontWeight="400">{texts.network}</TitleMobTop>
-            <Token className="main">
-              {BlockChainTo || (
-                <>
-                  <AvalancheIcon />
-                  <Text marginLeft="10px">{texts.avalanche}</Text>
-                </>
-              )}
-            </Token>
+            <Token className="main">{network2 === "avax" ? <AvaxNetwork /> : <BscNetwork />}</Token>
             <Progress>
               <ProgressWrapper>
                 <ProgressRange progress={progress2} texts={textsProgress2} />
