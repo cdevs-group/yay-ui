@@ -153,6 +153,7 @@ export interface TransactionHistoryDataProps {
     anotherHash?: string;
     toAddress?: string;
     amount?: string;
+    link?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {
     onDismiss: () => void | undefined;
