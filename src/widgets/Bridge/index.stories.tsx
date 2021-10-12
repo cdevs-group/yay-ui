@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BridgeStep1 from "./BridgeStep1";
 import BridgeStep2 from "./BridgeStep2";
-import { Timer } from "../../components/Timer";
 import useBridgeModal from "./useBridgeModal";
 import { Text } from "../../components/Text";
 import { AvalancheIcon, BnbIcon } from "../../components/Svg";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
-import { BridgeProof } from "./index";
+import { TransactionHistory } from "./index";
 import { Metamask } from "../../constants/images";
 import { NoticeBridgeType } from "./types";
 import { Button } from "../../components/Button";
@@ -190,7 +189,7 @@ export const BridgeStep2Block = () => {
           timer1={334}
           timer2={100}
           isError
-          progress2={20}
+          progress2={100}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
           addTokenHandler={() => {}}
@@ -215,11 +214,13 @@ export const BrightProofBlock = () => {
     </Btn>
   );
 };
+
 const Btn = styled(Text)`
   background: none;
   border: none;
   cursor: pointer;
 `;
+
 export const TransactionHistoryBlock = () => {
   const ProofOfAssetsData = [
     {
@@ -301,16 +302,25 @@ export const TransactionHistoryBlock = () => {
   const texts = {
     title: "Transactions History",
     description: "Here you can view the history of your transactions",
+    seeMore: "See more",
   };
 
+  const [isLoading, setisLoading] = useState(false);
+
   return (
-    <BridgeProof
+    <TransactionHistory
       addTokenHandler={() => {}}
       textCopy={"Copied"}
       onDismiss={() => {}}
       texts={texts}
-      ProofOfAssetsData={ProofOfAssetsData}
+      transactionHistoryData={ProofOfAssetsData}
       addTokenIcon={<img src={Metamask} />}
+      propsBtnSeeMore={{
+        onClick: () => {
+          setisLoading(true);
+        },
+        spinColor: isLoading,
+      }}
     />
   );
 };

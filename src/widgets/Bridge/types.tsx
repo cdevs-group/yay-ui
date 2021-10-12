@@ -140,3 +140,24 @@ interface proofData {
   link: string;
   title: string;
 }
+
+export interface InfoWrapperTransactionHistoryProps {
+  addTokenIcon?: ReactNode;
+  tokenLogo?: ReactNode;
+  transactionHistoryData: Array<{
+    proofData: proofData;
+    wrappedData: Array<proofData>;
+  }>;
+  addTokenHandler: () => void;
+  textCopy: string;
+  tokenName?: string;
+}
+export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {
+  onDismiss: () => void | undefined;
+  texts: {
+    title: string;
+    description: string;
+    seeMore?: string;
+  };
+  propsBtnSeeMore?: ButtonProps;
+}

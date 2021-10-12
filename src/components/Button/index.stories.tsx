@@ -60,7 +60,14 @@ export const Variants: React.FC = () => {
             Button
           </Button>
         </Row>
-        <Row></Row>
+        <Row>
+          <Button width="130px" scale="sm" variant="text">
+            Button
+          </Button>
+          <Button width="130px" scale="sm" variant="text" spinColor>
+            Button
+          </Button>
+        </Row>
       </BrowserRouter>
     </div>
   );
