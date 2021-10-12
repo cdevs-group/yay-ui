@@ -151,9 +151,16 @@ export const BridgeStep2Block = () => {
           noticeType={NoticeBridgeType.ERROR}
           noticeTitle="Something went wrong"
           noticeText={<>Your request was successfully completed. Check details here</>}
-          noticeButton1Text="Try again"
-          noticeButton2Text="Go to marketplace"
-          noticeButton1Props={{ spin: true, onClick: () => console.log("Click") }}
+          noticeButton1={
+            <Button variant="green" maxWidth="362px" width="100%" mb="14px">
+              noticeButton1Text
+            </Button>
+          }
+          noticeButton2={
+            <Button variant="gray" maxWidth="362px" width="100%">
+              noticeButton2Text
+            </Button>
+          }
         />
       </div>
       <div style={{ marginTop: "20px" }}>

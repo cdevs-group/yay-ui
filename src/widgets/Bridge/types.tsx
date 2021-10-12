@@ -96,10 +96,8 @@ export interface BridgeStep2Props {
   noticeType?: NoticeBridgeType;
   noticeTitle?: string;
   noticeText?: React.ReactNode;
-  noticeButton1Text?: string;
-  noticeButton2Text?: string;
-  noticeButton1Props?: ButtonProps;
-  noticeButton2Props?: ButtonProps;
+  noticeButton1?: React.ReactNode;
+  noticeButton2?: React.ReactNode;
 }
 
 export enum NoticeBridgeType {

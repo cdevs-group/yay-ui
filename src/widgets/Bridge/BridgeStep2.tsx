@@ -42,10 +42,8 @@ const BridgeStep2 = ({
   noticeType,
   noticeTitle,
   noticeText,
-  noticeButton1Text,
-  noticeButton2Text,
-  noticeButton1Props,
-  noticeButton2Props,
+  noticeButton1,
+  noticeButton2,
 }: BridgeStep2Props) => {
   const AvaxNetwork = () => (
     <>
@@ -189,12 +187,8 @@ const BridgeStep2 = ({
             <Text fontSize="18px" letterSpacing="0.5px" mb="17px" textAlign="center">
               {noticeText}
             </Text>
-            <Button variant="green" maxWidth="362px" width="100%" mb="14px" {...noticeButton1Props}>
-              {noticeButton1Text}
-            </Button>
-            <Button variant="gray" maxWidth="362px" width="100%" {...noticeButton2Props}>
-              {noticeButton2Text}
-            </Button>
+            {noticeButton1}
+            {noticeButton2}
           </Notice>
           <Border noticeType={noticeType} />
         </>
