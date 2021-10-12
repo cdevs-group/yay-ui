@@ -44,6 +44,7 @@ const BridgeStep2 = ({
   noticeButton1,
   noticeButton2,
   timer,
+  noticeOnDismiss,
 }: BridgeStep2Props) => {
   const AvaxNetwork = () => (
     <>
@@ -183,6 +184,9 @@ const BridgeStep2 = ({
       {noticeVisible && (
         <>
           <Notice>
+            <ButtonClose onClick={noticeOnDismiss}>
+              <CloseIcon />
+            </ButtonClose>
             {noticeImg || <img src={GhostsIcon} alt="" style={{ display: "block", margin: "0 auto 13px" }} />}
             <Text
               textAlign="center"
