@@ -32,7 +32,7 @@ const TokenInfoTransaction = ({
       >
         <CopyIcon />
       </Button>
-      <Button as="a" href={data?.link} className="arrow">
+      <Button as="a" href={data?.link} className="arrow" target="_blank">
         <ArrowLeft />
       </Button>
     </BlockInfo>

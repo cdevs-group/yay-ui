@@ -143,6 +143,6 @@ const Shadow = styled.div<{ show: boolean }>`
     z-index: 2;
     top: 0;
     transition: 0.3s;
-    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);
+    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);
   }
 `;
