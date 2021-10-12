@@ -27,9 +27,9 @@ const InfoWrapperTransactionHistory = ({
             data={{
               hash: data?.hash,
               amount: data?.amount,
-              network: data?.network,
+              network: data?.network === "avax" ? "bsc" : "avax",
               link:
-                data?.network === "avax"
+                data?.network === "bsc"
                   ? `https://cchain.explorer.avax.network/tx/${data?.hash}/token-transfers`
                   : `https://bscscan.com/tx/${data?.hash}`,
             }}
@@ -47,9 +47,9 @@ const InfoWrapperTransactionHistory = ({
             data={{
               hash: data?.anotherHash,
               amount: data?.amount,
-              network: data?.network === "avax" ? "bsc" : "avax",
+              network: data?.network,
               link:
-                data?.network === "bsc"
+                data?.network === "avax"
                   ? `https://cchain.explorer.avax.network/tx/${data?.anotherHash}/token-transfers`
                   : `https://bscscan.com/tx/${data?.anotherHash}`,
             }}

@@ -229,7 +229,7 @@ export const TransactionHistoryBlock = () => {
       id: "137fa17a-c6db-47f6-b642-7d37f6cbc83c",
       createdAt: "2021-10-12T10:38:40.212Z",
       updatedAt: "2021-10-12T10:38:40.212Z",
-      network: "avax",
+      network: "bsc",
       hash: "0x9ed7a74fedb963d5c378a60ce812c58e9e658280d4bcf9a2d00a729dce3afa16",
       blockNumber: 11705938,
       blockNumberTimestamp: 1634035118,
