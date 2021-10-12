@@ -11,6 +11,7 @@ import { Loader } from "../../components/Loader";
 import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
 import { Button } from "../../components/Button";
+import { Flex } from "../../components/Box";
 
 const BridgeStep2 = ({
   onDismiss,
@@ -18,12 +19,11 @@ const BridgeStep2 = ({
   progress2,
   textsProgress1,
   textsProgress2,
-  isError,
+  isErrorNetwork1,
+  isErrorNetwork2,
   texts,
   isLoadGasNetwork1,
   isLoadGasNetwork2,
-  timer1,
-  timer2,
   transferredValue,
   addTokenHandler,
   WalletIcon,
@@ -33,8 +33,7 @@ const BridgeStep2 = ({
   BlockChainFrom,
   BlockChainTo,
   stepsText,
-  isLoadTimeNetwork1,
-  isLoadTimeNetwork2,
+  isLoadTimeNetwork,
   noticeVisible,
   noticeImg,
   noticeType,
@@ -44,6 +43,7 @@ const BridgeStep2 = ({
   noticeButton2Text,
   noticeButton1Props,
   noticeButton2Props,
+  timer,
 }: BridgeStep2Props) => {
   return (
     <Content>
@@ -86,16 +86,27 @@ const BridgeStep2 = ({
         </TopLineBlock>
         <BodyBlock>
           <HeadLine>
-            <Text size="sm" fontWeight="400" color={baseColors.textGray}>
+            <TitleDesk size="sm" fontWeight="400" color={baseColors.textGray}>
               {texts.network}
-            </Text>
-            <div></div>
-            <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
-              {texts.timer}
-            </Text>
-            <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+            </TitleDesk>
+            <Flex flexDirection="column">
+              <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+                {texts.timer}
+              </Text>
+              <TimerWrap>
+                <TimerNotSolidWithoutBg
+                  hoursHide={timer < 3600 || isLoadTimeNetwork}
+                  marginPoint="0 3px"
+                  fontSize="15px"
+                  height="16px"
+                  isLoad={isLoadTimeNetwork}
+                  time={timer}
+                />
+              </TimerWrap>
+            </Flex>
+            <TitleDesk textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
               {texts.coast}
-            </Text>
+            </TitleDesk>
           </HeadLine>
           <ProgressBlock>
             <TitleMobTop>{texts.network}</TitleMobTop>
@@ -109,11 +120,14 @@ const BridgeStep2 = ({
             </Token>
             <Progress>
               <ProgressWrapper>
-                <ProgressSteps stepsText={stepsText} isError={isError} texts={textsProgress1} step={progress1} />
+                <ProgressSteps
+                  stepsText={stepsText}
+                  isError={isErrorNetwork1}
+                  texts={textsProgress1}
+                  progress={progress1}
+                />
               </ProgressWrapper>
             </Progress>
-            <TitleMob>{texts.timer}</TitleMob>
-            <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork1} time={timer1} />
             <TitleMob className="last">{texts.coast}</TitleMob>
             <GasCoast>
               {isLoadGasNetwork1 || !gasPriceTextNetwork1 ? (
@@ -144,14 +158,9 @@ const BridgeStep2 = ({
             </Token>
             <Progress>
               <ProgressWrapper>
-                <ProgressRange progress={progress2} texts={textsProgress2} />
+                <ProgressRange isError={isErrorNetwork2} progress={progress2} texts={textsProgress2} />
               </ProgressWrapper>
             </Progress>
-            <TitleMob fontWeight="400">{texts.timer}</TitleMob>
-            <TimerNotSolidWithoutBg isLoad={isLoadTimeNetwork2} time={timer2} />
-            <TitleMob fontWeight="400" className="last">
-              {texts.coast}
-            </TitleMob>
             <GasCoast>
               {isLoadGasNetwork2 || !gasPriceTextNetwork2 ? (
                 <LoaderWrap>
@@ -414,9 +423,8 @@ const BodyBlock = styled.div`
 `;
 const HeadLine = styled.div`
   position: relative;
-  margin-bottom: 24px;
-  display: none;
-  grid-template-columns: 0.7fr 1.3fr 0.4fr 0.7fr;
+  margin-bottom: 20px;
+  grid-template-columns: 0.7fr 1.3fr 0.7fr;
   grid-column-gap: 25px;
   &:last-child {
     margin-bottom: 0;
@@ -449,12 +457,11 @@ const ProgressBlock = styled(HeadLine)`
 `;
 const Progress = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 const GasCoast = styled.div`
   text-align: center;
   display: flex;
-  //justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 85px;
@@ -502,5 +509,15 @@ const ButtonClose = styled.button`
     position: absolute;
     top: -8px;
     left: -8px;
+  }
+`;
+const TimerWrap = styled.div`
+  height: 16px;
+  margin-top: 5px;
+`;
+const TitleDesk = styled(Text)`
+  display: none;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: block;
   }
 `;

@@ -130,7 +130,7 @@ export const BridgeStep2Block = () => {
           transferredValue={transferredValue}
           texts={texts}
           progress1={1}
-          progress2={0}
+          progress2={100}
           timer1={435}
           timer2={34534}
           isLoadGas
@@ -158,10 +158,9 @@ export const BridgeStep2Block = () => {
           onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
-          progress1={3}
-          progress2={0}
-          timer1={342324}
-          timer2={23}
+          progress1={50}
+          progress2={100}
+          timer={0}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
           addTokenHandler={() => {}}
@@ -169,9 +168,8 @@ export const BridgeStep2Block = () => {
           gasPriceTextNetwork1={gasPriceTextNetwork1}
           gasPriceTextNetwork2={gasPriceTextNetwork2}
           isLoadGasNetwork2={false}
-          isLoadTimeNetwork1
+          isLoadTimeNetwork
           isLoadGasNetwork1
-          isLoadTimeNetwork2={false}
         />
       </div>
       <div style={{ marginTop: "20px" }}>
@@ -179,10 +177,10 @@ export const BridgeStep2Block = () => {
           onDismiss={() => {}}
           transferredValue={transferredValue}
           texts={texts}
-          progress1={4}
-          timer1={334}
-          timer2={100}
-          isError
+          progress1={28}
+          timer={3601}
+          isErrorNetwork1
+          isErrorNetwork2
           progress2={20}
           textsProgress2={textsProgress2}
           textsProgress1={textsProgress1}
@@ -191,9 +189,7 @@ export const BridgeStep2Block = () => {
           gasPriceTextNetwork1={gasPriceTextNetwork1}
           gasPriceTextNetwork2={gasPriceTextNetwork2}
           isLoadGasNetwork2
-          isLoadTimeNetwork1={false}
-          isLoadGasNetwork1={false}
-          isLoadTimeNetwork2
+          isLoadTimeNetwork={false}
         />
       </div>
     </div>
