@@ -75,7 +75,7 @@ const Wrapper = styled.div`
   } ;
 `;
 const TokenList = styled.div`
-  padding-top: 28px;
+  margin-top: 28px;
   height: 70vh;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.md} {

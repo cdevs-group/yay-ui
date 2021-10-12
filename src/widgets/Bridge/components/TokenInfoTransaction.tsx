@@ -5,6 +5,7 @@ import { Text } from "../../../components/Text";
 import { Metamask } from "../../../constants/images";
 import { ArrowLeft, CopyIcon } from "../../../components/Svg";
 import { ellipsis } from "../../../helpers/ellipsis";
+import { getBalanceAmount } from "../../../helpers/bigNumber";
 
 const TokenInfoTransaction = ({
   data,
@@ -45,7 +46,7 @@ const TokenInfoTransaction = ({
       <WrapperInfo>
         <LeftColumnInfo>
           <Text marginBottom="10px" size="xs">
-            {data?.amount || ""} YAY
+            {getBalanceAmount(data?.amount) || ""} YAY
           </Text>
           <Text size="xs">{ellipsis(data?.hash || "", 10)}</Text>
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>
