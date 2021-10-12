@@ -39,15 +39,13 @@ export interface BridgeStep2Props {
     bscIcon?: ReactNode;
     isLoadGas?: boolean;
     TokenIcon?: ReactNode;
-    isErrorProgress?: boolean;
     progress1: number;
-    isError?: boolean;
-    timer1: number;
-    timer2: number;
+    isErrorNetwork1?: boolean;
+    isErrorNetwork2?: boolean;
+    timer: number;
     isLoadGasNetwork1: boolean;
     isLoadGasNetwork2: boolean;
-    isLoadTimeNetwork2: boolean;
-    isLoadTimeNetwork1: boolean;
+    isLoadTimeNetwork: boolean;
     gasPriceTextNetwork1?: {
         value: string;
         fiat: string;

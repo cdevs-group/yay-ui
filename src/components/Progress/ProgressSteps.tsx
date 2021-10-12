@@ -4,7 +4,7 @@ import { Text } from "../Text";
 import { ProgressStepsProps } from "./types";
 import { baseColors } from "../../theme/colors";
 
-const ProgressSteps = ({ isError, step, texts, stepsText }: ProgressStepsProps) => {
+const ProgressSteps = ({ isError, texts, progress }: ProgressStepsProps) => {
   return (
     <ProgressWrap>
       <Title>
@@ -13,14 +13,7 @@ const ProgressSteps = ({ isError, step, texts, stepsText }: ProgressStepsProps) 
           {isError ? texts.checkIt : texts.confirmations}
         </CheckIt>
       </Title>
-      <Steps>
-        {stepsText.map((name, i) => (
-          <Step key={i}>
-            <Indicator complete={i < step} isError={isError} />
-            <Text fontSize="10px">{name}</Text>
-          </Step>
-        ))}
-      </Steps>
+      <RangeTrack isError={isError} progress={progress} />
     </ProgressWrap>
   );
 };
@@ -42,23 +35,11 @@ const CheckIt = styled(Text)`
   background: none;
   border: none;
 `;
-const Steps = styled.div`
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-`;
-const Step = styled.div`
-  margin-right: 5px;
-  text-align: center;
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-const Indicator = styled.div<{ isError?: boolean; complete?: boolean }>`
+const RangeTrack = styled.div<{ progress?: number; isError?: boolean }>`
   position: relative;
-  width: 40px;
+  margin: 10px 0;
+  width: 100%;
   height: 12px;
-  margin-bottom: 10px;
   background: ${({ theme }) => theme.colors.buttonBg};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 3px;
@@ -66,12 +47,44 @@ const Indicator = styled.div<{ isError?: boolean; complete?: boolean }>`
     display: block;
     content: "";
     position: absolute;
-    width: calc(100% - 5px);
+    width: ${({ progress }) => (progress ? `calc(${progress}% - 5px)` : 0)};
     height: calc(100% - 6px);
     top: 3px;
     left: 2.5px;
     border-radius: 2px;
-    background: ${({ isError, complete, theme }) =>
-      isError ? theme.colors.darkPink : complete ? theme.colors.greenText2 : "transparent"};
+    background: ${({ theme, isError }) => (isError ? theme.colors.redBg : theme.colors.greenText2)};
   }
 `;
+// const Steps = styled.div`
+//   margin-top: 10px;
+//   display: flex;
+//   align-items: center;
+// `;
+// const Step = styled.div`
+//   margin-right: 5px;
+//   text-align: center;
+//   &:last-child {
+//     margin-right: 0;
+//   }
+// `;
+// const Indicator = styled.div<{ isError?: boolean; complete?: boolean }>`
+//   position: relative;
+//   width: 40px;
+//   height: 12px;
+//   margin-bottom: 10px;
+//   background: ${({ theme }) => theme.colors.buttonBg};
+//   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+//   border-radius: 3px;
+//   &:after {
+//     display: block;
+//     content: "";
+//     position: absolute;
+//     width: calc(100% - 5px);
+//     height: calc(100% - 6px);
+//     top: 3px;
+//     left: 2.5px;
+//     border-radius: 2px;
+//     background: ${({ isError, complete, theme }) =>
+//       isError ? theme.colors.darkPink : complete ? theme.colors.greenText2 : "transparent"};
+//   }
+// `;
