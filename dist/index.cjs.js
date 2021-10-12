@@ -4895,14 +4895,13 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 var BridgeProof = function (_a) {
     var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     var scrollBlock = React.useRef(null);
-    var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    React.useEffect(function () {
-        var block = scrollBlock.current;
-        if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-        }
-    }, [scrollBlock]);
-
+    var _b = React.useState(false), shadowVisibility = _b[0]; _b[1];
+    // useEffect(() => {
+    //   const block = scrollBlock.current;
+    //   if (block) {
+    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    //   }
+    // }, [scrollBlock]);
     return (React__default['default'].createElement(Wrapper$h, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -5140,7 +5139,6 @@ var TransactionHistory = function (_a) {
             block.removeEventListener("scroll", function () { });
         }
     }, [scrollBlock]);
-
     return (React__default['default'].createElement(Wrapper$f, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$2, { marginTop: "10px" }, texts.description),

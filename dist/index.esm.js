@@ -4863,14 +4863,13 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 var BridgeProof = function (_a) {
     var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     var scrollBlock = useRef(null);
-    var _b = useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    useEffect(function () {
-        var block = scrollBlock.current;
-        if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-        }
-    }, [scrollBlock]);
-
+    var _b = useState(false), shadowVisibility = _b[0]; _b[1];
+    // useEffect(() => {
+    //   const block = scrollBlock.current;
+    //   if (block) {
+    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    //   }
+    // }, [scrollBlock]);
     return (React__default.createElement(Wrapper$h, null,
         React__default.createElement(Text, { size: "lg" }, texts.title),
         React__default.createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -5115,7 +5114,6 @@ var TransactionHistory = function (_a) {
             React__default.createElement(Icon$U, { fill: "transparent" })),
         React__default.createElement(Shadow, { show: shadowVisibility }),
         React__default.createElement(TokenList, { ref: scrollBlock },
-
             React__default.createElement(React__default.Fragment, null,
                 transactionHistoryData.map(function (item, i) { return (React__default.createElement(InfoWrapperTransactionHistory, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, data: item, tokenLogo: tokenLogo, tokenName: tokenName, textTransaction: textTransaction })); }),
                 React__default.createElement(SeeMore, __assign({ variant: "text" }, propsBtnSeeMore), texts.seeMore)))));
