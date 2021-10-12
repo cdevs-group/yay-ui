@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
+import BigNumber from 'bignumber.js';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -4869,6 +4870,7 @@ var BridgeProof = function (_a) {
             block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
         }
     }, [scrollBlock]);
+
     return (React__default.createElement(Wrapper$h, null,
         React__default.createElement(Text, { size: "lg" }, texts.title),
         React__default.createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -4902,6 +4904,13 @@ var Shadow$1 = styled.div(templateObject_5$w || (templateObject_5$w = __makeTemp
 });
 var templateObject_1$1d, templateObject_2$10, templateObject_3$R, templateObject_4$F, templateObject_5$w;
 
+var BIG_TEN = new BigNumber(10);
+var getBalanceAmount = function (amount, decimals) {
+    if (decimals === void 0) { decimals = 18; }
+    if (amount)
+        return new BigNumber(amount).dividedBy(BIG_TEN.pow(decimals)).toNumber();
+};
+
 var TokenInfoTransaction = function (_a) {
     var _b;
     var data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, textTransaction = _a.textTransaction;
@@ -4931,7 +4940,7 @@ var TokenInfoTransaction = function (_a) {
         React__default.createElement(WrapperInfo, null,
             React__default.createElement(LeftColumnInfo, null,
                 React__default.createElement(Text, { marginBottom: "10px", size: "xs" },
-                    (data === null || data === void 0 ? void 0 : data.amount) || "",
+                    getBalanceAmount(data.amount),
                     " YAY"),
                 React__default.createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default.createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),
@@ -5106,6 +5115,7 @@ var TransactionHistory = function (_a) {
             React__default.createElement(Icon$U, { fill: "transparent" })),
         React__default.createElement(Shadow, { show: shadowVisibility }),
         React__default.createElement(TokenList, { ref: scrollBlock },
+
             React__default.createElement(React__default.Fragment, null,
                 transactionHistoryData.map(function (item, i) { return (React__default.createElement(InfoWrapperTransactionHistory, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, data: item, tokenLogo: tokenLogo, tokenName: tokenName, textTransaction: textTransaction })); }),
                 React__default.createElement(SeeMore, __assign({ variant: "text" }, propsBtnSeeMore), texts.seeMore)))));
@@ -5117,7 +5127,7 @@ var Wrapper$f = styled.div(templateObject_1$1a || (templateObject_1$1a = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
+var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  margin-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  margin-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
