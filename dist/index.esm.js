@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
-import BigNumber from 'bignumber.js';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -4903,13 +4902,6 @@ var Shadow$1 = styled.div(templateObject_5$w || (templateObject_5$w = __makeTemp
 });
 var templateObject_1$1d, templateObject_2$10, templateObject_3$R, templateObject_4$F, templateObject_5$w;
 
-var BIG_TEN = new BigNumber(10);
-var getBalanceAmount = function (amount, decimals) {
-    if (decimals === void 0) { decimals = 18; }
-    if (amount)
-        return new BigNumber(amount).dividedBy(BIG_TEN.pow(decimals));
-};
-
 var TokenInfoTransaction = function (_a) {
     var _b;
     var data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, textTransaction = _a.textTransaction;
@@ -4938,8 +4930,8 @@ var TokenInfoTransaction = function (_a) {
             _b.toLocaleUpperCase()),
         React__default.createElement(WrapperInfo, null,
             React__default.createElement(LeftColumnInfo, null,
-                React__default.createElement(Text, { marginBottom: "10px", size: "xs" },
-                    getBalanceAmount(data === null || data === void 0 ? void 0 : data.amount),
+                React__default.createElement(Text, { marginBottom: "10px", size: "xs" }, data === null || data === void 0 ? void 0 :
+                    data.amount,
                     " YAY"),
                 React__default.createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default.createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),

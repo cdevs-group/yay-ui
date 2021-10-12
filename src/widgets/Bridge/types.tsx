@@ -1,4 +1,3 @@
-import BigNumber from "bignumber.js";
 import { ReactNode } from "react";
 import { ButtonProps } from "../../components/Button";
 
@@ -160,7 +159,7 @@ export interface TransactionHistoryDataProps {
   tokenAddress?: string;
   anotherHash?: string;
   toAddress?: string;
-  amount?: any;
+  amount?: string;
   link?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {

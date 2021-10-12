@@ -152,7 +152,7 @@ export interface TransactionHistoryDataProps {
     tokenAddress?: string;
     anotherHash?: string;
     toAddress?: string;
-    amount?: any;
+    amount?: string;
     link?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {
