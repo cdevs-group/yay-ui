@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { ProgressRangeProps } from "./types";
 import { Text } from "../Text";
 
-const ProgressRange = ({ texts, progress }: ProgressRangeProps) => {
+const ProgressRange = ({ texts, progress, isError }: ProgressRangeProps) => {
   return (
     <ProgressWrap>
       <Text fontSize="10px">
         {texts.waiting} {texts.networkWaiting}
       </Text>
-      <RangeTrack progress={progress} />
+      <RangeTrack isError={isError} progress={progress} />
       <RangeTexts>
         <Text fontSize="10px">{texts.start}</Text>
         <Text fontSize="10px">{texts.final}</Text>
@@ -26,7 +26,7 @@ const ProgressWrap = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const RangeTrack = styled.div<{ progress?: number }>`
+const RangeTrack = styled.div<{ progress?: number; isError?: boolean }>`
   position: relative;
   margin: 10px 0;
   width: 100%;
@@ -38,12 +38,12 @@ const RangeTrack = styled.div<{ progress?: number }>`
     display: block;
     content: "";
     position: absolute;
-    width: ${({ progress }) => (progress ? `${progress}%` : 0)};
+    width: ${({ progress }) => (progress ? `calc(${progress}% - 5px)` : 0)};
     height: calc(100% - 6px);
     top: 3px;
     left: 2.5px;
     border-radius: 2px;
-    background: ${({ theme }) => theme.colors.greenText2};
+    background: ${({ theme, isError }) => (isError ? theme.colors.redBg : theme.colors.greenText2)};
   }
 `;
 const RangeTexts = styled.div`
