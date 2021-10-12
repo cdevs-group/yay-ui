@@ -5002,23 +5002,23 @@ var InfoWrapperTransactionHistory = function (_a) {
         React__default.createElement(MainBlock$1, null,
             React__default.createElement(LeftColumn, null,
                 React__default.createElement(TokenInfoTransaction, { data: {
-                        hash: data === null || data === void 0 ? void 0 : data.hash,
+                        hash: data === null || data === void 0 ? void 0 : data.anotherHash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
                         link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
+                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
+                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
             React__default.createElement(MiddleColumn, null,
                 React__default.createElement(Icon$b, null)),
             React__default.createElement(RightColumn, null,
                 React__default.createElement(TokenInfoTransaction, { data: {
-                        hash: data === null || data === void 0 ? void 0 : data.anotherHash,
+                        hash: data === null || data === void 0 ? void 0 : data.hash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: data === null || data === void 0 ? void 0 : data.network,
                         link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
+                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
+                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
 };
 var Wrapper$g = styled.div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
