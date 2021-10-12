@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { InfoWrapperProps, InfoWrapperTransactionHistoryProps } from "../types";
+import { InfoWrapperTransactionHistoryProps } from "../types";
 import YAYIcon from "../../../components/Svg/Icons/YAYIcon";
 import { Text } from "../../../components/Text";
 import { ClipIcon } from "../../../components/Svg";
-import { Metamask } from "../../../constants/images";
-import { ArrowLeft, CopyIcon } from "../../../components/Svg";
-import { ellipsis } from "../../../helpers/ellipsis";
+import TokenInfoTransaction from "./TokenInfoTransaction";
 
 const InfoWrapperTransactionHistory = ({
   tokenLogo,
@@ -17,30 +15,6 @@ const InfoWrapperTransactionHistory = ({
   tokenName,
   textTransaction,
 }: InfoWrapperTransactionHistoryProps) => {
-  const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
-
-  const ButtonsBlock = ({ type }: { type?: string }) => (
-    <BlockInfo className={`${type}`}>
-      <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
-      <Button
-        onClick={() => {
-          if (navigator.clipboard) {
-            navigator.clipboard.writeText(data?.hash || "");
-            setIsTooltipDisplayed(true);
-            setTimeout(() => {
-              setIsTooltipDisplayed(false);
-            }, 1000);
-          }
-        }}
-      >
-        <CopyIcon />
-      </Button>
-      <Button as="a" href={data?.anotherHash || ""} className="arrow">
-        <ArrowLeft />
-      </Button>
-    </BlockInfo>
-  );
-
   return (
     <Wrapper>
       <TokenLogo>
@@ -49,43 +23,41 @@ const InfoWrapperTransactionHistory = ({
       </TokenLogo>
       <MainBlock>
         <LeftColumn>
-          <WrapBlock>
-            <Text>
-              {textTransaction} {data?.network?.toLocaleUpperCase()}
-            </Text>
-            <WrapperInfo>
-              <LeftColumnInfo>
-                <Text marginBottom="10px" size="xs">
-                  {data?.amount || ""} YAY
-                </Text>
-                <Text size="xs">{ellipsis(data?.hash || "", 10)}</Text>
-                <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>
-              </LeftColumnInfo>
-              <ButtonsBlock />
-            </WrapperInfo>
-            <ButtonsBlock type="mob" />
-          </WrapBlock>
+          <TokenInfoTransaction
+            data={{
+              hash: data?.hash,
+              amount: data?.amount,
+              network: data?.network,
+              link:
+                data?.network === "avax"
+                  ? `https://cchain.explorer.avax.network/tx/${data?.hash}/token-transfers`
+                  : `https://bscscan.com/tx/${data?.hash}`,
+            }}
+            textCopy={textCopy}
+            addTokenHandler={addTokenHandler}
+            addTokenIcon={addTokenIcon}
+            textTransaction={textTransaction}
+          />
         </LeftColumn>
         <MiddleColumn>
           <ClipIcon />
         </MiddleColumn>
         <RightColumn>
-          <WrapBlock>
-            <Text>
-              {textTransaction} {data?.network === "avax" ? "BSC" : "AVAX"}
-            </Text>
-            <WrapperInfo>
-              <LeftColumnInfo>
-                <Text marginBottom="10px" size="xs">
-                  {data?.amount || ""} YAY
-                </Text>
-                <Text size="xs">{ellipsis(data?.anotherHash || "", 10)}</Text>
-                <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>
-              </LeftColumnInfo>
-              <ButtonsBlock />
-            </WrapperInfo>
-            <ButtonsBlock type="mob" />
-          </WrapBlock>
+          <TokenInfoTransaction
+            data={{
+              hash: data?.anotherHash,
+              amount: data?.amount,
+              network: data?.network === "avax" ? "bsc" : "avax",
+              link:
+                data?.network === "bsc"
+                  ? `https://cchain.explorer.avax.network/tx/${data?.anotherHash}/token-transfers`
+                  : `https://bscscan.com/tx/${data?.anotherHash}`,
+            }}
+            textCopy={textCopy}
+            addTokenHandler={addTokenHandler}
+            addTokenIcon={addTokenIcon}
+            textTransaction={textTransaction}
+          />
         </RightColumn>
       </MainBlock>
     </Wrapper>

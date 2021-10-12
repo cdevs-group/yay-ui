@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { TransactionHistoryProps } from "./types";
 import { Text } from "../../components/Text";
@@ -18,6 +18,16 @@ const TransactionHistory = ({
   propsBtnSeeMore,
   textTransaction,
 }: TransactionHistoryProps) => {
+  const scrollBlock = useRef(null);
+  const [shadowVisibility, setShadowVisibility] = useState(false);
+
+  useLayoutEffect(() => {
+    const block = scrollBlock.current;
+    if (block) {
+      block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    }
+  }, [scrollBlock]);
+
   return (
     <Wrapper>
       <Text size="lg">{texts.title}</Text>
@@ -25,6 +35,7 @@ const TransactionHistory = ({
       <ButtonClose onClick={onDismiss}>
         <CloseIcon fill="transparent" />
       </ButtonClose>
+      <Shadow show={shadowVisibility} />
       <TokenList>
         <>
           {transactionHistoryData.map((item: any, i: number) => (
@@ -114,5 +125,23 @@ const SeeMore = styled(Button)`
   }
   &:disabled {
     opacity: 1;
+  }
+`;
+
+const Shadow = styled.div<{ show: boolean }>`
+  position: relative;
+  &:after {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    opacity: ${({ show }) => (show ? 1 : 0)};
+    content: "";
+    width: calc(100% - 8px);
+    left: 0;
+    height: 64px;
+    z-index: 2;
+    top: 28px;
+    transition: 0.3s;
+    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);
   }
 `;
