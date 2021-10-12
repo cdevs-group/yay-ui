@@ -93,6 +93,7 @@ export interface BridgeStep2Props {
     noticeText?: React.ReactNode;
     noticeButton1?: React.ReactNode;
     noticeButton2?: React.ReactNode;
+    noticeOnDismiss?: () => void;
 }
 export declare enum NoticeBridgeType {
     ERROR = "error",
