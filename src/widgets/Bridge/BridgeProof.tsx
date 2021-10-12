@@ -18,12 +18,12 @@ const BridgeProof = ({
   const scrollBlock = useRef(null);
   const [shadowVisibility, setShadowVisibility] = useState(false);
 
-  useEffect(() => {
-    const block = scrollBlock.current;
-    if (block) {
-      block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
-    }
-  }, [scrollBlock]);
+  // useEffect(() => {
+  //   const block = scrollBlock.current;
+  //   if (block) {
+  //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+  //   }
+  // }, [scrollBlock]);
 
   return (
     <Wrapper>

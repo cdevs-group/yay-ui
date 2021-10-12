@@ -46,7 +46,7 @@ const TokenInfoTransaction = ({
       <WrapperInfo>
         <LeftColumnInfo>
           <Text marginBottom="10px" size="xs">
-            {getBalanceAmount(data?.amount) || ""} YAY
+            {getBalanceAmount(data?.amount)} YAY
           </Text>
           <Text size="xs">{ellipsis(data?.hash || "", 10)}</Text>
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>

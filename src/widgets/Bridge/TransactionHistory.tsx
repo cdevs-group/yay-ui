@@ -21,12 +21,12 @@ const TransactionHistory = ({
   const scrollBlock = useRef(null);
   const [shadowVisibility, setShadowVisibility] = useState(false);
 
-  useLayoutEffect(() => {
-    const block = scrollBlock.current;
-    if (block) {
-      block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
-    }
-  }, [scrollBlock]);
+  // useLayoutEffect(() => {
+  //   const block = scrollBlock.current;
+  //   if (block) {
+  //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+  //   }
+  // }, [scrollBlock]);
 
   return (
     <Wrapper>
