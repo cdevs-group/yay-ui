@@ -1,6 +1,6 @@
 export interface ProgressStepsProps {
   isError?: boolean;
-  step: number;
+  progress: number;
   stepsText: Array<string>;
   texts: {
     waiting: string;
@@ -12,6 +12,7 @@ export interface ProgressStepsProps {
 
 export interface ProgressRangeProps {
   progress: number;
+  isError?: boolean;
   texts: {
     waiting: string;
     start: string;

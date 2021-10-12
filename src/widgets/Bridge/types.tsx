@@ -41,15 +41,13 @@ export interface BridgeStep2Props {
   bscIcon?: ReactNode;
   isLoadGas?: boolean;
   TokenIcon?: ReactNode;
-  isErrorProgress?: boolean;
   progress1: number;
-  isError?: boolean;
-  timer1: number;
-  timer2: number;
+  isErrorNetwork1?: boolean;
+  isErrorNetwork2?: boolean;
+  timer: number;
   isLoadGasNetwork1: boolean;
   isLoadGasNetwork2: boolean;
-  isLoadTimeNetwork2: boolean;
-  isLoadTimeNetwork1: boolean;
+  isLoadTimeNetwork: boolean;
   gasPriceTextNetwork1?: {
     value: string;
     fiat: string;
@@ -96,10 +94,9 @@ export interface BridgeStep2Props {
   noticeType?: NoticeBridgeType;
   noticeTitle?: string;
   noticeText?: React.ReactNode;
-  noticeButton1Text?: string;
-  noticeButton2Text?: string;
-  noticeButton1Props?: ButtonProps;
-  noticeButton2Props?: ButtonProps;
+  noticeButton1?: React.ReactNode;
+  noticeButton2?: React.ReactNode;
+  noticeOnDismiss?: () => void;
 }
 
 export enum NoticeBridgeType {

@@ -15,6 +15,7 @@ interface MyTimerProps {
   margin?: string;
   widthWrapper?: string;
   fontSize?: string;
+  hoursHide?: boolean;
 }
 interface MyLoaderProps {
   height?: string;
@@ -25,6 +26,7 @@ interface MyLoaderProps {
   background?: string;
   widthWrapper?: string;
   fontSize?: string;
+  hoursHide?: boolean;
 }
 
 function MyTimer({
@@ -38,6 +40,7 @@ function MyTimer({
   margin,
   widthWrapper,
   fontSize,
+  hoursHide,
 }: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
@@ -49,7 +52,8 @@ function MyTimer({
     return { leftDigit, rightDigit };
   };
 
-  const timeArray = [hours, minutes, seconds];
+  const timeArray = hoursHide ? [minutes, seconds] : [hours, minutes, seconds];
+  const pointsAfter = hoursHide ? 1 : 2;
 
   return (
     <Wrapper widthWrapper={widthWrapper} margin={margin}>
@@ -67,7 +71,7 @@ function MyTimer({
               {handleDigit(item).leftDigit}
               {handleDigit(item).rightDigit}{" "}
             </ItemWithoutBg>
-            {i === 2 ? null : (
+            {i === pointsAfter ? null : (
               <DotsWithoutBg color={color} marginPoint={marginPoint}>
                 :
               </DotsWithoutBg>
@@ -79,8 +83,6 @@ function MyTimer({
   );
 }
 
-const LoadIcons = [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />];
-
 const LoadingTimer = ({
   margin,
   height,
@@ -90,7 +92,13 @@ const LoadingTimer = ({
   marginPoint,
   widthWrapper,
   fontSize,
+  hoursHide,
 }: MyLoaderProps) => {
+  const LoadIcons = hoursHide
+    ? [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />]
+    : [<CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />, <CercleIcon spin fill="none" />];
+  const pointsAfter = hoursHide ? 1 : 2;
+
   return (
     <Wrapper margin={margin} widthWrapper={widthWrapper}>
       <BlockWithoutBg
@@ -99,11 +107,12 @@ const LoadingTimer = ({
         background={background}
         width={width}
         height={height}
+        hoursHide={hoursHide}
       >
         {LoadIcons.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
             <ItemWithoutBg>{item}</ItemWithoutBg>
-            {i === 2 ? null : <DotsWithoutBg marginPoint={marginPoint}>:</DotsWithoutBg>}
+            {i === pointsAfter ? null : <DotsWithoutBg marginPoint={marginPoint}>:</DotsWithoutBg>}
           </React.Fragment>
         ))}
       </BlockWithoutBg>
@@ -123,6 +132,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
   margin,
   widthWrapper,
   fontSize,
+  hoursHide,
 }) => {
   return (
     <div style={{ width: `${widthWrapper ? widthWrapper : "auto"}` }}>
@@ -138,6 +148,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           margin={margin}
           widthWrapper={widthWrapper}
           fontSize={fontSize}
+          hoursHide={hoursHide}
         />
       ) : (
         <LoadingTimer
@@ -149,6 +160,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           margin={margin}
           widthWrapper={widthWrapper}
           fontSize={fontSize}
+          hoursHide={hoursHide}
         />
       )}
     </div>
