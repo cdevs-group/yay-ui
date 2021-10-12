@@ -41,12 +41,18 @@ const LobbyListItem = ({
         />
       </TimerMob>
       <Wrapper
-        history={!![Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.LOSE].find((el) => el === status)}
+        history={
+          !![Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.DRAW, Status.REVERT, Status.LOSE].find(
+            (el) => el === status
+          )
+        }
       >
         <Player title={texts.player} gamer={creator} />
         <Bet title={texts.bet} red={status === Status.LOSE} bet={bet} />
 
-        {[Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.LOSE].find((el) => el === status) ? (
+        {[Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.DRAW, Status.REVERT, Status.LOSE].find(
+          (el) => el === status
+        ) ? (
           <Scores
             titleYou={texts.yourScore}
             titleOpponent={texts.opportunScore}
