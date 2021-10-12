@@ -15,7 +15,7 @@ const BridgeProof = ({
   tokenLogo,
   tokenName,
 }: BrightProofProps) => {
-  const scrollBlock = useRef(null);
+  const scrollBlock = useRef<HTMLDivElement>(null);
   const [shadowVisibility, setShadowVisibility] = useState(false);
 
   // useEffect(() => {

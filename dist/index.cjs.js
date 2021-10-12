@@ -4895,13 +4895,14 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 var BridgeProof = function (_a) {
     var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     var scrollBlock = React.useRef(null);
-    var _b = React.useState(false), shadowVisibility = _b[0]; _b[1];
-    // useEffect(() => {
-    //   const block = scrollBlock.current;
-    //   if (block) {
-    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
-    //   }
-    // }, [scrollBlock]);
+    var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
+    React.useEffect(function () {
+        var block = scrollBlock.current;
+        if (block) {
+            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
+        }
+    }, [scrollBlock]);
+
     return (React__default['default'].createElement(Wrapper$h, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -5130,21 +5131,23 @@ var templateObject_1$1b, templateObject_2$_, templateObject_3$P, templateObject_
 
 var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
-    React.useRef(null);
-    var _b = React.useState(false), shadowVisibility = _b[0]; _b[1];
-    // useLayoutEffect(() => {
-    //   const block = scrollBlock.current;
-    //   if (block) {
-    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
-    //   }
-    // }, [scrollBlock]);
+    var scrollBlock = React.useRef(null);
+    var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
+    React.useEffect(function () {
+        var block = scrollBlock.current;
+        if (block) {
+            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
+            block.removeEventListener("scroll", function () { });
+        }
+    }, [scrollBlock]);
+
     return (React__default['default'].createElement(Wrapper$f, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$2, { marginTop: "10px" }, texts.description),
         React__default['default'].createElement(ButtonClose$1, { onClick: onDismiss },
             React__default['default'].createElement(Icon$U, { fill: "transparent" })),
         React__default['default'].createElement(Shadow, { show: shadowVisibility }),
-        React__default['default'].createElement(TokenList, null,
+        React__default['default'].createElement(TokenList, { ref: scrollBlock },
             React__default['default'].createElement(React__default['default'].Fragment, null,
                 transactionHistoryData.map(function (item, i) { return (React__default['default'].createElement(InfoWrapperTransactionHistory, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, data: item, tokenLogo: tokenLogo, tokenName: tokenName, textTransaction: textTransaction })); }),
                 React__default['default'].createElement(SeeMore, __assign({ variant: "text" }, propsBtnSeeMore), texts.seeMore)))));
@@ -5172,7 +5175,7 @@ var SeeMore = styled__default['default'](Button$a)(templateObject_5$t || (templa
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 28px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 28px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
 });
