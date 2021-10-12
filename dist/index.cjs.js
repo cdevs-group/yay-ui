@@ -4960,7 +4960,7 @@ var TokenInfoTransaction = function (_a) {
                     }
                 } },
                 React__default['default'].createElement(Icon$L, null)),
-            React__default['default'].createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow" },
+            React__default['default'].createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow", target: "_blank" },
                 React__default['default'].createElement(Icon$Q, null))));
     };
     return (React__default['default'].createElement(WrapBlock, null,
@@ -5036,8 +5036,8 @@ var InfoWrapperTransactionHistory = function (_a) {
                 React__default['default'].createElement(TokenInfoTransaction, { data: {
                         hash: data === null || data === void 0 ? void 0 : data.hash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
-                        network: data === null || data === void 0 ? void 0 : data.network,
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
+                        network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
+                        link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
                             ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
                             : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
@@ -5047,8 +5047,8 @@ var InfoWrapperTransactionHistory = function (_a) {
                 React__default['default'].createElement(TokenInfoTransaction, { data: {
                         hash: data === null || data === void 0 ? void 0 : data.anotherHash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
-                        network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
+                        network: data === null || data === void 0 ? void 0 : data.network,
+                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
                             ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
                             : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
@@ -5173,7 +5173,7 @@ var SeeMore = styled__default['default'](Button$a)(templateObject_5$t || (templa
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
 });
