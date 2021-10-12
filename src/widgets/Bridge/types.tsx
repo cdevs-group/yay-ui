@@ -142,7 +142,7 @@ interface proofData {
 export interface InfoWrapperTransactionHistoryProps {
   addTokenIcon?: ReactNode;
   tokenLogo?: ReactNode;
-  data?: TransactionHistoryDataProps;
+  data: TransactionHistoryDataProps;
   addTokenHandler: () => void;
   textCopy: string;
   tokenName?: string;
@@ -160,7 +160,7 @@ export interface TransactionHistoryDataProps {
   tokenAddress?: string;
   anotherHash?: string;
   toAddress?: string;
-  amount?: BigNumber;
+  amount: BigNumber;
   link?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {

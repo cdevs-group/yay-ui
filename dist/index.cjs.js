@@ -11,6 +11,7 @@ var reactRouterDom = require('react-router-dom');
 var debounce = require('lodash/debounce');
 var reactDom = require('react-dom');
 var reactPopper = require('react-popper');
+var BigNumber = require('bignumber.js');
 var reactFlipToolkit = require('react-flip-toolkit');
 var reactTransitionGroup = require('react-transition-group');
 
@@ -41,6 +42,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
+var BigNumber__default = /*#__PURE__*/_interopDefaultLegacy(BigNumber);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -4933,6 +4935,13 @@ var Shadow$1 = styled__default['default'].div(templateObject_5$w || (templateObj
 });
 var templateObject_1$1d, templateObject_2$10, templateObject_3$R, templateObject_4$F, templateObject_5$w;
 
+var BIG_TEN = new BigNumber__default['default'](10);
+var getBalanceAmount = function (amount, decimals) {
+    if (decimals === void 0) { decimals = 18; }
+    if (amount)
+        return new BigNumber__default['default'](amount).dividedBy(BIG_TEN.pow(decimals)).toNumber();
+};
+
 var TokenInfoTransaction = function (_a) {
     var _b;
     var data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, textTransaction = _a.textTransaction;
@@ -4961,8 +4970,8 @@ var TokenInfoTransaction = function (_a) {
             _b.toLocaleUpperCase()),
         React__default['default'].createElement(WrapperInfo, null,
             React__default['default'].createElement(LeftColumnInfo, null,
-                React__default['default'].createElement(Text, { marginBottom: "10px", size: "xs" }, data === null || data === void 0 ? void 0 :
-                    data.amount,
+                React__default['default'].createElement(Text, { marginBottom: "10px", size: "xs" },
+                    getBalanceAmount(data.amount),
                     " YAY"),
                 React__default['default'].createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default['default'].createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),
