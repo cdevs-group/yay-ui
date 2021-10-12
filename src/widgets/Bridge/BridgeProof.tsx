@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { BrightProofProps } from "./types";
 import { Text } from "../../components/Text";
@@ -15,6 +15,16 @@ const BridgeProof = ({
   tokenLogo,
   tokenName,
 }: BrightProofProps) => {
+  const scrollBlock = useRef(null);
+  const [shadowVisibility, setShadowVisibility] = useState(false);
+
+  useEffect(() => {
+    const block = scrollBlock.current;
+    if (block) {
+      block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    }
+  }, [scrollBlock]);
+
   return (
     <Wrapper>
       <Text size="lg">{texts.title}</Text>
@@ -22,7 +32,8 @@ const BridgeProof = ({
       <ButtonClose onClick={onDismiss}>
         <CloseIcon fill="transparent" />
       </ButtonClose>
-      <TokenList>
+      <Shadow show={shadowVisibility} />
+      <TokenList ref={scrollBlock}>
         {ProofOfAssetsData.map((item, i) => (
           <InfoWrapper
             addTokenIcon={addTokenIcon}
@@ -48,15 +59,15 @@ const Wrapper = styled.div`
   height: auto;
   padding: 33px 24px 0 14px;
   box-sizing: border-box;
+  border-radius: 10px 10px 0 0;
   background: ${({ theme }) => theme.colors.bgGray};
-  border-radius: 10px;
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 38px 44px 0 34px;
     width: 100%;
-  } ;
 `;
 const TokenList = styled.div`
   margin-top: 28px;
+  position: relative;
   height: 70vh;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.md} {
@@ -87,4 +98,21 @@ const Description = styled(Text)`
     font-size: 13px;
     padding-right: 0;
   } ;
+`;
+const Shadow = styled.div<{ show: boolean }>`
+  position: relative;
+  &:after {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    opacity: ${({ show }) => (show ? 1 : 0)};
+    content: "";
+    width: calc(100% - 8px);
+    left: 0;
+    height: 64px;
+    z-index: 2;
+    top: 28px;
+    transition: 0.3s;
+    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);
+  }
 `;
