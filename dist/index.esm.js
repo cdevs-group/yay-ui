@@ -4939,7 +4939,7 @@ var TokenInfoTransaction = function (_a) {
         React__default.createElement(WrapperInfo, null,
             React__default.createElement(LeftColumnInfo, null,
                 React__default.createElement(Text, { marginBottom: "10px", size: "xs" },
-                    getBalanceAmount(data.amount),
+                    getBalanceAmount(data === null || data === void 0 ? void 0 : data.amount),
                     " YAY"),
                 React__default.createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default.createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),
