@@ -4560,7 +4560,7 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 
 var BridgeStep2 = function (_a) {
     var _b;
-    var network1 = _a.network1, network2 = _a.network2, onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isErrorNetwork1 = _a.isErrorNetwork1, isErrorNetwork2 = _a.isErrorNetwork2, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, avalancheIcon = _a.avalancheIcon, bscIcon = _a.bscIcon, stepsText = _a.stepsText, isLoadTimeNetwork = _a.isLoadTimeNetwork, noticeVisible = _a.noticeVisible, noticeImg = _a.noticeImg, noticeType = _a.noticeType, noticeTitle = _a.noticeTitle, noticeText = _a.noticeText, noticeButton1Text = _a.noticeButton1Text, noticeButton2Text = _a.noticeButton2Text, noticeButton1Props = _a.noticeButton1Props, noticeButton2Props = _a.noticeButton2Props, timer = _a.timer;
+    var network1 = _a.network1, network2 = _a.network2, onDismiss = _a.onDismiss, progress1 = _a.progress1, progress2 = _a.progress2, textsProgress1 = _a.textsProgress1, textsProgress2 = _a.textsProgress2, isErrorNetwork1 = _a.isErrorNetwork1, isErrorNetwork2 = _a.isErrorNetwork2, texts = _a.texts, isLoadGasNetwork1 = _a.isLoadGasNetwork1, isLoadGasNetwork2 = _a.isLoadGasNetwork2, transferredValue = _a.transferredValue, addTokenHandler = _a.addTokenHandler, WalletIcon = _a.WalletIcon, TokenIcon = _a.TokenIcon, gasPriceTextNetwork1 = _a.gasPriceTextNetwork1, gasPriceTextNetwork2 = _a.gasPriceTextNetwork2, avalancheIcon = _a.avalancheIcon, bscIcon = _a.bscIcon, stepsText = _a.stepsText, isLoadTimeNetwork = _a.isLoadTimeNetwork, noticeVisible = _a.noticeVisible, noticeImg = _a.noticeImg, noticeType = _a.noticeType, noticeTitle = _a.noticeTitle, noticeText = _a.noticeText, noticeButton1 = _a.noticeButton1, noticeButton2 = _a.noticeButton2, timer = _a.timer;
     var AvaxNetwork = function () { return (React__default['default'].createElement(React__default['default'].Fragment, null,
         avalancheIcon || React__default['default'].createElement(Icon$d, null),
         React__default['default'].createElement(Text, { marginLeft: "10px" }, texts.avalanche || "Avalanche"))); };
@@ -4621,8 +4621,8 @@ var BridgeStep2 = function (_a) {
                 noticeImg || React__default['default'].createElement("img", { src: GhostsIcon, alt: "", style: { display: "block", margin: "0 auto 13px" } }),
                 React__default['default'].createElement(Text, { textAlign: "center", fontSize: "26px", letterSpacing: "0.5px", mb: "10px", color: (_b = getBgNotice(noticeType)) === null || _b === void 0 ? void 0 : _b.color }, noticeTitle),
                 React__default['default'].createElement(Text, { fontSize: "18px", letterSpacing: "0.5px", mb: "17px", textAlign: "center" }, noticeText),
-                React__default['default'].createElement(Button$9, __assign({ variant: "green", maxWidth: "362px", width: "100%", mb: "14px" }, noticeButton1Props), noticeButton1Text),
-                React__default['default'].createElement(Button$9, __assign({ variant: "gray", maxWidth: "362px", width: "100%" }, noticeButton2Props), noticeButton2Text)),
+                noticeButton1,
+                noticeButton2),
             React__default['default'].createElement(Border, { noticeType: noticeType })))));
 };
 var getBgNotice = function (type) {
