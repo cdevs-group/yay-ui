@@ -16,6 +16,7 @@ const TransactionHistory = ({
   tokenLogo,
   tokenName,
   propsBtnSeeMore,
+  textTransaction,
 }: TransactionHistoryProps) => {
   return (
     <Wrapper>
@@ -26,16 +27,16 @@ const TransactionHistory = ({
       </ButtonClose>
       <TokenList>
         <>
-          {transactionHistoryData.map((item, i) => (
+          {transactionHistoryData.map((item: any, i: number) => (
             <InfoWrapperTransactionHistory
               addTokenIcon={addTokenIcon}
               textCopy={textCopy}
               addTokenHandler={addTokenHandler}
               key={i}
-              proofData={item.proofData}
-              wrappedData={item.wrappedData}
+              data={item}
               tokenLogo={tokenLogo}
               tokenName={tokenName}
+              textTransaction={textTransaction}
             />
           ))}
           <SeeMore variant="text" {...propsBtnSeeMore}>

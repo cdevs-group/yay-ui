@@ -226,81 +226,20 @@ const Btn = styled(Text)`
 export const TransactionHistoryBlock = () => {
   const ProofOfAssetsData = [
     {
-      proofData: {
-        token: "3,836.537598 YAY",
-        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-        network: "bscan.ru",
-        link: "#",
-        title: "Proof of Asset",
-      },
-      wrappedData: [
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Wrapped Token",
-        },
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Supply token",
-        },
-      ],
-    },
-    {
-      proofData: {
-        token: "3,836.537598 YAY",
-        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-        network: "bscan.ru",
-        link: "#",
-        title: "Proof of Asset",
-      },
-      wrappedData: [
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Wrapped Token",
-        },
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Supply token",
-        },
-      ],
-    },
-    {
-      proofData: {
-        token: "3,836.537598 YAY",
-        address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-        network: "bscan.ru",
-        link: "#",
-        title: "Proof of Asset",
-      },
-      wrappedData: [
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Wrapped Token",
-        },
-        {
-          token: "3,836.537598 YAY",
-          address: "0xbdda50183d817c3289f895a4472eb475967dc980",
-          network: "bscan.ru",
-          link: "#",
-          title: "Supply token",
-        },
-      ],
+      id: "137fa17a-c6db-47f6-b642-7d37f6cbc83c",
+      createdAt: "2021-10-12T10:38:40.212Z",
+      updatedAt: "2021-10-12T10:38:40.212Z",
+      network: "bsc",
+      hash: "0x9ed7a74fedb963d5c378a60ce812c58e9e658280d4bcf9a2d00a729dce3afa16",
+      blockNumber: 11705938,
+      blockNumberTimestamp: 1634035118,
+      tokenAddress: "0x524dF384BFFB18C0C8f3f43d012011F8F9795579",
+      anotherHash: "0xfc94cfd43934441fccfbaabcd72653046f97896bb51ef4e2cd6992da625572d1",
+      toAddress: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
+      amount: "100000000000000",
     },
   ];
+
   const texts = {
     title: "Transactions History",
     description: "Here you can view the history of your transactions",
@@ -323,6 +262,7 @@ export const TransactionHistoryBlock = () => {
         },
         spinColor: isLoading,
       }}
+      textTransaction="Transaction of"
     />
   );
 };

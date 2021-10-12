@@ -141,13 +141,25 @@ interface proofData {
 export interface InfoWrapperTransactionHistoryProps {
   addTokenIcon?: ReactNode;
   tokenLogo?: ReactNode;
-  transactionHistoryData: Array<{
-    proofData: proofData;
-    wrappedData: Array<proofData>;
-  }>;
+  data?: TransactionHistoryDataProps;
   addTokenHandler: () => void;
   textCopy: string;
   tokenName?: string;
+  textTransaction?: string;
+}
+
+export interface TransactionHistoryDataProps {
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  network?: string;
+  hash?: string;
+  blockNumber?: number;
+  blockNumberTimestamp?: number;
+  tokenAddress?: string;
+  anotherHash?: string;
+  toAddress?: string;
+  amount?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {
   onDismiss: () => void | undefined;
@@ -157,4 +169,5 @@ export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryPr
     seeMore?: string;
   };
   propsBtnSeeMore?: ButtonProps;
+  transactionHistoryData: TransactionHistoryDataProps[];
 }
