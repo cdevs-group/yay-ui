@@ -137,3 +137,37 @@ interface proofData {
   link: string;
   title: string;
 }
+
+export interface InfoWrapperTransactionHistoryProps {
+  addTokenIcon?: ReactNode;
+  tokenLogo?: ReactNode;
+  data?: TransactionHistoryDataProps;
+  addTokenHandler: () => void;
+  textCopy: string;
+  tokenName?: string;
+  textTransaction?: string;
+}
+
+export interface TransactionHistoryDataProps {
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  network?: string;
+  hash?: string;
+  blockNumber?: number;
+  blockNumberTimestamp?: number;
+  tokenAddress?: string;
+  anotherHash?: string;
+  toAddress?: string;
+  amount?: string;
+}
+export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {
+  onDismiss: () => void | undefined;
+  texts: {
+    title: string;
+    description: string;
+    seeMore?: string;
+  };
+  propsBtnSeeMore?: ButtonProps;
+  transactionHistoryData: TransactionHistoryDataProps[];
+}

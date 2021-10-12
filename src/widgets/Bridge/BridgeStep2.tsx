@@ -44,7 +44,7 @@ const BridgeStep2 = ({
   noticeButton1,
   noticeButton2,
   timer,
-  noticeOnDismiss,
+  noticeOnDismiss
 }: BridgeStep2Props) => {
   const AvaxNetwork = () => (
     <>

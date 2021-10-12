@@ -1,4 +1,5 @@
 import React, { cloneElement, ElementType, isValidElement } from "react";
+import LoaderSmall from "../Loader/LoaderSmall";
 import { CercleIcon } from "../Svg";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
@@ -6,7 +7,7 @@ import { ButtonProps, scales, variants } from "./types";
 const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.Element => {
   const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
 
-  const isDisabled = isLoading || disabled;
+  const isDisabled = isLoading || disabled || props.spinColor;
   const classNames = className ? [className] : [];
 
   if (isLoading) {
@@ -24,7 +25,7 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
           cloneElement(startIcon, {
             mr: "0.5rem",
           })}
-        {children}
+        {props.spinColor ? <LoaderSmall /> : children}
         {props.spin ? <CercleIcon spin={true} fill="rgba(0,0,0,0)" /> : null}
         {isValidElement(endIcon) &&
           cloneElement(endIcon, {
