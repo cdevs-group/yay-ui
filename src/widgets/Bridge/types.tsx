@@ -143,7 +143,7 @@ export interface InfoWrapperTransactionHistoryProps {
   addTokenIcon?: ReactNode;
   tokenLogo?: ReactNode;
   data?: TransactionHistoryDataProps;
-  addTokenHandler: () => void;
+  addTokenHandler: (e: any) => void;
   textCopy: string;
   tokenName?: string;
   textTransaction?: string;
