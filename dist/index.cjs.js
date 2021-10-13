@@ -5235,7 +5235,7 @@ var Wrapper$f = styled__default['default'].div(templateObject_1$1a || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 470px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 470px;\n  } ;\n"])), function (_a) {
+var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    height: 500px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    height: 500px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -5251,7 +5251,7 @@ var SeeMore = styled__default['default'](Button$a)(templateObject_5$t || (templa
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
 });
