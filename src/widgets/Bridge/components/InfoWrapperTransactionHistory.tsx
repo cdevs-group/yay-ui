@@ -5,6 +5,7 @@ import YAYIcon from "../../../components/Svg/Icons/YAYIcon";
 import { Text } from "../../../components/Text";
 import { ClipIcon } from "../../../components/Svg";
 import TokenInfoTransaction from "./TokenInfoTransaction";
+import { getBscScanTransactionUrl } from "../../../util/bscscan";
 
 const InfoWrapperTransactionHistory = ({
   tokenLogo,
@@ -28,10 +29,7 @@ const InfoWrapperTransactionHistory = ({
               hash: data?.anotherHash,
               amount: data?.amount,
               network: data?.network === "avax" ? "bsc" : "avax",
-              link:
-                data?.network === "bsc"
-                  ? `https://cchain.explorer.avax.network/tx/${data?.anotherHash}/token-transfers`
-                  : `https://bscscan.com/tx/${data?.anotherHash}`,
+              link: getBscScanTransactionUrl(data?.anotherHash, data?.network === "avax" ? "bsc" : "avax"),
             }}
             textCopy={textCopy}
             addTokenHandler={addTokenHandler}
@@ -48,10 +46,7 @@ const InfoWrapperTransactionHistory = ({
               hash: data?.hash,
               amount: data?.amount,
               network: data?.network,
-              link:
-                data?.network === "avax"
-                  ? `https://cchain.explorer.avax.network/tx/${data?.hash}/token-transfers`
-                  : `https://bscscan.com/tx/${data?.hash}`,
+              link: getBscScanTransactionUrl(data?.hash, data?.network),
             }}
             textCopy={textCopy}
             addTokenHandler={addTokenHandler}
