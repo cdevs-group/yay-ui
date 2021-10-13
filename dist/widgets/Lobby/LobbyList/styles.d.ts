@@ -8,6 +8,9 @@ export declare const Time: import("styled-components").StyledComponent<"div", im
 export declare const WinWrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     win?: boolean | undefined;
 }, never>;
+export declare const WinWrapperCollect: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
+    win?: boolean | undefined;
+}, never>;
 export declare const ImgWrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     claimed?: boolean | undefined;
     hide?: boolean | undefined;

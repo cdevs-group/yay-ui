@@ -4,7 +4,6 @@ import { lightColors, baseColors } from "../../../theme/colors";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import { Player, Bet, Timer, Scores, Lose, WaitingOpponent, Win, Collect } from "./Components";
 import { TimerMob, Wrapper, TextStyle, ButtonStyle, TextButton } from "./styles";
-import { Button } from "../../../components/Button";
 
 const LobbyListItem = ({
   epoch,
@@ -97,17 +96,17 @@ const LobbyListItem = ({
           />
         )}
         {status === Status.REVERT && (
-          <Button variant="green" onClick={handleButton} {...propsButton}>
+          <ButtonStyle variant="green" onClick={handleButton} {...propsButton}>
             {texts.revert}
-          </Button>
+          </ButtonStyle>
         )}
         {status === Status.WAITINGOPPONENT && <WaitingOpponent title={texts.waitResult} />}
         {status === Status.WIN && <Win title={texts.win} />}
         {status === Status.LOSE && <Lose title={texts.lose} />}
         {status === Status.CONNECT && (
-          <Button variant="green" onClick={handleButton}>
+          <ButtonStyle variant="green" onClick={handleButton}>
             {texts.connect}
-          </Button>
+          </ButtonStyle>
         )}
         {status === Status.DRAW && <Win title={texts.draw} />}
       </Wrapper>
