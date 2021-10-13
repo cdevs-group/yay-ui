@@ -5138,8 +5138,9 @@ var Wrapper$f = styled.div(templateObject_1$1a || (templateObject_1$1a = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  margin-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  margin-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
-    var theme = _a.theme;
+
+var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
+   var theme = _a.theme;
     return theme.mediaQueries.md;
 });
 var ButtonClose$1 = styled.button(templateObject_3$O || (templateObject_3$O = __makeTemplateObject(["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"], ["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"])), function (_a) {
