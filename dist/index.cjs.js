@@ -4947,7 +4947,7 @@ var BIG_TEN = new BigNumber__default['default'](10);
 var getBalanceAmount = function (amount, decimals) {
     if (decimals === void 0) { decimals = 18; }
     if (amount)
-        return new BigNumber__default['default'](amount).dividedBy(BIG_TEN.pow(decimals)).toNumber();
+        return new BigNumber__default['default'](amount).dividedBy(BIG_TEN.pow(decimals)).toString(10);
 };
 
 var TokenInfoTransaction = function (_a) {
