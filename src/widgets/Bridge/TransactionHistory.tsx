@@ -83,10 +83,10 @@ const Wrapper = styled.div`
 `;
 const TokenList = styled.div`
   padding-top: 28px;
-  height: 72vh;
+  height: 70vh;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.md} {
-    max-height: 450px;
+    max-height: 470px;
   } ;
 `;
 const ButtonClose = styled.button`

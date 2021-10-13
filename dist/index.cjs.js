@@ -5235,7 +5235,7 @@ var Wrapper$f = styled__default['default'].div(templateObject_1$1a || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
+var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 470px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 470px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
