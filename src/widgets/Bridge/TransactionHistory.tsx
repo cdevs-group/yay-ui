@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { TransactionHistoryProps } from "./types";
 import { Text } from "../../components/Text";
@@ -21,12 +21,18 @@ const TransactionHistory = ({
   const scrollBlock = useRef<HTMLDivElement>(null);
   const [shadowVisibility, setShadowVisibility] = useState(false);
 
-  useEffect(() => {
+  const toggleShadow = useCallback((block: HTMLDivElement) => {
+    setShadowVisibility(block.scrollTop > 0);
+  }, []);
+
+  useLayoutEffect(() => {
     const block = scrollBlock.current;
     if (block) {
-      block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
-      block.removeEventListener("scroll", () => {});
+      block.addEventListener("scroll", () => toggleShadow(block));
     }
+    return () => {
+      block?.removeEventListener("scroll", () => toggleShadow(block));
+    };
   }, [scrollBlock]);
 
   return (
@@ -143,6 +149,6 @@ const Shadow = styled.div<{ show: boolean }>`
     z-index: 2;
     top: 0;
     transition: 0.3s;
-    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);
+    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);
   }
 `;

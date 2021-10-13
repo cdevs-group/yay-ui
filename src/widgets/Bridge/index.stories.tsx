@@ -236,7 +236,7 @@ export const TransactionHistoryBlock = () => {
       tokenAddress: "0x524dF384BFFB18C0C8f3f43d012011F8F9795579",
       anotherHash: "0xfc94cfd43934441fccfbaabcd72653046f97896bb51ef4e2cd6992da625572d1",
       toAddress: "0x049900f4204604c52BF76Ba61e72a43e04B0AA54",
-      amount: "100000000000000",
+      amount: "100000000000",
     },
   ];
 
@@ -247,10 +247,12 @@ export const TransactionHistoryBlock = () => {
   };
 
   const [isLoading, setisLoading] = useState(false);
-
+  const addTokenHandler = (e) => {
+    console.log(e);
+  };
   return (
     <TransactionHistory
-      addTokenHandler={() => {}}
+      addTokenHandler={addTokenHandler}
       textCopy={"Copied"}
       onDismiss={() => {}}
       texts={texts}

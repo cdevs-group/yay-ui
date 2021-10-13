@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ButtonProps } from "../../components/Button";
+import BigNumber from "bignumber.js";
 
 export interface BridgeStep1Props {
   onUserInput: (input: any) => void;
@@ -142,7 +143,7 @@ export interface InfoWrapperTransactionHistoryProps {
   addTokenIcon?: ReactNode;
   tokenLogo?: ReactNode;
   data?: TransactionHistoryDataProps;
-  addTokenHandler: () => void;
+  addTokenHandler: (e: any) => void;
   textCopy: string;
   tokenName?: string;
   textTransaction?: string;
@@ -159,7 +160,7 @@ export interface TransactionHistoryDataProps {
   tokenAddress?: string;
   anotherHash?: string;
   toAddress?: string;
-  amount?: string;
+  amount?: BigNumber;
   link?: string;
 }
 export interface TransactionHistoryProps extends InfoWrapperTransactionHistoryProps {

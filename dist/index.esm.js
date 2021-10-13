@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import debounce from 'lodash/debounce';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
+import BigNumber from 'bignumber.js';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -4870,13 +4871,13 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 var BridgeProof = function (_a) {
     var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     var scrollBlock = useRef(null);
-    var _b = useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    useEffect(function () {
-        var block = scrollBlock.current;
-        if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-        }
-    }, [scrollBlock]);
+    var _b = useState(false), shadowVisibility = _b[0]; _b[1];
+    // useEffect(() => {
+    //   const block = scrollBlock.current;
+    //   if (block) {
+    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    //   }
+    // }, [scrollBlock]);
     return (React__default.createElement(Wrapper$h, null,
         React__default.createElement(Text, { size: "lg" }, texts.title),
         React__default.createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -4910,6 +4911,13 @@ var Shadow$1 = styled.div(templateObject_5$w || (templateObject_5$w = __makeTemp
 });
 var templateObject_1$1d, templateObject_2$10, templateObject_3$R, templateObject_4$F, templateObject_5$w;
 
+var BIG_TEN = new BigNumber(10);
+var getBalanceAmount = function (amount, decimals) {
+    if (decimals === void 0) { decimals = 18; }
+    if (amount)
+        return new BigNumber(amount).dividedBy(BIG_TEN.pow(decimals)).toString(10);
+};
+
 var TokenInfoTransaction = function (_a) {
     var _b;
     var data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, textTransaction = _a.textTransaction;
@@ -4917,7 +4925,7 @@ var TokenInfoTransaction = function (_a) {
     var ButtonsBlock = function (_a) {
         var type = _a.type;
         return (React__default.createElement(BlockInfo, { className: "" + type },
-            React__default.createElement(Button$6, { onClick: addTokenHandler }, addTokenIcon || React__default.createElement("img", { src: Metamask })),
+            React__default.createElement(Button$6, { onClick: function () { return addTokenHandler(data === null || data === void 0 ? void 0 : data.network); }, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default.createElement("img", { src: Metamask })),
             React__default.createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText((data === null || data === void 0 ? void 0 : data.hash) || "");
@@ -4928,7 +4936,7 @@ var TokenInfoTransaction = function (_a) {
                     }
                 } },
                 React__default.createElement(Icon$L, null)),
-            React__default.createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow" },
+            React__default.createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow", target: "_blank" },
                 React__default.createElement(Icon$Q, null))));
     };
     return (React__default.createElement(WrapBlock, null,
@@ -4939,7 +4947,7 @@ var TokenInfoTransaction = function (_a) {
         React__default.createElement(WrapperInfo, null,
             React__default.createElement(LeftColumnInfo, null,
                 React__default.createElement(Text, { marginBottom: "10px", size: "xs" },
-                    (data === null || data === void 0 ? void 0 : data.amount) || "",
+                    getBalanceAmount(data === null || data === void 0 ? void 0 : data.amount),
                     " YAY"),
                 React__default.createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default.createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),
@@ -5002,23 +5010,23 @@ var InfoWrapperTransactionHistory = function (_a) {
         React__default.createElement(MainBlock$1, null,
             React__default.createElement(LeftColumn, null,
                 React__default.createElement(TokenInfoTransaction, { data: {
-                        hash: data === null || data === void 0 ? void 0 : data.hash,
-                        amount: data === null || data === void 0 ? void 0 : data.amount,
-                        network: data === null || data === void 0 ? void 0 : data.network,
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
-                    }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
-            React__default.createElement(MiddleColumn, null,
-                React__default.createElement(Icon$b, null)),
-            React__default.createElement(RightColumn, null,
-                React__default.createElement(TokenInfoTransaction, { data: {
                         hash: data === null || data === void 0 ? void 0 : data.anotherHash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
                         link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
                             ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
                             : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
+                    }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
+            React__default.createElement(MiddleColumn, null,
+                React__default.createElement(Icon$b, null)),
+            React__default.createElement(RightColumn, null,
+                React__default.createElement(TokenInfoTransaction, { data: {
+                        hash: data === null || data === void 0 ? void 0 : data.hash,
+                        amount: data === null || data === void 0 ? void 0 : data.amount,
+                        network: data === null || data === void 0 ? void 0 : data.network,
+                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
+                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
+                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
 };
 var Wrapper$g = styled.div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
@@ -5100,12 +5108,17 @@ var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
     var scrollBlock = useRef(null);
     var _b = useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    useEffect(function () {
+    var toggleShadow = useCallback(function (block) {
+        setShadowVisibility(block.scrollTop > 0);
+    }, []);
+    useLayoutEffect(function () {
         var block = scrollBlock.current;
         if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-            block.removeEventListener("scroll", function () { });
+            block.addEventListener("scroll", function () { return toggleShadow(block); });
         }
+        return function () {
+            block === null || block === void 0 ? void 0 : block.removeEventListener("scroll", function () { return toggleShadow(block); });
+        };
     }, [scrollBlock]);
     return (React__default.createElement(Wrapper$f, null,
         React__default.createElement(Text, { size: "lg" }, texts.title),
@@ -5125,8 +5138,9 @@ var Wrapper$f = styled.div(templateObject_1$1a || (templateObject_1$1a = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
+
 var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
-    var theme = _a.theme;
+   var theme = _a.theme;
     return theme.mediaQueries.md;
 });
 var ButtonClose$1 = styled.button(templateObject_3$O || (templateObject_3$O = __makeTemplateObject(["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"], ["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"])), function (_a) {
@@ -5141,7 +5155,7 @@ var SeeMore = styled(Button$a)(templateObject_5$t || (templateObject_5$t = __mak
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled.div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled.div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
 });

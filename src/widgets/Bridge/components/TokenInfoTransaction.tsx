@@ -5,6 +5,7 @@ import { Text } from "../../../components/Text";
 import { Metamask } from "../../../constants/images";
 import { ArrowLeft, CopyIcon } from "../../../components/Svg";
 import { ellipsis } from "../../../helpers/ellipsis";
+import { getBalanceAmount } from "../../../helpers/bigNumber";
 
 const TokenInfoTransaction = ({
   data,
@@ -17,7 +18,9 @@ const TokenInfoTransaction = ({
 
   const ButtonsBlock = ({ type }: { type?: string }) => (
     <BlockInfo className={`${type}`}>
-      <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
+      <Button onClick={() => addTokenHandler(data?.network)} value={data?.network}>
+        {addTokenIcon || <img src={Metamask} />}
+      </Button>
       <Button
         onClick={() => {
           if (navigator.clipboard) {
@@ -31,7 +34,7 @@ const TokenInfoTransaction = ({
       >
         <CopyIcon />
       </Button>
-      <Button as="a" href={data?.link} className="arrow">
+      <Button as="a" href={data?.link} className="arrow" target="_blank">
         <ArrowLeft />
       </Button>
     </BlockInfo>
@@ -45,7 +48,7 @@ const TokenInfoTransaction = ({
       <WrapperInfo>
         <LeftColumnInfo>
           <Text marginBottom="10px" size="xs">
-            {data?.amount || ""} YAY
+            {getBalanceAmount(data?.amount)} YAY
           </Text>
           <Text size="xs">{ellipsis(data?.hash || "", 10)}</Text>
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopy}</Tooltip>

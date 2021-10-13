@@ -25,13 +25,13 @@ const InfoWrapperTransactionHistory = ({
         <LeftColumn>
           <TokenInfoTransaction
             data={{
-              hash: data?.hash,
+              hash: data?.anotherHash,
               amount: data?.amount,
-              network: data?.network,
+              network: data?.network === "avax" ? "bsc" : "avax",
               link:
-                data?.network === "avax"
-                  ? `https://cchain.explorer.avax.network/tx/${data?.hash}/token-transfers`
-                  : `https://bscscan.com/tx/${data?.hash}`,
+                data?.network === "bsc"
+                  ? `https://cchain.explorer.avax.network/tx/${data?.anotherHash}/token-transfers`
+                  : `https://bscscan.com/tx/${data?.anotherHash}`,
             }}
             textCopy={textCopy}
             addTokenHandler={addTokenHandler}
@@ -45,13 +45,13 @@ const InfoWrapperTransactionHistory = ({
         <RightColumn>
           <TokenInfoTransaction
             data={{
-              hash: data?.anotherHash,
+              hash: data?.hash,
               amount: data?.amount,
-              network: data?.network === "avax" ? "bsc" : "avax",
+              network: data?.network,
               link:
-                data?.network === "bsc"
-                  ? `https://cchain.explorer.avax.network/tx/${data?.anotherHash}/token-transfers`
-                  : `https://bscscan.com/tx/${data?.anotherHash}`,
+                data?.network === "avax"
+                  ? `https://cchain.explorer.avax.network/tx/${data?.hash}/token-transfers`
+                  : `https://bscscan.com/tx/${data?.hash}`,
             }}
             textCopy={textCopy}
             addTokenHandler={addTokenHandler}

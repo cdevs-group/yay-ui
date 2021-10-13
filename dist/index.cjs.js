@@ -11,6 +11,7 @@ var reactRouterDom = require('react-router-dom');
 var debounce = require('lodash/debounce');
 var reactDom = require('react-dom');
 var reactPopper = require('react-popper');
+var BigNumber = require('bignumber.js');
 var reactFlipToolkit = require('react-flip-toolkit');
 var reactTransitionGroup = require('react-transition-group');
 
@@ -41,6 +42,7 @@ var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var React__namespace = /*#__PURE__*/_interopNamespace(React);
 var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
+var BigNumber__default = /*#__PURE__*/_interopDefaultLegacy(BigNumber);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -4901,13 +4903,13 @@ var templateObject_1$1e, templateObject_2$11, templateObject_3$S, templateObject
 var BridgeProof = function (_a) {
     var texts = _a.texts, ProofOfAssetsData = _a.ProofOfAssetsData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName;
     var scrollBlock = React.useRef(null);
-    var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    React.useEffect(function () {
-        var block = scrollBlock.current;
-        if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-        }
-    }, [scrollBlock]);
+    var _b = React.useState(false), shadowVisibility = _b[0]; _b[1];
+    // useEffect(() => {
+    //   const block = scrollBlock.current;
+    //   if (block) {
+    //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
+    //   }
+    // }, [scrollBlock]);
     return (React__default['default'].createElement(Wrapper$h, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
         React__default['default'].createElement(Description$3, { marginTop: "10px" }, texts.description),
@@ -4941,6 +4943,13 @@ var Shadow$1 = styled__default['default'].div(templateObject_5$w || (templateObj
 });
 var templateObject_1$1d, templateObject_2$10, templateObject_3$R, templateObject_4$F, templateObject_5$w;
 
+var BIG_TEN = new BigNumber__default['default'](10);
+var getBalanceAmount = function (amount, decimals) {
+    if (decimals === void 0) { decimals = 18; }
+    if (amount)
+        return new BigNumber__default['default'](amount).dividedBy(BIG_TEN.pow(decimals)).toString(10);
+};
+
 var TokenInfoTransaction = function (_a) {
     var _b;
     var data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, textTransaction = _a.textTransaction;
@@ -4948,7 +4957,7 @@ var TokenInfoTransaction = function (_a) {
     var ButtonsBlock = function (_a) {
         var type = _a.type;
         return (React__default['default'].createElement(BlockInfo, { className: "" + type },
-            React__default['default'].createElement(Button$6, { onClick: addTokenHandler }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
+            React__default['default'].createElement(Button$6, { onClick: function () { return addTokenHandler(data === null || data === void 0 ? void 0 : data.network); }, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
             React__default['default'].createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText((data === null || data === void 0 ? void 0 : data.hash) || "");
@@ -4959,7 +4968,7 @@ var TokenInfoTransaction = function (_a) {
                     }
                 } },
                 React__default['default'].createElement(Icon$L, null)),
-            React__default['default'].createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow" },
+            React__default['default'].createElement(Button$6, { as: "a", href: data === null || data === void 0 ? void 0 : data.link, className: "arrow", target: "_blank" },
                 React__default['default'].createElement(Icon$Q, null))));
     };
     return (React__default['default'].createElement(WrapBlock, null,
@@ -4970,7 +4979,7 @@ var TokenInfoTransaction = function (_a) {
         React__default['default'].createElement(WrapperInfo, null,
             React__default['default'].createElement(LeftColumnInfo, null,
                 React__default['default'].createElement(Text, { marginBottom: "10px", size: "xs" },
-                    (data === null || data === void 0 ? void 0 : data.amount) || "",
+                    getBalanceAmount(data === null || data === void 0 ? void 0 : data.amount),
                     " YAY"),
                 React__default['default'].createElement(Text, { size: "xs" }, ellipsis((data === null || data === void 0 ? void 0 : data.hash) || "", 10)),
                 React__default['default'].createElement(Tooltip$2, { isTooltipDisplayed: isTooltipDisplayed }, textCopy)),
@@ -5033,23 +5042,23 @@ var InfoWrapperTransactionHistory = function (_a) {
         React__default['default'].createElement(MainBlock$1, null,
             React__default['default'].createElement(LeftColumn, null,
                 React__default['default'].createElement(TokenInfoTransaction, { data: {
-                        hash: data === null || data === void 0 ? void 0 : data.hash,
-                        amount: data === null || data === void 0 ? void 0 : data.amount,
-                        network: data === null || data === void 0 ? void 0 : data.network,
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
-                    }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
-            React__default['default'].createElement(MiddleColumn, null,
-                React__default['default'].createElement(Icon$b, null)),
-            React__default['default'].createElement(RightColumn, null,
-                React__default['default'].createElement(TokenInfoTransaction, { data: {
                         hash: data === null || data === void 0 ? void 0 : data.anotherHash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
                         link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
                             ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
                             : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
+                    }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
+            React__default['default'].createElement(MiddleColumn, null,
+                React__default['default'].createElement(Icon$b, null)),
+            React__default['default'].createElement(RightColumn, null,
+                React__default['default'].createElement(TokenInfoTransaction, { data: {
+                        hash: data === null || data === void 0 ? void 0 : data.hash,
+                        amount: data === null || data === void 0 ? void 0 : data.amount,
+                        network: data === null || data === void 0 ? void 0 : data.network,
+                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
+                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
+                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
 };
 var Wrapper$g = styled__default['default'].div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
@@ -5131,12 +5140,17 @@ var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
     var scrollBlock = React.useRef(null);
     var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    React.useEffect(function () {
+    var toggleShadow = React.useCallback(function (block) {
+        setShadowVisibility(block.scrollTop > 0);
+    }, []);
+    React.useLayoutEffect(function () {
         var block = scrollBlock.current;
         if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-            block.removeEventListener("scroll", function () { });
+            block.addEventListener("scroll", function () { return toggleShadow(block); });
         }
+        return function () {
+            block === null || block === void 0 ? void 0 : block.removeEventListener("scroll", function () { return toggleShadow(block); });
+        };
     }, [scrollBlock]);
     return (React__default['default'].createElement(Wrapper$f, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
@@ -5156,6 +5170,7 @@ var Wrapper$f = styled__default['default'].div(templateObject_1$1a || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
+
 var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
@@ -5172,7 +5187,7 @@ var SeeMore = styled__default['default'](Button$a)(templateObject_5$t || (templa
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 4.45%, rgba(38, 38, 45, 0) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: 0;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
 });
