@@ -77,7 +77,7 @@ const Wrapper = styled.div`
 `;
 const TokenList = styled.div`
   padding-top: 28px;
-  height: 70vh;
+  height: 72vh;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.md} {
     max-height: 450px;
