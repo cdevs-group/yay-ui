@@ -86,7 +86,7 @@ const TokenList = styled.div`
   height: 70vh;
   overflow-y: auto;
   ${({ theme }) => theme.mediaQueries.md} {
-    max-height: 470px;
+    height: 500px;
   } ;
 `;
 const ButtonClose = styled.button`
@@ -147,7 +147,7 @@ const Shadow = styled.div<{ show: boolean }>`
     left: 0;
     height: 64px;
     z-index: 2;
-    top: 0;
+    top: -1px;
     transition: 0.3s;
     background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);
   }
