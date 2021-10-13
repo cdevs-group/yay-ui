@@ -20,6 +20,7 @@ export declare const variants: {
     readonly YELLOW: "yellow";
     readonly GRAY: "gray";
     readonly WHITE: "white";
+    readonly LOAD_COLOR: "load-color";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];
