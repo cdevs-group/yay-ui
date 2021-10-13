@@ -5228,14 +5228,14 @@ var TransactionHistory = function (_a) {
                 transactionHistoryData.map(function (item, i) { return (React__default['default'].createElement(InfoWrapperTransactionHistory, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, data: item, tokenLogo: tokenLogo, tokenName: tokenName, textTransaction: textTransaction })); }),
                 React__default['default'].createElement(SeeMore, __assign({ variant: "text" }, propsBtnSeeMore), texts.seeMore)))));
 };
-var Wrapper$f = styled__default['default'].div(templateObject_1$1a || (templateObject_1$1a = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  } ;\n"])), function (_a) {
+var Wrapper$f = styled__default['default'].div(templateObject_1$1a || (templateObject_1$1a = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    height: 500px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 70vh;\n  overflow-y: auto;\n  ", " {\n    height: 500px;\n  } ;\n"])), function (_a) {
+var TokenList = styled__default['default'].div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  margin-top: 28px;\n  height: 70%;\n  overflow-y: auto;\n  border-radius: 12px 12px 0 0;\n  ", " {\n    height: 500px;\n  } ;\n"], ["\n  margin-top: 28px;\n  height: 70%;\n  overflow-y: auto;\n  border-radius: 12px 12px 0 0;\n  ", " {\n    height: 500px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -5251,9 +5251,12 @@ var SeeMore = styled__default['default'](Button$a)(templateObject_5$t || (templa
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"], ["\n  position: relative;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n"])), function (_a) {
+var Shadow = styled__default['default'].div(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n  ", " {\n    display: block;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    position: absolute;\n    display: block;\n    pointer-events: none;\n    opacity: ", ";\n    content: \"\";\n    width: calc(100% - 8px);\n    left: 0;\n    height: 64px;\n    z-index: 2;\n    top: -1px;\n    transition: 0.3s;\n    background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);\n  }\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
     var show = _a.show;
     return (show ? 1 : 0);
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.lg;
 });
 var templateObject_1$1a, templateObject_2$Z, templateObject_3$O, templateObject_4$C, templateObject_5$t, templateObject_6$l;
 
