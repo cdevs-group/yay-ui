@@ -85,4 +85,10 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
+    "load-color": {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+        opacity: string;
+    };
 };
