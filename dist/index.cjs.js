@@ -4949,7 +4949,7 @@ var TokenInfoTransaction = function (_a) {
     var ButtonsBlock = function (_a) {
         var type = _a.type;
         return (React__default['default'].createElement(BlockInfo, { className: "" + type },
-            React__default['default'].createElement(Button$6, { onClick: addTokenHandler, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
+            React__default['default'].createElement(Button$6, { onClick: function () { return addTokenHandler(data === null || data === void 0 ? void 0 : data.network); }, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
             React__default['default'].createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText((data === null || data === void 0 ? void 0 : data.hash) || "");

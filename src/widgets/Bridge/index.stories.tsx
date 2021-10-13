@@ -248,8 +248,8 @@ export const TransactionHistoryBlock = () => {
 
   const [isLoading, setisLoading] = useState(false);
   const addTokenHandler = (e) => {
-    console.log(e)
-  }
+    console.log(e);
+  };
   return (
     <TransactionHistory
       addTokenHandler={addTokenHandler}
