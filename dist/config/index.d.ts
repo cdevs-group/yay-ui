@@ -1,4 +1,4 @@
-import BigNumber from 'bignumber.js/bignumber';
+import BigNumber from "bignumber.js/bignumber";
 export declare const BSC_BLOCK_TIME = 3;
 export declare const CAKE_PER_BLOCK: BigNumber;
 export declare const BLOCKS_PER_YEAR: BigNumber;

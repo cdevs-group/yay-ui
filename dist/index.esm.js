@@ -5010,43 +5010,43 @@ var BSC_BLOCK_TIME = 3;
 var CAKE_PER_BLOCK = new BigNumber$1(40);
 var BLOCKS_PER_YEAR = new BigNumber$1((60 / BSC_BLOCK_TIME) * 60 * 24 * 365); // 10512000
 CAKE_PER_BLOCK.times(BLOCKS_PER_YEAR);
-var BASE_BSC_SCAN_URL = 'https://bscscan.com';
-var BASE_AVAX_SCAN_URL = 'https://cchain.explorer.avax.network';
+var BASE_BSC_SCAN_URL = "https://bscscan.com";
+var BASE_AVAX_SCAN_URL = "https://cchain.explorer.avax.network";
 BIG_TEN.pow(18);
-var MAINNET_BSC_CHAIN_ID = '56';
-var MAINNET_AVAX_CHAIN_ID = '43114';
+var MAINNET_BSC_CHAIN_ID = "56";
+var MAINNET_AVAX_CHAIN_ID = "43114";
 var NETWORK_CHAIN = [
     {
-        name: 'Binance',
-        chainId: '56',
-        chainName: 'Binance Smart Chain Mainnet',
-        shortName: 'bsc',
+        name: "Binance",
+        chainId: "56",
+        chainName: "Binance Smart Chain Mainnet",
+        shortName: "bsc",
         nativeCurrency: {
-            name: 'BNB',
-            symbol: 'bnb',
+            name: "BNB",
+            symbol: "bnb",
             decimals: 18,
         },
         rpcUrls: [
-            'https://bsc-dataseed1.ninicoin.io',
-            'https://bsc-dataseed1.defibit.io',
-            'https://bsc-dataseed.binance.org',
+            "https://bsc-dataseed1.ninicoin.io",
+            "https://bsc-dataseed1.defibit.io",
+            "https://bsc-dataseed.binance.org",
         ],
-        blockExplorerUrls: ['https://bscscan.com'],
-        icon: '/images/bnb.png',
+        blockExplorerUrls: ["https://bscscan.com"],
+        icon: "/images/bnb.png",
     },
     {
-        name: 'AVAX',
-        chainId: '43114',
-        chainName: 'AVAX Mainnet',
-        shortName: 'avax',
+        name: "AVAX",
+        chainId: "43114",
+        chainName: "AVAX Mainnet",
+        shortName: "avax",
         nativeCurrency: {
-            name: 'AVAX',
-            symbol: 'avax',
+            name: "AVAX",
+            symbol: "avax",
             decimals: 18,
         },
-        rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
-        blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
-        icon: '/images/avalanche.png',
+        rpcUrls: ["https://api.avax.network/ext/bc/C/rpc"],
+        blockExplorerUrls: ["https://cchain.explorer.avax.network/"],
+        icon: "/images/avalanche.png",
     },
 ];
 
