@@ -48,14 +48,17 @@ export const Time = styled.div`
   } ;
 `;
 export const WinWrapper = styled.div<{ win?: boolean | undefined }>`
+  align-items: center;
   width: 100%;
   height: 53px;
   position: relative;
   justify-self: end;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: row-reverse;
+`;
+export const WinWrapperCollect = styled(WinWrapper)`
+  align-items: flex-end;
 `;
 export const ImgWrapper = styled.div<{ claimed?: boolean | undefined; hide?: boolean }>`
   display: ${({ claimed }) => (claimed ? "block" : "none")};
@@ -86,7 +89,7 @@ export const ButtonStyle = styled(Button)`
   width: 100%;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 16px;
-    height: 50px;
+    height: 53px;
   } ;
 `;
 export const TextStyle = styled(Text)`
@@ -206,5 +209,5 @@ export const Icon2 = styled(Icon1)`
 export const PlayerWrap = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 53px;
 `;
