@@ -9,6 +9,7 @@ import debounce from 'lodash/debounce';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 import BigNumber from 'bignumber.js';
+import BigNumber$1 from 'bignumber.js/bignumber';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -5001,6 +5002,73 @@ var WrapperInfo = styled.div(templateObject_5$v || (templateObject_5$v = __makeT
 var LeftColumnInfo = styled.div(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var templateObject_1$1c, templateObject_2$$, templateObject_3$Q, templateObject_4$E, templateObject_5$v, templateObject_6$n;
 
+BigNumber$1.config({
+    EXPONENTIAL_AT: 1000,
+    DECIMAL_PLACES: 80,
+});
+var BSC_BLOCK_TIME = 3;
+var CAKE_PER_BLOCK = new BigNumber$1(40);
+var BLOCKS_PER_YEAR = new BigNumber$1((60 / BSC_BLOCK_TIME) * 60 * 24 * 365); // 10512000
+CAKE_PER_BLOCK.times(BLOCKS_PER_YEAR);
+var BASE_BSC_SCAN_URL = 'https://bscscan.com';
+var BASE_AVAX_SCAN_URL = 'https://cchain.explorer.avax.network';
+BIG_TEN.pow(18);
+var MAINNET_BSC_CHAIN_ID = '56';
+var MAINNET_AVAX_CHAIN_ID = '43114';
+var NETWORK_CHAIN = [
+    {
+        name: 'Binance',
+        chainId: '56',
+        chainName: 'Binance Smart Chain Mainnet',
+        shortName: 'bsc',
+        nativeCurrency: {
+            name: 'BNB',
+            symbol: 'bnb',
+            decimals: 18,
+        },
+        rpcUrls: [
+            'https://bsc-dataseed1.ninicoin.io',
+            'https://bsc-dataseed1.defibit.io',
+            'https://bsc-dataseed.binance.org',
+        ],
+        blockExplorerUrls: ['https://bscscan.com'],
+        icon: '/images/bnb.png',
+    },
+    {
+        name: 'AVAX',
+        chainId: '43114',
+        chainName: 'AVAX Mainnet',
+        shortName: 'avax',
+        nativeCurrency: {
+            name: 'AVAX',
+            symbol: 'avax',
+            decimals: 18,
+        },
+        rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+        blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
+        icon: '/images/avalanche.png',
+    },
+];
+
+var getChainIdByName = function (name) {
+    var _a;
+    var id = (_a = NETWORK_CHAIN.find(function (el) { return el.shortName === name; })) === null || _a === void 0 ? void 0 : _a.chainId;
+    if (id)
+        return id;
+    return null;
+};
+
+var getBscScanTransactionUrl = function (transactionHash, network) {
+    var idNetwork = getChainIdByName(network);
+    if (idNetwork === MAINNET_BSC_CHAIN_ID) {
+        return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
+    }
+    if (idNetwork === MAINNET_AVAX_CHAIN_ID) {
+        return BASE_AVAX_SCAN_URL + "/tx/" + transactionHash;
+    }
+    return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
+};
+
 var InfoWrapperTransactionHistory = function (_a) {
     var tokenLogo = _a.tokenLogo, data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenName = _a.tokenName, textTransaction = _a.textTransaction;
     return (React__default.createElement(Wrapper$g, null,
@@ -5013,9 +5081,7 @@ var InfoWrapperTransactionHistory = function (_a) {
                         hash: data === null || data === void 0 ? void 0 : data.anotherHash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax",
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "bsc"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.anotherHash),
+                        link: getBscScanTransactionUrl(data === null || data === void 0 ? void 0 : data.anotherHash, (data === null || data === void 0 ? void 0 : data.network) === "avax" ? "bsc" : "avax"),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })),
             React__default.createElement(MiddleColumn, null,
                 React__default.createElement(Icon$b, null)),
@@ -5024,9 +5090,7 @@ var InfoWrapperTransactionHistory = function (_a) {
                         hash: data === null || data === void 0 ? void 0 : data.hash,
                         amount: data === null || data === void 0 ? void 0 : data.amount,
                         network: data === null || data === void 0 ? void 0 : data.network,
-                        link: (data === null || data === void 0 ? void 0 : data.network) === "avax"
-                            ? "https://cchain.explorer.avax.network/tx/" + (data === null || data === void 0 ? void 0 : data.hash) + "/token-transfers"
-                            : "https://bscscan.com/tx/" + (data === null || data === void 0 ? void 0 : data.hash),
+                        link: getBscScanTransactionUrl(data === null || data === void 0 ? void 0 : data.hash, data === null || data === void 0 ? void 0 : data.network),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
 };
 var Wrapper$g = styled.div(templateObject_1$1b || (templateObject_1$1b = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
@@ -5138,9 +5202,8 @@ var Wrapper$f = styled.div(templateObject_1$1a || (templateObject_1$1a = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-
 var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTemplateObject(["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"], ["\n  padding-top: 28px;\n  height: 72vh;\n  overflow-y: auto;\n  ", " {\n    max-height: 450px;\n  } ;\n"])), function (_a) {
-   var theme = _a.theme;
+    var theme = _a.theme;
     return theme.mediaQueries.md;
 });
 var ButtonClose$1 = styled.button(templateObject_3$O || (templateObject_3$O = __makeTemplateObject(["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"], ["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.15);\n  border-radius: 7px;\n  cursor: pointer;\n  ", " {\n    right: 50px;\n  } ;\n"])), function (_a) {
