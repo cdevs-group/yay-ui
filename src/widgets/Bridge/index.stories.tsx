@@ -247,10 +247,12 @@ export const TransactionHistoryBlock = () => {
   };
 
   const [isLoading, setisLoading] = useState(false);
-
+  const addTokenHandler = (e) => {
+    console.log(e.currentTarget.value)
+  }
   return (
     <TransactionHistory
-      addTokenHandler={() => {}}
+      addTokenHandler={addTokenHandler}
       textCopy={"Copied"}
       onDismiss={() => {}}
       texts={texts}

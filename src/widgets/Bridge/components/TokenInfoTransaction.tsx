@@ -18,7 +18,7 @@ const TokenInfoTransaction = ({
 
   const ButtonsBlock = ({ type }: { type?: string }) => (
     <BlockInfo className={`${type}`}>
-      <Button onClick={addTokenHandler}>{addTokenIcon || <img src={Metamask} />}</Button>
+      <Button onClick={addTokenHandler} value={data?.network}>{addTokenIcon || <img src={Metamask} />}</Button>
       <Button
         onClick={() => {
           if (navigator.clipboard) {
