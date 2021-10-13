@@ -88,4 +88,10 @@ export const styleVariants = {
     color: "#4BE43E",
     boxShadow: "none",
   },
+  [variants.LOAD_COLOR]: {
+    backgroundColor: "transparent",
+    color: "green",
+    boxShadow: "none",
+    opacity: "1",
+  },
 };

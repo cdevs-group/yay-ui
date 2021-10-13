@@ -1,27 +1,27 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant, typography } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
-import { BaseButtonProps } from "./types";
+import { BaseButtonProps, variants } from "./types";
 
 interface ThemedButtonProps extends BaseButtonProps {
   theme: DefaultTheme;
 }
 
-const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
+const getDisabledStyles = ({ isLoading, theme, variant }: ThemedButtonProps) => {
   if (isLoading === true) {
     return `
       &:disabled,
-      &.pancake-button--disabled {
+      &.yay-button--disabled {
         cursor: not-allowed;
       }
     `;
   }
-
+  const opacity = variant === variants.LOAD_COLOR ? 1 : 0.2;
   return `
     &:disabled,
-    &.pancake-button--disabled {
+    &.yay-button--disabled {
       box-shadow: none;
-      opacity:.2;
+      opacity: ${opacity};
       color: ${theme.colors.text};
       cursor: not-allowed;
     }
@@ -71,7 +71,7 @@ const StyledButton = styled.button<BaseButtonProps>`
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
-  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {
+  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {
     box-shadow: ${({ variant }) =>
       variant === "green"
         ? "0px 0px 29px #2CB021"

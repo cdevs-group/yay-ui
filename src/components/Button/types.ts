@@ -22,6 +22,7 @@ export const variants = {
   YELLOW: "yellow",
   GRAY: "gray",
   WHITE: "white",
+  LOAD_COLOR: "load-color",
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
