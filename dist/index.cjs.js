@@ -4949,7 +4949,7 @@ var TokenInfoTransaction = function (_a) {
     var ButtonsBlock = function (_a) {
         var type = _a.type;
         return (React__default['default'].createElement(BlockInfo, { className: "" + type },
-            React__default['default'].createElement(Button$6, { onClick: addTokenHandler }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
+            React__default['default'].createElement(Button$6, { onClick: addTokenHandler, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default['default'].createElement("img", { src: Metamask })),
             React__default['default'].createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText((data === null || data === void 0 ? void 0 : data.hash) || "");
@@ -5132,12 +5132,17 @@ var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
     var scrollBlock = React.useRef(null);
     var _b = React.useState(false), shadowVisibility = _b[0], setShadowVisibility = _b[1];
-    React.useEffect(function () {
+    var toggleShadow = React.useCallback(function (block) {
+        setShadowVisibility(block.scrollTop > 0);
+    }, []);
+    React.useLayoutEffect(function () {
         var block = scrollBlock.current;
         if (block) {
-            block.addEventListener("scroll", function () { return setShadowVisibility(block.scrollTop > 0); });
-            block.removeEventListener("scroll", function () { });
+            block.addEventListener("scroll", function () { return toggleShadow(block); });
         }
+        return function () {
+            block === null || block === void 0 ? void 0 : block.removeEventListener("scroll", function () { return toggleShadow(block); });
+        };
     }, [scrollBlock]);
     return (React__default['default'].createElement(Wrapper$f, null,
         React__default['default'].createElement(Text, { size: "lg" }, texts.title),
