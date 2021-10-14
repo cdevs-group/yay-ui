@@ -58,7 +58,7 @@ const NavBlock = styled.div`
   border-radius: 15px;
   ${space}
   ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 452px;
+    max-width: 469px;
   }
 `;
 const Wrapper = styled.div`
@@ -69,13 +69,13 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   ${({ theme }) => theme.mediaQueries.md} {
-    max-width: 452px;
+    max-width: 469px;
   }
 `;
 const ButtonAdd = styled.button`
   margin: 0 0 16px;
-  max-width: 220px;
-  min-height: 220px;
+  max-width: 222px;
+  min-height: 222px;
   width: 100%;
   padding: 20px 24px;
   background: ${({ theme }) => theme.colors.bgGrey2};
@@ -92,7 +92,7 @@ const ButtonAdd = styled.button`
     left: 0;
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    margin: 0 12px 0 0;
+    margin: 0 25px 0 0;
   }
 `;
 

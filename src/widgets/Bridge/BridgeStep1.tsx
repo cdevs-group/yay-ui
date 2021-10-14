@@ -147,10 +147,10 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               <SwapButton onClick={handleToggleNetwork} />
             </ButtonReverse>
             <MessageBox>
-              <MessageText color={inputError ? lightColors.redBg : lightColors.text} size="xs">
+              <MessageText fontWeight={400} color={inputError ? lightColors.redBg : lightColors.text} size="xs">
                 {balanceText.message1}{" "}
               </MessageText>
-              <MessageText color={inputError ? lightColors.redBg : baseColors.green} size="xs">
+              <MessageText fontWeight={400} color={inputError ? lightColors.redBg : baseColors.green} size="xs">
                 {" "}
                 {balanceText.message2}
               </MessageText>

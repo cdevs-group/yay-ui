@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
 import Button from "./Button";
+import WinButton from "./WinButton";
+import { WINNER3 } from "../../constants/images";
 
 export default {
   title: "Components/Button",
@@ -70,6 +72,9 @@ export const Variants: React.FC = () => {
           <Button width="130px" scale="sm" variant="load-color">
             Button
           </Button>
+          <WinButton onClick={() => alert("click")} image={WINNER3}>
+            Leaderboard
+          </WinButton>
         </Row>
       </BrowserRouter>
     </div>
