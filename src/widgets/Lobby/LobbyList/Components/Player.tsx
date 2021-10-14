@@ -1,19 +1,12 @@
 import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../../../constants/images";
 import { ellipsis } from "../../../../helpers/ellipsis";
-import React from "react";
-import { Icons, Icon1, Icon2, PlayerWrap, TextTitle, TextStyle } from "../styles";
+import React, { ReactNode } from "react";
+import { Icons, PlayerWrap, TextTitle, TextStyle } from "../styles";
 
-const Player = ({ title, gamer }: PlayerInterface) => {
+const Player = ({ title, gamer, icon }: PlayerInterface) => {
   return (
     <>
-      <Icons>
-        <Icon1>
-          <img src={AVATAR_PLAYER} />
-        </Icon1>
-        <Icon2>
-          <img src={AVATAR_PLAYER_2} />
-        </Icon2>
-      </Icons>
+      <Icons>{icon || <img src={AVATAR_PLAYER} />}</Icons>
       <PlayerWrap>
         <TextTitle>{title}</TextTitle>
         <TextStyle mb="5px">{ellipsis(gamer)}</TextStyle>
@@ -25,5 +18,6 @@ const Player = ({ title, gamer }: PlayerInterface) => {
 interface PlayerInterface {
   title?: string;
   gamer: string;
+  icon?: ReactNode;
 }
 export default Player;

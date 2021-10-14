@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { TransactionHistoryProps } from "./types";
 import { Text } from "../../components/Text";
 import InfoWrapperTransactionHistory from "./components/InfoWrapperTransactionHistory";
-import { CloseIcon } from "../../components/Svg";
+import { CloseIcon2 } from "../../components/Svg";
 import { Button } from "../../components/Button";
 
 const TransactionHistory = ({
@@ -40,7 +40,7 @@ const TransactionHistory = ({
       <Text size="lg">{texts.title}</Text>
       <Description marginTop="10px">{texts.description}</Description>
       <ButtonClose onClick={onDismiss}>
-        <CloseIcon fill="transparent" />
+        <CloseIcon2 />
       </ButtonClose>
       <Shadow show={shadowVisibility} />
       <TokenList ref={scrollBlock}>
@@ -99,9 +99,10 @@ const ButtonClose = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
+  background: none;
   border-radius: 7px;
-  cursor: pointer;
+  cursor: pointer; 
+  background: rgba(255, 255, 255, 0.15);
   ${({ theme }) => theme.mediaQueries.sm} {
     right: 50px;
   } ;

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { SpaceProps } from "styled-system";
 import { ButtonProps } from "../../components/Button/types";
 
@@ -57,6 +58,7 @@ export interface LobbyListItemProps {
   isLoad?: boolean;
   isEnoughYay: boolean;
   propsButton?: ButtonProps;
+  icon?: ReactNode;
 }
 interface DataLobbyProps {
   isEnoughYay: boolean;

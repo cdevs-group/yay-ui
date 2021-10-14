@@ -184,28 +184,13 @@ export const LoseBlock = styled(Flex)`
   align-items: center;
 `;
 
-export const Icons = styled.div`
-  width: 48px;
-  height: 48px;
-  position: relative;
+export const Icons = styled.div`  
   display: none;
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
   }
 `;
-export const Icon1 = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  box-shadow: ${({ theme }) => lightColors.boxShadow3};
-  border-radius: 9px;
-`;
-export const Icon2 = styled(Icon1)`
-  left: auto;
-  bottom: 0;
-  top: auto;
-  right: 0;
-`;
+
 export const PlayerWrap = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
