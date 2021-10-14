@@ -64,7 +64,7 @@ const AlertBlurCustom: React.FC<AlertProps> = ({ handleClose, buttonText, title,
             <CloseIcon fill="none" />
           </ButtonClose>
         </Flex>
-        <div>{children}</div>        
+        <div>{children}</div>
       </div>
     </StyledAlert>
   );

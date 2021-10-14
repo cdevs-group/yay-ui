@@ -4633,7 +4633,7 @@ var getBgNotice = function (type) {
     }
 };
 var Content$4 = styled.div(templateObject_1$1g || (templateObject_1$1g = __makeTemplateObject(["\n  position: relative;\n  max-width: 650px;\n  margin: 0 auto;\n  border-radius: 10px;\n"], ["\n  position: relative;\n  max-width: 650px;\n  margin: 0 auto;\n  border-radius: 10px;\n"])));
-var Border = styled.div(templateObject_2$13 || (templateObject_2$13 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  padding: 1px;\n  background: ", ";\n  width: calc(100% + 2px);\n  height: calc(100% + 2px);\n  border-radius: 10px;\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: ", ";\n    border-radius: inherit;\n    width: calc(100% - 2px);\n    height: calc(100% - 2px);\n    display: block;\n  }\n"], ["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  padding: 1px;\n  background: ", ";\n  width: calc(100% + 2px);\n  height: calc(100% + 2px);\n  border-radius: 10px;\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    background: ", ";\n    border-radius: inherit;\n    width: calc(100% - 2px);\n    height: calc(100% - 2px);\n    display: block;\n  }\n"])), function (_a) {
+var Border = styled.div(templateObject_2$13 || (templateObject_2$13 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  width: calc(100% + 2px);\n  height: calc(100% + 2px);\n  border-radius: 20px;\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: calc(50% + 1px);\n    transform: translate(-50%, -50%);\n    background: ", ";\n    border-radius: inherit;\n    width: calc(100% - 4px);\n    height: calc(100% - 4px);\n    display: block;\n  }\n"], ["\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  width: calc(100% + 2px);\n  height: calc(100% + 2px);\n  border-radius: 20px;\n  &::before {\n    content: \"\";\n    position: absolute;\n    left: 50%;\n    top: calc(50% + 1px);\n    transform: translate(-50%, -50%);\n    background: ", ";\n    border-radius: inherit;\n    width: calc(100% - 4px);\n    height: calc(100% - 4px);\n    display: block;\n  }\n"])), function (_a) {
     var _b;
     var noticeType = _a.noticeType;
     return (_b = getBgNotice(noticeType)) === null || _b === void 0 ? void 0 : _b.bg;
@@ -5204,7 +5204,7 @@ var TokenList = styled.div(templateObject_2$Z || (templateObject_2$Z = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var ButtonClose$1 = styled.button(templateObject_3$O || (templateObject_3$O = __makeTemplateObject(["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: none;\n  border-radius: 7px;\n  cursor: pointer; \n  background: rgba(255, 255, 255, 0.15);\n  ", " {\n    right: 50px;\n  } ;\n"], ["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: none;\n  border-radius: 7px;\n  cursor: pointer; \n  background: rgba(255, 255, 255, 0.15);\n  ", " {\n    right: 50px;\n  } ;\n"])), function (_a) {
+var ButtonClose$1 = styled.button(templateObject_3$O || (templateObject_3$O = __makeTemplateObject(["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: none;\n  border-radius: 7px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.15);\n  ", " {\n    right: 50px;\n  } ;\n"], ["\n  position: absolute;\n  top: 34px;\n  right: 25px;\n  padding: 0;\n  width: 30px;\n  height: 30px;\n  border: none;\n  display: flex;\n  align-items: center;\n  background: none;\n  border-radius: 7px;\n  cursor: pointer;\n  background: rgba(255, 255, 255, 0.15);\n  ", " {\n    right: 50px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -7585,7 +7585,7 @@ var ScroreBlock = styled(BetWrap)(templateObject_17 || (templateObject_17 = __ma
     return theme.mediaQueries.md;
 });
 var LoseBlock = styled(Flex)(templateObject_18 || (templateObject_18 = __makeTemplateObject(["\n  justify-content: center;\n  align-items: center;\n"], ["\n  justify-content: center;\n  align-items: center;\n"])));
-var Icons = styled.div(templateObject_19 || (templateObject_19 = __makeTemplateObject(["  \n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["  \n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
+var Icons = styled.div(templateObject_19 || (templateObject_19 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
