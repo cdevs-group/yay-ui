@@ -10,6 +10,7 @@ import { TransactionHistory } from "./index";
 import { Metamask } from "../../constants/images";
 import { NoticeBridgeType } from "./types";
 import { Button } from "../../components/Button";
+import BlurWithBorder from "../../components/BlurWithBorder/BlurWithBorder";
 
 export default {
   title: "Widgets/Bridge",
@@ -38,6 +39,14 @@ export const BridgeStep1Block: React.FC = () => {
     setFromChange(!fromChange);
   };
 
+  const BlurContent = () => {
+    return (
+      <ButtonStyle variant="green" maxWidth="294px" width="100%" onClick={() => console.log("click")}>
+        Approve
+      </ButtonStyle>
+    );
+  };
+
   return (
     <div>
       <div style={{ marginBottom: "50px" }}>
@@ -46,12 +55,16 @@ export const BridgeStep1Block: React.FC = () => {
           balanceText={balanceText}
           handleButtonToMax={() => {}}
           texts={texts}
+          noticeVisible
+          radiusBlur="15px"
           value={value}
           onUserInput={onUserInput}
           iconNetwork1={<BnbIcon />}
           iconNetwork2={<AvalancheIcon />}
           handleOpenProofOfAssets={() => {}}
           handleOpenTransactionsHistory={() => {}}
+          blurContent={<BlurContent />}
+          noticeType={NoticeBridgeType.SUCCESS}
           actionButton={
             <Button variant="green" width="100%">
               Transfer
@@ -268,3 +281,12 @@ export const TransactionHistoryBlock = () => {
     />
   );
 };
+
+const ButtonStyle = styled(Button)`
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
