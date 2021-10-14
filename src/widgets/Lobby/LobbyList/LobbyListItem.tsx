@@ -23,6 +23,7 @@ const LobbyListItem = ({
   lose,
   isEnoughYay,
   propsButton,
+  icon,
 }: LobbyListItemProps) => {
   return (
     <>
@@ -46,7 +47,7 @@ const LobbyListItem = ({
           )
         }
       >
-        <Player title={texts.player} gamer={creator} />
+        <Player title={texts.player} gamer={creator} icon={icon} />
         <Bet title={texts.bet} red={status === Status.LOSE} bet={bet} />
 
         {[Status.COLLECT, Status.WAITINGOPPONENT, Status.WIN, Status.DRAW, Status.REVERT, Status.LOSE].find(

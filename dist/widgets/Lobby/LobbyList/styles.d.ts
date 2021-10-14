@@ -40,6 +40,4 @@ export declare const WaitingBlock: import("styled-components").StyledComponent<"
 export declare const ScroreBlock: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const LoseBlock: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Box").BoxProps & import("../../../components/Box").FlexProps, never>;
 export declare const Icons: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
-export declare const Icon1: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
-export declare const Icon2: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const PlayerWrap: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Box").BoxProps & import("../../../components/Box").FlexProps, never>;
