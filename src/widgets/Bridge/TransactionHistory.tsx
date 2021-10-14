@@ -106,7 +106,7 @@ const ButtonClose = styled.button`
   align-items: center;
   background: none;
   border-radius: 7px;
-  cursor: pointer; 
+  cursor: pointer;
   background: rgba(255, 255, 255, 0.15);
   ${({ theme }) => theme.mediaQueries.sm} {
     right: 50px;

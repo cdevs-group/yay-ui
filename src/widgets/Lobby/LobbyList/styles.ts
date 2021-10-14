@@ -184,7 +184,7 @@ export const LoseBlock = styled(Flex)`
   align-items: center;
 `;
 
-export const Icons = styled.div`  
+export const Icons = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
