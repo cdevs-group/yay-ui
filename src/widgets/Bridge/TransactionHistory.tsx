@@ -71,20 +71,25 @@ export default TransactionHistory;
 const Wrapper = styled.div`
   position: relative;
   max-width: 875px;
-  height: auto;
-  padding: 33px 24px 0 14px;
+  height: 70vh;
+  padding: 33px 14px 0 14px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  top: 80px;
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 38px 44px 0 34px;
-    width: 100%;
+    height: auto;
+    overflow: auto;
   } ;
 `;
 const TokenList = styled.div`
-  padding-top: 28px;
-  height: 70vh;
+  margin-top: 28px;
+  height: 70%;
   overflow-y: auto;
+  border-radius: 12px 12px 0 0;
   ${({ theme }) => theme.mediaQueries.md} {
     height: 500px;
   } ;
@@ -138,6 +143,7 @@ const SeeMore = styled(Button)`
 
 const Shadow = styled.div<{ show: boolean }>`
   position: relative;
+  display: none;
   &:after {
     position: absolute;
     display: block;
@@ -151,5 +157,8 @@ const Shadow = styled.div<{ show: boolean }>`
     top: -1px;
     transition: 0.3s;
     background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    display: block;
   }
 `;
