@@ -3,14 +3,18 @@ import styled from "styled-components";
 import Text from "../../components/Text/Text";
 import { BalanceInput } from "../../components/BalanceInput";
 import { SwapButton } from "../../components/Toggle";
-import { BridgeStep1Props } from "./types";
+import { BridgeStep1Props, NoticeBridgeType } from "./types";
 import { lightColors, baseColors } from "../../theme/colors";
+import BlurWithBorder from "../../components/BlurWithBorder/BlurWithBorder";
 
 const Wrapper = styled.div`
+  position: relative;
   width: fit-content;
   margin: 0 auto;
 `;
+
 const BridgeWrapper = styled.div`
+  position: relative;
   max-width: 404px;
   max-height: 100vh;
   min-width: 303px;
@@ -20,6 +24,7 @@ const BridgeWrapper = styled.div`
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
+  z-index: 1;
   ${({ theme }) => theme.mediaQueries.xs} {
     min-width: 360px;
     width: 100%;
@@ -29,8 +34,11 @@ const BridgeWrapper = styled.div`
     width: 100%;
   }
 `;
-const BridgeContent = styled.div`
+const BridgeContent = styled.div<{ blur?: boolean }>`
   padding: 33px 23px 23px;
+  position: relative;
+  z-index: 1;
+  filter: ${({ blur }) => (blur ? `blur(5px)` : "none")};
 `;
 const Field = styled.div`
   height: 50px;
@@ -82,6 +90,14 @@ const ButtonOpenProof = styled(Text)`
   border: none;
   cursor: pointer;
 `;
+const ButtonsWrap = styled.div`
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
 
 const BridgeStep1: React.FC<BridgeStep1Props> = ({
   handleButtonToMax,
@@ -98,6 +114,10 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   handleOpenTransactionsHistory,
   disabledInput,
   actionButton,
+  noticeVisible,
+  blurContent,
+  noticeType,
+  radiusBlur,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -111,7 +131,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   return (
     <Wrapper>
       <BridgeWrapper>
-        <BridgeContent>
+        <BridgeContent blur={noticeVisible}>
           <Label size="lg">{texts.from}</Label>
           <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
           <InputWrap>
@@ -144,8 +164,15 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
           {actionButton}
         </BridgeContent>
       </BridgeWrapper>
-      <ButtonOpenProof onClick={handleOpenProofOfAssets}>{texts.buttonProofOfState}</ButtonOpenProof>
-      <ButtonOpenProof onClick={handleOpenTransactionsHistory}>{texts.buttonTransactionsHistory}</ButtonOpenProof>
+      {noticeVisible && (
+        <BlurWithBorder noticeType={noticeType} radiusBlur={radiusBlur}>
+          {blurContent}
+        </BlurWithBorder>
+      )}
+      <ButtonsWrap>
+        <ButtonOpenProof onClick={handleOpenProofOfAssets}>{texts.buttonProofOfState}</ButtonOpenProof>
+        <ButtonOpenProof onClick={handleOpenTransactionsHistory}>{texts.buttonTransactionsHistory}</ButtonOpenProof>
+      </ButtonsWrap>
     </Wrapper>
   );
 };

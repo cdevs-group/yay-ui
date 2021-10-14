@@ -3,6 +3,10 @@ import { ButtonProps } from "../../components/Button";
 import BigNumber from "bignumber.js";
 
 export interface BridgeStep1Props {
+  radiusBlur?: string;
+  blurContent?: ReactNode;
+  noticeType?: NoticeBridgeType;
+  noticeVisible?: boolean;
   onUserInput: (input: any) => void;
   value: string | number;
   inputError?: boolean;
@@ -33,6 +37,7 @@ export interface BridgeStep1Props {
 }
 
 export interface BridgeStep2Props {
+  radiusBlur?: string;
   network1: string;
   network2: string;
   onDismiss?: () => void;

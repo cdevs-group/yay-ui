@@ -10,7 +10,6 @@ import ProgressRange from "../../components/Progress/ProgressRange";
 import { Loader } from "../../components/Loader";
 import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
-import { Button } from "../../components/Button";
 import { Flex } from "../../components/Box";
 
 const BridgeStep2 = ({
