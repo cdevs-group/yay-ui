@@ -1,4 +1,4 @@
-import { AVATAR_PLAYER, AVATAR_PLAYER_2 } from "../../../../constants/images";
+import { AVATAR_PLAYER } from "../../../../constants/images";
 import { ellipsis } from "../../../../helpers/ellipsis";
 import React, { ReactNode } from "react";
 import { Icons, PlayerWrap, TextTitle, TextStyle } from "../styles";
@@ -20,4 +20,5 @@ interface PlayerInterface {
   gamer: string;
   icon?: ReactNode;
 }
+
 export default Player;
