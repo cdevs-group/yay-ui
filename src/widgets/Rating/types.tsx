@@ -24,10 +24,10 @@ export interface PlayerListProps {
     games: string;
   };
   playersList: Array<{
-    position: string | number;
-    token: any;
+    position?: string | number;
+    token?: any;
     name: string;
-    games: string;
+    score?: string;
   }>;
 }
 
@@ -49,7 +49,8 @@ export interface ListWrapProps {
   length?: number;
   togglePage?: (e: any) => Promise<void>;
   currentPage?: number;
-  nameInput: string;
+  nameInput?: string;
+  title?: string;
   handleShare?: () => void;
 }
 
