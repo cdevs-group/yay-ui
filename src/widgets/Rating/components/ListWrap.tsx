@@ -73,6 +73,7 @@ const Wrapper = styled.div`
 `;
 const MainBlock = styled.div`
   height: auto;
+  overflow: hidden;
   ${({ theme }) => theme.mediaQueries.xl} {
     height: 517px;
   }
