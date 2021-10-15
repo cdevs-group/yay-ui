@@ -40,7 +40,12 @@ export const TextTitle = styled(Text)`
   margin-bottom: 7px;
   color: ${({ theme }) => theme.colors.greyText};
 `;
-export const BetWrap = styled.div``;
+export const BetWrap = styled.div`
+  height: 53px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 export const Time = styled.div`
   display: none;
   ${({ theme }) => theme.mediaQueries.md} {
