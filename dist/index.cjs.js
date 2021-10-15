@@ -6926,7 +6926,7 @@ var Wrapper$9 = styled__default['default'].div(templateObject_1$z || (templateOb
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-var MainBlock = styled__default['default'].div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  height: auto;\n  ", " {\n    height: 517px;\n  }\n"], ["\n  height: auto;\n  ", " {\n    height: 517px;\n  }\n"])), function (_a) {
+var MainBlock = styled__default['default'].div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  height: auto;\n  overflow: hidden;\n  ", " {\n    height: 517px;\n  }\n"], ["\n  height: auto;\n  overflow: hidden;\n  ", " {\n    height: 517px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
