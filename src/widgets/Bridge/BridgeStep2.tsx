@@ -247,21 +247,20 @@ const Border = styled.div<{ noticeType?: NoticeBridgeType }>`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  padding: 1px;
   background: ${({ noticeType }) => getBgNotice(noticeType)?.bg};
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-  border-radius: 10px;
+  border-radius: 20px;
   &::before {
     content: "";
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: calc(50% + 1px);
     transform: translate(-50%, -50%);
     background: ${({ theme }) => theme.colors.dark};
     border-radius: inherit;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
     display: block;
   }
 `;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import Alert from "./Alert";
 import AlertBlur from "./AlertBlur";
+import AlertBlurCustom from "./AlertBlurCustom";
+
 import { Text } from "../Text";
 import { CloseRed } from "../Svg";
 
@@ -69,6 +71,19 @@ export const WithHandler: React.FC = () => {
             Do you want stake it?
           </Text>
         </AlertBlur>
+      </Row>
+      <Row>
+        <AlertBlurCustom onClick={() => {}} handleClose={closeAlert} buttonText="Stake it" title="STEP 1">
+          <Text fontSize="14px" color="#8B8B8B">
+            You have{" "}
+            <Text fontSize="14px" as="span" color="green">
+              9.000 e.Yay
+            </Text>{" "}
+            in AVAX.
+            <br />
+            Do you want stake it?
+          </Text>
+        </AlertBlurCustom>
       </Row>
     </div>
   );

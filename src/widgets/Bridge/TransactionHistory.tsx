@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { TransactionHistoryProps } from "./types";
 import { Text } from "../../components/Text";
 import InfoWrapperTransactionHistory from "./components/InfoWrapperTransactionHistory";
-import { CloseIcon } from "../../components/Svg";
+import { CloseIcon2 } from "../../components/Svg";
 import { Button } from "../../components/Button";
 
 const TransactionHistory = ({
@@ -40,7 +40,7 @@ const TransactionHistory = ({
       <Text size="lg">{texts.title}</Text>
       <Description marginTop="10px">{texts.description}</Description>
       <ButtonClose onClick={onDismiss}>
-        <CloseIcon fill="transparent" />
+        <CloseIcon2 />
       </ButtonClose>
       <Shadow show={shadowVisibility} />
       <TokenList ref={scrollBlock}>
@@ -71,20 +71,25 @@ export default TransactionHistory;
 const Wrapper = styled.div`
   position: relative;
   max-width: 875px;
-  height: auto;
-  padding: 33px 24px 0 14px;
+  height: 70vh;
+  padding: 33px 14px 0 14px;
   box-sizing: border-box;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  top: 80px;
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 38px 44px 0 34px;
-    width: 100%;
+    height: auto;
+    overflow: auto;
   } ;
 `;
 const TokenList = styled.div`
-  padding-top: 28px;
-  height: 70vh;
+  margin-top: 28px;
+  height: 70%;
   overflow-y: auto;
+  border-radius: 12px 12px 0 0;
   ${({ theme }) => theme.mediaQueries.md} {
     height: 500px;
   } ;
@@ -99,9 +104,10 @@ const ButtonClose = styled.button`
   border: none;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.15);
+  background: none;
   border-radius: 7px;
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
   ${({ theme }) => theme.mediaQueries.sm} {
     right: 50px;
   } ;
@@ -137,6 +143,7 @@ const SeeMore = styled(Button)`
 
 const Shadow = styled.div<{ show: boolean }>`
   position: relative;
+  display: none;
   &:after {
     position: absolute;
     display: block;
@@ -150,5 +157,8 @@ const Shadow = styled.div<{ show: boolean }>`
     top: -1px;
     transition: 0.3s;
     background: linear-gradient(180deg, #26262d 50%, rgba(38, 38, 45, 0.5) 68.51%, rgba(196, 196, 196, 0) 95.55%);
+  }
+  ${({ theme }) => theme.mediaQueries.lg} {
+    display: block;
   }
 `;

@@ -85,6 +85,7 @@ const BlockInfo = styled.div`
 const Button = styled.button`
   cursor: pointer;
   margin-left: 0;
+  padding: 0;
   width: 30px;
   height: 30px;
   background: ${({ theme }) => theme.colors.whiteRgba};
