@@ -7,6 +7,7 @@ import { ShareIcon } from "../../../components/Svg";
 import { Tabs } from "../../../components/Tabs";
 import { ListWrapProps } from "../types";
 import TabsTypeList from "./TabsTypeList";
+import { Text } from "../../../components/Text";
 
 const ListWrap: React.FC<ListWrapProps> = ({
   children,
@@ -26,6 +27,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
   currentPage,
   nameInput,
   handleShare,
+  title,
 }) => {
   return (
     <Wrapper>
@@ -33,13 +35,18 @@ const ListWrap: React.FC<ListWrapProps> = ({
         {players ? (
           <Tabs tabValue={activeTab} onClick={toggleTab} tabsList={tabsList} />
         ) : (
-          <InputSearch
-            name={nameInput}
-            placeholder={placeholder}
-            value={inputValue}
-            onChange={handleInput}
-            width="272px"
-          />
+          <>
+            {nameInput && (
+              <InputSearch
+                name={nameInput}
+                placeholder={placeholder}
+                value={inputValue}
+                onChange={handleInput}
+                width="272px"
+              />
+            )}
+            {title && <TitleStyle>{title}</TitleStyle>}
+          </>
         )}
       </TopContent>
       <MainBlock>{children}</MainBlock>
@@ -84,7 +91,7 @@ const TopContent = styled.div<{ players?: boolean }>`
   margin-right: ${({ players }) => (players ? "auto" : "0")};
   margin-bottom: 24px;
   ${({ theme }) => theme.mediaQueries.md} {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     width: ${({ players }) => (players ? "408px" : "fit-content")};
     margin-right: 0;
   }
@@ -118,4 +125,9 @@ const Buttons = styled.div`
     justify-content: flex-start;
     margin-bottom: 0px;
   }
+`;
+const TitleStyle = styled(Text)`
+  font-size: 31px;
+  line-height: 39px;
+  letter-spacing: 0.03em;
 `;

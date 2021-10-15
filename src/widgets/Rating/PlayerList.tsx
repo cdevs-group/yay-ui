@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ellipsis } from "../../helpers/ellipsis";
 import { PlayerListProps } from "./types";
+import TOKEN from "./img/token.svg";
 
 const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
   return (
@@ -21,10 +22,10 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
           <Line key={i}>
             <Cell>{item.position}</Cell>
             <Cell>
-              <img src={item.token} />
+              <img src={item.token || TOKEN} />
             </Cell>
             <Cell>{ellipsis(item.name)}</Cell>
-            <Cell>{item.games}</Cell>
+            <Cell>{item.score}</Cell>
           </Line>
         ))}
       </Table>

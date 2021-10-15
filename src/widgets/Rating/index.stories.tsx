@@ -7,7 +7,6 @@ import ListWrap from "./components/ListWrap";
 import COINS from "../../components/Cards/image/coins.png";
 import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
-import TOKEN from "./img/token.svg";
 import TabsTypeList from "./components/TabsTypeList";
 import GamesList from "./GamesList";
 
@@ -78,7 +77,8 @@ export const GamesTableBlock: React.FC = () => {
         placeholder="Search"
         toggleTypeList={toggleTypeList}
         typeTabsList={typeTabsList}
-        nameInput="search"
+        title="Best scores"
+        // nameInput="search"
       >
         {typeList === TypeList.TABLE ? (
           <GamesTable texts={{ title: "Choose Game" }} gamesList={newGamesList} handleSelectValue={handleSelectValue} />
@@ -113,45 +113,38 @@ export const PlayerListBlock: React.FC = () => {
   const playersList = [
     {
       position: "1",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "2",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "3",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "4",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "5",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "6",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
     {
       position: "7",
-      token: TOKEN,
       name: "dhc526x87agshe",
-      games: "56382",
+      score: "56382",
     },
   ];
 
@@ -176,7 +169,8 @@ export const PlayerListBlock: React.FC = () => {
       length={25}
       togglePage={togglePage}
       currentPage={currentPage}
-      nameInput="search"
+      // nameInput="search"
+      title="Best scores"
     >
       <PlayerList playersList={playersList} texts={texts} />
     </ListWrap>
