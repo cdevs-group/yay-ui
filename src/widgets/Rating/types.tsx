@@ -26,9 +26,10 @@ export interface PlayerListProps {
   playersList: Array<{
     position?: string | number;
     token?: any;
-    name: string;
+    account: string;
     score?: string;
   }>;
+  tokenIcon?: string;
 }
 
 export interface ListWrapProps {

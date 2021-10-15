@@ -113,37 +113,37 @@ export const PlayerListBlock: React.FC = () => {
   const playersList = [
     {
       position: "1",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "2",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "3",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "4",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "5",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "6",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
     {
       position: "7",
-      name: "dhc526x87agshe",
+      account: "dhc526x87agshe",
       score: "56382",
     },
   ];

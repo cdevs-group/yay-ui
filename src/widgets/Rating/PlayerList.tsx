@@ -4,7 +4,7 @@ import { ellipsis } from "../../helpers/ellipsis";
 import { PlayerListProps } from "./types";
 import TOKEN from "./img/token.svg";
 
-const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
+const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, tokenIcon }) => {
   return (
     <Wrapper>
       <Title>
@@ -22,9 +22,9 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList }) => {
           <Line key={i}>
             <Cell>{item.position}</Cell>
             <Cell>
-              <img src={item.token || TOKEN} />
+              <img src={item.token || tokenIcon || TOKEN} />
             </Cell>
-            <Cell>{ellipsis(item.name)}</Cell>
+            <Cell>{ellipsis(item.account)}</Cell>
             <Cell>{item.score}</Cell>
           </Line>
         ))}
