@@ -6718,7 +6718,7 @@ var templateObject_1$E, templateObject_2$w, templateObject_3$q, templateObject_4
 var TOKEN = "b9634c6ff728ffe1.svg";
 
 var PlayerList = function (_a) {
-    var texts = _a.texts, playersList = _a.playersList;
+    var texts = _a.texts, playersList = _a.playersList, tokenIcon = _a.tokenIcon;
     return (React__default['default'].createElement(Wrapper$c, null,
         React__default['default'].createElement(Title$5, null,
             texts.title,
@@ -6735,8 +6735,8 @@ var PlayerList = function (_a) {
             playersList.map(function (item, i) { return (React__default['default'].createElement(Line$1, { key: i },
                 React__default['default'].createElement(Cell$3, null, item.position),
                 React__default['default'].createElement(Cell$3, null,
-                    React__default['default'].createElement("img", { src: item.token || TOKEN })),
-                React__default['default'].createElement(Cell$3, null, ellipsis(item.name)),
+                    React__default['default'].createElement("img", { src: item.token || tokenIcon || TOKEN })),
+                React__default['default'].createElement(Cell$3, null, ellipsis(item.account)),
                 React__default['default'].createElement(Cell$3, null, item.score))); }))));
 };
 var Wrapper$c = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
