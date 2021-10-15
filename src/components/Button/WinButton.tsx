@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./index";
 import { Flex } from "../Box";
 import styled from "styled-components";
+import { WINNER3 } from "../../constants/images";
 
 const WinButton = ({ children, image, onClick }: { children: string; onClick: () => void; image: string }) => {
   return (
@@ -10,7 +11,7 @@ const WinButton = ({ children, image, onClick }: { children: string; onClick: ()
         {children}
       </Button>
       <ImgBlock>
-        <img src={image} />
+        <img src={image || WINNER3} />
       </ImgBlock>
     </Flex>
   );
