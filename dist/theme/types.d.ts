@@ -2,6 +2,7 @@ export declare type Breakpoints = string[];
 export declare type MediaQueries = {
     xs: string;
     sm: string;
+    xmd: string;
     md: string;
     lg: string;
     xl: string;
