@@ -3958,6 +3958,7 @@ var templateObject_1$1l, templateObject_2$18, templateObject_3$Y;
 var breakpointMap = {
     xs: 370,
     sm: 576,
+    xmd: 768,
     md: 852,
     lg: 968,
     xl: 1080,
@@ -3968,6 +3969,7 @@ var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { retur
 var mediaQueries$1 = {
     xs: "@media screen and (min-width: " + breakpointMap.xs + "px)",
     sm: "@media screen and (min-width: " + breakpointMap.sm + "px)",
+    xmd: "@media screen and (min-width: " + breakpointMap.xmd + "px)",
     md: "@media screen and (min-width: " + breakpointMap.md + "px)",
     lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
     xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
