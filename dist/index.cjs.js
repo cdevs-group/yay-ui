@@ -3410,6 +3410,7 @@ var baseColors = {
     boxShadow8: "0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05)",
     boxShadow9: "0px 0px 20px rgba(86, 239, 75, 0.35)",
     boxShadow10: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+    boxShadow11: "0px 4px 25px rgba(0, 0, 0, 0.35)",
     filterShadow: "drop-shadow(-3px 0px 8px rgba(0, 0, 0, 0.25))",
     bgOpacity: "rgba(0, 0, 0, 0.3)",
     bgOpacity2: "rgba(0, 0, 0, 0.05)",
@@ -3447,6 +3448,8 @@ var baseColors = {
     greyRgba: "rgba(0, 0, 0, 0.15)",
     greyRgba2: "rgba(38, 38, 45, .5)",
     blur: "-webkit-filter: blur(15px);\n filter: blur(15px); \n  -ms-filter: blur(15px);",
+    bgGray5: "#34343B",
+    darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
 };
 var brandColors = {
     binance: "#F0B90B",

@@ -25,6 +25,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
     setIsVisibleAccount(!isVisibleAccount);
   };
 
+const ProfileCard: React.FC<ProfileCardProps> = ({ token }) => {
   return (
     <Card>
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
