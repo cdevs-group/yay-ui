@@ -7,5 +7,9 @@ export default {
 };
 
 export const ProfileCardWidget: React.FC = () => {
-  return <ProfileCard />;
+  return (
+    <div style={{ marginTop: 50 }}>
+      <ProfileCard />
+    </div>
+  );
 };

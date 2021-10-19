@@ -36,6 +36,7 @@ import YAY_TOKEN from "../../public/images/logo.png";
 import LOSE from "../../public/images/lose-gift.png";
 import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
 import WINNER_MIN from "../../public/images/winnerMin.png";
+import YAY_TOKEN_CIRCLE from "../../public/images/logo-circle.png";
 
 export {
   BG_IMG,
@@ -76,4 +77,5 @@ export {
   LOSE,
   WINNER_MIN,
   WINNER3,
+  YAY_TOKEN_CIRCLE,
 };
