@@ -30,7 +30,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
       <Title>{texts.title}</Title>
       <AccountLine>
-        <Input value={ellipsis(account, 10)} type={isVisibleAccount ? "text" : "password"} />
+        <Input readOnly value={ellipsis(account, 10)} type={isVisibleAccount ? "text" : "password"} />
         <Eye onClick={handleClickEye}>
           {!isVisibleAccount && <EyeCloseIcon />}
           {isVisibleAccount && <EyeOpenIcon fill="whiteRgba" />}
