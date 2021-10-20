@@ -91,6 +91,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   padding: 0 14px 16px 14px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 10px;

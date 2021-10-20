@@ -77,6 +77,7 @@ export default Achievement;
 const AchievementWrap = styled.div`
   position: relative;
   height: 100%;
+  width: 100%;
   padding: 0 14px 16px;
   background: ${({ theme }) => theme.colors.bgGray};
   border: 1.5px solid ${({ theme }) => theme.colors.bgGray};
