@@ -8078,7 +8078,7 @@ var Field = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplat
 });
 var NameChain = styled(Text)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  letter-spacing: 0.5px;\n"], ["\n  letter-spacing: 0.5px;\n"])));
 var Label = styled(Text)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject([""], [""])));
-var InputWrap = styled.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-top: 13px;\n  margin-bottom: 15px;\n"], ["\n  margin-top: 13px;\n  margin-bottom: 15px;\n"])));
+var InputWrap = styled.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-top: 13px;\n  margin-bottom: 15px;\n  & div {\n    opacity: 1 !important;\n  }\n  & input {\n    color: #fff !important;\n  }\n"], ["\n  margin-top: 13px;\n  margin-bottom: 15px;\n  & div {\n    opacity: 1 !important;\n  }\n  & input {\n    color: #fff !important;\n  }\n"])));
 var Tab = styled(Button$a)(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 31%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  transition: 0.3s;\n  &:hover {\n    background: ", ";\n    box-shadow: ", " !important;\n  }\n"], ["\n  width: 31%;\n  padding: 4px 16px;\n  border-radius: 9px;\n  font-weight: 400;\n  transition: 0.3s;\n  &:hover {\n    background: ", ";\n    box-shadow: ", " !important;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
@@ -8093,7 +8093,7 @@ var StyledButton = styled(Button$a)(templateObject_7$2 || (templateObject_7$2 = 
 var BlockChainWrap = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var StyledArrow = styled.div(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
 var BridgeWidgetStep = function (_a) {
-    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer, hiddenToBlock = _a.hiddenToBlock, onUserInputWrite = _a.onUserInputWrite;
+    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer, hiddenToBlock = _a.hiddenToBlock, inputDisabled = _a.inputDisabled;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default.createElement(Field, null,
@@ -8104,7 +8104,7 @@ var BridgeWidgetStep = function (_a) {
         React__default.createElement(Label, { size: "lg" }, texts.from),
         React__default.createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 }),
         React__default.createElement(InputWrap, null,
-            React__default.createElement(BalanceInput, { onUserInput: onUserInputWrite, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currency } })),
+            React__default.createElement(BalanceInput, { disabled: inputDisabled, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currency } })),
         React__default.createElement(Flex, { justifyContent: "space-between", mt: "15px", mb: !hiddenToBlock ? "36px" : "22px" }, tabs.map(function (el, i) { return (React__default.createElement(Tab, { key: i, scale: "sm", variant: el === value ? "green" : "option", onClick: function () { return onUserInput(el); } },
             +el / 1000,
             "K")); })),
