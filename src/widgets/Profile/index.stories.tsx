@@ -2,16 +2,34 @@ import React from "react";
 import ProfileCard from "./ProfileCard";
 import Achievement from "./Achievement";
 import { ROKET1 } from "../../constants/images";
+import coins from "./images/coins.png";
+import rocket from "./images/rocket.png";
+import skull from "./images/skull.png";
+import win from "./images/win.png";
 
 export default {
   title: "Widgets/Profile",
   argTypes: {},
 };
 
+const textsCard = {
+  title: "User Name",
+  coins: "Coins",
+  games: "games",
+  wins: "wins",
+  losses: "losses",
+  edit: "Edit Profile",
+};
+
 export const ProfileCardWidget: React.FC = () => {
   return (
-    <div style={{ marginTop: 50 }}>
-      <ProfileCard />
+    <div style={{ marginTop: 50, maxWidth: 373 }}>
+      <ProfileCard
+        link="dd"
+        texts={textsCard}
+        account="6x3438e324938438e32438e329828x46R65"
+        awards={[coins, win, skull, rocket]}
+      />
     </div>
   );
 };
@@ -19,26 +37,30 @@ export const ProfileCardWidget: React.FC = () => {
 export const AchievementSolo = () => {
   return (
     <div style={{ display: "grid", gap: "0 7px", gridTemplateColumns: "1fr 1fr" }}>
-      <Achievement
-        image={ROKET1}
-        // count={2}
-        countMax="10"
-        title="Great loser"
-        description="lose 10 times in a row"
-        complete
-        collectText="Collect Reward"
-        collectTextMob="Collect"
-      />
-      <Achievement
-        image={ROKET1}
-        count={2}
-        countMax="10"
-        title="Great loser"
-        description="lose 10 times in a row"
-        complete={false}
-        collectText="Collect Reward"
-        collectTextMob="Collect"
-      />
+      <div style={{ maxWidth: 180 }}>
+        <Achievement
+          image={ROKET1}
+          // count={2}
+          countMax="10"
+          title="Great loser"
+          description="lose 10 times in a row"
+          complete
+          collectText="Collect Reward"
+          collectTextMob="Collect"
+        />
+      </div>
+      <div style={{ maxWidth: 180 }}>
+        <Achievement
+          image={ROKET1}
+          count={2}
+          countMax="10"
+          title="Great loser"
+          description="lose 10 times in a row"
+          complete={false}
+          collectText="Collect Reward"
+          collectTextMob="Collect"
+        />
+      </div>
     </div>
   );
 };

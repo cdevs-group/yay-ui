@@ -20,6 +20,7 @@ export declare const baseColors: {
     boxShadow9: string;
     boxShadow10: string;
     boxShadow11: string;
+    boxShadow12: string;
     filterShadow: string;
     bgOpacity: string;
     bgOpacity2: string;
