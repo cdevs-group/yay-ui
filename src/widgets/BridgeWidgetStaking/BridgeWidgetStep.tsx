@@ -49,6 +49,12 @@ const Label = styled(Text)``;
 const InputWrap = styled.div`
   margin-top: 13px;
   margin-bottom: 15px;
+  & div {
+    opacity: 1 !important;
+  }
+  & input {
+    color: #fff !important;
+  }
 `;
 
 const Tab = styled(Button)`
@@ -97,7 +103,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
   disabledBtnLeft,
   disabledBtnTransfer,
   hiddenToBlock,
-  onUserInputWrite,
+  inputDisabled,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -113,7 +119,8 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
       <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
       <InputWrap>
         <BalanceInput
-          onUserInput={onUserInputWrite}
+          disabled={inputDisabled}
+          onUserInput={onUserInput}
           value={value}
           icon={iconBalanceInput}
           texts={{ commit: texts.commit, currency: texts.currency }}

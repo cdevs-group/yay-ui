@@ -34,7 +34,6 @@ export const BridgeWidgetStepBlock: React.FC = () => {
           iconNetwork2={<AvalancheIcon />}
           iconBalanceInput={<YAYIcon />}
           onUserInput={onUserInput}
-          onUserInputWrite={onUserInput}
           value={value}
           handleButtonLeft={() => {}}
           handleButtonTransfer={() => {}}
@@ -50,7 +49,7 @@ export const BridgeWidgetStepBlock: React.FC = () => {
           iconNetwork2={<AvalancheIcon />}
           iconBalanceInput={<YAYIcon />}
           onUserInput={onUserInput}
-          onUserInputWrite={onUserInput}
+          inputDisabled
           value={value}
           handleButtonLeft={() => {}}
           handleButtonTransfer={() => {}}
