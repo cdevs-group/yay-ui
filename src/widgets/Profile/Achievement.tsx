@@ -75,15 +75,21 @@ const Achievement = ({
 export default Achievement;
 
 const AchievementWrap = styled.div`
-  width: 148px;
+  width: 146px;
   position: relative;
-  height: 196px;
+  height: 194px;
   padding: 0 14px 25px;
   background: ${({ theme }) => theme.colors.bgGray};
+  border: 1.5px solid ${({ theme }) => theme.colors.bgGray};
   border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
   ${({ theme }) => theme.mediaQueries.sm} {
-    width: 180px;
-    height: 210px;
+    width: 178px;
+    height: 208px;
+  }
+  &:hover {
+    border: 1.5px solid ${({ theme }) => theme.colors.green};
   }
 `;
 const Counter = styled.div`
