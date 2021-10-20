@@ -36,7 +36,6 @@ import YAY_TOKEN from "../../public/images/logo.png";
 import LOSE from "../../public/images/lose-gift.png";
 import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
 import WINNER_MIN from "../../public/images/winnerMin.png";
-import YAY_TOKEN_CIRCLE from "../../public/images/logo-circle.png";
 import COIN4 from "../../public/images/coin4.png";
 import ROKET1 from "../../public/images/rocket1.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, YAY_TOKEN_GREEN, LOSE, WINNER_MIN, WINNER3, YAY_TOKEN_CIRCLE, COIN4, ROKET1, };
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, YAY_TOKEN_GREEN, LOSE, WINNER_MIN, WINNER3, COIN4, ROKET1, };
