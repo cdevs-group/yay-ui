@@ -8336,7 +8336,7 @@ var ProfileCard = function (_a) {
         React__default['default'].createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default['default'].createElement("img", { alt: "", src: el, key: el })); })),
         React__default['default'].createElement(Button$a, { width: "100%", variant: "option" }, texts.edit)));
 };
-var Card = styled__default['default'].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  max-width: 373px;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  max-width: 373px;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"])), function (_a) {
+var Card = styled__default['default'].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -8389,15 +8389,12 @@ var Achievement = function (_a) {
                 React__default['default'].createElement(ButtonText, null, collectText),
                 React__default['default'].createElement(ButtonTextMob, null, collectTextMob))))));
 };
-var AchievementWrap = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  width: 146px;\n  position: relative;\n  height: 194px;\n  padding: 0 14px 25px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  ", " {\n    width: 178px;\n    height: 208px;\n  }\n  &:hover {\n    border: 1.5px solid ", ";\n  }\n"], ["\n  width: 146px;\n  position: relative;\n  height: 194px;\n  padding: 0 14px 25px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  ", " {\n    width: 178px;\n    height: 208px;\n  }\n  &:hover {\n    border: 1.5px solid ", ";\n  }\n"])), function (_a) {
+var AchievementWrap = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
@@ -8420,7 +8417,7 @@ var ImageBlock = styled__default['default'].div(templateObject_4 || (templateObj
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var RangeTrack = styled__default['default'].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  margin-top: 15px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  margin-top: 15px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"])), function (_a) {
+var RangeTrack = styled__default['default'].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
