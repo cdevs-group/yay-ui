@@ -11,7 +11,7 @@ interface Itext {
 }
 export interface BalanceInputProps extends BoxProps, SpaceProps {
   value: ReactText;
-  onUserInput: (input: string) => void;
+  onUserInput?: (input: string) => void;
   placeholder?: string;
   inputProps?: Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "placeholder" | "onChange">;
   isWarning?: boolean;

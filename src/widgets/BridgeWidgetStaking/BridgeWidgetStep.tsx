@@ -56,9 +56,10 @@ const Tab = styled(Button)`
   padding: 4px 16px;
   border-radius: 9px;
   font-weight: 400;
-  background: ${({ theme }) => theme.colors.whiteRgba};
+  transition: 0.3s;
   &:hover {
     background: ${({ theme }) => theme.colors.green};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow12} !important;
   }
 `;
 
@@ -96,6 +97,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
   disabledBtnLeft,
   disabledBtnTransfer,
   hiddenToBlock,
+  onUserInputWrite,
 }) => {
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
@@ -105,14 +107,13 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
       </Field>
     );
   };
-
   return (
     <BridgeWrapper>
       <Label size="lg">{texts.from}</Label>
       <BlockChainName icon={iconNetwork1} name={texts.nameNetwork1} />
       <InputWrap>
         <BalanceInput
-          onUserInput={onUserInput}
+          onUserInput={onUserInputWrite}
           value={value}
           icon={iconBalanceInput}
           texts={{ commit: texts.commit, currency: texts.currency }}
@@ -120,7 +121,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
       </InputWrap>
       <Flex justifyContent="space-between" mt="15px" mb={!hiddenToBlock ? "36px" : "22px"}>
         {tabs.map((el: string, i: number) => (
-          <Tab key={i} scale="sm" variant="green" onClick={() => onUserInput(el)}>
+          <Tab key={i} scale="sm" variant={el === value ? "green" : "option"} onClick={() => onUserInput(el)}>
             {+el / 1000}K
           </Tab>
         ))}
