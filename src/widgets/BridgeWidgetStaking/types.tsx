@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 export interface BridgeStepProps {
   tabs: string[];
   onUserInput: (input: any) => void;
+  onUserInputWrite?: (input: any) => void;
   value: string | number;
   iconBalanceInput?: ReactNode;
   handleButtonLeft: () => void;
