@@ -466,7 +466,7 @@ var Icon$I = function (props) {
 var Icon$H = function (props) {
     return (React__default['default'].createElement("svg", { width: "30", height: "30", viewBox: "0 0 30 30", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
         React__default['default'].createElement("rect", { width: "30", height: "30", rx: "7", fill: "white", fillOpacity: "0.15" }),
-        React__default['default'].createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M19.1163 17.9792C17.3638 17.7881 16 16.3033 16 14.5C16 12.6969 17.3634 11.2123 19.1155 11.0209C17.9439 10.3642 16.6032 10 15.205 10L14.7955 10C11.7282 10 8.93771 11.7528 7.60158 14.5002C8.93771 17.2476 11.7282 19.0005 14.7955 19.0005H15.205C16.6035 19.0005 17.9445 18.6361 19.1163 17.9792ZM5.58988 14.0862C5.52878 14.2206 5.49991 14.3615 5.5 14.5001C5.49986 14.6388 5.52873 14.7798 5.58988 14.9143L5.6918 15.1385C7.3145 18.7085 10.874 21.0005 14.7955 21.0005H15.205C19.1265 21.0005 22.686 18.7085 24.3087 15.1385L24.4106 14.9143C24.4717 14.7798 24.5006 14.6389 24.5005 14.5002C24.5006 14.3616 24.4717 14.2207 24.4106 14.0862L24.3087 13.862C22.686 10.292 19.1265 8 15.205 8H14.7955C10.874 8 7.3145 10.292 5.6918 13.862L5.58988 14.0862Z", fill: "white" })));
+        React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M19.1163 17.9792C17.3638 17.7881 16 16.3033 16 14.5C16 12.6969 17.3634 11.2123 19.1155 11.0209C17.9439 10.3642 16.6032 10 15.205 10L14.7955 10C11.7282 10 8.93771 11.7528 7.60158 14.5002C8.93771 17.2476 11.7282 19.0005 14.7955 19.0005H15.205C16.6035 19.0005 17.9445 18.6361 19.1163 17.9792ZM5.58988 14.0862C5.52878 14.2206 5.49991 14.3615 5.5 14.5001C5.49986 14.6388 5.52873 14.7798 5.58988 14.9143L5.6918 15.1385C7.3145 18.7085 10.874 21.0005 14.7955 21.0005H15.205C19.1265 21.0005 22.686 18.7085 24.3087 15.1385L24.4106 14.9143C24.4717 14.7798 24.5006 14.6389 24.5005 14.5002C24.5006 14.3616 24.4717 14.2207 24.4106 14.0862L24.3087 13.862C22.686 10.292 19.1265 8 15.205 8H14.7955C10.874 8 7.3145 10.292 5.6918 13.862L5.58988 14.0862Z", fill: "white" })));
 };
 
 var Icon$G = function (props) {
@@ -975,7 +975,7 @@ var Icon$2 = function (props) {
 
 var Icon$1 = function (props) {
     return (React__default['default'].createElement("svg", __assign({ width: "16", height: "16", viewBox: "0 0 16 16", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default['default'].createElement("path", { "fill-rule": "evenodd", "clip-rule": "evenodd", d: "M15 2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1H2C1.73478 1 1.48043 1.10536 1.29289 1.29289C1.10536 1.48043 1 1.73478 1 2V14C1 14.2652 1.10536 14.5196 1.29289 14.7071C1.48043 14.8946 1.73478 15 2 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V2ZM0 2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0L14 0C14.5304 0 15.0391 0.210714 15.4142 0.585786C15.7893 0.960859 16 1.46957 16 2V14C16 14.5304 15.7893 15.0391 15.4142 15.4142C15.0391 15.7893 14.5304 16 14 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V2ZM11.5 7.5C11.6326 7.5 11.7598 7.55268 11.8536 7.64645C11.9473 7.74021 12 7.86739 12 8C12 8.13261 11.9473 8.25979 11.8536 8.35355C11.7598 8.44732 11.6326 8.5 11.5 8.5H5.707L7.854 10.646C7.90049 10.6925 7.93736 10.7477 7.96252 10.8084C7.98768 10.8692 8.00063 10.9343 8.00063 11C8.00063 11.0657 7.98768 11.1308 7.96252 11.1916C7.93736 11.2523 7.90049 11.3075 7.854 11.354C7.80751 11.4005 7.75232 11.4374 7.69158 11.4625C7.63084 11.4877 7.56574 11.5006 7.5 11.5006C7.43426 11.5006 7.36916 11.4877 7.30842 11.4625C7.24768 11.4374 7.19249 11.4005 7.146 11.354L4.146 8.354C4.09944 8.30755 4.06249 8.25238 4.03729 8.19163C4.01208 8.13089 3.99911 8.06577 3.99911 8C3.99911 7.93423 4.01208 7.86911 4.03729 7.80837C4.06249 7.74762 4.09944 7.69245 4.146 7.646L7.146 4.646C7.23989 4.55211 7.36722 4.49937 7.5 4.49937C7.63278 4.49937 7.76011 4.55211 7.854 4.646C7.94789 4.73989 8.00063 4.86722 8.00063 5C8.00063 5.13278 7.94789 5.26011 7.854 5.354L5.707 7.5H11.5Z", fill: "white" })));
+        React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M15 2C15 1.73478 14.8946 1.48043 14.7071 1.29289C14.5196 1.10536 14.2652 1 14 1H2C1.73478 1 1.48043 1.10536 1.29289 1.29289C1.10536 1.48043 1 1.73478 1 2V14C1 14.2652 1.10536 14.5196 1.29289 14.7071C1.48043 14.8946 1.73478 15 2 15H14C14.2652 15 14.5196 14.8946 14.7071 14.7071C14.8946 14.5196 15 14.2652 15 14V2ZM0 2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0L14 0C14.5304 0 15.0391 0.210714 15.4142 0.585786C15.7893 0.960859 16 1.46957 16 2V14C16 14.5304 15.7893 15.0391 15.4142 15.4142C15.0391 15.7893 14.5304 16 14 16H2C1.46957 16 0.960859 15.7893 0.585786 15.4142C0.210714 15.0391 0 14.5304 0 14V2ZM11.5 7.5C11.6326 7.5 11.7598 7.55268 11.8536 7.64645C11.9473 7.74021 12 7.86739 12 8C12 8.13261 11.9473 8.25979 11.8536 8.35355C11.7598 8.44732 11.6326 8.5 11.5 8.5H5.707L7.854 10.646C7.90049 10.6925 7.93736 10.7477 7.96252 10.8084C7.98768 10.8692 8.00063 10.9343 8.00063 11C8.00063 11.0657 7.98768 11.1308 7.96252 11.1916C7.93736 11.2523 7.90049 11.3075 7.854 11.354C7.80751 11.4005 7.75232 11.4374 7.69158 11.4625C7.63084 11.4877 7.56574 11.5006 7.5 11.5006C7.43426 11.5006 7.36916 11.4877 7.30842 11.4625C7.24768 11.4374 7.19249 11.4005 7.146 11.354L4.146 8.354C4.09944 8.30755 4.06249 8.25238 4.03729 8.19163C4.01208 8.13089 3.99911 8.06577 3.99911 8C3.99911 7.93423 4.01208 7.86911 4.03729 7.80837C4.06249 7.74762 4.09944 7.69245 4.146 7.646L7.146 4.646C7.23989 4.55211 7.36722 4.49937 7.5 4.49937C7.63278 4.49937 7.76011 4.55211 7.854 4.646C7.94789 4.73989 8.00063 4.86722 8.00063 5C8.00063 5.13278 7.94789 5.26011 7.854 5.354L5.707 7.5H11.5Z", fill: "white" })));
 };
 
 var scales$5 = {
@@ -6741,13 +6741,13 @@ var templateObject_1$G, templateObject_2$x, templateObject_3$s, templateObject_4
 var TOKEN = "b9634c6ff728ffe1.svg";
 
 var PlayerList = function (_a) {
-    var texts = _a.texts, playersList = _a.playersList, tokenIcon = _a.tokenIcon;
+    var texts = _a.texts, playersList = _a.playersList, tokenIcon = _a.tokenIcon, myAccount = _a.myAccount, total = _a.total;
     return (React__default['default'].createElement(Wrapper$c, null,
         React__default['default'].createElement(Title$6, null,
             texts.title,
             React__default['default'].createElement("span", null,
                 "(",
-                playersList.length,
+                total,
                 ")")),
         React__default['default'].createElement(Table$2, null,
             React__default['default'].createElement(LineHeader$1, null,
@@ -6755,7 +6755,7 @@ var PlayerList = function (_a) {
                 React__default['default'].createElement("p", null),
                 React__default['default'].createElement("p", { className: "middle" }, texts.playerName),
                 React__default['default'].createElement("p", null, texts.games)),
-            playersList.map(function (item, i) { return (React__default['default'].createElement(Line$1, { key: i },
+            playersList.map(function (item, i) { return (React__default['default'].createElement(Line$1, { key: i, className: myAccount === item.account ? "active" : "" },
                 React__default['default'].createElement(Cell$3, null, item.position),
                 React__default['default'].createElement(Cell$3, null,
                     React__default['default'].createElement("img", { src: item.token || tokenIcon || TOKEN })),
@@ -6780,7 +6780,7 @@ var Title$6 = styled__default['default'].div(templateObject_2$w || (templateObje
     return theme.mediaQueries.md;
 });
 var Table$2 = styled__default['default'].div(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  margin-top: 20px;\n"], ["\n  margin-top: 20px;\n"])));
-var Line$1 = styled__default['default'].div(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &:hover {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &:hover {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
+var Line$1 = styled__default['default'].div(templateObject_4$o || (templateObject_4$o = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -6791,7 +6791,7 @@ var LineHeader$1 = styled__default['default'].div(templateObject_5$k || (templat
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 });
-var Cell$3 = styled__default['default'].div(templateObject_6$e || (templateObject_6$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ":hover & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ":hover & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"])), function (_a) {
+var Cell$3 = styled__default['default'].div(templateObject_6$e || (templateObject_6$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ".active & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ".active & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, Line$1, function (_a) {
@@ -6947,7 +6947,7 @@ var ListWrap = function (_a) {
             React__default['default'].createElement(Buttons$2, null,
                 React__default['default'].createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button),
                 React__default['default'].createElement(Icon$k, { role: "button", onClick: handleShare })),
-            React__default['default'].createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }))) : (React__default['default'].createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
+            length ? React__default['default'].createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }) : null)) : (React__default['default'].createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
 };
 var Wrapper$9 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
