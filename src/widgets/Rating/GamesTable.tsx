@@ -20,7 +20,7 @@ const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVa
           <ItemGame
             className={`${item.imgSrc ? "" : "empty"} ${selectGame === item.value ? "active" : ""}`}
             key={i}
-            onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}
+            onClick={() => (!item.disabled && item.imgSrc ? handleSelectValue(item.value) : () => {})}
             bg={item.imgSrc}
           >
             <Text fontSize="11px">{item.title}</Text>
