@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Text } from "../../components/Text";
 import { GameTableProps } from "./types";
 
-const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectValue }) => {
+const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectValue, selectGame }) => {
   const list = [];
   for (let i = 0; i < 12; i++) {
     list.push(gamesList[i] || {});
@@ -17,11 +18,12 @@ const GamesTable: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVa
       <Table>
         {list.map((item, i) => (
           <ItemGame
-            className={item.img ? "" : "empty"}
+            className={`${item.imgSrc ? "" : "empty"} ${selectGame === item.value ? "active" : ""}`}
             key={i}
             onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}
+            bg={item.imgSrc}
           >
-            {item.img}
+            <Text fontSize="11px">{item.title}</Text>
           </ItemGame>
         ))}
       </Table>
@@ -72,15 +74,24 @@ const Table = styled.div`
     }
   }
 `;
-const ItemGame = styled.div`
+const ItemGame = styled.div<{ bg?: string }>`
   width: 100%;
   min-height: 118px;
   border-radius: 15px;
   flex-shrink: 0;
   max-width: 133px;
   margin-right: 7px;
+  background: ${({ bg }) => `url(${bg}) no-repeat center center / cover`};
+  cursor: pointer;
+  padding: 10px 14px;
   &.empty {
     background: ${({ theme }) => theme.colors.bgOpacitY3};
+    cursor: default;
+  }
+  &.active {
+    border: 2px solid ${({ theme }) => theme.colors.green};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow6};
+    transition: 0.3s;
   }
   ${({ theme }) => theme.mediaQueries.md} {
     margin-right: 0;
