@@ -14,7 +14,7 @@ const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVal
           <p>№</p>
           <p />
           <p className="middle">{texts.gameName}</p>
-          <p>{texts.playedOnce}</p>
+          <p style={{ paddingRight: 16 }}>{texts.playedOnce}</p>
         </LineHeader>
         {gamesList.map((item, i) => (
           <Line
@@ -28,7 +28,7 @@ const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVal
               <img src={item.imgSrc} />
             </Cell>
             <Cell>{item.title}</Cell>
-            <Cell>{item.playedOnce}</Cell>
+            <Cell style={{ paddingRight: 16 }}>{item.playedOnce}</Cell>
           </Line>
         ))}
       </Table>

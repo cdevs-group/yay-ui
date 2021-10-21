@@ -22,7 +22,7 @@ export const GamesTableBlock: React.FC = () => {
     LIST = "list",
   }
   const [inputValue, setInputValue] = useState<string | number>("");
-  const [typeList, setTypeList] = useState(TypeList.TABLE);
+  const [typeList, setTypeList] = useState(TypeList.LIST);
 
   const typeTabsList = ["table", "list"];
   const gamesList = [
