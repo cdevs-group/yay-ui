@@ -9,7 +9,7 @@ import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
 import TabsTypeList from "./components/TabsTypeList";
 import GamesList from "./GamesList";
-import pinball from './img/pinball-game.png'
+import pinball from "./img/pinball-game.png";
 
 export default {
   title: "Widgets/GamesTable",
@@ -32,7 +32,7 @@ export const GamesTableBlock: React.FC = () => {
       value: "PinBall",
       playedOnce: "565642",
       imgSrc: pinball,
-      title: 'Pin'
+      title: "Pin",
     },
     {
       position: 2,
@@ -83,13 +83,18 @@ export const GamesTableBlock: React.FC = () => {
         // nameInput="search"
       >
         {typeList === TypeList.TABLE ? (
-          <GamesTable selectGame="PinBall" texts={{ title: "Choose Game" }} gamesList={newGamesList} handleSelectValue={handleSelectValue} />
+          <GamesTable
+            selectGame="PinBall"
+            texts={{ title: "Choose Game" }}
+            gamesList={newGamesList}
+            handleSelectValue={handleSelectValue}
+          />
         ) : (
           <GamesList
             texts={{ title: "Choose Game", gameName: "Game Name", playedOnce: "Played Once" }}
             gamesList={newGamesList}
             handleSelectValue={handleSelectValue}
-            selectGame="PinBall" 
+            selectGame="PinBall"
           />
         )}
       </ListWrap>

@@ -12,8 +12,10 @@ export interface GameTableProps {
         position: string | number;
         playedOnce: string;
         imgSrc?: string;
+        title?: string;
     }>;
     handleSelectValue: (value?: string) => void;
+    selectGame?: string;
 }
 export interface PlayerListProps {
     texts: {

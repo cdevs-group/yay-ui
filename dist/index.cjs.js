@@ -6804,7 +6804,7 @@ var Cell$3 = styled__default['default'].div(templateObject_6$e || (templateObjec
 var templateObject_1$F, templateObject_2$w, templateObject_3$r, templateObject_4$o, templateObject_5$k, templateObject_6$e;
 
 var GamesTable = function (_a) {
-    var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue;
+    var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue, selectGame = _a.selectGame;
     var list = [];
     for (var i = 0; i < 12; i++) {
         list.push(gamesList[i] || {});
@@ -6816,7 +6816,8 @@ var GamesTable = function (_a) {
                 "(",
                 gamesList.length,
                 ")")),
-        React__default['default'].createElement(Table$1, null, list.map(function (item, i) { return (React__default['default'].createElement(ItemGame, { className: item.img ? "" : "empty", key: i, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); } }, item.img)); }))));
+        React__default['default'].createElement(Table$1, null, list.map(function (item, i) { return (React__default['default'].createElement(ItemGame, { className: (item.imgSrc ? "" : "empty") + " " + (selectGame === item.value ? "active" : ""), key: i, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); }, bg: item.imgSrc },
+            React__default['default'].createElement(Text, { fontSize: "11px" }, item.title))); }))));
 };
 var Wrapper$b = styled__default['default'].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6839,9 +6840,18 @@ var Table$1 = styled__default['default'].div(templateObject_3$q || (templateObje
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var ItemGame = styled__default['default'].div(templateObject_4$n || (templateObject_4$n = __makeTemplateObject(["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  &.empty {\n    background: ", ";\n  }\n  ", " {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  &.empty {\n    background: ", ";\n  }\n  ", " {\n    margin-right: 0;\n  }\n"])), function (_a) {
+var ItemGame = styled__default['default'].div(templateObject_4$n || (templateObject_4$n = __makeTemplateObject(["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"])), function (_a) {
+    var bg = _a.bg;
+    return "url(" + bg + ") no-repeat center center / cover";
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.green;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.boxShadow6;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
@@ -6849,7 +6859,7 @@ var ItemGame = styled__default['default'].div(templateObject_4$n || (templateObj
 var templateObject_1$E, templateObject_2$v, templateObject_3$q, templateObject_4$n;
 
 var GamesList = function (_a) {
-    var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue;
+    var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue, selectGame = _a.selectGame;
     return (React__default['default'].createElement(Wrapper$a, null,
         React__default['default'].createElement(Title$4, null,
             texts.title,
@@ -6863,11 +6873,11 @@ var GamesList = function (_a) {
                 React__default['default'].createElement("p", null),
                 React__default['default'].createElement("p", { className: "middle" }, texts.gameName),
                 React__default['default'].createElement("p", null, texts.playedOnce)),
-            gamesList.map(function (item, i) { return (React__default['default'].createElement(Line, { key: i, disabled: item.disabled, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); } },
+            gamesList.map(function (item, i) { return (React__default['default'].createElement(Line, { key: i, disabled: item.disabled, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); }, className: selectGame === item.value ? "active" : "" },
                 React__default['default'].createElement(Cell$2, null, item.position),
                 React__default['default'].createElement(Cell$2, null,
                     React__default['default'].createElement("img", { src: item.imgSrc })),
-                React__default['default'].createElement(Cell$2, null, item.value),
+                React__default['default'].createElement(Cell$2, null, item.title),
                 React__default['default'].createElement(Cell$2, null, item.playedOnce))); }))));
 };
 var Wrapper$a = styled__default['default'].div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
@@ -6888,7 +6898,7 @@ var Title$4 = styled__default['default'].div(templateObject_2$u || (templateObje
     return theme.mediaQueries.md;
 });
 var Table = styled__default['default'].div(templateObject_3$p || (templateObject_3$p = __makeTemplateObject(["\n  margin-top: 20px;\n"], ["\n  margin-top: 20px;\n"])));
-var Line = styled__default['default'].div(templateObject_4$m || (templateObject_4$m = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &:hover {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &:hover {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
+var Line = styled__default['default'].div(templateObject_4$m || (templateObject_4$m = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &.active {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 13% 12% 55% 20%;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  cursor: ", ";\n  opacity: ", ";\n  &.active {\n    filter: ", ";\n    background: ", ";\n    & div {\n      color: ", " !important;\n    }\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 15% 10% 55% 20%;\n  }\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "default" : "pointer");
 }, function (_a) {
@@ -6914,7 +6924,7 @@ var LineHeader = styled__default['default'].div(templateObject_5$j || (templateO
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 });
-var Cell$2 = styled__default['default'].div(templateObject_6$d || (templateObject_6$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ":hover & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ":hover & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"])), function (_a) {
+var Cell$2 = styled__default['default'].div(templateObject_6$d || (templateObject_6$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ".active & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 0;\n  color: ", ";\n  transition: 0.3s;\n  ", ".active & {\n    color: ", ";\n  }\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n  ", " {\n    & img {\n      width: 36px;\n      height: 36px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, Line, function (_a) {
