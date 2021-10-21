@@ -6839,13 +6839,13 @@ var GamesList = function (_a) {
                 React__default.createElement("p", null, "\u2116"),
                 React__default.createElement("p", null),
                 React__default.createElement("p", { className: "middle" }, texts.gameName),
-                React__default.createElement("p", null, texts.playedOnce)),
+                React__default.createElement("p", { style: { paddingRight: 16 } }, texts.playedOnce)),
             gamesList.map(function (item, i) { return (React__default.createElement(Line, { key: i, disabled: item.disabled, onClick: function () { return (!item.disabled ? handleSelectValue(item.value) : function () { }); }, className: selectGame === item.value ? "active" : "" },
                 React__default.createElement(Cell$2, null, item.position),
                 React__default.createElement(Cell$2, null,
                     React__default.createElement("img", { src: item.imgSrc })),
                 React__default.createElement(Cell$2, null, item.title),
-                React__default.createElement(Cell$2, null, item.playedOnce))); }))));
+                React__default.createElement(Cell$2, { style: { paddingRight: 16 } }, item.playedOnce))); }))));
 };
 var Wrapper$a = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
