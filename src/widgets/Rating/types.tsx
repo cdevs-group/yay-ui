@@ -30,6 +30,8 @@ export interface PlayerListProps {
     score?: string;
   }>;
   tokenIcon?: string;
+  myAccount: string;
+  total: string | number;
 }
 
 export interface ListWrapProps {

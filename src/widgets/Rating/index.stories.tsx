@@ -118,32 +118,32 @@ export const PlayerListBlock: React.FC = () => {
     },
     {
       position: "2",
-      account: "dhc526x87agshe",
+      account: "dhc52er6x87agshe",
       score: "56382",
     },
     {
       position: "3",
-      account: "dhc526x87agshe",
+      account: "dhc52rt6x87agshe",
       score: "56382",
     },
     {
       position: "4",
-      account: "dhc526x87agshe",
+      account: "dhc526x87tagshe",
       score: "56382",
     },
     {
       position: "5",
-      account: "dhc526x87agshe",
+      account: "dhc52r6x87agshe",
       score: "56382",
     },
     {
       position: "6",
-      account: "dhc526x87agshe",
+      account: "dhc526fx87agshe",
       score: "56382",
     },
     {
       position: "7",
-      account: "dhc526x87agshe",
+      account: "dhc526xg87agshe",
       score: "56382",
     },
   ];
@@ -172,7 +172,7 @@ export const PlayerListBlock: React.FC = () => {
       // nameInput="search"
       title="Best scores"
     >
-      <PlayerList playersList={playersList} texts={texts} />
+      <PlayerList playersList={playersList} texts={texts} myAccount="dhc526x87agshe" total={5} />
     </ListWrap>
   );
 };

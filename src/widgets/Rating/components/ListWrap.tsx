@@ -59,7 +59,7 @@ const ListWrap: React.FC<ListWrapProps> = ({
               </ButtonPosition>
               <ShareIcon role="button" onClick={handleShare} />
             </Buttons>
-            <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
+            {length ? <Pagination currentPage={currentPage} length={length} togglePage={togglePage} /> : null}
           </>
         ) : (
           <TabsTypeList toggleTypeList={toggleTypeList} typeTabsList={typeTabsList} />
