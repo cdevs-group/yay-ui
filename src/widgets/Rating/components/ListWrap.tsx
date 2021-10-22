@@ -56,13 +56,15 @@ const ListWrap: React.FC<ListWrapProps> = ({
               <ButtonPosition scale="sm" variant="option" height="30px" onClick={myPositionButton}>
                 {texts?.button}
               </ButtonPosition>
-              <ShareIcon
+              <div
                 className="ya-share2"
                 data-curtain
                 data-limit="0"
                 data-more-button-type="short"
                 data-services="facebook,telegram,twitter"
-              />
+              >
+                <ShareIcon />
+              </div>
             </Buttons>
             {length ? <Pagination currentPage={currentPage} length={length} togglePage={togglePage} /> : null}
           </>
