@@ -1075,7 +1075,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$5 = styled.button(templateObject_1$2o || (templateObject_1$2o = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$4 = styled.button(templateObject_1$2o || (templateObject_1$2o = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
 }, function (_a) {
@@ -1115,7 +1115,7 @@ var Button$a = function (props) {
     if (isDisabled && !isLoading) {
         classNames.push("yay-button--disabled");
     }
-    return (React__default.createElement(StyledButton$5, __assign({ "$isLoading": isLoading, variant: variant, className: classNames.join(" "), disabled: isDisabled }, rest),
+    return (React__default.createElement(StyledButton$4, __assign({ "$isLoading": isLoading, variant: variant, className: classNames.join(" "), disabled: isDisabled }, rest),
         React__default.createElement(React__default.Fragment, null,
             isValidElement(startIcon) &&
                 cloneElement(startIcon, {
@@ -1291,7 +1291,7 @@ var UpContentWin$1 = styled.div(templateObject_8$l || (templateObject_8$l = __ma
     var show = _a.show;
     return (show ? "flex" : "none");
 });
-var ButtonBnb$1 = styled.div(templateObject_9$f || (templateObject_9$f = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
+var ButtonBnb$1 = styled.div(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg$1 = styled.div(templateObject_10$b || (templateObject_10$b = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
 var RightText$3 = styled.div(templateObject_11$9 || (templateObject_11$9 = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
@@ -1361,7 +1361,7 @@ var StyledCard = function (_a) {
                         React__default.createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$z, { fill: "#FFB72C" }))))))));
 };
-var templateObject_1$2k, templateObject_2$1T, templateObject_3$1y, templateObject_4$1c, templateObject_5$S, templateObject_6$G, templateObject_7$p, templateObject_8$l, templateObject_9$f, templateObject_10$b, templateObject_11$9, templateObject_12$8, templateObject_13$7, templateObject_14$4, templateObject_15$3, templateObject_16$3;
+var templateObject_1$2k, templateObject_2$1T, templateObject_3$1y, templateObject_4$1c, templateObject_5$S, templateObject_6$G, templateObject_7$p, templateObject_8$l, templateObject_9$e, templateObject_10$b, templateObject_11$9, templateObject_12$8, templateObject_13$7, templateObject_14$4, templateObject_15$3, templateObject_16$3;
 
 var Card$6 = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -1394,7 +1394,7 @@ var LinePrice$1 = styled.div(templateObject_6$F || (templateObject_6$F = __makeT
 });
 var Info$1 = styled.div(templateObject_7$o || (templateObject_7$o = __makeTemplateObject(["\n  margin-top: 35px;\n"], ["\n  margin-top: 35px;\n"])));
 var LockedPrice$1 = styled.div(templateObject_8$k || (templateObject_8$k = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"])));
-var Prize$1 = styled.div(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
+var Prize$1 = styled.div(templateObject_9$d || (templateObject_9$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
 var ExpiredCardNA = function (_a) {
     var negative = _a.negative, closedCount = _a.closedCount, linePrice = _a.linePrice, lockedPrice = _a.lockedPrice, prize = _a.prize, texts = _a.texts;
     return (React__default.createElement(Wrap$v, null,
@@ -1421,7 +1421,7 @@ var ExpiredCardNA = function (_a) {
                     prize,
                     " ")))));
 };
-var templateObject_1$2j, templateObject_2$1S, templateObject_3$1x, templateObject_4$1b, templateObject_5$R, templateObject_6$F, templateObject_7$o, templateObject_8$k, templateObject_9$e;
+var templateObject_1$2j, templateObject_2$1S, templateObject_3$1x, templateObject_4$1b, templateObject_5$R, templateObject_6$F, templateObject_7$o, templateObject_8$k, templateObject_9$d;
 
 var Wrap$u = styled.div(templateObject_1$2i || (templateObject_1$2i = __makeTemplateObject(["\n  font-weight: 500;\n  color: ", ";\n"], ["\n  font-weight: 500;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -1449,7 +1449,7 @@ var LinePrice = styled.div(templateObject_6$E || (templateObject_6$E = __makeTem
 });
 var Info = styled.div(templateObject_7$n || (templateObject_7$n = __makeTemplateObject(["\n  margin-top: 35px;\n"], ["\n  margin-top: 35px;\n"])));
 var LockedPrice = styled.div(templateObject_8$j || (templateObject_8$j = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"])));
-var Prize = styled.div(templateObject_9$d || (templateObject_9$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
+var Prize = styled.div(templateObject_9$c || (templateObject_9$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
 var LiveCard = function (_a) {
     var texts = _a.texts, negative = _a.negative, closedCount = _a.closedCount, linePrice = _a.linePrice, lockedPrice = _a.lockedPrice, prize = _a.prize;
     return (React__default.createElement(Wrap$u, null,
@@ -1470,7 +1470,7 @@ var LiveCard = function (_a) {
                 ": ",
                 React__default.createElement("div", null, prize)))));
 };
-var templateObject_1$2i, templateObject_2$1R, templateObject_3$1w, templateObject_4$1a, templateObject_5$Q, templateObject_6$E, templateObject_7$n, templateObject_8$j, templateObject_9$d;
+var templateObject_1$2i, templateObject_2$1R, templateObject_3$1w, templateObject_4$1a, templateObject_5$Q, templateObject_6$E, templateObject_7$n, templateObject_8$j, templateObject_9$c;
 
 var orangeAnimation$1 = keyframes(templateObject_1$2h || (templateObject_1$2h = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"])));
 var redAnimation$1 = keyframes(templateObject_2$1Q || (templateObject_2$1Q = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"])));
@@ -1486,7 +1486,7 @@ var OrangeCircle$1 = styled.div(templateObject_8$i || (templateObject_8$i = __ma
     var theme = _a.theme;
     return theme.colors.orangeBg;
 });
-var GreenCircle$1 = styled.div(templateObject_9$c || (templateObject_9$c = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), greenAnimation$1, function (_a) {
+var GreenCircle$1 = styled.div(templateObject_9$b || (templateObject_9$b = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), greenAnimation$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg;
 });
@@ -1513,7 +1513,7 @@ var LoaderCard = function (_a) {
                 React__default.createElement(YellowCircle$1, null)),
             textTooltip && React__default.createElement(BottomText$1, null, textTooltip))));
 };
-var templateObject_1$2h, templateObject_2$1Q, templateObject_3$1v, templateObject_4$19, templateObject_5$P, templateObject_6$D, templateObject_7$m, templateObject_8$i, templateObject_9$c, templateObject_10$a, templateObject_11$8, templateObject_12$7;
+var templateObject_1$2h, templateObject_2$1Q, templateObject_3$1v, templateObject_4$19, templateObject_5$P, templateObject_6$D, templateObject_7$m, templateObject_8$i, templateObject_9$b, templateObject_10$a, templateObject_11$8, templateObject_12$7;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -2733,7 +2733,7 @@ var UpContentWin = styled.div(templateObject_8$h || (templateObject_8$h = __make
     var show = _a.show;
     return (show ? "flex" : "none");
 });
-var ButtonBnb = styled.div(templateObject_9$b || (templateObject_9$b = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
+var ButtonBnb = styled.div(templateObject_9$a || (templateObject_9$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg = styled.div(templateObject_10$9 || (templateObject_10$9 = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
 var RightText$2 = styled.div(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
@@ -2818,7 +2818,7 @@ var StyledCardBTC = function (_a) {
                         React__default.createElement(IconCompleteDown, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$z, { fill: "#FFB72C" }))))))))));
 };
-var templateObject_1$1L, templateObject_2$1s, templateObject_3$1b, templateObject_4$Y, templateObject_5$K, templateObject_6$z, templateObject_7$l, templateObject_8$h, templateObject_9$b, templateObject_10$9, templateObject_11$7, templateObject_12$6, templateObject_13$6, templateObject_14$3, templateObject_15$2, templateObject_16$2, templateObject_17$2;
+var templateObject_1$1L, templateObject_2$1s, templateObject_3$1b, templateObject_4$Y, templateObject_5$K, templateObject_6$z, templateObject_7$l, templateObject_8$h, templateObject_9$a, templateObject_10$9, templateObject_11$7, templateObject_12$6, templateObject_13$6, templateObject_14$3, templateObject_15$2, templateObject_16$2, templateObject_17$2;
 
 var CardBTC = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3093,7 +3093,7 @@ var GreenCircle = styled.div(templateObject_8$f || (templateObject_8$f = __makeT
     var theme = _a.theme;
     return theme.colors.greenBg;
 });
-var RedCircle = styled.div(templateObject_9$a || (templateObject_9$a = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), redAnimation, function (_a) {
+var RedCircle = styled.div(templateObject_9$9 || (templateObject_9$9 = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), redAnimation, function (_a) {
     var theme = _a.theme;
     return theme.colors.redBg;
 });
@@ -3115,7 +3115,7 @@ var LoaderCardText = function (_a) {
             React__default.createElement(YellowCircle, null)),
         React__default.createElement(BottomText, null, textTooltip)));
 };
-var templateObject_1$1E, templateObject_2$1l, templateObject_3$15, templateObject_4$S, templateObject_5$G, templateObject_6$v, templateObject_7$j, templateObject_8$f, templateObject_9$a, templateObject_10$8, templateObject_11$6;
+var templateObject_1$1E, templateObject_2$1l, templateObject_3$15, templateObject_4$S, templateObject_5$G, templateObject_6$v, templateObject_7$j, templateObject_8$f, templateObject_9$9, templateObject_10$8, templateObject_11$6;
 
 var BalanceBlock$1 = function (_a) {
     var btc = _a.btc, value = _a.value;
@@ -3584,7 +3584,7 @@ var Round$1 = styled.div(templateObject_7$i || (templateObject_7$i = __makeTempl
     return theme.colors.greeanRgba2;
 });
 var Note = styled.div(templateObject_8$e || (templateObject_8$e = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var NoteContent = styled.div(templateObject_9$9 || (templateObject_9$9 = __makeTemplateObject(["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"], ["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"])), function (_a) {
+var NoteContent = styled.div(templateObject_9$8 || (templateObject_9$8 = __makeTemplateObject(["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"], ["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -3619,7 +3619,7 @@ var Indicator = styled.div(templateObject_13$5 || (templateObject_13$5 = __makeT
     var progress = _a.progress;
     return (progress && progress > 50 ? "-100%" : 0);
 }, Note, NoteContent);
-var templateObject_1$1v, templateObject_2$1c, templateObject_3$10, templateObject_4$O, templateObject_5$D, templateObject_6$u, templateObject_7$i, templateObject_8$e, templateObject_9$9, templateObject_10$7, templateObject_11$5, templateObject_12$5, templateObject_13$5;
+var templateObject_1$1v, templateObject_2$1c, templateObject_3$10, templateObject_4$O, templateObject_5$D, templateObject_6$u, templateObject_7$i, templateObject_8$e, templateObject_9$8, templateObject_10$7, templateObject_11$5, templateObject_12$5, templateObject_13$5;
 
 var SwitchUnitsButton = styled(IconButton)(templateObject_1$1u || (templateObject_1$1u = __makeTemplateObject(["\n  width: auto;\n"], ["\n  width: auto;\n"])));
 var UnitContainer = styled(Text)(templateObject_2$1b || (templateObject_2$1b = __makeTemplateObject(["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
@@ -4524,7 +4524,7 @@ var NameChain$1 = styled(Text)(templateObject_5$C || (templateObject_5$C = __mak
 var Label$3 = styled(Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject([""], [""])));
 var InputWrap$1 = styled.div(templateObject_7$h || (templateObject_7$h = __makeTemplateObject(["\n  margin-top: 13px;\n  position: relative;\n"], ["\n  margin-top: 13px;\n  position: relative;\n"])));
 var ButtonReverse = styled.div(templateObject_8$d || (templateObject_8$d = __makeTemplateObject(["\n  width: fit-content;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -10px);\n"], ["\n  width: fit-content;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -10px);\n"])));
-var MessageBox = styled.div(templateObject_9$8 || (templateObject_9$8 = __makeTemplateObject(["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"], ["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"])));
+var MessageBox = styled.div(templateObject_9$7 || (templateObject_9$7 = __makeTemplateObject(["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"], ["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"])));
 var MessageText = styled(Text)(templateObject_10$6 || (templateObject_10$6 = __makeTemplateObject(["\n  letter-spacing: 0.05em;\n  ", " {\n    letter-spacing: 0.13em;\n  } ;\n"], ["\n  letter-spacing: 0.05em;\n  ", " {\n    letter-spacing: 0.13em;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -4569,7 +4569,7 @@ var BridgeStep1 = function (_a) {
             React__default.createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
             React__default.createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory))));
 };
-var templateObject_1$1k, templateObject_2$16, templateObject_3$Y, templateObject_4$M, templateObject_5$C, templateObject_6$t, templateObject_7$h, templateObject_8$d, templateObject_9$8, templateObject_10$6, templateObject_11$4, templateObject_12$4, templateObject_13$4;
+var templateObject_1$1k, templateObject_2$16, templateObject_3$Y, templateObject_4$M, templateObject_5$C, templateObject_6$t, templateObject_7$h, templateObject_8$d, templateObject_9$7, templateObject_10$6, templateObject_11$4, templateObject_12$4, templateObject_13$4;
 
 var NoticeBridgeType;
 (function (NoticeBridgeType) {
@@ -4778,7 +4778,7 @@ var AmountTransfer = styled.div(templateObject_8$c || (templateObject_8$c = __ma
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TopLineTitle = styled(Text)(templateObject_9$7 || (templateObject_9$7 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"], ["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var TopLineTitle = styled(Text)(templateObject_9$6 || (templateObject_9$6 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"], ["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -4844,7 +4844,7 @@ var TitleDesk = styled(Text)(templateObject_26 || (templateObject_26 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$1i, templateObject_2$14, templateObject_3$W, templateObject_4$K, templateObject_5$B, templateObject_6$s, templateObject_7$g, templateObject_8$c, templateObject_9$7, templateObject_10$5, templateObject_11$3, templateObject_12$3, templateObject_13$3, templateObject_14$2, templateObject_15$1, templateObject_16$1, templateObject_17$1, templateObject_18$1, templateObject_19$1, templateObject_20$1, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26;
+var templateObject_1$1i, templateObject_2$14, templateObject_3$W, templateObject_4$K, templateObject_5$B, templateObject_6$s, templateObject_7$g, templateObject_8$c, templateObject_9$6, templateObject_10$5, templateObject_11$3, templateObject_12$3, templateObject_13$3, templateObject_14$2, templateObject_15$1, templateObject_16$1, templateObject_17$1, templateObject_18$1, templateObject_19$1, templateObject_20$1, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26;
 
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
@@ -5233,7 +5233,7 @@ styled.div(templateObject_8$b || (templateObject_8$b = __makeTemplateObject(["\n
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-styled.button(templateObject_9$6 || (templateObject_9$6 = __makeTemplateObject(["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"], ["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"])), function (_a) {
+styled.button(templateObject_9$5 || (templateObject_9$5 = __makeTemplateObject(["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"], ["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 }, function (_a) {
@@ -5271,7 +5271,7 @@ styled.div(templateObject_12$2 || (templateObject_12$2 = __makeTemplateObject(["
     return theme.mediaQueries.xs;
 });
 styled.div(templateObject_13$2 || (templateObject_13$2 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var templateObject_1$1d, templateObject_2$$, templateObject_3$R, templateObject_4$F, templateObject_5$w, templateObject_6$o, templateObject_7$e, templateObject_8$b, templateObject_9$6, templateObject_10$4, templateObject_11$2, templateObject_12$2, templateObject_13$2;
+var templateObject_1$1d, templateObject_2$$, templateObject_3$R, templateObject_4$F, templateObject_5$w, templateObject_6$o, templateObject_7$e, templateObject_8$b, templateObject_9$5, templateObject_10$4, templateObject_11$2, templateObject_12$2, templateObject_13$2;
 
 var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
@@ -5741,7 +5741,7 @@ var CopyButton = styled.button(templateObject_8$9 || (templateObject_8$9 = __mak
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var Tooltip = styled.div(templateObject_9$5 || (templateObject_9$5 = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
+var Tooltip = styled.div(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
 }, function (_a) {
@@ -5755,7 +5755,7 @@ var Tooltip = styled.div(templateObject_9$5 || (templateObject_9$5 = __makeTempl
     return theme.colors.invertedContrast;
 });
 var AddressTextWrapper = styled.div(templateObject_10$3 || (templateObject_10$3 = __makeTemplateObject(["\n  overflow: hidden;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  width: 100%;\n"])));
-var templateObject_1$15, templateObject_2$U, templateObject_3$L, templateObject_4$z, templateObject_5$s, templateObject_6$k, templateObject_7$b, templateObject_8$9, templateObject_9$5, templateObject_10$3;
+var templateObject_1$15, templateObject_2$U, templateObject_3$L, templateObject_4$z, templateObject_5$s, templateObject_6$k, templateObject_7$b, templateObject_8$9, templateObject_9$4, templateObject_10$3;
 
 var TransactionSide = function (_a) {
     var transactionsList = _a.transactionsList, transactionTitle = _a.transactionTitle, noRecentTransactions = _a.noRecentTransactions;
@@ -7170,14 +7170,14 @@ var bounceOutKeyframe = keyframes(templateObject_2$o || (templateObject_2$o = __
 var bounceInAnimation = css(templateObject_3$j || (templateObject_3$j = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceInKeyframe);
 var bounceOutAnimation = css(templateObject_4$h || (templateObject_4$h = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceOutKeyframe);
 var Wrapper$7 = styled.div(templateObject_5$e || (templateObject_5$e = __makeTemplateObject(["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"], ["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"])), bounceInAnimation, bounceOutAnimation);
-var StyledButton$4 = styled(Button$a)(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"])), function (_a) {
+var StyledButton$3 = styled(Button$a)(templateObject_6$9 || (templateObject_6$9 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.yellowGradient3;
 });
 var GiftPopup = function (_a) {
     var handleOpenForm = _a.handleOpenForm, btnText = _a.btnText, img = _a.img, ref = _a.ref;
     return (React__default.createElement(Wrapper$7, { ref: ref },
-        React__default.createElement(StyledButton$4, { style: { flex: 1 }, onClick: handleOpenForm, width: "100%" },
+        React__default.createElement(StyledButton$3, { style: { flex: 1 }, onClick: handleOpenForm, width: "100%" },
             React__default.createElement("img", { src: img || Gift, alt: "" }),
             React__default.createElement(Text, { fontSize: "21px" }, btnText))));
 };
@@ -7305,7 +7305,7 @@ var ClaimTokens = function (_a) {
         React__default.createElement(Card$3, { disabledCard: disabledCardClaimTokens, id: "ClaimTokens" },
             React__default.createElement(Row$2, null,
                 React__default.createElement(StyledTitle$2, null, texts.title),
-                React__default.createElement(StyledButton$3, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, isLoading: isLoading, endIcon: endIcon }, texts.button)),
+                React__default.createElement(StyledButton$2, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, isLoading: isLoading, endIcon: endIcon }, texts.button)),
             React__default.createElement(ProgressWrap, null,
                 React__default.createElement(ProgressTrack, null,
                     React__default.createElement(ProgressBar, { widthProgress: widthProgress || 0 },
@@ -7376,7 +7376,7 @@ var ProgressBar = styled.div(templateObject_8$5 || (templateObject_8$5 = __makeT
     var theme = _a.theme;
     return theme.colors.greenBg2;
 });
-var ProgressThumb = styled.div(templateObject_9$4 || (templateObject_9$4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"])), function (_a) {
+var ProgressThumb = styled.div(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
@@ -7396,14 +7396,14 @@ var TextHoverBlock = styled.div(templateObject_12$1 || (templateObject_12$1 = __
     return (widthProgress >= 50 ? "right" : "left");
 }, ProgressBar);
 var StyledText = styled(Text)(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"])));
-var StyledButton$3 = styled(Button$a)(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"])), function (_a) {
+var StyledButton$2 = styled(Button$a)(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
     var theme = _a.theme;
     return transparentize(0.85, theme.colors.text);
 });
-var templateObject_1$q, templateObject_2$k, templateObject_3$g, templateObject_4$e, templateObject_5$b, templateObject_6$6, templateObject_7$5, templateObject_8$5, templateObject_9$4, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14$1;
+var templateObject_1$q, templateObject_2$k, templateObject_3$g, templateObject_4$e, templateObject_5$b, templateObject_6$6, templateObject_7$5, templateObject_8$5, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12$1, templateObject_13$1, templateObject_14$1;
 
 var BG = "4277beef4ce8429d.png";
 
@@ -7441,7 +7441,7 @@ var TakeGift = function (_a) {
         React__default.createElement(Card$1, { id: "TakeGift" },
             React__default.createElement(StyledTitle, null, texts.title),
             React__default.createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift) || GIFT }),
-            React__default.createElement(StyledButton$2, { variant: "white", onClick: handleTakeGift }, texts.button)),
+            React__default.createElement(StyledButton$1, { variant: "white", onClick: handleTakeGift }, texts.button)),
         React__default.createElement(BlurWrapper, { claimedGift: claimedGift, giftLoader: giftLoader }),
         React__default.createElement(Claimed, { giftLoader: giftLoader },
             React__default.createElement(Loader$1, null)),
@@ -7457,7 +7457,7 @@ var StyledTitle = styled(Text)(templateObject_2$i || (templateObject_2$i = __mak
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledButton$2 = styled(Button$a)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n"], ["\n  width: 100%;\n  font-weight: 400;\n"])));
+var StyledButton$1 = styled(Button$a)(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n"], ["\n  width: 100%;\n  font-weight: 400;\n"])));
 var Claimed = styled.div(templateObject_4$d || (templateObject_4$d = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: 20px;\n  z-index: 2;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  transition: 0.3s;\n  opacity: ", ";\n  pointer-events: ", ";\n  border-radius: 20px;\n  z-index: 2;\n"])), function (_a) {
     var theme = _a.theme;
     return transparentize(0.5, theme.colors.bgGray);
@@ -7487,7 +7487,7 @@ var TokenOnPoolz = function (_a) {
             React__default.createElement(CardStyle, { src: (images === null || images === void 0 ? void 0 : images.bg) || BG },
                 React__default.createElement(StyledTitle$2, { size: "xl" }, texts.title),
                 React__default.createElement(Text, { margin: "42px 0" }, texts.description),
-                React__default.createElement(StyledButton$1, { as: "a", margin: "0 auto", minWidth: "204px", variant: "green", href: linkClaimTokens || "#" }, texts.button))),
+                React__default.createElement(StyledButton, { as: "a", margin: "0 auto", minWidth: "204px", variant: "green", href: linkClaimTokens || "#" }, texts.button))),
         React__default.createElement(Blur, { disabledCard: disabledCardClaimTokens })));
 };
 var Wrap$1 = styled.div(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
@@ -7515,7 +7515,7 @@ var Wrapper$5 = styled.div(templateObject_4$c || (templateObject_4$c = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledButton$1 = styled(Button$a)(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"], ["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"])), function (_a) {
+var StyledButton = styled(Button$a)(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"], ["\n  display: block;\n  width: 100%;\n  padding: 14px;\n  margin: 0 auto;\n  font-weight: 400;\n  color: ", ";\n  background: ", ";\n  border-radius: 10px;\n  max-width: 204px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.04em;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
@@ -7658,7 +7658,7 @@ var ButtonStyle$2 = styled(Button$a)(templateObject_8$4 || (templateObject_8$4 =
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextStyle = styled(Text)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
+var TextStyle = styled(Text)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -7712,7 +7712,7 @@ var Icons = styled.div(templateObject_19 || (templateObject_19 = __makeTemplateO
     return theme.mediaQueries.lg;
 });
 var PlayerWrap = styled(Flex)(templateObject_20 || (templateObject_20 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"])));
-var templateObject_1$k, templateObject_2$f, templateObject_3$c, templateObject_4$a, templateObject_5$7, templateObject_6$4, templateObject_7$4, templateObject_8$4, templateObject_9$3, templateObject_10$1, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20;
+var templateObject_1$k, templateObject_2$f, templateObject_3$c, templateObject_4$a, templateObject_5$7, templateObject_6$4, templateObject_7$4, templateObject_8$4, templateObject_9$2, templateObject_10$1, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20;
 
 var Bet = function (_a) {
     var title = _a.title, red = _a.red, bet = _a.bet;
@@ -8045,7 +8045,7 @@ var CardWrapper = styled(Flex)(templateObject_8$3 || (templateObject_8$3 = __mak
     var theme = _a.theme;
     return theme.colors.bgCard3;
 });
-var RoundVS = styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"])), function (_a) {
+var RoundVS = styled.div(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark2;
 }, function (_a) {
@@ -8058,7 +8058,7 @@ var RoundVS = styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTempl
     var theme = _a.theme;
     return theme.colors.text;
 });
-var templateObject_1$a, templateObject_2$8, templateObject_3$6, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$2;
+var templateObject_1$a, templateObject_2$8, templateObject_3$6, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$1;
 
 var BridgeWrapper = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  margin: 0 auto;\n  padding: 33px 23px 23px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  margin: 0 auto;\n  padding: 33px 23px 23px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -8096,14 +8096,10 @@ var Tab = styled(Button$a)(templateObject_6$2 || (templateObject_6$2 = __makeTem
     var theme = _a.theme;
     return theme.colors.boxShadow12;
 });
-var StyledButton = styled(Button$a)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"], ["\n  width: 48%;\n  padding: 0 10px;\n  &:disabled {\n    background: ", ";\n    opacity: 1;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.whiteRgba;
-});
-var BlockChainWrap = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var StyledArrow = styled.div(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
+var BlockChainWrap = styled.div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var StyledArrow = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"], ["\n  position: absolute;\n  left: 50%;\n  transform: translateX(-50%);\n  top: -40px;\n  z-index: 1;\n"])));
 var BridgeWidgetStep = function (_a) {
-    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleButtonLeft = _a.handleButtonLeft, handleButtonTransfer = _a.handleButtonTransfer, disabledBtnLeft = _a.disabledBtnLeft, disabledBtnTransfer = _a.disabledBtnTransfer, hiddenToBlock = _a.hiddenToBlock, inputDisabled = _a.inputDisabled;
+    var texts = _a.texts, onUserInput = _a.onUserInput, tabs = _a.tabs, value = _a.value, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, buttonLeft = _a.buttonLeft, buttonRight = _a.buttonRight, hiddenToBlock = _a.hiddenToBlock, inputDisabled = _a.inputDisabled;
     var BlockChainName = function (_a) {
         var icon = _a.icon, name = _a.name;
         return (React__default.createElement(Field, null,
@@ -8114,7 +8110,7 @@ var BridgeWidgetStep = function (_a) {
         React__default.createElement(Label, { size: "lg" }, texts.from),
         React__default.createElement(BlockChainName, { icon: iconNetwork1, name: texts.nameNetwork1 }),
         React__default.createElement(InputWrap, null,
-            React__default.createElement(BalanceInput, { disabled: inputDisabled, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currency } })),
+            React__default.createElement(BalanceInput, { disabled: inputDisabled, onUserInput: onUserInput, value: value, icon: iconBalanceInput, texts: { commit: texts.commit, currency: texts.currency }, inputProps: { readOnly: true } })),
         React__default.createElement(Flex, { justifyContent: "space-between", mt: "15px", mb: !hiddenToBlock ? "36px" : "22px" }, tabs.map(function (el, i) { return (React__default.createElement(Tab, { key: i, scale: "sm", variant: el === value ? "green" : "option", onClick: function () { return onUserInput(el); } },
             +el / 1000,
             "K")); })),
@@ -8125,10 +8121,10 @@ var BridgeWidgetStep = function (_a) {
                     React__default.createElement(Icon$v, null)),
                 React__default.createElement(BlockChainName, { icon: iconNetwork2, name: texts.nameNetwork2 })))),
         React__default.createElement(Flex, { justifyContent: "space-between" },
-            React__default.createElement(StyledButton, { onClick: handleButtonLeft, variant: "green", disabled: disabledBtnLeft }, texts.buttonLeft),
-            React__default.createElement(StyledButton, { onClick: handleButtonTransfer, variant: "green", disabled: disabledBtnTransfer }, texts.buttonTransfer))));
+            buttonLeft,
+            buttonRight)));
 };
-var templateObject_1$9, templateObject_2$7, templateObject_3$5, templateObject_4$4, templateObject_5$2, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$1;
+var templateObject_1$9, templateObject_2$7, templateObject_3$5, templateObject_4$4, templateObject_5$2, templateObject_6$2, templateObject_7$2, templateObject_8$2;
 
 var BaseCell = styled.div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  color: black;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n"], ["\n  color: black;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n"])));
 var CellContent = styled(Flex)(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  justify-content: space-between;\n  align-items: center;\n  ", " {\n    line-height: 1;\n  }\n  ", " {\n    flex-direction: column;\n    height: auto;\n    align-items: flex-start;\n  } ;\n"], ["\n  justify-content: space-between;\n  align-items: center;\n  ", " {\n    line-height: 1;\n  }\n  ", " {\n    flex-direction: column;\n    height: auto;\n    align-items: flex-start;\n  } ;\n"])), Text, function (_a) {

@@ -5,7 +5,7 @@ export interface BridgeStepProps {
   onUserInput: (input: any) => void;
   inputDisabled?: boolean;
   value: string | number;
-  iconBalanceInput?: ReactNode;  
+  iconBalanceInput?: ReactNode;
   iconNetwork1?: ReactNode;
   iconNetwork2?: ReactNode;
   texts: {
