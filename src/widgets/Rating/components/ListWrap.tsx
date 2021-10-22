@@ -148,5 +148,5 @@ const WrapShare = styled.div`
     left: 0;
     top: 0;
     pointer-events: none;
-  }  
+  }
 `;

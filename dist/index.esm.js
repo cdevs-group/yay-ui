@@ -6922,10 +6922,7 @@ var ListWrap = function (_a) {
         React__default.createElement(MainBlock, null, children),
         React__default.createElement(BottomContent, null, players ? (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(Buttons$2, null,
-                React__default.createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button),
-                React__default.createElement(WrapShare, null,
-                    React__default.createElement("div", { className: "ya-share2", "data-curtain": true, "data-limit": "0", "data-more-button-type": "short", "data-services": "facebook,telegram,twitter" }),
-                    React__default.createElement(Icon$k, null))),
+                React__default.createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button)),
             length ? React__default.createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }) : null)) : (React__default.createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
 };
 var Wrapper$9 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
@@ -6959,7 +6956,7 @@ var Buttons$2 = styled.div(templateObject_6$c || (templateObject_6$c = __makeTem
     return theme.mediaQueries.md;
 });
 var TitleStyle$1 = styled(Text)(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  font-size: 31px;\n  line-height: 39px;\n  letter-spacing: 0.03em;\n"], ["\n  font-size: 31px;\n  line-height: 39px;\n  letter-spacing: 0.03em;\n"])));
-var WrapShare = styled.div(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n  position: relative;\n  & svg {\n    position: absolute;\n    left: 0;\n    top: 0;\n    pointer-events: none;\n  }\n  & .ya-share2 {\n    opacity: 0;\n  }\n"], ["\n  position: relative;\n  & svg {\n    position: absolute;\n    left: 0;\n    top: 0;\n    pointer-events: none;\n  }\n  & .ya-share2 {\n    opacity: 0;\n  }\n"])));
+styled.div(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n  position: relative;\n  & svg {\n    position: absolute;\n    left: 0;\n    top: 0;\n    pointer-events: none;\n  }\n"], ["\n  position: relative;\n  & svg {\n    position: absolute;\n    left: 0;\n    top: 0;\n    pointer-events: none;\n  }\n"])));
 var templateObject_1$B, templateObject_2$t, templateObject_3$o, templateObject_4$l, templateObject_5$i, templateObject_6$c, templateObject_7$9, templateObject_8$7;
 
 var Wrap$6 = styled.div(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  padding: 0 20px 26px;\n"], ["\n  padding: 0 20px 26px;\n"])));
