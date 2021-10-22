@@ -69,15 +69,6 @@ const Tab = styled(Button)`
   }
 `;
 
-const StyledButton = styled(Button)`
-  width: 48%;
-  padding: 0 10px;
-  &:disabled {
-    background: ${({ theme }) => theme.colors.whiteRgba};
-    opacity: 1;
-  }
-`;
-
 const BlockChainWrap = styled.div`
   position: relative;
 `;
@@ -98,10 +89,8 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
   iconNetwork1,
   iconNetwork2,
   iconBalanceInput,
-  handleButtonLeft,
-  handleButtonTransfer,
-  disabledBtnLeft,
-  disabledBtnTransfer,
+  buttonLeft,
+  buttonRight,
   hiddenToBlock,
   inputDisabled,
 }) => {
@@ -124,6 +113,7 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
           value={value}
           icon={iconBalanceInput}
           texts={{ commit: texts.commit, currency: texts.currency }}
+          inputProps={{ readOnly: true }}
         />
       </InputWrap>
       <Flex justifyContent="space-between" mt="15px" mb={!hiddenToBlock ? "36px" : "22px"}>
@@ -145,12 +135,8 @@ const BridgeWidgetStep: React.FC<BridgeStepProps> = ({
         </Box>
       )}
       <Flex justifyContent="space-between">
-        <StyledButton onClick={handleButtonLeft} variant="green" disabled={disabledBtnLeft}>
-          {texts.buttonLeft}
-        </StyledButton>
-        <StyledButton onClick={handleButtonTransfer} variant="green" disabled={disabledBtnTransfer}>
-          {texts.buttonTransfer}
-        </StyledButton>
+        {buttonLeft}
+        {buttonRight}
       </Flex>
     </BridgeWrapper>
   );

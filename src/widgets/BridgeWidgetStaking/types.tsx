@@ -5,9 +5,7 @@ export interface BridgeStepProps {
   onUserInput: (input: any) => void;
   inputDisabled?: boolean;
   value: string | number;
-  iconBalanceInput?: ReactNode;
-  handleButtonLeft: () => void;
-  handleButtonTransfer: () => void;
+  iconBalanceInput?: ReactNode;  
   iconNetwork1?: ReactNode;
   iconNetwork2?: ReactNode;
   texts: {
@@ -20,8 +18,8 @@ export interface BridgeStepProps {
     buttonLeft: string;
     buttonTransfer: string;
   };
-  disabledBtnLeft: boolean;
-  disabledBtnTransfer: boolean;
+  buttonLeft: ReactNode;
+  buttonRight: ReactNode;
   hiddenToBlock?: boolean;
 }
 
