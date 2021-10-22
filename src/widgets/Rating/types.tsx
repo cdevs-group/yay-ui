@@ -56,7 +56,6 @@ export interface ListWrapProps {
   currentPage?: number;
   nameInput?: string;
   title?: string;
-  handleShare?: () => void;
 }
 
 export interface TabsTypeListPops {
