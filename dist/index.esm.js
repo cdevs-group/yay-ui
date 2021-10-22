@@ -6923,7 +6923,8 @@ var ListWrap = function (_a) {
         React__default.createElement(BottomContent, null, players ? (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(Buttons$2, null,
                 React__default.createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button),
-                React__default.createElement(Icon$k, { className: "ya-share2", "data-curtain": true, "data-limit": "0", "data-more-button-type": "short", "data-services": "facebook,telegram,twitter" })),
+                React__default.createElement("div", { className: "ya-share2", "data-curtain": true, "data-limit": "0", "data-more-button-type": "short", "data-services": "facebook,telegram,twitter" },
+                    React__default.createElement(Icon$k, null))),
             length ? React__default.createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }) : null)) : (React__default.createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
 };
 var Wrapper$9 = styled.div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
