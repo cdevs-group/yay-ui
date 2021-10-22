@@ -6947,7 +6947,7 @@ var Tab$2 = styled__default['default'].button(templateObject_1$C || (templateObj
 var templateObject_1$C;
 
 var ListWrap = function (_a) {
-    var children = _a.children, handleInput = _a.handleInput, inputValue = _a.inputValue, placeholder = _a.placeholder, players = _a.players, activeTab = _a.activeTab, toggleTab = _a.toggleTab, tabsList = _a.tabsList, toggleTypeList = _a.toggleTypeList, typeTabsList = _a.typeTabsList, texts = _a.texts, myPositionButton = _a.myPositionButton, length = _a.length, togglePage = _a.togglePage, currentPage = _a.currentPage, nameInput = _a.nameInput, handleShare = _a.handleShare, title = _a.title;
+    var children = _a.children, handleInput = _a.handleInput, inputValue = _a.inputValue, placeholder = _a.placeholder, players = _a.players, activeTab = _a.activeTab, toggleTab = _a.toggleTab, tabsList = _a.tabsList, toggleTypeList = _a.toggleTypeList, typeTabsList = _a.typeTabsList, texts = _a.texts, myPositionButton = _a.myPositionButton, length = _a.length, togglePage = _a.togglePage, currentPage = _a.currentPage, nameInput = _a.nameInput, title = _a.title;
     return (React__default['default'].createElement(Wrapper$9, null,
         React__default['default'].createElement(TopContent$1, { players: players }, players ? (React__default['default'].createElement(Tabs$1, { tabValue: activeTab, onClick: toggleTab, tabsList: tabsList })) : (React__default['default'].createElement(React__default['default'].Fragment, null,
             nameInput && (React__default['default'].createElement(InputSearch, { name: nameInput, placeholder: placeholder, value: inputValue, onChange: handleInput, width: "272px" })),
@@ -6956,7 +6956,7 @@ var ListWrap = function (_a) {
         React__default['default'].createElement(BottomContent, null, players ? (React__default['default'].createElement(React__default['default'].Fragment, null,
             React__default['default'].createElement(Buttons$2, null,
                 React__default['default'].createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button),
-                React__default['default'].createElement(Icon$k, { role: "button", onClick: handleShare })),
+                React__default['default'].createElement(Icon$k, { className: "ya-share2", "data-curtain": true, "data-limit": "0", "data-more-button-type": "short", "data-services": "facebook,telegram,twitter" })),
             length ? React__default['default'].createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }) : null)) : (React__default['default'].createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
 };
 var Wrapper$9 = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
