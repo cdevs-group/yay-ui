@@ -84,6 +84,7 @@ const ItemGame = styled.div<{ bg?: string }>`
   background: ${({ bg }) => `url(${bg}) no-repeat center center / cover`};
   cursor: pointer;
   padding: 10px 14px;
+  border: 2px solid transparent;
   &.empty {
     background: ${({ theme }) => theme.colors.bgOpacitY3};
     cursor: default;

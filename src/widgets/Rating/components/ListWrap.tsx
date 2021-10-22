@@ -56,15 +56,16 @@ const ListWrap: React.FC<ListWrapProps> = ({
               <ButtonPosition scale="sm" variant="option" height="30px" onClick={myPositionButton}>
                 {texts?.button}
               </ButtonPosition>
-              <div
-                className="ya-share2"
-                data-curtain
-                data-limit="0"
-                data-more-button-type="short"
-                data-services="facebook,telegram,twitter"
-              >
+              {/* <WrapShare>
+                <div
+                  className="ya-share2"
+                  data-curtain
+                  data-limit="0"
+                  data-more-button-type="short"
+                  data-services="facebook,telegram,twitter"
+                />
                 <ShareIcon />
-              </div>
+              </WrapShare> */}
             </Buttons>
             {length ? <Pagination currentPage={currentPage} length={length} togglePage={togglePage} /> : null}
           </>
@@ -138,4 +139,16 @@ const TitleStyle = styled(Text)`
   font-size: 31px;
   line-height: 39px;
   letter-spacing: 0.03em;
+`;
+
+const WrapShare = styled.div`
+  position: relative;
+  & svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  & .ya-share2 {
+    opacity: 0;
+  }
 `;
