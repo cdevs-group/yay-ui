@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { YAY_TOKEN_CIRCLE } from "../../constants/images";
 import { ProfileCardProps } from "./types";
 
-const ProfileCard: React.FC<ProfileCardProps> = ({token}) => {
+const ProfileCard: React.FC<ProfileCardProps> = ({ token }) => {
   return (
     <Card>
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
@@ -25,4 +25,4 @@ const Card = styled.div`
 
 const Token = styled.img`
   margin-top: -33px;
-`
+`;
