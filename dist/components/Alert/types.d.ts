@@ -22,4 +22,5 @@ export interface AlertProps {
     handleClose?: (evt: MouseEvent<HTMLButtonElement>) => void;
     icon?: ReactNode;
     propsWrapper?: AlertWrapperProps;
+    fillCloseIcon?: string;
 }

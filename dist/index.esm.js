@@ -2086,13 +2086,13 @@ var ButtonNext = styled(Button$a)(templateObject_3$1o || (templateObject_3$1o = 
     return theme.colors.green;
 });
 var AlertBlur = function (_a) {
-    var handleClose = _a.handleClose, buttonText = _a.buttonText, title = _a.title, children = _a.children; _a.variant; var onClick = _a.onClick, propsWrapper = _a.propsWrapper;
+    var handleClose = _a.handleClose, buttonText = _a.buttonText, title = _a.title, children = _a.children; _a.variant; var onClick = _a.onClick, propsWrapper = _a.propsWrapper, fillCloseIcon = _a.fillCloseIcon;
     return (React__default.createElement(StyledAlert$1, __assign({}, propsWrapper),
         React__default.createElement("div", null,
             React__default.createElement(Flex, { justifyContent: "space-between" },
                 React__default.createElement(Text, { fontWeight: 600, mb: "7px" }, title),
                 React__default.createElement(ButtonClose$5, { onClick: handleClose },
-                    React__default.createElement(Icon$X, { fill: "none" }))),
+                    React__default.createElement(Icon$X, { fill: fillCloseIcon || "none" }))),
             React__default.createElement("div", null, children),
             React__default.createElement(ButtonNext, { height: "auto", onClick: onClick },
                 buttonText,
