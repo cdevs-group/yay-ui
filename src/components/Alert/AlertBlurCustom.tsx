@@ -1,4 +1,5 @@
 import React from "react";
+import { space, background, layout } from "styled-system";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon } from "../Svg";
@@ -18,6 +19,9 @@ const StyledAlert = styled.div`
   overflow: hidden;
   border-radius: 12px;
   backdrop-filter: blur(10px);
+  ${background}
+  ${space}
+  ${layout}
 `;
 
 const ButtonClose = styled(Button)`
@@ -52,9 +56,9 @@ const ButtonNext = styled(Button)`
   }
 `;
 
-const AlertBlurCustom: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, onClick }) => {
+const AlertBlurCustom: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, onClick, propsWrapper }) => {
   return (
-    <StyledAlert>
+    <StyledAlert {...propsWrapper}>
       <div>
         <Flex justifyContent="space-between">
           <Text fontWeight={600} mb="7px">

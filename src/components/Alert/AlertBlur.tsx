@@ -1,4 +1,5 @@
 import React from "react";
+import { space, background, layout } from "styled-system";
 import styled from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon, ArrowIcon, GreenArrow } from "../Svg";
@@ -17,20 +18,10 @@ const StyledAlert = styled.div`
   background: ${({ theme }) => theme.colors.bgOpacitY3};
   overflow: hidden;
   border-radius: 12px;
-  //&:after{
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //  display: block;
-  //  content:'';
-  //  border-radius: 12px;
-  //  filter: blur(10px);
-  //  -webkit-filter: blur(10px);
   backdrop-filter: blur(10px);
-  //  z-index: -1;
-  //}
+  ${background}
+  ${space}
+  ${layout}
 `;
 
 const ButtonClose = styled(Button)`
@@ -65,9 +56,9 @@ const ButtonNext = styled(Button)`
   }
 `;
 
-const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, variant, onClick }) => {
+const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, variant, onClick, propsWrapper  }) => {
   return (
-    <StyledAlert>
+    <StyledAlert {...propsWrapper}>
       <div>
         <Flex justifyContent="space-between">
           <Text fontWeight={600} mb="7px">
