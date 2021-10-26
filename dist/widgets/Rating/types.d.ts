@@ -12,8 +12,10 @@ export interface GameTableProps {
         position: string | number;
         playedOnce: string;
         imgSrc?: string;
+        title?: string;
     }>;
     handleSelectValue: (value?: string) => void;
+    selectGame?: string;
 }
 export interface PlayerListProps {
     texts: {
@@ -28,6 +30,8 @@ export interface PlayerListProps {
         score?: string;
     }>;
     tokenIcon?: string;
+    myAccount: string;
+    total: string | number;
 }
 export interface ListWrapProps {
     children: ReactNode;
@@ -49,7 +53,6 @@ export interface ListWrapProps {
     currentPage?: number;
     nameInput?: string;
     title?: string;
-    handleShare?: () => void;
 }
 export interface TabsTypeListPops {
     toggleTypeList?: (e: any) => void;

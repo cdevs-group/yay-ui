@@ -4,6 +4,8 @@ import { AvalancheIcon, BnbIcon, YAYIcon } from "../../components/Svg";
 import ApproveStakingBPTBlock from "./ApproveStakingBPT";
 import HeaderBridgeStaking from "./components/HeaderBridgeStaking";
 import { Text } from "../../components/Text";
+import { Button } from "../../components/Button";
+import styled from "styled-components";
 
 export default {
   title: "Widgets/BridgeNew",
@@ -24,6 +26,18 @@ export const BridgeWidgetStepBlock: React.FC = () => {
     currency: "YAY",
   };
 
+  const ButtonAprove = () => (
+    <StyledButton onClick={() => {}} spin={false} disabled={false} variant="green" width="100%">
+      Approve
+    </StyledButton>
+  );
+
+  const ButtonSwap = () => (
+    <StyledButton onClick={() => {}} spin disabled variant="green" width="100%">
+      Swap
+    </StyledButton>
+  );
+
   return (
     <div>
       <div style={{ marginBottom: "50px" }}>
@@ -35,10 +49,22 @@ export const BridgeWidgetStepBlock: React.FC = () => {
           iconBalanceInput={<YAYIcon />}
           onUserInput={onUserInput}
           value={value}
-          handleButtonLeft={() => {}}
-          handleButtonTransfer={() => {}}
-          disabledBtnLeft={false}
-          disabledBtnTransfer
+          buttonLeft={<ButtonAprove />}
+          buttonRight={<ButtonSwap />}
+        />
+      </div>
+      <div style={{ marginBottom: "50px" }}>
+        <BridgeWidgetStep
+          tabs={["5000", "25000", "50000"]}
+          texts={texts}
+          iconNetwork1={<BnbIcon />}
+          iconNetwork2={<AvalancheIcon />}
+          iconBalanceInput={<YAYIcon />}
+          onUserInput={onUserInput}
+          inputDisabled
+          value={value}
+          buttonLeft={<ButtonAprove />}
+          buttonRight={<ButtonSwap />}
         />
       </div>
       <div style={{ marginBottom: "50px" }}>
@@ -50,10 +76,8 @@ export const BridgeWidgetStepBlock: React.FC = () => {
           iconBalanceInput={<YAYIcon />}
           onUserInput={onUserInput}
           value={value}
-          handleButtonLeft={() => {}}
-          handleButtonTransfer={() => {}}
-          disabledBtnLeft
-          disabledBtnTransfer={false}
+          buttonLeft={<ButtonAprove />}
+          buttonRight={<ButtonSwap />}
           hiddenToBlock
         />
       </div>
@@ -110,3 +134,12 @@ export const HeaderBridgeStakingBlock = () => {
     </div>
   );
 };
+
+const StyledButton = styled(Button)`
+  width: 48%;
+  padding: 0 10px;
+  &:disabled {
+    background: ${({ theme }) => theme.colors.whiteRgba};
+    opacity: 1;
+  }
+`;

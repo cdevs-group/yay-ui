@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { space, background } from "styled-system";
+import { space, background, layout } from "styled-system";
 import Text from "../Text/Text";
 import { CloseIcon, CercleIcon, CompleteIcon, ErrorIcon } from "../Svg";
 import { AlertProps, variants } from "./types";
@@ -19,6 +19,7 @@ const StyledAlert = styled.div`
   color: ${({ theme }) => theme.colors.text};
   ${background}
   ${space}
+  ${layout}
 `;
 
 const getIcon = (variant: AlertProps["variant"] = variants.COLLECTION) => {

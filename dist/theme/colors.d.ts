@@ -19,6 +19,8 @@ export declare const baseColors: {
     boxShadow8: string;
     boxShadow9: string;
     boxShadow10: string;
+    boxShadow11: string;
+    boxShadow12: string;
     filterShadow: string;
     bgOpacity: string;
     bgOpacity2: string;
@@ -56,6 +58,8 @@ export declare const baseColors: {
     greyRgba: string;
     greyRgba2: string;
     blur: string;
+    bgGray5: string;
+    darkGradient: string;
 };
 export declare const brandColors: {
     binance: string;

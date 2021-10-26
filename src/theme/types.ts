@@ -131,6 +131,10 @@ export type Colors = {
   blur: string;
   dark2: string;
   redRgba: string;
+  bgGray5: string;
+  boxShadow11: string;
+  darkGradient: string;
+  boxShadow12: string;
 
   // Gradients
   gradients: Gradients;

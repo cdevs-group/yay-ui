@@ -53,5 +53,7 @@ export * from "./widgets/Lobby";
 export * from "./widgets/ModalPlatform";
 export * from "./widgets/GameWidget";
 export * from "./widgets/BridgeWidgetStaking";
+export * from "./widgets/Profile";
+export * from "./widgets/LockFuture";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

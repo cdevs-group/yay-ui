@@ -14,6 +14,7 @@ import {
   CompleteIcon,
   CercleIcon,
   EyeClose,
+  EyeCloseIcon,
   SearchIcon,
   SearchIcon2,
   SquaresIcon,
@@ -65,6 +66,7 @@ export default {
     CompleteIcon,
     CercleIcon,
     EyeClose,
+    EyeCloseIcon,
     SearchIcon,
     SquaresIcon,
     PenIcon,
@@ -107,6 +109,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <EyeClose />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <EyeCloseIcon />
         </div>
         <div style={{ marginRight: 20 }}>
           <ArrowTopRight />
