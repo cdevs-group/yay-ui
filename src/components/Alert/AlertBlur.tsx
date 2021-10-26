@@ -56,7 +56,16 @@ const ButtonNext = styled(Button)`
   }
 `;
 
-const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, variant, onClick, propsWrapper  }) => {
+const AlertBlur: React.FC<AlertProps> = ({
+  handleClose,
+  buttonText,
+  title,
+  children,
+  variant,
+  onClick,
+  propsWrapper,
+  fillCloseIcon,
+}) => {
   return (
     <StyledAlert {...propsWrapper}>
       <div>
@@ -65,7 +74,7 @@ const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, child
             {title}
           </Text>
           <ButtonClose onClick={handleClose}>
-            <CloseIcon fill="none" />
+            <CloseIcon fill={fillCloseIcon || "none"} />
           </ButtonClose>
         </Flex>
         <div>{children}</div>
