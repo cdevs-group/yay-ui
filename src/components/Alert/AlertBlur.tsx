@@ -56,7 +56,15 @@ const ButtonNext = styled(Button)`
   }
 `;
 
-const AlertBlur: React.FC<AlertProps> = ({ handleClose, buttonText, title, children, variant, onClick, propsWrapper  }) => {
+const AlertBlur: React.FC<AlertProps> = ({
+  handleClose,
+  buttonText,
+  title,
+  children,
+  variant,
+  onClick,
+  propsWrapper,
+}) => {
   return (
     <StyledAlert {...propsWrapper}>
       <div>

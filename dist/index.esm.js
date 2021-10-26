@@ -2029,7 +2029,7 @@ var variants$1 = {
     ERROR: "error",
 };
 
-var StyledAlert$2 = styled.div(templateObject_1$24 || (templateObject_1$24 = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n"])), function (_a) {
+var StyledAlert$2 = styled.div(templateObject_1$24 || (templateObject_1$24 = __makeTemplateObject(["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"], ["\n  display: flex;\n  align-items: baseline;\n  width: fit-content;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 90px 15px 23px;\n  background: ", ";\n  box-shadow: inset ", ";\n  border-radius: 12px;\n  color: ", ";\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -2038,7 +2038,7 @@ var StyledAlert$2 = styled.div(templateObject_1$24 || (templateObject_1$24 = __m
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
-}, background, space);
+}, background, space, layout);
 var getIcon = function (variant) {
     if (variant === void 0) { variant = variants$1.COLLECTION; }
     switch (variant) {
@@ -2073,21 +2073,21 @@ var Alert = function (_a) {
 };
 var templateObject_1$24, templateObject_2$1H, templateObject_3$1p;
 
-var StyledAlert$1 = styled.div(templateObject_1$23 || (templateObject_1$23 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  //&:after{\n  //  position: absolute;\n  //  top: 0;\n  //  left: 0;\n  //  width: 100%;\n  //  height: 100%;\n  //  display: block;\n  //  content:'';\n  //  border-radius: 12px;\n  //  filter: blur(10px);\n  //  -webkit-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  //  z-index: -1;\n  //}\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  //&:after{\n  //  position: absolute;\n  //  top: 0;\n  //  left: 0;\n  //  width: 100%;\n  //  height: 100%;\n  //  display: block;\n  //  content:'';\n  //  border-radius: 12px;\n  //  filter: blur(10px);\n  //  -webkit-filter: blur(10px);\n  backdrop-filter: blur(10px);\n  //  z-index: -1;\n  //}\n"])), function (_a) {
+var StyledAlert$1 = styled.div(templateObject_1$23 || (templateObject_1$23 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
-});
+}, background, space, layout);
 var ButtonClose$5 = styled(Button$a)(templateObject_2$1G || (templateObject_2$1G = __makeTemplateObject(["\n  position: absolute;\n  padding: 0;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 4px;\n  cursor: pointer;\n  box-shadow: none;\n  &:disabled {\n    cursor: default;\n  }\n"], ["\n  position: absolute;\n  padding: 0;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 4px;\n  cursor: pointer;\n  box-shadow: none;\n  &:disabled {\n    cursor: default;\n  }\n"])));
 var ButtonNext = styled(Button$a)(templateObject_3$1o || (templateObject_3$1o = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  margin-top: 10px;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n  background: none;\n  color: ", ";\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n  & svg {\n    transform: rotate(180deg);\n    margin-left: 10px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  margin-top: 10px;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n  background: none;\n  color: ", ";\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n  & svg {\n    transform: rotate(180deg);\n    margin-left: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
 var AlertBlur = function (_a) {
-    var handleClose = _a.handleClose, buttonText = _a.buttonText, title = _a.title, children = _a.children; _a.variant; var onClick = _a.onClick;
-    return (React__default.createElement(StyledAlert$1, null,
+    var handleClose = _a.handleClose, buttonText = _a.buttonText, title = _a.title, children = _a.children; _a.variant; var onClick = _a.onClick, propsWrapper = _a.propsWrapper;
+    return (React__default.createElement(StyledAlert$1, __assign({}, propsWrapper),
         React__default.createElement("div", null,
             React__default.createElement(Flex, { justifyContent: "space-between" },
                 React__default.createElement(Text, { fontWeight: 600, mb: "7px" }, title),
@@ -2100,21 +2100,21 @@ var AlertBlur = function (_a) {
 };
 var templateObject_1$23, templateObject_2$1G, templateObject_3$1o;
 
-var StyledAlert = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n"])), function (_a) {
+var StyledAlert = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  max-width: 367px;\n  position: relative;\n  z-index: 5;\n  transition: 0.3s ease;\n  padding: 15px 60px 25px 23px;\n  color: ", ";\n  background: ", ";\n  overflow: hidden;\n  border-radius: 12px;\n  backdrop-filter: blur(10px);\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
-});
+}, background, space, layout);
 var ButtonClose$4 = styled(Button$a)(templateObject_2$1F || (templateObject_2$1F = __makeTemplateObject(["\n  position: absolute;\n  padding: 0;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 4px;\n  cursor: pointer;\n  box-shadow: none;\n  &:disabled {\n    cursor: default;\n  }\n"], ["\n  position: absolute;\n  padding: 0;\n  background: none;\n  border: none;\n  top: 4px;\n  right: 4px;\n  cursor: pointer;\n  box-shadow: none;\n  &:disabled {\n    cursor: default;\n  }\n"])));
 styled(Button$a)(templateObject_3$1n || (templateObject_3$1n = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  margin-top: 10px;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n  background: none;\n  color: ", ";\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n  & svg {\n    transform: rotate(180deg);\n    margin-left: 10px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  margin-top: 10px;\n  padding: 0;\n  border: none;\n  box-shadow: none;\n  background: none;\n  color: ", ";\n  font-size: 14px;\n  line-height: 18px;\n  cursor: pointer;\n  & svg {\n    transform: rotate(180deg);\n    margin-left: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
 var AlertBlurCustom = function (_a) {
-    var handleClose = _a.handleClose; _a.buttonText; var title = _a.title, children = _a.children; _a.onClick;
-    return (React__default.createElement(StyledAlert, null,
+    var handleClose = _a.handleClose; _a.buttonText; var title = _a.title, children = _a.children; _a.onClick; var propsWrapper = _a.propsWrapper;
+    return (React__default.createElement(StyledAlert, __assign({}, propsWrapper),
         React__default.createElement("div", null,
             React__default.createElement(Flex, { justifyContent: "space-between" },
                 React__default.createElement(Text, { fontWeight: 600, mb: "7px" }, title),
