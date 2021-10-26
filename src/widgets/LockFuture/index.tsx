@@ -1,3 +1,4 @@
 export { default as CardIndicator } from "./components/CardIndicator";
+export { default as CardChoose } from "./components/CardChoose";
 
-export type { LobbyNavProps } from "./types";
+export type { ICardChoose } from "./types";
