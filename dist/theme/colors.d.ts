@@ -58,6 +58,15 @@ export declare const baseColors: {
     greyRgba: string;
     greyRgba2: string;
     blur: string;
+    darkGradient1: string;
+    darkGradient2: string;
+    darkGradient3: string;
+    darkGradient4: string;
+    darkGradient5: string;
+    textShadow1: string;
+    lightGray: string;
+    darkBlue: string;
+    whiteRgba3: string;
     bgGray5: string;
     darkGradient: string;
 };
