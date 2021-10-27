@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { GameTableProps } from "./types";
 
-const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectValue }) => {
+const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectValue, selectGame }) => {
   return (
     <Wrapper>
       <Title>
@@ -14,20 +14,21 @@ const GamesList: React.FC<GameTableProps> = ({ texts, gamesList, handleSelectVal
           <p>№</p>
           <p />
           <p className="middle">{texts.gameName}</p>
-          <p>{texts.playedOnce}</p>
+          <p style={{ paddingRight: 16 }}>{texts.playedOnce}</p>
         </LineHeader>
         {gamesList.map((item, i) => (
           <Line
             key={i}
             disabled={item.disabled}
             onClick={() => (!item.disabled ? handleSelectValue(item.value) : () => {})}
+            className={selectGame === item.value ? "active" : ""}
           >
             <Cell>{item.position}</Cell>
             <Cell>
               <img src={item.imgSrc} />
             </Cell>
-            <Cell>{item.value}</Cell>
-            <Cell>{item.playedOnce}</Cell>
+            <Cell>{item.title}</Cell>
+            <Cell style={{ paddingRight: 16 }}>{item.playedOnce}</Cell>
           </Line>
         ))}
       </Table>
@@ -75,7 +76,7 @@ const Line = styled.div<{ disabled?: boolean }>`
   letter-spacing: 0.05em;
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
-  &:hover {
+  &.active {
     filter: ${({ disabled }) => (disabled ? "none" : "drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2))")};
     background: ${({ theme, disabled }) => (disabled ? theme.colors.dark : "#292930")};
     & div {
@@ -108,7 +109,7 @@ const Cell = styled.div`
   padding: 12px 0;
   color: ${({ theme }) => theme.colors.text};
   transition: 0.3s;
-  ${Line}:hover & {
+  ${Line}.active & {
     color: ${({ theme }) => theme.colors.green};
   }
   & img {

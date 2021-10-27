@@ -22,6 +22,8 @@ export const baseColors = {
   boxShadow8: "0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05)",
   boxShadow9: "0px 0px 20px rgba(86, 239, 75, 0.35)",
   boxShadow10: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+  boxShadow11: "0px 4px 25px rgba(0, 0, 0, 0.35)",
+  boxShadow12: "0px 0px 29px #2CB021",
   filterShadow: "drop-shadow(-3px 0px 8px rgba(0, 0, 0, 0.25))",
   bgOpacity: "rgba(0, 0, 0, 0.3)",
   bgOpacity2: "rgba(0, 0, 0, 0.05)",
@@ -59,7 +61,7 @@ export const baseColors = {
   greyRgba: "rgba(0, 0, 0, 0.15)",
   greyRgba2: "rgba(38, 38, 45, .5)",
   blur: "-webkit-filter: blur(15px);\n filter: blur(15px); \n  -ms-filter: blur(15px);",
-  darkGradient: "linear-gradient(180deg, rgba(39, 37, 37, 0) -8.54%, #17171E 100%)",
+  darkGradient1: "linear-gradient(180deg, rgba(39, 37, 37, 0) -8.54%, #17171E 100%)",
   darkGradient2: "linear-gradient(180deg, rgba(23, 23, 30, 0) -8.54%, #17171e 100%)",
   darkGradient3: "linear-gradient(180deg, #17171e -8.54%, #17171e 100%)",
   darkGradient4: "linear-gradient(0deg, rgba(75, 228, 62, 0) 0%, rgba(75, 228, 62, 0.16) 56.77%)",
@@ -68,6 +70,8 @@ export const baseColors = {
   lightGray: "#dbdbdb",
   darkBlue: "#1f1c2b",
   whiteRgba3: "rgba(255, 255, 255, 0.1)",
+  bgGray5: "#34343B",
+  darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
 };
 
 export const brandColors = {

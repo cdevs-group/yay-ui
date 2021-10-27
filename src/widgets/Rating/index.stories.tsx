@@ -9,6 +9,7 @@ import BALANCE from "../../components/Cards/image/balance.png";
 import HERO from "../../components/Cards/image/hero.png";
 import TabsTypeList from "./components/TabsTypeList";
 import GamesList from "./GamesList";
+import pinball from "./img/pinball-game.png";
 
 export default {
   title: "Widgets/GamesTable",
@@ -28,9 +29,10 @@ export const GamesTableBlock: React.FC = () => {
     {
       position: 1,
       img: <CardProduct small title="BTC vs ETH" bg="pink" img={BALANCE} isNotLink />,
-      value: "BTC vs ETH",
+      value: "PinBall",
       playedOnce: "565642",
-      imgSrc: BALANCE,
+      imgSrc: pinball,
+      title: "Pin",
     },
     {
       position: 2,
@@ -81,12 +83,18 @@ export const GamesTableBlock: React.FC = () => {
         // nameInput="search"
       >
         {typeList === TypeList.TABLE ? (
-          <GamesTable texts={{ title: "Choose Game" }} gamesList={newGamesList} handleSelectValue={handleSelectValue} />
+          <GamesTable
+            selectGame="PinBall"
+            texts={{ title: "Choose Game" }}
+            gamesList={newGamesList}
+            handleSelectValue={handleSelectValue}
+          />
         ) : (
           <GamesList
             texts={{ title: "Choose Game", gameName: "Game Name", playedOnce: "Played Once" }}
             gamesList={newGamesList}
             handleSelectValue={handleSelectValue}
+            selectGame="PinBall"
           />
         )}
       </ListWrap>
@@ -118,32 +126,32 @@ export const PlayerListBlock: React.FC = () => {
     },
     {
       position: "2",
-      account: "dhc526x87agshe",
+      account: "dhc52er6x87agshe",
       score: "56382",
     },
     {
       position: "3",
-      account: "dhc526x87agshe",
+      account: "dhc52rt6x87agshe",
       score: "56382",
     },
     {
       position: "4",
-      account: "dhc526x87agshe",
+      account: "dhc526x87tagshe",
       score: "56382",
     },
     {
       position: "5",
-      account: "dhc526x87agshe",
+      account: "dhc52r6x87agshe",
       score: "56382",
     },
     {
       position: "6",
-      account: "dhc526x87agshe",
+      account: "dhc526fx87agshe",
       score: "56382",
     },
     {
       position: "7",
-      account: "dhc526x87agshe",
+      account: "dhc526xg87agshe",
       score: "56382",
     },
   ];
@@ -172,7 +180,7 @@ export const PlayerListBlock: React.FC = () => {
       // nameInput="search"
       title="Best scores"
     >
-      <PlayerList playersList={playersList} texts={texts} />
+      <PlayerList playersList={playersList} texts={texts} myAccount="dhc526x87agshe" total={5} />
     </ListWrap>
   );
 };

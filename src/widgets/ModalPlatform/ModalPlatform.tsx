@@ -20,16 +20,30 @@ const ModalPlatform = ({ onDismiss, title, platforms, linkAbout }: IProps) => {
   return (
     <Modal title={title} welcome paddingTopHeader="20px" onDismiss={onDismiss}>
       <Wrap>
-        <Buttons>
-          {platforms?.map((el, i) => (
-            <React.Fragment key={i}>
-              <Button target="_blank" as="a" href={el.link}>
-                <TextStyled>{el.name}</TextStyled>
-                <img src={el.icon} alt="" />
-              </Button>
-            </React.Fragment>
-          ))}
-        </Buttons>
+        {platforms?.length > 1 && (
+          <Buttons>
+            {platforms?.map((el, i) => (
+              <React.Fragment key={i}>
+                <Button target="_blank" as="a" href={el.link}>
+                  <TextStyled>{el.name}</TextStyled>
+                  <img src={el.icon} alt="" />
+                </Button>
+              </React.Fragment>
+            ))}
+          </Buttons>
+        )}
+        {platforms?.length === 1 && (
+          <ButtonOne>
+            {platforms?.map((el, i) => (
+              <React.Fragment key={i}>
+                <Button target="_blank" as="a" href={el.link}>
+                  <TextStyled>{el.name}</TextStyled>
+                  <img src={el.icon} alt="" />
+                </Button>
+              </React.Fragment>
+            ))}
+          </ButtonOne>
+        )}
         {linkAbout ? (
           <Link href={linkAbout} style={{ margin: "0 auto" }}>
             {linkAbout}
@@ -68,4 +82,9 @@ const TextStyled = styled(Text)`
   font-weight: 500;
   letter-spacing: 0.5px;
   text-align: center;
+`;
+
+const ButtonOne = styled.div`
+  max-width: 167px;
+  margin: 40px auto;
 `;

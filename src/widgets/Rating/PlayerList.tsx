@@ -4,12 +4,12 @@ import { ellipsis } from "../../helpers/ellipsis";
 import { PlayerListProps } from "./types";
 import TOKEN from "./img/token.svg";
 
-const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, tokenIcon }) => {
+const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, tokenIcon, myAccount, total }) => {
   return (
     <Wrapper>
       <Title>
         {texts.title}
-        <span>({playersList.length})</span>
+        <span>({total})</span>
       </Title>
       <Table>
         <LineHeader>
@@ -19,7 +19,7 @@ const PlayerList: React.FC<PlayerListProps> = ({ texts, playersList, tokenIcon }
           <p>{texts.games}</p>
         </LineHeader>
         {playersList.map((item, i) => (
-          <Line key={i}>
+          <Line key={i} className={myAccount === item.account ? "active" : ""}>
             <Cell>{item.position}</Cell>
             <Cell>
               <img src={item.token || tokenIcon || TOKEN} />
@@ -71,7 +71,7 @@ const Line = styled.div`
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.05em;
-  &:hover {
+  &.active {
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
     background: #292930;
   }
@@ -101,7 +101,7 @@ const Cell = styled.div`
   padding: 12px 0;
   color: ${({ theme }) => theme.colors.text};
   transition: 0.3s;
-  ${Line}:hover & {
+  ${Line}.active & {
     color: ${({ theme }) => theme.colors.green};
   }
   & img {

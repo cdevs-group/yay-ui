@@ -26,7 +26,6 @@ const ListWrap: React.FC<ListWrapProps> = ({
   togglePage,
   currentPage,
   nameInput,
-  handleShare,
   title,
 }) => {
   return (
@@ -57,9 +56,18 @@ const ListWrap: React.FC<ListWrapProps> = ({
               <ButtonPosition scale="sm" variant="option" height="30px" onClick={myPositionButton}>
                 {texts?.button}
               </ButtonPosition>
-              <ShareIcon role="button" onClick={handleShare} />
+              {/* <WrapShare>
+                <div
+                  className="ya-share2"
+                  data-curtain
+                  data-limit="0"
+                  data-more-button-type="short"
+                  data-services="facebook,telegram,twitter"
+                />
+                <ShareIcon />
+              </WrapShare> */}
             </Buttons>
-            <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
+            {length ? <Pagination currentPage={currentPage} length={length} togglePage={togglePage} /> : null}
           </>
         ) : (
           <TabsTypeList toggleTypeList={toggleTypeList} typeTabsList={typeTabsList} />
@@ -131,4 +139,14 @@ const TitleStyle = styled(Text)`
   font-size: 31px;
   line-height: 39px;
   letter-spacing: 0.03em;
+`;
+
+const WrapShare = styled.div`
+  position: relative;
+  & svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
 `;
