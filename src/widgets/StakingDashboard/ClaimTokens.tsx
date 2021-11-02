@@ -52,7 +52,7 @@ const ClaimTokens = ({
             variant="green"
             onClick={handleClaimTokens}
             disabled={disabledButton}
-            isLoading={isLoading}
+            spin={isLoading}
             endIcon={endIcon}
           >
             {texts.button}

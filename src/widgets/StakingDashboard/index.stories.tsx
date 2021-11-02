@@ -75,10 +75,11 @@ export const StakingDashboardWidtdet: React.FC = () => {
           seconds: "s",
         },
       }}
-      endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
+      // endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
       // endIconButtonClaimBlock={<CercleIcon spin fill="none" />}
       progress="50%"
       isLoadingButtonClaimBlock
+      isLoadingButtonClaimTokens
     />
   );
 };
