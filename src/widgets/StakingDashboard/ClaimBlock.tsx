@@ -11,12 +11,12 @@ interface IProps {
     button: string;
   };
   canClaim?: boolean;
-  onClick?: () => void;
+  handleClaimBlock?: () => void;
   isLoading?: boolean;
   endIcon?: React.ReactNode;
 }
 
-const ClaimBlock = ({ text, canClaim, isLoading, endIcon }: IProps) => {
+const ClaimBlock = ({ text, canClaim, isLoading, endIcon, handleClaimBlock }: IProps) => {
   return (
     <Card src={BG}>
       <StyledTitle>{text.title}</StyledTitle>
@@ -26,6 +26,7 @@ const ClaimBlock = ({ text, canClaim, isLoading, endIcon }: IProps) => {
         isLoading={!!endIcon && isLoading}
         disabled={!canClaim || !!endIcon}
         variant={canClaim ? "green" : "option"}
+        onClick={handleClaimBlock}
       >
         {text.button}
       </StyledButton>

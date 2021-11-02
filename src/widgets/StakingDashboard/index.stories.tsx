@@ -22,7 +22,7 @@ export const StakingDashboardWidtdet: React.FC = () => {
     button: "Claim $YAY",
   };
 
-  const handleClaimTokens = () => {};
+  const handleClaimTokens = () => {console.log(2)};
 
   const dataCardsIndicators = [
     {
@@ -45,7 +45,7 @@ export const StakingDashboardWidtdet: React.FC = () => {
     button: "Claim $BPT",
   };
 
-  const handleClaimBlock = () => null;
+  const handleClaimBlock = () => {console.log(1)};
 
   return (
     <StakingDashboard

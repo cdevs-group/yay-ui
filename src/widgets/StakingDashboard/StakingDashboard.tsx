@@ -55,6 +55,7 @@ export interface VestingWidgetProps {
   disabledCardClaimTokens?: boolean;
   handleClaimBlock?: () => void;
   endIconButtonClaimBlock?: React.ReactNode | null;
+  isLoadingButtonClaimBlock?: boolean;
 }
 
 const StakingDashboard: React.FC<VestingWidgetProps> = ({
@@ -74,6 +75,7 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
   disabledTopCards,
   disabledCardClaimTokens,
   handleClaimBlock,
+  isLoadingButtonClaimBlock,
 }) => {
   return (
     <Wrapper>
@@ -107,9 +109,10 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
 
       <ClaimBlock
         endIcon={endIconButtonClaimBlock}
-        onClick={handleClaimBlock}
+        handleClaimBlock={handleClaimBlock}
         canClaim={canClaim}
         text={textClaimBlock}
+        isLoading={isLoadingButtonClaimBlock}
       />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
     </Wrapper>
