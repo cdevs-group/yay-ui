@@ -6,9 +6,9 @@ interface IProps {
         button: string;
     };
     canClaim?: boolean;
-    onClick?: () => void;
+    handleClaimBlock?: () => void;
     isLoading?: boolean;
     endIcon?: React.ReactNode;
 }
-declare const ClaimBlock: ({ text, canClaim, isLoading, endIcon }: IProps) => JSX.Element;
+declare const ClaimBlock: ({ text, canClaim, isLoading, endIcon, handleClaimBlock }: IProps) => JSX.Element;
 export default ClaimBlock;

@@ -48,6 +48,7 @@ export interface VestingWidgetProps {
     disabledCardClaimTokens?: boolean;
     handleClaimBlock?: () => void;
     endIconButtonClaimBlock?: React.ReactNode | null;
+    isLoadingButtonClaimBlock?: boolean;
 }
 declare const StakingDashboard: React.FC<VestingWidgetProps>;
 export default StakingDashboard;
