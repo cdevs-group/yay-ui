@@ -23,7 +23,7 @@ const ClaimBlock = ({ text, canClaim, isLoading, endIcon, handleClaimBlock }: IP
       <StyledDescription>{text.description}</StyledDescription>
       <StyledButton
         endIcon={endIcon}
-        isLoading={!!endIcon && isLoading}
+        spin={isLoading}
         disabled={!canClaim || !!endIcon}
         variant={canClaim ? "green" : "option"}
         onClick={handleClaimBlock}
