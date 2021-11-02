@@ -54,6 +54,7 @@ export interface VestingWidgetProps {
   progress: string | number;
   propsBtnClaimTokens?: ButtonProps;
   propsBtnClaimBlock?: ButtonProps;
+  imageBGClaimBlock?: string;
 }
 
 const StakingDashboard: React.FC<VestingWidgetProps> = ({
@@ -71,6 +72,7 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
   progress,
   propsBtnClaimTokens,
   propsBtnClaimBlock,
+  imageBGClaimBlock,
 }) => {
   return (
     <Wrapper>
@@ -101,7 +103,12 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
         progress={progress}
       />
 
-      <ClaimBlock propsBtnClaimBlock={propsBtnClaimBlock} canClaim={canClaim} text={textClaimBlock} />
+      <ClaimBlock
+        propsBtnClaimBlock={propsBtnClaimBlock}
+        canClaim={canClaim}
+        text={textClaimBlock}
+        imageBG={imageBGClaimBlock}
+      />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
     </Wrapper>
   );

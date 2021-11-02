@@ -12,11 +12,12 @@ interface IProps {
   };
   canClaim?: boolean;
   propsBtnClaimBlock?: ButtonProps;
+  imageBG?: string;
 }
 
-const ClaimBlock = ({ text, canClaim, propsBtnClaimBlock }: IProps) => {
+const ClaimBlock = ({ text, canClaim, propsBtnClaimBlock, imageBG }: IProps) => {
   return (
-    <Card src={BG}>
+    <Card src={imageBG || BG}>
       <StyledTitle>{text.title}</StyledTitle>
       <StyledDescription>{text.description}</StyledDescription>
       <StyledButton variant={canClaim ? "green" : "option"} {...propsBtnClaimBlock}>
