@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CardIndicator from "../Vesting/CardIndicator";
 import CardTimer from "../Vesting/CardTimer";
-import ClaimTokens from "../Vesting/ClaimTokens";
+import ClaimTokens from "./ClaimTokens";
 import MarketplaceLink from "../Vesting/MarketplaceLink";
 import ClaimBlock from "./ClaimBlock";
 
@@ -56,6 +56,7 @@ export interface VestingWidgetProps {
   handleClaimBlock?: () => void;
   endIconButtonClaimBlock?: React.ReactNode | null;
   isLoadingButtonClaimBlock?: boolean;
+  progress: string | number;
 }
 
 const StakingDashboard: React.FC<VestingWidgetProps> = ({
@@ -76,6 +77,7 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
   disabledCardClaimTokens,
   handleClaimBlock,
   isLoadingButtonClaimBlock,
+  progress,
 }) => {
   return (
     <Wrapper>
@@ -105,6 +107,7 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
         isLoading={isLoadingButtonClaimTokens}
         endIcon={endIconButtonClaimTokens}
         disabledCardClaimTokens={disabledCardClaimTokens}
+        progress={progress}
       />
 
       <ClaimBlock
