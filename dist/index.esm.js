@@ -8511,7 +8511,7 @@ var ClaimTokens = function (_a) {
         React__default.createElement(Card$1, { disabledCard: disabledCardClaimTokens, id: "ClaimTokens" },
             React__default.createElement(Row, null,
                 React__default.createElement(StyledTitle$1, null, texts.title),
-                React__default.createElement(StyledButton$1, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, isLoading: isLoading, endIcon: endIcon }, texts.button)),
+                React__default.createElement(StyledButton$1, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, spin: isLoading, endIcon: endIcon }, texts.button)),
             React__default.createElement(ProgressWrap, null,
                 React__default.createElement(ProgressTrack, null,
                     React__default.createElement(ProgressBar, { widthProgress: widthProgress || 0 },
@@ -8618,7 +8618,7 @@ var ClaimBlock = function (_a) {
     return (React__default.createElement(Card, { src: BG },
         React__default.createElement(StyledTitle, null, text.title),
         React__default.createElement(StyledDescription, null, text.description),
-        React__default.createElement(StyledButton, { endIcon: endIcon, isLoading: !!endIcon && isLoading, disabled: !canClaim || !!endIcon, variant: canClaim ? "green" : "option", onClick: handleClaimBlock }, text.button)));
+        React__default.createElement(StyledButton, { endIcon: endIcon, spin: isLoading, disabled: !canClaim || !!endIcon, variant: canClaim ? "green" : "option", onClick: handleClaimBlock }, text.button)));
 };
 var Card = styled.a(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
