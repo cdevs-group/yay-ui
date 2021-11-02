@@ -5,6 +5,7 @@ import CardTimer from "../Vesting/CardTimer";
 import ClaimTokens from "./ClaimTokens";
 import MarketplaceLink from "../Vesting/MarketplaceLink";
 import ClaimBlock from "./ClaimBlock";
+import { ButtonProps } from "../../components/Button";
 
 export interface VestingWidgetProps {
   dataClaimTokens: {
@@ -12,7 +13,6 @@ export interface VestingWidgetProps {
     total: string;
     left?: string;
   };
-  handleClaimTokens: () => void;
   textsClaimTokens: {
     title: string;
     button: string;
@@ -49,21 +49,16 @@ export interface VestingWidgetProps {
       seconds: string;
     };
   };
-  isLoadingButtonClaimTokens?: boolean;
-  endIconButtonClaimTokens?: React.ReactNode | null;
   disabledTopCards?: boolean;
   disabledCardClaimTokens?: boolean;
-  handleClaimBlock?: () => void;
-  endIconButtonClaimBlock?: React.ReactNode | null;
-  isLoadingButtonClaimBlock?: boolean;
   progress: string | number;
+  propsBtnClaimTokens?: ButtonProps;
+  propsBtnClaimBlock?: ButtonProps;
 }
 
 const StakingDashboard: React.FC<VestingWidgetProps> = ({
-  endIconButtonClaimBlock,
   dataClaimTokens,
   textsClaimTokens,
-  handleClaimTokens,
   dataCardsIndicators,
   textMarketplaceLink,
   linkMarketplace,
@@ -71,13 +66,11 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
   imagesMarketplace,
   dataTimer,
   canClaim,
-  isLoadingButtonClaimTokens,
-  endIconButtonClaimTokens,
   disabledTopCards,
   disabledCardClaimTokens,
-  handleClaimBlock,
-  isLoadingButtonClaimBlock,
   progress,
+  propsBtnClaimTokens,
+  propsBtnClaimBlock,
 }) => {
   return (
     <Wrapper>
@@ -103,19 +96,15 @@ const StakingDashboard: React.FC<VestingWidgetProps> = ({
       <ClaimTokens
         data={dataClaimTokens}
         texts={textsClaimTokens}
-        handleClaimTokens={handleClaimTokens}
-        isLoading={isLoadingButtonClaimTokens}
-        endIcon={endIconButtonClaimTokens}
+        propsBtnClaimTokens={propsBtnClaimTokens}
         disabledCardClaimTokens={disabledCardClaimTokens}
         progress={progress}
       />
 
       <ClaimBlock
-        endIcon={endIconButtonClaimBlock}
-        handleClaimBlock={handleClaimBlock}
+        propsBtnClaimBlock={propsBtnClaimBlock}
         canClaim={canClaim}
         text={textClaimBlock}
-        isLoading={isLoadingButtonClaimBlock}
       />
       <MarketplaceLink text={textMarketplaceLink} link={linkMarketplace} images={imagesMarketplace} />
     </Wrapper>

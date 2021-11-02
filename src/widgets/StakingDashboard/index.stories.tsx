@@ -56,12 +56,10 @@ export const StakingDashboardWidtdet: React.FC = () => {
       canClaim={true}
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
-      handleClaimTokens={handleClaimTokens}
       dataCardsIndicators={dataCardsIndicators}
       textMarketplaceLink="Marketplace"
       linkMarketplace="http"
       textClaimBlock={textClaimBlock}
-      handleClaimBlock={handleClaimBlock}
       dataTimer={{
         textFront: "Next stage after",
         textBack: "Your vesting stage",
@@ -75,11 +73,9 @@ export const StakingDashboardWidtdet: React.FC = () => {
           seconds: "s",
         },
       }}
-      // endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
-      // endIconButtonClaimBlock={<CercleIcon spin fill="none" />}
       progress="50%"
-      isLoadingButtonClaimBlock
-      isLoadingButtonClaimTokens
+      propsBtnClaimTokens={{ onClick: handleClaimTokens, spin: true }}
+      propsBtnClaimBlock={{ onClick: handleClaimBlock, spin: true, disabled: true }}
     />
   );
 };

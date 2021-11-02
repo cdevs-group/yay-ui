@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import BG from "./img/image-bg.png";
-import { Button } from "../../components/Button";
+import { Button, ButtonProps } from "../../components/Button";
 
 interface IProps {
   text: {
@@ -11,23 +11,15 @@ interface IProps {
     button: string;
   };
   canClaim?: boolean;
-  handleClaimBlock?: () => void;
-  isLoading?: boolean;
-  endIcon?: React.ReactNode;
+  propsBtnClaimBlock?: ButtonProps;
 }
 
-const ClaimBlock = ({ text, canClaim, isLoading, endIcon, handleClaimBlock }: IProps) => {
+const ClaimBlock = ({ text, canClaim, propsBtnClaimBlock }: IProps) => {
   return (
     <Card src={BG}>
       <StyledTitle>{text.title}</StyledTitle>
       <StyledDescription>{text.description}</StyledDescription>
-      <StyledButton
-        endIcon={endIcon}
-        spin={isLoading}
-        disabled={!canClaim || !!endIcon}
-        variant={canClaim ? "green" : "option"}
-        onClick={handleClaimBlock}
-      >
+      <StyledButton variant={canClaim ? "green" : "option"} {...propsBtnClaimBlock}>
         {text.button}
       </StyledButton>
     </Card>

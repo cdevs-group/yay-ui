@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
 import { Text } from "../../components/Text";
-import { Button } from "../../components/Button";
+import { Button, ButtonProps } from "../../components/Button";
 import { CheckIcon } from "../../components/Svg";
 
 interface IProps {
@@ -11,7 +11,6 @@ interface IProps {
     total: string;
     left?: string;
   };
-  handleClaimTokens: () => void;
   texts: {
     title: string;
     button: string;
@@ -19,23 +18,12 @@ interface IProps {
     total: string;
     left?: string;
   };
-  disabledButton?: boolean;
-  isLoading?: boolean;
-  endIcon?: React.ReactNode | null;
   disabledCardClaimTokens?: boolean;
   progress: string | number;
+  propsBtnClaimTokens?: ButtonProps;
 }
 
-const ClaimTokens = ({
-  data,
-  texts,
-  handleClaimTokens,
-  disabledButton,
-  isLoading,
-  endIcon,
-  disabledCardClaimTokens,
-  progress,
-}: IProps) => {
+const ClaimTokens = ({ data, texts, propsBtnClaimTokens, disabledCardClaimTokens, progress }: IProps) => {
   const [widthProgress, setWidthProgress] = useState(0);
   const numberConverter = (string: string) => +string.replace(/[^\d.]/g, "");
 
@@ -48,13 +36,7 @@ const ClaimTokens = ({
       <Card disabledCard={disabledCardClaimTokens} id="ClaimTokens">
         <Row>
           <StyledTitle>{texts.title}</StyledTitle>
-          <StyledButton
-            variant="green"
-            onClick={handleClaimTokens}
-            disabled={disabledButton}
-            spin={isLoading}
-            endIcon={endIcon}
-          >
+          <StyledButton variant="green" {...propsBtnClaimTokens}>
             {texts.button}
           </StyledButton>
         </Row>
