@@ -1,4 +1,5 @@
-import React from "react";
+/// <reference types="react" />
+import { ButtonProps } from "../../components/Button";
 interface IProps {
     text: {
         title: string;
@@ -6,9 +7,7 @@ interface IProps {
         button: string;
     };
     canClaim?: boolean;
-    handleClaimBlock?: () => void;
-    isLoading?: boolean;
-    endIcon?: React.ReactNode;
+    propsBtnClaimBlock?: ButtonProps;
 }
-declare const ClaimBlock: ({ text, canClaim, isLoading, endIcon, handleClaimBlock }: IProps) => JSX.Element;
+declare const ClaimBlock: ({ text, canClaim, propsBtnClaimBlock }: IProps) => JSX.Element;
 export default ClaimBlock;

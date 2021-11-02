@@ -1,11 +1,11 @@
 import React from "react";
+import { ButtonProps } from "../../components/Button";
 export interface VestingWidgetProps {
     dataClaimTokens: {
         totalRaised: string;
         total: string;
         left?: string;
     };
-    handleClaimTokens: () => void;
     textsClaimTokens: {
         title: string;
         button: string;
@@ -42,14 +42,11 @@ export interface VestingWidgetProps {
             seconds: string;
         };
     };
-    isLoadingButtonClaimTokens?: boolean;
-    endIconButtonClaimTokens?: React.ReactNode | null;
     disabledTopCards?: boolean;
     disabledCardClaimTokens?: boolean;
-    handleClaimBlock?: () => void;
-    endIconButtonClaimBlock?: React.ReactNode | null;
-    isLoadingButtonClaimBlock?: boolean;
     progress: string | number;
+    propsBtnClaimTokens?: ButtonProps;
+    propsBtnClaimBlock?: ButtonProps;
 }
 declare const StakingDashboard: React.FC<VestingWidgetProps>;
 export default StakingDashboard;

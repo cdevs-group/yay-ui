@@ -8501,7 +8501,7 @@ var Icon = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplate
 var templateObject_1$4, templateObject_2$2, templateObject_3$2, templateObject_4$2;
 
 var ClaimTokens = function (_a) {
-    var data = _a.data, texts = _a.texts, handleClaimTokens = _a.handleClaimTokens, disabledButton = _a.disabledButton, isLoading = _a.isLoading, endIcon = _a.endIcon, disabledCardClaimTokens = _a.disabledCardClaimTokens, progress = _a.progress;
+    var data = _a.data, texts = _a.texts, propsBtnClaimTokens = _a.propsBtnClaimTokens, disabledCardClaimTokens = _a.disabledCardClaimTokens, progress = _a.progress;
     var _b = useState(0), widthProgress = _b[0], setWidthProgress = _b[1];
     var numberConverter = function (string) { return +string.replace(/[^\d.]/g, ""); };
     useEffect(function () {
@@ -8511,7 +8511,7 @@ var ClaimTokens = function (_a) {
         React__default.createElement(Card$1, { disabledCard: disabledCardClaimTokens, id: "ClaimTokens" },
             React__default.createElement(Row, null,
                 React__default.createElement(StyledTitle$1, null, texts.title),
-                React__default.createElement(StyledButton$1, { variant: "green", onClick: handleClaimTokens, disabled: disabledButton, spin: isLoading, endIcon: endIcon }, texts.button)),
+                React__default.createElement(StyledButton$1, __assign({ variant: "green" }, propsBtnClaimTokens), texts.button)),
             React__default.createElement(ProgressWrap, null,
                 React__default.createElement(ProgressTrack, null,
                     React__default.createElement(ProgressBar, { widthProgress: widthProgress || 0 },
@@ -8614,11 +8614,11 @@ var templateObject_1$3, templateObject_2$1, templateObject_3$1, templateObject_4
 var BG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAQSURBVHgBAQUA+v8AAAAAAAAFAAFkeJU4AAAAAElFTkSuQmCC";
 
 var ClaimBlock = function (_a) {
-    var text = _a.text, canClaim = _a.canClaim, isLoading = _a.isLoading, endIcon = _a.endIcon, handleClaimBlock = _a.handleClaimBlock;
+    var text = _a.text, canClaim = _a.canClaim, propsBtnClaimBlock = _a.propsBtnClaimBlock;
     return (React__default.createElement(Card, { src: BG },
         React__default.createElement(StyledTitle, null, text.title),
         React__default.createElement(StyledDescription, null, text.description),
-        React__default.createElement(StyledButton, { endIcon: endIcon, spin: isLoading, disabled: !canClaim || !!endIcon, variant: canClaim ? "green" : "option", onClick: handleClaimBlock }, text.button)));
+        React__default.createElement(StyledButton, __assign({ variant: canClaim ? "green" : "option" }, propsBtnClaimBlock), text.button)));
 };
 var Card = styled.a(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
@@ -8639,14 +8639,14 @@ var StyledButton = styled(Button$a)(templateObject_4 || (templateObject_4 = __ma
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var StakingDashboard = function (_a) {
-    var endIconButtonClaimBlock = _a.endIconButtonClaimBlock, dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textClaimBlock = _a.textClaimBlock, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, isLoadingButtonClaimTokens = _a.isLoadingButtonClaimTokens, endIconButtonClaimTokens = _a.endIconButtonClaimTokens, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, handleClaimBlock = _a.handleClaimBlock, isLoadingButtonClaimBlock = _a.isLoadingButtonClaimBlock, progress = _a.progress;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textClaimBlock = _a.textClaimBlock, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, progress = _a.progress, propsBtnClaimTokens = _a.propsBtnClaimTokens, propsBtnClaimBlock = _a.propsBtnClaimBlock;
     return (React__default.createElement(Wrapper, null,
         React__default.createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[0], id: "CardIndicator-1" }),
         React__default.createElement(CardTimer, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataTimer }),
         React__default.createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[1], id: "CardIndicator-2" }),
         React__default.createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[2], id: "CardIndicator-3" }),
-        React__default.createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, handleClaimTokens: handleClaimTokens, isLoading: isLoadingButtonClaimTokens, endIcon: endIconButtonClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens, progress: progress }),
-        React__default.createElement(ClaimBlock, { endIcon: endIconButtonClaimBlock, handleClaimBlock: handleClaimBlock, canClaim: canClaim, text: textClaimBlock, isLoading: isLoadingButtonClaimBlock }),
+        React__default.createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, propsBtnClaimTokens: propsBtnClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens, progress: progress }),
+        React__default.createElement(ClaimBlock, { propsBtnClaimBlock: propsBtnClaimBlock, canClaim: canClaim, text: textClaimBlock }),
         React__default.createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace })));
 };
 var Wrapper = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
