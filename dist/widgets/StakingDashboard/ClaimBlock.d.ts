@@ -8,6 +8,7 @@ interface IProps {
     };
     canClaim?: boolean;
     propsBtnClaimBlock?: ButtonProps;
+    imageBG?: string;
 }
-declare const ClaimBlock: ({ text, canClaim, propsBtnClaimBlock }: IProps) => JSX.Element;
+declare const ClaimBlock: ({ text, canClaim, propsBtnClaimBlock, imageBG }: IProps) => JSX.Element;
 export default ClaimBlock;

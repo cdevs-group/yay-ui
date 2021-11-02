@@ -8644,11 +8644,11 @@ var StyledButton$1 = styled__default['default'](Button$a)(templateObject_14 || (
 });
 var templateObject_1$3, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14;
 
-var BG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAQSURBVHgBAQUA+v8AAAAAAAAFAAFkeJU4AAAAAElFTkSuQmCC";
+var BG = "7ab20286b7d29830.png";
 
 var ClaimBlock = function (_a) {
-    var text = _a.text, canClaim = _a.canClaim, propsBtnClaimBlock = _a.propsBtnClaimBlock;
-    return (React__default['default'].createElement(Card, { src: BG },
+    var text = _a.text, canClaim = _a.canClaim, propsBtnClaimBlock = _a.propsBtnClaimBlock, imageBG = _a.imageBG;
+    return (React__default['default'].createElement(Card, { src: imageBG || BG },
         React__default['default'].createElement(StyledTitle, null, text.title),
         React__default['default'].createElement(StyledDescription, null, text.description),
         React__default['default'].createElement(StyledButton, __assign({ variant: canClaim ? "green" : "option" }, propsBtnClaimBlock), text.button)));
@@ -8672,14 +8672,14 @@ var StyledButton = styled__default['default'](Button$a)(templateObject_4 || (tem
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var StakingDashboard = function (_a) {
-    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textClaimBlock = _a.textClaimBlock, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, progress = _a.progress, propsBtnClaimTokens = _a.propsBtnClaimTokens, propsBtnClaimBlock = _a.propsBtnClaimBlock;
+    var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textClaimBlock = _a.textClaimBlock, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, progress = _a.progress, propsBtnClaimTokens = _a.propsBtnClaimTokens, propsBtnClaimBlock = _a.propsBtnClaimBlock, imageBGClaimBlock = _a.imageBGClaimBlock;
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[0], id: "CardIndicator-1" }),
         React__default['default'].createElement(CardTimer, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataTimer }),
         React__default['default'].createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[1], id: "CardIndicator-2" }),
         React__default['default'].createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[2], id: "CardIndicator-3" }),
         React__default['default'].createElement(ClaimTokens, { data: dataClaimTokens, texts: textsClaimTokens, propsBtnClaimTokens: propsBtnClaimTokens, disabledCardClaimTokens: disabledCardClaimTokens, progress: progress }),
-        React__default['default'].createElement(ClaimBlock, { propsBtnClaimBlock: propsBtnClaimBlock, canClaim: canClaim, text: textClaimBlock }),
+        React__default['default'].createElement(ClaimBlock, { propsBtnClaimBlock: propsBtnClaimBlock, canClaim: canClaim, text: textClaimBlock, imageBG: imageBGClaimBlock }),
         React__default['default'].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace })));
 };
 var Wrapper = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {

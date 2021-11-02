@@ -47,6 +47,7 @@ export interface VestingWidgetProps {
     progress: string | number;
     propsBtnClaimTokens?: ButtonProps;
     propsBtnClaimBlock?: ButtonProps;
+    imageBGClaimBlock?: string;
 }
 declare const StakingDashboard: React.FC<VestingWidgetProps>;
 export default StakingDashboard;
