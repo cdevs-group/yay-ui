@@ -8454,7 +8454,7 @@ var Card$3 = styled.div(templateObject_1$5 || (templateObject_1$5 = __makeTempla
 var templateObject_1$5;
 
 var CardChoose = function (_a) {
-    var texts = _a.texts, tabs = _a.tabs, valueInput = _a.valueInput, buttonLeft = _a.buttonLeft, buttonRight = _a.buttonRight, onUserInput = _a.onUserInput, balance = _a.balance, iconCurrency = _a.iconCurrency;
+    var texts = _a.texts, tabs = _a.tabs, valueInput = _a.valueInput, buttonLeft = _a.buttonLeft, buttonRight = _a.buttonRight, buttonConnect = _a.buttonConnect, onUserInput = _a.onUserInput, balance = _a.balance, iconCurrency = _a.iconCurrency;
     return (React__default.createElement(Card$2, null,
         React__default.createElement(Text, { mb: "16px", fontSize: "21px", lineHeight: "27px", fontWeight: "400" }, texts.title),
         React__default.createElement(Hr, null),
@@ -8469,9 +8469,9 @@ var CardChoose = function (_a) {
         React__default.createElement(Flex, { justifyContent: "space-between", mb: "32px" }, tabs.map(function (el, i) { return (React__default.createElement(Tab, { key: i, scale: "sm", disabled: el.disabled, variant: el.value === valueInput ? "green" : "option", onClick: function () { return onUserInput(el.value); } },
             el.value / 1000,
             "K")); })),
-        React__default.createElement(Flex, { justifyContent: "space-between" },
+        React__default.createElement(Flex, { justifyContent: "space-between" }, buttonConnect || (React__default.createElement(React__default.Fragment, null,
             buttonLeft,
-            buttonRight)));
+            buttonRight)))));
 };
 var Card$2 = styled.div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  padding: 25px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  color: ", ";\n"], ["\n  padding: 25px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;

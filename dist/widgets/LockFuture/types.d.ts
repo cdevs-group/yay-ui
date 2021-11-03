@@ -16,4 +16,5 @@ export interface ICardChoose {
     onUserInput: (el: number) => void;
     balance: string;
     iconCurrency?: ReactNode;
+    buttonConnect?: ReactNode;
 }
