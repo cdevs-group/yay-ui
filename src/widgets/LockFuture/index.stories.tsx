@@ -43,6 +43,12 @@ export const LockFuture = () => {
     </StyledButton>
   );
 
+  const ButtonConnect = () => (
+    <Button onClick={() => {}} variant="green" width="100%">
+      Connect
+    </Button>
+  );
+
   const tabs = [
     {
       value: 5000,
@@ -73,6 +79,7 @@ export const LockFuture = () => {
         onUserInput={onUserInput}
         valueInput={value}
         balance="50,000 YAY"
+        buttonConnect={<ButtonConnect />}
       />
     </Wrapper>
   );

@@ -12,6 +12,7 @@ const CardChoose = ({
   valueInput,
   buttonLeft,
   buttonRight,
+  buttonConnect,
   onUserInput,
   balance,
   iconCurrency,
@@ -53,8 +54,12 @@ const CardChoose = ({
         ))}
       </Flex>
       <Flex justifyContent="space-between">
-        {buttonLeft}
-        {buttonRight}
+        {buttonConnect || (
+          <>
+            {buttonLeft}
+            {buttonRight}
+          </>
+        )}
       </Flex>
     </Card>
   );
