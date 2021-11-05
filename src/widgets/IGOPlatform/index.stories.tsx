@@ -21,10 +21,20 @@ export const IGOCardBlock = () => {
 
   const dataSlots = [17, 80, 0];
 
+  const texts = {
+    available: "Available",
+    networks: "Available networks:",
+    slots: "Available whitelist slots:",
+    progress: "Progress",
+    button: "View more",
+    isLive: "is live",
+    success: "successfully",
+    sale: "sale",
+  };
+
   return (
     <div>
       <IGOCard
-        widthProgress={50}
         dataSlots={dataSlots}
         currentNetwork={network}
         handleTab={handleChangeNetwork}
@@ -33,6 +43,9 @@ export const IGOCardBlock = () => {
         tokenImg={DESU_TOKEN}
         status={CardStatus.PUBLIC_SALE}
         token="DESU Token"
+        texts={texts}
+        currentVolume={1000}
+        totalVolume={1000}
       />
     </div>
   );

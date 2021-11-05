@@ -1,25 +1,69 @@
 import { CheckIcon } from "../../../../components/Svg";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
+import { Flex } from "../../../../components/Box";
+import { Text } from "../../../../components/Text";
+import { IProgress } from "../../types";
 
 const Progress = ({
-  widthProgress,
   totalVolume,
   currentVolume,
-}: {
-  widthProgress: number;
-  totalVolume: number;
-  currentVolume: number;
-}) => {
+}: IProgress) => {
+  const [widthTotal, setWidthTotal] = useState(0);
+  const [widthCurrent, setWidthCurrent] = useState(0);
+  const [widthProgressBar, setWidthProgressBar] = useState(0);
+  const [isFinish, setFinish] = useState(false);
+  const [widthProgress, setWidthProgress] = useState(0);
+  const refTotal = useRef<any>(null);
+  const refCurrent = useRef<any>(null);
+  const refProgress = useRef<any>(null);
+
+  useEffect(() => {
+    if (refProgress) {
+      setWidthProgressBar(refProgress.current.clientWidth);
+    }
+  }, []);
+  useEffect(() => {
+    if (refTotal) {
+      setWidthTotal(refTotal.current.clientWidth);
+    }
+  }, []);
+  useEffect(() => {
+    if (refCurrent) {
+      setWidthCurrent(refCurrent.current.clientWidth);
+    }
+  }, [widthProgress, currentVolume]);
+
+  useEffect(() => {
+    setWidthProgress((currentVolume / totalVolume) * 100);
+  });
+
+  useEffect(() => {
+    const width = widthTotal + 12;
+    const finish = widthProgressBar - (widthProgressBar / 100) * widthProgress <= width;
+    setFinish(finish);
+  });
+
   return (
-    <ProgressTrack>
-      <ProgressBar widthProgress={widthProgress || 0}>
-        <ProgressThumb>
-          <CheckIcon />
-        </ProgressThumb>
-      </ProgressBar>
-    </ProgressTrack>
+    <div>
+      <ProgressTrack ref={refProgress}>
+        <ProgressBar widthProgress={widthProgress || 0}>
+          <ProgressThumb>
+            <CheckIcon />
+          </ProgressThumb>
+        </ProgressBar>
+      </ProgressTrack>
+      <CounterWrapper>
+        <Counter stop={isFinish} width={isFinish ? widthTotal + 12 : widthProgress}>
+          <Current marginLeft={widthProgress > 50 ? `-${widthCurrent}px` : 0} ref={refCurrent}>
+            {currentVolume} BNB
+          </Current>
+          <Symbol visible={isFinish}>/</Symbol>
+          <Total ref={refTotal}>{totalVolume} BNB</Total>
+        </Counter>
+      </CounterWrapper>
+    </div>
   );
 };
 
@@ -66,4 +110,24 @@ const ProgressBar = styled.div<{ widthProgress: number }>`
   background: ${({ theme }) => theme.colors.greenBg2};
   border-radius: 6px;
   transition: 0.3s;
+`;
+const CounterWrapper = styled(Flex)`
+  margin-top: 13px;
+  justify-content: end;
+`;
+const Counter = styled(Flex)<{ width: number; stop: boolean }>`
+  justify-content: space-between;
+  width: ${({ width, stop }) => (stop ? `${width}px` : `calc(100% - ${width}%)`)};
+`;
+const Current = styled(Text)`
+  font-size: 10px;
+  line-height: 19px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  flex: none;
+`;
+const Total = styled(Current)``;
+const Symbol = styled(Current)<{ visible: boolean }>`
+  padding: 0 5px;
+  display: ${({ visible }) => (visible ? "block" : "none")};
 `;
