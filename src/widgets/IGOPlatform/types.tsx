@@ -1,4 +1,7 @@
-export interface IGOCardProps {
+export interface IBlurStatus{
+  statusText: React.ReactNode 
+}
+export interface IGOCardProps extends IBlurStatus {
   status: CardStatus;
   token: string;
   tokenImg: string;
@@ -8,6 +11,8 @@ export interface IGOCardProps {
   currentNetwork: number;
   dataSlots: number[];
   widthProgress: number;
+  statusTextVisible?: boolean;
+  
 }
 
 export enum NetworksTab {

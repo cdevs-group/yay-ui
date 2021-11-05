@@ -19,6 +19,8 @@ const IGOCard = ({
   currentNetwork,
   dataSlots,
   widthProgress,
+  statusText,
+  statusTextVisible,
 }: IGOCardProps) => {
   const texts = {
     available: "Available",
@@ -26,9 +28,6 @@ const IGOCard = ({
     slots: "Available whitelist slots:",
     progress: "Progress",
     button: "View more",
-    isLive: "is live",
-    success: "successfully",
-    sale: "sale",
   };
 
   return (
@@ -51,12 +50,13 @@ const IGOCard = ({
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <div style={{ position: "relative" }}>
+        {statusTextVisible && <BlurBlock statusText={statusText} />}
         <SlotsBlock>
           <TitleBlock>{texts.slots}</TitleBlock>
           <Slots dataSlots={dataSlots} />
-          <BlurBlock status={status} sale={texts.sale} success={texts.success} isLive={texts.isLive} />
         </SlotsBlock>
       </div>
+
       <ProgressBlock>
         <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
         <Progress totalVolume={700} currentVolume={100} widthProgress={widthProgress} />
@@ -135,7 +135,7 @@ const NetworkBlock = styled.div`
 `;
 
 const SlotsBlock = styled.div`
-  margin-top: 20px;
+  padding-top: 20px;
   position: relative;
 `;
 const ProgressBlock = styled.div`
