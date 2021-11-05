@@ -26,7 +26,7 @@ const ProgressWrap = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const RangeTrack = styled.div<{ progress?: number; isError?: boolean; }>`
+const RangeTrack = styled.div<{ progress?: number; isError?: boolean }>`
   position: relative;
   margin: 10px 0;
   width: 100%;

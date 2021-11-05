@@ -6,10 +6,7 @@ import { Flex } from "../../../../components/Box";
 import { Text } from "../../../../components/Text";
 import { IProgress } from "../../types";
 
-const Progress = ({
-  totalVolume,
-  currentVolume,
-}: IProgress) => {
+const Progress = ({ totalVolume, currentVolume }: IProgress) => {
   const [widthTotal, setWidthTotal] = useState(0);
   const [widthCurrent, setWidthCurrent] = useState(0);
   const [widthProgressBar, setWidthProgressBar] = useState(0);
