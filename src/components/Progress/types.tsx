@@ -11,9 +11,11 @@ export interface ProgressStepsProps {
 }
 
 export interface ProgressRangeProps {
+  bgTrack?: string;
   progress: number;
   isError?: boolean;
-  texts: {
+  counter?: string;
+  texts?: {
     waiting: string;
     start: string;
     final: string;

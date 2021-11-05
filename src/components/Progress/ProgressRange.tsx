@@ -3,17 +3,26 @@ import styled from "styled-components";
 import { ProgressRangeProps } from "./types";
 import { Text } from "../Text";
 
-const ProgressRange = ({ texts, progress, isError }: ProgressRangeProps) => {
+const ProgressRange = ({ texts, progress, isError, counter, bgTrack }: ProgressRangeProps) => {
   return (
     <ProgressWrap>
-      <Text fontSize="10px">
-        {texts.waiting} {texts.networkWaiting}
-      </Text>
-      <RangeTrack isError={isError} progress={progress} />
-      <RangeTexts>
-        <Text fontSize="10px">{texts.start}</Text>
-        <Text fontSize="10px">{texts.final}</Text>
-      </RangeTexts>
+      {texts && (
+        <Text fontSize="10px">
+          {texts.waiting} {texts.networkWaiting}
+        </Text>
+      )}
+      <RangeTrack bgTrack={bgTrack} isError={isError} progress={progress} />
+      {counter && (
+        <Text fontSize="11px" textAlign="center">
+          {counter}/100
+        </Text>
+      )}
+      {texts && (
+        <RangeTexts>
+          <Text fontSize="10px">{texts.start}</Text>
+          <Text fontSize="10px">{texts.final}</Text>
+        </RangeTexts>
+      )}
     </ProgressWrap>
   );
 };
@@ -26,12 +35,12 @@ const ProgressWrap = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const RangeTrack = styled.div<{ progress?: number; isError?: boolean }>`
+const RangeTrack = styled.div<{ progress?: number; isError?: boolean; bgTrack?: string }>`
   position: relative;
   margin: 10px 0;
   width: 100%;
   height: 12px;
-  background: ${({ theme }) => theme.colors.buttonBg};
+  background: ${({ theme, bgTrack }) => (bgTrack ? bgTrack : theme.colors.buttonBg)};
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   border-radius: 3px;
   &:after {
@@ -52,3 +61,4 @@ const RangeTexts = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+const Counter = styled.div``;
