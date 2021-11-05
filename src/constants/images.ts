@@ -38,6 +38,8 @@ import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
 import WINNER_MIN from "../../public/images/winnerMin.png";
 import COIN4 from "../../public/images/coin4.png";
 import ROKET1 from "../../public/images/rocket1.png";
+import DESU_TOKEN from "../../public/images/desu.png";
+import BSC_ICON from "../../public/images/bsc-icon.png";
 
 export {
   BG_IMG,
@@ -80,4 +82,6 @@ export {
   WINNER3,
   COIN4,
   ROKET1,
+  DESU_TOKEN,
+  BSC_ICON,
 };
