@@ -18,19 +18,10 @@ const IGOCard = ({
   handleTab,
   currentNetwork,
   dataSlots,
-  widthProgress,
+  currentVolume,
+  totalVolume,
+  texts,
 }: IGOCardProps) => {
-  const texts = {
-    available: "Available",
-    networks: "Available networks:",
-    slots: "Available whitelist slots:",
-    progress: "Progress",
-    button: "View more",
-    isLive: "is live",
-    success: "successfully",
-    sale: "sale",
-  };
-
   return (
     <Wrapper>
       <HeadLine>
@@ -59,7 +50,7 @@ const IGOCard = ({
       </div>
       <ProgressBlock>
         <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
-        <Progress totalVolume={700} currentVolume={100} widthProgress={widthProgress} />
+        <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
       </ProgressBlock>
       <Button width="100%" variant="green">
         {texts.button}

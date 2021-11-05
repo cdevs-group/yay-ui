@@ -61,6 +61,7 @@ export * from "./widgets/BridgeWidgetStaking";
 export * from "./widgets/Profile";
 export * from "./widgets/LockFuture";
 export * from "./widgets/StakingDashboard";
+export * from "./widgets/IGOPlatform";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

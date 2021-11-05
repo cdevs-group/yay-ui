@@ -7,7 +7,18 @@ export interface IGOCardProps {
   handleTab: (e: any) => void;
   currentNetwork: number;
   dataSlots: number[];
-  widthProgress: number;
+  currentVolume: number;
+  totalVolume: number;
+  texts: {
+    available: string;
+    networks: string;
+    slots: string;
+    progress: string;
+    button: string;
+    isLive: string;
+    success: string;
+    sale: string;
+  };
 }
 
 export enum NetworksTab {

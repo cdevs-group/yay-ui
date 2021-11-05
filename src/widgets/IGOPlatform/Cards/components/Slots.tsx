@@ -1,4 +1,4 @@
-import ProgressRange from "../../../../components/Progress/ProgressRange";
+import ProgressRange from "./ProgressRange";
 import { baseColors } from "../../../../theme/colors";
 import React from "react";
 import styled from "styled-components";
