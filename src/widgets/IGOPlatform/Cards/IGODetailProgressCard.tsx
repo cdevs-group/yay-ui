@@ -15,6 +15,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   baseProgress,
   texts,
   slots,
+  status,
 }) => {
   return (
     <Card>
@@ -33,9 +34,10 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         </div>
       </FlexTop>
       <ProgressWithText text={textBaseProgress} progress={baseProgress} />
-      <Text fontSize="11px" lineHeight="140%" fontWeight={400} mt="10px" textAlign="center">
+      <Text fontSize="11px" lineHeight="140%" fontWeight={400} mt="10px" mb="30px" textAlign="center">
         {texts.textBottomBaseProgress}
       </Text>
+      {status && <Status>{texts.status}</Status>}
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (
@@ -51,6 +53,7 @@ export default IGODetailProgressCard;
 
 const Card = styled.div`
   max-width: 548px;
+  width: 100%;
   padding: 32px 22px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
@@ -64,4 +67,17 @@ const FlexTop = styled(Flex)`
 
 const Slots = styled.div`
   margin-top: 11px;
+  margin-bottom: 55px;
+`;
+
+const Status = styled(Text)`
+  padding: 20px 0 50px;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  & span {
+    color: ${({ theme }) => theme.colors.green};
+  }
 `;

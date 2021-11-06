@@ -63,6 +63,9 @@ export interface IGODetailProgressCardProps {
     slotsSummaryTooltip: string | React.ReactNode;
     availableWhitelist: string;
     availableWhitelistTooltip: string | React.ReactNode;
+    status?: React.ReactNode;
   };
   slots: SlotSummaryProps[];
+  status?: boolean;
+  
 }

@@ -3,6 +3,7 @@ import { IGOCard } from "./index";
 import IGODetailProgressCard from "./Cards/IGODetailProgressCard";
 import { CardStatus, NetworksTab } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
+import { Flex } from "../..";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -68,6 +69,11 @@ export const IGODetailProgressCardBlock = () => {
     slotsSummaryTooltip: "Slots summary Tooltip",
     availableWhitelist: "Available whitelist slots:",
     availableWhitelistTooltip: "Available whitelist slots",
+    status: (
+      <>
+        PUBLIC sale <span>SOLD OUT</span>
+      </>
+    ),
   };
 
   const [isChecked, setIsChecked] = useState(false);
@@ -96,14 +102,29 @@ export const IGODetailProgressCardBlock = () => {
       error: false,
     },
   ];
+
   return (
-    <IGODetailProgressCard
-      checkedToggle={isChecked}
-      handleToggleChecked={handleToggleChecked}
-      textBaseProgress="700 BNB/ 700 BNB"
-      baseProgress={20}
-      texts={texts}
-      slots={slots}
-    />
+    <Flex>
+      <div style={{ marginRight: 40, maxWidth: 548, width: "100%" }}>
+        <IGODetailProgressCard
+          checkedToggle={isChecked}
+          handleToggleChecked={handleToggleChecked}
+          textBaseProgress="700 BNB/ 700 BNB"
+          baseProgress={20}
+          texts={texts}
+          slots={slots}
+          status
+        />
+      </div>
+      <IGODetailProgressCard
+        checkedToggle={!isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="700 BNB/ 700 BNB"
+        baseProgress={20}
+        texts={texts}
+        slots={slots}
+        status={false}
+      />
+    </Flex>
   );
 };
