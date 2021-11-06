@@ -25,6 +25,7 @@ const IGOCard = ({
   totalVolume,
   texts,
   time,
+  handleView,
 }: IGOCardProps) => {
   return (
     <Wrapper>
@@ -71,7 +72,9 @@ const IGOCard = ({
           <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
         </ProgressBlock>
       )}
-      <ButtonStyle variant="green">{texts.button}</ButtonStyle>
+      <ButtonStyle onClick={handleView} variant="green">
+        {texts.button}
+      </ButtonStyle>
     </Wrapper>
   );
 };

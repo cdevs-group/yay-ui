@@ -36,7 +36,7 @@ export const StyledTooltip = styled.div`
     border-left: none;
     border-right: 1px solid #606060;
   }
-  
+
   &[data-popper-placement^="bottom"] > ${Arrow} {
     top: -5px;
   }

@@ -17,6 +17,7 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
   dataSlots: number[];
   currentVolume: number;
   totalVolume: number;
+  handleView: () => void;
   time: number;
   texts: {
     available: string;
@@ -67,4 +68,26 @@ export interface IGODetailProgressCardProps {
     availableWhitelistTooltip: string | React.ReactNode;
   };
   slots: SlotSummaryProps[];
+}
+export interface IGOCardInfoProps {
+  name: string;
+  status: string;
+  site: string;
+  tokenImg: string;
+  balance: string;
+  address: string;
+  networksTab: { value: number; img: string }[];
+  handleTab: (e: any) => void;
+  currentNetwork: number;
+  time: number;
+  externalLink: string;
+  texts: {
+    networks: string;
+    before: string;
+    summary: string;
+    button: string;
+    summaryText: string;
+    copied: string;
+  };
+  handleView: () => void;
 }
