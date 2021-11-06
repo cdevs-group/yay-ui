@@ -176,6 +176,7 @@ const TokenButton = styled(Button)`
 
     & svg {
       transform: rotate(135deg);
+      margin-top: -1px;
     }
   }
 `;
