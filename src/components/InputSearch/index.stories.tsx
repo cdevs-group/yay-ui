@@ -12,7 +12,7 @@ export const InputMain: React.FC = () => {
 
   return (
     <div>
-      <Input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Search" />
+      <Input name="search" value={value} onChange={(e) => setValue(e.target.value)} placeholder="Search" />
     </div>
   );
 };

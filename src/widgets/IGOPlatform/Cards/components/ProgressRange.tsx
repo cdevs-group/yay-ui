@@ -6,7 +6,6 @@ export interface ProgressRangeProps {
   bgTrack: string;
   progress: number;
   isError?: boolean;
-
   counter: string;
 }
 

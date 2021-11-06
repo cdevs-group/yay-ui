@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Toggle from "./Toggle";
+import BaseToggle from "./BaseToggle";
 import SwapButton from "./SwapButton";
 
 export default {
@@ -17,11 +18,14 @@ export const Default: React.FC = () => {
       <div style={{ marginBottom: "32px" }}>
         <Toggle checked={isChecked} onChange={toggle} />
       </div>
-      <div>
+      <div style={{ marginBottom: "32px" }}>
         <Toggle checked={isChecked} onChange={toggle} scale="sm" />
       </div>
-      <div>
+      <div style={{ marginBottom: "32px" }}>
         <SwapButton onClick={() => {}} />
+      </div>
+      <div>
+        <BaseToggle checked={isChecked} onChange={toggle} scale="sm" />
       </div>
     </>
   );
