@@ -16,6 +16,7 @@ interface MyTimerProps {
   widthWrapper?: string;
   fontSize?: string;
   hoursHide?: boolean;
+  withTime?: boolean;
 }
 interface MyLoaderProps {
   height?: string;
@@ -41,6 +42,7 @@ function MyTimer({
   widthWrapper,
   fontSize,
   hoursHide,
+  withTime,
 }: MyTimerProps) {
   const hours = Math.floor(expiryTimestamp / 3600);
   const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
@@ -53,6 +55,7 @@ function MyTimer({
   };
 
   const timeArray = hoursHide ? [minutes, seconds] : [hours, minutes, seconds];
+  const timeShow = ["h", "m", "s"];
   const pointsAfter = hoursHide ? 1 : 2;
 
   return (
@@ -67,9 +70,9 @@ function MyTimer({
       >
         {timeArray.map((item, i) => (
           <React.Fragment key={`item-${i}`}>
-            <ItemWithoutBg fontSize={fontSize} color={color}>
+            <ItemWithoutBg withTime={withTime} fontSize={fontSize} color={color}>
               {handleDigit(item).leftDigit}
-              {handleDigit(item).rightDigit}{" "}
+              {handleDigit(item).rightDigit} {withTime && timeShow[i]}
             </ItemWithoutBg>
             {i === pointsAfter ? null : (
               <DotsWithoutBg color={color} marginPoint={marginPoint}>
@@ -133,6 +136,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
   widthWrapper,
   fontSize,
   hoursHide,
+  withTime,
 }) => {
   return (
     <div style={{ width: `${widthWrapper ? widthWrapper : "auto"}` }}>
@@ -149,6 +153,7 @@ const TimerNotSolidWithoutBg: React.FC<TimerProps> = ({
           widthWrapper={widthWrapper}
           fontSize={fontSize}
           hoursHide={hoursHide}
+          withTime={withTime}
         />
       ) : (
         <LoadingTimer
@@ -182,13 +187,13 @@ const BlockWithoutBg = styled(Block)<TimerColorProps>`
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "11px")};
 `;
 
-const ItemWithoutBg = styled(Item)<{ color?: string; fontSize?: string }>`
+const ItemWithoutBg = styled(Item)<{ color?: string; fontSize?: string; withTime?: boolean }>`
   box-shadow: none;
   background: none;
   margin: 0;
   height: auto;
   width: 15px;
-  display: flex;
+  display: ${({ withTime }) => (withTime ? "contents" : "flex")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "11px")};
   color: ${({ color }) => (color ? color : "#fff")};
 `;

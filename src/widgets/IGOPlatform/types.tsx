@@ -4,6 +4,7 @@ export interface IProgress {
 }
 export interface IBlurStatus {
   statusText: React.ReactNode;
+  marginStatusText?: number;
 }
 export interface IGOCardProps extends IBlurStatus, IProgress {
   status: CardStatus;
@@ -14,15 +15,16 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
   handleTab: (e: any) => void;
   currentNetwork: number;
   dataSlots: number[];
-  statusTextVisible?: boolean;
   currentVolume: number;
   totalVolume: number;
+  time: number;
   texts: {
     available: string;
     networks: string;
     slots: string;
     progress: string;
     button: string;
+    timer: string;
   };
 }
 

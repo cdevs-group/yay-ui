@@ -1,5 +1,5 @@
 import React from "react";
-import { IGOCardProps } from "../types";
+import { CardStatus, IGOCardProps } from "../types";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
@@ -8,6 +8,8 @@ import NetworksTabs from "./components/NetworksTabs";
 import Slots from "./components/Slots";
 import BlurBlock from "./components/BlurBlock";
 import Progress from "./components/Progress";
+import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
+import { Status } from "../../Lobby";
 
 const IGOCard = ({
   status,
@@ -19,10 +21,10 @@ const IGOCard = ({
   currentNetwork,
   dataSlots,
   statusText,
-  statusTextVisible,
   currentVolume,
   totalVolume,
   texts,
+  time,
 }: IGOCardProps) => {
   return (
     <Wrapper>
@@ -44,20 +46,32 @@ const IGOCard = ({
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <div style={{ position: "relative" }}>
-        {statusTextVisible && <BlurBlock statusText={statusText} />}
-        <SlotsBlock>
-          <TitleBlock>{texts.slots}</TitleBlock>
-          <Slots dataSlots={dataSlots} />
-        </SlotsBlock>
+        {status !== CardStatus.OPEN_WHITELIST && (
+          <BlurBlock
+            marginStatusText={status === CardStatus.COMPLETED || status === CardStatus.CLAIMING ? 90 : 45}
+            statusText={statusText}
+          />
+        )}
+        {status === CardStatus.OPEN_WHITELIST && (
+          <SlotsBlock>
+            <TitleBlock>{texts.slots}</TitleBlock>
+            <Slots dataSlots={dataSlots} />
+          </SlotsBlock>
+        )}
       </div>
-
-      <ProgressBlock>
-        <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
-        <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
-      </ProgressBlock>
-      <Button width="100%" variant="green">
-        {texts.button}
-      </Button>
+      {status === CardStatus.OPEN_WHITELIST && (
+        <TimerBlock>
+          <TimerTitle>{texts.timer}</TimerTitle>
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
+      {[CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find((el) => el === status) && (
+        <ProgressBlock>
+          <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
+          <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
+        </ProgressBlock>
+      )}
+      <ButtonStyle variant="green">{texts.button}</ButtonStyle>
     </Wrapper>
   );
 };
@@ -65,7 +79,9 @@ const IGOCard = ({
 export default IGOCard;
 
 const Wrapper = styled.div`
+  position: relative;
   max-width: 360px;
+  height: 555px;
   padding: 25px 25px 33px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
@@ -133,6 +149,21 @@ const SlotsBlock = styled.div`
   position: relative;
 `;
 const ProgressBlock = styled.div`
-  margin-top: 20px;
+  margin-top: 43px;
   margin-bottom: 27px;
+`;
+const TimerBlock = styled.div`
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+`;
+const TimerTitle = styled(Text)`
+  color: ${({ theme }) => theme.colors.textGray};
+  font-size: 15px;
+  line-height: 100%;
+`;
+const ButtonStyle = styled(Button)`
+  position: absolute;
+  bottom: 33px;
+  width: calc(100% - 50px);
 `;

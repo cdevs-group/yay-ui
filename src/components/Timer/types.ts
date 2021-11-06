@@ -25,6 +25,7 @@ export interface TimerProps {
   widthWrapper?: string;
   fontSize?: string;
   hoursHide?: boolean;
+  withTime?: boolean;
 }
 
 export interface TimerSimpleProps {
