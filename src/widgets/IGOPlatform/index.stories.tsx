@@ -46,7 +46,11 @@ export const IGOCardBlock = () => {
         texts={texts}
         currentVolume={1000}
         totalVolume={1000}
-        statusText={<>CLAIMING IS <span>LIVE</span></>}
+        statusText={
+          <>
+            CLAIMING IS <span>LIVE</span>
+          </>
+        }
         statusTextVisible={false}
       />
     </div>

@@ -38,7 +38,9 @@ export declare const baseColors: {
     greenGradient3: string;
     greenRgba: string;
     greeanRgba2: string;
+    greenRgba3: string;
     redRgba: string;
+    redRgba2: string;
     textGray2: string;
     bgCard: string;
     bgCard2: string;
