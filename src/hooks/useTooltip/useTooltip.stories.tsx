@@ -252,7 +252,7 @@ export const FineTuning: React.FC = () => {
     tooltip: tooltipFineTuned,
   } = useTooltip("Didn't you know that 6 comes before 7?", {
     placement: "top-start",
-    arrowPadding: { right: 221 },
+    arrowPadding: { right: 200 },
     tooltipOffset: [0, -8],
   });
   return (

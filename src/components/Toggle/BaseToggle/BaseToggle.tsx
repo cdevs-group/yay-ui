@@ -3,10 +3,8 @@ import styled from "styled-components";
 import { ToggleProps } from "../types";
 
 const BaseToggle: React.FC<ToggleProps> = ({ checked, ...props }) => {
-  const isChecked = !!checked;
-
   return (
-    <StyledToggle checked={isChecked}>
+    <StyledToggle checked={!!checked}>
       <Input checked={checked} {...props} type="checkbox" />
       <Handle />
     </StyledToggle>

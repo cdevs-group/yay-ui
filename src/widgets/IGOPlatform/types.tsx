@@ -38,3 +38,31 @@ export enum CardStatus {
   CLAIMING = "Claiming",
   WHITELIST_SALE = "Whitelist Sale",
 }
+
+export interface TextWithTooltipProps {
+  text: string;
+  textTooltip: string | React.ReactNode;
+}
+
+export interface SlotSummaryProps {
+  text: string | React.ReactNode;
+  error?: boolean;
+  circleHidden?: boolean;
+}
+export interface IGODetailProgressCardProps {
+  checkedToggle: boolean;
+  handleToggleChecked: () => void;
+  textBaseProgress: string;
+  baseProgress: number;
+  texts: {
+    textBottomBaseProgress: string;
+    title: string;
+    whitelistToggle: string;
+    saleToggle: string;
+    slotsSummary: string;
+    slotsSummaryTooltip: string | React.ReactNode;
+    availableWhitelist: string;
+    availableWhitelistTooltip: string | React.ReactNode;
+  };
+  slots: SlotSummaryProps[];
+}
