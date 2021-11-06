@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProgressAVAX from "./ProgressAVAX";
 import ProgressRange from "./ProgressRange";
 import ProgressSteps from "./ProgressSteps";
+import ProgressWithText from "./ProgressWithText";
 
 export default {
   title: "Components/Progress",
@@ -56,6 +57,19 @@ export const ProgressStepsBlock = () => {
       </div>
       <div style={{ maxWidth: 800 }}>
         <ProgressSteps texts={texts} progress={50} stepsText={[]} />
+      </div>
+    </>
+  );
+};
+
+export const ProgressWithTextBlock = () => {
+  return (
+    <>
+      <div style={{ maxWidth: 800, marginBottom: 50 }}>
+        <ProgressWithText text="Whitelist Phase" progress={0} />
+      </div>
+      <div style={{ maxWidth: 800 }}>
+        <ProgressWithText text="700 BNB/ 700 BNB" progress={50} />
       </div>
     </>
   );

@@ -34,3 +34,8 @@ export interface ProgressAVAXProps {
     currentBlock: string;
   };
 }
+
+export interface ProgressWithTextProps {
+  progress: number;
+  text: string;
+}
