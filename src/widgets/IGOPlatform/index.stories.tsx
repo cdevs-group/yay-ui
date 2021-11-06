@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IGOCard } from "./index";
+import IGODetailProgressCard from "./Cards/IGODetailProgressCard";
 import { CardStatus, NetworksTab } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
 
@@ -55,5 +56,55 @@ export const IGOCardBlock = () => {
         }
       />
     </div>
+  );
+};
+
+export const IGODetailProgressCardBlock = () => {
+  const texts = {
+    textBottomBaseProgress: "8,235.2941 DESU per 1 BNB",
+    title: "Progress",
+    whitelistToggle: "Whitelist",
+    saleToggle: "Sale",
+    slotsSummary: "Slots summary:",
+    slotsSummaryTooltip: "Slots summary Tooltip",
+    availableWhitelist: "Available whitelist slots:",
+    availableWhitelistTooltip: "Available whitelist slots",
+  };
+
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleToggleChecked = () => setIsChecked(!isChecked);
+
+  const slots = [
+    {
+      text: "Zeus -  10000 DESU per 1 BNB for 100 YAY",
+      error: false,
+    },
+    {
+      text: "Hermes - 20000 DESU per 1 BNB  for 500 YAY",
+      error: true,
+    },
+    {
+      text: (
+        <>
+          Poseidon <span> Slot available in 136h : 22m : 32s</span>
+        </>
+      ),
+      error: false,
+    },
+    {
+      text: "Public  - 100000 DESU  per 1 BNB",
+      error: false,
+    },
+  ];
+  return (
+    <IGODetailProgressCard
+      checkedToggle={isChecked}
+      handleToggleChecked={handleToggleChecked}
+      textBaseProgress="700 BNB/ 700 BNB"
+      baseProgress={20}
+      texts={texts}
+      slots={slots}
+    />
   );
 };
