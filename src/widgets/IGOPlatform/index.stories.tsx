@@ -30,6 +30,7 @@ export const IGOCardBlock = () => {
     isLive: "is live",
     success: "successfully",
     sale: "sale",
+    timer: "Before start",
   };
 
   return (
@@ -41,17 +42,17 @@ export const IGOCardBlock = () => {
         networksTab={networksTab}
         amount="282,689,372.1176 DESU"
         tokenImg={DESU_TOKEN}
-        status={CardStatus.PUBLIC_SALE}
+        status={CardStatus.WHITELIST_SALE}
         token="DESU Token"
         texts={texts}
         currentVolume={1000}
         totalVolume={1000}
+        time={1000}
         statusText={
           <>
             CLAIMING IS <span>LIVE</span>
           </>
         }
-        statusTextVisible={false}
       />
     </div>
   );
