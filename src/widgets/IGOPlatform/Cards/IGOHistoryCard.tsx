@@ -17,7 +17,7 @@ const IGOHistoryCard: React.FC<IGOHistoryCardProps> = ({ texts, data }) => {
     }
   };
 
-  const getColorType= () => {
+  const getColorType = () => {
     switch (data.status) {
       case TypeHistory.UNSTACKING:
         return "darkPink";
@@ -40,8 +40,12 @@ const IGOHistoryCard: React.FC<IGOHistoryCardProps> = ({ texts, data }) => {
           {el}
         </Text>
       ))}
-      <Text color={getColorStatus()} textTransform="capitalize">{data.status}</Text>
-      <Text color={getColorType()} textTransform="capitalize">{data.type}</Text>
+      <Text color={getColorStatus()} textTransform="capitalize">
+        {data.status}
+      </Text>
+      <Text color={getColorType()} textTransform="capitalize">
+        {data.type}
+      </Text>
     </Card>
   );
 };

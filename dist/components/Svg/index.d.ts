@@ -35,6 +35,7 @@ export { default as ArrowTopRight } from "./Icons/ArrowTopRight";
 export { default as MenuIcon } from "./Icons/MenuIcon";
 export { default as ArrowDownIcon } from "./Icons/ArrowDownIcon";
 export { default as HelpIcon } from "./Icons/HelpIcon";
+export { default as HelpIcon2 } from "./Icons/HelpIcon2";
 export { default as PlayingCardsIcon } from "./Icons/PlayingCardsIcon";
 export { default as ErrorIcon } from "./Icons/ErrorIcon";
 export { default as ShareIcon } from "./Icons/ShareIcon";
