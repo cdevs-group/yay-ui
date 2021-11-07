@@ -7,7 +7,6 @@ import ProgressWithText from "../../../components/Progress/ProgressWithText";
 import { IGODetailProgressCardProps } from "../types";
 import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
-import ProgressRange from "./components/ProgressRange";
 import ProgressRange2 from "./components/ProgressRange2";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({

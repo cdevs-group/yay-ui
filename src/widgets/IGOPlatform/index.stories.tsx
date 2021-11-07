@@ -6,6 +6,7 @@ import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import IGOCardInfo from "./Cards/IGOCardInfo";
+import IGOHistoryCard from "./Cards/IGOHistoryCard";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -110,7 +111,11 @@ export const IGODetailProgressCardBlock = () => {
   ];
 
   const ButtonLeft = () => <Button variant="green">100 YAY</Button>;
-  const ButtonRight = () => <Button variant="green" disabled>1000 YAY</Button>;
+  const ButtonRight = () => (
+    <Button variant="green" disabled>
+      1000 YAY
+    </Button>
+  );
   const ButtonCenter = () => <Button variant="option">Staked</Button>;
   const ButtonLong = () => (
     <Button variant="green" width="100%">
@@ -135,7 +140,7 @@ export const IGODetailProgressCardBlock = () => {
         buttonCenter={<ButtonCenter />}
         progress={dataProgress}
         progressVisible={false}
-        descriptionsButtons={['ZEUS', 'HERMES', 'POSEIDON']}
+        descriptionsButtons={["ZEUS", "HERMES", "POSEIDON"]}
       />
 
       <IGODetailProgressCard
@@ -221,4 +226,48 @@ export const IGOCardInfoBlock = () => {
       />
     </div>
   );
+};
+
+export const IGOHistoryCardBlock = () => {
+  const texts = {
+    date: "Date",
+    allocations: "Allocations",
+    amount: "BNB amount",
+    tx: "TX",
+    status: "Status",
+    type: "Type",
+  };
+
+  const data = [
+    {
+      date: "04.11.2021",
+      allocations: "50000000 YAY",
+      amount: "123 BNB",
+      tx: "123 BNB",
+      status: "error",
+      type: "unstacking",
+    },
+    {
+      date: "04.11.2021",
+      allocations: "50000000 YAY",
+      amount: "123 BNB",
+      tx: "123 BNB",
+      status: "success",
+      type: "buy",
+    },
+    {
+      date: "04.11.2021",
+      allocations: "50000000 YAY",
+      amount: "123 BNB",
+      tx: "123 BNB",
+      status: "pending",
+      type: "buy",
+    },
+  ];
+
+  return data.map((el) => (
+    <div style={{ marginBottom: 8 }}>
+      <IGOHistoryCard texts={texts} data={el} />
+    </div>
+  ));
 };
