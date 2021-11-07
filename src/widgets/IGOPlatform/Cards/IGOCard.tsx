@@ -9,7 +9,6 @@ import Slots from "./components/Slots";
 import BlurBlock from "./components/BlurBlock";
 import Progress from "./components/Progress";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
-import { Status } from "../../Lobby";
 
 const IGOCard = ({
   status,
