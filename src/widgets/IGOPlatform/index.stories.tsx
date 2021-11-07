@@ -3,6 +3,8 @@ import { IGOCard } from "./index";
 import IGODetailProgressCard from "./Cards/IGODetailProgressCard";
 import { CardStatus, NetworksTab } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
 import IGOCardInfo from "./Cards/IGOCardInfo";
 
 export default {
@@ -73,6 +75,11 @@ export const IGODetailProgressCardBlock = () => {
     slotsSummaryTooltip: "Slots summary Tooltip",
     availableWhitelist: "Available whitelist slots:",
     availableWhitelistTooltip: "Available whitelist slots",
+    status: (
+      <>
+        PUBLIC sale <span>SOLD OUT</span>
+      </>
+    ),
   };
 
   const [isChecked, setIsChecked] = useState(false);
@@ -101,17 +108,68 @@ export const IGODetailProgressCardBlock = () => {
       error: false,
     },
   ];
+
+  const ButtonLeft = () => <Button variant="green">100 YAY</Button>;
+  const ButtonRight = () => <Button variant="green" disabled>1000 YAY</Button>;
+  const ButtonCenter = () => <Button variant="option">Staked</Button>;
+  const ButtonLong = () => (
+    <Button variant="green" width="100%">
+      Join public sale
+    </Button>
+  );
+
   return (
-    <IGODetailProgressCard
-      checkedToggle={isChecked}
-      handleToggleChecked={handleToggleChecked}
-      textBaseProgress="700 BNB/ 700 BNB"
-      baseProgress={20}
-      texts={texts}
-      slots={slots}
-    />
+    <Cards>
+      <IGODetailProgressCard
+        checkedToggle={isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="Whitelist Phase"
+        baseProgress={0}
+        texts={texts}
+        slots={slots}
+        status
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
+      />
+
+      <IGODetailProgressCard
+        checkedToggle={isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="700 BNB/ 700 BNB"
+        baseProgress={20}
+        texts={texts}
+        slots={[slots[0]]}
+        status
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
+      />
+
+      <IGODetailProgressCard
+        checkedToggle={!isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="700 BNB/ 700 BNB"
+        baseProgress={100}
+        texts={texts}
+        slots={slots}
+        status={false}
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
+      />
+    </Cards>
   );
 };
+
+const Cards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+`;
 
 export const IGOCardInfoBlock = () => {
   const networksTab = [
