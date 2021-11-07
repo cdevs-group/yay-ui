@@ -25,6 +25,8 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   progressVisible,
   descriptionsButtons,
 }) => {
+  const buttonsList = [buttonLeft, buttonCenter, buttonRight];
+
   return (
     <Card>
       <FlexTop>
@@ -54,26 +56,22 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
       <div style={{ marginBottom: 30 }} />
-      {progressVisible ? (
-        <Grid margin="auto 0 12px">
-          {progress.map((el) => (
-            <ProgressRange2 progress={el} />
-          ))}
-        </Grid>
-      ) : (
-        <Grid margin="auto 0 5px">
-          {descriptionsButtons?.map((el) => (
-            <Text fontSize="13px" textAlign="center">
-              {el}
-            </Text>
-          ))}
-        </Grid>
-      )}
       <Grid>
-        {buttonLeft}
-        {buttonCenter}
-        {buttonRight}
-      </Grid>
+        {buttonsList.map((el, i) => (
+          <div>
+            {progressVisible ? (
+              <div style={{ marginBottom: 12 }}>
+                <ProgressRange2 progress={progress[i]} />
+              </div>
+            ) : (
+              <Text fontSize="13px" textAlign="center" mb="5px">
+                {descriptionsButtons?.[i]}
+              </Text>
+            )}
+            {el}
+          </div>
+        ))}
+      </Grid>      
       {buttonLong}
     </Card>
   );
@@ -89,6 +87,7 @@ const Card = styled.div`
   padding: 32px 22px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  margin: 0 auto;
 `;
 
 const FlexTop = styled(Flex)`
@@ -114,12 +113,12 @@ const Status = styled(Text)`
   }
 `;
 
-const Grid = styled.div<{ margin?: string }>`
+const Grid = styled.div`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(1, 1fr);
-  margin: ${({ margin }) => margin || "0 0 14px"};
-
+  margin-top: auto;
+  margin-bottom: 14px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(3, 1fr);
   }

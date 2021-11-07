@@ -87,6 +87,7 @@ const Card = styled.div`
   padding: 32px 22px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  margin: 0 auto;
 `;
 const HeadLine = styled(Flex)`
   align-items: center;
