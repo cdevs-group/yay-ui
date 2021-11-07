@@ -100,3 +100,33 @@ export interface IGOCardInfoProps {
   };
   handleView: () => void;
 }
+
+export interface IGOHistoryCardProps {
+  texts: {
+    date: string;
+    allocations: string;
+    amount: string;
+    tx: string;
+    status: string;
+    type: string;
+  };
+  data: {
+    date: string;
+    allocations: string;
+    amount: string;
+    tx: string;
+    status: string;
+    type: string;
+  };
+}
+
+export enum StatusHistory {
+  ERROR = "error",
+  SUCCESS = "success",
+  PENDING = "pending",
+}
+
+export enum TypeHistory {
+  BUY = "buy",
+  UNSTACKING = "unstacking",
+}
