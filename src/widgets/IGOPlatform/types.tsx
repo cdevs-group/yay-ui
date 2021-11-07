@@ -74,6 +74,9 @@ export interface IGODetailProgressCardProps {
   buttonCenter: React.ReactNode;
   buttonRight: React.ReactNode;
   buttonLong: React.ReactNode;
+  progress: number[];
+  progressVisible?: boolean;
+  descriptionsButtons?: string[];
 }
 export interface IGOCardInfoProps {
   name: string;

@@ -7,6 +7,8 @@ import ProgressWithText from "../../../components/Progress/ProgressWithText";
 import { IGODetailProgressCardProps } from "../types";
 import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
+import ProgressRange from "./components/ProgressRange";
+import ProgressRange2 from "./components/ProgressRange2";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
@@ -20,6 +22,9 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   buttonCenter,
   buttonRight,
   buttonLong,
+  progress,
+  progressVisible,
+  descriptionsButtons,
 }) => {
   return (
     <Card>
@@ -49,11 +54,27 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         ))}
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
-      <Buttons>
+      <div style={{ marginBottom: 30 }} />
+      {progressVisible ? (
+        <Grid margin="auto 0 12px">
+          {progress.map((el) => (
+            <ProgressRange2 progress={el} />
+          ))}
+        </Grid>
+      ) : (
+        <Grid margin="auto 0 5px">
+          {descriptionsButtons?.map((el) => (
+            <Text fontSize="13px" textAlign="center">
+              {el}
+            </Text>
+          ))}
+        </Grid>
+      )}
+      <Grid>
         {buttonLeft}
         {buttonCenter}
         {buttonRight}
-      </Buttons>
+      </Grid>
       {buttonLong}
     </Card>
   );
@@ -62,6 +83,8 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
 export default IGODetailProgressCard;
 
 const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 548px;
   width: 100%;
   padding: 32px 22px;
@@ -92,12 +115,13 @@ const Status = styled(Text)`
   }
 `;
 
-const Buttons = styled.div`
+const Grid = styled.div<{ margin?: string }>`
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(1, 1fr);
-  margin-bottom: 14px;
+  margin: ${({ margin }) => margin || "0 0 14px"};
+
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(3, 1fr);
   }
-`
+`;
