@@ -1,1 +1,1 @@
-export { default } from './BaseToggle'
+export { default } from "./BaseToggle";
