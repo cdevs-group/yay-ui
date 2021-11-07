@@ -117,6 +117,7 @@ export const IGODetailProgressCardBlock = () => {
       Join public sale
     </Button>
   );
+  const dataProgress = [0, 80, 100];
 
   return (
     <Cards>
@@ -132,6 +133,9 @@ export const IGODetailProgressCardBlock = () => {
         buttonRight={<ButtonRight />}
         buttonLong={<ButtonLong />}
         buttonCenter={<ButtonCenter />}
+        progress={dataProgress}
+        progressVisible={false}
+        descriptionsButtons={['ZEUS', 'HERMES', 'POSEIDON']}
       />
 
       <IGODetailProgressCard
@@ -146,6 +150,8 @@ export const IGODetailProgressCardBlock = () => {
         buttonRight={<ButtonRight />}
         buttonLong={<ButtonLong />}
         buttonCenter={<ButtonCenter />}
+        progress={dataProgress}
+        progressVisible
       />
 
       <IGODetailProgressCard
@@ -160,6 +166,8 @@ export const IGODetailProgressCardBlock = () => {
         buttonRight={<ButtonRight />}
         buttonLong={<ButtonLong />}
         buttonCenter={<ButtonCenter />}
+        progress={dataProgress}
+        progressVisible
       />
     </Cards>
   );
