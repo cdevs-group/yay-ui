@@ -8993,7 +8993,7 @@ var IGOCardInfo = function (_a) {
             React__default['default'].createElement(SummaryText, null, texts.summaryText)),
         React__default['default'].createElement(ButtonStyle, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Card$2 = styled__default['default'].div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  max-width: 548px;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n"], ["\n  max-width: 548px;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n"])), function (_a) {
+var Card$2 = styled__default['default'].div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  max-width: 548px;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"], ["\n  max-width: 548px;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
@@ -9123,6 +9123,7 @@ var templateObject_1$3, templateObject_2$2;
 
 var IGODetailProgressCard = function (_a) {
     var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons;
+    var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default['default'].createElement(Card$1, null,
         React__default['default'].createElement(FlexTop, null,
             React__default['default'].createElement(Text, { fontSize: "17px" }, texts.title),
@@ -9138,14 +9139,13 @@ var IGODetailProgressCard = function (_a) {
         React__default['default'].createElement(Slots, null, slots.map(function (el) { return (React__default['default'].createElement(SlotSummary, { text: el.text, error: el.error, circleHidden: (slots === null || slots === void 0 ? void 0 : slots.length) <= 1 })); })),
         React__default['default'].createElement(TextWithTooltip, { text: texts.availableWhitelist, textTooltip: texts.availableWhitelistTooltip }),
         React__default['default'].createElement("div", { style: { marginBottom: 30 } }),
-        progressVisible ? (React__default['default'].createElement(Grid, { margin: "auto 0 12px" }, progress.map(function (el) { return (React__default['default'].createElement(ProgressRange2, { progress: el })); }))) : (React__default['default'].createElement(Grid, { margin: "auto 0 5px" }, descriptionsButtons === null || descriptionsButtons === void 0 ? void 0 : descriptionsButtons.map(function (el) { return (React__default['default'].createElement(Text, { fontSize: "13px", textAlign: "center" }, el)); }))),
-        React__default['default'].createElement(Grid, null,
-            buttonLeft,
-            buttonCenter,
-            buttonRight),
+        React__default['default'].createElement(Grid, null, buttonsList.map(function (el, i) { return (React__default['default'].createElement("div", null,
+            progressVisible ? (React__default['default'].createElement("div", { style: { marginBottom: 12 } },
+                React__default['default'].createElement(ProgressRange2, { progress: progress[i] }))) : (React__default['default'].createElement(Text, { fontSize: "13px", textAlign: "center", mb: "5px" }, descriptionsButtons === null || descriptionsButtons === void 0 ? void 0 : descriptionsButtons[i])),
+            el)); })),
         buttonLong));
 };
-var Card$1 = styled__default['default'].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n"])), function (_a) {
+var Card$1 = styled__default['default'].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
@@ -9155,10 +9155,7 @@ var Status = styled__default['default'](Text)(templateObject_4 || (templateObjec
     var theme = _a.theme;
     return theme.colors.green;
 });
-var Grid = styled__default['default'].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 10px;\n  grid-template-columns: repeat(1, 1fr);\n  margin: ", ";\n\n  ", " {\n    grid-template-columns: repeat(3, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-gap: 10px;\n  grid-template-columns: repeat(1, 1fr);\n  margin: ", ";\n\n  ", " {\n    grid-template-columns: repeat(3, 1fr);\n  }\n"])), function (_a) {
-    var margin = _a.margin;
-    return margin || "0 0 14px";
-}, function (_a) {
+var Grid = styled__default['default'].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  display: grid;\n  grid-gap: 10px;\n  grid-template-columns: repeat(1, 1fr);\n  margin-top: auto;\n  margin-bottom: 14px;\n  ", " {\n    grid-template-columns: repeat(3, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-gap: 10px;\n  grid-template-columns: repeat(1, 1fr);\n  margin-top: auto;\n  margin-bottom: 14px;\n  ", " {\n    grid-template-columns: repeat(3, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });

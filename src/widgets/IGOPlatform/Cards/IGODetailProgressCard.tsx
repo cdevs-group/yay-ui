@@ -71,7 +71,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
             {el}
           </div>
         ))}
-      </Grid>      
+      </Grid>
       {buttonLong}
     </Card>
   );
