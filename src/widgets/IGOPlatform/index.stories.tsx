@@ -5,7 +5,7 @@ import { CardStatus, NetworksTab } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
-import IGOCardInfo from "./Cards/IGOCardInfo";
+import IGODetailCard from "./Cards/IGODetailCard";
 import IGOHistoryCard from "./Cards/IGOHistoryCard";
 
 export default {
@@ -62,6 +62,94 @@ export const IGOCardBlock = () => {
           </>
         }
       />
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.PUBLIC_SALE}
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <>
+              CLAIMING IS <span>LIVE</span>
+            </>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.OPEN_WHITELIST}
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <>
+              CLAIMING IS <span>LIVE</span>
+            </>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.COMPLETED}
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <>
+              CLAIMING IS <span>LIVE</span>
+            </>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.CLAIMING}
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <>
+              CLAIMING IS <span>LIVE</span>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };
@@ -184,7 +272,7 @@ const Cards = styled.div`
   grid-gap: 30px;
 `;
 
-export const IGOCardInfoBlock = () => {
+export const IGOCardDetailsBlock = () => {
   const networksTab = [
     { value: NetworksTab.BSC, img: BSC_ICON },
     { value: NetworksTab.AVAX, img: BSC_ICON },
@@ -196,6 +284,8 @@ export const IGOCardInfoBlock = () => {
   };
 
   const texts = {
+    status: "PUBLIC",
+    isLive: "SALE IS LIVE",
     networks: "Available Networks:",
     before: "Before IGO countdown:",
     summary: "Project summary:",
@@ -209,7 +299,7 @@ export const IGOCardInfoBlock = () => {
   };
   return (
     <div>
-      <IGOCardInfo
+      <IGODetailCard
         name="DESU Token"
         status="Public Sale"
         site="DEXSPORT.io"
@@ -222,8 +312,27 @@ export const IGOCardInfoBlock = () => {
         time={1000}
         texts={texts}
         handleView={handleView}
+        withTimer={false}
         externalLink="https://github.com/cdevs-group/yay-ui/pull/197"
       />
+      <div style={{ marginTop: "50px" }}>
+        <IGODetailCard
+          name="DESU Token"
+          status="Public Sale"
+          site="DEXSPORT.io"
+          tokenImg={DESU_TOKEN}
+          balance="282,689,372.1176 DESU"
+          address="0x524df384bffb18c0c8f3f43d012011f8f9795579"
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          time={1000}
+          texts={texts}
+          handleView={handleView}
+          withTimer
+          externalLink="https://github.com/cdevs-group/yay-ui/pull/197"
+        />
+      </div>
     </div>
   );
 };

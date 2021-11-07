@@ -97,8 +97,11 @@ export interface IGOCardInfoProps {
     button: string;
     summaryText: string;
     copied: string;
+    isLive: string;
+    status: string;
   };
   handleView: () => void;
+  withTimer: boolean;
 }
 
 export interface IGOHistoryCardProps {

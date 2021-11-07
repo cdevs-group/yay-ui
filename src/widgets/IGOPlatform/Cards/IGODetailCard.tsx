@@ -8,7 +8,7 @@ import { ArrowLeft, CopyIcon } from "../../../components/Svg";
 import NetworksTabs from "./components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 
-const IGOCardInfo = ({
+const IGODetailCard = ({
   name,
   status,
   site,
@@ -22,6 +22,7 @@ const IGOCardInfo = ({
   texts,
   handleView,
   externalLink,
+  withTimer,
 }: IGOCardInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
   return (
@@ -66,9 +67,18 @@ const IGOCardInfo = ({
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <TimerBlock>
-        <TitleBlock marginBottom="5px">{texts.before}</TitleBlock>
-        <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        {withTimer ? (
+          <>
+            <TitleBlock marginBottom="5px">{texts.before}</TitleBlock>
+            <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+          </>
+        ) : (
+          <StatusStyle>
+            {texts.status} <span>{texts.isLive}</span>
+          </StatusStyle>
+        )}
       </TimerBlock>
+
       <SummaryBlock>
         <TitleBlock marginBottom="5px">{texts.summary}</TitleBlock>
         <SummaryText>{texts.summaryText}</SummaryText>
@@ -80,7 +90,7 @@ const IGOCardInfo = ({
   );
 };
 
-export default IGOCardInfo;
+export default IGODetailCard;
 
 const Card = styled.div`
   max-width: 548px;
@@ -117,6 +127,7 @@ const StatusName = styled(Text)`
 `;
 
 const SiteToken = styled(Text)`
+  margin-top: 37px;
   font-weight: normal;
   font-size: 21px;
   line-height: 100%;
@@ -167,8 +178,8 @@ const TokenButton = styled(Button)`
   background: ${({ theme }) => theme.colors.whiteRgba};
 
   & svg {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 
   &:last-child {
@@ -176,7 +187,10 @@ const TokenButton = styled(Button)`
 
     & svg {
       transform: rotate(135deg);
-      margin-top: -1px;
+      margin-top: -3px;
+      margin-left: -1px;
+      width: 15px;
+      height: 15px;
     }
   }
 `;
@@ -226,4 +240,13 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
 const Buttons = styled(Flex)`
   position: relative;
   justify-content: space-between;
+`;
+const StatusStyle = styled(Text)`
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  & span {
+    color: ${({ theme }) => theme.colors.green};
+  }
 `;
