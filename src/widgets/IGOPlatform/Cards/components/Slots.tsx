@@ -1,5 +1,5 @@
 import ProgressRange from "./ProgressRange";
-import { baseColors } from "../../../../theme/colors";
+import { darkColors } from "../../../../theme/colors";
 import React from "react";
 import styled from "styled-components";
 import { Flex } from "../../../../components/Box";
@@ -12,7 +12,7 @@ const Slots = ({ dataSlots }: { dataSlots: number[] }) => {
           <ProgressRange
             counter={item.toString()}
             isError={item === 0}
-            bgTrack={item === 0 ? baseColors.redRgba2 : baseColors.greenRgba3}
+            bgTrack={darkColors.buttonBg}
             progress={item === 0 ? 100 : item}
           />
         </Slot>

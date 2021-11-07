@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../../../components/Text";
 import { IBlurStatus } from "../../types";
+import { Flex } from "../../../../components/Box";
 
-const BlurBlock = ({ statusText }: IBlurStatus) => {
+const BlurBlock = ({ statusText, marginStatusText }: IBlurStatus) => {
   return (
-    <Wrap>
+    <Wrap position={marginStatusText === 45 ? "relative" : "absolute"} marginTop={`${marginStatusText}px`}>
       <TextStyle>{statusText}</TextStyle>
     </Wrap>
   );
@@ -13,11 +14,9 @@ const BlurBlock = ({ statusText }: IBlurStatus) => {
 
 export default BlurBlock;
 
-const Wrap = styled.div`
-  position: absolute;
+const Wrap = styled(Flex)`
   left: 0;
   top: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;

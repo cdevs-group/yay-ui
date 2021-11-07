@@ -76,7 +76,10 @@ const ProgressThumb = styled.div`
   height: 15px;
   background: ${({ theme }) => theme.colors.text};
   border-radius: 50%;
-
+  & svg {
+    width: 10px;
+    height: 7px;
+  }
   &::before {
     content: "";
     position: absolute;
