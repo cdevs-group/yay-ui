@@ -67,5 +67,8 @@ export interface IGODetailProgressCardProps {
   };
   slots: SlotSummaryProps[];
   status?: boolean;
-  
+  buttonLeft: React.ReactNode;
+  buttonCenter: React.ReactNode;
+  buttonRight: React.ReactNode;
+  buttonLong: React.ReactNode;
 }

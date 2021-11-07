@@ -16,6 +16,10 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   texts,
   slots,
   status,
+  buttonLeft,
+  buttonCenter,
+  buttonRight,
+  buttonLong,
 }) => {
   return (
     <Card>
@@ -45,6 +49,12 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         ))}
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
+      <Buttons>
+        {buttonLeft}
+        {buttonCenter}
+        {buttonRight}
+      </Buttons>
+      {buttonLong}
     </Card>
   );
 };
@@ -81,3 +91,13 @@ const Status = styled(Text)`
     color: ${({ theme }) => theme.colors.green};
   }
 `;
+
+const Buttons = styled.div`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-bottom: 14px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`

@@ -3,7 +3,8 @@ import { IGOCard } from "./index";
 import IGODetailProgressCard from "./Cards/IGODetailProgressCard";
 import { CardStatus, NetworksTab } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
-import { Flex } from "../..";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -103,28 +104,64 @@ export const IGODetailProgressCardBlock = () => {
     },
   ];
 
+  const ButtonLeft = () => <Button variant="green">100 YAY</Button>;
+  const ButtonRight = () => <Button variant="green" disabled>1000 YAY</Button>;
+  const ButtonCenter = () => <Button variant="option">Staked</Button>;
+  const ButtonLong = () => (
+    <Button variant="green" width="100%">
+      Join public sale
+    </Button>
+  );
+
   return (
-    <Flex>
-      <div style={{ marginRight: 40, maxWidth: 548, width: "100%" }}>
-        <IGODetailProgressCard
-          checkedToggle={isChecked}
-          handleToggleChecked={handleToggleChecked}
-          textBaseProgress="700 BNB/ 700 BNB"
-          baseProgress={20}
-          texts={texts}
-          slots={slots}
-          status
-        />
-      </div>
+    <Cards>
       <IGODetailProgressCard
-        checkedToggle={!isChecked}
+        checkedToggle={isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="Whitelist Phase"
+        baseProgress={0}
+        texts={texts}
+        slots={slots}
+        status
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
+      />
+
+      <IGODetailProgressCard
+        checkedToggle={isChecked}
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="700 BNB/ 700 BNB"
         baseProgress={20}
         texts={texts}
+        slots={[slots[0]]}
+        status
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
+      />
+
+      <IGODetailProgressCard
+        checkedToggle={!isChecked}
+        handleToggleChecked={handleToggleChecked}
+        textBaseProgress="700 BNB/ 700 BNB"
+        baseProgress={100}
+        texts={texts}
         slots={slots}
         status={false}
+        buttonLeft={<ButtonLeft />}
+        buttonRight={<ButtonRight />}
+        buttonLong={<ButtonLong />}
+        buttonCenter={<ButtonCenter />}
       />
-    </Flex>
+    </Cards>
   );
 };
+
+const Cards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+`;
