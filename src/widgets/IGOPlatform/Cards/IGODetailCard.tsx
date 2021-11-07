@@ -4,9 +4,11 @@ import { IGOCardInfoProps } from "../types";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { Button } from "../../../components/Button";
-import { ArrowLeft, CopyIcon } from "../../../components/Svg";
+import { ArrowLeft } from "../../../components/Svg";
 import NetworksTabs from "./components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
+import CopyButton from "./components/CopyButton";
+import { Tooltip } from "./style";
 
 const IGODetailCard = ({
   name,
@@ -31,29 +33,17 @@ const IGODetailCard = ({
         <TokenName>{name}</TokenName>
         <StatusName>{status}</StatusName>
       </HeadLine>
-      <SiteToken>{site}</SiteToken>
+      <SiteToken>{site}</SiteToken>{" "}
       <TokenInfoBlock>
         <TokenLogo>
-          <img src={tokenImg} />
+          <img src={tokenImg} alt="token" />
         </TokenLogo>
         <TokenInfo>
           <TokenBalance>{balance}</TokenBalance>
           <AddressLine>
             <TokenAddress>{address}</TokenAddress>
             <Buttons>
-              <TokenButton
-                onClick={() => {
-                  if (navigator.clipboard) {
-                    navigator.clipboard.writeText(address);
-                    setIsTooltipDisplayed(true);
-                    setTimeout(() => {
-                      setIsTooltipDisplayed(false);
-                    }, 1000);
-                  }
-                }}
-              >
-                <CopyIcon />
-              </TokenButton>
+              <CopyButton textCopy={address} setIsTooltipDisplayed={setIsTooltipDisplayed} />
               <TokenButton target="_blank" as="a" href={externalLink}>
                 <ArrowLeft />
               </TokenButton>
@@ -78,7 +68,6 @@ const IGODetailCard = ({
           </StatusStyle>
         )}
       </TimerBlock>
-
       <SummaryBlock>
         <TitleBlock marginBottom="5px">{texts.summary}</TitleBlock>
         <SummaryText>{texts.summaryText}</SummaryText>
@@ -92,23 +81,32 @@ const IGODetailCard = ({
 
 export default IGODetailCard;
 
-const Card = styled.div`
+const Card = styled(Flex)`
   max-width: 548px;
-  padding: 32px 22px;
+  display: block;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 32px 22px;
+  }
 `;
 const HeadLine = styled(Flex)`
   align-items: center;
   justify-content: space-between;
 `;
 const TokenName = styled(Text)`
-  font-size: 17px;
+  font-size: 15px;
   line-height: 100%;
   color: ${({ theme }) => theme.colors.textGray};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 17px;
+  }
 `;
 const StatusName = styled(Text)`
-  font-size: 15px;
+  font-size: 13px;
   line-height: 100%;
   color: ${({ theme }) => theme.colors.green};
   position: relative;
@@ -124,20 +122,26 @@ const StatusName = styled(Text)`
     top: 50%;
     background: ${({ theme }) => theme.colors.green};
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  }
 `;
 
 const SiteToken = styled(Text)`
   margin-top: 37px;
   font-weight: normal;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 100%;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 21px;
+  }
 `;
 const TokenInfoBlock = styled(Flex)`
+  align-items: center;
   margin-top: 36px;
-  padding: 27px 20px;
+  padding: 20px 15px 20px 15px;
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
-  align-items: center;
 `;
 const TokenLogo = styled.div`
   & img {
@@ -146,13 +150,17 @@ const TokenLogo = styled.div`
   }
 `;
 const TokenInfo = styled.div`
-  margin-left: 10px;
+  padding-right: 55px;
   width: 100%;
+  margin-left: 10px;
 `;
 const TokenBalance = styled(Text)`
   font-weight: normal;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 100%;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 17px;
+  } ;
 `;
 const AddressLine = styled(Flex)`
   position: relative;
@@ -166,6 +174,9 @@ const TokenAddress = styled(Text)`
   line-height: 15px;
   letter-spacing: 0.08em;
   color: ${({ theme }) => theme.colors.textGray};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 const TokenButton = styled(Button)`
   width: 20px;
@@ -176,23 +187,16 @@ const TokenButton = styled(Button)`
   align-items: center;
   border-radius: 5px;
   background: ${({ theme }) => theme.colors.whiteRgba};
+  margin-left: 15px;
 
   & svg {
-    width: 12px;
-    height: 12px;
+    transform: rotate(135deg);
+    margin-top: -3px;
+    margin-left: -1px;
+    width: 15px;
+    height: 15px;
   }
-
-  &:last-child {
-    margin-left: 15px;
-
-    & svg {
-      transform: rotate(135deg);
-      margin-top: -3px;
-      margin-left: -1px;
-      width: 15px;
-      height: 15px;
-    }
-  }
+}
 `;
 const NetworkBlock = styled.div`
   margin-top: 20px;
@@ -200,9 +204,12 @@ const NetworkBlock = styled.div`
 const TitleBlock = styled(Text)`
   margin-bottom: 20px;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 11px;
   line-height: 100%;
   color: ${({ theme }) => theme.colors.textGray};
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 13px;
+  }
 `;
 const TimerBlock = styled(Flex)`
   margin-top: 20px;
@@ -218,35 +225,31 @@ const SummaryBlock = styled.div`
 `;
 const SummaryText = styled(Text)`
   font-weight: normal;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 22px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
+  }
 `;
 const ButtonStyle = styled(Button)`
   width: 100%;
   margin-top: 35px;
 `;
-const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
-  display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};
-  position: absolute;
-  bottom: -22px;
-  right: 0;
-  left: 0;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.contrast};
-  color: ${({ theme }) => theme.colors.invertedContrast};
-  border-radius: 16px;
-  opacity: 0.7;
-`;
+
 const Buttons = styled(Flex)`
-  position: relative;
   justify-content: space-between;
+  margin-left: 10px;
 `;
 const StatusStyle = styled(Text)`
   margin-bottom: 20px;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 19px;
   letter-spacing: 0.05em;
+
   & span {
     color: ${({ theme }) => theme.colors.green};
+  }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 15px;
   }
 `;

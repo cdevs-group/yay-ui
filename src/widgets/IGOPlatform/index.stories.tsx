@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { IGOCard } from "./index";
 import IGODetailProgressCard from "./Cards/IGODetailProgressCard";
 import { CardStatus, NetworksTab } from "./types";
-import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
+import { BSC_ICON, DESU_TOKEN, MAIN_GAME } from "../../constants/images";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import IGODetailCard from "./Cards/IGODetailCard";
 import IGOHistoryCard from "./Cards/IGOHistoryCard";
+import IGOSubscriptionCard from "./Cards/IGOSubscriptionCard";
+import IGOInfoCard from "./Cards/IGOInfoCard";
+import InfoBoard from "./InfoBoard";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -313,7 +316,7 @@ export const IGOCardDetailsBlock = () => {
         texts={texts}
         handleView={handleView}
         withTimer={false}
-        externalLink="https://github.com/cdevs-group/yay-ui/pull/197"
+        externalLink="/"
       />
       <div style={{ marginTop: "50px" }}>
         <IGODetailCard
@@ -330,7 +333,7 @@ export const IGOCardDetailsBlock = () => {
           texts={texts}
           handleView={handleView}
           withTimer
-          externalLink="https://github.com/cdevs-group/yay-ui/pull/197"
+          externalLink="/"
         />
       </div>
     </div>
@@ -379,4 +382,81 @@ export const IGOHistoryCardBlock = () => {
       <IGOHistoryCard texts={texts} data={el} />
     </div>
   ));
+};
+
+export const IGOSubscriptionCardBlock = () => {
+  const texts = {
+    title: "Subscription Info",
+    totalSale: "Total Tokens for Sales",
+    rate: "Rate",
+    private: "Private Start",
+    public: "Public Start",
+    end: "End",
+    soft: "Soft Cap",
+    hard: "Hard Cap",
+    minPurchased: "Min Purchase",
+    maxPurchased: "Max Purchase",
+    vesting: "Vesting Schedule",
+  };
+
+  return (
+    <div>
+      <IGOSubscriptionCard
+        totalSale="5,742,345.42345612 i BFR"
+        rate="8,235.2932 iBFR = 1 BNB"
+        privateDate="20/09/2021"
+        publicDate="20/09/2021"
+        endDate="20/09/2021"
+        softCap="244 BNB"
+        hardCap="700 BNB"
+        minPurchased="2.8 BNB"
+        maxPurchased="2.8 BNB"
+        vestingStatus="Refer to project details"
+        texts={texts}
+      />
+    </div>
+  );
+};
+
+export const IGOInfoCardBlock = () => {
+  const texts = {
+    title: "Token Info",
+    name: "Name",
+    address: "Address",
+    copied: "Copied",
+    liquid: "Liquidity Provision",
+    initial: "Initial Liquidity",
+    lock: "Lock Duration",
+    status: "Status",
+    link: "Link",
+  };
+
+  return (
+    <div>
+      <IGOInfoCard
+        tokenName="iBuffer Token"
+        address="0x524df384bffb18c0c8f3f43d012011f8f9795579"
+        initial="244 BNB + 1,333,400 iBFR"
+        lockDuration="6 month"
+        status="Status"
+        texts={texts}
+        link="/"
+      />
+    </div>
+  );
+};
+
+export const InfoBoardBlock = () => {
+  const texts = {
+    title: "Title",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
+    description2:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
+  };
+  return (
+    <div>
+      <InfoBoard texts={texts} images={[MAIN_GAME, "", "", ""]} imgMain={MAIN_GAME} />
+    </div>
+  );
 };
