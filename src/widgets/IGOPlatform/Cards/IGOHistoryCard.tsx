@@ -21,7 +21,7 @@ const IGOHistoryCard: React.FC<IGOHistoryCardProps> = ({ texts, data }) => {
     switch (data.status) {
       case TypeHistory.UNSTACKING:
         return "darkPink";
-      case TypeHistory.UNSTACKING:
+      case TypeHistory.BUY:
         return "green";
       default:
         return "text";
