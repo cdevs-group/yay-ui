@@ -104,6 +104,7 @@ export interface IGOCardInfoProps {
   };
   handleView: () => void;
   withTimer: boolean;
+  width: number;
 }
 
 export interface IGOHistoryCardProps {
@@ -179,6 +180,7 @@ export interface IGOInfoCardProps {
     status: string;
     link: string;
   };
+  width: number;
 }
 export interface InfoBoardProps {
   imgMain: string;

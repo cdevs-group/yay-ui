@@ -28,9 +28,9 @@ const IGODetailCard = ({
   handleView,
   externalLink,
   withTimer,
+  width,
 }: IGOCardInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
-  const { width } = useWindowDimensions();
 
   return (
     <Card>

@@ -4,8 +4,10 @@ import { IGOInfoCardProps } from "../types";
 import CopyButton from "./components/CopyButton";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
+import useWindowDimensions from "../../../hooks/useResize";
+import { ellipsis } from "../../../helpers/ellipsis";
 
-const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, texts }: IGOInfoCardProps) => {
+const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, texts, width }: IGOInfoCardProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
@@ -19,7 +21,7 @@ const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, 
       </Row>
       <Row>
         <CopyBlock>
-          <TitleBlock>{texts.address}</TitleBlock>
+          <TitleBlock>{width && width < 560 ? ellipsis(address, 5) : address}</TitleBlock>
           <ValueBlockCopy>{address}</ValueBlockCopy>
           <CopyButton setIsTooltipDisplayed={setIsTooltipDisplayed} textCopy={address} />
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{texts.copied}</Tooltip>

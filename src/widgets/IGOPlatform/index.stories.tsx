@@ -329,6 +329,7 @@ export const IGOCardDetailsBlock = () => {
         handleView={handleView}
         withTimer={false}
         externalLink="/"
+        width={500}
       />
       <div style={{ marginTop: "50px" }}>
         <IGODetailCard
@@ -346,6 +347,7 @@ export const IGOCardDetailsBlock = () => {
           handleView={handleView}
           withTimer
           externalLink="/"
+          width={500}
         />
       </div>
     </div>
@@ -453,6 +455,7 @@ export const IGOInfoCardBlock = () => {
         status="Status"
         texts={texts}
         link="/"
+        width={500}
       />
     </div>
   );
