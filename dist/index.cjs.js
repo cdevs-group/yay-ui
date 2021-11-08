@@ -9172,7 +9172,7 @@ var ButtonStyle$1 = styled__default['default'](Button$a)(templateObject_1$6 || (
 });
 var templateObject_1$6;
 
-var Card$1 = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  max-width: 548px;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"], ["\n  max-width: 548px;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"])), function (_a) {
+var Card$1 = styled__default['default'].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  max-width: 548px;\n  width: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"], ["\n  max-width: 548px;\n  width: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
