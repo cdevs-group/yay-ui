@@ -89,7 +89,7 @@ export default IGODetailCard;
 
 const Card = styled(Flex)`
   max-width: 548px;
-  display: block;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 12px 12px 23px;

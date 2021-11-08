@@ -85,7 +85,7 @@ export default IGOCard;
 const Wrapper = styled.div`
   position: relative;
   max-width: 360px;
-  height: 555px;
+  min-height: 555px;
   padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
