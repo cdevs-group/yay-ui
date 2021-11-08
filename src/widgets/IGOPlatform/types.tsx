@@ -123,6 +123,32 @@ export interface IGOHistoryCardProps {
   };
 }
 
+export interface IGOSubscriptionCardProps {
+  totalSale: string;
+  rate: string;
+  privateDate: string;
+  publicDate: string;
+  endDate: string;
+  softCap: string;
+  hardCap: string;
+  minPurchased: string;
+  maxPurchased: string;
+  vestingStatus: string;
+  texts: {
+    title: string;
+    totalSale: string;
+    rate: string;
+    private: string;
+    public: string;
+    end: string;
+    soft: string;
+    hard: string;
+    minPurchased: string;
+    maxPurchased: string;
+    vesting: string;
+  };
+}
+
 export enum StatusHistory {
   ERROR = "error",
   SUCCESS = "success",
@@ -132,4 +158,32 @@ export enum StatusHistory {
 export enum TypeHistory {
   BUY = "buy",
   UNSTACKING = "unstacking",
+}
+export interface IGOInfoCardProps {
+  tokenName: string;
+  address: string;
+  initial: string;
+  lockDuration: string;
+  status: string;
+  link: string;
+  texts: {
+    title: string;
+    name: string;
+    address: string;
+    copied: string;
+    liquid: string;
+    initial: string;
+    lock: string;
+    status: string;
+    link: string;
+  };
+}
+export interface InfoBoardProps {
+  imgMain: string;
+  images: string[];
+  texts: {
+    title: string;
+    description: string;
+    description2: string;
+  };
 }

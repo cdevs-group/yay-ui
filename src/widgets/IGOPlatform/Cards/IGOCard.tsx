@@ -84,9 +84,12 @@ const Wrapper = styled.div`
   position: relative;
   max-width: 360px;
   height: 555px;
-  padding: 25px 25px 33px;
+  padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 25px 25px 33px;
+  }
 `;
 const HeadLine = styled(Flex)`
   align-items: center;
@@ -118,9 +121,12 @@ const StatusName = styled(Text)`
 const AvailableBlock = styled(Flex)`
   align-items: center;
   margin-top: 30px;
-  padding: 27px 20px;
+  padding: 20px 15px;
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
+  padding: ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 27px 20px;
+  } ;
 `;
 const TokenLogo = styled.div`
   & img {
@@ -139,8 +145,11 @@ const TitleBlock = styled(Text)`
   color: ${({ theme }) => theme.colors.textGray};
 `;
 const AmoutTokens = styled(Text)`
-  font-size: 17px;
+  font-size: 15px;
   line-height: 100%;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 17px;
+  }
 `;
 const NetworkBlock = styled.div`
   margin-top: 20px;
@@ -167,5 +176,8 @@ const TimerTitle = styled(Text)`
 const ButtonStyle = styled(Button)`
   position: absolute;
   bottom: 33px;
-  width: calc(100% - 50px);
+  width: calc(100% - 24px);
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: calc(100% - 50px);
+  }
 `;
