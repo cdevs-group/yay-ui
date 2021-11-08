@@ -10,6 +10,7 @@ import IGOHistoryCard from "./Cards/IGOHistoryCard";
 import IGOSubscriptionCard from "./Cards/IGOSubscriptionCard";
 import IGOInfoCard from "./Cards/IGOInfoCard";
 import InfoBoard from "./InfoBoard";
+import { Flex, TimerNotSolidWithoutBg } from "../..";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -35,6 +36,7 @@ export const IGOCardBlock = () => {
     available: "Available",
     networks: "Available networks:",
     slots: "Available whitelist slots:",
+    slotsTooltip: "Available whitelist slots Tooltip",
     progress: "Progress",
     button: "View more",
     isLive: "is live",
@@ -189,9 +191,10 @@ export const IGODetailProgressCardBlock = () => {
     },
     {
       text: (
-        <>
-          Poseidon <span> Slot available in 136h : 22m : 32s</span>
-        </>
+        <Flex>
+          Poseidon <span> Slot available in</span>{" "}
+          <TimerNotSolidWithoutBg height="auto" withTime fontSize="13px" time={55555} />
+        </Flex>
       ),
       error: false,
     },
@@ -298,6 +301,7 @@ export const IGOCardDetailsBlock = () => {
     status: "PUBLIC",
     isLive: "SALE IS LIVE",
     networks: "Available Networks:",
+    networksTooltip: "Available Networks Tooltip",
     before: "Before IGO countdown:",
     summary: "Project summary:",
     button: "Visit website",

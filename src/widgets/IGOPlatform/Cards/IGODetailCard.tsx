@@ -9,6 +9,9 @@ import NetworksTabs from "./components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import CopyButton from "./components/CopyButton";
 import { Tooltip } from "./style";
+import useWindowDimensions from "../../../hooks/useResize";
+import { ellipsis } from "../../../helpers/ellipsis";
+import TextWithTooltip from "./components/TextWithTooltip";
 
 const IGODetailCard = ({
   name,
@@ -27,6 +30,8 @@ const IGODetailCard = ({
   withTimer,
 }: IGOCardInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
+  const { width } = useWindowDimensions();
+
   return (
     <Card>
       <HeadLine>
@@ -41,7 +46,7 @@ const IGODetailCard = ({
         <TokenInfo>
           <TokenBalance>{balance}</TokenBalance>
           <AddressLine>
-            <TokenAddress>{address}</TokenAddress>
+            <TokenAddress>{width && width < 560 ? ellipsis(address, 5) : address}</TokenAddress>
             <Buttons>
               <CopyButton textCopy={address} setIsTooltipDisplayed={setIsTooltipDisplayed} />
               <TokenButton target="_blank" as="a" href={externalLink}>
@@ -53,7 +58,8 @@ const IGODetailCard = ({
         </TokenInfo>
       </TokenInfoBlock>
       <NetworkBlock>
-        <TitleBlock marginBottom="20px">{texts.networks}</TitleBlock>
+        <TextWithTooltip text={texts.networks} textTooltip={texts.networksTooltip} />
+        <div style={{ marginBottom: 20 }} />
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <TimerBlock>
@@ -145,13 +151,13 @@ const TokenInfoBlock = styled(Flex)`
   border-radius: 12px;
 `;
 const TokenLogo = styled.div`
+  flex-shrink: 0;
   & img {
     width: 55px;
     height: 55px;
   }
 `;
 const TokenInfo = styled.div`
-  padding-right: 55px;
   width: 100%;
   margin-left: 10px;
 `;
@@ -223,6 +229,7 @@ const TimerBlock = styled(Flex)`
 `;
 const SummaryBlock = styled.div`
   margin-top: 5px;
+  margin-bottom: 35px;
 `;
 const SummaryText = styled(Text)`
   font-weight: normal;
@@ -234,7 +241,7 @@ const SummaryText = styled(Text)`
 `;
 const ButtonStyle = styled(Button)`
   width: 100%;
-  margin-top: 35px;
+  margin-top: auto;
 `;
 
 const Buttons = styled(Flex)`

@@ -9,6 +9,7 @@ import Slots from "./components/Slots";
 import BlurBlock from "./components/BlurBlock";
 import Progress from "./components/Progress";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
+import TextWithTooltip from "./components/TextWithTooltip";
 
 const IGOCard = ({
   status,
@@ -54,7 +55,8 @@ const IGOCard = ({
         )}
         {status === CardStatus.OPEN_WHITELIST && (
           <SlotsBlock>
-            <TitleBlock>{texts.slots}</TitleBlock>
+            <TextWithTooltip text={texts.slots} textTooltip={texts.slotsTooltip} />
+            <div style={{ marginBottom: 10 }} />
             <Slots dataSlots={dataSlots} />
           </SlotsBlock>
         )}

@@ -58,7 +58,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <div style={{ marginBottom: 30 }} />
       <Grid>
         {buttonsList.map((el, i) => (
-          <div>
+          <Block>
             {progressVisible ? (
               <div style={{ marginBottom: 12 }}>
                 <ProgressRange2 progress={progress[i]} />
@@ -69,7 +69,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
               </Text>
             )}
             {el}
-          </div>
+          </Block>
         ))}
       </Grid>
       {buttonLong}
@@ -121,5 +121,12 @@ const Grid = styled.div`
   margin-bottom: 14px;
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
+const Block = styled.div`
+  margin-bottom: 16px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 0;
   }
 `;

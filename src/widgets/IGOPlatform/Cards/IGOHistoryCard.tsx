@@ -58,14 +58,14 @@ const IGOHistoryCard: React.FC<IGOHistoryCardProps> = ({ texts, data }) => {
   return (
     <Card>
       {cellList.map((el, i) => (
-        <div style={{ padding: "16px 0" }}>
+        <Block>
           <Text key={i} fontSize="13px" letterSpacing="0.05em" color="textGray">
             {el.text}
           </Text>
           <Text key={i} letterSpacing="0.05em" textTransform="capitalize" color={el.color || "text"}>
             {el.value}
           </Text>
-        </div>
+        </Block>
       ))}
     </Card>
   );
@@ -78,13 +78,21 @@ const Card = styled.div`
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 7px 20px;
   width: 100%;
-  padding: 0 34px;
+  padding: 8px 34px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 15px;
   ${({ theme }) => theme.mediaQueries.xmd} {
     grid-template-columns: repeat(3, 1fr);
+    padding: 0 34px;
   }
   ${({ theme }) => theme.mediaQueries.lg} {
     grid-template-columns: repeat(6, 1fr);
+  }
+`;
+
+const Block = styled.div`
+  padding: 4px 0;
+  ${({ theme }) => theme.mediaQueries.lg} {
+    padding: 16px 0;
   }
 `;

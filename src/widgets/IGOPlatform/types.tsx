@@ -23,6 +23,7 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
     available: string;
     networks: string;
     slots: string;
+    slotsTooltip: string;
     progress: string;
     button: string;
     timer: string;
@@ -92,6 +93,7 @@ export interface IGOCardInfoProps {
   externalLink: string;
   texts: {
     networks: string;
+    networksTooltip: string;
     before: string;
     summary: string;
     button: string;

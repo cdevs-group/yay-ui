@@ -8,6 +8,7 @@ export const Card = styled.div`
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
   box-sizing: border-box;
+  margin: 0 auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 32px 32px 26px;
   }
