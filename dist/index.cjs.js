@@ -8926,7 +8926,7 @@ var IGOCard = function (_a) {
             React__default['default'].createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume }))),
         React__default['default'].createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$1 = styled__default['default'].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 360px;\n  min-height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 360px;\n  min-height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$1 = styled__default['default'].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
