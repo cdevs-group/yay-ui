@@ -89,6 +89,7 @@ const Card = styled(Flex)`
   padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  margin: 0 auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 32px 22px;
   }
@@ -196,8 +197,8 @@ const TokenButton = styled(Button)`
     width: 15px;
     height: 15px;
   }
-}
 `;
+
 const NetworkBlock = styled.div`
   margin-top: 20px;
 `;
