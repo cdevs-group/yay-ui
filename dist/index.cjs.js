@@ -9217,36 +9217,9 @@ var Tooltip = styled__default['default'].div(templateObject_7$1 || (templateObje
 });
 var templateObject_1$5, templateObject_2$3, templateObject_3$2, templateObject_4$2, templateObject_5$2, templateObject_6$2, templateObject_7$1;
 
-function useWindowDimensions() {
-    var hasWindow = typeof window !== "undefined";
-    var getWindowDimensions = function () {
-        var width = hasWindow ? window.innerWidth : null;
-        var height = hasWindow ? window.innerHeight : null;
-        return {
-            width: width,
-            height: height,
-        };
-    };
-    var _a = React.useState(getWindowDimensions()), windowDimensions = _a[0], setWindowDimensions = _a[1];
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    var handleResize = function () {
-        setWindowDimensions(getWindowDimensions());
-    };
-    React.useEffect(function () {
-        if (window && hasWindow) {
-            window.addEventListener("resize", handleResize);
-        }
-        return function () {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, [handleResize, hasWindow]);
-    return windowDimensions;
-}
-
 var IGODetailCard = function (_a) {
-    var name = _a.name, status = _a.status, site = _a.site, tokenImg = _a.tokenImg, balance = _a.balance, address = _a.address, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, time = _a.time, texts = _a.texts, handleView = _a.handleView, externalLink = _a.externalLink, withTimer = _a.withTimer;
+    var name = _a.name, status = _a.status, site = _a.site, tokenImg = _a.tokenImg, balance = _a.balance, address = _a.address, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, time = _a.time, texts = _a.texts, handleView = _a.handleView, externalLink = _a.externalLink, withTimer = _a.withTimer, width = _a.width;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
-    var width = useWindowDimensions().width;
     return (React__default['default'].createElement(Card, null,
         React__default['default'].createElement(HeadLine, null,
             React__default['default'].createElement(TokenName, null, name),
@@ -9354,7 +9327,7 @@ var StatusStyle = styled__default['default'](Text)(templateObject_20 || (templat
 var templateObject_1$4, templateObject_2$2, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20;
 
 var IGOInfoCard = function (_a) {
-    var tokenName = _a.tokenName, address = _a.address, initial = _a.initial, lockDuration = _a.lockDuration, status = _a.status, link = _a.link, texts = _a.texts;
+    var tokenName = _a.tokenName, address = _a.address, initial = _a.initial, lockDuration = _a.lockDuration, status = _a.status, link = _a.link, texts = _a.texts, width = _a.width;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default['default'].createElement(Card$1, null,
         React__default['default'].createElement(TitleStyle, null, texts.title),
@@ -9364,7 +9337,7 @@ var IGOInfoCard = function (_a) {
                 React__default['default'].createElement(ValueBlock, null, tokenName))),
         React__default['default'].createElement(Row, null,
             React__default['default'].createElement(CopyBlock, null,
-                React__default['default'].createElement(TitleBlock$1, null, texts.address),
+                React__default['default'].createElement(TitleBlock$1, null, width && width < 560 ? ellipsis(address, 5) : address),
                 React__default['default'].createElement(ValueBlockCopy, null, address),
                 React__default['default'].createElement(CopyButton, { setIsTooltipDisplayed: setIsTooltipDisplayed, textCopy: address }),
                 React__default['default'].createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, texts.copied))),
