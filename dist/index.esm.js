@@ -8893,7 +8893,7 @@ var IGOCard = function (_a) {
             React__default.createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume }))),
         React__default.createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 360px;\n  height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 360px;\n  height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 360px;\n  min-height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 360px;\n  min-height: 555px;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -9185,7 +9185,7 @@ var Tooltip = styled.div(templateObject_7$1 || (templateObject_7$1 = __makeTempl
 var templateObject_1$5, templateObject_2$3, templateObject_3$2, templateObject_4$2, templateObject_5$2, templateObject_6$2, templateObject_7$1;
 
 function useWindowDimensions() {
-    var hasWindow = typeof window !== 'undefined';
+    var hasWindow = typeof window !== "undefined";
     var getWindowDimensions = function () {
         var width = hasWindow ? window.innerWidth : null;
         var height = hasWindow ? window.innerHeight : null;
@@ -9201,10 +9201,10 @@ function useWindowDimensions() {
     };
     useEffect(function () {
         if (window && hasWindow) {
-            window.addEventListener('resize', handleResize);
+            window.addEventListener("resize", handleResize);
         }
         return function () {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener("resize", handleResize);
         };
     }, [handleResize, hasWindow]);
     return windowDimensions;
@@ -9247,7 +9247,7 @@ var IGODetailCard = function (_a) {
             React__default.createElement(SummaryText, null, texts.summaryText)),
         React__default.createElement(ButtonStyle, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Card = styled(Flex)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 548px;\n  display: block;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"], ["\n  max-width: 548px;\n  display: block;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"])), function (_a) {
+var Card = styled(Flex)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"], ["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
