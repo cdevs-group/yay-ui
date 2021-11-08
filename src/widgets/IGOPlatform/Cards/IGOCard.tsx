@@ -85,6 +85,7 @@ export default IGOCard;
 const Wrapper = styled.div`
   position: relative;
   max-width: 548px;
+  width: 100%;
   min-height: 555px;
   margin: 0 auto;
   padding: 12px 12px 23px;
@@ -132,6 +133,7 @@ const AvailableBlock = styled(Flex)`
   } ;
 `;
 const TokenLogo = styled.div`
+  flex-shrink: 0;
   & img {
     width: 55px;
     height: 55px;
