@@ -5,6 +5,7 @@ export interface IProgress {
 }
 export interface IBlurStatus {
     statusText: React.ReactNode;
+    marginStatusText?: number;
 }
 export interface IGOCardProps extends IBlurStatus, IProgress {
     status: CardStatus;
@@ -18,15 +19,17 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
     handleTab: (e: any) => void;
     currentNetwork: number;
     dataSlots: number[];
-    statusTextVisible?: boolean;
     currentVolume: number;
     totalVolume: number;
+    handleView: () => void;
+    time: number;
     texts: {
         available: string;
         networks: string;
         slots: string;
         progress: string;
         button: string;
+        timer: string;
     };
 }
 export declare enum NetworksTab {
@@ -39,4 +42,91 @@ export declare enum CardStatus {
     PUBLIC_SALE = "Public Sale",
     CLAIMING = "Claiming",
     WHITELIST_SALE = "Whitelist Sale"
+}
+export interface TextWithTooltipProps {
+    text: string;
+    textTooltip: string | React.ReactNode;
+}
+export interface SlotSummaryProps {
+    text: string | React.ReactNode;
+    error?: boolean;
+    circleHidden?: boolean;
+}
+export interface IGODetailProgressCardProps {
+    checkedToggle: boolean;
+    handleToggleChecked: () => void;
+    textBaseProgress: string;
+    baseProgress: number;
+    texts: {
+        textBottomBaseProgress: string;
+        title: string;
+        whitelistToggle: string;
+        saleToggle: string;
+        slotsSummary: string;
+        slotsSummaryTooltip: string | React.ReactNode;
+        availableWhitelist: string;
+        availableWhitelistTooltip: string | React.ReactNode;
+        status?: React.ReactNode;
+    };
+    slots: SlotSummaryProps[];
+    status?: boolean;
+    buttonLeft: React.ReactNode;
+    buttonCenter: React.ReactNode;
+    buttonRight: React.ReactNode;
+    buttonLong: React.ReactNode;
+    progress: number[];
+    progressVisible?: boolean;
+    descriptionsButtons?: string[];
+}
+export interface IGOCardInfoProps {
+    name: string;
+    status: string;
+    site: string;
+    tokenImg: string;
+    balance: string;
+    address: string;
+    networksTab: {
+        value: number;
+        img: string;
+    }[];
+    handleTab: (e: any) => void;
+    currentNetwork: number;
+    time: number;
+    externalLink: string;
+    texts: {
+        networks: string;
+        before: string;
+        summary: string;
+        button: string;
+        summaryText: string;
+        copied: string;
+    };
+    handleView: () => void;
+}
+export interface IGOHistoryCardProps {
+    texts: {
+        date: string;
+        allocations: string;
+        amount: string;
+        tx: string;
+        status: string;
+        type: string;
+    };
+    data: {
+        date: string;
+        allocations: string;
+        amount: string;
+        tx: string;
+        status: string;
+        type: string;
+    };
+}
+export declare enum StatusHistory {
+    ERROR = "error",
+    SUCCESS = "success",
+    PENDING = "pending"
+}
+export declare enum TypeHistory {
+    BUY = "buy",
+    UNSTACKING = "unstacking"
 }

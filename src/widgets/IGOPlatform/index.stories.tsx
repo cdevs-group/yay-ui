@@ -198,13 +198,21 @@ export const IGODetailProgressCardBlock = () => {
     },
   ];
 
-  const ButtonLeft = () => <Button variant="green">100 YAY</Button>;
+  const ButtonLeft = () => (
+    <Button variant="green" width="100%">
+      100 YAY
+    </Button>
+  );
   const ButtonRight = () => (
-    <Button variant="green" disabled>
+    <Button variant="green" disabled width="100%">
       1000 YAY
     </Button>
   );
-  const ButtonCenter = () => <Button variant="option">Staked</Button>;
+  const ButtonCenter = () => (
+    <Button variant="option" width="100%">
+      Staked
+    </Button>
+  );
   const ButtonLong = () => (
     <Button variant="green" width="100%">
       Join public sale
