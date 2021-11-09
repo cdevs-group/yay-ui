@@ -87,11 +87,11 @@ export interface IGOCardInfoProps {
     balance: string;
     address: string;
     networksTab: {
-        value: number;
+        value: number | string;
         img: string;
     }[];
     handleTab: (e: any) => void;
-    currentNetwork: number;
+    currentNetwork: number | string;
     time: number;
     externalLink: string;
     texts: {
@@ -102,8 +102,7 @@ export interface IGOCardInfoProps {
         button: string;
         summaryText: string;
         copied: string;
-        isLive: string;
-        status: string;
+        status: React.ReactNode;
     };
     handleView: () => void;
     withTimer: boolean;

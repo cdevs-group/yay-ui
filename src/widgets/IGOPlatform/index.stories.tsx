@@ -288,10 +288,10 @@ const Cards = styled.div`
 
 export const IGOCardDetailsBlock = () => {
   const networksTab = [
-    { value: 'BSC', img: BSC_ICON },
-    { value: 'AVAX', img: BSC_ICON },
+    { value: "BSC", img: BSC_ICON },
+    { value: "AVAX", img: BSC_ICON },
   ];
-  const [network, setNetwork] = useState<string>('BSC');
+  const [network, setNetwork] = useState<string>("BSC");
 
   const handleChangeNetwork = (e: any) => {
     setNetwork(e.target.value);
