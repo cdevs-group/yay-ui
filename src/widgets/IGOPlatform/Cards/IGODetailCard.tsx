@@ -9,7 +9,6 @@ import NetworksTabs from "./components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import CopyButton from "./components/CopyButton";
 import { Tooltip } from "./style";
-import useWindowDimensions from "../../../hooks/useResize";
 import { ellipsis } from "../../../helpers/ellipsis";
 import TextWithTooltip from "./components/TextWithTooltip";
 
@@ -70,7 +69,7 @@ const IGODetailCard = ({
           </>
         ) : (
           <StatusStyle>
-            {texts.status} <span>{texts.isLive}</span>
+            {texts.status}
           </StatusStyle>
         )}
       </TimerBlock>
