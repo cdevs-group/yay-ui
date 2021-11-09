@@ -28,7 +28,7 @@ export const IGOCardBlock = () => {
     setNetwork(e.target.value);
   };
 
-  const dataSlots = [17, 80, 0];
+  const dataSlots = [17, 80, 100];
   const handleView = () => {
     console.log("view");
   };
@@ -470,7 +470,7 @@ export const InfoBoardBlock = () => {
   };
   return (
     <div>
-      <InfoBoard texts={texts} images={[MAIN_GAME, "", "", ""]} imgMain={MAIN_GAME} />
+      <InfoBoard texts={texts} images={[MAIN_GAME, MAIN_GAME, MAIN_GAME]} imgMain={MAIN_GAME} />
     </div>
   );
 };
