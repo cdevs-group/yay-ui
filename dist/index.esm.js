@@ -8893,7 +8893,7 @@ var IGOCard = function (_a) {
             React__default.createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume }))),
         React__default.createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$1 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -8919,7 +8919,7 @@ var AvailableBlock = styled(Flex)(templateObject_5$4 || (templateObject_5$4 = __
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TokenLogo$1 = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"])));
+var TokenLogo$1 = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTemplateObject(["\n  flex-shrink: 0;\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  flex-shrink: 0;\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"])));
 var TextBlock = styled.div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
 var TitleBlock$2 = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"], ["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
