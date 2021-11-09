@@ -11,9 +11,9 @@ const Slots = ({ dataSlots }: { dataSlots: number[] }) => {
         <Slot key={i}>
           <ProgressRange
             counter={item.toString()}
-            isError={item === 0}
+            isError={item === 100}
             bgTrack={darkColors.buttonBg}
-            progress={item === 0 ? 100 : item}
+            progress={item}
           />
         </Slot>
       ))}

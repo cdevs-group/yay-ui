@@ -9,11 +9,13 @@ const InfoBoard = ({ imgMain, images, texts }: InfoBoardProps) => {
       <MainImg src={imgMain} />
       <Title>{texts.title}</Title>
       <Description>{texts.description}</Description>
-      <Images>
-        {images.map((item, i) => (
-          <ImgItem src={item} key={i} />
-        ))}
-      </Images>
+      {images && images.length > 1 && (
+        <Images length={images.length}>
+          {images.map((item, i) => (
+            <ImgItem src={item} key={i} />
+          ))}
+        </Images>
+      )}
       <Description>{texts.description2}</Description>
     </Wrapper>
   );
@@ -55,18 +57,15 @@ const Description = styled(Text)`
     line-height: 22px;
   }
 `;
-const Images = styled.div`
+const Images = styled.div<{ length: number }>`
   margin: 24px 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px 0;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    gap: 24px 24px;
-    grid-template-columns: 1fr 1fr;
   }
   ${({ theme }) => theme.mediaQueries.md} {
     gap: 0 24px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:${({ length }) => `repeat(${length}, 1fr)`};
   }
 `;
 const ImgItem = styled.div<{ src: string }>`
@@ -75,7 +74,7 @@ const ImgItem = styled.div<{ src: string }>`
   height: 109px;
   border-radius: 12px;
   justify-self: center;
-  background: ${({ src, theme }) => (src === "" ? theme.colors.whiteRgba : `url(${src})`)};
+  background: ${({ src }) => `url(${src})`};
   background-size: cover;
   background-position: center;
 `;

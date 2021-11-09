@@ -68,9 +68,7 @@ const IGODetailCard = ({
             <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
           </>
         ) : (
-          <StatusStyle>
-            {texts.status}
-          </StatusStyle>
+          <StatusStyle>{texts.status}</StatusStyle>
         )}
       </TimerBlock>
       <SummaryBlock>
