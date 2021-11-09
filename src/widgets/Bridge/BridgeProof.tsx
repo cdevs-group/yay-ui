@@ -64,6 +64,7 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 38px 44px 0 34px;
     width: 100%;
+  }
 `;
 const TokenList = styled.div`
   margin-top: 28px;
