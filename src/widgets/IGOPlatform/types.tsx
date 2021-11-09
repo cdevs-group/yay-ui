@@ -7,7 +7,7 @@ export interface IBlurStatus {
   marginStatusText?: number;
 }
 export interface IGOCardProps extends IBlurStatus, IProgress {
-  status: CardStatus;
+  status: string;
   token: string;
   tokenImg: string;
   amount: string;
