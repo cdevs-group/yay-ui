@@ -19,13 +19,13 @@ export default {
 
 export const IGOCardBlock = () => {
   const networksTab = [
-    { value: NetworksTab.BSC, img: BSC_ICON },
-    { value: NetworksTab.AVAX, img: BSC_ICON },
+    { value: 'BSC', img: BSC_ICON },
+    { value: 'AVAX', img: BSC_ICON },
   ];
-  const [network, setNetwork] = useState<number>(NetworksTab.BSC);
+  const [network, setNetwork] = useState<string>('BSC');
 
   const handleChangeNetwork = (e: any) => {
-    setNetwork(+e.target.value);
+    setNetwork(e.target.value);
   };
 
   const dataSlots = [17, 80, 0];

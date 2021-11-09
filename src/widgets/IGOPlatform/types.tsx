@@ -11,9 +11,9 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
   token: string;
   tokenImg: string;
   amount: string;
-  networksTab: { value: number; img: string }[];
+  networksTab: { value: string | number; img: string }[];
   handleTab: (e: any) => void;
-  currentNetwork: number;
+  currentNetwork: string | number;
   dataSlots: number[];
   currentVolume: number;
   totalVolume: number;

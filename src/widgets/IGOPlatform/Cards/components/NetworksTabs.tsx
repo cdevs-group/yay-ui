@@ -6,8 +6,8 @@ const NetworksTabs = ({
   currentNetwork,
   onClick,
 }: {
-  networksTab: { value: number; img: string }[];
-  currentNetwork: number;
+  networksTab: { value: string | number; img: string }[];
+  currentNetwork: string | number;
   onClick: (e: any) => void;
 }) => {
   return (
