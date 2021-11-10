@@ -2036,7 +2036,7 @@ var LoadingTimer = function (_a) {
 };
 var TimerNotSolidWithoutBg = function (_a) {
     var time = _a.time, color = _a.color, isLoad = _a.isLoad, height = _a.height, borderRadius = _a.borderRadius, width = _a.width, background = _a.background, marginPoint = _a.marginPoint, margin = _a.margin, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize, hoursHide = _a.hoursHide, withTime = _a.withTime;
-    return (React__default.createElement("div", { style: { width: "" + (widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "text", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default.createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
+    return (React__default.createElement("div", { style: { width: "" + (widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "#fff", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default.createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
 };
 var Wrapper$r = styled(Wrap$r)(templateObject_1$2q || (templateObject_1$2q = __makeTemplateObject(["\n  margin: ", ";\n  width: ", ";\n"], ["\n  margin: ", ";\n  width: ", ";\n"])), function (_a) {
     var margin = _a.margin;
@@ -8841,7 +8841,7 @@ var ProgressBar = styled.div(templateObject_3$6 || (templateObject_3$6 = __makeT
     var theme = _a.theme;
     return theme.colors.greenBg2;
 });
-var CounterWrapper = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  margin-top: 13px;\n  justify-content: end;\n"], ["\n  margin-top: 13px;\n  justify-content: end;\n"])));
+var CounterWrapper = styled(Flex)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  margin-top: 13px;\n  justify-content: flex-end;\n"], ["\n  margin-top: 13px;\n  justify-content: flex-end;\n"])));
 var Counter = styled(Flex)(templateObject_5$5 || (templateObject_5$5 = __makeTemplateObject(["\n  justify-content: space-between;\n  width: ", ";\n"], ["\n  justify-content: space-between;\n  width: ", ";\n"])), function (_a) {
     var width = _a.width, stop = _a.stop;
     return (stop ? width + "px" : "calc(100% - " + width + "%)");
@@ -9214,7 +9214,9 @@ var IGODetailCard = function (_a) {
             React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))) : (React__default.createElement(StatusStyle, null, texts.status))),
         React__default.createElement(SummaryBlock, null,
             React__default.createElement(TitleBlock, { marginBottom: "5px" }, texts.summary),
-            React__default.createElement(SummaryText, null, texts.summaryText)),
+            React__default.createElement(SummaryText, { dangerouslySetInnerHTML: {
+                    __html: texts.summaryText,
+                } })),
         React__default.createElement(ButtonStyle, { onClick: handleView, variant: "green" }, texts.button)));
 };
 var Card = styled(Flex)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"], ["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"])), function (_a) {
@@ -9387,9 +9389,13 @@ var InfoBoard = function (_a) {
     return (React__default.createElement(Wrapper, null,
         React__default.createElement(MainImg, { src: imgMain }),
         React__default.createElement(Title, null, texts.title),
-        React__default.createElement(Description, null, texts.description),
+        React__default.createElement(Description, { dangerouslySetInnerHTML: {
+                __html: texts.description,
+            } }),
         images && images.length > 1 && (React__default.createElement(Images, { length: images.length }, images.map(function (item, i) { return (React__default.createElement(ImgItem, { src: item, key: i })); }))),
-        React__default.createElement(Description, null, texts.description2)));
+        React__default.createElement(Description, { dangerouslySetInnerHTML: {
+                __html: texts.description2,
+            } })));
 };
 var Wrapper = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 22px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 32px 32px 25px;\n  }\n"], ["\n  padding: 22px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 32px 32px 25px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9410,7 +9416,7 @@ var Description = styled(Text)(templateObject_4 || (templateObject_4 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Images = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns:", ";\n  }\n"], ["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns:", ";\n  }\n"])), function (_a) {
+var Images = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  ", " {\n    gap: 0 24px;\n    grid-template-columns: ", ";\n  }\n"], ["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  ", " {\n    gap: 0 24px;\n    grid-template-columns: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
