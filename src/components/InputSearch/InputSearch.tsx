@@ -41,12 +41,11 @@ const InputItem = styled.input`
   width: ${({ width }) => (width ? width : "fit-content")};
   height: 100%;
   position: relative;
-  display: block;
+  display: inline-block;
   padding: 16px 25px;
   background: rgb(20, 20, 25);
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 12px;
-  border: none;
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.5px;
