@@ -8,13 +8,21 @@ const InfoBoard = ({ imgMain, images, texts }: InfoBoardProps) => {
     <Wrapper>
       <MainImg src={imgMain} />
       <Title>{texts.title}</Title>
-      <Description>{texts.description}</Description>
+      <Description
+        dangerouslySetInnerHTML={{
+          __html: texts.description,
+        }}
+      />
       <Images>
         {images.map((item, i) => (
           <ImgItem src={item} key={i} />
         ))}
       </Images>
-      <Description>{texts.description2}</Description>
+      <Description
+        dangerouslySetInnerHTML={{
+          __html: texts.description2,
+        }}
+      />
     </Wrapper>
   );
 };

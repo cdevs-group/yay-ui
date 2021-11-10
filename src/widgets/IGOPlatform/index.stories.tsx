@@ -306,7 +306,7 @@ export const IGOCardDetailsBlock = () => {
     button: "Visit website",
     copied: "Copied",
     summaryText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
+      "Lorem ipsum dolor <br/> sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
   };
   const handleView = () => {
     console.log("view");

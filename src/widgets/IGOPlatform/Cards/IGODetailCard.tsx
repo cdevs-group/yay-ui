@@ -68,14 +68,16 @@ const IGODetailCard = ({
             <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
           </>
         ) : (
-          <StatusStyle>
-            {texts.status}
-          </StatusStyle>
+          <StatusStyle>{texts.status}</StatusStyle>
         )}
       </TimerBlock>
       <SummaryBlock>
         <TitleBlock marginBottom="5px">{texts.summary}</TitleBlock>
-        <SummaryText>{texts.summaryText}</SummaryText>
+        <SummaryText
+          dangerouslySetInnerHTML={{
+            __html: texts.summaryText,
+          }}
+        />
       </SummaryBlock>
       <ButtonStyle onClick={handleView} variant="green">
         {texts.button}
