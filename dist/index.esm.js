@@ -9030,7 +9030,7 @@ var IGODetailProgressCard = function (_a) {
             el)); })),
         buttonLong));
 };
-var Card$3 = styled.div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"])), function (_a) {
+var Card$3 = styled.div(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
@@ -9219,7 +9219,7 @@ var IGODetailCard = function (_a) {
                 } })),
         React__default.createElement(ButtonStyle, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Card = styled(Flex)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"], ["\n  max-width: 548px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"])), function (_a) {
+var Card = styled(Flex)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 548px;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"], ["\n  max-width: 548px;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 22px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
