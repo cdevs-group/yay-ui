@@ -8752,7 +8752,7 @@ var templateObject_1$g, templateObject_2$c;
 var Slots$1 = function (_a) {
     var dataSlots = _a.dataSlots;
     return (React__default.createElement(Flex, null, dataSlots.map(function (item, i) { return (React__default.createElement(Slot, { key: i },
-        React__default.createElement(ProgressRange, { counter: item.toString(), isError: item === 0, bgTrack: darkColors.buttonBg, progress: item === 0 ? 100 : item }))); })));
+        React__default.createElement(ProgressRange, { counter: item.toString(), isError: item === 100, bgTrack: darkColors.buttonBg, progress: item }))); })));
 };
 var Slot = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  width: 100%;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n"])));
 var templateObject_1$f;
@@ -9211,10 +9211,7 @@ var IGODetailCard = function (_a) {
             React__default.createElement(NetworksTabs, { networksTab: networksTab, currentNetwork: currentNetwork, onClick: handleTab })),
         React__default.createElement(TimerBlock, null, withTimer ? (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(TitleBlock, { marginBottom: "5px" }, texts.before),
-            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))) : (React__default.createElement(StatusStyle, null,
-            texts.status,
-            " ",
-            React__default.createElement("span", null, texts.isLive)))),
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))) : (React__default.createElement(StatusStyle, null, texts.status))),
         React__default.createElement(SummaryBlock, null,
             React__default.createElement(TitleBlock, { marginBottom: "5px" }, texts.summary),
             React__default.createElement(SummaryText, null, texts.summaryText)),
@@ -9391,7 +9388,7 @@ var InfoBoard = function (_a) {
         React__default.createElement(MainImg, { src: imgMain }),
         React__default.createElement(Title, null, texts.title),
         React__default.createElement(Description, null, texts.description),
-        React__default.createElement(Images, null, images.map(function (item, i) { return (React__default.createElement(ImgItem, { src: item, key: i })); })),
+        images && images.length > 1 && (React__default.createElement(Images, { length: images.length }, images.map(function (item, i) { return (React__default.createElement(ImgItem, { src: item, key: i })); }))),
         React__default.createElement(Description, null, texts.description2)));
 };
 var Wrapper = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 22px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 32px 32px 25px;\n  }\n"], ["\n  padding: 22px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 32px 32px 25px;\n  }\n"])), function (_a) {
@@ -9413,16 +9410,16 @@ var Description = styled(Text)(templateObject_4 || (templateObject_4 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Images = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  ", " {\n    gap: 24px 24px;\n    grid-template-columns: 1fr 1fr;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  ", " {\n    gap: 24px 24px;\n    grid-template-columns: 1fr 1fr;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-}, function (_a) {
+var Images = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns:", ";\n  }\n"], ["\n  margin: 24px 0;\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px 0;\n  }\n  ", " {\n    gap: 0 24px;\n    grid-template-columns:", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
+}, function (_a) {
+    var length = _a.length;
+    return "repeat(" + length + ", 1fr)";
 });
 var ImgItem = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"], ["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"])), function (_a) {
-    var src = _a.src, theme = _a.theme;
-    return (src === "" ? theme.colors.whiteRgba : "url(" + src + ")");
+    var src = _a.src;
+    return "url(" + src + ")";
 });
 var templateObject_1$1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6;
 

@@ -28,7 +28,7 @@ export const IGOCardBlock = () => {
     setNetwork(e.target.value);
   };
 
-  const dataSlots = [17, 80, 0];
+  const dataSlots = [17, 80, 100];
   const handleView = () => {
     console.log("view");
   };
@@ -57,7 +57,7 @@ export const IGOCardBlock = () => {
         status={CardStatus.WHITELIST_SALE}
         token="DESU Token"
         texts={texts}
-        currentVolume={1000}
+        currentVolume={500}
         totalVolume={1000}
         time={1000}
         handleView={handleView}
@@ -100,7 +100,7 @@ export const IGOCardBlock = () => {
           status={CardStatus.OPEN_WHITELIST}
           token="DESU Token"
           texts={texts}
-          currentVolume={1000}
+          currentVolume={500}
           totalVolume={1000}
           time={1000}
           handleView={handleView}
@@ -288,10 +288,10 @@ const Cards = styled.div`
 
 export const IGOCardDetailsBlock = () => {
   const networksTab = [
-    { value: 'BSC', img: BSC_ICON },
-    { value: 'AVAX', img: BSC_ICON },
+    { value: "BSC", img: BSC_ICON },
+    { value: "AVAX", img: BSC_ICON },
   ];
-  const [network, setNetwork] = useState<string>('BSC');
+  const [network, setNetwork] = useState<string>("BSC");
 
   const handleChangeNetwork = (e: any) => {
     setNetwork(e.target.value);
@@ -470,7 +470,7 @@ export const InfoBoardBlock = () => {
   };
   return (
     <div>
-      <InfoBoard texts={texts} images={[MAIN_GAME, "", "", ""]} imgMain={MAIN_GAME} />
+      <InfoBoard texts={texts} images={[MAIN_GAME, MAIN_GAME, MAIN_GAME]} imgMain={MAIN_GAME} />
     </div>
   );
 };

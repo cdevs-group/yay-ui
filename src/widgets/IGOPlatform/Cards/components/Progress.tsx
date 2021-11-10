@@ -113,7 +113,7 @@ const ProgressBar = styled.div<{ widthProgress: number }>`
 `;
 const CounterWrapper = styled(Flex)`
   margin-top: 13px;
-  justify-content: end;
+  justify-content: flex-end;
 `;
 const Counter = styled(Flex)<{ width: number; stop: boolean }>`
   justify-content: space-between;
