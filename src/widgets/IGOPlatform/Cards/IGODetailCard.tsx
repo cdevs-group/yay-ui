@@ -90,6 +90,7 @@ export default IGODetailCard;
 
 const Card = styled(Flex)`
   max-width: 548px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

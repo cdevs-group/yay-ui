@@ -84,6 +84,7 @@ const Card = styled.div`
   flex-direction: column;
   max-width: 548px;
   width: 100%;
+  height: 100%;
   padding: 32px 22px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
