@@ -62,6 +62,7 @@ export * from "./widgets/Profile";
 export * from "./widgets/LockFuture";
 export * from "./widgets/StakingDashboard";
 export * from "./widgets/IGOPlatform";
+export * from "./widgets/AgreeMessage";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";
