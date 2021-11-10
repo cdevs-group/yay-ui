@@ -57,7 +57,7 @@ export const IGOCardBlock = () => {
         status={CardStatus.WHITELIST_SALE}
         token="DESU Token"
         texts={texts}
-        currentVolume={1000}
+        currentVolume={500}
         totalVolume={1000}
         time={1000}
         handleView={handleView}
@@ -100,7 +100,7 @@ export const IGOCardBlock = () => {
           status={CardStatus.OPEN_WHITELIST}
           token="DESU Token"
           texts={texts}
-          currentVolume={1000}
+          currentVolume={500}
           totalVolume={1000}
           time={1000}
           handleView={handleView}
