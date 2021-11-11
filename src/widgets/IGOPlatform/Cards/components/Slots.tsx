@@ -4,14 +4,17 @@ import React from "react";
 import styled from "styled-components";
 import { Flex } from "../../../../components/Box";
 
-const Slots = ({ dataSlots }: { dataSlots: number[] }) => {
+export interface ProgressRangeProps {
+  dataSlots: { all: number; free: number }[];
+}
+
+const Slots = ({ dataSlots }: ProgressRangeProps) => {
   return (
     <Flex>
       {dataSlots.map((item, i) => (
         <Slot key={i}>
           <ProgressRange
-            counter={item.toString()}
-            isError={item === 100}
+            counter={item.toString()}            
             bgTrack={darkColors.buttonBg}
             progress={item}
           />
