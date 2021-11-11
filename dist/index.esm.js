@@ -2617,7 +2617,7 @@ Toggle.defaultProps = {
 
 var BaseToggle = function (_a) {
     var checked = _a.checked, props = __rest(_a, ["checked"]);
-    return (React__default.createElement(StyledToggle, { checked: !!checked },
+    return (React__default.createElement(StyledToggle, { checked: !!checked, disabled: props.disabled },
         React__default.createElement(Input$1, __assign({ checked: checked }, props, { type: "checkbox" })),
         React__default.createElement(Handle, null)));
 };
@@ -2626,12 +2626,15 @@ var Handle = styled.div(templateObject_1$2c || (templateObject_1$2c = __makeTemp
     return theme.colors.text;
 });
 var Input$1 = styled.input(templateObject_2$1O || (templateObject_2$1O = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: 21px;\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: 21px;\n  }\n"])), Handle);
-var StyledToggle = styled.div(templateObject_3$1r || (templateObject_3$1r = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 30px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 50px;\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 30px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 50px;\n"])), function (_a) {
+var StyledToggle = styled.div(templateObject_3$1r || (templateObject_3$1r = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 30px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 50px;\n  opacity: ", ";\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: 30px;\n  position: relative;\n  transition: background-color 200ms;\n  width: 50px;\n  opacity: ", ";\n"])), function (_a) {
     var theme = _a.theme, checked = _a.checked;
     return theme.colors[checked ? "green" : "bgOpacity"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
+}, function (_a) {
+    var disabled = _a.disabled;
+    return (disabled ? 0.5 : 1);
 });
 var templateObject_1$2c, templateObject_2$1O, templateObject_3$1r;
 
@@ -9030,16 +9033,16 @@ var RangeTrack = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTe
 var templateObject_1$a, templateObject_2$7;
 
 var IGODetailProgressCard = function (_a) {
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance;
+    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance;
     var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default.createElement(Card$3, null,
         React__default.createElement(FlexTop, null,
             React__default.createElement(Text, { fontSize: "17px" }, texts.title),
             React__default.createElement("div", null,
                 React__default.createElement(Flex, { alignItems: "center" },
-                    React__default.createElement(Text, { fontSize: "13px", mr: "10px" }, texts.whitelistToggle),
-                    React__default.createElement(BaseToggle, { checked: checkedToggle, onChange: handleToggleChecked }),
-                    React__default.createElement(Text, { fontSize: "13px", ml: "10px" }, texts.saleToggle)))),
+                    React__default.createElement(Text, { fontSize: "13px", mr: "10px", style: { opacity: disabledToggle ? 0.5 : 1 } }, texts.whitelistToggle),
+                    React__default.createElement(BaseToggle, { checked: checkedToggle, onChange: handleToggleChecked, disabled: disabledToggle }),
+                    React__default.createElement(Text, { fontSize: "13px", ml: "10px", style: { opacity: disabledToggle ? 0.5 : 1 } }, texts.saleToggle)))),
         React__default.createElement(ProgressWithText, { text: textBaseProgress, progress: baseProgress }),
         React__default.createElement(Text, { fontSize: "11px", lineHeight: "140%", fontWeight: 400, mt: "10px", mb: "30px", textAlign: "center" }, texts.textBottomBaseProgress),
         status && React__default.createElement(Status, null, texts.status),
@@ -9165,7 +9168,7 @@ var ButtonStyle$1 = styled(Button$a)(templateObject_1$7 || (templateObject_1$7 =
 });
 var templateObject_1$7;
 
-var Card$1 = styled.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  max-width: 548px;\n  width: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"], ["\n  max-width: 548px;\n  width: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"])), function (_a) {
+var Card$1 = styled.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"], ["\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 22px 22px 18px;\n  background: ", ";\n  border-radius: 12px;\n  box-sizing: border-box;\n  margin: 0 auto;\n  ", " {\n    padding: 32px 32px 26px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -9319,7 +9322,9 @@ var StatusStyle = styled(Text)(templateObject_20 || (templateObject_20 = __makeT
 var templateObject_1$5, templateObject_2$3, templateObject_3$2, templateObject_4$2, templateObject_5$2, templateObject_6$2, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20;
 
 var IGOInfoCard = function (_a) {
-    var tokenName = _a.tokenName, address = _a.address, initial = _a.initial, lockDuration = _a.lockDuration, status = _a.status, link = _a.link, texts = _a.texts, width = _a.width;
+    var tokenName = _a.tokenName, address = _a.address, 
+    // initial, lockDuration, status, link,
+    texts = _a.texts, width = _a.width;
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default.createElement(Card$1, null,
         React__default.createElement(TitleStyle, null, texts.title),
@@ -9332,26 +9337,7 @@ var IGOInfoCard = function (_a) {
                 React__default.createElement(TitleBlock$1, null, texts.address),
                 React__default.createElement(ValueBlockCopy, null, width && width < 560 ? ellipsis(address, 5) : address),
                 React__default.createElement(CopyButton, { setIsTooltipDisplayed: setIsTooltipDisplayed, textCopy: address }),
-                React__default.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, texts.copied))),
-        React__default.createElement(TitleStyle, { margin: "40px 0 32px" }, texts.liquid),
-        React__default.createElement(Row, null,
-            React__default.createElement("div", null,
-                React__default.createElement(TitleBlock$1, null, texts.initial),
-                React__default.createElement(ValueBlock, null, initial))),
-        React__default.createElement(Row, null,
-            React__default.createElement("div", null,
-                React__default.createElement(TitleBlock$1, null, texts.lock),
-                React__default.createElement(ValueBlock, null, lockDuration))),
-        React__default.createElement(Row, null,
-            React__default.createElement("div", null,
-                React__default.createElement(TitleBlock$1, null, texts.status),
-                React__default.createElement(ValueBlock, null,
-                    status,
-                    " ",
-                    React__default.createElement("a", { target: "_blank", href: link },
-                        "(",
-                        texts.link,
-                        ")"))))));
+                React__default.createElement(Tooltip, { isTooltipDisplayed: isTooltipDisplayed }, texts.copied)))));
 };
 var ValueBlockCopy = styled(Text)(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  color: ", ";\n  justify-content: space-between;\n  align-items: center;\n  line-height: 100%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  ", " {\n    font-size: 17px;\n  }\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  color: ", ";\n  justify-content: space-between;\n  align-items: center;\n  line-height: 100%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  ", " {\n    font-size: 17px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9364,7 +9350,11 @@ var CopyBlock = styled.div(templateObject_2$2 || (templateObject_2$2 = __makeTem
 var templateObject_1$4, templateObject_2$2;
 
 var IGOSubscriptionCard = function (_a) {
-    var totalSale = _a.totalSale, rate = _a.rate, privateDate = _a.privateDate, publicDate = _a.publicDate, endDate = _a.endDate, softCap = _a.softCap, hardCap = _a.hardCap, minPurchased = _a.minPurchased, maxPurchased = _a.maxPurchased, vestingStatus = _a.vestingStatus, texts = _a.texts;
+    var totalSale = _a.totalSale, rate = _a.rate, privateDate = _a.privateDate, publicDate = _a.publicDate, endDate = _a.endDate, 
+    // softCap,
+    hardCap = _a.hardCap, purchasedLimit = _a.purchasedLimit, 
+    // maxPurchased,
+    vestingStatus = _a.vestingStatus, texts = _a.texts, privateTime = _a.privateTime, publicTime = _a.publicTime, endTime = _a.endTime;
     return (React__default.createElement(Card$1, null,
         React__default.createElement(TitleStyle, null, texts.title),
         React__default.createElement(Row, null,
@@ -9378,33 +9368,30 @@ var IGOSubscriptionCard = function (_a) {
         React__default.createElement(RowType, null,
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.private),
-                React__default.createElement(ValueBlock, null, privateDate)),
+                React__default.createElement(ValueBlock, null, privateDate),
+                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, privateTime)),
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.public),
-                React__default.createElement(ValueBlock, null, publicDate)),
+                React__default.createElement(ValueBlock, null, publicDate),
+                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, publicTime)),
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.end),
-                React__default.createElement(ValueBlock, null, endDate))),
-        React__default.createElement(RowType, null,
-            React__default.createElement(Block, null,
-                React__default.createElement(TitleBlock$1, null, texts.soft),
-                React__default.createElement(ValueBlock, null, softCap)),
-            React__default.createElement(Block, null,
+                React__default.createElement(ValueBlock, null, endDate),
+                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, endTime))),
+        React__default.createElement(Row, null,
+            React__default.createElement("div", null,
                 React__default.createElement(TitleBlock$1, null, texts.hard),
                 React__default.createElement(ValueBlock, null, hardCap))),
-        React__default.createElement(RowType, null,
-            React__default.createElement(Block, null,
-                React__default.createElement(TitleBlock$1, null, texts.minPurchased),
-                React__default.createElement(ValueBlock, null, minPurchased)),
-            React__default.createElement(Block, null,
-                React__default.createElement(TitleBlock$1, null, texts.maxPurchased),
-                React__default.createElement(ValueBlock, null, maxPurchased))),
+        React__default.createElement(Row, null,
+            React__default.createElement("div", null,
+                React__default.createElement(TitleBlock$1, null, texts.purchasedLimit),
+                React__default.createElement(ValueBlock, null, purchasedLimit))),
         React__default.createElement(Row, null,
             React__default.createElement("div", null,
                 React__default.createElement(TitleBlock$1, null, texts.vesting),
                 React__default.createElement(ValueBlock, null, vestingStatus)))));
 };
-var Block = styled(Flex)(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  justify-content: space-between;\n  ", " {\n    flex-direction: column;\n  }\n"], ["\n  justify-content: space-between;\n  ", " {\n    flex-direction: column;\n  }\n"])), function (_a) {
+var Block = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  margin-bottom: 25px;\n  ", " {\n    margin-bottom: 0;\n  }\n"], ["\n  margin-bottom: 25px;\n  ", " {\n    margin-bottom: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
