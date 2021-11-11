@@ -8696,11 +8696,14 @@ var NetworksTab;
 })(NetworksTab || (NetworksTab = {}));
 var CardStatus;
 (function (CardStatus) {
-    CardStatus["OPEN_WHITELIST"] = "Open whitelist";
-    CardStatus["COMPLETED"] = "Completed";
-    CardStatus["PUBLIC_SALE"] = "Public Sale";
-    CardStatus["CLAIMING"] = "Claiming";
-    CardStatus["WHITELIST_SALE"] = "Whitelist Sale";
+    CardStatus["BEFORE_WHITELIST"] = "beforeWhitelist";
+    CardStatus["OPEN_WHITELIST"] = "openWhitelist";
+    CardStatus["WHITELIST_SALE"] = "whitelistSale";
+    CardStatus["PUBLIC_SALE"] = "publicSale";
+    CardStatus["WAIT_SALE"] = "waitSale";
+    CardStatus["WAIT_TGE"] = "waitTGE";
+    CardStatus["COMPLETED"] = "completed";
+    CardStatus["CLAIMING"] = "claiming";
 })(CardStatus || (CardStatus = {}));
 var StatusHistory;
 (function (StatusHistory) {
@@ -8866,11 +8869,11 @@ var TextWithTooltip = function (_a) {
 };
 
 var IGOCard = function (_a) {
-    var status = _a.status, token = _a.token, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, handleTab = _a.handleTab, currentNetwork = _a.currentNetwork, dataSlots = _a.dataSlots, statusText = _a.statusText, currentVolume = _a.currentVolume, totalVolume = _a.totalVolume, texts = _a.texts, time = _a.time, handleView = _a.handleView;
+    var status = _a.status, token = _a.token, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, handleTab = _a.handleTab, currentNetwork = _a.currentNetwork, dataSlots = _a.dataSlots, statusText = _a.statusText, currentVolume = _a.currentVolume, totalVolume = _a.totalVolume, texts = _a.texts, time = _a.time, handleView = _a.handleView, statusTitle = _a.statusTitle;
     return (React__default.createElement(Wrapper$2, null,
         React__default.createElement(HeadLine$1, null,
             React__default.createElement(TokenName$1, null, token),
-            React__default.createElement(StatusName$1, null, status)),
+            React__default.createElement(StatusName$1, null, statusTitle)),
         React__default.createElement(AvailableBlock, null,
             React__default.createElement(TokenLogo$1, null,
                 React__default.createElement("img", { src: tokenImg })),
@@ -8881,20 +8884,38 @@ var IGOCard = function (_a) {
             React__default.createElement(TitleBlock$2, { marginBottom: "20px" }, texts.networks),
             React__default.createElement(NetworksTabs, { networksTab: networksTab, currentNetwork: currentNetwork, onClick: handleTab })),
         React__default.createElement("div", { style: { position: "relative" } },
-            status !== CardStatus.OPEN_WHITELIST && (React__default.createElement(BlurBlock, { marginStatusText: status === CardStatus.COMPLETED || status === CardStatus.CLAIMING ? 90 : 45, statusText: statusText })),
-            status === CardStatus.OPEN_WHITELIST && (React__default.createElement(SlotsBlock, null,
+            status === CardStatus.COMPLETED && (React__default.createElement(BlurBlock, { marginStatusText: status === CardStatus.COMPLETED ? 90 : 45, statusText: statusText })),
+            status === CardStatus.CLAIMING && (React__default.createElement(BlurBlock, { marginStatusText: status === CardStatus.CLAIMING ? 90 : 45, statusText: statusText })),
+            (status === CardStatus.WAIT_SALE ||
+                status === CardStatus.BEFORE_WHITELIST ||
+                status === CardStatus.OPEN_WHITELIST) && (React__default.createElement(SlotsBlock, null,
                 React__default.createElement(TextWithTooltip, { text: texts.slots, textTooltip: texts.slotsTooltip }),
                 React__default.createElement("div", { style: { marginBottom: 10 } }),
                 React__default.createElement(Slots$1, { dataSlots: dataSlots })))),
-        status === CardStatus.OPEN_WHITELIST && (React__default.createElement(TimerBlock$1, null,
-            React__default.createElement(TimerTitle, null, texts.timer),
+        status === CardStatus.WAIT_TGE && (React__default.createElement(TimerBlock$1, null,
+            statusText,
             React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
-        [CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find(function (el) { return el === status; }) && (React__default.createElement(ProgressBlock, null,
+        status === CardStatus.WAIT_SALE && (React__default.createElement(TimerBlock$1, null,
+            statusText,
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
+        status === CardStatus.BEFORE_WHITELIST && (React__default.createElement(TimerBlock$1, null,
+            statusText,
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
+        status === CardStatus.PUBLIC_SALE && (React__default.createElement(TimerBlock$1, null,
+            statusText,
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
+        status === CardStatus.WHITELIST_SALE && (React__default.createElement(TimerBlock$1, { style: { marginTop: "25px" } },
+            statusText,
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
+        status === CardStatus.OPEN_WHITELIST && (React__default.createElement(TimerBlock$1, null,
+            statusText,
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
+        [CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find(function (el) { return el === status; }) && (React__default.createElement(ProgressBlock, { style: { marginTop: "37px" } },
             React__default.createElement(TitleBlock$2, { marginBottom: "15px" }, texts.progress),
             React__default.createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume }))),
         React__default.createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$2 = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$2 = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -8920,13 +8941,13 @@ var AvailableBlock = styled(Flex)(templateObject_5$5 || (templateObject_5$5 = __
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TokenLogo$1 = styled.div(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject(["\n  flex-shrink: 0;\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  flex-shrink: 0;\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"])));
+var TokenLogo$1 = styled.div(templateObject_6$5 || (templateObject_6$5 = __makeTemplateObject(["\n  flex-shrink: 0;\n\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  flex-shrink: 0;\n\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"])));
 var TextBlock = styled.div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
 var TitleBlock$2 = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"], ["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var AmoutTokens = styled(Text)(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 100%;\n  ", " {\n    font-size: 17px;\n  }\n"], ["\n  font-size: 15px;\n  line-height: 100%;\n  ", " {\n    font-size: 17px;\n  }\n"])), function (_a) {
+var AmoutTokens = styled(Text)(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 100%;\n\n  ", " {\n    font-size: 17px;\n  }\n"], ["\n  font-size: 15px;\n  line-height: 100%;\n\n  ", " {\n    font-size: 17px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -8934,11 +8955,11 @@ var NetworkBlock$1 = styled.div(templateObject_10$1 || (templateObject_10$1 = __
 var SlotsBlock = styled.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  padding-top: 20px;\n  position: relative;\n"], ["\n  padding-top: 20px;\n  position: relative;\n"])));
 var ProgressBlock = styled.div(templateObject_12$1 || (templateObject_12$1 = __makeTemplateObject(["\n  margin-top: 43px;\n  margin-bottom: 27px;\n"], ["\n  margin-top: 43px;\n  margin-bottom: 27px;\n"])));
 var TimerBlock$1 = styled.div(templateObject_13$1 || (templateObject_13$1 = __makeTemplateObject(["\n  margin-top: 40px;\n  margin-bottom: 20px;\n  text-align: center;\n"], ["\n  margin-top: 40px;\n  margin-bottom: 20px;\n  text-align: center;\n"])));
-var TimerTitle = styled(Text)(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 15px;\n  line-height: 100%;\n"], ["\n  color: ", ";\n  font-size: 15px;\n  line-height: 100%;\n"])), function (_a) {
+styled(Text)(templateObject_14$1 || (templateObject_14$1 = __makeTemplateObject(["\n  color: ", ";\n  font-size: 15px;\n  line-height: 100%;\n"], ["\n  color: ", ";\n  font-size: 15px;\n  line-height: 100%;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var ButtonStyle$2 = styled(Button$a)(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n  ", " {\n    width: calc(100% - 50px);\n  }\n"], ["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n  ", " {\n    width: calc(100% - 50px);\n  }\n"])), function (_a) {
+var ButtonStyle$2 = styled(Button$a)(templateObject_15$1 || (templateObject_15$1 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"], ["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
