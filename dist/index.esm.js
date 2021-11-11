@@ -8927,7 +8927,7 @@ var TokenName$1 = styled(Text)(templateObject_3$6 || (templateObject_3$6 = __mak
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var StatusName$1 = styled(Text)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    background: ", ";\n  }\n"], ["\n  font-size: 15px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    background: ", ";\n  }\n"])), function (_a) {
+var StatusName$1 = styled(Text)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: ", ";\n  }\n"], ["\n  font-size: 15px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, function (_a) {

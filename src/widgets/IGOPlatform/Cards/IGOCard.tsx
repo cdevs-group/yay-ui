@@ -160,6 +160,7 @@ const StatusName = styled(Text)`
     content: "";
     left: -9px;
     top: 50%;
+    transform: translateY(-50%);
     background: ${({ theme }) => theme.colors.green};
   }
 `;
