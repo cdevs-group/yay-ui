@@ -13,6 +13,7 @@ import { baseColors } from "../../../theme/colors";
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
   handleToggleChecked,
+  disabledToggle,
   textBaseProgress,
   baseProgress,
   texts,
@@ -36,11 +37,11 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         <Text fontSize="17px">{texts.title}</Text>
         <div>
           <Flex alignItems="center">
-            <Text fontSize="13px" mr="10px">
+            <Text fontSize="13px" mr="10px" style={{ opacity: disabledToggle ? 0.5 : 1 }}>
               {texts.whitelistToggle}
             </Text>
-            <BaseToggle checked={checkedToggle} onChange={handleToggleChecked} />
-            <Text fontSize="13px" ml="10px">
+            <BaseToggle checked={checkedToggle} onChange={handleToggleChecked} disabled={disabledToggle} />
+            <Text fontSize="13px" ml="10px" style={{ opacity: disabledToggle ? 0.5 : 1 }}>
               {texts.saleToggle}
             </Text>
           </Flex>

@@ -352,6 +352,7 @@ export const IGODetailProgressCardBlock = () => {
         progress={dataProgress}
         progressVisible={false}
         descriptionsButtons={["ZEUS", "HERMES", "POSEIDON"]}
+        disabledToggle
       />
 
       <IGODetailProgressCard
@@ -516,10 +517,10 @@ export const IGOSubscriptionCardBlock = () => {
     private: "Private Start",
     public: "Public Start",
     end: "End",
-    soft: "Soft Cap",
+    // soft: "Soft Cap",
     hard: "Hard Cap",
-    minPurchased: "Min Purchase",
-    maxPurchased: "Max Purchase",
+    purchasedLimit: "Min Purchase",
+    // maxPurchased: "Max Purchase",
     vesting: "Vesting Schedule",
   };
 
@@ -531,12 +532,15 @@ export const IGOSubscriptionCardBlock = () => {
         privateDate="20/09/2021"
         publicDate="20/09/2021"
         endDate="20/09/2021"
-        softCap="244 BNB"
+        // softCap="244 BNB"
         hardCap="700 BNB"
-        minPurchased="2.8 BNB"
-        maxPurchased="2.8 BNB"
+        purchasedLimit="2.8 BNB"
+        // maxPurchased="2.8 BNB"
         vestingStatus="Refer to project details"
         texts={texts}
+        privateTime="05:00 PM"
+        publicTime="05:00 PM"
+        endTime="05:00 PM"
       />
     </div>
   );
@@ -549,10 +553,10 @@ export const IGOInfoCardBlock = () => {
     address: "Address",
     copied: "Copied",
     liquid: "Liquidity Provision",
-    initial: "Initial Liquidity",
-    lock: "Lock Duration",
-    status: "Status",
-    link: "Link",
+    // initial: "Initial Liquidity",
+    // lock: "Lock Duration",
+    // status: "Status",
+    // link: "Link",
   };
 
   return (
@@ -560,11 +564,11 @@ export const IGOInfoCardBlock = () => {
       <IGOInfoCard
         tokenName="iBuffer Token"
         address="0x524df384bffb18c0c8f3f43d012011f8f9795579"
-        initial="244 BNB + 1,333,400 iBFR"
-        lockDuration="6 month"
-        status="Status"
+        // initial="244 BNB + 1,333,400 iBFR"
+        // lockDuration="6 month"
+        // status="Status"
         texts={texts}
-        link="/"
+        // link="/"
         width={500}
       />
     </div>

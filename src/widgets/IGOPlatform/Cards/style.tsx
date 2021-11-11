@@ -5,6 +5,7 @@ import { Flex } from "../../../components/Box";
 export const Card = styled.div`
   max-width: 548px;
   width: 100%;
+  height: 100%;
   padding: 22px 22px 18px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
