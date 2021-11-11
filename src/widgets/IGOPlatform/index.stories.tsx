@@ -303,15 +303,18 @@ export const IGODetailProgressCardBlock = () => {
     {
       text: "7 day lock - 10000 DESU per 1 BNB for 100 YAY",
       error: false,
+      opacity: true,
     },
     {
       text: "15 day lock - 20000 DESU per 1 BNB  for 500 YAY",
       error: false,
+      opacity: false,
     },
 
     {
       text: "30 day lock - 30000 DESU per 1 BNB for 1000 YAY",
       error: false,
+      opacity: false,
     },
   ];
 
@@ -372,6 +375,7 @@ export const IGODetailProgressCardBlock = () => {
         disabledToggle
         time={5006}
         timerVisible
+        hrefYAYBuy="https://www.yandex.ru/"
       />
 
       <IGODetailProgressCard
@@ -407,7 +411,6 @@ export const IGODetailProgressCardBlock = () => {
         buttonCenter={<ButtonCenter />}
         progress={dataProgress}
         progressVisible
-        handleBuyYAY={() => console.log("buy")}
       />
     </Cards>
   );

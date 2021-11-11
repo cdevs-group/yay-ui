@@ -59,7 +59,7 @@ export interface SlotSummaryProps {
     text: string | React.ReactNode;
     error?: boolean;
     circleHidden?: boolean;
-    slotsOpacity?: boolean;
+    opacity?: boolean;
 }
 export interface IGODetailProgressCardProps {
     checkedToggle: boolean;
@@ -96,7 +96,7 @@ export interface IGODetailProgressCardProps {
     balance?: string;
     disabledToggle?: boolean;
     slotsOpacity?: boolean;
-    handleBuyYAY?: () => void | Promise<void>;
+    hrefYAYBuy?: string;
 }
 export interface IGOCardInfoProps {
     name: string;
