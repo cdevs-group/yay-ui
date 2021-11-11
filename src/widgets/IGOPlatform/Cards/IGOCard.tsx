@@ -10,6 +10,7 @@ import BlurBlock from "./components/BlurBlock";
 import Progress from "./components/Progress";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import TextWithTooltip from "./components/TextWithTooltip";
+import { baseColors, lightColors } from "../../../theme/colors";
 
 const IGOCard = ({
   status,
@@ -26,12 +27,13 @@ const IGOCard = ({
   texts,
   time,
   handleView,
+  statusTitle,
 }: IGOCardProps) => {
   return (
     <Wrapper>
       <HeadLine>
         <TokenName>{token}</TokenName>
-        <StatusName>{status}</StatusName>
+        <StatusName>{statusTitle}</StatusName>
       </HeadLine>
       <AvailableBlock>
         <TokenLogo>
@@ -47,13 +49,15 @@ const IGOCard = ({
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <div style={{ position: "relative" }}>
-        {status !== CardStatus.OPEN_WHITELIST && (
-          <BlurBlock
-            marginStatusText={status === CardStatus.COMPLETED || status === CardStatus.CLAIMING ? 90 : 45}
-            statusText={statusText}
-          />
+        {status === CardStatus.COMPLETED && (
+          <BlurBlock marginStatusText={status === CardStatus.COMPLETED ? 90 : 45} statusText={statusText} />
         )}
-        {status === CardStatus.OPEN_WHITELIST && (
+        {status === CardStatus.CLAIMING && (
+          <BlurBlock marginStatusText={status === CardStatus.CLAIMING ? 90 : 45} statusText={statusText} />
+        )}
+        {(status === CardStatus.WAIT_SALE ||
+          status === CardStatus.BEFORE_WHITELIST ||
+          status === CardStatus.OPEN_WHITELIST) && (
           <SlotsBlock>
             <TextWithTooltip text={texts.slots} textTooltip={texts.slotsTooltip} />
             <div style={{ marginBottom: 10 }} />
@@ -61,14 +65,50 @@ const IGOCard = ({
           </SlotsBlock>
         )}
       </div>
+
+      {status === CardStatus.WAIT_TGE && (
+        <TimerBlock>
+          {statusText}
+
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
+      {status === CardStatus.WAIT_SALE && (
+        <TimerBlock>
+          {statusText}
+
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
+      {status === CardStatus.BEFORE_WHITELIST && (
+        <TimerBlock>
+          {statusText}
+
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
+      {status === CardStatus.PUBLIC_SALE && (
+        <TimerBlock>
+          {statusText}
+
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
+      {status === CardStatus.WHITELIST_SALE && (
+        <TimerBlock style={{ marginTop: "25px" }}>
+          {statusText}
+
+          <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
+        </TimerBlock>
+      )}
       {status === CardStatus.OPEN_WHITELIST && (
         <TimerBlock>
-          <TimerTitle>{texts.timer}</TimerTitle>
+          {statusText}
           <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
         </TimerBlock>
       )}
       {[CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find((el) => el === status) && (
-        <ProgressBlock>
+        <ProgressBlock style={{ marginTop: "37px" }}>
           <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
           <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
         </ProgressBlock>
@@ -91,6 +131,7 @@ const Wrapper = styled.div`
   padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 25px 25px 33px;
   }
@@ -134,6 +175,7 @@ const AvailableBlock = styled(Flex)`
 `;
 const TokenLogo = styled.div`
   flex-shrink: 0;
+
   & img {
     width: 55px;
     height: 55px;
@@ -152,6 +194,7 @@ const TitleBlock = styled(Text)`
 const AmoutTokens = styled(Text)`
   font-size: 15px;
   line-height: 100%;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 17px;
   }
@@ -182,6 +225,7 @@ const ButtonStyle = styled(Button)`
   position: absolute;
   bottom: 33px;
   width: calc(100% - 24px);
+
   ${({ theme }) => theme.mediaQueries.sm} {
     width: calc(100% - 50px);
   }
