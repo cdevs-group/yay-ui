@@ -94,6 +94,8 @@ export interface IGODetailProgressCardProps {
   disabledToggle?: boolean;
   slotsOpacity?: boolean;
   handleBuyYAY?: () => void | Promise<void>;
+  time?: number;
+  timerVisible?: boolean;
 }
 export interface IGOCardInfoProps {
   name: string;

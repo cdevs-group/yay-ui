@@ -10,6 +10,7 @@ import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
 import { baseColors } from "../../../theme/colors";
 import { Button } from "../../../components/Button";
+import { TimerNotSolidWithoutBg } from "../../..";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
@@ -31,6 +32,8 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   balance,
   handleBuyYAY,
   slotsOpacity,
+  time,
+  timerVisible,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
 
@@ -54,7 +57,17 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <Text fontSize="11px" lineHeight="140%" fontWeight={400} mt="10px" mb="30px" textAlign="center">
         {texts.textBottomBaseProgress}
       </Text>
-      {status && <Status>{texts.status}</Status>}
+      {status && (
+        <Status>
+          {texts.status}
+          {timerVisible && (
+            <Text textTransform="lowercase">
+              <TimerNotSolidWithoutBg height="auto" withTime fontSize="17px" time={time} />
+            </Text>
+          )}
+        </Status>
+      )}
+
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (
