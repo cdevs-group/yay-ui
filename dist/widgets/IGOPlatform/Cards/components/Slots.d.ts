@@ -1,5 +1,9 @@
 /// <reference types="react" />
-declare const Slots: ({ dataSlots }: {
-    dataSlots: number[];
-}) => JSX.Element;
+export interface ProgressRangeProps {
+    dataSlots: {
+        all: number;
+        free: number;
+    }[];
+}
+declare const Slots: ({ dataSlots }: ProgressRangeProps) => JSX.Element;
 export default Slots;

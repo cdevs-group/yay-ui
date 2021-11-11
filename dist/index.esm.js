@@ -8726,12 +8726,13 @@ var NetworkItem = styled.button(templateObject_1$i || (templateObject_1$i = __ma
 var templateObject_1$i;
 
 var ProgressRange = function (_a) {
-    var progress = _a.progress, isError = _a.isError, counter = _a.counter, bgTrack = _a.bgTrack;
+    var progress = _a.progress, counter = _a.counter, bgTrack = _a.bgTrack;
     return (React__default.createElement(ProgressWrap$2, null,
-        React__default.createElement(RangeTrack$2, { bgTrack: bgTrack, isError: isError, progress: progress }),
+        React__default.createElement(RangeTrack$2, { bgTrack: bgTrack, isError: progress.free === 0, progress: ((progress.all - progress.free) * 100) / progress.all }),
         counter && (React__default.createElement(Text, { fontSize: "11px", textAlign: "center" },
-            counter,
-            "/100"))));
+            progress.all - progress.free,
+            "/",
+            progress.all))));
 };
 var ProgressWrap$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
 var RangeTrack$2 = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  position: relative;\n  margin: 10px 0;\n  width: 100%;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  margin: 10px 0;\n  width: 100%;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"])), function (_a) {
@@ -8752,7 +8753,7 @@ var templateObject_1$h, templateObject_2$d;
 var Slots$1 = function (_a) {
     var dataSlots = _a.dataSlots;
     return (React__default.createElement(Flex, null, dataSlots.map(function (item, i) { return (React__default.createElement(Slot, { key: i },
-        React__default.createElement(ProgressRange, { counter: item.toString(), isError: item === 100, bgTrack: darkColors.buttonBg, progress: item }))); })));
+        React__default.createElement(ProgressRange, { counter: item.toString(), bgTrack: darkColors.buttonBg, progress: item }))); })));
 };
 var Slot = styled.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  width: 100%;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  margin-right: 5px;\n\n  &:last-child {\n    margin-right: 0;\n  }\n"])));
 var templateObject_1$g;
@@ -8986,9 +8987,10 @@ var ProgressRange2 = function (_a) {
     var progress = _a.progress;
     return (React__default.createElement(ProgressWrap, null,
         React__default.createElement(Text, { fontSize: "13px", textAlign: "center", lineHeight: 1, mb: "5px" },
-            progress,
-            "/100"),
-        React__default.createElement(RangeTrack, { isError: progress === 100, progress: progress })));
+            progress.all - progress.free,
+            "/",
+            progress.all),
+        React__default.createElement(RangeTrack, { isError: progress.free === 0, progress: ((progress.all - progress.free) * 100) / progress.all })));
 };
 var ProgressWrap = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
 var RangeTrack = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 50%;\n    left: 5px;\n    transform: translateY(-50%);\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 10px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 50%;\n    left: 5px;\n    transform: translateY(-50%);\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {

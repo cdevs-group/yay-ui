@@ -18,7 +18,10 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
     }[];
     handleTab: (e: any) => void;
     currentNetwork: string | number;
-    dataSlots: number[];
+    dataSlots: {
+        free: number;
+        all: number;
+    }[];
     currentVolume: number;
     totalVolume: number;
     handleView: () => void;
@@ -77,7 +80,10 @@ export interface IGODetailProgressCardProps {
     buttonCenter: React.ReactNode;
     buttonRight: React.ReactNode;
     buttonLong: React.ReactNode;
-    progress: number[];
+    progress: {
+        all: number;
+        free: number;
+    }[];
     progressVisible?: boolean;
     descriptionsButtons?: string[];
     balanceError?: boolean;

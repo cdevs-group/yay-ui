@@ -13,11 +13,7 @@ const Slots = ({ dataSlots }: ProgressRangeProps) => {
     <Flex>
       {dataSlots.map((item, i) => (
         <Slot key={i}>
-          <ProgressRange
-            counter={item.toString()}            
-            bgTrack={darkColors.buttonBg}
-            progress={item}
-          />
+          <ProgressRange counter={item.toString()} bgTrack={darkColors.buttonBg} progress={item} />
         </Slot>
       ))}
     </Flex>
