@@ -262,7 +262,8 @@ export const IGODetailProgressCardBlock = () => {
     availableWhitelist: "Available whitelist slots:",
     availableWhitelistTooltip: "Available whitelist slots",
     balance: "Available balance: ",
-    error: "Insufficient balance to make bet",
+    error: "You dont have YAY.",
+    buyYAY: "Buy YAY",
     status: (
       <>
         PUBLIC sale <span>SOLD OUT</span>
@@ -294,6 +295,22 @@ export const IGODetailProgressCardBlock = () => {
     },
     {
       text: "Public  - 100000 DESU  per 1 BNB",
+      error: false,
+    },
+  ];
+
+  const slots1 = [
+    {
+      text: "7 day lock - 10000 DESU per 1 BNB for 100 YAY",
+      error: false,
+    },
+    {
+      text: "15 day lock - 20000 DESU per 1 BNB  for 500 YAY",
+      error: false,
+    },
+
+    {
+      text: "30 day lock - 30000 DESU per 1 BNB for 1000 YAY",
       error: false,
     },
   ];
@@ -373,13 +390,14 @@ export const IGODetailProgressCardBlock = () => {
       />
 
       <IGODetailProgressCard
+        slotsOpacity
         balance="100yay"
         checkedToggle={!isChecked}
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="700 BNB/ 700 BNB"
         baseProgress={100}
         texts={texts}
-        slots={slots}
+        slots={slots1}
         status={false}
         buttonLeft={<ButtonLeft />}
         buttonRight={<ButtonRight />}
@@ -387,6 +405,7 @@ export const IGODetailProgressCardBlock = () => {
         buttonCenter={<ButtonCenter />}
         progress={dataProgress}
         progressVisible
+        handleBuyYAY={() => console.log("buy")}
       />
     </Cards>
   );
@@ -420,9 +439,7 @@ export const IGOCardDetailsBlock = () => {
     summaryText:
       "Lorem ipsum dolor <br/> sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
   };
-  const handleView = () => {
-    console.log("view");
-  };
+  const linkView = "https://www.yay.games/";
   return (
     <div>
       <IGODetailCard
@@ -437,7 +454,7 @@ export const IGOCardDetailsBlock = () => {
         networksTab={networksTab}
         time={1000}
         texts={texts}
-        handleView={handleView}
+        linkView={linkView}
         withTimer={false}
         externalLink="/"
         width={500}
@@ -455,7 +472,7 @@ export const IGOCardDetailsBlock = () => {
           networksTab={networksTab}
           time={1000}
           texts={texts}
-          handleView={handleView}
+          linkView={linkView}
           withTimer
           externalLink="/"
           width={500}

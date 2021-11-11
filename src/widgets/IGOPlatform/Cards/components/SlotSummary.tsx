@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Text } from "../../../../components/Text";
 import { SlotSummaryProps } from "../../types";
 
-const SlotSummary = ({ text, error, circleHidden }: SlotSummaryProps) => {
+const SlotSummary = ({ text, error, circleHidden, slotsOpacity }: SlotSummaryProps) => {
   return (
     <TextStyled
       className={`${error || ""}`}
@@ -21,13 +21,14 @@ const SlotSummary = ({ text, error, circleHidden }: SlotSummaryProps) => {
 
 export default SlotSummary;
 
-const TextStyled = styled(Text)`
+const TextStyled = styled(Text)<{ slotsOpacity?: boolean }>`
   display: flex;
   align-items: center;
   font-weight: normal;
   font-size: 13px;
   line-height: 100%;
   margin-bottom: 15px;
+  opacity: ${({ slotsOpacity }) => (slotsOpacity ? 0.5 : 1)};
   &.error {
     margin-right: 0;
   }

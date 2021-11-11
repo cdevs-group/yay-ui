@@ -24,7 +24,7 @@ const IGODetailCard = ({
   handleTab,
   time,
   texts,
-  handleView,
+  linkView,
   externalLink,
   withTimer,
   width,
@@ -79,7 +79,7 @@ const IGODetailCard = ({
           }}
         />
       </SummaryBlock>
-      <ButtonStyle onClick={handleView} variant="green">
+      <ButtonStyle target="_blank" as="a" href={linkView} variant="green">
         {texts.button}
       </ButtonStyle>
     </Card>
@@ -98,6 +98,7 @@ const Card = styled(Flex)`
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
   margin: 0 auto;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 32px 22px;
   }
@@ -110,6 +111,7 @@ const TokenName = styled(Text)`
   font-size: 15px;
   line-height: 100%;
   color: ${({ theme }) => theme.colors.textGray};
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 17px;
   }
@@ -131,6 +133,7 @@ const StatusName = styled(Text)`
     top: 50%;
     background: ${({ theme }) => theme.colors.green};
   }
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 15px;
   }
@@ -141,6 +144,7 @@ const SiteToken = styled(Text)`
   font-weight: normal;
   font-size: 19px;
   line-height: 100%;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 21px;
   }
@@ -154,6 +158,7 @@ const TokenInfoBlock = styled(Flex)`
 `;
 const TokenLogo = styled.div`
   flex-shrink: 0;
+
   & img {
     width: 55px;
     height: 55px;
@@ -167,6 +172,7 @@ const TokenBalance = styled(Text)`
   font-weight: normal;
   font-size: 15px;
   line-height: 100%;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 17px;
   } ;
@@ -216,6 +222,7 @@ const TitleBlock = styled(Text)`
   font-size: 11px;
   line-height: 100%;
   color: ${({ theme }) => theme.colors.textGray};
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 13px;
   }
@@ -237,13 +244,30 @@ const SummaryText = styled(Text)`
   font-weight: normal;
   font-size: 13px;
   line-height: 22px;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 15px;
   }
 `;
 const ButtonStyle = styled(Button)`
   width: 100%;
-  margin-top: auto;
+  display: flex;
+  height: 50px;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #4cee3e -16%, #47da3b 100%);
+  color: #fff;
+  box-shadow: none;
+  transition: 0.3s;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  &:hover {
+    box-shadow: 0px 0px 29px #2cb021;
+  }
 `;
 
 const Buttons = styled(Flex)`
@@ -259,6 +283,7 @@ const StatusStyle = styled(Text)`
   & span {
     color: ${({ theme }) => theme.colors.green};
   }
+
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 15px;
   }

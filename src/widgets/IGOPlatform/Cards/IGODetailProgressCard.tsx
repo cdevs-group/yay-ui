@@ -9,6 +9,7 @@ import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
 import { baseColors } from "../../../theme/colors";
+import { Button } from "../../../components/Button";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
@@ -28,6 +29,8 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   descriptionsButtons,
   balanceError,
   balance,
+  handleBuyYAY,
+  slotsOpacity,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
 
@@ -55,7 +58,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (
-          <SlotSummary text={el.text} error={el.error} circleHidden={slots?.length <= 1} />
+          <SlotSummary slotsOpacity={slotsOpacity} text={el.text} error={el.error} circleHidden={slots?.length <= 1} />
         ))}
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
@@ -77,13 +80,27 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         ))}
       </Grid>
       {balanceError ? (
-        <Text mb={10} color={baseColors.darkPink}>
-          {texts.error}
-        </Text>
+        <Flex alignItems="center" justifyContent="center" mb={10}>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.darkPink}>
+            {texts.error}
+          </Text>
+          <BuyYAYButton
+            onClick={handleBuyYAY}
+            fontSize="13px"
+            style={{ textsDecoration: "underline", opacity: 0.5 }}
+            color={baseColors.green}
+          >
+            {texts.buyYAY}
+          </BuyYAYButton>
+        </Flex>
       ) : (
-        <Flex mb={10}>
-          <Text mr="10px">{texts.balance}</Text>
-          <Text color={baseColors.green}>{balance}</Text>
+        <Flex justifyContent="center" mb={10}>
+          <Text color={baseColors.textGray} style={{ opacity: 0.5 }} fontSize="13px" marginRight="10px">
+            {texts.balance}
+          </Text>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.textGray}>
+            {balance}
+          </Text>
         </Flex>
       )}
       {buttonLong}
@@ -144,4 +161,15 @@ const Block = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-bottom: 0;
   }
+`;
+const BuyYAYButton = styled(Button)`
+  height: fit-content;
+  display: block;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  color: ${({ theme }) => theme.colors.green};
 `;
