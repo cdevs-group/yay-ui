@@ -8992,14 +8992,14 @@ var RangeText = styled(Text)(templateObject_3$5 || (templateObject_3$5 = __makeT
 var templateObject_1$c, templateObject_2$9, templateObject_3$5;
 
 var SlotSummary = function (_a) {
-    var text = _a.text, error = _a.error, circleHidden = _a.circleHidden; _a.slotsOpacity;
-    return (React__default.createElement(TextStyled, { className: "" + (error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, color: error ? "darkPink" : "green", mr: "5px" },
+    var text = _a.text, error = _a.error, circleHidden = _a.circleHidden, opacity = _a.opacity;
+    return (React__default.createElement(TextStyled, { className: "" + (error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, opacity: opacity, color: error ? "darkPink" : "green", mr: "5px" },
         !circleHidden && React__default.createElement(Circle, { error: error }),
         text));
 };
 var TextStyled = styled(Text)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  margin-bottom: 15px;\n  opacity: ", ";\n  &.error {\n    margin-right: 0;\n  }\n  & span {\n    color: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  margin-bottom: 15px;\n  opacity: ", ";\n  &.error {\n    margin-right: 0;\n  }\n  & span {\n    color: ", ";\n  }\n"])), function (_a) {
-    var slotsOpacity = _a.slotsOpacity;
-    return (slotsOpacity ? 0.5 : 1);
+    var opacity = _a.opacity;
+    return (opacity ? "0.5 " : "1");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -9036,7 +9036,7 @@ var RangeTrack = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTe
 var templateObject_1$a, templateObject_2$7;
 
 var IGODetailProgressCard = function (_a) {
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, handleBuyYAY = _a.handleBuyYAY, slotsOpacity = _a.slotsOpacity;
+    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, hrefYAYBuy = _a.hrefYAYBuy;
     var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default.createElement(Card$3, null,
         React__default.createElement(FlexTop, null,
@@ -9050,7 +9050,7 @@ var IGODetailProgressCard = function (_a) {
         React__default.createElement(Text, { fontSize: "11px", lineHeight: "140%", fontWeight: 400, mt: "10px", mb: "30px", textAlign: "center" }, texts.textBottomBaseProgress),
         status && React__default.createElement(Status, null, texts.status),
         React__default.createElement(TextWithTooltip, { text: texts.slotsSummary, textTooltip: texts.slotsSummaryTooltip }),
-        React__default.createElement(Slots, null, slots.map(function (el) { return (React__default.createElement(SlotSummary, { slotsOpacity: slotsOpacity, text: el.text, error: el.error, circleHidden: (slots === null || slots === void 0 ? void 0 : slots.length) <= 1 })); })),
+        React__default.createElement(Slots, null, slots.map(function (el) { return (React__default.createElement(SlotSummary, { text: el.text, opacity: el.opacity, error: el.error, circleHidden: (slots === null || slots === void 0 ? void 0 : slots.length) <= 1 })); })),
         React__default.createElement(TextWithTooltip, { text: texts.availableWhitelist, textTooltip: texts.availableWhitelistTooltip }),
         React__default.createElement("div", { style: { marginBottom: 30 } }),
         React__default.createElement(Grid, null, buttonsList.map(function (el, i) { return (React__default.createElement(Block$2, null,
@@ -9059,7 +9059,7 @@ var IGODetailProgressCard = function (_a) {
             el)); })),
         balanceError ? (React__default.createElement(Flex, { alignItems: "center", justifyContent: "center", mb: 10 },
             React__default.createElement(Text, { fontSize: "13px", style: { opacity: 0.5 }, color: baseColors.darkPink }, texts.error),
-            React__default.createElement(BuyYAYButton, { onClick: handleBuyYAY, fontSize: "13px", style: { textsDecoration: "underline", opacity: 0.5 }, color: baseColors.green }, texts.buyYAY))) : (React__default.createElement(Flex, { justifyContent: "center", mb: 10 },
+            React__default.createElement(BuyYAYButton, { href: hrefYAYBuy, as: "a", target: "_blank", fontSize: "13px", style: { textsDecoration: "underline", opacity: 0.5 }, color: baseColors.green }, texts.buyYAY))) : (React__default.createElement(Flex, { justifyContent: "center", mb: 10 },
             React__default.createElement(Text, { color: baseColors.textGray, style: { opacity: 0.5 }, fontSize: "13px", marginRight: "10px" }, texts.balance),
             React__default.createElement(Text, { fontSize: "13px", style: { opacity: 0.5 }, color: baseColors.textGray }, balance))),
         buttonLong));
@@ -9082,7 +9082,7 @@ var Block$2 = styled.div(templateObject_6$4 || (templateObject_6$4 = __makeTempl
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BuyYAYButton = styled(Button$a)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  height: fit-content;\n  display: block;\n  text-decoration: underline;\n  border: none;\n  outline: none;\n  background: none;\n  box-shadow: none;\n  padding: 0;\n  color: ", ";\n"], ["\n  height: fit-content;\n  display: block;\n  text-decoration: underline;\n  border: none;\n  outline: none;\n  background: none;\n  box-shadow: none;\n  padding: 0;\n  color: ", ";\n"])), function (_a) {
+var BuyYAYButton = styled(Button$a)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  height: fit-content;\n  display: block;\n  text-decoration: underline;\n  border: none;\n  outline: none;\n  background: none;\n  box-shadow: none;\n  padding: 0;\n  color: ", ";\n  font-size: 13px;\n  margin-left: 5px;\n"], ["\n  height: fit-content;\n  display: block;\n  text-decoration: underline;\n  border: none;\n  outline: none;\n  background: none;\n  box-shadow: none;\n  padding: 0;\n  color: ", ";\n  font-size: 13px;\n  margin-left: 5px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });

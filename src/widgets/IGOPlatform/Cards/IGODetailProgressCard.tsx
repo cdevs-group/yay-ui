@@ -29,8 +29,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   descriptionsButtons,
   balanceError,
   balance,
-  handleBuyYAY,
-  slotsOpacity,
+  hrefYAYBuy,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
 
@@ -58,7 +57,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (
-          <SlotSummary slotsOpacity={slotsOpacity} text={el.text} error={el.error} circleHidden={slots?.length <= 1} />
+          <SlotSummary text={el.text} opacity={el.opacity} error={el.error} circleHidden={slots?.length <= 1} />
         ))}
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
@@ -85,7 +84,9 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
             {texts.error}
           </Text>
           <BuyYAYButton
-            onClick={handleBuyYAY}
+            href={hrefYAYBuy}
+            as="a"
+            target="_blank"
             fontSize="13px"
             style={{ textsDecoration: "underline", opacity: 0.5 }}
             color={baseColors.green}
@@ -172,4 +173,6 @@ const BuyYAYButton = styled(Button)`
   box-shadow: none;
   padding: 0;
   color: ${({ theme }) => theme.colors.green};
+  font-size: 13px;
+  margin-left: 5px;
 `;
