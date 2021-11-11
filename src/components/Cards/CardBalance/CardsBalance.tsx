@@ -6,7 +6,7 @@ import { TextCardsProps } from "../types";
 import Arrow from "./components/Arrow";
 import CardBalance from "./components/CardBalance";
 
-const CardsBalance = ({ texts, account }: TextCardsProps) => {
+const CardsBalance = ({ texts, account, hideArrow }: TextCardsProps) => {
   return (
     <Cards>
       <CardBalance
@@ -34,9 +34,11 @@ const CardsBalance = ({ texts, account }: TextCardsProps) => {
           <DualshockIcon />
         </DualShockBalance>
       </CardBalance>
-      <ArrowIcon>
-        <Arrow center={true} />
-      </ArrowIcon>
+      {hideArrow ? null : (
+        <ArrowIcon>
+          <Arrow center={true} />
+        </ArrowIcon>
+      )}
     </Cards>
   );
 };

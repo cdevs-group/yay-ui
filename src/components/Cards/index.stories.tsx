@@ -10,7 +10,7 @@ export default {
 };
 
 export const CardBalanceBlock: React.FC = () => <CardsBalance account="fghfgh" />;
-export const CardBalanceBlockNoAuth: React.FC = () => <CardsBalance account="" />;
+export const CardBalanceBlockNoAuth: React.FC = () => <CardsBalance hideArrow account="" />;
 
 export const CardsProductsPreciew: React.FC = () => {
   return (
