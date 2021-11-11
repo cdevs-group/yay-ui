@@ -9199,7 +9199,7 @@ var TitleBlock$1 = styled(Text)(templateObject_4$3 || (templateObject_4$3 = __ma
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ValueBlock = styled(Text)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 100%;\n  & a {\n    color: ", ";\n  }\n  ", " {\n    font-size: 17px;\n  }\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 100%;\n  & a {\n    color: ", ";\n  }\n  ", " {\n    font-size: 17px;\n  }\n"])), function (_a) {
+var ValueBlock = styled(Text)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 100%;\n  & a:hover {\n    color: ", ";\n  }\n  ", " {\n    font-size: 17px;\n  }\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 100%;\n  & a:hover {\n    color: ", ";\n  }\n  ", " {\n    font-size: 17px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, function (_a) {
@@ -9378,15 +9378,15 @@ var IGOSubscriptionCard = function (_a) {
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.private),
                 React__default.createElement(ValueBlock, null, privateDate),
-                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, privateTime)),
+                privateTime && (React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, privateTime))),
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.public),
                 React__default.createElement(ValueBlock, null, publicDate),
-                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, publicTime)),
+                publicTime && (React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, publicTime))),
             React__default.createElement(Block, null,
                 React__default.createElement(TitleBlock$1, null, texts.end),
                 React__default.createElement(ValueBlock, null, endDate),
-                React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, endTime))),
+                endTime && (React__default.createElement(Text, { fontSize: "13px", fontWeight: 400, mt: 10 }, endTime)))),
         React__default.createElement(Row, null,
             React__default.createElement("div", null,
                 React__default.createElement(TitleBlock$1, null, texts.hard),

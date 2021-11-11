@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { ReactNode } from "react";
 export interface IProgress {
     totalVolume: number;
     currentVolume: number;
@@ -154,7 +154,7 @@ export interface IGOSubscriptionCardProps {
     endDate: string;
     hardCap: string;
     purchasedLimit: string;
-    vestingStatus: string;
+    vestingStatus: string | ReactNode;
     texts: {
         title: string;
         totalSale: string;
@@ -166,9 +166,9 @@ export interface IGOSubscriptionCardProps {
         purchasedLimit: string;
         vesting: string;
     };
-    privateTime: string;
-    publicTime: string;
-    endTime: string;
+    privateTime?: string;
+    publicTime?: string;
+    endTime?: string;
 }
 export declare enum StatusHistory {
     ERROR = "error",
