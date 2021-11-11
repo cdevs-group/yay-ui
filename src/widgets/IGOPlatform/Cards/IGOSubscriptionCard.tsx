@@ -2,7 +2,7 @@ import React from "react";
 import { IGOSubscriptionCardProps } from "../types";
 import { Card, Row, RowType, TitleBlock, TitleStyle, ValueBlock } from "./style";
 import styled from "styled-components";
-import { Flex } from "../../../components/Box";
+import { Text } from "../../../components/Text";
 
 const IGOSubscriptionCard = ({
   totalSale,
@@ -10,12 +10,15 @@ const IGOSubscriptionCard = ({
   privateDate,
   publicDate,
   endDate,
-  softCap,
+  // softCap,
   hardCap,
-  minPurchased,
-  maxPurchased,
+  purchasedLimit,
+  // maxPurchased,
   vestingStatus,
   texts,
+  privateTime,
+  publicTime,
+  endTime,
 }: IGOSubscriptionCardProps) => {
   return (
     <Card>
@@ -36,36 +39,45 @@ const IGOSubscriptionCard = ({
         <Block>
           <TitleBlock>{texts.private}</TitleBlock>
           <ValueBlock>{privateDate}</ValueBlock>
+          <Text fontSize="13px" fontWeight={400} mt={10}>
+            {privateTime}
+          </Text>
         </Block>
         <Block>
           <TitleBlock>{texts.public}</TitleBlock>
           <ValueBlock>{publicDate}</ValueBlock>
+          <Text fontSize="13px" fontWeight={400} mt={10}>
+            {publicTime}
+          </Text>
         </Block>
         <Block>
           <TitleBlock>{texts.end}</TitleBlock>
           <ValueBlock>{endDate}</ValueBlock>
+          <Text fontSize="13px" fontWeight={400} mt={10}>
+            {endTime}
+          </Text>
         </Block>
       </RowType>
-      <RowType>
-        <Block>
+      <Row>
+        {/* <Block>
           <TitleBlock>{texts.soft}</TitleBlock>
           <ValueBlock>{softCap}</ValueBlock>
-        </Block>
-        <Block>
+        </Block> */}
+        <div>
           <TitleBlock>{texts.hard}</TitleBlock>
           <ValueBlock>{hardCap}</ValueBlock>
-        </Block>
-      </RowType>
-      <RowType>
-        <Block>
-          <TitleBlock>{texts.minPurchased}</TitleBlock>
-          <ValueBlock>{minPurchased}</ValueBlock>
-        </Block>
-        <Block>
+        </div>
+      </Row>
+      <Row>
+        <div>
+          <TitleBlock>{texts.purchasedLimit}</TitleBlock>
+          <ValueBlock>{purchasedLimit}</ValueBlock>
+        </div>
+        {/* <Block>
           <TitleBlock>{texts.maxPurchased}</TitleBlock>
           <ValueBlock>{maxPurchased}</ValueBlock>
-        </Block>
-      </RowType>
+        </Block> */}
+      </Row>
       <Row>
         <div>
           <TitleBlock>{texts.vesting}</TitleBlock>
@@ -78,9 +90,9 @@ const IGOSubscriptionCard = ({
 
 export default IGOSubscriptionCard;
 
-const Block = styled(Flex)`
-  justify-content: space-between;
+const Block = styled.div`
+  margin-bottom: 25px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    flex-direction: column;
+    margin-bottom: 0;
   }
 `;

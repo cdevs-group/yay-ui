@@ -87,6 +87,7 @@ export interface IGODetailProgressCardProps {
   descriptionsButtons?: string[];
   balanceError?: boolean;
   balance?: string;
+  disabledToggle?: boolean;
 }
 export interface IGOCardInfoProps {
   name: string;
@@ -140,10 +141,10 @@ export interface IGOSubscriptionCardProps {
   privateDate: string;
   publicDate: string;
   endDate: string;
-  softCap: string;
+  // softCap: string;
   hardCap: string;
-  minPurchased: string;
-  maxPurchased: string;
+  purchasedLimit: string;
+  // maxPurchased: string;
   vestingStatus: string;
   texts: {
     title: string;
@@ -152,12 +153,15 @@ export interface IGOSubscriptionCardProps {
     private: string;
     public: string;
     end: string;
-    soft: string;
+    // soft: string;
     hard: string;
-    minPurchased: string;
-    maxPurchased: string;
+    purchasedLimit: string;
+    // maxPurchased: string;
     vesting: string;
   };
+  privateTime: string;
+  publicTime: string;
+  endTime: string;
 }
 
 export enum StatusHistory {
@@ -173,20 +177,20 @@ export enum TypeHistory {
 export interface IGOInfoCardProps {
   tokenName: string;
   address: string;
-  initial: string;
-  lockDuration: string;
-  status: string;
-  link: string;
+  // initial: string;
+  // lockDuration: string;
+  // status: string;
+  // link: string;
   texts: {
     title: string;
     name: string;
     address: string;
     copied: string;
     liquid: string;
-    initial: string;
-    lock: string;
-    status: string;
-    link: string;
+    // initial: string;
+    // lock: string;
+    // status: string;
+    // link: string;
   };
   width: number;
 }

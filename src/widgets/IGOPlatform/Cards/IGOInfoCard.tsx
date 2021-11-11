@@ -6,7 +6,13 @@ import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { ellipsis } from "../../../helpers/ellipsis";
 
-const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, texts, width }: IGOInfoCardProps) => {
+const IGOInfoCard = ({
+  tokenName,
+  address,
+  // initial, lockDuration, status, link,
+  texts,
+  width,
+}: IGOInfoCardProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
@@ -26,7 +32,7 @@ const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, 
           <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{texts.copied}</Tooltip>
         </CopyBlock>
       </Row>
-      <TitleStyle margin="40px 0 32px">{texts.liquid}</TitleStyle>
+      {/* <TitleStyle margin="40px 0 32px">{texts.liquid}</TitleStyle>
       <Row>
         <div>
           <TitleBlock>{texts.initial}</TitleBlock>
@@ -49,7 +55,7 @@ const IGOInfoCard = ({ tokenName, address, initial, lockDuration, status, link, 
             </a>
           </ValueBlock>
         </div>
-      </Row>
+      </Row> */}
     </Card>
   );
 };
