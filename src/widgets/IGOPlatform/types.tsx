@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IProgress {
   totalVolume: number;
   currentVolume: number;
@@ -150,7 +152,7 @@ export interface IGOSubscriptionCardProps {
   hardCap: string;
   purchasedLimit: string;
   // maxPurchased: string;
-  vestingStatus: string;
+  vestingStatus: string | ReactNode;
   texts: {
     title: string;
     totalSale: string;
@@ -164,9 +166,9 @@ export interface IGOSubscriptionCardProps {
     // maxPurchased: string;
     vesting: string;
   };
-  privateTime: string;
-  publicTime: string;
-  endTime: string;
+  privateTime?: string;
+  publicTime?: string;
+  endTime?: string;
 }
 
 export enum StatusHistory {
