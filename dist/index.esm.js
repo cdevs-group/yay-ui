@@ -2471,7 +2471,7 @@ var Ghost = styled.div(templateObject_4$1c || (templateObject_4$1c = __makeTempl
 var templateObject_1$2h, templateObject_2$1S, templateObject_3$1v, templateObject_4$1c;
 
 var CardsBalance = function (_a) {
-    var texts = _a.texts, account = _a.account;
+    var texts = _a.texts, account = _a.account, hideArrow = _a.hideArrow;
     return (React__default.createElement(Cards, null,
         React__default.createElement(CardBalance, { texts: {
                 title: (texts === null || texts === void 0 ? void 0 : texts.title1) || "2`000 YAY",
@@ -2487,8 +2487,8 @@ var CardsBalance = function (_a) {
             }, account: account },
             React__default.createElement(DualShockBalance, null,
                 React__default.createElement(DualshockIcon, null))),
-        React__default.createElement(ArrowIcon, null,
-            React__default.createElement(Arrow$2, { center: true }))));
+        hideArrow ? null : (React__default.createElement(ArrowIcon, null,
+            React__default.createElement(Arrow$2, { center: true })))));
 };
 var Cards = styled.div(templateObject_1$2g || (templateObject_1$2g = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  ", " {\n    position: relative;\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 0 16px;\n  }\n"], ["\n  display: flex;\n  position: relative;\n  flex-direction: column;\n  ", " {\n    position: relative;\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    gap: 0 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9007,7 +9007,7 @@ var RangeTrack = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTe
 var templateObject_1$a, templateObject_2$7;
 
 var IGODetailProgressCard = function (_a) {
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons;
+    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance;
     var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default.createElement(Card$3, null,
         React__default.createElement(FlexTop, null,
@@ -9028,6 +9028,9 @@ var IGODetailProgressCard = function (_a) {
             progressVisible ? (React__default.createElement("div", { style: { marginBottom: 12 } },
                 React__default.createElement(ProgressRange2, { progress: progress[i] }))) : (React__default.createElement(Text, { fontSize: "13px", textAlign: "center", mb: "5px" }, descriptionsButtons === null || descriptionsButtons === void 0 ? void 0 : descriptionsButtons[i])),
             el)); })),
+        balanceError ? (React__default.createElement(Text, { mb: 10, color: baseColors.darkPink }, texts.error)) : (React__default.createElement(Flex, { mb: 10 },
+            React__default.createElement(Text, { mr: "10px" }, texts.balance),
+            React__default.createElement(Text, { color: baseColors.green }, balance))),
         buttonLong));
 };
 var Card$3 = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"], ["\n  display: flex;\n  flex-direction: column;\n  max-width: 548px;\n  width: 100%;\n  height: 100%;\n  padding: 32px 22px;\n  background: ", ";\n  border-radius: 12px;\n  margin: 0 auto;\n"])), function (_a) {

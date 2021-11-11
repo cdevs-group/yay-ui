@@ -29,6 +29,7 @@ export interface TextCardsProps {
         connect?: string;
     };
     account: string;
+    hideArrow?: boolean;
 }
 export interface CardProductProp {
     title: string;
