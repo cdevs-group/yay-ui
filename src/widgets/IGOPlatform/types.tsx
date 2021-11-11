@@ -161,9 +161,9 @@ export interface IGOSubscriptionCardProps {
     // maxPurchased: string;
     vesting: string;
   };
-  privateTime: string;
-  publicTime: string;
-  endTime: string;
+  privateTime?: string;
+  publicTime?: string;
+  endTime?: string;
 }
 
 export enum StatusHistory {
