@@ -22,6 +22,7 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
     currentVolume: number;
     totalVolume: number;
     handleView: () => void;
+    statusTitle?: string;
     time: number;
     texts: {
         available: string;
@@ -38,11 +39,14 @@ export declare enum NetworksTab {
     AVAX = 1
 }
 export declare enum CardStatus {
-    OPEN_WHITELIST = "Open whitelist",
-    COMPLETED = "Completed",
-    PUBLIC_SALE = "Public Sale",
-    CLAIMING = "Claiming",
-    WHITELIST_SALE = "Whitelist Sale"
+    BEFORE_WHITELIST = "beforeWhitelist",
+    OPEN_WHITELIST = "openWhitelist",
+    WHITELIST_SALE = "whitelistSale",
+    PUBLIC_SALE = "publicSale",
+    WAIT_SALE = "waitSale",
+    WAIT_TGE = "waitTGE",
+    COMPLETED = "completed",
+    CLAIMING = "claiming"
 }
 export interface TextWithTooltipProps {
     text: string;
