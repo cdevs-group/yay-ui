@@ -28,7 +28,21 @@ export const IGOCardBlock = () => {
     setNetwork(e.target.value);
   };
 
-  const dataSlots = [17, 80, 100];
+  const dataSlots = [
+    {
+      all: 230,
+      free: 200,
+    },
+    {
+      all: 230,
+      free: 230,
+    },
+    {
+      all: 230,
+      free: 0,
+    },
+  ];
+
   const handleView = () => {
     console.log("view");
   };
@@ -224,7 +238,20 @@ export const IGODetailProgressCardBlock = () => {
       Join public sale
     </Button>
   );
-  const dataProgress = [0, 80, 100];
+  const dataProgress = [
+    {
+      all: 230,
+      free: 0,
+    },
+    {
+      all: 230,
+      free: 230,
+    },
+    {
+      all: 230,
+      free: 40,
+    },
+  ];
 
   return (
     <Cards>

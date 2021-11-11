@@ -3,16 +3,16 @@ import styled from "styled-components";
 import { Text } from "../../../../components/Text";
 
 export interface ProgressRange2Props {
-  progress: number;
+  progress: { all: number; free: number };
 }
 
 const ProgressRange2 = ({ progress }: ProgressRange2Props) => {
   return (
     <ProgressWrap>
       <Text fontSize="13px" textAlign="center" lineHeight={1} mb="5px">
-        {progress}/100
+        {progress.all - progress.free}/{progress.all}
       </Text>
-      <RangeTrack isError={progress === 100} progress={progress} />
+      <RangeTrack isError={progress.free === 0} progress={((progress.all - progress.free) * 100) / progress.all} />
     </ProgressWrap>
   );
 };
