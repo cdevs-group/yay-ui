@@ -8,6 +8,7 @@ import { IGODetailProgressCardProps } from "../types";
 import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
+import { baseColors } from "../../../theme/colors";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
@@ -24,6 +25,8 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   progress,
   progressVisible,
   descriptionsButtons,
+  balanceError,
+  balance,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
 
@@ -72,6 +75,16 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
           </Block>
         ))}
       </Grid>
+      {balanceError ? (
+        <Text mb={10} color={baseColors.darkPink}>
+          {texts.error}
+        </Text>
+      ) : (
+        <Flex mb={10}>
+          <Text mr="10px">{texts.balance}</Text>
+          <Text color={baseColors.green}>{balance}</Text>
+        </Flex>
+      )}
       {buttonLong}
     </Card>
   );

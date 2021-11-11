@@ -169,6 +169,8 @@ export const IGODetailProgressCardBlock = () => {
     slotsSummaryTooltip: "Slots summary Tooltip",
     availableWhitelist: "Available whitelist slots:",
     availableWhitelistTooltip: "Available whitelist slots",
+    balance: "Available balance: ",
+    error: "Insufficient balance to make bet",
     status: (
       <>
         PUBLIC sale <span>SOLD OUT</span>
@@ -229,6 +231,8 @@ export const IGODetailProgressCardBlock = () => {
   return (
     <Cards>
       <IGODetailProgressCard
+        balance="100yay"
+        balanceError
         checkedToggle={isChecked}
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="Whitelist Phase"
@@ -247,6 +251,7 @@ export const IGODetailProgressCardBlock = () => {
 
       <IGODetailProgressCard
         checkedToggle={isChecked}
+        balance="100yay"
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="700 BNB/ 700 BNB"
         baseProgress={20}
@@ -262,6 +267,7 @@ export const IGODetailProgressCardBlock = () => {
       />
 
       <IGODetailProgressCard
+        balance="100yay"
         checkedToggle={!isChecked}
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="700 BNB/ 700 BNB"

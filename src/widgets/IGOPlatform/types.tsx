@@ -68,6 +68,8 @@ export interface IGODetailProgressCardProps {
     availableWhitelist: string;
     availableWhitelistTooltip: string | React.ReactNode;
     status?: React.ReactNode;
+    balance?: string;
+    error?: string;
   };
   slots: SlotSummaryProps[];
   status?: boolean;
@@ -78,6 +80,8 @@ export interface IGODetailProgressCardProps {
   progress: number[];
   progressVisible?: boolean;
   descriptionsButtons?: string[];
+  balanceError?: boolean;
+  balance?: string;
 }
 export interface IGOCardInfoProps {
   name: string;
