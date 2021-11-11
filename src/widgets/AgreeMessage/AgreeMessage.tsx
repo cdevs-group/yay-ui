@@ -4,7 +4,7 @@ import { Text } from "../../components/Text";
 import { GhostsIcon } from "../../constants/images";
 import { CheckboxInput } from "../../components/CheckboxInput";
 import { Flex } from "../../components/Box";
-import { Button } from "../../components/Button";
+import { Button, ButtonProps } from "../../components/Button";
 
 interface AgreeMessageProps {
   isChecked: {
@@ -13,7 +13,7 @@ interface AgreeMessageProps {
   };
   handleChangeCheckbox: (e: any) => void;
   disabled: boolean;
-  onClick: () => void;
+  onClick: () => void | Promise<void>;
   texts: {
     title: string;
     message: string;
@@ -21,9 +21,17 @@ interface AgreeMessageProps {
     option2: string;
     button: string;
   };
+  propsButton?: ButtonProps;
 }
 
-const AgreeMessage = ({ isChecked, handleChangeCheckbox, disabled, onClick, texts }: AgreeMessageProps) => {
+const AgreeMessage = ({
+  isChecked,
+  handleChangeCheckbox,
+  disabled,
+  onClick,
+  texts,
+  propsButton,
+}: AgreeMessageProps) => {
   return (
     <Wrapper>
       <TitleText>{texts.title}</TitleText>
@@ -41,7 +49,7 @@ const AgreeMessage = ({ isChecked, handleChangeCheckbox, disabled, onClick, text
           <Label htmlFor="option2">{texts.option2}</Label>
         </Option>
       </div>
-      <Button onClick={onClick} disabled={disabled} marginTop="70px" variant="green" width="100%">
+      <Button onClick={onClick} disabled={disabled} marginTop="70px" variant="green" width="100%" {...propsButton}>
         {texts.button}
       </Button>
     </Wrapper>
@@ -54,7 +62,6 @@ const Wrapper = styled.div`
   padding: 13px;
   max-width: 534px;
   max-height: 100vh;
-  //min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);

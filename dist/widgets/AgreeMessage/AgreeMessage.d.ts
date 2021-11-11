@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { ButtonProps } from "../../components/Button";
 interface AgreeMessageProps {
     isChecked: {
         option1: boolean | any;
@@ -6,7 +7,7 @@ interface AgreeMessageProps {
     };
     handleChangeCheckbox: (e: any) => void;
     disabled: boolean;
-    onClick: () => void;
+    onClick: () => void | Promise<void>;
     texts: {
         title: string;
         message: string;
@@ -14,6 +15,7 @@ interface AgreeMessageProps {
         option2: string;
         button: string;
     };
+    propsButton?: ButtonProps;
 }
-declare const AgreeMessage: ({ isChecked, handleChangeCheckbox, disabled, onClick, texts }: AgreeMessageProps) => JSX.Element;
+declare const AgreeMessage: ({ isChecked, handleChangeCheckbox, disabled, onClick, texts, propsButton, }: AgreeMessageProps) => JSX.Element;
 export default AgreeMessage;

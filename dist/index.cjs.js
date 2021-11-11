@@ -9463,7 +9463,7 @@ var ImgItem = styled__default['default'].div(templateObject_6$1 || (templateObje
 var templateObject_1$2, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5$1, templateObject_6$1;
 
 var AgreeMessage = function (_a) {
-    var isChecked = _a.isChecked, handleChangeCheckbox = _a.handleChangeCheckbox, disabled = _a.disabled, onClick = _a.onClick, texts = _a.texts;
+    var isChecked = _a.isChecked, handleChangeCheckbox = _a.handleChangeCheckbox, disabled = _a.disabled, onClick = _a.onClick, texts = _a.texts, propsButton = _a.propsButton;
     return (React__default['default'].createElement(Wrapper, null,
         React__default['default'].createElement(TitleText, null, texts.title),
         React__default['default'].createElement(ImgBlock, null,
@@ -9476,9 +9476,9 @@ var AgreeMessage = function (_a) {
             React__default['default'].createElement(Option, { className: "option2" },
                 React__default['default'].createElement(CheckboxInput, { id: "option2", onChange: handleChangeCheckbox, checked: isChecked.option2, name: "option2" }),
                 React__default['default'].createElement(Label, { htmlFor: "option2" }, texts.option2))),
-        React__default['default'].createElement(Button$a, { onClick: onClick, disabled: disabled, marginTop: "70px", variant: "green", width: "100%" }, texts.button)));
+        React__default['default'].createElement(Button$a, __assign({ onClick: onClick, disabled: disabled, marginTop: "70px", variant: "green", width: "100%" }, propsButton), texts.button)));
 };
-var Wrapper = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 13px;\n  max-width: 534px;\n  max-height: 100vh;\n  //min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    padding: 27px;\n  }\n"], ["\n  padding: 13px;\n  max-width: 534px;\n  max-height: 100vh;\n  //min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    padding: 27px;\n  }\n"])), function (_a) {
+var Wrapper = styled__default['default'].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 13px;\n  max-width: 534px;\n  max-height: 100vh;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    padding: 27px;\n  }\n"], ["\n  padding: 13px;\n  max-width: 534px;\n  max-height: 100vh;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    padding: 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {

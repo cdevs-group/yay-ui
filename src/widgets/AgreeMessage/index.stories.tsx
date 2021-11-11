@@ -31,6 +31,7 @@ export const AgreeMessageBlock = () => {
         onClick={() => console.log("click")}
         disabled={isChecked.option1 === false || isChecked.option2 === false}
         isChecked={isChecked}
+        propsButton={{ spin: true }}
         handleChangeCheckbox={handleChangeCheckbox}
       />
     </div>
