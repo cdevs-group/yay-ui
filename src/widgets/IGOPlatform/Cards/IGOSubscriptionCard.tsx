@@ -39,23 +39,29 @@ const IGOSubscriptionCard = ({
         <Block>
           <TitleBlock>{texts.private}</TitleBlock>
           <ValueBlock>{privateDate}</ValueBlock>
-          <Text fontSize="13px" fontWeight={400} mt={10}>
-            {privateTime}
-          </Text>
+          {privateTime && (
+            <Text fontSize="13px" fontWeight={400} mt={10}>
+              {privateTime}
+            </Text>
+          )}
         </Block>
         <Block>
           <TitleBlock>{texts.public}</TitleBlock>
           <ValueBlock>{publicDate}</ValueBlock>
-          <Text fontSize="13px" fontWeight={400} mt={10}>
-            {publicTime}
-          </Text>
+          {publicTime && (
+            <Text fontSize="13px" fontWeight={400} mt={10}>
+              {publicTime}
+            </Text>
+          )}
         </Block>
         <Block>
           <TitleBlock>{texts.end}</TitleBlock>
           <ValueBlock>{endDate}</ValueBlock>
-          <Text fontSize="13px" fontWeight={400} mt={10}>
-            {endTime}
-          </Text>
+          {endTime && (
+            <Text fontSize="13px" fontWeight={400} mt={10}>
+              {endTime}
+            </Text>
+          )}
         </Block>
       </RowType>
       <Row>

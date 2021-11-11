@@ -47,7 +47,7 @@ export const ValueBlock = styled(Text)`
   font-weight: normal;
   font-size: 15px;
   line-height: 100%;
-  & a {
+  & a:hover {
     color: ${({ theme }) => theme.colors.green};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
