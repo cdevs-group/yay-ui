@@ -96,7 +96,7 @@ function __spreadArray(to, from, pack) {
             ar[i] = from[i];
         }
     }
-    return to.concat(ar || from);
+    return to.concat(ar || Array.prototype.slice.call(from));
 }
 
 function __makeTemplateObject(cooked, raw) {
@@ -2002,26 +2002,30 @@ var Wrap$q = styled.div(templateObject_1$2s || (templateObject_1$2s = __makeTemp
 var templateObject_1$2s;
 
 function MyTimer(_a) {
-    var expiryTimestamp = _a.expiryTimestamp, color = _a.color, height = _a.height, width = _a.width, marginPoint = _a.marginPoint, background = _a.background, borderRadius = _a.borderRadius, margin = _a.margin, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize, hoursHide = _a.hoursHide, withTime = _a.withTime;
-    var hours = Math.floor(expiryTimestamp / 3600);
-    var minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-    var seconds = expiryTimestamp - hours * 3600 - minutes * 60;
-    var handleDigit = function (value) {
-        var leftDigit = value >= 10 ? value.toString()[0] : "0";
-        var rightDigit = value >= 10 ? value.toString()[1] : value.toString();
-        return { leftDigit: leftDigit, rightDigit: rightDigit };
-    };
-    var timeArray = hoursHide ? [minutes, seconds] : [hours, minutes, seconds];
-    var timeShow = ["h", "m", "s"];
-    var pointsAfter = hoursHide ? 1 : 2;
+    var expiryTimestamp = _a.expiryTimestamp, color = _a.color, height = _a.height, width = _a.width; _a.marginPoint; var background = _a.background, borderRadius = _a.borderRadius, margin = _a.margin, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize; _a.hoursHide; _a.withTime;
+    function getTimeRemaining(expiryTimestamp) {
+        var seconds = Math.floor(expiryTimestamp % 60);
+        var minutes = Math.floor((expiryTimestamp / 60) % 60);
+        var hours = Math.floor((expiryTimestamp / (60 * 60)) % 24);
+        var days = Math.floor(expiryTimestamp / (60 * 60 * 24));
+        return {
+            expiryTimestamp: expiryTimestamp,
+            days: days,
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds,
+        };
+    }
+    var date = getTimeRemaining(expiryTimestamp);
     return (React__default.createElement(Wrapper$s, { widthWrapper: widthWrapper, margin: margin },
-        React__default.createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
-            React__default.createElement(ItemWithoutBg, { withTime: withTime, fontSize: fontSize, color: color },
-                handleDigit(item).leftDigit,
-                handleDigit(item).rightDigit,
-                " ",
-                withTime && timeShow[i]),
-            i === pointsAfter ? null : (React__default.createElement(DotsWithoutBg, { color: color, marginPoint: marginPoint }, ":")))); }))));
+        React__default.createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, color: color },
+            date.days > 0 ? date.days + "d :" : "",
+            " ",
+            date.hours > 0 ? date.hours + "h :" : "",
+            " ",
+            date.minutes + "m",
+            " ",
+            ": " + date.seconds + "s")));
 }
 var LoadingTimer = function (_a) {
     var margin = _a.margin, height = _a.height, width = _a.width, borderRadius = _a.borderRadius, background = _a.background, marginPoint = _a.marginPoint, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize, hoursHide = _a.hoursHide;
@@ -3291,7 +3295,7 @@ var Bunny = styled.div(templateObject_2$1z || (templateObject_2$1z = __makeTempl
 });
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b; _a.size; var _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
-    var bunnies = __spreadArray([], Array(count)).map(function (_, index) { return (React__default.createElement(Bunny, { key: String(index), position: Math.random() * 100, iterations: iterations, duration: duration },
+    var bunnies = __spreadArray([], Array(count), true).map(function (_, index) { return (React__default.createElement(Bunny, { key: String(index), position: Math.random() * 100, iterations: iterations, duration: duration },
         React__default.createElement(Text, { color: "text" }, "Failing"))); });
     return React__default.createElement("div", null, bunnies);
 };
@@ -3361,7 +3365,7 @@ var TabsWithMovingLine = function (_a) {
     var _b = useState([]), widthTabsActive = _b[0], setWidthTabsActive = _b[1];
     useLayoutEffect(function () {
         if (refTab) {
-            refTab.forEach(function (el) { return setWidthTabsActive(function (prev) { var _a; return __spreadArray(__spreadArray([], prev), [((_a = el === null || el === void 0 ? void 0 : el.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 0]); }); });
+            refTab.forEach(function (el) { return setWidthTabsActive(function (prev) { var _a; return __spreadArray(__spreadArray([], prev, true), [((_a = el === null || el === void 0 ? void 0 : el.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 0], false); }); });
         }
     }, []);
     return (React__default.createElement(TopLine$1, null,
@@ -4344,7 +4348,7 @@ var useAccordeon = function (cards) {
     var filterCards = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) !== (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
     var filterActiveCard = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) === (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
     useEffect(function () {
-        setNewCards(__spreadArray(__spreadArray([], filterActiveCard), filterCards));
+        setNewCards(__spreadArray(__spreadArray([], filterActiveCard, true), filterCards, true));
     }, [active, cards.length]);
     return { valueAccordeon: valueAccordeon, setValueAccordeon: setValueAccordeon, heightActiveBlock: heightActiveBlock, handleToggleAccordeon: handleToggleAccordeon, newCards: newCards, active: active, refHidden: refHidden };
 };
