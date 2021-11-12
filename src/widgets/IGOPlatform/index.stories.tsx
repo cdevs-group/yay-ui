@@ -64,6 +64,7 @@ export const IGOCardBlock = () => {
     <div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -87,6 +88,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           statusTitle="Whitelist is open"
@@ -110,6 +112,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -133,6 +136,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -157,6 +161,7 @@ export const IGOCardBlock = () => {
 
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -180,6 +185,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -203,6 +209,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -226,6 +233,7 @@ export const IGOCardBlock = () => {
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}

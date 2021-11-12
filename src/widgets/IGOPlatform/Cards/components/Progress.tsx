@@ -6,7 +6,7 @@ import { Flex } from "../../../../components/Box";
 import { Text } from "../../../../components/Text";
 import { IProgress } from "../../types";
 
-const Progress = ({ totalVolume, currentVolume }: IProgress) => {
+const Progress = ({ totalVolume, currentVolume, tokenName }: IProgress) => {
   const [widthTotal, setWidthTotal] = useState(0);
   const [widthCurrent, setWidthCurrent] = useState(0);
   const [widthProgressBar, setWidthProgressBar] = useState(0);
@@ -54,10 +54,10 @@ const Progress = ({ totalVolume, currentVolume }: IProgress) => {
       <CounterWrapper>
         <Counter stop={isFinish} width={isFinish ? widthTotal + 12 : widthProgress}>
           <Current marginLeft={widthProgress > 50 ? `-${widthCurrent}px` : 0} ref={refCurrent}>
-            {currentVolume} BNB
+            {currentVolume} {tokenName}
           </Current>
           <Symbol visible={isFinish}>/</Symbol>
-          <Total ref={refTotal}>{totalVolume} BNB</Total>
+          <Total ref={refTotal}>{totalVolume} {tokenName}</Total>
         </Counter>
       </CounterWrapper>
     </div>

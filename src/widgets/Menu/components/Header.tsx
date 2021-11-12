@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { NavProps } from "../types";
 import Account from "./Account";
@@ -76,7 +77,7 @@ const Header: React.FC<NavProps> = ({
       {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
       <Content>
         <Line>
-          <LogoWrap href={linkLogo}>
+          <LogoWrap to={linkLogo}>
             <img src={Logo} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
@@ -207,7 +208,7 @@ const LanguageBlockDesk = styled.div`
   }
 `;
 
-const LogoWrap = styled.a`
+const LogoWrap = styled(NavLink)`
   display: flex;
   align-items: center;
   & img {

@@ -28,6 +28,7 @@ const IGOCard = ({
   time,
   handleView,
   statusTitle,
+  tokenName,
 }: IGOCardProps) => {
   return (
     <Wrapper>
@@ -110,7 +111,7 @@ const IGOCard = ({
       {[CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find((el) => el === status) && (
         <ProgressBlock style={{ marginTop: "37px" }}>
           <TitleBlock marginBottom="15px">{texts.progress}</TitleBlock>
-          <Progress totalVolume={totalVolume} currentVolume={currentVolume} />
+          <Progress totalVolume={totalVolume} currentVolume={currentVolume} tokenName={tokenName} />
         </ProgressBlock>
       )}
       <ButtonStyle onClick={handleView} variant="green">
