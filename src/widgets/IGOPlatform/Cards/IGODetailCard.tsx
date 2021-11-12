@@ -28,6 +28,7 @@ const IGODetailCard = ({
   externalLink,
   withTimer,
   width,
+  statusText,
 }: IGOCardInfoProps) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
@@ -68,7 +69,7 @@ const IGODetailCard = ({
             <TimerNotSolidWithoutBg withTime fontSize="15px" time={time} />
           </>
         ) : (
-          <StatusStyle>{texts.status}</StatusStyle>
+          <StatusStyle>{statusText || texts.status}</StatusStyle>
         )}
       </TimerBlock>
       <SummaryBlock>
@@ -131,6 +132,7 @@ const StatusName = styled(Text)`
     content: "";
     left: -9px;
     top: 50%;
+    transform: translateY(-50%);
     background: ${({ theme }) => theme.colors.green};
   }
 

@@ -356,6 +356,11 @@ export const IGODetailProgressCardBlock = () => {
   return (
     <Cards>
       <IGODetailProgressCard
+        statusText={
+          <>
+            PUBLIC sale <span>SOLD OUT</span>
+          </>
+        }
         balance="100yay"
         balanceError
         checkedToggle={isChecked}
@@ -461,6 +466,11 @@ export const IGOCardDetailsBlock = () => {
         withTimer={false}
         externalLink="/"
         width={500}
+        statusText={
+          <Text fontSize="15px" color={baseColors.green}>
+            WHITELIST SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+          </Text>
+        }
       />
       <div style={{ marginTop: "50px" }}>
         <IGODetailCard

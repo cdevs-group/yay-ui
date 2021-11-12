@@ -29,6 +29,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   descriptionsButtons,
   balanceError,
   balance,
+  statusText,
   hrefYAYBuy,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
@@ -53,7 +54,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <Text fontSize="11px" lineHeight="140%" fontWeight={400} mt="10px" mb="30px" textAlign="center">
         {texts.textBottomBaseProgress}
       </Text>
-      {status && <Status>{texts.status}</Status>}
+      {status && <Status>{statusText || texts.status}</Status>}
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (

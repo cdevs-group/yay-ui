@@ -9036,7 +9036,7 @@ var RangeTrack = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTe
 var templateObject_1$a, templateObject_2$7;
 
 var IGODetailProgressCard = function (_a) {
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, hrefYAYBuy = _a.hrefYAYBuy;
+    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, statusText = _a.statusText, hrefYAYBuy = _a.hrefYAYBuy;
     var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default.createElement(Card$3, null,
         React__default.createElement(FlexTop, null,
@@ -9048,7 +9048,7 @@ var IGODetailProgressCard = function (_a) {
                     React__default.createElement(Text, { fontSize: "13px", ml: "10px", style: { opacity: disabledToggle ? 0.5 : 1 } }, texts.saleToggle)))),
         React__default.createElement(ProgressWithText, { text: textBaseProgress, progress: baseProgress }),
         React__default.createElement(Text, { fontSize: "11px", lineHeight: "140%", fontWeight: 400, mt: "10px", mb: "30px", textAlign: "center" }, texts.textBottomBaseProgress),
-        status && React__default.createElement(Status, null, texts.status),
+        status && React__default.createElement(Status, null, statusText || texts.status),
         React__default.createElement(TextWithTooltip, { text: texts.slotsSummary, textTooltip: texts.slotsSummaryTooltip }),
         React__default.createElement(Slots, null, slots.map(function (el) { return (React__default.createElement(SlotSummary, { text: el.text, opacity: el.opacity, error: el.error, circleHidden: (slots === null || slots === void 0 ? void 0 : slots.length) <= 1 })); })),
         React__default.createElement(TextWithTooltip, { text: texts.availableWhitelist, textTooltip: texts.availableWhitelistTooltip }),
@@ -9223,7 +9223,7 @@ var Tooltip = styled.div(templateObject_7$1 || (templateObject_7$1 = __makeTempl
 var templateObject_1$6, templateObject_2$4, templateObject_3$3, templateObject_4$3, templateObject_5$3, templateObject_6$3, templateObject_7$1;
 
 var IGODetailCard = function (_a) {
-    var name = _a.name, status = _a.status, site = _a.site, tokenImg = _a.tokenImg, balance = _a.balance, address = _a.address, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, time = _a.time, texts = _a.texts, linkView = _a.linkView, externalLink = _a.externalLink, withTimer = _a.withTimer, width = _a.width;
+    var name = _a.name, status = _a.status, site = _a.site, tokenImg = _a.tokenImg, balance = _a.balance, address = _a.address, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, time = _a.time, texts = _a.texts, linkView = _a.linkView, externalLink = _a.externalLink, withTimer = _a.withTimer, width = _a.width, statusText = _a.statusText;
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default.createElement(Card, null,
         React__default.createElement(HeadLine, null,
@@ -9249,7 +9249,7 @@ var IGODetailCard = function (_a) {
             React__default.createElement(NetworksTabs, { networksTab: networksTab, currentNetwork: currentNetwork, onClick: handleTab })),
         React__default.createElement(TimerBlock, null, withTimer ? (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(TitleBlock, { marginBottom: "5px" }, texts.before),
-            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))) : (React__default.createElement(StatusStyle, null, texts.status))),
+            React__default.createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))) : (React__default.createElement(StatusStyle, null, statusText || texts.status))),
         React__default.createElement(SummaryBlock, null,
             React__default.createElement(TitleBlock, { marginBottom: "5px" }, texts.summary),
             React__default.createElement(SummaryText, { dangerouslySetInnerHTML: {
@@ -9272,7 +9272,7 @@ var TokenName = styled(Text)(templateObject_3$2 || (templateObject_3$2 = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StatusName = styled(Text)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    background: ", ";\n  }\n\n  ", " {\n    font-size: 15px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    background: ", ";\n  }\n\n  ", " {\n    font-size: 15px;\n  }\n"])), function (_a) {
+var StatusName = styled(Text)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: ", ";\n  }\n\n  ", " {\n    font-size: 15px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n  position: relative;\n\n  &:after {\n    display: block;\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n    content: \"\";\n    left: -9px;\n    top: 50%;\n    transform: translateY(-50%);\n    background: ", ";\n  }\n\n  ", " {\n    font-size: 15px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, function (_a) {

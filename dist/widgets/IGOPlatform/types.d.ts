@@ -66,6 +66,7 @@ export interface IGODetailProgressCardProps {
     handleToggleChecked: () => void;
     textBaseProgress: string;
     baseProgress: number;
+    statusText?: ReactNode;
     texts: {
         textBottomBaseProgress: string;
         title: string;
@@ -127,6 +128,7 @@ export interface IGOCardInfoProps {
     withTimer: boolean;
     width: number;
     linkView?: string;
+    statusText?: ReactNode;
 }
 export interface IGOHistoryCardProps {
     texts: {
