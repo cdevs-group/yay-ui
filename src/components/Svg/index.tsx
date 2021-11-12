@@ -31,6 +31,7 @@ export { default as ArrowBigDownIcon } from "./Icons/ArrowBigDown";
 export { default as ArrowCardDown } from "./Icons/ArrowCardDown";
 export { default as ArrowSingl } from "./Icons/ArrowSingl";
 export { default as ArrowDouble } from "./Icons/ArrowDouble";
+export { default as ArrowUpIcon } from "./Icons/ArrowUp";
 
 export { default as ArrowRight } from "./Icons/ArrowRight";
 export { default as ArrowTopRight } from "./Icons/ArrowTopRight";
@@ -60,6 +61,7 @@ export { default as ComunityIcon } from "./Icons/ComunityIcon";
 export { default as CloseRed } from "./Icons/CloseRed";
 export { default as ControllerMouse } from "./Icons/ControllerMouse";
 export { default as ArrowBorder } from "./Icons/ArrowBorder";
+export { default as MetamaskIcon } from "./Icons/Metamask";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

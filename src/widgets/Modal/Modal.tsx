@@ -4,6 +4,8 @@ import { IconButton } from "../../components/Button";
 import { CloseIcon } from "../../components/Svg";
 import { InjectedProps } from "./types";
 import { Gift2 } from "../../constants/images";
+import get from "lodash/get";
+import { DefaultTheme, useTheme } from "styled-components";
 
 interface Props extends InjectedProps {
   title?: string;
@@ -12,7 +14,13 @@ interface Props extends InjectedProps {
   welcome?: boolean;
   image?: boolean;
   paddingTopHeader?: string;
+  headerBackground?: string;
 }
+
+const getThemeValue =
+  (path: string, fallback?: string | number) =>
+  (theme: DefaultTheme): string =>
+    get(theme, path, fallback);
 
 const ModalContent = styled.div`
   position: relative;
@@ -38,9 +46,10 @@ const StyledModal = styled.div`
   }
 `;
 
-const ModalHeader = styled.div<{ paddingTopHeader?: string }>`
+const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
   display: flex;
   align-items: center;
+  background: ${({ background }) => background || "transparent"};
   padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "20px"} 14px 24px`};
   &.welcome {
     padding-bottom: 0;
@@ -95,30 +104,38 @@ const Modal: React.FC<Props> = ({
   hideCloseButton = false,
   image,
   paddingTopHeader,
-}) => (
-  <div>
-    <Overlay />
-    <StyledModal>
-      <ModalContent>
-        <ModalHeader className={welcome ? "welcome" : ""} paddingTopHeader={paddingTopHeader}>
-          <ModalTitle>
-            <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
-          </ModalTitle>
-          {image ? (
-            <Image>
-              <img src={Gift2} alt="" />
-            </Image>
-          ) : null}
-          {!hideCloseButton && (
-            <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-              <CloseIcon />
-            </IconButton>
-          )}
-        </ModalHeader>
-        {children}
-      </ModalContent>
-    </StyledModal>
+  headerBackground = "transparent",
+}) => {
+  const theme = useTheme();
+  return (
+    <div>
+      <Overlay />
+      <StyledModal>
+        <ModalContent>
+          <ModalHeader 
+            className={welcome ? "welcome" : ""}
+            paddingTopHeader={paddingTopHeader}
+            background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
+          >
+            <ModalTitle>
+              <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
+            </ModalTitle>
+            {image ? (
+              <Image>
+                <img src={Gift2} alt="" />
+              </Image>
+            ) : null}
+            {!hideCloseButton && (
+              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+                <CloseIcon />
+              </IconButton>
+            )}
+          </ModalHeader>
+          {children}
+        </ModalContent>
+      </StyledModal>
   </div>
-);
+  );
+};
 
 export default Modal;

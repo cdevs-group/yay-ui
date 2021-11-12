@@ -1,12 +1,8 @@
 import React from 'react'
-import { Trade, TradeType } from '@pancakeswap/sdk'
 import { Text } from '../../../components/Text'
-import { useUserSlippageTolerance } from 'state/user/hooks'
-import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown } from 'utils/prices'
 import { AutoColumn } from '../../../components/Layout/Column'
-import QuestionHelper from 'components/QuestionHelper'
+import QuestionHelper from '../../../components/QuestionHelper'
 import { RowBetween, RowFixed } from '../../../components/Layout/Row'
-import FormattedPriceImpact from './FormattedPriceImpact'
 import SwapRoute from './SwapRoute'
 
 export enum Field {
@@ -14,27 +10,31 @@ export enum Field {
   OUTPUT = 'OUTPUT',
 }
 
-export interface TradeSummaryProps {
-  texts: {
-    receivedOrSold: string
-    slippageAdjusted: string
-    transactionHelper: string
-    priceImpact: string
-    priceDifference: string
-    fee: string
-    amountFee: string
-    amountLP: string
-    amountTreasury: string
-    amountTowards: string
-    realizedLPFeeText: string
-  },
+export interface TradeSummaryTextProps {
+  receivedOrSold: string
+  slippageAdjusted: string
+  transactionHelper: string
+  priceImpact: string
+  priceDifference: string
+  fee: string
+  amountFee: string
+  amountLP: string
+  amountTreasury: string
+  amountTowards: string
+  realizedLPFeeText: string
+}
+
+export interface ErrorNodeText {
   errorText: React.ReactNode
 }
 
-function TradeSummary({
-  texts,
-  errorText
-}: TradeSummaryProps) {
+export interface TradeSummaryProps {
+  texts: TradeSummaryTextProps,
+  errorText: ErrorNodeText
+}
+
+function TradeSummary({ texts, errorText }: TradeSummaryProps) {
+
   const { 
     receivedOrSold,
     slippageAdjusted,
@@ -106,29 +106,38 @@ function TradeSummary({
 }
 
 export interface AdvancedSwapDetailsProps {
-  trade?: Trade
+  trade?: any
+  lastTrade?: any
+  routeText: string
+  routingFromToken: string
+  tradeSummaryTexts: TradeSummaryTextProps
+  errorText: ErrorNodeText
+  showRoute: boolean
 }
 
-export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
-  const { t } = useTranslation()
-  const [allowedSlippage] = useUserSlippageTolerance()
-
-  const showRoute = Boolean(trade && trade.route.path.length > 2)
+export function AdvancedSwapDetails({ 
+  trade,
+  routeText,
+  routingFromToken,
+  tradeSummaryTexts,
+  errorText,
+  showRoute
+ }: AdvancedSwapDetailsProps) {
 
   return (
     <AutoColumn gap="0px">
       {trade && (
         <>
-          <TradeSummary trade={trade} allowedSlippage={allowedSlippage} />
+          <TradeSummary texts={tradeSummaryTexts} errorText={errorText} />
           {showRoute && (
             <>
               <RowBetween style={{ padding: '0 16px' }}>
                 <span style={{ display: 'flex', alignItems: 'center' }}>
                   <Text fontSize="14px" color="textSubtle">
-                    {t('Route')}
+                    {routeText}
                   </Text>
                   <QuestionHelper
-                    text={t('Routing through these tokens resulted in the best price for your trade.')}
+                    text={routingFromToken}
                     ml="4px"
                   />
                 </span>
