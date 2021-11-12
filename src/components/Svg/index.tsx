@@ -4,6 +4,7 @@ export { default as CloseIcon2 } from "./Icons/CloseIcon2";
 export { default as CloseSimpleIcon } from "./Icons/CloseSimpleIcon";
 export { default as OpenNewIcon } from "./Icons/OpenNewIcon";
 export { default as ArrowLeft } from "./Icons/ArrowLeft";
+export { default as BinanceIcon } from "./Icons/Binance";
 export { default as BnbIcon } from "./Icons/BnbIcon";
 export { default as ChartIcon } from "./Icons/ChartIcon";
 export { default as HistoryIcon } from "./Icons/HistoryIcon";
