@@ -1,19 +1,23 @@
 import React from 'react'
-import { Token } from '@pancakeswap/sdk'
-import { Modal, InjectedModalProps } from '@pancakeswap/uikit'
-import ImportToken from 'components/SearchModal/ImportToken'
-import { useTranslation } from 'contexts/Localization'
+import { Modal, InjectedModalProps } from '../../Modal'
+import ImportToken from '../../../components/SearchModal/ImportToken'
+
+export interface Token {
+  address: string,
+  symbol: string,
+  decimals: number
+}
 
 interface Props extends InjectedModalProps {
   tokens: Token[]
   onCancel: () => void
+  modalTitleText: string
 }
 
-const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel }) => {
-  const { t } = useTranslation()
+const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel, modalTitleText }) => {
   return (
     <Modal
-      title={t('Import Token')}
+      title={modalTitleText}
       onDismiss={() => {
         if (onDismiss) {
           onDismiss()

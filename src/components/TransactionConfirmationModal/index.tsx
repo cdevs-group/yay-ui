@@ -60,12 +60,6 @@ function ConfirmationPendingContent({
   )
 }
 
-export interface Token {
-  address: string,
-  symbol: string,
-  decimals: number
-}
-
 export interface TransactionSubmittedContentProps {
   onDismiss?: () => void
   registerToken: (address: string, symbol: string, decimals: number) => void
@@ -78,7 +72,7 @@ export interface TransactionSubmittedContentProps {
   metamaskAssetText: string
   btnCloseText: string
   isMetaMask: boolean
-  token: Token
+  token: any
 }
 
 function TransactionSubmittedContent({

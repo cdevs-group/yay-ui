@@ -62,6 +62,7 @@ export { default as CloseRed } from "./Icons/CloseRed";
 export { default as ControllerMouse } from "./Icons/ControllerMouse";
 export { default as ArrowBorder } from "./Icons/ArrowBorder";
 export { default as MetamaskIcon } from "./Icons/Metamask";
+export { default as WarningIcon } from "./Icons/Warning";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
