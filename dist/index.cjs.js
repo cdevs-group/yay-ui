@@ -9069,11 +9069,7 @@ var RangeTrack = styled__default['default'].div(templateObject_2$7 || (templateO
 var templateObject_1$a, templateObject_2$7;
 
 var IGODetailProgressCard = function (_a) {
-<<<<<<< HEAD
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, statusText = _a.statusText, hrefYAYBuy = _a.hrefYAYBuy;
-=======
-    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, time = _a.time, timerVisible = _a.timerVisible, hrefYAYBuy = _a.hrefYAYBuy;
->>>>>>> 0a170730b68cc64dc793d7edf6e07d24b79cfdc4
+    var checkedToggle = _a.checkedToggle, handleToggleChecked = _a.handleToggleChecked, disabledToggle = _a.disabledToggle, textBaseProgress = _a.textBaseProgress, baseProgress = _a.baseProgress, texts = _a.texts, slots = _a.slots, status = _a.status, buttonLeft = _a.buttonLeft, buttonCenter = _a.buttonCenter, buttonRight = _a.buttonRight, buttonLong = _a.buttonLong, progress = _a.progress, progressVisible = _a.progressVisible, descriptionsButtons = _a.descriptionsButtons, balanceError = _a.balanceError, balance = _a.balance, statusText = _a.statusText, time = _a.time, timerVisible = _a.timerVisible, hrefYAYBuy = _a.hrefYAYBuy;
     var buttonsList = [buttonLeft, buttonCenter, buttonRight];
     return (React__default['default'].createElement(Card$3, null,
         React__default['default'].createElement(FlexTop, null,
@@ -9085,14 +9081,10 @@ var IGODetailProgressCard = function (_a) {
                     React__default['default'].createElement(Text, { fontSize: "13px", ml: "10px", style: { opacity: disabledToggle ? 0.5 : 1 } }, texts.saleToggle)))),
         React__default['default'].createElement(ProgressWithText, { text: textBaseProgress, progress: baseProgress }),
         React__default['default'].createElement(Text, { fontSize: "11px", lineHeight: "140%", fontWeight: 400, mt: "10px", mb: "30px", textAlign: "center" }, texts.textBottomBaseProgress),
-<<<<<<< HEAD
-        status && React__default['default'].createElement(Status, null, statusText || texts.status),
-=======
         status && (React__default['default'].createElement(Status, null,
-            texts.status,
+            statusText || texts.status,
             timerVisible && (React__default['default'].createElement(Text, { textTransform: "lowercase" },
                 React__default['default'].createElement(TimerNotSolidWithoutBg, { height: "auto", withTime: true, fontSize: "17px", time: time }))))),
->>>>>>> 0a170730b68cc64dc793d7edf6e07d24b79cfdc4
         React__default['default'].createElement(TextWithTooltip, { text: texts.slotsSummary, textTooltip: texts.slotsSummaryTooltip }),
         React__default['default'].createElement(Slots, null, slots.map(function (el) { return (React__default['default'].createElement(SlotSummary, { text: el.text, opacity: el.opacity, error: el.error, circleHidden: (slots === null || slots === void 0 ? void 0 : slots.length) <= 1 })); })),
         React__default['default'].createElement(TextWithTooltip, { text: texts.availableWhitelist, textTooltip: texts.availableWhitelistTooltip }),
