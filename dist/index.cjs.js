@@ -6734,7 +6734,7 @@ var Header = function (_a) {
         disclaimer ? React__default['default'].createElement(Disclaimer, { text: disclaimerText || "" }) : null,
         React__default['default'].createElement(Content$4, null,
             React__default['default'].createElement(Line$2, null,
-                React__default['default'].createElement(LogoWrap, { href: linkLogo },
+                React__default['default'].createElement(LogoWrap, { to: linkLogo },
                     React__default['default'].createElement("img", { src: Logo, alt: "" })),
                 React__default['default'].createElement(Nav, { className: openMenu ? "open" : "" },
                     links.map(function (item, i) { return (React__default['default'].createElement(MenuLink, { key: i, size: "md", name: item.name, url: item.url, onClick: handleLink })); }),
@@ -6772,7 +6772,7 @@ var LanguageBlockDesk = styled__default['default'].div(templateObject_7$g || (te
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var LogoWrap = styled__default['default'].a(templateObject_8$c || (templateObject_8$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"])), function (_a) {
+var LogoWrap = styled__default['default'](reactRouterDom.NavLink)(templateObject_8$c || (templateObject_8$c = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  & img {\n    width: 79px;\n    height: 34px;\n  }\n  & svg {\n    width: 133px;\n    ", " {\n      width: 153px;\n    }\n  }\n  ", " {\n    & img {\n      width: auto;\n      height: auto;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 }, function (_a) {
@@ -8813,7 +8813,7 @@ var TextStyle = styled__default['default'](Text)(templateObject_2$c || (template
 var templateObject_1$f, templateObject_2$c;
 
 var Progress = function (_a) {
-    var totalVolume = _a.totalVolume, currentVolume = _a.currentVolume;
+    var totalVolume = _a.totalVolume, currentVolume = _a.currentVolume, tokenName = _a.tokenName;
     var _b = React.useState(0), widthTotal = _b[0], setWidthTotal = _b[1];
     var _c = React.useState(0), widthCurrent = _c[0], setWidthCurrent = _c[1];
     var _d = React.useState(0), widthProgressBar = _d[0], setWidthProgressBar = _d[1];
@@ -8854,11 +8854,13 @@ var Progress = function (_a) {
             React__default['default'].createElement(Counter, { stop: isFinish, width: isFinish ? widthTotal + 12 : widthProgress },
                 React__default['default'].createElement(Current, { marginLeft: widthProgress > 50 ? "-" + widthCurrent + "px" : 0, ref: refCurrent },
                     currentVolume,
-                    " BNB"),
+                    " ",
+                    tokenName),
                 React__default['default'].createElement(Symbol$1, { visible: isFinish }, "/"),
                 React__default['default'].createElement(Total, { ref: refTotal },
                     totalVolume,
-                    " BNB")))));
+                    " ",
+                    tokenName)))));
 };
 var ProgressThumb = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 15px;\n  height: 15px;\n  background: ", ";\n  border-radius: 50%;\n  & svg {\n    width: 10px;\n    height: 7px;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 25px;\n    height: 25px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 15px;\n  height: 15px;\n  background: ", ";\n  border-radius: 50%;\n  & svg {\n    width: 10px;\n    height: 7px;\n  }\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 25px;\n    height: 25px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -8905,7 +8907,7 @@ var TextWithTooltip = function (_a) {
 };
 
 var IGOCard = function (_a) {
-    var status = _a.status, token = _a.token, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, handleTab = _a.handleTab, currentNetwork = _a.currentNetwork, dataSlots = _a.dataSlots, statusText = _a.statusText, currentVolume = _a.currentVolume, totalVolume = _a.totalVolume, texts = _a.texts, time = _a.time, handleView = _a.handleView, statusTitle = _a.statusTitle;
+    var status = _a.status, token = _a.token, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, handleTab = _a.handleTab, currentNetwork = _a.currentNetwork, dataSlots = _a.dataSlots, statusText = _a.statusText, currentVolume = _a.currentVolume, totalVolume = _a.totalVolume, texts = _a.texts, time = _a.time, handleView = _a.handleView, statusTitle = _a.statusTitle, tokenName = _a.tokenName;
     return (React__default['default'].createElement(Wrapper$2, null,
         React__default['default'].createElement(HeadLine$1, null,
             React__default['default'].createElement(TokenName$1, null, token),
@@ -8948,7 +8950,7 @@ var IGOCard = function (_a) {
             React__default['default'].createElement(TimerNotSolidWithoutBg, { withTime: true, fontSize: "15px", time: time }))),
         [CardStatus.PUBLIC_SALE, CardStatus.WHITELIST_SALE].find(function (el) { return el === status; }) && (React__default['default'].createElement(ProgressBlock, { style: { marginTop: "37px" } },
             React__default['default'].createElement(TitleBlock$2, { marginBottom: "15px" }, texts.progress),
-            React__default['default'].createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume }))),
+            React__default['default'].createElement(Progress, { totalVolume: totalVolume, currentVolume: currentVolume, tokenName: tokenName }))),
         React__default['default'].createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
 var Wrapper$2 = styled__default['default'].div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {

@@ -57,7 +57,9 @@ const Progress = ({ totalVolume, currentVolume, tokenName }: IProgress) => {
             {currentVolume} {tokenName}
           </Current>
           <Symbol visible={isFinish}>/</Symbol>
-          <Total ref={refTotal}>{totalVolume} {tokenName}</Total>
+          <Total ref={refTotal}>
+            {totalVolume} {tokenName}
+          </Total>
         </Counter>
       </CounterWrapper>
     </div>

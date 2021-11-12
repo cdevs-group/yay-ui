@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 export interface IProgress {
     totalVolume: number;
     currentVolume: number;
+    tokenName: string;
 }
 export interface IBlurStatus {
     statusText: React.ReactNode;
@@ -24,6 +25,7 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
     }[];
     currentVolume: number;
     totalVolume: number;
+    tokenName: string;
     handleView: () => void;
     statusTitle?: string;
     time: number;
