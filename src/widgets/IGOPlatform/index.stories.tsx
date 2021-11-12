@@ -378,6 +378,8 @@ export const IGODetailProgressCardBlock = () => {
         progressVisible={false}
         descriptionsButtons={["ZEUS", "HERMES", "POSEIDON"]}
         disabledToggle
+        time={5006}
+        timerVisible
         hrefYAYBuy="https://www.yandex.ru/"
       />
 
