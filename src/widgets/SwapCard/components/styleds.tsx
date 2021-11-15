@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, ErrorIcon } from "@pancakeswap/uikit";
 import styled, { css } from "styled-components";
-import { AutoColumn } from "components/Layout/Column";
+import { ErrorIcon, Text } from "../../..";
+import { AutoColumn } from "../../../components/Layout/Column";
+
 
 export const Wrapper = styled.div`
   position: relative;
@@ -51,10 +52,10 @@ export const StyledBalanceMaxMini = styled.button`
   float: right;
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.dropdown};
+    background-color: ${({ theme }) => theme.colors.card};
   }
   :focus {
-    background-color: ${({ theme }) => theme.colors.dropdown};
+    background-color: ${({ theme }) => theme.colors.card};
     outline: none;
   }
 `;
