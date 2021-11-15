@@ -1,14 +1,14 @@
-import React, { Fragment, memo } from 'react'
-import { Trade } from '@pancakeswap/sdk'
-import { Text, Flex, ChevronRightIcon } from '@pancakeswap/uikit'
-import { unwrappedToken } from 'utils/wrappedCurrency'
+import React, { Fragment, memo, ReactNode } from "react";
+import { Flex } from "../../../components/Box";
+import { Text } from "../../../components/Text";
+import { ChevronRightIcon } from "../../../components/Svg";
 
-export default memo(function SwapRoute({ trade }: { trade: Trade }) {
+export default memo(function SwapRoute({ trade, unwrappedToken }: { trade: any; unwrappedToken: (token: any) => any }) {
   return (
     <Flex flexWrap="wrap" width="100%" justifyContent="flex-end" alignItems="center">
-      {trade.route.path.map((token, i, path) => {
-        const isLastItem: boolean = i === path.length - 1
-        const currency = unwrappedToken(token)
+      {trade.route.path.map((token: any, i: number, path: string) => {
+        const isLastItem: boolean = i === path.length - 1;
+        const currency = unwrappedToken(token);
         return (
           // eslint-disable-next-line react/no-array-index-key
           <Fragment key={i}>
@@ -17,10 +17,10 @@ export default memo(function SwapRoute({ trade }: { trade: Trade }) {
                 {currency.symbol}
               </Text>
             </Flex>
-            {!isLastItem && <ChevronRightIcon width="12px" />}
+            {isLastItem && <ChevronRightIcon width="12px" />}
           </Fragment>
-        )
+        );
       })}
     </Flex>
-  )
-})
+  );
+});

@@ -1,41 +1,40 @@
-import React from 'react'
-import { Text } from '../../../components/Text'
-import { AutoColumn } from '../../../components/Layout/Column'
-import QuestionHelper from '../../../components/QuestionHelper'
-import { RowBetween, RowFixed } from '../../../components/Layout/Row'
-import SwapRoute from './SwapRoute'
+import React from "react";
+import { Text } from "../../../components/Text";
+import { AutoColumn } from "../../../components/Layout/Column";
+import QuestionHelper from "../../../components/QuestionHelper";
+import { RowBetween, RowFixed } from "../../../components/Layout/Row";
+import SwapRoute from "./SwapRoute";
 
 export enum Field {
-  INPUT = 'INPUT',
-  OUTPUT = 'OUTPUT',
+  INPUT = "INPUT",
+  OUTPUT = "OUTPUT",
 }
 
 export interface TradeSummaryTextProps {
-  receivedOrSold: string
-  slippageAdjusted: string
-  transactionHelper: string
-  priceImpact: string
-  priceDifference: string
-  fee: string
-  amountFee: string
-  amountLP: string
-  amountTreasury: string
-  amountTowards: string
-  realizedLPFeeText: string
+  receivedOrSold: string;
+  slippageAdjusted: string;
+  transactionHelper: string;
+  priceImpact: string;
+  priceDifference: string;
+  fee: string;
+  amountFee: string;
+  amountLP: string;
+  amountTreasury: string;
+  amountTowards: string;
+  realizedLPFeeText: string;
 }
 
 export interface ErrorNodeText {
-  errorText: React.ReactNode
+  errorText: React.ReactNode;
 }
 
 export interface TradeSummaryProps {
-  texts: TradeSummaryTextProps,
-  errorText: ErrorNodeText
+  texts: TradeSummaryTextProps;
+  errorText: ErrorNodeText;
 }
 
 function TradeSummary({ texts, errorText }: TradeSummaryProps) {
-
-  const { 
+  const {
     receivedOrSold,
     slippageAdjusted,
     transactionHelper,
@@ -46,25 +45,20 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
     amountLP,
     amountTreasury,
     amountTowards,
-    realizedLPFeeText
-   } = texts
+    realizedLPFeeText,
+  } = texts;
 
   return (
-    <AutoColumn style={{ padding: '0 16px' }}>
+    <AutoColumn style={{ padding: "0 16px" }}>
       <RowBetween>
         <RowFixed>
           <Text fontSize="14px" color="textSubtle">
             {receivedOrSold}
           </Text>
-          <QuestionHelper
-            text={transactionHelper}
-            ml="4px"
-          />
+          <QuestionHelper text={transactionHelper} ml="4px" />
         </RowFixed>
         <RowFixed>
-          <Text fontSize="14px">
-            {slippageAdjusted}
-          </Text>
+          <Text fontSize="14px">{slippageAdjusted}</Text>
         </RowFixed>
       </RowBetween>
       <RowBetween>
@@ -72,10 +66,7 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
           <Text fontSize="14px" color="textSubtle">
             {priceImpact}
           </Text>
-          <QuestionHelper
-            text={priceDifference}
-            ml="4px"
-          />
+          <QuestionHelper text={priceDifference} ml="4px" />
         </RowFixed>
         {errorText}
       </RowBetween>
@@ -97,33 +88,30 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
             ml="4px"
           />
         </RowFixed>
-        <Text fontSize="14px">
-          {realizedLPFeeText}
-        </Text>
+        <Text fontSize="14px">{realizedLPFeeText}</Text>
       </RowBetween>
     </AutoColumn>
-  )
+  );
 }
 
 export interface AdvancedSwapDetailsProps {
-  trade?: any
-  lastTrade?: any
-  routeText: string
-  routingFromToken: string
-  tradeSummaryTexts: TradeSummaryTextProps
-  errorText: ErrorNodeText
-  showRoute: boolean
+  trade?: any;
+  lastTrade?: any;
+  routeText: string;
+  routingFromToken: string;
+  tradeSummaryTexts: TradeSummaryTextProps;
+  errorText: ErrorNodeText;
+  showRoute: boolean;
 }
 
-export function AdvancedSwapDetails({ 
+export function AdvancedSwapDetails({
   trade,
   routeText,
   routingFromToken,
   tradeSummaryTexts,
   errorText,
-  showRoute
- }: AdvancedSwapDetailsProps) {
-
+  showRoute,
+}: AdvancedSwapDetailsProps) {
   return (
     <AutoColumn gap="0px">
       {trade && (
@@ -131,15 +119,12 @@ export function AdvancedSwapDetails({
           <TradeSummary texts={tradeSummaryTexts} errorText={errorText} />
           {showRoute && (
             <>
-              <RowBetween style={{ padding: '0 16px' }}>
-                <span style={{ display: 'flex', alignItems: 'center' }}>
+              <RowBetween style={{ padding: "0 16px" }}>
+                <span style={{ display: "flex", alignItems: "center" }}>
                   <Text fontSize="14px" color="textSubtle">
                     {routeText}
                   </Text>
-                  <QuestionHelper
-                    text={routingFromToken}
-                    ml="4px"
-                  />
+                  <QuestionHelper text={routingFromToken} ml="4px" />
                 </span>
                 <SwapRoute trade={trade} />
               </RowBetween>
@@ -148,5 +133,5 @@ export function AdvancedSwapDetails({
         </>
       )}
     </AutoColumn>
-  )
+  );
 }

@@ -46,7 +46,7 @@ const StyledModal = styled.div`
   }
 `;
 
-const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
+const ModalHeader = styled.div<{ paddingTopHeader?: string; background?: string }>`
   display: flex;
   align-items: center;
   background: ${({ background }) => background || "transparent"};
@@ -112,7 +112,7 @@ const Modal: React.FC<Props> = ({
       <Overlay />
       <StyledModal>
         <ModalContent>
-          <ModalHeader 
+          <ModalHeader
             className={welcome ? "welcome" : ""}
             paddingTopHeader={paddingTopHeader}
             background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
@@ -134,7 +134,7 @@ const Modal: React.FC<Props> = ({
           {children}
         </ModalContent>
       </StyledModal>
-  </div>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { ErrorIcon, Text } from "../../..";
 import { AutoColumn } from "../../../components/Layout/Column";
 
+
 export const Wrapper = styled.div`
   position: relative;
   padding: 1rem;

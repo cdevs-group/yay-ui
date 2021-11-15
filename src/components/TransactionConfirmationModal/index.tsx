@@ -1,44 +1,38 @@
-import React, { useCallback } from 'react'
-import styled from 'styled-components'
-import { Button } from '../../components/Button'
-import { Text } from '../../components/Text'
-import { ErrorIcon, ArrowUpIcon, MetamaskIcon } from '../Svg'
-import { Flex, Box } from '../Box'
-import { Link } from '../Link'
-import { Spinner } from '../Spinner'
-import { Modal, InjectedModalProps } from '../../widgets/Modal'
-import { RowFixed } from '../Layout/Row'
-import { AutoColumn, ColumnCenter } from '../Layout/Column'
+import React, { useCallback } from "react";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
+import { Text } from "../../components/Text";
+import { ErrorIcon, ArrowUpIcon, MetamaskIcon } from "../Svg";
+import { Flex, Box } from "../Box";
+import { Link } from "../Link";
+import { Spinner } from "../Spinner";
+import { Modal, InjectedModalProps } from "../../widgets/Modal";
+import { RowFixed } from "../Layout/Row";
+import { AutoColumn, ColumnCenter } from "../Layout/Column";
 
 const Wrapper = styled.div`
   width: 100%;
-`
+`;
 const Section = styled(AutoColumn)`
   padding: 24px;
-`
+`;
 
 const ConfirmedIcon = styled(ColumnCenter)`
   padding: 24px 0;
-`
+`;
 
 export interface ConfirmationPendingContentTextProps {
-  confirmationWaiting: string
-  transactionConfirm: string
+  confirmationWaiting: string;
+  transactionConfirm: string;
 }
 
 export interface ConfirmationPendingContentProps {
-  pendingText: string
-  texts: ConfirmationPendingContentTextProps
+  pendingText: string;
+  texts: ConfirmationPendingContentTextProps;
 }
 
-function ConfirmationPendingContent({ 
-  pendingText,
-  texts
- }: ConfirmationPendingContentProps) {
-  const { 
-    confirmationWaiting,
-    transactionConfirm
-   } = texts
+function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingContentProps) {
+  const { confirmationWaiting, transactionConfirm } = texts;
 
   return (
     <Wrapper>
@@ -57,22 +51,22 @@ function ConfirmationPendingContent({
         </Text>
       </AutoColumn>
     </Wrapper>
-  )
+  );
 }
 
 export interface TransactionSubmittedContentProps {
-  onDismiss?: () => void
-  registerToken: (address: string, symbol: string, decimals: number) => void
-  hash: string | undefined
-  chainId: number
-  currencyToAdd?: any
-  bscScanLink: string
-  transSubmittedText: string
-  bscScanLinkText: string
-  metamaskAssetText: string
-  btnCloseText: string
-  isMetaMask: boolean
-  token: any
+  onDismiss?: () => void;
+  registerToken: (address: string, symbol: string, decimals: number) => void;
+  hash: string | undefined;
+  chainId: number;
+  currencyToAdd?: any;
+  bscScanLink: string;
+  transSubmittedText: string;
+  bscScanLinkText: string;
+  metamaskAssetText: string;
+  btnCloseText: string;
+  isMetaMask: boolean;
+  token: any;
 }
 
 function TransactionSubmittedContent({
@@ -87,7 +81,7 @@ function TransactionSubmittedContent({
   metamaskAssetText,
   btnCloseText,
   isMetaMask,
-  token
+  token,
 }: TransactionSubmittedContentProps) {
   return (
     <Wrapper>
@@ -121,28 +115,28 @@ function TransactionSubmittedContent({
         </AutoColumn>
       </Section>
     </Wrapper>
-  )
+  );
 }
 
 export function ConfirmationModalContent({
   bottomContent,
   topContent,
 }: {
-  topContent: () => React.ReactNode
-  bottomContent: () => React.ReactNode
+  topContent: () => React.ReactNode;
+  bottomContent: () => React.ReactNode;
 }) {
   return (
     <Wrapper>
       <Box>{topContent()}</Box>
       <Box>{bottomContent()}</Box>
     </Wrapper>
-  )
+  );
 }
 
 export interface TransactionErrorContentProps {
-  message: string
-  onDismiss?: () => void
-  dismissText: string
+  message: string;
+  onDismiss?: () => void;
+  dismissText: string;
 }
 
 export function TransactionErrorContent({ message, onDismiss, dismissText }: TransactionErrorContentProps) {
@@ -150,7 +144,7 @@ export function TransactionErrorContent({ message, onDismiss, dismissText }: Tra
     <Wrapper>
       <AutoColumn justify="center">
         <ErrorIcon color="failure" width="64px" />
-        <Text color="failure" style={{ textAlign: 'center', width: '85%' }}>
+        <Text color="failure" style={{ textAlign: "center", width: "85%" }}>
           {message}
         </Text>
       </AutoColumn>
@@ -159,22 +153,24 @@ export function TransactionErrorContent({ message, onDismiss, dismissText }: Tra
         <Button onClick={onDismiss}>{dismissText}</Button>
       </Flex>
     </Wrapper>
-  )
+  );
 }
 
 interface ConfirmationModalProps {
-  title: string
-  customOnDismiss?: () => void
-  hash: string | undefined
-  content: () => React.ReactNode
-  attemptingTxn: boolean
-  pendingText: string
-  currencyToAdd?: any
-  texts: ConfirmationPendingContentTextProps
-  chainId: number
+  title: string;
+  customOnDismiss?: () => void;
+  hash: string | undefined;
+  content: () => React.ReactNode;
+  attemptingTxn: boolean;
+  pendingText: string;
+  currencyToAdd?: any;
+  texts: ConfirmationPendingContentTextProps;
+  chainId: number;
 }
 
-const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationModalProps & TransactionSubmittedContentProps> = ({
+const TransactionConfirmationModal: React.FC<
+  InjectedModalProps & ConfirmationModalProps & TransactionSubmittedContentProps
+> = ({
   title,
   onDismiss,
   customOnDismiss,
@@ -192,17 +188,16 @@ const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationMo
   metamaskAssetText,
   btnCloseText,
   isMetaMask,
-  token
+  token,
 }) => {
-
   const handleDismiss = useCallback(() => {
     if (customOnDismiss) {
-      customOnDismiss()
+      customOnDismiss();
     }
-    if (onDismiss) onDismiss()
-  }, [customOnDismiss, onDismiss])
+    if (onDismiss) onDismiss();
+  }, [customOnDismiss, onDismiss]);
 
-  if (!chainId) return null
+  if (!chainId) return null;
 
   return (
     <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
@@ -227,7 +222,7 @@ const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationMo
         content()
       )}
     </Modal>
-  )
-}
+  );
+};
 
-export default TransactionConfirmationModal
+export default TransactionConfirmationModal;
