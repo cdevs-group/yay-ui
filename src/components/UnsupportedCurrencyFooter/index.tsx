@@ -27,7 +27,7 @@ const DetailsFooter = styled.div`
   color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.invertedContrast};
   text-align: center;
-`
+`;
 
 const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, srcs, chainId, bscScanLink, unsupportedTokens, tokens }) => {
   return (
@@ -38,7 +38,7 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, src
             token &&
             unsupportedTokens &&
             Object.keys(unsupportedTokens).includes(token.address) && (
-              <AutoColumn key={token.address?.concat('not-supported')} gap="10px">
+              <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
                 <AutoRow gap="5px" align="center">
                   <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} />
                   <Text>{token.symbol}</Text>
@@ -50,7 +50,7 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, src
                 )}
               </AutoColumn>
             )
-          )
+          );
         })}
         <AutoColumn gap="lg">
           <Text>
@@ -60,8 +60,8 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, src
         </AutoColumn>
       </AutoColumn>
     </Modal>
-  )
-}
+  );
+};
 
 export default function UnsupportedCurrencyFooter({ tokens, currencies, srcs, isEther, chainId, bscScanLink, unsupportedTokens }: Props) {
   const [onPresentModal] = useModal(
@@ -81,5 +81,5 @@ export default function UnsupportedCurrencyFooter({ tokens, currencies, srcs, is
         Read more about unsupported assets
       </Button>
     </DetailsFooter>
-  )
+  );
 }

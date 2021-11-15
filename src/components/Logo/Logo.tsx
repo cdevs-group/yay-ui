@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { HelpIcon } from '../Svg/index'
+import React, { useState } from "react";
+import { HelpIcon } from "../Svg/index";
 
-const BAD_SRCS: { [tokenAddress: string]: true } = {}
+const BAD_SRCS: { [tokenAddress: string]: true } = {};
 
 export interface LogoProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  srcs: string[]
+  srcs: string[];
 }
 
 const Logo: React.FC<LogoProps> = ({ srcs, alt, ...rest }) => {
-  const [, refresh] = useState<number>(0)
+  const [, refresh] = useState<number>(0);
 
-  const src: string | undefined = srcs.find((s) => !BAD_SRCS[s])
+  const src: string | undefined = srcs.find((s) => !BAD_SRCS[s]);
 
   if (src) {
     return (
@@ -19,14 +19,14 @@ const Logo: React.FC<LogoProps> = ({ srcs, alt, ...rest }) => {
         alt={alt}
         src={src}
         onError={() => {
-          if (src) BAD_SRCS[src] = true
-          refresh((i) => i + 1)
+          if (src) BAD_SRCS[src] = true;
+          refresh((i) => i + 1);
         }}
       />
-    )
+    );
   }
 
-  return <HelpIcon {...rest} />
-}
+  return <HelpIcon {...rest} />;
+};
 
-export default Logo
+export default Logo;

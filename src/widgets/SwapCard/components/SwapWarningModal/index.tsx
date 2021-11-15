@@ -11,12 +11,12 @@ import Acknowledgement, { AcknowledgementTexsts } from './Acknowledgement'
 
 const StyledModalContainer = styled(ModalContainer)`
   max-width: 440px;
-`
+`;
 
 const MessageContainer = styled(Message)`
   align-items: flex-start;
   justify-content: flex-start;
-`
+`;
 
 interface SwapWarningModalProps {
   swapCurrency: any
@@ -36,16 +36,16 @@ const usePreventModalOverlayClick = () => {
     }
 
     document.querySelectorAll('[role="presentation"]').forEach((el) => {
-      el.addEventListener('click', preventClickHandler, true)
-    })
+      el.addEventListener("click", preventClickHandler, true);
+    });
 
     return () => {
       document.querySelectorAll('[role="presentation"]').forEach((el) => {
-        el.removeEventListener('click', preventClickHandler, true)
-      })
-    }
-  }, [])
-}
+        el.removeEventListener("click", preventClickHandler, true);
+      });
+    };
+  }, []);
+};
 
   const SwapWarningModal: React.FC<SwapWarningModalProps & SafemoonWarningProps & AcknowledgementTexsts> = ({ 
     swapCurrency,
@@ -70,13 +70,13 @@ const usePreventModalOverlayClick = () => {
       symbol: SwapWarningTokensConfig.bondly.symbol,
       component: <BondlyWarning bondlyWarningText={bondlyWarningText} />,
     },
-  }
+  };
 
-  const SWAP_WARNING = TOKEN_WARNINGS[swapCurrency.address]
+  const SWAP_WARNING = TOKEN_WARNINGS[swapCurrency.address];
 
   return (
     <StyledModalContainer minWidth="280px">
-      <ModalHeader background={theme.colors.gradients.cardHeader}>
+      <ModalHeader background={theme.colors.card}>
         <Heading p="12px 24px">{noticeForTradingText}</Heading>
       </ModalHeader>
       <ModalBody p="24px">
@@ -86,7 +86,7 @@ const usePreventModalOverlayClick = () => {
         <Acknowledgement handleContinueClick={onDismiss} buttonText={buttonText} understandngText={understandngText} />
       </ModalBody>
     </StyledModalContainer>
-  )
-}
+  );
+};
 
-export default SwapWarningModal
+export default SwapWarningModal;

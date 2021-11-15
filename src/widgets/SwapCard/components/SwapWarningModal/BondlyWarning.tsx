@@ -9,4 +9,4 @@ const BondlyWarning = ({bondlyWarningText}: BondlyWarningProps) => {
   return <Text>{bondlyWarningText}</Text>
 }
 
-export default BondlyWarning
+export default BondlyWarning;

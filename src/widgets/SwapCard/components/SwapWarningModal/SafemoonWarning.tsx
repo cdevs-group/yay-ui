@@ -32,7 +32,7 @@ const SafemoonWarning = ({ texts }: SafemoonWarningProps) => {
       <Text>• {feeFivePercentAllHolders}</Text>
       <Text>• {feeFivePercentAddLiquidity}</Text>
     </>
-  )
-}
+  );
+};
 
-export default SafemoonWarning
+export default SafemoonWarning;

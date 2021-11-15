@@ -26,11 +26,11 @@ const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({
       title={modalTitleText}
       onDismiss={() => {
         if (onDismiss) {
-          onDismiss()
+          onDismiss();
         }
-        onCancel()
+        onCancel();
       }}
-      style={{ maxWidth: '420px' }}
+      style={{ maxWidth: "420px" }}
     >
       <ImportToken
         tokens={tokens}
@@ -44,7 +44,7 @@ const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({
         bscScanLink={bscScanLink}
       />
     </Modal>
-  )
-}
+  );
+};
 
-export default ImportTokenWarningModal
+export default ImportTokenWarningModal;

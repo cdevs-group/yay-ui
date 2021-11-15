@@ -24,9 +24,9 @@ const getThemeValue =
   (theme: DefaultTheme): string =>
     get(theme, path, fallback);
 
-export const ModalContent = styled.div<{ padding?: string }>`
+export const ModalContent = styled.div<{ p?: string }>`
   position: relative;
-  padding: ${({padding}) => padding};
+  padding: ${({p}) => p};
 `;
 
 export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
@@ -117,7 +117,7 @@ const Modal: React.FC<Props> = ({
       <Overlay />
       <StyledModal {...style} maxWidth={maxWidth}>
         <ModalContent>
-          <ModalHeader 
+          <ModalHeader
             className={welcome ? "welcome" : ""}
             paddingTopHeader={paddingTopHeader}
             background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
@@ -139,7 +139,7 @@ const Modal: React.FC<Props> = ({
           {children}
         </ModalContent>
       </StyledModal>
-  </div>
+    </div>
   );
 };
 

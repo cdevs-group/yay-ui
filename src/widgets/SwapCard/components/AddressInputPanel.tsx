@@ -1,9 +1,9 @@
-import React, { useCallback } from 'react'
-import styled from 'styled-components'
-import { Text } from '../../../components/Text'
-import { Link } from '../../../components/Link'
-import { AutoColumn } from '../../../components/Layout/Column'
-import { RowBetween } from '../../../components/Layout/Row'
+import React, { useCallback } from "react";
+import styled from "styled-components";
+import { Text } from "../../../components/Text";
+import { Link } from "../../../components/Link";
+import { AutoColumn } from "../../../components/Layout/Column";
+import { RowBetween } from "../../../components/Layout/Row";
 
 const InputPanel = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const InputPanel = styled.div`
   background-color: ${({ theme }) => theme.colors.card};
   z-index: 1;
   width: 100%;
-`
+`;
 
 const ContainerRow = styled.div<{ error: boolean }>`
   display: flex;
@@ -29,7 +29,7 @@ const ContainerRow = styled.div<{ error: boolean }>`
 const InputContainer = styled.div`
   flex: 1;
   padding: 1rem;
-`
+`;
 
 const Input = styled.input<{ error?: boolean }>`
   font-size: 1.25rem;
@@ -61,15 +61,15 @@ const Input = styled.input<{ error?: boolean }>`
   ::placeholder {
     color: ${({ theme }) => theme.colors.textDisabled};
   }
-`
+`;
 
 export interface AddressInputPanelProps {
-  id?: string
-  value: string
-  onChange: (value: string) => void
-  linkText: string
-  recipientText: string
-  inputPlaceholderText: string
+  id?: string;
+  value: string;
+  onChange: (value: string) => void;
+  linkText: string;
+  recipientText: string;
+  inputPlaceholderText: string;
   ENS: {
     address: string
     loading: boolean
@@ -88,21 +88,20 @@ export default function AddressInputPanel({
   inputPlaceholderText,
   ENS,
   chainId,
-  bscScanLink
+  bscScanLink,
 }: AddressInputPanelProps) {
-
-  const { address, loading, name } = ENS
+  const { address, loading, name } = ENS;
 
   const handleInput = useCallback(
     (event) => {
-      const input = event.target.value
-      const withoutSpaces = input.replace(/\s+/g, '')
-      onChange(withoutSpaces)
+      const input = event.target.value;
+      const withoutSpaces = input.replace(/\s+/g, "");
+      onChange(withoutSpaces);
     },
-    [onChange],
-  )
+    [onChange]
+  );
 
-  const error = Boolean(value.length > 0 && !loading && !address)
+  const error = Boolean(value.length > 0 && !loading && !address);
 
   return (
     <InputPanel id={id}>
@@ -134,5 +133,5 @@ export default function AddressInputPanel({
         </InputContainer>
       </ContainerRow>
     </InputPanel>
-  )
+  );
 }

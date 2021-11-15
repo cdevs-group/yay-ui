@@ -37,7 +37,7 @@ const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick, 
         </Button>
       </Flex>
     </>
-  )
-}
+  );
+};
 
-export default Acknowledgement
+export default Acknowledgement;

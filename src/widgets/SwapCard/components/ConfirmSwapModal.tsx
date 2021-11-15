@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo } from 'react'
-import { InjectedModalProps } from '../../Modal'
+import React, { useCallback, useMemo } from "react";
+import { InjectedModalProps } from "../../Modal";
 import TransactionConfirmationModal, {
   ConfirmationModalContent,
   TransactionErrorContent,
@@ -91,11 +91,10 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   buttonSwap,
   swapModalFooterTexts
 }) => {
-
   const showAcceptChanges = useMemo(
     () => Boolean(trade && originalTrade && tradeMeaningfullyDiffers),
-    [originalTrade, trade],
-  )
+    [originalTrade, trade]
+  );
 
   const modalHeader = useCallback(() => {
     return trade ? (
@@ -109,8 +108,8 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
         truncatedTextColorFrom={truncatedTextColorFrom}
         truncatedTextColorTo={truncatedTextColorTo}
       />
-    ) : null
-  }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade])
+    ) : null;
+  }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade]);
 
   const modalBottom = useCallback(() => {
     return trade ? (
@@ -120,8 +119,8 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
         buttonSwap={buttonSwap}
         texts={swapModalFooterTexts}
       />
-    ) : null
-  }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade])
+    ) : null;
+  }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade]);
 
   const confirmationContent = useCallback(
     () =>
@@ -130,8 +129,8 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
       ) : (
         <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />
       ),
-    [onDismiss, modalBottom, modalHeader, swapErrorMessage],
-  )
+    [onDismiss, modalBottom, modalHeader, swapErrorMessage]
+  );
 
   return (
     <TransactionConfirmationModal
@@ -154,7 +153,7 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
       isMetaMask={isMetaMask}
       token={token}
     />
-  )
-}
+  );
+};
 
-export default ConfirmSwapModal
+export default ConfirmSwapModal;
