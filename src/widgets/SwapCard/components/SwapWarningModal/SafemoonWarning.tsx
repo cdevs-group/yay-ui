@@ -1,18 +1,36 @@
 import React from 'react'
-import { useTranslation } from 'contexts/Localization'
-import { Text } from '@pancakeswap/uikit'
+import { Text } from '../../../../components/Text'
 
-const SafemoonWarning = () => {
-  const { t } = useTranslation()
+export interface SafemoonWarningProps {
+  texts: {
+    tradeSafeMoon: string
+    clickSettingIcon: string
+    slippageToleranceSetting: string
+    feeTransaction: string
+    feeFivePercentAllHolders: string
+    feeFivePercentAddLiquidity: string
+  }
+}
+
+const SafemoonWarning = ({ texts }: SafemoonWarningProps) => {
+
+  const { 
+    tradeSafeMoon,
+    clickSettingIcon,
+    slippageToleranceSetting,
+    feeTransaction,
+    feeFivePercentAllHolders,
+    feeFivePercentAddLiquidity
+   } = texts
 
   return (
     <>
-      <Text>{t('To trade SAFEMOON, you must:')} </Text>
-      <Text>• {t('Click on the settings icon')}</Text>
-      <Text mb="24px">• {t('Set your slippage tolerance to 12%+')}</Text>
-      <Text>{t('This is because SafeMoon taxes a 10% fee on each transaction:')}</Text>
-      <Text>• {t('5% fee = redistributed to all existing holders')}</Text>
-      <Text>• {t('5% fee = used to add liquidity')}</Text>
+      <Text>{tradeSafeMoon} </Text>
+      <Text>• {clickSettingIcon}</Text>
+      <Text mb="24px">• {slippageToleranceSetting}</Text>
+      <Text>{feeTransaction}</Text>
+      <Text>• {feeFivePercentAllHolders}</Text>
+      <Text>• {feeFivePercentAddLiquidity}</Text>
     </>
   )
 }

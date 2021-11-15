@@ -1,11 +1,12 @@
 import React from 'react'
-import { Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { Text } from '../../../../components/Text'
 
-const BondlyWarning = () => {
-  const { t } = useTranslation()
+interface BondlyWarningProps {
+  bondlyWarningText: string
+}
 
-  return <Text>{t('Warning: BONDLY has been compromised. Please remove liquidity until further notice.')}</Text>
+const BondlyWarning = ({bondlyWarningText}: BondlyWarningProps) => {
+  return <Text>{bondlyWarningText}</Text>
 }
 
 export default BondlyWarning

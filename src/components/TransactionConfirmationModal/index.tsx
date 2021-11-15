@@ -64,7 +64,7 @@ export interface TransactionSubmittedContentProps {
   onDismiss?: () => void
   registerToken: (address: string, symbol: string, decimals: number) => void
   hash: string | undefined
-  chainId: number
+  chainId: any
   currencyToAdd?: any
   bscScanLink: string
   transSubmittedText: string
@@ -171,7 +171,7 @@ interface ConfirmationModalProps {
   pendingText: string
   currencyToAdd?: any
   texts: ConfirmationPendingContentTextProps
-  chainId: number
+  chainId: any
 }
 
 const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationModalProps & TransactionSubmittedContentProps> = ({

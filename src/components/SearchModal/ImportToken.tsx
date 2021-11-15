@@ -11,7 +11,7 @@ import { Grid } from '../Box'
 import { AutoColumn } from '../../components/Layout/Column'
 import { ListLogo } from '../../components/Logo'
 
-interface ImportProps {
+export interface InjectedImportTokenProps {
     tokens: any[]
     handleCurrencySelect?: (currency: any) => void
     srcs: string[]
@@ -25,7 +25,7 @@ interface ImportProps {
         importText: string
     }
     addToken: (token: any) => void
-    chainId: number,
+    chainId: any,
     inactiveTokenList: any
     truncateHash: string
     bscScanLink: string
@@ -41,7 +41,7 @@ function ImportToken({
     inactiveTokenList,
     truncateHash,
     bscScanLink
-}: ImportProps) {
+}: InjectedImportTokenProps) {
 
     const {
         createToken,

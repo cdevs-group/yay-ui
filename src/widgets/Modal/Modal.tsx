@@ -15,6 +15,8 @@ interface Props extends InjectedProps {
   image?: boolean;
   paddingTopHeader?: string;
   headerBackground?: string;
+  style?: any,
+  maxWidth?: string
 }
 
 const getThemeValue =
@@ -22,14 +24,15 @@ const getThemeValue =
   (theme: DefaultTheme): string =>
     get(theme, path, fallback);
 
-const ModalContent = styled.div`
+export const ModalContent = styled.div<{ padding?: string }>`
   position: relative;
+  padding: ${({padding}) => padding};
 `;
 
-const StyledModal = styled.div`
-  max-width: 404px;
+export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
+  max-width: ${({ maxWidth }) => maxWidth || "404px"}
   max-height: 100vh;
-  min-width: 303px;
+  min-width: ${({ minWidth }) => minWidth || "303px"};
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
@@ -46,7 +49,7 @@ const StyledModal = styled.div`
   }
 `;
 
-const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
+export const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
   display: flex;
   align-items: center;
   background: ${({ background }) => background || "transparent"};
@@ -105,12 +108,14 @@ const Modal: React.FC<Props> = ({
   image,
   paddingTopHeader,
   headerBackground = "transparent",
+  style,
+  maxWidth
 }) => {
   const theme = useTheme();
   return (
     <div>
       <Overlay />
-      <StyledModal>
+      <StyledModal {...style} maxWidth={maxWidth}>
         <ModalContent>
           <ModalHeader 
             className={welcome ? "welcome" : ""}
