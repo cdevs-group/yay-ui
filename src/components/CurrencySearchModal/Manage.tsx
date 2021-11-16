@@ -1,49 +1,37 @@
-import React, { useState } from 'react'
-import { Token } from '@pancakeswap/sdk'
-import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
-import styled from 'styled-components'
-import { TokenList } from '@uniswap/token-lists'
-import { useTranslation } from 'contexts/Localization'
-import ManageLists from './ManageLists'
-import ManageTokens from './ManageTokens'
-import { CurrencyModalView } from './types'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { ButtonMenu, ButtonMenuItem } from "../ButtonMenu";
 
 const StyledButtonMenu = styled(ButtonMenu)`
   width: 100%;
-`
+`;
 
 export default function Manage({
-  setModalView,
-  setImportList,
-  setImportToken,
-  setListUrl,
+  manageLists,
+  manageTokens,
+  texts,
 }: {
-  setModalView: (view: CurrencyModalView) => void
-  setImportToken: (token: Token) => void
-  setImportList: (list: TokenList) => void
-  setListUrl: (url: string) => void
+  manageLists: React.ReactNode;
+  manageTokens: React.ReactNode;
+  texts: {
+    lists: string;
+    tokens: string;
+  };
 }) {
-  const [showLists, setShowLists] = useState(true)
-
-  const { t } = useTranslation()
+  const [showLists, setShowLists] = useState(true);
 
   return (
-    <ModalBody>
+    <div>
       <StyledButtonMenu
         activeIndex={showLists ? 0 : 1}
         onItemClick={() => setShowLists((prev) => !prev)}
         scale="sm"
-        variant="subtle"
         mb="32px"
       >
-        <ButtonMenuItem width="50%">{t('Lists')}</ButtonMenuItem>
-        <ButtonMenuItem width="50%">{t('Tokens')}</ButtonMenuItem>
+        <ButtonMenuItem width="50%">{texts.lists}</ButtonMenuItem>
+        <ButtonMenuItem width="50%">{texts.tokens}</ButtonMenuItem>
       </StyledButtonMenu>
-      {showLists ? (
-        <ManageLists setModalView={setModalView} setImportList={setImportList} setListUrl={setListUrl} />
-      ) : (
-        <ManageTokens setModalView={setModalView} setImportToken={setImportToken} />
-      )}
-    </ModalBody>
-  )
+      {showLists ? manageLists : manageTokens}
+    </div>
+  );
 }
