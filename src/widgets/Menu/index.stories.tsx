@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
-import { links } from "./config";
+import { links, linksSubmenu } from "./config";
 import { useState } from "react";
 import { BNB2 } from "../../constants/images";
 import { Avalanche } from "../../constants/images";
@@ -392,5 +392,57 @@ export const HeaderBridge = () => {
         </div>
       </BrowserRouter>
     </div>
+  );
+};
+
+
+export const HeaderWithSubmenu: React.FC = () => {
+  const langs = [
+    { locale: "en-US", language: "English", code: "en" },
+    { locale: "de-DE", language: "Deutsch", code: "de" },
+  ];
+
+  const textsAccount = {
+    copy: "Copy",
+    title: "Your wallet",
+    button: "Logout",
+    view: "View on BscScan",
+    copied: "Copied",
+    yayBalance: "$YAY balance",
+    address: "Your address",
+    tabs: ["Wallet", "Transactions"],
+    recentTransactions: "Recent transactions",
+    claimed: "Claimed",
+    addToken: "Add token",
+  };
+
+  const textsConnect = {
+    title: "Сonnect wallet",
+    link: "Learn how connect",
+  };
+
+  return (
+    <BrowserRouter>
+      <div style={{ marginTop: "50px" }}>
+        <Header
+          account="0xbdda50183d817c3289f895a4472eb475967dc980"
+          login={noop}
+          logout={noop}
+          isDark={false}
+          toggleTheme={noop}
+          langs={langs}
+          setLang={noop}
+          currentLang="EN"
+          links={linksSubmenu}
+          profile={{
+            profileLink: "/profile",
+            noProfileLink: "/no-profile",
+          }}
+          textsAccount={textsAccount}
+          textsConnect={textsConnect}
+          linkLogo="/"
+        />
+      </div>
+    </BrowserRouter>
   );
 };

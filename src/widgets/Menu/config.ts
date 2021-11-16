@@ -16,3 +16,32 @@ export const links = [
     url: "/3",
   },
 ];
+
+export const linksSubmenu = [
+  {
+    name: "Gaming Marketplace",
+    url: "http://gf",
+  },
+  {
+    name: "Zeus",
+    url: "/1",
+    submenu: [
+      {
+        name: "Stake",
+        url: "/stake",
+      },
+      {
+        name: "Top stakeRs",
+        url: "/tops-takers",
+      },
+    ],
+  },
+  {
+    name: "Farm",
+    url: "/2",
+  },
+  {
+    name: "Profile",
+    url: "/3",
+  },
+];
