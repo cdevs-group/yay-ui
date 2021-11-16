@@ -303,6 +303,7 @@ export default function Swap({ history }: RouteComponentProps) {
     "confirmSwapModal"
   );
 
+ 
   return (
     <Page>
       <AppBody>
@@ -350,7 +351,7 @@ export default function Swap({ history }: RouteComponentProps) {
               id="swap-currency-output"
             />
 
-            {isExpertMode && recipient !== null && !showWrap ? (
+           {isExpertMode && recipient !== null && !showWrap ? (
               <>
                 <AutoRow justify="space-between" style={{ padding: "0 1rem" }}>
                   <ArrowWrapper clickable={false}>
