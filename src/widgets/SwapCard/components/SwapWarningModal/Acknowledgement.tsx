@@ -1,20 +1,26 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'contexts/Localization'
-import { Text, Flex, Checkbox, Button } from '@pancakeswap/uikit'
+import { Text } from '../../../../components/Text'
+import { Flex } from '../../../../components/Box'
+import { CheckboxInput } from '../../../../components/CheckboxInput'
+import { Button } from '../../../../components/Button'
 
-interface AcknowledgementProps {
-  handleContinueClick: () => void
+export interface AcknowledgementTexsts {
+  buttonText: string
+  understandngText: string
 }
 
-const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick }) => {
-  const { t } = useTranslation()
+interface AcknowledgementProps extends AcknowledgementTexsts{
+  handleContinueClick?: () => void
+}
+
+const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick, buttonText, understandngText }) => {
   const [isConfirmed, setIsConfirmed] = useState(false)
 
   return (
     <>
       <Flex justifyContent="space-between">
         <Flex alignItems="center">
-          <Checkbox
+          <CheckboxInput
             name="confirmed"
             type="checkbox"
             checked={isConfirmed}
@@ -22,16 +28,16 @@ const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick }
             scale="sm"
           />
           <Text ml="10px" style={{ userSelect: 'none' }}>
-            {t('I understand')}
+            {understandngText}
           </Text>
         </Flex>
 
         <Button disabled={!isConfirmed} onClick={handleContinueClick}>
-          {t('Continue')}
+          {buttonText}
         </Button>
       </Flex>
     </>
-  )
-}
+  );
+};
 
-export default Acknowledgement
+export default Acknowledgement;
