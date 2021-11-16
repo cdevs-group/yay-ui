@@ -57,7 +57,7 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
 export interface TransactionSubmittedContentProps {
   onDismiss?: () => void
   registerToken: (address: string, symbol: string, decimals: number) => void
-  hash: string | undefined
+  txHash: string | undefined
   chainId: any
   currencyToAdd?: any
   bscScanLink: string
@@ -73,7 +73,7 @@ function TransactionSubmittedContent({
   onDismiss,
   registerToken,
   chainId,
-  hash,
+  txHash,
   currencyToAdd,
   bscScanLink,
   transSubmittedText,
@@ -91,7 +91,7 @@ function TransactionSubmittedContent({
         </ConfirmedIcon>
         <AutoColumn gap="12px" justify="center">
           <Text fontSize="20px">{transSubmittedText}</Text>
-          {chainId && hash && (
+          {chainId && txHash && (
             <Link external small href={bscScanLink}>
               {bscScanLinkText}
             </Link>
@@ -159,7 +159,7 @@ export function TransactionErrorContent({ message, onDismiss, dismissText }: Tra
 interface ConfirmationModalProps {
   title: string
   customOnDismiss?: () => void
-  hash: string | undefined
+  txHash: string | undefined
   content: () => React.ReactNode
   attemptingTxn: boolean
   pendingText: string
@@ -175,7 +175,7 @@ const TransactionConfirmationModal: React.FC<
   onDismiss,
   customOnDismiss,
   attemptingTxn,
-  hash,
+  txHash,
   pendingText,
   content,
   currencyToAdd,
@@ -203,10 +203,10 @@ const TransactionConfirmationModal: React.FC<
     <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
       {attemptingTxn ? (
         <ConfirmationPendingContent pendingText={pendingText} texts={texts} />
-      ) : hash ? (
+      ) : txHash ? (
         <TransactionSubmittedContent
           chainId={chainId}
-          hash={hash}
+          txHash={txHash}
           onDismiss={onDismiss}
           currencyToAdd={currencyToAdd}
           registerToken={registerToken}

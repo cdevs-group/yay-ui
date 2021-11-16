@@ -25,8 +25,11 @@ export interface InjectedImportTokenProps {
     importText: string;
   };
   addToken: (token: any) => void;
-  chainId: number;
-  inactiveTokenList: any;
+  chainId: any;
+  inactiveTokenList: {
+    logoURI: string
+    name: string
+  };
   truncateHash: string;
   bscScanLink: string;
 }
@@ -59,18 +62,17 @@ function ImportToken({
       </Message>
 
       {tokens.map((token: any) => {
-        const list = chainId && inactiveTokenList?.[chainId]?.[token.address]?.list;
         const address = token.address ? `${truncateHash}` : null;
         return (
           <Grid key={token.address} gridTemplateRows="1fr 1fr 1fr" gridGap="4px">
-            {list !== undefined ? (
+            {inactiveTokenList !== undefined ? (
               <Tag
                 variant="success"
                 outline
                 scale="sm"
-                startIcon={list.logoURI && <ListLogo srcs={srcs} logoURI={list.logoURI} size="12px" />}
+                startIcon={inactiveTokenList.logoURI && <ListLogo srcs={srcs} logoURI={inactiveTokenList.logoURI} size="12px" />}
               >
-                {via} {list.name}
+                {via} {inactiveTokenList.name}
               </Tag>
             ) : (
               <Tag variant="failure" outline scale="sm" startIcon={<ErrorIcon color="failure" />}>

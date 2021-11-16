@@ -12,7 +12,6 @@ import SwapModalHeader from './SwapModalHeader'
 
 interface ConfirmSwapModalProps {
   trade?: any
-  originalTrade?: any
   attemptingTxn: boolean
   txHash?: string
   recipient: string | null
@@ -23,7 +22,6 @@ interface ConfirmSwapModalProps {
   customOnDismiss?: () => void
   pendingText: string
   modalTitle: string
-  tradeMeaningfullyDiffers: boolean
   dismissText: string
   contentTexts: ConfirmationPendingContentTextProps
   swapModalHeaderTexts: {
@@ -54,11 +52,15 @@ interface ConfirmSwapModalProps {
   }
   errorText: React.ReactNode
   buttonSwap:React.ReactNode
+  currencyLogoFrom: React.ReactNode
+  currencyLogoTo: React.ReactNode
+  truncatedTextColorFrom: string
+  truncatedTextColorTo: string
+  showAcceptChanges: boolean
 }
 
-const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps & SwapModalHeaderProps> = ({
+const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps> = ({
   trade,
-  originalTrade,
   onAcceptChanges,
   allowedSlippage,
   onConfirm,
@@ -70,7 +72,6 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   txHash,
   pendingText,
   modalTitle,
-  tradeMeaningfullyDiffers,
   dismissText,
   contentTexts,
   chainId,
@@ -89,13 +90,9 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   truncatedTextColorTo,
   errorText,
   buttonSwap,
-  swapModalFooterTexts
+  swapModalFooterTexts,
+  showAcceptChanges
 }) => {
-  const showAcceptChanges = useMemo(
-    () => Boolean(trade && originalTrade && tradeMeaningfullyDiffers),
-    [originalTrade, trade]
-  );
-
   const modalHeader = useCallback(() => {
     return trade ? (
       <SwapModalHeader
@@ -138,7 +135,7 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
       onDismiss={onDismiss}
       customOnDismiss={customOnDismiss}
       attemptingTxn={attemptingTxn}
-      hash={txHash}
+      txHash={txHash}
       content={confirmationContent}
       pendingText={pendingText}
       currencyToAdd={trade?.outputAmount.currency}

@@ -1,4 +1,4 @@
-import React, { Fragment, memo, ReactNode } from "react";
+import React, { Fragment, memo } from "react";
 import { Flex } from "../../../components/Box";
 import { Text } from "../../../components/Text";
 import { ChevronRightIcon } from "../../../components/Svg";

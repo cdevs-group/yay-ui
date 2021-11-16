@@ -24,13 +24,9 @@ export interface TradeSummaryTextProps {
   realizedLPFeeText: string;
 }
 
-export interface ErrorNodeText {
-  errorText: React.ReactNode;
-}
-
 export interface TradeSummaryProps {
   texts: TradeSummaryTextProps;
-  errorText: ErrorNodeText;
+  errorText: React.ReactNode;
 }
 
 function TradeSummary({ texts, errorText }: TradeSummaryProps) {
@@ -100,7 +96,7 @@ export interface AdvancedSwapDetailsProps {
   routeText: string;
   routingFromToken: string;
   tradeSummaryTexts: TradeSummaryTextProps;
-  errorText: ErrorNodeText;
+  errorText: React.ReactNode;
   showRoute: boolean;
 }
 
