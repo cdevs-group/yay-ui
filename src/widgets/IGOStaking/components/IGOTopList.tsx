@@ -53,12 +53,11 @@ const Title = styled(Flex)`
   padding: 0 10px;
   color: ${({ theme }) => theme.colors.text2};
   text-shadow: ${({ theme }) => theme.colors.textShadow};
-  & span {
-    opacity: 0.5;
-  }
+  font-size: 15px;
+  line-height: 19px;
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 15px;
-    line-height: 19px;
+    line-height: 32px;
     padding: 0 30px;
     flex-wrap: nowrap;
   }
