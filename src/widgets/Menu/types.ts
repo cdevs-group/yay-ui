@@ -15,6 +15,8 @@ export interface LinkHeaderProps {
   url: string;
   setOpenMenu: (val: boolean) => void;
   submenu?: MenuEntry[];
+  setOpenDropdown: (val: boolean) => void;
+  openDropdown: boolean;
 }
 
 export interface AccProps {

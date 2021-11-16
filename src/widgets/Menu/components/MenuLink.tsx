@@ -1,50 +1,33 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import DropdownLayout from "../../../components/DropDown/DropDown";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
-const MenuLink = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) => {
+const MenuLink = ({ name, url, setOpenMenu, submenu, setOpenDropdown, openDropdown }: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
   const Item = () => <LinkItem>{name}</LinkItem>;
 
-  const refItem = useRef<any>(null);
-  const [openDropdown, setOpenDropdown] = useState(false);
-
-  // const handleClickOutside = useCallback(
-  //   (e) => {
-  //     if (refItem.current !== e.target && refItem.current && !refItem.current.contains(e.target)) {
-  //       setOpenDropdown(false);
-  //     }
-  //   },
-  //   [setOpenDropdown]
-  // );
-
-  // useEffect(() => {
-  //   if (document && refItem && refItem.current) {
-  //     document.addEventListener("mouseup", handleClickOutside, false);
-  //   }
-  //   return () => {
-  //     document.removeEventListener("mouseup", handleClickOutside, false);
-  //   };
-  // }, [refItem, handleClickOutside]);
-
   const handleLink = () => {
     setOpenDropdown(false);
-    console.log('openDropdown')
     setOpenMenu(false);
   };
-console.log(openDropdown)
+
   if (submenu?.length) {
     return (
-      <DropdownWrapper ref={refItem}>
-        <LinkItem onClick={() => setOpenDropdown(true)}>{name}</LinkItem>
+      <DropdownLayout
+        open={openDropdown}
+        setOpen={setOpenDropdown}
+        icon={<LinkItem onClick={() => setOpenDropdown(true)}>{name}</LinkItem>}
+        variant="menu"
+      >
         <Dropdown open={openDropdown}>
           {submenu?.map((el) => (
-            <MenuLink {...el} setOpenMenu={setOpenMenu} />
+            <MenuLink {...el} setOpenMenu={setOpenMenu} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
           ))}
         </Dropdown>
-      </DropdownWrapper>
+      </DropdownLayout>
     );
   }
 
@@ -69,21 +52,14 @@ export default MenuLink;
 const DropdownWrapper = styled.div`
   position: relative;
 `;
-const Dropdown = styled.div<{ open?: boolean }>`
-  position: absolute;
-  left: 35px;
-  top: 30px;
+const Dropdown = styled.div<{ open?: boolean }>`  
   display: flex;
   flex-direction: column;
   padding: 11px 16px;
   min-width: 140px;
   background: rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  transition: 0.3s;
-  z-index: ${({ open }) => (open ? 1 : -1)};
-  opacity: ${({ open }) => (open ? 1 : 0)};
-  pointer-events: ${({ open }) => (open ? 'all' : 'none')};
+  border-radius: 12px; 
 `;
 
 const StyledLink = styled(NavLink)``;
