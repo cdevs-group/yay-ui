@@ -78,4 +78,3 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
 };
 
 export default SwapModalHeader;
->>> feature/swap-card
