@@ -1,38 +1,37 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import styled from "styled-components";
-import { CurrencyAmount, JSBI, Token, Trade } from "@pancakeswap/sdk";
-import { Button } from "../../components/Button";
-import { Text } from "../../components/Text";
-import { ArrowDownIcon } from "../../components/Svg";
-import { Box } from "../../components/Box";
-import { useModal } from "../Modal";
-import { useIsTransactionUnsupported } from "hooks/Trades";
-import UnsupportedCurrencyFooter from "components/UnsupportedCurrencyFooter";
-import { RouteComponentProps } from "react-router-dom";
-import { useTranslation } from "contexts/Localization";
-import SwapWarningTokens from "config/constants/swapWarningTokens";
-import AddressInputPanel from "./components/AddressInputPanel";
-import { GreyCard } from "../../components/StyledCard";
-import Column, { AutoColumn } from "../../components/Layout/Column";
-import ConfirmSwapModal from "./components/ConfirmSwapModal";
-import CurrencyInputPanel from "../../components/CurrencyInputPanel";
-import { AutoRow, RowBetween } from "../../components/Layout/Row";
-import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
-import confirmPriceImpactWithoutFee from "./components/confirmPriceImpactWithoutFee";
-import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
-import TradePrice from "./components/TradePrice";
-import ImportTokenWarningModal from "./components/ImportTokenWarningModal";
-import ProgressSteps from "./components/ProgressSteps";
-import { AppHeader, AppBody } from "../../components/App";
-import ConnectWalletButton from "../../components/ConnectWalletButton";
-
-import { INITIAL_ALLOWED_SLIPPAGE } from "../../config/constants";
-import useActiveWeb3React from "../../hooks/useActiveWeb3React";
-import { useCurrency, useAllTokens } from "../../hooks/Tokens";
-import { ApprovalState, useApproveCallbackFromTrade } from "../../hooks/useApproveCallback";
-import { useSwapCallback } from "../../hooks/useSwapCallback";
-import useWrapCallback, { WrapType } from "../../hooks/useWrapCallback";
-import { Field } from "../../state/swap/actions";
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap/sdk'
+import { Button } from '../../components/Button'
+import { Text } from '../../components/Text'
+import { ArrowDownIcon } from '../../components/Svg'
+import { Box } from '../../components/Box'
+import { useModal } from '../Modal'
+import { useIsTransactionUnsupported } from 'hooks/Trades'
+import UnsupportedCurrencyFooter from '../../components/UnsupportedCurrencyFooter'
+import { RouteComponentProps } from 'react-router-dom'
+import { useTranslation } from 'contexts/Localization'
+import SwapWarningTokens from 'config/constants/swapWarningTokens'
+import AddressInputPanel from './components/AddressInputPanel'
+import { GreyCard } from '../../components/StyledCard'
+import Column, { AutoColumn } from '../../components/Layout/Column'
+import ConfirmSwapModal from './components/ConfirmSwapModal'
+import CurrencyInputPanel from '../../components/CurrencyInputPanel'
+import { AutoRow, RowBetween } from '../../components/Layout/Row'
+import AdvancedSwapDetailsDropdown from './components/AdvancedSwapDetailsDropdown'
+import confirmPriceImpactWithoutFee from './components/confirmPriceImpactWithoutFee'
+import { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds'
+import TradePrice from './components/TradePrice'
+import ImportTokenWarningModal from './components/ImportTokenWarningModal'
+import ProgressSteps from './components/ProgressSteps'
+import { AppHeader, AppBody } from '../../components/App'
+import ConnectWalletButton from '../../components/ConnectWalletButton'
+import { INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
+import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+import { useCurrency, useAllTokens } from '../../hooks/Tokens'
+import { ApprovalState, useApproveCallbackFromTrade } from '../../hooks/useApproveCallback'
+import { useSwapCallback } from '../../hooks/useSwapCallback'
+import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
+import { Field } from '../../state/swap/actions'
 import {
   useDefaultsFromURLSearch,
   useDerivedSwapInfo,
@@ -304,6 +303,7 @@ export default function Swap({ history }: RouteComponentProps) {
     "confirmSwapModal"
   );
 
+ 
   return (
     <Page>
       <AppBody>
@@ -351,7 +351,7 @@ export default function Swap({ history }: RouteComponentProps) {
               id="swap-currency-output"
             />
 
-            {isExpertMode && recipient !== null && !showWrap ? (
+           {isExpertMode && recipient !== null && !showWrap ? (
               <>
                 <AutoRow justify="space-between" style={{ padding: "0 1rem" }}>
                   <ArrowWrapper clickable={false}>

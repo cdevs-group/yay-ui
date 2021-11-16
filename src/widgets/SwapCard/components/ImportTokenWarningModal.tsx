@@ -1,20 +1,26 @@
-import React from "react";
-import { Modal, InjectedModalProps } from "../../Modal";
-import ImportToken from "../../../components/SearchModal/ImportToken";
-
-export interface Token {
-  address: string;
-  symbol: string;
-  decimals: number;
-}
+import React from 'react'
+import { Modal, InjectedModalProps } from '../../Modal'
+import ImportToken, { InjectedImportTokenProps } from '../../../components/SearchModal/ImportToken'
 
 interface Props extends InjectedModalProps {
-  tokens: Token[];
-  onCancel: () => void;
-  modalTitleText: string;
+  tokens: any[]
+  onCancel: () => void
+  modalTitleText: string
 }
 
-const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel, modalTitleText }) => {
+const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({ 
+  tokens,
+  onDismiss,
+  onCancel,
+  modalTitleText,
+  srcs,
+  texts,
+  addToken,
+  chainId,
+  inactiveTokenList,
+  truncateHash,
+  bscScanLink
+ }) => {
   return (
     <Modal
       title={modalTitleText}
@@ -26,7 +32,17 @@ const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel,
       }}
       style={{ maxWidth: "420px" }}
     >
-      <ImportToken tokens={tokens} handleCurrencySelect={onDismiss} />
+      <ImportToken
+        tokens={tokens}
+        handleCurrencySelect={onDismiss}
+        srcs={srcs}
+        texts={texts}
+        addToken={addToken}
+        chainId={chainId}
+        inactiveTokenList={inactiveTokenList}
+        truncateHash={truncateHash}
+        bscScanLink={bscScanLink}
+      />
     </Modal>
   );
 };

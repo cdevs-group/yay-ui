@@ -1,14 +1,8 @@
-import React, { useMemo } from "react";
-import { Trade, TradeType } from "@pancakeswap/sdk";
-import { Button, Text, ErrorIcon, ArrowDownIcon } from "@pancakeswap/uikit";
-import { Field } from "state/swap/actions";
-import { useTranslation } from "contexts/Localization";
-import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown, warningSeverity } from "utils/prices";
-import { AutoColumn } from "components/Layout/Column";
-import { CurrencyLogo } from "components/Logo";
-import { RowBetween, RowFixed } from "components/Layout/Row";
-import truncateHash from "utils/truncateHash";
-
+import React from "react";
+import { ArrowDownIcon, Button, ErrorIcon, Text } from "../../..";
+import { AutoColumn } from "../../../components/Layout/Column";
+import { RowBetween, RowFixed } from "../../../components/Layout/Row";
+import { SwapModalHeaderProps } from "../types";
 import { TruncatedText, SwapShowAcceptChanges } from "./styleds";
 
 const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({

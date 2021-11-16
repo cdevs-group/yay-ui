@@ -11,7 +11,7 @@ import { Grid } from "../Box";
 import { AutoColumn } from "../../components/Layout/Column";
 import { ListLogo } from "../../components/Logo";
 
-interface ImportProps {
+export interface InjectedImportTokenProps {
   tokens: any[];
   handleCurrencySelect?: (currency: any) => void;
   srcs: string[];
@@ -41,8 +41,9 @@ function ImportToken({
   inactiveTokenList,
   truncateHash,
   bscScanLink,
-}: ImportProps) {
+}: InjectedImportTokenProps) {
   const { createToken, purchaseToken, via, unknownSource, viewOnbscScan, understanding, importText } = texts;
+
 
   const [confirmed, setConfirmed] = useState(false);
 

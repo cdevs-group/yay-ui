@@ -1,19 +1,21 @@
-import React from "react";
-import { Currency, Token } from "@pancakeswap/sdk";
-import { Button, Text, Modal, useModal, InjectedModalProps, Link } from "@pancakeswap/uikit";
-import styled from "styled-components";
-import { AutoRow } from "../Layout/Row";
-import { AutoColumn } from "../Layout/Column";
-//import { CurrencyLogo } from 'components/Logo'
-import useActiveWeb3React from "hooks/useActiveWeb3React";
-import { getBscScanLink } from "utils";
-import { wrappedCurrency } from "utils/wrappedCurrency";
-import { useUnsupportedTokens } from "../hooks/Tokens";
+import React from 'react'
+import { Button } from '../Button'
+import { Text } from '../Text'
+import { Modal, useModal, InjectedModalProps } from '../../widgets/Modal'
+import { Link } from '../Link'
+import styled from 'styled-components'
+import { AutoRow } from '../Layout/Row'
+import { AutoColumn } from '../Layout/Column'
+import { CurrencyLogo } from '../Logo'
 
 interface Props extends InjectedModalProps {
-  currencies: (Currency | undefined)[];
-  onDismiss: () => void;
-  CurrencyLogo: React.ReactNode;
+  tokens: any[]
+  currencies: (any | undefined)[],
+  srcs: string[],
+  isEther: boolean
+  chainId: any
+  bscScanLink: string
+  unsupportedTokens: { [address: string]: any }
 }
 
 const DetailsFooter = styled.div`
@@ -27,17 +29,7 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss }, CurrencyLogo) => {
-  const { chainId } = useActiveWeb3React();
-  const tokens =
-    chainId && currencies
-      ? currencies.map((currency) => {
-          return wrappedCurrency(currency, chainId);
-        })
-      : [];
-
-  const unsupportedTokens: { [address: string]: Token } = useUnsupportedTokens();
-
+const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, srcs, chainId, bscScanLink, unsupportedTokens, tokens }) => {
   return (
     <Modal title="Unsupported Assets" maxWidth="420px" onDismiss={onDismiss}>
       <AutoColumn gap="lg">
@@ -48,11 +40,11 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss }, CurrencyLo
             Object.keys(unsupportedTokens).includes(token.address) && (
               <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
                 <AutoRow gap="5px" align="center">
-                  <CurrencyLogo />
+                  <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} />
                   <Text>{token.symbol}</Text>
                 </AutoRow>
                 {chainId && (
-                  <Link external small color="primaryDark" href={getBscScanLink(token.address, "address", chainId)}>
+                  <Link external small color="primaryDark" href={bscScanLink}>
                     {token.address}
                   </Link>
                 )}
@@ -71,8 +63,17 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss }, CurrencyLo
   );
 };
 
-export default function UnsupportedCurrencyFooter({ currencies }: { currencies: (Currency | undefined)[] }) {
-  const [onPresentModal] = useModal(<UnsupportedModal currencies={currencies} />);
+export default function UnsupportedCurrencyFooter({ tokens, currencies, srcs, isEther, chainId, bscScanLink, unsupportedTokens }: Props) {
+  const [onPresentModal] = useModal(
+  <UnsupportedModal
+    tokens={tokens}
+    currencies={currencies}
+    srcs={srcs}
+    isEther={isEther}
+    chainId={chainId}
+    bscScanLink={bscScanLink}
+    unsupportedTokens={unsupportedTokens}
+  />)
 
   return (
     <DetailsFooter>
