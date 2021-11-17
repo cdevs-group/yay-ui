@@ -3,7 +3,7 @@ import { Button } from "../..";
 
 import TradePrice from "./components/TradePrice";
 import SwapRoute from "./components/SwapRoute";
-import CurrencySearch from "./components/SerachCurrency/CurrencySearch";
+import CurrencySearch from "./components/CurrencySearchModal/CurrencySearch";
 
 import AddressInputPanel from "./components/AddressInputPanel";
 import { AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
