@@ -1,8 +1,9 @@
 import React from "react";
 import { StakeDescription, StakeTitle, UnstakeWrapper, Progress } from "../style";
-import TimerNotSolidWithoutBg from "../../../../components/Timer/TimerNotSolidWithBg";
-import { Button } from "../../../../components/Button";
-import TextWithTooltip from "../../../IGOPlatform/Cards/components/TextWithTooltip";
+import { Button } from "../../../components/Button";
+import TextWithTooltip from "../../IGOPlatform/Cards/components/TextWithTooltip";
+import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
+
 import styled from "styled-components";
 
 interface IUnstakeProps {

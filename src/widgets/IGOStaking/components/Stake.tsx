@@ -1,9 +1,9 @@
 import React from "react";
 import { InputBlock, StakeDescription, StakeTitle, StakeWrapper, Balance, Buttons } from "../style";
-import BalanceInput from "../../../../components/BalanceInput/BalanceInput";
-import { Button } from "../../../../components/Button";
-import { YAY_TOKEN } from "../../../../constants/images";
-import TabsSmall from "../../../../components/Tabs/TabsSmall";
+import BalanceInput from "../../../components/BalanceInput/BalanceInput";
+import { Button } from "../../../components/Button";
+import { YAY_TOKEN } from "../../../constants/images";
+import TabsSmall from "../../../components/Tabs/TabsSmall";
 
 interface IStakeProps {
   texts: {

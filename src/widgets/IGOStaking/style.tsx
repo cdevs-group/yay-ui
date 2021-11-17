@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Text } from "../../../components/Text";
-import { Flex } from "../../../components/Box";
+import { Text } from "../../components/Text";
+import { Flex } from "../../components/Box";
 
 export const StakeWrapper = styled.div`
   min-height: 304px;

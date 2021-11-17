@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Text } from "../..";
 import IGOTopList from "./components/IGOTopList";
 import CardTopIndicator from "./components/CardTopIndicator";
-import IGOStake from "./IGOStake/IGOStake";
+import IGOStake from "./IGOStake";
 import { YAY_TOKEN } from "../../constants/images";
 
 export default {

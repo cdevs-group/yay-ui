@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Text } from "../../../../components/Text";
+import { Text } from "../../..";
 
 const TopBlock = ({ title, value }: { title: string; value: string | number }) => {
   return (
