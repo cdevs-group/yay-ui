@@ -1,6 +1,6 @@
 import React from 'react'
 import { Modal, InjectedModalProps } from '../../Modal'
-import ImportToken, { InjectedImportTokenProps } from '../../../components/SearchModal/ImportToken'
+import ImportToken, { InjectedImportTokenProps } from './CurrencySearchModal/ImportToken'
 
 interface Props extends InjectedModalProps {
   tokens: any[]

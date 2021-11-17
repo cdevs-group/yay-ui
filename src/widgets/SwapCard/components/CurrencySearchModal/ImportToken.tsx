@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Button } from "../Button";
-import { Text } from "../Text";
-import { ErrorIcon } from "../Svg";
-import { Flex } from "../Box";
-import { Message } from "../Message";
-import { CheckboxInput } from "../CheckboxInput";
-import { Link } from "../Link";
-import { Tag } from "../Tag";
-import { Grid } from "../Box";
-import { AutoColumn } from "../../components/Layout/Column";
-import { ListLogo } from "../../components/Logo";
+import { Button } from "../../../../components/Button";
+import { Text } from "../../../../components/Text";
+import { ErrorIcon } from "../../../../components/Svg";
+import { Flex } from "../../../../components/Box";
+import { Message } from "../../../../components/Message";
+import { CheckboxInput } from "../../../../components/CheckboxInput";
+import { Link } from "../../../../components/Link";
+import { Tag } from "../../../../components/Tag";
+import { Grid } from "../../../../components/Box";
+import { AutoColumn } from "../../../../components/Layout/Column";
+import { ListLogo } from "../../../../components/Logo";
 
 export interface InjectedImportTokenProps {
   tokens: any[];

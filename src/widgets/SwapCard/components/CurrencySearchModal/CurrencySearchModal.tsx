@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
 import styled from "styled-components";
-import { Button, IconButton } from "../Button";
-import { Text } from "../Text";
+import { Button, IconButton } from "../../../../components/Button";
+import { Text } from "../../../../components/Text";
 import { CurrencySearchModalProps, CurrencyModalView } from "./types";
-import { ArrowLeft, CloseIcon } from "../Svg";
-import { Modal } from "../..";
+import { ArrowLeft, CloseIcon } from "../../../../components/Svg";
+import { Modal } from "../../../..";
 
 const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
   onDismiss = () => null,

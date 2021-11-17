@@ -1,10 +1,10 @@
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
-import { Button } from "../Button";
-import { AutoColumn } from "../Layout/Column";
-import { AutoRow, RowFixed } from "../Layout/Row";
-import { CheckmarkCircleIcon } from "../Svg";
-import { Text } from "../Text";
+import { Button } from "../../../../components/Button";
+import { AutoColumn } from "../../../../components/Layout/Column";
+import { AutoRow, RowFixed } from "../../../../components/Layout/Row";
+import { CheckmarkCircleIcon } from "../../../../components/Svg";
+import { Text } from "../../../../components/Text";
 
 const TokenSection = styled.div<{ dim?: boolean }>`
   padding: 4px 20px;

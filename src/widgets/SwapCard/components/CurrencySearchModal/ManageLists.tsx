@@ -1,14 +1,14 @@
 import React, { memo, useCallback, useMemo, useState, useEffect } from "react";
 import styled from "styled-components";
-import Column, { AutoColumn } from "../Layout/Column";
-import Row, { RowFixed, RowBetween } from "../Layout/Row";
-import { Button } from "../Button";
-import { Text } from "../Text";
-import { Input } from "../Input";
-import { CheckIcon, CogIcon } from "../Svg";
-import { BaseToggle } from "../Toggle";
-import { LinkExternal } from "../Link";
-import { useTooltip } from "../..";
+import Column, { AutoColumn } from "../../../../components/Layout/Column";
+import Row, { RowFixed, RowBetween } from "../../../../components/Layout/Row";
+import { Button } from "../../../../components/Button";
+import { Text } from "../../../../components/Text";
+import { Input } from "../../../../components/Input";
+import { CheckIcon, CogIcon } from "../../../../components/Svg";
+import { BaseToggle } from "../../../../components/Toggle";
+import { LinkExternal } from "../../../../components/Link";
+import { useTooltip } from "../../../..";
 import { ListRowTotalProps, ManageListsProps } from "./types";
 
 function listVersionLabel(version: any): string {

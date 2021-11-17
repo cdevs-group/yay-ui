@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ButtonMenu, ButtonMenuItem } from "../ButtonMenu";
+import { ButtonMenu, ButtonMenuItem } from "../../../../components/ButtonMenu";
 
 const StyledButtonMenu = styled(ButtonMenu)`
   width: 100%;

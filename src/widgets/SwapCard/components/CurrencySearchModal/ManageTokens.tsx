@@ -1,12 +1,12 @@
 import React, { useRef, RefObject, useMemo } from "react";
 import styled from "styled-components";
-import { Button, IconButton } from "../Button";
-import { Input } from "../Input";
-import Column, { AutoColumn } from "../Layout/Column";
-import Row, { RowBetween, RowFixed } from "../Layout/Row";
-import { Link, LinkExternal } from "../Link";
-import { CloseIcon } from "../Svg";
-import { Text } from "../Text";
+import { Button, IconButton } from "../../../../components/Button";
+import { Input } from "../../../../components/Input";
+import Column, { AutoColumn } from "../../../../components/Layout/Column";
+import Row, { RowBetween, RowFixed } from "../../../../components/Layout/Row";
+import { Link, LinkExternal } from "../../../../components/Link";
+import { CloseIcon } from "../../../../components/Svg";
+import { Text } from "../../../../components/Text";
 
 const Wrapper = styled.div`
   width: 100%;
