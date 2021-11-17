@@ -11,10 +11,12 @@ export const sizes = {
 
 export interface LinkHeaderProps {
   name: string;
-  size?: string;
   className?: string;
   url: string;
-  onClick: () => void;
+  setOpenMenu: (val: boolean) => void;
+  submenu?: MenuEntry[];
+  setOpenDropdown: (val: boolean) => void;
+  openDropdown: boolean;
 }
 
 export interface AccProps {
@@ -38,6 +40,7 @@ export interface Language {
 export interface MenuEntry {
   name: string;
   url: string;
+  submenu?: MenuEntry[];
 }
 
 export interface LangType {

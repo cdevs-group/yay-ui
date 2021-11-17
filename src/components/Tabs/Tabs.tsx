@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
-import { TabsProp } from "./types";
+import { TabsProp, Variant } from "./types";
+import { variant } from "styled-system";
+import { styleVariantsTab, styleVariantsTabs } from "./theme";
 
-const Tabs = ({ tabValue, onClick, tabsList }: TabsProp) => {
+const Tabs = ({ tabValue, onClick, tabsList, variant }: TabsProp) => {
   return (
-    <TabsWrap length={tabsList?.length}>
+    <TabsWrap length={tabsList?.length} variant={variant}>
       {tabsList?.map((item, i) => (
-        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i}>
+        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i} variant={variant}>
           {item}
         </Tab>
       ))}
@@ -17,15 +19,18 @@ const Tabs = ({ tabValue, onClick, tabsList }: TabsProp) => {
 
 export default Tabs;
 
-const TabsWrap = styled.div<{ length?: number }>`
+const TabsWrap = styled.div<{ length?: number; variant?: Variant }>`
   display: grid;
-  grid-template-columns: repeat(${({ length }) => length || 2}, 1fr);
+  grid-template-columns: ${({ length, variant }) => `repeat(${length || 2}, ${variant === "small" ? "auto" : "1fr"})`};
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+  ${variant({
+    variants: styleVariantsTabs,
+  })}
 `;
 
-const Tab = styled.button`
+const Tab = styled.button<{ variant?: Variant }>`
   padding: 15px 16px;
   border: none;
   background: transparent;
@@ -46,4 +51,7 @@ const Tab = styled.button`
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 15px 30px;
   }
+  ${variant({
+    variants: styleVariantsTab,
+  })}
 `;

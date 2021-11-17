@@ -80,4 +80,5 @@ const ButtonText = styled(Text)`
   line-height: 15px;
   letter-spacing: 0.08em;
   pointer-events: none; ;
+  text-align: center;
 `;
