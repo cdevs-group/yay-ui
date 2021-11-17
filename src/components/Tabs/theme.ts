@@ -8,9 +8,9 @@ export const styleVariantsTab = {
     borderRadius: 8,
     "@media screen and (min-width: 852px)": {
       padding: "9px",
-      '&.active': {
+      "&.active": {
         padding: "9px 20px",
-      }
+      },
     },
   },
 };

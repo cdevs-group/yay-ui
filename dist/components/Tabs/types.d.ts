@@ -1,7 +1,12 @@
+export declare const variants: {
+    readonly SMALL: "small";
+};
+export declare type Variant = typeof variants[keyof typeof variants];
 export interface TabsProp {
     tabValue?: number;
     onClick?: (e: any) => Promise<void> | void;
     tabsList?: Array<string>;
+    variant?: Variant;
 }
 export interface TabsSmallProp {
     tabValue?: number | string;

@@ -17,5 +17,5 @@ export interface DropDownProps {
   open: boolean;
   setOpen: (value: boolean) => void;
   children: ReactNode;
-  variant?: Variant
+  variant?: Variant;
 }

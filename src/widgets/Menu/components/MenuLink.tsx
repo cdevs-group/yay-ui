@@ -52,14 +52,14 @@ export default MenuLink;
 const DropdownWrapper = styled.div`
   position: relative;
 `;
-const Dropdown = styled.div<{ open?: boolean }>`  
+const Dropdown = styled.div<{ open?: boolean }>`
   display: flex;
   flex-direction: column;
   padding: 11px 16px;
   min-width: 140px;
   background: rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 12px; 
+  border-radius: 12px;
 `;
 
 const StyledLink = styled(NavLink)``;

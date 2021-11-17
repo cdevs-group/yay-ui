@@ -395,7 +395,6 @@ export const HeaderBridge = () => {
   );
 };
 
-
 export const HeaderWithSubmenu: React.FC = () => {
   const langs = [
     { locale: "en-US", language: "English", code: "en" },

@@ -58,5 +58,6 @@ export * from "./widgets/LockFuture";
 export * from "./widgets/StakingDashboard";
 export * from "./widgets/IGOPlatform";
 export * from "./widgets/AgreeMessage";
+export * from "./widgets/IGOStaking";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

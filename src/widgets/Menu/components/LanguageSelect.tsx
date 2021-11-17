@@ -27,5 +27,5 @@ const ButtonText = styled(Text)`
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
-  letter-spacing: 0.08em;  
+  letter-spacing: 0.08em;
 `;

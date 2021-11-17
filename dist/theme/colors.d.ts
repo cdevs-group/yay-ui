@@ -25,6 +25,7 @@ export declare const baseColors: {
     bgOpacity: string;
     bgOpacity2: string;
     bgOpacitY3: string;
+    bgOpacity4: string;
     bgBlackRgba: string;
     textGray: string;
     bgGray: string;
