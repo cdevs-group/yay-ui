@@ -15,7 +15,7 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
   config,
   modalView,
   setModalView,
-  texts
+  texts,
 }) => {
   const handleCurrencySelect = useCallback(
     (currency: any) => {

@@ -55,18 +55,18 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
 }
 
 export interface TransactionSubmittedContentProps {
-  onDismiss?: () => void
-  registerToken: (address: string, symbol: string, decimals: number) => void
-  txHash: string | undefined
-  chainId: any
-  currencyToAdd?: any
-  bscScanLink: string
-  transSubmittedText: string
-  bscScanLinkText: string
-  metamaskAssetText: string
-  btnCloseText: string
-  isMetaMask: boolean
-  token: any
+  onDismiss?: () => void;
+  registerToken: (address: string, symbol: string, decimals: number) => void;
+  txHash?: string;
+  chainId: any;
+  currencyToAdd?: any;
+  bscScanLink: string;
+  transSubmittedText: string;
+  bscScanLinkText: string;
+  metamaskAssetText: string;
+  btnCloseText: string;
+  isMetaMask: boolean;
+  token: any;
 }
 
 function TransactionSubmittedContent({
@@ -157,15 +157,15 @@ export function TransactionErrorContent({ message, onDismiss, dismissText }: Tra
 }
 
 interface ConfirmationModalProps {
-  title: string
-  customOnDismiss?: () => void
-  txHash: string | undefined
-  content: () => React.ReactNode
-  attemptingTxn: boolean
-  pendingText: string
-  currencyToAdd?: any
-  texts: ConfirmationPendingContentTextProps
-  chainId: any
+  title: string;
+  customOnDismiss?: () => void;
+  txHash: string | undefined;
+  content: () => React.ReactNode;
+  attemptingTxn: boolean;
+  pendingText: string;
+  currencyToAdd?: any;
+  texts: ConfirmationPendingContentTextProps;
+  chainId: any;
 }
 
 const TransactionConfirmationModal: React.FC<

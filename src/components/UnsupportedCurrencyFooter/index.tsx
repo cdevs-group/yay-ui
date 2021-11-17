@@ -1,20 +1,20 @@
-import React from 'react'
-import { Button } from '../Button'
-import { Text } from '../Text'
-import { Modal, useModal, InjectedModalProps } from '../../widgets/Modal'
-import { Link } from '../Link'
-import styled from 'styled-components'
-import { AutoRow } from '../Layout/Row'
-import { AutoColumn } from '../Layout/Column'
-import { CurrencyLogo } from '../Logo'
+import React from "react";
+import { Button } from "../Button";
+import { Text } from "../Text";
+import { Modal, useModal, InjectedModalProps } from "../../widgets/Modal";
+import { Link } from "../Link";
+import styled from "styled-components";
+import { AutoRow } from "../Layout/Row";
+import { AutoColumn } from "../Layout/Column";
+import { CurrencyLogo } from "../Logo";
 
 interface Props extends InjectedModalProps {
-  tokens: any[]
-  srcs: string[],
-  isEther: boolean
-  chainId: any
-  bscScanLink: string
-  unsupportedTokens: { [address: string]: any }
+  tokens: any[];
+  srcs: string[];
+  isEther: boolean;
+  chainId: any;
+  bscScanLink: string;
+  unsupportedTokens: { [address: string]: any };
 }
 
 const DetailsFooter = styled.div`
@@ -28,7 +28,15 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-const UnsupportedModal: React.FC<Props> = ({ onDismiss, isEther, srcs, chainId, bscScanLink, unsupportedTokens, tokens }) => {
+const UnsupportedModal: React.FC<Props> = ({
+  onDismiss,
+  isEther,
+  srcs,
+  chainId,
+  bscScanLink,
+  unsupportedTokens,
+  tokens,
+}) => {
   return (
     <Modal title="Unsupported Assets" maxWidth="420px" onDismiss={onDismiss}>
       <AutoColumn gap="lg">
@@ -62,16 +70,24 @@ const UnsupportedModal: React.FC<Props> = ({ onDismiss, isEther, srcs, chainId, 
   );
 };
 
-export default function UnsupportedCurrencyFooter({ tokens, srcs, isEther, chainId, bscScanLink, unsupportedTokens }: Props) {
+export default function UnsupportedCurrencyFooter({
+  tokens,
+  srcs,
+  isEther,
+  chainId,
+  bscScanLink,
+  unsupportedTokens,
+}: Props) {
   const [onPresentModal] = useModal(
-  <UnsupportedModal
-    tokens={tokens}
-    srcs={srcs}
-    isEther={isEther}
-    chainId={chainId}
-    bscScanLink={bscScanLink}
-    unsupportedTokens={unsupportedTokens}
-  />)
+    <UnsupportedModal
+      tokens={tokens}
+      srcs={srcs}
+      isEther={isEther}
+      chainId={chainId}
+      bscScanLink={bscScanLink}
+      unsupportedTokens={unsupportedTokens}
+    />
+  );
 
   return (
     <DetailsFooter>

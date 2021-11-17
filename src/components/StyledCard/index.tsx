@@ -20,7 +20,7 @@ export default Card;
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.background};
   background-color: ${({ theme }) => theme.colors.card};
-`
+`;
 
 export const LightGreyCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.card};
@@ -29,4 +29,4 @@ export const LightGreyCard = styled(Card)`
 
 export const GreyCard = styled(Card)`
   background-color: ${({ theme }) => theme.colors.card};
-`
+`;
