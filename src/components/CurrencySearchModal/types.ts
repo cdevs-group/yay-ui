@@ -25,3 +25,45 @@ export interface CurrencySearchModalProps {
     manageTokens: string;
   };
 }
+export interface ListUrlRowProps {
+  listUrl: string;
+}
+
+export interface ListRowProps {
+  list: any;
+  texts: {
+    see: string;
+    remove: string;
+    updateList: string;
+    tokens: string;
+  };
+  handleAcceptListUpdate: () => void;
+  handleRemoveList: () => void;
+  disabledButtonRemove: boolean;
+  pending: any;
+  isActive: boolean;
+  handleDisableList: () => void;
+  handleEnableList: () => void;
+  listLogoRow: React.ReactNode;
+}
+
+export interface ListRowTotalProps extends ListUrlRowProps, ListRowProps {}
+
+export interface ManageListsProps {
+  tempList: any;
+  addError: string | undefined;
+  lists: any;
+  activeListUrls: any;
+  listUrlInput: string;
+  setListUrlInput: (e: any) => void;
+  texts: {
+    placeholder: string;
+    tokens: string;
+    loaded: string;
+    import: string;
+  };
+  unsupportedListUrls: string[];
+  listLogo: React.ReactNode;
+  handleImport: () => void;
+  listRowProps: ListRowProps;
+}
