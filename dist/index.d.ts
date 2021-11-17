@@ -59,5 +59,6 @@ export * from "./widgets/StakingDashboard";
 export * from "./widgets/IGOPlatform";
 export * from "./widgets/AgreeMessage";
 export * from "./widgets/IGOStaking";
+export * from "./widgets/IGOPlatformV2";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
