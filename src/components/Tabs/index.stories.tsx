@@ -31,6 +31,9 @@ export const TabsBlock: React.FC = () => {
       <div style={{ width: "400px", marginTop: "50px" }}>
         <Tabs onClick={toggleTab2} tabValue={activeTab2} tabsList={tabsList2} />
       </div>
+      <div style={{ width: "400px", marginTop: "50px" }}>
+        <Tabs onClick={toggleTab2} tabValue={activeTab2} tabsList={tabsList2} variant="small" />
+      </div>
     </>
   );
 };

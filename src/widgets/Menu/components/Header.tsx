@@ -48,6 +48,7 @@ const Header: React.FC<NavProps> = ({
   linkExternalWalletModal,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
@@ -68,10 +69,6 @@ const Header: React.FC<NavProps> = ({
     };
   }, [refSelect, handleClickOutside]);
 
-  const handleLink = () => {
-    setOpenMenu(false);
-  };
-
   return (
     <HeaderWrap ref={refSelect}>
       {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
@@ -82,7 +79,15 @@ const Header: React.FC<NavProps> = ({
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
             {links.map((item, i) => (
-              <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
+              <MenuLink
+                key={i}
+                name={item.name}
+                url={item.url}
+                submenu={item.submenu}
+                setOpenMenu={setOpenMenu}
+                openDropdown={openDropdown}
+                setOpenDropdown={setOpenDropdown}
+              />
             ))}
             <LanguageBlockMob>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
