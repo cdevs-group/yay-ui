@@ -10,7 +10,6 @@ import { CurrencyLogo } from '../Logo'
 
 interface Props extends InjectedModalProps {
   tokens: any[]
-  currencies: (any | undefined)[],
   srcs: string[],
   isEther: boolean
   chainId: any
@@ -29,7 +28,7 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, srcs, chainId, bscScanLink, unsupportedTokens, tokens }) => {
+const UnsupportedModal: React.FC<Props> = ({ onDismiss, isEther, srcs, chainId, bscScanLink, unsupportedTokens, tokens }) => {
   return (
     <Modal title="Unsupported Assets" maxWidth="420px" onDismiss={onDismiss}>
       <AutoColumn gap="lg">
@@ -63,11 +62,10 @@ const UnsupportedModal: React.FC<Props> = ({ currencies, onDismiss, isEther, src
   );
 };
 
-export default function UnsupportedCurrencyFooter({ tokens, currencies, srcs, isEther, chainId, bscScanLink, unsupportedTokens }: Props) {
+export default function UnsupportedCurrencyFooter({ tokens, srcs, isEther, chainId, bscScanLink, unsupportedTokens }: Props) {
   const [onPresentModal] = useModal(
   <UnsupportedModal
     tokens={tokens}
-    currencies={currencies}
     srcs={srcs}
     isEther={isEther}
     chainId={chainId}

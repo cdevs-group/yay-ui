@@ -19,6 +19,8 @@ import BondlyWarning from "./components/SwapWarningModal/BondlyWarning";
 import SafemoonWarning from "./components/SwapWarningModal/SafemoonWarning";
 import SwapWarningModal from "./components/SwapWarningModal";
 
+import UnsupportedCurrencyFooter from "../../components/UnsupportedCurrencyFooter";
+
 export default {
   title: "Widgets/Swap",
   argTypes: {},
@@ -84,6 +86,28 @@ const trade = {
     currency: "123456789"
   }
 };
+
+const tokens = [
+  {
+    address: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+    symbol: "123456789",
+    name: "Token Name 1"
+  },
+  {
+    address: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+    symbol: "987654321",
+    name: "Token Name 2"
+  }
+];
+
+const srcs = [
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+];
 
 export const AddressInputPanelBlock = () => {
   return (
@@ -219,23 +243,6 @@ export const ConfirmSwapModalBlock = () => {
 }
 
 export const ImportTokenWarningModalBlock = () => {
-
-  const tokens = [
-    {
-      address: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-      symbol: "123456789",
-      name: "Token Name"
-    }
-  ]
-
-  const srcs = [
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
-  ]
 
   const addToken = (token): any => null;
 
@@ -389,6 +396,21 @@ export const SwapWarningModalBlock = () => {
       }}
       buttonText="Button Text"
       understandngText="I understand"
+    />
+  );
+}
+
+export const UnsupportedCurrencyFooterBlock = () => {
+  return (
+    <UnsupportedCurrencyFooter
+      tokens={tokens}
+      srcs={srcs}
+      isEther={true}
+      chainId="123456789"
+      bscScanLink="https://storybook.js.org/"
+      unsupportedTokens={{
+        address: "https://storybook.js.org/"
+      }}
     />
   );
 }
