@@ -1,49 +1,50 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap/sdk'
+//import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap/sdk'
 import { Button } from '../../components/Button'
 import { Text } from '../../components/Text'
 import { ArrowDownIcon } from '../../components/Svg'
 import { Box } from '../../components/Box'
 import { useModal } from '../Modal'
-import { useIsTransactionUnsupported } from 'hooks/Trades'
+//import { useIsTransactionUnsupported } from 'hooks/Trades'
 import UnsupportedCurrencyFooter from '../../components/UnsupportedCurrencyFooter'
 import { RouteComponentProps } from 'react-router-dom'
-import { useTranslation } from 'contexts/Localization'
-import SwapWarningTokens from 'config/constants/swapWarningTokens'
+//import SwapWarningTokens from 'config/constants/swapWarningTokens'
 import AddressInputPanel from './components/AddressInputPanel'
 import { GreyCard } from '../../components/StyledCard'
 import Column, { AutoColumn } from '../../components/Layout/Column'
 import ConfirmSwapModal from './components/ConfirmSwapModal'
-import CurrencyInputPanel from '../../components/CurrencyInputPanel'
+import { CurrencyInputPanel, CurrencyInputPanelProps } from '../../components/CurrencyInputPanel'
 import { AutoRow, RowBetween } from '../../components/Layout/Row'
 import AdvancedSwapDetailsDropdown from './components/AdvancedSwapDetailsDropdown'
-import confirmPriceImpactWithoutFee from './components/confirmPriceImpactWithoutFee'
+//import confirmPriceImpactWithoutFee from './components/confirmPriceImpactWithoutFee'
 import { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds'
 import TradePrice from './components/TradePrice'
 import ImportTokenWarningModal from './components/ImportTokenWarningModal'
 import ProgressSteps from './components/ProgressSteps'
 import { AppHeader, AppBody } from '../../components/App'
 import ConnectWalletButton from '../../components/ConnectWalletButton'
-import { INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
-import useActiveWeb3React from '../../hooks/useActiveWeb3React'
-import { useCurrency, useAllTokens } from '../../hooks/Tokens'
-import { ApprovalState, useApproveCallbackFromTrade } from '../../hooks/useApproveCallback'
-import { useSwapCallback } from '../../hooks/useSwapCallback'
-import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
-import { Field } from '../../state/swap/actions'
-import {
+//import { INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
+//import useActiveWeb3React from '../../hooks/useActiveWeb3React'
+//import { useCurrency, useAllTokens } from '../../hooks/Tokens'
+//import { ApprovalState, useApproveCallbackFromTrade } from '../../hooks/useApproveCallback'
+//import { useSwapCallback } from '../../hooks/useSwapCallback'
+//import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
+//import { Field } from '../../state/swap/actions'
+/* import {
   useDefaultsFromURLSearch,
   useDerivedSwapInfo,
   useSwapActionHandlers,
   useSwapState,
-} from "../../state/swap/hooks";
-import { useExpertModeManager, useUserSlippageTolerance, useUserSingleHopOnly } from "../../state/user/hooks";
-import { maxAmountSpend } from "../../utils/maxAmountSpend";
-import { computeTradePriceBreakdown, warningSeverity } from "../../utils/prices";
-import CircleLoader from "../../components/Loader/CircleLoader";
-import Page from "../Page";
-import SwapWarningModal from "./components/SwapWarningModal";
+} from "../../state/swap/hooks"; */
+//import { useExpertModeManager, useUserSlippageTolerance, useUserSingleHopOnly } from "../../state/user/hooks";
+//import { maxAmountSpend } from "../../utils/maxAmountSpend";
+//import { computeTradePriceBreakdown, warningSeverity } from "../../utils/prices";
+//import CircleLoader from "../../components/Loader/CircleLoader"
+import SwapWarningModal from "./components/SwapWarningModal"
+
+import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails"
+import { AppHeaderProps } from "../../components/App"
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -51,8 +52,24 @@ const Label = styled(Text)`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
-export default function Swap({ history }: RouteComponentProps) {
-  const loadedUrlParams = useDefaultsFromURLSearch();
+interface SwapCardProps {
+  currencyInputPanelFrom: CurrencyInputPanelProps
+  currencyInputPanelTo: CurrencyInputPanelProps
+  appHeader: AppHeaderProps
+  isExpertMode: boolean
+  onArrowDownIconClick: () => void
+  AdvancedSwapDetailsDropdown: AdvancedSwapDetailsProps 
+}
+
+export default function Swap({ 
+  history,
+  currencyInputPanelFrom,
+  currencyInputPanelTo,
+  appHeader,
+  isExpertMode,
+  AdvancedSwapDetailsDropdown
+ }: RouteComponentProps & SwapCardProps) {
+  /* const loadedUrlParams = useDefaultsFromURLSearch();
 
   const { t } = useTranslation();
 
@@ -288,7 +305,6 @@ export default function Swap({ history }: RouteComponentProps) {
   const [onPresentConfirmModal] = useModal(
     <ConfirmSwapModal
       trade={trade}
-      originalTrade={tradeToConfirm}
       onAcceptChanges={handleAcceptChanges}
       attemptingTxn={attemptingTxn}
       txHash={txHash}
@@ -301,35 +317,44 @@ export default function Swap({ history }: RouteComponentProps) {
     true,
     true,
     "confirmSwapModal"
-  );
+  ); */
 
+  const { 
+    title,
+    subtitle,
+    expertMode
+   } = appHeader
  
   return (
-    <Page>
+    <>
       <AppBody>
-        <AppHeader title={t("Exchange")} subtitle={t("Trade tokens in an instant")} />
+        <AppHeader title={title} subtitle={subtitle} expertMode={expertMode} />
         <Wrapper id="swap-page">
           <AutoColumn gap="md">
             <CurrencyInputPanel
-              label={independentField === Field.OUTPUT && !showWrap && trade ? t("From (estimated)") : t("From")}
-              value={formattedAmounts[Field.INPUT]}
-              showMaxButton={!atMaxAmountInput}
-              currency={currencies[Field.INPUT]}
-              onUserInput={handleTypeInput}
-              onMax={handleMaxInput}
-              onCurrencySelect={handleInputSelect}
-              otherCurrency={currencies[Field.OUTPUT]}
-              id="swap-currency-input"
+              label={currencyInputPanelFrom.label}
+              value={currencyInputPanelFrom.value}
+              onUserInput={currencyInputPanelFrom.onUserInput}
+              onMax={currencyInputPanelFrom.onMax}
+              showMaxButton={currencyInputPanelFrom.showMaxButton}
+              currency={currencyInputPanelFrom.currency} 
+              //id="swap-currency-input"
+              id={currencyInputPanelFrom.id}
+              disableCurrencySelect={currencyInputPanelFrom.disableCurrencySelect}
+              pair={currencyInputPanelFrom.pair}
+              hideInput={currencyInputPanelFrom.hideInput}
+              account={currencyInputPanelFrom.account}
+              onPresentCurrencyModal={currencyInputPanelFrom.onPresentCurrencyModal}
+              сurrencyLogo={currencyInputPanelFrom.сurrencyLogo}
+              doubleCurrencyLogo={currencyInputPanelFrom.doubleCurrencyLogo}
+              texts={currencyInputPanelFrom.texts}
             />
             <AutoColumn justify="space-between">
               <AutoRow justify={isExpertMode ? "space-between" : "center"} style={{ padding: "0 1rem" }}>
                 <ArrowWrapper clickable>
                   <ArrowDownIcon
                     width="16px"
-                    onClick={() => {
-                      setApprovalSubmitted(false); // reset 2 step UI for approvals
-                      onSwitchTokens();
-                    }}
+                    onClick={onArrowDownIconClick}
                     color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? "primary" : "text"}
                   />
                 </ArrowWrapper>
@@ -341,17 +366,25 @@ export default function Swap({ history }: RouteComponentProps) {
               </AutoRow>
             </AutoColumn>
             <CurrencyInputPanel
-              value={formattedAmounts[Field.OUTPUT]}
-              onUserInput={handleTypeOutput}
-              label={independentField === Field.INPUT && !showWrap && trade ? t("To (estimated)") : t("To")}
-              showMaxButton={false}
-              currency={currencies[Field.OUTPUT]}
-              onCurrencySelect={handleOutputSelect}
-              otherCurrency={currencies[Field.INPUT]}
-              id="swap-currency-output"
+              label={currencyInputPanelTo.label}
+              value={currencyInputPanelTo.value}
+              onUserInput={currencyInputPanelTo.onUserInput}
+              onMax={currencyInputPanelTo.onMax}
+              showMaxButton={currencyInputPanelTo.showMaxButton}
+              currency={currencyInputPanelTo.currency} 
+              //id="swap-currency-input"
+              id={currencyInputPanelTo.id}
+              disableCurrencySelect={currencyInputPanelTo.disableCurrencySelect}
+              pair={currencyInputPanelTo.pair}
+              hideInput={currencyInputPanelTo.hideInput}
+              account={currencyInputPanelTo.account}
+              onPresentCurrencyModal={currencyInputPanelTo.onPresentCurrencyModal}
+              сurrencyLogo={currencyInputPanelTo.сurrencyLogo}
+              doubleCurrencyLogo={currencyInputPanelTo.doubleCurrencyLogo}
+              texts={currencyInputPanelTo.texts}
             />
 
-           {isExpertMode && recipient !== null && !showWrap ? (
+           {/* {isExpertMode && recipient !== null && !showWrap ? (
               <>
                 <AutoRow justify="space-between" style={{ padding: "0 1rem" }}>
                   <ArrowWrapper clickable={false}>
@@ -363,9 +396,9 @@ export default function Swap({ history }: RouteComponentProps) {
                 </AutoRow>
                 <AddressInputPanel id="recipient" value={recipient} onChange={onChangeRecipient} />
               </>
-            ) : null}
+            ) : null} */}
 
-            {showWrap ? null : (
+            {/* {showWrap ? null : (
               <AutoColumn gap="8px" style={{ padding: "0 16px" }}>
                 {Boolean(trade) && (
                   <RowBetween align="center">
@@ -386,7 +419,7 @@ export default function Swap({ history }: RouteComponentProps) {
                   </RowBetween>
                 )}
               </AutoColumn>
-            )}
+            )} */}
           </AutoColumn>
           <Box mt="1rem">
             {swapIsUnsupported ? (
@@ -497,8 +530,8 @@ export default function Swap({ history }: RouteComponentProps) {
       {!swapIsUnsupported ? (
         <AdvancedSwapDetailsDropdown trade={trade} />
       ) : (
-        <UnsupportedCurrencyFooter currencies={[currencies.INPUT, currencies.OUTPUT]} />
+        <UnsupportedCurrencyFooter />
       )}
-    </Page>
+    </>
   );
 }

@@ -67,6 +67,7 @@ export { default as AutoRenewIcon } from "./Icons/AutoRenew";
 export { default as CheckmarkCircleIcon } from "./Icons/CheckmarkCircle";
 export { default as ChevronRightIcon } from "./Icons/ChevronRight";
 export { default as CogIcon } from "./Icons/Cog";
+export { default as ArrowBackIcon } from "./Icons/ArrowBack";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
