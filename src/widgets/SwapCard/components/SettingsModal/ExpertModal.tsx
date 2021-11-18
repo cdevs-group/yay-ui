@@ -15,12 +15,13 @@ const ExpertModal = ({
   setShowConfirmExpertModal,
   setShowExpertModeAcknowledgement,
   texts,
+  toggleExpertModeFunc,
 }: {
   setShowConfirmExpertModal: any;
   setShowExpertModeAcknowledgement: any;
   texts: IText;
+  toggleExpertModeFunc: any;
 }) => {
-  // const [, toggleExpertMode] = useExpertModeManager()
   const [isRememberChecked, setIsRememberChecked] = useState(false);
 
   return (
@@ -54,7 +55,7 @@ const ExpertModal = ({
         onClick={() => {
           // eslint-disable-next-line no-alert
           if (window.prompt(texts.pleaseTypeThe) === "confirm") {
-            // toggleExpertMode()
+            toggleExpertModeFunc();
             setShowConfirmExpertModal(false);
             if (isRememberChecked) {
               setShowExpertModeAcknowledgement(false);

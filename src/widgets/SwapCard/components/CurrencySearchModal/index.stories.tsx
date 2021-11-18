@@ -106,13 +106,7 @@ export const CurrencySearchModalBlock = () => {
     );
 
     return (
-      <CurrencyList
-        row={Row}
-        height={390}
-        fixedListRef={null}
-        currencyKey={() => {}}
-        itemData={filteredSortedTokens}
-      />
+      <CurrencyList row={Row} height={390} fixedListRef={null} currencyKey={() => {}} itemData={filteredSortedTokens} />
     );
   };
 

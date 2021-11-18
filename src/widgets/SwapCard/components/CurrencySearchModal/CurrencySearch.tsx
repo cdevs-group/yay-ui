@@ -19,7 +19,7 @@ interface CurrencySearchProps {
   commonBases: ReactNode;
   debouncedQuery: any;
   filteredSortedTokens: any;
-  filteredInactiveTokens: any;  
+  filteredInactiveTokens: any;
 }
 
 function CurrencySearch({
@@ -35,12 +35,12 @@ function CurrencySearch({
   onCurrencySelect,
   currencyList,
   showCommonBases,
-  importRow,  
+  importRow,
 }: CurrencySearchProps) {
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>();
   const [searchQuery, setSearchQuery] = useState<string>("");
- 
+
   const handleCurrencySelect = useCallback(
     (currency: any) => {
       onCurrencySelect(currency);
