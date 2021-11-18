@@ -27,8 +27,8 @@ export interface InjectedImportTokenProps {
   addToken: (token: any) => void;
   chainId: any;
   inactiveTokenList: {
-    logoURI: string
-    name: string
+    logoURI: string;
+    name: string;
   };
   truncateHash: string;
   bscScanLink: string;
@@ -46,7 +46,6 @@ function ImportToken({
   bscScanLink,
 }: InjectedImportTokenProps) {
   const { createToken, purchaseToken, via, unknownSource, viewOnbscScan, understanding, importText } = texts;
-
 
   const [confirmed, setConfirmed] = useState(false);
 
@@ -70,7 +69,9 @@ function ImportToken({
                 variant="success"
                 outline
                 scale="sm"
-                startIcon={inactiveTokenList.logoURI && <ListLogo srcs={srcs} logoURI={inactiveTokenList.logoURI} size="12px" />}
+                startIcon={
+                  inactiveTokenList.logoURI && <ListLogo srcs={srcs} logoURI={inactiveTokenList.logoURI} size="12px" />
+                }
               >
                 {via} {inactiveTokenList.name}
               </Tag>

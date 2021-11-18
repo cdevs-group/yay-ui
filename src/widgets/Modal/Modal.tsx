@@ -15,8 +15,9 @@ interface Props extends InjectedProps {
   image?: boolean;
   paddingTopHeader?: string;
   headerBackground?: string;
-  style?: any,
-  maxWidth?: string
+  style?: any;
+  maxWidth?: string;
+  onBack?: () => void;
 }
 
 const getThemeValue =
@@ -26,10 +27,10 @@ const getThemeValue =
 
 export const ModalContent = styled.div<{ p?: string }>`
   position: relative;
-  padding: ${({p}) => p};
+  padding: ${({ p }) => p};
 `;
 
-export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
+export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string }>`
   max-width: ${({ maxWidth }) => maxWidth || "404px"}
   max-height: 100vh;
   min-width: ${({ minWidth }) => minWidth || "303px"};
@@ -49,7 +50,7 @@ export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
   }
 `;
 
-export const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
+export const ModalHeader = styled.div<{ paddingTopHeader?: string; background?: string }>`
   display: flex;
   align-items: center;
   background: ${({ background }) => background || "transparent"};
@@ -109,7 +110,8 @@ const Modal: React.FC<Props> = ({
   paddingTopHeader,
   headerBackground = "transparent",
   style,
-  maxWidth
+  onBack,
+  maxWidth,
 }) => {
   const theme = useTheme();
   return (
@@ -130,6 +132,11 @@ const Modal: React.FC<Props> = ({
                 <img src={Gift2} alt="" />
               </Image>
             ) : null}
+            {onBack && (
+              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+                button to back
+              </IconButton>
+            )}
             {!hideCloseButton && (
               <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
                 <CloseIcon />

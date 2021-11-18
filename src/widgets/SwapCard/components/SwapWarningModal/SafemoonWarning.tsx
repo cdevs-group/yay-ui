@@ -1,27 +1,26 @@
-import React from 'react'
-import { Text } from '../../../../components/Text'
+import React from "react";
+import { Text } from "../../../../components/Text";
 
 export interface SafemoonWarningProps {
   texts: {
-    tradeSafeMoon: string
-    clickSettingIcon: string
-    slippageToleranceSetting: string
-    feeTransaction: string
-    feeFivePercentAllHolders: string
-    feeFivePercentAddLiquidity: string
-  }
+    tradeSafeMoon: string;
+    clickSettingIcon: string;
+    slippageToleranceSetting: string;
+    feeTransaction: string;
+    feeFivePercentAllHolders: string;
+    feeFivePercentAddLiquidity: string;
+  };
 }
 
 const SafemoonWarning = ({ texts }: SafemoonWarningProps) => {
-
-  const { 
+  const {
     tradeSafeMoon,
     clickSettingIcon,
     slippageToleranceSetting,
     feeTransaction,
     feeFivePercentAllHolders,
-    feeFivePercentAddLiquidity
-   } = texts
+    feeFivePercentAddLiquidity,
+  } = texts;
 
   return (
     <>

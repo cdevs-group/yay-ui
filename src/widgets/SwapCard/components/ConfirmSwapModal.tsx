@@ -4,59 +4,59 @@ import TransactionConfirmationModal, {
   ConfirmationModalContent,
   TransactionErrorContent,
   TransactionSubmittedContentProps,
-  ConfirmationPendingContentTextProps
-} from '../../../components/TransactionConfirmationModal'
-import { SwapModalHeaderProps } from '../types';
-import SwapModalFooter from './SwapModalFooter'
-import SwapModalHeader from './SwapModalHeader'
+  ConfirmationPendingContentTextProps,
+} from "../../../components/TransactionConfirmationModal";
+import { SwapModalHeaderProps } from "../types";
+import SwapModalFooter from "./SwapModalFooter";
+import SwapModalHeader from "./SwapModalHeader";
 
 interface ConfirmSwapModalProps {
-  trade?: any
-  attemptingTxn: boolean
-  txHash?: string
-  recipient: string | null
-  allowedSlippage: number
-  onAcceptChanges: () => void
-  onConfirm: () => void
-  swapErrorMessage?: string
-  customOnDismiss?: () => void
-  pendingText: string
-  modalTitle: string
-  dismissText: string
-  contentTexts: ConfirmationPendingContentTextProps
+  trade?: any;
+  attemptingTxn: boolean;
+  txHash?: string;
+  recipient: string | null;
+  allowedSlippage: number;
+  onAcceptChanges: () => void;
+  onConfirm: () => void;
+  swapErrorMessage?: string;
+  customOnDismiss?: () => void;
+  pendingText: string;
+  modalTitle: string;
+  dismissText: string;
+  contentTexts: ConfirmationPendingContentTextProps;
   swapModalHeaderTexts: {
-    truncatedTextFrom: string
-    truncatedTextTo: string
-    currencySymbolFrom: string
-    currencySymbolTo: string
-    priceUpdated: string
-    accept: string
-    estimatedText: React.ReactNode | string
-    recipientSentToText: React.ReactNode | string
-  }
+    truncatedTextFrom: string;
+    truncatedTextTo: string;
+    currencySymbolFrom: string;
+    currencySymbolTo: string;
+    priceUpdated: string;
+    accept: string;
+    estimatedText: React.ReactNode | string;
+    recipientSentToText: React.ReactNode | string;
+  };
   swapModalFooterTexts: {
-    price: string
-    executionPrice: string
-    receivedOrSold: string
-    transactionRevert: string
-    slippageAdjustedAmounts: string
-    priceImpact: string
-    differencePrice: string
-    liquidityProviderFee: string
-    amountFee: string
-    amountLP: string
-    amountTreasury: string
-    amountTowards: string
-    currencySymbolTop: string
-    currencySymbolBottom: string
-  }
-  errorText: React.ReactNode
-  buttonSwap:React.ReactNode
-  currencyLogoFrom: React.ReactNode
-  currencyLogoTo: React.ReactNode
-  truncatedTextColorFrom: string
-  truncatedTextColorTo: string
-  showAcceptChanges: boolean
+    price: string;
+    executionPrice: string;
+    receivedOrSold: string;
+    transactionRevert: string;
+    slippageAdjustedAmounts: string;
+    priceImpact: string;
+    differencePrice: string;
+    liquidityProviderFee: string;
+    amountFee: string;
+    amountLP: string;
+    amountTreasury: string;
+    amountTowards: string;
+    currencySymbolTop: string;
+    currencySymbolBottom: string;
+  };
+  errorText: React.ReactNode;
+  buttonSwap: React.ReactNode;
+  currencyLogoFrom: React.ReactNode;
+  currencyLogoTo: React.ReactNode;
+  truncatedTextColorFrom: string;
+  truncatedTextColorTo: string;
+  showAcceptChanges: boolean;
 }
 
 const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps> = ({
@@ -91,7 +91,7 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   errorText,
   buttonSwap,
   swapModalFooterTexts,
-  showAcceptChanges
+  showAcceptChanges,
 }) => {
   const modalHeader = useCallback(() => {
     return trade ? (
