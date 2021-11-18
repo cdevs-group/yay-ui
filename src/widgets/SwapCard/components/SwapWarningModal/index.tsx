@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
-import styled, { useTheme } from 'styled-components'
-import { ModalContent as ModalBody , StyledModal as ModalContainer, ModalHeader } from '../../../Modal/Modal'
-import { Message } from '../../../../components/Message'
-import { Box } from '../../../../components/Box'
-import { Heading } from '../../../../components/Heading'
-import SafemoonWarning, { SafemoonWarningProps } from './SafemoonWarning'
-import BondlyWarning from './BondlyWarning'
-import Acknowledgement, { AcknowledgementTexsts } from './Acknowledgement'
-
+import React, { useEffect } from "react";
+import styled, { useTheme } from "styled-components";
+import { ModalContent as ModalBody, StyledModal as ModalContainer, ModalHeader } from "../../../Modal/Modal";
+import { Message } from "../../../../components/Message";
+import { Box } from "../../../../components/Box";
+import { Heading } from "../../../../components/Heading";
+import SafemoonWarning, { SafemoonWarningProps } from "./SafemoonWarning";
+import BondlyWarning from "./BondlyWarning";
+import Acknowledgement, { AcknowledgementTexsts } from "./Acknowledgement";
 
 const StyledModalContainer = styled(ModalContainer)`
   max-width: 440px;
@@ -19,21 +18,21 @@ const MessageContainer = styled(Message)`
 `;
 
 interface SwapWarningModalProps {
-  swapCurrency: any
-  onDismiss?: () => void
-  SwapWarningTokensConfig: any
-  bondlyWarningText: string
-  noticeForTradingText: string
+  swapCurrency: any;
+  onDismiss?: () => void;
+  SwapWarningTokensConfig: any;
+  bondlyWarningText: string;
+  noticeForTradingText: string;
 }
 
 // Modal is fired by a useEffect and doesn't respond to closeOnOverlayClick prop being set to false
 const usePreventModalOverlayClick = () => {
   useEffect(() => {
     const preventClickHandler = (e: any) => {
-      e.stopPropagation()
-      e.preventDefault()
-      return false
-    }
+      e.stopPropagation();
+      e.preventDefault();
+      return false;
+    };
 
     document.querySelectorAll('[role="presentation"]').forEach((el) => {
       el.addEventListener("click", preventClickHandler, true);
@@ -47,17 +46,17 @@ const usePreventModalOverlayClick = () => {
   }, []);
 };
 
-  const SwapWarningModal: React.FC<SwapWarningModalProps & SafemoonWarningProps & AcknowledgementTexsts> = ({ 
-    swapCurrency,
-    onDismiss,
-    SwapWarningTokensConfig,
-    texts,
-    bondlyWarningText,
-    buttonText,
-    understandngText,
-    noticeForTradingText
-  }) => {
-  usePreventModalOverlayClick()
+const SwapWarningModal: React.FC<SwapWarningModalProps & SafemoonWarningProps & AcknowledgementTexsts> = ({
+  swapCurrency,
+  onDismiss,
+  SwapWarningTokensConfig,
+  texts,
+  bondlyWarningText,
+  buttonText,
+  understandngText,
+  noticeForTradingText,
+}) => {
+  usePreventModalOverlayClick();
 
   const theme = useTheme();
 

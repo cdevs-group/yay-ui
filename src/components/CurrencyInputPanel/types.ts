@@ -13,13 +13,13 @@ export interface CurrencyInputPanelProps {
   id: string;
   account: string;
   onPresentCurrencyModal: () => void;
-  сurrencyLogo: React.ReactNode
-  doubleCurrencyLogo: React.ReactNode
+  сurrencyLogo: React.ReactNode;
+  doubleCurrencyLogo: React.ReactNode;
   texts: {
     translatedLabel: string;
     balance: string;
     numericalInputTitle: string;
     max: string;
-    currencySelect: string
+    currencySelect: string;
   };
 }

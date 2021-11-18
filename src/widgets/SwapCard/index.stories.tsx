@@ -20,6 +20,7 @@ import SafemoonWarning from "./components/SwapWarningModal/SafemoonWarning";
 import SwapWarningModal from "./components/SwapWarningModal";
 
 import UnsupportedCurrencyFooter from "../../components/UnsupportedCurrencyFooter";
+import GlobalSettings from "./components/SettingsModal";
 
 export default {
   title: "Widgets/Swap",
@@ -61,43 +62,43 @@ const trade = {
     path: [
       {
         token: {
-          symbol: "12345"
+          symbol: "12345",
         },
         i: 0,
-        path: "0"
+        path: "0",
       },
       {
         token: {
-          symbol: "12345"
+          symbol: "12345",
         },
         i: 1,
-        path: "1"
+        path: "1",
       },
       {
         token: {
-          symbol: "12345"
+          symbol: "12345",
         },
         i: 2,
-        path: "2"
+        path: "2",
       },
-    ]
+    ],
   },
   outputAmount: {
-    currency: "123456789"
-  }
+    currency: "123456789",
+  },
 };
 
 const tokens = [
   {
     address: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
     symbol: "123456789",
-    name: "Token Name 1"
+    name: "Token Name 1",
   },
   {
     address: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
     symbol: "987654321",
-    name: "Token Name 2"
-  }
+    name: "Token Name 2",
+  },
 ];
 
 const srcs = [
@@ -106,26 +107,26 @@ const srcs = [
   "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
   "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
   "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+  "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
 ];
 
 export const AddressInputPanelBlock = () => {
   return (
     <AddressInputPanel
-        id="12345"
-        value="Some Test Value"
-        onChange={() => null}
-        linkText="Link Text"
-        recipientText="Recipient Text"
-        inputPlaceholderText="Input Placeholder Text"
-        ENS={{ address: "Address",  loading: false, name: "Some Name"}}
-        chainId={123456789}
-        bscScanLink="https://storybook.js.org/"
-      />
+      id="12345"
+      value="Some Test Value"
+      onChange={() => null}
+      linkText="Link Text"
+      recipientText="Recipient Text"
+      inputPlaceholderText="Input Placeholder Text"
+      ENS={{ address: "Address", loading: false, name: "Some Name" }}
+      chainId={123456789}
+      bscScanLink="https://storybook.js.org/"
+    />
   );
-}
+};
 
-export const AdvancedSwapDetailsBlock = () => { 
+export const AdvancedSwapDetailsBlock = () => {
   return (
     <AdvancedSwapDetails
       trade={trade}
@@ -139,17 +140,17 @@ export const AdvancedSwapDetailsBlock = () => {
         priceImpact: "Price Impact Text",
         priceDifference: "Price Difference Text",
         fee: "Fee Text",
-        amountFee:"Amount Fee Text",
+        amountFee: "Amount Fee Text",
         amountLP: "Amount LP Text",
         amountTreasury: "Amount Treasury Text",
         amountTowards: "Amount Towards Text",
-        realizedLPFeeText: "Realized LP Fee Text"
+        realizedLPFeeText: "Realized LP Fee Text",
       }}
       errorText={<div>Some Error Text</div>}
       showRoute={true}
     />
   );
-}
+};
 
 export const AdvancedSwapDetailsDropdownBlock = () => {
   return (
@@ -165,36 +166,36 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
         priceImpact: "Price Impact Text",
         priceDifference: "Price Difference Text",
         fee: "Fee Text",
-        amountFee:"Amount Fee Text",
+        amountFee: "Amount Fee Text",
         amountLP: "Amount LP Text",
         amountTreasury: "Amount Treasury Text",
         amountTowards: "Amount Towards Text",
-        realizedLPFeeText: "Realized LP Fee Text"
+        realizedLPFeeText: "Realized LP Fee Text",
       }}
       errorText={<div>Some Error Text</div>}
       showRoute={true}
     />
   );
-}
+};
 
 export const ConfirmSwapModalBlock = () => {
   return (
     <ConfirmSwapModal
       trade={trade}
       attemptingTxn={false}
-      txHash="123456789"
+      // txHash="123456789"
       recipient="recipient"
       allowedSlippage={1}
       onAcceptChanges={() => null}
       onConfirm={() => null}
-      swapErrorMessage="Some Error Text"
+      // swapErrorMessage="Some Error Text"
       customOnDismiss={() => null}
       pendingText="Pending Text"
       modalTitle="Modal Title"
       dismissText="Dismiss Text"
       contentTexts={{
         confirmationWaiting: "Confirmation Waiting",
-        transactionConfirm: "Transaction Confirm"
+        transactionConfirm: "Transaction Confirm",
       }}
       chainId="12346789"
       registerToken={(address: string, symbol: string, decimals: number) => null}
@@ -208,8 +209,8 @@ export const ConfirmSwapModalBlock = () => {
       currencyLogoFrom={<p>Some Pic 1</p>}
       currencyLogoTo={<p>Some Pic 2</p>}
       swapModalHeaderTexts={{
-        truncatedTextFrom: "Truncated Text From",
-        truncatedTextTo: "Truncated Text To",
+        truncatedTextFrom: "0.001 BND",
+        truncatedTextTo: "1 BUSD",
         currencySymbolFrom: "Currency Symbol From",
         currencySymbolTo: "Currency Symbol To",
         priceUpdated: "Price Updated",
@@ -226,12 +227,12 @@ export const ConfirmSwapModalBlock = () => {
         priceImpact: "Price Impact",
         differencePrice: "Difference Price",
         liquidityProviderFee: "Liquidity Provider Fee",
-        amountFee:"Amount Fee Text",
+        amountFee: "Amount Fee Text",
         amountLP: "Amount LP Text",
         amountTreasury: "Amount Treasury Text",
         amountTowards: "Amount Towards Text",
         currencySymbolTop: "Currency Symbol Top",
-        currencySymbolBottom: "Currency Symbol Bottom"
+        currencySymbolBottom: "Currency Symbol Bottom",
       }}
       errorText={<div>Some Error Text</div>}
       buttonSwap={<Button>Button</Button>}
@@ -240,16 +241,15 @@ export const ConfirmSwapModalBlock = () => {
       showAcceptChanges={true}
     />
   );
-}
+};
 
 export const ImportTokenWarningModalBlock = () => {
-
-  const addToken = (token): any => null;
+  const addToken = (token: any): any => null;
 
   const inactiveTokenList = {
     logoURI: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    name: "cdevs-group"
-  }
+    name: "cdevs-group",
+  };
 
   return (
     <ImportTokenWarningModal
@@ -265,7 +265,7 @@ export const ImportTokenWarningModalBlock = () => {
         unknownSource: "Unknown Source",
         viewOnbscScan: "View On BscScan",
         understanding: "I understand",
-        importText: "Import Text"
+        importText: "Import Text",
       }}
       addToken={addToken}
       chainId="123456789"
@@ -274,16 +274,11 @@ export const ImportTokenWarningModalBlock = () => {
       bscScanLink="https://storybook.js.org/"
     />
   );
-}
+};
 
 export const ProgressStepsBlock = () => {
-  return (
-    <ProgressCircles
-      steps={[true,true,false,true,false,true,true]}
-      disabled={false}
-    />
-  );
-}
+  return <ProgressCircles steps={[true, true, false, true, false, true, true]} disabled={false} />;
+};
 
 export const SwapModalFooterBlock = () => {
   return (
@@ -297,19 +292,19 @@ export const SwapModalFooterBlock = () => {
         priceImpact: "Price Impact",
         differencePrice: "Difference Price",
         liquidityProviderFee: "Liquidity Provider Fee",
-        amountFee:"Amount Fee Text",
+        amountFee: "Amount Fee Text",
         amountLP: "Amount LP Text",
         amountTreasury: "Amount Treasury Text",
         amountTowards: "Amount Towards Text",
         currencySymbolTop: "Currency Symbol Top",
-        currencySymbolBottom: "Currency Symbol Bottom"
+        currencySymbolBottom: "Currency Symbol Bottom",
       }}
       errorText={<div>Some Error Text</div>}
       buttonSwap={<Button>Button</Button>}
       swapErrorMessage="Some Error Message"
     />
   );
-}
+};
 
 export const SwapModalHeaderBlock = () => {
   return (
@@ -333,23 +328,15 @@ export const SwapModalHeaderBlock = () => {
       onAcceptChanges={() => null}
     />
   );
-}
+};
 
 export const AcknowledgementBlock = () => {
-  return (
-    <Acknowledgement
-      buttonText="Button Text"
-      understandngText="I understand"
-      handleContinueClick={() => null}
-    />
-  );
-}
+  return <Acknowledgement buttonText="Button Text" understandngText="I understand" handleContinueClick={() => null} />;
+};
 
 export const BondlyWarningBlock = () => {
-  return (
-    <BondlyWarning bondlyWarningText="Bondly Warning Text" />
-  );
-}
+  return <BondlyWarning bondlyWarningText="Bondly Warning Text" />;
+};
 
 export const SafemoonWarningBlock = () => {
   return (
@@ -360,28 +347,27 @@ export const SafemoonWarningBlock = () => {
         slippageToleranceSetting: "Slippage Tolerance Setting",
         feeTransaction: "Fee Transaction",
         feeFivePercentAllHolders: "Fee Five Percent All Holders",
-        feeFivePercentAddLiquidity: "Fee Five Percent Add Liquidity"
+        feeFivePercentAddLiquidity: "Fee Five Percent Add Liquidity",
       }}
     />
   );
-}
+};
 
 export const SwapWarningModalBlock = () => {
-
   const SwapWarningTokensConfig = {
     safemoon: {
       address: "address",
-      symbol: "symbol"
+      symbol: "symbol",
     },
     bondly: {
       address: "address",
-      symbol: "symbol"
-    }
-  }
+      symbol: "symbol",
+    },
+  };
 
   return (
     <SwapWarningModal
-      swapCurrency={{address: "address"}}
+      swapCurrency={{ address: "address" }}
       onDismiss={() => null}
       SwapWarningTokensConfig={SwapWarningTokensConfig}
       bondlyWarningText="Bondly Warning Text"
@@ -392,13 +378,13 @@ export const SwapWarningModalBlock = () => {
         slippageToleranceSetting: "Slippage Tolerance Setting",
         feeTransaction: "Fee Transaction",
         feeFivePercentAllHolders: "Fee Five Percent All Holders",
-        feeFivePercentAddLiquidity: "Fee Five Percent Add Liquidity"
+        feeFivePercentAddLiquidity: "Fee Five Percent Add Liquidity",
       }}
       buttonText="Button Text"
       understandngText="I understand"
     />
   );
-}
+};
 
 export const UnsupportedCurrencyFooterBlock = () => {
   return (
@@ -409,8 +395,16 @@ export const UnsupportedCurrencyFooterBlock = () => {
       chainId="123456789"
       bscScanLink="https://storybook.js.org/"
       unsupportedTokens={{
-        address: "https://storybook.js.org/"
+        address: "https://storybook.js.org/",
       }}
     />
   );
-}
+};
+
+export const SettingsModalBlock = () => {
+  return (
+    <div>
+      <GlobalSettings />
+    </div>
+  );
+};
