@@ -8,7 +8,7 @@ import { AutoRow } from "../Layout/Row";
 import { AutoColumn } from "../Layout/Column";
 import { CurrencyLogo } from "../Logo";
 
-interface Props extends InjectedModalProps {
+export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
   tokens: any[];
   srcs: string[];
   isEther: boolean;
@@ -28,7 +28,7 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-const UnsupportedModal: React.FC<Props> = ({
+const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
   onDismiss,
   isEther,
   srcs,
@@ -77,7 +77,7 @@ export default function UnsupportedCurrencyFooter({
   chainId,
   bscScanLink,
   unsupportedTokens,
-}: Props) {
+}: UnsupportedCurrencyFooterProps) {
   const [onPresentModal] = useModal(
     <UnsupportedModal
       tokens={tokens}

@@ -46,7 +46,7 @@ const Connector = styled.div<{ prevConfirmed?: boolean; disabled?: boolean }>`
   opacity: 0.6;
 `;
 
-interface ProgressCirclesProps {
+export interface ProgressCirclesProps {
   steps: boolean[];
   disabled?: boolean;
 }
