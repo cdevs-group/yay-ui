@@ -70,7 +70,7 @@ const ListRow = memo(function ListRow({
   return (
     <RowWrapper active={isActive} key={listUrl} id={listUrlRowHTMLId(listUrl)}>
       {tooltipVisible && tooltip}
-      {list.logoURI ? { listLogoRow } : <div style={{ width: "24px", height: "24px", marginRight: "1rem" }} />}
+      {list.logoURI ? listLogoRow : <div style={{ width: "24px", height: "24px", marginRight: "1rem" }} />}
       <Column style={{ flex: "1" }}>
         <Row>
           <Text bold>{list.name}</Text>

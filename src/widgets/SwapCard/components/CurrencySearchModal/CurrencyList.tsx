@@ -7,14 +7,11 @@ import Column from "../../../../components/Layout/Column";
 import { RowFixed, RowBetween } from "../../../../components/Layout/Row";
 import { CercleIcon } from "../../../../components/Svg";
 
-const StyledBalanceText = styled(Text)`
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 5rem;
-  text-overflow: ellipsis;
-`;
 const TextStyle = styled(Text)`
   max-width: 200px;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.5px;
 `;
 
 const Card = styled(Box)<{
@@ -36,16 +33,12 @@ export const LightGreyCard = styled(Card)`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-function Balance({ balance }: { balance: any }) {
-  return <StyledBalanceText title={balance.toExact()}>{balance.toSignificant(4)}</StyledBalanceText>;
-}
-
 const MenuItem = styled(RowBetween)<{ disabled: boolean; selected: boolean }>`
   padding: 4px 20px;
   height: 56px;
   display: grid;
   grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);
-  grid-gap: 8px;
+  grid-gap: 16px;
   cursor: ${({ disabled }) => !disabled && "pointer"};
   pointer-events: ${({ disabled }) => disabled && "none"};
 
@@ -64,6 +57,7 @@ export function CurrencyRow({
   style,
   account,
   balance,
+  hasBalanse,
   customAdded,
   isOnSelectedList,
   key,
@@ -75,7 +69,8 @@ export function CurrencyRow({
   otherSelected: boolean;
   style: CSSProperties;
   account: any;
-  balance: any;
+  balance: ReactNode;
+  hasBalanse: boolean;
   customAdded: any;
   isOnSelectedList: any;
   key: any;
@@ -91,13 +86,15 @@ export function CurrencyRow({
     >
       {CurrencyLogo}
       <Column>
-        <Text bold>{currency.symbol}</Text>
-        <TextStyle color="textSubtle" small>
+        <Text fontWeight={500} letterSpacing="0.5px">
+          {currency.symbol}
+        </Text>
+        <TextStyle>
           {!isOnSelectedList && customAdded && "Added by user •"} {currency.name}
         </TextStyle>
       </Column>
       <RowFixed style={{ justifySelf: "flex-end" }}>
-        {balance ? <Balance balance={balance} /> : account ? <CercleIcon /> : null}
+        {hasBalanse ? <Text>{balance}</Text> : account ? <CercleIcon spin fill="transparent" /> : null}
       </RowFixed>
     </MenuItem>
   );
