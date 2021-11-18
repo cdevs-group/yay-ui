@@ -1,37 +1,24 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Button, IconButton } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
 import { CurrencySearchModalProps, CurrencyModalView } from "./types";
 import { ArrowLeft, CloseIcon } from "../../../../components/Svg";
-import { Modal } from "../../../..";
 
 const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
   onDismiss = () => null,
-  onCurrencySelect,
-  selectedCurrency,
-  otherSelectedCurrency,
-  showCommonBases = false,
   config,
   modalView,
   setModalView,
   texts,
+  currencySearchComponent,
+  importTokenComponent,
+  importListComponent,
+  manageComponent,
+  importToken,
+  importList,
+  listURL,
 }) => {
-  const handleCurrencySelect = useCallback(
-    (currency: any) => {
-      onDismiss();
-      onCurrencySelect(currency);
-    },
-    [onDismiss, onCurrencySelect]
-  );
-
-  // used for import token flow
-  const [importToken, setImportToken] = useState();
-
-  // used for import list
-  const [importList, setImportList] = useState();
-  const [listURL, setListUrl] = useState();
-
   return (
     <div>
       <Overlay />
@@ -50,29 +37,15 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
           </IconButton>
         </ModalHeader>
         <StyledModalBody>
-          {modalView === CurrencyModalView.search ? (
-            <CurrencySearch
-              onCurrencySelect={handleCurrencySelect}
-              selectedCurrency={selectedCurrency}
-              otherSelectedCurrency={otherSelectedCurrency}
-              showCommonBases={showCommonBases}
-              showImportView={() => setModalView(CurrencyModalView.importToken)}
-              setImportToken={setImportToken}
-            />
-          ) : modalView === CurrencyModalView.importToken && importToken ? (
-            <ImportToken tokens={[importToken]} handleCurrencySelect={handleCurrencySelect} />
-          ) : modalView === CurrencyModalView.importList && importList && listURL ? (
-            <ImportList list={importList} listURL={listURL} onImport={() => setModalView(CurrencyModalView.manage)} />
-          ) : modalView === CurrencyModalView.manage ? (
-            <Manage
-              setModalView={setModalView}
-              setImportToken={setImportToken}
-              setImportList={setImportList}
-              setListUrl={setListUrl}
-            />
-          ) : (
-            ""
-          )}
+          {modalView === CurrencyModalView.search
+            ? currencySearchComponent
+            : modalView === CurrencyModalView.importToken && importToken
+            ? importTokenComponent
+            : modalView === CurrencyModalView.importList && importList && listURL
+            ? importListComponent
+            : modalView === CurrencyModalView.manage
+            ? manageComponent
+            : ""}
           {modalView === CurrencyModalView.search && (
             <Footer>
               <Button

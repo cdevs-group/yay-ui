@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import { Text } from "../../../../components/Text";
 import styled from "styled-components";
 import { AutoColumn } from "../../../../components/Layout/Column";
-import QuestionHelper from "./QuestionHelper";
 import { AutoRow } from "../../../../components/Layout/Row";
+import QuestionHelper from "../../../../components/QuestionHelper";
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`
   border: 1px solid ${({ theme, disable }) => (disable ? "transparent" : theme.colors.green)};
@@ -60,7 +60,6 @@ export default function CommonBases({
           const selected = selectedCurrency.address === token.address;
           return (
             <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
-              {/* <CurrencyLogo currency={token} style={{ marginRight: 8 }} /> */}
               {CurrencyLogo}
               <Text>{token.symbol}</Text>
             </BaseWrapper>
