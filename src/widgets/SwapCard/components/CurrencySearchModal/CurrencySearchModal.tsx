@@ -30,7 +30,9 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
                 <ArrowLeft />
               </IconButton>
             )}
-            <Text>{config[modalView].title}</Text>
+            <Text fontSize="21px" letterSpacing="0.5px">
+              {config[modalView].title}
+            </Text>
           </ModalTitle>
           <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
             <CloseIcon />
@@ -53,6 +55,8 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
                 variant="text"
                 onClick={() => setModalView(CurrencyModalView.manage)}
                 className="list-token-manage-button"
+                fontSize="15px"
+                letterSpacing="0.05em"
               >
                 {texts.manageTokens}
               </Button>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
-const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name }: InputSearchProp) => {
+const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name, ...props }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
@@ -17,6 +17,7 @@ const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, na
         onBlur={() => setFocus(false)}
         placeholder={placeholder}
         name={name}
+        {...props}
       />
       <Button iconLess={iconLess}>
         <SearchIcon2 color={focus ? "green" : "text"} />

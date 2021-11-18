@@ -5,6 +5,7 @@ import { Text } from "../../../../components/Text";
 import { FixedSizeList } from "react-window";
 import Column, { AutoColumn } from "../../../../components/Layout/Column";
 import Row from "../../../../components/Layout/Row";
+import { InputSearch } from "../../../..";
 
 interface CurrencySearchProps {
   onCurrencySelect: (currency: any) => void;
@@ -19,7 +20,7 @@ interface CurrencySearchProps {
   commonBases: ReactNode;
   debouncedQuery: any;
   filteredSortedTokens: any;
-  filteredInactiveTokens: any;  
+  filteredInactiveTokens: any;
 }
 
 function CurrencySearch({
@@ -35,12 +36,12 @@ function CurrencySearch({
   onCurrencySelect,
   currencyList,
   showCommonBases,
-  importRow,  
+  importRow,
 }: CurrencySearchProps) {
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>();
   const [searchQuery, setSearchQuery] = useState<string>("");
- 
+
   const handleCurrencySelect = useCallback(
     (currency: any) => {
       onCurrencySelect(currency);
@@ -85,15 +86,16 @@ function CurrencySearch({
       <div>
         <AutoColumn gap="16px">
           <Row>
-            <Input
+            <InputSearch
               id="token-search-input"
               placeholder={placeholder}
-              scale="lg"
+              name="token-search-input"
               autoComplete="off"
               value={searchQuery}
               ref={inputRef as RefObject<HTMLInputElement>}
               onChange={handleInput}
               onKeyDown={handleEnter}
+              width="100%"
             />
           </Row>
           {showCommonBases && commonBases}
