@@ -1,0 +1,47 @@
+import React from "react";
+import SettingsModal from "./SettingsModal";
+import useModal from "../../../Modal/useModal";
+import { CogIcon } from "../../../../components/Svg";
+import { Button } from "../../../../components/Button";
+
+const GlobalSettings = () => {
+  const texts = {
+    global: "Global",
+    settings: "Settings",
+    swapLiquid: "Swaps & Liquidity",
+    bypasses: "Bypasses confirmation modals and allows high slippage trades. Use at your own risk.",
+    disableMultihops: "Disable Multihops",
+    restricsSwaps: "Restricts swaps to direct pairs only.",
+    funSoudsToMake: "Fun sounds to make a truly immersive pancake-flipping trading experience",
+    expertMode: "Expert Mode",
+    expertModeDescription:
+      "Expert mode turns off the 'Confirm' transaction prompt, and allows high slippage trades that often result in bad rates and lost funds.",
+    onlyUseThis: "Only use this mode if you know what you’re doing.",
+    pleaseTypeThe: 'Please type the word "confirm" to enable expert mode.',
+    turnOnExpert: "Turn On Expert Mode",
+    settingsHightSplippage:
+      "Setting a high slippage tolerance can help transactions succeed, but you may not get such a good price. Use with caution.",
+    enterValidSlippage: "Enter a valid slippage percentage",
+    transactionMayFail: "Your transaction may fail",
+    transactionMayFront: "Your transaction may be frontrun",
+    txDeadline: "Tx deadline (mins)",
+    yourTransactionRevent: "Your transaction will revert if it is left confirming for longer than this time.",
+    defaultTransaction: "Default Transaction Speed (GWEI)",
+    adjustGasPrice:
+      "Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees",
+    standard: "Standard (%gasPrice%)",
+    fast: "Fast (%gasPrice%)",
+    instant: "Instant (%gasPrice%)",
+  };
+  const [onPresentSettingsModal] = useModal(<SettingsModal texts={texts} onDismiss={() => null} />);
+
+  return (
+    <div>
+      <Button onClick={onPresentSettingsModal} variant="green">
+        <CogIcon height={24} width={24} color="textSubtle" />
+      </Button>
+    </div>
+  );
+};
+
+export default GlobalSettings;

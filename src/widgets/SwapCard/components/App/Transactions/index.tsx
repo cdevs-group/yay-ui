@@ -1,8 +1,9 @@
 import React from 'react'
-import { HistoryIcon } from '../../Svg'
-import { Button } from '../../Button'
-import { useModal } from '../../../widgets/Modal'
+import { HistoryIcon } from '../../../../../components/Svg'
+import { Button } from '../../../../../components/Button'
+import { useModal } from '../../../../Modal'
 import TransactionsModal, { TransactionsModalProps } from './TransactionsModal'
+import { TransactionDetailsProps } from './types'
 
 const Transactions = ({
   account,
@@ -11,8 +12,13 @@ const Transactions = ({
   pendingTransaction,
   confirmedTransaction,
   clearAllTransactionsCallback,
-  ConnectWalletButton
-}: TransactionsModalProps & { onDismiss: () => void }) => {
+  ConnectWalletButton,
+  chainId,
+  bscScanLink,
+  summary,
+  pending,
+  success
+}: TransactionsModalProps & { onDismiss: () => void } & TransactionDetailsProps) => {
   const [onPresentTransactionsModal] = useModal(
     <TransactionsModal
       account={account}
@@ -22,6 +28,11 @@ const Transactions = ({
       confirmedTransaction={confirmedTransaction}
       clearAllTransactionsCallback={clearAllTransactionsCallback}
       ConnectWalletButton={ConnectWalletButton}
+      chainId={chainId}
+      bscScanLink={bscScanLink}
+      summary={summary}
+      pending={pending}
+      success={success}
     />
   )
   return (

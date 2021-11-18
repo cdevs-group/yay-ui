@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CheckmarkIcon, CloseIcon, LinkExternal } from '@pancakeswap/uikit'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { getBscScanLink } from 'utils'
-import { TransactionDetails } from 'state/transactions/reducer'
-import CircleLoader from '../../Loader/CircleLoader'
+import { CheckmarkIcon, CloseIcon } from '../../../../../components/Svg'
+import { LinkExternal } from '../../../../..'
+import CircleLoader from '../../../../../components/Loader/CircleLoader'
+import { TransactionDetailsProps } from "./types"
 
 const TransactionState = styled.div<{ pending: boolean; success?: boolean }>`
   display: flex;
@@ -23,18 +22,19 @@ const IconWrapper = styled.div<{ pending: boolean; success?: boolean }>`
     pending ? theme.colors.primary : success ? theme.colors.success : theme.colors.failure};
 `
 
-export default function Transaction({ tx }: { tx: TransactionDetails }) {
-  const { chainId } = useActiveWeb3React()
-
-  const summary = tx?.summary
-  const pending = !tx?.receipt
-  const success = !pending && tx && (tx.receipt?.status === 1 || typeof tx.receipt?.status === 'undefined')
+export default function Transaction({
+  chainId,
+  bscScanLink,
+  summary,
+  pending,
+  success
+ }: TransactionDetailsProps) {
 
   if (!chainId) return null
 
   return (
     <TransactionState pending={pending} success={success}>
-      <LinkExternal href={getBscScanLink(tx.hash, 'transaction', chainId)}>{summary ?? tx.hash}</LinkExternal>
+      <LinkExternal href={bscScanLink}>{summary}</LinkExternal>
       <IconWrapper pending={pending} success={success}>
         {pending ? <CircleLoader /> : success ? <CheckmarkIcon color="success" /> : <CloseIcon color="failure" />}
       </IconWrapper>

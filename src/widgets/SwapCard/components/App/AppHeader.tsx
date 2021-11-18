@@ -1,16 +1,17 @@
 import React from "react"
 import styled from "styled-components"
-import { Text } from "../Text"
-import { Flex } from "../Box"
-import { Heading } from "../Heading"
-import { IconButton } from "../Button"
-import { ArrowBackIcon } from "../Svg"
-import { NotificationDot } from "../NotificationDot"
+import { Text } from "../../../../components/Text"
+import { Flex } from "../../../../components/Box"
+import { Heading } from "../../../../components/Heading"
+import { IconButton } from "../../../../components/Button"
+import { ArrowBackIcon } from "../../../../components/Svg"
+import { NotificationDot } from "../../../../components/NotificationDot"
 import { Link } from "react-router-dom"
-import GlobalSettings from "../SwapMenu/GlobalSettings"
+import GlobalSettings from "../SettingsModal"
 import Transactions from "./Transactions"
 import { TransactionsModalProps } from "./Transactions/TransactionsModal"
-import QuestionHelper from "../QuestionHelper"
+import QuestionHelper from "../../../../components/QuestionHelper"
+import { TransactionDetailsProps } from "./Transactions/types"
 
 export interface AppHeaderProps {
   title: string
@@ -29,7 +30,7 @@ const AppHeaderContainer = styled(Flex)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.card};
 `
 
-const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & { onDismiss: () => void }> = ({ 
+const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionDetailsProps & { onDismiss: () => void }> = ({
   title,
   subtitle,
   helper,
@@ -42,8 +43,13 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & { onDismiss:
   pendingTransaction,
   confirmedTransaction,
   clearAllTransactionsCallback,
-  ConnectWalletButton
- }) => {
+  ConnectWalletButton,
+  chainId,
+  bscScanLink,
+  summary,
+  pending,
+  success
+}) => {
   return (
     <AppHeaderContainer>
       <Flex alignItems="center" mr={noConfig ? 0 : "16px"}>
@@ -67,16 +73,21 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & { onDismiss:
       {!noConfig && (
         <Flex alignItems="center">
           <NotificationDot show={expertMode}>
-          <GlobalSettings />
+            <GlobalSettings />
           </NotificationDot>
           <Transactions
-             account={account}
-             onDismiss={onDismiss}
-             texts={texts}
-             pendingTransaction={pendingTransaction}
-             confirmedTransaction={confirmedTransaction}
-             clearAllTransactionsCallback={clearAllTransactionsCallback}
-             ConnectWalletButton={ConnectWalletButton}
+            account={account}
+            onDismiss={onDismiss}
+            texts={texts}
+            pendingTransaction={pendingTransaction}
+            confirmedTransaction={confirmedTransaction}
+            clearAllTransactionsCallback={clearAllTransactionsCallback}
+            ConnectWalletButton={ConnectWalletButton}
+            chainId={chainId}
+            bscScanLink={bscScanLink}
+            summary={summary}
+            pending={pending}
+            success={success}
           />
         </Flex>
       )}

@@ -22,7 +22,7 @@ import { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds'
 import TradePrice from './components/TradePrice'
 import ImportTokenWarningModal from './components/ImportTokenWarningModal'
 import ProgressSteps from './components/ProgressSteps'
-import { AppHeader, AppBody } from '../../components/App'
+import { AppHeader, AppBody } from './components/App'
 import ConnectWalletButton from '../../components/ConnectWalletButton'
 //import { INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
 //import useActiveWeb3React from '../../hooks/useActiveWeb3React'
@@ -44,7 +44,7 @@ import ConnectWalletButton from '../../components/ConnectWalletButton'
 import SwapWarningModal from "./components/SwapWarningModal"
 
 import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails"
-import { AppHeaderProps } from "../../components/App"
+import { AppHeaderProps } from "./components/App"
 
 const Label = styled(Text)`
   font-size: 12px;

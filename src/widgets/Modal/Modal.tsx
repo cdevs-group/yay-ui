@@ -6,6 +6,7 @@ import { InjectedProps } from "./types";
 import { Gift2 } from "../../constants/images";
 import get from "lodash/get";
 import { DefaultTheme, useTheme } from "styled-components";
+import { Flex } from "../../components/Box";
 
 interface Props extends InjectedProps {
   title?: string;
@@ -15,8 +16,9 @@ interface Props extends InjectedProps {
   image?: boolean;
   paddingTopHeader?: string;
   headerBackground?: string;
-  style?: any,
-  maxWidth?: string
+  style?: any;
+  maxWidth?: string;
+  onBack?: () => void;
 }
 
 const getThemeValue =
@@ -26,10 +28,17 @@ const getThemeValue =
 
 export const ModalContent = styled.div<{ p?: string }>`
   position: relative;
-  padding: ${({p}) => p};
+  padding: ${({ p }) => p || "20px" };
 `;
 
-export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
+export const ModalBody = styled(Flex)`
+  flex-direction: column;
+  max-height: 90vh;
+  overflow-y: auto;
+`;
+
+export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string }>`
+  padding: 30px
   max-width: ${({ maxWidth }) => maxWidth || "404px"}
   max-height: 100vh;
   min-width: ${({ minWidth }) => minWidth || "303px"};
@@ -49,7 +58,7 @@ export const StyledModal = styled.div<{ minWidth?: string, maxWidth?: string }>`
   }
 `;
 
-export const ModalHeader = styled.div<{ paddingTopHeader?: string, background?: string }>`
+export const ModalHeader = styled.div<{ paddingTopHeader?: string; background?: string }>`
   display: flex;
   align-items: center;
   background: ${({ background }) => background || "transparent"};
@@ -109,7 +118,8 @@ const Modal: React.FC<Props> = ({
   paddingTopHeader,
   headerBackground = "transparent",
   style,
-  maxWidth
+  onBack,
+  maxWidth,
 }) => {
   const theme = useTheme();
   return (
@@ -130,6 +140,11 @@ const Modal: React.FC<Props> = ({
                 <img src={Gift2} alt="" />
               </Image>
             ) : null}
+            {onBack && (
+              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+                button to back
+              </IconButton>
+            )}
             {!hideCloseButton && (
               <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
                 <CloseIcon />
