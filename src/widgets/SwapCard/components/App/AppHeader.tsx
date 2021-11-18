@@ -12,15 +12,7 @@ import Transactions from "./Transactions"
 import { TransactionsModalProps } from "./Transactions/TransactionsModal"
 import QuestionHelper from "../../../../components/QuestionHelper"
 import { TransactionDetailsProps } from "./Transactions/types"
-
-export interface AppHeaderProps {
-  title: string
-  subtitle: string
-  helper?: string
-  backTo?: string
-  noConfig?: boolean
-  expertMode: boolean
-}
+import { AppHeaderProps } from "./types"
 
 const AppHeaderContainer = styled(Flex)`
   align-items: center;

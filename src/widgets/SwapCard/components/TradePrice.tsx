@@ -3,7 +3,7 @@ import { StyledBalanceMaxMini } from "./styleds";
 import { Text } from "../../../components/Text";
 import { AutoRenewIcon } from "../../../components/Svg";
 
-interface TradePriceProps {
+export interface TradePriceProps {
   price?: any;
   showInverted: boolean;
   setShowInverted: (showInverted: boolean) => void;

@@ -10,7 +10,7 @@ import { SwapModalHeaderProps } from "../types";
 import SwapModalFooter from "./SwapModalFooter";
 import SwapModalHeader from "./SwapModalHeader";
 
-interface ConfirmSwapModalProps {
+export interface ConfirmSwapModalProps {
   trade?: any;
   attemptingTxn: boolean;
   txHash?: string;

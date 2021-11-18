@@ -19,10 +19,10 @@ export interface TransactionProps {
     from: string
   }
 
-  export interface TransactionDetailsProps {
-    chainId: any
-    bscScanLink: string
-    summary: string
-    pending: boolean
-    success: boolean
-  }
+export interface TransactionDetailsProps {
+  chainId: any
+  bscScanLink: string
+  summary: string
+  pending: boolean
+  success: boolean
+}
