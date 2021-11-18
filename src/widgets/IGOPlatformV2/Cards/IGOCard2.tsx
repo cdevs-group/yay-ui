@@ -7,6 +7,21 @@ import { Button } from "../../../components/Button";
 import NetworksTabs from "../../IGOPlatform/Cards/components/NetworksTabs";
 import { baseColors } from "../../../theme/colors";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
+import {
+  HeadLine,
+  TokenName,
+  StatusName,
+  AvailableBlock,
+  TokenLogo,
+  TextBlock,
+  TitleBlock,
+  AmoutTokens,
+  NetworkBlock,
+  TierLine,
+  StakeButton,
+  InfoText,
+  ChanceBlock,
+} from "./styles";
 
 const IGOCardV2 = ({
   chance,
@@ -26,8 +41,9 @@ const IGOCardV2 = ({
   isStaked,
   allocation,
   inPool,
-  isClaimed,
   tperiodText,
+  propsButtonStake,
+  disabledButtonStake,
 }: IGOCardV2Props) => {
   return (
     <Wrapper>
@@ -40,7 +56,6 @@ const IGOCardV2 = ({
           <img src={tokenImg} />
         </TokenLogo>
         <TextBlock>
-          <TitleBlock>{texts.available}</TitleBlock>
           <AmoutTokens>{amount}</AmoutTokens>
         </TextBlock>
       </AvailableBlock>
@@ -54,8 +69,8 @@ const IGOCardV2 = ({
             <TitleBlock>{texts.tier}</TitleBlock>
             <InfoText white>{tierStatus}</InfoText>
           </div>
-          {!isStaked && (
-            <StakeButton onClick={handleStake} variant="green">
+          {!isStaked && status === StatusType.BEFORE_SALE && (
+            <StakeButton disabled={disabledButtonStake} onClick={handleStake} variant="green" {...propsButtonStake}>
               {texts.stakeButton}
             </StakeButton>
           )}
@@ -108,118 +123,10 @@ const Wrapper = styled.div`
     padding: 25px 25px 33px;
   }
 `;
-const HeadLine = styled(Flex)`
-  align-items: center;
-  justify-content: space-between;
-`;
-const TokenName = styled(Text)`
-  font-size: 17px;
-  line-height: 100%;
-  color: ${({ theme }) => theme.colors.textGray};
-`;
-const StatusName = styled(Text)`
-  font-size: 15px;
-  line-height: 100%;
-  color: ${({ theme }) => theme.colors.green};
-  position: relative;
-
-  &:after {
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    position: absolute;
-    content: "";
-    left: -9px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: ${({ theme }) => theme.colors.green};
-  }
-`;
-const AvailableBlock = styled(Flex)`
-  align-items: center;
-  margin-top: 30px;
-  padding: 20px 15px;
-  background: ${({ theme }) => theme.colors.buttonBg};
-  border-radius: 12px;
-  padding: ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 27px 20px;
-  } ;
-`;
-const TokenLogo = styled.div`
-  flex-shrink: 0;
-
-  & img {
-    width: 55px;
-    height: 55px;
-  }
-`;
-const TextBlock = styled.div`
-  margin-left: 10px;
-`;
-const TitleBlock = styled(Text)`
-  margin-bottom: 12px;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 100%;
-  color: ${({ theme }) => theme.colors.textGray};
-`;
-const AmoutTokens = styled(Text)`
-  font-size: 15px;
-  line-height: 100%;
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 17px;
-  }
-`;
-const NetworkBlock = styled.div`
-  margin-top: 20px;
-`;
 const MainBlock = styled.div`
   margin-top: 20px;
 `;
-const TierLine = styled(Flex)`
-  margin-bottom: 20px;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
-const InfoText = styled(Text)<{ white?: boolean }>`
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 100%;
-  color: ${({ theme, white }) => (white ? theme.colors.text : theme.colors.green)};
-`;
-const StakeButton = styled(Button)`
-  height: 30px;
-  max-width: 130px;
-  width: 100%;
-  border-radius: 7px;
-  font-size: 13px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.5px;
-`;
-const ChanceBlock = styled.div`
-  margin-bottom: 20px;
-`;
-const SlotsBlock = styled.div`
-  padding-top: 20px;
-  position: relative;
-`;
-const ProgressBlock = styled.div`
-  margin-top: 43px;
-  margin-bottom: 27px;
-`;
-const TimerBlock = styled.div`
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-`;
-const TimerTitle = styled(Text)`
-  color: ${({ theme }) => theme.colors.textGray};
-  font-size: 15px;
-  line-height: 100%;
-`;
+
 const ButtonStyle = styled(Button)`
   position: absolute;
   bottom: 25px;
