@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import SettingsModal from "./SettingsModal";
-import useModal from "../../../Modal/useModal";
-import { CogIcon } from "../../../../components/Svg";
-import { Button } from "../../../../components/Button";
 
 const GlobalSettings = () => {
+  const [showExpertModeAcknowledgement, setShowExpertModeAcknowledgement] = useState(false);
+  const [expertMode, toggleExpertMode] = useState(false);
+  const [singleHopOnly, setSingleHopOnly] = useState(false);
+  const [userSlippageTolerance, setUserSlippageTolerance] = useState(100);
+  const [ttl, setTtl] = useState(100);
+  const [slippageInput, setSlippageInput] = useState("");
+  const [deadlineInput, setDeadlineInput] = useState("");
+  const [gasPrice, setGasPrice] = useState<string>("");
   const texts = {
     global: "Global",
     settings: "Settings",
@@ -33,13 +38,28 @@ const GlobalSettings = () => {
     fast: "Fast (%gasPrice%)",
     instant: "Instant (%gasPrice%)",
   };
-  const [onPresentSettingsModal] = useModal(<SettingsModal texts={texts} onDismiss={() => null} />);
 
   return (
     <div>
-      <Button onClick={onPresentSettingsModal} variant="green">
-        <CogIcon height={24} width={24} color="textSubtle" />
-      </Button>
+      <SettingsModal
+        showExpertModeAcknowledgement={showExpertModeAcknowledgement}
+        setShowExpertModeAcknowledgement={setShowExpertModeAcknowledgement}
+        expertMode={expertMode}
+        toggleExpertMode={toggleExpertMode}
+        singleHopOnly={singleHopOnly}
+        setSingleHopOnly={setSingleHopOnly}
+        userSlippageTolerance={userSlippageTolerance}
+        setUserSlippageTolerance={setUserSlippageTolerance}
+        ttl={ttl}
+        setTtl={setTtl}
+        slippageInput={slippageInput}
+        setSlippageInput={setSlippageInput}
+        texts={texts}
+        deadlineInput={deadlineInput}
+        setDeadlineInput={setDeadlineInput}
+        gasPrice={gasPrice}
+        setGasPrice={setGasPrice}
+      />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { Input } from "../../../../components/Input";
 import { Box, Flex } from "../../../../components/Box";
 import { Button } from "../../../../components/Button";
@@ -18,13 +18,33 @@ enum DeadlineError {
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`); // match escaped "." characters via in a non-capturing group
 
-const SlippageTabs = ({ texts }: { texts: IText }) => {
-  // const [userSlippageTolerance, setUserSlippageTolerance] = useUserSlippageTolerance()
-  const [userSlippageTolerance, setUserSlippageTolerance] = useState(100);
-  // const [ttl, setTtl] = useUserTransactionTTL()
-  const [ttl, setTtl] = useState(100);
-  const [slippageInput, setSlippageInput] = useState("");
-  const [deadlineInput, setDeadlineInput] = useState("");
+interface SlippageTabsProps {
+  texts: IText;
+  userSlippageTolerance: number;
+  setUserSlippageTolerance: Dispatch<SetStateAction<number>>;
+  ttl: number;
+  setTtl: Dispatch<SetStateAction<number>>;
+  slippageInput: string;
+  setSlippageInput: Dispatch<SetStateAction<string>>;
+  deadlineInput: string;
+  setDeadlineInput: Dispatch<SetStateAction<string>>;
+}
+
+const SlippageTabs = ({
+  texts,
+  userSlippageTolerance,
+  setUserSlippageTolerance,
+  ttl,
+  setTtl,
+  slippageInput,
+  setSlippageInput,
+  deadlineInput,
+  setDeadlineInput,
+}: SlippageTabsProps) => {
+  // const [userSlippageTolerance, setUserSlippageTolerance] = useState(100);
+  // const [ttl, setTtl] = useState(100);
+  // const [slippageInput, setSlippageInput] = useState("");
+  // const [deadlineInput, setDeadlineInput] = useState("");
 
   const slippageInputIsValid =
     slippageInput === "" || (userSlippageTolerance / 100).toFixed(2) === Number.parseFloat(slippageInput).toFixed(2);

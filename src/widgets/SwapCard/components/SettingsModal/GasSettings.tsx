@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { Box, Flex } from "../../../../components/Box";
 import { Button } from "../../../../components/Button";
 
@@ -6,8 +6,16 @@ import { Text } from "../../../../components/Text";
 import QuestionHelper from "../../../../components/QuestionHelper";
 import { IText } from "./types";
 
-const GasSettings = ({ texts }: { texts: IText }) => {
-  const [gasPrice, setGasPrice] = useState<string>();
+const GasSettings = ({
+  texts,
+  gasPrice,
+  setGasPrice,
+}: {
+  texts: IText;
+  gasPrice: string;
+  setGasPrice: Dispatch<SetStateAction<string>>;
+}) => {
+  // const [gasPrice, setGasPrice] = useState<string>();
 
   return (
     <Flex flexDirection="column">
