@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button, IconButton } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
 import { CurrencySearchModalProps, CurrencyModalView } from "./types";
-import { ArrowLeft, CloseIcon } from "../../../../components/Svg";
+import { ArrowBack2, CloseIcon } from "../../../../components/Svg";
 
 const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
   onDismiss = () => null,
@@ -25,14 +25,14 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
       <StyledModal>
         <ModalHeader>
           <ModalTitle>
-            {config[modalView].onBack && (
-              <IconButton variant="text" onClick={config[modalView].onBack} aria-label="Close the dialog">
-                <ArrowLeft />
-              </IconButton>
-            )}
             <Text fontSize="21px" letterSpacing="0.5px">
               {config[modalView].title}
             </Text>
+            {config[modalView].onBack && (
+              <IconButton variant="text" onClick={config[modalView].onBack} aria-label="Close the dialog">
+                <ArrowBack2 />
+              </IconButton>
+            )}
           </ModalTitle>
           <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
             <CloseIcon />
@@ -121,7 +121,9 @@ const ModalHeader = styled.div<{ paddingTopHeader?: string; background?: string 
 `;
 
 const ModalTitle = styled.div`
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   flex: 1;
   color: ${({ theme }) => theme.colors.text};
 `;

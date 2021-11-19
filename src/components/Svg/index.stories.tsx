@@ -46,8 +46,13 @@ import {
   VerifideIcon,
   ComunityIcon,
   CloseRed,
+  CloseIcon2,
   ControllerMouse,
   ArrowBorder,
+  CheckIcon2,
+  CloseIcon3,
+  ArrowBack2,
+  ArrowBackIcon,
 } from ".";
 
 export default {
@@ -60,6 +65,7 @@ export default {
     StrikeIcon,
     ArrowDownIcon,
     CloseIcon,
+    CloseIcon2,
     MenuIcon,
     StrikesWideIcon,
     ChartIcon,
@@ -107,6 +113,12 @@ export const Default: React.FC = () => {
           <ArrowRight fill="none" stroke="#4BE43E" />
         </div>
         <div style={{ marginRight: 20 }}>
+          <ArrowBack2 />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <ArrowBackIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
           <EyeOpen />
         </div>
         <div style={{ marginRight: 20 }}>
@@ -135,6 +147,12 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <CloseIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CloseIcon2 />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CloseIcon3 />
         </div>
         <div style={{ marginRight: 20 }}>
           <MenuIcon />
@@ -203,6 +221,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <CheckIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CheckIcon2 />
         </div>
         <div style={{ marginRight: 20 }}>
           <TwitterIcon />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Button } from "../../../../components/Button";
 import { AutoColumn } from "../../../../components/Layout/Column";
 import { AutoRow, RowFixed } from "../../../../components/Layout/Row";
-import { CheckmarkCircleIcon } from "../../../../components/Svg";
+import { CheckIcon2 } from "../../../../components/Svg";
 import { Text } from "../../../../components/Text";
 
 const TokenSection = styled.div<{ dim?: boolean }>`
@@ -17,11 +17,10 @@ const TokenSection = styled.div<{ dim?: boolean }>`
   opacity: ${({ dim }) => (dim ? "0.4" : "1")};
 `;
 
-const CheckIcon = styled(CheckmarkCircleIcon)`
+const CheckIconStyled = styled(CheckIcon2)`
   height: 16px;
   width: 16px;
   margin-right: 6px;
-  stroke: ${({ theme }) => theme.colors.success};
 `;
 
 const NameOverflow = styled.div`
@@ -71,7 +70,7 @@ export default function ImportRow({
         </AutoRow>
         {list && list.logoURI && (
           <RowFixed>
-            <Text small mr="4px" color="textSubtle">
+            <Text fontSize="11px" mr="4px">
               {texts.via} {list.name}
             </Text>
             {listLogo}
@@ -79,13 +78,13 @@ export default function ImportRow({
         )}
       </AutoColumn>
       {!isActive && !isAdded ? (
-        <Button width="fit-content" onClick={handleClickImport}>
+        <Button width="fit-content" onClick={handleClickImport} variant="green" scale="sm">
           {texts.import}
         </Button>
       ) : (
         <RowFixed style={{ minWidth: "fit-content" }}>
-          <CheckIcon />
-          <Text color="success">{texts.active}</Text>
+          <CheckIconStyled />
+          <Text color="green">{texts.active}</Text>
         </RowFixed>
       )}
     </TokenSection>
