@@ -1,19 +1,12 @@
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 export interface IText {
-  global?: string;
   settings?: string;
-  swapLiquid?: string;
-  bypasses?: string;
   disableMultihops?: string;
-  restricsSwaps?: string;
   funSoudsToMake?: string;
-  expertMode?: string;
   expertModeDescription?: string;
   onlyUseThis?: string;
-  pleaseTypeThe?: string;
   turnOnExpert?: string;
-  settingsHightSplippage?: string;
   enterValidSlippage?: string;
   transactionMayFail?: string;
   transactionMayFront?: string;
@@ -21,9 +14,10 @@ export interface IText {
   yourTransactionRevent?: string;
   defaultTransaction?: string;
   adjustGasPrice?: string;
-  standard?: string;
-  fast?: string;
-  instant?: string;
+  slippageTollerance: string;
+  expert: string;
+  dontAskAgain: string;
+  pleaseTypeThe: string;
 }
 
 export interface SettingsModalProps {
@@ -35,14 +29,18 @@ export interface SettingsModalProps {
   toggleExpertMode: Dispatch<SetStateAction<boolean>>;
   singleHopOnly: boolean;
   setSingleHopOnly: Dispatch<SetStateAction<boolean>>;
-  userSlippageTolerance: number;
-  setUserSlippageTolerance: Dispatch<SetStateAction<number>>;
-  ttl: number;
-  setTtl: Dispatch<SetStateAction<number>>;
+  showConfirmExpertModal: boolean;
+  setShowConfirmExpertModal: Dispatch<SetStateAction<boolean>>;
+  gasTabs: string[];
+  slippageTabs: string[];
+  isRememberChecked: boolean;
+  setIsRememberChecked: Dispatch<SetStateAction<boolean>>;
+  activeTabGas: number | null;
+  activeTabSlippage: number | null;
+  toggleTabGas: (e: any) => void;
+  toggleTabSlippage: (e: any) => void;
   slippageInput: string;
-  setSlippageInput: Dispatch<SetStateAction<string>>;
   deadlineInput: string;
-  setDeadlineInput: Dispatch<SetStateAction<string>>;
-  gasPrice: string;
-  setGasPrice: Dispatch<SetStateAction<string>>;
+  handleSlippageInput: (e: any) => void;
+  handleDeadlineInput: (e: any) => void;
 }

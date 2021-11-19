@@ -2,63 +2,80 @@ import React, { useState } from "react";
 import SettingsModal from "./SettingsModal";
 
 const GlobalSettings = () => {
-  const [showExpertModeAcknowledgement, setShowExpertModeAcknowledgement] = useState(false);
+  const [showExpertModeAcknowledgement, setShowExpertModeAcknowledgement] = useState(true);
   const [expertMode, toggleExpertMode] = useState(false);
   const [singleHopOnly, setSingleHopOnly] = useState(false);
-  const [userSlippageTolerance, setUserSlippageTolerance] = useState(100);
-  const [ttl, setTtl] = useState(100);
   const [slippageInput, setSlippageInput] = useState("");
   const [deadlineInput, setDeadlineInput] = useState("");
-  const [gasPrice, setGasPrice] = useState<string>("");
+  const [showConfirmExpertModal, setShowConfirmExpertModal] = useState(false);
+  const [activeTabGas, setActiveTabGas] = useState<number>(0);
+  const [activeTabSlippage, setActiveTabSlippage] = useState<number | null>(null);
+
+  const handleSlippageInput = (e: any) => {
+    setSlippageInput(e.target.value);
+  };
+
+  const handleDeadlineInput = (e: any) => {
+    setDeadlineInput(e.target.value);
+  };
+
+  const toggleTabGas = async (e: any) => {
+    setActiveTabGas(+e.target.value);
+  };
+  const toggleTabSlippage = async (e: any) => {
+    setActiveTabSlippage(+e.target.value);
+  };
   const texts = {
-    global: "Global",
     settings: "Settings",
-    swapLiquid: "Swaps & Liquidity",
-    bypasses: "Bypasses confirmation modals and allows high slippage trades. Use at your own risk.",
+    slippageTollerance: "Slippage Tolerance",
     disableMultihops: "Disable Multihops",
-    restricsSwaps: "Restricts swaps to direct pairs only.",
     funSoudsToMake: "Fun sounds to make a truly immersive pancake-flipping trading experience",
-    expertMode: "Expert Mode",
     expertModeDescription:
       "Expert mode turns off the 'Confirm' transaction prompt, and allows high slippage trades that often result in bad rates and lost funds.",
     onlyUseThis: "Only use this mode if you know what you’re doing.",
-    pleaseTypeThe: 'Please type the word "confirm" to enable expert mode.',
     turnOnExpert: "Turn On Expert Mode",
-    settingsHightSplippage:
-      "Setting a high slippage tolerance can help transactions succeed, but you may not get such a good price. Use with caution.",
     enterValidSlippage: "Enter a valid slippage percentage",
     transactionMayFail: "Your transaction may fail",
     transactionMayFront: "Your transaction may be frontrun",
     txDeadline: "Tx deadline (mins)",
     yourTransactionRevent: "Your transaction will revert if it is left confirming for longer than this time.",
-    defaultTransaction: "Default Transaction Speed (GWEI)",
+    defaultTransaction: "Default Transaction Speed",
     adjustGasPrice:
       "Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees",
-    standard: "Standard (%gasPrice%)",
-    fast: "Fast (%gasPrice%)",
-    instant: "Instant (%gasPrice%)",
+    expert: "Expert Mode",
+    dontAskAgain: "Don’t show this again",
+    pleaseTypeThe: 'Please type the word "confirm" to enable expert mode.',
   };
+
+  const slippageTabs = ["0.1%", "0.5%", "1.0%"];
+  const gasTabs = ["Standard (5)", "Fast (6)", "Instant (7)"];
+  const [isRememberChecked, setIsRememberChecked] = useState(false);
 
   return (
     <div>
       <SettingsModal
+        onDismiss={() => null}
+        slippageTabs={slippageTabs}
+        gasTabs={gasTabs}
         showExpertModeAcknowledgement={showExpertModeAcknowledgement}
         setShowExpertModeAcknowledgement={setShowExpertModeAcknowledgement}
         expertMode={expertMode}
         toggleExpertMode={toggleExpertMode}
         singleHopOnly={singleHopOnly}
         setSingleHopOnly={setSingleHopOnly}
-        userSlippageTolerance={userSlippageTolerance}
-        setUserSlippageTolerance={setUserSlippageTolerance}
-        ttl={ttl}
-        setTtl={setTtl}
-        slippageInput={slippageInput}
-        setSlippageInput={setSlippageInput}
         texts={texts}
+        showConfirmExpertModal={showConfirmExpertModal}
+        setShowConfirmExpertModal={setShowConfirmExpertModal}
+        isRememberChecked={isRememberChecked}
+        setIsRememberChecked={setIsRememberChecked}
+        activeTabGas={activeTabGas}
+        activeTabSlippage={activeTabSlippage}
+        toggleTabGas={toggleTabGas}
+        toggleTabSlippage={toggleTabSlippage}
+        slippageInput={slippageInput}
         deadlineInput={deadlineInput}
-        setDeadlineInput={setDeadlineInput}
-        gasPrice={gasPrice}
-        setGasPrice={setGasPrice}
+        handleSlippageInput={handleSlippageInput}
+        handleDeadlineInput={handleDeadlineInput}
       />
     </div>
   );

@@ -1,31 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { StyledBalanceMaxMini, SwapCallbackError } from "./styleds";
 import { AutoColumn } from "../../../components/Layout/Column";
-import { RowBetween, RowFixed, AutoRow } from "../../../components/Layout/Row";
-import QuestionHelper from "../../../components/QuestionHelper";
+import { RowBetween, AutoRow } from "../../../components/Layout/Row";
 import { Text } from "../../../components/Text";
-import { AutoRenewIcon } from "../../..";
 import { SwapModalFooterProps } from "../types";
+import { baseColors } from "../../../theme/colors";
+import { Button } from "../../../index";
 
 const SwapModalFooterContainer = styled(AutoColumn)`
-  margin-top: 24px;
-  padding: 16px;
-  border-radius: ${({ theme }) => theme.radii.default};
-  border: 1px solid ${({ theme }) => theme.colors.greyText};
-  background-color: ${({ theme }) => theme.colors.panel};
+  margin-top: 35px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme.colors.bgOpacitY3};
 `;
 
-const SwapModalFooter: React.FC<SwapModalFooterProps> = ({ swapErrorMessage, errorText, buttonSwap, texts }) => {
-  const [showInverted, setShowInverted] = useState<boolean>(false);
-
+const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
+  buttonSwapHandler,
+  buttonSwapProps,
+  swapErrorMessage,
+  errorText,
+  texts,
+  priceImpact,
+  executionPrice,
+  minimusReceived,
+}) => {
   return (
     <>
       <SwapModalFooterContainer>
-        <RowBetween align="center">
-          <Text fontSize="14px">{texts.price}</Text>
+        <RowBetween mt="8px" align="center">
+          <Text fontSize="11px">{texts.price}</Text>
           <Text
-            fontSize="14px"
+            fontSize="11px"
             style={{
               justifyContent: "center",
               alignItems: "center",
@@ -34,53 +39,32 @@ const SwapModalFooter: React.FC<SwapModalFooterProps> = ({ swapErrorMessage, err
               paddingLeft: "10px",
             }}
           >
-            {texts.executionPrice}
-            <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
-              <AutoRenewIcon width="14px" />
-            </StyledBalanceMaxMini>
+            {executionPrice}
           </Text>
         </RowBetween>
 
-        <RowBetween>
-          <RowFixed>
-            <Text fontSize="14px">{texts.receivedOrSold}</Text>
-            <QuestionHelper text={texts.transactionRevert} ml="4px" />
-          </RowFixed>
-          <RowFixed>
-            <Text fontSize="14px">{texts.slippageAdjustedAmounts}</Text>
-            <Text fontSize="14px" marginLeft="4px">
-              {texts.currencySymbolTop}
-            </Text>
-          </RowFixed>
+        <RowBetween mt="8px">
+          <Text fontSize="11px">{texts.receivedOrSold}</Text>
+
+          <Text fontSize="11px"> {minimusReceived}</Text>
         </RowBetween>
-        <RowBetween>
-          <RowFixed>
-            <Text fontSize="14px">{texts.priceImpact}</Text>
-            <QuestionHelper text={texts.differencePrice} ml="4px" />
-          </RowFixed>
-          {errorText}
+        <RowBetween mt="8px">
+          <Text fontSize="11px">{texts.priceImpact}</Text>
+
+          <Text color={baseColors.green} fontSize="11px">
+            {" "}
+            {priceImpact}
+          </Text>
         </RowBetween>
-        <RowBetween>
-          <RowFixed>
-            <Text fontSize="14px">{texts.liquidityProviderFee}</Text>
-            <QuestionHelper
-              text={
-                <>
-                  <Text mb="12px">{texts.amountFee}</Text>
-                  <Text>- {texts.amountLP}</Text>
-                  <Text>- {texts.amountTreasury}</Text>
-                  <Text>- {texts.amountTowards}</Text>
-                </>
-              }
-              ml="4px"
-            />
-          </RowFixed>
-          <Text fontSize="14px">{texts.currencySymbolBottom}</Text>
+        <RowBetween mt="8px">
+          <Text fontSize="11px">{texts.liquidityProviderFee}</Text>
+          <Text fontSize="11px">{texts.currencySymbolBottom}</Text>
         </RowBetween>
       </SwapModalFooterContainer>
       <AutoRow>
-        {buttonSwap}
-        {swapErrorMessage ? <SwapCallbackError error={swapErrorMessage} /> : null}
+        <Button mt="37px" onClick={buttonSwapHandler} variant="green" width="100%" {...buttonSwapProps}>
+          {texts.buttonSwap}
+        </Button>
       </AutoRow>
     </>
   );

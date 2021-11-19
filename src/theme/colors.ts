@@ -28,6 +28,7 @@ export const baseColors = {
   bgOpacity: "rgba(0, 0, 0, 0.3)",
   bgOpacity2: "rgba(0, 0, 0, 0.05)",
   bgOpacitY3: " rgba(255, 255, 255, 0.05)",
+  bgGreenRgba: "rgba(75, 228, 62, 0.11)",
   bgBlackRgba: "rgba(43, 43, 50, .7)",
   textGray: "#A3A3A3",
   bgGray: "#26262D",

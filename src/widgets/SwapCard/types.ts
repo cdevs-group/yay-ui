@@ -1,7 +1,13 @@
+import { ButtonProps } from "../../components/Button/types";
+
 export interface SwapModalFooterProps {
   swapErrorMessage: string | undefined;
   errorText: React.ReactNode;
   buttonSwap: React.ReactNode;
+  priceImpact: string;
+  buttonSwapProps: ButtonProps;
+  executionPrice: string;
+  minimusReceived: string;
   texts: {
     price: string;
     executionPrice: string;
@@ -17,14 +23,25 @@ export interface SwapModalFooterProps {
     amountTowards: string;
     currencySymbolTop: string;
     currencySymbolBottom: string;
+    buttonSwap: string;
   };
+  buttonSwapHandler: () => void | Promise<void>;
 }
 
 export interface SwapModalHeaderProps {
-  currencyLogoFrom: React.ReactNode;
-  currencyLogoTo: React.ReactNode;
-  truncatedTextColorFrom: string;
-  truncatedTextColorTo: string;
+  currencyFrom: {
+    shortName: string;
+    fullName: string;
+    logo: string;
+  };
+  currencyTo: {
+    shortName: string;
+    fullName: string;
+    logo: string;
+  };
+  priceFrom: number | string;
+  priceTo: number | string;
+  outputEstimates: React.ReactNode | string;
   texts: {
     truncatedTextFrom: string;
     truncatedTextTo: string;

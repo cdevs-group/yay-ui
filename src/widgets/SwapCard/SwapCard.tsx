@@ -1,27 +1,27 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Button } from '../../components/Button'
-import { Text } from '../../components/Text'
-import { ArrowDownIcon } from '../../components/Svg'
-import { Box } from '../../components/Box'
-import { useModal } from '../Modal'
-import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from '../../components/UnsupportedCurrencyFooter'
-import AddressInputPanel, { AddressInputPanelProps } from './components/AddressInputPanel'
-import { GreyCard } from '../../components/StyledCard'
-import Column, { AutoColumn } from '../../components/Layout/Column'
-import ConfirmSwapModal, { ConfirmSwapModalProps } from './components/ConfirmSwapModal'
-import { CurrencyInputPanel, CurrencyInputPanelProps } from '../../components/CurrencyInputPanel'
-import { AutoRow, RowBetween } from '../../components/Layout/Row'
-import AdvancedSwapDetailsDropdown from './components/AdvancedSwapDetailsDropdown'
-import { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds'
-import TradePrice, { TradePriceProps } from './components/TradePrice'
+import React from "react";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
+import { Text } from "../../components/Text";
+import { ArrowDownIcon } from "../../components/Svg";
+import { Box } from "../../components/Box";
+import { useModal } from "../Modal";
+import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter";
+import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel";
+import { GreyCard } from "../../components/StyledCard";
+import Column, { AutoColumn } from "../../components/Layout/Column";
+import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal";
+import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel";
+import { AutoRow, RowBetween } from "../../components/Layout/Row";
+import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
+import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
+import TradePrice, { TradePriceProps } from "./components/TradePrice";
 //import ImportTokenWarningModal from './components/ImportTokenWarningModal'
-import ProgressSteps, { ProgressCirclesProps } from './components/ProgressSteps'
-import { AppHeader, AppBody } from './components/App'
-import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails"
-import { AppHeaderProps } from "./components/App/types"
-import { TransactionsModalProps } from './components/App/Transactions/TransactionsModal'
-import { TransactionDetailsProps } from './components/App/Transactions/types'
+import ProgressSteps, { ProgressCirclesProps } from "./components/ProgressSteps";
+import { AppHeader, AppBody } from "./components/App";
+import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails";
+import { AppHeaderProps } from "./components/App/types";
+import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal";
+import { TransactionDetailsProps } from "./components/App/Transactions/types";
 import { InjectedModalProps } from "../Modal";
 import { TransactionSubmittedContentProps } from "../../components/TransactionConfirmationModal";
 
@@ -38,7 +38,7 @@ interface SwapCardProps {
   ArrowDownIconComponent: {
     onClick: () => void;
     color: string;
-  }
+  };
   AddressInputPanelComponent: AddressInputPanelProps;
   AdvancedSwapDetailsDropdownComponent: AdvancedSwapDetailsProps;
   ConnectWalletButton: React.ReactNode;
@@ -61,11 +61,11 @@ interface SwapCardProps {
     liquidityText: string;
     priceImpactSeverityButtonError: string;
     recipientButton: string;
-  }
+  };
   TradePriceComponent: TradePriceProps;
   ProgressStepsComponent: ProgressCirclesProps;
-  SwapCallbackErrorText: string
-  ConfirmSwapModalComponent: InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps
+  SwapCallbackErrorText: string;
+  ConfirmSwapModalComponent: InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps;
 }
 
 export default function Swap({
@@ -88,9 +88,8 @@ export default function Swap({
   TradePriceComponent,
   ProgressStepsComponent,
   SwapCallbackErrorText,
-  ConfirmSwapModalComponent
- }: SwapCardProps) {
-
+  ConfirmSwapModalComponent,
+}: SwapCardProps) {
   const [onPresentConfirmModal] = useModal(
     <ConfirmSwapModal
       trade={ConfirmSwapModalComponent.trade}
@@ -123,9 +122,9 @@ export default function Swap({
       truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
       showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
     />
-  ); 
+  );
 
-  const { 
+  const {
     removeSendButton,
     priceLabel,
     slippageToleranceLabel,
@@ -135,13 +134,13 @@ export default function Swap({
     priceImpactSeverityButton,
     liquidityText,
     priceImpactSeverityButtonError,
-    recipientButton
-   } = texts
+    recipientButton,
+  } = texts;
 
   return (
     <>
       <AppBody>
-        <AppHeader 
+        <AppHeader
           title={appHeader.title}
           subtitle={appHeader.subtitle}
           expertMode={appHeader.expertMode}
@@ -166,7 +165,7 @@ export default function Swap({
               onUserInput={currencyInputPanelFrom.onUserInput}
               onMax={currencyInputPanelFrom.onMax}
               showMaxButton={currencyInputPanelFrom.showMaxButton}
-              currency={currencyInputPanelFrom.currency} 
+              currency={currencyInputPanelFrom.currency}
               //id="swap-currency-input"
               id={currencyInputPanelFrom.id}
               disableCurrencySelect={currencyInputPanelFrom.disableCurrencySelect}
@@ -187,10 +186,10 @@ export default function Swap({
                     color={ArrowDownIconComponent.color}
                   />
                   {appHeader.expertMode ? (
-                  <Button variant="text" id="add-recipient-button" onClick={() => null}>
-                    {recipientButton}
-                  </Button>
-                ) : null}
+                    <Button variant="text" id="add-recipient-button" onClick={() => null}>
+                      {recipientButton}
+                    </Button>
+                  ) : null}
                 </ArrowWrapper>
               </AutoRow>
             </AutoColumn>
@@ -200,7 +199,7 @@ export default function Swap({
               onUserInput={currencyInputPanelTo.onUserInput}
               onMax={currencyInputPanelTo.onMax}
               showMaxButton={currencyInputPanelTo.showMaxButton}
-              currency={currencyInputPanelTo.currency} 
+              currency={currencyInputPanelTo.currency}
               id={currencyInputPanelTo.id}
               disableCurrencySelect={currencyInputPanelTo.disableCurrencySelect}
               pair={currencyInputPanelTo.pair}
@@ -211,7 +210,7 @@ export default function Swap({
               doubleCurrencyLogo={currencyInputPanelTo.doubleCurrencyLogo}
               texts={currencyInputPanelTo.texts}
             />
-            {appHeader.expertMode? (
+            {appHeader.expertMode ? (
               <>
                 <AutoRow justify="space-between" style={{ padding: "0 1rem" }}>
                   <ArrowWrapper clickable={false}>
@@ -221,7 +220,7 @@ export default function Swap({
                     {removeSendButton}
                   </Button>
                 </AutoRow>
-                <AddressInputPanel 
+                <AddressInputPanel
                   id={AddressInputPanelComponent.id}
                   value={AddressInputPanelComponent.value}
                   onChange={AddressInputPanelComponent.onChange}
@@ -231,10 +230,10 @@ export default function Swap({
                   ENS={AddressInputPanelComponent.ENS}
                   chainId={AddressInputPanelComponent.chainId}
                   bscScanLink={AddressInputPanelComponent.bscScanLink}
-                  />
+                />
               </>
             ) : null}
-             {showWrap ? null : (
+            {showWrap ? null : (
               <AutoColumn gap="8px" style={{ padding: "0 16px" }}>
                 {Boolean(trade) && (
                   <RowBetween align="center">
@@ -266,7 +265,7 @@ export default function Swap({
                 {unsupportedAssetButton}
               </Button>
             ) : !account ? (
-              {ConnectWalletButton}
+              { ConnectWalletButton }
             ) : showWrap ? (
               <Button width="100%" onClick={() => null}>
                 {wrapOrUnwrapButton}
@@ -279,28 +278,15 @@ export default function Swap({
               </GreyCard>
             ) : showApproveFlow ? (
               <RowBetween>
-                <Button
-                  variant="success"
-                  onClick={() => null}
-                  width="48%"
-                >
+                <Button variant="success" onClick={() => null} width="48%">
                   {approvalButton}
                 </Button>
-                <Button
-                  variant="danger"
-                  onClick={() => onPresentConfirmModal()}
-                  width="48%"
-                  id="swap-button"
-                >
+                <Button variant="danger" onClick={() => onPresentConfirmModal()} width="48%" id="swap-button">
                   {priceImpactSeverityButton}
                 </Button>
               </RowBetween>
             ) : (
-              <Button
-                variant="danger"
-                onClick={() => onPresentConfirmModal()}
-                id="swap-button"
-                width="100%">
+              <Button variant="danger" onClick={() => onPresentConfirmModal()} id="swap-button" width="100%">
                 {priceImpactSeverityButtonError}
               </Button>
             )}

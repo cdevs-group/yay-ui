@@ -1,18 +1,18 @@
-import React from "react"
-import styled from "styled-components"
-import { Text } from "../../../../components/Text"
-import { Flex } from "../../../../components/Box"
-import { Heading } from "../../../../components/Heading"
-import { IconButton } from "../../../../components/Button"
-import { ArrowBackIcon } from "../../../../components/Svg"
-import { NotificationDot } from "../../../../components/NotificationDot"
-import { Link } from "react-router-dom"
-import GlobalSettings from "../SettingsModal"
-import Transactions from "./Transactions"
-import { TransactionsModalProps } from "./Transactions/TransactionsModal"
-import QuestionHelper from "../../../../components/QuestionHelper"
-import { TransactionDetailsProps } from "./Transactions/types"
-import { AppHeaderProps } from "./types"
+import React from "react";
+import styled from "styled-components";
+import { Text } from "../../../../components/Text";
+import { Flex } from "../../../../components/Box";
+import { Heading } from "../../../../components/Heading";
+import { IconButton } from "../../../../components/Button";
+import { ArrowBackIcon } from "../../../../components/Svg";
+import { NotificationDot } from "../../../../components/NotificationDot";
+import { Link } from "react-router-dom";
+import GlobalSettings from "../SettingsModal";
+import Transactions from "./Transactions";
+import { TransactionsModalProps } from "./Transactions/TransactionsModal";
+import QuestionHelper from "../../../../components/QuestionHelper";
+import { TransactionDetailsProps } from "./Transactions/types";
+import { AppHeaderProps } from "./types";
 
 const AppHeaderContainer = styled(Flex)`
   align-items: center;
@@ -20,9 +20,11 @@ const AppHeaderContainer = styled(Flex)`
   padding: 24px;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.card};
-`
+`;
 
-const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionDetailsProps & { onDismiss: () => void }> = ({
+const AppHeader: React.FC<
+  AppHeaderProps & TransactionsModalProps & TransactionDetailsProps & { onDismiss: () => void }
+> = ({
   title,
   subtitle,
   helper,
@@ -40,7 +42,7 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionD
   bscScanLink,
   summary,
   pending,
-  success
+  success,
 }) => {
   return (
     <AppHeaderContainer>
@@ -84,7 +86,7 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionD
         </Flex>
       )}
     </AppHeaderContainer>
-  )
-}
+  );
+};
 
-export default AppHeader
+export default AppHeader;
