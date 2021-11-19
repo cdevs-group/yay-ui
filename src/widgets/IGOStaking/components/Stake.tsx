@@ -35,6 +35,8 @@ interface IStakeProps {
   handleStake: () => void | Promise<void>;
   disableStake: boolean;
   disableApprove: boolean;
+  loadingApprove?: boolean;
+  loadingStake?: boolean;
 }
 
 const Stake = ({
@@ -51,6 +53,8 @@ const Stake = ({
   iconBalanceInput,
   disabledInput,
   balance,
+  loadingApprove,
+  loadingStake,
 }: IStakeProps) => {
   return (
     <StakeWrapper>
@@ -71,10 +75,10 @@ const Stake = ({
       </Balance>
       <TabsSmall tabValue={tabValue} tabsList={tabsList} onClick={handleTab} />
       <Buttons>
-        <Button disabled={disableApprove} onClick={handleApprove} variant="green">
+        <Button disabled={disableApprove} onClick={handleApprove} variant="green" spin={loadingApprove}>
           {texts.buttonApprove}
         </Button>
-        <Button disabled={disableStake} onClick={handleStake} variant="green">
+        <Button disabled={disableStake} onClick={handleStake} variant="green" spin={loadingStake}>
           {texts.buttonStake}
         </Button>
       </Buttons>

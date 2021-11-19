@@ -61,6 +61,8 @@ export const IGOStakeBlock = () => {
         myStakeValue="1212 YAY"
         avaibleValue="0.00001"
         tookPartValue="12"
+        loadingApprove
+        loadingStake
       />
     </div>
   );

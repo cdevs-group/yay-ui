@@ -41,6 +41,8 @@ interface IGOStakeProps {
   myStakeValue: string | number;
   avaibleValue: string | number;
   tookPartValue: string | number;
+  loadingApprove?: boolean;
+  loadingStake?: boolean;
 }
 
 const IGOStake = ({
@@ -64,6 +66,8 @@ const IGOStake = ({
   handleTab,
   disableStake,
   disableApprove,
+  loadingStake,
+  loadingApprove,
 }: IGOStakeProps) => {
   return (
     <div>
@@ -88,6 +92,8 @@ const IGOStake = ({
           valueInput={valueInput}
           tabValue={tabValue}
           handleTab={handleTab}
+          loadingApprove={loadingApprove}
+          loadingStake={loadingStake}
         />
         <Unstake cooldownDisabled={cooldownDisabled} time={time} handleCooldown={handleCooldown} texts={texts} />
       </MainLine>
