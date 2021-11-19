@@ -10,12 +10,12 @@ const rotate = keyframes`
   }
 `
 
-const StyledSVG = styled.svg<{ size: string; stroke?: string }>`
+const StyledSVG = styled.svg<{ size: string; stroke?: string, color?: string }>`
   animation: 2s ${rotate} linear infinite;
   height: ${({ size }) => size};
   width: ${({ size }) => size};
   path {
-    stroke: ${({ stroke, theme }) => stroke ?? theme.colors.primary};
+    stroke: ${({ stroke, color, theme }) => stroke ?? color ? color : theme.colors.primary};
   }
 `
 

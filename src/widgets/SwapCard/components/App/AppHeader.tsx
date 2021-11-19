@@ -19,7 +19,10 @@ const AppHeaderContainer = styled(Flex)`
   justify-content: space-between;
   padding: 24px;
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.card};
+`
+const Subtitle = styled(Text)`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.text};
 `
 
 const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionDetailsProps & { onDismiss: () => void }> = ({
@@ -56,9 +59,9 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionD
           </Heading>
           <Flex alignItems="center">
             {helper && <QuestionHelper text={helper} mr="4px" placement="top-start" />}
-            <Text color="textSubtle" fontSize="14px">
+            <Subtitle>
               {subtitle}
-            </Text>
+            </Subtitle>
           </Flex>
         </Flex>
       </Flex>

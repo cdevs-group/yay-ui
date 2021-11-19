@@ -16,7 +16,7 @@ interface Props extends InjectedProps {
   image?: boolean;
   paddingTopHeader?: string;
   headerBackground?: string;
-  style?: any;
+  style?: React.CSSProperties;
   maxWidth?: string;
   onBack?: () => void;
 }
@@ -119,13 +119,13 @@ const Modal: React.FC<Props> = ({
   headerBackground = "transparent",
   style,
   onBack,
-  maxWidth,
+  maxWidth
 }) => {
   const theme = useTheme();
   return (
     <div>
       <Overlay />
-      <StyledModal {...style} maxWidth={maxWidth}>
+      <StyledModal maxWidth={maxWidth}>
         <ModalContent>
           <ModalHeader
             className={welcome ? "welcome" : ""}
