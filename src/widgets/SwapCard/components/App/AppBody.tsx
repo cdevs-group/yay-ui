@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Card } from "../../../../components/Card"
 
-export const BodyWrapper = styled(Card)`
+export const BodyWrapper = styled.div`
   border-radius: 24px;
   max-width: 436px;
   width: 100%;

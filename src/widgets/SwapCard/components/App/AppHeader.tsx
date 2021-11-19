@@ -65,7 +65,7 @@ const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & TransactionD
       {!noConfig && (
         <Flex alignItems="center">
           <NotificationDot show={expertMode}>
-            <GlobalSettings />
+            {/* <GlobalSettings /> */}
           </NotificationDot>
           <Transactions
             account={account}

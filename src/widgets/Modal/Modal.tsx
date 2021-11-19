@@ -28,7 +28,7 @@ const getThemeValue =
 
 export const ModalContent = styled.div<{ p?: string }>`
   position: relative;
-  padding: ${({ p }) => p || "20px" };
+  padding: ${({ p }) => p};
 `;
 
 export const ModalBody = styled(Flex)`
