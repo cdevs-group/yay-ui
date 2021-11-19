@@ -193,21 +193,21 @@ export const CurrencySearchModalBlock = () => {
           return <FixedSizeListRow style={style} texts={{ expanded: "expanded", tokens: "tokens" }} />;
         }
 
-        if (showImport && token) {
+        // if (showImport && token) {
           return (
-            <></>
-            // <ImportRow style={style} token={token} showImportView={showImportView} setImportToken={setImportToken} dim />
+            // <></>
+            <ImportRow style={style} token={token} showImportView={showImportView} setImportToken={setImportToken} dim />
           );
-        }
-        return (
-          <CurrencyRowBlock
-            style={style}
-            currency={currency}
-            isSelected={isSelected}
-            onSelect={handleSelect}
-            otherSelected={otherSelected}
-          />
-        );
+        // }
+        // return (
+        //   <CurrencyRowBlock
+        //     style={style}
+        //     currency={currency}
+        //     isSelected={isSelected}
+        //     onSelect={handleSelect}
+        //     otherSelected={otherSelected}
+        //   />
+        // );
       },
       [
         chainId,

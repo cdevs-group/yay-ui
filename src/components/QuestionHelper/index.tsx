@@ -1,5 +1,5 @@
 import React from "react";
-import { HelpIcon } from "../Svg";
+import { HelpIcon2 } from "../Svg";
 import { useTooltip } from "../../hooks/useTooltip";
 import { Box, BoxProps } from "../Box";
 import { Placement } from "@popperjs/core";
@@ -24,7 +24,7 @@ const QuestionHelper: React.FC<Props> = ({ text, placement = "right-end", ...pro
     <Box {...props}>
       {tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef}>
-        <HelpIcon color="textSubtle" width="16px" />
+        <HelpIcon2 color="textSubtle" width="16px" />
       </QuestionWrapper>
     </Box>
   );
