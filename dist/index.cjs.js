@@ -9695,7 +9695,7 @@ var Progress = styled__default['default'].div(templateObject_8$2 || (templateObj
 var templateObject_1$9, templateObject_2$6, templateObject_3$5, templateObject_4$4, templateObject_5$2, templateObject_6$2, templateObject_7$2, templateObject_8$2;
 
 var Stake = function (_a) {
-    var disableApprove = _a.disableApprove, disableStake = _a.disableStake, handleApprove = _a.handleApprove, handleStake = _a.handleStake, tabValue = _a.tabValue, handleTab = _a.handleTab, tabsList = _a.tabsList, texts = _a.texts, onUserInput = _a.onUserInput, valueInput = _a.valueInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance;
+    var disableApprove = _a.disableApprove, disableStake = _a.disableStake, handleApprove = _a.handleApprove, handleStake = _a.handleStake, tabValue = _a.tabValue, handleTab = _a.handleTab, tabsList = _a.tabsList, texts = _a.texts, onUserInput = _a.onUserInput, valueInput = _a.valueInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, loadingApprove = _a.loadingApprove, loadingStake = _a.loadingStake;
     return (React__default['default'].createElement(StakeWrapper, null,
         React__default['default'].createElement(StakeTitle, null, texts.stakeTitle),
         React__default['default'].createElement(StakeDescription, null, texts.stakeDescription),
@@ -9706,8 +9706,8 @@ var Stake = function (_a) {
             React__default['default'].createElement("span", null, balance)),
         React__default['default'].createElement(TabsSmall, { tabValue: tabValue, tabsList: tabsList, onClick: handleTab }),
         React__default['default'].createElement(Buttons$2, null,
-            React__default['default'].createElement(Button$9, { disabled: disableApprove, onClick: handleApprove, variant: "green" }, texts.buttonApprove),
-            React__default['default'].createElement(Button$9, { disabled: disableStake, onClick: handleStake, variant: "green" }, texts.buttonStake))));
+            React__default['default'].createElement(Button$9, { disabled: disableApprove, onClick: handleApprove, variant: "green", spin: loadingApprove }, texts.buttonApprove),
+            React__default['default'].createElement(Button$9, { disabled: disableStake, onClick: handleStake, variant: "green", spin: loadingStake }, texts.buttonStake))));
 };
 
 var Unstake = function (_a) {
@@ -9726,7 +9726,7 @@ var ButtonStyle$2 = styled__default['default'](Button$9)(templateObject_1$8 || (
 var templateObject_1$8;
 
 var IGOStake = function (_a) {
-    var totalValue = _a.totalValue, myStakeValue = _a.myStakeValue, avaibleValue = _a.avaibleValue, tookPartValue = _a.tookPartValue, time = _a.time, cooldownDisabled = _a.cooldownDisabled, onUserInput = _a.onUserInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, tabsList = _a.tabsList, handleStake = _a.handleStake, handleApprove = _a.handleApprove, handleCooldown = _a.handleCooldown, texts = _a.texts, valueInput = _a.valueInput, tabValue = _a.tabValue, handleTab = _a.handleTab, disableStake = _a.disableStake, disableApprove = _a.disableApprove;
+    var totalValue = _a.totalValue, myStakeValue = _a.myStakeValue, avaibleValue = _a.avaibleValue, tookPartValue = _a.tookPartValue, time = _a.time, cooldownDisabled = _a.cooldownDisabled, onUserInput = _a.onUserInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, tabsList = _a.tabsList, handleStake = _a.handleStake, handleApprove = _a.handleApprove, handleCooldown = _a.handleCooldown, texts = _a.texts, valueInput = _a.valueInput, tabValue = _a.tabValue, handleTab = _a.handleTab, disableStake = _a.disableStake, disableApprove = _a.disableApprove, loadingStake = _a.loadingStake, loadingApprove = _a.loadingApprove;
     return (React__default['default'].createElement("div", null,
         React__default['default'].createElement(TopLine, null,
             React__default['default'].createElement(TopBlock, { title: texts.totalStake, value: totalValue }),
@@ -9734,7 +9734,7 @@ var IGOStake = function (_a) {
             React__default['default'].createElement(TopBlock, { title: texts.avaible, value: avaibleValue }),
             React__default['default'].createElement(TopBlock, { title: texts.tookPart, value: tookPartValue })),
         React__default['default'].createElement(MainLine, null,
-            React__default['default'].createElement(Stake, { texts: texts, onUserInput: onUserInput, iconBalanceInput: iconBalanceInput, disabledInput: disabledInput, balance: balance, tabsList: tabsList, handleStake: handleStake, handleApprove: handleApprove, disableApprove: disableApprove, disableStake: disableStake, valueInput: valueInput, tabValue: tabValue, handleTab: handleTab }),
+            React__default['default'].createElement(Stake, { texts: texts, onUserInput: onUserInput, iconBalanceInput: iconBalanceInput, disabledInput: disabledInput, balance: balance, tabsList: tabsList, handleStake: handleStake, handleApprove: handleApprove, disableApprove: disableApprove, disableStake: disableStake, valueInput: valueInput, tabValue: tabValue, handleTab: handleTab, loadingApprove: loadingApprove, loadingStake: loadingStake }),
             React__default['default'].createElement(Unstake, { cooldownDisabled: cooldownDisabled, time: time, handleCooldown: handleCooldown, texts: texts }))));
 };
 var TopLine = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  display: grid;\n  gap: 15px;\n  grid-template-columns: 1fr;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n    gap: 0 15px;\n  }\n"], ["\n  margin-bottom: 15px;\n  display: grid;\n  gap: 15px;\n  grid-template-columns: 1fr;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n    gap: 0 15px;\n  }\n"])), function (_a) {

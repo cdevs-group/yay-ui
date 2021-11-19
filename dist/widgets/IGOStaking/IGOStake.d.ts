@@ -36,6 +36,8 @@ interface IGOStakeProps {
     myStakeValue: string | number;
     avaibleValue: string | number;
     tookPartValue: string | number;
+    loadingApprove?: boolean;
+    loadingStake?: boolean;
 }
-declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, }: IGOStakeProps) => JSX.Element;
+declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, }: IGOStakeProps) => JSX.Element;
 export default IGOStake;

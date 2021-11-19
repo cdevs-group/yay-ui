@@ -29,6 +29,8 @@ interface IStakeProps {
     handleStake: () => void | Promise<void>;
     disableStake: boolean;
     disableApprove: boolean;
+    loadingApprove?: boolean;
+    loadingStake?: boolean;
 }
-declare const Stake: ({ disableApprove, disableStake, handleApprove, handleStake, tabValue, handleTab, tabsList, texts, onUserInput, valueInput, iconBalanceInput, disabledInput, balance, }: IStakeProps) => JSX.Element;
+declare const Stake: ({ disableApprove, disableStake, handleApprove, handleStake, tabValue, handleTab, tabsList, texts, onUserInput, valueInput, iconBalanceInput, disabledInput, balance, loadingApprove, loadingStake, }: IStakeProps) => JSX.Element;
 export default Stake;
