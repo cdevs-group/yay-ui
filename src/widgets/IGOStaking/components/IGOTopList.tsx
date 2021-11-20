@@ -14,12 +14,13 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
           </TabsWrap>
         )}
       </Title>
+
+      <LineHeader>
+        <CellHeader>№</CellHeader>
+        <CellHeader className="middle">{texts.wallet}</CellHeader>
+        <CellHeader>{texts.staked}</CellHeader>
+      </LineHeader>
       <Table>
-        <LineHeader>
-          <CellHeader>№</CellHeader>
-          <CellHeader className="middle">{texts.wallet}</CellHeader>
-          <CellHeader>{texts.staked}</CellHeader>
-        </LineHeader>
         {topUsersList.map((item, i) => (
           <Line key={i} className={myWallet === item.wallet ? "active" : ""}>
             <Cell>{item.position}</Cell>
@@ -63,7 +64,8 @@ const Title = styled(Flex)`
   }
 `;
 const Table = styled.div`
-  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 300px;
 `;
 const Line = styled.div`
   display: grid;
@@ -84,6 +86,7 @@ const Line = styled.div`
   }
 `;
 const LineHeader = styled.div`
+  margin-top: 20px;
   display: none;
   padding: 0;
   ${({ theme }) => theme.mediaQueries.md} {

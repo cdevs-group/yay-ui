@@ -9743,18 +9743,17 @@ var IGOTopList = function (_a) {
             texts.title,
             tabsList && (tabsList === null || tabsList === void 0 ? void 0 : tabsList.length) && (React__default.createElement(TabsWrap, null,
                 React__default.createElement(Tabs$1, { tabValue: activeTab, onClick: toggleTab, tabsList: tabsList, variant: "small" })))),
-        React__default.createElement(Table, null,
-            React__default.createElement(LineHeader, null,
-                React__default.createElement(CellHeader, null, "\u2116"),
-                React__default.createElement(CellHeader, { className: "middle" }, texts.wallet),
-                React__default.createElement(CellHeader, null, texts.staked)),
-            topUsersList.map(function (item, i) { return (React__default.createElement(Line, { key: i, className: myWallet === item.wallet ? "active" : "" },
-                React__default.createElement(Cell, null, item.position),
-                React__default.createElement(Cell, null, item.wallet),
-                React__default.createElement(Cell, null,
-                    item.staked,
-                    " ",
-                    texts.tokenName))); }))));
+        React__default.createElement(LineHeader, null,
+            React__default.createElement(CellHeader, null, "\u2116"),
+            React__default.createElement(CellHeader, { className: "middle" }, texts.wallet),
+            React__default.createElement(CellHeader, null, texts.staked)),
+        React__default.createElement(Table, null, topUsersList.map(function (item, i) { return (React__default.createElement(Line, { key: i, className: myWallet === item.wallet ? "active" : "" },
+            React__default.createElement(Cell, null, item.position),
+            React__default.createElement(Cell, null, item.wallet),
+            React__default.createElement(Cell, null,
+                item.staked,
+                " ",
+                texts.tokenName))); }))));
 };
 var Wrapper$4 = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9773,12 +9772,12 @@ var Title$3 = styled(Flex)(templateObject_2$7 || (templateObject_2$7 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Table = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  margin-top: 20px;\n"], ["\n  margin-top: 20px;\n"])));
+var Table = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  overflow-y: auto;\n  max-height: 300px;\n"], ["\n  overflow-y: auto;\n  max-height: 300px;\n"])));
 var Line = styled.div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 20% 50% 30%;\n  padding: 0 10px;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 20% 50% 30%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 20% 50% 30%;\n  padding: 0 10px;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 20% 50% 30%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var LineHeader = styled.div(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  display: none;\n  padding: 0;\n  ", " {\n    display: grid;\n    grid-template-columns: 20% 50% 30%;\n    padding: 0 10px;\n  }\n"], ["\n  display: none;\n  padding: 0;\n  ", " {\n    display: grid;\n    grid-template-columns: 20% 50% 30%;\n    padding: 0 10px;\n  }\n"])), function (_a) {
+var LineHeader = styled.div(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  margin-top: 20px;\n  display: none;\n  padding: 0;\n  ", " {\n    display: grid;\n    grid-template-columns: 20% 50% 30%;\n    padding: 0 10px;\n  }\n"], ["\n  margin-top: 20px;\n  display: none;\n  padding: 0;\n  ", " {\n    display: grid;\n    grid-template-columns: 20% 50% 30%;\n    padding: 0 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
