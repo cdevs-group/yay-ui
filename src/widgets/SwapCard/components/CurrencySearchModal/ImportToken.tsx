@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
+import { transparentize } from "polished";
+import styled from "styled-components";
 import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
 import { ErrorIcon } from "../../../../components/Svg";
 import { Flex } from "../../../../components/Box";
-import { Message } from "../../../../components/Message";
 import { CheckboxInput } from "../../../../components/CheckboxInput";
 import { Link } from "../../../../components/Link";
 import { Tag } from "../../../../components/Tag";
 import { Grid } from "../../../../components/Box";
 import { AutoColumn } from "../../../../components/Layout/Column";
-import { ListLogo } from "../../../../components/Logo";
 
 export interface InjectedImportTokenProps {
   tokens: any[];
   handleCurrencySelect?: (currency: any) => void;
-  srcs: string[];
+  listLogo: ReactNode;
   texts: {
     createToken: string;
     purchaseToken: string;
@@ -25,19 +25,16 @@ export interface InjectedImportTokenProps {
     importText: string;
   };
   addToken: (token: any) => void;
-  chainId: any;
-  inactiveTokenList: {
-    logoURI: string;
-    name: string;
-  };
-  truncateHash: string;
+  chainId: number;
+  inactiveTokenList: any;
+  truncateHash: any;
   bscScanLink: string;
 }
 
 function ImportToken({
   tokens,
   handleCurrencySelect,
-  srcs,
+  listLogo,
   texts,
   addToken,
   chainId,
@@ -51,8 +48,8 @@ function ImportToken({
 
   return (
     <AutoColumn gap="lg">
-      <Message variant="warning">
-        <Text>
+      <Message>
+        <Text color="green">
           {createToken}
           <br />
           <br />
@@ -65,14 +62,7 @@ function ImportToken({
         return (
           <Grid key={token.address} gridTemplateRows="1fr 1fr 1fr" gridGap="4px">
             {inactiveTokenList !== undefined ? (
-              <Tag
-                variant="success"
-                outline
-                scale="sm"
-                startIcon={
-                  inactiveTokenList.logoURI && <ListLogo srcs={srcs} logoURI={inactiveTokenList.logoURI} size="12px" />
-                }
-              >
+              <Tag variant="success" outline scale="sm" startIcon={inactiveTokenList.logoURI && listLogo}>
                 {via} {inactiveTokenList.name}
               </Tag>
             ) : (
@@ -128,3 +118,9 @@ function ImportToken({
 }
 
 export default ImportToken;
+
+const Message = styled.div`
+  padding: 20px;
+  background: ${({ theme }) => transparentize(0.9, theme.colors.green)};
+  border-radius: 12px;
+`;

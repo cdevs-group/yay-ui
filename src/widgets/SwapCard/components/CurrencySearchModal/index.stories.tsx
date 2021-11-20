@@ -7,6 +7,8 @@ import ManageTokens from "./ManageTokens";
 import Manage from "./Manage";
 import ManageLists from "./ManageLists";
 import { BNB } from "../../../../constants/images";
+import ImportRow from "./ImportRow";
+import ImportToken from "./ImportToken";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
@@ -195,8 +197,27 @@ export const CurrencySearchModalBlock = () => {
 
         if (showImport && token) {
           return (
-            <></>
-            // <ImportRow style={style} token={token} showImportView={showImportView} setImportToken={setImportToken} dim />
+            <ImportRow
+              style={style}
+              token={token}
+              dim
+              handleClickImport={() => {
+                if (setImportToken) {
+                  setImportToken(token);
+                }
+                showImportView();
+              }}
+              list={listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current}
+              isAdded
+              isActive={false}
+              currencyLogo={<img src={BNB} />}
+              listLogo={<img src={BNB} />}
+              texts={{
+                via: "via",
+                import: "import",
+                active: "active",
+              }}
+            />
           );
         }
         return (
@@ -226,6 +247,29 @@ export const CurrencySearchModalBlock = () => {
     );
   };
 
+  const ImportTokenComponent = () => {
+    return (
+      <ImportToken
+        tokens={filteredSortedTokens}
+        handleCurrencySelect={() => {}}
+        listLogo={<img src={BNB} />}
+        texts={{
+          createToken: "createToken",
+          purchaseToken: "purchaseToken",
+          via: "via",
+          unknownSource: "unknownSource",
+          viewOnbscScan: "viewOnbscScan",
+          understanding: "understanding",
+          importText: "importText",
+        }}
+        addToken={() => {}}
+        chainId={56}
+        inactiveTokenList={inactiveTokenList}
+        truncateHash={() => {}}
+        bscScanLink="http://dlsknjknsdv.v"
+      />
+    );
+  };
   const CurrencySearchComponent = () => {
     const [valueInput, setValueInput] = useState();
 
@@ -257,7 +301,7 @@ export const CurrencySearchModalBlock = () => {
         setModalView={setModalView}
         texts={{ manageTokens: "Manage Tokens" }}
         currencySearchComponent={<CurrencySearchComponent />}
-        importTokenComponent={<></>}
+        importTokenComponent={<ImportTokenComponent />}
         importListComponent={<></>}
         manageComponent={<ManageBlock />}
         importToken={importToken}
@@ -3430,4 +3474,155 @@ const listsTokensManage = {
     error: null,
     loadingRequestId: "SG0kQnGjD09tCLY2-Fbv3",
   },
+};
+
+const inactiveTokenList = {
+  "56": {
+    "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82": {
+      token: {
+        decimals: 18,
+        symbol: "CAKE",
+        name: "PancakeSwap Token",
+        chainId: 56,
+        address: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+        tokenInfo: {
+          name: "PancakeSwap Token",
+          symbol: "CAKE",
+          address: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+          chainId: 56,
+          decimals: 18,
+          logoURI: "https://tokens.pancakeswap.finance/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png",
+        },
+        tags: [],
+      },
+      list: {
+        name: "PancakeSwap Extended",
+        timestamp: "2021-11-18T09:53:47.484Z",
+        version: {
+          major: 2,
+          minor: 16,
+          patch: 41,
+        },
+        logoURI:
+          "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/logo.png",
+        keywords: ["pancakeswap", "extended"],
+        tokens: [
+          {
+            name: "PancakeSwap Token",
+            symbol: "CAKE",
+            address: "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png",
+          },
+          {
+            name: "Cardano Token",
+            symbol: "ADA",
+            address: "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47.png",
+          },
+          {
+            name: "AdEx Network",
+            symbol: "ADX",
+            address: "0x6bfF4Fb161347ad7de4A625AE5aa3A1CA7077819",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0x6bfF4Fb161347ad7de4A625AE5aa3A1CA7077819.png",
+          },
+          {
+            name: "My Neigbor Alice",
+            symbol: "ALICE",
+            address: "0xAC51066d7bEC65Dc4589368da368b212745d63E8",
+            chainId: 56,
+            decimals: 6,
+            logoURI: "https://tokens.pancakeswap.finance/images/0xAC51066d7bEC65Dc4589368da368b212745d63E8.png",
+          },
+          {
+            name: "AlpaToken",
+            symbol: "ALPA",
+            address: "0xc5E6689C9c8B02be7C49912Ef19e79cF24977f03",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0xc5E6689C9c8B02be7C49912Ef19e79cF24977f03.png",
+          },
+          {
+            name: "Alpaca",
+            symbol: "ALPACA",
+            address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F.png",
+          },
+        ],
+      },
+    },
+    "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47": {
+      token: {
+        decimals: 18,
+        symbol: "ADA",
+        name: "Cardano Token",
+        chainId: 56,
+        address: "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47",
+        tokenInfo: {
+          name: "Cardano Token",
+          symbol: "ADA",
+          address: "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47",
+          chainId: 56,
+          decimals: 18,
+          logoURI: "https://tokens.pancakeswap.finance/images/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47.png",
+        },
+        tags: [],
+      },
+      list: {
+        name: "PancakeSwap Top 100",
+        timestamp: "2021-09-17T08:04:09.127Z",
+        version: {
+          major: 2,
+          minor: 16,
+          patch: 9,
+        },
+        logoURI:
+          "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82/logo.png",
+        keywords: ["pancakeswap", "top 100"],
+        tokens: [
+          {
+            name: "Cardano Token",
+            symbol: "ADA",
+            address: "0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47.png",
+          },
+          {
+            name: "ALICE",
+            symbol: "ALICE",
+            address: "0xAC51066d7bEC65Dc4589368da368b212745d63E8",
+            chainId: 56,
+            decimals: 6,
+            logoURI: "https://tokens.pancakeswap.finance/images/0xAC51066d7bEC65Dc4589368da368b212745d63E8.png",
+          },
+          {
+            name: "AlinX",
+            symbol: "ALIX",
+            address: "0xaF6Bd11A6F8f9c44b9D18f5FA116E403db599f8E",
+            chainId: 56,
+            decimals: 18,
+            logoURI:
+              "https://assets.trustwalletapp.com/blockchains/smartchain/assets/0xaF6Bd11A6F8f9c44b9D18f5FA116E403db599f8E/logo.png",
+          },
+          {
+            name: "AlphaToken",
+            symbol: "ALPHA",
+            address: "0xa1faa113cbE53436Df28FF0aEe54275c13B40975",
+            chainId: 56,
+            decimals: 18,
+            logoURI: "https://tokens.pancakeswap.finance/images/0xa1faa113cbE53436Df28FF0aEe54275c13B40975.png",
+          },
+        ],
+      },
+    },
+  },
+  "97": {},
 };

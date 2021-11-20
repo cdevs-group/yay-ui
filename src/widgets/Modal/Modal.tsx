@@ -38,8 +38,8 @@ export const ModalBody = styled(Flex)`
 `;
 
 export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string }>`
-  padding: 30px
-  max-width: ${({ maxWidth }) => maxWidth || "404px"}
+  padding: 30px;
+  max-width: ${({ maxWidth }) => maxWidth || "404px"};
   max-height: 100vh;
   min-width: ${({ minWidth }) => minWidth || "303px"};
   width: 100%;
