@@ -28,8 +28,12 @@ export default function Manage({
         scale="sm"
         mb="32px"
       >
-        <ButtonMenuItem width="50%">{texts.lists}</ButtonMenuItem>
-        <ButtonMenuItem width="50%">{texts.tokens}</ButtonMenuItem>
+        <ButtonMenuItem width="50%" colorActive="#4BE43E">
+          {texts.lists}
+        </ButtonMenuItem>
+        <ButtonMenuItem width="50%" colorActive="#4BE43E">
+          {texts.tokens}
+        </ButtonMenuItem>
       </StyledButtonMenu>
       {showLists ? manageLists : manageTokens}
     </div>

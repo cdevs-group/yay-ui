@@ -9,6 +9,7 @@ import ManageLists from "./ManageLists";
 import { BNB } from "../../../../constants/images";
 import ImportRow from "./ImportRow";
 import ImportToken from "./ImportToken";
+import ImportList from "./ImportList";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
@@ -55,7 +56,11 @@ export const CurrencySearchModalBlock = () => {
     const [valueInput, setValueInput] = useState();
     return (
       <ManageLists
-        tempList={undefined}
+        tempList={{
+          name: 'NAME TOKEN',
+          logoURI: 'vkdvn',
+          tokens: ['c']
+        }}
         addError="Enter valid list location"
         lists={listsTokensManage}
         activeListUrls={[]}
@@ -70,7 +75,7 @@ export const CurrencySearchModalBlock = () => {
           import: "import",
         }}
         unsupportedListUrls={[]}
-        listLogo={<></>}
+        listLogo={<img src={BNB} />}
         handleImport={() => {}}
         listRowProps={{
           list: listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current,
@@ -87,7 +92,7 @@ export const CurrencySearchModalBlock = () => {
           isActive: true,
           handleDisableList: () => {},
           handleEnableList: () => {},
-          listLogoRow: <></>,
+          listLogoRow: <img src={BNB} style={{ marginRight: 16 }} />,
         }}
       />
     );
@@ -103,10 +108,13 @@ export const CurrencySearchModalBlock = () => {
         }}
         searchQuery={valueInput}
         handleRemoveAll={() => {}}
-        currencyLogo={<></>}
+        currencyLogo={<img src={BNB} />}
         importRow={<></>}
         linkHref="lnlkdms"
-        userAddedTokens={[]}
+        userAddedTokens={[{
+          address: 'ldfmvlmdflvdfv',
+          symbol: 'SYMBOL'
+        }]}
         chainId={56}
         isAddressValid
         removeToken={() => {}}
@@ -254,7 +262,8 @@ export const CurrencySearchModalBlock = () => {
         handleCurrencySelect={() => {}}
         listLogo={<img src={BNB} />}
         texts={{
-          createToken: "createToken",
+          createToken:
+            "Anyone can create a BEP20 token on BSC with any name, including creating fake versions of existing tokens and tokens that claim to represent projects that do not have a token.",
           purchaseToken: "purchaseToken",
           via: "via",
           unknownSource: "unknownSource",
@@ -265,8 +274,35 @@ export const CurrencySearchModalBlock = () => {
         addToken={() => {}}
         chainId={56}
         inactiveTokenList={inactiveTokenList}
-        truncateHash={() => {}}
+        truncateHash="0x1AdfffgffghgfhfghDBc3"
         bscScanLink="http://dlsknjknsdv.v"
+      />
+    );
+  };
+  const ImportListComponent = () => {
+    return (
+      <ImportList
+        listURL="ldkld"
+        list={{
+          name: "Alpaca",
+          symbol: "ALPACA",
+          address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+          chainId: 56,
+          decimals: 18,
+          tokens: ["1"],
+          logoURI: "https://tokens.pancakeswap.finance/images/0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F.png",
+        }}
+        listLogo={<img src={BNB} />}
+        handleAddList={() => {}}
+        addError="addError"
+        texts={{
+          tokens: "tokens",
+          import: "Import",
+          adding: "By adding this list you are implicitly trusting that the data is correct.",
+          iUnderstand: "I understand",
+          importRisk: "Import at your own risk",
+          byAdding: "If you purchase a token from this list, you may not be able to sell it back.",
+        }}
       />
     );
   };
@@ -302,7 +338,7 @@ export const CurrencySearchModalBlock = () => {
         texts={{ manageTokens: "Manage Tokens" }}
         currencySearchComponent={<CurrencySearchComponent />}
         importTokenComponent={<ImportTokenComponent />}
-        importListComponent={<></>}
+        importListComponent={<ImportListComponent />}
         manageComponent={<ManageBlock />}
         importToken={importToken}
         importList={setImportToken}

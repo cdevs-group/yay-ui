@@ -279,7 +279,7 @@ export const ImportTokenWarningModalBlock = () => {
       onDismiss={() => null}
       onCancel={() => null}
       modalTitleText="Modal Title Text"
-      srcs={srcs}
+      listLogo={<></>}
       texts={{
         createToken: "Create Token",
         purchaseToken: "Purchase Token",
@@ -290,7 +290,7 @@ export const ImportTokenWarningModalBlock = () => {
         importText: "Import Text",
       }}
       addToken={addToken}
-      chainId="123456789"
+      chainId={123456789}
       inactiveTokenList={inactiveTokenList}
       truncateHash="123456789"
       bscScanLink="https://storybook.js.org/"
@@ -547,7 +547,7 @@ export const SwapBlock = () => {
   const Container = styled.div`
     display: flex;
     justify-content: center;
-  `
+  `;
   return (
     <Container>
       <Swap
@@ -569,8 +569,8 @@ export const SwapBlock = () => {
             balance: "Balance",
             numericalInputTitle: "Numerical Input Title",
             max: "Max",
-            currencySelect: "Currency"
-          }
+            currencySelect: "Currency",
+          },
         }}
         currencyInputPanelTo={{
           value: "0.0",
@@ -590,8 +590,8 @@ export const SwapBlock = () => {
             balance: "Balance",
             numericalInputTitle: "Numerical Input Title",
             max: "Max",
-            currencySelect: "Currency"
-          }
+            currencySelect: "Currency",
+          },
         }}
         appHeader={{
           title: "App Title",
@@ -603,7 +603,7 @@ export const SwapBlock = () => {
             modalTitle: "Recent Transactions",
             modalBodyText: "Recent Transactions",
             ModalButton: "Clear All",
-            ModalAlternativeText: "Modal Alternative Lorem Text"
+            ModalAlternativeText: "Modal Alternative Lorem Text",
           },
           pendingTransaction: transaction,
           confirmedTransaction: transaction,
@@ -613,11 +613,11 @@ export const SwapBlock = () => {
           bscScanLink: "https://storybook.js.org/",
           summary: "MMИСМИ",
           pending: true,
-          success: true
+          success: true,
         }}
         ArrowDownIconComponent={{
           color: "green",
-          onClick: () => null
+          onClick: () => null,
         }}
         AddressInputPanelComponent={{
           id: "12345",
@@ -628,7 +628,7 @@ export const SwapBlock = () => {
           inputPlaceholderText: "Input Placeholder Text",
           ENS: { address: "Address", loading: false, name: "Some Name" },
           chainId: 123456789,
-          bscScanLink: "https://storybook.js.org/"
+          bscScanLink: "https://storybook.js.org/",
         }}
         AdvancedSwapDetailsDropdownComponent={{
           trade: trade,
@@ -649,9 +649,13 @@ export const SwapBlock = () => {
             realizedLPFeeText: "Realized LP Fee Text",
           },
           errorText: <div>Some Error Text</div>,
-          showRoute: true
+          showRoute: true,
         }}
-        ConnectWalletButton={<Button width="100%" variant="green" marginTop="25px">Connect Wallet</Button>}
+        ConnectWalletButton={
+          <Button width="100%" variant="green" marginTop="25px">
+            Connect Wallet
+          </Button>
+        }
         swapIsUnsupported={false}
         showFooter={false}
         showWrap={false}
@@ -667,7 +671,7 @@ export const SwapBlock = () => {
           bscScanLink: "https://storybook.js.org/",
           unsupportedTokens: {
             address: "https://storybook.js.org/",
-          }
+          },
         }}
         texts={{
           removeSendButton: "Remove Send Button",
@@ -679,7 +683,7 @@ export const SwapBlock = () => {
           priceImpactSeverityButton: "Price Impact Severity Button",
           liquidityText: "Liquidity Text",
           priceImpactSeverityButtonError: "Price Impact Severity Button Error",
-          recipientButton: "Recipient Button"
+          recipientButton: "Recipient Button",
         }}
         TradePriceComponent={{
           price: true,
@@ -687,11 +691,11 @@ export const SwapBlock = () => {
           setShowInverted: () => null,
           show: true,
           label: "label",
-          formattedPrice: "1231"
+          formattedPrice: "1231",
         }}
         ProgressStepsComponent={{
           steps: [true, true, true, false, true, false, false, true],
-          disabled: false
+          disabled: false,
         }}
         SwapCallbackErrorText="Swap Callback Error Text"
         ConfirmSwapModalComponent={{
@@ -750,7 +754,7 @@ export const SwapBlock = () => {
           buttonSwap: <Button>Button</Button>,
           truncatedTextColorFrom: "green",
           truncatedTextColorTo: "yellow",
-          showAcceptChanges: true
+          showAcceptChanges: true,
         }}
       />
     </Container>

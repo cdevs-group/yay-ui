@@ -24,12 +24,14 @@ const SafemoonWarning = ({ texts }: SafemoonWarningProps) => {
 
   return (
     <>
-      <Text>{tradeSafeMoon} </Text>
-      <Text>• {clickSettingIcon}</Text>
-      <Text mb="24px">• {slippageToleranceSetting}</Text>
-      <Text>{feeTransaction}</Text>
-      <Text>• {feeFivePercentAllHolders}</Text>
-      <Text>• {feeFivePercentAddLiquidity}</Text>
+      <Text color="redBg">{tradeSafeMoon} </Text>
+      <Text color="redBg">• {clickSettingIcon}</Text>
+      <Text mb="24px" color="redBg">
+        • {slippageToleranceSetting}
+      </Text>
+      <Text color="redBg">{feeTransaction}</Text>
+      <Text color="redBg">• {feeFivePercentAllHolders}</Text>
+      <Text color="redBg">• {feeFivePercentAddLiquidity}</Text>
     </>
   );
 };

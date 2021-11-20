@@ -21,13 +21,9 @@ const Wrapper = styled(Column)`
 `;
 
 const RowWrapper = styled(Row)<{ active: boolean }>`
-  background-color: ${({ active, theme }) => (active ? `${theme.colors.success}19` : "transparent")};
-  border: solid 1px;
-  border-color: ${({ active, theme }) => (active ? theme.colors.success : theme.colors.tertiary)};
   transition: 200ms;
   align-items: center;
-  padding: 1rem;
-  border-radius: 20px;
+  margin-bottom: 10px;
 `;
 
 function listUrlRowHTMLId(listUrl: string) {
@@ -53,7 +49,7 @@ const ListRow = memo(function ListRow({
       <LinkExternal external href={`https://tokenlists.org/token-list?url=${listUrl}`}>
         {texts.see}
       </LinkExternal>
-      <Button variant="danger" scale="xs" onClick={handleRemoveList} disabled={disabledButtonRemove}>
+      <Button variant="option" scale="xs" onClick={handleRemoveList} disabled={disabledButtonRemove}>
         {texts.remove}
       </Button>
       {pending && (
@@ -73,10 +69,10 @@ const ListRow = memo(function ListRow({
       {list.logoURI ? listLogoRow : <div style={{ width: "24px", height: "24px", marginRight: "1rem" }} />}
       <Column style={{ flex: "1" }}>
         <Row>
-          <Text bold>{list.name}</Text>
+          <Text>{list.name}</Text>
         </Row>
         <RowFixed mt="4px">
-          <Text fontSize="12px" mr="6px" textTransform="lowercase">
+          <Text fontSize="11px" mr="6px" textTransform="lowercase">
             {list.tokens.length} {texts.tokens}
           </Text>
           <span ref={targetRef}>
@@ -101,7 +97,6 @@ const ListRow = memo(function ListRow({
 const ListContainer = styled.div`
   padding: 1rem 0;
   height: 100%;
-  overflow: auto;
 `;
 
 function ManageLists({
@@ -174,34 +169,38 @@ function ManageLists({
             placeholder={texts.placeholder}
             value={listUrlInput}
             onChange={handleInput}
+            background="rgba(0, 0, 0, 0.25)"
+            padding="16px 23px"
+            placeholderOpacity
+            boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.2)"
           />
         </Row>
         {addError ? (
-          <Text color="failure" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+          <Text color="redBg" fontSize="11px" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
             {addError}
           </Text>
         ) : null}
       </AutoColumn>
       {tempList && (
-        <AutoColumn style={{ paddingTop: 0 }}>
+        <AutoColumn style={{ paddingTop: 0, marginTop: 20 }}>
           <div>
             <RowBetween>
               <RowFixed>
                 {tempList.logoURI && listLogo}
                 <AutoColumn gap="4px" style={{ marginLeft: "20px" }}>
                   <Text bold>{tempList.name}</Text>
-                  <Text color="textSubtle" small textTransform="lowercase">
+                  <Text color="text" fontSize="11px" textTransform="lowercase">
                     {tempList.tokens.length} {texts.tokens}
                   </Text>
                 </AutoColumn>
               </RowFixed>
               {isImported ? (
                 <RowFixed>
-                  <CheckIcon width="16px" mr="10px" />
+                  <CheckIcon width="16px" style={{ marginRight: 10 }} />
                   <Text>{texts.loaded}</Text>
                 </RowFixed>
               ) : (
-                <Button width="fit-content" onClick={handleImport}>
+                <Button width="fit-content" variant="text" scale="sm" onClick={handleImport}>
                   {texts.import}
                 </Button>
               )}

@@ -6,6 +6,7 @@ import { FixedSizeList } from "react-window";
 import Column, { AutoColumn } from "../../../../components/Layout/Column";
 import Row from "../../../../components/Layout/Row";
 import { InputSearch } from "../../../..";
+import { OneGhost2 } from "../../../../constants/images";
 
 interface CurrencySearchProps {
   onCurrencySelect: (currency: any) => void;
@@ -21,6 +22,7 @@ interface CurrencySearchProps {
   debouncedQuery: any;
   filteredSortedTokens: any;
   filteredInactiveTokens: any;
+  imgNoResult?: ReactNode;
 }
 
 function CurrencySearch({
@@ -37,6 +39,7 @@ function CurrencySearch({
   currencyList,
   showCommonBases,
   importRow,
+  imgNoResult,
 }: CurrencySearchProps) {
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>();
@@ -105,8 +108,9 @@ function CurrencySearch({
         ) : filteredSortedTokens?.length > 0 || filteredInactiveTokens?.length > 0 ? (
           <Box margin="24px -24px">{currencyList}</Box>
         ) : (
-          <Column style={{ padding: "20px", height: "100%" }}>
-            <Text color="textSubtle" textAlign="center" mb="20px">
+          <Column style={{ padding: "60px 0 100px", height: "100%", alignItems: "center" }}>
+            {imgNoResult || <img src={OneGhost2} alt="" />}
+            <Text color="text" textAlign="center" style={{ opacity: 0.7 }}>
               {notResultText}
             </Text>
           </Column>

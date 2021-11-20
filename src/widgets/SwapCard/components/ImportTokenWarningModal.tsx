@@ -13,7 +13,7 @@ const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({
   onDismiss,
   onCancel,
   modalTitleText,
-  srcs,
+  listLogo,
   texts,
   addToken,
   chainId,
@@ -30,12 +30,12 @@ const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({
         }
         onCancel();
       }}
-      style={{ maxWidth: "420px" }}
+      style={{ maxWidth: "420px" }}      
     >
       <ImportToken
         tokens={tokens}
         handleCurrencySelect={onDismiss}
-        srcs={srcs}
+        listLogo={listLogo}
         texts={texts}
         addToken={addToken}
         chainId={chainId}

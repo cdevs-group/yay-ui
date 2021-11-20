@@ -4,6 +4,7 @@ import { BaseButtonProps, Scale } from "../Button/types";
 
 export interface ButtonMenuItemProps extends BaseButtonProps {
   isActive?: boolean;
+  colorActive?: string;
 }
 
 export interface ButtonMenuProps extends SpaceProps, TypographyProps {
