@@ -9805,7 +9805,7 @@ var Title$3 = styled__default['default'](Flex)(templateObject_2$7 || (templateOb
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Table = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  overflow-y: auto;\n  max-height: 300px;\n"], ["\n  overflow-y: auto;\n  max-height: 300px;\n"])));
+var Table = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  overflow-y: auto;\n  max-height: 301px;\n"], ["\n  overflow-y: auto;\n  max-height: 301px;\n"])));
 var Line = styled__default['default'].div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 20% 50% 30%;\n  padding: 0 10px;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 20% 50% 30%;\n  }\n"], ["\n  display: grid;\n  grid-template-columns: 20% 50% 30%;\n  padding: 0 10px;\n  transition: 0.3s;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.05em;\n  &.active {\n    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));\n    background: #292930;\n  }\n  ", " {\n    font-size: 15px;\n    line-height: 19px;\n    grid-template-columns: 20% 50% 30%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;

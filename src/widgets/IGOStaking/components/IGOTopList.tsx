@@ -65,7 +65,7 @@ const Title = styled(Flex)`
 `;
 const Table = styled.div`
   overflow-y: auto;
-  max-height: 300px;
+  max-height: 301px;
 `;
 const Line = styled.div`
   display: grid;
