@@ -1,14 +1,13 @@
-import React, { useState, useCallback } from "react";
+import { transparentize } from "polished";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, CheckboxInput, Flex, Link, Text } from "../../../..";
 import { AutoColumn } from "../../../../components/Layout/Column";
 import { RowBetween, RowFixed } from "../../../../components/Layout/Row";
-import { Message } from "../../../../components/Message";
 
 interface ImportProps {
   listURL: string;
   list: any;
-
   listLogo: React.ReactNode;
   handleAddList: () => void;
   addError: string | null;
@@ -18,6 +17,7 @@ interface ImportProps {
     adding: string;
     iUnderstand: string;
     importRisk: string;
+    byAdding: string;
   };
 }
 
@@ -51,7 +51,7 @@ function ImportList({ listURL, list, listLogo, handleAddList, addError, texts }:
                       {list.name}
                     </Text>
                     <TextDot />
-                    <Text small color="textSubtle" ml="6px">
+                    <Text small color="textGray" ml="6px">
                       {list.tokens.length} {texts.tokens}
                     </Text>
                   </RowFixed>
@@ -69,16 +69,16 @@ function ImportList({ listURL, list, listLogo, handleAddList, addError, texts }:
             </RowBetween>
           </div>
 
-          <Message variant="danger">
+          <Message>
             <Flex flexDirection="column">
-              <Text fontSize="20px" textAlign="center" color="redBg" mb="16px">
+              <Text fontSize="20px" color="redBg" mb="16px">
                 {texts.importRisk}
               </Text>
               <Text color="redBg" mb="8px">
                 {texts.adding}
               </Text>
               <Text bold color="redBg" mb="16px">
-                {typeof "If you purchase a token from this list, you may not be able to sell it back."}
+                {texts.byAdding}
               </Text>
               <Flex alignItems="center">
                 <CheckboxInput
@@ -95,11 +95,11 @@ function ImportList({ listURL, list, listLogo, handleAddList, addError, texts }:
             </Flex>
           </Message>
 
-          <Button disabled={!confirmed} onClick={handleAddList}>
+          <Button disabled={!confirmed} onClick={handleAddList} variant="option">
             {texts.import}
           </Button>
           {addError ? (
-            <Text color="failure" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+            <Text color="redBg" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
               {addError}
             </Text>
           ) : null}
@@ -110,3 +110,9 @@ function ImportList({ listURL, list, listLogo, handleAddList, addError, texts }:
 }
 
 export default ImportList;
+
+const Message = styled.div`
+  padding: 20px;
+  background: ${({ theme }) => transparentize(0.9, theme.colors.redBg)};
+  border-radius: 12px;
+`;

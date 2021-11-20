@@ -3,13 +3,12 @@ import { transparentize } from "polished";
 import styled from "styled-components";
 import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
-import { ErrorIcon } from "../../../../components/Svg";
 import { Flex } from "../../../../components/Box";
 import { CheckboxInput } from "../../../../components/CheckboxInput";
 import { Link } from "../../../../components/Link";
-import { Tag } from "../../../../components/Tag";
 import { Grid } from "../../../../components/Box";
 import { AutoColumn } from "../../../../components/Layout/Column";
+import { ellipsis } from "../../../../helpers/ellipsis";
 
 export interface InjectedImportTokenProps {
   tokens: any[];
@@ -56,19 +55,19 @@ function ImportToken({
           {purchaseToken}
         </Text>
       </Message>
-
       {tokens.map((token: any) => {
-        const address = token.address ? `${truncateHash}` : null;
+        const address = token.address ? `${ellipsis(truncateHash, 5)}` : null;
         return (
           <Grid key={token.address} gridTemplateRows="1fr 1fr 1fr" gridGap="4px">
             {inactiveTokenList !== undefined ? (
-              <Tag variant="success" outline scale="sm" startIcon={inactiveTokenList.logoURI && listLogo}>
-                {via} {inactiveTokenList.name}
-              </Tag>
+              <Flex alignItems="center">
+                {inactiveTokenList.logoURI && listLogo}
+                <Text color="green">
+                  {via} {inactiveTokenList.name}
+                </Text>
+              </Flex>
             ) : (
-              <Tag variant="failure" outline scale="sm" startIcon={<ErrorIcon color="failure" />}>
-                {unknownSource}
-              </Tag>
+              <Text color="redBg">{unknownSource}</Text>
             )}
             <Flex alignItems="center">
               <Text mr="8px">{token.name}</Text>
@@ -100,7 +99,7 @@ function ImportToken({
           </Text>
         </Flex>
         <Button
-          variant="danger"
+          variant="option"
           disabled={!confirmed}
           onClick={() => {
             tokens.map((token) => addToken(token));

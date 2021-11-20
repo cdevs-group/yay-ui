@@ -1,27 +1,15 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled from "styled-components";
 import { InputProps, scales } from "./types";
+import { space, background, boxShadow, SpaceProps, BackgroundProps, BoxShadowProps } from "styled-system";
 
-interface StyledInputProps extends InputProps {
-  theme: DefaultTheme;
+interface StyledInputProps extends InputProps, SpaceProps, BackgroundProps, BoxShadowProps {
+  placeholderOpacity?: boolean;
 }
 
-const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
-  switch (scale) {
-    case scales.SM:
-      return "32px";
-    case scales.LG:
-      return "48px";
-    case scales.MD:
-    default:
-      return "40px";
-  }
-};
-
-const Input = styled.input<InputProps>`
+const Input = styled.input<StyledInputProps>`
   color: ${({ theme }) => theme.colors.text};
   display: block;
   font-size: 16px;
-  /* height: ${getHeight}; */
   outline: 0;
   padding: 0;
   background: none;
@@ -31,9 +19,14 @@ const Input = styled.input<InputProps>`
   font-size: 17px;
   line-height: 22px;
   letter-spacing: 0.5px;
-
+  border-radius: 12px;
+  ${background}
+  ${space}
+  ${boxShadow}
+ 
   &::placeholder {
     color: ${({ theme }) => theme.colors.text};
+    opacity: ${({ placeholderOpacity }) => (placeholderOpacity ? 0.7 : 1)};
   }
 
   &:disabled {
