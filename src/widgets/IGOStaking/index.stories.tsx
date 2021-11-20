@@ -109,7 +109,7 @@ export const TopListBlock: React.FC = () => {
     },
     {
       position: "5",
-      wallet: "dhc52r6x87agshe",
+      wallet: "dhc521r6x87agshe",
       staked: "56382",
     },
     {
