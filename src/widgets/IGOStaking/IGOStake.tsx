@@ -74,8 +74,8 @@ const IGOStake = ({
       <TopLine>
         <TopBlock title={texts.totalStake} value={totalValue} />
         <TopBlock title={texts.myStake} value={myStakeValue} />
-        <TopBlock title={texts.avaible} value={avaibleValue} />
-        <TopBlock title={texts.tookPart} value={tookPartValue} />
+        <TopBlock id="available" title={texts.avaible} value={avaibleValue} />
+        <TopBlock id="stake" title={texts.tookPart} value={tookPartValue} />
       </TopLine>
       <MainLine>
         <Stake

@@ -42,6 +42,7 @@ import DESU_TOKEN from "../../public/images/desu.png";
 import BSC_ICON from "../../public/images/bsc-icon.png";
 import MAIN_GAME from "../../public/images/main-game.png";
 import WALLET_KYC from "../../public/images/wallet-kyc.png";
+import BLUR from "../../public/images/blur.png";
 
 export {
   BG_IMG,
@@ -88,4 +89,5 @@ export {
   BSC_ICON,
   MAIN_GAME,
   WALLET_KYC,
+  BLUR,
 };
