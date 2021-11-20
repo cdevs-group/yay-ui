@@ -97,7 +97,6 @@ const ListRow = memo(function ListRow({
 const ListContainer = styled.div`
   padding: 1rem 0;
   height: 100%;
-  overflow: auto;
 `;
 
 function ManageLists({
@@ -173,16 +172,17 @@ function ManageLists({
             background="rgba(0, 0, 0, 0.25)"
             padding="16px 23px"
             placeholderOpacity
+            boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.2)"
           />
         </Row>
         {addError ? (
-          <Text color="redBg" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
+          <Text color="redBg" fontSize="11px" style={{ textOverflow: "ellipsis", overflow: "hidden" }}>
             {addError}
           </Text>
         ) : null}
       </AutoColumn>
       {tempList && (
-        <AutoColumn style={{ paddingTop: 0 }}>
+        <AutoColumn style={{ paddingTop: 0, marginTop: 20 }}>
           <div>
             <RowBetween>
               <RowFixed>
@@ -200,7 +200,7 @@ function ManageLists({
                   <Text>{texts.loaded}</Text>
                 </RowFixed>
               ) : (
-                <Button width="fit-content" variant="green" scale="sm" onClick={handleImport}>
+                <Button width="fit-content" variant="text" scale="sm" onClick={handleImport}>
                   {texts.import}
                 </Button>
               )}

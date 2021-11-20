@@ -1,20 +1,15 @@
 import React, { useEffect } from "react";
 import styled, { useTheme } from "styled-components";
 import { ModalContent as ModalBody, StyledModal as ModalContainer, ModalHeader } from "../../../Modal/Modal";
-import { Message } from "../../../../components/Message";
 import { Box } from "../../../../components/Box";
 import { Heading } from "../../../../components/Heading";
 import SafemoonWarning, { SafemoonWarningProps } from "./SafemoonWarning";
 import BondlyWarning from "./BondlyWarning";
 import Acknowledgement, { AcknowledgementTexsts } from "./Acknowledgement";
+import { transparentize } from "polished";
 
 const StyledModalContainer = styled(ModalContainer)`
   max-width: 440px;
-`;
-
-const MessageContainer = styled(Message)`
-  align-items: flex-start;
-  justify-content: flex-start;
 `;
 
 interface SwapWarningModalProps {
@@ -74,14 +69,14 @@ const SwapWarningModal: React.FC<SwapWarningModalProps & SafemoonWarningProps & 
   const SWAP_WARNING = TOKEN_WARNINGS[swapCurrency.address];
 
   return (
-    <StyledModalContainer minWidth="280px">
-      <ModalHeader background={theme.colors.card}>
-        <Heading p="12px 24px">{noticeForTradingText}</Heading>
+    <StyledModalContainer>
+      <ModalHeader background={theme.colors.cardBg}>
+        <Heading pt="12px">{noticeForTradingText}</Heading>
       </ModalHeader>
-      <ModalBody p="24px">
-        <MessageContainer variant="warning" mb="24px">
+      <ModalBody p="0 24px 24px 24px">
+        <Message>
           <Box>{SWAP_WARNING.component}</Box>
-        </MessageContainer>
+        </Message>
         <Acknowledgement handleContinueClick={onDismiss} buttonText={buttonText} understandngText={understandngText} />
       </ModalBody>
     </StyledModalContainer>
@@ -89,3 +84,10 @@ const SwapWarningModal: React.FC<SwapWarningModalProps & SafemoonWarningProps & 
 };
 
 export default SwapWarningModal;
+
+const Message = styled.div`
+  padding: 20px;
+  margin-bottom: 24px;
+  background: ${({ theme }) => transparentize(0.9, theme.colors.redBg)};
+  border-radius: 12px; 
+`;

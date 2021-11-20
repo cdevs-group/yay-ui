@@ -48,18 +48,18 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
     <AutoColumn style={{ padding: "0 16px" }}>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="14px" color="textSubtle">
+          <Text fontSize="11px" color="text">
             {receivedOrSold}
           </Text>
           <QuestionHelper text={transactionHelper} ml="4px" />
         </RowFixed>
         <RowFixed>
-          <Text fontSize="14px">{slippageAdjusted}</Text>
+          <Text fontSize="11px">{slippageAdjusted}</Text>
         </RowFixed>
       </RowBetween>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="14px" color="textSubtle">
+          <Text fontSize="11px" color="text">
             {priceImpact}
           </Text>
           <QuestionHelper text={priceDifference} ml="4px" />
@@ -69,22 +69,24 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
 
       <RowBetween>
         <RowFixed>
-          <Text fontSize="14px" color="textSubtle">
+          <Text fontSize="11px" color="text">
             {fee}
           </Text>
           <QuestionHelper
             text={
               <>
-                <Text mb="12px">{amountFee}</Text>
-                <Text>- {amountLP}</Text>
-                <Text>- {amountTreasury}</Text>
-                <Text>- {amountTowards}</Text>
+                <Text mb="12px" fontSize="11px">
+                  {amountFee}
+                </Text>
+                <Text fontSize="11px">- {amountLP}</Text>
+                <Text fontSize="11px">- {amountTreasury}</Text>
+                <Text fontSize="11px">- {amountTowards}</Text>
               </>
             }
             ml="4px"
           />
         </RowFixed>
-        <Text fontSize="14px">{realizedLPFeeText}</Text>
+        <Text fontSize="11px">{realizedLPFeeText}</Text>
       </RowBetween>
     </AutoColumn>
   );
@@ -117,7 +119,7 @@ export function AdvancedSwapDetails({
             <>
               <RowBetween style={{ padding: "0 16px" }}>
                 <span style={{ display: "flex", alignItems: "center" }}>
-                  <Text fontSize="14px" color="textSubtle">
+                  <Text fontSize="11px" color="text">
                     {routeText}
                   </Text>
                   <QuestionHelper text={routingFromToken} ml="4px" />

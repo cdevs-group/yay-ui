@@ -7,8 +7,9 @@ import { Gift2 } from "../../constants/images";
 import get from "lodash/get";
 import { DefaultTheme, useTheme } from "styled-components";
 import { Flex } from "../../components/Box";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
-interface Props extends InjectedProps {
+interface Props extends InjectedProps, SpaceProps, LayoutProps {
   title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
@@ -20,6 +21,8 @@ interface Props extends InjectedProps {
   maxWidth?: string;
   onBack?: () => void;
 }
+
+interface StyledModalProps extends SpaceProps {}
 
 const getThemeValue =
   (path: string, fallback?: string | number) =>
@@ -37,17 +40,18 @@ export const ModalBody = styled(Flex)`
   overflow-y: auto;
 `;
 
-export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string; padding?: string | number }>`
-  padding: ${({ padding }) => padding || "30px"};
-  max-width: ${({ maxWidth }) => maxWidth || "404px"};
+export const StyledModal = styled.div<StyledModalProps>`
+  max-width: 404px;
   max-height: 100vh;
-  min-width: ${({ minWidth }) => minWidth || "303px"};
+  min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
+  ${space}
+  ${layout}
   ${({ theme }) => theme.mediaQueries.xs} {
     min-width: 360px;
     width: 100%;
@@ -119,13 +123,14 @@ const Modal: React.FC<Props> = ({
   headerBackground = "transparent",
   style,
   onBack,
-  maxWidth
+  maxWidth,
+  ...props
 }) => {
   const theme = useTheme();
   return (
     <div>
       <Overlay />
-      <StyledModal maxWidth={maxWidth}>
+      <StyledModal {...props}>
         <ModalContent>
           <ModalHeader
             className={welcome ? "welcome" : ""}

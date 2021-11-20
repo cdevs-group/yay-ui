@@ -5,7 +5,7 @@ import { Input } from "../../../../components/Input";
 import Column, { AutoColumn } from "../../../../components/Layout/Column";
 import Row, { RowBetween, RowFixed } from "../../../../components/Layout/Row";
 import { Link, LinkExternal } from "../../../../components/Link";
-import { CloseIcon } from "../../../../components/Svg";
+import { CloseIcon3 } from "../../../../components/Svg";
 import { Text } from "../../../../components/Text";
 
 const Wrapper = styled.div`
@@ -61,16 +61,16 @@ export default function ManageTokens({
     return (
       chainId &&
       userAddedTokens.map((token: any) => (
-        <RowBetween key={token.address} width="100%">
+        <RowBetween key={token.address} width="100%" marginTop="20px">
           <RowFixed>
             {currencyLogo}
-            <Link external href={linkHref} color="textSubtle" ml="10px">
+            <Link external href={linkHref} color="text" ml="10px">
               {token.symbol}
             </Link>
           </RowFixed>
           <RowFixed>
             <IconButton variant="text" onClick={() => removeToken(chainId, token.address)}>
-              <CloseIcon />
+              <CloseIcon3 />
             </IconButton>
             <LinkExternal href={linkHref} />
           </RowFixed>
@@ -93,18 +93,26 @@ export default function ManageTokens({
               ref={inputRef as RefObject<HTMLInputElement>}
               onChange={handleInput}
               isWarning={!isAddressValid}
+              background="rgba(0, 0, 0, 0.25)"
+              padding="16px 23px"
+              placeholderOpacity
+              boxShadow="inset 0px 4px 4px rgba(0, 0, 0, 0.2)"
             />
           </Row>
-          {!isAddressValid && <Text color="failure">{texts.errorValidText}</Text>}
+          {!isAddressValid && (
+            <Text color="redBg" fontSize="11px">
+              {texts.errorValidText}
+            </Text>
+          )}
           {importRow}
         </AutoColumn>
         {tokenList}
         <Footer>
-          <Text bold color="textSubtle">
+          <Text color="green">
             {userAddedTokens?.length} {userAddedTokens.length === 1 ? texts.customToken : texts.customTokens}
           </Text>
           {userAddedTokens.length > 0 && (
-            <Button variant="tertiary" onClick={handleRemoveAll}>
+            <Button variant="text" onClick={handleRemoveAll} scale="sm">
               {texts.clearAll}
             </Button>
           )}

@@ -32,7 +32,7 @@ const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick, 
           </Text>
         </Flex>
 
-        <Button disabled={!isConfirmed} onClick={handleContinueClick}>
+        <Button disabled={!isConfirmed} variant="green" scale="sm" onClick={handleContinueClick}>
           {buttonText}
         </Button>
       </Flex>

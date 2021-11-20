@@ -23,7 +23,7 @@ export const CurrencySearchModalBlock = () => {
     importToken,
     importList,
   }
-  const [modalView, setModalView] = useState<CurrencyModalView>(CurrencyModalView.manage);
+  const [modalView, setModalView] = useState<CurrencyModalView>(CurrencyModalView.search);
   const prevView = undefined;
   const [importToken, setImportToken] = useState<any>();
   const [listURL, setListUrl] = useState<string | undefined>();
@@ -111,7 +111,10 @@ export const CurrencySearchModalBlock = () => {
         currencyLogo={<img src={BNB} />}
         importRow={<></>}
         linkHref="lnlkdms"
-        userAddedTokens={[]}
+        userAddedTokens={[{
+          address: 'ldfmvlmdflvdfv',
+          symbol: 'SYMBOL'
+        }]}
         chainId={56}
         isAddressValid
         removeToken={() => {}}

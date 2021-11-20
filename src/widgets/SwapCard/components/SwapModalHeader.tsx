@@ -66,7 +66,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
       {/*</AutoColumn>*/}
       {recipient !== null ? (
         <AutoColumn justify="flex-start" gap="sm" style={{ padding: "12px 0 0 0px" }}>
-          <Text color="textSubtle">{texts.recipientSentToText}</Text>
+          <Text color="text">{texts.recipientSentToText}</Text>
         </AutoColumn>
       ) : null}
     </div>

@@ -46,7 +46,7 @@ function ImportToken({
   const [confirmed, setConfirmed] = useState(false);
 
   return (
-    <AutoColumn gap="lg">
+    <AutoColumn gap="lg" style={{ padding: "0 27px 27px 27px" }}>
       <Message>
         <Text color="green">
           {createToken}

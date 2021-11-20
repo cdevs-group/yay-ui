@@ -6,7 +6,7 @@ interface BondlyWarningProps {
 }
 
 const BondlyWarning = ({ bondlyWarningText }: BondlyWarningProps) => {
-  return <Text>{bondlyWarningText}</Text>;
+  return <Text color="redBg">{bondlyWarningText}</Text>;
 };
 
 export default BondlyWarning;
