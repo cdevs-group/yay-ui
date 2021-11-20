@@ -81,7 +81,7 @@ export const TopListBlock: React.FC = () => {
 
   const tabsList = ["All", "Hercules", "Perseus", "Argus", "Minos"];
   const texts = {
-    title: "Main pool",
+    title: "HEROS pool",
     wallet: "Wallet",
     staked: "YAY staked",
     tokenName: "YAY",

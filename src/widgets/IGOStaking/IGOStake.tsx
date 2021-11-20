@@ -165,7 +165,7 @@ const StyleText = styled(Text)`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1111;
+  z-index: 15;
   font-size: 25px;
   left: 0;
   top: 0;

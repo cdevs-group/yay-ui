@@ -9747,7 +9747,7 @@ var Claimed = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTempl
     var id = _a.id;
     return "-moz-element(#" + id + ")";
 });
-var StyleText = styled(Text)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 1111;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 1111;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"])));
+var StyleText = styled(Text)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"])));
 var templateObject_1$b, templateObject_2$8, templateObject_3$8, templateObject_4$7;
 
 var CardTopIndicator = function (_a) {
