@@ -41,6 +41,7 @@ import ROKET1 from "../../public/images/rocket1.png";
 import DESU_TOKEN from "../../public/images/desu.png";
 import BSC_ICON from "../../public/images/bsc-icon.png";
 import MAIN_GAME from "../../public/images/main-game.png";
+import WALLET_KYC from "../../public/images/wallet-kyc.png";
 
 export {
   BG_IMG,
@@ -86,4 +87,5 @@ export {
   DESU_TOKEN,
   BSC_ICON,
   MAIN_GAME,
+  WALLET_KYC,
 };
