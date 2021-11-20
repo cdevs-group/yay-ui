@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Flex, Tabs } from "../../..";
 import { IGOTopListProps } from "../types";
 import { ellipsis } from "../../../helpers/ellipsis";
-
+import Web3Utils from "web3-utils";
 const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, tabsList, toggleTab, activeTab }) => {
   return (
     <Wrapper>
@@ -27,7 +27,7 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
             <Cell>{item.position}</Cell>
             <Cell>{ellipsis(item.wallet, 6)}</Cell>
             <Cell>
-              {item.staked} {texts.tokenName}
+              {Web3Utils.fromWei(item.stake)} {texts.tokenName}
             </Cell>
           </Line>
         ))}

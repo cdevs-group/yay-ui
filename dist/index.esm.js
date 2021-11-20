@@ -12,6 +12,7 @@ import BigNumber from 'bignumber.js';
 import BigNumber$1 from 'bignumber.js/bignumber';
 import { Flipped, Flipper } from 'react-flip-toolkit';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Web3Utils from 'web3-utils';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -96,7 +97,7 @@ function __spreadArray(to, from, pack) {
             ar[i] = from[i];
         }
     }
-    return to.concat(ar || from);
+    return to.concat(ar || Array.prototype.slice.call(from));
 }
 
 function __makeTemplateObject(cooked, raw) {
@@ -3297,7 +3298,7 @@ var Bunny = styled.div(templateObject_2$1K || (templateObject_2$1K = __makeTempl
 });
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b; _a.size; var _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
-    var bunnies = __spreadArray([], Array(count)).map(function (_, index) { return (React__default.createElement(Bunny, { key: String(index), position: Math.random() * 100, iterations: iterations, duration: duration },
+    var bunnies = __spreadArray([], Array(count), true).map(function (_, index) { return (React__default.createElement(Bunny, { key: String(index), position: Math.random() * 100, iterations: iterations, duration: duration },
         React__default.createElement(Text, { color: "text" }, "Failing"))); });
     return React__default.createElement("div", null, bunnies);
 };
@@ -3396,7 +3397,7 @@ var TabsWithMovingLine = function (_a) {
     var _b = useState([]), widthTabsActive = _b[0], setWidthTabsActive = _b[1];
     useLayoutEffect(function () {
         if (refTab) {
-            refTab.forEach(function (el) { return setWidthTabsActive(function (prev) { var _a; return __spreadArray(__spreadArray([], prev), [((_a = el === null || el === void 0 ? void 0 : el.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 0]); }); });
+            refTab.forEach(function (el) { return setWidthTabsActive(function (prev) { var _a; return __spreadArray(__spreadArray([], prev, true), [((_a = el === null || el === void 0 ? void 0 : el.current) === null || _a === void 0 ? void 0 : _a.clientWidth) || 0], false); }); });
         }
     }, []);
     return (React__default.createElement(TopLine$2, null,
@@ -4381,7 +4382,7 @@ var useAccordeon = function (cards) {
     var filterCards = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) !== (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
     var filterActiveCard = useMemo(function () { return cards === null || cards === void 0 ? void 0 : cards.filter(function (el) { return (el === null || el === void 0 ? void 0 : el.id) === (active === null || active === void 0 ? void 0 : active.id); }); }, [active, cards]);
     useEffect(function () {
-        setNewCards(__spreadArray(__spreadArray([], filterActiveCard), filterCards));
+        setNewCards(__spreadArray(__spreadArray([], filterActiveCard, true), filterCards, true));
     }, [active, cards.length]);
     return { valueAccordeon: valueAccordeon, setValueAccordeon: setValueAccordeon, heightActiveBlock: heightActiveBlock, handleToggleAccordeon: handleToggleAccordeon, newCards: newCards, active: active, refHidden: refHidden };
 };
@@ -9782,7 +9783,7 @@ var IGOTopList = function (_a) {
             React__default.createElement(Cell, null, item.position),
             React__default.createElement(Cell, null, ellipsis(item.wallet, 6)),
             React__default.createElement(Cell, null,
-                item.staked,
+                Web3Utils.fromWei(item.stake),
                 " ",
                 texts.tokenName))); }))));
 };

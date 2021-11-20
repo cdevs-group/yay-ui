@@ -7,7 +7,7 @@ export interface IGOTopListProps {
     };
     topUsersList: Array<{
         position: string | number;
-        staked: string;
+        stake: string;
         wallet: string;
     }>;
     myWallet: string;
