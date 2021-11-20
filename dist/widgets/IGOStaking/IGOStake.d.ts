@@ -15,6 +15,7 @@ interface IGOStakeProps {
     cooldownDisabled: boolean;
     balance: string;
     time: number;
+    isBlur?: boolean;
     texts: {
         stakeTitle: string;
         stakeDescription: string;
@@ -39,5 +40,5 @@ interface IGOStakeProps {
     loadingApprove?: boolean;
     loadingStake?: boolean;
 }
-declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, }: IGOStakeProps) => JSX.Element;
+declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, isBlur, }: IGOStakeProps) => JSX.Element;
 export default IGOStake;

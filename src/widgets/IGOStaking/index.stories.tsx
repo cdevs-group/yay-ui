@@ -41,6 +41,7 @@ export const IGOStakeBlock = () => {
   return (
     <div>
       <IGOStake
+        isBlur
         onUserInput={(input) => null}
         iconBalanceInput={YAY_TOKEN}
         disabledInput={false}

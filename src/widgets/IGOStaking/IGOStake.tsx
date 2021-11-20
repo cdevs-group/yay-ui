@@ -3,6 +3,8 @@ import TopBlock from "./components/TopBlock";
 import styled from "styled-components";
 import Stake from "./components/Stake";
 import Unstake from "./components/Unstake";
+import { Text } from "../../components/Text";
+import { transparentize } from "polished";
 
 interface IGOStakeProps {
   handleCooldown: () => void | Promise<void>;
@@ -20,6 +22,7 @@ interface IGOStakeProps {
   cooldownDisabled: boolean;
   balance: string;
   time: number;
+  isBlur?: boolean;
   texts: {
     stakeTitle: string;
     stakeDescription: string;
@@ -68,35 +71,44 @@ const IGOStake = ({
   disableApprove,
   loadingStake,
   loadingApprove,
+  isBlur,
 }: IGOStakeProps) => {
   return (
-    <div>
-      <TopLine>
-        <TopBlock title={texts.totalStake} value={totalValue} />
-        <TopBlock title={texts.myStake} value={myStakeValue} />
-        <TopBlock id="available" title={texts.avaible} value={avaibleValue} />
-        <TopBlock id="stake" title={texts.tookPart} value={tookPartValue} />
-      </TopLine>
-      <MainLine>
-        <Stake
-          texts={texts}
-          onUserInput={onUserInput}
-          iconBalanceInput={iconBalanceInput}
-          disabledInput={disabledInput}
-          balance={balance}
-          tabsList={tabsList}
-          handleStake={handleStake}
-          handleApprove={handleApprove}
-          disableApprove={disableApprove}
-          disableStake={disableStake}
-          valueInput={valueInput}
-          tabValue={tabValue}
-          handleTab={handleTab}
-          loadingApprove={loadingApprove}
-          loadingStake={loadingStake}
-        />
-        <Unstake cooldownDisabled={cooldownDisabled} time={time} handleCooldown={handleCooldown} texts={texts} />
-      </MainLine>
+    <div style={{ position: "relative" }}>
+      <div id="stakeBlock">
+        <TopLine>
+          <TopBlock title={texts.totalStake} value={totalValue} />
+          <TopBlock title={texts.myStake} value={myStakeValue} />
+          <TopBlock id="available" title={texts.avaible} value={avaibleValue} />
+          <TopBlock id="stake" title={texts.tookPart} value={tookPartValue} />
+        </TopLine>
+        <MainLine>
+          <Stake
+            texts={texts}
+            onUserInput={onUserInput}
+            iconBalanceInput={iconBalanceInput}
+            disabledInput={disabledInput}
+            balance={balance}
+            tabsList={tabsList}
+            handleStake={handleStake}
+            handleApprove={handleApprove}
+            disableApprove={disableApprove}
+            disableStake={disableStake}
+            valueInput={valueInput}
+            tabValue={tabValue}
+            handleTab={handleTab}
+            loadingApprove={loadingApprove}
+            loadingStake={loadingStake}
+          />
+          <Unstake cooldownDisabled={cooldownDisabled} time={time} handleCooldown={handleCooldown} texts={texts} />
+        </MainLine>
+      </div>
+      {isBlur && (
+        <>
+          <Claimed id="stakeBlock" />
+          <StyleText>Change network to AVAX</StyleText>
+        </>
+      )}
     </div>
   );
 };
@@ -124,4 +136,37 @@ const MainLine = styled(TopLine)`
     grid-template-columns: repeat(2, 1fr);
     gap: 0 15px;
   }
+`;
+const Claimed = styled.div<{ id: string }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgGray)};
+  transition: 0.3s;
+  pointer-events: none;
+  border-radius: 20px;
+  z-index: 1;
+  background-image: ${({ id }) => `-moz-element(#${id})`};
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  filter: blur(10px);
+`;
+const StyleText = styled(Text)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1111;
+  font-size: 25px;
+  left: 0;
+  top: 0;
 `;
