@@ -37,8 +37,8 @@ export const ModalBody = styled(Flex)`
   overflow-y: auto;
 `;
 
-export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string }>`
-  padding: 30px;
+export const StyledModal = styled.div<{ minWidth?: string; maxWidth?: string; padding?: string | number }>`
+  padding: ${({ padding }) => padding || "30px"};
   max-width: ${({ maxWidth }) => maxWidth || "404px"};
   max-height: 100vh;
   min-width: ${({ minWidth }) => minWidth || "303px"};

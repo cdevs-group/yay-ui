@@ -6,9 +6,9 @@ import TransactionConfirmationModal, {
   TransactionSubmittedContentProps,
   ConfirmationPendingContentTextProps,
 } from "../../../components/TransactionConfirmationModal";
-import { SwapModalHeaderProps } from "../types";
 import SwapModalFooter from "./SwapModalFooter";
 import SwapModalHeader from "./SwapModalHeader";
+import { ButtonProps } from "../../../components/Button/types";
 
 export interface ConfirmSwapModalProps {
   trade?: any;
@@ -23,7 +23,9 @@ export interface ConfirmSwapModalProps {
   pendingText: string;
   modalTitle: string;
   dismissText: string;
+  buttonSwapHandler: () => void | Promise<void>;
   contentTexts: ConfirmationPendingContentTextProps;
+  buttonSwapProps: ButtonProps;
   swapModalHeaderTexts: {
     truncatedTextFrom: string;
     truncatedTextTo: string;
@@ -49,17 +51,35 @@ export interface ConfirmSwapModalProps {
     amountTowards: string;
     currencySymbolTop: string;
     currencySymbolBottom: string;
+    buttonSwap: string;
   };
   errorText: React.ReactNode;
   buttonSwap: React.ReactNode;
-  currencyLogoFrom: React.ReactNode;
-  currencyLogoTo: React.ReactNode;
+  outputEstimates: React.ReactNode | string;
+  priceFrom: string | number;
+  currencyFrom: {
+    shortName: string;
+    fullName: string;
+    logo: string;
+  };
+  currencyTo: {
+    shortName: string;
+    fullName: string;
+    logo: string;
+  };
+  priceTo: string | number;
+  executionPrice: string;
+  minimusReceived: string;
   truncatedTextColorFrom: string;
   truncatedTextColorTo: string;
   showAcceptChanges: boolean;
+  priceImpact: string;
 }
 
 const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & TransactionSubmittedContentProps> = ({
+  minimusReceived,
+  executionPrice,
+  priceImpact,
   trade,
   onAcceptChanges,
   allowedSlippage,
@@ -83,15 +103,18 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   btnCloseText,
   isMetaMask,
   token,
-  currencyLogoFrom,
-  currencyLogoTo,
+  priceFrom,
+  currencyFrom,
+  priceTo,
+  currencyTo,
   swapModalHeaderTexts,
-  truncatedTextColorFrom,
-  truncatedTextColorTo,
   errorText,
   buttonSwap,
   swapModalFooterTexts,
+  buttonSwapHandler,
+  outputEstimates,
   showAcceptChanges,
+  buttonSwapProps,
 }) => {
   const modalHeader = useCallback(() => {
     return trade ? (
@@ -99,11 +122,12 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
         recipient={recipient}
         showAcceptChanges={showAcceptChanges}
         onAcceptChanges={onAcceptChanges}
-        currencyLogoFrom={currencyLogoFrom}
-        currencyLogoTo={currencyLogoTo}
+        currencyFrom={currencyFrom}
+        priceFrom={priceFrom}
+        currencyTo={currencyTo}
+        priceTo={priceTo}
         texts={swapModalHeaderTexts}
-        truncatedTextColorFrom={truncatedTextColorFrom}
-        truncatedTextColorTo={truncatedTextColorTo}
+        outputEstimates={outputEstimates}
       />
     ) : null;
   }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade]);
@@ -111,10 +135,15 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   const modalBottom = useCallback(() => {
     return trade ? (
       <SwapModalFooter
+        buttonSwapHandler={buttonSwapHandler}
+        priceImpact={priceImpact}
+        minimusReceived={minimusReceived}
+        executionPrice={executionPrice}
         swapErrorMessage={swapErrorMessage}
         errorText={errorText}
         buttonSwap={buttonSwap}
         texts={swapModalFooterTexts}
+        buttonSwapProps={buttonSwapProps}
       />
     ) : null;
   }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade]);
@@ -122,7 +151,7 @@ const ConfirmSwapModal: React.FC<InjectedModalProps & ConfirmSwapModalProps & Tr
   const confirmationContent = useCallback(
     () =>
       swapErrorMessage ? (
-        <TransactionErrorContent onDismiss={onDismiss} dismissText={dismissText} message={swapErrorMessage} />
+        <TransactionErrorContent onDismiss={onDismiss} dismissText={dismissText} />
       ) : (
         <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />
       ),

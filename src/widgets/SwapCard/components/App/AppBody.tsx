@@ -11,5 +11,5 @@ export const BodyWrapper = styled.div`
 `
 
 export default function AppBody({ children }: { children: React.ReactNode }) {
-  return <BodyWrapper>{children}</BodyWrapper>
+  return <BodyWrapper>{children}</BodyWrapper>;
 }

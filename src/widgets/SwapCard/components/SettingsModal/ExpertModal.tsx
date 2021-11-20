@@ -1,57 +1,57 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Flex } from "../../../../components/Box";
 import { Text } from "../../../../components/Text";
-import { Modal } from "../../../Modal";
-import { Button } from "../../../../components/Button";
+import { Button, IconButton } from "../../../../components/Button";
 import { CheckboxInput } from "../../../../components/CheckboxInput";
 import { IText } from "./types";
-
-// interface ExpertModalProps extends InjectedModalProps {
-//   setShowConfirmExpertModal: (boolean) => void
-//   setShowExpertModeAcknowledgement: (boolean) => void
-// }
+import { CloseIcon } from "../../../../components/Svg";
+import { ModalHeader, ModalTitle, StyledModal, MessageStyle, TextMessage, TextLabel } from "./styles";
 
 const ExpertModal = ({
   setShowConfirmExpertModal,
   setShowExpertModeAcknowledgement,
   texts,
   toggleExpertModeFunc,
+  isRememberChecked,
+  setIsRememberChecked,
 }: {
   setShowConfirmExpertModal: any;
   setShowExpertModeAcknowledgement: any;
   texts: IText;
   toggleExpertModeFunc: any;
+  isRememberChecked: boolean;
+  setIsRememberChecked: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const [isRememberChecked, setIsRememberChecked] = useState(false);
-
   return (
-    <Modal
-      title={texts.expertMode}
-      onBack={() => setShowConfirmExpertModal(false)}
-      onDismiss={() => setShowConfirmExpertModal(false)}
-      style={{ maxWidth: "360px" }}
-    >
-      <Text color="warning" mb="24px">
-        {" "}
-        //Message
-        <Text>{texts.expertModeDescription}</Text>
-      </Text>
+    <StyledModal>
+      <ModalHeader>
+        <ModalTitle>
+          <Flex>{texts.expert}</Flex>
+        </ModalTitle>
+        <IconButton variant="text" onClick={() => setShowConfirmExpertModal(false)} aria-label="Close the dialog">
+          <CloseIcon />
+        </IconButton>
+      </ModalHeader>
+      <MessageStyle>
+        <TextMessage>{texts.expertModeDescription}</TextMessage>
+      </MessageStyle>
       <Text mb="24px">{texts.onlyUseThis}</Text>
       <Flex alignItems="center" mb="24px">
         <CheckboxInput
-          name="confirmed"
-          type="checkbox"
-          checked={isRememberChecked}
+          id="confirmed"
           onChange={() => setIsRememberChecked(!isRememberChecked)}
-          scale="sm"
+          checked={isRememberChecked}
+          name="confirmed"
         />
-        <Text ml="10px" color="textSubtle" style={{ userSelect: "none" }}>
-          Don’t show this again
-        </Text>
+        <TextLabel as="label" ml="22px" htmlFor="confirmed">
+          {texts.dontAskAgain}
+        </TextLabel>
       </Flex>
       <Button
         mb="8px"
         id="confirm-expert-mode"
+        variant="green"
+        width="100%"
         onClick={() => {
           // eslint-disable-next-line no-alert
           if (window.prompt(texts.pleaseTypeThe) === "confirm") {
@@ -65,15 +65,7 @@ const ExpertModal = ({
       >
         {texts.turnOnExpert}
       </Button>
-      <Button
-        variant="secondary"
-        onClick={() => {
-          setShowConfirmExpertModal(false);
-        }}
-      >
-        Cancel
-      </Button>
-    </Modal>
+    </StyledModal>
   );
 };
 

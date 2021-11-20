@@ -1,14 +1,15 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+import { Button, IconButton } from "../../components/Button";
 import { Text } from "../../components/Text";
-import { ErrorIcon, ArrowUpIcon, MetamaskIcon } from "../Svg";
+import { ArrowUpIcon, MetamaskIcon, CloseIcon } from "../Svg";
 import { Flex, Box } from "../Box";
 import { Link } from "../Link";
 import { Spinner } from "../Spinner";
-import { Modal, InjectedModalProps } from "../../widgets/Modal";
+import { InjectedModalProps } from "../../widgets/Modal";
 import { RowFixed } from "../Layout/Row";
 import { AutoColumn, ColumnCenter } from "../Layout/Column";
+import { OneGhost } from "../../constants/images";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -134,23 +135,18 @@ export function ConfirmationModalContent({
 }
 
 export interface TransactionErrorContentProps {
-  message: string;
   onDismiss?: () => void;
   dismissText: string;
 }
 
-export function TransactionErrorContent({ message, onDismiss, dismissText }: TransactionErrorContentProps) {
+export function TransactionErrorContent({ onDismiss, dismissText }: TransactionErrorContentProps) {
   return (
     <Wrapper>
       <AutoColumn justify="center">
-        <ErrorIcon color="failure" width="64px" />
-        <Text color="failure" style={{ textAlign: "center", width: "85%" }}>
-          {message}
-        </Text>
+        <img src={OneGhost} alt="error" />
       </AutoColumn>
-
       <Flex justifyContent="center" pt="24px">
-        <Button onClick={onDismiss}>{dismissText}</Button>
+        <ButtonStyle onClick={onDismiss}>{dismissText}</ButtonStyle>
       </Flex>
     </Wrapper>
   );
@@ -200,29 +196,123 @@ const TransactionConfirmationModal: React.FC<
   if (!chainId) return null;
 
   return (
-    <Modal title={title} headerBackground="gradients.cardHeader" onDismiss={handleDismiss}>
-      {attemptingTxn ? (
-        <ConfirmationPendingContent pendingText={pendingText} texts={texts} />
-      ) : txHash ? (
-        <TransactionSubmittedContent
-          chainId={chainId}
-          txHash={txHash}
-          onDismiss={onDismiss}
-          currencyToAdd={currencyToAdd}
-          registerToken={registerToken}
-          bscScanLink={bscScanLink}
-          transSubmittedText={transSubmittedText}
-          bscScanLinkText={bscScanLinkText}
-          metamaskAssetText={metamaskAssetText}
-          btnCloseText={btnCloseText}
-          isMetaMask={isMetaMask}
-          token={token}
-        />
-      ) : (
-        content()
-      )}
-    </Modal>
+    <div>
+      <Overlay />
+      <StyledModal>
+        <ModalHeader>
+          <ModalTitle>
+            <Flex>{title}</Flex>
+          </ModalTitle>
+          <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+            <CloseIcon />
+          </IconButton>
+        </ModalHeader>
+        <Box>
+          {attemptingTxn ? (
+            <ConfirmationPendingContent pendingText={pendingText} texts={texts} />
+          ) : txHash ? (
+            <TransactionSubmittedContent
+              chainId={chainId}
+              txHash={txHash}
+              onDismiss={onDismiss}
+              currencyToAdd={currencyToAdd}
+              registerToken={registerToken}
+              bscScanLink={bscScanLink}
+              transSubmittedText={transSubmittedText}
+              bscScanLinkText={bscScanLinkText}
+              metamaskAssetText={metamaskAssetText}
+              btnCloseText={btnCloseText}
+              isMetaMask={isMetaMask}
+              token={token}
+            />
+          ) : (
+            content()
+          )}
+        </Box>
+      </StyledModal>
+    </div>
   );
 };
 
 export default TransactionConfirmationModal;
+
+export const StyledModal = styled.div`
+  padding: 18px 8px;
+  max-width: 404px;
+  max-height: 100vh;
+  min-width: 303px;
+  width: 100%;
+  background: ${({ theme }) => theme.colors.bgGray};
+  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  z-index: ${({ theme }) => theme.zIndices.modal};
+  overflow-y: auto;
+
+  ${({ theme }) => theme.mediaQueries.xs} {
+    min-width: 360px;
+    width: 100%;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    min-width: 404px;
+    width: 100%;
+    padding: 27px 24px;
+  }
+`;
+const ModalTitle = styled.div`
+  align-items: center;
+  flex: 1;
+  color: ${({ theme }) => theme.colors.text};
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 27px;
+  letter-spacing: 0.5px;
+`;
+export const ModalHeader = styled.div`
+  display: flex;
+  margin-bottom: 32px;
+  align-items: center;
+  padding: 0;
+`;
+const TextStyle = styled(Text)`
+  margin-bottom: 15px;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.5px;
+  color: ${({ theme }) => theme.colors.textGray};
+`;
+const InputWrap = styled.div`
+  margin-left: 10px;
+`;
+const TabsWrap = styled.div`
+  & button {
+    padding: 7px 3px;
+    font-size: 13px;
+
+    ${({ theme }) => theme.mediaQueries.sm} {
+      padding: 7px;
+      font-size: 15px;
+    }
+  }
+`;
+const Overlay = styled.div`
+  pointer-events: none;
+  display: block;
+  background: ${({ theme }) => theme.colors.overlayBg};
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+`;
+
+const ButtonStyle = styled(Button)`
+  border: none;
+  outline: none;
+  background: none;
+  color: ${({ theme }) => theme.colors.green};
+  box-shadow: none;
+`;

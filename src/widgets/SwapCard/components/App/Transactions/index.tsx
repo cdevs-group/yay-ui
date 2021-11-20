@@ -1,9 +1,9 @@
-import React from 'react'
-import { HistoryIcon } from '../../../../../components/Svg'
-import { Button } from '../../../../../components/Button'
-import { useModal } from '../../../../Modal'
-import TransactionsModal, { TransactionsModalProps } from './TransactionsModal'
-import { TransactionDetailsProps } from './types'
+import React from "react";
+import { HistoryIcon } from "../../../../../components/Svg";
+import { Button } from "../../../../../components/Button";
+import { useModal } from "../../../../Modal";
+import TransactionsModal, { TransactionsModalProps } from "./TransactionsModal";
+import { TransactionDetailsProps } from "./types";
 
 const Transactions = ({
   account,
@@ -17,7 +17,7 @@ const Transactions = ({
   bscScanLink,
   summary,
   pending,
-  success
+  success,
 }: TransactionsModalProps & { onDismiss: () => void } & TransactionDetailsProps) => {
   const [onPresentTransactionsModal] = useModal(
     <TransactionsModal
@@ -34,14 +34,14 @@ const Transactions = ({
       pending={pending}
       success={success}
     />
-  )
+  );
   return (
     <>
       <Button variant="text" p={0} onClick={onPresentTransactionsModal} ml="16px">
         <HistoryIcon color="textSubtle" width="30px" />
       </Button>
     </>
-  )
-}
+  );
+};
 
-export default Transactions
+export default Transactions;

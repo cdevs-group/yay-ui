@@ -24,6 +24,7 @@ import UnsupportedCurrencyFooter from "../../components/UnsupportedCurrencyFoote
 import GlobalSettings from "./components/SettingsModal";
 import { AppHeader } from "./components/App";
 import Swap from "./SwapCard";
+import { YAY_TOKEN_GREEN } from "../../constants/images";
 
 export default {
   title: "Widgets/Swap",
@@ -182,8 +183,20 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
 };
 
 export const ConfirmSwapModalBlock = () => {
+  const currencyFrom = {
+    shortName: "YAY",
+    fullName: "YAY Games",
+    logo: YAY_TOKEN_GREEN,
+  };
+  const currencyTo = {
+    shortName: "BNB",
+    fullName: "Binance Chain",
+    logo: YAY_TOKEN_GREEN,
+  };
+
   return (
     <ConfirmSwapModal
+      onDismiss={() => null}
       trade={trade}
       attemptingTxn={false}
       recipient="recipient"
@@ -192,8 +205,11 @@ export const ConfirmSwapModalBlock = () => {
       onConfirm={() => null}
       customOnDismiss={() => null}
       pendingText="Pending Text"
-      modalTitle="Modal Title"
+      modalTitle="Swap Modal"
       dismissText="Dismiss Text"
+      executionPrice="0.6545 YAY / BNB"
+      minimusReceived="1 BNB"
+      priceImpact="5%"
       contentTexts={{
         confirmationWaiting: "Confirmation Waiting",
         transactionConfirm: "Transaction Confirm",
@@ -207,8 +223,12 @@ export const ConfirmSwapModalBlock = () => {
       btnCloseText="Close"
       isMetaMask={true}
       token="token"
-      currencyLogoFrom={<p>Some Pic 1</p>}
-      currencyLogoTo={<p>Some Pic 2</p>}
+      currencyFrom={currencyFrom}
+      currencyTo={currencyTo}
+      priceTo="1.123"
+      priceFrom={0.578}
+      buttonSwapProps={{ spin: true, disabled: true }}
+      outputEstimates="Output is estimated. You wil receive at least 0`7890 YAY or the transactions will revert."
       swapModalHeaderTexts={{
         truncatedTextFrom: "0.001 BND",
         truncatedTextTo: "1 BUSD",
@@ -234,9 +254,10 @@ export const ConfirmSwapModalBlock = () => {
         amountTowards: "Amount Towards Text",
         currencySymbolTop: "Currency Symbol Top",
         currencySymbolBottom: "Currency Symbol Bottom",
+        buttonSwap: "Swap",
       }}
       errorText={<div>Some Error Text</div>}
-      buttonSwap={<Button>Button</Button>}
+      buttonSwapHandler={() => console.log("swap")}
       truncatedTextColorFrom="green"
       truncatedTextColorTo="yellow"
       showAcceptChanges={true}
@@ -429,7 +450,7 @@ const transaction = [
     lastCheckedBlockNumber: 4,
     addedTime: 123456789001,
     confirmedTime: 987654321,
-    from: "From"
+    from: "From",
   },
   {
     hash: "123456789",
@@ -449,7 +470,7 @@ const transaction = [
     lastCheckedBlockNumber: 4,
     addedTime: 123456789002,
     confirmedTime: 987654321,
-    from: "From"
+    from: "From",
   },
   {
     hash: "123456789",
@@ -469,13 +490,13 @@ const transaction = [
     lastCheckedBlockNumber: 4,
     addedTime: 123456789003,
     confirmedTime: 987654321,
-    from: "From"
+    from: "From",
   },
-]
+];
 
 export const AppHeaderBlock = () => {
   return (
-    <AppHeader 
+    <AppHeader
       title="App Title"
       subtitle="App Subtitle"
       expertMode={false}
@@ -485,7 +506,7 @@ export const AppHeaderBlock = () => {
         modalTitle: "Modal Title",
         modalBodyText: "Recent Transactions",
         ModalButton: "Clear All",
-        ModalAlternativeText: "Modal Alternative Lorem Text"
+        ModalAlternativeText: "Modal Alternative Lorem Text",
       }}
       pendingTransaction={transaction}
       confirmedTransaction={transaction}
@@ -498,15 +519,35 @@ export const AppHeaderBlock = () => {
       success={true}
     />
   );
-}
+};
 
 export const SwapBlock = () => {
+  const currencyInputPanelData = {
+    value: "value",
+    onUserInput: (value: string) => null,
+    onMax: () => null,
+    showMaxButton: true,
+    label: "Some Label Text",
+    disableCurrencySelect: false,
+    hideInput: false,
+    id: "123456789",
+    account: "account",
+    onPresentCurrencyModal: () => null,
+    сurrencyLogo: <p>Some Currency Logo</p>,
+    doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
+    texts: {
+      translatedLabel: "Translated Label Text",
+      balance: "Balance",
+      numericalInputTitle: "Numerical Input Title",
+      max: "Max",
+      currencySelect: "Currency Select",
+    },
+  };
 
   const Container = styled.div`
     display: flex;
     justify-content: center;
   `
-
   return (
     <Container>
       <Swap
@@ -714,4 +755,4 @@ export const SwapBlock = () => {
       />
     </Container>
   );
-}
+};
