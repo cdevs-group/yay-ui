@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Flex, Tabs } from "../../..";
 import { IGOTopListProps } from "../types";
+import { ellipsis } from "../../../helpers/ellipsis";
 
 const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, tabsList, toggleTab, activeTab }) => {
   return (
@@ -24,7 +25,7 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
         {topUsersList.map((item, i) => (
           <Line id={item.wallet} key={i} className={myWallet === item.wallet ? "active" : ""}>
             <Cell>{item.position}</Cell>
-            <Cell>{item.wallet}</Cell>
+            <Cell>{ellipsis(item.wallet, 6)}</Cell>
             <Cell>
               {item.staked} {texts.tokenName}
             </Cell>
