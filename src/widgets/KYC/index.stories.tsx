@@ -83,6 +83,8 @@ export const KYCPage = () => {
       </div>
       <div style={{ margin: "30px" }}>
         <StepWrapperFrame
+          disabledInput
+          linkFrame="s"
           textError="Please, enter valid e-mail"
           onChange={(e) => console.log(e)}
           name="email"

@@ -4,12 +4,13 @@ import styled from "styled-components";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
-const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name }: InputSearchProp) => {
+const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name, disabled }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
     <InputBlock height={height} width={width}>
       <InputItem
+        disabled={disabled}
         width={width}
         value={value}
         onChange={onChange}

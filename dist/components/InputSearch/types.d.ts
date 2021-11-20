@@ -7,4 +7,5 @@ export interface InputSearchProp {
     width?: string;
     height?: string;
     name: string;
+    disabled?: boolean;
 }

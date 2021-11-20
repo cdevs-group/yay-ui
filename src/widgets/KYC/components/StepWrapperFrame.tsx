@@ -15,6 +15,8 @@ interface StepWrapperFrameProps {
   onClick: () => void | Promise<void>;
   buttonProps?: ButtonProps;
   isFrame: boolean;
+  linkFrame?: string;
+  disabledInput?: boolean;
 
   onChange: (e: any) => void;
   name: string;
@@ -30,18 +32,31 @@ const StepWrapperFrame = ({
   name,
   value,
   textError,
+  linkFrame,
+  disabledInput,
   isFrame,
 }: StepWrapperFrameProps) => {
   return (
     <Wrapper isFrame={isFrame}>
       <Title>{texts.title}</Title>
       <Description>{texts.description}</Description>
+      <InputWrap>
+        <InputSearch
+          disabled={disabledInput}
+          width="100%"
+          placeholder={texts.placeholder}
+          value={value}
+          onChange={onChange}
+          name={name}
+        />
+        {textError && <ErrorMessage>{textError}</ErrorMessage>}
+      </InputWrap>
       {isFrame ? (
         <IFrame>
           <iframe
             height="100%"
             width="100%"
-            src="https://app.shuftipro.com/process/kyc/c3Ig59XTNl4kguRteqOoxrME0vdEVUjdpxV5HQstKOfHwGjvAIoSGu9i54Nk7ojZ"
+            src={linkFrame}
             id="shuftipro-iframe"
             allow="camera"
             frameBorder="0"
@@ -49,10 +64,6 @@ const StepWrapperFrame = ({
         </IFrame>
       ) : (
         <>
-          <InputWrap>
-            <InputSearch width="100%" placeholder={texts.placeholder} value={value} onChange={onChange} name={name} />
-            {textError && <ErrorMessage>{textError}</ErrorMessage>}
-          </InputWrap>
           <Button onClick={onClick} variant="green" maxWidth="285px" width="100%" {...buttonProps}>
             {texts.button}
           </Button>

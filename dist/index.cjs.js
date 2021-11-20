@@ -2559,10 +2559,10 @@ var BaseLayout = function (_a) {
 var templateObject_1$2v;
 
 var InputSearch = function (_a) {
-    var height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width, name = _a.name;
+    var height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width, name = _a.name, disabled = _a.disabled;
     var _b = React.useState(false), focus = _b[0], setFocus = _b[1];
     return (React__default['default'].createElement(InputBlock$2, { height: height, width: width },
-        React__default['default'].createElement(InputItem, { width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder, name: name }),
+        React__default['default'].createElement(InputItem, { disabled: disabled, width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder, name: name }),
         React__default['default'].createElement(Button$7, { iconLess: iconLess },
             React__default['default'].createElement(Icon$N, { color: focus ? "green" : "text" }))));
 };
@@ -10059,15 +10059,15 @@ var Buttons = styled__default['default'](Flex)(templateObject_4$3 || (templateOb
 var templateObject_1$5, templateObject_2$3, templateObject_3$3, templateObject_4$3;
 
 var StepWrapperFrame = function (_a) {
-    var texts = _a.texts, onClick = _a.onClick, buttonProps = _a.buttonProps, onChange = _a.onChange, name = _a.name, value = _a.value, textError = _a.textError, isFrame = _a.isFrame;
+    var texts = _a.texts, onClick = _a.onClick, buttonProps = _a.buttonProps, onChange = _a.onChange, name = _a.name, value = _a.value, textError = _a.textError, linkFrame = _a.linkFrame, disabledInput = _a.disabledInput, isFrame = _a.isFrame;
     return (React__default['default'].createElement(Wrapper$2, { isFrame: isFrame },
         React__default['default'].createElement(Title$2, null, texts.title),
         React__default['default'].createElement(Description$2, null, texts.description),
+        React__default['default'].createElement(InputWrap, null,
+            React__default['default'].createElement(InputSearch, { disabled: disabledInput, width: "100%", placeholder: texts.placeholder, value: value, onChange: onChange, name: name }),
+            textError && React__default['default'].createElement(ErrorMessage, null, textError)),
         isFrame ? (React__default['default'].createElement(IFrame, null,
-            React__default['default'].createElement("iframe", { height: "100%", width: "100%", src: "https://app.shuftipro.com/process/kyc/c3Ig59XTNl4kguRteqOoxrME0vdEVUjdpxV5HQstKOfHwGjvAIoSGu9i54Nk7ojZ", id: "shuftipro-iframe", allow: "camera", frameBorder: "0" }))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
-            React__default['default'].createElement(InputWrap, null,
-                React__default['default'].createElement(InputSearch, { width: "100%", placeholder: texts.placeholder, value: value, onChange: onChange, name: name }),
-                textError && React__default['default'].createElement(ErrorMessage, null, textError)),
+            React__default['default'].createElement("iframe", { height: "100%", width: "100%", src: linkFrame, id: "shuftipro-iframe", allow: "camera", frameBorder: "0" }))) : (React__default['default'].createElement(React__default['default'].Fragment, null,
             React__default['default'].createElement(Button$9, __assign({ onClick: onClick, variant: "green", maxWidth: "285px", width: "100%" }, buttonProps), texts.button)))));
 };
 var Wrapper$2 = styled__default['default'].div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  max-width: 666px;\n  width: 100%;\n  padding: ", ";\n  background: ", ";\n  border-radius: 15px;\n  text-align: center;\n"], ["\n  max-width: 666px;\n  width: 100%;\n  padding: ", ";\n  background: ", ";\n  border-radius: 15px;\n  text-align: center;\n"])), function (_a) {
