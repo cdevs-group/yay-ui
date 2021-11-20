@@ -22,7 +22,7 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
       </LineHeader>
       <Table>
         {topUsersList.map((item, i) => (
-          <Line key={i} className={myWallet === item.wallet ? "active" : ""}>
+          <Line id={item.wallet} key={i} className={myWallet === item.wallet ? "active" : ""}>
             <Cell>{item.position}</Cell>
             <Cell>{item.wallet}</Cell>
             <Cell>

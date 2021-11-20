@@ -9747,7 +9747,7 @@ var IGOTopList = function (_a) {
             React__default.createElement(CellHeader, null, "\u2116"),
             React__default.createElement(CellHeader, { className: "middle" }, texts.wallet),
             React__default.createElement(CellHeader, null, texts.staked)),
-        React__default.createElement(Table, null, topUsersList.map(function (item, i) { return (React__default.createElement(Line, { key: i, className: myWallet === item.wallet ? "active" : "" },
+        React__default.createElement(Table, null, topUsersList.map(function (item, i) { return (React__default.createElement(Line, { id: item.wallet, key: i, className: myWallet === item.wallet ? "active" : "" },
             React__default.createElement(Cell, null, item.position),
             React__default.createElement(Cell, null, item.wallet),
             React__default.createElement(Cell, null,
