@@ -83,6 +83,7 @@ export const KYCPage = () => {
       </div>
       <div style={{ margin: "30px" }}>
         <StepWrapperFrame
+          inputHide
           disabledInput
           linkFrame="s"
           textError="Please, enter valid e-mail"

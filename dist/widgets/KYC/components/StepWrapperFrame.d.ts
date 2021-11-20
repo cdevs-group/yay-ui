@@ -12,10 +12,11 @@ interface StepWrapperFrameProps {
     isFrame: boolean;
     linkFrame?: string;
     disabledInput?: boolean;
+    inputHide?: boolean;
     onChange: (e: any) => void;
     name: string;
     value: string | number;
     textError?: string;
 }
-declare const StepWrapperFrame: ({ texts, onClick, buttonProps, onChange, name, value, textError, linkFrame, disabledInput, isFrame, }: StepWrapperFrameProps) => JSX.Element;
+declare const StepWrapperFrame: ({ texts, onClick, buttonProps, onChange, name, value, textError, linkFrame, disabledInput, isFrame, inputHide, }: StepWrapperFrameProps) => JSX.Element;
 export default StepWrapperFrame;

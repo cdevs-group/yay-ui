@@ -10026,13 +10026,13 @@ var Buttons = styled(Flex)(templateObject_4$3 || (templateObject_4$3 = __makeTem
 var templateObject_1$5, templateObject_2$3, templateObject_3$3, templateObject_4$3;
 
 var StepWrapperFrame = function (_a) {
-    var texts = _a.texts, onClick = _a.onClick, buttonProps = _a.buttonProps, onChange = _a.onChange, name = _a.name, value = _a.value, textError = _a.textError, linkFrame = _a.linkFrame, disabledInput = _a.disabledInput, isFrame = _a.isFrame;
+    var texts = _a.texts, onClick = _a.onClick, buttonProps = _a.buttonProps, onChange = _a.onChange, name = _a.name, value = _a.value, textError = _a.textError, linkFrame = _a.linkFrame, disabledInput = _a.disabledInput, isFrame = _a.isFrame, inputHide = _a.inputHide;
     return (React__default.createElement(Wrapper$2, { isFrame: isFrame },
         React__default.createElement(Title$2, null, texts.title),
-        React__default.createElement(Description$2, null, texts.description),
-        React__default.createElement(InputWrap, null,
+        React__default.createElement(Description$2, { inputHide: inputHide }, texts.description),
+        !inputHide && (React__default.createElement(InputWrap, null,
             React__default.createElement(InputSearch, { disabled: disabledInput, width: "100%", placeholder: texts.placeholder, value: value, onChange: onChange, name: name }),
-            textError && React__default.createElement(ErrorMessage, null, textError)),
+            textError && React__default.createElement(ErrorMessage, null, textError))),
         isFrame ? (React__default.createElement(IFrame, null,
             React__default.createElement("iframe", { height: "100%", width: "100%", src: linkFrame, id: "shuftipro-iframe", allow: "camera", frameBorder: "0" }))) : (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(Button$9, __assign({ onClick: onClick, variant: "green", maxWidth: "285px", width: "100%" }, buttonProps), texts.button)))));
@@ -10048,7 +10048,10 @@ var Title$2 = styled(Text)(templateObject_2$2 || (templateObject_2$2 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Description$2 = styled(Title$2)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  margin-bottom: 0;\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  margin-bottom: 0;\n  font-size: 15px;\n  line-height: 19px;\n"])));
+var Description$2 = styled(Title$2)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  margin-bottom: ", ";\n  font-size: 15px;\n  line-height: 19px;\n"], ["\n  margin-bottom: ", ";\n  font-size: 15px;\n  line-height: 19px;\n"])), function (_a) {
+    var inputHide = _a.inputHide;
+    return (inputHide ? "36px" : 0);
+});
 var InputWrap = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  position: relative;\n  margin: 44px 0;\n  padding: 0 20px;\n  & button {\n    display: none;\n  }\n  ", " {\n    padding: 0 80px;\n  }\n"], ["\n  position: relative;\n  margin: 44px 0;\n  padding: 0 20px;\n  & button {\n    display: none;\n  }\n  ", " {\n    padding: 0 80px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;

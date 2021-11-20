@@ -17,7 +17,7 @@ interface StepWrapperFrameProps {
   isFrame: boolean;
   linkFrame?: string;
   disabledInput?: boolean;
-
+  inputHide?: boolean;
   onChange: (e: any) => void;
   name: string;
   value: string | number;
@@ -35,22 +35,25 @@ const StepWrapperFrame = ({
   linkFrame,
   disabledInput,
   isFrame,
+  inputHide,
 }: StepWrapperFrameProps) => {
   return (
     <Wrapper isFrame={isFrame}>
       <Title>{texts.title}</Title>
-      <Description>{texts.description}</Description>
-      <InputWrap>
-        <InputSearch
-          disabled={disabledInput}
-          width="100%"
-          placeholder={texts.placeholder}
-          value={value}
-          onChange={onChange}
-          name={name}
-        />
-        {textError && <ErrorMessage>{textError}</ErrorMessage>}
-      </InputWrap>
+      <Description inputHide={inputHide}>{texts.description}</Description>
+      {!inputHide && (
+        <InputWrap>
+          <InputSearch
+            disabled={disabledInput}
+            width="100%"
+            placeholder={texts.placeholder}
+            value={value}
+            onChange={onChange}
+            name={name}
+          />
+          {textError && <ErrorMessage>{textError}</ErrorMessage>}
+        </InputWrap>
+      )}
       {isFrame ? (
         <IFrame>
           <iframe
@@ -94,8 +97,8 @@ const Title = styled(Text)`
     padding: 0 80px;
   }
 `;
-const Description = styled(Title)`
-  margin-bottom: 0;
+const Description = styled(Title)<{ inputHide?: boolean }>`
+  margin-bottom: ${({ inputHide }) => (inputHide ? "36px" : 0)};
   font-size: 15px;
   line-height: 19px;
 `;
