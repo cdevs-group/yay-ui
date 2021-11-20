@@ -1,35 +1,40 @@
-import React from "react";
-import styled from "styled-components";
-import { Button } from "../../components/Button";
-import { Text } from "../../components/Text";
-import { ArrowDownIcon } from "../../components/Svg";
-import { Box } from "../../components/Box";
-import { useModal } from "../Modal";
-import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter";
-import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel";
-import { GreyCard } from "../../components/StyledCard";
-import Column, { AutoColumn } from "../../components/Layout/Column";
-import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal";
-import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel";
-import { AutoRow, RowBetween } from "../../components/Layout/Row";
-import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
-import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
-import TradePrice, { TradePriceProps } from "./components/TradePrice";
-//import ImportTokenWarningModal from './components/ImportTokenWarningModal'
-import ProgressSteps, { ProgressCirclesProps } from "./components/ProgressSteps";
-import { AppHeader, AppBody } from "./components/App";
-import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails";
-import { AppHeaderProps } from "./components/App/types";
-import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal";
-import { TransactionDetailsProps } from "./components/App/Transactions/types";
+import React from "react"
+import styled from "styled-components"
+import { Button } from "../../components/Button"
+import { Text } from "../../components/Text"
+import { ArrowDownIcon } from "../../components/Svg"
+import { Box } from "../../components/Box"
+import { useModal } from "../Modal"
+import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter"
+import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel"
+import { GreyCard } from "../../components/StyledCard"
+import Column, { AutoColumn } from "../../components/Layout/Column"
+import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal"
+import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel"
+import { AutoRow, RowBetween } from "../../components/Layout/Row"
+import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown"
+import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds"
+import TradePrice, { TradePriceProps } from "./components/TradePrice"
+//import ImportTokenWarningModal from "./components/ImportTokenWarningModal"
+import ProgressSteps, { ProgressCirclesProps } from "./components/ProgressSteps"
+import { AppHeader, AppBody } from "./components/App"
+import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails"
+import { AppHeaderProps } from "./components/App/types"
+import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal"
+import { TransactionDetailsProps } from "./components/App/Transactions/types"
 import { InjectedModalProps } from "../Modal";
 import { TransactionSubmittedContentProps } from "../../components/TransactionConfirmationModal";
 
 const Label = styled(Text)`
-  font-size: 12px;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.secondary};
+  font-size: 11px;
+  color: ${({ theme }) => theme.colors.text};
 `;
+
+const StyledSlippageToleranceText = styled(Text)`
+font-size: 13px;
+margin-left: 8px;
+color: ${({ theme }) => theme.colors.green};
+`
 
 interface SwapCardProps {
   currencyInputPanelFrom: CurrencyInputPanelProps;
@@ -46,8 +51,9 @@ interface SwapCardProps {
   showWrap: boolean;
   noRoute: boolean;
   showApproveFlow: boolean;
+  showFooter: boolean;
   trade: any;
-  account: any;
+  account?: any;
   allowedSlippage: number;
   UnsupportedCurrencyFooterComponent: UnsupportedCurrencyFooterProps;
   texts: {
@@ -78,6 +84,7 @@ export default function Swap({
   showWrap,
   noRoute,
   showApproveFlow,
+  showFooter,
   trade,
   account,
   allowedSlippage,
@@ -235,7 +242,7 @@ export default function Swap({
             ) : null}
             {showWrap ? null : (
               <AutoColumn gap="8px" style={{ padding: "0 16px" }}>
-                {Boolean(trade) && (
+                {/* {Boolean(trade) && (
                   <RowBetween align="center">
                     <Label>{priceLabel}</Label>
                     <TradePrice
@@ -247,14 +254,14 @@ export default function Swap({
                       formattedPrice={TradePriceComponent.formattedPrice}
                     />
                   </RowBetween>
-                )}
+                )} */}
                 {allowedSlippage && (
-                  <RowBetween align="center">
+                  <AutoRow>
                     <Label>{slippageToleranceLabel}</Label>
-                    <Text bold color="primary">
+                    <StyledSlippageToleranceText>
                       {allowedSlippage / 100}%
-                    </Text>
-                  </RowBetween>
+                    </StyledSlippageToleranceText>
+                  </AutoRow>
                 )}
               </AutoColumn>
             )}
@@ -264,9 +271,8 @@ export default function Swap({
               <Button width="100%" disabled mb="4px">
                 {unsupportedAssetButton}
               </Button>
-            ) : !account ? (
-              { ConnectWalletButton }
-            ) : showWrap ? (
+            ) : !account ? ConnectWalletButton
+            : showWrap ? (
               <Button width="100%" onClick={() => null}>
                 {wrapOrUnwrapButton}
               </Button>
@@ -292,33 +298,38 @@ export default function Swap({
             )}
             {showApproveFlow && (
               <Column style={{ marginTop: "1rem" }}>
-                <ProgressSteps steps={ProgressStepsComponent.steps} />
+                <ProgressSteps steps={ProgressStepsComponent.steps} disabled={ProgressStepsComponent.disabled} />
               </Column>
             )}
             {appHeader.expertMode ? <SwapCallbackError error={SwapCallbackErrorText} /> : null}
           </Box>
         </Wrapper>
       </AppBody>
-      {!swapIsUnsupported ? (
-        <AdvancedSwapDetailsDropdown
-          trade={AdvancedSwapDetailsDropdownComponent.trade}
-          lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
-          routeText={AdvancedSwapDetailsDropdownComponent.routeText}
-          routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
-          tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
-          errorText={AdvancedSwapDetailsDropdownComponent.errorText}
-          showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
-        />
-      ) : (
-        <UnsupportedCurrencyFooter
-          tokens={UnsupportedCurrencyFooterComponent.tokens}
-          srcs={UnsupportedCurrencyFooterComponent.srcs}
-          isEther={UnsupportedCurrencyFooterComponent.isEther}
-          chainId={UnsupportedCurrencyFooterComponent.chainId}
-          bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
-          unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
-        />
-      )}
+      {
+        showFooter && (
+          <>{!swapIsUnsupported ? (
+              <AdvancedSwapDetailsDropdown
+                trade={AdvancedSwapDetailsDropdownComponent.trade}
+                lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
+                routeText={AdvancedSwapDetailsDropdownComponent.routeText}
+                routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
+                tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
+                errorText={AdvancedSwapDetailsDropdownComponent.errorText}
+                showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
+              />
+            ) : (
+              <UnsupportedCurrencyFooter
+                tokens={UnsupportedCurrencyFooterComponent.tokens}
+                srcs={UnsupportedCurrencyFooterComponent.srcs}
+                isEther={UnsupportedCurrencyFooterComponent.isEther}
+                chainId={UnsupportedCurrencyFooterComponent.chainId}
+                bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
+                unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+              />
+            )}</>
+        )
+      }
+      {}
     </>
   );
 }

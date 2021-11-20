@@ -7,33 +7,21 @@ import QuestionHelper from "../../../../components/QuestionHelper";
 const FixedSizeListRow = ({
   style,
   texts,
-}: // importRow,
-// selectedCurrency,
-// onCurrencySelect,
-// otherCurrency,
-// currencyRow,
-// isSelected,
-{
+}: {
   style: any;
   texts: {
     expanded: string;
     tokens: string;
   };
-  // importRow: React.ReactNode;
-  // currencyRow: React.ReactNode;
-  // selectedCurrency: any | null;
-  // onCurrencySelect: (currency: any) => void;
-  // otherCurrency: any | null;
-  // isSelected: boolean;
 }) => {
   return (
     <FixedContentRow style={style}>
-      <div>
+      <Card>
         <RowBetween>
           <Text small>{texts.expanded}</Text>
           <QuestionHelper text={texts.tokens} ml="4px" />
         </RowBetween>
-      </div>
+      </Card>
     </FixedContentRow>
   );
 };
@@ -46,4 +34,10 @@ const FixedContentRow = styled.div`
   display: grid;
   grid-gap: 16px;
   align-items: center;
+`;
+
+const Card = styled.div`
+  padding: 24px;
+  background-color: ${({ theme }) => theme.colors.greyBg2};
+  border-radius: 12px;
 `;

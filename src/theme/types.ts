@@ -28,6 +28,7 @@ export type Shadows = {
   warning: string;
   focus: string;
   inset: string;
+  input: string;
 };
 
 export type Gradients = {
@@ -102,6 +103,7 @@ export type Colors = {
   bgCard2: string;
   bgCard3: string;
   bgCard4: string;
+  bgCard5: string;
   yellow: string;
   bgHeader: string;
   buttonBg2: string;
