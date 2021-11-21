@@ -1,6 +1,9 @@
+import { ReactNode } from "react";
+
 export interface IProgress {
   totalVolume: number;
   currentVolume: number;
+  tokenName: string;
 }
 export interface IBlurStatus {
   statusText: React.ReactNode;
@@ -14,10 +17,12 @@ export interface IGOCardProps extends IBlurStatus, IProgress {
   networksTab: { value: string | number; img: string }[];
   handleTab: (e: any) => void;
   currentNetwork: string | number;
-  dataSlots: number[];
+  dataSlots: { free: number; all: number }[];
   currentVolume: number;
   totalVolume: number;
+  tokenName: string;
   handleView: () => void;
+  statusTitle?: string;
   time: number;
   texts: {
     available: string;
@@ -36,11 +41,14 @@ export enum NetworksTab {
 }
 
 export enum CardStatus {
-  OPEN_WHITELIST = "Open whitelist",
-  COMPLETED = "Completed",
-  PUBLIC_SALE = "Public Sale",
-  CLAIMING = "Claiming",
-  WHITELIST_SALE = "Whitelist Sale",
+  BEFORE_WHITELIST = "beforeWhitelist",
+  OPEN_WHITELIST = "openWhitelist",
+  WHITELIST_SALE = "whitelistSale",
+  PUBLIC_SALE = "publicSale",
+  WAIT_SALE = "waitSale",
+  WAIT_TGE = "waitTGE",
+  COMPLETED = "completed",
+  CLAIMING = "claiming",
 }
 
 export interface TextWithTooltipProps {
@@ -52,12 +60,15 @@ export interface SlotSummaryProps {
   text: string | React.ReactNode;
   error?: boolean;
   circleHidden?: boolean;
+  opacity?: boolean;
 }
+
 export interface IGODetailProgressCardProps {
   checkedToggle: boolean;
   handleToggleChecked: () => void;
   textBaseProgress: string;
   baseProgress: number;
+  statusText?: ReactNode;
   texts: {
     textBottomBaseProgress: string;
     title: string;
@@ -70,6 +81,7 @@ export interface IGODetailProgressCardProps {
     status?: React.ReactNode;
     balance?: string;
     error?: string;
+    buyYAY?: string;
   };
   slots: SlotSummaryProps[];
   status?: boolean;
@@ -77,11 +89,17 @@ export interface IGODetailProgressCardProps {
   buttonCenter: React.ReactNode;
   buttonRight: React.ReactNode;
   buttonLong: React.ReactNode;
-  progress: number[];
+  progress: { all: number; free: number }[];
   progressVisible?: boolean;
   descriptionsButtons?: string[];
   balanceError?: boolean;
   balance?: string;
+  disabledToggle?: boolean;
+  slotsOpacity?: boolean;
+  handleBuyYAY?: () => void | Promise<void>;
+  time?: number;
+  timerVisible?: boolean;
+  hrefYAYBuy?: string;
 }
 export interface IGOCardInfoProps {
   name: string;
@@ -105,9 +123,11 @@ export interface IGOCardInfoProps {
     copied: string;
     status: React.ReactNode;
   };
-  handleView: () => void;
+  handleView?: () => void;
   withTimer: boolean;
   width: number;
+  linkView?: string;
+  statusText?: ReactNode;
 }
 
 export interface IGOHistoryCardProps {
@@ -135,11 +155,11 @@ export interface IGOSubscriptionCardProps {
   privateDate: string;
   publicDate: string;
   endDate: string;
-  softCap: string;
+  // softCap: string;
   hardCap: string;
-  minPurchased: string;
-  maxPurchased: string;
-  vestingStatus: string;
+  purchasedLimit: string;
+  // maxPurchased: string;
+  vestingStatus: string | ReactNode;
   texts: {
     title: string;
     totalSale: string;
@@ -147,12 +167,15 @@ export interface IGOSubscriptionCardProps {
     private: string;
     public: string;
     end: string;
-    soft: string;
+    // soft: string;
     hard: string;
-    minPurchased: string;
-    maxPurchased: string;
+    purchasedLimit: string;
+    // maxPurchased: string;
     vesting: string;
   };
+  privateTime?: string;
+  publicTime?: string;
+  endTime?: string;
 }
 
 export enum StatusHistory {
@@ -168,20 +191,20 @@ export enum TypeHistory {
 export interface IGOInfoCardProps {
   tokenName: string;
   address: string;
-  initial: string;
-  lockDuration: string;
-  status: string;
-  link: string;
+  // initial: string;
+  // lockDuration: string;
+  // status: string;
+  // link: string;
   texts: {
     title: string;
     name: string;
     address: string;
     copied: string;
     liquid: string;
-    initial: string;
-    lock: string;
-    status: string;
-    link: string;
+    // initial: string;
+    // lock: string;
+    // status: string;
+    // link: string;
   };
   width: number;
 }

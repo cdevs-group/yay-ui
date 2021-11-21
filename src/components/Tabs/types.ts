@@ -1,3 +1,9 @@
+export const variants = {
+  SMALL: "small",
+} as const;
+
+export type Variant = typeof variants[keyof typeof variants];
+
 export interface TabsProp {
   tabValue?: number | null;
   onClick?: (e: any) => Promise<void> | void;
@@ -6,6 +12,7 @@ export interface TabsProp {
   paddingTabs?: string;
   colorActive?: string;
   fontSize?: string;
+  variant?: Variant;
 }
 
 export interface TabsSmallProp {

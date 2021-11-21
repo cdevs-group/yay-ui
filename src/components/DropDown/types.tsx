@@ -7,9 +7,15 @@ export interface LanguagesProps {
   setLang: (lang: LangType) => void;
 }
 
+export const variants = {
+  MENU: "menu",
+} as const;
+
+export type Variant = typeof variants[keyof typeof variants];
 export interface DropDownProps {
   icon: ReactNode;
   open: boolean;
   setOpen: (value: boolean) => void;
   children: ReactNode;
+  variant?: Variant;
 }

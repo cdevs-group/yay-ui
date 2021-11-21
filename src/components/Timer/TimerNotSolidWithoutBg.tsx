@@ -44,9 +44,25 @@ function MyTimer({
   hoursHide,
   withTime,
 }: MyTimerProps) {
-  const hours = Math.floor(expiryTimestamp / 3600);
-  const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
+  function getTimeRemaining(expiryTimestamp: number) {
+    const seconds = Math.floor(expiryTimestamp % 60);
+    const minutes = Math.floor((expiryTimestamp / 60) % 60);
+    const hours = Math.floor((expiryTimestamp / (60 * 60)) % 24);
+    const days = Math.floor(expiryTimestamp / (60 * 60 * 24));
+
+    return {
+      expiryTimestamp,
+      days,
+      hours,
+      minutes,
+      seconds,
+    };
+  }
+
+  // const hours = Math.floor(expiryTimestamp / 3600);
+  // console.log(hours)
+  // const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
+  // const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
 
   const handleDigit = (value: number) => {
     const leftDigit = value >= 10 ? value.toString()[0] : "0";
@@ -54,10 +70,10 @@ function MyTimer({
     return { leftDigit, rightDigit };
   };
 
-  const timeArray = hoursHide ? [minutes, seconds] : [hours, minutes, seconds];
+  // const timeArray = hoursHide ? [minutes, seconds] : [hours, minutes, seconds];
   const timeShow = ["h", "m", "s"];
   const pointsAfter = hoursHide ? 1 : 2;
-
+  const date = getTimeRemaining(expiryTimestamp);
   return (
     <Wrapper widthWrapper={widthWrapper} margin={margin}>
       <BlockWithoutBg
@@ -68,19 +84,21 @@ function MyTimer({
         height={height}
         color={color}
       >
-        {timeArray.map((item, i) => (
-          <React.Fragment key={`item-${i}`}>
-            <ItemWithoutBg withTime={withTime} fontSize={fontSize} color={color}>
-              {handleDigit(item).leftDigit}
-              {handleDigit(item).rightDigit} {withTime && timeShow[i]}
-            </ItemWithoutBg>
-            {i === pointsAfter ? null : (
-              <DotsWithoutBg color={color} marginPoint={marginPoint}>
-                :
-              </DotsWithoutBg>
-            )}
-          </React.Fragment>
-        ))}
+        {/*{timeArray.map((item, i) => (*/}
+        {/*  <React.Fragment key={`item-${i}`}>*/}
+        {/*    <ItemWithoutBg withTime={withTime} fontSize={fontSize} color={color}>*/}
+        {/*    /!*  {handleDigit(item).leftDigit}*!/*/}
+        {/*    /!*  {handleDigit(item).rightDigit} {withTime && timeShow[i]}*!/*/}
+        {/*    </ItemWithoutBg>*/}
+        {/*    /!*{i === pointsAfter ? null : (*!/*/}
+        {/*    /!*  <DotsWithoutBg color={color} marginPoint={marginPoint}>*!/*/}
+        {/*    /!*    :*!/*/}
+        {/*    /!*  </DotsWithoutBg>*!/*/}
+        {/*    /!*)}*!/*/}
+        {/*  </React.Fragment>*/}
+        {/*))}*/}
+        {date.days > 0 ? date.days + "d :" : ""} {date.hours > 0 ? date.hours + "h :" : ""} {date.minutes + "m"}{" "}
+        {": " + date.seconds + "s"}
       </BlockWithoutBg>
     </Wrapper>
   );

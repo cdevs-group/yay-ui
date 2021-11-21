@@ -9,10 +9,13 @@ import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
 import { baseColors } from "../../../theme/colors";
+import { Button } from "../../../components/Button";
+import { TimerNotSolidWithoutBg } from "../../..";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   checkedToggle,
   handleToggleChecked,
+  disabledToggle,
   textBaseProgress,
   baseProgress,
   texts,
@@ -27,6 +30,10 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   descriptionsButtons,
   balanceError,
   balance,
+  statusText,
+  time,
+  timerVisible,
+  hrefYAYBuy,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
 
@@ -36,11 +43,11 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         <Text fontSize="17px">{texts.title}</Text>
         <div>
           <Flex alignItems="center">
-            <Text fontSize="13px" mr="10px">
+            <Text fontSize="13px" mr="10px" style={{ opacity: disabledToggle ? 0.5 : 1 }}>
               {texts.whitelistToggle}
             </Text>
-            <BaseToggle checked={checkedToggle} onChange={handleToggleChecked} />
-            <Text fontSize="13px" ml="10px">
+            <BaseToggle checked={checkedToggle} onChange={handleToggleChecked} disabled={disabledToggle} />
+            <Text fontSize="13px" ml="10px" style={{ opacity: disabledToggle ? 0.5 : 1 }}>
               {texts.saleToggle}
             </Text>
           </Flex>
@@ -50,11 +57,21 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       <Text fontSize="11px" lineHeight="140%" fontWeight={400} mt="10px" mb="30px" textAlign="center">
         {texts.textBottomBaseProgress}
       </Text>
-      {status && <Status>{texts.status}</Status>}
+      {status && (
+        <Status>
+          {statusText || texts.status}
+          {timerVisible && (
+            <Text textTransform="lowercase">
+              <TimerNotSolidWithoutBg height="auto" withTime fontSize="17px" time={time} />
+            </Text>
+          )}
+        </Status>
+      )}
+
       <TextWithTooltip text={texts.slotsSummary} textTooltip={texts.slotsSummaryTooltip} />
       <Slots>
         {slots.map((el) => (
-          <SlotSummary text={el.text} error={el.error} circleHidden={slots?.length <= 1} />
+          <SlotSummary text={el.text} opacity={el.opacity} error={el.error} circleHidden={slots?.length <= 1} />
         ))}
       </Slots>
       <TextWithTooltip text={texts.availableWhitelist} textTooltip={texts.availableWhitelistTooltip} />
@@ -76,13 +93,29 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
         ))}
       </Grid>
       {balanceError ? (
-        <Text mb={10} color={baseColors.darkPink}>
-          {texts.error}
-        </Text>
+        <Flex alignItems="center" justifyContent="center" mb={10}>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.darkPink}>
+            {texts.error}
+          </Text>
+          <BuyYAYButton
+            href={hrefYAYBuy}
+            as="a"
+            target="_blank"
+            fontSize="13px"
+            style={{ textsDecoration: "underline", opacity: 0.5 }}
+            color={baseColors.green}
+          >
+            {texts.buyYAY}
+          </BuyYAYButton>
+        </Flex>
       ) : (
-        <Flex mb={10}>
-          <Text mr="10px">{texts.balance}</Text>
-          <Text color={baseColors.green}>{balance}</Text>
+        <Flex justifyContent="center" mb={10}>
+          <Text color={baseColors.textGray} style={{ opacity: 0.5 }} fontSize="13px" marginRight="10px">
+            {texts.balance}
+          </Text>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.textGray}>
+            {balance}
+          </Text>
         </Flex>
       )}
       {buttonLong}
@@ -143,4 +176,17 @@ const Block = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-bottom: 0;
   }
+`;
+const BuyYAYButton = styled(Button)`
+  height: fit-content;
+  display: block;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  color: ${({ theme }) => theme.colors.green};
+  font-size: 13px;
+  margin-left: 5px;
 `;

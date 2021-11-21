@@ -10,7 +10,8 @@ import IGOHistoryCard from "./Cards/IGOHistoryCard";
 import IGOSubscriptionCard from "./Cards/IGOSubscriptionCard";
 import IGOInfoCard from "./Cards/IGOInfoCard";
 import InfoBoard from "./InfoBoard";
-import { Flex, TimerNotSolidWithoutBg } from "../..";
+import { Flex, lightColors, Text, TimerNotSolidWithoutBg } from "../..";
+import { baseColors } from "../../theme/colors";
 
 export default {
   title: "Widgets/IGOPlatform",
@@ -28,7 +29,21 @@ export const IGOCardBlock = () => {
     setNetwork(e.target.value);
   };
 
-  const dataSlots = [17, 80, 100];
+  const dataSlots = [
+    {
+      all: 230,
+      free: 200,
+    },
+    {
+      all: 230,
+      free: 230,
+    },
+    {
+      all: 230,
+      free: 0,
+    },
+  ];
+
   const handleView = () => {
     console.log("view");
   };
@@ -47,35 +62,17 @@ export const IGOCardBlock = () => {
 
   return (
     <div>
-      <IGOCard
-        dataSlots={dataSlots}
-        currentNetwork={network}
-        handleTab={handleChangeNetwork}
-        networksTab={networksTab}
-        amount="282,689,372.1176 DESU"
-        tokenImg={DESU_TOKEN}
-        status={CardStatus.WHITELIST_SALE}
-        token="DESU Token"
-        texts={texts}
-        currentVolume={500}
-        totalVolume={1000}
-        time={1000}
-        handleView={handleView}
-        statusText={
-          <>
-            CLAIMING IS <span>LIVE</span>
-          </>
-        }
-      />
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
           networksTab={networksTab}
           amount="282,689,372.1176 DESU"
           tokenImg={DESU_TOKEN}
-          status={CardStatus.PUBLIC_SALE}
+          status={CardStatus.BEFORE_WHITELIST}
+          statusTitle="Before Whitelist"
           token="DESU Token"
           texts={texts}
           currentVolume={1000}
@@ -83,16 +80,18 @@ export const IGOCardBlock = () => {
           time={1000}
           handleView={handleView}
           statusText={
-            <>
-              CLAIMING IS <span>LIVE</span>
-            </>
+            <Text fontSize="15px" color={baseColors.green}>
+              WHITELIST <span style={{ color: lightColors.text, marginLeft: "5px" }}>LIVE IN</span>
+            </Text>
           }
         />
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
+          statusTitle="Whitelist is open"
           handleTab={handleChangeNetwork}
           networksTab={networksTab}
           amount="282,689,372.1176 DESU"
@@ -105,21 +104,23 @@ export const IGOCardBlock = () => {
           time={1000}
           handleView={handleView}
           statusText={
-            <>
-              CLAIMING IS <span>LIVE</span>
-            </>
+            <Text fontSize="15px" color={baseColors.green}>
+              WHITELIST SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+            </Text>
           }
         />
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
           networksTab={networksTab}
           amount="282,689,372.1176 DESU"
           tokenImg={DESU_TOKEN}
-          status={CardStatus.COMPLETED}
+          statusTitle="Whitelist is closed"
+          status={CardStatus.WAIT_SALE}
           token="DESU Token"
           texts={texts}
           currentVolume={1000}
@@ -127,14 +128,88 @@ export const IGOCardBlock = () => {
           time={1000}
           handleView={handleView}
           statusText={
-            <>
-              CLAIMING IS <span>LIVE</span>
-            </>
+            <Text fontSize="15px" color={baseColors.green}>
+              WHITELIST SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+            </Text>
           }
         />
       </div>
       <div style={{ marginTop: "50px" }}>
         <IGOCard
+          tokenName="BNd"
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          statusTitle="Whitelist sale"
+          status={CardStatus.WHITELIST_SALE}
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <Text fontSize="15px" color={baseColors.green}>
+              WHITELIST SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+            </Text>
+          }
+        />
+      </div>
+
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          tokenName="BNd"
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.PUBLIC_SALE}
+          statusTitle="FCFS sale"
+          token="DESU Token"
+          texts={texts}
+          currentVolume={500}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <Text fontSize="15px" color={baseColors.green}>
+              FCFS SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+            </Text>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          tokenName="BNd"
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.WAIT_TGE}
+          statusTitle="Waiting for TGE"
+          token="DESU Token"
+          texts={texts}
+          currentVolume={500}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <Text fontSize="15px" color={baseColors.green}>
+              TGE <span style={{ color: lightColors.text, marginLeft: "5px" }}>IN</span>
+            </Text>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          tokenName="BNd"
           dataSlots={dataSlots}
           currentNetwork={network}
           handleTab={handleChangeNetwork}
@@ -143,6 +218,7 @@ export const IGOCardBlock = () => {
           tokenImg={DESU_TOKEN}
           status={CardStatus.CLAIMING}
           token="DESU Token"
+          statusTitle="Claiming"
           texts={texts}
           currentVolume={1000}
           totalVolume={1000}
@@ -150,7 +226,31 @@ export const IGOCardBlock = () => {
           handleView={handleView}
           statusText={
             <>
-              CLAIMING IS <span>LIVE</span>
+              DESU CLAIMING IS <span>LIVE</span>
+            </>
+          }
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          tokenName="BNd"
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.COMPLETED}
+          statusTitle="Completed"
+          token="DESU Token"
+          texts={texts}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <>
+              SEDU IGO IS <span>IS COMPLETED</span>
             </>
           }
         />
@@ -170,7 +270,8 @@ export const IGODetailProgressCardBlock = () => {
     availableWhitelist: "Available whitelist slots:",
     availableWhitelistTooltip: "Available whitelist slots",
     balance: "Available balance: ",
-    error: "Insufficient balance to make bet",
+    error: "You dont have YAY.",
+    buyYAY: "Buy YAY",
     status: (
       <>
         PUBLIC sale <span>SOLD OUT</span>
@@ -206,6 +307,25 @@ export const IGODetailProgressCardBlock = () => {
     },
   ];
 
+  const slots1 = [
+    {
+      text: "7 day lock - 10000 DESU per 1 BNB for 100 YAY",
+      error: false,
+      opacity: true,
+    },
+    {
+      text: "15 day lock - 20000 DESU per 1 BNB  for 500 YAY",
+      error: false,
+      opacity: false,
+    },
+
+    {
+      text: "30 day lock - 30000 DESU per 1 BNB for 1000 YAY",
+      error: false,
+      opacity: false,
+    },
+  ];
+
   const ButtonLeft = () => (
     <Button variant="green" width="100%">
       100 YAY
@@ -226,11 +346,29 @@ export const IGODetailProgressCardBlock = () => {
       Join public sale
     </Button>
   );
-  const dataProgress = [0, 80, 100];
+  const dataProgress = [
+    {
+      all: 230,
+      free: 0,
+    },
+    {
+      all: 230,
+      free: 230,
+    },
+    {
+      all: 230,
+      free: 40,
+    },
+  ];
 
   return (
     <Cards>
       <IGODetailProgressCard
+        statusText={
+          <>
+            PUBLIC sale <span>SOLD OUT</span>
+          </>
+        }
         balance="100yay"
         balanceError
         checkedToggle={isChecked}
@@ -247,6 +385,10 @@ export const IGODetailProgressCardBlock = () => {
         progress={dataProgress}
         progressVisible={false}
         descriptionsButtons={["ZEUS", "HERMES", "POSEIDON"]}
+        disabledToggle
+        time={5006}
+        timerVisible
+        hrefYAYBuy="https://www.yandex.ru/"
       />
 
       <IGODetailProgressCard
@@ -267,13 +409,14 @@ export const IGODetailProgressCardBlock = () => {
       />
 
       <IGODetailProgressCard
+        slotsOpacity
         balance="100yay"
         checkedToggle={!isChecked}
         handleToggleChecked={handleToggleChecked}
         textBaseProgress="700 BNB/ 700 BNB"
         baseProgress={100}
         texts={texts}
-        slots={slots}
+        slots={slots1}
         status={false}
         buttonLeft={<ButtonLeft />}
         buttonRight={<ButtonRight />}
@@ -314,9 +457,7 @@ export const IGOCardDetailsBlock = () => {
     summaryText:
       "Lorem ipsum dolor <br/> sit amet, consectetur adipiscing elit. Ut et nulla ultrices mi venenatis etiam . Vulputate sed semper blandit vitae ut lectus sed pulvinar. Mi neque tempor, lobortis adipiscing consectetur proin varius orci adipiscing semper venenatis etiam.",
   };
-  const handleView = () => {
-    console.log("view");
-  };
+  const linkView = "https://www.yay.games/";
   return (
     <div>
       <IGODetailCard
@@ -331,10 +472,15 @@ export const IGOCardDetailsBlock = () => {
         networksTab={networksTab}
         time={1000}
         texts={texts}
-        handleView={handleView}
+        linkView={linkView}
         withTimer={false}
         externalLink="/"
         width={500}
+        statusText={
+          <Text fontSize="15px" color={baseColors.green}>
+            WHITELIST SALE <span style={{ color: lightColors.text, marginLeft: "10px" }}>LIVE IN</span>
+          </Text>
+        }
       />
       <div style={{ marginTop: "50px" }}>
         <IGODetailCard
@@ -349,7 +495,7 @@ export const IGOCardDetailsBlock = () => {
           networksTab={networksTab}
           time={1000}
           texts={texts}
-          handleView={handleView}
+          linkView={linkView}
           withTimer
           externalLink="/"
           width={500}
@@ -411,10 +557,10 @@ export const IGOSubscriptionCardBlock = () => {
     private: "Private Start",
     public: "Public Start",
     end: "End",
-    soft: "Soft Cap",
+    // soft: "Soft Cap",
     hard: "Hard Cap",
-    minPurchased: "Min Purchase",
-    maxPurchased: "Max Purchase",
+    purchasedLimit: "Min Purchase",
+    // maxPurchased: "Max Purchase",
     vesting: "Vesting Schedule",
   };
 
@@ -426,12 +572,15 @@ export const IGOSubscriptionCardBlock = () => {
         privateDate="20/09/2021"
         publicDate="20/09/2021"
         endDate="20/09/2021"
-        softCap="244 BNB"
+        // softCap="244 BNB"
         hardCap="700 BNB"
-        minPurchased="2.8 BNB"
-        maxPurchased="2.8 BNB"
-        vestingStatus="Refer to project details"
+        purchasedLimit="2.8 BNB"
+        // maxPurchased="2.8 BNB"
+        vestingStatus={<a>Refer to project details</a>}
         texts={texts}
+        privateTime="05:00 PM"
+        publicTime="05:00 PM"
+        endTime="05:00 PM"
       />
     </div>
   );
@@ -444,10 +593,10 @@ export const IGOInfoCardBlock = () => {
     address: "Address",
     copied: "Copied",
     liquid: "Liquidity Provision",
-    initial: "Initial Liquidity",
-    lock: "Lock Duration",
-    status: "Status",
-    link: "Link",
+    // initial: "Initial Liquidity",
+    // lock: "Lock Duration",
+    // status: "Status",
+    // link: "Link",
   };
 
   return (
@@ -455,11 +604,11 @@ export const IGOInfoCardBlock = () => {
       <IGOInfoCard
         tokenName="iBuffer Token"
         address="0x524df384bffb18c0c8f3f43d012011f8f9795579"
-        initial="244 BNB + 1,333,400 iBFR"
-        lockDuration="6 month"
-        status="Status"
+        // initial="244 BNB + 1,333,400 iBFR"
+        // lockDuration="6 month"
+        // status="Status"
         texts={texts}
-        link="/"
+        // link="/"
         width={500}
       />
     </div>

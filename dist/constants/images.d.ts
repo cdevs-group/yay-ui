@@ -41,4 +41,6 @@ import ROKET1 from "../../public/images/rocket1.png";
 import DESU_TOKEN from "../../public/images/desu.png";
 import BSC_ICON from "../../public/images/bsc-icon.png";
 import MAIN_GAME from "../../public/images/main-game.png";
-export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, YAY_TOKEN_GREEN, LOSE, WINNER_MIN, WINNER3, COIN4, ROKET1, DESU_TOKEN, BSC_ICON, MAIN_GAME, };
+import WALLET_KYC from "../../public/images/wallet-kyc.png";
+import BLUR from "../../public/images/blur.png";
+export { BG_IMG, BG2_IMG, BG3_IMG, Metamask, TrustWallet, MathWallet, TokenPocket, WalletConnect, BinanceWallet, SafepackWallet, BNB, COINS2, Winner, Win, AccountIcon, ADA, ComingSoonIcon, GhostsIcon, OneGhost, WINNER2, Coin98, Gift, Gift2, Gift3, BNB2, Avalanche, CONTROLLER, COINS, AVATAR_PLAYER, AVATAR_PLAYER_2, UNIT, PANCAKE, PANGOLIN, YAY_TOKEN, YAY_TOKEN_GREEN, LOSE, WINNER_MIN, WINNER3, COIN4, ROKET1, DESU_TOKEN, BSC_ICON, MAIN_GAME, WALLET_KYC, BLUR, };

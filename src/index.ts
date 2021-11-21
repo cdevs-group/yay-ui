@@ -63,6 +63,9 @@ export * from "./widgets/LockFuture";
 export * from "./widgets/StakingDashboard";
 export * from "./widgets/IGOPlatform";
 export * from "./widgets/AgreeMessage";
+export * from "./widgets/IGOStaking";
+export * from "./widgets/IGOPlatformV2";
+export * from "./widgets/KYC";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

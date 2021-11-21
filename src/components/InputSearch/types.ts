@@ -11,4 +11,5 @@ export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement> {
   ref?: Ref<HTMLInputElement>;
   icon?: ReactNode;
   padding?: string;
+  disabled?: boolean;
 }

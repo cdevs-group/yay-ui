@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
-import { TabsProp } from "./types";
+import { TabsProp, Variant } from "./types";
+import { variant } from "styled-system";
+import { styleVariantsTab, styleVariantsTabs } from "./theme";
 
-const Tabs = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, colorActive }: TabsProp) => {
+const Tabs = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, colorActive, variant }: TabsProp) => {
   return (
-    <TabsWrap width={width} length={tabsList?.length}>
+    <TabsWrap width={width} length={tabsList?.length} variant={variant}>
       {tabsList?.map((item, i) => (
         <Tab
           fontSize={fontSize}
@@ -15,6 +17,7 @@ const Tabs = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, color
           className={tabValue === i ? "active" : ""}
           key={i}
           value={i}
+          variant={variant}
         >
           {item}
         </Tab>
@@ -25,16 +28,19 @@ const Tabs = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, color
 
 export default Tabs;
 
-const TabsWrap = styled.div<{ length?: number; width?: string }>`
+const TabsWrap = styled.div<{ length?: number; width?: string; variant?: Variant }>`
   display: grid;
   width: ${({ width }) => width || "auto"};
-  grid-template-columns: repeat(${({ length }) => length || 2}, 1fr);
+  grid-template-columns: ${({ length, variant }) => `repeat(${length || 2}, ${variant === "small" ? "auto" : "1fr"})`};
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+  ${variant({
+    variants: styleVariantsTabs,
+  })}
 `;
 
-const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize?: string }>`
+const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize?: string; variant?: Variant }>`
   padding: ${({ paddingTabs }) => paddingTabs || "15px 16px"};
   border: none;
   background: transparent;
@@ -55,4 +61,7 @@ const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize
   ${({ theme }) => theme.mediaQueries.md} {
     padding: ${({ paddingTabs }) => paddingTabs || "15px 30px"};
   }
+  ${variant({
+    variants: styleVariantsTab,
+  })}
 `;

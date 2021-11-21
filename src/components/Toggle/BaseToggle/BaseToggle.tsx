@@ -4,7 +4,7 @@ import { ToggleProps } from "../types";
 
 const BaseToggle: React.FC<ToggleProps> = ({ checked, ...props }) => {
   return (
-    <StyledToggle checked={!!checked}>
+    <StyledToggle checked={!!checked} disabled={props.disabled}>
       <Input checked={checked} {...props} type="checkbox" />
       <Handle />
     </StyledToggle>
@@ -52,4 +52,5 @@ const StyledToggle = styled.div<ToggleProps>`
   position: relative;
   transition: background-color 200ms;
   width: 50px;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;

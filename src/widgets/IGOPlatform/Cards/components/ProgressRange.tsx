@@ -4,18 +4,21 @@ import { Text } from "../../../../components/Text";
 
 export interface ProgressRangeProps {
   bgTrack: string;
-  progress: number;
-  isError?: boolean;
+  progress: { all: number; free: number };
   counter: string;
 }
 
-const ProgressRange = ({ progress, isError, counter, bgTrack }: ProgressRangeProps) => {
+const ProgressRange = ({ progress, counter, bgTrack }: ProgressRangeProps) => {
   return (
     <ProgressWrap>
-      <RangeTrack bgTrack={bgTrack} isError={isError} progress={progress} />
+      <RangeTrack
+        bgTrack={bgTrack}
+        isError={progress.free === 0}
+        progress={((progress.all - progress.free) * 100) / progress.all}
+      />
       {counter && (
         <Text fontSize="11px" textAlign="center">
-          {counter}/100
+          {progress.all - progress.free}/{progress.all}
         </Text>
       )}
     </ProgressWrap>

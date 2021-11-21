@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { NavProps } from "../types";
 import Account from "./Account";
@@ -47,6 +48,7 @@ const Header: React.FC<NavProps> = ({
   linkExternalWalletModal,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
@@ -67,21 +69,25 @@ const Header: React.FC<NavProps> = ({
     };
   }, [refSelect, handleClickOutside]);
 
-  const handleLink = () => {
-    setOpenMenu(false);
-  };
-
   return (
     <HeaderWrap ref={refSelect}>
       {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
       <Content>
         <Line>
-          <LogoWrap href={linkLogo}>
+          <LogoWrap to={linkLogo}>
             <img src={Logo} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
             {links.map((item, i) => (
-              <MenuLink key={i} size="md" name={item.name} url={item.url} onClick={handleLink} />
+              <MenuLink
+                key={i}
+                name={item.name}
+                url={item.url}
+                submenu={item.submenu}
+                setOpenMenu={setOpenMenu}
+                openDropdown={openDropdown}
+                setOpenDropdown={setOpenDropdown}
+              />
             ))}
             <LanguageBlockMob>
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
@@ -207,7 +213,7 @@ const LanguageBlockDesk = styled.div`
   }
 `;
 
-const LogoWrap = styled.a`
+const LogoWrap = styled(NavLink)`
   display: flex;
   align-items: center;
   & img {
