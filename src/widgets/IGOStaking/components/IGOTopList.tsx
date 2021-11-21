@@ -4,6 +4,8 @@ import { Flex, Tabs } from "../../..";
 import { IGOTopListProps } from "../types";
 import { ellipsis } from "../../../helpers/ellipsis";
 import Web3Utils from "web3-utils";
+import BigNumber from "bignumber.js";
+
 const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, tabsList, toggleTab, activeTab }) => {
   return (
     <Wrapper>
@@ -27,7 +29,7 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
             <Cell>{item.position}</Cell>
             <Cell>{ellipsis(item.wallet, 6)}</Cell>
             <Cell>
-              {Web3Utils.fromWei(item.stake).toFixed(2)} {texts.tokenName}
+              {new BigNumber(Web3Utils.fromWei(item.stake)).toFixed(2)} {texts.tokenName}
             </Cell>
           </Line>
         ))}
