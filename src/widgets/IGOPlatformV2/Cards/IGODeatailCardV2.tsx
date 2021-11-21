@@ -43,6 +43,7 @@ const IGODetailCardV2 = ({
   tperiodText,
   time,
   linkView,
+  isLottery,
 }: IGODetailCardV2Props) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
@@ -76,17 +77,19 @@ const IGODetailCardV2 = ({
           <TitleBlock marginBottom="20px !important">{texts.availableNetwork}</TitleBlock>
           <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
         </NetworkBlock>
-        <TimerBlock>
-          <TitleBlock marginBottom="20px !important">{tperiodText}</TitleBlock>
-          <TimerNotSolidWithoutBg
-            widthWrapper="fit-content"
-            margin="0"
-            fontSize="15px"
-            height="fit-content"
-            time={time}
-            color={baseColors.green}
-          />
-        </TimerBlock>
+        {!isLottery && (
+          <TimerBlock>
+            <TitleBlock marginBottom="20px !important">{tperiodText}</TitleBlock>
+            <TimerNotSolidWithoutBg
+              widthWrapper="fit-content"
+              margin="0"
+              fontSize="15px"
+              height="fit-content"
+              time={time}
+              color={baseColors.green}
+            />
+          </TimerBlock>
+        )}
       </div>
       <ButtonStyle target="_blank" as="a" href={linkView} variant="green">
         {texts.button}

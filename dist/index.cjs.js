@@ -10130,7 +10130,7 @@ var ChanceBlockProgress = styled__default["default"].div(templateObject_27 || (t
 var templateObject_1$D, templateObject_2$q, templateObject_3$k, templateObject_4$f, templateObject_5$8, templateObject_6$4, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27;
 
 var IGOCardV2 = function (_a) {
-    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake;
+    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake, isLottery = _a.isLottery;
     return (React__default["default"].createElement(Wrapper$8, null,
         React__default["default"].createElement(HeadLine, null,
             React__default["default"].createElement(TokenName, null, token),
@@ -10156,8 +10156,9 @@ var IGOCardV2 = function (_a) {
                 " ",
                 React__default["default"].createElement(TitleBlock, null, texts.chance),
                 React__default["default"].createElement(InfoText, { white: chance === 0 }, chance)))),
-            React__default["default"].createElement(TitleBlock, null, tperiodText),
-            React__default["default"].createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })),
+            !isLottery && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                React__default["default"].createElement(TitleBlock, null, tperiodText),
+                React__default["default"].createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })))),
         React__default["default"].createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
 var Wrapper$8 = styled__default["default"].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
@@ -10175,7 +10176,7 @@ var ButtonStyle$2 = styled__default["default"](Button$9)(templateObject_3$j || (
 var templateObject_1$C, templateObject_2$p, templateObject_3$j;
 
 var IGODetailCardV2 = function (_a) {
-    var token = _a.token, statusTitle = _a.statusTitle, site = _a.site, texts = _a.texts, tokenImg = _a.tokenImg, width = _a.width, address = _a.address, balance = _a.balance, externalLink = _a.externalLink, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tperiodText = _a.tperiodText, time = _a.time, linkView = _a.linkView;
+    var token = _a.token, statusTitle = _a.statusTitle, site = _a.site, texts = _a.texts, tokenImg = _a.tokenImg, width = _a.width, address = _a.address, balance = _a.balance, externalLink = _a.externalLink, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tperiodText = _a.tperiodText, time = _a.time, linkView = _a.linkView, isLottery = _a.isLottery;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     return (React__default["default"].createElement(CardFlex, null,
         React__default["default"].createElement("div", null,
@@ -10198,9 +10199,9 @@ var IGODetailCardV2 = function (_a) {
             React__default["default"].createElement(NetworkBlock, null,
                 React__default["default"].createElement(TitleBlock, { marginBottom: "20px !important" }, texts.availableNetwork),
                 React__default["default"].createElement(NetworksTabs, { networksTab: networksTab, currentNetwork: currentNetwork, onClick: handleTab })),
-            React__default["default"].createElement(TimerBlock, null,
+            !isLottery && (React__default["default"].createElement(TimerBlock, null,
                 React__default["default"].createElement(TitleBlock, { marginBottom: "20px !important" }, tperiodText),
-                React__default["default"].createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green }))),
+                React__default["default"].createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })))),
         React__default["default"].createElement(ButtonStyle$1, { target: "_blank", as: "a", href: linkView, variant: "green" }, texts.button)));
 };
 var CardFlex = styled__default["default"](Card$2)(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"])));

@@ -44,6 +44,7 @@ const IGOCardV2 = ({
   tperiodText,
   propsButtonStake,
   disabledButtonStake,
+  isLottery,
 }: IGOCardV2Props) => {
   return (
     <Wrapper>
@@ -90,15 +91,19 @@ const IGOCardV2 = ({
             </>
           )}
         </ChanceBlock>
-        <TitleBlock>{tperiodText}</TitleBlock>
-        <TimerNotSolidWithoutBg
-          widthWrapper="fit-content"
-          margin="0"
-          fontSize="15px"
-          height="fit-content"
-          time={time}
-          color={baseColors.green}
-        />
+        {!isLottery && (
+          <>
+            <TitleBlock>{tperiodText}</TitleBlock>
+            <TimerNotSolidWithoutBg
+              widthWrapper="fit-content"
+              margin="0"
+              fontSize="15px"
+              height="fit-content"
+              time={time}
+              color={baseColors.green}
+            />
+          </>
+        )}
       </MainBlock>
       <ButtonStyle onClick={handleView} variant="green">
         {texts.button}
