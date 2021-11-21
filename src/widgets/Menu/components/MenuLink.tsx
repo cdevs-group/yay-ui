@@ -23,8 +23,14 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, setOpenDropdown, openDropdo
         variant="menu"
       >
         <Dropdown open={openDropdown}>
-          {submenu?.map((el) => (
-            <MenuLink {...el} setOpenMenu={setOpenMenu} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
+          {submenu?.map((el, i) => (
+            <MenuLink
+              {...el}
+              key={i}
+              setOpenMenu={setOpenMenu}
+              openDropdown={openDropdown}
+              setOpenDropdown={setOpenDropdown}
+            />
           ))}
         </Dropdown>
       </DropdownLayout>

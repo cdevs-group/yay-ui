@@ -6772,7 +6772,7 @@ var MenuLink = function (_a) {
     };
     if (submenu === null || submenu === void 0 ? void 0 : submenu.length) {
         return (React__default["default"].createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default["default"].createElement(LinkItem$1, { onClick: function () { return setOpenDropdown(true); } }, name), variant: "menu" },
-            React__default["default"].createElement(Dropdown, { open: openDropdown }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el) { return (React__default["default"].createElement(MenuLink, __assign({}, el, { setOpenMenu: setOpenMenu, openDropdown: openDropdown, setOpenDropdown: setOpenDropdown }))); }))));
+            React__default["default"].createElement(Dropdown, { open: openDropdown }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el, i) { return (React__default["default"].createElement(MenuLink, __assign({}, el, { key: i, setOpenMenu: setOpenMenu, openDropdown: openDropdown, setOpenDropdown: setOpenDropdown }))); }))));
     }
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         isHttpLink && (React__default["default"].createElement("a", { href: url, target: "_blank" },
