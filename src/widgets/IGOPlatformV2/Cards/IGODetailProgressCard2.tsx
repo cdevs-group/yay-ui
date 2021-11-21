@@ -56,7 +56,7 @@ const IGODetailProgressCard2 = ({
         !inPool ? (
           <InfoText white>-</InfoText>
         ) : (
-          <InfoText white>{chance}%</InfoText>
+          <InfoText white>{chance}</InfoText>
         )}
       </ChanceBlockProgress>
       <ChanceBlockProgress>

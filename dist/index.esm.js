@@ -10193,9 +10193,7 @@ var IGODetailProgressCard2 = function (_a) {
         React__default.createElement(ChanceBlockProgress, null,
             React__default.createElement(TitleBlock, null, texts.chance),
             (status === StatusType.COMPLETED || status === StatusType.CLAIMING || status === StatusType.WAITING_FOR_TGE) &&
-                !inPool ? (React__default.createElement(InfoText, { white: true }, "-")) : (React__default.createElement(InfoText, { white: true },
-                chance,
-                "%"))),
+                !inPool ? (React__default.createElement(InfoText, { white: true }, "-")) : (React__default.createElement(InfoText, { white: true }, chance))),
         React__default.createElement(ChanceBlockProgress, null,
             React__default.createElement(TitleBlock, null, texts.allocation),
             !inPool ? React__default.createElement(InfoText, { white: true }, "-") : React__default.createElement(InfoText, null, allocation)),
