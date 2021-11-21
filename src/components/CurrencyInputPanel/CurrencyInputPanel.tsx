@@ -57,7 +57,6 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   doubleCurrencyLogo,
   texts,
 }) => {
-  
   return (
     <InputPanel id={id}>
       <Container hideInput={hideInput}>

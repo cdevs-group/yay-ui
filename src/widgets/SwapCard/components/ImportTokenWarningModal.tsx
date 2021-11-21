@@ -30,7 +30,7 @@ const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({
         }
         onCancel();
       }}
-      style={{ maxWidth: "420px" }}      
+      style={{ maxWidth: "420px" }}
     >
       <ImportToken
         tokens={tokens}

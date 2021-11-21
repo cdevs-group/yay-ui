@@ -1,27 +1,27 @@
-import React from "react"
-import styled from "styled-components"
-import { Button } from "../../components/Button"
-import { Text } from "../../components/Text"
-import { ArrowDownIcon } from "../../components/Svg"
-import { Box } from "../../components/Box"
-import { useModal } from "../Modal"
-import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter"
-import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel"
-import { GreyCard } from "../../components/StyledCard"
-import Column, { AutoColumn } from "../../components/Layout/Column"
-import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal"
-import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel"
-import { AutoRow, RowBetween } from "../../components/Layout/Row"
-import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown"
-import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds"
-import TradePrice, { TradePriceProps } from "./components/TradePrice"
+import React from "react";
+import styled from "styled-components";
+import { Button } from "../../components/Button";
+import { Text } from "../../components/Text";
+import { ArrowDownIcon } from "../../components/Svg";
+import { Box } from "../../components/Box";
+import { useModal } from "../Modal";
+import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter";
+import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel";
+import { GreyCard } from "../../components/StyledCard";
+import Column, { AutoColumn } from "../../components/Layout/Column";
+import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal";
+import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel";
+import { AutoRow, RowBetween } from "../../components/Layout/Row";
+import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
+import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
+import TradePrice, { TradePriceProps } from "./components/TradePrice";
 //import ImportTokenWarningModal from "./components/ImportTokenWarningModal"
-import ProgressSteps, { ProgressCirclesProps } from "./components/ProgressSteps"
-import { AppHeader, AppBody } from "./components/App"
-import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails"
-import { AppHeaderProps } from "./components/App/types"
-import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal"
-import { TransactionDetailsProps } from "./components/App/Transactions/types"
+import ProgressSteps, { ProgressCirclesProps } from "./components/ProgressSteps";
+import { AppHeader, AppBody } from "./components/App";
+import { AdvancedSwapDetailsProps } from "./components/AdvancedSwapDetails";
+import { AppHeaderProps } from "./components/App/types";
+import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal";
+import { TransactionDetailsProps } from "./components/App/Transactions/types";
 import { InjectedModalProps } from "../Modal";
 import { TransactionSubmittedContentProps } from "../../components/TransactionConfirmationModal";
 
@@ -31,10 +31,10 @@ const Label = styled(Text)`
 `;
 
 const StyledSlippageToleranceText = styled(Text)`
-font-size: 13px;
-margin-left: 8px;
-color: ${({ theme }) => theme.colors.green};
-`
+  font-size: 13px;
+  margin-left: 8px;
+  color: ${({ theme }) => theme.colors.green};
+`;
 
 interface SwapCardProps {
   currencyInputPanelFrom: CurrencyInputPanelProps;
@@ -97,39 +97,39 @@ export default function Swap({
   SwapCallbackErrorText,
   ConfirmSwapModalComponent,
 }: SwapCardProps) {
-  const [onPresentConfirmModal] = useModal(
-    <ConfirmSwapModal
-      trade={ConfirmSwapModalComponent.trade}
-      attemptingTxn={ConfirmSwapModalComponent.attemptingTxn}
-      recipient={ConfirmSwapModalComponent.recipient}
-      allowedSlippage={ConfirmSwapModalComponent.allowedSlippage}
-      onAcceptChanges={ConfirmSwapModalComponent.onAcceptChanges}
-      onConfirm={ConfirmSwapModalComponent.onConfirm}
-      customOnDismiss={ConfirmSwapModalComponent.customOnDismiss}
-      pendingText={ConfirmSwapModalComponent.pendingText}
-      modalTitle={ConfirmSwapModalComponent.modalTitle}
-      dismissText={ConfirmSwapModalComponent.dismissText}
-      contentTexts={ConfirmSwapModalComponent.contentTexts}
-      chainId={ConfirmSwapModalComponent.chainId}
-      registerToken={ConfirmSwapModalComponent.registerToken}
-      bscScanLink={ConfirmSwapModalComponent.bscScanLink}
-      transSubmittedText={ConfirmSwapModalComponent.transSubmittedText}
-      bscScanLinkText={ConfirmSwapModalComponent.bscScanLinkText}
-      metamaskAssetText={ConfirmSwapModalComponent.metamaskAssetText}
-      btnCloseText={ConfirmSwapModalComponent.btnCloseText}
-      isMetaMask={ConfirmSwapModalComponent.isMetaMask}
-      token={ConfirmSwapModalComponent.token}
-      currencyLogoFrom={ConfirmSwapModalComponent.currencyLogoFrom}
-      currencyLogoTo={ConfirmSwapModalComponent.currencyLogoTo}
-      swapModalHeaderTexts={ConfirmSwapModalComponent.swapModalHeaderTexts}
-      swapModalFooterTexts={ConfirmSwapModalComponent.swapModalFooterTexts}
-      errorText={ConfirmSwapModalComponent.errorText}
-      buttonSwap={ConfirmSwapModalComponent.buttonSwap}
-      truncatedTextColorFrom={ConfirmSwapModalComponent.truncatedTextColorFrom}
-      truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
-      showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
-    />
-  );
+  // const [onPresentConfirmModal] = useModal(
+  //   <ConfirmSwapModal
+  //     trade={ConfirmSwapModalComponent.trade}
+  //     attemptingTxn={ConfirmSwapModalComponent.attemptingTxn}
+  //     recipient={ConfirmSwapModalComponent.recipient}
+  //     allowedSlippage={ConfirmSwapModalComponent.allowedSlippage}
+  //     onAcceptChanges={ConfirmSwapModalComponent.onAcceptChanges}
+  //     onConfirm={ConfirmSwapModalComponent.onConfirm}
+  //     customOnDismiss={ConfirmSwapModalComponent.customOnDismiss}
+  //     pendingText={ConfirmSwapModalComponent.pendingText}
+  //     modalTitle={ConfirmSwapModalComponent.modalTitle}
+  //     dismissText={ConfirmSwapModalComponent.dismissText}
+  //     contentTexts={ConfirmSwapModalComponent.contentTexts}
+  //     chainId={ConfirmSwapModalComponent.chainId}
+  //     registerToken={ConfirmSwapModalComponent.registerToken}
+  //     bscScanLink={ConfirmSwapModalComponent.bscScanLink}
+  //     transSubmittedText={ConfirmSwapModalComponent.transSubmittedText}
+  //     bscScanLinkText={ConfirmSwapModalComponent.bscScanLinkText}
+  //     metamaskAssetText={ConfirmSwapModalComponent.metamaskAssetText}
+  //     btnCloseText={ConfirmSwapModalComponent.btnCloseText}
+  //     isMetaMask={ConfirmSwapModalComponent.isMetaMask}
+  //     token={ConfirmSwapModalComponent.token}
+  //     currencyLogoFrom={ConfirmSwapModalComponent.currencyLogoFrom}
+  //     currencyLogoTo={ConfirmSwapModalComponent.currencyLogoTo}
+  //     swapModalHeaderTexts={ConfirmSwapModalComponent.swapModalHeaderTexts}
+  //     swapModalFooterTexts={ConfirmSwapModalComponent.swapModalFooterTexts}
+  //     errorText={ConfirmSwapModalComponent.errorText}
+  //     buttonSwap={ConfirmSwapModalComponent.buttonSwap}
+  //     truncatedTextColorFrom={ConfirmSwapModalComponent.truncatedTextColorFrom}
+  //     truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
+  //     showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
+  //   />
+  // );
 
   const {
     removeSendButton,
@@ -258,9 +258,7 @@ export default function Swap({
                 {allowedSlippage && (
                   <AutoRow>
                     <Label>{slippageToleranceLabel}</Label>
-                    <StyledSlippageToleranceText>
-                      {allowedSlippage / 100}%
-                    </StyledSlippageToleranceText>
+                    <StyledSlippageToleranceText>{allowedSlippage / 100}%</StyledSlippageToleranceText>
                   </AutoRow>
                 )}
               </AutoColumn>
@@ -271,8 +269,9 @@ export default function Swap({
               <Button width="100%" disabled mb="4px">
                 {unsupportedAssetButton}
               </Button>
-            ) : !account ? ConnectWalletButton
-            : showWrap ? (
+            ) : !account ? (
+              ConnectWalletButton
+            ) : showWrap ? (
               <Button width="100%" onClick={() => null}>
                 {wrapOrUnwrapButton}
               </Button>
@@ -287,12 +286,12 @@ export default function Swap({
                 <Button variant="success" onClick={() => null} width="48%">
                   {approvalButton}
                 </Button>
-                <Button variant="danger" onClick={() => onPresentConfirmModal()} width="48%" id="swap-button">
+                <Button variant="danger" onClick={() => null} width="48%" id="swap-button">
                   {priceImpactSeverityButton}
                 </Button>
               </RowBetween>
             ) : (
-              <Button variant="danger" onClick={() => onPresentConfirmModal()} id="swap-button" width="100%">
+              <Button variant="danger" onClick={() => null} id="swap-button" width="100%">
                 {priceImpactSeverityButtonError}
               </Button>
             )}
@@ -305,30 +304,30 @@ export default function Swap({
           </Box>
         </Wrapper>
       </AppBody>
-      {
-        showFooter && (
-          <>{!swapIsUnsupported ? (
-              <AdvancedSwapDetailsDropdown
-                trade={AdvancedSwapDetailsDropdownComponent.trade}
-                lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
-                routeText={AdvancedSwapDetailsDropdownComponent.routeText}
-                routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
-                tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
-                errorText={AdvancedSwapDetailsDropdownComponent.errorText}
-                showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
-              />
-            ) : (
-              <UnsupportedCurrencyFooter
-                tokens={UnsupportedCurrencyFooterComponent.tokens}
-                srcs={UnsupportedCurrencyFooterComponent.srcs}
-                isEther={UnsupportedCurrencyFooterComponent.isEther}
-                chainId={UnsupportedCurrencyFooterComponent.chainId}
-                bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
-                unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
-              />
-            )}</>
-        )
-      }
+      {showFooter && (
+        <>
+          {!swapIsUnsupported ? (
+            <AdvancedSwapDetailsDropdown
+              trade={AdvancedSwapDetailsDropdownComponent.trade}
+              lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
+              routeText={AdvancedSwapDetailsDropdownComponent.routeText}
+              routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
+              tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
+              errorText={AdvancedSwapDetailsDropdownComponent.errorText}
+              showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
+            />
+          ) : (
+            <UnsupportedCurrencyFooter
+              tokens={UnsupportedCurrencyFooterComponent.tokens}
+              srcs={UnsupportedCurrencyFooterComponent.srcs}
+              isEther={UnsupportedCurrencyFooterComponent.isEther}
+              chainId={UnsupportedCurrencyFooterComponent.chainId}
+              bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
+              unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+            />
+          )}
+        </>
+      )}
       {}
     </>
   );

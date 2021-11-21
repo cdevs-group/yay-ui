@@ -26,6 +26,7 @@ export declare const baseColors: {
     bgOpacity: string;
     bgOpacity2: string;
     bgOpacitY3: string;
+    bgGreenRgba: string;
     bgOpacity4: string;
     bgBlackRgba: string;
     textGray: string;
@@ -48,6 +49,7 @@ export declare const baseColors: {
     bgCard2: string;
     bgCard3: string;
     bgCard4: string;
+    bgCard5: string;
     cardShadow: string;
     yellow: string;
     bgHeader: string;
