@@ -9938,7 +9938,7 @@ var IGOTopList = function (_a) {
             React__default.createElement(Cell, null, item.position),
             React__default.createElement(Cell, null, ellipsis(item.wallet, 6)),
             React__default.createElement(Cell, null,
-                Web3Utils.fromWei(item.stake),
+                Web3Utils.fromWei(item.stake).toFixed(2),
                 " ",
                 texts.tokenName))); }))));
 };

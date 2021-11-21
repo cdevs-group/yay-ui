@@ -27,7 +27,7 @@ const IGOTopList: React.FC<IGOTopListProps> = ({ texts, topUsersList, myWallet, 
             <Cell>{item.position}</Cell>
             <Cell>{ellipsis(item.wallet, 6)}</Cell>
             <Cell>
-              {Web3Utils.fromWei(item.stake)} {texts.tokenName}
+              {Web3Utils.fromWei(item.stake).toFixed(2)} {texts.tokenName}
             </Cell>
           </Line>
         ))}
