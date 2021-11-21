@@ -1,6 +1,6 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, InputHTMLAttributes, ReactNode, Ref, RefObject } from "react";
 
-export interface InputSearchProp {
+export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string | number;
@@ -8,5 +8,8 @@ export interface InputSearchProp {
   width?: string;
   height?: string;
   name: string;
+  ref?: Ref<HTMLInputElement>;
+  icon?: ReactNode;
+  padding?: string;
   disabled?: boolean;
 }

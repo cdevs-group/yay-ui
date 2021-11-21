@@ -4,13 +4,24 @@ import styled from "styled-components";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
-const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, name, disabled }: InputSearchProp) => {
+const InputSearch = ({
+  icon,
+  height,
+  placeholder,
+  value,
+  onChange,
+  iconLess,
+  width,
+  name,
+  padding,
+  ...props
+}: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
     <InputBlock height={height} width={width}>
       <InputItem
-        disabled={disabled}
+        padding={padding}
         width={width}
         value={value}
         onChange={onChange}
@@ -18,10 +29,9 @@ const InputSearch = ({ height, placeholder, value, onChange, iconLess, width, na
         onBlur={() => setFocus(false)}
         placeholder={placeholder}
         name={name}
+        {...props}
       />
-      <Button iconLess={iconLess}>
-        <SearchIcon2 color={focus ? "green" : "text"} />
-      </Button>
+      <Button iconLess={iconLess}>{icon || <SearchIcon2 color={focus ? "green" : "text"} />}</Button>
     </InputBlock>
   );
 };
@@ -38,12 +48,12 @@ const InputBlock = styled.div<{ width?: string; height?: string }>`
   height: ${({ height }) => (height ? height : "auto")};
 `;
 
-const InputItem = styled.input`
+const InputItem = styled.input<{ padding?: string }>`
   width: ${({ width }) => (width ? width : "fit-content")};
   height: 100%;
   position: relative;
   display: inline-block;
-  padding: 16px 25px;
+  padding: ${({ padding }) => padding || "16px 25px"};
   background: rgb(20, 20, 25);
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 12px;

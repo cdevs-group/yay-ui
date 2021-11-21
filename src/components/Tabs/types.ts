@@ -5,9 +5,13 @@ export const variants = {
 export type Variant = typeof variants[keyof typeof variants];
 
 export interface TabsProp {
-  tabValue?: number;
+  tabValue?: number | null;
   onClick?: (e: any) => Promise<void> | void;
   tabsList?: Array<string>;
+  width?: string;
+  paddingTabs?: string;
+  colorActive?: string;
+  fontSize?: string;
   variant?: Variant;
 }
 

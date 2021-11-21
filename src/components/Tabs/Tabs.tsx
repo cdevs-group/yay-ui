@@ -5,11 +5,20 @@ import { TabsProp, Variant } from "./types";
 import { variant } from "styled-system";
 import { styleVariantsTab, styleVariantsTabs } from "./theme";
 
-const Tabs = ({ tabValue, onClick, tabsList, variant }: TabsProp) => {
+const Tabs = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, colorActive, variant }: TabsProp) => {
   return (
-    <TabsWrap length={tabsList?.length} variant={variant}>
+    <TabsWrap width={width} length={tabsList?.length} variant={variant}>
       {tabsList?.map((item, i) => (
-        <Tab onClick={onClick} className={tabValue === i ? "active" : ""} key={i} value={i} variant={variant}>
+        <Tab
+          fontSize={fontSize}
+          colorActive={colorActive}
+          paddingTabs={paddingTabs}
+          onClick={onClick}
+          className={tabValue === i ? "active" : ""}
+          key={i}
+          value={i}
+          variant={variant}
+        >
           {item}
         </Tab>
       ))}
@@ -19,8 +28,9 @@ const Tabs = ({ tabValue, onClick, tabsList, variant }: TabsProp) => {
 
 export default Tabs;
 
-const TabsWrap = styled.div<{ length?: number; variant?: Variant }>`
+const TabsWrap = styled.div<{ length?: number; width?: string; variant?: Variant }>`
   display: grid;
+  width: ${({ width }) => width || "auto"};
   grid-template-columns: ${({ length, variant }) => `repeat(${length || 2}, ${variant === "small" ? "auto" : "1fr"})`};
   background: ${({ theme }) => theme.colors.buttonBg};
   border-radius: 12px;
@@ -30,12 +40,12 @@ const TabsWrap = styled.div<{ length?: number; variant?: Variant }>`
   })}
 `;
 
-const Tab = styled.button<{ variant?: Variant }>`
-  padding: 15px 16px;
+const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize?: string; variant?: Variant }>`
+  padding: ${({ paddingTabs }) => paddingTabs || "15px 16px"};
   border: none;
   background: transparent;
   border-radius: 12px;
-  font-size: 15px;
+  font-size: ${({ fontSize }) => fontSize || "15px"};
   line-height: 19px;
   font-weight: 500;
   text-align: center;
@@ -46,10 +56,10 @@ const Tab = styled.button<{ variant?: Variant }>`
   color: ${({ theme }) => transparentize(0.3, theme.colors.text)};
   &.active {
     background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme, colorActive }) => colorActive || theme.colors.text};
   }
   ${({ theme }) => theme.mediaQueries.md} {
-    padding: 15px 30px;
+    padding: ${({ paddingTabs }) => paddingTabs || "15px 30px"};
   }
   ${variant({
     variants: styleVariantsTab,

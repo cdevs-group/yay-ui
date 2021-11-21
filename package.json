@@ -19,6 +19,8 @@
     "react-popper": "^2.2.5",
     "react-timer-hook": "^2.0.6",
     "react-transition-group": "^4.4.1",
+    "@types/react-window": "^1.8.3",
+    "react-window": "^1.8.6",
     "storybook": "^6.2.9",
     "styled-system": "^5.1.5",
     "web3": "^1.6.1"

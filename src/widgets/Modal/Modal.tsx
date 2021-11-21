@@ -4,21 +4,43 @@ import { IconButton } from "../../components/Button";
 import { CloseIcon } from "../../components/Svg";
 import { InjectedProps } from "./types";
 import { Gift2 } from "../../constants/images";
+import get from "lodash/get";
+import { DefaultTheme, useTheme } from "styled-components";
+import { Flex } from "../../components/Box";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
-interface Props extends InjectedProps {
+interface Props extends InjectedProps, SpaceProps, LayoutProps {
   title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
   welcome?: boolean;
   image?: boolean;
   paddingTopHeader?: string;
+  headerBackground?: string;
+  style?: React.CSSProperties;
+  maxWidth?: string;
+  onBack?: () => void;
 }
 
-const ModalContent = styled.div`
+interface StyledModalProps extends SpaceProps {}
+
+const getThemeValue =
+  (path: string, fallback?: string | number) =>
+  (theme: DefaultTheme): string =>
+    get(theme, path, fallback);
+
+export const ModalContent = styled.div<{ p?: string }>`
   position: relative;
+  padding: ${({ p }) => p};
 `;
 
-const StyledModal = styled.div`
+export const ModalBody = styled(Flex)`
+  flex-direction: column;
+  max-height: 90vh;
+  overflow-y: auto;
+`;
+
+export const StyledModal = styled.div<StyledModalProps>`
   max-width: 404px;
   max-height: 100vh;
   min-width: 303px;
@@ -28,6 +50,8 @@ const StyledModal = styled.div`
   border-radius: 15px;
   z-index: ${({ theme }) => theme.zIndices.modal};
   overflow-y: auto;
+  ${space}
+  ${layout}
   ${({ theme }) => theme.mediaQueries.xs} {
     min-width: 360px;
     width: 100%;
@@ -38,9 +62,10 @@ const StyledModal = styled.div`
   }
 `;
 
-const ModalHeader = styled.div<{ paddingTopHeader?: string }>`
+export const ModalHeader = styled.div<{ paddingTopHeader?: string; background?: string }>`
   display: flex;
   align-items: center;
+  background: ${({ background }) => background || "transparent"};
   padding: ${({ paddingTopHeader }) => ` ${paddingTopHeader || "20px"} 14px 24px`};
   &.welcome {
     padding-bottom: 0;
@@ -95,30 +120,47 @@ const Modal: React.FC<Props> = ({
   hideCloseButton = false,
   image,
   paddingTopHeader,
-}) => (
-  <div>
-    <Overlay />
-    <StyledModal>
-      <ModalContent>
-        <ModalHeader className={welcome ? "welcome" : ""} paddingTopHeader={paddingTopHeader}>
-          <ModalTitle>
-            <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
-          </ModalTitle>
-          {image ? (
-            <Image>
-              <img src={Gift2} alt="" />
-            </Image>
-          ) : null}
-          {!hideCloseButton && (
-            <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-              <CloseIcon />
-            </IconButton>
-          )}
-        </ModalHeader>
-        {children}
-      </ModalContent>
-    </StyledModal>
-  </div>
-);
+  headerBackground = "transparent",
+  style,
+  onBack,
+  maxWidth,
+  ...props
+}) => {
+  const theme = useTheme();
+  return (
+    <div>
+      <Overlay />
+      <StyledModal {...props}>
+        <ModalContent>
+          <ModalHeader
+            className={welcome ? "welcome" : ""}
+            paddingTopHeader={paddingTopHeader}
+            background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
+          >
+            <ModalTitle>
+              <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
+            </ModalTitle>
+            {image ? (
+              <Image>
+                <img src={Gift2} alt="" />
+              </Image>
+            ) : null}
+            {onBack && (
+              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+                button to back
+              </IconButton>
+            )}
+            {!hideCloseButton && (
+              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+                <CloseIcon />
+              </IconButton>
+            )}
+          </ModalHeader>
+          {children}
+        </ModalContent>
+      </StyledModal>
+    </div>
+  );
+};
 
 export default Modal;
