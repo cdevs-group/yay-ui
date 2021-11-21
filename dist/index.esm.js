@@ -10123,9 +10123,7 @@ var IGOCardV2 = function (_a) {
                 !inPool ? React__default.createElement(InfoText, { white: true }, "-") : React__default.createElement(InfoText, null, allocation))) : (React__default.createElement(React__default.Fragment, null,
                 " ",
                 React__default.createElement(TitleBlock, null, texts.chance),
-                React__default.createElement(InfoText, { white: chance === 0 },
-                    chance,
-                    "%")))),
+                React__default.createElement(InfoText, { white: chance === 0 }, chance)))),
             React__default.createElement(TitleBlock, null, tperiodText),
             React__default.createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })),
         React__default.createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));

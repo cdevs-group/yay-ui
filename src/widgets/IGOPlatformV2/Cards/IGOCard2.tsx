@@ -86,7 +86,7 @@ const IGOCardV2 = ({
             <>
               {" "}
               <TitleBlock>{texts.chance}</TitleBlock>
-              <InfoText white={chance === 0}>{chance}%</InfoText>
+              <InfoText white={chance === 0}>{chance}</InfoText>
             </>
           )}
         </ChanceBlock>
