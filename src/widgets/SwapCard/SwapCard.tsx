@@ -119,8 +119,6 @@ export default function Swap({
       btnCloseText={ConfirmSwapModalComponent.btnCloseText}
       isMetaMask={ConfirmSwapModalComponent.isMetaMask}
       token={ConfirmSwapModalComponent.token}
-      currencyLogoFrom={ConfirmSwapModalComponent.currencyLogoFrom}
-      currencyLogoTo={ConfirmSwapModalComponent.currencyLogoTo}
       swapModalHeaderTexts={ConfirmSwapModalComponent.swapModalHeaderTexts}
       swapModalFooterTexts={ConfirmSwapModalComponent.swapModalFooterTexts}
       errorText={ConfirmSwapModalComponent.errorText}
@@ -128,6 +126,16 @@ export default function Swap({
       truncatedTextColorFrom={ConfirmSwapModalComponent.truncatedTextColorFrom}
       truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
       showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
+      buttonSwapHandler={ConfirmSwapModalComponent.buttonSwapHandler}
+      buttonSwapProps={ConfirmSwapModalComponent.buttonSwapProps}
+      outputEstimates={ConfirmSwapModalComponent.outputEstimates}
+      priceFrom={ConfirmSwapModalComponent.priceFrom}
+      currencyFrom={ConfirmSwapModalComponent.currencyFrom}
+      currencyTo={ConfirmSwapModalComponent.currencyTo}
+      priceTo={ConfirmSwapModalComponent.priceTo}
+      executionPrice={ConfirmSwapModalComponent.executionPrice}
+      minimusReceived={ConfirmSwapModalComponent.minimusReceived}
+      priceImpact={ConfirmSwapModalComponent.priceImpact}
     />
   );
 
@@ -329,7 +337,6 @@ export default function Swap({
             )}</>
         )
       }
-      {}
     </>
   );
 }
