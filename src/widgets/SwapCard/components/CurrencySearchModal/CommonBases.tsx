@@ -24,7 +24,8 @@ export default function CommonBases({
   onSelect,
   selectedCurrency,
   texts,
-  CurrencyLogo,
+  currencyLogoETHER,
+  CurrencyLogoToken,
   currencyEquals,
   SUGGESTED_BASES,
 }: {
@@ -34,7 +35,8 @@ export default function CommonBases({
   texts: any;
   currencyEquals?: any;
   SUGGESTED_BASES?: any;
-  CurrencyLogo: ReactNode;
+  currencyLogoETHER: ReactNode;
+  CurrencyLogoToken: ReactNode;
 }) {
   return (
     <AutoColumn gap="md">
@@ -51,7 +53,7 @@ export default function CommonBases({
           }}
           disable={selectedCurrency === "ETHER"}
         >
-          {CurrencyLogo}
+          {currencyLogoETHER}
           {/* <CurrencyLogo currency={'ETHER'} style={{ marginRight: 8 }} /> */}
           <Text>BNB</Text>
         </BaseWrapper>
@@ -60,7 +62,7 @@ export default function CommonBases({
           const selected = selectedCurrency.address === token.address;
           return (
             <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
-              {CurrencyLogo}
+              {currencyLogoToken}
               <Text>{token.symbol}</Text>
             </BaseWrapper>
           );
