@@ -332,6 +332,7 @@ export default function Swap({
               chainId={UnsupportedCurrencyFooterComponent.chainId}
               bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
               unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+              texts={UnsupportedCurrencyFooterComponent.texts}
             />
           )}
         </>

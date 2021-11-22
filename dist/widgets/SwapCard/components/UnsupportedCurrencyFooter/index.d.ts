@@ -9,5 +9,9 @@ export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
     unsupportedTokens: {
         [address: string]: any;
     };
+    texts: {
+        someAssets: string;
+        readMore: string;
+    };
 }
-export default function UnsupportedCurrencyFooter({ tokens, srcs, isEther, chainId, bscScanLink, unsupportedTokens, }: UnsupportedCurrencyFooterProps): JSX.Element;
+export default function UnsupportedCurrencyFooter({ tokens, srcs, isEther, chainId, bscScanLink, unsupportedTokens, texts, }: UnsupportedCurrencyFooterProps): JSX.Element;
