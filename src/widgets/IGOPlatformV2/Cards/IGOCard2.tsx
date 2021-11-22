@@ -57,6 +57,7 @@ const IGOCardV2 = ({
           <img src={tokenImg} />
         </TokenLogo>
         <TextBlock>
+          <TitleBlock>{texts.available}</TitleBlock>
           <AmoutTokens>{amount}</AmoutTokens>
         </TextBlock>
       </AvailableBlock>

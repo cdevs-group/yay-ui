@@ -46,7 +46,7 @@ const IGOCard = ({
         </TextBlock>
       </AvailableBlock>
       <NetworkBlock>
-        <TitleBlock marginBottom="20px">{texts.networks}</TitleBlock>
+        <TitleBlock marginBottom="20px !important">{texts.networks}</TitleBlock>
         <NetworksTabs networksTab={networksTab} currentNetwork={currentNetwork} onClick={handleTab} />
       </NetworkBlock>
       <div style={{ position: "relative" }}>
@@ -189,8 +189,8 @@ const TextBlock = styled.div`
 const TitleBlock = styled(Text)`
   margin-bottom: 10px;
   font-weight: normal;
-  font-size: 13px;
-  line-height: 100%;
+  font-size: 15px;
+  line-height: 140%;
   color: ${({ theme }) => theme.colors.textGray};
 `;
 const AmoutTokens = styled(Text)`
@@ -225,7 +225,7 @@ const TimerTitle = styled(Text)`
 `;
 const ButtonStyle = styled(Button)`
   position: absolute;
-  bottom: 33px;
+  bottom: 26px;
   width: calc(100% - 24px);
 
   ${({ theme }) => theme.mediaQueries.sm} {

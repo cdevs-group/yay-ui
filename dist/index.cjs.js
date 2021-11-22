@@ -9318,7 +9318,7 @@ var IGOCard = function (_a) {
                 React__default["default"].createElement(TitleBlock$3, null, texts.available),
                 React__default["default"].createElement(AmoutTokens$1, null, amount))),
         React__default["default"].createElement(NetworkBlock$2, null,
-            React__default["default"].createElement(TitleBlock$3, { marginBottom: "20px" }, texts.networks),
+            React__default["default"].createElement(TitleBlock$3, { marginBottom: "20px !important" }, texts.networks),
             React__default["default"].createElement(NetworksTabs, { networksTab: networksTab, currentNetwork: currentNetwork, onClick: handleTab })),
         React__default["default"].createElement("div", { style: { position: "relative" } },
             status === CardStatus.COMPLETED && (React__default["default"].createElement(BlurBlock, { marginStatusText: status === CardStatus.COMPLETED ? 90 : 45, statusText: statusText })),
@@ -9380,7 +9380,7 @@ var AvailableBlock$1 = styled__default["default"](Flex)(templateObject_5$f || (t
 });
 var TokenLogo$2 = styled__default["default"].div(templateObject_6$c || (templateObject_6$c = __makeTemplateObject(["\n  flex-shrink: 0;\n\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  flex-shrink: 0;\n\n  & img {\n    width: 55px;\n    height: 55px;\n  }\n"])));
 var TextBlock$1 = styled__default["default"].div(templateObject_7$9 || (templateObject_7$9 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
-var TitleBlock$3 = styled__default["default"](Text)(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"], ["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 100%;\n  color: ", ";\n"])), function (_a) {
+var TitleBlock$3 = styled__default["default"](Text)(templateObject_8$7 || (templateObject_8$7 = __makeTemplateObject(["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 140%;\n  color: ", ";\n"], ["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 140%;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 });
@@ -9396,7 +9396,7 @@ styled__default["default"](Text)(templateObject_14$2 || (templateObject_14$2 = _
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var ButtonStyle$6 = styled__default["default"](Button$9)(templateObject_15$2 || (templateObject_15$2 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"], ["\n  position: absolute;\n  bottom: 33px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"])), function (_a) {
+var ButtonStyle$6 = styled__default["default"](Button$9)(templateObject_15$2 || (templateObject_15$2 = __makeTemplateObject(["\n  position: absolute;\n  bottom: 26px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"], ["\n  position: absolute;\n  bottom: 26px;\n  width: calc(100% - 24px);\n\n  ", " {\n    width: calc(100% - 50px);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -10300,6 +10300,7 @@ var IGOCardV2 = function (_a) {
             React__default["default"].createElement(TokenLogo, null,
                 React__default["default"].createElement("img", { src: tokenImg })),
             React__default["default"].createElement(TextBlock, null,
+                React__default["default"].createElement(TitleBlock, null, texts.available),
                 React__default["default"].createElement(AmoutTokens, null, amount))),
         React__default["default"].createElement(NetworkBlock, null,
             React__default["default"].createElement(TitleBlock, { marginBottom: "20px !important" }, texts.availableNetwork),
