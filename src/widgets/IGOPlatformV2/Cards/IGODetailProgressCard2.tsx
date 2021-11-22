@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ElementType } from "react";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 import ProgressWithText from "../../../components/Progress/ProgressWithText";
 import { IGODetailProgressCard2Props, StatusType } from "../types";
 import { Card, TitleBlock, InfoText, TierLine, StakeButton, ChanceBlockProgress } from "./styles";
@@ -56,7 +56,7 @@ const IGODetailProgressCard2 = ({
         !inPool ? (
           <InfoText white>-</InfoText>
         ) : (
-          <InfoText white>{chance}%</InfoText>
+          <InfoText white>{chance}</InfoText>
         )}
       </ChanceBlockProgress>
       <ChanceBlockProgress>
@@ -92,7 +92,7 @@ const TierLineProgress = styled(TierLine)`
   justify-content: flex-start;
   margin-top: 25px;
 `;
-const StakeButtonProgress = styled(StakeButton)`
+const StakeButtonProgress = styled(StakeButton)<ButtonProps<ElementType>>`
   margin-left: 36px;
 `;
 const Buttons = styled(Flex)`

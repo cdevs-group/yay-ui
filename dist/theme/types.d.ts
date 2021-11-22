@@ -24,6 +24,7 @@ export declare type Shadows = {
     warning: string;
     focus: string;
     inset: string;
+    input: string;
 };
 export declare type Gradients = {
     bubblegum: string;
@@ -96,6 +97,7 @@ export declare type Colors = {
     bgCard2: string;
     bgCard3: string;
     bgCard4: string;
+    bgCard5: string;
     yellow: string;
     bgHeader: string;
     buttonBg2: string;
@@ -140,6 +142,7 @@ export declare type Colors = {
     boxShadow12: string;
     greenRgba3: string;
     redRgba2: string;
+    bgGreenRgba: string;
     bgOpacity4: string;
     boxShadow13: string;
     gradients: Gradients;

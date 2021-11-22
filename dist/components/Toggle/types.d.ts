@@ -10,6 +10,7 @@ export declare type Scales = typeof scales[keyof typeof scales];
 export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
     scale?: Scales;
     checked?: boolean;
+    onChange?: any;
 }
 export interface HandleProps {
     scale: Scales;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { Button } from "../../../components/Button";
+import { ButtonProps } from "../../../components/Button/types";
 
 export const Card = styled.div`
   max-width: 548px;
@@ -204,7 +205,7 @@ export const TierLine = styled(Flex)`
   justify-content: space-between;
   align-items: flex-end;
 `;
-export const StakeButton = styled(Button)`
+export const StakeButton = styled(Button)<ButtonProps>`
   height: 30px;
   padding: 0;
   max-width: 130px;

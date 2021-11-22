@@ -66,6 +66,7 @@ export * from "./widgets/AgreeMessage";
 export * from "./widgets/IGOStaking";
 export * from "./widgets/IGOPlatformV2";
 export * from "./widgets/KYC";
+export * from "./widgets/SwapCard";
 
 // Theme
 export { default as ResetCSS } from "./ResetCSS";

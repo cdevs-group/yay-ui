@@ -89,5 +89,5 @@ const Message = styled.div`
   padding: 20px;
   margin-bottom: 24px;
   background: ${({ theme }) => transparentize(0.9, theme.colors.redBg)};
-  border-radius: 12px; 
+  border-radius: 12px;
 `;

@@ -38,7 +38,7 @@ const Title = styled(Text)`
 `;
 const Value = styled(Text)`
   font-weight: normal;
-  font-size: 24px;
+  font-size: 19px;
   line-height: 30px;
   letter-spacing: 0.05em;
 `;

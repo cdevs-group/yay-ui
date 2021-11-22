@@ -43,6 +43,7 @@ export interface IGOCardV2Props {
     inPool: boolean;
     propsButtonStake?: ButtonProps;
     disabledButtonStake?: boolean;
+    isLottery?: boolean;
 }
 interface IGOCardDetailText {
     available: string;
@@ -70,6 +71,7 @@ export interface IGODetailCardV2Props {
     tperiodText: string;
     time: number;
     linkView: string;
+    isLottery?: boolean;
 }
 interface IGOCardDetailProgressText {
     title: string;

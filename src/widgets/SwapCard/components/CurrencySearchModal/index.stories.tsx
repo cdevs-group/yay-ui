@@ -57,9 +57,9 @@ export const CurrencySearchModalBlock = () => {
     return (
       <ManageLists
         tempList={{
-          name: 'NAME TOKEN',
-          logoURI: 'vkdvn',
-          tokens: ['c']
+          name: "NAME TOKEN",
+          logoURI: "vkdvn",
+          tokens: ["c"],
         }}
         addError="Enter valid list location"
         lists={listsTokensManage}
@@ -111,10 +111,12 @@ export const CurrencySearchModalBlock = () => {
         currencyLogo={<img src={BNB} />}
         importRow={<></>}
         linkHref="lnlkdms"
-        userAddedTokens={[{
-          address: 'ldfmvlmdflvdfv',
-          symbol: 'SYMBOL'
-        }]}
+        userAddedTokens={[
+          {
+            address: "ldfmvlmdflvdfv",
+            symbol: "SYMBOL",
+          },
+        ]}
         chainId={56}
         isAddressValid
         removeToken={() => {}}

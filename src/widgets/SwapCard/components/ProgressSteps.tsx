@@ -36,11 +36,7 @@ const Connector = styled.div<{ prevConfirmed?: boolean; disabled?: boolean }>`
         disabled ? theme.colors.bgOpacitY3 : prevConfirmed ? theme.colors.green : theme.colors.bgOpacitY3}
       0%,
     ${({ theme, prevConfirmed, disabled }) =>
-        disabled
-          ? theme.colors.bgOpacitY3
-          : prevConfirmed
-          ? theme.colors.green
-          : theme.colors.bgOpacitY3}
+        disabled ? theme.colors.bgOpacitY3 : prevConfirmed ? theme.colors.green : theme.colors.bgOpacitY3}
       80%
   );
   opacity: 0.6;
