@@ -312,30 +312,30 @@ export default function Swap({
           </Box>
         </Wrapper>
       </AppBody>
-      {
-        showFooter && (
-          <>{!swapIsUnsupported ? (
-              <AdvancedSwapDetailsDropdown
-                trade={AdvancedSwapDetailsDropdownComponent.trade}
-                lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
-                routeText={AdvancedSwapDetailsDropdownComponent.routeText}
-                routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
-                tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
-                errorText={AdvancedSwapDetailsDropdownComponent.errorText}
-                showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
-              />
-            ) : (
-              <UnsupportedCurrencyFooter
-                tokens={UnsupportedCurrencyFooterComponent.tokens}
-                srcs={UnsupportedCurrencyFooterComponent.srcs}
-                isEther={UnsupportedCurrencyFooterComponent.isEther}
-                chainId={UnsupportedCurrencyFooterComponent.chainId}
-                bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
-                unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
-              />
-            )}</>
-        )
-      }
+      {showFooter && (
+        <>
+          {!swapIsUnsupported ? (
+            <AdvancedSwapDetailsDropdown
+              trade={AdvancedSwapDetailsDropdownComponent.trade}
+              lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
+              routeText={AdvancedSwapDetailsDropdownComponent.routeText}
+              routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
+              tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
+              errorText={AdvancedSwapDetailsDropdownComponent.errorText}
+              showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
+            />
+          ) : (
+            <UnsupportedCurrencyFooter
+              tokens={UnsupportedCurrencyFooterComponent.tokens}
+              srcs={UnsupportedCurrencyFooterComponent.srcs}
+              isEther={UnsupportedCurrencyFooterComponent.isEther}
+              chainId={UnsupportedCurrencyFooterComponent.chainId}
+              bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
+              unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+            />
+          )}
+        </>
+      )}
     </>
   );
 }

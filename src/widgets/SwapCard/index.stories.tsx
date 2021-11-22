@@ -321,14 +321,14 @@ export const SwapModalFooterBlock = () => {
         amountTowards: "Amount Towards Text",
         currencySymbolTop: "Currency Symbol Top",
         currencySymbolBottom: "Currency Symbol Bottom",
-        buttonSwap: "Swap Button"
+        buttonSwap: "Swap Button",
       }}
       errorText={<div>Some Error Text</div>}
       buttonSwap={<Button>Button</Button>}
       swapErrorMessage="Some Error Message"
       priceImpact="Price Impact"
       buttonSwapProps={{
-        variant: "green"
+        variant: "green",
       }}
       executionPrice="Execution Price"
       minimusReceived="Minimus Received"
@@ -356,12 +356,12 @@ export const SwapModalHeaderBlock = () => {
       currencyFrom={{
         shortName: "Short Name",
         fullName: "Full Name",
-        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
       }}
       currencyTo={{
         shortName: "Short Name",
         fullName: "Full Name",
-        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
       }}
       priceFrom="0.0"
       priceTo="0.0"
@@ -743,7 +743,7 @@ export const SwapBlock = () => {
             amountTowards: "Amount Towards Text",
             currencySymbolTop: "Currency Symbol Top",
             currencySymbolBottom: "Currency Symbol Bottom",
-            buttonSwap: "Swap Button"
+            buttonSwap: "Swap Button",
           },
           errorText: <div>Some Error Text</div>,
           buttonSwap: <Button>Button</Button>,
@@ -752,7 +752,7 @@ export const SwapBlock = () => {
           showAcceptChanges: true,
           priceImpact: "Price Impact",
           buttonSwapProps: {
-            variant: "green"
+            variant: "green",
           },
           executionPrice: "Execution Price",
           minimusReceived: "Minimus Received",
@@ -760,16 +760,16 @@ export const SwapBlock = () => {
           currencyFrom: {
             shortName: "Short Name",
             fullName: "Full Name",
-            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
           },
           currencyTo: {
             shortName: "Short Name",
             fullName: "Full Name",
-            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
           },
           priceFrom: "0.0",
           priceTo: "0.0",
-          outputEstimates: "Output Estimates"
+          outputEstimates: "Output Estimates",
         }}
       />
     </Container>
