@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Link } from "../../../components/Link";
-import { AutoColumn } from "../../../components/Layout/Column";
-import { RowBetween } from "../../../components/Layout/Row";
+import { AutoColumn } from "../../../components/Layouts/Column";
+import { RowBetween } from "../../../components/Layouts/Row";
 
 const InputPanel = styled.div`
   display: flex;

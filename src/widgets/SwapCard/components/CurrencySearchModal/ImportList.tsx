@@ -2,8 +2,8 @@ import { transparentize } from "polished";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, CheckboxInput, Flex, Link, Text } from "../../../..";
-import { AutoColumn } from "../../../../components/Layout/Column";
-import { RowBetween, RowFixed } from "../../../../components/Layout/Row";
+import { AutoColumn } from "../../../../components/Layouts/Column";
+import { RowBetween, RowFixed } from "../../../../components/Layouts/Row";
 
 interface ImportProps {
   listURL: string;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Text } from "../../../components/Text";
-import { AutoColumn } from "../../../components/Layout/Column";
+import { AutoColumn } from "../../../components/Layouts/Column";
 import QuestionHelper from "../../../components/QuestionHelper";
-import { RowBetween, RowFixed } from "../../../components/Layout/Row";
+import { RowBetween, RowFixed } from "../../../components/Layouts/Row";
 import SwapRoute from "./SwapRoute";
 
 export enum Field {

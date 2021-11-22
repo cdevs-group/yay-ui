@@ -23,6 +23,7 @@ interface IGOStakeProps {
   balance: string;
   time: number;
   isBlur?: boolean;
+  isBlurUnstake?: boolean;
   texts: {
     stakeTitle: string;
     stakeDescription: string;
@@ -46,6 +47,8 @@ interface IGOStakeProps {
   tookPartValue: string | number;
   loadingApprove?: boolean;
   loadingStake?: boolean;
+  isBlurTopBlockTookPart?: boolean;
+  isBlurTopBlockAvailable?: boolean;
 }
 
 const IGOStake = ({
@@ -72,6 +75,9 @@ const IGOStake = ({
   loadingStake,
   loadingApprove,
   isBlur,
+  isBlurUnstake,
+  isBlurTopBlockTookPart,
+  isBlurTopBlockAvailable,
 }: IGOStakeProps) => {
   return (
     <div style={{ position: "relative" }}>
@@ -79,8 +85,8 @@ const IGOStake = ({
         <TopLine>
           <TopBlock title={texts.totalStake} value={totalValue} />
           <TopBlock title={texts.myStake} value={myStakeValue} />
-          <TopBlock id="available" title={texts.avaible} value={avaibleValue} />
-          <TopBlock id="stake" title={texts.tookPart} value={tookPartValue} />
+          <TopBlock id="available" title={texts.avaible} value={avaibleValue} isBlur={isBlurTopBlockAvailable} />
+          <TopBlock id="stake" title={texts.tookPart} value={tookPartValue} isBlur={isBlurTopBlockTookPart} />
         </TopLine>
         <MainLine>
           <Stake
@@ -100,7 +106,13 @@ const IGOStake = ({
             loadingApprove={loadingApprove}
             loadingStake={loadingStake}
           />
-          <Unstake cooldownDisabled={cooldownDisabled} time={time} handleCooldown={handleCooldown} texts={texts} />
+          <Unstake
+            cooldownDisabled={cooldownDisabled}
+            time={time}
+            handleCooldown={handleCooldown}
+            texts={texts}
+            isBlur={isBlurUnstake}
+          />
         </MainLine>
       </div>
       {isBlur && (

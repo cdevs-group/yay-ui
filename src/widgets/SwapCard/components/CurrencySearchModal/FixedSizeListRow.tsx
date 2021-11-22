@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../../..";
-import { RowBetween } from "../../../../components/Layout/Row";
+import { RowBetween } from "../../../../components/Layouts/Row";
 import QuestionHelper from "../../../../components/QuestionHelper";
 
 const FixedSizeListRow = ({

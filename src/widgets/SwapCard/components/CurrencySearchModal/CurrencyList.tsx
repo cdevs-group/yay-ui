@@ -3,8 +3,8 @@ import { Text } from "../../../../components/Text";
 import { Box } from "../../../../components/Box";
 import styled from "styled-components";
 import { FixedSizeList } from "react-window";
-import Column from "../../../../components/Layout/Column";
-import { RowFixed, RowBetween } from "../../../../components/Layout/Row";
+import Column from "../../../../components/Layouts/Column";
+import { RowFixed, RowBetween } from "../../../../components/Layouts/Row";
 import { CercleIcon } from "../../../../components/Svg";
 
 const TextStyle = styled(Text)`

@@ -3,8 +3,8 @@ import Input from "../../../../components/Input/Input";
 import Box from "../../../../components/Box/Box";
 import { Text } from "../../../../components/Text";
 import { FixedSizeList } from "react-window";
-import Column, { AutoColumn } from "../../../../components/Layout/Column";
-import Row from "../../../../components/Layout/Row";
+import Column, { AutoColumn } from "../../../../components/Layouts/Column";
+import Row from "../../../../components/Layouts/Row";
 import { InputSearch } from "../../../..";
 import { OneGhost2 } from "../../../../constants/images";
 

@@ -1,12 +1,13 @@
 import React from "react";
-import { Button } from "../Button";
-import { Text } from "../Text";
-import { Modal, useModal, InjectedModalProps } from "../../widgets/Modal";
-import { Link } from "../Link";
 import styled from "styled-components";
-import { AutoRow } from "../Layout/Row";
-import { AutoColumn } from "../Layout/Column";
-import { CurrencyLogo } from "../Logo";
+import { Button } from "../../../../components/Button";
+import { Text } from "../../../../components/Text";
+import { Modal, useModal, InjectedModalProps } from "../../../../widgets/Modal";
+import { Link } from "../../../../components/Link";
+
+// import { CurrencyLogo } from "../Logo";
+import { AutoColumn } from "../../../../components/Layouts/Column";
+import { AutoRow } from "../../../../components/Layouts/Row";
 
 export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
   tokens: any[];
@@ -47,7 +48,7 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
             Object.keys(unsupportedTokens).includes(token.address) && (
               <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
                 <AutoRow gap="5px" align="center">
-                  <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} />
+                  {/* <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} /> */}
                   <Text>{token.symbol}</Text>
                 </AutoRow>
                 {chainId && (

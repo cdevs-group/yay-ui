@@ -28,9 +28,10 @@ interface IUnstakeProps {
   cooldownDisabled: boolean;
   handleCooldown: () => void | Promise<void>;
   time: number;
+  isBlur?: boolean;
 }
 
-const Unstake = ({ texts, cooldownDisabled, handleCooldown, time }: IUnstakeProps) => {
+const Unstake = ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUnstakeProps) => {
   return (
     <div style={{ position: "relative" }}>
       <UnstakeWrapper id="unstake">
@@ -52,7 +53,7 @@ const Unstake = ({ texts, cooldownDisabled, handleCooldown, time }: IUnstakeProp
           {texts.cooldownButton}
         </ButtonStyle>
       </UnstakeWrapper>
-      <Claimed id="unstake" />
+      {isBlur && <Claimed id="unstake" />}
     </div>
   );
 };

@@ -1,15 +1,15 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import { Button, IconButton } from "../../components/Button";
-import { Text } from "../../components/Text";
-import { ArrowUpIcon, MetamaskIcon, CloseIcon } from "../Svg";
-import { Flex, Box } from "../Box";
-import { Link } from "../Link";
-import { Spinner } from "../Spinner";
-import { InjectedModalProps } from "../../widgets/Modal";
-import { RowFixed } from "../Layout/Row";
-import { AutoColumn, ColumnCenter } from "../Layout/Column";
-import { OneGhost } from "../../constants/images";
+import { Button, IconButton } from "../../../../components/Button";
+import { Text } from "../../../../components/Text";
+import { ArrowUpIcon, MetamaskIcon, CloseIcon } from "../../../../components/Svg";
+import { Flex, Box } from "../../../../components/Box";
+import { Link } from "../../../../components/Link";
+import { Spinner } from "../../../../components/Spinner";
+import { InjectedModalProps } from "../../../Modal";
+import { RowFixed } from "../../../../components/Layouts/Row";
+import { AutoColumn, ColumnCenter } from "../../../../components/Layouts/Column";
+import { OneGhost } from "../../../../constants/images";
 
 const Wrapper = styled.div`
   width: 100%;

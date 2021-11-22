@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Text, Flex } from "../../..";
-import { AutoColumn } from "../../../components/Layout/Column";
-import { RowBetween, RowFixed } from "../../../components/Layout/Row";
+import { AutoColumn } from "../../../components/Layouts/Column";
+import { RowBetween, RowFixed } from "../../../components/Layouts/Row";
 import { SwapModalHeaderProps } from "../types";
 import { SwapShowAcceptChanges } from "./styleds";
 import { YAY_TOKEN_GREEN } from "../../../constants/images";
