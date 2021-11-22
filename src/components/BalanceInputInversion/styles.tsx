@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Box from "../Box/Box";
-import { Input } from "../Input";
+import Input from "../Input/Input";
 import Text from "../Text/Text";
 import IconButton from "../Button/IconButton";
 import { BalanceInputInversionProps } from "./types";

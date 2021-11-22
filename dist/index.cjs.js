@@ -4605,7 +4605,8 @@ var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$3, colo
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$3, colors: lightColors, card: light$2, toggle: light$1, modal: light });
 
 var isTouchDevice = function () {
-    return "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    var _a;
+    return "ontouchstart" in window || navigator.maxTouchPoints > 0 || ((_a = window.navigator) === null || _a === void 0 ? void 0 : _a.msMaxTouchPoints) > 0;
 };
 
 var Arrow$1 = styled__default["default"].div(templateObject_1$2r || (templateObject_1$2r = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n    border-bottom: 1px solid #606060;\n    border-left: 1px solid #606060;\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n    border-bottom: 1px solid #606060;\n    border-left: 1px solid #606060;\n  }\n"])), function (_a) {

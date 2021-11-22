@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { InputProps, scales } from "./types";
 import { space, background, boxShadow, SpaceProps, BackgroundProps, BoxShadowProps } from "styled-system";
 
-interface StyledInputProps extends InputProps, SpaceProps, BackgroundProps, BoxShadowProps {
+export interface StyledInputProps extends InputProps, SpaceProps, BackgroundProps, BoxShadowProps {
   placeholderOpacity?: boolean;
 }
 
