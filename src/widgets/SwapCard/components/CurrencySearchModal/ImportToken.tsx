@@ -7,7 +7,7 @@ import { Flex } from "../../../../components/Box";
 import { CheckboxInput } from "../../../../components/CheckboxInput";
 import { Link } from "../../../../components/Link";
 import { Grid } from "../../../../components/Box";
-import { AutoColumn } from "../../../../components/Layout/Column";
+import { AutoColumn } from "../../../../components/Layouts/Column";
 import { ellipsis } from "../../../../helpers/ellipsis";
 
 export interface InjectedImportTokenProps {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { RowBetween } from "../../../components/Layout/Row";
-import { AutoColumn } from "../../../components/Layout/Column";
+import { RowBetween } from "../../../components/Layouts/Row";
+import { AutoColumn } from "../../../components/Layouts/Column";
 
 const Grouping = styled(RowBetween)`
   width: 50%;

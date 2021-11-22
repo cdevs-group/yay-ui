@@ -5,7 +5,7 @@ import TransactionConfirmationModal, {
   TransactionErrorContent,
   TransactionSubmittedContentProps,
   ConfirmationPendingContentTextProps,
-} from "../../../components/TransactionConfirmationModal";
+} from "./TransactionConfirmationModal";
 import SwapModalFooter from "./SwapModalFooter";
 import SwapModalHeader from "./SwapModalHeader";
 import { ButtonProps } from "../../../components/Button/types";

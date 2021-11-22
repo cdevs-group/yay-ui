@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 import { Text } from "../../../../components/Text";
 import styled from "styled-components";
-import { AutoColumn } from "../../../../components/Layout/Column";
-import { AutoRow } from "../../../../components/Layout/Row";
+import { AutoColumn } from "../../../../components/Layouts/Column";
+import { AutoRow } from "../../../../components/Layouts/Row";
 import QuestionHelper from "../../../../components/QuestionHelper";
 
 const BaseWrapper = styled.div<{ disable?: boolean }>`

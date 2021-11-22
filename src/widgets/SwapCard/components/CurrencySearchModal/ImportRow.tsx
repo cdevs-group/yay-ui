@@ -1,8 +1,8 @@
 import React, { CSSProperties } from "react";
 import styled from "styled-components";
 import { Button } from "../../../../components/Button";
-import { AutoColumn } from "../../../../components/Layout/Column";
-import { AutoRow, RowFixed } from "../../../../components/Layout/Row";
+import { AutoColumn } from "../../../../components/Layouts/Column";
+import { AutoRow, RowFixed } from "../../../../components/Layouts/Row";
 import { CheckIcon2 } from "../../../../components/Svg";
 import { Text } from "../../../../components/Text";
 

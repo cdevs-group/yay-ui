@@ -20,7 +20,7 @@ import BondlyWarning from "./components/SwapWarningModal/BondlyWarning";
 import SafemoonWarning from "./components/SwapWarningModal/SafemoonWarning";
 import SwapWarningModal from "./components/SwapWarningModal";
 
-import UnsupportedCurrencyFooter from "../../components/UnsupportedCurrencyFooter";
+import UnsupportedCurrencyFooter from "./components/UnsupportedCurrencyFooter";
 import GlobalSettings from "./components/SettingsModal";
 import { AppHeader } from "./components/App";
 import Swap from "./SwapCard";

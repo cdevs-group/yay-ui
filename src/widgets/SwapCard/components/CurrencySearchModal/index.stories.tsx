@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import CurrencySearch from "./CurrencySearch";
 import CurrencySearchModal from "./CurrencySearchModal";
 import CurrencyList, { CurrencyRow } from "./CurrencyList";
-import FixedSizeListRow from "./Row";
+import FixedSizeListRow from "./FixedSizeListRow";
 import ManageTokens from "./ManageTokens";
 import Manage from "./Manage";
 import ManageLists from "./ManageLists";

@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo, useState, useEffect } from "react";
 import styled from "styled-components";
-import Column, { AutoColumn } from "../../../../components/Layout/Column";
-import Row, { RowFixed, RowBetween } from "../../../../components/Layout/Row";
+import Column, { AutoColumn } from "../../../../components/Layouts/Column";
+import Row, { RowFixed, RowBetween } from "../../../../components/Layouts/Row";
 import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
 import { Input } from "../../../../components/Input";

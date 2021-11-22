@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Flex } from "../Box";
 import { Button } from "../Button";
 import NumericalInput from "./NumericalInput";
-import { RowBetween } from "../Layout/Row";
+import { RowBetween } from "../Layouts/Row";
 import { Text } from "../Text";
 import { CurrencyInputPanelProps } from "./types";
 import { ArrowDownIcon } from "../Svg";

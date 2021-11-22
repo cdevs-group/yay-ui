@@ -5,13 +5,13 @@ import { Text } from "../../components/Text";
 import { ArrowDownIcon } from "../../components/Svg";
 import { Box } from "../../components/Box";
 import { useModal } from "../Modal";
-import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter";
+import UnsupportedCurrencyFooter, { UnsupportedCurrencyFooterProps } from "./components/UnsupportedCurrencyFooter";
 import AddressInputPanel, { AddressInputPanelProps } from "./components/AddressInputPanel";
 import { GreyCard } from "../../components/StyledCard";
-import Column, { AutoColumn } from "../../components/Layout/Column";
+import Column, { AutoColumn } from "../../components/Layouts/Column";
 import ConfirmSwapModal, { ConfirmSwapModalProps } from "./components/ConfirmSwapModal";
 import { CurrencyInputPanel, CurrencyInputPanelProps } from "../../components/CurrencyInputPanel";
-import { AutoRow, RowBetween } from "../../components/Layout/Row";
+import { AutoRow, RowBetween } from "../../components/Layouts/Row";
 import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
 import { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
 import TradePrice, { TradePriceProps } from "./components/TradePrice";
@@ -23,7 +23,7 @@ import { AppHeaderProps } from "./components/App/types";
 import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal";
 import { TransactionDetailsProps } from "./components/App/Transactions/types";
 import { InjectedModalProps } from "../Modal";
-import { TransactionSubmittedContentProps } from "../../components/TransactionConfirmationModal";
+import { TransactionSubmittedContentProps } from "./components/TransactionConfirmationModal";
 
 const Label = styled(Text)`
   font-size: 11px;

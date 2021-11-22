@@ -5,7 +5,7 @@ import { ModalBody } from "../../../../Modal/Modal";
 import { Text } from "../../../../../components/Text";
 import { Button } from "../../../../../components/Button";
 import { Flex } from "../../../../../components/Box";
-import { AutoRow } from "../../../../../components/Layout/Row";
+import { AutoRow } from "../../../../../components/Layouts/Row";
 import Transaction from "./Transaction";
 import { TransactionProps, TransactionDetailsProps } from "./types";
 

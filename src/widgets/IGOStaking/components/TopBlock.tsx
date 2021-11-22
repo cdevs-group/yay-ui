@@ -1,17 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../..";
-import { BLUR } from "../../../constants/images";
 import { transparentize } from "polished";
 
-const TopBlock = ({ title, value, id }: { title: string; value: string | number; id?: string }) => {
+const TopBlock = ({
+  title,
+  value,
+  id,
+  isBlur,
+}: {
+  title: string;
+  value: string | number;
+  id?: string;
+  isBlur?: boolean;
+}) => {
   return (
     <div style={{ position: "relative" }}>
       <Wrapper id={id}>
         <Title>{title}</Title>
         <Value>{value}</Value>
       </Wrapper>
-      {id && <Claimed id={id} />}
+      {isBlur && <Claimed id={id || ""} />}
     </div>
   );
 };
