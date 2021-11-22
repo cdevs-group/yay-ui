@@ -16,6 +16,7 @@ interface IGOStakeProps {
     balance: string;
     time: number;
     isBlur?: boolean;
+    isBlurUnstake?: boolean;
     texts: {
         stakeTitle: string;
         stakeDescription: string;
@@ -39,6 +40,8 @@ interface IGOStakeProps {
     tookPartValue: string | number;
     loadingApprove?: boolean;
     loadingStake?: boolean;
+    isBlurTopBlockTookPart?: boolean;
+    isBlurTopBlockAvailable?: boolean;
 }
-declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, isBlur, }: IGOStakeProps) => JSX.Element;
+declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, isBlur, isBlurUnstake, isBlurTopBlockTookPart, isBlurTopBlockAvailable, }: IGOStakeProps) => JSX.Element;
 export default IGOStake;

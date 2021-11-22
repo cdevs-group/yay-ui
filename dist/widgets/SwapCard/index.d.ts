@@ -17,7 +17,9 @@ export { default as ImportToken } from "./components/CurrencySearchModal/ImportT
 export { default as Manage } from "./components/CurrencySearchModal/Manage";
 export { default as ManageLists } from "./components/CurrencySearchModal/ManageLists";
 export { default as ManageTokens } from "./components/CurrencySearchModal/ManageTokens";
-export { default as Row } from "./components/CurrencySearchModal/Row";
 export { default as ExpertModal } from "./components/SettingsModal/ExpertModal";
 export { default as SettingsModal } from "./components/SettingsModal/SettingsModal";
 export { default as SwapWarningModal } from "./components/SwapWarningModal";
+export { default as UnsupportedCurrencyFooter } from "./components/UnsupportedCurrencyFooter";
+export { default as TransactionConfirmationModal } from "./components/TransactionConfirmationModal";
+export { default as FixedSizeListRow } from "./components/CurrencySearchModal/FixedSizeListRow";

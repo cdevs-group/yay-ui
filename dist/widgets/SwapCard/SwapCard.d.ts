@@ -1,5 +1,5 @@
 import React from "react";
-import { UnsupportedCurrencyFooterProps } from "../../components/UnsupportedCurrencyFooter";
+import { UnsupportedCurrencyFooterProps } from "./components/UnsupportedCurrencyFooter";
 import { AddressInputPanelProps } from "./components/AddressInputPanel";
 import { ConfirmSwapModalProps } from "./components/ConfirmSwapModal";
 import { CurrencyInputPanelProps } from "../../components/CurrencyInputPanel";
@@ -10,7 +10,7 @@ import { AppHeaderProps } from "./components/App/types";
 import { TransactionsModalProps } from "./components/App/Transactions/TransactionsModal";
 import { TransactionDetailsProps } from "./components/App/Transactions/types";
 import { InjectedModalProps } from "../Modal";
-import { TransactionSubmittedContentProps } from "../../components/TransactionConfirmationModal";
+import { TransactionSubmittedContentProps } from "./components/TransactionConfirmationModal";
 interface SwapCardProps {
     currencyInputPanelFrom: CurrencyInputPanelProps;
     currencyInputPanelTo: CurrencyInputPanelProps;

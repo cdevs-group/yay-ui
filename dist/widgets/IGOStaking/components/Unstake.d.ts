@@ -20,6 +20,7 @@ interface IUnstakeProps {
     cooldownDisabled: boolean;
     handleCooldown: () => void | Promise<void>;
     time: number;
+    isBlur?: boolean;
 }
-declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time }: IUnstakeProps) => JSX.Element;
+declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUnstakeProps) => JSX.Element;
 export default Unstake;

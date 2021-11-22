@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { InjectedModalProps } from "../../widgets/Modal";
+import { InjectedModalProps } from "../../../../widgets/Modal";
 export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
     tokens: any[];
     srcs: string[];

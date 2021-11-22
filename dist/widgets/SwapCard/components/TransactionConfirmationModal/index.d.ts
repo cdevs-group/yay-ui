@@ -1,5 +1,5 @@
 import React from "react";
-import { InjectedModalProps } from "../../widgets/Modal";
+import { InjectedModalProps } from "../../../Modal";
 export interface ConfirmationPendingContentTextProps {
     confirmationWaiting: string;
     transactionConfirm: string;

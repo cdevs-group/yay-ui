@@ -1,6 +1,6 @@
 import React from "react";
 import { InjectedModalProps } from "../../Modal";
-import { TransactionSubmittedContentProps, ConfirmationPendingContentTextProps } from "../../../components/TransactionConfirmationModal";
+import { TransactionSubmittedContentProps, ConfirmationPendingContentTextProps } from "./TransactionConfirmationModal";
 import { ButtonProps } from "../../../components/Button/types";
 export interface ConfirmSwapModalProps {
     trade?: any;
