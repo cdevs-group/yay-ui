@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ElementType } from "react";
 import styled from "styled-components";
 import { space } from "styled-system";
 import { transparentize } from "polished";
@@ -107,7 +107,7 @@ const ButtonCreate = styled(ButtonAdd)`
     margin: 0;
   }
 `;
-const ButtonStyle = styled(Button)`
+const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
   opacity: 1 !important;
   position: absolute;
   top: 50%;

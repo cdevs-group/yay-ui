@@ -1,7 +1,8 @@
+import { ElementType } from "react";
 import styled from "styled-components";
 import { darkColors, lightColors } from "../../../theme";
 import { Text } from "../../../components/Text";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 import { Flex } from "../../../components/Box";
 
 export const Wrapper = styled.div<{ history?: boolean }>`
@@ -88,7 +89,7 @@ export const ImgWrapper = styled.div<{ claimed?: boolean | undefined; hide?: boo
   }
 `;
 
-export const ButtonStyle = styled(Button)`
+export const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
   padding: 8px;
   height: 30px;
   width: 100%;

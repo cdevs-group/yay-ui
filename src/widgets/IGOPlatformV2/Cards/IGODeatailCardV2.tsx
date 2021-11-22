@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ElementType } from "react";
 import {
   TokenButton,
   Card,
@@ -20,7 +20,7 @@ import { IGODetailCardV2Props } from "../types";
 import styled from "styled-components";
 import { ArrowLeft } from "../../../components/Svg";
 import { Text } from "../../../components/Text";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 import CopyButton from "../../IGOPlatform/Cards/components/CopyButton";
 import { ellipsis } from "../../../helpers/ellipsis";
 import NetworksTabs from "../../IGOPlatform/Cards/components/NetworksTabs";
@@ -113,7 +113,7 @@ const SiteName = styled(Text)`
 const TimerBlock = styled.div`
   margin-top: 25px;
 `;
-const ButtonStyle = styled(Button)`
+const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
   margin-top: 47px;
   width: 100%;
   display: flex;

@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import { ElementType } from "react";
 import { ButtonProps } from "../../../components/Button/types";
 export declare const Card: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const TitleStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Text").TextProps, never>;
@@ -21,7 +21,7 @@ export declare const TokenBalance: import("styled-components").StyledComponent<"
 export declare const AddressLine: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Box").BoxProps & import("../../../components/Box").FlexProps, never>;
 export declare const TokenAddress: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Text").TextProps, never>;
 export declare const TokenButton: import("styled-components").StyledComponent<{
-    <E extends import("react").ElementType<any> = "button">(props: ButtonProps<E>): JSX.Element;
+    <E extends ElementType<any> = "button">(props: ButtonProps<E>): JSX.Element;
     defaultProps: {
         isLoading: boolean;
         external: boolean;
@@ -35,7 +35,7 @@ export declare const Buttons: import("styled-components").StyledComponent<"div",
 export declare const NetworkBlock: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const TierLine: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Box").BoxProps & import("../../../components/Box").FlexProps, never>;
 export declare const StakeButton: import("styled-components").StyledComponent<{
-    <E extends import("react").ElementType<any> = "button">(props: ButtonProps<E>): JSX.Element;
+    <E extends ElementType<any> = "button">(props: ButtonProps<E>): JSX.Element;
     defaultProps: {
         isLoading: boolean;
         external: boolean;
@@ -43,7 +43,7 @@ export declare const StakeButton: import("styled-components").StyledComponent<{
         scale: "md";
         disabled: boolean;
     };
-}, import("styled-components").DefaultTheme, import("../../../components/Button").BaseButtonProps & import("../../../components/Button/types").AsProps<"button"> & Omit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "as">, never>;
+}, import("styled-components").DefaultTheme, import("../../../components/Button").BaseButtonProps & import("../../../components/Button/types").AsProps<ElementType<any>> & Omit<any, "as">, never>;
 export declare const InfoText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Text").TextProps & {
     white?: boolean | undefined;
 }, never>;

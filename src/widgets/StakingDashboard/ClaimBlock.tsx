@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ElementType } from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import BG from "./img/image-bg.png";
@@ -68,7 +68,7 @@ const StyledDescription = styled(Text)`
   line-height: 32px;
   letter-spacing: -0.02em;
 `;
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<ButtonProps<ElementType>>`
   width: 100%;
   margin-top: 22px;
   border-radius: 10px;

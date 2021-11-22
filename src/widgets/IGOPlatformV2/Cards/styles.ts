@@ -1,3 +1,4 @@
+import { ElementType } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
@@ -205,7 +206,7 @@ export const TierLine = styled(Flex)`
   justify-content: space-between;
   align-items: flex-end;
 `;
-export const StakeButton = styled(Button)<ButtonProps>`
+export const StakeButton = styled(Button)<ButtonProps<ElementType>>`
   height: 30px;
   padding: 0;
   max-width: 130px;

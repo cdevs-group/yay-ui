@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { ElementType, useState } from "react";
 import styled from "styled-components";
 import { IGOCardInfoProps } from "../types";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 import { ArrowLeft } from "../../../components/Svg";
 import NetworksTabs from "./components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
@@ -251,7 +251,7 @@ const SummaryText = styled(Text)`
     font-size: 15px;
   }
 `;
-const ButtonStyle = styled(Button)`
+const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
   width: 100%;
   display: flex;
   height: 50px;

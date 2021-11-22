@@ -1,10 +1,10 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
+import React, { ElementType, useCallback, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { TransactionHistoryProps } from "./types";
 import { Text } from "../../components/Text";
 import InfoWrapperTransactionHistory from "./components/InfoWrapperTransactionHistory";
 import { CloseIcon2 } from "../../components/Svg";
-import { Button } from "../../components/Button";
+import { Button, ButtonProps } from "../../components/Button";
 
 const TransactionHistory = ({
   texts,
@@ -121,7 +121,7 @@ const Description = styled(Text)`
   } ;
 `;
 
-const SeeMore = styled(Button)`
+const SeeMore = styled(Button)<ButtonProps<ElementType>>`
   display: flex;
   align-items: center;
   margin: 38px auto 46px;

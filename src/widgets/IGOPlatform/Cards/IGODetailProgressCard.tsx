@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ElementType } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
@@ -9,7 +9,7 @@ import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
 import { baseColors } from "../../../theme/colors";
-import { Button } from "../../../components/Button";
+import { Button, ButtonProps } from "../../../components/Button";
 import { TimerNotSolidWithoutBg } from "../../..";
 
 const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
@@ -177,7 +177,7 @@ const Block = styled.div`
     margin-bottom: 0;
   }
 `;
-const BuyYAYButton = styled(Button)`
+const BuyYAYButton = styled(Button)<ButtonProps<ElementType>>`
   height: fit-content;
   display: block;
   text-decoration: underline;

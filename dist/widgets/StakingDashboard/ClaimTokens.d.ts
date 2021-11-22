@@ -35,5 +35,5 @@ export declare const StyledButton: import("styled-components").StyledComponent<{
         scale: "md";
         disabled: boolean;
     };
-}, import("styled-components").DefaultTheme, {}, never>;
+}, import("styled-components").DefaultTheme, import("../../components/Button").BaseButtonProps & import("../../components/Button/types").AsProps<React.ElementType<any>> & Omit<any, "as">, never>;
 export default ClaimTokens;

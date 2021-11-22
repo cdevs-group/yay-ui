@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ElementType } from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
 import BG from "./img/link-bg.png";
 import { Text } from "../../components/Text";
-import { Button } from "../../components/Button";
+import { Button, ButtonProps } from "../../components/Button";
 import { StyledTitle } from "./ClaimTokens";
 
 interface Iprops {
@@ -76,7 +76,7 @@ const Wrapper = styled.div<{ disabledCard?: boolean }>`
   }
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<ButtonProps<ElementType>>`
   display: block;
   width: 100%;
   padding: 14px;

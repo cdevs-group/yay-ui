@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ElementType, useEffect, useState } from "react";
 import styled from "styled-components";
 import { transparentize } from "polished";
 import { Text } from "../../components/Text";
@@ -215,7 +215,7 @@ const StyledText = styled(Text)`
   font-weight: 400;
 `;
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)<ButtonProps<ElementType>>`
   width: 100%;
   font-weight: 400;
   ${({ theme }) => theme.mediaQueries.sm} {
