@@ -25,7 +25,7 @@ export default function CommonBases({
   selectedCurrency,
   texts,
   currencyLogoETHER,
-  CurrencyLogoToken,
+  currencyLogoToken,
   currencyEquals,
   SUGGESTED_BASES,
 }: {
@@ -36,7 +36,7 @@ export default function CommonBases({
   currencyEquals?: any;
   SUGGESTED_BASES?: any;
   currencyLogoETHER: ReactNode;
-  CurrencyLogoToken: ReactNode;
+  currencyLogoToken: ReactNode;
 }) {
   return (
     <AutoColumn gap="md">
