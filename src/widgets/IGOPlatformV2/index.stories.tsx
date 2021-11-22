@@ -328,7 +328,7 @@ export const IGODetailProgressCard2Block = () => {
           status={StatusType.BEFORE_SALE}
           texts={texts}
           textBaseProgress="Time to end of Lottery"
-          baseProgress={0}
+          baseProgress={120}
           isStaked={false}
           tierStatus="Stake YAY to get in"
           handleStake={() => console.log("stake")}

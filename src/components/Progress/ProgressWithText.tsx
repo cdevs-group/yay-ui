@@ -7,7 +7,9 @@ const ProgressWithText = ({ text, progress }: ProgressWithTextProps) => {
   return (
     <ProgressWrap>
       <RangeText>{text}</RangeText>
-      <RangeTrack progress={progress} />
+      <RangeTrackWrap>
+        <RangeTrack progress={progress} />
+      </RangeTrackWrap>
     </ProgressWrap>
   );
 };
@@ -23,10 +25,16 @@ const ProgressWrap = styled.div`
   border-radius: 8px;
   padding: 5px;
 `;
+const RangeTrackWrap = styled.div`
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
 const RangeTrack = styled.div<{ progress?: number }>`
   width: ${({ progress }) => (progress ? `${progress}%` : 0)};
   height: 100%;
-  border-radius: 6px;
   background: ${({ theme }) => theme.colors.greenGradient};
 `;
 
