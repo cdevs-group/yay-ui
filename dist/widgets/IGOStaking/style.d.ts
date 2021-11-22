@@ -5,4 +5,8 @@ export declare const StakeDescription: import("styled-components").StyledCompone
 export declare const InputBlock: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const Balance: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Text").TextProps, never>;
 export declare const Buttons: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../components/Box").BoxProps & import("../../components/Box").FlexProps, never>;
-export declare const Progress: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+export declare const ProgressTrack: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+export declare const ProgressWrap: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+export declare const ProgressBar: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
+    progress: number;
+}, never>;
