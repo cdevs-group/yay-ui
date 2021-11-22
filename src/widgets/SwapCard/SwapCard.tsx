@@ -97,39 +97,47 @@ export default function Swap({
   SwapCallbackErrorText,
   ConfirmSwapModalComponent,
 }: SwapCardProps) {
-  // const [onPresentConfirmModal] = useModal(
-  //   <ConfirmSwapModal
-  //     trade={ConfirmSwapModalComponent.trade}
-  //     attemptingTxn={ConfirmSwapModalComponent.attemptingTxn}
-  //     recipient={ConfirmSwapModalComponent.recipient}
-  //     allowedSlippage={ConfirmSwapModalComponent.allowedSlippage}
-  //     onAcceptChanges={ConfirmSwapModalComponent.onAcceptChanges}
-  //     onConfirm={ConfirmSwapModalComponent.onConfirm}
-  //     customOnDismiss={ConfirmSwapModalComponent.customOnDismiss}
-  //     pendingText={ConfirmSwapModalComponent.pendingText}
-  //     modalTitle={ConfirmSwapModalComponent.modalTitle}
-  //     dismissText={ConfirmSwapModalComponent.dismissText}
-  //     contentTexts={ConfirmSwapModalComponent.contentTexts}
-  //     chainId={ConfirmSwapModalComponent.chainId}
-  //     registerToken={ConfirmSwapModalComponent.registerToken}
-  //     bscScanLink={ConfirmSwapModalComponent.bscScanLink}
-  //     transSubmittedText={ConfirmSwapModalComponent.transSubmittedText}
-  //     bscScanLinkText={ConfirmSwapModalComponent.bscScanLinkText}
-  //     metamaskAssetText={ConfirmSwapModalComponent.metamaskAssetText}
-  //     btnCloseText={ConfirmSwapModalComponent.btnCloseText}
-  //     isMetaMask={ConfirmSwapModalComponent.isMetaMask}
-  //     token={ConfirmSwapModalComponent.token}
-  //     currencyLogoFrom={ConfirmSwapModalComponent.currencyLogoFrom}
-  //     currencyLogoTo={ConfirmSwapModalComponent.currencyLogoTo}
-  //     swapModalHeaderTexts={ConfirmSwapModalComponent.swapModalHeaderTexts}
-  //     swapModalFooterTexts={ConfirmSwapModalComponent.swapModalFooterTexts}
-  //     errorText={ConfirmSwapModalComponent.errorText}
-  //     buttonSwap={ConfirmSwapModalComponent.buttonSwap}
-  //     truncatedTextColorFrom={ConfirmSwapModalComponent.truncatedTextColorFrom}
-  //     truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
-  //     showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
-  //   />
-  // );
+  const [onPresentConfirmModal] = useModal(
+    <ConfirmSwapModal
+      trade={ConfirmSwapModalComponent.trade}
+      attemptingTxn={ConfirmSwapModalComponent.attemptingTxn}
+      recipient={ConfirmSwapModalComponent.recipient}
+      allowedSlippage={ConfirmSwapModalComponent.allowedSlippage}
+      onAcceptChanges={ConfirmSwapModalComponent.onAcceptChanges}
+      onConfirm={ConfirmSwapModalComponent.onConfirm}
+      customOnDismiss={ConfirmSwapModalComponent.customOnDismiss}
+      pendingText={ConfirmSwapModalComponent.pendingText}
+      modalTitle={ConfirmSwapModalComponent.modalTitle}
+      dismissText={ConfirmSwapModalComponent.dismissText}
+      contentTexts={ConfirmSwapModalComponent.contentTexts}
+      chainId={ConfirmSwapModalComponent.chainId}
+      registerToken={ConfirmSwapModalComponent.registerToken}
+      bscScanLink={ConfirmSwapModalComponent.bscScanLink}
+      transSubmittedText={ConfirmSwapModalComponent.transSubmittedText}
+      bscScanLinkText={ConfirmSwapModalComponent.bscScanLinkText}
+      metamaskAssetText={ConfirmSwapModalComponent.metamaskAssetText}
+      btnCloseText={ConfirmSwapModalComponent.btnCloseText}
+      isMetaMask={ConfirmSwapModalComponent.isMetaMask}
+      token={ConfirmSwapModalComponent.token}
+      swapModalHeaderTexts={ConfirmSwapModalComponent.swapModalHeaderTexts}
+      swapModalFooterTexts={ConfirmSwapModalComponent.swapModalFooterTexts}
+      errorText={ConfirmSwapModalComponent.errorText}
+      buttonSwap={ConfirmSwapModalComponent.buttonSwap}
+      truncatedTextColorFrom={ConfirmSwapModalComponent.truncatedTextColorFrom}
+      truncatedTextColorTo={ConfirmSwapModalComponent.truncatedTextColorTo}
+      showAcceptChanges={ConfirmSwapModalComponent.showAcceptChanges}
+      buttonSwapHandler={ConfirmSwapModalComponent.buttonSwapHandler}
+      buttonSwapProps={ConfirmSwapModalComponent.buttonSwapProps}
+      outputEstimates={ConfirmSwapModalComponent.outputEstimates}
+      priceFrom={ConfirmSwapModalComponent.priceFrom}
+      currencyFrom={ConfirmSwapModalComponent.currencyFrom}
+      currencyTo={ConfirmSwapModalComponent.currencyTo}
+      priceTo={ConfirmSwapModalComponent.priceTo}
+      executionPrice={ConfirmSwapModalComponent.executionPrice}
+      minimusReceived={ConfirmSwapModalComponent.minimusReceived}
+      priceImpact={ConfirmSwapModalComponent.priceImpact}
+    />
+  );
 
   const {
     removeSendButton,
@@ -304,31 +312,30 @@ export default function Swap({
           </Box>
         </Wrapper>
       </AppBody>
-      {showFooter && (
-        <>
-          {!swapIsUnsupported ? (
-            <AdvancedSwapDetailsDropdown
-              trade={AdvancedSwapDetailsDropdownComponent.trade}
-              lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
-              routeText={AdvancedSwapDetailsDropdownComponent.routeText}
-              routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
-              tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
-              errorText={AdvancedSwapDetailsDropdownComponent.errorText}
-              showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
-            />
-          ) : (
-            <UnsupportedCurrencyFooter
-              tokens={UnsupportedCurrencyFooterComponent.tokens}
-              srcs={UnsupportedCurrencyFooterComponent.srcs}
-              isEther={UnsupportedCurrencyFooterComponent.isEther}
-              chainId={UnsupportedCurrencyFooterComponent.chainId}
-              bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
-              unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
-            />
-          )}
-        </>
-      )}
-      {}
+      {
+        showFooter && (
+          <>{!swapIsUnsupported ? (
+              <AdvancedSwapDetailsDropdown
+                trade={AdvancedSwapDetailsDropdownComponent.trade}
+                lastTrade={AdvancedSwapDetailsDropdownComponent.lastTrade}
+                routeText={AdvancedSwapDetailsDropdownComponent.routeText}
+                routingFromToken={AdvancedSwapDetailsDropdownComponent.routingFromToken}
+                tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
+                errorText={AdvancedSwapDetailsDropdownComponent.errorText}
+                showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
+              />
+            ) : (
+              <UnsupportedCurrencyFooter
+                tokens={UnsupportedCurrencyFooterComponent.tokens}
+                srcs={UnsupportedCurrencyFooterComponent.srcs}
+                isEther={UnsupportedCurrencyFooterComponent.isEther}
+                chainId={UnsupportedCurrencyFooterComponent.chainId}
+                bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
+                unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+              />
+            )}</>
+        )
+      }
     </>
   );
 }

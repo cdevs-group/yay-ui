@@ -261,6 +261,7 @@ export const ConfirmSwapModalBlock = () => {
       truncatedTextColorFrom="green"
       truncatedTextColorTo="yellow"
       showAcceptChanges={true}
+      buttonSwap={<Button variant="green">Swap</Button>}
     />
   );
 };
@@ -320,10 +321,18 @@ export const SwapModalFooterBlock = () => {
         amountTowards: "Amount Towards Text",
         currencySymbolTop: "Currency Symbol Top",
         currencySymbolBottom: "Currency Symbol Bottom",
+        buttonSwap: "Swap Button"
       }}
       errorText={<div>Some Error Text</div>}
       buttonSwap={<Button>Button</Button>}
       swapErrorMessage="Some Error Message"
+      priceImpact="Price Impact"
+      buttonSwapProps={{
+        variant: "green"
+      }}
+      executionPrice="Execution Price"
+      minimusReceived="Minimus Received"
+      buttonSwapHandler={() => null}
     />
   );
 };
@@ -341,13 +350,22 @@ export const SwapModalHeaderBlock = () => {
         estimatedText: "Estimated Text",
         recipientSentToText: "Recipient Sent To Text",
       }}
-      currencyLogoFrom={<p>Some Pic 1</p>}
-      currencyLogoTo={<p>Some Pic 2</p>}
-      truncatedTextColorFrom="green"
-      truncatedTextColorTo="yellow"
       showAcceptChanges={true}
       recipient="recipient"
       onAcceptChanges={() => null}
+      currencyFrom={{
+        shortName: "Short Name",
+        fullName: "Full Name",
+        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+      }}
+      currencyTo={{
+        shortName: "Short Name",
+        fullName: "Full Name",
+        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+      }}
+      priceFrom="0.0"
+      priceTo="0.0"
+      outputEstimates="Output Estimates"
     />
   );
 };
@@ -522,28 +540,6 @@ export const AppHeaderBlock = () => {
 };
 
 export const SwapBlock = () => {
-  const currencyInputPanelData = {
-    value: "value",
-    onUserInput: (value: string) => null,
-    onMax: () => null,
-    showMaxButton: true,
-    label: "Some Label Text",
-    disableCurrencySelect: false,
-    hideInput: false,
-    id: "123456789",
-    account: "account",
-    onPresentCurrencyModal: () => null,
-    сurrencyLogo: <p>Some Currency Logo</p>,
-    doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
-    texts: {
-      translatedLabel: "Translated Label Text",
-      balance: "Balance",
-      numericalInputTitle: "Numerical Input Title",
-      max: "Max",
-      currencySelect: "Currency Select",
-    },
-  };
-
   const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -722,8 +718,6 @@ export const SwapBlock = () => {
           btnCloseText: "Close",
           isMetaMask: true,
           token: "token",
-          currencyLogoFrom: <p>Some Pic 1</p>,
-          currencyLogoTo: <p>Some Pic 2</p>,
           swapModalHeaderTexts: {
             truncatedTextFrom: "0.001 BND",
             truncatedTextTo: "1 BUSD",
@@ -749,12 +743,33 @@ export const SwapBlock = () => {
             amountTowards: "Amount Towards Text",
             currencySymbolTop: "Currency Symbol Top",
             currencySymbolBottom: "Currency Symbol Bottom",
+            buttonSwap: "Swap Button"
           },
           errorText: <div>Some Error Text</div>,
           buttonSwap: <Button>Button</Button>,
           truncatedTextColorFrom: "green",
           truncatedTextColorTo: "yellow",
           showAcceptChanges: true,
+          priceImpact: "Price Impact",
+          buttonSwapProps: {
+            variant: "green"
+          },
+          executionPrice: "Execution Price",
+          minimusReceived: "Minimus Received",
+          buttonSwapHandler: () => null,
+          currencyFrom: {
+            shortName: "Short Name",
+            fullName: "Full Name",
+            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+          },
+          currencyTo: {
+            shortName: "Short Name",
+            fullName: "Full Name",
+            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4"
+          },
+          priceFrom: "0.0",
+          priceTo: "0.0",
+          outputEstimates: "Output Estimates"
         }}
       />
     </Container>
