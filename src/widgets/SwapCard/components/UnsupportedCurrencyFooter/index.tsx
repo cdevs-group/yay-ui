@@ -4,8 +4,7 @@ import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
 import { Modal, useModal, InjectedModalProps } from "../../../../widgets/Modal";
 import { Link } from "../../../../components/Link";
-
-// import { CurrencyLogo } from "../Logo";
+import { CurrencyLogo } from "../../../../components/Logo";
 import { AutoColumn } from "../../../../components/Layouts/Column";
 import { AutoRow } from "../../../../components/Layouts/Row";
 
@@ -16,6 +15,10 @@ export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
   chainId: any;
   bscScanLink: string;
   unsupportedTokens: { [address: string]: any };
+  texts: {
+    someAssets: string;
+    readMore: string;
+  };
 }
 
 const DetailsFooter = styled.div`
@@ -37,6 +40,7 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
   bscScanLink,
   unsupportedTokens,
   tokens,
+  texts,
 }) => {
   return (
     <Modal title="Unsupported Assets" maxWidth="420px" onDismiss={onDismiss}>
@@ -48,7 +52,7 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
             Object.keys(unsupportedTokens).includes(token.address) && (
               <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
                 <AutoRow gap="5px" align="center">
-                  {/* <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} /> */}
+                  <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} />
                   <Text>{token.symbol}</Text>
                 </AutoRow>
                 {chainId && (
@@ -61,10 +65,7 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
           );
         })}
         <AutoColumn gap="lg">
-          <Text>
-            Some assets are not available through this interface because they may not work well with our smart contract
-            or we are unable to allow trading for legal reasons.
-          </Text>
+          <Text>{texts.someAssets}</Text>
         </AutoColumn>
       </AutoColumn>
     </Modal>
@@ -78,6 +79,7 @@ export default function UnsupportedCurrencyFooter({
   chainId,
   bscScanLink,
   unsupportedTokens,
+  texts,
 }: UnsupportedCurrencyFooterProps) {
   const [onPresentModal] = useModal(
     <UnsupportedModal
@@ -87,13 +89,14 @@ export default function UnsupportedCurrencyFooter({
       chainId={chainId}
       bscScanLink={bscScanLink}
       unsupportedTokens={unsupportedTokens}
+      texts={texts}
     />
   );
 
   return (
     <DetailsFooter>
       <Button variant="text" onClick={onPresentModal}>
-        Read more about unsupported assets
+        {texts.readMore}
       </Button>
     </DetailsFooter>
   );
