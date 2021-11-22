@@ -21,6 +21,8 @@ interface IUnstakeProps {
     handleCooldown: () => void | Promise<void>;
     time: number;
     isBlur?: boolean;
+    loadingCooldown?: boolean;
+    progress: number;
 }
-declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUnstakeProps) => JSX.Element;
+declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur, loadingCooldown, progress, }: IUnstakeProps) => JSX.Element;
 export default Unstake;

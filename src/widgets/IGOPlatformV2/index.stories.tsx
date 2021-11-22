@@ -4,6 +4,9 @@ import { StatusType } from "./types";
 import { BSC_ICON, DESU_TOKEN } from "../../constants/images";
 import IGODetailCardV2 from "./Cards/IGODeatailCardV2";
 import IGODetailProgressCard2 from "./Cards/IGODetailProgressCard2";
+import { lightColors, Text } from "../../index";
+import { baseColors } from "../../theme/colors";
+import IGOCard from "../IGOPlatform/Cards/IGOCard";
 
 export default {
   title: "Widgets/IGOPlatformV2.0",
@@ -37,6 +40,43 @@ export const IGOPCardV2Block = () => {
     console.log("stake");
   };
 
+  const texts2 = {
+    available: "Available",
+    networks: "Available networks:",
+    slots: "Available whitelist slots:",
+    slotsTooltip: "Available whitelist slots Tooltip",
+    progress: "Progress",
+    button: "View more",
+    isLive: "is live",
+    success: "successfully",
+    sale: "sale",
+    timer: "Before start",
+  };
+
+  const dataSlots = [
+    {
+      all: 230,
+      free: 200,
+    },
+    {
+      all: 230,
+      free: 230,
+    },
+    {
+      all: 230,
+      free: 0,
+    },
+  ];
+  enum CardStatus {
+    BEFORE_WHITELIST = "beforeWhitelist",
+    OPEN_WHITELIST = "openWhitelist",
+    WHITELIST_SALE = "whitelistSale",
+    PUBLIC_SALE = "publicSale",
+    WAIT_SALE = "waitSale",
+    WAIT_TGE = "waitTGE",
+    COMPLETED = "completed",
+    CLAIMING = "claiming",
+  }
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "50px" }}>
       <div style={{ margin: "50px auto", width: "360px" }}>
@@ -59,6 +99,31 @@ export const IGOPCardV2Block = () => {
           inPool
           propsButtonStake={{ spin: true }}
           disabledButtonStake={false}
+        />
+      </div>
+
+      <div style={{ marginTop: "50px" }}>
+        <IGOCard
+          tokenName="BNd"
+          dataSlots={dataSlots}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          networksTab={networksTab}
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          status={CardStatus.BEFORE_WHITELIST}
+          statusTitle="Before Whitelist"
+          token="DESU Token"
+          texts={texts2}
+          currentVolume={1000}
+          totalVolume={1000}
+          time={1000}
+          handleView={handleView}
+          statusText={
+            <Text fontSize="15px" color={baseColors.green}>
+              WHITELIST <span style={{ color: lightColors.text, marginLeft: "5px" }}>LIVE IN</span>
+            </Text>
+          }
         />
       </div>
       <div style={{ margin: "50px auto", width: "360px" }}>
