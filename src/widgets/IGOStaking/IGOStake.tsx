@@ -49,6 +49,8 @@ interface IGOStakeProps {
   loadingStake?: boolean;
   isBlurTopBlockTookPart?: boolean;
   isBlurTopBlockAvailable?: boolean;
+  progress: number;
+  loadingCooldown?: boolean;
 }
 
 const IGOStake = ({
@@ -78,6 +80,8 @@ const IGOStake = ({
   isBlurUnstake,
   isBlurTopBlockTookPart,
   isBlurTopBlockAvailable,
+  progress,
+  loadingCooldown,
 }: IGOStakeProps) => {
   return (
     <div style={{ position: "relative" }}>
@@ -112,6 +116,8 @@ const IGOStake = ({
             handleCooldown={handleCooldown}
             texts={texts}
             isBlur={isBlurUnstake}
+            loadingCooldown={loadingCooldown}
+            progress={progress}
           />
         </MainLine>
       </div>

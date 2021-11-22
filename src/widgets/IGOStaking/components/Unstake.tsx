@@ -1,6 +1,6 @@
-import React from "react";
-import { StakeDescription, StakeTitle, UnstakeWrapper, Progress } from "../style";
-import { Button } from "../../../components/Button";
+import React, { ElementType } from "react";
+import { StakeDescription, StakeTitle, UnstakeWrapper, ProgressTrack, ProgressWrap, ProgressBar } from "../style";
+import { Button, ButtonProps } from "../../../components/Button";
 import TextWithTooltip from "../../IGOPlatform/Cards/components/TextWithTooltip";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 
@@ -29,9 +29,19 @@ interface IUnstakeProps {
   handleCooldown: () => void | Promise<void>;
   time: number;
   isBlur?: boolean;
+  loadingCooldown?: boolean;
+  progress: number;
 }
 
-const Unstake = ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUnstakeProps) => {
+const Unstake = ({
+  texts,
+  cooldownDisabled,
+  handleCooldown,
+  time,
+  isBlur,
+  loadingCooldown,
+  progress,
+}: IUnstakeProps) => {
   return (
     <div style={{ position: "relative" }}>
       <UnstakeWrapper id="unstake">
@@ -43,12 +53,17 @@ const Unstake = ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUns
         </div>
         <div>
           <TimerNotSolidWithoutBg width="100%" time={time} />
-          <Progress />
+          <ProgressTrack>
+            <ProgressWrap>
+              <ProgressBar progress={progress} />
+            </ProgressWrap>
+          </ProgressTrack>
         </div>
         <ButtonStyle
           disabled={cooldownDisabled}
           onClick={handleCooldown}
           variant={cooldownDisabled ? "option" : "green"}
+          spin={loadingCooldown}
         >
           {texts.cooldownButton}
         </ButtonStyle>
@@ -60,7 +75,7 @@ const Unstake = ({ texts, cooldownDisabled, handleCooldown, time, isBlur }: IUns
 
 export default Unstake;
 
-const ButtonStyle = styled(Button)`
+const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
   &:disabled {
     opacity: 1;
   }

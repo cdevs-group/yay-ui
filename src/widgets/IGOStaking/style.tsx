@@ -55,7 +55,7 @@ export const Buttons = styled(Flex)`
     }
   }
 `;
-export const Progress = styled.div`
+export const ProgressTrack = styled.div`
   position: relative;
   width: 100%;
   height: 10px;
@@ -63,15 +63,22 @@ export const Progress = styled.div`
   border-radius: 6px;
   background: ${({ theme }) => theme.colors.bgOpacity4};
   box-shadow: ${({ theme }) => theme.colors.boxShadow7};
-  &:after {
-    top: 2px;
-    left: 3px;
-    position: absolute;
-    content: "";
-    width: calc(20% - 6px);
-    height: calc(100% - 4px);
-    background: ${({ theme }) => theme.colors.greenBg2};
-    box-shadow: ${({ theme }) => theme.colors.boxShadow9};
-    border-radius: 6px;
-  }
+`;
+export const ProgressWrap = styled.div`
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: calc(100% - 6px);
+  height: calc(100% - 4px);
+  border-radius: 6px;
+`;
+
+export const ProgressBar = styled.div<{ progress: number }>`
+  width: ${({ progress }) => `${progress}%`};
+  height: 100%;
+  background: ${({ theme }) => theme.colors.greenBg2};
+  box-shadow: ${({ theme }) => theme.colors.boxShadow9};
+  border-radius: 6px;
 `;

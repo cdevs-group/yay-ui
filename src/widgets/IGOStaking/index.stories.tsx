@@ -65,6 +65,7 @@ export const IGOStakeBlock = () => {
         loadingApprove
         loadingStake
         isBlurUnstake={false}
+        progress={90}
       />
     </div>
   );
