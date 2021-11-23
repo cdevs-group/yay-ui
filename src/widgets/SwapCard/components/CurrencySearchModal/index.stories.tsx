@@ -164,8 +164,8 @@ export const CurrencySearchModalBlock = () => {
           otherSelected={otherSelected}
           style={style}
           account="kdbfv,jhdfbvj,hbd"
-          hasBalanse
-          balance={<>65651651</>}
+          balance={{}}
+          balanceComponent={<>65651651</>}
           customAdded
           isOnSelectedList={false}
           key={14}
@@ -277,7 +277,7 @@ export const CurrencySearchModalBlock = () => {
         chainId={56}
         inactiveTokenList={inactiveTokenList}
         truncateHash="0x1AdfffgffghgfhfghDBc3"
-        bscScanLink="http://dlsknjknsdv.v"
+        getBscScanLink={(tokenAddress: any, address: string, chainId: any) => { return ''}}
       />
     );
   };
