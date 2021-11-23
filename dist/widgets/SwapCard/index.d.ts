@@ -23,3 +23,7 @@ export { default as SwapWarningModal } from "./components/SwapWarningModal";
 export { default as UnsupportedCurrencyFooter } from "./components/UnsupportedCurrencyFooter";
 export { default as TransactionConfirmationModal } from "./components/TransactionConfirmationModal";
 export { default as FixedSizeListRow } from "./components/CurrencySearchModal/FixedSizeListRow";
+export { default as AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
+export { default as ProgressCircles } from './components/ProgressSteps';
+export { default as AdvancedSwapDetailsDropdown } from "./components/AdvancedSwapDetailsDropdown";
+export { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds';

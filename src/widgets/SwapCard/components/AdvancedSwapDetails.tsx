@@ -133,3 +133,4 @@ export function AdvancedSwapDetails({
     </AutoColumn>
   );
 }
+export default AdvancedSwapDetails;

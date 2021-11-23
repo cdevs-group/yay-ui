@@ -30,3 +30,4 @@ export interface AdvancedSwapDetailsProps {
     showRoute: boolean;
 }
 export declare function AdvancedSwapDetails({ trade, routeText, routingFromToken, tradeSummaryTexts, errorText, showRoute, }: AdvancedSwapDetailsProps): JSX.Element;
+export default AdvancedSwapDetails;
