@@ -50,13 +50,22 @@ const ModalUnstake = ({
 export default ModalUnstake;
 
 const Wrapper = styled.div<{ open: boolean }>`
+  width: 320px;
+  max-height: 100vh;
+  background: ${({ theme }) => theme.colors.bgGray};
+  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  z-index: ${({ theme }) => theme.zIndices.modal};
+  overflow-y: auto;
+  overflow-x: hidden;
   display: ${({ open }) => (open ? "block" : "none")};
   position: relative;
-  width: 320px;
+  //width: 320px;
   padding: 12px 15px 25px;
   background: ${({ theme }) => theme.colors.bgGray};
-  border-radius: 15px;
-  z-index: 16;
+  //border-radius: 15px;
+  //z-index: 16;
+  pointer-events: all;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 26px 50px;
     width: 404px;
@@ -90,8 +99,11 @@ const Close = styled(Button)`
   }
 `;
 const Buttons = styled(Flex)`
+  margin-top: 20px;
   padding: 0 10px;
-  margin-top: 35px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 35px;
+  }
 `;
 const ButtonUnstake = styled(Button)<ButtonProps<ElementType>>`
   width: 100%;

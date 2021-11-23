@@ -10214,7 +10214,13 @@ var ModalUnstake = function (_a) {
             React__default["default"].createElement(ButtonUnstake, __assign({ variant: "option", onClick: handleUnstake }, unstakeButtonProps), textsUnstake),
             React__default["default"].createElement(ButtonClose, { variant: "green", onClick: handleClose }, textClose))));
 };
-var Wrapper$9 = styled__default["default"].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: ", ";\n  position: relative;\n  width: 320px;\n  padding: 12px 15px 25px;\n  background: ", ";\n  border-radius: 15px;\n  z-index: 16;\n  ", " {\n    padding: 26px 50px;\n    width: 404px;\n  }\n"], ["\n  display: ", ";\n  position: relative;\n  width: 320px;\n  padding: 12px 15px 25px;\n  background: ", ";\n  border-radius: 15px;\n  z-index: 16;\n  ", " {\n    padding: 26px 50px;\n    width: 404px;\n  }\n"])), function (_a) {
+var Wrapper$9 = styled__default["default"].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  width: 320px;\n  max-height: 100vh;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  overflow-x: hidden;\n  display: ", ";\n  position: relative;\n  //width: 320px;\n  padding: 12px 15px 25px;\n  background: ", ";\n  //border-radius: 15px;\n  //z-index: 16;\n  pointer-events: all;\n  ", " {\n    padding: 26px 50px;\n    width: 404px;\n  }\n"], ["\n  width: 320px;\n  max-height: 100vh;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  overflow-x: hidden;\n  display: ", ";\n  position: relative;\n  //width: 320px;\n  padding: 12px 15px 25px;\n  background: ", ";\n  //border-radius: 15px;\n  //z-index: 16;\n  pointer-events: all;\n  ", " {\n    padding: 26px 50px;\n    width: 404px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.bgGray;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.modal;
+}, function (_a) {
     var open = _a.open;
     return (open ? "block" : "none");
 }, function (_a) {
@@ -10230,7 +10236,10 @@ var Close = styled__default["default"](Button$9)(templateObject_4$g || (template
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Buttons$2 = styled__default["default"](Flex)(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  padding: 0 10px;\n  margin-top: 35px;\n"], ["\n  padding: 0 10px;\n  margin-top: 35px;\n"])));
+var Buttons$2 = styled__default["default"](Flex)(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  margin-top: 20px;\n  padding: 0 10px;\n  ", " {\n    margin-top: 35px;\n  }\n"], ["\n  margin-top: 20px;\n  padding: 0 10px;\n  ", " {\n    margin-top: 35px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
 var ButtonUnstake = styled__default["default"](Button$9)(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 100%;\n  margin-right: 7px;\n"], ["\n  width: 100%;\n  margin-right: 7px;\n"])));
 var ButtonClose = styled__default["default"](Button$9)(templateObject_7$4 || (templateObject_7$4 = __makeTemplateObject(["\n  width: 100%;\n  margin-left: 7px;\n"], ["\n  width: 100%;\n  margin-left: 7px;\n"])));
 var templateObject_1$C, templateObject_2$q, templateObject_3$k, templateObject_4$g, templateObject_5$8, templateObject_6$6, templateObject_7$4;

@@ -49,7 +49,7 @@ export const IGOStakeBlock = () => {
   return (
     <div>
       <Overlay open={openModal} />
-      <Modal>
+      <Modal open={openModal}>
         <ModalUnstake
           open={openModal}
           img={ComingSoonIcon}
@@ -178,18 +178,22 @@ const CardsTop = styled.div`
     grid-template-columns: repeat(4, 1fr);
   }
 `;
-const Modal = styled.div`
+const Modal = styled.div<{ open: boolean }>`
   position: fixed;
-  top: 50%;
+  top: 0;
+  left: 0;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  //height: 100vh;
+  //width: 100vw;
   z-index: 16;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 397px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    max-height: 440px;
-  }
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  pointer-events: ${({ open }) => (open ? "all" : "none")};
 `;
 const Overlay = styled.div<{ open?: boolean }>`
   pointer-events: none;
