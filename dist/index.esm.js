@@ -10745,7 +10745,7 @@ function ImportRow(_a) {
 var templateObject_1$q, templateObject_2$f, templateObject_3$9;
 
 function ImportToken(_a) {
-    var tokens = _a.tokens, handleCurrencySelect = _a.handleCurrencySelect, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, bscScanLink = _a.bscScanLink;
+    var tokens = _a.tokens, handleCurrencySelect = _a.handleCurrencySelect, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, getBscScanLink = _a.getBscScanLink;
     var createToken = texts.createToken, purchaseToken = texts.purchaseToken, via = texts.via, unknownSource = texts.unknownSource, viewOnbscScan = texts.viewOnbscScan, understanding = texts.understanding, importText = texts.importText;
     var _b = useState(false), confirmed = _b[0], setConfirmed = _b[1];
     return (React__default.createElement(AutoColumn, { gap: "lg", style: { padding: "0 27px 27px 27px" } },
@@ -10772,7 +10772,7 @@ function ImportToken(_a) {
                         ")")),
                 chainId && (React__default.createElement(Flex, { justifyContent: "space-between", width: "100%" },
                     React__default.createElement(Text, { mr: "4px" }, address),
-                    React__default.createElement(Link$3, { href: bscScanLink, external: true },
+                    React__default.createElement(Link$3, { href: getBscScanLink(token.address, 'address', chainId), external: true },
                         "(",
                         viewOnbscScan,
                         ")")))));
@@ -11664,14 +11664,14 @@ function Swap(_a) {
 var templateObject_1$4, templateObject_2$3;
 
 var ImportTokenWarningModal = function (_a) {
-    var tokens = _a.tokens, onDismiss = _a.onDismiss, onCancel = _a.onCancel, modalTitleText = _a.modalTitleText, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, bscScanLink = _a.bscScanLink;
+    var tokens = _a.tokens, onDismiss = _a.onDismiss, onCancel = _a.onCancel, modalTitleText = _a.modalTitleText, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, getBscScanLink = _a.getBscScanLink;
     return (React__default.createElement(Modal, { title: modalTitleText, onDismiss: function () {
             if (onDismiss) {
                 onDismiss();
             }
             onCancel();
         }, style: { maxWidth: "420px" } },
-        React__default.createElement(ImportToken, { tokens: tokens, handleCurrencySelect: onDismiss, listLogo: listLogo, texts: texts, addToken: addToken, chainId: chainId, inactiveTokenList: inactiveTokenList, truncateHash: truncateHash, bscScanLink: bscScanLink })));
+        React__default.createElement(ImportToken, { tokens: tokens, handleCurrencySelect: onDismiss, listLogo: listLogo, texts: texts, addToken: addToken, chainId: chainId, inactiveTokenList: inactiveTokenList, truncateHash: truncateHash, getBscScanLink: getBscScanLink })));
 };
 
 function TradePrice(_a) {
