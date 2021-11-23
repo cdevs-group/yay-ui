@@ -31,3 +31,4 @@ interface IUnstakeProps {
 }
 declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur, loadingCooldown, progress, restakeDisabed, handleRestake, loadingRestake, }: IUnstakeProps) => JSX.Element;
 export default Unstake;
+export declare const StyledTooltip: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

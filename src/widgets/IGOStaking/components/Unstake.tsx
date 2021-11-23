@@ -14,6 +14,8 @@ import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWitho
 
 import styled from "styled-components";
 import { transparentize } from "polished";
+import { HelpIcon2, useTooltip } from "../../../index";
+import { Flex } from "../../../components/Box";
 
 interface IUnstakeProps {
   texts: {
@@ -58,6 +60,8 @@ const Unstake = ({
   handleRestake,
   loadingRestake,
 }: IUnstakeProps) => {
+  const { tooltipVisible, targetRef } = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" });
+
   return (
     <div style={{ position: "relative" }}>
       <UnstakeWrapper id="unstake">
@@ -79,10 +83,18 @@ const Unstake = ({
           <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
             {texts.cooldownButton}
           </ButtonStyle>
-          <ButtonStyle disabled={restakeDisabed} onClick={handleRestake} variant="green" spin={loadingRestake}>
-            {texts.restake}
-            <TextWithTooltip textTooltip={texts.tooltipButton} />
-          </ButtonStyle>
+
+          <ButtonWrap ref={targetRef}>
+            {tooltipVisible && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}
+            <ButtonStyle disabled onClick={handleRestake} variant="green" spin={loadingRestake}>
+              {texts.restake}
+              <Flex ml="10px" alignItems="center">
+                <Flex alignItems="center">
+                  <HelpIcon2 />
+                </Flex>
+              </Flex>
+            </ButtonStyle>
+          </ButtonWrap>
         </Buttons>
       </UnstakeWrapper>
       {isBlur && <Claimed id="unstake" />}
@@ -93,10 +105,17 @@ const Unstake = ({
 export default Unstake;
 
 const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
+  position: relative;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+`;
+const ButtonWrap = styled.div`
+  position: relative;
+  width: 100%;
+  pointer-events: all;
 `;
 const Claimed = styled.div<{ id: string }>`
   position: absolute;
@@ -118,4 +137,25 @@ const Claimed = styled.div<{ id: string }>`
   background-repeat: no-repeat;
   background-position: 50% 0;
   filter: blur(10px);
+`;
+
+export const StyledTooltip = styled.div`
+  opacity: 1;
+  left: -100px;
+  top: -70px;
+  width: 230px;
+  position: absolute;
+  padding: 11px;
+  font-size: 11px;
+  line-height: 16px;
+  border-radius: 8px;
+  max-width: 320px;
+  z-index: 101;
+  background: ${({ theme }) => theme.colors.bgGray};
+  color: ${({ theme }) => theme.colors.text};
+  border: 1px solid #606060;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  ${({ theme }) => theme.mediaQueries.sm} {
+    left: 0;
+  }
 `;

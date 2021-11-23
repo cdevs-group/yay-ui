@@ -15,6 +15,9 @@ export default {
 export const IGOStakeBlock = () => {
   const [tabValue, setTabValue] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
 
   const tabsList = ["25%", "50%", "75%", "100%"];
   const texts = {
@@ -42,9 +45,7 @@ export const IGOStakeBlock = () => {
   const handleTab = (e: any) => {
     setTabValue(e.target.value);
   };
-  const handleModal = () => {
-    setOpenModal(!openModal);
-  };
+
   return (
     <div>
       <Overlay open={openModal} />
@@ -186,6 +187,9 @@ const Modal = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 397px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    max-height: 440px;
+  }
 `;
 const Overlay = styled.div<{ open?: boolean }>`
   pointer-events: none;
