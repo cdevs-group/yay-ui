@@ -27,7 +27,7 @@ export interface InjectedImportTokenProps {
   chainId: number;
   inactiveTokenList: any;
   truncateHash: any;
-  bscScanLink: string;
+  getBscScanLink: (tokenAddress: any, address: string, chainId: any) => string;
 }
 
 function ImportToken({
@@ -39,7 +39,7 @@ function ImportToken({
   chainId,
   inactiveTokenList,
   truncateHash,
-  bscScanLink,
+  getBscScanLink,
 }: InjectedImportTokenProps) {
   const { createToken, purchaseToken, via, unknownSource, viewOnbscScan, understanding, importText } = texts;
 
@@ -76,7 +76,7 @@ function ImportToken({
             {chainId && (
               <Flex justifyContent="space-between" width="100%">
                 <Text mr="4px">{address}</Text>
-                <Link href={bscScanLink} external>
+                <Link href={getBscScanLink(token.address, 'address', chainId)} external>
                   ({viewOnbscScan})
                 </Link>
               </Flex>
