@@ -1,6 +1,7 @@
 export { default as CurrencySearchModal } from "./CurrencySearchModal";
 export { default as CurrencySearch } from "./CurrencySearch";
 export { default as CurrencyList } from "./CurrencyList";
+export { CurrencyRow } from "./CurrencyList";
 export { default as ImportList } from "./ImportList";
 export { default as ImportRow } from "./ImportRow";
 export { default as ImportToken } from "./ImportToken";

@@ -16,7 +16,7 @@ export interface InjectedImportTokenProps {
     chainId: number;
     inactiveTokenList: any;
     truncateHash: any;
-    bscScanLink: string;
+    getBscScanLink: (tokenAddress: any, address: string, chainId: any) => string;
 }
-declare function ImportToken({ tokens, handleCurrencySelect, listLogo, texts, addToken, chainId, inactiveTokenList, truncateHash, bscScanLink, }: InjectedImportTokenProps): JSX.Element;
+declare function ImportToken({ tokens, handleCurrencySelect, listLogo, texts, addToken, chainId, inactiveTokenList, truncateHash, getBscScanLink, }: InjectedImportTokenProps): JSX.Element;
 export default ImportToken;

@@ -5,15 +5,15 @@ export declare const LightGreyCard: import("styled-components").StyledComponent<
     border?: string | undefined;
     borderRadius?: string | undefined;
 }, never>;
-export declare function CurrencyRow({ currency, onSelect, isSelected, otherSelected, style, account, balance, hasBalanse, customAdded, isOnSelectedList, key, CurrencyLogo, }: {
+export declare function CurrencyRow({ currency, onSelect, isSelected, otherSelected, style, account, balance, balanceComponent, customAdded, isOnSelectedList, key, CurrencyLogo, }: {
     currency: any;
     onSelect: () => void;
     isSelected: boolean;
     otherSelected: boolean;
     style: CSSProperties;
     account: any;
-    balance: ReactNode;
-    hasBalanse: boolean;
+    balanceComponent: ReactNode;
+    balance: any;
     customAdded: any;
     isOnSelectedList: any;
     key: any;

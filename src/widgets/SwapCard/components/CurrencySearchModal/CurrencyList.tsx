@@ -57,7 +57,7 @@ export function CurrencyRow({
   style,
   account,
   balance,
-  hasBalanse,
+  balanceComponent,
   customAdded,
   isOnSelectedList,
   key,
@@ -69,8 +69,8 @@ export function CurrencyRow({
   otherSelected: boolean;
   style: CSSProperties;
   account: any;
-  balance: ReactNode;
-  hasBalanse: boolean;
+  balanceComponent: ReactNode;
+  balance: any;
   customAdded: any;
   isOnSelectedList: any;
   key: any;
@@ -94,7 +94,7 @@ export function CurrencyRow({
         </TextStyle>
       </Column>
       <RowFixed style={{ justifySelf: "flex-end" }}>
-        {hasBalanse ? <Text>{balance}</Text> : account ? <CercleIcon spin fill="transparent" /> : null}
+        {balance ? <Text>{balanceComponent}</Text> : account ? <CercleIcon spin fill="transparent" /> : null}
       </RowFixed>
     </MenuItem>
   );
