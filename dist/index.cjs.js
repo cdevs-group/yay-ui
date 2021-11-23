@@ -8134,11 +8134,11 @@ var ButtonStyle$9 = styled__default["default"](Button$9)(templateObject_8$e || (
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextStyle$2 = styled__default["default"](Text)(templateObject_9$a || (templateObject_9$a = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
+var TextStyle$3 = styled__default["default"](Text)(templateObject_9$a || (templateObject_9$a = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var BetValue = styled__default["default"](TextStyle$2)(templateObject_10$8 || (templateObject_10$8 = __makeTemplateObject(["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"], ["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"])), function (_a) {
+var BetValue = styled__default["default"](TextStyle$3)(templateObject_10$8 || (templateObject_10$8 = __makeTemplateObject(["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"], ["\n  padding: 6px;\n  width: 65px;\n  height: 30px;\n  background: ", ";\n  color: ", ";\n  border-radius: 7px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    width: 83px;\n  }\n"])), function (_a) {
     var lose = _a.lose, theme = _a.theme;
     return (lose ? theme.colors.redRgba : darkColors.gradients.greenGradient);
 }, function (_a) {
@@ -8211,7 +8211,7 @@ var Collect = function (_a) {
 var Lose = function (_a) {
     var title = _a.title;
     return (React__default["default"].createElement(LoseBlock, null,
-        React__default["default"].createElement(TextStyle$2, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, title),
+        React__default["default"].createElement(TextStyle$3, { mt: "10px", textAlign: "center", color: baseColors.textGray, textTransform: "uppercase" }, title),
         React__default["default"].createElement("img", { src: LOSE$1 })));
 };
 
@@ -8221,7 +8221,7 @@ var Player = function (_a) {
         React__default["default"].createElement(Icons, null, icon || React__default["default"].createElement("img", { src: AVATAR_PLAYER })),
         React__default["default"].createElement(PlayerWrap, null,
             React__default["default"].createElement(TextTitle, null, title),
-            React__default["default"].createElement(TextStyle$2, { mb: "5px" }, ellipsis(gamer)))));
+            React__default["default"].createElement(TextStyle$3, { mb: "5px" }, ellipsis(gamer)))));
 };
 
 var Scores = function (_a) {
@@ -8229,10 +8229,10 @@ var Scores = function (_a) {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(ScroreBlock, null,
             React__default["default"].createElement(TextTitle, null, titleYou),
-            React__default["default"].createElement(TextStyle$2, null, yourScore)),
+            React__default["default"].createElement(TextStyle$3, null, yourScore)),
         React__default["default"].createElement(ScroreBlock, null,
             React__default["default"].createElement(TextTitle, null, titleOpponent),
-            React__default["default"].createElement(TextStyle$2, null, opponentScore))));
+            React__default["default"].createElement(TextStyle$3, null, opponentScore))));
 };
 
 var Timer = function (_a) {
@@ -8245,7 +8245,7 @@ var Timer = function (_a) {
 var WaitingOpponent = function (_a) {
     var title = _a.title;
     return (React__default["default"].createElement(WaitingBlock, null,
-        React__default["default"].createElement(TextStyle$2, null, title),
+        React__default["default"].createElement(TextStyle$3, null, title),
         React__default["default"].createElement(LoaderWrap, null,
             React__default["default"].createElement(Loader$1, null))));
 };
@@ -8255,7 +8255,7 @@ var Win = function (_a) {
     return (React__default["default"].createElement(WinWrapper, null,
         React__default["default"].createElement(ImgWrapper, { claimed: true },
             React__default["default"].createElement("img", { src: WINNER_MIN })),
-        React__default["default"].createElement(TextStyle$2, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, title)));
+        React__default["default"].createElement(TextStyle$3, { mt: "10px", textAlign: "center", color: baseColors.green, textTransform: "uppercase" }, title)));
 };
 
 var LobbyListItem = function (_a) {
@@ -8268,13 +8268,13 @@ var LobbyListItem = function (_a) {
             React__default["default"].createElement(Bet, { title: texts.bet, red: status === Status$1.LOSE, bet: bet }),
             [Status$1.COLLECT, Status$1.WAITINGOPPONENT, Status$1.WIN, Status$1.DRAW, Status$1.REVERT, Status$1.LOSE].find(function (el) { return el === status; }) ? (React__default["default"].createElement(Scores, { titleYou: texts.yourScore, titleOpponent: texts.opportunScore, yourScore: yourScore, opponentScore: status === Status$1.WAITINGOPPONENT ? "-" : opponentScore })) : (React__default["default"].createElement(Timer, { title: texts.time, color: ![Status$1.PLAY].find(function (el) { return el === status; }) ? baseColors.whiteRgba2 : lightColors.text, time: startTime })),
             status === Status$1.PLAY && (React__default["default"].createElement(ButtonStyle$9, __assign({ variant: "green", onClick: handleButton }, propsButton),
-                React__default["default"].createElement(TextStyle$2, null, texts.play))),
+                React__default["default"].createElement(TextStyle$3, null, texts.play))),
             status === Status$1.WAITINGJOIN && (React__default["default"].createElement(ButtonStyle$9, { style: { opacity: 1 }, disabled: true, variant: "option" },
-                React__default["default"].createElement(TextStyle$2, null, texts.waitPlayer))),
+                React__default["default"].createElement(TextStyle$3, null, texts.waitPlayer))),
             status === Status$1.JOIN && (React__default["default"].createElement(ButtonStyle$9, __assign({ onClick: handleButton, variant: "green" }, propsButton),
                 React__default["default"].createElement(TextButton, { style: { display: "block" } }, texts.join))),
             status === Status$1.ENOUGH && (React__default["default"].createElement(ButtonStyle$9, { style: { opacity: 1 }, disabled: true, variant: "option" },
-                React__default["default"].createElement(TextStyle$2, { color: baseColors.darkPink }, texts.notEnoughYAY))),
+                React__default["default"].createElement(TextStyle$3, { color: baseColors.darkPink }, texts.notEnoughYAY))),
             status === Status$1.COLLECT && (React__default["default"].createElement(Collect, { title: texts.winner, titleMob: texts.winnerMob, handleButton: handleButton, propsButton: propsButton })),
             status === Status$1.REVERT && (React__default["default"].createElement(ButtonStyle$9, __assign({ variant: "green", onClick: handleButton }, propsButton), texts.revert)),
             status === Status$1.WAITINGOPPONENT && React__default["default"].createElement(WaitingOpponent, { title: texts.waitResult }),
@@ -9200,13 +9200,13 @@ var templateObject_1$X;
 var BlurBlock = function (_a) {
     var statusText = _a.statusText, marginStatusText = _a.marginStatusText;
     return (React__default["default"].createElement(Wrap, { position: marginStatusText === 45 ? "relative" : "absolute", marginTop: marginStatusText + "px" },
-        React__default["default"].createElement(TextStyle$1, null, statusText)));
+        React__default["default"].createElement(TextStyle$2, null, statusText)));
 };
 var Wrap = styled__default["default"](Flex)(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"], ["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
-var TextStyle$1 = styled__default["default"](Text)(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  width: 100%;\n  text-align: center;\n  & span {\n    color: ", ";\n  }\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  width: 100%;\n  text-align: center;\n  & span {\n    color: ", ";\n  }\n"])), function (_a) {
+var TextStyle$2 = styled__default["default"](Text)(templateObject_2$H || (templateObject_2$H = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  width: 100%;\n  text-align: center;\n  & span {\n    color: ", ";\n  }\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  width: 100%;\n  text-align: center;\n  & span {\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
@@ -10651,7 +10651,7 @@ function CurrencySearch(_a) {
                 React__default["default"].createElement(Text, { color: "text", textAlign: "center", style: { opacity: 0.7 } }, notResultText))))));
 }
 
-styled__default["default"](Text)(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  max-width: 200px;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  max-width: 200px;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
+var TextStyle$1 = styled__default["default"](Text)(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  max-width: 200px;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  max-width: 200px;\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
 var Card$2 = styled__default["default"](Box)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  width: ", ";\n  border-radius: 16px;\n  padding: 1.25rem;\n  padding: ", ";\n  border: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n"], ["\n  width: ", ";\n  border-radius: 16px;\n  padding: 1.25rem;\n  padding: ", ";\n  border: ", ";\n  border-radius: ", ";\n  background-color: ", ";\n"])), function (_a) {
     var width = _a.width;
     return width !== null && width !== void 0 ? width : "100%";
@@ -10675,7 +10675,7 @@ styled__default["default"](Card$2)(templateObject_3$b || (templateObject_3$b = _
     var theme = _a.theme;
     return theme.colors.background;
 });
-styled__default["default"](RowBetween)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  padding: 4px 20px;\n  height: 56px;\n  display: grid;\n  grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);\n  grid-gap: 16px;\n  cursor: ", ";\n  pointer-events: ", ";\n\n  :hover {\n    background-color: ", ";\n  }\n\n  opacity: ", ";\n"], ["\n  padding: 4px 20px;\n  height: 56px;\n  display: grid;\n  grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);\n  grid-gap: 16px;\n  cursor: ", ";\n  pointer-events: ", ";\n\n  :hover {\n    background-color: ", ";\n  }\n\n  opacity: ", ";\n"])), function (_a) {
+var MenuItem = styled__default["default"](RowBetween)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  padding: 4px 20px;\n  height: 56px;\n  display: grid;\n  grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);\n  grid-gap: 16px;\n  cursor: ", ";\n  pointer-events: ", ";\n\n  :hover {\n    background-color: ", ";\n  }\n\n  opacity: ", ";\n"], ["\n  padding: 4px 20px;\n  height: 56px;\n  display: grid;\n  grid-template-columns: auto minmax(auto, 1fr) minmax(0, 72px);\n  grid-gap: 16px;\n  cursor: ", ";\n  pointer-events: ", ";\n\n  :hover {\n    background-color: ", ";\n  }\n\n  opacity: ", ";\n"])), function (_a) {
     var disabled = _a.disabled;
     return !disabled && "pointer";
 }, function (_a) {
@@ -10688,6 +10688,18 @@ styled__default["default"](RowBetween)(templateObject_4$8 || (templateObject_4$8
     var disabled = _a.disabled, selected = _a.selected;
     return (disabled || selected ? 0.5 : 1);
 });
+function CurrencyRow(_a) {
+    var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, hasBalanse = _a.hasBalanse, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, key = _a.key, CurrencyLogo = _a.CurrencyLogo;
+    return (React__default["default"].createElement(MenuItem, { style: style, className: "token-item-" + key, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
+        CurrencyLogo,
+        React__default["default"].createElement(Column$1, null,
+            React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.5px" }, currency.symbol),
+            React__default["default"].createElement(TextStyle$1, null,
+                !isOnSelectedList && customAdded && "Added by user •",
+                " ",
+                currency.name)),
+        React__default["default"].createElement(RowFixed, { style: { justifySelf: "flex-end" } }, hasBalanse ? React__default["default"].createElement(Text, null, balance) : account ? React__default["default"].createElement(Icon$O, { spin: true, fill: "transparent" }) : null)));
+}
 function CurrencyList(_a) {
     var height = _a.height, fixedListRef = _a.fixedListRef, currencyKey = _a.currencyKey, itemData = _a.itemData, row = _a.row;
     var itemKey = React.useCallback(function (index, data) { return currencyKey(data[index]); }, []);
@@ -12043,6 +12055,7 @@ exports.CopyIcon = Icon$11;
 exports.CopyIcon2 = Icon$s;
 exports.CurrencyInputPanel = CurrencyInputPanel;
 exports.CurrencyList = CurrencyList;
+exports.CurrencyRow = CurrencyRow;
 exports.CurrencySearch = CurrencySearch;
 exports.CurrencySearchModal = CurrencySearchModal;
 exports.ETHIMG = ETH;
