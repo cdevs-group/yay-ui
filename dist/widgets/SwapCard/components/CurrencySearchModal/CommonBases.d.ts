@@ -1,11 +1,13 @@
 import { ReactNode } from "react";
-export default function CommonBases({ chainId, onSelect, selectedCurrency, texts, currencyLogoETHER, currencyLogoToken, currencyEquals, SUGGESTED_BASES, }: {
-    chainId?: any;
+export default function CommonBases({ onSelect, selectedCurrency, texts, currencyLogoETHER, currencyEquals, ETHER, children, }: {
     selectedCurrency?: any | null;
     onSelect: (currency: any) => void;
-    texts: any;
+    texts: {
+        common: string;
+        token: string;
+    };
     currencyEquals?: any;
-    SUGGESTED_BASES?: any;
     currencyLogoETHER: ReactNode;
-    currencyLogoToken: ReactNode;
+    ETHER: any;
+    children: ReactNode;
 }): JSX.Element;

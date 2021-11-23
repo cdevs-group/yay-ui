@@ -10985,26 +10985,20 @@ var BaseWrapper = styled__default["default"].div(templateObject_1$k || (template
     return disable && "0.4";
 });
 function CommonBases(_a) {
-    var chainId = _a.chainId, onSelect = _a.onSelect, selectedCurrency = _a.selectedCurrency, texts = _a.texts, currencyLogoETHER = _a.currencyLogoETHER, currencyLogoToken = _a.currencyLogoToken, currencyEquals = _a.currencyEquals, SUGGESTED_BASES = _a.SUGGESTED_BASES;
+    var onSelect = _a.onSelect, selectedCurrency = _a.selectedCurrency, texts = _a.texts, currencyLogoETHER = _a.currencyLogoETHER, currencyEquals = _a.currencyEquals, ETHER = _a.ETHER, children = _a.children;
     return (React__default["default"].createElement(AutoColumn, { gap: "md" },
         React__default["default"].createElement(AutoRow, null,
             React__default["default"].createElement(Text, { fontSize: "14px" }, texts.common),
             React__default["default"].createElement(QuestionHelper, { text: texts.token, ml: "4px" })),
         React__default["default"].createElement(AutoRow, { gap: "auto" },
             React__default["default"].createElement(BaseWrapper, { onClick: function () {
-                    if (!selectedCurrency || !currencyEquals(selectedCurrency, "ETHER")) {
-                        onSelect("ETHER");
+                    if (!selectedCurrency || !currencyEquals(selectedCurrency, ETHER)) {
+                        onSelect(ETHER);
                     }
-                }, disable: selectedCurrency === "ETHER" },
+                }, disable: selectedCurrency === ETHER },
                 currencyLogoETHER,
                 React__default["default"].createElement(Text, null, "BNB")),
-            (chainId ? SUGGESTED_BASES[chainId] : []).map(function (token) {
-                // const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
-                var selected = selectedCurrency.address === token.address;
-                return (React__default["default"].createElement(BaseWrapper, { onClick: function () { return !selected && onSelect(token); }, disable: selected, key: token.address },
-                    currencyLogoToken,
-                    React__default["default"].createElement(Text, null, token.symbol)));
-            }))));
+            children)));
 }
 var templateObject_1$k;
 
