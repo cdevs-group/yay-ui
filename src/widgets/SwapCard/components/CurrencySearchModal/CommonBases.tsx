@@ -20,23 +20,24 @@ const BaseWrapper = styled.div<{ disable?: boolean }>`
 `;
 
 export default function CommonBases({
-  chainId,
   onSelect,
   selectedCurrency,
   texts,
   currencyLogoETHER,
-  currencyLogoToken,
   currencyEquals,
-  SUGGESTED_BASES,
+  ETHER,
+  children,
 }: {
-  chainId?: any;
   selectedCurrency?: any | null;
   onSelect: (currency: any) => void;
-  texts: any;
+  texts: {
+    common: string;
+    token: string;
+  };
   currencyEquals?: any;
-  SUGGESTED_BASES?: any;
   currencyLogoETHER: ReactNode;
-  currencyLogoToken: ReactNode;
+  ETHER: any;
+  children: ReactNode;
 }) {
   return (
     <AutoColumn gap="md">
@@ -47,26 +48,16 @@ export default function CommonBases({
       <AutoRow gap="auto">
         <BaseWrapper
           onClick={() => {
-            if (!selectedCurrency || !currencyEquals(selectedCurrency, "ETHER")) {
-              onSelect("ETHER");
+            if (!selectedCurrency || !currencyEquals(selectedCurrency, ETHER)) {
+              onSelect(ETHER);
             }
           }}
-          disable={selectedCurrency === "ETHER"}
+          disable={selectedCurrency === ETHER}
         >
           {currencyLogoETHER}
-          {/* <CurrencyLogo currency={'ETHER'} style={{ marginRight: 8 }} /> */}
           <Text>BNB</Text>
         </BaseWrapper>
-        {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: any) => {
-          // const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
-          const selected = selectedCurrency.address === token.address;
-          return (
-            <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
-              {currencyLogoToken}
-              <Text>{token.symbol}</Text>
-            </BaseWrapper>
-          );
-        })}
+        {children}
       </AutoRow>
     </AutoColumn>
   );
