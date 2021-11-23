@@ -1,3 +1,4 @@
+export * from "./components/CurrencySearchModal";
 export { default as SwapCard } from "./SwapCard";
 export { default as AddressInputPanel } from "./components/AddressInputPanel";
 export { default as ConfirmSwapModal } from "./components/ConfirmSwapModal";
@@ -10,13 +11,6 @@ export { default as AppBody } from "./components/App/AppBody";
 export { default as AppHeader } from "./components/App/AppHeader";
 export { default as Transaction } from "./components/App/Transactions/Transaction";
 export { default as TransactionsModal } from "./components/App/Transactions/TransactionsModal";
-export { default as CurrencySearch } from "./components/CurrencySearchModal/CurrencySearch";
-export { default as ImportList } from "./components/CurrencySearchModal/ImportList";
-export { default as ImportRow } from "./components/CurrencySearchModal/ImportRow";
-export { default as ImportToken } from "./components/CurrencySearchModal/ImportToken";
-export { default as Manage } from "./components/CurrencySearchModal/Manage";
-export { default as ManageLists } from "./components/CurrencySearchModal/ManageLists";
-export { default as ManageTokens } from "./components/CurrencySearchModal/ManageTokens";
 export { default as ExpertModal } from "./components/SettingsModal/ExpertModal";
 export { default as SettingsModal } from "./components/SettingsModal/SettingsModal";
 export { default as SwapWarningModal } from "./components/SwapWarningModal";
@@ -24,6 +18,6 @@ export { default as UnsupportedCurrencyFooter } from "./components/UnsupportedCu
 export { default as TransactionConfirmationModal } from "./components/TransactionConfirmationModal";
 export { default as FixedSizeListRow } from "./components/CurrencySearchModal/FixedSizeListRow";
 export { default as AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
-export { default as ProgressCircles } from './components/ProgressSteps';
+export { default as ProgressCircles } from "./components/ProgressSteps";
 export { default as AdvancedSwapDetailsDropdown } from "./components/AdvancedSwapDetailsDropdown";
-export { ArrowWrapper, SwapCallbackError, Wrapper } from './components/styleds';
+export { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";
