@@ -1,5 +1,13 @@
 import React, { ElementType } from "react";
-import { StakeDescription, StakeTitle, UnstakeWrapper, ProgressTrack, ProgressWrap, ProgressBar } from "../style";
+import {
+  StakeDescription,
+  StakeTitle,
+  UnstakeWrapper,
+  ProgressTrack,
+  ProgressWrap,
+  ProgressBar,
+  Buttons,
+} from "../style";
 import { Button, ButtonProps } from "../../../components/Button";
 import TextWithTooltip from "../../IGOPlatform/Cards/components/TextWithTooltip";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
@@ -24,6 +32,8 @@ interface IUnstakeProps {
     myStake: string;
     avaible: string;
     tookPart: string;
+    restake: string;
+    tooltipButton: string;
   };
   cooldownDisabled: boolean;
   handleCooldown: () => void | Promise<void>;
@@ -31,6 +41,9 @@ interface IUnstakeProps {
   isBlur?: boolean;
   loadingCooldown?: boolean;
   progress: number;
+  restakeDisabed?: boolean;
+  handleRestake?: () => void | Promise<void>;
+  loadingRestake?: boolean;
 }
 
 const Unstake = ({
@@ -41,6 +54,9 @@ const Unstake = ({
   isBlur,
   loadingCooldown,
   progress,
+  restakeDisabed,
+  handleRestake,
+  loadingRestake,
 }: IUnstakeProps) => {
   return (
     <div style={{ position: "relative" }}>
@@ -59,14 +75,15 @@ const Unstake = ({
             </ProgressWrap>
           </ProgressTrack>
         </div>
-        <ButtonStyle
-          disabled={cooldownDisabled}
-          onClick={handleCooldown}
-          variant={cooldownDisabled ? "option" : "green"}
-          spin={loadingCooldown}
-        >
-          {texts.cooldownButton}
-        </ButtonStyle>
+        <Buttons>
+          <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
+            {texts.cooldownButton}
+          </ButtonStyle>
+          <ButtonStyle disabled={restakeDisabed} onClick={handleRestake} variant="green" spin={loadingRestake}>
+            {texts.restake}
+            <TextWithTooltip textTooltip={texts.tooltipButton} />
+          </ButtonStyle>
+        </Buttons>
       </UnstakeWrapper>
       {isBlur && <Claimed id="unstake" />}
     </div>
@@ -76,9 +93,10 @@ const Unstake = ({
 export default Unstake;
 
 const ButtonStyle = styled(Button)<ButtonProps<ElementType>>`
-  &:disabled {
-    opacity: 1;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
 const Claimed = styled.div<{ id: string }>`
   position: absolute;

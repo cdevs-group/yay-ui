@@ -54,7 +54,7 @@ export declare enum CardStatus {
     CLAIMING = "claiming"
 }
 export interface TextWithTooltipProps {
-    text: string;
+    text?: string;
     textTooltip: string | React.ReactNode;
 }
 export interface SlotSummaryProps {

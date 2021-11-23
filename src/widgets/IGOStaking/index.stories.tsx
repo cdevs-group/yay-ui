@@ -4,7 +4,8 @@ import { Text } from "../..";
 import IGOTopList from "./components/IGOTopList";
 import CardTopIndicator from "./components/CardTopIndicator";
 import IGOStake from "./IGOStake";
-import { YAY_TOKEN } from "../../constants/images";
+import { ComingSoonIcon, YAY_TOKEN } from "../../constants/images";
+import ModalUnstake from "./components/ModalUnstake";
 
 export default {
   title: "Widgets/IGOStake",
@@ -13,6 +14,7 @@ export default {
 
 export const IGOStakeBlock = () => {
   const [tabValue, setTabValue] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   const tabsList = ["25%", "50%", "75%", "100%"];
   const texts = {
@@ -30,6 +32,8 @@ export const IGOStakeBlock = () => {
     myStake: "My stake",
     avaible: "Avaiable tickets",
     tookPart: "Took part in IGOs",
+    restake: "Restake",
+    tooltipButton: "Our next IGO is nearing. if you unstake now, you might lose the chance to join.",
   };
 
   const handleButton = () => {
@@ -38,8 +42,23 @@ export const IGOStakeBlock = () => {
   const handleTab = (e: any) => {
     setTabValue(e.target.value);
   };
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
   return (
     <div>
+      <Overlay open={openModal} />
+      <Modal>
+        <ModalUnstake
+          open={openModal}
+          img={ComingSoonIcon}
+          textsUnstake="Unstake"
+          textClose="Cancel"
+          textContent="Our next IGO is nearing. if you unstake now, you might lose the chance to join."
+          handleClose={handleModal}
+          handleUnstake={() => console.log("unstake")}
+        />
+      </Modal>
       <IGOStake
         isBlur={false}
         onUserInput={(input) => null}
@@ -54,9 +73,9 @@ export const IGOStakeBlock = () => {
         disableStake={false}
         tabValue={tabValue}
         valueInput={0}
-        handleCooldown={handleButton}
+        handleCooldown={handleModal}
         texts={texts}
-        cooldownDisabled
+        cooldownDisabled={false}
         time={53}
         totalValue="1212 YAY"
         myStakeValue="1212 YAY"
@@ -66,6 +85,9 @@ export const IGOStakeBlock = () => {
         loadingStake
         isBlurUnstake={false}
         progress={90}
+        restakeDisabed={false}
+        handleRestake={() => console.log("unsatke")}
+        loadingRestake={false}
       />
     </div>
   );
@@ -154,4 +176,26 @@ const CardsTop = styled.div`
   ${({ theme }) => theme.mediaQueries.xl} {
     grid-template-columns: repeat(4, 1fr);
   }
+`;
+const Modal = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 16;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 397px;
+`;
+const Overlay = styled.div<{ open?: boolean }>`
+  pointer-events: none;
+  display: block;
+  background: ${({ theme }) => theme.colors.overlayBg};
+  position: fixed;
+  z-index: ${({ open }) => (open ? 15 : -1)};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
 `;

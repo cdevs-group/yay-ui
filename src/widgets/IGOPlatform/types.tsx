@@ -52,7 +52,7 @@ export enum CardStatus {
 }
 
 export interface TextWithTooltipProps {
-  text: string;
+  text?: string;
   textTooltip: string | React.ReactNode;
 }
 

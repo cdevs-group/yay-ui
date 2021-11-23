@@ -24,6 +24,9 @@ interface IGOStakeProps {
   time: number;
   isBlur?: boolean;
   isBlurUnstake?: boolean;
+  restakeDisabed?: boolean;
+  handleRestake: () => void | Promise<void>;
+  loadingRestake?: boolean;
   texts: {
     stakeTitle: string;
     stakeDescription: string;
@@ -40,6 +43,8 @@ interface IGOStakeProps {
     myStake: string;
     avaible: string;
     tookPart: string;
+    restake: string;
+    tooltipButton: string;
   };
   totalValue: string | number;
   myStakeValue: string | number;
@@ -82,6 +87,9 @@ const IGOStake = ({
   isBlurTopBlockAvailable,
   progress,
   loadingCooldown,
+  restakeDisabed,
+  handleRestake,
+  loadingRestake,
 }: IGOStakeProps) => {
   return (
     <div style={{ position: "relative" }}>
@@ -118,6 +126,9 @@ const IGOStake = ({
             isBlur={isBlurUnstake}
             loadingCooldown={loadingCooldown}
             progress={progress}
+            restakeDisabed={restakeDisabed}
+            handleRestake={handleRestake}
+            loadingRestake={loadingRestake}
           />
         </MainLine>
       </div>
@@ -138,9 +149,11 @@ const TopLine = styled.div`
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     grid-template-columns: repeat(2, 1fr);
   }
+
   ${({ theme }) => theme.mediaQueries.xl} {
     grid-template-columns: repeat(4, 1fr);
     gap: 0 15px;
@@ -150,6 +163,7 @@ const MainLine = styled(TopLine)`
   margin-bottom: 0;
   grid-template-columns: 1fr;
   gap: 15px;
+
   ${({ theme }) => theme.mediaQueries.xl} {
     grid-template-columns: repeat(2, 1fr);
     gap: 0 15px;
