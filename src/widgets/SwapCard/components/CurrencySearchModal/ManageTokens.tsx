@@ -37,7 +37,7 @@ export default function ManageTokens({
   handleRemoveAll: () => void;
   importRow: React.ReactNode;
   userAddedTokens: any[];
-  isAddressValid: boolean;
+  isAddressValid: string | boolean;
   texts: {
     customToken: string;
     customTokens: string;
