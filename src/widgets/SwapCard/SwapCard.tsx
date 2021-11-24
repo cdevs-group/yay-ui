@@ -323,6 +323,7 @@ export default function Swap({
               tradeSummaryTexts={AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts}
               errorText={AdvancedSwapDetailsDropdownComponent.errorText}
               showRoute={AdvancedSwapDetailsDropdownComponent.showRoute}
+              unwrappedToken={AdvancedSwapDetailsDropdownComponent.unwrappedToken}
             />
           ) : (
             <UnsupportedCurrencyFooter

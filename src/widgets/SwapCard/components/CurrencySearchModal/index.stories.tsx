@@ -11,10 +11,30 @@ import ImportRow from "./ImportRow";
 import ImportToken from "./ImportToken";
 import ImportList from "./ImportList";
 import ImportTokenChildren from "./ImportTokenChildren";
+import ManageTokensList from "./ManageTokenList";
+import ManageListTooltip from "./ManageListTooltip";
+import ManageListRow from "./ManageListRow";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
   argTypes: {},
+};
+
+const token = {
+  decimals: 18,
+  symbol: "ALPACA",
+  name: "Alpaca",
+  chainId: 56,
+  address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+  tokenInfo: {
+    name: "Alpaca",
+    symbol: "ALPACA",
+    address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+    chainId: 56,
+    decimals: 18,
+    logoURI: "https://pancakeswap.finance/images/tokens/0x8f0528ce5ef7b51152a59745befdd91d97091d2f.png",
+  },
+  tags: [],
 };
 
 export const CurrencySearchModalBlock = () => {
@@ -53,8 +73,28 @@ export const CurrencySearchModalBlock = () => {
     );
   };
 
+  const ManageTooltip = () => {
+    return (
+      <ManageListTooltip
+        tooltipLabel="ddd"
+        hrefLink="dddd"
+        handleRemoveList={() => {}}
+        handleAcceptListUpdate={() => {}}
+        disabledButtonRemove
+        pending
+        texts={{
+          see: "see",
+          remove: "remove",
+          updateList: "updateList",
+        }}
+      />
+    );
+  };
+
   const ManageListsBlock = () => {
     const [valueInput, setValueInput] = useState();
+    const listUrls = Object.keys(listsTokensManage);
+
     return (
       <ManageLists
         tempList={{
@@ -63,44 +103,52 @@ export const CurrencySearchModalBlock = () => {
           tokens: ["c"],
         }}
         addError="Enter valid list location"
-        lists={listsTokensManage}
-        activeListUrls={[]}
+        isImported
+        handleInput={() => {}}
         listUrlInput={valueInput}
-        setListUrlInput={(e) => {
-          setValueInput(e.target.value);
-        }}
         texts={{
           placeholder: "https:// or ipfs:// or ENS name",
           tokens: "tokens",
           loaded: "loaded",
           import: "import",
         }}
-        unsupportedListUrls={[]}
         listLogo={<img src={BNB} />}
         handleImport={() => {}}
-        listRowProps={{
-          list: listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current,
-          texts: {
-            see: "see",
-            remove: "remove",
-            updateList: "updateList",
-            tokens: "tokens",
-          },
-          handleAcceptListUpdate: () => {},
-          handleRemoveList: () => {},
-          disabledButtonRemove: false,
-          pending: null,
-          isActive: true,
-          handleDisableList: () => {},
-          handleEnableList: () => {},
-          listLogoRow: <img src={BNB} style={{ marginRight: 16 }} />,
-        }}
-      />
+      >
+        {listUrls.map((listUrl) => (
+          <ManageListRow
+            key={listUrl}
+            tooltipVisible
+            tooltip={<ManageTooltip />}
+            targetRef={null}
+            isActive
+            onChangeBaseToggle={() => {}}
+            list={listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current}
+            listUrl={listUrl}
+            listLogo={<img src={BNB} style={{ marginRight: 16 }} />}
+            texts={{
+              tokens: "tokens",
+            }}
+          />
+        ))}
+      </ManageLists>
     );
   };
 
   const ManageTokensBlock = () => {
     const [valueInput, setValueInput] = useState();
+
+    const ManageTokensListBlock = () => {
+      return (
+        <ManageTokensList
+          currencyLogo={<img src={BNB} />}
+          linkHref="lnlkdms"
+          chainId={56}
+          removeToken={() => {}}
+          token={token}
+        />
+      );
+    };
 
     return (
       <ManageTokens
@@ -109,24 +157,21 @@ export const CurrencySearchModalBlock = () => {
         }}
         searchQuery={valueInput}
         handleRemoveAll={() => {}}
-        currencyLogo={<img src={BNB} />}
         importRow={<></>}
-        linkHref="lnlkdms"
         userAddedTokens={[
           {
             address: "ldfmvlmdflvdfv",
             symbol: "SYMBOL",
           },
         ]}
-        chainId={56}
         isAddressValid
-        removeToken={() => {}}
         texts={{
           customToken: "custom Token",
           customTokens: "customTokens",
           clearAll: "clearAll",
           errorValidText: "errorValidText",
         }}
+        tokenList={<ManageTokensListBlock />}
       />
     );
   };
@@ -182,23 +227,6 @@ export const CurrencySearchModalBlock = () => {
         const isSelected = true;
         const otherSelected = false;
         const handleSelect = () => onCurrencySelect();
-
-        const token = {
-          decimals: 18,
-          symbol: "ALPACA",
-          name: "Alpaca",
-          chainId: 56,
-          address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
-          tokenInfo: {
-            name: "Alpaca",
-            symbol: "ALPACA",
-            address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
-            chainId: 56,
-            decimals: 18,
-            logoURI: "https://pancakeswap.finance/images/tokens/0x8f0528ce5ef7b51152a59745befdd91d97091d2f.png",
-          },
-          tags: [],
-        };
 
         const showImport = inactiveTokens && token && Object.keys(inactiveTokens).includes(token.address);
 

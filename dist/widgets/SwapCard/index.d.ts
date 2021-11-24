@@ -19,4 +19,5 @@ export { default as FixedSizeListRow } from "./components/CurrencySearchModal/Fi
 export { default as AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
 export { default as ProgressCircles } from "./components/ProgressSteps";
 export { default as AdvancedSwapDetailsDropdown } from "./components/AdvancedSwapDetailsDropdown";
+export { ErrorText } from "./components/styleds";
 export { ArrowWrapper, SwapCallbackError, Wrapper } from "./components/styleds";

@@ -9,10 +9,6 @@ export enum CurrencyModalView {
 
 export interface CurrencySearchModalProps {
   onDismiss: () => void;
-  // selectedCurrency?: any | null;
-  // onCurrencySelect: (currency: any) => void;
-  // otherSelectedCurrency?: any | null;
-  // showCommonBases?: boolean;
   currencySearchComponent: React.ReactNode;
   importTokenComponent: React.ReactNode;
   importListComponent: React.ReactNode;
@@ -59,18 +55,16 @@ export interface ListRowTotalProps extends ListUrlRowProps, ListRowProps {}
 export interface ManageListsProps {
   tempList: any;
   addError: string | undefined;
-  lists: any;
-  activeListUrls: any;
+  isImported: boolean;
+  handleInput: (e: any) => void;
   listUrlInput: string;
-  setListUrlInput: (e: any) => void;
   texts: {
     placeholder: string;
     tokens: string;
     loaded: string;
     import: string;
   };
-  unsupportedListUrls: string[];
   listLogo: React.ReactNode;
   handleImport: () => void;
-  listRowProps: ListRowProps;
+  children: React.ReactNode;
 }

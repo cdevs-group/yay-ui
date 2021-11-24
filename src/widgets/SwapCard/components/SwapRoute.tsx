@@ -3,13 +3,13 @@ import { Flex } from "../../../components/Box";
 import { Text } from "../../../components/Text";
 import { ChevronRightIcon } from "../../../components/Svg";
 
-export default memo(function SwapRoute({ trade }: { trade: any }) {
+export default memo(function SwapRoute({ trade, unwrappedToken }: { trade: any; unwrappedToken: any }) {
   return (
     <Flex flexWrap="wrap" width="100%" justifyContent="flex-end" alignItems="center">
-      {trade.route.path.map((token: any, i: number, path: string) => {
+      {trade.route.path.map((token: any, i: number, path: any) => {
         const isLastItem: boolean = i === path.length - 1;
-        // const currency = unwrappedToken(token);
-        const currency = token;
+        const currency = unwrappedToken(token);
+
         return (
           // eslint-disable-next-line react/no-array-index-key
           <Fragment key={i}>
