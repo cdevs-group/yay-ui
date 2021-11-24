@@ -10834,6 +10834,30 @@ var Message$1 = styled__default["default"].div(templateObject_1$p || (templateOb
 });
 var templateObject_1$p;
 
+function ImportTokenChildren(_a) {
+    var token = _a.token, address = _a.address, listLogo = _a.listLogo, texts = _a.texts, hrefLink = _a.hrefLink, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList;
+    var via = texts.via, unknownSource = texts.unknownSource, viewOnbscScan = texts.viewOnbscScan;
+    return (React__default["default"].createElement(Grid$1, { key: token.address, gridTemplateRows: "1fr 1fr 1fr", gridGap: "4px" },
+        inactiveTokenList !== undefined ? (React__default["default"].createElement(Flex, { alignItems: "center" },
+            inactiveTokenList.logoURI && listLogo,
+            React__default["default"].createElement(Text, { color: "green" },
+                via,
+                " ",
+                inactiveTokenList.name))) : (React__default["default"].createElement(Text, { color: "redBg" }, unknownSource)),
+        React__default["default"].createElement(Flex, { alignItems: "center" },
+            React__default["default"].createElement(Text, { mr: "8px" }, token.name),
+            React__default["default"].createElement(Text, null,
+                "(",
+                token.symbol,
+                ")")),
+        chainId && (React__default["default"].createElement(Flex, { justifyContent: "space-between", width: "100%" },
+            React__default["default"].createElement(Text, { mr: "4px" }, address),
+            React__default["default"].createElement(Link$3, { href: hrefLink, external: true },
+                "(",
+                viewOnbscScan,
+                ")")))));
+}
+
 var StyledButtonMenu = styled__default["default"](ButtonMenu)(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
 function Manage(_a) {
     var manageLists = _a.manageLists, manageTokens = _a.manageTokens, texts = _a.texts;
@@ -12101,6 +12125,7 @@ exports.Image = Image$1;
 exports.ImportList = ImportList;
 exports.ImportRow = ImportRow;
 exports.ImportToken = ImportToken;
+exports.ImportTokenChildren = ImportTokenChildren;
 exports.InfoBoard = InfoBoard;
 exports.InfoWrapper = InfoWrapper;
 exports.Input = Input$5;

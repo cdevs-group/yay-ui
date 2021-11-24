@@ -5,6 +5,7 @@ export { CurrencyRow } from "./CurrencyList";
 export { default as ImportList } from "./ImportList";
 export { default as ImportRow } from "./ImportRow";
 export { default as ImportToken } from "./ImportToken";
+export { default as ImportTokenChildren } from "./ImportTokenChildren";
 export { default as Manage } from "./Manage";
 export { default as ManageLists } from "./ManageLists";
 export { default as ManageTokens } from "./ManageTokens";
