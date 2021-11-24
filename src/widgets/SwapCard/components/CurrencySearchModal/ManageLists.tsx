@@ -23,13 +23,12 @@ function ManageLists({
   addError,
   isImported,
   handleInput,
-  listUrlInput, 
-  texts, 
+  listUrlInput,
+  texts,
   listLogo,
   handleImport,
   children,
 }: ManageListsProps) {
-
   return (
     <Wrapper>
       <AutoColumn gap="14px">

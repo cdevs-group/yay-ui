@@ -28,6 +28,7 @@ export interface AdvancedSwapDetailsProps {
     tradeSummaryTexts: TradeSummaryTextProps;
     errorText: React.ReactNode;
     showRoute: boolean;
+    unwrappedToken: any;
 }
-export declare function AdvancedSwapDetails({ trade, routeText, routingFromToken, tradeSummaryTexts, errorText, showRoute, }: AdvancedSwapDetailsProps): JSX.Element;
+export declare function AdvancedSwapDetails({ trade, routeText, routingFromToken, tradeSummaryTexts, errorText, showRoute, unwrappedToken, }: AdvancedSwapDetailsProps): JSX.Element;
 export default AdvancedSwapDetails;

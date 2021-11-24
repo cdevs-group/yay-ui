@@ -57,7 +57,7 @@ export interface ManageListsProps {
   addError: string | undefined;
   isImported: boolean;
   handleInput: (e: any) => void;
-  listUrlInput: string;  
+  listUrlInput: string;
   texts: {
     placeholder: string;
     tokens: string;
