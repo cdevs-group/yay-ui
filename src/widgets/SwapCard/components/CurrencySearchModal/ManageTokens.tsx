@@ -1,11 +1,9 @@
-import React, { useRef, RefObject, useMemo } from "react";
+import React, { useRef, RefObject } from "react";
 import styled from "styled-components";
-import { Button, IconButton } from "../../../../components/Button";
+import { Button } from "../../../../components/Button";
 import { Input } from "../../../../components/Input";
 import Column, { AutoColumn } from "../../../../components/Layouts/Column";
-import Row, { RowBetween, RowFixed } from "../../../../components/Layouts/Row";
-import { Link, LinkExternal } from "../../../../components/Link";
-import { CloseIcon3 } from "../../../../components/Svg";
+import Row from "../../../../components/Layouts/Row";
 import { Text } from "../../../../components/Text";
 
 const Wrapper = styled.div`
@@ -28,56 +26,28 @@ export default function ManageTokens({
   handleInput,
   searchQuery,
   handleRemoveAll,
-  currencyLogo,
   importRow,
-  linkHref,
   userAddedTokens,
-  chainId,
   isAddressValid,
-  removeToken,
   texts,
+  tokenList,
 }: {
   handleInput: (e: any) => void;
   searchQuery: string;
   handleRemoveAll: () => void;
-  currencyLogo: React.ReactNode;
   importRow: React.ReactNode;
-  linkHref: string;
   userAddedTokens: any[];
-  chainId: number;
   isAddressValid: boolean;
-  removeToken: (chainId: number, address: string) => void;
   texts: {
     customToken: string;
     customTokens: string;
     clearAll: string;
     errorValidText: string;
   };
+  tokenList: any;
 }) {
   // manage focus on modal show
   const inputRef = useRef<HTMLInputElement>();
-
-  const tokenList = useMemo(() => {
-    return (
-      chainId &&
-      userAddedTokens.map((token: any) => (
-        <RowBetween key={token.address} width="100%" marginTop="20px">
-          <RowFixed>
-            {currencyLogo}
-            <Link external href={linkHref} color="text" ml="10px">
-              {token.symbol}
-            </Link>
-          </RowFixed>
-          <RowFixed>
-            <IconButton variant="text" onClick={() => removeToken(chainId, token.address)}>
-              <CloseIcon3 />
-            </IconButton>
-            <LinkExternal href={linkHref} />
-          </RowFixed>
-        </RowBetween>
-      ))
-    );
-  }, [userAddedTokens, chainId, removeToken]);
 
   return (
     <Wrapper>

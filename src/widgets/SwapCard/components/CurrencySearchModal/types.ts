@@ -9,10 +9,6 @@ export enum CurrencyModalView {
 
 export interface CurrencySearchModalProps {
   onDismiss: () => void;
-  // selectedCurrency?: any | null;
-  // onCurrencySelect: (currency: any) => void;
-  // otherSelectedCurrency?: any | null;
-  // showCommonBases?: boolean;
   currencySearchComponent: React.ReactNode;
   importTokenComponent: React.ReactNode;
   importListComponent: React.ReactNode;

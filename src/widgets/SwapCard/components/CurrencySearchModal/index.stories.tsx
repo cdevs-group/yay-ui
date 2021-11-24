@@ -11,10 +11,28 @@ import ImportRow from "./ImportRow";
 import ImportToken from "./ImportToken";
 import ImportList from "./ImportList";
 import ImportTokenChildren from "./ImportTokenChildren";
+import ManageTokensList from "./ManageTokenList";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
   argTypes: {},
+};
+
+const token = {
+  decimals: 18,
+  symbol: "ALPACA",
+  name: "Alpaca",
+  chainId: 56,
+  address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+  tokenInfo: {
+    name: "Alpaca",
+    symbol: "ALPACA",
+    address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
+    chainId: 56,
+    decimals: 18,
+    logoURI: "https://pancakeswap.finance/images/tokens/0x8f0528ce5ef7b51152a59745befdd91d97091d2f.png",
+  },
+  tags: [],
 };
 
 export const CurrencySearchModalBlock = () => {
@@ -102,6 +120,18 @@ export const CurrencySearchModalBlock = () => {
   const ManageTokensBlock = () => {
     const [valueInput, setValueInput] = useState();
 
+    const ManageTokensListBlock = () => {
+      return (
+        <ManageTokensList
+          currencyLogo={<img src={BNB} />}
+          linkHref="lnlkdms"
+          chainId={56}
+          removeToken={() => {}}
+          token={token}
+        />
+      );
+    };
+
     return (
       <ManageTokens
         handleInput={(e) => {
@@ -109,24 +139,21 @@ export const CurrencySearchModalBlock = () => {
         }}
         searchQuery={valueInput}
         handleRemoveAll={() => {}}
-        currencyLogo={<img src={BNB} />}
         importRow={<></>}
-        linkHref="lnlkdms"
         userAddedTokens={[
           {
             address: "ldfmvlmdflvdfv",
             symbol: "SYMBOL",
           },
         ]}
-        chainId={56}
         isAddressValid
-        removeToken={() => {}}
         texts={{
           customToken: "custom Token",
           customTokens: "customTokens",
           clearAll: "clearAll",
           errorValidText: "errorValidText",
         }}
+        tokenList={<ManageTokensListBlock />}
       />
     );
   };
@@ -182,23 +209,6 @@ export const CurrencySearchModalBlock = () => {
         const isSelected = true;
         const otherSelected = false;
         const handleSelect = () => onCurrencySelect();
-
-        const token = {
-          decimals: 18,
-          symbol: "ALPACA",
-          name: "Alpaca",
-          chainId: 56,
-          address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
-          tokenInfo: {
-            name: "Alpaca",
-            symbol: "ALPACA",
-            address: "0x8F0528cE5eF7B51152A59745bEfDD91D97091d2F",
-            chainId: 56,
-            decimals: 18,
-            logoURI: "https://pancakeswap.finance/images/tokens/0x8f0528ce5ef7b51152a59745befdd91d97091d2f.png",
-          },
-          tags: [],
-        };
 
         const showImport = inactiveTokens && token && Object.keys(inactiveTokens).includes(token.address);
 
