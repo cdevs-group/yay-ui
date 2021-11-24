@@ -6,7 +6,6 @@ import { DropDownProps } from "./types";
 
 const DropdownLayout = ({ children, open, setOpen, icon, variant }: DropDownProps) => {
   const refSelect = useRef<any>(null);
-
   const handleClickOutside = useCallback(
     (e) => {
       if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {

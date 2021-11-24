@@ -10,7 +10,6 @@ import AddressInputPanel from "./components/AddressInputPanel";
 import { AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
 import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
 import ConfirmSwapModal from "./components/ConfirmSwapModal";
-import ImportTokenWarningModal from "./components/ImportTokenWarningModal";
 import ProgressCircles from "./components/ProgressSteps";
 import SwapModalFooter from "./components/SwapModalFooter";
 import SwapModalHeader from "./components/SwapModalHeader";
@@ -262,39 +261,6 @@ export const ConfirmSwapModalBlock = () => {
       truncatedTextColorTo="yellow"
       showAcceptChanges={true}
       buttonSwap={<Button variant="green">Swap</Button>}
-    />
-  );
-};
-
-export const ImportTokenWarningModalBlock = () => {
-  const addToken = (token: any): any => null;
-
-  const inactiveTokenList = {
-    logoURI: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-    name: "cdevs-group",
-  };
-
-  return (
-    <ImportTokenWarningModal
-      tokens={tokens}
-      onDismiss={() => null}
-      onCancel={() => null}
-      modalTitleText="Modal Title Text"
-      listLogo={<></>}
-      texts={{
-        createToken: "Create Token",
-        purchaseToken: "Purchase Token",
-        via: "via",
-        unknownSource: "Unknown Source",
-        viewOnbscScan: "View On BscScan",
-        understanding: "I understand",
-        importText: "Import Text",
-      }}
-      addToken={addToken}
-      chainId={123456789}
-      inactiveTokenList={inactiveTokenList}
-      truncateHash="123456789"
-      bscScanLink="https://storybook.js.org/"
     />
   );
 };

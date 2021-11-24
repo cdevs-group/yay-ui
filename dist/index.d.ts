@@ -64,5 +64,6 @@ export * from "./widgets/IGOStaking";
 export * from "./widgets/IGOPlatformV2";
 export * from "./widgets/KYC";
 export * from "./widgets/SwapCard";
+export * from "./widgets/Support";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
