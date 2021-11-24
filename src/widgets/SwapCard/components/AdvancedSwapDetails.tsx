@@ -100,6 +100,7 @@ export interface AdvancedSwapDetailsProps {
   tradeSummaryTexts: TradeSummaryTextProps;
   errorText: React.ReactNode;
   showRoute: boolean;
+  unwrappedToken: any;
 }
 
 export function AdvancedSwapDetails({
@@ -109,6 +110,7 @@ export function AdvancedSwapDetails({
   tradeSummaryTexts,
   errorText,
   showRoute,
+  unwrappedToken,
 }: AdvancedSwapDetailsProps) {
   return (
     <AutoColumn gap="0px">
@@ -124,7 +126,7 @@ export function AdvancedSwapDetails({
                   </Text>
                   <QuestionHelper text={routingFromToken} ml="4px" />
                 </span>
-                <SwapRoute trade={trade} />
+                <SwapRoute trade={trade} unwrappedToken={unwrappedToken} />
               </RowBetween>
             </>
           )}

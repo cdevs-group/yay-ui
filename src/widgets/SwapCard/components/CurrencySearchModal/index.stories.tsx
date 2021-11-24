@@ -12,6 +12,8 @@ import ImportToken from "./ImportToken";
 import ImportList from "./ImportList";
 import ImportTokenChildren from "./ImportTokenChildren";
 import ManageTokensList from "./ManageTokenList";
+import ManageListTooltip from "./ManageListTooltip";
+import ManageListRow from "./ManageListRow";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
@@ -71,8 +73,28 @@ export const CurrencySearchModalBlock = () => {
     );
   };
 
+  const ManageTooltip = () => {
+    return (
+      <ManageListTooltip
+        tooltipLabel="ddd"
+        hrefLink="dddd"
+        handleRemoveList={() => {}}
+        handleAcceptListUpdate={() => {}}
+        disabledButtonRemove
+        pending
+        texts={{
+          see: "see",
+          remove: "remove",
+          updateList: "updateList",
+        }}
+      />
+    );
+  };
+
   const ManageListsBlock = () => {
     const [valueInput, setValueInput] = useState();
+    const listUrls = Object.keys(listsTokensManage);
+
     return (
       <ManageLists
         tempList={{
@@ -81,39 +103,35 @@ export const CurrencySearchModalBlock = () => {
           tokens: ["c"],
         }}
         addError="Enter valid list location"
-        lists={listsTokensManage}
-        activeListUrls={[]}
+        isImported
+        handleInput={() => {}}
         listUrlInput={valueInput}
-        setListUrlInput={(e) => {
-          setValueInput(e.target.value);
-        }}
         texts={{
           placeholder: "https:// or ipfs:// or ENS name",
           tokens: "tokens",
           loaded: "loaded",
           import: "import",
         }}
-        unsupportedListUrls={[]}
         listLogo={<img src={BNB} />}
         handleImport={() => {}}
-        listRowProps={{
-          list: listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current,
-          texts: {
-            see: "see",
-            remove: "remove",
-            updateList: "updateList",
-            tokens: "tokens",
-          },
-          handleAcceptListUpdate: () => {},
-          handleRemoveList: () => {},
-          disabledButtonRemove: false,
-          pending: null,
-          isActive: true,
-          handleDisableList: () => {},
-          handleEnableList: () => {},
-          listLogoRow: <img src={BNB} style={{ marginRight: 16 }} />,
-        }}
-      />
+      >
+        {listUrls.map((listUrl) => (
+          <ManageListRow
+            key={listUrl}
+            tooltipVisible
+            tooltip={<ManageTooltip />}
+            targetRef={null}
+            isActive
+            onChangeBaseToggle={() => {}}
+            list={listsTokensManage["https://tokens.pancakeswap.finance/pancakeswap-extended.json"].current}
+            listUrl={listUrl}
+            listLogo={<img src={BNB} style={{ marginRight: 16 }} />}
+            texts={{
+              tokens: "tokens",
+            }}
+          />
+        ))}
+      </ManageLists>
     );
   };
 

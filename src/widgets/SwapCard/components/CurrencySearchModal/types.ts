@@ -55,18 +55,16 @@ export interface ListRowTotalProps extends ListUrlRowProps, ListRowProps {}
 export interface ManageListsProps {
   tempList: any;
   addError: string | undefined;
-  lists: any;
-  activeListUrls: any;
-  listUrlInput: string;
-  setListUrlInput: (e: any) => void;
+  isImported: boolean;
+  handleInput: (e: any) => void;
+  listUrlInput: string;  
   texts: {
     placeholder: string;
     tokens: string;
     loaded: string;
     import: string;
   };
-  unsupportedListUrls: string[];
   listLogo: React.ReactNode;
   handleImport: () => void;
-  listRowProps: ListRowProps;
+  children: React.ReactNode;
 }
