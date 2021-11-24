@@ -6,7 +6,7 @@ interface Props extends InjectedModalProps {
   tokens: any[];
   onCancel: () => void;
   modalTitleText: string;
-  getBscScanLink: (tokenAddress: any, address: string, chainId: any) => string;
+  getBscScanLink: any;
 }
 
 const ImportTokenWarningModal: React.FC<Props & InjectedImportTokenProps> = ({

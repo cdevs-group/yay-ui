@@ -27,7 +27,7 @@ export interface InjectedImportTokenProps {
   chainId: number;
   inactiveTokenList: any;
   truncateHash: any;
-  getBscScanLink: (tokenAddress: any, address: string, chainId: any) => string;
+  getBscScanLink: any;
 }
 
 function ImportToken({
