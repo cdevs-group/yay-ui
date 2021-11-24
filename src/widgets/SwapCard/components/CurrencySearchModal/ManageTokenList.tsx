@@ -1,5 +1,5 @@
 import React from "react";
-import {  IconButton } from "../../../../components/Button";
+import { IconButton } from "../../../../components/Button";
 import { RowBetween, RowFixed } from "../../../../components/Layouts/Row";
 import { Link, LinkExternal } from "../../../../components/Link";
 import { CloseIcon3 } from "../../../../components/Svg";

@@ -10949,20 +10949,9 @@ var templateObject_1$n, templateObject_2$e, templateObject_3$8;
 var Wrapper$2 = styled.div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  width: 100%;\n  height: calc(100% - 60px);\n  position: relative;\n  padding-bottom: 60px;\n"], ["\n  width: 100%;\n  height: calc(100% - 60px);\n  position: relative;\n  padding-bottom: 60px;\n"])));
 var Footer = styled.div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"])));
 function ManageTokens(_a) {
-    var handleInput = _a.handleInput, searchQuery = _a.searchQuery, handleRemoveAll = _a.handleRemoveAll, currencyLogo = _a.currencyLogo, importRow = _a.importRow, linkHref = _a.linkHref, userAddedTokens = _a.userAddedTokens, chainId = _a.chainId, isAddressValid = _a.isAddressValid, removeToken = _a.removeToken, texts = _a.texts;
+    var handleInput = _a.handleInput, searchQuery = _a.searchQuery, handleRemoveAll = _a.handleRemoveAll, importRow = _a.importRow, userAddedTokens = _a.userAddedTokens, isAddressValid = _a.isAddressValid, texts = _a.texts, tokenList = _a.tokenList;
     // manage focus on modal show
     var inputRef = useRef();
-    var tokenList = useMemo(function () {
-        return (chainId &&
-            userAddedTokens.map(function (token) { return (React__default.createElement(RowBetween, { key: token.address, width: "100%", marginTop: "20px" },
-                React__default.createElement(RowFixed, null,
-                    currencyLogo,
-                    React__default.createElement(Link$3, { external: true, href: linkHref, color: "text", ml: "10px" }, token.symbol)),
-                React__default.createElement(RowFixed, null,
-                    React__default.createElement(IconButton, { variant: "text", onClick: function () { return removeToken(chainId, token.address); } },
-                        React__default.createElement(Icon$5, null)),
-                    React__default.createElement(LinkExternal, { href: linkHref })))); }));
-    }, [userAddedTokens, chainId, removeToken]);
     return (React__default.createElement(Wrapper$2, null,
         React__default.createElement(Column$1, { style: { width: "100%", flex: "1 1" } },
             React__default.createElement(AutoColumn, { gap: "14px" },
