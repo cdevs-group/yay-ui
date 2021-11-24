@@ -10806,8 +10806,8 @@ function ImportRow(_a) {
 var templateObject_1$q, templateObject_2$f, templateObject_3$9;
 
 function ImportToken(_a) {
-    var tokens = _a.tokens, handleCurrencySelect = _a.handleCurrencySelect, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, getBscScanLink = _a.getBscScanLink;
-    var createToken = texts.createToken, purchaseToken = texts.purchaseToken, via = texts.via, unknownSource = texts.unknownSource, viewOnbscScan = texts.viewOnbscScan, understanding = texts.understanding, importText = texts.importText;
+    var tokens = _a.tokens, handleCurrencySelect = _a.handleCurrencySelect, children = _a.children, texts = _a.texts, addToken = _a.addToken;
+    var createToken = texts.createToken, purchaseToken = texts.purchaseToken, understanding = texts.understanding, importText = texts.importText;
     var _b = React.useState(false), confirmed = _b[0], setConfirmed = _b[1];
     return (React__default["default"].createElement(AutoColumn, { gap: "lg", style: { padding: "0 27px 27px 27px" } },
         React__default["default"].createElement(Message$1, null,
@@ -10816,28 +10816,7 @@ function ImportToken(_a) {
                 React__default["default"].createElement("br", null),
                 React__default["default"].createElement("br", null),
                 purchaseToken)),
-        tokens.map(function (token) {
-            var address = token.address ? "" + ellipsis(truncateHash, 5) : null;
-            return (React__default["default"].createElement(Grid$1, { key: token.address, gridTemplateRows: "1fr 1fr 1fr", gridGap: "4px" },
-                inactiveTokenList !== undefined ? (React__default["default"].createElement(Flex, { alignItems: "center" },
-                    inactiveTokenList.logoURI && listLogo,
-                    React__default["default"].createElement(Text, { color: "green" },
-                        via,
-                        " ",
-                        inactiveTokenList.name))) : (React__default["default"].createElement(Text, { color: "redBg" }, unknownSource)),
-                React__default["default"].createElement(Flex, { alignItems: "center" },
-                    React__default["default"].createElement(Text, { mr: "8px" }, token.name),
-                    React__default["default"].createElement(Text, null,
-                        "(",
-                        token.symbol,
-                        ")")),
-                chainId && (React__default["default"].createElement(Flex, { justifyContent: "space-between", width: "100%" },
-                    React__default["default"].createElement(Text, { mr: "4px" }, address),
-                    React__default["default"].createElement(Link$3, { href: getBscScanLink(token.address, "address", chainId), external: true },
-                        "(",
-                        viewOnbscScan,
-                        ")")))));
-        }),
+        children,
         React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
             React__default["default"].createElement(Flex, { alignItems: "center", onClick: function () { return setConfirmed(!confirmed); } },
                 React__default["default"].createElement(CheckboxInput, { scale: "sm", name: "confirmed", type: "checkbox", checked: confirmed, onChange: function () { return setConfirmed(!confirmed); } }),
@@ -11724,17 +11703,6 @@ function Swap(_a) {
 }
 var templateObject_1$4, templateObject_2$3;
 
-var ImportTokenWarningModal = function (_a) {
-    var tokens = _a.tokens, onDismiss = _a.onDismiss, onCancel = _a.onCancel, modalTitleText = _a.modalTitleText, listLogo = _a.listLogo, texts = _a.texts, addToken = _a.addToken, chainId = _a.chainId, inactiveTokenList = _a.inactiveTokenList, truncateHash = _a.truncateHash, getBscScanLink = _a.getBscScanLink;
-    return (React__default["default"].createElement(Modal, { title: modalTitleText, onDismiss: function () {
-            if (onDismiss) {
-                onDismiss();
-            }
-            onCancel();
-        }, style: { maxWidth: "420px" } },
-        React__default["default"].createElement(ImportToken, { tokens: tokens, handleCurrencySelect: onDismiss, listLogo: listLogo, texts: texts, addToken: addToken, chainId: chainId, inactiveTokenList: inactiveTokenList, truncateHash: truncateHash, getBscScanLink: getBscScanLink })));
-};
-
 function TradePrice(_a) {
     // const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6);
     _a.price; var showInverted = _a.showInverted, setShowInverted = _a.setShowInverted, show = _a.show, label = _a.label, formattedPrice = _a.formattedPrice;
@@ -12133,7 +12101,6 @@ exports.Image = Image$1;
 exports.ImportList = ImportList;
 exports.ImportRow = ImportRow;
 exports.ImportToken = ImportToken;
-exports.ImportTokenWarningModal = ImportTokenWarningModal;
 exports.InfoBoard = InfoBoard;
 exports.InfoWrapper = InfoWrapper;
 exports.Input = Input$5;

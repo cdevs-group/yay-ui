@@ -2,7 +2,6 @@ export * from "./components/CurrencySearchModal";
 export { default as SwapCard } from "./SwapCard";
 export { default as AddressInputPanel } from "./components/AddressInputPanel";
 export { default as ConfirmSwapModal } from "./components/ConfirmSwapModal";
-export { default as ImportTokenWarningModal } from "./components/ImportTokenWarningModal";
 export { default as SwapModalFooter } from "./components/SwapModalFooter";
 export { default as SwapModalHeader } from "./components/SwapModalHeader";
 export { default as SwapRoute } from "./components/SwapRoute";
