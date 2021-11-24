@@ -10,6 +10,7 @@ import { BNB } from "../../../../constants/images";
 import ImportRow from "./ImportRow";
 import ImportToken from "./ImportToken";
 import ImportList from "./ImportList";
+import ImportTokenChildren from "./ImportTokenChildren";
 
 export default {
   title: "Widgets/Swap/CurrencyModals",
@@ -262,27 +263,38 @@ export const CurrencySearchModalBlock = () => {
       <ImportToken
         tokens={filteredSortedTokens}
         handleCurrencySelect={() => {}}
-        listLogo={<img src={BNB} />}
         texts={{
           createToken:
             "Anyone can create a BEP20 token on BSC with any name, including creating fake versions of existing tokens and tokens that claim to represent projects that do not have a token.",
           purchaseToken: "purchaseToken",
-          via: "via",
-          unknownSource: "unknownSource",
-          viewOnbscScan: "viewOnbscScan",
           understanding: "understanding",
           importText: "importText",
         }}
         addToken={() => {}}
-        chainId={56}
-        inactiveTokenList={inactiveTokenList}
-        truncateHash="0x1AdfffgffghgfhfghDBc3"
-        getBscScanLink={(tokenAddress: any, address: string, chainId: any) => {
-          return "";
-        }}
-      />
+      >
+        {filteredSortedTokens.map((token) => {
+          const list = inactiveTokenList?.[56]?.[token.address]?.list;
+          const address = "fkdnbkfb";
+          return (
+            <ImportTokenChildren
+              token={token}
+              address={address}
+              listLogo={<img src={BNB} />}
+              texts={{
+                via: "via",
+                unknownSource: "unknownSource",
+                viewOnbscScan: "viewOnbscScan",
+              }}
+              hrefLink="dfdfn"
+              chainId={56}
+              inactiveTokenList={list}
+            />
+          );
+        })}
+      </ImportToken>
     );
   };
+
   const ImportListComponent = () => {
     return (
       <ImportList
