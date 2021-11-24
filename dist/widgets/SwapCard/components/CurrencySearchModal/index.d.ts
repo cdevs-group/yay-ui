@@ -9,6 +9,7 @@ export { default as ImportTokenChildren } from "./ImportTokenChildren";
 export { default as Manage } from "./Manage";
 export { default as ManageLists } from "./ManageLists";
 export { default as ManageTokens } from "./ManageTokens";
+export { default as ManageTokenList } from "./ManageTokenList";
 export { default as CommonBases } from "./CommonBases";
 export { default as CommonBasesChildren } from "./CommonBasesChildren";
 export type { CurrencySearchModalProps } from "./types";

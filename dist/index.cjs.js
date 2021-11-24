@@ -11001,6 +11001,18 @@ function ManageTokens(_a) {
 }
 var templateObject_1$m, templateObject_2$d;
 
+function ManageTokenList(_a) {
+    var currencyLogo = _a.currencyLogo, linkHref = _a.linkHref, chainId = _a.chainId, removeToken = _a.removeToken, token = _a.token;
+    return (React__default["default"].createElement(RowBetween, { key: token.address, width: "100%", marginTop: "20px" },
+        React__default["default"].createElement(RowFixed, null,
+            currencyLogo,
+            React__default["default"].createElement(Link$3, { external: true, href: linkHref, color: "text", ml: "10px" }, token.symbol)),
+        React__default["default"].createElement(RowFixed, null,
+            React__default["default"].createElement(IconButton, { variant: "text", onClick: function () { return removeToken(chainId, token.address); } },
+                React__default["default"].createElement(Icon$5, null)),
+            React__default["default"].createElement(LinkExternal, { href: linkHref }))));
+}
+
 var BaseWrapper$1 = styled__default["default"].div(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  border: 1px solid ", ";\n  border-radius: 10px;\n  display: flex;\n  padding: 6px;\n  align-items: center;\n  :hover {\n    cursor: ", ";\n    background-color: ", ";\n  }\n  background-color: ", ";\n  opacity: ", ";\n"], ["\n  border: 1px solid ", ";\n  border-radius: 10px;\n  display: flex;\n  padding: 6px;\n  align-items: center;\n  :hover {\n    cursor: ", ";\n    background-color: ", ";\n  }\n  background-color: ", ";\n  opacity: ", ";\n"])), function (_a) {
     var theme = _a.theme, disable = _a.disable;
     return (disable ? "transparent" : theme.colors.green);
@@ -12137,6 +12149,7 @@ exports.LobbyNav = LobbyNav;
 exports.LobbyResultModal = LobbyResultModal;
 exports.Manage = Manage;
 exports.ManageLists = ManageLists;
+exports.ManageTokenList = ManageTokenList;
 exports.ManageTokens = ManageTokens;
 exports.MenuIcon = Icon$E;
 exports.MetamaskIcon = Icon$e;
