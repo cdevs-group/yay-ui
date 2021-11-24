@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 interface CurrencySearchProps {
-    onCurrencySelect: (currency: any) => void;
+    handleInput: (event: any) => void;
+    handleEnter: (event: any) => void;
     currencyList: ReactNode;
     showCommonBases: boolean;
     importRow: ReactNode;
@@ -8,12 +9,12 @@ interface CurrencySearchProps {
     notResultText: string;
     searchTokenIsAdded: any;
     searchToken: any;
-    checksummedInput: boolean;
+    searchQuery: any;
     commonBases: ReactNode;
-    debouncedQuery: any;
+    inputRef: any;
     filteredSortedTokens: any;
     filteredInactiveTokens: any;
     imgNoResult?: ReactNode;
 }
-declare function CurrencySearch({ placeholder, notResultText, checksummedInput, filteredSortedTokens, filteredInactiveTokens, debouncedQuery, commonBases, searchTokenIsAdded, searchToken, onCurrencySelect, currencyList, showCommonBases, importRow, imgNoResult, }: CurrencySearchProps): JSX.Element;
+declare function CurrencySearch({ placeholder, notResultText, searchQuery, filteredSortedTokens, filteredInactiveTokens, inputRef, commonBases, searchTokenIsAdded, searchToken, handleInput, currencyList, showCommonBases, importRow, imgNoResult, handleEnter, }: CurrencySearchProps): JSX.Element;
 export default CurrencySearch;

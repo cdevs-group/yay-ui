@@ -10636,40 +10636,7 @@ var Overlay$2 = styled.div(templateObject_6$3 || (templateObject_6$3 = __makeTem
 var templateObject_1$t, templateObject_2$i, templateObject_3$c, templateObject_4$9, templateObject_5$4, templateObject_6$3;
 
 function CurrencySearch(_a) {
-    var placeholder = _a.placeholder, notResultText = _a.notResultText, checksummedInput = _a.checksummedInput, filteredSortedTokens = _a.filteredSortedTokens, filteredInactiveTokens = _a.filteredInactiveTokens, debouncedQuery = _a.debouncedQuery, commonBases = _a.commonBases, searchTokenIsAdded = _a.searchTokenIsAdded, searchToken = _a.searchToken, onCurrencySelect = _a.onCurrencySelect, currencyList = _a.currencyList, showCommonBases = _a.showCommonBases, importRow = _a.importRow, imgNoResult = _a.imgNoResult;
-    // refs for fixed size lists
-    var fixedList = useRef();
-    var _b = useState(""), searchQuery = _b[0], setSearchQuery = _b[1];
-    var handleCurrencySelect = useCallback(function (currency) {
-        onCurrencySelect(currency);
-    }, [onCurrencySelect]);
-    // manage focus on modal show
-    var inputRef = useRef();
-    useEffect(function () {
-        if (inputRef && inputRef.current)
-            inputRef.current.focus();
-    }, [inputRef]);
-    var handleInput = useCallback(function (event) {
-        var _a;
-        var input = event.target.value;
-        setSearchQuery(checksummedInput || input);
-        (_a = fixedList.current) === null || _a === void 0 ? void 0 : _a.scrollTo(0);
-    }, []);
-    var handleEnter = useCallback(function (e) {
-        var _a;
-        if (e.key === "Enter") {
-            var s = debouncedQuery.toLowerCase().trim();
-            if (s === "bnb") {
-                handleCurrencySelect("ETHER");
-            }
-            else if (filteredSortedTokens.length > 0) {
-                if (((_a = filteredSortedTokens[0].symbol) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === debouncedQuery.trim().toLowerCase() ||
-                    filteredSortedTokens.length === 1) {
-                    handleCurrencySelect(filteredSortedTokens[0]);
-                }
-            }
-        }
-    }, [filteredSortedTokens, handleCurrencySelect, debouncedQuery]);
+    var placeholder = _a.placeholder, notResultText = _a.notResultText, searchQuery = _a.searchQuery, filteredSortedTokens = _a.filteredSortedTokens, filteredInactiveTokens = _a.filteredInactiveTokens, inputRef = _a.inputRef, commonBases = _a.commonBases, searchTokenIsAdded = _a.searchTokenIsAdded, searchToken = _a.searchToken, handleInput = _a.handleInput, currencyList = _a.currencyList, showCommonBases = _a.showCommonBases, importRow = _a.importRow, imgNoResult = _a.imgNoResult, handleEnter = _a.handleEnter;
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement("div", null,
             React__default.createElement(AutoColumn, { gap: "16px" },
