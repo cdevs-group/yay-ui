@@ -16,6 +16,8 @@ interface IUnstakeProps {
         myStake: string;
         avaible: string;
         tookPart: string;
+        restake: string;
+        tooltipButton: string;
     };
     cooldownDisabled: boolean;
     handleCooldown: () => void | Promise<void>;
@@ -23,6 +25,10 @@ interface IUnstakeProps {
     isBlur?: boolean;
     loadingCooldown?: boolean;
     progress: number;
+    restakeDisabed?: boolean;
+    handleRestake?: () => void | Promise<void>;
+    loadingRestake?: boolean;
 }
-declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur, loadingCooldown, progress, }: IUnstakeProps) => JSX.Element;
+declare const Unstake: ({ texts, cooldownDisabled, handleCooldown, time, isBlur, loadingCooldown, progress, restakeDisabed, handleRestake, loadingRestake, }: IUnstakeProps) => JSX.Element;
 export default Unstake;
+export declare const StyledTooltip: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

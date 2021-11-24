@@ -17,6 +17,9 @@ interface IGOStakeProps {
     time: number;
     isBlur?: boolean;
     isBlurUnstake?: boolean;
+    restakeDisabed?: boolean;
+    handleRestake: () => void | Promise<void>;
+    loadingRestake?: boolean;
     texts: {
         stakeTitle: string;
         stakeDescription: string;
@@ -33,6 +36,8 @@ interface IGOStakeProps {
         myStake: string;
         avaible: string;
         tookPart: string;
+        restake: string;
+        tooltipButton: string;
     };
     totalValue: string | number;
     myStakeValue: string | number;
@@ -45,5 +50,5 @@ interface IGOStakeProps {
     progress: number;
     loadingCooldown?: boolean;
 }
-declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, isBlur, isBlurUnstake, isBlurTopBlockTookPart, isBlurTopBlockAvailable, progress, loadingCooldown, }: IGOStakeProps) => JSX.Element;
+declare const IGOStake: ({ totalValue, myStakeValue, avaibleValue, tookPartValue, time, cooldownDisabled, onUserInput, iconBalanceInput, disabledInput, balance, tabsList, handleStake, handleApprove, handleCooldown, texts, valueInput, tabValue, handleTab, disableStake, disableApprove, loadingStake, loadingApprove, isBlur, isBlurUnstake, isBlurTopBlockTookPart, isBlurTopBlockAvailable, progress, loadingCooldown, restakeDisabed, handleRestake, loadingRestake, }: IGOStakeProps) => JSX.Element;
 export default IGOStake;

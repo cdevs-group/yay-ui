@@ -16,6 +16,7 @@ export const UnstakeWrapper = styled(StakeWrapper)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  height: 100%;
 `;
 export const StakeTitle = styled(Text)`
   margin-bottom: 10px;

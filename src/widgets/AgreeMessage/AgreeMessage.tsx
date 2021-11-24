@@ -59,7 +59,7 @@ const AgreeMessage = ({
 export default AgreeMessage;
 
 const Wrapper = styled.div`
-  padding: 13px;
+  padding: 13px 13px 27px;
   max-width: 534px;
   max-height: 100vh;
   width: 100%;
