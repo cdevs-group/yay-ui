@@ -10981,20 +10981,9 @@ var templateObject_1$n, templateObject_2$e, templateObject_3$8;
 var Wrapper$2 = styled__default["default"].div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  width: 100%;\n  height: calc(100% - 60px);\n  position: relative;\n  padding-bottom: 60px;\n"], ["\n  width: 100%;\n  height: calc(100% - 60px);\n  position: relative;\n  padding-bottom: 60px;\n"])));
 var Footer = styled__default["default"].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"], ["\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n"])));
 function ManageTokens(_a) {
-    var handleInput = _a.handleInput, searchQuery = _a.searchQuery, handleRemoveAll = _a.handleRemoveAll, currencyLogo = _a.currencyLogo, importRow = _a.importRow, linkHref = _a.linkHref, userAddedTokens = _a.userAddedTokens, chainId = _a.chainId, isAddressValid = _a.isAddressValid, removeToken = _a.removeToken, texts = _a.texts;
+    var handleInput = _a.handleInput, searchQuery = _a.searchQuery, handleRemoveAll = _a.handleRemoveAll, importRow = _a.importRow, userAddedTokens = _a.userAddedTokens, isAddressValid = _a.isAddressValid, texts = _a.texts, tokenList = _a.tokenList;
     // manage focus on modal show
     var inputRef = React.useRef();
-    var tokenList = React.useMemo(function () {
-        return (chainId &&
-            userAddedTokens.map(function (token) { return (React__default["default"].createElement(RowBetween, { key: token.address, width: "100%", marginTop: "20px" },
-                React__default["default"].createElement(RowFixed, null,
-                    currencyLogo,
-                    React__default["default"].createElement(Link$3, { external: true, href: linkHref, color: "text", ml: "10px" }, token.symbol)),
-                React__default["default"].createElement(RowFixed, null,
-                    React__default["default"].createElement(IconButton, { variant: "text", onClick: function () { return removeToken(chainId, token.address); } },
-                        React__default["default"].createElement(Icon$5, null)),
-                    React__default["default"].createElement(LinkExternal, { href: linkHref })))); }));
-    }, [userAddedTokens, chainId, removeToken]);
     return (React__default["default"].createElement(Wrapper$2, null,
         React__default["default"].createElement(Column$1, { style: { width: "100%", flex: "1 1" } },
             React__default["default"].createElement(AutoColumn, { gap: "14px" },
@@ -11011,6 +11000,18 @@ function ManageTokens(_a) {
                 userAddedTokens.length > 0 && (React__default["default"].createElement(Button$9, { variant: "text", onClick: handleRemoveAll, scale: "sm" }, texts.clearAll))))));
 }
 var templateObject_1$m, templateObject_2$d;
+
+function ManageTokenList(_a) {
+    var currencyLogo = _a.currencyLogo, linkHref = _a.linkHref, chainId = _a.chainId, removeToken = _a.removeToken, token = _a.token;
+    return (React__default["default"].createElement(RowBetween, { key: token.address, width: "100%", marginTop: "20px" },
+        React__default["default"].createElement(RowFixed, null,
+            currencyLogo,
+            React__default["default"].createElement(Link$3, { external: true, href: linkHref, color: "text", ml: "10px" }, token.symbol)),
+        React__default["default"].createElement(RowFixed, null,
+            React__default["default"].createElement(IconButton, { variant: "text", onClick: function () { return removeToken(chainId, token.address); } },
+                React__default["default"].createElement(Icon$5, null)),
+            React__default["default"].createElement(LinkExternal, { href: linkHref }))));
+}
 
 var BaseWrapper$1 = styled__default["default"].div(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  border: 1px solid ", ";\n  border-radius: 10px;\n  display: flex;\n  padding: 6px;\n  align-items: center;\n  :hover {\n    cursor: ", ";\n    background-color: ", ";\n  }\n  background-color: ", ";\n  opacity: ", ";\n"], ["\n  border: 1px solid ", ";\n  border-radius: 10px;\n  display: flex;\n  padding: 6px;\n  align-items: center;\n  :hover {\n    cursor: ", ";\n    background-color: ", ";\n  }\n  background-color: ", ";\n  opacity: ", ";\n"])), function (_a) {
     var theme = _a.theme, disable = _a.disable;
@@ -12148,6 +12149,7 @@ exports.LobbyNav = LobbyNav;
 exports.LobbyResultModal = LobbyResultModal;
 exports.Manage = Manage;
 exports.ManageLists = ManageLists;
+exports.ManageTokenList = ManageTokenList;
 exports.ManageTokens = ManageTokens;
 exports.MenuIcon = Icon$E;
 exports.MetamaskIcon = Icon$e;
