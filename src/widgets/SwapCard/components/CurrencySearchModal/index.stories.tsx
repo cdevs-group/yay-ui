@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { KeyboardEvent, useCallback, useState } from "react";
 import CurrencySearch from "./CurrencySearch";
 import CurrencySearchModal from "./CurrencySearchModal";
 import CurrencyList, { CurrencyRow } from "./CurrencyList";
@@ -313,21 +313,27 @@ export const CurrencySearchModalBlock = () => {
   const CurrencySearchComponent = () => {
     const [valueInput, setValueInput] = useState();
 
+    const handleEnter = useCallback((e: KeyboardEvent<HTMLInputElement>) => {}, []);
+    const handleInput = useCallback((event) => {
+      const input = event.target.value;
+    }, []);
+
     return (
       <CurrencySearch
         placeholder="Search name or paste address"
         notResultText="No results found."
-        checksummedInput={false}
-        debouncedQuery={valueInput}
+        handleInput={handleInput}
+        handleEnter={handleEnter}
+        inputRef={null}
         commonBases={<></>}
         searchTokenIsAdded={false}
         searchToken={undefined}
-        onCurrencySelect={() => {}}
         currencyList={<CurrencyListComponent />}
         showCommonBases={false}
         importRow={<></>}
         filteredSortedTokens={filteredSortedTokens}
         filteredInactiveTokens={filteredInactiveTokens}
+        searchQuery={null}
       />
     );
   };

@@ -1,15 +1,14 @@
-import React, { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState, useEffect, ReactNode } from "react";
-import Input from "../../../../components/Input/Input";
+import React, { RefObject, ReactNode } from "react";
 import Box from "../../../../components/Box/Box";
 import { Text } from "../../../../components/Text";
-import { FixedSizeList } from "react-window";
 import Column, { AutoColumn } from "../../../../components/Layouts/Column";
 import Row from "../../../../components/Layouts/Row";
 import { InputSearch } from "../../../..";
 import { OneGhost2 } from "../../../../constants/images";
 
 interface CurrencySearchProps {
-  onCurrencySelect: (currency: any) => void;
+  handleInput: (event: any) => void;
+  handleEnter: (event: any) => void;
   currencyList: ReactNode;
   showCommonBases: boolean;
   importRow: ReactNode;
@@ -17,9 +16,9 @@ interface CurrencySearchProps {
   notResultText: string;
   searchTokenIsAdded: any;
   searchToken: any;
-  checksummedInput: boolean;
+  searchQuery: any;
   commonBases: ReactNode;
-  debouncedQuery: any;
+  inputRef: any;
   filteredSortedTokens: any;
   filteredInactiveTokens: any;
   imgNoResult?: ReactNode;
@@ -28,62 +27,20 @@ interface CurrencySearchProps {
 function CurrencySearch({
   placeholder,
   notResultText,
-  checksummedInput,
+  searchQuery,
   filteredSortedTokens,
   filteredInactiveTokens,
-  debouncedQuery,
+  inputRef,
   commonBases,
   searchTokenIsAdded,
   searchToken,
-  onCurrencySelect,
+  handleInput,
   currencyList,
   showCommonBases,
   importRow,
   imgNoResult,
+  handleEnter,
 }: CurrencySearchProps) {
-  // refs for fixed size lists
-  const fixedList = useRef<FixedSizeList>();
-  const [searchQuery, setSearchQuery] = useState<string>("");
-
-  const handleCurrencySelect = useCallback(
-    (currency: any) => {
-      onCurrencySelect(currency);
-    },
-    [onCurrencySelect]
-  );
-
-  // manage focus on modal show
-  const inputRef = useRef<HTMLInputElement>();
-
-  useEffect(() => {
-    if (inputRef && inputRef.current) inputRef.current.focus();
-  }, [inputRef]);
-
-  const handleInput = useCallback((event) => {
-    const input = event.target.value;
-    setSearchQuery(checksummedInput || input);
-    fixedList.current?.scrollTo(0);
-  }, []);
-
-  const handleEnter = useCallback(
-    (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === "Enter") {
-        const s = debouncedQuery.toLowerCase().trim();
-        if (s === "bnb") {
-          handleCurrencySelect("ETHER");
-        } else if (filteredSortedTokens.length > 0) {
-          if (
-            filteredSortedTokens[0].symbol?.toLowerCase() === debouncedQuery.trim().toLowerCase() ||
-            filteredSortedTokens.length === 1
-          ) {
-            handleCurrencySelect(filteredSortedTokens[0]);
-          }
-        }
-      }
-    },
-    [filteredSortedTokens, handleCurrencySelect, debouncedQuery]
-  );
-
   return (
     <>
       <div>
