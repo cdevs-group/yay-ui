@@ -10657,7 +10657,7 @@ var MenuItem = styled(RowBetween)(templateObject_4$8 || (templateObject_4$8 = __
     return (disabled || selected ? 0.5 : 1);
 });
 function CurrencyRow(_a) {
-    var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, hasBalanse = _a.hasBalanse, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, key = _a.key, CurrencyLogo = _a.CurrencyLogo;
+    var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, balanceComponent = _a.balanceComponent, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, key = _a.key, CurrencyLogo = _a.CurrencyLogo;
     return (React__default.createElement(MenuItem, { style: style, className: "token-item-" + key, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
         CurrencyLogo,
         React__default.createElement(Column$1, null,
@@ -10666,7 +10666,7 @@ function CurrencyRow(_a) {
                 !isOnSelectedList && customAdded && "Added by user •",
                 " ",
                 currency.name)),
-        React__default.createElement(RowFixed, { style: { justifySelf: "flex-end" } }, hasBalanse ? React__default.createElement(Text, null, balance) : account ? React__default.createElement(Icon$O, { spin: true, fill: "transparent" }) : null)));
+        React__default.createElement(RowFixed, { style: { justifySelf: "flex-end" } }, balance ? React__default.createElement(Text, null, balanceComponent) : account ? React__default.createElement(Icon$O, { spin: true, fill: "transparent" }) : null)));
 }
 function CurrencyList(_a) {
     var height = _a.height, fixedListRef = _a.fixedListRef, currencyKey = _a.currencyKey, itemData = _a.itemData, row = _a.row;
@@ -10772,7 +10772,7 @@ function ImportToken(_a) {
                         ")")),
                 chainId && (React__default.createElement(Flex, { justifyContent: "space-between", width: "100%" },
                     React__default.createElement(Text, { mr: "4px" }, address),
-                    React__default.createElement(Link$3, { href: getBscScanLink(token.address, 'address', chainId), external: true },
+                    React__default.createElement(Link$3, { href: getBscScanLink(token.address, "address", chainId), external: true },
                         "(",
                         viewOnbscScan,
                         ")")))));

@@ -277,7 +277,9 @@ export const CurrencySearchModalBlock = () => {
         chainId={56}
         inactiveTokenList={inactiveTokenList}
         truncateHash="0x1AdfffgffghgfhfghDBc3"
-        getBscScanLink={(tokenAddress: any, address: string, chainId: any) => { return ''}}
+        getBscScanLink={(tokenAddress: any, address: string, chainId: any) => {
+          return "";
+        }}
       />
     );
   };
