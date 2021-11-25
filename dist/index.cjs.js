@@ -11069,8 +11069,8 @@ var DetailsFooter = styled__default["default"].div(templateObject_1$n || (templa
     return theme.colors.invertedContrast;
 });
 var UnsupportedModal = function (_a) {
-    var onDismiss = _a.onDismiss, isEther = _a.isEther, srcs = _a.srcs, chainId = _a.chainId, bscScanLink = _a.bscScanLink, unsupportedTokens = _a.unsupportedTokens, tokens = _a.tokens, texts = _a.texts;
-    return (React__default["default"].createElement(Modal, { title: "Unsupported Assets", maxWidth: "420px", onDismiss: onDismiss },
+    var onDismiss = _a.onDismiss, isEther = _a.isEther, srcs = _a.srcs, chainId = _a.chainId, getBscScanLink = _a.getBscScanLink, unsupportedTokens = _a.unsupportedTokens, tokens = _a.tokens, texts = _a.texts;
+    return (React__default["default"].createElement(Modal, { title: texts.title, maxWidth: "420px", onDismiss: onDismiss },
         React__default["default"].createElement(AutoColumn, { gap: "lg" },
             tokens.map(function (token) {
                 var _a;
@@ -11080,16 +11080,15 @@ var UnsupportedModal = function (_a) {
                     React__default["default"].createElement(AutoRow, { gap: "5px", align: "center" },
                         React__default["default"].createElement(CurrencyLogo, { currency: token, size: "24px", isEther: isEther, srcs: srcs }),
                         React__default["default"].createElement(Text, null, token.symbol)),
-                    chainId && (React__default["default"].createElement(Link$3, { external: true, small: true, color: "primaryDark", href: bscScanLink }, token.address)))));
+                    chainId && (React__default["default"].createElement(Link$3, { external: true, small: true, color: "primaryDark", href: getBscScanLink(token.address, "address", chainId) }, token.address)))));
             }),
             React__default["default"].createElement(AutoColumn, { gap: "lg" },
                 React__default["default"].createElement(Text, null, texts.someAssets)))));
 };
 function UnsupportedCurrencyFooter(_a) {
-    var tokens = _a.tokens, srcs = _a.srcs, isEther = _a.isEther, chainId = _a.chainId, bscScanLink = _a.bscScanLink, unsupportedTokens = _a.unsupportedTokens, texts = _a.texts;
-    var onPresentModal = useModal(React__default["default"].createElement(UnsupportedModal, { tokens: tokens, srcs: srcs, isEther: isEther, chainId: chainId, bscScanLink: bscScanLink, unsupportedTokens: unsupportedTokens, texts: texts }))[0];
+    var onPresentModal = _a.onPresentModal, texts = _a.texts;
     return (React__default["default"].createElement(DetailsFooter, null,
-        React__default["default"].createElement(Button$9, { variant: "text", onClick: onPresentModal }, texts.readMore)));
+        React__default["default"].createElement(Button$9, { variant: "text", onClick: onPresentModal }, texts)));
 }
 var templateObject_1$n;
 
@@ -11681,7 +11680,7 @@ function Swap(_a) {
                     showApproveFlow && (React__default["default"].createElement(Column$1, { style: { marginTop: "1rem" } },
                         React__default["default"].createElement(ProgressCircles, { steps: ProgressStepsComponent.steps, disabled: ProgressStepsComponent.disabled }))),
                     appHeader.expertMode ? React__default["default"].createElement(SwapCallbackError, { error: SwapCallbackErrorText }) : null))),
-        showFooter && (React__default["default"].createElement(React__default["default"].Fragment, null, !swapIsUnsupported ? (React__default["default"].createElement(AdvancedSwapDetailsDropdown, { trade: AdvancedSwapDetailsDropdownComponent.trade, lastTrade: AdvancedSwapDetailsDropdownComponent.lastTrade, routeText: AdvancedSwapDetailsDropdownComponent.routeText, routingFromToken: AdvancedSwapDetailsDropdownComponent.routingFromToken, tradeSummaryTexts: AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts, errorText: AdvancedSwapDetailsDropdownComponent.errorText, showRoute: AdvancedSwapDetailsDropdownComponent.showRoute, unwrappedToken: AdvancedSwapDetailsDropdownComponent.unwrappedToken })) : (React__default["default"].createElement(UnsupportedCurrencyFooter, { tokens: UnsupportedCurrencyFooterComponent.tokens, srcs: UnsupportedCurrencyFooterComponent.srcs, isEther: UnsupportedCurrencyFooterComponent.isEther, chainId: UnsupportedCurrencyFooterComponent.chainId, bscScanLink: UnsupportedCurrencyFooterComponent.bscScanLink, unsupportedTokens: UnsupportedCurrencyFooterComponent.unsupportedTokens, texts: UnsupportedCurrencyFooterComponent.texts }))))));
+        showFooter && (React__default["default"].createElement(React__default["default"].Fragment, null, !swapIsUnsupported ? (React__default["default"].createElement(AdvancedSwapDetailsDropdown, { trade: AdvancedSwapDetailsDropdownComponent.trade, lastTrade: AdvancedSwapDetailsDropdownComponent.lastTrade, routeText: AdvancedSwapDetailsDropdownComponent.routeText, routingFromToken: AdvancedSwapDetailsDropdownComponent.routingFromToken, tradeSummaryTexts: AdvancedSwapDetailsDropdownComponent.tradeSummaryTexts, errorText: AdvancedSwapDetailsDropdownComponent.errorText, showRoute: AdvancedSwapDetailsDropdownComponent.showRoute, unwrappedToken: AdvancedSwapDetailsDropdownComponent.unwrappedToken })) : (React__default["default"].createElement(UnsupportedCurrencyFooter, { onPresentModal: UnsupportedCurrencyFooterComponent.onPresentModal, texts: UnsupportedCurrencyFooterComponent.texts }))))));
 }
 var templateObject_1$9, templateObject_2$7;
 
@@ -12414,6 +12413,7 @@ exports.TransactionsModal = TransactionsModal;
 exports.TwitterIcon = Icon$u;
 exports.Unstake = Unstake;
 exports.UnsupportedCurrencyFooter = UnsupportedCurrencyFooter;
+exports.UnsupportedModal = UnsupportedModal;
 exports.ValueRow = ValueRow;
 exports.VerifideIcon = Icon$j;
 exports.VestingWidget = VestingWidget;

@@ -8,7 +8,7 @@ import { CurrencyLogo } from "../../../../components/Logo";
 import { AutoColumn } from "../../../../components/Layouts/Column";
 import { AutoRow } from "../../../../components/Layouts/Row";
 
-export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
+export interface UnsupportedModalProps extends InjectedModalProps {
   tokens: any[];
   srcs: string[];
   isEther: boolean;
@@ -19,6 +19,11 @@ export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
     title: string;
     someAssets: string;
   };
+}
+
+export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
+  texts: string;
+  onPresentModal: () => void;
 }
 
 const DetailsFooter = styled.div`
@@ -32,7 +37,7 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-export const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
+export const UnsupportedModal: React.FC<UnsupportedModalProps> = ({
   onDismiss,
   isEther,
   srcs,
@@ -72,13 +77,7 @@ export const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
   );
 };
 
-export default function UnsupportedCurrencyFooter({
-  onPresentModal,
-  texts,
-}: {
-  texts: string;
-  onPresentModal: () => void;
-}) {
+export default function UnsupportedCurrencyFooter({ onPresentModal, texts }: UnsupportedCurrencyFooterProps) {
   return (
     <DetailsFooter>
       <Button variant="text" onClick={onPresentModal}>

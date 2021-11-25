@@ -327,12 +327,7 @@ export default function Swap({
             />
           ) : (
             <UnsupportedCurrencyFooter
-              tokens={UnsupportedCurrencyFooterComponent.tokens}
-              srcs={UnsupportedCurrencyFooterComponent.srcs}
-              isEther={UnsupportedCurrencyFooterComponent.isEther}
-              chainId={UnsupportedCurrencyFooterComponent.chainId}
-              bscScanLink={UnsupportedCurrencyFooterComponent.bscScanLink}
-              unsupportedTokens={UnsupportedCurrencyFooterComponent.unsupportedTokens}
+              onPresentModal={UnsupportedCurrencyFooterComponent.onPresentModal}
               texts={UnsupportedCurrencyFooterComponent.texts}
             />
           )}
