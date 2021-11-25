@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SettingsModal from "./SettingsModal";
+import { GAS_PRICE_GWEI } from "./types";
 
 const GlobalSettings = () => {
   const [showExpertModeAcknowledgement, setShowExpertModeAcknowledgement] = useState(true);
@@ -8,22 +9,23 @@ const GlobalSettings = () => {
   const [slippageInput, setSlippageInput] = useState("");
   const [deadlineInput, setDeadlineInput] = useState("");
   const [showConfirmExpertModal, setShowConfirmExpertModal] = useState(false);
-  const [activeTabGas, setActiveTabGas] = useState<number>(0);
+  const [activeTabGas, setActiveTabGas] = useState<number>(GAS_PRICE_GWEI.default);
   const [activeTabSlippage, setActiveTabSlippage] = useState<number | null>(null);
+  const [ttl, setTtl] = useState("");
 
   const handleSlippageInput = (e: any) => {
-    setSlippageInput(e.target.value);
+    setSlippageInput(e);
   };
 
   const handleDeadlineInput = (e: any) => {
-    setDeadlineInput(e.target.value);
+    setDeadlineInput(e);
   };
 
   const toggleTabGas = async (e: any) => {
-    setActiveTabGas(+e.target.value);
+    setActiveTabGas(e);
   };
   const toggleTabSlippage = async (e: any) => {
-    setActiveTabSlippage(+e.target.value);
+    setActiveTabSlippage(e);
   };
   const texts = {
     settings: "Settings",
@@ -76,6 +78,8 @@ const GlobalSettings = () => {
         deadlineInput={deadlineInput}
         handleSlippageInput={handleSlippageInput}
         handleDeadlineInput={handleDeadlineInput}
+        ttl={ttl}
+        setTtl={setTtl}
       />
     </div>
   );

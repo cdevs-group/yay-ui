@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { IText } from "./types";
-declare const ExpertModal: ({ setShowConfirmExpertModal, setShowExpertModeAcknowledgement, texts, toggleExpertModeFunc, isRememberChecked, setIsRememberChecked, }: {
+declare const ExpertModal: ({ onDismiss, setShowConfirmExpertModal, setShowExpertModeAcknowledgement, texts, toggleExpertModeFunc, isRememberChecked, setIsRememberChecked, }: {
+    onDismiss?: (() => void) | undefined;
     setShowConfirmExpertModal: any;
     setShowExpertModeAcknowledgement: any;
     texts: IText;

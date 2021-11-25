@@ -22,18 +22,18 @@ export interface SettingsModalProps {
     onDismiss: any;
     texts: IText;
     showExpertModeAcknowledgement: boolean;
-    setShowExpertModeAcknowledgement: Dispatch<SetStateAction<boolean>>;
+    setShowExpertModeAcknowledgement: Dispatch<SetStateAction<boolean>> | any;
     expertMode: boolean;
     toggleExpertMode: Dispatch<SetStateAction<boolean>>;
     singleHopOnly: boolean;
-    setSingleHopOnly: Dispatch<SetStateAction<boolean>>;
+    setSingleHopOnly: Dispatch<SetStateAction<boolean>> | any;
     showConfirmExpertModal: boolean;
     setShowConfirmExpertModal: Dispatch<SetStateAction<boolean>>;
     gasTabs: string[];
     slippageTabs: string[];
     isRememberChecked: boolean;
     setIsRememberChecked: Dispatch<SetStateAction<boolean>>;
-    activeTabGas: number | null;
+    activeTabGas: number | null | any;
     activeTabSlippage: number | null;
     toggleTabGas: (e: any) => void;
     toggleTabSlippage: (e: any) => void;
@@ -41,4 +41,15 @@ export interface SettingsModalProps {
     deadlineInput: string;
     handleSlippageInput: (e: any) => void;
     handleDeadlineInput: (e: any) => void;
+    setTtl: any;
+    ttl: any;
 }
+export declare enum GAS_PRICE_GWEI {
+    default = 5,
+    fast = 6,
+    instant = 7
+}
+export declare const variants: {
+    readonly SMALL: "small";
+};
+export declare type Variant = typeof variants[keyof typeof variants];
