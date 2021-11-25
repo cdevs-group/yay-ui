@@ -76,7 +76,7 @@ export const VestingWidgetComponent: React.FC = () => {
         textFront: "Next stage after",
         textBack: "Your vesting stage",
         textStage: "Stage 1",
-        timeSecond: 290000,
+        timeSecond: 298000,
         totalSeconds: 500000,
         textsTime: {
           days: "d",
