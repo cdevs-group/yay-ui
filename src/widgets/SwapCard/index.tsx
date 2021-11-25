@@ -15,6 +15,8 @@ export { default as SettingsModal } from "./components/SettingsModal/SettingsMod
 export { default as SwapWarningModal } from "./components/SwapWarningModal";
 export { default as UnsupportedCurrencyFooter } from "./components/UnsupportedCurrencyFooter";
 export { default as TransactionConfirmationModal } from "./components/TransactionConfirmationModal";
+export { default as ConfirmationModalContent } from "./components/TransactionConfirmationModal";
+export { default as TransactionErrorContent } from "./components/TransactionConfirmationModal";
 export { default as FixedSizeListRow } from "./components/CurrencySearchModal/FixedSizeListRow";
 export { default as AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
 export { default as ProgressCircles } from "./components/ProgressSteps";
