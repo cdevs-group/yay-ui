@@ -2083,9 +2083,10 @@ var getColor = function (_a) {
 function MyTimer$1(_a) {
     var expiryTimestamp = _a.expiryTimestamp, color = _a.color, texts = _a.texts;
     var days = Math.floor(expiryTimestamp / 86400);
-    var hours = Math.floor(expiryTimestamp / 3600);
-    var minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-    var seconds = expiryTimestamp - hours * 3600 - minutes * 60;
+    var secHours = Math.floor(expiryTimestamp / 3600);
+    var hours = Math.floor((expiryTimestamp - days * 86400) / 3600);
+    var minutes = Math.floor((expiryTimestamp - secHours * 3600) / 60);
+    var seconds = expiryTimestamp - secHours * 3600 - minutes * 60;
     var handleDigit = function (value) {
         var leftDigit = value >= 10 ? value.toString()[0] : "0";
         var rightDigit = value >= 10 ? value.toString()[1] : value.toString();

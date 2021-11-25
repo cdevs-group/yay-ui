@@ -25,7 +25,7 @@ const getColor = ({ color, theme }: ThemedProps) => {
 function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
   const days = Math.floor(expiryTimestamp / 86400);
 
-  const secHours = Math.floor(expiryTimestamp / 3600);  
+  const secHours = Math.floor(expiryTimestamp / 3600);
   const hours = Math.floor((expiryTimestamp - days * 86400) / 3600);
 
   const minutes = Math.floor((expiryTimestamp - secHours * 3600) / 60);
