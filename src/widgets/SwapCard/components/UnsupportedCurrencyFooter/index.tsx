@@ -1,24 +1,18 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
-import { Modal, InjectedModalProps } from "../../../../widgets/Modal";
+import { InjectedModalProps } from "../../../../widgets/Modal";
 import { Link } from "../../../../components/Link";
-import { CurrencyLogo } from "../../../../components/Logo";
 import { AutoColumn } from "../../../../components/Layouts/Column";
 import { AutoRow } from "../../../../components/Layouts/Row";
 
-export interface UnsupportedModalProps extends InjectedModalProps {
-  tokens: any[];
-  srcs: string[];
-  isEther: boolean;
-  chainId: any;
-  getBscScanLink: any;
+export interface UnsupportedModalProps {
+  token: any;
   unsupportedTokens: { [address: string]: any };
-  texts: {
-    title: string;
-    someAssets: string;
-  };
+  currencyLogo: ReactNode;
+  chainId: any;
+  hrefLink: string;
 }
 
 export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
@@ -38,42 +32,28 @@ const DetailsFooter = styled.div`
 `;
 
 export const UnsupportedModal: React.FC<UnsupportedModalProps> = ({
-  onDismiss,
-  isEther,
-  srcs,
-  chainId,
-  getBscScanLink,
+  token,
   unsupportedTokens,
-  tokens,
-  texts,
+  currencyLogo,
+  chainId,
+  hrefLink,
 }) => {
   return (
-    <Modal title={texts.title} maxWidth="420px" onDismiss={onDismiss}>
-      <AutoColumn gap="lg">
-        {tokens.map((token) => {
-          return (
-            token &&
-            unsupportedTokens &&
-            Object.keys(unsupportedTokens).includes(token.address) && (
-              <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
-                <AutoRow gap="5px" align="center">
-                  <CurrencyLogo currency={token} size="24px" isEther={isEther} srcs={srcs} />
-                  <Text>{token.symbol}</Text>
-                </AutoRow>
-                {chainId && (
-                  <Link external small color="primaryDark" href={getBscScanLink(token.address, "address", chainId)}>
-                    {token.address}
-                  </Link>
-                )}
-              </AutoColumn>
-            )
-          );
-        })}
-        <AutoColumn gap="lg">
-          <Text>{texts.someAssets}</Text>
+    <>
+      {token && unsupportedTokens && Object.keys(unsupportedTokens).includes(token.address) && (
+        <AutoColumn key={token.address?.concat("not-supported")} gap="10px">
+          <AutoRow gap="5px" align="center">
+            {currencyLogo}
+            <Text>{token.symbol}</Text>
+          </AutoRow>
+          {chainId && (
+            <Link external small color="primaryDark" href={hrefLink}>
+              {token.address}
+            </Link>
+          )}
         </AutoColumn>
-      </AutoColumn>
-    </Modal>
+      )}
+    </>
   );
 };
 
