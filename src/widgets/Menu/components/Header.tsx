@@ -93,45 +93,56 @@ const Header: React.FC<NavProps> = ({
               <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
             </LanguageBlockMob>
           </Nav>
-          <RightContent>
-            {network ? (
-              <Network
-                titleNetwork={titleNetwork}
-                linkHrefNetwork={linkHrefNetwork}
-                linkTextNetwork={linkTextNetwork}
-                handleToggleNetwork={handleToggleNetwork}
+          {textsAccount && textsConnect && (
+            <RightContent>
+              {network ? (
+                <Network
+                  titleNetwork={titleNetwork}
+                  linkHrefNetwork={linkHrefNetwork}
+                  linkTextNetwork={linkTextNetwork}
+                  handleToggleNetwork={handleToggleNetwork}
+                  network={network}
+                  valuesNetworks={valuesNetworks}
+                  listNetwork={listNetwork}
+                />
+              ) : null}
+              <Account
+                text={textConnect || "Connect"}
+                account={account}
+                login={login}
+                logout={logout}
+                textsAccount={textsAccount}
+                textsConnect={textsConnect}
+                hrefLearnHow={hrefLearnHow}
                 network={network}
-                valuesNetworks={valuesNetworks}
-                listNetwork={listNetwork}
+                vesting={vesting}
+                bridge={bridge}
+                yayBalance={yayBalance}
+                dataTransactions={dataTransactions}
+                handleClaimed={handleClaimed}
+                textsBridge={textsBridge}
+                transactionsList={transactionsList}
+                handleAddToken={handleAddToken}
+                marginContent={marginContent}
+                minHeight={minHeight}
+                buttonLogoutType={buttonLogoutType}
+                linkExternalWalletModal={linkExternalWalletModal}
               />
-            ) : null}
-            <Account
-              text={textConnect || "Connect"}
-              account={account}
-              login={login}
-              logout={logout}
-              textsAccount={textsAccount}
-              textsConnect={textsConnect}
-              hrefLearnHow={hrefLearnHow}
-              network={network}
-              vesting={vesting}
-              bridge={bridge}
-              yayBalance={yayBalance}
-              dataTransactions={dataTransactions}
-              handleClaimed={handleClaimed}
-              textsBridge={textsBridge}
-              transactionsList={transactionsList}
-              handleAddToken={handleAddToken}
-              marginContent={marginContent}
-              minHeight={minHeight}
-              buttonLogoutType={buttonLogoutType}
-              linkExternalWalletModal={linkExternalWalletModal}
-            />
-            <LanguageBlockDesk>
-              <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-            </LanguageBlockDesk>
-            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-          </RightContent>
+              <LanguageBlockDesk>
+                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+              </LanguageBlockDesk>
+              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            </RightContent>
+          )}
+          {!textsConnect && !textsConnect && (
+            <RightContent>
+              {" "}
+              <LanguageBlockDesk>
+                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+              </LanguageBlockDesk>
+              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            </RightContent>
+          )}
         </Line>
       </Content>
     </HeaderWrap>
@@ -144,6 +155,7 @@ const HeaderWrap = styled.div`
   left: 0;
   top: 0;
   z-index: 10;
+
   & svg {
     flex-shrink: 0;
   }
@@ -161,6 +173,7 @@ const Line = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+
   ${({ theme }) => theme.mediaQueries.lg} {
     padding: 21px 15px 15px;
   }
@@ -178,10 +191,13 @@ const Nav = styled.div`
   padding: 20px 30px 20px;
   top: 59px;
   transition: 0.3s ease-in-out;
+
   &.open {
     left: 0;
   }
+
   background-color: ${({ theme }) => theme.colors.bgBlackRgba};
+
   ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
     position: relative;
@@ -207,6 +223,7 @@ const LanguageBlockMob = styled.div`
 
 const LanguageBlockDesk = styled.div`
   display: none;
+
   ${({ theme }) => theme.mediaQueries.lg} {
     display: block;
     margin-left: 11px;
@@ -216,16 +233,20 @@ const LanguageBlockDesk = styled.div`
 const LogoWrap = styled(NavLink)`
   display: flex;
   align-items: center;
+
   & img {
     width: 79px;
     height: 34px;
   }
+
   & svg {
     width: 133px;
+
     ${({ theme }) => theme.mediaQueries.lg} {
       width: 153px;
     }
   }
+
   ${({ theme }) => theme.mediaQueries.lg} {
     & img {
       width: auto;

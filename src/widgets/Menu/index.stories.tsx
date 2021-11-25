@@ -445,3 +445,34 @@ export const HeaderWithSubmenu: React.FC = () => {
     </BrowserRouter>
   );
 };
+
+export const HeaderSimple = () => {
+  const langs = [
+    { locale: "en-US", language: "English", code: "en" },
+    { locale: "de-DE", language: "Deutsch", code: "de" },
+  ];
+  return (
+    <BrowserRouter>
+      <div style={{ marginTop: "50px" }}>
+        <Header
+          // account="0xbdda50183d817c3289f895a4472eb475967dc980"
+          login={noop}
+          logout={noop}
+          isDark={false}
+          toggleTheme={noop}
+          langs={langs}
+          setLang={noop}
+          currentLang="EN"
+          links={links}
+          profile={{
+            profileLink: "/profile",
+            noProfileLink: "/no-profile",
+          }}
+          // textsAccount={textsAccount}
+          // textsConnect={textsConnect}
+          linkLogo="/"
+        />
+      </div>
+    </BrowserRouter>
+  );
+};
