@@ -8,6 +8,7 @@ import { CloseIcon } from "../../../../components/Svg";
 import { ModalHeader, ModalTitle, StyledModal, MessageStyle, TextMessage, TextLabel } from "./styles";
 
 const ExpertModal = ({
+  onDismiss,
   setShowConfirmExpertModal,
   setShowExpertModeAcknowledgement,
   texts,
@@ -15,6 +16,7 @@ const ExpertModal = ({
   isRememberChecked,
   setIsRememberChecked,
 }: {
+  onDismiss?: () => void;
   setShowConfirmExpertModal: any;
   setShowExpertModeAcknowledgement: any;
   texts: IText;

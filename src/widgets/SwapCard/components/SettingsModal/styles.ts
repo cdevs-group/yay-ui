@@ -1,4 +1,6 @@
+import { transparentize } from "polished";
 import styled from "styled-components";
+import { Variant } from "./types";
 import { Text } from "../../../../components/Text";
 
 export const StyledModal = styled.div`
@@ -88,4 +90,36 @@ export const TextMessage = styled(Text)`
 `;
 export const TextLabel = styled(Text)`
   cursor: pointer;
+`;
+
+export const TabsWrapBlock = styled.div<{ length?: number; width?: string; variant?: Variant }>`
+  display: grid;
+  width: ${({ width }) => width || "auto"};
+  grid-template-columns: ${({ length, variant }) => `repeat(${length || 2}, ${variant === "small" ? "auto" : "1fr"})`};
+  background: ${({ theme }) => theme.colors.buttonBg};
+  border-radius: 12px;
+  box-shadow: ${({ theme }) => theme.colors.boxShadow4};
+`;
+
+export const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize?: string; variant?: Variant }>`
+  padding: ${({ paddingTabs }) => paddingTabs || "15px 16px"};
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  font-size: ${({ fontSize }) => fontSize || "15px"};
+  line-height: 19px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+  cursor: pointer;
+  color: ${({ theme }) => transparentize(0.3, theme.colors.text)};
+  &.active {
+    background: ${({ theme }) => transparentize(0.85, theme.colors.text)};
+    color: ${({ theme, colorActive }) => colorActive || theme.colors.text};
+  }
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: ${({ paddingTabs }) => paddingTabs || "15px 30px"};
+  }
 `;
