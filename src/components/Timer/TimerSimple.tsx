@@ -24,9 +24,12 @@ const getColor = ({ color, theme }: ThemedProps) => {
 
 function MyTimer({ expiryTimestamp, color, texts }: MyTimerProps) {
   const days = Math.floor(expiryTimestamp / 86400);
-  const hours = Math.floor(expiryTimestamp / 3600);
-  const minutes = Math.floor((expiryTimestamp - hours * 3600) / 60);
-  const seconds = expiryTimestamp - hours * 3600 - minutes * 60;
+
+  const secHours = Math.floor(expiryTimestamp / 3600);  
+  const hours = Math.floor((expiryTimestamp - days * 86400) / 3600);
+
+  const minutes = Math.floor((expiryTimestamp - secHours * 3600) / 60);
+  const seconds = expiryTimestamp - secHours * 3600 - minutes * 60;
 
   const handleDigit = (value: number) => {
     const leftDigit = value >= 10 ? value.toString()[0] : "0";

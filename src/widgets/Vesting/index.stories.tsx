@@ -60,7 +60,7 @@ export const VestingWidgetComponent: React.FC = () => {
 
   return (
     <VestingWidget
-      canClaim={false}
+      canClaim
       dataClaimTokens={dataClaimTokens}
       textsClaimTokens={textsClaimTokens}
       handleClaimTokens={handleClaimTokens}
@@ -76,8 +76,8 @@ export const VestingWidgetComponent: React.FC = () => {
         textFront: "Next stage after",
         textBack: "Your vesting stage",
         textStage: "Stage 1",
-        timeSecond: 30000,
-        totalSeconds: 50000,
+        timeSecond: 298000,
+        totalSeconds: 500000,
         textsTime: {
           days: "d",
           hours: "h",
@@ -88,7 +88,7 @@ export const VestingWidgetComponent: React.FC = () => {
       disabledButtonClaimTokens
       isLoadingButtonClaimTokens
       endIconButtonClaimTokens={<CercleIcon spin fill="none" />}
-      disabledTopCards
+      disabledTopCards={false}
       // giftLoader
       disabledCardClaimTokens
     />
