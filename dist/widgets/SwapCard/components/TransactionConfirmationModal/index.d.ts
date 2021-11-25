@@ -10,7 +10,7 @@ export interface ConfirmationPendingContentProps {
 }
 export interface TransactionSubmittedContentProps {
     onDismiss?: () => void;
-    registerToken: (address: string, symbol: string, decimals: number) => void;
+    registerToken: any;
     txHash?: string;
     chainId: any;
     currencyToAdd?: any;
