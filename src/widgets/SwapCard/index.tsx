@@ -14,6 +14,7 @@ export { default as ExpertModal } from "./components/SettingsModal/ExpertModal";
 export { default as SettingsModal } from "./components/SettingsModal/SettingsModal";
 export { default as SwapWarningModal } from "./components/SwapWarningModal";
 export { default as UnsupportedCurrencyFooter } from "./components/UnsupportedCurrencyFooter";
+export { UnsupportedModal } from "./components/UnsupportedCurrencyFooter";
 export { default as TransactionConfirmationModal } from "./components/TransactionConfirmationModal";
 export { ConfirmationModalContent } from "./components/TransactionConfirmationModal";
 export { TransactionErrorContent } from "./components/TransactionConfirmationModal";

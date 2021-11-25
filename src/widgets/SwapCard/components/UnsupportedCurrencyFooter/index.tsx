@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../../../components/Button";
 import { Text } from "../../../../components/Text";
-import { Modal, useModal, InjectedModalProps } from "../../../../widgets/Modal";
+import { Modal, InjectedModalProps } from "../../../../widgets/Modal";
 import { Link } from "../../../../components/Link";
 import { CurrencyLogo } from "../../../../components/Logo";
 import { AutoColumn } from "../../../../components/Layouts/Column";
@@ -13,11 +13,11 @@ export interface UnsupportedCurrencyFooterProps extends InjectedModalProps {
   srcs: string[];
   isEther: boolean;
   chainId: any;
-  bscScanLink: string;
+  getBscScanLink: any;
   unsupportedTokens: { [address: string]: any };
   texts: {
+    title: string;
     someAssets: string;
-    readMore: string;
   };
 }
 
@@ -32,18 +32,18 @@ const DetailsFooter = styled.div`
   text-align: center;
 `;
 
-const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
+export const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
   onDismiss,
   isEther,
   srcs,
   chainId,
-  bscScanLink,
+  getBscScanLink,
   unsupportedTokens,
   tokens,
   texts,
 }) => {
   return (
-    <Modal title="Unsupported Assets" maxWidth="420px" onDismiss={onDismiss}>
+    <Modal title={texts.title} maxWidth="420px" onDismiss={onDismiss}>
       <AutoColumn gap="lg">
         {tokens.map((token) => {
           return (
@@ -56,7 +56,7 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
                   <Text>{token.symbol}</Text>
                 </AutoRow>
                 {chainId && (
-                  <Link external small color="primaryDark" href={bscScanLink}>
+                  <Link external small color="primaryDark" href={getBscScanLink(token.address, "address", chainId)}>
                     {token.address}
                   </Link>
                 )}
@@ -73,30 +73,16 @@ const UnsupportedModal: React.FC<UnsupportedCurrencyFooterProps> = ({
 };
 
 export default function UnsupportedCurrencyFooter({
-  tokens,
-  srcs,
-  isEther,
-  chainId,
-  bscScanLink,
-  unsupportedTokens,
+  onPresentModal,
   texts,
-}: UnsupportedCurrencyFooterProps) {
-  const [onPresentModal] = useModal(
-    <UnsupportedModal
-      tokens={tokens}
-      srcs={srcs}
-      isEther={isEther}
-      chainId={chainId}
-      bscScanLink={bscScanLink}
-      unsupportedTokens={unsupportedTokens}
-      texts={texts}
-    />
-  );
-
+}: {
+  texts: string;
+  onPresentModal: () => void;
+}) {
   return (
     <DetailsFooter>
       <Button variant="text" onClick={onPresentModal}>
-        {texts.readMore}
+        {texts}
       </Button>
     </DetailsFooter>
   );
