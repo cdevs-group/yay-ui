@@ -34,6 +34,7 @@ export * from "./components/NotificationDot";
 export * from "./components/TokenPair";
 export * from "./components//CurrencyInputPanel";
 export * from "./components/QuestionHelper";
+export * from "./components/StyledCard";
 
 // Hooks
 export * from "./hooks";
