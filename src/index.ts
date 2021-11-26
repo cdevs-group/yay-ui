@@ -40,7 +40,7 @@ export * from "./components/StyledCard";
 export * from "./hooks";
 
 //Constants
-export * from "./constants/images"
+export * from "./constants/images";
 
 // Widgets
 export * from "./widgets/Bridge";

@@ -24,9 +24,7 @@ const Subtitle = styled(Text)`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const AppHeader: React.FC<
-  AppHeaderProps & TransactionsModalProps & { onDismiss: () => void }
-> = ({
+const AppHeader: React.FC<AppHeaderProps & TransactionsModalProps & { onDismiss: () => void }> = ({
   title,
   subtitle,
   helper,
@@ -41,7 +39,7 @@ const AppHeader: React.FC<
   clearAllTransactionsCallback,
   ConnectWalletButton,
   renderPendingTransactions,
-  renderConfirmedTransactions
+  renderConfirmedTransactions,
 }) => {
   return (
     <AppHeaderContainer>

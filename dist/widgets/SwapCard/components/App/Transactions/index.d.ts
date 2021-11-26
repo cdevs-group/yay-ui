@@ -1,7 +1,6 @@
 /// <reference types="react" />
 import { TransactionsModalProps } from "./TransactionsModal";
-import { TransactionDetailsProps } from "./types";
-declare const Transactions: ({ account, onDismiss, texts, pendingTransaction, confirmedTransaction, clearAllTransactionsCallback, ConnectWalletButton, chainId, bscScanLink, summary, pending, success, }: TransactionsModalProps & {
+declare const Transactions: ({ account, onDismiss, texts, pendingTransaction, confirmedTransaction, clearAllTransactionsCallback, ConnectWalletButton, renderPendingTransactions, renderConfirmedTransactions }: TransactionsModalProps & {
     onDismiss: () => void;
-} & TransactionDetailsProps) => JSX.Element;
+}) => JSX.Element;
 export default Transactions;

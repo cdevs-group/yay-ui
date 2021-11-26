@@ -39,7 +39,7 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> =
   clearAllTransactionsCallback,
   ConnectWalletButton,
   renderPendingTransactions,
-  renderConfirmedTransactions
+  renderConfirmedTransactions,
 }) => {
   const { modalTitle, modalBodyText, ModalButton, ModalAlternativeText } = texts;
 

@@ -166,11 +166,8 @@ export default function Swap({
           confirmedTransaction={appHeader.confirmedTransaction}
           clearAllTransactionsCallback={appHeader.clearAllTransactionsCallback}
           ConnectWalletButton={appHeader.ConnectWalletButton}
-          chainId={appHeader.chainId}
-          bscScanLink={appHeader.bscScanLink}
-          summary={appHeader.summary}
-          pending={appHeader.pending}
-          success={appHeader.success}
+          renderPendingTransactions={appHeader.renderPendingTransactions}
+          renderConfirmedTransactions={appHeader.renderConfirmedTransactions}
         />
         <Wrapper id="swap-page">
           <AutoColumn gap="md">

@@ -13,7 +13,7 @@ const Transactions = ({
   clearAllTransactionsCallback,
   ConnectWalletButton,
   renderPendingTransactions,
-  renderConfirmedTransactions
+  renderConfirmedTransactions,
 }: TransactionsModalProps & { onDismiss: () => void }) => {
   const [onPresentTransactionsModal] = useModal(
     <TransactionsModal
