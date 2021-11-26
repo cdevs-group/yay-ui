@@ -18,7 +18,6 @@ const SupportWindow = ({
   handleButton: () => void | Promise<void>;
   texts: ITexts;
   product: string[];
-  issues: string[];
   state: IStateInput;
   handleInput: (e: any) => void;
 }) => {

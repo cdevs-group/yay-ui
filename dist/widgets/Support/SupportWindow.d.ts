@@ -5,7 +5,6 @@ declare const SupportWindow: ({ texts, state, handleInput, product, handleButton
     handleButton: () => void | Promise<void>;
     texts: ITexts;
     product: string[];
-    issues: string[];
     state: IStateInput;
     handleInput: (e: any) => void;
 }) => JSX.Element;
