@@ -11,7 +11,6 @@ import GlobalSettings from "../SettingsModal";
 import Transactions from "./Transactions";
 import { TransactionsModalProps } from "./Transactions/TransactionsModal";
 import QuestionHelper from "../../../../components/QuestionHelper";
-import { TransactionDetailsProps } from "./Transactions/types";
 import { AppHeaderProps } from "./types";
 
 const AppHeaderContainer = styled(Flex)`
@@ -26,7 +25,7 @@ const Subtitle = styled(Text)`
 `;
 
 const AppHeader: React.FC<
-  AppHeaderProps & TransactionsModalProps & TransactionDetailsProps & { onDismiss: () => void }
+  AppHeaderProps & TransactionsModalProps & { onDismiss: () => void }
 > = ({
   title,
   subtitle,
@@ -41,11 +40,8 @@ const AppHeader: React.FC<
   confirmedTransaction,
   clearAllTransactionsCallback,
   ConnectWalletButton,
-  chainId,
-  bscScanLink,
-  summary,
-  pending,
-  success,
+  renderPendingTransactions,
+  renderConfirmedTransactions
 }) => {
   return (
     <AppHeaderContainer>
@@ -76,11 +72,8 @@ const AppHeader: React.FC<
             confirmedTransaction={confirmedTransaction}
             clearAllTransactionsCallback={clearAllTransactionsCallback}
             ConnectWalletButton={ConnectWalletButton}
-            chainId={chainId}
-            bscScanLink={bscScanLink}
-            summary={summary}
-            pending={pending}
-            success={success}
+            renderPendingTransactions={renderPendingTransactions}
+            renderConfirmedTransactions={renderConfirmedTransactions}
           />
         </Flex>
       )}
