@@ -3,7 +3,6 @@ import { HistoryIcon } from "../../../../../components/Svg";
 import { Button } from "../../../../../components/Button";
 import { useModal } from "../../../../Modal";
 import TransactionsModal, { TransactionsModalProps } from "./TransactionsModal";
-import { TransactionDetailsProps } from "./types";
 
 const Transactions = ({
   account,
@@ -13,12 +12,9 @@ const Transactions = ({
   confirmedTransaction,
   clearAllTransactionsCallback,
   ConnectWalletButton,
-  chainId,
-  bscScanLink,
-  summary,
-  pending,
-  success,
-}: TransactionsModalProps & { onDismiss: () => void } & TransactionDetailsProps) => {
+  renderPendingTransactions,
+  renderConfirmedTransactions
+}: TransactionsModalProps & { onDismiss: () => void }) => {
   const [onPresentTransactionsModal] = useModal(
     <TransactionsModal
       account={account}
@@ -28,11 +24,8 @@ const Transactions = ({
       confirmedTransaction={confirmedTransaction}
       clearAllTransactionsCallback={clearAllTransactionsCallback}
       ConnectWalletButton={ConnectWalletButton}
-      chainId={chainId}
-      bscScanLink={bscScanLink}
-      summary={summary}
-      pending={pending}
-      success={success}
+      renderPendingTransactions={renderPendingTransactions}
+      renderConfirmedTransactions={renderConfirmedTransactions}
     />
   );
   return (

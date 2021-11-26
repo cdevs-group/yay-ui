@@ -4,10 +4,8 @@ import { Modal, InjectedModalProps } from "../../../../Modal";
 import { ModalBody } from "../../../../Modal/Modal";
 import { Text } from "../../../../../components/Text";
 import { Button } from "../../../../../components/Button";
-import { Flex } from "../../../../../components/Box";
 import { AutoRow } from "../../../../../components/Layouts/Row";
-import Transaction from "./Transaction";
-import { TransactionProps, TransactionDetailsProps } from "./types";
+import { TransactionProps } from "./types";
 
 const StyledText = styled(Text)`
   font-size: 15px;
@@ -28,35 +26,11 @@ export interface TransactionsModalProps {
   confirmedTransaction: TransactionProps[];
   clearAllTransactionsCallback: () => void;
   ConnectWalletButton: React.ReactNode;
+  renderPendingTransactions: React.ReactNode;
+  renderConfirmedTransactions: React.ReactNode;
 }
 
-function renderTransactions(
-  transactions: TransactionProps[],
-  chainId: any,
-  bscScanLink: string,
-  summary: string,
-  pending: boolean,
-  success: boolean
-) {
-  return (
-    <Flex flexDirection="column">
-      {transactions.map((tx: TransactionProps) => {
-        return (
-          <Transaction
-            key={tx.hash + tx.addedTime}
-            chainId={chainId}
-            bscScanLink={bscScanLink}
-            summary={summary}
-            pending={pending}
-            success={success}
-          />
-        );
-      })}
-    </Flex>
-  );
-}
-
-const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps & TransactionDetailsProps> = ({
+const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> = ({
   account,
   onDismiss,
   texts,
@@ -64,11 +38,8 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps & 
   confirmedTransaction,
   clearAllTransactionsCallback,
   ConnectWalletButton,
-  chainId,
-  bscScanLink,
-  summary,
-  pending,
-  success,
+  renderPendingTransactions,
+  renderConfirmedTransactions
 }) => {
   const { modalTitle, modalBodyText, ModalButton, ModalAlternativeText } = texts;
 
@@ -84,8 +55,8 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps & 
                   {ModalButton}
                 </Button>
               </AutoRow>
-              {renderTransactions(pendingTransaction, chainId, bscScanLink, summary, pending, success)}
-              {renderTransactions(confirmedTransaction, chainId, bscScanLink, summary, pending, success)}
+              {renderPendingTransactions}
+              {renderConfirmedTransactions}
             </>
           ) : (
             <Text>{ModalAlternativeText}</Text>
