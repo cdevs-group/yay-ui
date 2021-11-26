@@ -33,6 +33,7 @@ export * from "./components/NotificationDot";
 export * from "./components/TokenPair";
 export * from "./components//CurrencyInputPanel";
 export * from "./components/QuestionHelper";
+export * from "./components/StyledCard";
 export * from "./hooks";
 export * from "./widgets/Bridge";
 export * from "./widgets/Modal";
