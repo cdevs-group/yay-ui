@@ -11495,6 +11495,12 @@ function Transaction(_a) {
 }
 var templateObject_1$d, templateObject_2$8;
 
+var Transactions = function (_a) {
+    var onPresentTransactionsModal = _a.onPresentTransactionsModal;
+    return (React__default["default"].createElement(Button$9, { variant: "text", p: 0, onClick: onPresentTransactionsModal, ml: "16px" },
+        React__default["default"].createElement(Icon$13, { color: "textSubtle", width: "30px" })));
+};
+
 var StyledText = styled__default["default"](Text)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"])));
 var TransactionsModal = function (_a) {
     var account = _a.account, onDismiss = _a.onDismiss, texts = _a.texts, pending = _a.pending, confirmed = _a.confirmed, clearAllTransactionsCallback = _a.clearAllTransactionsCallback, ConnectWalletButton = _a.ConnectWalletButton, renderTransactions = _a.renderTransactions;
@@ -12379,6 +12385,7 @@ exports.Transaction = Transaction;
 exports.TransactionConfirmationModal = TransactionConfirmationModal;
 exports.TransactionErrorContent = TransactionErrorContent;
 exports.TransactionHistory = TransactionHistory;
+exports.Transactions = Transactions;
 exports.TransactionsModal = TransactionsModal;
 exports.TrustWallet = TrustWallet;
 exports.TwitterIcon = Icon$u;

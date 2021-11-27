@@ -8,6 +8,7 @@ export { default as TradePrice } from "./components/TradePrice";
 export { default as AppBody } from "./components/App/AppBody";
 export { default as AppHeader } from "./components/App/AppHeader";
 export { default as Transaction } from "./components/App/Transactions/Transaction";
+export { default as Transactions } from "./components/App/Transactions";
 export { default as TransactionsModal } from "./components/App/Transactions/TransactionsModal";
 export { default as ExpertModal } from "./components/SettingsModal/ExpertModal";
 export { default as SettingsModal } from "./components/SettingsModal/SettingsModal";
