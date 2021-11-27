@@ -33,7 +33,7 @@ export default {
 export const TradePriceBlock = () => {
   return (
     <div>
-      <TradePrice price showInverted setShowInverted={() => null} show label="label" formattedPrice="1231" />
+      <TradePrice showInverted setShowInverted={() => null} show label="label" formattedPrice="1231" />
     </div>
   );
 };

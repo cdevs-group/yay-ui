@@ -22,9 +22,7 @@ const IconWrapper = styled.div<{ pending: boolean; success?: boolean }>`
     pending ? theme.colors.text : success ? theme.colors.success : theme.colors.failure};
 `;
 
-export default function Transaction({ chainId, bscScanLink, summary, pending, success }: TransactionDetailsProps) {
-  if (!chainId) return null;
-
+export default function Transaction({ bscScanLink, summary, pending, success }: TransactionDetailsProps) {
   return (
     <TransactionState pending={pending} success={success}>
       <LinkExternal href={bscScanLink}>{summary}</LinkExternal>

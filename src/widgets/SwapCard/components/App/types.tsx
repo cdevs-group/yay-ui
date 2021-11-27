@@ -5,4 +5,6 @@ export interface AppHeaderProps {
   backTo?: string;
   noConfig?: boolean;
   expertMode: boolean;
+  globalSettings: React.ReactElement | React.ReactElement[];
+  transactions: React.ReactNode;
 }

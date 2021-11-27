@@ -4,7 +4,6 @@ import { Text } from "../../../components/Text";
 import { AutoRenewIcon } from "../../../components/Svg";
 
 export interface TradePriceProps {
-  price?: any;
   showInverted: boolean;
   setShowInverted: (showInverted: boolean) => void;
   show?: boolean;
@@ -12,21 +11,7 @@ export interface TradePriceProps {
   formattedPrice?: string;
 }
 
-export default function TradePrice({
-  price,
-  showInverted,
-  setShowInverted,
-  show,
-  label,
-  formattedPrice,
-}: TradePriceProps) {
-  // const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6);
-
-  // const show = Boolean(price?.baseCurrency && price?.quoteCurrency)
-  // const label = showInverted
-  //   ? `${price?.quoteCurrency?.symbol} per ${price?.baseCurrency?.symbol}`
-  //   : `${price?.baseCurrency?.symbol} per ${price?.quoteCurrency?.symbol}`
-
+export default function TradePrice({ showInverted, setShowInverted, show, label, formattedPrice }: TradePriceProps) {
   return (
     <Text style={{ justifyContent: "center", alignItems: "center", display: "flex" }}>
       {show ? (
