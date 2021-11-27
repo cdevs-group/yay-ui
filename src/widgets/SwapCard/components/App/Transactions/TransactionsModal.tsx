@@ -5,7 +5,7 @@ import { ModalBody } from "../../../../Modal/Modal";
 import { Text } from "../../../../../components/Text";
 import { Button } from "../../../../../components/Button";
 import { AutoRow } from "../../../../../components/Layouts/Row";
-import { TransactionProps, TransactionDetailsProps } from "./types";
+import { TransactionProps } from "./types";
 
 const StyledText = styled(Text)`
   font-size: 15px;
@@ -29,7 +29,7 @@ export interface TransactionsModalProps {
   renderTransactions: any;
 }
 
-const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps & TransactionDetailsProps> = ({
+const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> = ({
   account,
   onDismiss,
   texts,
