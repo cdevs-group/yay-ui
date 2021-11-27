@@ -39,6 +39,9 @@ export * from "./components/StyledCard";
 // Hooks
 export * from "./hooks";
 
+//Constants
+export * from "./constants/images";
+
 // Widgets
 export * from "./widgets/Bridge";
 export * from "./widgets/Modal";

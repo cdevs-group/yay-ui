@@ -35,6 +35,7 @@ export * from "./components//CurrencyInputPanel";
 export * from "./components/QuestionHelper";
 export * from "./components/StyledCard";
 export * from "./hooks";
+export * from "./constants/images";
 export * from "./widgets/Bridge";
 export * from "./widgets/Modal";
 export * from "./widgets/WalletModal";

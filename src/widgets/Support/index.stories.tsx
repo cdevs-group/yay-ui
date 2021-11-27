@@ -11,7 +11,6 @@ export default {
 
 export const SupportBlock = () => {
   const product = ["Bridge", "Igo", "Doodle", "Pinball"];
-  const issue = ["Bridge1", "Igo1", "Doodle1", "Pinball1"];
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
     address: "",
@@ -67,7 +66,6 @@ export const SupportBlock = () => {
       state={inputsState}
       handleInput={handleInput}
       product={product}
-      issues={issue}
       texts={texts}
       handleButton={() => console.log("click")}
       points={points}
