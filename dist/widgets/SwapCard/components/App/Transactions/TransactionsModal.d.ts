@@ -1,20 +1,19 @@
 import React from "react";
 import { InjectedModalProps } from "../../../../Modal";
-import { TransactionProps } from "./types";
+import { TransactionProps, TransactionDetailsProps } from "./types";
 export interface TransactionsModalProps {
     texts: {
         modalTitle: string;
         modalBodyText: string;
-        ModalButton: string;
-        ModalAlternativeText: string;
+        modalButton: string;
+        modalAlternativeText: string;
     };
     account: any;
-    pendingTransaction: TransactionProps[];
-    confirmedTransaction: TransactionProps[];
+    pending: TransactionProps[];
+    confirmed: TransactionProps[];
     clearAllTransactionsCallback: () => void;
     ConnectWalletButton: React.ReactNode;
-    renderPendingTransactions: React.ReactNode;
-    renderConfirmedTransactions: React.ReactNode;
+    renderTransactions: any;
 }
-declare const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps>;
+declare const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps & TransactionDetailsProps>;
 export default TransactionsModal;
