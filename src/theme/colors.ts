@@ -107,7 +107,7 @@ export const lightColors: Colors = {
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
   greenBg2: "#56EF4B",
-  greyBg2: "#201e1e",  
+  greyBg2: "#201e1e",
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
   yellowBg2: "#FFB72C",

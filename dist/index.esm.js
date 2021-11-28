@@ -3812,12 +3812,13 @@ var baseColors = {
     whiteRgba3: "rgba(255, 255, 255, 0.1)",
     bgGray5: "#34343B",
     darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
+    redBg: "#FF6161",
 };
 var brandColors = {
     binance: "#F0B90B",
 };
 // export const darkColors: Colors = {
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", greyText3: "#BCBCBC", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "#47DA3B", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", greyText3: "#BCBCBC", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "#47DA3B", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
         greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
@@ -6666,7 +6667,7 @@ var PriceBlock$1 = styled.div(templateObject_2$1w || (templateObject_2$1w = __ma
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Price$2 = styled.div(templateObject_3$1c || (templateObject_3$1c = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
+var Price$1 = styled.div(templateObject_3$1c || (templateObject_3$1c = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
@@ -6680,10 +6681,10 @@ var ClosedPrice = function (_a) {
         React__default.createElement(PriceBlock$1, null,
             React__default.createElement(Text, { color: "text", mb: 18, fontWeight: 500, fontSize: "13px", textTransform: "uppercase" }, textPrice || (!result ? "Closed Price" : "Your Result")),
             ((!roundFailed && !result) || result) && (React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
-                React__default.createElement(Price$2, { negative: negative }, price),
+                React__default.createElement(Price$1, { negative: negative }, price),
                 React__default.createElement(Text, { fontWeight: 400, mr: "auto", ml: 9 }, result),
                 React__default.createElement(RightText$1, { negative: rightText === "UP" ? false : negative },
-                    React__default.createElement(Price$2, { negative: rightText === "UP" ? false : negative },
+                    React__default.createElement(Price$1, { negative: rightText === "UP" ? false : negative },
                         React__default.createElement(Text, null, rightText))))),
             roundFailed && !result && React__default.createElement(Text, { color: "greyText" }, textCanceled || "CANCELED"))));
 };
@@ -6748,7 +6749,7 @@ var PriceBlock = styled.div(templateObject_2$1u || (templateObject_2$1u = __make
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Price$1 = styled.div(templateObject_3$1a || (templateObject_3$1a = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
+var Price = styled.div(templateObject_3$1a || (templateObject_3$1a = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
@@ -6773,7 +6774,7 @@ var ClosedPriceBTC = function (_a) {
                 React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
                     React__default.createElement(Text, { color: "textGray", fontWeight: 500 }, textTitle || "Title"),
                     React__default.createElement(RightText, { negative: rightText === "UP" ? false : negative },
-                        React__default.createElement(Price$1, { negative: rightText === "UP" ? false : negative }, rightText))))),
+                        React__default.createElement(Price, { negative: rightText === "UP" ? false : negative }, rightText))))),
             roundFailed && (React__default.createElement(Text, { color: "greyText", marginTop: "40px" }, textCanceled || "CANCELED")))));
 };
 var templateObject_1$1_, templateObject_2$1u, templateObject_3$1a, templateObject_4$$;
@@ -11117,150 +11118,12 @@ function AddressInputPanel(_a) {
 }
 var templateObject_1$l, templateObject_2$e, templateObject_3$8, templateObject_4$7;
 
-var Icon$1 = function (props) {
-    return (React__default.createElement(Svg, __assign({ viewBox: "0 0 256 256" }, props),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M166.898 204.279C172.402 190.795 170.197 176.127 166.942 163.633C164.747 155.208 156.522 149.043 143.339 146.339C130.289 143.662 113.23 144.62 95.212 149.658C77.1941 154.696 61.9863 162.761 52.0088 171.877C41.9295 181.085 37.8164 190.7 40.0117 199.126C43.2669 211.619 48.4857 225.444 59.7919 234.228C70.9463 242.894 88.7701 247.193 118.461 238.891C148.152 230.589 161.467 217.582 166.898 204.279ZM119.268 241.986C179.746 225.075 176.514 188.072 169.929 162.798C164.622 142.43 131.106 136.301 94.4056 146.563C57.7053 156.825 31.7183 179.593 37.0251 199.961C43.6102 225.235 58.7891 258.897 119.268 241.986Z", fill: "#464649" }),
-        React__default.createElement("path", { d: "M155.801 175.68C158.653 186.628 180.351 181.576 214.977 171.894C249.604 162.212 257.158 150.578 254.305 139.63C251.453 128.682 244.685 121.053 216.678 128.884C182.051 138.566 152.948 164.732 155.801 175.68Z", fill: "#606063" }),
-        React__default.createElement("path", { d: "M159.97 178.737L175.437 178.709C178.284 178.704 178.523 174.429 177.474 164.815C176.82 158.816 173.457 154.101 171.27 155.477L159.942 163.875L159.97 178.737Z", fill: "#464649" }),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M162.261 177.996C160.059 177.319 159.158 176.266 158.788 174.845C158.644 174.296 158.636 173.375 159.104 171.965C159.566 170.568 160.432 168.889 161.754 166.98C164.397 163.161 168.612 158.775 174.091 154.332C185.037 145.456 200.6 136.7 217.484 131.979C231.34 128.104 239.201 128.297 243.777 130.191C248.018 131.946 250.005 135.425 251.319 140.465C251.901 142.7 251.928 144.848 251.283 146.962C250.634 149.091 249.235 151.411 246.622 153.858C241.312 158.83 231.342 163.998 214.171 168.799C196.798 173.657 182.967 177.263 173.149 178.336C168.216 178.875 164.644 178.728 162.261 177.996ZM214.977 171.894C180.351 181.576 158.653 186.628 155.801 175.68C152.948 164.732 182.051 138.566 216.678 128.884C244.685 121.053 251.453 128.682 254.305 139.63C257.158 150.578 249.604 162.212 214.977 171.894Z", fill: "#464649" }),
-        React__default.createElement("path", { d: "M169.925 161.024C176.511 186.298 179.743 223.301 119.264 240.212C58.7859 257.123 43.607 223.461 37.022 198.187C31.7151 177.819 57.7022 155.052 94.4024 144.789C131.103 134.527 164.619 140.656 169.925 161.024Z", fill: "#606063" }),
-        React__default.createElement("path", { d: "M62.2322 217.512C45.5076 212.12 42.4613 203.795 40.3848 196.052L41.9594 211.275L50.2352 225.685L64.4374 238.481L80.947 244.327C82.4065 243.612 89.4986 243.299 83.1029 242.028C76.7073 240.758 72.7474 234.756 69.9914 231.378C68.2638 226.484 67.7365 219.287 62.2322 217.512Z", fill: "#464649" }),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M166.895 202.505C172.399 189.021 170.194 174.353 166.939 161.86C164.744 153.434 156.519 147.269 143.336 144.565C130.286 141.888 113.227 142.846 95.2088 147.884C77.1909 152.922 61.9831 160.987 52.0056 170.103C41.9263 179.311 37.8132 188.926 40.0086 197.352C43.2637 209.845 48.4825 223.67 59.7887 232.454C70.9431 241.12 88.7669 245.419 118.458 237.117C148.149 228.815 161.464 215.809 166.895 202.505ZM119.264 240.212C179.743 223.301 176.511 186.298 169.925 161.024C164.619 140.656 131.103 134.527 94.4024 144.789C57.7022 155.052 31.7151 177.819 37.022 198.187C43.607 223.461 58.7859 257.123 119.264 240.212Z", fill: "#464649" }),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M164.233 181.686C165.018 182.322 165.157 183.497 164.543 184.311C162.98 186.382 161.187 188.422 159.188 190.412C158.469 191.128 157.327 191.104 156.636 190.36C155.945 189.615 155.968 188.431 156.687 187.716C158.576 185.834 160.252 183.925 161.7 182.007C162.314 181.193 163.448 181.05 164.233 181.686ZM57.4215 216.239C57.6566 215.235 58.6323 214.619 59.6008 214.863C73.2899 218.308 91.7045 217.793 111.035 212.388C120.262 209.808 128.779 206.37 136.271 202.374C137.157 201.901 138.245 202.263 138.701 203.181C139.157 204.099 138.809 205.226 137.923 205.699C130.195 209.821 121.438 213.352 111.976 215.998C92.2044 221.527 73.1589 222.124 58.7494 218.497C57.7809 218.253 57.1863 217.242 57.4215 216.239Z", fill: "#979797" }),
-        React__default.createElement("path", { d: "M159.836 163.292C164.405 180.829 141.059 195.381 109.857 204.106C78.655 212.831 51.4793 212.682 46.8428 194.887C42.2064 177.092 65.6193 162.798 96.8214 154.074C128.024 145.349 155.266 145.755 159.836 163.292Z", fill: "#464649" }),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M145.831 183.549C154.508 176.998 157.462 170.578 155.854 164.406C154.245 158.233 148.575 154.225 137.894 153.086C127.333 151.96 113.281 153.898 97.8965 158.2C82.4985 162.506 69.3986 168.094 60.8132 174.54C52.1526 181.043 49.1801 187.461 50.825 193.774C52.4698 200.087 58.1557 204.083 68.7987 205.189C79.3491 206.285 93.384 204.285 108.782 199.98C124.166 195.678 137.251 190.028 145.831 183.549ZM110.264 205.113C141.466 196.388 164.405 180.829 159.836 163.292C155.266 145.755 128.024 145.349 96.8214 154.074C65.6193 162.798 42.2064 177.092 46.8428 194.887C51.4793 212.682 79.0614 213.838 110.264 205.113Z", fill: "#737373" }),
-        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M103.877 181.153C89.0555 185.297 76.4977 192.072 68.1169 199.619C67.3647 200.297 66.2249 200.214 65.5711 199.434C64.9173 198.655 64.997 197.474 65.7492 196.796C74.622 188.806 87.7006 181.803 102.936 177.543C106.034 176.676 109.107 175.955 112.134 175.375C113.114 175.187 114.056 175.858 114.237 176.873C114.419 177.889 113.771 178.864 112.792 179.052C109.86 179.614 106.881 180.313 103.877 181.153ZM123.847 175.658C123.792 174.627 124.554 173.745 125.549 173.688C132.378 173.297 138.774 173.682 144.424 174.797C145.403 174.991 146.046 175.97 145.86 176.984C145.673 177.999 144.728 178.664 143.749 178.471C138.431 177.421 132.333 177.045 125.749 177.422C124.753 177.479 123.902 176.69 123.847 175.658Z", fill: "#606063" })));
-};
-
-var Icon = function (props) {
-    return (React__default.createElement(Svg, __assign({ viewBox: "0 0 128 128" }, props),
-        React__default.createElement("svg", { width: "128", height: "128", viewBox: "0 0 128 128", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React__default.createElement("path", { d: "M56.7204 37.5858C56.7204 45.3822 58.0271 54.1169 60.2906 60.8591C61.4246 64.2369 62.7705 67.0285 64.249 68.946C65.742 70.8826 67.1906 71.7103 68.5307 71.7103C71.1919 71.7103 74.4165 70.5307 77.8384 68.3524C81.235 66.1902 84.7001 63.1234 87.8127 59.5481C94.0844 52.3439 98.6784 43.3694 98.6784 35.942C98.6784 28.1653 97.1567 21.2636 93.9931 16.3543C90.8793 11.5222 86.1363 8.54284 79.3564 8.54284C72.6009 8.54284 66.9825 11.9157 63.0072 17.2564C59.0174 22.6164 56.7204 29.9263 56.7204 37.5858Z", fill: "#FEDC90", stroke: "#D1884F", strokeWidth: "2.89134" }),
-            React__default.createElement("path", { d: "M32.7442 66.7859C39.4364 62.9222 47.2575 60.5211 53.8454 59.9252C57.1411 59.6272 60.0564 59.7876 62.336 60.3933C64.6294 61.0028 66.1079 62.0118 66.8368 63.2742C69.6116 68.0804 69.9429 76.4856 67.7501 84.8501C65.5656 93.1829 61.0085 100.957 54.6069 104.653C47.9434 108.5 40.9505 110.185 34.8292 109.454C28.7533 108.729 23.476 105.626 20.0729 99.7316C16.6658 93.8305 16.5364 87.5528 18.8757 81.7754C21.228 75.9659 26.1018 70.6209 32.7442 66.7859Z", fill: "#D1884F", stroke: "#633001", strokeWidth: "2.89134" }),
-            React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M73.6122 7.76013C69.4145 8.86483 64.8207 11.0867 61.24 16.1556C53.2804 27.4231 51.7006 41.9592 58.5495 60.7386C65.3984 79.518 63.3431 89.9236 56.0487 98.3189C48.7543 106.714 29.475 108.685 23.3482 101.929C21.8481 100.274 17.4954 97.4588 20.3675 102.54C23.2397 107.622 30.7527 111.748 39.59 111.748C48.4273 111.748 55.5943 108.146 61.958 101.338C68.3217 94.5306 74.292 78.3883 68.3268 61.7709C60.6331 40.3385 62.8311 27.508 68.2893 19.7815C71.0879 15.8198 75.5453 12.3629 78.6077 10.5868C81.8233 8.72183 84.8797 8.42294 86.8682 8.42294C83.3332 6.65548 77.8099 6.65542 73.6122 7.76013Z", fill: "#633001" }))));
-};
-
-var rotate = keyframes(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var float = keyframes(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n\t0% {\n\t\ttransform: translatey(0px);\n\t}\n\t50% {\n\t\ttransform: translatey(10px);\n\t}\n\t100% {\n\t\ttransform: translatey(0px);\n\t}\n"], ["\n\t0% {\n\t\ttransform: translatey(0px);\n\t}\n\t50% {\n\t\ttransform: translatey(10px);\n\t}\n\t100% {\n\t\ttransform: translatey(0px);\n\t}\n"])));
-var Container = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var RotatingPancakeIcon = styled(Icon)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"])), rotate);
-var FloatingPanIcon = styled(Icon$1)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  animation: ", " 6s ease-in-out infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 6s ease-in-out infinite;\n  transform: translate3d(0, 0, 0);\n"])), float);
-var Spinner = function (_a) {
-    var _b = _a.size, size = _b === void 0 ? 128 : _b;
-    return (React__default.createElement(Container, null,
-        React__default.createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" }),
-        React__default.createElement(FloatingPanIcon, { width: size + "px" })));
-};
-var templateObject_1$k, templateObject_2$d, templateObject_3$7, templateObject_4$6, templateObject_5$3;
-
-var Wrapper$3 = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
-var Section = styled(AutoColumn)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding: 24px;\n"], ["\n  padding: 24px;\n"])));
-var ConfirmedIcon = styled(ColumnCenter)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  padding: 24px 0;\n"], ["\n  padding: 24px 0;\n"])));
-function ConfirmationPendingContent(_a) {
-    var pendingText = _a.pendingText, texts = _a.texts;
-    var confirmationWaiting = texts.confirmationWaiting, transactionConfirm = texts.transactionConfirm;
-    return (React__default.createElement(Wrapper$3, null,
-        React__default.createElement(ConfirmedIcon, null,
-            React__default.createElement(Spinner, null)),
-        React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
-            React__default.createElement(Text, { fontSize: "20px" }, confirmationWaiting),
-            React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
-                React__default.createElement(Text, { bold: true, small: true, textAlign: "center" }, pendingText)),
-            React__default.createElement(Text, { small: true, color: "textSubtle", textAlign: "center" }, transactionConfirm))));
-}
-function TransactionSubmittedContent(_a) {
-    var onDismiss = _a.onDismiss, registerToken = _a.registerToken, chainId = _a.chainId, txHash = _a.txHash, currencyToAdd = _a.currencyToAdd, bscScanLink = _a.bscScanLink, transSubmittedText = _a.transSubmittedText, bscScanLinkText = _a.bscScanLinkText, metamaskAssetText = _a.metamaskAssetText, btnCloseText = _a.btnCloseText, isMetaMask = _a.isMetaMask, token = _a.token;
-    return (React__default.createElement(Wrapper$3, null,
-        React__default.createElement(Section, null,
-            React__default.createElement(ConfirmedIcon, null,
-                React__default.createElement(Icon$H, { strokeWidth: 0.5, width: "90px", color: "primary" })),
-            React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
-                React__default.createElement(Text, { fontSize: "20px" }, transSubmittedText),
-                chainId && txHash && (React__default.createElement(Link$3, { external: true, small: true, href: bscScanLink }, bscScanLinkText)),
-                currencyToAdd && isMetaMask && (React__default.createElement(Button$9, { variant: "tertiary", mt: "12px", width: "fit-content", onClick: function () { return registerToken(token.address, token.symbol, token.decimals); } },
-                    React__default.createElement(RowFixed, null,
-                        metamaskAssetText,
-                        React__default.createElement(Icon$e, { width: "16px", ml: "6px" })))),
-                React__default.createElement(Button$9, { onClick: onDismiss, mt: "20px" }, btnCloseText)))));
-}
-function ConfirmationModalContent(_a) {
-    var bottomContent = _a.bottomContent, topContent = _a.topContent;
-    return (React__default.createElement(Wrapper$3, null,
-        React__default.createElement(Box, null, topContent()),
-        React__default.createElement(Box, null, bottomContent())));
-}
-function TransactionErrorContent(_a) {
-    var onDismiss = _a.onDismiss, dismissText = _a.dismissText;
-    return (React__default.createElement(Wrapper$3, null,
-        React__default.createElement(AutoColumn, { justify: "center" },
-            React__default.createElement("img", { src: OneGhost, alt: "error" })),
-        React__default.createElement(Flex, { justifyContent: "center", pt: "24px" },
-            React__default.createElement(ButtonStyle, { onClick: onDismiss }, dismissText))));
-}
-var TransactionConfirmationModal = function (_a) {
-    var title = _a.title, onDismiss = _a.onDismiss, customOnDismiss = _a.customOnDismiss, attemptingTxn = _a.attemptingTxn, txHash = _a.txHash, pendingText = _a.pendingText, content = _a.content, currencyToAdd = _a.currencyToAdd, texts = _a.texts, chainId = _a.chainId, registerToken = _a.registerToken, bscScanLink = _a.bscScanLink, transSubmittedText = _a.transSubmittedText, bscScanLinkText = _a.bscScanLinkText, metamaskAssetText = _a.metamaskAssetText, btnCloseText = _a.btnCloseText, isMetaMask = _a.isMetaMask, token = _a.token;
-    useCallback(function () {
-        if (customOnDismiss) {
-            customOnDismiss();
-        }
-        if (onDismiss)
-            onDismiss();
-    }, [customOnDismiss, onDismiss]);
-    if (!chainId)
-        return null;
-    return (React__default.createElement("div", null,
-        React__default.createElement(Overlay$1, null),
-        React__default.createElement(StyledModal$1, null,
-            React__default.createElement(ModalHeader$1, null,
-                React__default.createElement(ModalTitle$1, null,
-                    React__default.createElement(Flex, null, title)),
-                React__default.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
-                    React__default.createElement(Icon$1b, null))),
-            React__default.createElement(Box, null, attemptingTxn ? (React__default.createElement(ConfirmationPendingContent, { pendingText: pendingText, texts: texts })) : txHash ? (React__default.createElement(TransactionSubmittedContent, { chainId: chainId, txHash: txHash, onDismiss: onDismiss, currencyToAdd: currencyToAdd, registerToken: registerToken, bscScanLink: bscScanLink, transSubmittedText: transSubmittedText, bscScanLinkText: bscScanLinkText, metamaskAssetText: metamaskAssetText, btnCloseText: btnCloseText, isMetaMask: isMetaMask, token: token })) : (content())))));
-};
-var StyledModal$1 = styled.div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"], ["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.bgGray;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.zIndices.modal;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.xs;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var ModalTitle$1 = styled.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.text;
-});
-var ModalHeader$1 = styled.div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"], ["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"])));
-styled(Text)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.textGray;
-});
-styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
-styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"], ["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.sm;
-});
-var Overlay$1 = styled.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"], ["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.overlayBg;
-});
-var ButtonStyle = styled(Button$9)(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  border: none;\n  outline: none;\n  background: none;\n  color: ", ";\n  box-shadow: none;\n"], ["\n  border: none;\n  outline: none;\n  background: none;\n  color: ", ";\n  box-shadow: none;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
-});
-var templateObject_1$j, templateObject_2$c, templateObject_3$6, templateObject_4$5, templateObject_5$2, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2, templateObject_10$1, templateObject_11$1;
-
-var SwapModalFooterContainer = styled(AutoColumn)(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  margin-top: 35px;\n  padding: 16px 20px;\n  border-radius: 12px;\n  background-color: ", ";\n"], ["\n  margin-top: 35px;\n  padding: 16px 20px;\n  border-radius: 12px;\n  background-color: ", ";\n"])), function (_a) {
+var SwapModalFooterContainer = styled(AutoColumn)(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  margin-top: 35px;\n  padding: 16px 20px;\n  border-radius: 12px;\n  background-color: ", ";\n"], ["\n  margin-top: 35px;\n  padding: 16px 20px;\n  border-radius: 12px;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 });
 var SwapModalFooter = function (_a) {
-    var buttonSwapHandler = _a.buttonSwapHandler, buttonSwapProps = _a.buttonSwapProps; _a.swapErrorMessage; _a.errorText; var texts = _a.texts, priceImpact = _a.priceImpact, executionPrice = _a.executionPrice, minimusReceived = _a.minimusReceived;
+    var buttonSwapProps = _a.buttonSwapProps, swapErrorMessage = _a.swapErrorMessage, texts = _a.texts, priceImpact = _a.priceImpact, executionPrice = _a.executionPrice;
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(SwapModalFooterContainer, null,
             React__default.createElement(RowBetween, { mt: "8px", align: "center" },
@@ -11273,10 +11136,11 @@ var SwapModalFooter = function (_a) {
                         paddingLeft: "10px",
                     } }, executionPrice)),
             React__default.createElement(RowBetween, { mt: "8px" },
-                React__default.createElement(Text, { fontSize: "11px" }, texts.receivedOrSold),
-                React__default.createElement(Text, { fontSize: "11px" },
-                    " ",
-                    minimusReceived)),
+                React__default.createElement(RowFixed, null,
+                    React__default.createElement(Text, { fontSize: "11px" }, texts.receivedOrSold)),
+                React__default.createElement(RowFixed, null,
+                    React__default.createElement(Text, { fontSize: "14px" }, texts.slippageAdjustedAmounts),
+                    React__default.createElement(Text, { fontSize: "14px", marginLeft: "4px" }, texts.outputAmount))),
             React__default.createElement(RowBetween, { mt: "8px" },
                 React__default.createElement(Text, { fontSize: "11px" }, texts.priceImpact),
                 React__default.createElement(Text, { color: baseColors.green, fontSize: "11px" },
@@ -11286,17 +11150,18 @@ var SwapModalFooter = function (_a) {
                 React__default.createElement(Text, { fontSize: "11px" }, texts.liquidityProviderFee),
                 React__default.createElement(Text, { fontSize: "11px" }, texts.currencySymbolBottom))),
         React__default.createElement(AutoRow, null,
-            React__default.createElement(Button$9, __assign({ mt: "37px", onClick: buttonSwapHandler, variant: "green", width: "100%" }, buttonSwapProps), texts.buttonSwap))));
+            React__default.createElement(Button$9, __assign({ mt: "37px", variant: "green", width: "100%" }, buttonSwapProps), texts.buttonSwap),
+            swapErrorMessage ? (React__default.createElement(Text, { fontSize: "11px", color: "redBg" }, swapErrorMessage)) : null)));
 };
-var templateObject_1$i;
+var templateObject_1$k;
 
-var Wrapper$2 = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  position: relative;\n  padding: 1rem;\n"], ["\n  position: relative;\n  padding: 1rem;\n"])));
-var ArrowWrapper = styled.div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  padding: 2px;\n\n  ", "\n"], ["\n  padding: 2px;\n\n  ", "\n"])), function (_a) {
+var Wrapper$3 = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  position: relative;\n  padding: 1rem;\n"], ["\n  position: relative;\n  padding: 1rem;\n"])));
+var ArrowWrapper = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  padding: 2px;\n\n  ", "\n"], ["\n  padding: 2px;\n\n  ", "\n"])), function (_a) {
     var clickable = _a.clickable;
     return clickable
-        ? css(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n          :hover {\n            cursor: pointer;\n            opacity: 0.8;\n          }\n        "], ["\n          :hover {\n            cursor: pointer;\n            opacity: 0.8;\n          }\n        "]))) : null;
+        ? css(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n          :hover {\n            cursor: pointer;\n            opacity: 0.8;\n          }\n        "], ["\n          :hover {\n            cursor: pointer;\n            opacity: 0.8;\n          }\n        "]))) : null;
 });
-var ErrorText = styled(Text)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+var ErrorText = styled(Text)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, severity = _a.severity;
     return severity === 3 || severity === 4
         ? theme.colors.failure
@@ -11306,7 +11171,7 @@ var ErrorText = styled(Text)(templateObject_4$4 || (templateObject_4$4 = __makeT
                 ? theme.colors.text
                 : theme.colors.success;
 });
-var StyledBalanceMaxMini = styled.button(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"], ["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"])), function (_a) {
+var StyledBalanceMaxMini = styled.button(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"], ["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
 }, function (_a) {
@@ -11319,15 +11184,15 @@ var StyledBalanceMaxMini = styled.button(templateObject_5$1 || (templateObject_5
     var theme = _a.theme;
     return theme.colors.card;
 });
-styled(Text).attrs({ ellipsis: true })(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  width: 220px;\n"], ["\n  width: 220px;\n"])));
-var SwapCallbackErrorInner = styled.div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"])), function (_a) {
+styled(Text).attrs({ ellipsis: true })(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 220px;\n"], ["\n  width: 220px;\n"])));
+var SwapCallbackErrorInner = styled.div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.failure + "33";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.failure;
 });
-var SwapCallbackErrorInnerAlertTriangle = styled.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"], ["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"])), function (_a) {
+var SwapCallbackErrorInnerAlertTriangle = styled.div(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"], ["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.failure + "33";
 });
@@ -11338,59 +11203,41 @@ function SwapCallbackError(_a) {
             React__default.createElement(Icon$z, { width: "24px" })),
         React__default.createElement("p", null, error)));
 }
-var SwapShowAcceptChanges = styled(AutoColumn)(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  padding-left: 20px;\n  background-color: ", ";\n  border-radius: 12px;\n  margin-top: 35px;\n"], ["\n  padding-left: 20px;\n  background-color: ", ";\n  border-radius: 12px;\n  margin-top: 35px;\n"])), function (_a) {
+var SwapShowAcceptChanges = styled(AutoColumn)(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  padding-left: 20px;\n  background-color: ", ";\n  border-radius: 12px;\n  margin-top: 35px;\n"], ["\n  padding-left: 20px;\n  background-color: ", ";\n  border-radius: 12px;\n  margin-top: 35px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGreenRgba;
 });
-var templateObject_1$h, templateObject_2$b, templateObject_3$5, templateObject_4$4, templateObject_5$1, templateObject_6$1, templateObject_7$1, templateObject_8$1, templateObject_9$1;
+var templateObject_1$j, templateObject_2$d, templateObject_3$7, templateObject_4$6, templateObject_5$3, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2;
 
 var SwapModalHeader = function (_a) {
-    var recipient = _a.recipient, showAcceptChanges = _a.showAcceptChanges, onAcceptChanges = _a.onAcceptChanges, currencyFrom = _a.currencyFrom, currencyTo = _a.currencyTo, texts = _a.texts, priceTo = _a.priceTo, priceFrom = _a.priceFrom, outputEstimates = _a.outputEstimates;
+    var recipient = _a.recipient, showAcceptChanges = _a.showAcceptChanges, onAcceptChanges = _a.onAcceptChanges, outputEstimates = _a.outputEstimates, recipientSentToText = _a.recipientSentToText, currencyFrom = _a.currencyFrom, currencyTo = _a.currencyTo, currencyFromSymbol = _a.currencyFromSymbol, currencyToSymbol = _a.currencyToSymbol, texts = _a.texts;
     return (React__default.createElement("div", null,
         React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "flex-start" },
-            React__default.createElement(Flex, { alignItems: "flex-start" },
-                React__default.createElement("img", { style: { width: "33px", height: "33px" }, src: currencyFrom.logo || YAY_TOKEN_GREEN }),
-                React__default.createElement(CurrencyName, null,
-                    React__default.createElement(ShortName, null, currencyFrom.shortName),
-                    React__default.createElement(FullName, null, currencyFrom.fullName))),
-            React__default.createElement(Price, null, priceFrom)),
+            React__default.createElement(RowFixed, { gap: "0px" }, currencyFrom),
+            React__default.createElement(RowFixed, { gap: "0px" },
+                React__default.createElement(Text, { fontSize: "24px", ml: "10px" }, currencyFromSymbol))),
+        React__default.createElement(RowFixed, null,
+            React__default.createElement(Icon$L, { width: "16px", ml: "4px" })),
         React__default.createElement(Flex, { mt: "31px", justifyContent: "space-between", alignItems: "flex-start" },
-            React__default.createElement(Flex, { alignItems: "flex-start" },
-                React__default.createElement("img", { style: { width: "33px", height: "33px" }, src: currencyTo.logo }),
-                React__default.createElement(CurrencyName, null,
-                    React__default.createElement(ShortName, null, currencyTo.shortName),
-                    React__default.createElement(FullName, null, currencyTo.fullName))),
-            React__default.createElement(Price, null, priceTo)),
+            React__default.createElement(RowFixed, { gap: "0px" }, currencyTo),
+            React__default.createElement(RowFixed, { gap: "0px" },
+                React__default.createElement(Text, { fontSize: "24px", ml: "10px" }, currencyToSymbol))),
         showAcceptChanges ? (React__default.createElement(SwapShowAcceptChanges, { justify: "flex-start", gap: "0px" },
             React__default.createElement(RowBetween, null,
                 React__default.createElement(RowFixed, null,
-                    React__default.createElement(Text, { color: baseColors.green, fontWeight: "500" },
+                    React__default.createElement(Text, { color: baseColors.redBg, fontWeight: "500" },
                         " ",
                         texts.priceUpdated)),
                 React__default.createElement(Button$9, { variant: "green", onClick: onAcceptChanges }, texts.accept)))) : null,
         React__default.createElement(Text, { mt: "28px", fontSize: "13px", color: baseColors.textGray }, outputEstimates),
         recipient !== null ? (React__default.createElement(AutoColumn, { justify: "flex-start", gap: "sm", style: { padding: "12px 0 0 0px" } },
-            React__default.createElement(Text, { color: "text" }, texts.recipientSentToText))) : null));
+            React__default.createElement(Text, { color: "text" }, recipientSentToText))) : null));
 };
-var CurrencyName = styled.div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  margin-left: 15px;\n"], ["\n  margin-left: 15px;\n"])));
-var ShortName = styled(Text)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"], ["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"])));
-var FullName = styled(Text)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
-var Price = styled(ShortName)(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  margin-bottom: 0;\n"], ["\n  margin-bottom: 0;\n"])));
-var templateObject_1$g, templateObject_2$a, templateObject_3$4, templateObject_4$3;
-
-var ConfirmSwapModal = function (_a) {
-    var minimusReceived = _a.minimusReceived, executionPrice = _a.executionPrice, priceImpact = _a.priceImpact, trade = _a.trade, onAcceptChanges = _a.onAcceptChanges, allowedSlippage = _a.allowedSlippage, onConfirm = _a.onConfirm, onDismiss = _a.onDismiss, customOnDismiss = _a.customOnDismiss, recipient = _a.recipient, swapErrorMessage = _a.swapErrorMessage, attemptingTxn = _a.attemptingTxn, txHash = _a.txHash, pendingText = _a.pendingText, modalTitle = _a.modalTitle, dismissText = _a.dismissText, contentTexts = _a.contentTexts, chainId = _a.chainId, registerToken = _a.registerToken, bscScanLink = _a.bscScanLink, transSubmittedText = _a.transSubmittedText, bscScanLinkText = _a.bscScanLinkText, metamaskAssetText = _a.metamaskAssetText, btnCloseText = _a.btnCloseText, isMetaMask = _a.isMetaMask, token = _a.token, priceFrom = _a.priceFrom, currencyFrom = _a.currencyFrom, priceTo = _a.priceTo, currencyTo = _a.currencyTo, swapModalHeaderTexts = _a.swapModalHeaderTexts, errorText = _a.errorText, buttonSwap = _a.buttonSwap, swapModalFooterTexts = _a.swapModalFooterTexts, buttonSwapHandler = _a.buttonSwapHandler, outputEstimates = _a.outputEstimates, showAcceptChanges = _a.showAcceptChanges, buttonSwapProps = _a.buttonSwapProps;
-    var modalHeader = useCallback(function () {
-        return trade ? (React__default.createElement(SwapModalHeader, { recipient: recipient, showAcceptChanges: showAcceptChanges, onAcceptChanges: onAcceptChanges, currencyFrom: currencyFrom, priceFrom: priceFrom, currencyTo: currencyTo, priceTo: priceTo, texts: swapModalHeaderTexts, outputEstimates: outputEstimates })) : null;
-    }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade]);
-    var modalBottom = useCallback(function () {
-        return trade ? (React__default.createElement(SwapModalFooter, { buttonSwapHandler: buttonSwapHandler, priceImpact: priceImpact, minimusReceived: minimusReceived, executionPrice: executionPrice, swapErrorMessage: swapErrorMessage, errorText: errorText, buttonSwap: buttonSwap, texts: swapModalFooterTexts, buttonSwapProps: buttonSwapProps })) : null;
-    }, [allowedSlippage, onConfirm, showAcceptChanges, swapErrorMessage, trade]);
-    var confirmationContent = useCallback(function () {
-        return swapErrorMessage ? (React__default.createElement(TransactionErrorContent, { onDismiss: onDismiss, dismissText: dismissText })) : (React__default.createElement(ConfirmationModalContent, { topContent: modalHeader, bottomContent: modalBottom }));
-    }, [onDismiss, modalBottom, modalHeader, swapErrorMessage]);
-    return (React__default.createElement(TransactionConfirmationModal, { title: modalTitle, onDismiss: onDismiss, customOnDismiss: customOnDismiss, attemptingTxn: attemptingTxn, txHash: txHash, content: confirmationContent, pendingText: pendingText, currencyToAdd: trade === null || trade === void 0 ? void 0 : trade.outputAmount.currency, texts: contentTexts, chainId: chainId, registerToken: registerToken, bscScanLink: bscScanLink, transSubmittedText: transSubmittedText, bscScanLinkText: bscScanLinkText, metamaskAssetText: metamaskAssetText, btnCloseText: btnCloseText, isMetaMask: isMetaMask, token: token }));
-};
+styled.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  margin-left: 15px;\n"], ["\n  margin-left: 15px;\n"])));
+var ShortName = styled(Text)(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"], ["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"])));
+styled(Text)(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
+styled(ShortName)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  margin-bottom: 0;\n"], ["\n  margin-bottom: 0;\n"])));
+var templateObject_1$i, templateObject_2$c, templateObject_3$6, templateObject_4$5;
 
 var SwapRoute = memo(function SwapRoute(_a) {
     var trade = _a.trade, unwrappedToken = _a.unwrappedToken;
@@ -11415,7 +11262,7 @@ function TradePrice(_a) {
             React__default.createElement(Icon$c, { width: "14px" })))) : ("-")));
 }
 
-var BodyWrapper = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"], ["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"])), function (_a) {
+var BodyWrapper = styled.div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"], ["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
@@ -11423,10 +11270,10 @@ function AppBody(_a) {
     var children = _a.children;
     return React__default.createElement(BodyWrapper, null, children);
 }
-var templateObject_1$f;
+var templateObject_1$h;
 
-var AppHeaderContainer = styled(Flex)(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 24px;\n  width: 100%;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 24px;\n  width: 100%;\n"])));
-var Subtitle = styled(Text)(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  font-size: 14px;\n  color: ", ";\n"], ["\n  font-size: 14px;\n  color: ", ";\n"])), function (_a) {
+var AppHeaderContainer = styled(Flex)(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 24px;\n  width: 100%;\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 24px;\n  width: 100%;\n"])));
+var Subtitle = styled(Text)(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  font-size: 14px;\n  color: ", ";\n"], ["\n  font-size: 14px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -11445,13 +11292,13 @@ var AppHeader = function (_a) {
             React__default.createElement(NotificationDot, { show: expertMode }, globalSettings),
             transactions))));
 };
-var templateObject_1$e, templateObject_2$9;
+var templateObject_1$g, templateObject_2$b;
 
-var TransactionState = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  text-decoration: none !important;\n  border-radius: 0.5rem;\n  padding: 0.25rem 0rem;\n  font-weight: 500;\n  font-size: 0.825rem;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  text-decoration: none !important;\n  border-radius: 0.5rem;\n  padding: 0.25rem 0rem;\n  font-weight: 500;\n  font-size: 0.825rem;\n  color: ", ";\n"])), function (_a) {
+var TransactionState = styled.div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  text-decoration: none !important;\n  border-radius: 0.5rem;\n  padding: 0.25rem 0rem;\n  font-weight: 500;\n  font-size: 0.825rem;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  text-decoration: none !important;\n  border-radius: 0.5rem;\n  padding: 0.25rem 0rem;\n  font-weight: 500;\n  font-size: 0.825rem;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var IconWrapper = styled.div(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+var IconWrapper = styled.div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var pending = _a.pending, success = _a.success, theme = _a.theme;
     return pending ? theme.colors.text : success ? theme.colors.success : theme.colors.failure;
 });
@@ -11461,7 +11308,7 @@ function Transaction(_a) {
         React__default.createElement(LinkExternal, { href: bscScanLink }, summary),
         React__default.createElement(IconWrapper, { pending: pending, success: success }, pending ? (React__default.createElement(CircleLoader, { color: "#FFFFFF" })) : success ? (React__default.createElement(Icon$7, { color: "#49DE3C" })) : (React__default.createElement(Icon$1b, { color: "#F65656" })))));
 }
-var templateObject_1$d, templateObject_2$8;
+var templateObject_1$f, templateObject_2$a;
 
 var Transactions = function (_a) {
     var onPresentTransactionsModal = _a.onPresentTransactionsModal;
@@ -11469,7 +11316,7 @@ var Transactions = function (_a) {
         React__default.createElement(Icon$13, { color: "textSubtle", width: "30px" })));
 };
 
-var StyledText = styled(Text)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"])));
+var StyledText = styled(Text)(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"])));
 var TransactionsModal = function (_a) {
     var account = _a.account, onDismiss = _a.onDismiss, texts = _a.texts, pending = _a.pending, confirmed = _a.confirmed, clearAllTransactionsCallback = _a.clearAllTransactionsCallback, ConnectWalletButton = _a.ConnectWalletButton, renderTransactions = _a.renderTransactions;
     var modalTitle = texts.modalTitle, modalBodyText = texts.modalBodyText, modalButton = texts.modalButton, modalAlternativeText = texts.modalAlternativeText;
@@ -11480,9 +11327,9 @@ var TransactionsModal = function (_a) {
         renderTransactions(pending),
         renderTransactions(confirmed))) : (React__default.createElement(Text, null, modalAlternativeText)))) : ({ ConnectWalletButton: ConnectWalletButton })));
 };
-var templateObject_1$c;
+var templateObject_1$e;
 
-var StyledModal = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"], ["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"])), function (_a) {
+var StyledModal$1 = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"], ["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -11495,34 +11342,34 @@ var StyledModal = styled.div(templateObject_1$b || (templateObject_1$b = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ModalTitle = styled.div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"])), function (_a) {
+var ModalTitle$1 = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ModalHeader = styled.div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"], ["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"])));
-var TextStyle = styled(Text)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
+var ModalHeader$1 = styled.div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"], ["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"])));
+var TextStyle = styled(Text)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 });
-var InputWrap = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
-var TabsWrap = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"], ["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"])), function (_a) {
+var InputWrap = styled.div(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
+var TabsWrap = styled.div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"], ["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Overlay = styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"], ["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"])), function (_a) {
+var Overlay$1 = styled.div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"], ["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.overlayBg;
 });
-var MessageStyle = styled.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  margin-bottom: 25px;\n  padding: 18px 25px;\n  border-radius: 12px;\n  background: ", ";\n"], ["\n  margin-bottom: 25px;\n  padding: 18px 25px;\n  border-radius: 12px;\n  background: ", ";\n"])), function (_a) {
+var MessageStyle = styled.div(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  margin-bottom: 25px;\n  padding: 18px 25px;\n  border-radius: 12px;\n  background: ", ";\n"], ["\n  margin-bottom: 25px;\n  padding: 18px 25px;\n  border-radius: 12px;\n  background: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGreenRgba;
 });
-var TextMessage = styled(Text)(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
+var TextMessage = styled(Text)(templateObject_9$1 || (templateObject_9$1 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
-var TextLabel = styled(Text)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
-var TabsWrapBlock = styled.div(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"], ["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"])), function (_a) {
+var TextLabel = styled(Text)(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
+var TabsWrapBlock = styled.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"], ["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"])), function (_a) {
     var width = _a.width;
     return width || "auto";
 }, function (_a) {
@@ -11557,13 +11404,13 @@ var Tab = styled.button(templateObject_12 || (templateObject_12 = __makeTemplate
     var paddingTabs = _a.paddingTabs;
     return paddingTabs || "15px 30px";
 });
-var templateObject_1$b, templateObject_2$7, templateObject_3$3, templateObject_4$2, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11, templateObject_12;
+var templateObject_1$d, templateObject_2$9, templateObject_3$5, templateObject_4$4, templateObject_5$2, templateObject_6$1, templateObject_7$1, templateObject_8$1, templateObject_9$1, templateObject_10$1, templateObject_11$1, templateObject_12;
 
 var ExpertModal = function (_a) {
     _a.onDismiss; var setShowConfirmExpertModal = _a.setShowConfirmExpertModal, setShowExpertModeAcknowledgement = _a.setShowExpertModeAcknowledgement, texts = _a.texts, toggleExpertModeFunc = _a.toggleExpertModeFunc, isRememberChecked = _a.isRememberChecked, setIsRememberChecked = _a.setIsRememberChecked;
-    return (React__default.createElement(StyledModal, null,
-        React__default.createElement(ModalHeader, null,
-            React__default.createElement(ModalTitle, null,
+    return (React__default.createElement(StyledModal$1, null,
+        React__default.createElement(ModalHeader$1, null,
+            React__default.createElement(ModalTitle$1, null,
                 React__default.createElement(Flex, null, texts.expert)),
             React__default.createElement(IconButton, { variant: "text", onClick: function () { return setShowConfirmExpertModal(false); }, "aria-label": "Close the dialog" },
                 React__default.createElement(Icon$1b, null))),
@@ -11690,7 +11537,7 @@ var SettingsModal = function (_a) {
     };
     if (showConfirmExpertModal) {
         return (React__default.createElement("div", null,
-            React__default.createElement(Overlay, null),
+            React__default.createElement(Overlay$1, null),
             React__default.createElement(ExpertModal, { toggleExpertModeFunc: toggleExpertModeFunc, texts: texts, setShowConfirmExpertModal: setShowConfirmExpertModal, setShowExpertModeAcknowledgement: setShowExpertModeAcknowledgement, isRememberChecked: isRememberChecked, setIsRememberChecked: setIsRememberChecked })));
     }
     var handleExpertModeToggle = function () {
@@ -11705,10 +11552,10 @@ var SettingsModal = function (_a) {
         }
     };
     return (React__default.createElement("div", null,
-        React__default.createElement(Overlay, null),
-        React__default.createElement(StyledModal, null,
-            React__default.createElement(ModalHeader, null,
-                React__default.createElement(ModalTitle, null,
+        React__default.createElement(Overlay$1, null),
+        React__default.createElement(StyledModal$1, null,
+            React__default.createElement(ModalHeader$1, null,
+                React__default.createElement(ModalTitle$1, null,
                     React__default.createElement(Flex, null, texts.settings)),
                 React__default.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
                     React__default.createElement(Icon$1b, null))),
@@ -11766,7 +11613,7 @@ var Acknowledgement = function (_a) {
             React__default.createElement(Button$9, { disabled: !isConfirmed, variant: "green", scale: "sm", onClick: handleContinueClick }, buttonText))));
 };
 
-var StyledModalContainer = styled(StyledModal$3)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  max-width: 440px;\n"], ["\n  max-width: 440px;\n"])));
+var StyledModalContainer = styled(StyledModal$3)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  max-width: 440px;\n"], ["\n  max-width: 440px;\n"])));
 // Modal is fired by a useEffect and doesn't respond to closeOnOverlayClick prop being set to false
 var usePreventModalOverlayClick = function () {
     useEffect(function () {
@@ -11809,13 +11656,13 @@ var SwapWarningModal = function (_a) {
                 React__default.createElement(Box, null, SWAP_WARNING.component)),
             React__default.createElement(Acknowledgement, { handleContinueClick: onDismiss, buttonText: buttonText, understandngText: understandngText }))));
 };
-var Message = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  padding: 20px;\n  margin-bottom: 24px;\n  background: ", ";\n  border-radius: 12px;\n"], ["\n  padding: 20px;\n  margin-bottom: 24px;\n  background: ", ";\n  border-radius: 12px;\n"])), function (_a) {
+var Message = styled.div(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  padding: 20px;\n  margin-bottom: 24px;\n  background: ", ";\n  border-radius: 12px;\n"], ["\n  padding: 20px;\n  margin-bottom: 24px;\n  background: ", ";\n  border-radius: 12px;\n"])), function (_a) {
     var theme = _a.theme;
     return transparentize(0.9, theme.colors.redBg);
 });
-var templateObject_1$a, templateObject_2$6;
+var templateObject_1$c, templateObject_2$8;
 
-var DetailsFooter = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  padding: 8px 0;\n  width: 100%;\n  max-width: 400px;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  color: ", ";\n  background-color: ", ";\n  text-align: center;\n"], ["\n  padding: 8px 0;\n  width: 100%;\n  max-width: 400px;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  color: ", ";\n  background-color: ", ";\n  text-align: center;\n"])), function (_a) {
+var DetailsFooter = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  padding: 8px 0;\n  width: 100%;\n  max-width: 400px;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  color: ", ";\n  background-color: ", ";\n  text-align: center;\n"], ["\n  padding: 8px 0;\n  width: 100%;\n  max-width: 400px;\n  border-bottom-left-radius: 20px;\n  border-bottom-right-radius: 20px;\n  color: ", ";\n  background-color: ", ";\n  text-align: center;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
@@ -11836,7 +11683,145 @@ function UnsupportedCurrencyFooter(_a) {
     return (React__default.createElement(DetailsFooter, null,
         React__default.createElement(Button$9, { variant: "text", onClick: onPresentModal }, texts)));
 }
-var templateObject_1$9;
+var templateObject_1$b;
+
+var Icon$1 = function (props) {
+    return (React__default.createElement(Svg, __assign({ viewBox: "0 0 256 256" }, props),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M166.898 204.279C172.402 190.795 170.197 176.127 166.942 163.633C164.747 155.208 156.522 149.043 143.339 146.339C130.289 143.662 113.23 144.62 95.212 149.658C77.1941 154.696 61.9863 162.761 52.0088 171.877C41.9295 181.085 37.8164 190.7 40.0117 199.126C43.2669 211.619 48.4857 225.444 59.7919 234.228C70.9463 242.894 88.7701 247.193 118.461 238.891C148.152 230.589 161.467 217.582 166.898 204.279ZM119.268 241.986C179.746 225.075 176.514 188.072 169.929 162.798C164.622 142.43 131.106 136.301 94.4056 146.563C57.7053 156.825 31.7183 179.593 37.0251 199.961C43.6102 225.235 58.7891 258.897 119.268 241.986Z", fill: "#464649" }),
+        React__default.createElement("path", { d: "M155.801 175.68C158.653 186.628 180.351 181.576 214.977 171.894C249.604 162.212 257.158 150.578 254.305 139.63C251.453 128.682 244.685 121.053 216.678 128.884C182.051 138.566 152.948 164.732 155.801 175.68Z", fill: "#606063" }),
+        React__default.createElement("path", { d: "M159.97 178.737L175.437 178.709C178.284 178.704 178.523 174.429 177.474 164.815C176.82 158.816 173.457 154.101 171.27 155.477L159.942 163.875L159.97 178.737Z", fill: "#464649" }),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M162.261 177.996C160.059 177.319 159.158 176.266 158.788 174.845C158.644 174.296 158.636 173.375 159.104 171.965C159.566 170.568 160.432 168.889 161.754 166.98C164.397 163.161 168.612 158.775 174.091 154.332C185.037 145.456 200.6 136.7 217.484 131.979C231.34 128.104 239.201 128.297 243.777 130.191C248.018 131.946 250.005 135.425 251.319 140.465C251.901 142.7 251.928 144.848 251.283 146.962C250.634 149.091 249.235 151.411 246.622 153.858C241.312 158.83 231.342 163.998 214.171 168.799C196.798 173.657 182.967 177.263 173.149 178.336C168.216 178.875 164.644 178.728 162.261 177.996ZM214.977 171.894C180.351 181.576 158.653 186.628 155.801 175.68C152.948 164.732 182.051 138.566 216.678 128.884C244.685 121.053 251.453 128.682 254.305 139.63C257.158 150.578 249.604 162.212 214.977 171.894Z", fill: "#464649" }),
+        React__default.createElement("path", { d: "M169.925 161.024C176.511 186.298 179.743 223.301 119.264 240.212C58.7859 257.123 43.607 223.461 37.022 198.187C31.7151 177.819 57.7022 155.052 94.4024 144.789C131.103 134.527 164.619 140.656 169.925 161.024Z", fill: "#606063" }),
+        React__default.createElement("path", { d: "M62.2322 217.512C45.5076 212.12 42.4613 203.795 40.3848 196.052L41.9594 211.275L50.2352 225.685L64.4374 238.481L80.947 244.327C82.4065 243.612 89.4986 243.299 83.1029 242.028C76.7073 240.758 72.7474 234.756 69.9914 231.378C68.2638 226.484 67.7365 219.287 62.2322 217.512Z", fill: "#464649" }),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M166.895 202.505C172.399 189.021 170.194 174.353 166.939 161.86C164.744 153.434 156.519 147.269 143.336 144.565C130.286 141.888 113.227 142.846 95.2088 147.884C77.1909 152.922 61.9831 160.987 52.0056 170.103C41.9263 179.311 37.8132 188.926 40.0086 197.352C43.2637 209.845 48.4825 223.67 59.7887 232.454C70.9431 241.12 88.7669 245.419 118.458 237.117C148.149 228.815 161.464 215.809 166.895 202.505ZM119.264 240.212C179.743 223.301 176.511 186.298 169.925 161.024C164.619 140.656 131.103 134.527 94.4024 144.789C57.7022 155.052 31.7151 177.819 37.022 198.187C43.607 223.461 58.7859 257.123 119.264 240.212Z", fill: "#464649" }),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M164.233 181.686C165.018 182.322 165.157 183.497 164.543 184.311C162.98 186.382 161.187 188.422 159.188 190.412C158.469 191.128 157.327 191.104 156.636 190.36C155.945 189.615 155.968 188.431 156.687 187.716C158.576 185.834 160.252 183.925 161.7 182.007C162.314 181.193 163.448 181.05 164.233 181.686ZM57.4215 216.239C57.6566 215.235 58.6323 214.619 59.6008 214.863C73.2899 218.308 91.7045 217.793 111.035 212.388C120.262 209.808 128.779 206.37 136.271 202.374C137.157 201.901 138.245 202.263 138.701 203.181C139.157 204.099 138.809 205.226 137.923 205.699C130.195 209.821 121.438 213.352 111.976 215.998C92.2044 221.527 73.1589 222.124 58.7494 218.497C57.7809 218.253 57.1863 217.242 57.4215 216.239Z", fill: "#979797" }),
+        React__default.createElement("path", { d: "M159.836 163.292C164.405 180.829 141.059 195.381 109.857 204.106C78.655 212.831 51.4793 212.682 46.8428 194.887C42.2064 177.092 65.6193 162.798 96.8214 154.074C128.024 145.349 155.266 145.755 159.836 163.292Z", fill: "#464649" }),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M145.831 183.549C154.508 176.998 157.462 170.578 155.854 164.406C154.245 158.233 148.575 154.225 137.894 153.086C127.333 151.96 113.281 153.898 97.8965 158.2C82.4985 162.506 69.3986 168.094 60.8132 174.54C52.1526 181.043 49.1801 187.461 50.825 193.774C52.4698 200.087 58.1557 204.083 68.7987 205.189C79.3491 206.285 93.384 204.285 108.782 199.98C124.166 195.678 137.251 190.028 145.831 183.549ZM110.264 205.113C141.466 196.388 164.405 180.829 159.836 163.292C155.266 145.755 128.024 145.349 96.8214 154.074C65.6193 162.798 42.2064 177.092 46.8428 194.887C51.4793 212.682 79.0614 213.838 110.264 205.113Z", fill: "#737373" }),
+        React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M103.877 181.153C89.0555 185.297 76.4977 192.072 68.1169 199.619C67.3647 200.297 66.2249 200.214 65.5711 199.434C64.9173 198.655 64.997 197.474 65.7492 196.796C74.622 188.806 87.7006 181.803 102.936 177.543C106.034 176.676 109.107 175.955 112.134 175.375C113.114 175.187 114.056 175.858 114.237 176.873C114.419 177.889 113.771 178.864 112.792 179.052C109.86 179.614 106.881 180.313 103.877 181.153ZM123.847 175.658C123.792 174.627 124.554 173.745 125.549 173.688C132.378 173.297 138.774 173.682 144.424 174.797C145.403 174.991 146.046 175.97 145.86 176.984C145.673 177.999 144.728 178.664 143.749 178.471C138.431 177.421 132.333 177.045 125.749 177.422C124.753 177.479 123.902 176.69 123.847 175.658Z", fill: "#606063" })));
+};
+
+var Icon = function (props) {
+    return (React__default.createElement(Svg, __assign({ viewBox: "0 0 128 128" }, props),
+        React__default.createElement("svg", { width: "128", height: "128", viewBox: "0 0 128 128", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+            React__default.createElement("path", { d: "M56.7204 37.5858C56.7204 45.3822 58.0271 54.1169 60.2906 60.8591C61.4246 64.2369 62.7705 67.0285 64.249 68.946C65.742 70.8826 67.1906 71.7103 68.5307 71.7103C71.1919 71.7103 74.4165 70.5307 77.8384 68.3524C81.235 66.1902 84.7001 63.1234 87.8127 59.5481C94.0844 52.3439 98.6784 43.3694 98.6784 35.942C98.6784 28.1653 97.1567 21.2636 93.9931 16.3543C90.8793 11.5222 86.1363 8.54284 79.3564 8.54284C72.6009 8.54284 66.9825 11.9157 63.0072 17.2564C59.0174 22.6164 56.7204 29.9263 56.7204 37.5858Z", fill: "#FEDC90", stroke: "#D1884F", strokeWidth: "2.89134" }),
+            React__default.createElement("path", { d: "M32.7442 66.7859C39.4364 62.9222 47.2575 60.5211 53.8454 59.9252C57.1411 59.6272 60.0564 59.7876 62.336 60.3933C64.6294 61.0028 66.1079 62.0118 66.8368 63.2742C69.6116 68.0804 69.9429 76.4856 67.7501 84.8501C65.5656 93.1829 61.0085 100.957 54.6069 104.653C47.9434 108.5 40.9505 110.185 34.8292 109.454C28.7533 108.729 23.476 105.626 20.0729 99.7316C16.6658 93.8305 16.5364 87.5528 18.8757 81.7754C21.228 75.9659 26.1018 70.6209 32.7442 66.7859Z", fill: "#D1884F", stroke: "#633001", strokeWidth: "2.89134" }),
+            React__default.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M73.6122 7.76013C69.4145 8.86483 64.8207 11.0867 61.24 16.1556C53.2804 27.4231 51.7006 41.9592 58.5495 60.7386C65.3984 79.518 63.3431 89.9236 56.0487 98.3189C48.7543 106.714 29.475 108.685 23.3482 101.929C21.8481 100.274 17.4954 97.4588 20.3675 102.54C23.2397 107.622 30.7527 111.748 39.59 111.748C48.4273 111.748 55.5943 108.146 61.958 101.338C68.3217 94.5306 74.292 78.3883 68.3268 61.7709C60.6331 40.3385 62.8311 27.508 68.2893 19.7815C71.0879 15.8198 75.5453 12.3629 78.6077 10.5868C81.8233 8.72183 84.8797 8.42294 86.8682 8.42294C83.3332 6.65548 77.8099 6.65542 73.6122 7.76013Z", fill: "#633001" }))));
+};
+
+var rotate = keyframes(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
+var float = keyframes(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n\t0% {\n\t\ttransform: translatey(0px);\n\t}\n\t50% {\n\t\ttransform: translatey(10px);\n\t}\n\t100% {\n\t\ttransform: translatey(0px);\n\t}\n"], ["\n\t0% {\n\t\ttransform: translatey(0px);\n\t}\n\t50% {\n\t\ttransform: translatey(10px);\n\t}\n\t100% {\n\t\ttransform: translatey(0px);\n\t}\n"])));
+var Container = styled.div(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var RotatingPancakeIcon = styled(Icon)(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 2s linear infinite;\n  transform: translate3d(0, 0, 0);\n"])), rotate);
+var FloatingPanIcon = styled(Icon$1)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  animation: ", " 6s ease-in-out infinite;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 6s ease-in-out infinite;\n  transform: translate3d(0, 0, 0);\n"])), float);
+var Spinner = function (_a) {
+    var _b = _a.size, size = _b === void 0 ? 128 : _b;
+    return (React__default.createElement(Container, null,
+        React__default.createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" }),
+        React__default.createElement(FloatingPanIcon, { width: size + "px" })));
+};
+var templateObject_1$a, templateObject_2$7, templateObject_3$4, templateObject_4$3, templateObject_5$1;
+
+var Wrapper$2 = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+var Section = styled(AutoColumn)(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  padding: 24px;\n"], ["\n  padding: 24px;\n"])));
+var ConfirmedIcon = styled(ColumnCenter)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  padding: 24px 0;\n"], ["\n  padding: 24px 0;\n"])));
+function ConfirmationPendingContent(_a) {
+    var pendingText = _a.pendingText, texts = _a.texts;
+    var confirmationWaiting = texts.confirmationWaiting, transactionConfirm = texts.transactionConfirm;
+    return (React__default.createElement(Wrapper$2, null,
+        React__default.createElement(ConfirmedIcon, null,
+            React__default.createElement(Spinner, null)),
+        React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
+            React__default.createElement(Text, { fontSize: "20px" }, confirmationWaiting),
+            React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
+                React__default.createElement(Text, { bold: true, small: true, textAlign: "center" }, pendingText)),
+            React__default.createElement(Text, { small: true, color: "textSubtle", textAlign: "center" }, transactionConfirm))));
+}
+function TransactionSubmittedContent(_a) {
+    var onDismiss = _a.onDismiss, registerToken = _a.registerToken, chainId = _a.chainId, txHash = _a.txHash, currencyToAdd = _a.currencyToAdd, bscScanLink = _a.bscScanLink, transSubmittedText = _a.transSubmittedText, bscScanLinkText = _a.bscScanLinkText, metamaskAssetText = _a.metamaskAssetText, btnCloseText = _a.btnCloseText, isMetaMask = _a.isMetaMask, token = _a.token;
+    return (React__default.createElement(Wrapper$2, null,
+        React__default.createElement(Section, null,
+            React__default.createElement(ConfirmedIcon, null,
+                React__default.createElement(Icon$H, { strokeWidth: 0.5, width: "90px", color: "primary" })),
+            React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
+                React__default.createElement(Text, { fontSize: "20px" }, transSubmittedText),
+                chainId && txHash && (React__default.createElement(Link$3, { external: true, small: true, href: bscScanLink }, bscScanLinkText)),
+                currencyToAdd && isMetaMask && (React__default.createElement(Button$9, { variant: "tertiary", mt: "12px", width: "fit-content", onClick: function () { return registerToken(token.address, token.symbol, token.decimals); } },
+                    React__default.createElement(RowFixed, null,
+                        metamaskAssetText,
+                        React__default.createElement(Icon$e, { width: "16px", ml: "6px" })))),
+                React__default.createElement(Button$9, { onClick: onDismiss, mt: "20px" }, btnCloseText)))));
+}
+function ConfirmationModalContent(_a) {
+    var bottomContent = _a.bottomContent, topContent = _a.topContent;
+    return (React__default.createElement(Wrapper$2, null,
+        React__default.createElement(Box, null, topContent()),
+        React__default.createElement(Box, null, bottomContent())));
+}
+function TransactionErrorContent(_a) {
+    var onDismiss = _a.onDismiss, dismissText = _a.dismissText;
+    return (React__default.createElement(Wrapper$2, null,
+        React__default.createElement(AutoColumn, { justify: "center" },
+            React__default.createElement("img", { src: OneGhost, alt: "error" })),
+        React__default.createElement(Flex, { justifyContent: "center", pt: "24px" },
+            React__default.createElement(ButtonStyle, { onClick: onDismiss }, dismissText))));
+}
+var TransactionConfirmationModal = function (_a) {
+    var title = _a.title, onDismiss = _a.onDismiss, customOnDismiss = _a.customOnDismiss, attemptingTxn = _a.attemptingTxn, txHash = _a.txHash, pendingText = _a.pendingText, content = _a.content, currencyToAdd = _a.currencyToAdd, texts = _a.texts, chainId = _a.chainId, registerToken = _a.registerToken, bscScanLink = _a.bscScanLink, transSubmittedText = _a.transSubmittedText, bscScanLinkText = _a.bscScanLinkText, metamaskAssetText = _a.metamaskAssetText, btnCloseText = _a.btnCloseText, isMetaMask = _a.isMetaMask, token = _a.token;
+    useCallback(function () {
+        if (customOnDismiss) {
+            customOnDismiss();
+        }
+        if (onDismiss)
+            onDismiss();
+    }, [customOnDismiss, onDismiss]);
+    if (!chainId)
+        return null;
+    return (React__default.createElement("div", null,
+        React__default.createElement(Overlay, null),
+        React__default.createElement(StyledModal, null,
+            React__default.createElement(ModalHeader, null,
+                React__default.createElement(ModalTitle, null,
+                    React__default.createElement(Flex, null, title)),
+                React__default.createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
+                    React__default.createElement(Icon$1b, null))),
+            React__default.createElement(Box, null, attemptingTxn ? (React__default.createElement(ConfirmationPendingContent, { pendingText: pendingText, texts: texts })) : txHash ? (React__default.createElement(TransactionSubmittedContent, { chainId: chainId, txHash: txHash, onDismiss: onDismiss, currencyToAdd: currencyToAdd, registerToken: registerToken, bscScanLink: bscScanLink, transSubmittedText: transSubmittedText, bscScanLinkText: bscScanLinkText, metamaskAssetText: metamaskAssetText, btnCloseText: btnCloseText, isMetaMask: isMetaMask, token: token })) : (content())))));
+};
+var StyledModal = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"], ["\n  padding: 18px 8px;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n    padding: 27px 24px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.bgGray;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.zIndices.modal;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.xs;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var ModalTitle = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n  font-weight: 500;\n  font-size: 21px;\n  line-height: 27px;\n  letter-spacing: 0.5px;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.text;
+});
+var ModalHeader = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"], ["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"])));
+styled(Text)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.textGray;
+});
+styled.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  margin-left: 10px;\n"], ["\n  margin-left: 10px;\n"])));
+styled.div(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"], ["\n  & button {\n    padding: 7px 3px;\n    font-size: 13px;\n\n    ", " {\n      padding: 7px;\n      font-size: 15px;\n    }\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+var Overlay = styled.div(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"], ["\n  pointer-events: none;\n  display: block;\n  background: ", ";\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  width: 100%;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.overlayBg;
+});
+var ButtonStyle = styled(Button$9)(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n  border: none;\n  outline: none;\n  background: none;\n  color: ", ";\n  box-shadow: none;\n"], ["\n  border: none;\n  outline: none;\n  background: none;\n  color: ", ";\n  box-shadow: none;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.green;
+});
+var templateObject_1$9, templateObject_2$6, templateObject_3$3, templateObject_4$2, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11;
 
 var FixedSizeListRow = function (_a) {
     var style = _a.style, texts = _a.texts;
@@ -12051,4 +12036,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { cardanoWhite as ADA, AVATAR_PLAYER, avatarPlayer2 as AVATAR_PLAYER_2, Accordeon, AccordeonCard, AccountIcon, Achievement, Icon$1c as AddIcon, AddressInputPanel, AdvancedSwapDetails, AdvancedSwapDetailsDropdown, AgreeMessage, Alert, AlertBlur, AlertBlurCustom, AppBody, AppHeader, ApproveStakingBPT, Icon$4 as ArrowBack2, Icon$8 as ArrowBackIcon, Icon$L as ArrowBigDownIcon, Icon$f as ArrowBorder, Icon$K as ArrowCardDown, Icon$I as ArrowDouble, Icon$D as ArrowDownIcon, Icon$t as ArrowDownRightIcon, Icon$U as ArrowIcon, Icon$17 as ArrowLeft, Icon$T as ArrowPanel, Icon$G as ArrowRight, Icon$J as ArrowSingl, ArrowSlider, Icon$F as ArrowTopRight, Icon$H as ArrowUpIcon, ArrowWrapper, AutoColumn, Icon$c as AutoRenewIcon, AutoRow, avalanche as Avalanche, Icon$r as AvalancheIcon, bg2 as BG2_IMG, bg3 as BG3_IMG, BG_IMG, blur as BLUR, BNB2 as BNB, BNB2, bscIcon as BSC_ICON, BTC as BTCIMG, BackgroundImage, BalanceBlock$1 as BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, BaseToggle, Icon$16 as BinanceIcon, BinanceWallet, Icon$15 as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep, Icon$S as BtnPanel, Button$9 as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, COIN4, coins as COINS, coins2 as COINS2, CONTROLLER, Icon$m as CalculateIcon, Card$j as Card, CardBTC, CardChoose, CardFlip, CardFlipBTC, CardIndicator, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardTopIndicator, CardsBalance, CardsProducts, Icon$O as CercleIcon, ChartDisclaimer, Icon$14 as ChartIcon, Icon$x as CheckIcon, Icon$6 as CheckIcon2, CheckboxInput, Icon$b as CheckmarkCircleIcon, Icon$7 as CheckmarkIcon, Icon$a as ChevronRightIcon, CircleLoader, Icon$p as ClipIcon, Icon$1b as CloseIcon, Icon$1a as CloseIcon2, Icon$5 as CloseIcon3, Icon$h as CloseRed, Icon$19 as CloseSimpleIcon, Icon$9 as CogIcon, Coin98, CollectRoundWinningsModal, CollectWinningsPopup, Column$1 as Column, ColumnCenter, ComingSoon, ComingSoonIcon, ComingSoonWithButton, CommonBases, CommonBasesChildren, Icon$P as CompleteIcon, Icon$i as ComunityIcon, ConfirmSwapModal, ConfirmationModalContent, CongratulateModal, ConnectorNames, Container$2 as Container, Icon$g as ControllerMouse, Icon$11 as CopyIcon, Icon$s as CopyIcon2, CurrencyInputPanel, CurrencyList, CurrencyRow, CurrencySearch, CurrencySearchModal, desu as DESU_TOKEN, ETH as ETHIMG, Icon$z as ErrorIcon, ErrorText, ExpertModal, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$W as EyeClose, Icon$V as EyeCloseIcon, Icon$Y as EyeOpen, Icon$X as EyeOpenIcon, FallingBunnies, FixedSizeListRow, Flex, GHOST$1 as GHOST, GamesList, GamesTable, GhostCard, GhostsIcon, Gift, Gift2, Gift3, GiftFormModal, GiftPopup, Icon$12 as GreenArrow, GreyCard, Grid$1 as Grid, Header, HeaderBridgeStaking, HeaderHistory, Heading$1 as Heading, Icon$C as HelpIcon, Icon$B as HelpIcon2, HiddenItemAccordeonCard, HistoryBlock, Icon$13 as HistoryIcon, HistoryPanel, IGOCard, IGOCardV2, IGODetailCardV2 as IGODeatailCardV2, IGODetailCard, IGODetailProgressCard, IGODetailProgressCard2, IGOHistoryCard, IGOInfoCard, IGOStake, IGOSubscriptionCard, IGOTopList, IconButton, Image$1 as Image, ImportList, ImportRow, ImportToken, ImportTokenChildren, InfoBoard, InfoWrapper, Input$6 as Input, InputSearch, Icon$v as InstagramIcon, KYCSteps, LOSE$1 as LOSE, LightCard, LightGreyCard, Link$3 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LoaderSmall, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, LobbyResultModal, mainGame as MAIN_GAME, Manage, ManageListRow, ManageListTooltip, ManageLists, ManageTokenList, ManageTokens, MathWallet, Icon$E as MenuIcon, Metamask, Icon$e as MetamaskIcon, Icon$k as MinusIcon, Modal, ModalPlatform, ModalProvider, ModalUnstake, Network, NetworkModal, NoHistory, NotificationDot, OneGhost, OneGhost2, Icon$18 as OpenNewIcon, pancake as PANCAKE, pangolin as PANGOLIN, Pagination, PausedErrorModals, Icon$R as PenIcon, Icon$M as PlayIcon, PlayerList, Icon$A as PlayingCardsIcon, Icon$l as PlusIcon, PrizePoolBlock, ProfileCard, ProgressAVAX, ProgressBar$5 as ProgressBar, ProgressCircles, ProgressRange$1 as ProgressRange, ProgressSteps, rocket1 as ROKET1, ResetCSS, Icon$q as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, RowBetween, RowFixed, RowFlat, SafepackWallet, Icon$10 as SearchIcon, Icon$$ as SearchIcon2, SetPositionCard, SetPositionCardBTC, SettingsModal, Icon$y as ShareIcon, Skeleton, Icon$Z as SquaresIcon, Stake, StakingDashboard, Statistic, StepWrapper$1 as StepWrapper, StepWrapperFrame, Icon$_ as StrikeIcon, Icon$Q as StrikesWideIcon, Card$i as StyledCard, StyledCardBTC, SupportWindow, Svg, SwapButton, SwapCallbackError, SwapModalFooter, SwapModalHeader, SwapRoute, Icon$n as SwapVertIcon, SwapWarningModal, Tabs$1 as Tabs, TabsCard, TabsWithMovingLine, Tag, Icon$w as TelegramIcon, Text, Textfield as TextField, Timer$3 as Timer, TimerNotSolid, TimerNotSolidWithoutBg, TimerSimple, TitleBlock$4 as TitleBlock, ToastContainer, Toggle, TokenPairImage, TokenPocket, TopBlock, TopContent$3 as TopContent, TradePrice, Transaction, TransactionConfirmationModal, TransactionErrorContent, TransactionHistory, Transactions, TransactionsModal, TrustWallet, Icon$u as TwitterIcon, UNIT, Unstake, UnsupportedCurrencyFooter, UnsupportedModal, ValueRow, Icon$j as VerifideIcon, VestingWidget, walletKyc as WALLET_KYC, WIN$1 as WINIMG, WINNER2, WINNER3, WINNER_MIN, WalletConnect, WalletHistoryModal, Icon$d as WarningIcon, Icon$N as WatchIcon, WelcomeModal, win as Win, WinButton, Winner, WinnersBlock, Wrapper$2 as Wrapper, Icon$o as YAYIcon, YAY_TOKEN, YAY_TOKEN_GREEN, YourHistory, variants$3 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useLobbyResultModal, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };
+export { cardanoWhite as ADA, AVATAR_PLAYER, avatarPlayer2 as AVATAR_PLAYER_2, Accordeon, AccordeonCard, AccountIcon, Achievement, Icon$1c as AddIcon, AddressInputPanel, AdvancedSwapDetails, AdvancedSwapDetailsDropdown, AgreeMessage, Alert, AlertBlur, AlertBlurCustom, AppBody, AppHeader, ApproveStakingBPT, Icon$4 as ArrowBack2, Icon$8 as ArrowBackIcon, Icon$L as ArrowBigDownIcon, Icon$f as ArrowBorder, Icon$K as ArrowCardDown, Icon$I as ArrowDouble, Icon$D as ArrowDownIcon, Icon$t as ArrowDownRightIcon, Icon$U as ArrowIcon, Icon$17 as ArrowLeft, Icon$T as ArrowPanel, Icon$G as ArrowRight, Icon$J as ArrowSingl, ArrowSlider, Icon$F as ArrowTopRight, Icon$H as ArrowUpIcon, ArrowWrapper, AutoColumn, Icon$c as AutoRenewIcon, AutoRow, avalanche as Avalanche, Icon$r as AvalancheIcon, bg2 as BG2_IMG, bg3 as BG3_IMG, BG_IMG, blur as BLUR, BNB2 as BNB, BNB2, bscIcon as BSC_ICON, BTC as BTCIMG, BackgroundImage, BalanceBlock$1 as BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, BaseToggle, Icon$16 as BinanceIcon, BinanceWallet, Icon$15 as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep, Icon$S as BtnPanel, Button$9 as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, COIN4, coins as COINS, coins2 as COINS2, CONTROLLER, Icon$m as CalculateIcon, Card$j as Card, CardBTC, CardChoose, CardFlip, CardFlipBTC, CardIndicator, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardTopIndicator, CardsBalance, CardsProducts, Icon$O as CercleIcon, ChartDisclaimer, Icon$14 as ChartIcon, Icon$x as CheckIcon, Icon$6 as CheckIcon2, CheckboxInput, Icon$b as CheckmarkCircleIcon, Icon$7 as CheckmarkIcon, Icon$a as ChevronRightIcon, CircleLoader, Icon$p as ClipIcon, Icon$1b as CloseIcon, Icon$1a as CloseIcon2, Icon$5 as CloseIcon3, Icon$h as CloseRed, Icon$19 as CloseSimpleIcon, Icon$9 as CogIcon, Coin98, CollectRoundWinningsModal, CollectWinningsPopup, Column$1 as Column, ColumnCenter, ComingSoon, ComingSoonIcon, ComingSoonWithButton, CommonBases, CommonBasesChildren, Icon$P as CompleteIcon, Icon$i as ComunityIcon, ConfirmationModalContent, CongratulateModal, ConnectorNames, Container$2 as Container, Icon$g as ControllerMouse, Icon$11 as CopyIcon, Icon$s as CopyIcon2, CurrencyInputPanel, CurrencyList, CurrencyRow, CurrencySearch, CurrencySearchModal, desu as DESU_TOKEN, ETH as ETHIMG, Icon$z as ErrorIcon, ErrorText, ExpertModal, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$W as EyeClose, Icon$V as EyeCloseIcon, Icon$Y as EyeOpen, Icon$X as EyeOpenIcon, FallingBunnies, FixedSizeListRow, Flex, GHOST$1 as GHOST, GamesList, GamesTable, GhostCard, GhostsIcon, Gift, Gift2, Gift3, GiftFormModal, GiftPopup, Icon$12 as GreenArrow, GreyCard, Grid$1 as Grid, Header, HeaderBridgeStaking, HeaderHistory, Heading$1 as Heading, Icon$C as HelpIcon, Icon$B as HelpIcon2, HiddenItemAccordeonCard, HistoryBlock, Icon$13 as HistoryIcon, HistoryPanel, IGOCard, IGOCardV2, IGODetailCardV2 as IGODeatailCardV2, IGODetailCard, IGODetailProgressCard, IGODetailProgressCard2, IGOHistoryCard, IGOInfoCard, IGOStake, IGOSubscriptionCard, IGOTopList, IconButton, Image$1 as Image, ImportList, ImportRow, ImportToken, ImportTokenChildren, InfoBoard, InfoWrapper, Input$6 as Input, InputSearch, Icon$v as InstagramIcon, KYCSteps, LOSE$1 as LOSE, LightCard, LightGreyCard, Link$3 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LoaderSmall, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, LobbyResultModal, mainGame as MAIN_GAME, Manage, ManageListRow, ManageListTooltip, ManageLists, ManageTokenList, ManageTokens, MathWallet, Icon$E as MenuIcon, Metamask, Icon$e as MetamaskIcon, Icon$k as MinusIcon, Modal, ModalPlatform, ModalProvider, ModalUnstake, Network, NetworkModal, NoHistory, NotificationDot, OneGhost, OneGhost2, Icon$18 as OpenNewIcon, pancake as PANCAKE, pangolin as PANGOLIN, Pagination, PausedErrorModals, Icon$R as PenIcon, Icon$M as PlayIcon, PlayerList, Icon$A as PlayingCardsIcon, Icon$l as PlusIcon, PrizePoolBlock, ProfileCard, ProgressAVAX, ProgressBar$5 as ProgressBar, ProgressCircles, ProgressRange$1 as ProgressRange, ProgressSteps, rocket1 as ROKET1, ResetCSS, Icon$q as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, RowBetween, RowFixed, RowFlat, SafepackWallet, Icon$10 as SearchIcon, Icon$$ as SearchIcon2, SetPositionCard, SetPositionCardBTC, SettingsModal, Icon$y as ShareIcon, Skeleton, Icon$Z as SquaresIcon, Stake, StakingDashboard, Statistic, StepWrapper$1 as StepWrapper, StepWrapperFrame, Icon$_ as StrikeIcon, Icon$Q as StrikesWideIcon, Card$i as StyledCard, StyledCardBTC, SupportWindow, Svg, SwapButton, SwapCallbackError, SwapModalFooter, SwapModalHeader, SwapRoute, Icon$n as SwapVertIcon, SwapWarningModal, Tabs$1 as Tabs, TabsCard, TabsWithMovingLine, Tag, Icon$w as TelegramIcon, Text, Textfield as TextField, Timer$3 as Timer, TimerNotSolid, TimerNotSolidWithoutBg, TimerSimple, TitleBlock$4 as TitleBlock, ToastContainer, Toggle, TokenPairImage, TokenPocket, TopBlock, TopContent$3 as TopContent, TradePrice, Transaction, TransactionConfirmationModal, TransactionErrorContent, TransactionHistory, Transactions, TransactionsModal, TrustWallet, Icon$u as TwitterIcon, UNIT, Unstake, UnsupportedCurrencyFooter, UnsupportedModal, ValueRow, Icon$j as VerifideIcon, VestingWidget, walletKyc as WALLET_KYC, WIN$1 as WINIMG, WINNER2, WINNER3, WINNER_MIN, WalletConnect, WalletHistoryModal, Icon$d as WarningIcon, Icon$N as WatchIcon, WelcomeModal, win as Win, WinButton, Winner, WinnersBlock, Wrapper$3 as Wrapper, Icon$o as YAYIcon, YAY_TOKEN, YAY_TOKEN_GREEN, YourHistory, variants$3 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useLobbyResultModal, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };
