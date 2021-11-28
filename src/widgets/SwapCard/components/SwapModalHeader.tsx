@@ -1,10 +1,9 @@
 import React from "react";
-import { Button, Text, Flex } from "../../..";
+import { Button, Text, Flex, ArrowBigDownIcon } from "../../..";
 import { AutoColumn } from "../../../components/Layouts/Column";
 import { RowBetween, RowFixed } from "../../../components/Layouts/Row";
 import { SwapModalHeaderProps } from "../types";
 import { SwapShowAcceptChanges } from "./styleds";
-import { YAY_TOKEN_GREEN } from "../../../constants/images";
 import styled from "styled-components";
 import { baseColors } from "../../../theme/colors";
 
@@ -12,40 +11,56 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
   recipient,
   showAcceptChanges,
   onAcceptChanges,
+  outputEstimates,
+  recipientSentToText,
   currencyFrom,
   currencyTo,
+  currencyFromSymbol,
+  currencyToSymbol,
   texts,
-  priceTo,
-  priceFrom,
-  outputEstimates,
 }) => {
   return (
     <div>
       <Flex justifyContent="space-between" alignItems="flex-start">
-        <Flex alignItems="flex-start">
+        {/* <Flex alignItems="flex-start">
           <img style={{ width: "33px", height: "33px" }} src={currencyFrom.logo || YAY_TOKEN_GREEN} />
           <CurrencyName>
             <ShortName>{currencyFrom.shortName}</ShortName>
             <FullName>{currencyFrom.fullName}</FullName>
           </CurrencyName>
         </Flex>
-        <Price>{priceFrom}</Price>
+        <Price>{priceFrom}</Price> */}
+        <RowFixed gap="0px">{currencyFrom}</RowFixed>
+        <RowFixed gap="0px">
+          <Text fontSize="24px" ml="10px">
+            {currencyFromSymbol}
+          </Text>
+        </RowFixed>
       </Flex>
+      <RowFixed>
+        <ArrowBigDownIcon width="16px" ml="4px" />
+      </RowFixed>
       <Flex mt="31px" justifyContent="space-between" alignItems="flex-start">
-        <Flex alignItems="flex-start">
+        {/* <Flex alignItems="flex-start">
           <img style={{ width: "33px", height: "33px" }} src={currencyTo.logo} />
           <CurrencyName>
             <ShortName>{currencyTo.shortName}</ShortName>
             <FullName>{currencyTo.fullName}</FullName>
           </CurrencyName>
         </Flex>
-        <Price>{priceTo}</Price>
+        <Price>{priceTo}</Price> */}
+        <RowFixed gap="0px">{currencyTo}</RowFixed>
+        <RowFixed gap="0px">
+          <Text fontSize="24px" ml="10px">
+            {currencyToSymbol}
+          </Text>
+        </RowFixed>
       </Flex>
       {showAcceptChanges ? (
         <SwapShowAcceptChanges justify="flex-start" gap="0px">
           <RowBetween>
             <RowFixed>
-              <Text color={baseColors.green} fontWeight="500">
+              <Text color={baseColors.redBg} fontWeight="500">
                 {" "}
                 {texts.priceUpdated}
               </Text>
@@ -66,7 +81,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
       {/*</AutoColumn>*/}
       {recipient !== null ? (
         <AutoColumn justify="flex-start" gap="sm" style={{ padding: "12px 0 0 0px" }}>
-          <Text color="text">{texts.recipientSentToText}</Text>
+          <Text color="text">{recipientSentToText}</Text>
         </AutoColumn>
       ) : null}
     </div>

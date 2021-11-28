@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AutoColumn } from "../../../components/Layouts/Column";
-import { RowBetween, AutoRow } from "../../../components/Layouts/Row";
+import { RowBetween, AutoRow, RowFixed } from "../../../components/Layouts/Row";
 import { Text } from "../../../components/Text";
 import { SwapModalFooterProps } from "../types";
 import { baseColors } from "../../../theme/colors";
@@ -15,14 +15,11 @@ const SwapModalFooterContainer = styled(AutoColumn)`
 `;
 
 const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
-  buttonSwapHandler,
   buttonSwapProps,
   swapErrorMessage,
-  errorText,
   texts,
   priceImpact,
   executionPrice,
-  minimusReceived,
 }) => {
   return (
     <>
@@ -44,9 +41,15 @@ const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
         </RowBetween>
 
         <RowBetween mt="8px">
-          <Text fontSize="11px">{texts.receivedOrSold}</Text>
-
-          <Text fontSize="11px"> {minimusReceived}</Text>
+          <RowFixed>
+            <Text fontSize="11px">{texts.receivedOrSold}</Text>
+          </RowFixed>
+          <RowFixed>
+            <Text fontSize="14px">{texts.slippageAdjustedAmounts}</Text>
+            <Text fontSize="14px" marginLeft="4px">
+              {texts.outputAmount}
+            </Text>
+          </RowFixed>
         </RowBetween>
         <RowBetween mt="8px">
           <Text fontSize="11px">{texts.priceImpact}</Text>
@@ -62,9 +65,14 @@ const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
         </RowBetween>
       </SwapModalFooterContainer>
       <AutoRow>
-        <Button mt="37px" onClick={buttonSwapHandler} variant="green" width="100%" {...buttonSwapProps}>
+        <Button mt="37px" variant="green" width="100%" {...buttonSwapProps}>
           {texts.buttonSwap}
         </Button>
+        {swapErrorMessage ? (
+          <Text fontSize="11px" color="redBg">
+            {swapErrorMessage}
+          </Text>
+        ) : null}
       </AutoRow>
     </>
   );

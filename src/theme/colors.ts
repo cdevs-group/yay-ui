@@ -78,6 +78,7 @@ export const baseColors = {
   whiteRgba3: "rgba(255, 255, 255, 0.1)",
   bgGray5: "#34343B",
   darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
+  redBg: "#FF6161",
 };
 
 export const brandColors = {
@@ -106,8 +107,7 @@ export const lightColors: Colors = {
   orangeBg: "#FF9525",
   greenBg: "#69E35F",
   greenBg2: "#56EF4B",
-  greyBg2: "#201e1e",
-  redBg: "#FF6161",
+  greyBg2: "#201e1e",  
   yellowBg: "#ECCB57",
   lightGreyBg: "#C0C0C0",
   yellowBg2: "#FFB72C",
