@@ -19,7 +19,7 @@ export interface IText {
     pleaseTypeThe: string;
 }
 export interface SettingsModalProps {
-    onDismiss: any;
+    onDismiss?: () => void;
     texts: IText;
     showExpertModeAcknowledgement: boolean;
     setShowExpertModeAcknowledgement: Dispatch<SetStateAction<boolean>> | any;
