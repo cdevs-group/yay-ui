@@ -30,7 +30,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
           </CurrencyName>
         </Flex>
         <Price>{priceFrom}</Price> */}
-        <RowFixed gap="0px">{currencyFrom}</RowFixed>
+        <RowFixed gap="0px">{currencyFrom?.shortName}</RowFixed>
         <RowFixed gap="0px">
           <Text fontSize="24px" ml="10px">
             {currencyFromSymbol}
@@ -49,7 +49,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
           </CurrencyName>
         </Flex>
         <Price>{priceTo}</Price> */}
-        <RowFixed gap="0px">{currencyTo}</RowFixed>
+        <RowFixed gap="0px">{currencyTo?.shortName}</RowFixed>
         <RowFixed gap="0px">
           <Text fontSize="24px" ml="10px">
             {currencyToSymbol}

@@ -20,8 +20,14 @@ export interface SwapModalFooterProps {
 
 export interface SwapModalHeaderProps {
   texts: {
+    truncatedTextFrom: string;
+    truncatedTextTo: string;
+    currencySymbolFrom: string;
+    currencySymbolTo: string;
     priceUpdated: string;
     accept: string;
+    estimatedText: string;
+    recipientSentToText: string;
   };
   outputEstimates: React.ReactNode | string;
   recipientSentToText: React.ReactNode | string;
@@ -32,4 +38,5 @@ export interface SwapModalHeaderProps {
   currencyFrom: React.ReactNode;
   currencyFromSymbol: React.ReactNode;
   currencyToSymbol: React.ReactNode;
+  priceFrom: string | number;
 }

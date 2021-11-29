@@ -9,7 +9,7 @@ import CurrencySearch from "./components/CurrencySearchModal/CurrencySearch";
 import AddressInputPanel from "./components/AddressInputPanel";
 import { AdvancedSwapDetails } from "./components/AdvancedSwapDetails";
 import AdvancedSwapDetailsDropdown from "./components/AdvancedSwapDetailsDropdown";
-import ConfirmSwapModal from "./components/ConfirmSwapModal";
+// import ConfirmSwapModal from "./components/ConfirmSwapModal";
 import ProgressCircles from "./components/ProgressSteps";
 import SwapModalFooter from "./components/SwapModalFooter";
 import SwapModalHeader from "./components/SwapModalHeader";
@@ -22,7 +22,7 @@ import SwapWarningModal from "./components/SwapWarningModal";
 import UnsupportedCurrencyFooter from "./components/UnsupportedCurrencyFooter";
 import GlobalSettings from "./components/SettingsModal";
 import { AppHeader } from "./components/App";
-import Swap from "./SwapCard";
+// import Swap from "./SwapCard";
 import { YAY_TOKEN_GREEN } from "../../constants/images";
 
 export default {
@@ -47,7 +47,7 @@ export const SwapRouteBlock = () => {
 
   return (
     <div>
-      <SwapRoute trade={trade} />
+      <SwapRoute unwrappedToken={(e: any) => e} trade={trade} />
     </div>
   );
 };
@@ -134,6 +134,7 @@ export const AdvancedSwapDetailsBlock = () => {
     <AdvancedSwapDetails
       trade={trade}
       lastTrade={trade}
+      unwrappedToken={(e: any) => e}
       routeText="Text"
       routingFromToken="Routing From Token Text"
       tradeSummaryTexts={{
@@ -160,6 +161,7 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
     <AdvancedSwapDetailsDropdown
       trade={trade}
       lastTrade={trade}
+      unwrappedToken={(e: any) => e}
       routeText="Text"
       routingFromToken="Routing From Token Text"
       tradeSummaryTexts={{
@@ -181,89 +183,108 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
   );
 };
 
-export const ConfirmSwapModalBlock = () => {
-  const currencyFrom = {
-    shortName: "YAY",
-    fullName: "YAY Games",
-    logo: YAY_TOKEN_GREEN,
-  };
-  const currencyTo = {
-    shortName: "BNB",
-    fullName: "Binance Chain",
-    logo: YAY_TOKEN_GREEN,
-  };
-
-  return (
-    <ConfirmSwapModal
-      onDismiss={() => null}
-      trade={trade}
-      attemptingTxn={false}
-      recipient="recipient"
-      allowedSlippage={1}
-      onAcceptChanges={() => null}
-      onConfirm={() => null}
-      customOnDismiss={() => null}
-      pendingText="Pending Text"
-      modalTitle="Swap Modal"
-      dismissText="Dismiss Text"
-      executionPrice="0.6545 YAY / BNB"
-      minimusReceived="1 BNB"
-      priceImpact="5%"
-      contentTexts={{
-        confirmationWaiting: "Confirmation Waiting",
-        transactionConfirm: "Transaction Confirm",
-      }}
-      chainId="12346789"
-      registerToken={(address: string, symbol: string, decimals: number) => null}
-      bscScanLink="https://storybook.js.org/"
-      transSubmittedText="Transaction Submitted Text"
-      bscScanLinkText="BscScan Link Text"
-      metamaskAssetText="Metamask Asset Text"
-      btnCloseText="Close"
-      isMetaMask={true}
-      token="token"
-      currencyFrom={currencyFrom}
-      currencyTo={currencyTo}
-      priceTo="1.123"
-      priceFrom={0.578}
-      buttonSwapProps={{ spin: true, disabled: true }}
-      outputEstimates="Output is estimated. You wil receive at least 0`7890 YAY or the transactions will revert."
-      swapModalHeaderTexts={{
-        truncatedTextFrom: "0.001 BND",
-        truncatedTextTo: "1 BUSD",
-        currencySymbolFrom: "Currency Symbol From",
-        currencySymbolTo: "Currency Symbol To",
-        priceUpdated: "Price Updated",
-        accept: "Accept",
-        estimatedText: "Estimated Text",
-        recipientSentToText: "Recipient Sent To Text",
-      }}
-      swapModalFooterTexts={{
-        price: "Price",
-        executionPrice: "Execution Price",
-        receivedOrSold: "Received Or Sold",
-        transactionRevert: "Transaction Revert",
-        slippageAdjustedAmounts: "Slippage Adjusted Amounts",
-        priceImpact: "Price Impact",
-        differencePrice: "Difference Price",
-        liquidityProviderFee: "Liquidity Provider Fee",
-        amountFee: "Amount Fee Text",
-        amountLP: "Amount LP Text",
-        amountTreasury: "Amount Treasury Text",
-        amountTowards: "Amount Towards Text",
-        currencySymbolTop: "Currency Symbol Top",
-        currencySymbolBottom: "Currency Symbol Bottom",
-        buttonSwap: "Swap",
-      }}
-      errorText={<div>Some Error Text</div>}
-      buttonSwapHandler={() => console.log("swap")}
-      truncatedTextColorFrom="green"
-      truncatedTextColorTo="yellow"
-      showAcceptChanges={true}
-      buttonSwap={<Button variant="green">Swap</Button>}
-    />
-  );
-};
+//  export const ConfirmSwapModalBlock = () => {
+//    const currencyFrom = {
+//      shortName: "YAY",
+//      fullName: "YAY Games",
+//      logo: YAY_TOKEN_GREEN,
+//    };
+//    const currencyTo = {
+//      shortName: "BNB",
+//      fullName: "Binance Chain",
+//      logo: YAY_TOKEN_GREEN,
+{
+  /*   };*/
+}
+//
+//    return (
+// <ConfirmSwapModal
+{
+  /*      onDismiss={() => null}*/
+}
+{
+  /*      trade={trade}*/
+}
+{
+  /*      attemptingTxn={false}*/
+}
+//        recipient="recipient"
+//        allowedSlippage={1}
+//        onAcceptChanges={() => null}
+//        onConfirm={() => null}
+//        customOnDismiss={() => null}
+//        pendingText="Pending Text"
+//        modalTitle="Swap Modal"
+//        dismissText="Dismiss Text"
+//        executionPrice="0.6545 YAY / BNB"
+//        minimusReceived="1 BNB"
+//        priceImpact="5%"
+//        contentTexts={{
+//          confirmationWaiting: "Confirmation Waiting",
+//          transactionConfirm: "Transaction Confirm",
+//        }}
+//        chainId="12346789"
+//        registerToken={(address: string, symbol: string, decimals: number) => null}
+//        bscScanLink="https://storybook.js.org/"
+//        transSubmittedText="Transaction Submitted Text"
+//        bscScanLinkText="BscScan Link Text"
+//        metamaskAssetText="Metamask Asset Text"
+{
+  /*      btnCloseText="Close"*/
+}
+//        isMetaMask={true}
+{
+  /*       token="token"*/
+}
+//        currencyFrom={currencyFrom}
+//        currencyTo={currencyTo}
+//        priceTo="1.123"
+//        priceFrom={0.578}
+//        buttonSwapProps={{ spin: true, disabled: true }}
+//        outputEstimates="Output is estimated. You wil receive at least 0`7890 YAY or the transactions will revert."
+//        swapModalHeaderTexts={{
+//          truncatedTextFrom: "0.001 BND",
+//          truncatedTextTo: "1 BUSD",
+//          currencySymbolFrom: "Currency Symbol From",
+//          currencySymbolTo: "Currency Symbol To",
+//          priceUpdated: "Price Updated",
+//          accept: "Accept",
+//          estimatedText: "Estimated Text",
+//         recipientSentToText: "Recipient Sent To Text",
+//        }}
+//        swapModalFooterTexts={{
+//         price: "Price",
+//          executionPrice: "Execution Price",
+//         receivedOrSold: "Received Or Sold",
+{
+  /*        transactionRevert: "Transaction Revert",*/
+}
+{
+  /*   slippageAdjustedAmounts: "Slippage Adjusted Amounts",*/
+}
+{
+  /*         priceImpact: "Price Impact",*/
+}
+//      differencePrice: "Difference Price",
+//        liquidityProviderFee: "Liquidity Provider Fee",
+//      amountFee: "Amount Fee Text",
+//       amountLP: "Amount LP Text",
+//        amountTreasury: "Amount Treasury Text",
+//      amountTowards: "Amount Towards Text",
+//     currencySymbolTop: "Currency Symbol Top",
+//       currencySymbolBottom: "Currency Symbol Bottom",
+//         buttonSwap: "Swap",
+//
+//      }}
+//     errorText={<div>Some Error Text</div>}
+//    buttonSwapHandler={() => console.log("swap")}
+//      truncatedTextColorFrom="green"
+//      truncatedTextColorTo="yellow"
+//    showAcceptChanges={true}
+//    buttonSwap={<Button variant="green">Swap</Button>}
+//   />
+//  );
+// };
 
 export const ProgressStepsBlock = () => {
   return <ProgressCircles steps={[true, true, false, true, false, true, true]} disabled={false} />;
@@ -505,239 +526,239 @@ export const AppHeaderBlock = () => {
   );
 };
 
-export const SwapBlock = () => {
-  const Container = styled.div`
-    display: flex;
-    justify-content: center;
-  `;
-  return (
-    <Container>
-      <Swap
-        currencyInputPanelFrom={{
-          value: "0.0",
-          onUserInput: (value: string) => null,
-          onMax: () => null,
-          showMaxButton: true,
-          label: "Some Label Text",
-          disableCurrencySelect: false,
-          hideInput: false,
-          id: "123456789",
-          account: "account",
-          onPresentCurrencyModal: () => null,
-          сurrencyLogo: <p>Some Currency Logo</p>,
-          doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
-          texts: {
-            translatedLabel: "From",
-            balance: "Balance",
-            numericalInputTitle: "Numerical Input Title",
-            max: "Max",
-            currencySelect: "Currency",
-          },
-        }}
-        currencyInputPanelTo={{
-          value: "0.0",
-          onUserInput: (value: string) => null,
-          onMax: () => null,
-          showMaxButton: true,
-          label: "Some Label Text",
-          disableCurrencySelect: false,
-          hideInput: false,
-          id: "123456789",
-          account: "account",
-          onPresentCurrencyModal: () => null,
-          сurrencyLogo: <p>Some Currency Logo</p>,
-          doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
-          texts: {
-            translatedLabel: "To",
-            balance: "Balance",
-            numericalInputTitle: "Numerical Input Title",
-            max: "Max",
-            currencySelect: "Currency",
-          },
-        }}
-        appHeader={{
-          title: "App Title",
-          subtitle: "App Subtitle",
-          expertMode: false,
-          account: "account",
-          onDismiss: () => null,
-          texts: {
-            modalTitle: "Recent Transactions",
-            modalBodyText: "Recent Transactions",
-            ModalButton: "Clear All",
-            ModalAlternativeText: "Modal Alternative Lorem Text",
-          },
-          pendingTransaction: transaction,
-          confirmedTransaction: transaction,
-          clearAllTransactionsCallback: () => null,
-          ConnectWalletButton: <Button>Button</Button>,
-          chainId: "123456789",
-          bscScanLink: "https://storybook.js.org/",
-          summary: "MMИСМИ",
-          pending: true,
-          success: true,
-        }}
-        ArrowDownIconComponent={{
-          color: "green",
-          onClick: () => null,
-        }}
-        AddressInputPanelComponent={{
-          id: "12345",
-          value: "Some Test Value",
-          onChange: () => null,
-          linkText: "Link Text",
-          recipientText: "Recipient Text",
-          inputPlaceholderText: "Input Placeholder Text",
-          ENS: { address: "Address", loading: false, name: "Some Name" },
-          chainId: 123456789,
-          bscScanLink: "https://storybook.js.org/",
-        }}
-        AdvancedSwapDetailsDropdownComponent={{
-          trade: trade,
-          lastTrade: trade,
-          routeText: "Text",
-          routingFromToken: "Routing From Token Text",
-          tradeSummaryTexts: {
-            receivedOrSold: "Received Or Sold Text",
-            slippageAdjusted: "Slippage Adjusted Text",
-            transactionHelper: "Transaction Helper Text",
-            priceImpact: "Price Impact Text",
-            priceDifference: "Price Difference Text",
-            fee: "Fee Text",
-            amountFee: "Amount Fee Text",
-            amountLP: "Amount LP Text",
-            amountTreasury: "Amount Treasury Text",
-            amountTowards: "Amount Towards Text",
-            realizedLPFeeText: "Realized LP Fee Text",
-          },
-          errorText: <div>Some Error Text</div>,
-          showRoute: true,
-        }}
-        ConnectWalletButton={
-          <Button width="100%" variant="green" marginTop="25px">
-            Connect Wallet
-          </Button>
-        }
-        swapIsUnsupported={false}
-        showFooter={false}
-        showWrap={false}
-        noRoute={true}
-        showApproveFlow={false}
-        trade={trade}
-        allowedSlippage={100}
-        UnsupportedCurrencyFooterComponent={{
-          tokens: tokens,
-          srcs: srcs,
-          isEther: true,
-          chainId: "123456789",
-          bscScanLink: "https://storybook.js.org/",
-          unsupportedTokens: {
-            address: "https://storybook.js.org/",
-          },
-        }}
-        texts={{
-          removeSendButton: "Remove Send Button",
-          priceLabel: "Price Label",
-          slippageToleranceLabel: "Slippage Tolerance",
-          unsupportedAssetButton: "Unsupported Asset Button",
-          wrapOrUnwrapButton: "Wrap Or Unwrap Button",
-          approvalButton: "Approval Button",
-          priceImpactSeverityButton: "Price Impact Severity Button",
-          liquidityText: "Liquidity Text",
-          priceImpactSeverityButtonError: "Price Impact Severity Button Error",
-          recipientButton: "Recipient Button",
-        }}
-        TradePriceComponent={{
-          price: true,
-          showInverted: true,
-          setShowInverted: () => null,
-          show: true,
-          label: "label",
-          formattedPrice: "1231",
-        }}
-        ProgressStepsComponent={{
-          steps: [true, true, true, false, true, false, false, true],
-          disabled: false,
-        }}
-        SwapCallbackErrorText="Swap Callback Error Text"
-        ConfirmSwapModalComponent={{
-          trade: trade,
-          attemptingTxn: false,
-          recipient: "recipient",
-          allowedSlippage: 1,
-          onAcceptChanges: () => null,
-          onConfirm: () => null,
-          customOnDismiss: () => null,
-          pendingText: "Pending Text",
-          modalTitle: "Modal Title",
-          dismissText: "Dismiss Text",
-          contentTexts: {
-            confirmationWaiting: "Confirmation Waiting",
-            transactionConfirm: "Transaction Confirm",
-          },
-          chainId: "12346789",
-          registerToken: (address: string, symbol: string, decimals: number) => null,
-          bscScanLink: "https://storybook.js.org/",
-          transSubmittedText: "Transaction Submitted Text",
-          bscScanLinkText: "BscScan Link Text",
-          metamaskAssetText: "Metamask Asset Text",
-          btnCloseText: "Close",
-          isMetaMask: true,
-          token: "token",
-          swapModalHeaderTexts: {
-            truncatedTextFrom: "0.001 BND",
-            truncatedTextTo: "1 BUSD",
-            currencySymbolFrom: "Currency Symbol From",
-            currencySymbolTo: "Currency Symbol To",
-            priceUpdated: "Price Updated",
-            accept: "Accept",
-            estimatedText: "Estimated Text",
-            recipientSentToText: "Recipient Sent To Text",
-          },
-          swapModalFooterTexts: {
-            price: "Price",
-            executionPrice: "Execution Price",
-            receivedOrSold: "Received Or Sold",
-            transactionRevert: "Transaction Revert",
-            slippageAdjustedAmounts: "Slippage Adjusted Amounts",
-            priceImpact: "Price Impact",
-            differencePrice: "Difference Price",
-            liquidityProviderFee: "Liquidity Provider Fee",
-            amountFee: "Amount Fee Text",
-            amountLP: "Amount LP Text",
-            amountTreasury: "Amount Treasury Text",
-            amountTowards: "Amount Towards Text",
-            currencySymbolTop: "Currency Symbol Top",
-            currencySymbolBottom: "Currency Symbol Bottom",
-            buttonSwap: "Swap Button",
-          },
-          errorText: <div>Some Error Text</div>,
-          buttonSwap: <Button>Button</Button>,
-          truncatedTextColorFrom: "green",
-          truncatedTextColorTo: "yellow",
-          showAcceptChanges: true,
-          priceImpact: "Price Impact",
-          buttonSwapProps: {
-            variant: "green",
-          },
-          executionPrice: "Execution Price",
-          minimusReceived: "Minimus Received",
-          buttonSwapHandler: () => null,
-          currencyFrom: {
-            shortName: "Short Name",
-            fullName: "Full Name",
-            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-          },
-          currencyTo: {
-            shortName: "Short Name",
-            fullName: "Full Name",
-            logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-          },
-          priceFrom: "0.0",
-          priceTo: "0.0",
-          outputEstimates: "Output Estimates",
-        }}
-      />
-    </Container>
-  );
-};
+// export const SwapBlock = () => {
+//   const Container = styled.div`
+//     display: flex;
+//     justify-content: center;
+//   `;
+//   return (
+//     <Container>
+//       <Swap
+//         currencyInputPanelFrom={{
+//           value: "0.0",
+//           onUserInput: (value: string) => null,
+//           onMax: () => null,
+//           showMaxButton: true,
+//           label: "Some Label Text",
+//           disableCurrencySelect: false,
+//           hideInput: false,
+//           id: "123456789",
+//           account: "account",
+//           onPresentCurrencyModal: () => null,
+//           сurrencyLogo: <p>Some Currency Logo</p>,
+//           doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
+//           texts: {
+//             translatedLabel: "From",
+//             balance: "Balance",
+//             numericalInputTitle: "Numerical Input Title",
+//             max: "Max",
+//             currencySelect: "Currency",
+//           },
+//         }}
+//         currencyInputPanelTo={{
+//           value: "0.0",
+//           onUserInput: (value: string) => null,
+//           onMax: () => null,
+//           showMaxButton: true,
+//           label: "Some Label Text",
+//           disableCurrencySelect: false,
+//           hideInput: false,
+//           id: "123456789",
+//           account: "account",
+//           onPresentCurrencyModal: () => null,
+//           сurrencyLogo: <p>Some Currency Logo</p>,
+//           doubleCurrencyLogo: <p>Some Double Currency Logo</p>,
+//           texts: {
+//             translatedLabel: "To",
+//             balance: "Balance",
+//             numericalInputTitle: "Numerical Input Title",
+//             max: "Max",
+//             currencySelect: "Currency",
+//           },
+//         }}
+//         appHeader={{
+//           title: "App Title",
+//           subtitle: "App Subtitle",
+//           expertMode: false,
+//           account: "account",
+//           onDismiss: () => null,
+//           texts: {
+//             modalTitle: "Recent Transactions",
+//             modalBodyText: "Recent Transactions",
+//             ModalButton: "Clear All",
+//             ModalAlternativeText: "Modal Alternative Lorem Text",
+//           },
+//           pendingTransaction: transaction,
+//           confirmedTransaction: transaction,
+//           clearAllTransactionsCallback: () => null,
+//           ConnectWalletButton: <Button>Button</Button>,
+//           chainId: "123456789",
+//           bscScanLink: "https://storybook.js.org/",
+//           summary: "MMИСМИ",
+//           pending: true,
+//           success: true,
+//         }}
+//         ArrowDownIconComponent={{
+//           color: "green",
+//           onClick: () => null,
+//         }}
+//         AddressInputPanelComponent={{
+//           id: "12345",
+//           value: "Some Test Value",
+//           onChange: () => null,
+//           linkText: "Link Text",
+//           recipientText: "Recipient Text",
+//           inputPlaceholderText: "Input Placeholder Text",
+//           ENS: { address: "Address", loading: false, name: "Some Name" },
+//           chainId: 123456789,
+//           bscScanLink: "https://storybook.js.org/",
+//         }}
+//         AdvancedSwapDetailsDropdownComponent={{
+//           trade: trade,
+//           lastTrade: trade,
+//           routeText: "Text",
+//           routingFromToken: "Routing From Token Text",
+//           tradeSummaryTexts: {
+//             receivedOrSold: "Received Or Sold Text",
+//             slippageAdjusted: "Slippage Adjusted Text",
+//             transactionHelper: "Transaction Helper Text",
+//             priceImpact: "Price Impact Text",
+//             priceDifference: "Price Difference Text",
+//             fee: "Fee Text",
+//             amountFee: "Amount Fee Text",
+//             amountLP: "Amount LP Text",
+//             amountTreasury: "Amount Treasury Text",
+//             amountTowards: "Amount Towards Text",
+//             realizedLPFeeText: "Realized LP Fee Text",
+//           },
+//           errorText: <div>Some Error Text</div>,
+//           showRoute: true,
+//         }}
+//         ConnectWalletButton={
+//           <Button width="100%" variant="green" marginTop="25px">
+//             Connect Wallet
+//           </Button>
+//         }
+//         swapIsUnsupported={false}
+//         showFooter={false}
+//         showWrap={false}
+//         noRoute={true}
+//         showApproveFlow={false}
+//         trade={trade}
+//         allowedSlippage={100}
+//         UnsupportedCurrencyFooterComponent={{
+//           tokens: tokens,
+//           srcs: srcs,
+//           isEther: true,
+//           chainId: "123456789",
+//           bscScanLink: "https://storybook.js.org/",
+//           unsupportedTokens: {
+//             address: "https://storybook.js.org/",
+//           },
+//         }}
+//         texts={{
+//           removeSendButton: "Remove Send Button",
+//           priceLabel: "Price Label",
+//           slippageToleranceLabel: "Slippage Tolerance",
+//           unsupportedAssetButton: "Unsupported Asset Button",
+//           wrapOrUnwrapButton: "Wrap Or Unwrap Button",
+//           approvalButton: "Approval Button",
+//           priceImpactSeverityButton: "Price Impact Severity Button",
+//           liquidityText: "Liquidity Text",
+//           priceImpactSeverityButtonError: "Price Impact Severity Button Error",
+//           recipientButton: "Recipient Button",
+//         }}
+//         TradePriceComponent={{
+//           price: true,
+//           showInverted: true,
+//           setShowInverted: () => null,
+//           show: true,
+//           label: "label",
+//           formattedPrice: "1231",
+//         }}
+//         ProgressStepsComponent={{
+//           steps: [true, true, true, false, true, false, false, true],
+//           disabled: false,
+//         }}
+//         SwapCallbackErrorText="Swap Callback Error Text"
+//         ConfirmSwapModalComponent={{
+//           trade: trade,
+//           attemptingTxn: false,
+//           recipient: "recipient",
+//           allowedSlippage: 1,
+//           onAcceptChanges: () => null,
+//           onConfirm: () => null,
+//           customOnDismiss: () => null,
+//           pendingText: "Pending Text",
+//           modalTitle: "Modal Title",
+//           dismissText: "Dismiss Text",
+//           contentTexts: {
+//             confirmationWaiting: "Confirmation Waiting",
+//             transactionConfirm: "Transaction Confirm",
+//           },
+//           chainId: "12346789",
+//           registerToken: (address: string, symbol: string, decimals: number) => null,
+//           bscScanLink: "https://storybook.js.org/",
+//           transSubmittedText: "Transaction Submitted Text",
+//           bscScanLinkText: "BscScan Link Text",
+//           metamaskAssetText: "Metamask Asset Text",
+//           btnCloseText: "Close",
+//           isMetaMask: true,
+//           token: "token",
+//           swapModalHeaderTexts: {
+//             truncatedTextFrom: "0.001 BND",
+//             truncatedTextTo: "1 BUSD",
+//             currencySymbolFrom: "Currency Symbol From",
+//             currencySymbolTo: "Currency Symbol To",
+//             priceUpdated: "Price Updated",
+//             accept: "Accept",
+//             estimatedText: "Estimated Text",
+//             recipientSentToText: "Recipient Sent To Text",
+//           },
+//           swapModalFooterTexts: {
+//             price: "Price",
+//             executionPrice: "Execution Price",
+//             receivedOrSold: "Received Or Sold",
+//             transactionRevert: "Transaction Revert",
+//             slippageAdjustedAmounts: "Slippage Adjusted Amounts",
+//             priceImpact: "Price Impact",
+//             differencePrice: "Difference Price",
+//             liquidityProviderFee: "Liquidity Provider Fee",
+//             amountFee: "Amount Fee Text",
+//             amountLP: "Amount LP Text",
+//             amountTreasury: "Amount Treasury Text",
+//             amountTowards: "Amount Towards Text",
+//             currencySymbolTop: "Currency Symbol Top",
+//             currencySymbolBottom: "Currency Symbol Bottom",
+//             buttonSwap: "Swap Button",
+//           },
+//           errorText: <div>Some Error Text</div>,
+//           buttonSwap: <Button>Button</Button>,
+//           truncatedTextColorFrom: "green",
+//           truncatedTextColorTo: "yellow",
+//           showAcceptChanges: true,
+//           priceImpact: "Price Impact",
+//           buttonSwapProps: {
+//             variant: "green",
+//           },
+//           executionPrice: "Execution Price",
+//           minimusReceived: "Minimus Received",
+//           buttonSwapHandler: () => null,
+//           currencyFrom: {
+//             shortName: "Short Name",
+//             fullName: "Full Name",
+//             logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+//           },
+//           currencyTo: {
+//             shortName: "Short Name",
+//             fullName: "Full Name",
+//             logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
+//           },
+//           priceFrom: "0.0",
+//           priceTo: "0.0",
+//           outputEstimates: "Output Estimates",
+//         }}
+//       />
+//     </Container>
+//   );
+// };
