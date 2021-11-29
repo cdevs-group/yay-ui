@@ -40,7 +40,7 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> =
   renderTransactions,
 }) => {
   const { modalTitle, modalBodyText, modalButton, modalAlternativeText } = texts;
-
+  console.log(ConnectWalletButton, "ConnectWalletButton");
   return (
     <Modal title={modalTitle} onDismiss={onDismiss} welcome padding={0}>
       {account ? (
@@ -61,7 +61,7 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> =
           )}
         </ModalBody>
       ) : (
-        <>{ConnectWalletButton}</>
+        <>{/* {ConnectWalletButton} */}</>
       )}
     </Modal>
   );

@@ -11360,12 +11360,13 @@ var StyledText = styled__default["default"](Text)(templateObject_1$f || (templat
 var TransactionsModal = function (_a) {
     var account = _a.account, onDismiss = _a.onDismiss, texts = _a.texts, pending = _a.pending, confirmed = _a.confirmed, clearAllTransactionsCallback = _a.clearAllTransactionsCallback, ConnectWalletButton = _a.ConnectWalletButton, renderTransactions = _a.renderTransactions;
     var modalTitle = texts.modalTitle, modalBodyText = texts.modalBodyText, modalButton = texts.modalButton, modalAlternativeText = texts.modalAlternativeText;
+    console.log(ConnectWalletButton, 'ConnectWalletButton');
     return (React__default["default"].createElement(Modal$1, { title: modalTitle, onDismiss: onDismiss, welcome: true, padding: 0 }, account ? (React__default["default"].createElement(ModalBody, { p: "27px" }, !!pending.length || !!confirmed.length ? (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(AutoRow, { mb: "1rem", style: { justifyContent: "space-between" } },
             React__default["default"].createElement(StyledText, null, modalBodyText),
             React__default["default"].createElement(Button$9, { scale: "sm", variant: "text", onClick: clearAllTransactionsCallback }, modalButton)),
         renderTransactions(pending),
-        renderTransactions(confirmed))) : (React__default["default"].createElement(Text, null, modalAlternativeText)))) : (React__default["default"].createElement(React__default["default"].Fragment, null, ConnectWalletButton))));
+        renderTransactions(confirmed))) : (React__default["default"].createElement(Text, null, modalAlternativeText)))) : (React__default["default"].createElement(React__default["default"].Fragment, null))));
 };
 var templateObject_1$f;
 
