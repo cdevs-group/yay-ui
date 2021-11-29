@@ -1,3 +1,4 @@
+export {};
 // import React, { useCallback, useMemo } from "react";
 // import { InjectedModalProps } from "../../Modal";
 // import TransactionConfirmationModal, {
