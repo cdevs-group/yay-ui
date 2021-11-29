@@ -18,7 +18,6 @@ interface CurrencySearchProps {
   searchToken: any;
   searchQuery: any;
   commonBases: ReactNode;
-  inputRef: any;
   filteredSortedTokens: any;
   filteredInactiveTokens: any;
   imgNoResult?: ReactNode;
@@ -30,7 +29,6 @@ function CurrencySearch({
   searchQuery,
   filteredSortedTokens,
   filteredInactiveTokens,
-  inputRef,
   commonBases,
   searchTokenIsAdded,
   searchToken,
@@ -41,6 +39,13 @@ function CurrencySearch({
   imgNoResult,
   handleEnter,
 }: CurrencySearchProps) {
+  // manage focus on modal show
+  const inputRef = useRef<HTMLInputElement>()
+
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
+
   return (
     <>
       <div>
