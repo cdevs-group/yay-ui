@@ -3,6 +3,7 @@ import { Text } from "../../../components/Text";
 
 export const Wrapper = styled.div<{ margin?: string }>`
   margin: ${({ margin }) => margin || 0};
+  position: relative;
 `;
 export const TitleStyle = styled(Text)`
   margin-bottom: 10px;

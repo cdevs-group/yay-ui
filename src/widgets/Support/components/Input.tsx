@@ -1,6 +1,8 @@
 import React from "react";
 import { Wrapper, TitleStyle } from "./styles";
 import styled from "styled-components";
+import { Text } from "../../../components/Text";
+import { baseColors } from "../../../theme/colors";
 
 const Input = ({
   title,
@@ -10,6 +12,7 @@ const Input = ({
   value,
   onChange,
   textArea,
+  inputError,
 }: {
   textArea?: boolean;
   onChange: (e: any) => void;
@@ -18,14 +21,29 @@ const Input = ({
   title: string;
   margin?: string;
   placeholder: string;
+  inputError?: string;
 }) => {
   return (
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
       {textArea ? (
-        <InputArea name={name} value={value} onChange={onChange} placeholder={placeholder} />
+        <>
+          <InputArea name={name} value={value} onChange={onChange} placeholder={placeholder} />
+          {inputError && (
+            <TextStyle color={baseColors.darkPink} fontSize="13px">
+              {inputError}
+            </TextStyle>
+          )}
+        </>
       ) : (
-        <InputBlock name={name} value={value} onChange={onChange} placeholder={placeholder} />
+        <>
+          <InputBlock name={name} value={value} onChange={onChange} placeholder={placeholder} />
+          {inputError && (
+            <TextStyle color={baseColors.darkPink} fontSize="13px">
+              {inputError}
+            </TextStyle>
+          )}
+        </>
       )}
     </Wrapper>
   );
@@ -65,4 +83,8 @@ const InputBlock = styled.input`
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
+`;
+const TextStyle = styled(Text)`
+  position: absolute;
+  bottom: -25px;
 `;

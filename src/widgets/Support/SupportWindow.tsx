@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Select from "./components/Select";
 import Input from "./components/Input";
 import { Button } from "../../components/Button";
-import { IStateInput, ITexts } from "./types";
+import { IStateInput, IStateInputError, ITexts } from "./types";
 import TitlePage from "./components/TitlePage";
+import NoticeModal from "./components/NoticeModal";
 
 const SupportWindow = ({
   texts,
@@ -13,6 +14,12 @@ const SupportWindow = ({
   product,
   handleButton,
   points,
+  networks,
+  inputError,
+  modalOpen,
+  modalClick,
+  noteSuccess,
+  titleSuccess,
 }: {
   points: ReactNode[];
   handleButton: () => void | Promise<void>;
@@ -20,63 +27,90 @@ const SupportWindow = ({
   product: string[];
   state: IStateInput;
   handleInput: (e: any) => void;
+  inputError?: IStateInputError;
+  networks: string[];
+  modalOpen: boolean;
+  modalClick: () => void;
+  noteSuccess: ReactNode;
+  titleSuccess: string;
 }) => {
   return (
     <div style={{ maxWidth: "520px", margin: "0 auto" }}>
-      <TitlePage points={points} title={texts.title} note={texts.note} />
-      <StyledSupport>
-        <Select
-          margin="0 0 21px"
-          handleSelect={handleInput}
-          optionsList={product}
-          selectTarget={state["product"]}
-          title={texts.product}
-          name="product"
-        />
-        {/*<Select margin="0 0 25px"*/}
-        {/*        handleSelect={handleInput}*/}
-        {/*        optionsList={issues}*/}
-        {/*        selectTarget={state['issue']}*/}
-        {/*        title="Issue severity"*/}
-        {/*        name={texts.issue}*/}
-        {/*/>*/}
-        <Input
-          title={texts.problem}
-          margin="0 0 25px"
-          placeholder={texts.problemPlaceholder}
-          onChange={handleInput}
-          name="problem"
-          textArea
-          value={state["problem"]}
-        />
-        <Input
-          title={texts.email}
-          margin="0 0 25px"
-          placeholder={texts.emailPlaceholder}
-          onChange={handleInput}
-          name="email"
-          value={state["email"]}
-        />
-        <Input
-          title={texts.address}
-          margin="0 0 25px"
-          placeholder={texts.addressPlaceholder}
-          onChange={handleInput}
-          name="address"
-          value={state["address"]}
-        />
-        <Input
-          title={texts.txHash}
-          margin="0 0 45px"
-          placeholder={texts.txHashPlaceholder}
-          onChange={handleInput}
-          name="txHash"
-          value={state["txHash"]}
-        />
-        <Button onClick={handleButton} width="100%" variant="green">
-          {texts.button}
-        </Button>
-      </StyledSupport>
+      {!modalOpen ? (
+        <>
+          {" "}
+          <TitlePage points={points} title={texts.title} note={texts.note} />
+          <StyledSupport>
+            <Select
+              margin="0 0 21px"
+              handleSelect={handleInput}
+              optionsList={product}
+              selectTarget={state["product"]}
+              title={texts.product}
+              name="product"
+            />
+
+            <Select
+              margin="0 0 25px"
+              handleSelect={handleInput}
+              optionsList={networks}
+              selectTarget={state["networks"]}
+              title={texts.networks}
+              name="networks"
+            />
+            <Input
+              title={texts.problem}
+              margin="0 0 25px"
+              placeholder={texts.problemPlaceholder}
+              onChange={handleInput}
+              name="problem"
+              textArea
+              value={state["problem"]}
+              inputError={inputError?.problem}
+            />
+            <Input
+              title={texts.email}
+              margin="0 0 25px"
+              placeholder={texts.emailPlaceholder}
+              onChange={handleInput}
+              name="email"
+              value={state["email"]}
+              inputError={inputError?.email}
+            />
+            <Input
+              title={texts.address}
+              margin="0 0 25px"
+              placeholder={texts.addressPlaceholder}
+              onChange={handleInput}
+              name="address"
+              value={state["address"]}
+              inputError={inputError?.address}
+            />
+            <Input
+              title={texts.txHash}
+              margin="0 0 45px"
+              placeholder={texts.txHashPlaceholder}
+              onChange={handleInput}
+              name="txHash"
+              value={state["txHash"]}
+              inputError={inputError?.txHash}
+            />
+            <Button onClick={handleButton} width="100%" variant="green">
+              {texts.button}
+            </Button>
+          </StyledSupport>
+        </>
+      ) : (
+        <>
+          <TitlePage title={titleSuccess} note={noteSuccess} />
+          <NoticeModal
+            onClick={modalClick}
+            text={texts.modalText}
+            button={texts.modalButton}
+            title={texts.modalTitle}
+          />
+        </>
+      )}
     </div>
   );
 };

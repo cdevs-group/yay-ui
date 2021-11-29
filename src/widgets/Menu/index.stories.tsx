@@ -460,9 +460,9 @@ export const HeaderSimple = () => {
           logout={noop}
           isDark={false}
           toggleTheme={noop}
-          langs={langs}
-          setLang={noop}
-          currentLang="EN"
+          // langs={langs}
+          // setLang={noop}
+          // currentLang="EN"
           links={links}
           profile={{
             profileLink: "/profile",

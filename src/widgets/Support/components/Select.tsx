@@ -3,6 +3,8 @@ import DropdownLayout from "../../../components/DropDown/DropDown";
 import styled from "styled-components";
 import { Button } from "../../../components/Button";
 import { Wrapper, TitleStyle, InputWrapper } from "./styles";
+import { ArrowDownIcon } from "../../../components/Svg";
+import { Flex } from "../../../components/Box";
 
 const Select = ({
   title,
@@ -37,6 +39,9 @@ const Select = ({
           ))}
         </SelectWrapper>
       </DropdownLayout>
+      <ArrowBlock>
+        <ArrowDownIcon />
+      </ArrowBlock>
     </Wrapper>
   );
 };
@@ -69,4 +74,15 @@ const OptionItem = styled(Button)`
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
+`;
+const ArrowBlock = styled(Flex)`
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: ${({ theme }) => theme.colors.whiteRgba};
+  border-radius: 7px;
+  align-items: center;
+  justify-content: center;
+  right: 15px;
+  bottom: 7px;
 `;

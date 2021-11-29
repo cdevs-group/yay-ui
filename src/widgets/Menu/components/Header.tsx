@@ -89,9 +89,11 @@ const Header: React.FC<NavProps> = ({
                 setOpenDropdown={setOpenDropdown}
               />
             ))}
-            <LanguageBlockMob>
-              <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-            </LanguageBlockMob>
+            {currentLang && (
+              <LanguageBlockMob>
+                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+              </LanguageBlockMob>
+            )}
           </Nav>
           {textsAccount && textsConnect && (
             <RightContent>
@@ -128,18 +130,22 @@ const Header: React.FC<NavProps> = ({
                 buttonLogoutType={buttonLogoutType}
                 linkExternalWalletModal={linkExternalWalletModal}
               />
-              <LanguageBlockDesk>
-                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-              </LanguageBlockDesk>
+              {currentLang && (
+                <LanguageBlockDesk>
+                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+                </LanguageBlockDesk>
+              )}
               <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
             </RightContent>
           )}
           {!textsConnect && !textsConnect && (
             <RightContent>
               {" "}
-              <LanguageBlockDesk>
-                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-              </LanguageBlockDesk>
+              {currentLang && (
+                <LanguageBlockDesk>
+                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+                </LanguageBlockDesk>
+              )}
               <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
             </RightContent>
           )}

@@ -194,12 +194,12 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
 //     fullName: "Binance Chain",
 //     logo: YAY_TOKEN_GREEN,
 //   };
-
 //   return (
 //     <ConfirmSwapModal
 //       onDismiss={() => null}
 //       trade={trade}
 //       attemptingTxn={false}
+
 //       recipient="recipient"
 //       allowedSlippage={1}
 //       onAcceptChanges={() => null}
