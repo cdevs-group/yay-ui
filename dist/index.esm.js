@@ -11326,15 +11326,14 @@ var Transactions = function (_a) {
 
 var StyledText = styled(Text)(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: #a3a3a3;\n"])));
 var TransactionsModal = function (_a) {
-    var account = _a.account, onDismiss = _a.onDismiss, texts = _a.texts, pending = _a.pending, confirmed = _a.confirmed, clearAllTransactionsCallback = _a.clearAllTransactionsCallback, ConnectWalletButton = _a.ConnectWalletButton, renderTransactions = _a.renderTransactions;
+    var account = _a.account, onDismiss = _a.onDismiss, texts = _a.texts, pending = _a.pending, confirmed = _a.confirmed, clearAllTransactionsCallback = _a.clearAllTransactionsCallback, connectWalletButton = _a.connectWalletButton, renderTransactions = _a.renderTransactions;
     var modalTitle = texts.modalTitle, modalBodyText = texts.modalBodyText, modalButton = texts.modalButton, modalAlternativeText = texts.modalAlternativeText;
-    console.log(ConnectWalletButton, 'ConnectWalletButton');
     return (React__default.createElement(Modal$1, { title: modalTitle, onDismiss: onDismiss, welcome: true, padding: 0 }, account ? (React__default.createElement(ModalBody, { p: "27px" }, !!pending.length || !!confirmed.length ? (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(AutoRow, { mb: "1rem", style: { justifyContent: "space-between" } },
             React__default.createElement(StyledText, null, modalBodyText),
             React__default.createElement(Button$9, { scale: "sm", variant: "text", onClick: clearAllTransactionsCallback }, modalButton)),
         renderTransactions(pending),
-        renderTransactions(confirmed))) : (React__default.createElement(Text, null, modalAlternativeText)))) : (React__default.createElement(React__default.Fragment, null))));
+        renderTransactions(confirmed))) : (React__default.createElement(Text, null, modalAlternativeText)))) : (React__default.createElement(React__default.Fragment, null, connectWalletButton))));
 };
 var templateObject_1$f;
 

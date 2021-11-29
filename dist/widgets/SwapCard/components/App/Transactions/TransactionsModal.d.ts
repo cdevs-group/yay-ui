@@ -12,7 +12,7 @@ export interface TransactionsModalProps {
     pending: TransactionProps[];
     confirmed: TransactionProps[];
     clearAllTransactionsCallback: () => void;
-    ConnectWalletButton: React.ReactNode;
+    connectWalletButton: React.ReactNode | React.ReactElement | React.ReactElement[];
     renderTransactions: any;
 }
 declare const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps>;
