@@ -21,7 +21,7 @@ export interface IText {
 }
 
 export interface SettingsModalProps {
-  onDismiss?: () => void
+  onDismiss?: () => void;
   texts: IText;
   showExpertModeAcknowledgement: boolean;
   setShowExpertModeAcknowledgement: Dispatch<SetStateAction<boolean>> | any;
