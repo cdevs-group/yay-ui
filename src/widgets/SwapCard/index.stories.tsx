@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../..";
+import { Button, Text } from "../..";
 
 import TradePrice from "./components/TradePrice";
 import SwapRoute from "./components/SwapRoute";
@@ -47,7 +47,7 @@ export const SwapRouteBlock = () => {
 
   return (
     <div>
-      <SwapRoute trade={trade} />
+      <SwapRoute trade={trade} unwrappedToken={() => {}} />
     </div>
   );
 };
@@ -151,6 +151,7 @@ export const AdvancedSwapDetailsBlock = () => {
       }}
       errorText={<div>Some Error Text</div>}
       showRoute={true}
+      unwrappedToken={() => {}}
     />
   );
 };
@@ -177,6 +178,7 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
       }}
       errorText={<div>Some Error Text</div>}
       showRoute={true}
+      unwrappedToken={() => {}}
     />
   );
 };
@@ -192,18 +194,12 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
 //     fullName: "Binance Chain",
 //     logo: YAY_TOKEN_GREEN,
 //   };
-//
 //   return (
 //     <ConfirmSwapModal
-{
-  /*      onDismiss={() => null}*/
-}
-{
-  /*      trade={trade}*/
-}
-{
-  /*      attemptingTxn={false}*/
-}
+//       onDismiss={() => null}
+//       trade={trade}
+//       attemptingTxn={false}
+
 //       recipient="recipient"
 //       allowedSlippage={1}
 //       onAcceptChanges={() => null}
@@ -225,9 +221,7 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
 //       transSubmittedText="Transaction Submitted Text"
 //       bscScanLinkText="BscScan Link Text"
 //       metamaskAssetText="Metamask Asset Text"
-{
-  /*      btnCloseText="Close"*/
-}
+//       btnCloseText="Close"
 //       isMetaMask={true}
 //       token="token"
 //       currencyFrom={currencyFrom}
@@ -247,19 +241,11 @@ export const AdvancedSwapDetailsDropdownBlock = () => {
 //         recipientSentToText: "Recipient Sent To Text",
 //       }}
 //       swapModalFooterTexts={{
-{
-  /*        price: "Price",*/
-}
+//         price: "Price",
 //         executionPrice: "Execution Price",
-{
-  /*        receivedOrSold: "Received Or Sold",*/
-}
-{
-  /*        transactionRevert: "Transaction Revert",*/
-}
-{
-  /*        slippageAdjustedAmounts: "Slippage Adjusted Amounts",*/
-}
+//         receivedOrSold: "Received Or Sold",
+//         transactionRevert: "Transaction Revert",
+//         slippageAdjustedAmounts: "Slippage Adjusted Amounts",
 //         priceImpact: "Price Impact",
 //         differencePrice: "Difference Price",
 //         liquidityProviderFee: "Liquidity Provider Fee",
@@ -288,33 +274,20 @@ export const ProgressStepsBlock = () => {
 export const SwapModalFooterBlock = () => {
   return (
     <SwapModalFooter
+      buttonSwapProps={{ variant: "primary", onClick: () => {}, disabled: true }}
+      swapErrorMessage="{swapErrorMessage}"
+      priceImpact="{<FormattedPriceImpact priceImpact={priceImpactWithoutFee} />}"
+      executionPrice="0.0656"
       texts={{
         price: "Price",
-        executionPrice: "Execution Price",
-        receivedOrSold: "Received Or Sold",
-        transactionRevert: "Transaction Revert",
-        slippageAdjustedAmounts: "Slippage Adjusted Amounts",
+        receivedOrSold: "Minimum received",
+        slippageAdjustedAmounts: "-",
+        outputAmount: null,
         priceImpact: "Price Impact",
-        differencePrice: "Difference Price",
         liquidityProviderFee: "Liquidity Provider Fee",
-        amountFee: "Amount Fee Text",
-        amountLP: "Amount LP Text",
-        amountTreasury: "Amount Treasury Text",
-        amountTowards: "Amount Towards Text",
-        currencySymbolTop: "Currency Symbol Top",
-        currencySymbolBottom: "Currency Symbol Bottom",
-        buttonSwap: "Swap Button",
+        currencySymbolBottom: "-",
+        buttonSwap: "Swap Anyway",
       }}
-      errorText={<div>Some Error Text</div>}
-      buttonSwap={<Button>Button</Button>}
-      swapErrorMessage="Some Error Message"
-      priceImpact="Price Impact"
-      buttonSwapProps={{
-        variant: "green",
-      }}
-      executionPrice="Execution Price"
-      minimusReceived="Minimus Received"
-      buttonSwapHandler={() => null}
     />
   );
 };
@@ -323,31 +296,38 @@ export const SwapModalHeaderBlock = () => {
   return (
     <SwapModalHeader
       texts={{
-        truncatedTextFrom: "Truncated Text From",
-        truncatedTextTo: "Truncated Text To",
-        currencySymbolFrom: "Currency Symbol From",
-        currencySymbolTo: "Currency Symbol To",
         priceUpdated: "Price Updated",
         accept: "Accept",
-        estimatedText: "Estimated Text",
-        recipientSentToText: "Recipient Sent To Text",
       }}
+      recipientSentToText={<>recipientSentToText truncatedRecipient postSentToText</>}
+      outputEstimates={
+        <>
+          estimatedText
+          <b>amount symbol</b>
+          transactionRevertText
+        </>
+      }
       showAcceptChanges={true}
-      recipient="recipient"
-      onAcceptChanges={() => null}
-      currencyFrom={{
-        shortName: "Short Name",
-        fullName: "Full Name",
-        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-      }}
-      currencyTo={{
-        shortName: "Short Name",
-        fullName: "Full Name",
-        logo: "https://avatars.githubusercontent.com/u/79834037?s=200&v=4",
-      }}
-      priceFrom="0.0"
-      priceTo="0.0"
-      outputEstimates="Output Estimates"
+      recipient="{recipient}"
+      onAcceptChanges={() => {}}
+      currencyFrom={
+        <>
+          <img src={YAY_TOKEN_GREEN} />
+          <Text fontSize="24px" color="primary">
+            'trade.inputAmount.toSignificant(6)'
+          </Text>
+        </>
+      }
+      currencyTo={
+        <>
+          <img src={YAY_TOKEN_GREEN} />
+          <Text fontSize="24px" color="failure">
+            trade.outputAmount.toSignificant(6)
+          </Text>
+        </>
+      }
+      currencyFromSymbol={<img src={YAY_TOKEN_GREEN} />}
+      currencyToSymbol={<img src={YAY_TOKEN_GREEN} />}
     />
   );
 };
@@ -409,18 +389,7 @@ export const SwapWarningModalBlock = () => {
 };
 
 export const UnsupportedCurrencyFooterBlock = () => {
-  return (
-    <UnsupportedCurrencyFooter
-      tokens={tokens}
-      srcs={srcs}
-      isEther={true}
-      chainId="123456789"
-      bscScanLink="https://storybook.js.org/"
-      unsupportedTokens={{
-        address: "https://storybook.js.org/",
-      }}
-    />
-  );
+  return <UnsupportedCurrencyFooter texts="UnsupportedCurrencyFooter" onPresentModal={() => {}} />;
 };
 
 export const SettingsModalBlock = () => {
@@ -500,23 +469,11 @@ export const AppHeaderBlock = () => {
       title="App Title"
       subtitle="App Subtitle"
       expertMode={false}
-      account="account"
-      onDismiss={() => null}
-      texts={{
-        modalTitle: "Modal Title",
-        modalBodyText: "Recent Transactions",
-        ModalButton: "Clear All",
-        ModalAlternativeText: "Modal Alternative Lorem Text",
-      }}
-      pendingTransaction={transaction}
-      confirmedTransaction={transaction}
-      clearAllTransactionsCallback={() => null}
-      ConnectWalletButton={<Button>Button</Button>}
-      chainId="123456789"
-      bscScanLink="https://storybook.js.org/"
-      summary="Some Summary Text"
-      pending={false}
-      success={true}
+      helper="helper"
+      backTo="back"
+      noConfig={false}
+      transactions={<></>}
+      globalSettings={<></>}
     />
   );
 };
