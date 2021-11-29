@@ -364,7 +364,6 @@ export const CurrencySearchModalBlock = () => {
         notResultText="No results found."
         handleInput={handleInput}
         handleEnter={handleEnter}
-        inputRef={null}
         commonBases={<></>}
         searchTokenIsAdded={false}
         searchToken={undefined}
