@@ -4,6 +4,13 @@ export interface IStateInput {
   txHash: string;
   problem: string;
   product: string;
+  networks: string;
+}
+export interface IStateInputError {
+  email?: string;
+  address?: string;
+  txHash?: string;
+  problem?: string;
 }
 
 export interface ITexts {
@@ -19,4 +26,8 @@ export interface ITexts {
   txHashPlaceholder: string;
   title: string;
   note: string;
+  networks: string;
+  modalTitle: string;
+  modalText: string;
+  modalButton: string;
 }

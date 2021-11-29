@@ -8,8 +8,10 @@ const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleSelect = (lang: any) => {
-    setLang(lang);
-    setOpen(false);
+    if (setLang && lang) {
+      setLang(lang);
+      setOpen(false);
+    }
   };
 
   return (
@@ -24,7 +26,7 @@ const Languages = ({ currentLang, setLang, langs }: LanguagesProps) => {
         }
       >
         <SelectList>
-          {langs.map((lang) => (
+          {langs?.map((lang) => (
             <Select onClick={() => handleSelect(lang)} key={lang.code}>
               {lang.code?.toUpperCase()}
             </Select>

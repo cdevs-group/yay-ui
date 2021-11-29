@@ -2,13 +2,13 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 
-const TitlePage = ({ title, note, points }: { points: ReactNode[]; note: string; title: string }) => {
+const TitlePage = ({ title, note, points }: { points?: ReactNode[]; note: string | ReactNode; title: string }) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
       <Note>{note}</Note>
       <Points>
-        {points.map((point, i) => (
+        {points?.map((point, i) => (
           <React.Fragment key={i}>{point}</React.Fragment>
         ))}
       </Points>

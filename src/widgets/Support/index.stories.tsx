@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import SupportWindow from "./SupportWindow";
-import { IStateInput } from "./types";
+import { IStateInput, IStateInputError } from "./types";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 
@@ -11,11 +11,20 @@ export default {
 
 export const SupportBlock = () => {
   const product = ["Bridge", "Igo", "Doodle", "Pinball"];
+  const networks = ["AVAX", "BSC"];
+  const [openModal, setOpenModal] = useState(false);
+  const [inputError, setInputError] = useState<IStateInputError>({
+    email: "",
+    address: "",
+    txHash: "",
+    problem: "",
+  });
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
     address: "",
     txHash: "",
     problem: "",
+    networks: networks[0],
     product: product[0],
   });
 
@@ -25,6 +34,9 @@ export const SupportBlock = () => {
       ...inputsState,
       [name]: value,
     });
+  };
+  const handleSend = () => {
+    setOpenModal(!openModal);
   };
 
   const texts = {
@@ -41,6 +53,10 @@ export const SupportBlock = () => {
     txHashPlaceholder: "Enter transaction hash",
     title: "Tech support",
     note: "Please understand that we can only assist with issues directly related to YAY Games services. ",
+    networks: "Network",
+    modalTitle: "Success",
+    modalText: "This page can`t be displayed right now due to an error. Please check back soon.",
+    modalButton: "Go to marketplace",
   };
 
   const points = [
@@ -64,11 +80,23 @@ export const SupportBlock = () => {
   return (
     <SupportWindow
       state={inputsState}
+      networks={networks}
       handleInput={handleInput}
       product={product}
       texts={texts}
-      handleButton={() => console.log("click")}
+      inputError={inputError}
+      handleButton={handleSend}
       points={points}
+      modalClick={() => console.log("click")}
+      modalOpen={openModal}
+      noteSuccess={
+        <TextStyle>
+          Join
+          <span>more than 80 talented</span> people around the world. Our opportunities are all{" "}
+          <span> 100% remote.</span>
+        </TextStyle>
+      }
+      titleSuccess="We're hiring!"
     />
   );
 };
