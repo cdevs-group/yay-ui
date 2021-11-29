@@ -11,10 +11,9 @@ interface CurrencySearchProps {
     searchToken: any;
     searchQuery: any;
     commonBases: ReactNode;
-    inputRef: any;
     filteredSortedTokens: any;
     filteredInactiveTokens: any;
     imgNoResult?: ReactNode;
 }
-declare function CurrencySearch({ placeholder, notResultText, searchQuery, filteredSortedTokens, filteredInactiveTokens, inputRef, commonBases, searchTokenIsAdded, searchToken, handleInput, currencyList, showCommonBases, importRow, imgNoResult, handleEnter, }: CurrencySearchProps): JSX.Element;
+declare function CurrencySearch({ placeholder, notResultText, searchQuery, filteredSortedTokens, filteredInactiveTokens, commonBases, searchTokenIsAdded, searchToken, handleInput, currencyList, showCommonBases, importRow, imgNoResult, handleEnter, }: CurrencySearchProps): JSX.Element;
 export default CurrencySearch;

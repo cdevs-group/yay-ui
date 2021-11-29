@@ -1,4 +1,4 @@
-import React, { RefObject, ReactNode } from "react";
+import React, { RefObject, ReactNode, useRef, useEffect } from "react";
 import Box from "../../../../components/Box/Box";
 import { Text } from "../../../../components/Text";
 import Column, { AutoColumn } from "../../../../components/Layouts/Column";
@@ -40,11 +40,11 @@ function CurrencySearch({
   handleEnter,
 }: CurrencySearchProps) {
   // manage focus on modal show
-  const inputRef = useRef<HTMLInputElement>()
+  const inputRef = useRef<HTMLInputElement>();
 
   useEffect(() => {
-    inputRef.current.focus()
-  }, [])
+    inputRef?.current?.focus();
+  }, []);
 
   return (
     <>

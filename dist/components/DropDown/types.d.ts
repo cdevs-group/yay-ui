@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { LangType } from "../../widgets/Menu/types";
 export interface LanguagesProps {
-    currentLang: string;
-    langs: LangType[];
-    setLang: (lang: LangType) => void;
+    currentLang?: string;
+    langs?: LangType[];
+    setLang?: (lang: LangType) => void;
 }
 export declare const variants: {
     readonly MENU: "menu";

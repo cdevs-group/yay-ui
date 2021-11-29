@@ -61,7 +61,7 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> =
           )}
         </ModalBody>
       ) : (
-        <>{ ConnectWalletButton }</>
+        <>{ConnectWalletButton}</>
       )}
     </Modal>
   );
