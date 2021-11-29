@@ -10,7 +10,7 @@ import GasSettings from "./GasSettings";
 import TransactionSettings from "./TransactionSettings";
 
 const SettingsModal = ({
-  onDismiss,
+  onDismiss = () => null,
   texts,
   setShowExpertModeAcknowledgement,
   showExpertModeAcknowledgement,
