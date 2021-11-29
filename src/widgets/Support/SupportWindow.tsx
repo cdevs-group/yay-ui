@@ -17,7 +17,7 @@ const SupportWindow = ({
   networks,
   inputError,
   modalOpen,
-  modalClick,
+  href,
   noteSuccess,
   titleSuccess,
 }: {
@@ -30,7 +30,7 @@ const SupportWindow = ({
   inputError?: IStateInputError;
   networks: string[];
   modalOpen: boolean;
-  modalClick: () => void;
+  href: string;
   noteSuccess: ReactNode;
   titleSuccess: string;
 }) => {
@@ -103,12 +103,7 @@ const SupportWindow = ({
       ) : (
         <>
           <TitlePage title={titleSuccess} note={noteSuccess} />
-          <NoticeModal
-            onClick={modalClick}
-            text={texts.modalText}
-            button={texts.modalButton}
-            title={texts.modalTitle}
-          />
+          <NoticeModal href={href} text={texts.modalText} button={texts.modalButton} title={texts.modalTitle} />
         </>
       )}
     </div>

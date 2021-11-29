@@ -4,24 +4,14 @@ import { Text } from "../../../components/Text";
 import { GhostsIcon } from "../../../constants/images";
 import { Button } from "../../../components/Button";
 
-const NoticeModal = ({
-  title,
-  text,
-  button,
-  onClick,
-}: {
-  onClick: () => void;
-  title: string;
-  text: string;
-  button: string;
-}) => {
+const NoticeModal = ({ title, text, button, href }: { href: string; title: string; text: string; button: string }) => {
   return (
     <Wrapper>
       <Modal>
         <Title>{title}</Title>
         <img src={GhostsIcon} alt="success" />
         <Description>{text}</Description>
-        <Button onClick={onClick} width="100%" variant="green">
+        <Button as="a" href={href} target="_blank" width="100%" variant="green">
           {button}
         </Button>
       </Modal>

@@ -12020,13 +12020,13 @@ var Points = styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTempla
 var templateObject_1$3, templateObject_2$1, templateObject_3$1, templateObject_4$1;
 
 var NoticeModal = function (_a) {
-    var title = _a.title, text = _a.text, button = _a.button, onClick = _a.onClick;
+    var title = _a.title, text = _a.text, button = _a.button, href = _a.href;
     return (React__default.createElement(Wrapper, null,
         React__default.createElement(Modal, null,
             React__default.createElement(Title, null, title),
             React__default.createElement("img", { src: GhostsIcon, alt: "success" }),
             React__default.createElement(Description, null, text),
-            React__default.createElement(Button$9, { onClick: onClick, width: "100%", variant: "green" }, button))));
+            React__default.createElement(Button$9, { as: "a", href: href, target: "_blank", width: "100%", variant: "green" }, button))));
 };
 var Wrapper = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  margin-top: 40px;\n"], ["\n  margin-top: 40px;\n"])));
 var Modal = styled.div(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  padding: 27px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  text-align: center;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 27px;\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  padding: 27px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  text-align: center;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 27px;\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {
@@ -12047,7 +12047,7 @@ var Description = styled(Text)(templateObject_4 || (templateObject_4 = __makeTem
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var SupportWindow = function (_a) {
-    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, networks = _a.networks, inputError = _a.inputError, modalOpen = _a.modalOpen, modalClick = _a.modalClick, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess;
+    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, networks = _a.networks, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess;
     return (React__default.createElement("div", { style: { maxWidth: "520px", margin: "0 auto" } }, !modalOpen ? (React__default.createElement(React__default.Fragment, null,
         " ",
         React__default.createElement(TitlePage, { points: points, title: texts.title, note: texts.note }),
@@ -12060,7 +12060,7 @@ var SupportWindow = function (_a) {
             React__default.createElement(Input, { title: texts.txHash, margin: "0 0 45px", placeholder: texts.txHashPlaceholder, onChange: handleInput, name: "txHash", value: state["txHash"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.txHash }),
             React__default.createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button)))) : (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(TitlePage, { title: titleSuccess, note: noteSuccess }),
-        React__default.createElement(NoticeModal, { onClick: modalClick, text: texts.modalText, button: texts.modalButton, title: texts.modalTitle })))));
+        React__default.createElement(NoticeModal, { href: href, text: texts.modalText, button: texts.modalButton, title: texts.modalTitle })))));
 };
 var StyledSupport = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"], ["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;

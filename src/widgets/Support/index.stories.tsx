@@ -87,7 +87,7 @@ export const SupportBlock = () => {
       inputError={inputError}
       handleButton={handleSend}
       points={points}
-      modalClick={() => console.log("click")}
+      href="/"
       modalOpen={openModal}
       noteSuccess={
         <TextStyle>
