@@ -1,6 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, ReactNode, Ref, RefObject } from "react";
+import { BackgroundProps, SpaceProps } from "styled-system";
 
-export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement>, BackgroundProps, SpaceProps {
   placeholder: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   value?: string | number;
@@ -10,6 +11,5 @@ export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   ref?: Ref<HTMLInputElement>;
   icon?: ReactNode;
-  padding?: string;
   disabled?: boolean;
 }

@@ -29,6 +29,7 @@ const GasSettings = ({
           onClick={() => {
             setGasPrice(GAS_PRICE_GWEI.default);
           }}
+          
         >
           {gasTabs[0]}
         </Tab>

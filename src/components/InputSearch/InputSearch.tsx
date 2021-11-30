@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import { background, space } from "styled-system";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
@@ -13,7 +14,6 @@ const InputSearch = ({
   iconLess,
   width,
   name,
-  padding,
   ...props
 }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
@@ -21,7 +21,6 @@ const InputSearch = ({
   return (
     <InputBlock height={height} width={width}>
       <InputItem
-        padding={padding}
         width={width}
         value={value}
         onChange={onChange}
@@ -48,12 +47,12 @@ const InputBlock = styled.div<{ width?: string; height?: string }>`
   height: ${({ height }) => (height ? height : "auto")};
 `;
 
-const InputItem = styled.input<{ padding?: string }>`
+const InputItem = styled.input`
   width: ${({ width }) => (width ? width : "fit-content")};
   height: 100%;
   position: relative;
   display: inline-block;
-  padding: ${({ padding }) => padding || "16px 25px"};
+  padding: 16px 25px;
   background: rgb(20, 20, 25);
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   border-radius: 12px;
@@ -65,6 +64,8 @@ const InputItem = styled.input<{ padding?: string }>`
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   outline: none;
   border: 1px solid transparent;
+  ${background}
+  ${space}
   &::placeholder {
     opacity: 0.5;
   }

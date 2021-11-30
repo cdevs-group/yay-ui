@@ -42,7 +42,6 @@ export const ModalHeader = styled.div`
   padding: 0;
 `;
 export const TextStyle = styled(Text)`
-  margin-bottom: 15px;
   font-weight: normal;
   font-size: 15px;
   line-height: 19px;
@@ -96,8 +95,8 @@ export const TabsWrapBlock = styled.div<{ length?: number; width?: string; varia
   display: grid;
   width: ${({ width }) => width || "auto"};
   grid-template-columns: ${({ length, variant }) => `repeat(${length || 2}, ${variant === "small" ? "auto" : "1fr"})`};
-  background: ${({ theme }) => theme.colors.buttonBg};
-  border-radius: 12px;
+  background: ${({ theme }) => theme.colors.bgOpacity};
+  border-radius: 9px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
 `;
 
@@ -105,7 +104,7 @@ export const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; f
   padding: ${({ paddingTabs }) => paddingTabs || "15px 16px"};
   border: none;
   background: transparent;
-  border-radius: 12px;
+  border-radius: 9px;
   font-size: ${({ fontSize }) => fontSize || "15px"};
   line-height: 19px;
   font-weight: 500;

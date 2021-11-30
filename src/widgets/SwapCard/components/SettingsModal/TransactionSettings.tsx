@@ -130,11 +130,12 @@ const TransactionSettings = ({
                   %
                 </Text>
               }
+              background={baseColors.bgOpacity}
             />
           </InputWrap>
         </Flex>
       </Box>
-      <Flex justifyContent="space-between" alignItems="center" mb="24px">
+      <Flex justifyContent="space-between" alignItems="center" mb="34px">
         <Flex alignItems="center">
           <TextStyle mb="0 !important">{texts.txDeadline}</TextStyle>
         </Flex>
@@ -144,7 +145,6 @@ const TransactionSettings = ({
               padding="16px 50px 16px 12px"
               name="deadline"
               value={deadlineInput}
-              // onChange={handleDeadlineInput}
               width="90px"
               height="33px"
               placeholder="0"
@@ -161,6 +161,7 @@ const TransactionSettings = ({
                   min
                 </Text>
               }
+              background={baseColors.bgOpacity}
             />
           </Box>
         </Flex>
