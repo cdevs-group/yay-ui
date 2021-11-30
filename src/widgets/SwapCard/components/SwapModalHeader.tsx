@@ -13,55 +13,43 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
   onAcceptChanges,
   outputEstimates,
   recipientSentToText,
-  currencyFrom,
-  currencyTo,
+  currencyIconFrom,
   currencyFromSymbol,
+  currencyFromName,
+  priceFrom,
+  currencyIconTo,
   currencyToSymbol,
+  currencyToName,
+  priceTo,
   texts,
 }) => {
   return (
     <div>
       <Flex justifyContent="space-between" alignItems="flex-start">
-        {/* <Flex alignItems="flex-start">
-          <img style={{ width: "33px", height: "33px" }} src={currencyFrom.logo || YAY_TOKEN_GREEN} />
+        <Flex alignItems="flex-start">
+          {currencyIconFrom}
           <CurrencyName>
-            <ShortName>{currencyFrom.shortName}</ShortName>
-            <FullName>{currencyFrom.fullName}</FullName>
+            <ShortName>{currencyFromSymbol}</ShortName>
+            <FullName>{currencyFromName}</FullName>
           </CurrencyName>
         </Flex>
-        <Price>{priceFrom}</Price> */}
-        <RowFixed gap="0px">{currencyFrom}</RowFixed>
-        <RowFixed gap="0px">
-          <Text fontSize="24px" ml="10px">
-            {currencyFromSymbol}
-          </Text>
-        </RowFixed>
+        <Price>{priceFrom}</Price>
       </Flex>
-      <RowFixed>
-        <ArrowBigDownIcon width="16px" ml="4px" />
-      </RowFixed>
       <Flex mt="31px" justifyContent="space-between" alignItems="flex-start">
-        {/* <Flex alignItems="flex-start">
-          <img style={{ width: "33px", height: "33px" }} src={currencyTo.logo} />
+        <Flex alignItems="flex-start">
+          {currencyIconTo}
           <CurrencyName>
-            <ShortName>{currencyTo.shortName}</ShortName>
-            <FullName>{currencyTo.fullName}</FullName>
+            <ShortName>{currencyToSymbol}</ShortName>
+            <FullName>{currencyToName}</FullName>
           </CurrencyName>
         </Flex>
-        <Price>{priceTo}</Price> */}
-        <RowFixed gap="0px">{currencyTo}</RowFixed>
-        <RowFixed gap="0px">
-          <Text fontSize="24px" ml="10px">
-            {currencyToSymbol}
-          </Text>
-        </RowFixed>
+        <Price>{priceTo}</Price>
       </Flex>
       {showAcceptChanges ? (
         <SwapShowAcceptChanges justify="flex-start" gap="0px">
           <RowBetween>
             <RowFixed>
-              <Text color={baseColors.redBg} fontWeight="500">
-                {" "}
+              <Text color={baseColors.green} fontWeight="500">
                 {texts.priceUpdated}
               </Text>
             </RowFixed>

@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import styled from "styled-components";
 import { Button, Text, Flex } from "../..";
 
@@ -25,7 +27,7 @@ import { AppHeader } from "./components/App";
 // import Swap from "./SwapCard";
 import { YAY_TOKEN_GREEN } from "../../constants/images";
 import TransactionsModal from "./components/App/Transactions/TransactionsModal";
-import { Transaction } from ".";
+import { Transaction, Transactions } from ".";
 
 export default {
   title: "Widgets/Swap",
@@ -276,7 +278,7 @@ export const ProgressStepsBlock = () => {
 export const SwapModalFooterBlock = () => {
   return (
     <SwapModalFooter
-      buttonSwapProps={{ variant: "primary", onClick: () => {}, disabled: true }}
+      buttonSwapProps={{ onClick: () => {}, disabled: true }}
       swapErrorMessage="{swapErrorMessage}"
       priceImpact="{<FormattedPriceImpact priceImpact={priceImpactWithoutFee} />}"
       executionPrice="0.0656"
@@ -312,24 +314,14 @@ export const SwapModalHeaderBlock = () => {
       showAcceptChanges={true}
       recipient="{recipient}"
       onAcceptChanges={() => {}}
-      currencyFrom={
-        <>
-          <img src={YAY_TOKEN_GREEN} />
-          <Text fontSize="24px" color="primary">
-            'trade.inputAmount.toSignificant(6)'
-          </Text>
-        </>
-      }
-      currencyTo={
-        <>
-          <img src={YAY_TOKEN_GREEN} />
-          <Text fontSize="24px" color="failure">
-            trade.outputAmount.toSignificant(6)
-          </Text>
-        </>
-      }
-      currencyFromSymbol={<img src={YAY_TOKEN_GREEN} />}
-      currencyToSymbol={<img src={YAY_TOKEN_GREEN} />}
+      currencyIconFrom={<img src={YAY_TOKEN_GREEN} />}
+      currencyFromSymbol="BNB"
+      currencyFromName="binance"
+      priceFrom="0.03"
+      currencyIconTo={<img src={YAY_TOKEN_GREEN} />}
+      currencyToSymbol="YAY"
+      currencyToName="YAY Games"
+      priceTo="2323"
     />
   );
 };
@@ -467,16 +459,18 @@ const transaction = [
 
 export const AppHeaderBlock = () => {
   return (
-    <AppHeader
-      title="App Title"
-      subtitle="App Subtitle"
-      expertMode={false}
-      helper="helper"
-      backTo="back"
-      noConfig={false}
-      transactions={<></>}
-      globalSettings={<></>}
-    />
+    <BrowserRouter>
+      <AppHeader
+        title="App Title"
+        subtitle="App Subtitle"
+        expertMode={true}
+        helper="helper"
+        backTo=""
+        noConfig={false}
+        transactions={<Transactions onPresentTransactionsModal={() => {}} />}
+        globalSettings={<></>}
+      />
+    </BrowserRouter>
   );
 };
 

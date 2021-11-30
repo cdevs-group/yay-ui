@@ -20,25 +20,24 @@ export const CurrencyInputPanelBlock: React.FC = () => {
     console.log("onPresentCurrencyModal");
   };
   return (
-    <div>
+    <div style={{ maxWidth: 500 }}>
       <CurrencyInputPanel
         value={value}
         onUserInput={onUserInput}
         onMax={onMax}
-        showMaxButton
+        showMaxButton={false}
         label="Input"
         currency={{ decimals: 18, name: "BNB", symbol: "BNB" }}
-        disableCurrencySelect={false}
+        disableCurrencySelect
         pair={null}
         hideInput={false}
         id="id"
         account="lndvjkdnvjud3rt45532"
         onPresentCurrencyModal={onPresentCurrencyModal}
-        сurrencyLogo={<img src={BNB} style={{ marginRight: "8px" }} />}
-        doubleCurrencyLogo={<img src={BNB} style={{ marginRight: "8px" }} />}
+        сurrencyLogo={<img src={BNB} />}
+        doubleCurrencyLogo={<img src={BNB} />}
         texts={{
           translatedLabel: "From",
-          balance: "Balance: 0.0345151",
           numericalInputTitle: "Title",
           max: "MAX",
           currencySelect: "BNB",

@@ -17,7 +17,6 @@ export interface CurrencyInputPanelProps {
   doubleCurrencyLogo: React.ReactNode;
   texts: {
     translatedLabel: string;
-    balance: string;
     numericalInputTitle: string;
     max: string;
     currencySelect: string;
