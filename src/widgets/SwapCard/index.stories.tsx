@@ -24,7 +24,7 @@ import GlobalSettings from "./components/SettingsModal";
 import { AppHeader } from "./components/App";
 // import Swap from "./SwapCard";
 import { YAY_TOKEN_GREEN } from "../../constants/images";
-import TransactionsModal from "./components/App/Transactions/TransactionsModal"
+import TransactionsModal from "./components/App/Transactions/TransactionsModal";
 import { Transaction } from ".";
 
 export default {
@@ -718,17 +718,24 @@ export const AppHeaderBlock = () => {
 // };
 
 export const TransactionsModalBlock = () => {
-
   const renderTransactions = (transactions: any[]) => {
     return (
       <Flex flexDirection="column">
         {transactions.map((tx) => {
           //pending={true} - спиннер
-          return <Transaction key={tx.hash + tx.addedTime} bscScanLink="https://storybook.js.org/" summary="summary" pending={false} success={true}/>
+          return (
+            <Transaction
+              key={tx.hash + tx.addedTime}
+              bscScanLink="https://storybook.js.org/"
+              summary="summary"
+              pending={false}
+              success={true}
+            />
+          );
         })}
       </Flex>
-    )
-  }
+    );
+  };
 
   return (
     <TransactionsModal
@@ -738,13 +745,17 @@ export const TransactionsModalBlock = () => {
         modalTitle: "Transactions",
         modalBodyText: "Transactions",
         modalButton: "Clear All",
-        modalAlternativeText: "modalAlternativeText"
+        modalAlternativeText: "modalAlternativeText",
       }}
       pending={transaction}
       confirmed={transaction}
       clearAllTransactionsCallback={() => null}
-      connectWalletButton={<Button variant="green" width="100%">Connect Wallet Button</Button>}
+      connectWalletButton={
+        <Button variant="green" width="100%">
+          Connect Wallet Button
+        </Button>
+      }
       renderTransactions={renderTransactions}
     />
   );
-}
+};

@@ -16,7 +16,7 @@ const StyledText = styled(Text)`
 
 const StyledButtonBlock = styled.div`
   padding: 20px;
-`
+`;
 
 export interface TransactionsModalProps {
   texts: {
