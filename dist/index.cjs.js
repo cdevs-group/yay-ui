@@ -4405,11 +4405,11 @@ var InputRow = styled__default["default"].div(templateObject_1$2x || (templateOb
     var selected = _a.selected;
     return (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem");
 });
-var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  padding: 9px 20px 6px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"], ["\n  padding: 9px 20px 6px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"])), function (_a) {
+var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"], ["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 });
-var LabelRow = styled__default["default"].div(templateObject_3$1C || (templateObject_3$1C = __makeTemplateObject(["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"], ["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"])), function (_a) {
+styled__default["default"].div(templateObject_3$1C || (templateObject_3$1C = __makeTemplateObject(["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"], ["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
@@ -4420,7 +4420,7 @@ var InputPanel$1 = styled__default["default"].div(templateObject_4$1k || (templa
     var theme = _a.theme;
     return theme.colors.bgOpacity;
 });
-var Container$1 = styled__default["default"](Flex)(templateObject_5$Y || (templateObject_5$Y = __makeTemplateObject(["\n  justify-content: space-between;\n  padding: 14px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  justify-content: space-between;\n  padding: 14px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
+var Container$1 = styled__default["default"](Flex)(templateObject_5$Y || (templateObject_5$Y = __makeTemplateObject(["\n  justify-content: space-between;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  justify-content: space-between;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard5;
 }, function (_a) {
@@ -4434,11 +4434,10 @@ var CurrencyInputPanel = function (_a) {
     hideInput = _d === void 0 ? false : _d, id = _a.id, account = _a.account, onPresentCurrencyModal = _a.onPresentCurrencyModal, сurrencyLogo = _a.сurrencyLogo, doubleCurrencyLogo = _a.doubleCurrencyLogo, texts = _a.texts;
     return (React__default["default"].createElement(InputPanel$1, { id: id },
         React__default["default"].createElement(Container$1, { hideInput: hideInput },
-            React__default["default"].createElement("div", null,
-                !hideInput && (React__default["default"].createElement(LabelRow, null,
-                    React__default["default"].createElement(RowBetween, null,
-                        React__default["default"].createElement(Text, { color: "textGray" }, texts.translatedLabel)))),
-                React__default["default"].createElement(InputRow, { style: hideInput ? { padding: "0", borderRadius: "8px" } : {}, selected: disableCurrencySelect }, !hideInput && (React__default["default"].createElement(React__default["default"].Fragment, null,
+            React__default["default"].createElement("div", { style: { flexGrow: 1, flexDirection: "column", display: "flex", justifyContent: "space-between" } },
+                !hideInput && (React__default["default"].createElement(RowBetween, null,
+                    React__default["default"].createElement(Text, { color: "textGray" }, texts.translatedLabel))),
+                React__default["default"].createElement(InputRow, { style: hideInput ? { padding: "0", borderRadius: "8px" } : { padding: "4px 4px 4px 0" }, selected: disableCurrencySelect }, !hideInput && (React__default["default"].createElement(React__default["default"].Fragment, null,
                     React__default["default"].createElement(Input$3, { className: "token-amount-input", title: texts.numericalInputTitle, value: value, onUserInput: function (val) {
                             onUserInput(val);
                         } }),
