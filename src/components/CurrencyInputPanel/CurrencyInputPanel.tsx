@@ -15,7 +15,9 @@ const InputRow = styled.div<{ selected: boolean }>`
   padding: ${({ selected }) => (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem")};
 `;
 const CurrencySelectButton = styled(Button).attrs({ variant: "text", scale: "sm" })`
-  padding: 9px 20px 6px;
+  padding: 9px 6px 6px;
+  width: 100%;
+  max-width: 66px;
   background: ${({ theme }) => theme.colors.bgOpacitY3};
   border-radius: 12px;
   height: auto;
@@ -40,7 +42,7 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
 `;
 const Container = styled(Flex)<{ hideInput: boolean }>`
   justify-content: space-between;
-  padding: 14px;
+  padding: 14px 14px 14px 25px;
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.bgCard5};
   box-shadow: ${({ theme }) => theme.shadows.input};
@@ -68,15 +70,16 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   return (
     <InputPanel id={id}>
       <Container hideInput={hideInput}>
-        <div>
+        <div style={{ flexGrow: 1, flexDirection: "column", display: "flex", justifyContent: "space-between" }}>
           {!hideInput && (
-            <LabelRow>
-              <RowBetween>
-                <Text color="textGray">{texts.translatedLabel}</Text>
-              </RowBetween>
-            </LabelRow>
+            <RowBetween>
+              <Text color="textGray">{texts.translatedLabel}</Text>
+            </RowBetween>
           )}
-          <InputRow style={hideInput ? { padding: "0", borderRadius: "8px" } : {}} selected={disableCurrencySelect}>
+          <InputRow
+            style={hideInput ? { padding: "0", borderRadius: "8px" } : { padding: "4px 4px 4px 0" }}
+            selected={disableCurrencySelect}
+          >
             {!hideInput && (
               <>
                 <NumericalInput
