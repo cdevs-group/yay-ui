@@ -26,8 +26,12 @@ export interface SwapModalHeaderProps {
     recipient: string | null;
     showAcceptChanges: boolean;
     onAcceptChanges: () => void;
-    currencyTo: React.ReactNode;
-    currencyFrom: React.ReactNode;
-    currencyFromSymbol: React.ReactNode;
-    currencyToSymbol: React.ReactNode;
+    currencyIconFrom: any;
+    currencyFromSymbol: any;
+    currencyFromName?: any;
+    priceFrom: any;
+    currencyIconTo: any;
+    currencyToSymbol: any;
+    currencyToName?: any;
+    priceTo: any;
 }
