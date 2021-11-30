@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import { background, space } from "styled-system";
+import { background, border, space } from "styled-system";
 import { SearchIcon2 } from "../Svg";
 import { InputSearchProp } from "./types";
 
@@ -66,6 +66,7 @@ const InputItem = styled.input`
   border: 1px solid transparent;
   ${background}
   ${space}
+  ${border}
   &::placeholder {
     opacity: 0.5;
   }

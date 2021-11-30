@@ -131,6 +131,7 @@ const TransactionSettings = ({
                 </Text>
               }
               background={baseColors.bgOpacity}
+              borderRadius="9px"
             />
           </InputWrap>
         </Flex>
@@ -162,6 +163,7 @@ const TransactionSettings = ({
                 </Text>
               }
               background={baseColors.bgOpacity}
+              borderRadius="9px"
             />
           </Box>
         </Flex>
