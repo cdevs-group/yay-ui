@@ -124,8 +124,8 @@ var loaderdot1$1 = keyframes(templateObject_2$2Q || (templateObject_2$2Q = __mak
 var loaderdot2$1 = keyframes(templateObject_3$2i || (templateObject_3$2i = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-3px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-3px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
 var loaderdot3$1 = keyframes(templateObject_4$1P || (templateObject_4$1P = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 3px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 3px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "])));
 var loaderdot4$1 = keyframes(templateObject_5$1e || (templateObject_5$1e = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -3px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -3px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
-var LoaderBlock$1 = styled.div(templateObject_6$Y || (templateObject_6$Y = __makeTemplateObject(["\n  height: 35px;\n  width: 35px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 35px;\n    width: 35px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"], ["\n  height: 35px;\n  width: 35px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 35px;\n    width: 35px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"])), loader1$1, loaderdot1$1, loaderdot2$1, loaderdot3$1, loaderdot4$1);
-var templateObject_1$3H, templateObject_2$2Q, templateObject_3$2i, templateObject_4$1P, templateObject_5$1e, templateObject_6$Y;
+var LoaderBlock$1 = styled.div(templateObject_6$Z || (templateObject_6$Z = __makeTemplateObject(["\n  height: 35px;\n  width: 35px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 35px;\n    width: 35px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"], ["\n  height: 35px;\n  width: 35px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 11px;\n    height: 11px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 35px;\n    width: 35px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 11px;\n      height: 11px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"])), loader1$1, loaderdot1$1, loaderdot2$1, loaderdot3$1, loaderdot4$1);
+var templateObject_1$3H, templateObject_2$2Q, templateObject_3$2i, templateObject_4$1P, templateObject_5$1e, templateObject_6$Z;
 
 var getThemeValue$1 = function (path, fallback) {
     return function (theme) {
@@ -1424,7 +1424,7 @@ var LeftContent$3 = styled.div(templateObject_4$1O || (templateObject_4$1O = __m
     return theme.colors.text;
 });
 var RightContent$4 = styled(LeftContent$3)(templateObject_5$1d || (templateObject_5$1d = __makeTemplateObject(["\n  font-size: 11px;\n"], ["\n  font-size: 11px;\n"])));
-var Content$8 = styled.div(templateObject_6$X || (templateObject_6$X = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
+var Content$8 = styled.div(templateObject_6$Y || (templateObject_6$Y = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
@@ -1515,7 +1515,7 @@ var StyledCard = function (_a) {
                         React__default.createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$P, { fill: "#FFB72C" }))))))));
 };
-var templateObject_1$3B, templateObject_2$2N, templateObject_3$2f, templateObject_4$1O, templateObject_5$1d, templateObject_6$X, templateObject_7$C, templateObject_8$w, templateObject_9$m, templateObject_10$i, templateObject_11$f, templateObject_12$d, templateObject_13$b, templateObject_14$8, templateObject_15$6, templateObject_16$5;
+var templateObject_1$3B, templateObject_2$2N, templateObject_3$2f, templateObject_4$1O, templateObject_5$1d, templateObject_6$Y, templateObject_7$C, templateObject_8$w, templateObject_9$m, templateObject_10$i, templateObject_11$f, templateObject_12$d, templateObject_13$b, templateObject_14$8, templateObject_15$6, templateObject_16$5;
 
 var Card$j = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -1539,7 +1539,7 @@ var Arrow$4 = styled.div(templateObject_5$1c || (templateObject_5$1c = __makeTem
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice$1 = styled.div(templateObject_6$W || (templateObject_6$W = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice$1 = styled.div(templateObject_6$X || (templateObject_6$X = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1575,7 +1575,7 @@ var ExpiredCardNA = function (_a) {
                     prize,
                     " ")))));
 };
-var templateObject_1$3A, templateObject_2$2M, templateObject_3$2e, templateObject_4$1N, templateObject_5$1c, templateObject_6$W, templateObject_7$B, templateObject_8$v, templateObject_9$l;
+var templateObject_1$3A, templateObject_2$2M, templateObject_3$2e, templateObject_4$1N, templateObject_5$1c, templateObject_6$X, templateObject_7$B, templateObject_8$v, templateObject_9$l;
 
 var Wrap$w = styled.div(templateObject_1$3z || (templateObject_1$3z = __makeTemplateObject(["\n  font-weight: 500;\n  color: ", ";\n"], ["\n  font-weight: 500;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -1594,7 +1594,7 @@ var Arrow$3 = styled.div(templateObject_5$1b || (templateObject_5$1b = __makeTem
     var negative = _a.negative;
     return (!negative ? "scale(1,-1)" : "none");
 });
-var LinePrice = styled.div(templateObject_6$V || (templateObject_6$V = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
+var LinePrice = styled.div(templateObject_6$W || (templateObject_6$W = __makeTemplateObject(["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"], ["\n  padding: 8px 10px;\n  border-radius: 7px;\n  background: ", ";\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return negative ? transparentize(0.75, theme.colors.redBg) : theme.colors.gradients.greenGradient;
 }, function (_a) {
@@ -1624,7 +1624,7 @@ var LiveCard = function (_a) {
                 ": ",
                 React__default.createElement("div", null, prize)))));
 };
-var templateObject_1$3z, templateObject_2$2L, templateObject_3$2d, templateObject_4$1M, templateObject_5$1b, templateObject_6$V, templateObject_7$A, templateObject_8$u, templateObject_9$k;
+var templateObject_1$3z, templateObject_2$2L, templateObject_3$2d, templateObject_4$1M, templateObject_5$1b, templateObject_6$W, templateObject_7$A, templateObject_8$u, templateObject_9$k;
 
 var orangeAnimation$1 = keyframes(templateObject_1$3y || (templateObject_1$3y = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"])));
 var redAnimation$1 = keyframes(templateObject_2$2K || (templateObject_2$2K = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"])));
@@ -1634,7 +1634,7 @@ var Wrap$v = styled.div(templateObject_5$1a || (templateObject_5$1a = __makeTemp
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Content$7 = styled.div(templateObject_6$U || (templateObject_6$U = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
+var Content$7 = styled.div(templateObject_6$V || (templateObject_6$V = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  height: 100%;\n"])));
 var Loader$2 = styled.div(templateObject_7$z || (templateObject_7$z = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 50px;\n  flex-grow: 1;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 50px;\n  flex-grow: 1;\n"])));
 var OrangeCircle$1 = styled.div(templateObject_8$t || (templateObject_8$t = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), orangeAnimation$1, function (_a) {
     var theme = _a.theme;
@@ -1667,7 +1667,7 @@ var LoaderCard = function (_a) {
                 React__default.createElement(YellowCircle$1, null)),
             textTooltip && React__default.createElement(BottomText$1, null, textTooltip))));
 };
-var templateObject_1$3y, templateObject_2$2K, templateObject_3$2c, templateObject_4$1L, templateObject_5$1a, templateObject_6$U, templateObject_7$z, templateObject_8$t, templateObject_9$j, templateObject_10$h, templateObject_11$e, templateObject_12$c;
+var templateObject_1$3y, templateObject_2$2K, templateObject_3$2c, templateObject_4$1L, templateObject_5$1a, templateObject_6$V, templateObject_7$z, templateObject_8$t, templateObject_9$j, templateObject_10$h, templateObject_11$e, templateObject_12$c;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -1927,8 +1927,8 @@ var ButtonToMax = styled(Text)(templateObject_4$1I || (templateObject_4$1I = __m
     return theme.colors.text;
 });
 var RightBlock = styled.div(templateObject_5$19 || (templateObject_5$19 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n"])));
-var LeftBlock = styled.div(templateObject_6$T || (templateObject_6$T = __makeTemplateObject([""], [""])));
-var templateObject_1$3r, templateObject_2$2G, templateObject_3$29, templateObject_4$1I, templateObject_5$19, templateObject_6$T;
+var LeftBlock = styled.div(templateObject_6$U || (templateObject_6$U = __makeTemplateObject([""], [""])));
+var templateObject_1$3r, templateObject_2$2G, templateObject_3$29, templateObject_4$1I, templateObject_5$19, templateObject_6$U;
 
 function ArrowIcon$1(props) {
     return (React.createElement("svg", __assign({ width: 26, height: 26, viewBox: "0 0 26 26", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
@@ -2863,8 +2863,8 @@ var loaderdot1 = keyframes(templateObject_2$2n || (templateObject_2$2n = __makeT
 var loaderdot2 = keyframes(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-6px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(-6px, 0, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
 var loaderdot3 = keyframes(templateObject_4$1B || (templateObject_4$1B = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, 6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n "])));
 var loaderdot4 = keyframes(templateObject_5$17 || (templateObject_5$17 = __makeTemplateObject(["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "], ["\n    0%   { transform: translate3d(0, 0, 0); }\n    50%  { transform: translate3d(0, -6px, 0); }\n    100% { transform: translate3d(0, 0, 0); }\n  "])));
-var LoaderBlock = styled.div(templateObject_6$S || (templateObject_6$S = __makeTemplateObject(["\n  height: 70px;\n  width: 70px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 70px;\n    width: 70px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"], ["\n  height: 70px;\n  width: 70px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 70px;\n    width: 70px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"])), loader1, loaderdot1, loaderdot2, loaderdot3, loaderdot4);
-var templateObject_1$31, templateObject_2$2n, templateObject_3$1V, templateObject_4$1B, templateObject_5$17, templateObject_6$S;
+var LoaderBlock = styled.div(templateObject_6$T || (templateObject_6$T = __makeTemplateObject(["\n  height: 70px;\n  width: 70px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 70px;\n    width: 70px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"], ["\n  height: 70px;\n  width: 70px;\n  animation: ", " 3s linear 0s infinite normal;\n  &:before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: auto;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #ff9525;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  &:after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: 0;\n    left: auto;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    width: 22px;\n    height: 22px;\n    background: #69e35f;\n    border-radius: 50%;\n    animation: ", " 1s ease-out infinite;\n  }\n  & span {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    margin: auto;\n    height: 70px;\n    width: 70px;\n    &::before {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: 0;\n      left: 0;\n      bottom: auto;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #ff6161;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n    &::after {\n      content: \"\";\n      display: block;\n      position: absolute;\n      top: auto;\n      left: 0;\n      bottom: 0;\n      right: 0;\n      margin: auto;\n      width: 22px;\n      height: 22px;\n      background: #eccb57;\n      border-radius: 50%;\n      animation: ", " 1s ease-out infinite;\n    }\n  }\n"])), loader1, loaderdot1, loaderdot2, loaderdot3, loaderdot4);
+var templateObject_1$31, templateObject_2$2n, templateObject_3$1V, templateObject_4$1B, templateObject_5$17, templateObject_6$T;
 
 var rotate$1 = keyframes(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
 var StyledSVG = styled.svg(templateObject_2$2m || (templateObject_2$2m = __makeTemplateObject(["\n  animation: 2s ", " linear infinite;\n  height: ", ";\n  width: ", ";\n  path {\n    stroke: ", ";\n  }\n"], ["\n  animation: 2s ", " linear infinite;\n  height: ", ";\n  width: ", ";\n  path {\n    stroke: ", ";\n  }\n"])), rotate$1, function (_a) {
@@ -2965,14 +2965,14 @@ var Timer$2 = styled.div(templateObject_5$15 || (templateObject_5$15 = __makeTem
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var VisibleTimer = styled.div(templateObject_6$R || (templateObject_6$R = __makeTemplateObject(["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var VisibleTimer = styled.div(templateObject_6$S || (templateObject_6$S = __makeTemplateObject(["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"], ["\n  display: ", ";\n  margin-top: 30px;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var childrenVisibleModile = _a.childrenVisibleModile;
     return (childrenVisibleModile ? "block" : "none");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$2_, templateObject_2$2k, templateObject_3$1T, templateObject_4$1z, templateObject_5$15, templateObject_6$R;
+var templateObject_1$2_, templateObject_2$2k, templateObject_3$1T, templateObject_4$1z, templateObject_5$15, templateObject_6$S;
 
 var Wrap$p = styled.div(templateObject_1$2Z || (templateObject_1$2Z = __makeTemplateObject(["\n  position: relative;\n  padding: 0 55px;\n  width: 404px;\n  height: 335px;\n  background: ", ";\n  border-radius: 15px;\n  color: ", ";\n  text-align: center;\n  letter-spacing: 0.5px;\n"], ["\n  position: relative;\n  padding: 0 55px;\n  width: 404px;\n  height: 335px;\n  background: ", ";\n  border-radius: 15px;\n  color: ", ";\n  text-align: center;\n  letter-spacing: 0.5px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -3048,7 +3048,7 @@ var LeftContent$1 = styled.div(templateObject_4$1w || (templateObject_4$1w = __m
     return theme.colors.text;
 });
 var RightContent$2 = styled(LeftContent$1)(templateObject_5$14 || (templateObject_5$14 = __makeTemplateObject(["\n  font-size: 11px;\n"], ["\n  font-size: 11px;\n"])));
-var Content$6 = styled.div(templateObject_6$Q || (templateObject_6$Q = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
+var Content$6 = styled.div(templateObject_6$R || (templateObject_6$R = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin-top: 28px;\n  background: ", ";\n  border-radius: 15px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
@@ -3154,7 +3154,7 @@ var StyledCardBTC = function (_a) {
                         React__default.createElement(IconCompleteDown, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$P, { fill: "#FFB72C" }))))))))));
 };
-var templateObject_1$2X, templateObject_2$2h, templateObject_3$1Q, templateObject_4$1w, templateObject_5$14, templateObject_6$Q, templateObject_7$y, templateObject_8$s, templateObject_9$i, templateObject_10$g, templateObject_11$d, templateObject_12$b, templateObject_13$a, templateObject_14$7, templateObject_15$5, templateObject_16$4, templateObject_17$4;
+var templateObject_1$2X, templateObject_2$2h, templateObject_3$1Q, templateObject_4$1w, templateObject_5$14, templateObject_6$R, templateObject_7$y, templateObject_8$s, templateObject_9$i, templateObject_10$g, templateObject_11$d, templateObject_12$b, templateObject_13$a, templateObject_14$7, templateObject_15$5, templateObject_16$4, templateObject_17$4;
 
 var CardBTC = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3175,7 +3175,7 @@ var Locked$1 = styled(Closed$1)(templateObject_4$1v || (templateObject_4$1v = __
     return theme.colors.greyText;
 });
 var Line$9 = styled.div(templateObject_5$13 || (templateObject_5$13 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var Percent$1 = styled.div(templateObject_6$P || (templateObject_6$P = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var Percent$1 = styled.div(templateObject_6$Q || (templateObject_6$Q = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme, btcLider = _a.btcLider;
     return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
@@ -3213,7 +3213,7 @@ var ExpiredCardBTC = function (_a) {
                     (texts === null || texts === void 0 ? void 0 : texts.locked) || "Locked Price"),
                 React__default.createElement("p", null, lockedETH)))));
 };
-var templateObject_1$2W, templateObject_2$2g, templateObject_3$1P, templateObject_4$1v, templateObject_5$13, templateObject_6$P;
+var templateObject_1$2W, templateObject_2$2g, templateObject_3$1P, templateObject_4$1v, templateObject_5$13, templateObject_6$Q;
 
 var Wrap$l = styled.div(templateObject_1$2V || (templateObject_1$2V = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"], ["\n  height: 100%;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"])));
 var Closed = styled.div(templateObject_2$2f || (templateObject_2$2f = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"], ["\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 1px;\n  color: ", ";\n"])), function (_a) {
@@ -3229,7 +3229,7 @@ var Locked = styled(Closed)(templateObject_4$1u || (templateObject_4$1u = __make
     return theme.colors.greyText;
 });
 var Line$8 = styled.div(templateObject_5$12 || (templateObject_5$12 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
-var Percent = styled.div(templateObject_6$O || (templateObject_6$O = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var Percent = styled.div(templateObject_6$P || (templateObject_6$P = __makeTemplateObject(["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"], ["\n  color: ", ";\n  background: ", ";\n  border-radius: 5px;\n  padding: 3px 7px;\n  margin-right: 9px;\n  font-weight: 500;\n  font-size: 11px;\n  line-height: 14px;\n  text-align: center;\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme, btcLider = _a.btcLider;
     return (btcLider ? theme.colors.green : theme.colors.redBg);
 }, function (_a) {
@@ -3271,7 +3271,7 @@ var LiveCardBTC = function (_a) {
                     " ",
                     lockedETH)))));
 };
-var templateObject_1$2V, templateObject_2$2f, templateObject_3$1O, templateObject_4$1u, templateObject_5$12, templateObject_6$O;
+var templateObject_1$2V, templateObject_2$2f, templateObject_3$1O, templateObject_4$1u, templateObject_5$12, templateObject_6$P;
 
 var Front = styled.div(templateObject_1$2U || (templateObject_1$2U = __makeTemplateObject(["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var Back = styled(Front)(templateObject_2$2e || (templateObject_2$2e = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
@@ -3351,13 +3351,13 @@ var PrizeBlock = styled.div(templateObject_5$11 || (templateObject_5$11 = __make
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ButtonWrap$1 = styled.div(templateObject_6$N || (templateObject_6$N = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
+var ButtonWrap$1 = styled.div(templateObject_6$O || (templateObject_6$O = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
 var ButtonRightBlock = styled.div(templateObject_7$x || (templateObject_7$x = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
 var IconComplete = styled.div(templateObject_8$r || (templateObject_8$r = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n  margin-right: -5px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n  margin-right: -5px;\n"])), function (_a) {
     var hasEntered = _a.hasEntered;
     return (hasEntered ? "flex" : "none");
 });
-var templateObject_1$2T, templateObject_2$2d, templateObject_3$1M, templateObject_4$1s, templateObject_5$11, templateObject_6$N, templateObject_7$x, templateObject_8$r;
+var templateObject_1$2T, templateObject_2$2d, templateObject_3$1M, templateObject_4$1s, templateObject_5$11, templateObject_6$O, templateObject_7$x, templateObject_8$r;
 
 var CardNext = function (_a) {
     var roundEpoch = _a.roundEpoch, time = _a.time, payoutWin = _a.payoutWin, payoutLose = _a.payoutLose, pool = _a.pool, hasEnteredUp = _a.hasEnteredUp, hasEnteredDown = _a.hasEnteredDown, handleSetPosition = _a.handleSetPosition, disabledButton = _a.disabledButton, disabledTimer = _a.disabledTimer, textRow = _a.textRow, textsButtons = _a.textsButtons, ethButton = _a.ethButton, btcButton = _a.btcButton;
@@ -3417,7 +3417,7 @@ var Wrap$j = styled.div(templateObject_5$10 || (templateObject_5$10 = __makeTemp
     var theme = _a.theme;
     return theme.colors.text;
 });
-var Loader = styled.div(templateObject_6$M || (templateObject_6$M = __makeTemplateObject(["\n  position: ", ";\n  top: 50%;\n"], ["\n  position: ", ";\n  top: 50%;\n"])), function (_a) {
+var Loader = styled.div(templateObject_6$N || (templateObject_6$N = __makeTemplateObject(["\n  position: ", ";\n  top: 50%;\n"], ["\n  position: ", ";\n  top: 50%;\n"])), function (_a) {
     var textTooltip = _a.textTooltip;
     return (textTooltip ? "static" : "absolute");
 });
@@ -3451,7 +3451,7 @@ var LoaderCardText = function (_a) {
             React__default.createElement(YellowCircle, null)),
         React__default.createElement(BottomText, null, textTooltip)));
 };
-var templateObject_1$2Q, templateObject_2$2a, templateObject_3$1K, templateObject_4$1q, templateObject_5$10, templateObject_6$M, templateObject_7$w, templateObject_8$q, templateObject_9$h, templateObject_10$f, templateObject_11$c;
+var templateObject_1$2Q, templateObject_2$2a, templateObject_3$1K, templateObject_4$1q, templateObject_5$10, templateObject_6$N, templateObject_7$w, templateObject_8$q, templateObject_9$h, templateObject_10$f, templateObject_11$c;
 
 var BalanceBlock$1 = function (_a) {
     var btc = _a.btc, value = _a.value;
@@ -3965,7 +3965,7 @@ var Block$c = styled.div(templateObject_5$Z || (templateObject_5$Z = __makeTempl
     var theme = _a.theme;
     return theme.colors.buttonBg;
 });
-var RoundCurrentBlock = styled.div(templateObject_6$L || (templateObject_6$L = __makeTemplateObject(["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"], ["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"])), function (_a) {
+var RoundCurrentBlock = styled.div(templateObject_6$M || (templateObject_6$M = __makeTemplateObject(["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"], ["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"])), function (_a) {
     var progress = _a.progress;
     return (progress ? progress + "%" : 0);
 });
@@ -4012,7 +4012,7 @@ var Indicator = styled.div(templateObject_13$9 || (templateObject_13$9 = __makeT
     var progress = _a.progress;
     return (progress && progress > 50 ? "-100%" : 0);
 }, Note$1, NoteContent);
-var templateObject_1$2H, templateObject_2$21, templateObject_3$1F, templateObject_4$1m, templateObject_5$Z, templateObject_6$L, templateObject_7$v, templateObject_8$p, templateObject_9$g, templateObject_10$e, templateObject_11$b, templateObject_12$a, templateObject_13$9;
+var templateObject_1$2H, templateObject_2$21, templateObject_3$1F, templateObject_4$1m, templateObject_5$Z, templateObject_6$M, templateObject_7$v, templateObject_8$p, templateObject_9$g, templateObject_10$e, templateObject_11$b, templateObject_12$a, templateObject_13$9;
 
 var SwitchUnitsButton = styled(IconButton)(templateObject_1$2G || (templateObject_1$2G = __makeTemplateObject(["\n  width: auto;\n"], ["\n  width: auto;\n"])));
 var UnitContainer = styled(Text)(templateObject_2$20 || (templateObject_2$20 = __makeTemplateObject(["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
@@ -4342,13 +4342,13 @@ function escapeRegExp$1(string) {
 
 var StyledInput = styled.input(templateObject_1$2y || (templateObject_1$2y = __makeTemplateObject(["\n  color: ", ";\n  width: 0;\n  position: relative;\n  font-weight: 500;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  background-color: transparent;\n  font-size: 16px;\n  text-align: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  [type=\"number\"] {\n    -moz-appearance: textfield;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"], ["\n  color: ", ";\n  width: 0;\n  position: relative;\n  font-weight: 500;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  background-color: transparent;\n  font-size: 16px;\n  text-align: ", ";\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  [type=\"number\"] {\n    -moz-appearance: textfield;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"])), function (_a) {
     var error = _a.error, theme = _a.theme;
-    return (error ? theme.colors.failure : theme.colors.text);
+    return (error ? theme.colors.redBg : theme.colors.text);
 }, function (_a) {
     var align = _a.align;
     return align && align;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.colors.text;
 });
 var inputRegex$1 = RegExp("^\\d*(?:\\\\[.])?\\d*$"); // match escaped "." characters via in a non-capturing group
 var Input$3 = React__default.memo(function InnerInput(_a) {
@@ -4373,55 +4373,58 @@ var InputRow = styled.div(templateObject_1$2x || (templateObject_1$2x = __makeTe
     var selected = _a.selected;
     return (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem");
 });
-var CurrencySelectButton = styled(Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  padding: 0 0.5rem;\n"], ["\n  padding: 0 0.5rem;\n"])));
+var CurrencySelectButton = styled(Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  padding: 9px 20px 6px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"], ["\n  padding: 9px 20px 6px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.bgOpacitY3;
+});
 var LabelRow = styled.div(templateObject_3$1C || (templateObject_3$1C = __makeTemplateObject(["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"], ["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
-var InputPanel$1 = styled.div(templateObject_4$1k || (templateObject_4$1k = __makeTemplateObject(["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background-color: ", ";\n  z-index: 1;\n"], ["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background-color: ", ";\n  z-index: 1;\n"])), function (_a) {
+var InputPanel$1 = styled.div(templateObject_4$1k || (templateObject_4$1k = __makeTemplateObject(["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background: ", ";\n  z-index: 1;\n"], ["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background: ", ";\n  z-index: 1;\n"])), function (_a) {
     var hideInput = _a.hideInput;
     return (hideInput ? "8px" : "20px");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.background;
+    return theme.colors.bgOpacity;
 });
-var Container$1 = styled.div(templateObject_5$Y || (templateObject_5$Y = __makeTemplateObject(["\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
+var Container$1 = styled(Flex)(templateObject_5$Y || (templateObject_5$Y = __makeTemplateObject(["\n  justify-content: space-between;\n  padding: 14px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  justify-content: space-between;\n  padding: 14px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard5;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.input;
 });
+var FlexCurrency = styled(Flex)(templateObject_6$L || (templateObject_6$L = __makeTemplateObject([""], [""])));
 var CurrencyInputPanel = function (_a) {
     var value = _a.value, onUserInput = _a.onUserInput, onMax = _a.onMax, showMaxButton = _a.showMaxButton, label = _a.label, currency = _a.currency, _b = _a.disableCurrencySelect, disableCurrencySelect = _b === void 0 ? false : _b, _c = _a.pair, pair = _c === void 0 ? null : _c, // used for double token logo
     _d = _a.hideInput, // used for double token logo
     hideInput = _d === void 0 ? false : _d, id = _a.id, account = _a.account, onPresentCurrencyModal = _a.onPresentCurrencyModal, сurrencyLogo = _a.сurrencyLogo, doubleCurrencyLogo = _a.doubleCurrencyLogo, texts = _a.texts;
     return (React__default.createElement(InputPanel$1, { id: id },
         React__default.createElement(Container$1, { hideInput: hideInput },
-            !hideInput && (React__default.createElement(LabelRow, null,
-                React__default.createElement(RowBetween, null,
-                    React__default.createElement(Text, { fontSize: "14px" }, texts.translatedLabel),
-                    account && (React__default.createElement(Text, { onClick: onMax, fontSize: "14px", style: { display: "inline", cursor: "pointer" } }, texts.balance))))),
-            React__default.createElement(InputRow, { style: hideInput ? { padding: "0", borderRadius: "8px" } : {}, selected: disableCurrencySelect },
-                !hideInput && (React__default.createElement(React__default.Fragment, null,
+            React__default.createElement("div", null,
+                !hideInput && (React__default.createElement(LabelRow, null,
+                    React__default.createElement(RowBetween, null,
+                        React__default.createElement(Text, { color: "textGray" }, texts.translatedLabel)))),
+                React__default.createElement(InputRow, { style: hideInput ? { padding: "0", borderRadius: "8px" } : {}, selected: disableCurrencySelect }, !hideInput && (React__default.createElement(React__default.Fragment, null,
                     React__default.createElement(Input$3, { className: "token-amount-input", title: texts.numericalInputTitle, value: value, onUserInput: function (val) {
                             onUserInput(val);
                         } }),
-                    account && currency && showMaxButton && label !== "To" && (React__default.createElement(Button$9, { onClick: onMax, scale: "sm", variant: "text" }, texts.max)))),
-                React__default.createElement(CurrencySelectButton, { selected: !!currency, className: "open-currency-select-button", onClick: function () {
-                        if (!disableCurrencySelect) {
-                            onPresentCurrencyModal();
-                        }
-                    } },
-                    React__default.createElement(Flex, { alignItems: "center", justifyContent: "space-between" },
-                        pair ? doubleCurrencyLogo : currency ? сurrencyLogo : null,
-                        pair ? (React__default.createElement(Text, { id: "pair" }, pair === null || pair === void 0 ? void 0 :
-                            pair.token0.symbol,
-                            ":", pair === null || pair === void 0 ? void 0 :
-                            pair.token1.symbol)) : (React__default.createElement(Text, { id: "pair" }, texts.currencySelect)),
-                        !disableCurrencySelect && React__default.createElement(Icon$D, null)))))));
+                    account && currency && showMaxButton && label !== "To" && (React__default.createElement(Button$9, { onClick: onMax, scale: "sm", variant: "text" }, texts.max)))))),
+            !hideInput && (React__default.createElement(CurrencySelectButton, { selected: !!currency, className: "open-currency-select-button", onClick: function () {
+                    if (!disableCurrencySelect) {
+                        onPresentCurrencyModal();
+                    }
+                } },
+                React__default.createElement(FlexCurrency, { alignItems: "center", justifyContent: "center", flexDirection: "column" },
+                    pair ? doubleCurrencyLogo : currency ? сurrencyLogo : null,
+                    pair ? (React__default.createElement(Text, { id: "pair", mt: "7px", fontSize: "11px" }, pair === null || pair === void 0 ? void 0 :
+                        pair.token0.symbol,
+                        ":", pair === null || pair === void 0 ? void 0 :
+                        pair.token1.symbol)) : (React__default.createElement(Text, { id: "pair", mt: "7px", fontSize: "11px" }, texts.currencySelect)),
+                    !disableCurrencySelect && React__default.createElement(Icon$D, null)))))));
 };
-var templateObject_1$2x, templateObject_2$1Z, templateObject_3$1C, templateObject_4$1k, templateObject_5$Y;
+var templateObject_1$2x, templateObject_2$1Z, templateObject_3$1C, templateObject_4$1k, templateObject_5$Y, templateObject_6$L;
 
 var light$3 = {
     background: lightColors.card,
@@ -6667,7 +6670,7 @@ var PriceBlock$1 = styled.div(templateObject_2$1y || (templateObject_2$1y = __ma
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Price$1 = styled.div(templateObject_3$1f || (templateObject_3$1f = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
+var Price$2 = styled.div(templateObject_3$1f || (templateObject_3$1f = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
@@ -6681,10 +6684,10 @@ var ClosedPrice = function (_a) {
         React__default.createElement(PriceBlock$1, null,
             React__default.createElement(Text, { color: "text", mb: 18, fontWeight: 500, fontSize: "13px", textTransform: "uppercase" }, textPrice || (!result ? "Closed Price" : "Your Result")),
             ((!roundFailed && !result) || result) && (React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
-                React__default.createElement(Price$1, { negative: negative }, price),
+                React__default.createElement(Price$2, { negative: negative }, price),
                 React__default.createElement(Text, { fontWeight: 400, mr: "auto", ml: 9 }, result),
                 React__default.createElement(RightText$1, { negative: rightText === "UP" ? false : negative },
-                    React__default.createElement(Price$1, { negative: rightText === "UP" ? false : negative },
+                    React__default.createElement(Price$2, { negative: rightText === "UP" ? false : negative },
                         React__default.createElement(Text, null, rightText))))),
             roundFailed && !result && React__default.createElement(Text, { color: "greyText" }, textCanceled || "CANCELED"))));
 };
@@ -6749,7 +6752,7 @@ var PriceBlock = styled.div(templateObject_2$1w || (templateObject_2$1w = __make
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Price = styled.div(templateObject_3$1d || (templateObject_3$1d = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
+var Price$1 = styled.div(templateObject_3$1d || (templateObject_3$1d = __makeTemplateObject(["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"], ["\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative;
     return (negative ? theme.colors.redBg : theme.colors.linkColor);
 });
@@ -6774,7 +6777,7 @@ var ClosedPriceBTC = function (_a) {
                 React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
                     React__default.createElement(Text, { color: "textGray", fontWeight: 500 }, textTitle || "Title"),
                     React__default.createElement(RightText, { negative: rightText === "UP" ? false : negative },
-                        React__default.createElement(Price, { negative: rightText === "UP" ? false : negative }, rightText))))),
+                        React__default.createElement(Price$1, { negative: rightText === "UP" ? false : negative }, rightText))))),
             roundFailed && (React__default.createElement(Text, { color: "greyText", marginTop: "40px" }, textCanceled || "CANCELED")))));
 };
 var templateObject_1$1$, templateObject_2$1w, templateObject_3$1d, templateObject_4$10;
@@ -11218,33 +11221,35 @@ var SwapShowAcceptChanges = styled(AutoColumn)(templateObject_9$2 || (templateOb
 var templateObject_1$k, templateObject_2$f, templateObject_3$a, templateObject_4$7, templateObject_5$3, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2;
 
 var SwapModalHeader = function (_a) {
-    var recipient = _a.recipient, showAcceptChanges = _a.showAcceptChanges, onAcceptChanges = _a.onAcceptChanges, outputEstimates = _a.outputEstimates, recipientSentToText = _a.recipientSentToText, currencyFrom = _a.currencyFrom, currencyTo = _a.currencyTo, currencyFromSymbol = _a.currencyFromSymbol, currencyToSymbol = _a.currencyToSymbol, texts = _a.texts;
+    var recipient = _a.recipient, showAcceptChanges = _a.showAcceptChanges, onAcceptChanges = _a.onAcceptChanges, outputEstimates = _a.outputEstimates, recipientSentToText = _a.recipientSentToText, currencyIconFrom = _a.currencyIconFrom, currencyFromSymbol = _a.currencyFromSymbol, currencyFromName = _a.currencyFromName, priceFrom = _a.priceFrom, currencyIconTo = _a.currencyIconTo, currencyToSymbol = _a.currencyToSymbol, currencyToName = _a.currencyToName, priceTo = _a.priceTo, texts = _a.texts;
     return (React__default.createElement("div", null,
         React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "flex-start" },
-            React__default.createElement(RowFixed, { gap: "0px" }, currencyFrom),
-            React__default.createElement(RowFixed, { gap: "0px" },
-                React__default.createElement(Text, { fontSize: "24px", ml: "10px" }, currencyFromSymbol))),
-        React__default.createElement(RowFixed, null,
-            React__default.createElement(Icon$L, { width: "16px", ml: "4px" })),
+            React__default.createElement(Flex, { alignItems: "flex-start" },
+                currencyIconFrom,
+                React__default.createElement(CurrencyName, null,
+                    React__default.createElement(ShortName, null, currencyFromSymbol),
+                    React__default.createElement(FullName, null, currencyFromName))),
+            React__default.createElement(Price, null, priceFrom)),
         React__default.createElement(Flex, { mt: "31px", justifyContent: "space-between", alignItems: "flex-start" },
-            React__default.createElement(RowFixed, { gap: "0px" }, currencyTo),
-            React__default.createElement(RowFixed, { gap: "0px" },
-                React__default.createElement(Text, { fontSize: "24px", ml: "10px" }, currencyToSymbol))),
+            React__default.createElement(Flex, { alignItems: "flex-start" },
+                currencyIconTo,
+                React__default.createElement(CurrencyName, null,
+                    React__default.createElement(ShortName, null, currencyToSymbol),
+                    React__default.createElement(FullName, null, currencyToName))),
+            React__default.createElement(Price, null, priceTo)),
         showAcceptChanges ? (React__default.createElement(SwapShowAcceptChanges, { justify: "flex-start", gap: "0px" },
             React__default.createElement(RowBetween, null,
                 React__default.createElement(RowFixed, null,
-                    React__default.createElement(Text, { color: baseColors.redBg, fontWeight: "500" },
-                        " ",
-                        texts.priceUpdated)),
+                    React__default.createElement(Text, { color: baseColors.green, fontWeight: "500" }, texts.priceUpdated)),
                 React__default.createElement(Button$9, { variant: "green", onClick: onAcceptChanges }, texts.accept)))) : null,
         React__default.createElement(Text, { mt: "28px", fontSize: "13px", color: baseColors.textGray }, outputEstimates),
         recipient !== null ? (React__default.createElement(AutoColumn, { justify: "flex-start", gap: "sm", style: { padding: "12px 0 0 0px" } },
             React__default.createElement(Text, { color: "text" }, recipientSentToText))) : null));
 };
-styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  margin-left: 15px;\n"], ["\n  margin-left: 15px;\n"])));
+var CurrencyName = styled.div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  margin-left: 15px;\n"], ["\n  margin-left: 15px;\n"])));
 var ShortName = styled(Text)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"], ["\n  margin-bottom: 5px;\n  font-weight: 500;\n  font-size: 15px;\n  line-height: 15px;\n  letter-spacing: 0.5px;\n"])));
-styled(Text)(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
-styled(ShortName)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  margin-bottom: 0;\n"], ["\n  margin-bottom: 0;\n"])));
+var FullName = styled(Text)(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"], ["\n  font-size: 11px;\n  line-height: 14px;\n  letter-spacing: 0.5px;\n"])));
+var Price = styled(ShortName)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  margin-bottom: 0;\n"], ["\n  margin-bottom: 0;\n"])));
 var templateObject_1$j, templateObject_2$e, templateObject_3$9, templateObject_4$6;
 
 var SwapRoute = memo(function SwapRoute(_a) {
@@ -11270,7 +11275,7 @@ function TradePrice(_a) {
             React__default.createElement(Icon$c, { width: "14px" })))) : ("-")));
 }
 
-var BodyWrapper = styled.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"], ["\n  border-radius: 24px;\n  max-width: 404px;\n  height: 486px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"])), function (_a) {
+var BodyWrapper = styled.div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  border-radius: 24px;\n  max-width: 404px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"], ["\n  border-radius: 24px;\n  max-width: 404px;\n  width: 100%;\n  z-index: 1;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
@@ -11320,7 +11325,7 @@ var templateObject_1$g, templateObject_2$c;
 
 var Transactions = function (_a) {
     var onPresentTransactionsModal = _a.onPresentTransactionsModal;
-    return (React__default.createElement(Button$9, { variant: "text", p: 0, onClick: onPresentTransactionsModal, ml: "16px" },
+    return (React__default.createElement(Button$9, { variant: "text", p: 0, onClick: onPresentTransactionsModal, ml: "12px" },
         React__default.createElement(Icon$13, { color: "textSubtle", width: "30px" })));
 };
 
