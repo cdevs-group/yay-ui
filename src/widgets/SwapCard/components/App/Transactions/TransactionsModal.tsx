@@ -14,6 +14,10 @@ const StyledText = styled(Text)`
   color: #a3a3a3;
 `;
 
+const StyledButtonBlock = styled.div`
+  padding: 20px;
+`
+
 export interface TransactionsModalProps {
   texts: {
     modalTitle: string;
@@ -61,7 +65,7 @@ const TransactionsModal: React.FC<InjectedModalProps & TransactionsModalProps> =
           )}
         </ModalBody>
       ) : (
-        <>{connectWalletButton}</>
+        <StyledButtonBlock>{connectWalletButton}</StyledButtonBlock>
       )}
     </Modal>
   );

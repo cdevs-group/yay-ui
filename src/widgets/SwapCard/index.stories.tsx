@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button, Text } from "../..";
+import { Button, Text, Flex } from "../..";
 
 import TradePrice from "./components/TradePrice";
 import SwapRoute from "./components/SwapRoute";
@@ -24,6 +24,8 @@ import GlobalSettings from "./components/SettingsModal";
 import { AppHeader } from "./components/App";
 // import Swap from "./SwapCard";
 import { YAY_TOKEN_GREEN } from "../../constants/images";
+import TransactionsModal from "./components/App/Transactions/TransactionsModal"
+import { Transaction } from ".";
 
 export default {
   title: "Widgets/Swap",
@@ -714,3 +716,35 @@ export const AppHeaderBlock = () => {
 //     </Container>
 //   );
 // };
+
+export const TransactionsModalBlock = () => {
+
+  const renderTransactions = (transactions: any[]) => {
+    return (
+      <Flex flexDirection="column">
+        {transactions.map((tx) => {
+          //pending={true} - спиннер
+          return <Transaction key={tx.hash + tx.addedTime} bscScanLink="https://storybook.js.org/" summary="summary" pending={false} success={true}/>
+        })}
+      </Flex>
+    )
+  }
+
+  return (
+    <TransactionsModal
+      account={undefined} // для просмотра транзакций можно передать строку вместо текущего undefined, например "account"
+      onDismiss={() => null}
+      texts={{
+        modalTitle: "Transactions",
+        modalBodyText: "Transactions",
+        modalButton: "Clear All",
+        modalAlternativeText: "modalAlternativeText"
+      }}
+      pending={transaction}
+      confirmed={transaction}
+      clearAllTransactionsCallback={() => null}
+      connectWalletButton={<Button variant="green" width="100%">Connect Wallet Button</Button>}
+      renderTransactions={renderTransactions}
+    />
+  );
+}
