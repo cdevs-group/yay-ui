@@ -2720,10 +2720,10 @@ var RowFixed = styled(Row$7)(templateObject_5$18 || (templateObject_5$18 = __mak
 var templateObject_1$36, templateObject_2$2r, templateObject_3$1Z, templateObject_4$1C, templateObject_5$18;
 
 var InputSearch = function (_a) {
-    var icon = _a.icon, height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width, name = _a.name, padding = _a.padding, props = __rest(_a, ["icon", "height", "placeholder", "value", "onChange", "iconLess", "width", "name", "padding"]);
+    var icon = _a.icon, height = _a.height, placeholder = _a.placeholder, value = _a.value, onChange = _a.onChange, iconLess = _a.iconLess, width = _a.width, name = _a.name, props = __rest(_a, ["icon", "height", "placeholder", "value", "onChange", "iconLess", "width", "name"]);
     var _b = useState(false), focus = _b[0], setFocus = _b[1];
     return (React__default.createElement(InputBlock$3, { height: height, width: width },
-        React__default.createElement(InputItem, __assign({ padding: padding, width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder, name: name }, props)),
+        React__default.createElement(InputItem, __assign({ width: width, value: value, onChange: onChange, onFocus: function () { return setFocus(true); }, onBlur: function () { return setFocus(false); }, placeholder: placeholder, name: name }, props)),
         React__default.createElement(Button$7, { iconLess: iconLess }, icon || React__default.createElement(Icon$$, { color: focus ? "green" : "text" }))));
 };
 InputSearch.defaultProps = {
@@ -2736,19 +2736,16 @@ var InputBlock$3 = styled.div(templateObject_1$35 || (templateObject_1$35 = __ma
     var height = _a.height;
     return (height ? height : "auto");
 });
-var InputItem = styled.input(templateObject_2$2q || (templateObject_2$2q = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  position: relative;\n  display: inline-block;\n  padding: ", ";\n  background: rgb(20, 20, 25);\n  box-shadow: ", ";\n  border-radius: 12px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  font-weight: normal;\n  color: ", ";\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  outline: none;\n  border: 1px solid transparent;\n  &::placeholder {\n    opacity: 0.5;\n  }\n  &:focus {\n    border: 1px solid #4cee3e;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"], ["\n  width: ", ";\n  height: 100%;\n  position: relative;\n  display: inline-block;\n  padding: ", ";\n  background: rgb(20, 20, 25);\n  box-shadow: ", ";\n  border-radius: 12px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  font-weight: normal;\n  color: ", ";\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  outline: none;\n  border: 1px solid transparent;\n  &::placeholder {\n    opacity: 0.5;\n  }\n  &:focus {\n    border: 1px solid #4cee3e;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (_a) {
+var InputItem = styled.input(templateObject_2$2q || (templateObject_2$2q = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  position: relative;\n  display: inline-block;\n  padding: 16px 25px;\n  background: rgb(20, 20, 25);\n  box-shadow: ", ";\n  border-radius: 12px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  font-weight: normal;\n  color: ", ";\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  outline: none;\n  border: 1px solid transparent;\n  ", "\n  ", "\n  ", "\n  &::placeholder {\n    opacity: 0.5;\n  }\n  &:focus {\n    border: 1px solid #4cee3e;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"], ["\n  width: ", ";\n  height: 100%;\n  position: relative;\n  display: inline-block;\n  padding: 16px 25px;\n  background: rgb(20, 20, 25);\n  box-shadow: ", ";\n  border-radius: 12px;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  font-weight: normal;\n  color: ", ";\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  outline: none;\n  border: 1px solid transparent;\n  ", "\n  ", "\n  ", "\n  &::placeholder {\n    opacity: 0.5;\n  }\n  &:focus {\n    border: 1px solid #4cee3e;\n    &::placeholder {\n      opacity: 0;\n    }\n  }\n"])), function (_a) {
     var width = _a.width;
     return (width ? width : "fit-content");
-}, function (_a) {
-    var padding = _a.padding;
-    return padding || "16px 25px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
-});
+}, background, space, border);
 var Button$7 = styled.button(templateObject_3$1Y || (templateObject_3$1Y = __makeTemplateObject(["\n  display: ", ";\n  padding: 0;\n  border: none;\n  background: none;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 21px;\n"], ["\n  display: ", ";\n  padding: 0;\n  border: none;\n  background: none;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 21px;\n"])), function (_a) {
     var iconLess = _a.iconLess;
     return (iconLess ? "none" : "block");
@@ -11174,12 +11171,12 @@ var ArrowWrapper = styled.div(templateObject_3$a || (templateObject_3$a = __make
 var ErrorText = styled(Text)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme, severity = _a.severity;
     return severity === 3 || severity === 4
-        ? theme.colors.failure
+        ? theme.colors.redBg
         : severity === 2
-            ? theme.colors.warning
+            ? theme.colors.redBg
             : severity === 1
                 ? theme.colors.text
-                : theme.colors.success;
+                : theme.colors.green;
 });
 var StyledBalanceMaxMini = styled.button(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"], ["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -11260,7 +11257,7 @@ var SwapRoute = memo(function SwapRoute(_a) {
         // eslint-disable-next-line react/no-array-index-key
         React__default.createElement(Fragment, { key: i },
             React__default.createElement(Flex, { alignItems: "end" },
-                React__default.createElement(Text, { fontSize: "14px", ml: "0.125rem", mr: "0.125rem" }, currency.symbol)),
+                React__default.createElement(Text, { fontSize: "14px", ml: "0.125rem", mr: "0.125rem" }, currency === null || currency === void 0 ? void 0 : currency.symbol)),
             isLastItem && React__default.createElement(Icon$a, { width: "12px" })));
     })));
 });
@@ -11360,7 +11357,7 @@ var ModalTitle$1 = styled.div(templateObject_2$a || (templateObject_2$a = __make
     return theme.colors.text;
 });
 var ModalHeader$1 = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"], ["\n  display: flex;\n  margin-bottom: 32px;\n  align-items: center;\n  padding: 0;\n"])));
-var TextStyle$1 = styled(Text)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  margin-bottom: 15px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
+var TextStyle$1 = styled(Text)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"], ["\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  letter-spacing: 0.5px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 });
@@ -11382,7 +11379,7 @@ var TextMessage = styled(Text)(templateObject_9$1 || (templateObject_9$1 = __mak
     return theme.colors.green;
 });
 var TextLabel = styled(Text)(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  cursor: pointer;\n"], ["\n  cursor: pointer;\n"])));
-var TabsWrapBlock = styled.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"], ["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 12px;\n  box-shadow: ", ";\n"])), function (_a) {
+var TabsWrapBlock = styled.div(templateObject_11$1 || (templateObject_11$1 = __makeTemplateObject(["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 9px;\n  box-shadow: ", ";\n"], ["\n  display: grid;\n  width: ", ";\n  grid-template-columns: ", ";\n  background: ", ";\n  border-radius: 9px;\n  box-shadow: ", ";\n"])), function (_a) {
     var width = _a.width;
     return width || "auto";
 }, function (_a) {
@@ -11390,12 +11387,12 @@ var TabsWrapBlock = styled.div(templateObject_11$1 || (templateObject_11$1 = __m
     return "repeat(" + (length || 2) + ", " + (variant === "small" ? "auto" : "1fr") + ")";
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.buttonBg;
+    return theme.colors.bgOpacity;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow4;
 });
-var Tab = styled.button(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  padding: ", ";\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n"], ["\n  padding: ", ";\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n"])), function (_a) {
+var Tab = styled.button(templateObject_12 || (templateObject_12 = __makeTemplateObject(["\n  padding: ", ";\n  border: none;\n  background: transparent;\n  border-radius: 9px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n"], ["\n  padding: ", ";\n  border: none;\n  background: transparent;\n  border-radius: 9px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n"])), function (_a) {
     var paddingTabs = _a.paddingTabs;
     return paddingTabs || "15px 16px";
 }, function (_a) {
@@ -11526,21 +11523,19 @@ var TransactionSettings = function (_a) {
                             }
                         }, width: "90px", height: "33px", onBlur: function () {
                             parseCustomSlippage((slippageInput / 100).toFixed(2));
-                        }, placeholder: "", icon: React__default.createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "%") })))),
-        React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "24px" },
+                        }, placeholder: "", icon: React__default.createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "%"), background: baseColors.bgOpacity, borderRadius: "9px" })))),
+        React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "34px" },
             React__default.createElement(Flex, { alignItems: "center" },
                 React__default.createElement(TextStyle$1, { mb: "0 !important" }, texts.txDeadline)),
             React__default.createElement(Flex, null,
                 React__default.createElement(Box, { width: "fit-content" },
-                    React__default.createElement(InputSearch, { padding: "16px 50px 16px 12px", name: "deadline", value: deadlineInput, 
-                        // onChange={handleDeadlineInput}
-                        width: "90px", height: "33px", placeholder: "0", onBlur: function () {
+                    React__default.createElement(InputSearch, { padding: "16px 50px 16px 12px", name: "deadline", value: deadlineInput, width: "90px", height: "33px", placeholder: "0", onBlur: function () {
                             parseCustomDeadline((ttl / 60).toString());
                         }, onChange: function (event) {
                             if (event.currentTarget.validity.valid) {
                                 parseCustomDeadline(event.target.value);
                             }
-                        }, icon: React__default.createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "min") }))))));
+                        }, icon: React__default.createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "min"), background: baseColors.bgOpacity, borderRadius: "9px" }))))));
 };
 
 var SettingsModal = function (_a) {
@@ -11680,7 +11675,7 @@ var DetailsFooter = styled.div(templateObject_1$c || (templateObject_1$c = __mak
     return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.invertedContrast;
+    return theme.colors.bgOpacitY3;
 });
 var UnsupportedModal = function (_a) {
     var _b;
@@ -11862,18 +11857,18 @@ function TradeSummary(_a) {
     return (React__default.createElement(AutoColumn, { style: { padding: "0 16px" } },
         React__default.createElement(RowBetween, null,
             React__default.createElement(RowFixed, null,
-                React__default.createElement(Text, { fontSize: "11px", color: "text" }, receivedOrSold),
-                React__default.createElement(QuestionHelper, { text: transactionHelper, ml: "4px" })),
+                React__default.createElement(Text, { fontSize: "11px" }, receivedOrSold),
+                React__default.createElement(QuestionHelper, { text: transactionHelper, ml: "8px" })),
             React__default.createElement(RowFixed, null,
                 React__default.createElement(Text, { fontSize: "11px" }, slippageAdjusted))),
         React__default.createElement(RowBetween, null,
             React__default.createElement(RowFixed, null,
-                React__default.createElement(Text, { fontSize: "11px", color: "text" }, priceImpact),
-                React__default.createElement(QuestionHelper, { text: priceDifference, ml: "4px" })),
-            errorText),
+                React__default.createElement(Text, { fontSize: "11px" }, priceImpact),
+                React__default.createElement(QuestionHelper, { text: priceDifference, ml: "8px" })),
+            React__default.createElement(Text, { fontSize: "11px" }, errorText)),
         React__default.createElement(RowBetween, null,
             React__default.createElement(RowFixed, null,
-                React__default.createElement(Text, { fontSize: "11px", color: "text" }, fee),
+                React__default.createElement(Text, { fontSize: "11px" }, fee),
                 React__default.createElement(QuestionHelper, { text: React__default.createElement(React__default.Fragment, null,
                         React__default.createElement(Text, { mb: "12px", fontSize: "11px" }, amountFee),
                         React__default.createElement(Text, { fontSize: "11px" },
@@ -11884,7 +11879,7 @@ function TradeSummary(_a) {
                             amountTreasury),
                         React__default.createElement(Text, { fontSize: "11px" },
                             "- ",
-                            amountTowards)), ml: "4px" })),
+                            amountTowards)), ml: "8px" })),
             React__default.createElement(Text, { fontSize: "11px" }, realizedLPFeeText))));
 }
 function AdvancedSwapDetails(_a) {
@@ -11932,7 +11927,7 @@ var AdvancedDetailsFooter = styled.div(templateObject_1$7 || (templateObject_1$7
     return (show ? "16px" : 0);
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.invertedContrast;
+    return theme.colors.bgOpacitY3;
 }, function (_a) {
     var show = _a.show;
     return (show ? "translateY(0%)" : "translateY(-100%)");
