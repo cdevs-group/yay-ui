@@ -25,12 +25,12 @@ export const ArrowWrapper = styled.div<{ clickable: boolean }>`
 export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
-      ? theme.colors.failure
+      ? theme.colors.redBg
       : severity === 2
-      ? theme.colors.warning
+      ? theme.colors.redBg
       : severity === 1
       ? theme.colors.text
-      : theme.colors.success};
+      : theme.colors.green};
 `;
 
 export const StyledBalanceMaxMini = styled.button`

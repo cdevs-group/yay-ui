@@ -15,7 +15,7 @@ export default memo(function SwapRoute({ trade, unwrappedToken }: { trade: any; 
           <Fragment key={i}>
             <Flex alignItems="end">
               <Text fontSize="14px" ml="0.125rem" mr="0.125rem">
-                {currency.symbol}
+                {currency?.symbol}
               </Text>
             </Flex>
             {isLastItem && <ChevronRightIcon width="12px" />}

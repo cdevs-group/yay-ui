@@ -48,28 +48,32 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
     <AutoColumn style={{ padding: "0 16px" }}>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="11px" color="text">
+          <Text fontSize="11px">
             {receivedOrSold}
           </Text>
-          <QuestionHelper text={transactionHelper} ml="4px" />
+          <QuestionHelper text={transactionHelper} ml="8px" />
         </RowFixed>
         <RowFixed>
-          <Text fontSize="11px">{slippageAdjusted}</Text>
+          <Text fontSize="11px">
+            {slippageAdjusted}
+          </Text>
         </RowFixed>
       </RowBetween>
       <RowBetween>
         <RowFixed>
-          <Text fontSize="11px" color="text">
+          <Text fontSize="11px">
             {priceImpact}
           </Text>
-          <QuestionHelper text={priceDifference} ml="4px" />
+          <QuestionHelper text={priceDifference} ml="8px" />
         </RowFixed>
-        {errorText}
+        <Text fontSize="11px">
+          {errorText}
+        </Text>
       </RowBetween>
 
       <RowBetween>
         <RowFixed>
-          <Text fontSize="11px" color="text">
+          <Text fontSize="11px">
             {fee}
           </Text>
           <QuestionHelper
@@ -83,7 +87,7 @@ function TradeSummary({ texts, errorText }: TradeSummaryProps) {
                 <Text fontSize="11px">- {amountTowards}</Text>
               </>
             }
-            ml="4px"
+            ml="8px"
           />
         </RowFixed>
         <Text fontSize="11px">{realizedLPFeeText}</Text>
