@@ -7179,7 +7179,7 @@ var Header = function (_a) {
             React__default.createElement(Line$3, null,
                 React__default.createElement(LogoWrap, { to: linkLogo },
                     React__default.createElement("img", { src: Logo, alt: "" })),
-                React__default.createElement(Nav, { className: openMenu ? "open" : "" },
+                React__default.createElement(Nav, { className: openMenu ? "open" : "" }, links === null || links === void 0 ? void 0 :
                     links.map(function (item, i) { return (React__default.createElement(MenuLink, { key: i, name: item.name, url: item.url, submenu: item.submenu, setOpenMenu: setOpenMenu, openDropdown: openDropdown, setOpenDropdown: setOpenDropdown })); }),
                     currentLang && (React__default.createElement(LanguageBlockMob, null,
                         React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),

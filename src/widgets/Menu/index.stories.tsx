@@ -451,11 +451,30 @@ export const HeaderSimple = () => {
     { locale: "en-US", language: "English", code: "en" },
     { locale: "de-DE", language: "Deutsch", code: "de" },
   ];
+
+  const textsAccount = {
+    copy: "Copy",
+    title: "Your wallet",
+    button: "Logout",
+    view: "View on BscScan",
+    copied: "Copied",
+    yayBalance: "$YAY balance",
+    address: "Your address",
+    tabs: ["Wallet", "Transactions"],
+    recentTransactions: "Recent transactions",
+    claimed: "Claimed",
+    addToken: "Add token",
+  };
+
+  const textsConnect = {
+    title: "Сonnect wallet",
+    link: "Learn how connect",
+  };
   return (
     <BrowserRouter>
       <div style={{ marginTop: "50px" }}>
         <Header
-          // account="0xbdda50183d817c3289f895a4472eb475967dc980"
+          account="0xbdda50183d817c3289f895a4472eb475967dc980"
           login={noop}
           logout={noop}
           isDark={false}
@@ -463,13 +482,13 @@ export const HeaderSimple = () => {
           // langs={langs}
           // setLang={noop}
           // currentLang="EN"
-          links={links}
+          // links={links}
           profile={{
             profileLink: "/profile",
             noProfileLink: "/no-profile",
           }}
-          // textsAccount={textsAccount}
-          // textsConnect={textsConnect}
+          textsAccount={textsAccount}
+          textsConnect={textsConnect}
           linkLogo="/"
         />
       </div>
