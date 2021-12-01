@@ -78,7 +78,7 @@ const Header: React.FC<NavProps> = ({
             <img src={Logo} alt="" />
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
-            {links.map((item, i) => (
+            {links?.map((item, i) => (
               <MenuLink
                 key={i}
                 name={item.name}
