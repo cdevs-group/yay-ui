@@ -20,6 +20,7 @@ export const IGOStakeBlock = () => {
   };
 
   const tabsList = ["25%", "50%", "75%", "100%"];
+  const [isStaker, setStaker] = useState(false);
   const texts = {
     stakeTitle: "Stake",
     stakeDescription: "Lock YAY to unlock full potential (pun intended)",
@@ -37,6 +38,9 @@ export const IGOStakeBlock = () => {
     tookPart: "Took part in IGOs",
     restake: "Restake",
     tooltipButton: "Our next IGO is nearing. if you unstake now, you might lose the chance to join.",
+    countdown: "Countdown",
+    standart: "Standar",
+    stakers: "Stakers",
   };
 
   const handleButton = () => {
@@ -61,6 +65,8 @@ export const IGOStakeBlock = () => {
         />
       </Modal>
       <IGOStake
+        isStaker={isStaker}
+        handleStaketype={() => setStaker(!isStaker)}
         isBlur={false}
         onUserInput={(input) => null}
         iconBalanceInput={YAY_TOKEN}
