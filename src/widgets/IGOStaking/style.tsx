@@ -18,8 +18,8 @@ export const UnstakeWrapper = styled(StakeWrapper)`
   flex-direction: column;
   height: 100%;
 `;
-export const StakeTitle = styled(Text)`
-  margin-bottom: 10px;
+export const StakeTitle = styled(Text)<{ margin?: string | number }>`
+  margin-bottom: ${({ margin }) => margin || "10px"};
   font-weight: normal;
   font-size: 15px;
   line-height: 19px;

@@ -45,6 +45,9 @@ interface IGOStakeProps {
     tookPart: string;
     restake: string;
     tooltipButton: string;
+    standart: string;
+    stakers: string;
+    countdown: string;
   };
   totalValue: string | number;
   myStakeValue: string | number;
@@ -56,6 +59,8 @@ interface IGOStakeProps {
   isBlurTopBlockAvailable?: boolean;
   progress: number;
   loadingCooldown?: boolean;
+  isStaker?: boolean;
+  handleStaketype?: () => void;
 }
 
 const IGOStake = ({
@@ -90,6 +95,8 @@ const IGOStake = ({
   restakeDisabed,
   handleRestake,
   loadingRestake,
+  isStaker,
+  handleStaketype,
 }: IGOStakeProps) => {
   return (
     <div style={{ position: "relative" }}>
@@ -102,6 +109,8 @@ const IGOStake = ({
         </TopLine>
         <MainLine>
           <Stake
+            isStaker={isStaker}
+            handleStaketype={handleStaketype}
             texts={texts}
             onUserInput={onUserInput}
             iconBalanceInput={iconBalanceInput}
@@ -119,6 +128,7 @@ const IGOStake = ({
             loadingStake={loadingStake}
           />
           <Unstake
+            isStaker={isStaker}
             cooldownDisabled={cooldownDisabled}
             time={time}
             handleCooldown={handleCooldown}

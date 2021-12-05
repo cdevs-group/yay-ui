@@ -36,6 +36,7 @@ interface IUnstakeProps {
     tookPart: string;
     restake: string;
     tooltipButton: string;
+    countdown: string;
   };
   cooldownDisabled: boolean;
   handleCooldown: () => void | Promise<void>;
@@ -46,6 +47,7 @@ interface IUnstakeProps {
   restakeDisabed?: boolean;
   handleRestake?: () => void | Promise<void>;
   loadingRestake?: boolean;
+  isStaker?: boolean;
 }
 
 const Unstake = ({
@@ -59,6 +61,7 @@ const Unstake = ({
   restakeDisabed,
   handleRestake,
   loadingRestake,
+  isStaker,
 }: IUnstakeProps) => {
   const { tooltipVisible, targetRef } = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" });
 
@@ -80,21 +83,36 @@ const Unstake = ({
           </ProgressTrack>
         </div>
         <Buttons>
-          <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
-            {texts.cooldownButton}
-          </ButtonStyle>
-
-          <ButtonWrap ref={targetRef}>
-            {tooltipVisible && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}
-            <ButtonStyle disabled onClick={handleRestake} variant="green" spin={loadingRestake}>
-              {texts.restake}
-              <Flex ml="10px" alignItems="center">
-                <Flex alignItems="center">
-                  <HelpIcon2 />
-                </Flex>
-              </Flex>
+          {isStaker ? (
+            <ButtonStyle
+              margin="0 !important"
+              disabled
+              onClick={handleRestake}
+              width="100%"
+              variant="green"
+              spin={loadingRestake}
+            >
+              {texts.countdown}
             </ButtonStyle>
-          </ButtonWrap>
+          ) : (
+            <>
+              {" "}
+              <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
+                {texts.cooldownButton}
+              </ButtonStyle>
+              <ButtonWrap ref={targetRef}>
+                {tooltipVisible && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}
+                <ButtonStyle disabled onClick={handleRestake} variant="green" spin={loadingRestake}>
+                  {texts.restake}
+                  <Flex ml="10px" alignItems="center">
+                    <Flex alignItems="center">
+                      <HelpIcon2 />
+                    </Flex>
+                  </Flex>
+                </ButtonStyle>
+              </ButtonWrap>{" "}
+            </>
+          )}
         </Buttons>
       </UnstakeWrapper>
       {isBlur && <Claimed id="unstake" />}

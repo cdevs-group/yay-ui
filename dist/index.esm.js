@@ -10028,7 +10028,10 @@ var StakeWrapper = styled.div(templateObject_1$L || (templateObject_1$L = __make
     return theme.mediaQueries.sm;
 });
 var UnstakeWrapper = styled(StakeWrapper)(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: 100%;\n"], ["\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: 100%;\n"])));
-var StakeTitle = styled(Text)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  text-shadow: ", ";\n"], ["\n  margin-bottom: 10px;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  text-shadow: ", ";\n"])), function (_a) {
+var StakeTitle = styled(Text)(templateObject_3$r || (templateObject_3$r = __makeTemplateObject(["\n  margin-bottom: ", ";\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  text-shadow: ", ";\n"], ["\n  margin-bottom: ", ";\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  text-shadow: ", ";\n"])), function (_a) {
+    var margin = _a.margin;
+    return margin || "10px";
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.text2;
 }, function (_a) {
@@ -10069,9 +10072,16 @@ var ProgressBar = styled.div(templateObject_10$3 || (templateObject_10$3 = __mak
 var templateObject_1$L, templateObject_2$y, templateObject_3$r, templateObject_4$l, templateObject_5$a, templateObject_6$8, templateObject_7$6, templateObject_8$5, templateObject_9$4, templateObject_10$3;
 
 var Stake = function (_a) {
-    var disableApprove = _a.disableApprove, disableStake = _a.disableStake, handleApprove = _a.handleApprove, handleStake = _a.handleStake, tabValue = _a.tabValue, handleTab = _a.handleTab, tabsList = _a.tabsList, texts = _a.texts, onUserInput = _a.onUserInput, valueInput = _a.valueInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, loadingApprove = _a.loadingApprove, loadingStake = _a.loadingStake;
+    var disableApprove = _a.disableApprove, disableStake = _a.disableStake, handleApprove = _a.handleApprove, handleStake = _a.handleStake, tabValue = _a.tabValue, handleTab = _a.handleTab, tabsList = _a.tabsList, texts = _a.texts, onUserInput = _a.onUserInput, valueInput = _a.valueInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, loadingApprove = _a.loadingApprove, loadingStake = _a.loadingStake, isStaker = _a.isStaker, handleStaketype = _a.handleStaketype;
+    var _b = useState(false); _b[0]; _b[1];
     return (React__default.createElement(StakeWrapper, null,
-        React__default.createElement(StakeTitle, null, texts.stakeTitle),
+        React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
+            React__default.createElement(StakeTitle, { margin: 0 }, texts.stakeTitle),
+            React__default.createElement(Flex, { alignItems: "center" },
+                React__default.createElement(Text, { fontSize: "13px" }, texts.standart),
+                React__default.createElement(Box, { margin: "0 15px" },
+                    React__default.createElement(BaseToggle, { checked: isStaker, onChange: handleStaketype })),
+                React__default.createElement(Text, { fontSize: "13px" }, texts.stakers))),
         React__default.createElement(StakeDescription, null, texts.stakeDescription),
         React__default.createElement(InputBlock$1, null,
             React__default.createElement(BalanceInput, { onUserInput: onUserInput, value: valueInput, icon: React__default.createElement("img", { style: { width: "32px", marginBottom: "5px" }, src: iconBalanceInput || YAY_TOKEN, alt: "token" }), texts: { commit: texts.stakeTitle, currency: texts.currencyInput || "YAY" }, disabled: disabledInput })),
@@ -10080,12 +10090,12 @@ var Stake = function (_a) {
             React__default.createElement("span", null, balance)),
         React__default.createElement(TabsSmall, { tabValue: tabValue, tabsList: tabsList, onClick: handleTab }),
         React__default.createElement(Buttons$3, null,
-            React__default.createElement(Button$9, { disabled: disableApprove, onClick: handleApprove, variant: "green", spin: loadingApprove }, texts.buttonApprove),
-            React__default.createElement(Button$9, { disabled: disableStake, onClick: handleStake, variant: "green", spin: loadingStake }, texts.buttonStake))));
+            React__default.createElement(Button$9, { padding: 0, disabled: disableApprove, onClick: handleApprove, variant: "green", spin: loadingApprove }, texts.buttonApprove),
+            React__default.createElement(Button$9, { padding: 0, disabled: disableStake, onClick: handleStake, variant: "green", spin: loadingStake }, texts.buttonStake))));
 };
 
 var Unstake = function (_a) {
-    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress; _a.restakeDisabed; var handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake;
+    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress; _a.restakeDisabed; var handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
     var _b = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef;
     return (React__default.createElement("div", { style: { position: "relative" } },
         React__default.createElement(UnstakeWrapper, { id: "unstake" },
@@ -10098,7 +10108,8 @@ var Unstake = function (_a) {
                 React__default.createElement(ProgressTrack, null,
                     React__default.createElement(ProgressWrap, null,
                         React__default.createElement(ProgressBar, { progress: progress })))),
-            React__default.createElement(Buttons$3, null,
+            React__default.createElement(Buttons$3, null, isStaker ? (React__default.createElement(ButtonStyle$3, { margin: "0 !important", disabled: true, onClick: handleRestake, width: "100%", variant: "green", spin: loadingRestake }, texts.countdown)) : (React__default.createElement(React__default.Fragment, null,
+                " ",
                 React__default.createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, texts.cooldownButton),
                 React__default.createElement(ButtonWrap, { ref: targetRef },
                     tooltipVisible && React__default.createElement(StyledTooltip, null, texts.tooltipButton),
@@ -10106,7 +10117,8 @@ var Unstake = function (_a) {
                         texts.restake,
                         React__default.createElement(Flex, { ml: "10px", alignItems: "center" },
                             React__default.createElement(Flex, { alignItems: "center" },
-                                React__default.createElement(Icon$B, null))))))),
+                                React__default.createElement(Icon$B, null))))),
+                " ")))),
         isBlur && React__default.createElement(Claimed$1, { id: "unstake" })));
 };
 var ButtonStyle$3 = styled(Button$9)(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"], ["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"])));
@@ -10131,7 +10143,7 @@ var StyledTooltip = styled.div(templateObject_4$k || (templateObject_4$k = __mak
 var templateObject_1$K, templateObject_2$x, templateObject_3$q, templateObject_4$k;
 
 var IGOStake = function (_a) {
-    var totalValue = _a.totalValue, myStakeValue = _a.myStakeValue, avaibleValue = _a.avaibleValue, tookPartValue = _a.tookPartValue, time = _a.time, cooldownDisabled = _a.cooldownDisabled, onUserInput = _a.onUserInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, tabsList = _a.tabsList, handleStake = _a.handleStake, handleApprove = _a.handleApprove, handleCooldown = _a.handleCooldown, texts = _a.texts, valueInput = _a.valueInput, tabValue = _a.tabValue, handleTab = _a.handleTab, disableStake = _a.disableStake, disableApprove = _a.disableApprove, loadingStake = _a.loadingStake, loadingApprove = _a.loadingApprove, isBlur = _a.isBlur, isBlurUnstake = _a.isBlurUnstake, isBlurTopBlockTookPart = _a.isBlurTopBlockTookPart, isBlurTopBlockAvailable = _a.isBlurTopBlockAvailable, progress = _a.progress, loadingCooldown = _a.loadingCooldown, restakeDisabed = _a.restakeDisabed, handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake;
+    var totalValue = _a.totalValue, myStakeValue = _a.myStakeValue, avaibleValue = _a.avaibleValue, tookPartValue = _a.tookPartValue, time = _a.time, cooldownDisabled = _a.cooldownDisabled, onUserInput = _a.onUserInput, iconBalanceInput = _a.iconBalanceInput, disabledInput = _a.disabledInput, balance = _a.balance, tabsList = _a.tabsList, handleStake = _a.handleStake, handleApprove = _a.handleApprove, handleCooldown = _a.handleCooldown, texts = _a.texts, valueInput = _a.valueInput, tabValue = _a.tabValue, handleTab = _a.handleTab, disableStake = _a.disableStake, disableApprove = _a.disableApprove, loadingStake = _a.loadingStake, loadingApprove = _a.loadingApprove, isBlur = _a.isBlur, isBlurUnstake = _a.isBlurUnstake, isBlurTopBlockTookPart = _a.isBlurTopBlockTookPart, isBlurTopBlockAvailable = _a.isBlurTopBlockAvailable, progress = _a.progress, loadingCooldown = _a.loadingCooldown, restakeDisabed = _a.restakeDisabed, handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker, handleStaketype = _a.handleStaketype;
     return (React__default.createElement("div", { style: { position: "relative" } },
         React__default.createElement("div", { id: "stakeBlock" },
             React__default.createElement(TopLine, null,
@@ -10140,8 +10152,8 @@ var IGOStake = function (_a) {
                 React__default.createElement(TopBlock, { id: "available", title: texts.avaible, value: avaibleValue, isBlur: isBlurTopBlockAvailable }),
                 React__default.createElement(TopBlock, { id: "stake", title: texts.tookPart, value: tookPartValue, isBlur: isBlurTopBlockTookPart })),
             React__default.createElement(MainLine, null,
-                React__default.createElement(Stake, { texts: texts, onUserInput: onUserInput, iconBalanceInput: iconBalanceInput, disabledInput: disabledInput, balance: balance, tabsList: tabsList, handleStake: handleStake, handleApprove: handleApprove, disableApprove: disableApprove, disableStake: disableStake, valueInput: valueInput, tabValue: tabValue, handleTab: handleTab, loadingApprove: loadingApprove, loadingStake: loadingStake }),
-                React__default.createElement(Unstake, { cooldownDisabled: cooldownDisabled, time: time, handleCooldown: handleCooldown, texts: texts, isBlur: isBlurUnstake, loadingCooldown: loadingCooldown, progress: progress, restakeDisabed: restakeDisabed, handleRestake: handleRestake, loadingRestake: loadingRestake }))),
+                React__default.createElement(Stake, { isStaker: isStaker, handleStaketype: handleStaketype, texts: texts, onUserInput: onUserInput, iconBalanceInput: iconBalanceInput, disabledInput: disabledInput, balance: balance, tabsList: tabsList, handleStake: handleStake, handleApprove: handleApprove, disableApprove: disableApprove, disableStake: disableStake, valueInput: valueInput, tabValue: tabValue, handleTab: handleTab, loadingApprove: loadingApprove, loadingStake: loadingStake }),
+                React__default.createElement(Unstake, { isStaker: isStaker, cooldownDisabled: cooldownDisabled, time: time, handleCooldown: handleCooldown, texts: texts, isBlur: isBlurUnstake, loadingCooldown: loadingCooldown, progress: progress, restakeDisabed: restakeDisabed, handleRestake: handleRestake, loadingRestake: loadingRestake }))),
         isBlur && (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(Claimed, { id: "stakeBlock" }),
             React__default.createElement(StyleText, null, "Change network to AVAX")))));

@@ -16,6 +16,9 @@ interface IStakeProps {
         myStake: string;
         avaible: string;
         tookPart: string;
+        standart: string;
+        stakers: string;
+        countdown: string;
     };
     valueInput: string | number;
     onUserInput: (input: string) => void;
@@ -31,6 +34,8 @@ interface IStakeProps {
     disableApprove: boolean;
     loadingApprove?: boolean;
     loadingStake?: boolean;
+    isStaker?: boolean;
+    handleStaketype?: () => void;
 }
-declare const Stake: ({ disableApprove, disableStake, handleApprove, handleStake, tabValue, handleTab, tabsList, texts, onUserInput, valueInput, iconBalanceInput, disabledInput, balance, loadingApprove, loadingStake, }: IStakeProps) => JSX.Element;
+declare const Stake: ({ disableApprove, disableStake, handleApprove, handleStake, tabValue, handleTab, tabsList, texts, onUserInput, valueInput, iconBalanceInput, disabledInput, balance, loadingApprove, loadingStake, isStaker, handleStaketype, }: IStakeProps) => JSX.Element;
 export default Stake;
