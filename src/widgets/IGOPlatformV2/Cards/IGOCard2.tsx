@@ -21,6 +21,7 @@ import {
   StakeButton,
   InfoText,
   ChanceBlock,
+  Ribbon,
 } from "./styles";
 
 const IGOCardV2 = ({
@@ -45,11 +46,13 @@ const IGOCardV2 = ({
   propsButtonStake,
   disabledButtonStake,
   isLottery,
+  holdersRound,
 }: IGOCardV2Props) => {
   return (
     <Wrapper>
       <HeadLine>
-        <TokenName>{token}</TokenName>
+        {holdersRound && <Ribbon>{texts.holdersRound}</Ribbon>}
+        <TokenName>{!holdersRound && token}</TokenName>
         <StatusName>{statusTitle}</StatusName>
       </HeadLine>
       <AvailableBlock>
@@ -124,6 +127,7 @@ const Wrapper = styled.div`
   padding: 12px 12px 23px;
   background: ${({ theme }) => theme.colors.bgGray};
   border-radius: 12px;
+  overflow: hidden;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 25px 25px 33px;

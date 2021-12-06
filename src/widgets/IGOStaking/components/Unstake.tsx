@@ -37,6 +37,8 @@ interface IUnstakeProps {
     restake: string;
     tooltipButton: string;
     countdown: string;
+    unstake?: string;
+    claim?: string;
   };
   cooldownDisabled: boolean;
   handleCooldown: () => void | Promise<void>;
@@ -83,36 +85,22 @@ const Unstake = ({
           </ProgressTrack>
         </div>
         <Buttons>
-          {isStaker ? (
-            <ButtonStyle
-              margin="0 !important"
-              disabled
-              onClick={handleRestake}
-              width="100%"
-              variant="green"
-              spin={loadingRestake}
-            >
-              {texts.countdown}
-            </ButtonStyle>
-          ) : (
-            <>
-              {" "}
-              <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
-                {texts.cooldownButton}
-              </ButtonStyle>
-              <ButtonWrap ref={targetRef}>
-                {tooltipVisible && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}
-                <ButtonStyle disabled onClick={handleRestake} variant="green" spin={loadingRestake}>
-                  {texts.restake}
-                  <Flex ml="10px" alignItems="center">
-                    <Flex alignItems="center">
-                      <HelpIcon2 />
-                    </Flex>
+          <ButtonStyle disabled={cooldownDisabled} onClick={handleCooldown} variant="green" spin={loadingCooldown}>
+            {isStaker ? texts.unstake : texts.cooldownButton}
+          </ButtonStyle>
+          <ButtonWrap ref={targetRef}>
+            {tooltipVisible && !isStaker && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}
+            <ButtonStyle disabled={restakeDisabed} onClick={handleRestake} variant="green" spin={loadingRestake}>
+              {isStaker ? texts.claim : texts.restake}
+              <Flex ml="10px" alignItems="center">
+                {!isStaker && (
+                  <Flex alignItems="center">
+                    <HelpIcon2 />
                   </Flex>
-                </ButtonStyle>
-              </ButtonWrap>{" "}
-            </>
-          )}
+                )}
+              </Flex>
+            </ButtonStyle>
+          </ButtonWrap>{" "}
         </Buttons>
       </UnstakeWrapper>
       {isBlur && <Claimed id="unstake" />}
@@ -173,6 +161,7 @@ export const StyledTooltip = styled.div`
   color: ${({ theme }) => theme.colors.text};
   border: 1px solid #606060;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+
   ${({ theme }) => theme.mediaQueries.sm} {
     left: 0;
   }

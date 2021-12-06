@@ -10095,7 +10095,7 @@ var Stake = function (_a) {
 };
 
 var Unstake = function (_a) {
-    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress; _a.restakeDisabed; var handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
+    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress, restakeDisabed = _a.restakeDisabed, handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
     var _b = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef;
     return (React__default.createElement("div", { style: { position: "relative" } },
         React__default.createElement(UnstakeWrapper, { id: "unstake" },
@@ -10108,17 +10108,15 @@ var Unstake = function (_a) {
                 React__default.createElement(ProgressTrack, null,
                     React__default.createElement(ProgressWrap, null,
                         React__default.createElement(ProgressBar, { progress: progress })))),
-            React__default.createElement(Buttons$3, null, isStaker ? (React__default.createElement(ButtonStyle$3, { margin: "0 !important", disabled: true, onClick: handleRestake, width: "100%", variant: "green", spin: loadingRestake }, texts.countdown)) : (React__default.createElement(React__default.Fragment, null,
-                " ",
-                React__default.createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, texts.cooldownButton),
+            React__default.createElement(Buttons$3, null,
+                React__default.createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, isStaker ? texts.unstake : texts.cooldownButton),
                 React__default.createElement(ButtonWrap, { ref: targetRef },
-                    tooltipVisible && React__default.createElement(StyledTooltip, null, texts.tooltipButton),
-                    React__default.createElement(ButtonStyle$3, { disabled: true, onClick: handleRestake, variant: "green", spin: loadingRestake },
-                        texts.restake,
-                        React__default.createElement(Flex, { ml: "10px", alignItems: "center" },
-                            React__default.createElement(Flex, { alignItems: "center" },
-                                React__default.createElement(Icon$B, null))))),
-                " ")))),
+                    tooltipVisible && !isStaker && React__default.createElement(StyledTooltip, null, texts.tooltipButton),
+                    React__default.createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
+                        isStaker ? texts.claim : texts.restake,
+                        React__default.createElement(Flex, { ml: "10px", alignItems: "center" }, !isStaker && (React__default.createElement(Flex, { alignItems: "center" },
+                            React__default.createElement(Icon$B, null)))))),
+                " ")),
         isBlur && React__default.createElement(Claimed$1, { id: "unstake" })));
 };
 var ButtonStyle$3 = styled(Button$9)(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"], ["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"])));
@@ -10130,7 +10128,7 @@ var Claimed$1 = styled.div(templateObject_3$q || (templateObject_3$q = __makeTem
     var id = _a.id;
     return "-moz-element(#" + id + ")";
 });
-var StyledTooltip = styled.div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
+var StyledTooltip = styled.div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -10411,13 +10409,18 @@ var InfoText = styled(Text)(templateObject_25 || (templateObject_25 = __makeTemp
 });
 var ChanceBlock = styled.div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
 var ChanceBlockProgress = styled.div(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  margin-bottom: 25px;\n"], ["\n  margin-bottom: 25px;\n"])));
-var templateObject_1$F, templateObject_2$t, templateObject_3$m, templateObject_4$g, templateObject_5$7, templateObject_6$5, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27;
+var Ribbon = styled(Flex)(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  height: 40px;\n  width: 260px;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  font-weight: normal;\n  font-size: 10px;\n  line-height: 100%;\n  transform: rotate(-37.14deg);\n  text-transform: uppercase;\n  padding: 0 84px;\n  box-sizing: border-box;\n  text-align: center;\n  margin-left: -114px;\n  margin-top: -1px;\n  position: absolute;\n"], ["\n  height: 40px;\n  width: 260px;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  font-weight: normal;\n  font-size: 10px;\n  line-height: 100%;\n  transform: rotate(-37.14deg);\n  text-transform: uppercase;\n  padding: 0 84px;\n  box-sizing: border-box;\n  text-align: center;\n  margin-left: -114px;\n  margin-top: -1px;\n  position: absolute;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.green;
+});
+var templateObject_1$F, templateObject_2$t, templateObject_3$m, templateObject_4$g, templateObject_5$7, templateObject_6$5, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28;
 
 var IGOCardV2 = function (_a) {
-    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake, isLottery = _a.isLottery;
+    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake, isLottery = _a.isLottery, holdersRound = _a.holdersRound;
     return (React__default.createElement(Wrapper$b, null,
         React__default.createElement(HeadLine, null,
-            React__default.createElement(TokenName, null, token),
+            holdersRound && React__default.createElement(Ribbon, null, texts.holdersRound),
+            React__default.createElement(TokenName, null, !holdersRound && token),
             React__default.createElement(StatusName, null, statusTitle)),
         React__default.createElement(AvailableBlock, null,
             React__default.createElement(TokenLogo, null,
@@ -10446,7 +10449,7 @@ var IGOCardV2 = function (_a) {
                 React__default.createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })))),
         React__default.createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$b = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$b = styled.div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  overflow: hidden;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  overflow: hidden;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {

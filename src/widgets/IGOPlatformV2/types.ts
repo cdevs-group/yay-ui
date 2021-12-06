@@ -19,6 +19,7 @@ interface IGOCardsText {
   timer: string;
   allocation: string;
   claimed: string;
+  holdersRound?: string;
 }
 
 export interface IGOCardV2Props {
@@ -43,6 +44,7 @@ export interface IGOCardV2Props {
   propsButtonStake?: ButtonProps;
   disabledButtonStake?: boolean;
   isLottery?: boolean;
+  holdersRound?: boolean;
 }
 interface IGOCardDetailText {
   available: string;
@@ -50,6 +52,7 @@ interface IGOCardDetailText {
   button: string;
   timer: string;
   copied: string;
+  holdersRound?: string;
 }
 
 export interface IGODetailCardV2Props {
