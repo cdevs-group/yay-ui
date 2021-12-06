@@ -45,7 +45,6 @@ const Input = styled.input<{ error?: boolean }>`
   ::placeholder {
     color: ${({ theme }) => theme.colors.textGray};
   }
-  padding: 0px;
   -webkit-appearance: textfield;
 
   ::-webkit-search-decoration {

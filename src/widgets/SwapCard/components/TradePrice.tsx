@@ -18,7 +18,7 @@ export default function TradePrice({ showInverted, setShowInverted, show, label,
         <>
           {formattedPrice ?? "-"} {label}
           <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
-            <AutoRenewIcon width="14px" />
+            <AutoRenewIcon width="14px" color="#000" />
           </StyledBalanceMaxMini>
         </>
       ) : (

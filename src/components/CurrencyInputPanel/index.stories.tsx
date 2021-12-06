@@ -28,7 +28,7 @@ export const CurrencyInputPanelBlock: React.FC = () => {
         showMaxButton={false}
         label="Input"
         currency={{ decimals: 18, name: "BNB", symbol: "BNB" }}
-        disableCurrencySelect
+        disableCurrencySelect={false}
         pair={null}
         hideInput={false}
         id="id"
@@ -41,7 +41,9 @@ export const CurrencyInputPanelBlock: React.FC = () => {
           numericalInputTitle: "Title",
           max: "MAX",
           currencySelect: "BNB",
+          balance: "Balance: 0.53453 YAY",
         }}
+        hideBalance={false}
       />
     </div>
   );

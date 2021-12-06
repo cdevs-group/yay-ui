@@ -15,12 +15,7 @@ const InputRow = styled.div<{ selected: boolean }>`
   padding: ${({ selected }) => (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem")};
 `;
 const CurrencySelectButton = styled(Button).attrs({ variant: "text", scale: "sm" })`
-  padding: 9px 6px 6px;
-  width: 100%;
-  max-width: 66px;
-  background: ${({ theme }) => theme.colors.bgOpacitY3};
-  border-radius: 12px;
-  height: auto;
+  padding: 0 0.5rem;
 `;
 const LabelRow = styled.div`
   display: flex;
@@ -38,15 +33,11 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? "8px" : "20px")};
   z-index: 1;
 `;
-const Container = styled(Flex)<{ hideInput: boolean }>`
-  justify-content: space-between;
-  padding: 14px 14px 14px 25px;
+const Container = styled.div<{ hideInput: boolean }>`
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.bgCard5};
   box-shadow: ${({ theme }) => theme.shadows.input};
 `;
-
-const FlexCurrency = styled(Flex)``;
 
 const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   value,
@@ -56,6 +47,7 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   label,
   currency,
   disableCurrencySelect = false,
+  hideBalance = false,
   pair = null, // used for double token logo
   hideInput = false,
   id,
@@ -68,36 +60,43 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   return (
     <InputPanel id={id}>
       <Container hideInput={hideInput}>
-        <div style={{ flexGrow: 1, flexDirection: "column", display: "flex", justifyContent: "space-between" }}>
-          {!hideInput && (
+        {!hideInput && (
+          <LabelRow>
             <RowBetween>
               <Text color="textGray">{texts.translatedLabel}</Text>
+              {account && (
+                <Text
+                  onClick={onMax}
+                  color="textGray"
+                  fontSize="10px"
+                  fontWeight="400"
+                  style={{ display: "inline", cursor: "pointer" }}
+                >
+                  {!hideBalance && !!currency ? texts.balance : " -"}
+                </Text>
+              )}
             </RowBetween>
+          </LabelRow>
+        )}
+        <InputRow style={hideInput ? { padding: "0", borderRadius: "8px" } : {}} selected={disableCurrencySelect}>
+          {!hideInput && (
+            <>
+              <NumericalInput
+                className="token-amount-input"
+                title={texts.numericalInputTitle}
+                value={value}
+                onUserInput={(val) => {
+                  onUserInput(val);
+                }}
+              />
+              {account && currency && showMaxButton && label !== "To" && (
+                <Button onClick={onMax} scale="sm" variant="text">
+                  {texts.max}
+                </Button>
+              )}
+            </>
           )}
-          <InputRow
-            style={hideInput ? { padding: "0", borderRadius: "8px" } : { padding: "4px 4px 4px 0" }}
-            selected={disableCurrencySelect}
-          >
-            {!hideInput && (
-              <>
-                <NumericalInput
-                  className="token-amount-input"
-                  title={texts.numericalInputTitle}
-                  value={value}
-                  onUserInput={(val) => {
-                    onUserInput(val);
-                  }}
-                />
-                {account && currency && showMaxButton && label !== "To" && (
-                  <Button onClick={onMax} scale="sm" variant="text">
-                    {texts.max}
-                  </Button>
-                )}
-              </>
-            )}
-          </InputRow>
-        </div>
-        {!hideInput && (
+
           <CurrencySelectButton
             selected={!!currency}
             className="open-currency-select-button"
@@ -107,21 +106,21 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
               }
             }}
           >
-            <FlexCurrency alignItems="center" justifyContent="center" flexDirection="column">
+            <Flex alignItems="center" justifyContent="space-between">
               {pair ? doubleCurrencyLogo : currency ? сurrencyLogo : null}
               {pair ? (
-                <Text id="pair" mt="7px" fontSize="11px">
+                <Text id="pair" ml="10px" mr="5px" fontSize="11px">
                   {pair?.token0.symbol}:{pair?.token1.symbol}
                 </Text>
               ) : (
-                <Text id="pair" mt="7px" fontSize="11px">
+                <Text id="pair" ml="10px" mr="5px" fontSize="11px">
                   {texts.currencySelect}
                 </Text>
               )}
               {!disableCurrencySelect && <ArrowDownIcon />}
-            </FlexCurrency>
+            </Flex>
           </CurrencySelectButton>
-        )}
+        </InputRow>
       </Container>
     </InputPanel>
   );

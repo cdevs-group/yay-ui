@@ -82,13 +82,13 @@ const CurrencyName = styled.div`
   margin-left: 15px;
 `;
 const ShortName = styled(Text)`
-  margin-bottom: 5px;
   font-weight: 500;
   font-size: 15px;
   line-height: 15px;
   letter-spacing: 0.5px;
 `;
 const FullName = styled(Text)`
+  margin-top: 5px;
   font-size: 11px;
   line-height: 14px;
   letter-spacing: 0.5px;
