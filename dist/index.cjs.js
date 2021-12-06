@@ -11272,8 +11272,8 @@ var SwapModalFooter = function (_a) {
                 React__default["default"].createElement(RowFixed, null,
                     React__default["default"].createElement(Text, { fontSize: "11px" }, texts.receivedOrSold)),
                 React__default["default"].createElement(RowFixed, null,
-                    React__default["default"].createElement(Text, { fontSize: "14px" }, texts.slippageAdjustedAmounts),
-                    React__default["default"].createElement(Text, { fontSize: "14px", marginLeft: "4px" }, texts.outputAmount))),
+                    React__default["default"].createElement(Text, { fontSize: "11px" }, texts.slippageAdjustedAmounts),
+                    React__default["default"].createElement(Text, { fontSize: "11px", marginLeft: "4px" }, texts.outputAmount))),
             React__default["default"].createElement(RowBetween, { mt: "8px" },
                 React__default["default"].createElement(Text, { fontSize: "11px" }, texts.priceImpact),
                 React__default["default"].createElement(Text, { color: baseColors.green, fontSize: "11px" },
@@ -11304,7 +11304,7 @@ var ErrorText = styled__default["default"](Text)(templateObject_4$7 || (template
                 ? theme.colors.text
                 : theme.colors.green;
 });
-var StyledBalanceMaxMini = styled__default["default"].button(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"], ["\n  height: 22px;\n  width: 22px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"])), function (_a) {
+var StyledBalanceMaxMini = styled__default["default"].button(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  height: 16px;\n  width: 16px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"], ["\n  height: 16px;\n  width: 16px;\n  background-color: ", ";\n  border: none;\n  border-radius: 50%;\n  padding: 0.2rem;\n  font-size: 0.875rem;\n  font-weight: 400;\n  margin-left: 0.4rem;\n  cursor: pointer;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  float: right;\n\n  :hover {\n    background-color: ", ";\n  }\n  :focus {\n    background-color: ", ";\n    outline: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
 }, function (_a) {
@@ -11350,14 +11350,14 @@ var SwapModalHeader = function (_a) {
                 currencyIconFrom,
                 React__default["default"].createElement(CurrencyName, null,
                     React__default["default"].createElement(ShortName, null, currencyFromSymbol),
-                    React__default["default"].createElement(FullName, null, currencyFromName))),
+                    currencyFromName && React__default["default"].createElement(FullName, null, currencyFromName))),
             React__default["default"].createElement(Price, null, priceFrom)),
         React__default["default"].createElement(Flex, { mt: "31px", justifyContent: "space-between", alignItems: "flex-start" },
             React__default["default"].createElement(Flex, { alignItems: "flex-start" },
                 currencyIconTo,
                 React__default["default"].createElement(CurrencyName, null,
                     React__default["default"].createElement(ShortName, null, currencyToSymbol),
-                    React__default["default"].createElement(FullName, null, currencyToName))),
+                    currencyToName && React__default["default"].createElement(FullName, null, currencyToName))),
             React__default["default"].createElement(Price, null, priceTo)),
         showAcceptChanges ? (React__default["default"].createElement(SwapShowAcceptChanges, { justify: "flex-start", gap: "0px" },
             React__default["default"].createElement(RowBetween, null,
@@ -11383,14 +11383,14 @@ var SwapRoute = React.memo(function SwapRoute(_a) {
         // eslint-disable-next-line react/no-array-index-key
         React__default["default"].createElement(React.Fragment, { key: i },
             React__default["default"].createElement(Flex, { alignItems: "end" },
-                React__default["default"].createElement(Text, { fontSize: "14px", ml: "0.125rem", mr: "0.125rem" }, currency === null || currency === void 0 ? void 0 : currency.symbol)),
+                React__default["default"].createElement(Text, { fontSize: "11px", ml: "0.125rem", mr: "0.125rem" }, currency === null || currency === void 0 ? void 0 : currency.symbol)),
             isLastItem && React__default["default"].createElement(Icon$a, { width: "12px" })));
     })));
 });
 
 function TradePrice(_a) {
     var showInverted = _a.showInverted, setShowInverted = _a.setShowInverted, show = _a.show, label = _a.label, formattedPrice = _a.formattedPrice;
-    return (React__default["default"].createElement(Text, { style: { justifyContent: "center", alignItems: "center", display: "flex" } }, show ? (React__default["default"].createElement(React__default["default"].Fragment, null, formattedPrice !== null && formattedPrice !== void 0 ? formattedPrice : "-",
+    return (React__default["default"].createElement(Text, { style: { justifyContent: "center", alignItems: "center", display: "flex" }, fontSize: "11px" }, show ? (React__default["default"].createElement(React__default["default"].Fragment, null, formattedPrice !== null && formattedPrice !== void 0 ? formattedPrice : "-",
         " ",
         label,
         React__default["default"].createElement(StyledBalanceMaxMini, { onClick: function () { return setShowInverted(!showInverted); } },

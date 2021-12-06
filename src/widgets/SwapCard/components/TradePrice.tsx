@@ -13,7 +13,7 @@ export interface TradePriceProps {
 
 export default function TradePrice({ showInverted, setShowInverted, show, label, formattedPrice }: TradePriceProps) {
   return (
-    <Text style={{ justifyContent: "center", alignItems: "center", display: "flex" }} fontSize="11px" >
+    <Text style={{ justifyContent: "center", alignItems: "center", display: "flex" }} fontSize="11px">
       {show ? (
         <>
           {formattedPrice ?? "-"} {label}
