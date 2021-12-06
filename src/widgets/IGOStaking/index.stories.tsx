@@ -119,6 +119,10 @@ export const TopListBlock: React.FC = () => {
   const [activeTab, setActiveTab] = useState(TabsValue.ALL);
   const [activeTab2Yers, setActiveTab2Yers] = useState(TabsValue.ALL);
 
+  const toggleTab2Yers = async (e: any) => {
+    setActiveTab2Yers(+e.target.value);
+  };
+
   const tabsList = ["All", "Hercules", "Perseus", "Argus", "Minos"];
   const tabsList2Yaers = ["All", "Hercules", "Perseus", "Argus", "Minos", "Muses"];
   const texts = {
@@ -128,16 +132,7 @@ export const TopListBlock: React.FC = () => {
     tokenName: "YAY",
     button: "My position",
   };
-  const texts2Years = {
-    title: "2-years Pool",
-    wallet: "Wallet",
-    staked: "YAY staked",
-    tokenName: "YAY",
-    button: "My position",
-    allocation: "Available allocation",
-    tier: "Tier",
-    allocationCurrency: "$",
-  };
+
   const topUsersList = [
     {
       position: "1",
@@ -155,6 +150,16 @@ export const TopListBlock: React.FC = () => {
       stake: "1000000",
     },
   ];
+  const texts2Years = {
+    title: "2-years Pool",
+    wallet: "Wallet",
+    staked: "YAY staked",
+    tokenName: "YAY",
+    button: "My position",
+    allocation: "Available allocation",
+    tier: "Tier",
+    allocationCurrency: "$",
+  };
   const topUsersList2Years = [
     {
       position: "1",
@@ -181,9 +186,6 @@ export const TopListBlock: React.FC = () => {
 
   const toggleTab = async (e: any) => {
     setActiveTab(+e.target.value);
-  };
-  const toggleTab2Yers = async (e: any) => {
-    setActiveTab2Yers(+e.target.value);
   };
 
   const handleMyPosition = () => {};
