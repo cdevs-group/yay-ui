@@ -110,7 +110,8 @@ const Line = styled.div<{ last: boolean; exclude: boolean }>`
   min-width: 500px;
   position: relative;
   display: grid;
-  grid-template-columns: 10% 25% 25% 20% 20%;
+  grid-template-columns: 10% 20% 40% 15% 15%;
+
   padding: 0 10px;
   transition: 0.3s;
   font-size: 11px;
@@ -156,7 +157,7 @@ const LineHeader = styled.div`
   margin-top: 20px;
   display: none;
   padding: 0;
-
+  grid-template-columns: 10% 20% 40% 15% 15%;
   ${({ theme }) => theme.mediaQueries.md} {
     display: grid;
     grid-template-columns: 10% 25% 25% 20% 20%;
