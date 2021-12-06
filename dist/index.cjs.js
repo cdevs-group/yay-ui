@@ -4315,10 +4315,10 @@ var Dot = styled__default["default"].span(templateObject_2$20 || (templateObject
     return (show ? "inline-flex" : "none");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.invertedContrast;
+    return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.failure;
+    return theme.colors.text;
 });
 var NotificationDot = function (_a) {
     var _b = _a.show, show = _b === void 0 ? false : _b, children = _a.children, props = __rest(_a, ["show", "children"]);
@@ -4402,7 +4402,7 @@ var InputRow = styled__default["default"].div(templateObject_1$2y || (templateOb
     var selected = _a.selected;
     return (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem");
 });
-var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"], ["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n  cursor: default;\n"])), function (_a) {
+var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n"], ["\n  padding: 9px 6px 6px;\n  width: 100%;\n  max-width: 66px;\n  background: ", ";\n  border-radius: 12px;\n  height: auto;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 });
@@ -4410,12 +4410,9 @@ styled__default["default"].div(templateObject_3$1D || (templateObject_3$1D = __m
     var theme = _a.theme;
     return theme.colors.text;
 });
-var InputPanel$1 = styled__default["default"].div(templateObject_4$1l || (templateObject_4$1l = __makeTemplateObject(["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background: ", ";\n  z-index: 1;\n"], ["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  background: ", ";\n  z-index: 1;\n"])), function (_a) {
+var InputPanel$1 = styled__default["default"].div(templateObject_4$1l || (templateObject_4$1l = __makeTemplateObject(["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  z-index: 1;\n"], ["\n  display: flex;\n  flex-flow: column nowrap;\n  position: relative;\n  border-radius: ", ";\n  z-index: 1;\n"])), function (_a) {
     var hideInput = _a.hideInput;
     return (hideInput ? "8px" : "20px");
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.bgOpacity;
 });
 var Container$1 = styled__default["default"](Flex)(templateObject_5$Z || (templateObject_5$Z = __makeTemplateObject(["\n  justify-content: space-between;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  justify-content: space-between;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -11213,10 +11210,13 @@ var ContainerRow = styled__default["default"].div(templateObject_2$g || (templat
     var theme = _a.theme;
     return theme.colors.cardBg;
 });
-var InputContainer = styled__default["default"].div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  flex: 1;\n  padding: 1rem;\n"], ["\n  flex: 1;\n  padding: 1rem;\n"])));
-var Input$1 = styled__default["default"].input(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  font-size: 1.25rem;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  background-color: ", ";\n  transition: color 300ms ", ";\n  color: ", ";\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 500;\n  width: 100%;\n  ::placeholder {\n    color: ", ";\n  }\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"], ["\n  font-size: 1.25rem;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  background-color: ", ";\n  transition: color 300ms ", ";\n  color: ", ";\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 500;\n  width: 100%;\n  ::placeholder {\n    color: ", ";\n  }\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"])), function (_a) {
+var InputContainer = styled__default["default"].div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  flex: 1;\n"], ["\n  flex: 1;\n"])));
+var Input$1 = styled__default["default"].input(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  font-size: 16px;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n  transition: color 300ms ", ";\n  color: ", ";\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 500;\n  width: 100%;\n  ::placeholder {\n    color: ", ";\n  }\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"], ["\n  font-size: 16px;\n  outline: none;\n  border: none;\n  flex: 1 1 auto;\n  padding: 14px 14px 14px 25px;\n  border-radius: 16px;\n  background-color: ", ";\n  box-shadow: ", ";\n  transition: color 300ms ", ";\n  color: ", ";\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 500;\n  width: 100%;\n  ::placeholder {\n    color: ", ";\n  }\n  padding: 0px;\n  -webkit-appearance: textfield;\n\n  ::-webkit-search-decoration {\n    -webkit-appearance: none;\n  }\n\n  ::-webkit-outer-spin-button,\n  ::-webkit-inner-spin-button {\n    -webkit-appearance: none;\n  }\n\n  ::placeholder {\n    color: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.cardBg;
+    return theme.colors.bgCard5;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.shadows.input;
 }, function (_a) {
     var error = _a.error;
     return (error ? "step-end" : "step-start");
@@ -11243,7 +11243,7 @@ function AddressInputPanel(_a) {
         React__default["default"].createElement(ContainerRow, { error: error },
             React__default["default"].createElement(InputContainer, null,
                 React__default["default"].createElement(AutoColumn, { gap: "md" },
-                    React__default["default"].createElement(RowBetween, null,
+                    React__default["default"].createElement(RowBetween, { style: { padding: "0 1rem" } },
                         React__default["default"].createElement(Text, null, recipientText),
                         address && chainId && (React__default["default"].createElement(Link$3, { external: true, small: true, href: bscScanLink },
                             "(",
@@ -11651,7 +11651,7 @@ var TransactionSettings = function (_a) {
                             }
                         }, width: "90px", height: "33px", onBlur: function () {
                             parseCustomSlippage((slippageInput / 100).toFixed(2));
-                        }, placeholder: "", icon: React__default["default"].createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "%"), background: baseColors.bgOpacity, borderRadius: "9px" })))),
+                        }, placeholder: "0.00", icon: React__default["default"].createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "%"), background: baseColors.bgOpacity, borderRadius: "9px" })))),
         React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "34px" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
                 React__default["default"].createElement(TextStyle$1, { mb: "0 !important" }, texts.txDeadline)),
