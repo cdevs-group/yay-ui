@@ -7,6 +7,7 @@ import IGOStake from "./IGOStake";
 import { ComingSoonIcon, YAY_TOKEN } from "../../constants/images";
 import ModalUnstake from "./components/ModalUnstake";
 import Tabs from "../../components/Tabs/Tabs";
+import IGOTopList2Yers from "./components/IGOTopList2Yers";
 
 export default {
   title: "Widgets/IGOStake",
@@ -111,9 +112,15 @@ export const TopListBlock: React.FC = () => {
     ARGUS,
     MINOS,
   }
+  enum TypePool {
+    COMMON = 0,
+    TWO_YERS = 1,
+  }
   const [activeTab, setActiveTab] = useState(TabsValue.ALL);
+  const [activeTab2Yers, setActiveTab2Yers] = useState(TabsValue.ALL);
 
   const tabsList = ["All", "Hercules", "Perseus", "Argus", "Minos"];
+  const tabsList2Yaers = ["All", "Hercules", "Perseus", "Argus", "Minos", "Muses"];
   const texts = {
     title: "HEROS pool",
     wallet: "Wallet",
@@ -121,16 +128,61 @@ export const TopListBlock: React.FC = () => {
     tokenName: "YAY",
     button: "My position",
   };
+  const texts2Years = {
+    title: "2-years Pool",
+    wallet: "Wallet",
+    staked: "YAY staked",
+    tokenName: "YAY",
+    button: "My position",
+    allocation: "Available allocation",
+    tier: "Tier",
+  };
   const topUsersList = [
     {
       position: "1",
       wallet: "dhc526x87agshe",
       stake: "1000000",
     },
+    {
+      position: "2",
+      wallet: "dhc526x87agshe",
+      stake: "1000000",
+    },
+    {
+      position: "3",
+      wallet: "dhc526x87agshe",
+      stake: "1000000",
+    },
+  ];
+  const topUsersList2Years = [
+    {
+      position: "1",
+      tier: "Hercules",
+      wallet: "dhc526x87agshe",
+      stake: "1000000",
+      allocation: "150",
+    },
+    {
+      position: "2",
+      tier: "Perseus",
+      wallet: "dhc526x87agshe",
+      stake: "1000000",
+      allocation: "50",
+    },
+    {
+      position: "3",
+      tier: "-",
+      wallet: "dhc526x87agshe",
+      stake: "1000000",
+      allocation: "0",
+    },
   ];
 
   const toggleTab = async (e: any) => {
     setActiveTab(+e.target.value);
+  };
+  const toggleTab2Yers = async (e: any) => {
+    setActiveTab2Yers(+e.target.value);
   };
 
   const handleMyPosition = () => {};
@@ -142,7 +194,7 @@ export const TopListBlock: React.FC = () => {
     { name: "Your tier", value: "Hercules" },
   ];
   const typesPool = ["Common Pool", "2-years Pool"];
-  const [typePoolTab, seTypePoolTab] = useState(0);
+  const [typePoolTab, seTypePoolTab] = useState<TypePool>(0);
   const handleTypePool = (e: any) => {
     seTypePoolTab(+e.target.value);
   };
@@ -157,20 +209,31 @@ export const TopListBlock: React.FC = () => {
 
       <CardsTop>
         {indicatorList.map((el, i) => (
-          <CardTopIndicator {...el} />
+          <CardTopIndicator key={i} {...el} />
         ))}
       </CardsTop>
-      <Cards>
-        <IGOTopList
-          topUsersList={topUsersList}
-          texts={texts}
+      {typePoolTab === TypePool.COMMON ? (
+        <Cards>
+          <IGOTopList
+            topUsersList={topUsersList}
+            texts={texts}
+            myWallet="dhc52r6x87agshe"
+            tabsList={tabsList}
+            activeTab={activeTab}
+            toggleTab={toggleTab}
+          />
+          <IGOTopList topUsersList={topUsersList} texts={texts} myWallet="dhc52r6x87agshe" />
+        </Cards>
+      ) : (
+        <IGOTopList2Yers
+          toggleTab={toggleTab2Yers}
+          activeTab={activeTab2Yers}
+          tabsList={tabsList2Yaers}
+          texts={texts2Years}
           myWallet="dhc52r6x87agshe"
-          tabsList={tabsList}
-          activeTab={activeTab}
-          toggleTab={toggleTab}
+          topUsersList={topUsersList2Years}
         />
-        <IGOTopList topUsersList={topUsersList} texts={texts} myWallet="dhc52r6x87agshe" />
-      </Cards>
+      )}
     </>
   );
 };
