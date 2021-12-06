@@ -38,9 +38,9 @@ interface IGOStakeProps {
         tookPart: string;
         restake: string;
         tooltipButton: string;
-        standart: string;
-        stakers: string;
-        countdown: string;
+        standart?: string;
+        stakers?: string;
+        countdown?: string;
     };
     totalValue: string | number;
     myStakeValue: string | number;
