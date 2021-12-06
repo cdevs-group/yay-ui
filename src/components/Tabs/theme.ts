@@ -2,7 +2,7 @@ import { variants } from "./types";
 
 export const styleVariantsTab = {
   [variants.SMALL]: {
-    fontSize: 11,
+    fontSize: 10,
     lineHeight: "14px",
     padding: "9px 6px",
     borderRadius: 8,

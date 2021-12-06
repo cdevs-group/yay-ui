@@ -3586,7 +3586,7 @@ var variants$2 = {
 var _a$4, _b$2;
 var styleVariantsTab = (_a$4 = {},
     _a$4[variants$2.SMALL] = {
-        fontSize: 11,
+        fontSize: 10,
         lineHeight: "14px",
         padding: "9px 6px",
         borderRadius: 8,
