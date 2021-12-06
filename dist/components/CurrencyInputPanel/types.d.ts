@@ -19,5 +19,7 @@ export interface CurrencyInputPanelProps {
         numericalInputTitle: string;
         max: string;
         currencySelect: string;
+        balance: string;
     };
+    hideBalance: boolean;
 }
