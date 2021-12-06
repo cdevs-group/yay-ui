@@ -30,7 +30,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
           {currencyIconFrom}
           <CurrencyName>
             <ShortName>{currencyFromSymbol}</ShortName>
-            <FullName>{currencyFromName}</FullName>
+            {currencyFromName && <FullName>{currencyFromName}</FullName>}
           </CurrencyName>
         </Flex>
         <Price>{priceFrom}</Price>
@@ -40,7 +40,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
           {currencyIconTo}
           <CurrencyName>
             <ShortName>{currencyToSymbol}</ShortName>
-            <FullName>{currencyToName}</FullName>
+            {currencyToName && <FullName>{currencyToName}</FullName>}
           </CurrencyName>
         </Flex>
         <Price>{priceTo}</Price>
@@ -62,11 +62,6 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
       <Text mt="28px" fontSize="13px" color={baseColors.textGray}>
         {outputEstimates}
       </Text>
-      {/*<AutoColumn justify="flex-start" gap="sm" style={{ padding: "24px 0 0 0px" }}>*/}
-      {/*  <Text small color="textSubtle" textAlign="left" style={{ width: "100%" }}>*/}
-      {/*    {texts.estimatedText}*/}
-      {/*  </Text>*/}
-      {/*</AutoColumn>*/}
       {recipient !== null ? (
         <AutoColumn justify="flex-start" gap="sm" style={{ padding: "12px 0 0 0px" }}>
           <Text color="text">{recipientSentToText}</Text>

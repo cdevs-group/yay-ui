@@ -45,8 +45,8 @@ const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
             <Text fontSize="11px">{texts.receivedOrSold}</Text>
           </RowFixed>
           <RowFixed>
-            <Text fontSize="14px">{texts.slippageAdjustedAmounts}</Text>
-            <Text fontSize="14px" marginLeft="4px">
+            <Text fontSize="11px">{texts.slippageAdjustedAmounts}</Text>
+            <Text fontSize="11px" marginLeft="4px">
               {texts.outputAmount}
             </Text>
           </RowFixed>

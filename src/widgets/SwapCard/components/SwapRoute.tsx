@@ -14,7 +14,7 @@ export default memo(function SwapRoute({ trade, unwrappedToken }: { trade: any; 
           // eslint-disable-next-line react/no-array-index-key
           <Fragment key={i}>
             <Flex alignItems="end">
-              <Text fontSize="14px" ml="0.125rem" mr="0.125rem">
+              <Text fontSize="11px" ml="0.125rem" mr="0.125rem">
                 {currency?.symbol}
               </Text>
             </Flex>
