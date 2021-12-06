@@ -31,6 +31,7 @@ export const IGOPCardV2Block = () => {
     timer: "Sale phase in:",
     allocation: "Unclaimed allocation:",
     claimed: "Completed",
+    holdersRound: "yay holders Round",
   };
 
   const handleView = () => {
@@ -51,6 +52,7 @@ export const IGOPCardV2Block = () => {
     success: "successfully",
     sale: "sale",
     timer: "Before start",
+    holdersRound: "yay holders Round",
   };
 
   const dataSlots = [
@@ -79,6 +81,29 @@ export const IGOPCardV2Block = () => {
   }
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "50px" }}>
+      <div style={{ margin: "50px auto", width: "360px" }}>
+        <IGOCardV2
+          amount="282,689,372.1176 DESU"
+          tokenImg={DESU_TOKEN}
+          statusTitle="Before sale"
+          texts={texts}
+          token="DESU Token"
+          status={StatusType.BEFORE_SALE}
+          networksTab={networksTab}
+          currentNetwork={network}
+          handleTab={handleChangeNetwork}
+          handleView={handleView}
+          handleStake={handleStake}
+          tierStatus="Stake YAY to get in"
+          chance={0}
+          time={11237}
+          tperiodText="Sale phase in:"
+          inPool
+          propsButtonStake={{ spin: true }}
+          disabledButtonStake={false}
+          holdersRound
+        />
+      </div>
       <div style={{ margin: "50px auto", width: "360px" }}>
         <IGOCardV2
           amount="282,689,372.1176 DESU"

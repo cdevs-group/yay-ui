@@ -6,6 +6,7 @@ import CardTopIndicator from "./components/CardTopIndicator";
 import IGOStake from "./IGOStake";
 import { ComingSoonIcon, YAY_TOKEN } from "../../constants/images";
 import ModalUnstake from "./components/ModalUnstake";
+import Tabs from "../../components/Tabs/Tabs";
 
 export default {
   title: "Widgets/IGOStake",
@@ -138,11 +139,20 @@ export const TopListBlock: React.FC = () => {
     { name: "Your pool share", value: "1380,00000 YAY" },
     { name: "Your tier", value: "Hercules" },
   ];
+  const typesPool = ["Common Pool", "2-years Pool"];
+  const [typePoolTab, seTypePoolTab] = useState(0);
+  const handleTypePool = (e: any) => {
+    seTypePoolTab(+e.target.value);
+  };
   return (
     <>
       <Text fontSize="25px" lineHeight="32px" letterSpacing="0.03em" textAlign="center" mb="61px">
         Opportunities start here <br /> Together we're unstoppable, thank you for joining!
       </Text>
+      <TabsWrap>
+        <Tabs tabsList={typesPool} onClick={handleTypePool} tabValue={typePoolTab} />
+      </TabsWrap>
+
       <CardsTop>
         {indicatorList.map((el, i) => (
           <CardTopIndicator {...el} />
@@ -212,4 +222,8 @@ const Overlay = styled.div<{ open?: boolean }>`
   right: 0;
   bottom: 0;
   width: 100%;
+`;
+const TabsWrap = styled.div`
+  max-width: 308px;
+  margin-bottom: 12px;
 `;

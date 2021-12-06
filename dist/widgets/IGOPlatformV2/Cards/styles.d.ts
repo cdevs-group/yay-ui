@@ -49,3 +49,4 @@ export declare const InfoText: import("styled-components").StyledComponent<"div"
 }, never>;
 export declare const ChanceBlock: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const ChanceBlockProgress: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
+export declare const Ribbon: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../../../components/Box").BoxProps & import("../../../components/Box").FlexProps, never>;

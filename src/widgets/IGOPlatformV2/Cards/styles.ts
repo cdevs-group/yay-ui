@@ -229,3 +229,21 @@ export const ChanceBlock = styled.div`
 export const ChanceBlockProgress = styled.div`
   margin-bottom: 25px;
 `;
+export const Ribbon = styled(Flex)`
+  height: 40px;
+  width: 260px;
+  align-items: center;
+  justify-content: center;
+  background: ${({ theme }) => theme.colors.green};
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 100%;
+  transform: rotate(-37.14deg);
+  text-transform: uppercase;
+  padding: 0 84px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: -114px;
+  margin-top: -1px;
+  position: absolute;
+`;

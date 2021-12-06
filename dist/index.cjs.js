@@ -10443,13 +10443,18 @@ var InfoText = styled__default["default"](Text)(templateObject_25 || (templateOb
 });
 var ChanceBlock = styled__default["default"].div(templateObject_26 || (templateObject_26 = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
 var ChanceBlockProgress = styled__default["default"].div(templateObject_27 || (templateObject_27 = __makeTemplateObject(["\n  margin-bottom: 25px;\n"], ["\n  margin-bottom: 25px;\n"])));
-var templateObject_1$F, templateObject_2$t, templateObject_3$m, templateObject_4$g, templateObject_5$7, templateObject_6$5, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27;
+var Ribbon = styled__default["default"](Flex)(templateObject_28 || (templateObject_28 = __makeTemplateObject(["\n  height: 40px;\n  width: 260px;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  font-weight: normal;\n  font-size: 10px;\n  line-height: 100%;\n  transform: rotate(-37.14deg);\n  text-transform: uppercase;\n  padding: 0 84px;\n  box-sizing: border-box;\n  text-align: center;\n  margin-left: -114px;\n  margin-top: -1px;\n  position: absolute;\n"], ["\n  height: 40px;\n  width: 260px;\n  align-items: center;\n  justify-content: center;\n  background: ", ";\n  font-weight: normal;\n  font-size: 10px;\n  line-height: 100%;\n  transform: rotate(-37.14deg);\n  text-transform: uppercase;\n  padding: 0 84px;\n  box-sizing: border-box;\n  text-align: center;\n  margin-left: -114px;\n  margin-top: -1px;\n  position: absolute;\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.green;
+});
+var templateObject_1$F, templateObject_2$t, templateObject_3$m, templateObject_4$g, templateObject_5$7, templateObject_6$5, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$2, templateObject_11$2, templateObject_12$1, templateObject_13, templateObject_14, templateObject_15, templateObject_16, templateObject_17, templateObject_18, templateObject_19, templateObject_20, templateObject_21, templateObject_22, templateObject_23, templateObject_24, templateObject_25, templateObject_26, templateObject_27, templateObject_28;
 
 var IGOCardV2 = function (_a) {
-    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake, isLottery = _a.isLottery;
+    var chance = _a.chance, status = _a.status, handleStake = _a.handleStake, texts = _a.texts, handleView = _a.handleView, token = _a.token, statusTitle = _a.statusTitle, tokenImg = _a.tokenImg, amount = _a.amount, networksTab = _a.networksTab, currentNetwork = _a.currentNetwork, handleTab = _a.handleTab, tierStatus = _a.tierStatus, time = _a.time, isStaked = _a.isStaked, allocation = _a.allocation, inPool = _a.inPool, tperiodText = _a.tperiodText, propsButtonStake = _a.propsButtonStake, disabledButtonStake = _a.disabledButtonStake, isLottery = _a.isLottery, holdersRound = _a.holdersRound;
     return (React__default["default"].createElement(Wrapper$b, null,
         React__default["default"].createElement(HeadLine, null,
-            React__default["default"].createElement(TokenName, null, token),
+            holdersRound && React__default["default"].createElement(Ribbon, null, texts.holdersRound),
+            React__default["default"].createElement(TokenName, null, !holdersRound && token),
             React__default["default"].createElement(StatusName, null, statusTitle)),
         React__default["default"].createElement(AvailableBlock, null,
             React__default["default"].createElement(TokenLogo, null,
@@ -10478,7 +10483,7 @@ var IGOCardV2 = function (_a) {
                 React__default["default"].createElement(TimerNotSolidWithoutBg, { widthWrapper: "fit-content", margin: "0", fontSize: "15px", height: "fit-content", time: time, color: baseColors.green })))),
         React__default["default"].createElement(ButtonStyle$2, { onClick: handleView, variant: "green" }, texts.button)));
 };
-var Wrapper$b = styled__default["default"].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
+var Wrapper$b = styled__default["default"].div(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  overflow: hidden;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"], ["\n  position: relative;\n  max-width: 548px;\n  width: 100%;\n  min-height: 555px;\n  margin: 0 auto;\n  padding: 12px 12px 23px;\n  background: ", ";\n  border-radius: 12px;\n  overflow: hidden;\n\n  ", " {\n    padding: 25px 25px 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
