@@ -25,9 +25,9 @@ interface IStakeProps {
     myStake: string;
     avaible: string;
     tookPart: string;
-    standart: string;
-    stakers: string;
-    countdown: string;
+    standart?: string;
+    stakers?: string;
+    countdown?: string;
   };
   valueInput: string | number;
   onUserInput: (input: string) => void;
