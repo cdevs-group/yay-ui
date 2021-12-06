@@ -25,8 +25,8 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
 }) => {
   return (
     <div>
-      <Flex justifyContent="space-between" alignItems="flex-start">
-        <Flex alignItems="flex-start">
+      <Flex justifyContent="space-between" alignItems="center">
+        <Flex alignItems="center">
           {currencyIconFrom}
           <CurrencyName>
             <ShortName>{currencyFromSymbol}</ShortName>
