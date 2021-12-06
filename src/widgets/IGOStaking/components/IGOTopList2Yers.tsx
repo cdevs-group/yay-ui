@@ -13,6 +13,7 @@ interface IGOTopList2YersProps {
     tokenName: string;
     allocation: string;
     tier: string;
+    allocationCurrency: string;
   };
   topUsersList: Array<{
     position: string | number;
@@ -59,7 +60,10 @@ const IGOTopList2Yers = ({ topUsersList, texts, activeTab, toggleTab, tabsList, 
             <Cell>
               {new BigNumber(Web3Utils.fromWei(item.stake)).toFixed(2)} {texts.tokenName}
             </Cell>
-            <Cell>${item.allocation}</Cell>
+            <Cell>
+              {texts.allocationCurrency}
+              {item.allocation}
+            </Cell>
           </Line>
         ))}
       </Table>

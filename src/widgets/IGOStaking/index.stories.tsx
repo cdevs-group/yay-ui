@@ -136,6 +136,7 @@ export const TopListBlock: React.FC = () => {
     button: "My position",
     allocation: "Available allocation",
     tier: "Tier",
+    allocationCurrency: "$",
   };
   const topUsersList = [
     {
@@ -165,7 +166,7 @@ export const TopListBlock: React.FC = () => {
     {
       position: "2",
       tier: "Perseus",
-      wallet: "dhc526x87agshe",
+      wallet: "dhc52r6x87agshe",
       stake: "1000000",
       allocation: "50",
     },
