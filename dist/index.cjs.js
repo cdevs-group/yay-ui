@@ -10127,7 +10127,7 @@ var Stake = function (_a) {
 };
 
 var Unstake = function (_a) {
-    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress; _a.restakeDisabed; var handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
+    var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress, restakeDisabed = _a.restakeDisabed, handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
     var _b = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef;
     return (React__default["default"].createElement("div", { style: { position: "relative" } },
         React__default["default"].createElement(UnstakeWrapper, { id: "unstake" },
@@ -10140,17 +10140,15 @@ var Unstake = function (_a) {
                 React__default["default"].createElement(ProgressTrack, null,
                     React__default["default"].createElement(ProgressWrap, null,
                         React__default["default"].createElement(ProgressBar, { progress: progress })))),
-            React__default["default"].createElement(Buttons$3, null, isStaker ? (React__default["default"].createElement(ButtonStyle$3, { margin: "0 !important", disabled: true, onClick: handleRestake, width: "100%", variant: "green", spin: loadingRestake }, texts.countdown)) : (React__default["default"].createElement(React__default["default"].Fragment, null,
-                " ",
-                React__default["default"].createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, texts.cooldownButton),
+            React__default["default"].createElement(Buttons$3, null,
+                React__default["default"].createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, isStaker ? texts.unstake : texts.cooldownButton),
                 React__default["default"].createElement(ButtonWrap, { ref: targetRef },
-                    tooltipVisible && React__default["default"].createElement(StyledTooltip, null, texts.tooltipButton),
-                    React__default["default"].createElement(ButtonStyle$3, { disabled: true, onClick: handleRestake, variant: "green", spin: loadingRestake },
-                        texts.restake,
-                        React__default["default"].createElement(Flex, { ml: "10px", alignItems: "center" },
-                            React__default["default"].createElement(Flex, { alignItems: "center" },
-                                React__default["default"].createElement(Icon$B, null))))),
-                " ")))),
+                    tooltipVisible && !isStaker && React__default["default"].createElement(StyledTooltip, null, texts.tooltipButton),
+                    React__default["default"].createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
+                        isStaker ? texts.claim : texts.restake,
+                        React__default["default"].createElement(Flex, { ml: "10px", alignItems: "center" }, !isStaker && (React__default["default"].createElement(Flex, { alignItems: "center" },
+                            React__default["default"].createElement(Icon$B, null)))))),
+                " ")),
         isBlur && React__default["default"].createElement(Claimed$1, { id: "unstake" })));
 };
 var ButtonStyle$3 = styled__default["default"](Button$9)(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"], ["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"])));
@@ -10162,7 +10160,7 @@ var Claimed$1 = styled__default["default"].div(templateObject_3$q || (templateOb
     var id = _a.id;
     return "-moz-element(#" + id + ")";
 });
-var StyledTooltip = styled__default["default"].div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
+var StyledTooltip = styled__default["default"].div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {

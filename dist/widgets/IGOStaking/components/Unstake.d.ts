@@ -19,6 +19,8 @@ interface IUnstakeProps {
         restake: string;
         tooltipButton: string;
         countdown: string;
+        unstake?: string;
+        claim?: string;
     };
     cooldownDisabled: boolean;
     handleCooldown: () => void | Promise<void>;

@@ -42,6 +42,8 @@ export const IGOStakeBlock = () => {
     countdown: "Countdown",
     standart: "Standar",
     stakers: "Stakers",
+    unstake: "Unstake",
+    claim: "Claim YAY",
   };
 
   const handleButton = () => {
