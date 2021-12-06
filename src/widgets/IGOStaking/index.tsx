@@ -5,3 +5,4 @@ export { default as Stake } from "./components/Stake";
 export { default as TopBlock } from "./components/TopBlock";
 export { default as Unstake } from "./components/Unstake";
 export { default as ModalUnstake } from "./components/ModalUnstake";
+export { default as IGOTopList2Yers } from "./components/IGOTopList2Yers";

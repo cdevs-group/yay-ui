@@ -18,7 +18,7 @@ interface IUnstakeProps {
         tookPart: string;
         restake: string;
         tooltipButton: string;
-        countdown: string;
+        countdown?: string;
         unstake?: string;
         claim?: string;
     };
