@@ -11345,8 +11345,8 @@ var templateObject_1$k, templateObject_2$f, templateObject_3$a, templateObject_4
 var SwapModalHeader = function (_a) {
     var recipient = _a.recipient, showAcceptChanges = _a.showAcceptChanges, onAcceptChanges = _a.onAcceptChanges, outputEstimates = _a.outputEstimates, recipientSentToText = _a.recipientSentToText, currencyIconFrom = _a.currencyIconFrom, currencyFromSymbol = _a.currencyFromSymbol, currencyFromName = _a.currencyFromName, priceFrom = _a.priceFrom, currencyIconTo = _a.currencyIconTo, currencyToSymbol = _a.currencyToSymbol, currencyToName = _a.currencyToName, priceTo = _a.priceTo, texts = _a.texts;
     return (React__default["default"].createElement("div", null,
-        React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "flex-start" },
-            React__default["default"].createElement(Flex, { alignItems: "flex-start" },
+        React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
+            React__default["default"].createElement(Flex, { alignItems: "center" },
                 currencyIconFrom,
                 React__default["default"].createElement(CurrencyName, null,
                     React__default["default"].createElement(ShortName, null, currencyFromSymbol),
