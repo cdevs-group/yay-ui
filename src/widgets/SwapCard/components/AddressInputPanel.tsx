@@ -25,15 +25,17 @@ const ContainerRow = styled.div<{ error: boolean }>`
 
 const InputContainer = styled.div`
   flex: 1;
-  padding: 1rem;
 `;
 
 const Input = styled.input<{ error?: boolean }>`
-  font-size: 1.25rem;
+  font-size: 16px;
   outline: none;
   border: none;
   flex: 1 1 auto;
-  background-color: ${({ theme }) => theme.colors.cardBg};
+  padding: 14px 14px 14px 25px;
+  border-radius: 16px;
+  background-color: ${({ theme }) => theme.colors.bgCard5};
+  box-shadow: ${({ theme }) => theme.shadows.input};
   transition: color 300ms ${({ error }) => (error ? "step-end" : "step-start")};
   color: ${({ error, theme }) => (error ? theme.colors.redBg : theme.colors.green)};
   overflow: hidden;
@@ -105,7 +107,7 @@ export default function AddressInputPanel({
       <ContainerRow error={error}>
         <InputContainer>
           <AutoColumn gap="md">
-            <RowBetween>
+            <RowBetween style={{ padding: "0 1rem" }}>
               <Text>{recipientText}</Text>
               {address && chainId && (
                 <Link external small href={bscScanLink}>

@@ -124,7 +124,7 @@ const TransactionSettings = ({
               onBlur={() => {
                 parseCustomSlippage((slippageInput / 100).toFixed(2));
               }}
-              placeholder=""
+              placeholder="0.00"
               icon={
                 <Text color="rgba(255,255,255,.7)" fontSize="13px">
                   %

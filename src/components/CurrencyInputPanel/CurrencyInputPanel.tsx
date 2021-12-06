@@ -21,7 +21,6 @@ const CurrencySelectButton = styled(Button).attrs({ variant: "text", scale: "sm"
   background: ${({ theme }) => theme.colors.bgOpacitY3};
   border-radius: 12px;
   height: auto;
-  cursor: default;
 `;
 const LabelRow = styled.div`
   display: flex;
@@ -37,7 +36,6 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   flex-flow: column nowrap;
   position: relative;
   border-radius: ${({ hideInput }) => (hideInput ? "8px" : "20px")};
-  background: ${({ theme }) => theme.colors.bgOpacity};
   z-index: 1;
 `;
 const Container = styled(Flex)<{ hideInput: boolean }>`
