@@ -9,7 +9,7 @@ const StyledOverlay = styled(Box)`
   width: 100%;
   height: 100%;
   background: ${({ theme }) => theme.colors.overlayBg};
-  z-index: 20;
+  z-index: -1;
 `;
 
 const BodyLock = () => {
