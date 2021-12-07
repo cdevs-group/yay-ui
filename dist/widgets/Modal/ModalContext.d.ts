@@ -5,7 +5,7 @@ interface ModalsContext {
     nodeId: string;
     modalNode: React.ReactNode;
     setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
-    onPresent: (node: React.ReactNode, key?: string) => void;
+    onPresent: (node: React.ReactNode, newNodeId: string) => void;
     onDismiss: Handler;
     setCloseOnOverlayClick: React.Dispatch<React.SetStateAction<boolean>>;
 }

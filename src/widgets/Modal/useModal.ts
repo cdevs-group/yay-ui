@@ -3,7 +3,8 @@ import get from "lodash/get";
 import { Context } from "./ModalContext";
 import { Handler } from "./types";
 
-const useModal = (modal: React.ReactNode,
+const useModal = (
+  modal: React.ReactNode,
   closeOnOverlayClick = true,
   updateOnPropsChange = false,
   modalId = "defaultNodeId"
