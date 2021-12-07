@@ -5905,16 +5905,16 @@ var ModalProvider = function (_a) {
     var _b = React.useState(false), isOpen = _b[0], setIsOpen = _b[1];
     var _c = React.useState(), modalNode = _c[0], setModalNode = _c[1];
     var _d = React.useState(true), closeOnOverlayClick = _d[0], setCloseOnOverlayClick = _d[1];
-    var _e = React.useState(""), nodeId = _e[0]; _e[1];
+    var _e = React.useState(""), nodeId = _e[0], setNodeId = _e[1];
     var handlePresent = function (node, newNodeId) {
         setModalNode(node);
         setIsOpen(true);
-        // setNodeId(newNodeId);
+        setNodeId(newNodeId);
     };
     var handleDismiss = function () {
         setModalNode(undefined);
         setIsOpen(false);
-        // setNodeId("");
+        setNodeId("");
     };
     var handleOverlayDismiss = function () {
         if (closeOnOverlayClick) {
@@ -5940,19 +5940,7 @@ var ModalProvider = function (_a) {
 };
 var templateObject_1$2k;
 
-var useModal = function (modal, closeOnOverlayClick) {
-    if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
-    var _a = React.useContext(Context), onPresent = _a.onPresent, onDismiss = _a.onDismiss, setCloseOnOverlayClick = _a.setCloseOnOverlayClick;
-    var onPresentCallback = React.useCallback(function () {
-        onPresent(modal);
-    }, [modal, onPresent]);
-    React.useEffect(function () {
-        setCloseOnOverlayClick(closeOnOverlayClick);
-    }, [closeOnOverlayClick, setCloseOnOverlayClick]);
-    return [onPresentCallback, onDismiss];
-};
-
-var useModalWithUpdate = function (modal, closeOnOverlayClick, updateOnPropsChange, modalId) {
+var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalId) {
     if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
     if (updateOnPropsChange === void 0) { updateOnPropsChange = false; }
     if (modalId === void 0) { modalId = "defaultNodeId"; }
@@ -5960,20 +5948,10 @@ var useModalWithUpdate = function (modal, closeOnOverlayClick, updateOnPropsChan
     var onPresentCallback = React.useCallback(function () {
         onPresent(modal, modalId);
     }, [modal, modalId, onPresent]);
-    // Updates the "modal" component if props are changed
-    // Use carefully since it might result in unnecessary rerenders
-    // Typically if modal is staic there is no need for updates, use when you expect props to change
     React.useEffect(function () {
-        // NodeId is needed in case there are 2 useModal hooks on the same page and one has updateOnPropsChange
         if (updateOnPropsChange && isOpen && nodeId === modalId) {
             var modalProps = get__default["default"](modal, "props");
             var oldModalProps = get__default["default"](modalNode, "props");
-            // Note: I tried to use lodash isEqual to compare props but it is giving false-negatives too easily
-            // For example ConfirmSwapModal in exchange has ~500 lines prop object that stringifies to same string
-            // and online diff checker says both objects are identical but lodash isEqual thinks they are different
-            // Do not try to replace JSON.stringify with isEqual, high risk of infinite rerenders
-            // TODO: Find a good way to handle modal updates, this whole flow is just backwards-compatible workaround,
-            // would be great to simplify the logic here
             if (modalProps && oldModalProps && JSON.stringify(modalProps) !== JSON.stringify(oldModalProps)) {
                 setModalNode(modal);
             }
@@ -12623,7 +12601,6 @@ exports.useKonamiCheatCode = useKonamiCheatCode;
 exports.useLobbyResultModal = useLobbyResultModal;
 exports.useMatchBreakpoints = useMatchBreakpoints;
 exports.useModal = useModal;
-exports.useModalWithUpdate = useModalWithUpdate;
 exports.useParticleBurst = useParticleBurst;
 exports.useTooltip = useTooltip;
 exports.useWalletHistoryModal = useWalletHistoryModal;
