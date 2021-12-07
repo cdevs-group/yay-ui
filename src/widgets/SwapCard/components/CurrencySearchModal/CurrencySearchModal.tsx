@@ -9,8 +9,6 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
   onDismiss = () => null,
   config,
   modalView,
-  setModalView,
-  texts,
   currencySearchComponent,
   importTokenComponent,
   importListComponent,
@@ -48,20 +46,6 @@ const CurrencySearchModal: React.FC<CurrencySearchModalProps> = ({
             : modalView === CurrencyModalView.manage
             ? manageComponent
             : ""}
-          {modalView === CurrencyModalView.search && (
-            <Footer>
-              <Button
-                scale="sm"
-                variant="text"
-                onClick={() => setModalView(CurrencyModalView.manage)}
-                className="list-token-manage-button"
-                fontSize="15px"
-                letterSpacing="0.05em"
-              >
-                {texts.manageTokens}
-              </Button>
-            </Footer>
-          )}
         </StyledModalBody>
       </StyledModal>
     </div>

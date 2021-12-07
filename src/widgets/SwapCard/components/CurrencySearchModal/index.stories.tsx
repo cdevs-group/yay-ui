@@ -383,8 +383,6 @@ export const CurrencySearchModalBlock = () => {
         onDismiss={() => null}
         config={config}
         modalView={modalView}
-        setModalView={setModalView}
-        texts={{ manageTokens: "Manage Tokens" }}
         currencySearchComponent={<CurrencySearchComponent />}
         importTokenComponent={<ImportTokenComponent />}
         importListComponent={<ImportListComponent />}
