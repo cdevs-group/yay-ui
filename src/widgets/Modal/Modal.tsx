@@ -9,7 +9,7 @@ import { DefaultTheme, useTheme } from "styled-components";
 import { Flex } from "../../components/Box";
 import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
-interface Props extends InjectedProps, SpaceProps, LayoutProps {
+export interface Props extends InjectedProps, SpaceProps, LayoutProps {
   title?: string;
   hideCloseButton?: boolean;
   bodyPadding?: string;
