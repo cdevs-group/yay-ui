@@ -8,8 +8,7 @@ const StyledOverlay = styled(Box)`
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => `${theme.colors.text}99`};
-  backdrop-filter: blur(2px);
+  background: ${({ theme }) => theme.colors.overlayBg};
   z-index: 20;
 `;
 

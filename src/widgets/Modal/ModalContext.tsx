@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import styled from "styled-components";
+import { Overlay } from "../../components/Overlay";
 import { Handler } from "./types";
 
 interface ModalsContext {
@@ -77,7 +78,7 @@ const ModalProvider: React.FC = ({ children }) => {
     >
       {isOpen && (
         <ModalWrapper>
-          {/* <Overlay show onClick={handleOverlayDismiss} /> */}
+          <Overlay onClick={handleOverlayDismiss} />
           {React.isValidElement(modalNode) &&
             React.cloneElement(modalNode, {
               onDismiss: handleDismiss,

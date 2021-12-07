@@ -84,19 +84,6 @@ const ModalTitle = styled.div`
   color: ${({ theme }) => theme.colors.text};
 `;
 
-const Overlay = styled.div`
-  pointer-events: none;
-  display: block;
-  background: ${({ theme }) => theme.colors.overlayBg};
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-`;
-
 const Heading = styled.div`
   &.welcome {
     font-weight: 500;
@@ -128,38 +115,35 @@ const Modal: React.FC<Props> = ({
 }) => {
   const theme = useTheme();
   return (
-    <div>
-      <Overlay />
-      <StyledModal {...props}>
-        <ModalContent>
-          <ModalHeader
-            className={welcome ? "welcome" : ""}
-            paddingTopHeader={paddingTopHeader}
-            background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
-          >
-            <ModalTitle>
-              <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
-            </ModalTitle>
-            {image ? (
-              <Image>
-                <img src={Gift2} alt="" />
-              </Image>
-            ) : null}
-            {onBack && (
-              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-                button to back
-              </IconButton>
-            )}
-            {!hideCloseButton && (
-              <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-                <CloseIcon />
-              </IconButton>
-            )}
-          </ModalHeader>
-          {children}
-        </ModalContent>
-      </StyledModal>
-    </div>
+    <StyledModal {...props}>
+      <ModalContent>
+        <ModalHeader
+          className={welcome ? "welcome" : ""}
+          paddingTopHeader={paddingTopHeader}
+          background={getThemeValue(`colors.${headerBackground}`, headerBackground)(theme)}
+        >
+          <ModalTitle>
+            <Heading className={welcome ? "welcome" : ""}>{title}</Heading>
+          </ModalTitle>
+          {image ? (
+            <Image>
+              <img src={Gift2} alt="" />
+            </Image>
+          ) : null}
+          {onBack && (
+            <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+              button to back
+            </IconButton>
+          )}
+          {!hideCloseButton && (
+            <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
+              <CloseIcon />
+            </IconButton>
+          )}
+        </ModalHeader>
+        {children}
+      </ModalContent>
+    </StyledModal>
   );
 };
 
