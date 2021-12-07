@@ -70,6 +70,11 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
+    "option-dark": {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+    };
     yellow: {
         background: string;
         color: string;

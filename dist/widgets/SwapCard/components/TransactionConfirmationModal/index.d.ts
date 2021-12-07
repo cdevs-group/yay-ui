@@ -8,6 +8,7 @@ export interface ConfirmationPendingContentProps {
     pendingText: string;
     texts: ConfirmationPendingContentTextProps;
 }
+export declare function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingContentProps): JSX.Element;
 export interface TransactionSubmittedContentProps {
     onDismiss?: () => void;
     registerToken: any;
@@ -22,6 +23,7 @@ export interface TransactionSubmittedContentProps {
     isMetaMask: boolean;
     token: any;
 }
+export declare function TransactionSubmittedContent({ onDismiss, registerToken, chainId, txHash, currencyToAdd, bscScanLink, transSubmittedText, bscScanLinkText, metamaskAssetText, btnCloseText, isMetaMask, token, }: TransactionSubmittedContentProps): JSX.Element;
 export declare function ConfirmationModalContent({ bottomContent, topContent, }: {
     topContent: () => React.ReactNode;
     bottomContent: () => React.ReactNode;

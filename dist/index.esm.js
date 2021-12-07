@@ -1079,6 +1079,7 @@ var variants$4 = {
     GREEN: "green",
     PINK: "pink",
     OPTION: "option",
+    OPTION_DARK: "option-dark",
     YELLOW: "yellow",
     GRAY: "gray",
     WHITE: "white",
@@ -1155,6 +1156,11 @@ var styleVariants$2 = (_b$3 = {},
     },
     _b$3[variants$4.OPTION] = {
         backgroundColor: "rgba(255, 255, 255, 0.15)",
+        color: "#fff",
+        boxShadow: "none",
+    },
+    _b$3[variants$4.OPTION_DARK] = {
+        backgroundColor: "rgba(0, 0, 0, 0.25)",
         color: "#fff",
         boxShadow: "none",
     },
@@ -11839,6 +11845,8 @@ function ConfirmationPendingContent(_a) {
     var confirmationWaiting = texts.confirmationWaiting, transactionConfirm = texts.transactionConfirm;
     return (React__default.createElement(Wrapper$3, null,
         React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
+            React__default.createElement(ConfirmedIcon, null,
+                React__default.createElement(Loader$1, null)),
             React__default.createElement(Text, { fontSize: "20px" }, confirmationWaiting),
             React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
                 React__default.createElement(Text, { bold: true, small: true, textAlign: "center" }, pendingText)),
@@ -11849,15 +11857,15 @@ function TransactionSubmittedContent(_a) {
     return (React__default.createElement(Wrapper$3, null,
         React__default.createElement(Section, null,
             React__default.createElement(ConfirmedIcon, null,
-                React__default.createElement(Icon$F, { strokeWidth: 0.5, width: "90px", color: "primary" })),
+                React__default.createElement(Icon$F, { strokeWidth: 0.5, width: "90px", color: "green" })),
             React__default.createElement(AutoColumn, { gap: "12px", justify: "center" },
                 React__default.createElement(Text, { fontSize: "20px" }, transSubmittedText),
                 chainId && txHash && (React__default.createElement(Link$3, { external: true, small: true, href: bscScanLink }, bscScanLinkText)),
-                currencyToAdd && isMetaMask && (React__default.createElement(Button$9, { variant: "tertiary", mt: "12px", width: "fit-content", onClick: function () { return registerToken(token.address, token.symbol, token.decimals); } },
+                currencyToAdd && isMetaMask && (React__default.createElement(Button$9, { variant: "option-dark", mt: "12px", width: "fit-content", onClick: function () { return registerToken(token.address, token.symbol, token.decimals); } },
                     React__default.createElement(RowFixed, null,
                         metamaskAssetText,
                         React__default.createElement(Icon$c, { width: "16px", ml: "6px" })))),
-                React__default.createElement(Button$9, { onClick: onDismiss, mt: "20px" }, btnCloseText)))));
+                React__default.createElement(Button$9, { onClick: onDismiss, mt: "20px", variant: "green" }, btnCloseText)))));
 }
 function ConfirmationModalContent(_a) {
     var bottomContent = _a.bottomContent, topContent = _a.topContent;

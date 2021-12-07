@@ -17,6 +17,7 @@ export declare const variants: {
     readonly GREEN: "green";
     readonly PINK: "pink";
     readonly OPTION: "option";
+    readonly OPTION_DARK: "option-dark";
     readonly YELLOW: "yellow";
     readonly GRAY: "gray";
     readonly WHITE: "white";
