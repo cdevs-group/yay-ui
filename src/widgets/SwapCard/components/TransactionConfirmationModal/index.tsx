@@ -35,7 +35,7 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
   const { confirmationWaiting, transactionConfirm } = texts;
 
   return (
-    <Wrapper>      
+    <Wrapper>
       <AutoColumn gap="12px" justify="center">
         <Text fontSize="20px">{confirmationWaiting}</Text>
         <AutoColumn gap="12px" justify="center">
@@ -44,7 +44,7 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
           </Text>
         </AutoColumn>
         <Text small color="green" textAlign="center">
-          {transactionConfirm}...
+          {transactionConfirm}
         </Text>
       </AutoColumn>
     </Wrapper>
