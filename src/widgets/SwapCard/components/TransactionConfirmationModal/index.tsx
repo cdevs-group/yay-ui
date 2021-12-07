@@ -48,7 +48,7 @@ export function ConfirmationPendingContent({ pendingText, texts }: ConfirmationP
           </Text>
         </AutoColumn>
         <Text small color="green" textAlign="center">
-          {transactionConfirm}...
+          {transactionConfirm}
         </Text>
       </AutoColumn>
     </Wrapper>
