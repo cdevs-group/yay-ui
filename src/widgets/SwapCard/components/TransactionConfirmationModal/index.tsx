@@ -9,6 +9,7 @@ import { InjectedModalProps } from "../../../Modal";
 import { RowFixed } from "../../../../components/Layouts/Row";
 import { AutoColumn, ColumnCenter } from "../../../../components/Layouts/Column";
 import { OneGhost } from "../../../../constants/images";
+import { Loader } from "../../../..";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -31,12 +32,15 @@ export interface ConfirmationPendingContentProps {
   texts: ConfirmationPendingContentTextProps;
 }
 
-function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingContentProps) {
+export function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingContentProps) {
   const { confirmationWaiting, transactionConfirm } = texts;
 
   return (
-    <Wrapper>      
+    <Wrapper>
       <AutoColumn gap="12px" justify="center">
+        <ConfirmedIcon>
+          <Loader />
+        </ConfirmedIcon>
         <Text fontSize="20px">{confirmationWaiting}</Text>
         <AutoColumn gap="12px" justify="center">
           <Text bold small textAlign="center">
@@ -66,7 +70,7 @@ export interface TransactionSubmittedContentProps {
   token: any;
 }
 
-function TransactionSubmittedContent({
+export function TransactionSubmittedContent({
   onDismiss,
   registerToken,
   chainId,
@@ -84,7 +88,7 @@ function TransactionSubmittedContent({
     <Wrapper>
       <Section>
         <ConfirmedIcon>
-          <ArrowUpIcon strokeWidth={0.5} width="90px" color="primary" />
+          <ArrowUpIcon strokeWidth={0.5} width="90px" color="green" />
         </ConfirmedIcon>
         <AutoColumn gap="12px" justify="center">
           <Text fontSize="20px">{transSubmittedText}</Text>
@@ -95,7 +99,7 @@ function TransactionSubmittedContent({
           )}
           {currencyToAdd && isMetaMask && (
             <Button
-              variant="tertiary"
+              variant="option-dark"
               mt="12px"
               width="fit-content"
               onClick={() => registerToken(token.address, token.symbol, token.decimals)}
@@ -106,7 +110,7 @@ function TransactionSubmittedContent({
               </RowFixed>
             </Button>
           )}
-          <Button onClick={onDismiss} mt="20px">
+          <Button onClick={onDismiss} mt="20px" variant="green">
             {btnCloseText}
           </Button>
         </AutoColumn>

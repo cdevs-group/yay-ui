@@ -19,6 +19,7 @@ export const variants = {
   GREEN: "green",
   PINK: "pink",
   OPTION: "option",
+  OPTION_DARK: "option-dark",
   YELLOW: "yellow",
   GRAY: "gray",
   WHITE: "white",

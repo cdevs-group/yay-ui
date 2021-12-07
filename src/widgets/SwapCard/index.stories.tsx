@@ -18,12 +18,53 @@ import { AppHeader } from "./components/App";
 import { YAY_TOKEN_GREEN } from "../../constants/images";
 import TransactionsModal from "./components/App/Transactions/TransactionsModal";
 import { Transaction, Transactions } from ".";
-import { TransactionErrorContent, ConfirmationModalContent } from "../SwapCard/components/TransactionConfirmationModal";
+import {
+  TransactionErrorContent,
+  ConfirmationModalContent,
+  TransactionSubmittedContent,
+  ConfirmationPendingContent,
+} from "../SwapCard/components/TransactionConfirmationModal";
 import styled from "styled-components";
+import { Modal } from "../Modal";
 
 export default {
   title: "Widgets/Swap",
   argTypes: {},
+};
+
+export const ConfirmationPendingContentBlock = () => {
+  return (
+    <Modal onDismiss={() => null} title="Confirm swap">
+      <ConfirmationPendingContent
+        pendingText="Swapping 0.001 BNB"
+        texts={{
+          confirmationWaiting: "Waiting for confirmation",
+          transactionConfirm: "confirm this transaction in your wallet",
+        }}
+      />
+    </Modal>
+  );
+};
+
+export const TransactionSubmittedContentBlock = () => {
+  return (
+    <Modal onDismiss={() => null} title="Confirm swap">
+      <TransactionSubmittedContent
+        onDismiss={() => null}
+        registerToken={() => null}
+        chainId={56}
+        txHash="vkdjfnvldfbvldfb"
+        currencyToAdd
+        bscScanLink="View on BscScan"
+        transSubmittedText="Transaction Submitted"
+        bscScanLinkText="View on BscScan"
+        metamaskAssetText="Add to Metamask"
+        btnCloseText="Close"
+        isMetaMask
+        token
+      />
+    </Modal>
+  );
 };
 
 export const ConfirmationModalContentBlock = () => {

@@ -73,6 +73,11 @@ export const styleVariants = {
     color: "#fff",
     boxShadow: "none",
   },
+  [variants.OPTION_DARK]: {
+    backgroundColor: "rgba(0, 0, 0, 0.25)",
+    color: "#fff",
+    boxShadow: "none",
+  },
   [variants.YELLOW]: {
     background: " linear-gradient(180deg, #FFB001 -16%, #FFA201 100%)",
     color: "#fff",
