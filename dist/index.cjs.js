@@ -5866,7 +5866,7 @@ var Modal$1 = function (_a) {
 };
 var templateObject_1$2m, templateObject_2$1O, templateObject_3$1s, templateObject_4$1b, templateObject_5$Q, templateObject_6$E, templateObject_7$r;
 
-var StyledOverlay = styled__default["default"](Box)(templateObject_1$2l || (templateObject_1$2l = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 20;\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 20;\n"])), function (_a) {
+var StyledOverlay = styled__default["default"](Box)(templateObject_1$2l || (templateObject_1$2l = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: -1;\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: -1;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.overlayBg;
 });
