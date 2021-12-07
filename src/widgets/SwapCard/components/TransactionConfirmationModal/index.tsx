@@ -5,7 +5,6 @@ import { Text } from "../../../../components/Text";
 import { ArrowUpIcon, MetamaskIcon, CloseIcon } from "../../../../components/Svg";
 import { Flex, Box } from "../../../../components/Box";
 import { Link } from "../../../../components/Link";
-import { Spinner } from "../../../../components/Spinner";
 import { InjectedModalProps } from "../../../Modal";
 import { RowFixed } from "../../../../components/Layouts/Row";
 import { AutoColumn, ColumnCenter } from "../../../../components/Layouts/Column";
@@ -36,10 +35,7 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
   const { confirmationWaiting, transactionConfirm } = texts;
 
   return (
-    <Wrapper>
-      <ConfirmedIcon>
-        <Spinner />
-      </ConfirmedIcon>
+    <Wrapper>      
       <AutoColumn gap="12px" justify="center">
         <Text fontSize="20px">{confirmationWaiting}</Text>
         <AutoColumn gap="12px" justify="center">
@@ -47,8 +43,8 @@ function ConfirmationPendingContent({ pendingText, texts }: ConfirmationPendingC
             {pendingText}
           </Text>
         </AutoColumn>
-        <Text small color="textSubtle" textAlign="center">
-          {transactionConfirm}
+        <Text small color="green" textAlign="center">
+          {transactionConfirm}...
         </Text>
       </AutoColumn>
     </Wrapper>
