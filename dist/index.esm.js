@@ -11402,7 +11402,7 @@ var SwapRoute = memo(function SwapRoute(_a) {
         React__default.createElement(Fragment, { key: i },
             React__default.createElement(Flex, { alignItems: "end" },
                 React__default.createElement(Text, { fontSize: "11px", ml: "0.125rem", mr: "0.125rem" }, currency === null || currency === void 0 ? void 0 : currency.symbol)),
-            isLastItem && React__default.createElement(Icon$8, { width: "12px" })));
+            !isLastItem && React__default.createElement(Icon$8, { width: "12px" })));
     })));
 });
 

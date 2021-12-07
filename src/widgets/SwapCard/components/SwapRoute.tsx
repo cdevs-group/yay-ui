@@ -18,7 +18,7 @@ export default memo(function SwapRoute({ trade, unwrappedToken }: { trade: any; 
                 {currency?.symbol}
               </Text>
             </Flex>
-            {isLastItem && <ChevronRightIcon width="12px" />}
+            {!isLastItem && <ChevronRightIcon width="12px" />}
           </Fragment>
         );
       })}
