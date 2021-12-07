@@ -10823,7 +10823,7 @@ var CurrencyModalView;
 })(CurrencyModalView || (CurrencyModalView = {}));
 
 var CurrencySearchModal = function (_a) {
-    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, config = _a.config, modalView = _a.modalView, setModalView = _a.setModalView, texts = _a.texts, currencySearchComponent = _a.currencySearchComponent, importTokenComponent = _a.importTokenComponent, importListComponent = _a.importListComponent, manageComponent = _a.manageComponent, importToken = _a.importToken, importList = _a.importList, listURL = _a.listURL;
+    var _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, config = _a.config, modalView = _a.modalView, currencySearchComponent = _a.currencySearchComponent, importTokenComponent = _a.importTokenComponent, importListComponent = _a.importListComponent, manageComponent = _a.manageComponent, importToken = _a.importToken, importList = _a.importList, listURL = _a.listURL;
     return (React__default["default"].createElement("div", null,
         React__default["default"].createElement(Overlay$2, null),
         React__default["default"].createElement(StyledModal$2, null,
@@ -10834,20 +10834,17 @@ var CurrencySearchModal = function (_a) {
                         React__default["default"].createElement(Icon$2, null)))),
                 React__default["default"].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
                     React__default["default"].createElement(Icon$19, null))),
-            React__default["default"].createElement(StyledModalBody, null,
-                modalView === CurrencyModalView.search
-                    ? currencySearchComponent
-                    : modalView === CurrencyModalView.importToken && importToken
-                        ? importTokenComponent
-                        : modalView === CurrencyModalView.importList && importList && listURL
-                            ? importListComponent
-                            : modalView === CurrencyModalView.manage
-                                ? manageComponent
-                                : "",
-                modalView === CurrencyModalView.search && (React__default["default"].createElement(Footer$1, null,
-                    React__default["default"].createElement(Button$9, { scale: "sm", variant: "text", onClick: function () { return setModalView(CurrencyModalView.manage); }, className: "list-token-manage-button", fontSize: "15px", letterSpacing: "0.05em" }, texts.manageTokens)))))));
+            React__default["default"].createElement(StyledModalBody, null, modalView === CurrencyModalView.search
+                ? currencySearchComponent
+                : modalView === CurrencyModalView.importToken && importToken
+                    ? importTokenComponent
+                    : modalView === CurrencyModalView.importList && importList && listURL
+                        ? importListComponent
+                        : modalView === CurrencyModalView.manage
+                            ? manageComponent
+                            : ""))));
 };
-var Footer$1 = styled__default["default"].div(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  width: 100%;\n  background-color: ", ";\n  text-align: center;\n"], ["\n  width: 100%;\n  background-color: ", ";\n  text-align: center;\n"])), function (_a) {
+styled__default["default"].div(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  width: 100%;\n  background-color: ", ";\n  text-align: center;\n"], ["\n  width: 100%;\n  background-color: ", ";\n  text-align: center;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
 });

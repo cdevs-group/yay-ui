@@ -33,10 +33,6 @@ export interface CurrencySearchModalProps {
         };
     };
     modalView: CurrencyModalView;
-    setModalView: (val: CurrencyModalView) => void;
-    texts: {
-        manageTokens: string;
-    };
 }
 export interface ListUrlRowProps {
     listUrl: string;
