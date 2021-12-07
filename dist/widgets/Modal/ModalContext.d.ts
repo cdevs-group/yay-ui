@@ -1,6 +1,10 @@
 import React from "react";
 import { Handler } from "./types";
 interface ModalsContext {
+    isOpen: boolean;
+    nodeId: string;
+    modalNode: React.ReactNode;
+    setModalNode: React.Dispatch<React.SetStateAction<React.ReactNode>>;
     onPresent: (node: React.ReactNode, key?: string) => void;
     onDismiss: Handler;
     setCloseOnOverlayClick: React.Dispatch<React.SetStateAction<boolean>>;

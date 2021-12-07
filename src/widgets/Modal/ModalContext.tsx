@@ -33,7 +33,7 @@ export const Context = createContext<ModalsContext>({
   nodeId: "",
   modalNode: null,
   setModalNode: () => null,
-  
+
   onPresent: () => null,
   onDismiss: () => null,
   setCloseOnOverlayClick: () => true,
@@ -45,7 +45,7 @@ const ModalProvider: React.FC = ({ children }) => {
   const [closeOnOverlayClick, setCloseOnOverlayClick] = useState(true);
   const [nodeId, setNodeId] = useState("");
 
- const handlePresent = (node: React.ReactNode, newNodeId?: string) => {
+  const handlePresent = (node: React.ReactNode, newNodeId?: string) => {
     setModalNode(node);
     setIsOpen(true);
     // setNodeId(newNodeId);

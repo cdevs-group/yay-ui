@@ -2,7 +2,7 @@ import React from "react";
 import { InjectedProps } from "./types";
 import { DefaultTheme } from "styled-components";
 import { LayoutProps, SpaceProps } from "styled-system";
-interface Props extends InjectedProps, SpaceProps, LayoutProps {
+export interface Props extends InjectedProps, SpaceProps, LayoutProps {
     title?: string;
     hideCloseButton?: boolean;
     bodyPadding?: string;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import  Modal  from "../Modal";
+import Modal from "../Modal";
 import { Props } from "../Modal";
 import Button from "../../../components/Button/Button";
 import Heading from "../../../components/Heading/Heading";
@@ -26,7 +26,7 @@ export const Default: React.FC = () => {
   const [onPresent3] = useModalWithUpdate(<CustomModal title="Modal 3" />);
   return (
     <div>
-      <Button onClick={()=>onPresent1()}>Open modal 1</Button>
+      <Button onClick={() => onPresent1()}>Open modal 1</Button>
       <Button onClick={onPresent2}>Open modal 2</Button>
       <Button onClick={onPresent3}>Open modal with background</Button>
     </div>
