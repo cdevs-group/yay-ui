@@ -44,6 +44,7 @@ import BSC_ICON from "../../public/images/bsc-icon.png";
 import MAIN_GAME from "../../public/images/main-game.png";
 import WALLET_KYC from "../../public/images/wallet-kyc.png";
 import BLUR from "../../public/images/blur.png";
+import COINBASE from "../../public/images/coinbase.png";
 
 export {
   BG_IMG,
@@ -92,4 +93,5 @@ export {
   MAIN_GAME,
   WALLET_KYC,
   BLUR,
+  COINBASE,
 };

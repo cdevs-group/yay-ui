@@ -1388,6 +1388,8 @@ var walletKyc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ0AAACcCAYAAABle
 
 var blur = "5c164a2c7c44701f.png";
 
+var COINBASE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAP2SURBVHgBlVZLbExRGP7unTvV0jCqRUmZaEloMRESG+kMkSDisRMSKWKNSGws2i6IsGEhIbGYiNh4NSLxTqc7j2AqWLRNjGeFqCGMMXdmjv+/5565985Dx5+c+/jPuf93/sf5/qthHGnsEmG6dUIgLIAgPQeFsKaSdI/TGISBaDKqxf9lRxsHoJtGmEAgbL0oeobzHCNjvckLWqwqoECXCPgJgGzslxYcw3n7QRQuXkBbf1L3E2BUS1YEIpAggfTRB0vdIAwwsQZongpMnih1P34B778CvzMuK/Z6eo1n/NiajmqJEiDbk5gbxOcDWmcA60LAqkXAvJlAXY2cY4ChUWDgJXB3EBj+BJhZj4dxowYR5ZmhgPwyHwUQP81sXA7sigAr2mihDyUyp4kS2A6sXwacuwdcfwz8MQvOhUzTsnmg4JGd+H43yJ41wMFNMlR6xZJx5BuF8sQ14MxdIJN1hd2HSJoKRLfRuhWIoUtPGCQwqToQlqm09tBWYPMKaUPVipaTtnXKTUi4SritGdi9WoL8r7D3e9dKG9a+hbX5cO02EebQdykQnogsBpa3eg2w/ssPIG169fW10hPN9pq953xuoJy9fCv1tmdhQxNYqtycQBXR2V6aeI7/4YvAi7cucBodLcDRHcD0KY7e75MFcvomkMpAIXUaeaoO3hCfldkNwPxmlMjPtAR59a6IIWikM6XrW8nGLLI1PFpQBdnbgPqaY2ydkwpSjnrKCduYUudaJxA0PPRRhbjXi3E25F7P5Z1Q3JX8VT4UEE6oCoZspHJg6T+U15RHlWSPEpD0j49jwAhRSUuj98NaCkX7HFfo7J12kK6+rhRo6IPkQTibihtCwwDXOr+naCcDr4jXFnorr2kynfqdsijcIeFcNBSdt2wOuP+CuJBsWbxj0QMGdbrEFDTX/a2nwKMRpyWwsL6hnrit0Rlzm2RZa0XM8XAYuB13QCwzOqK61aiExdqWjIxKgvyewn/LGOX47B0K3Ue44xwzL2lx3X7tVeEwc5KFj/fJg1qNsPdjP4FjV4CrD2W7cFWlZdvKRPp5b2LCkh5qa1jJkxznZ6+BN58pPJSfmTTj08uD8MYeDAFHLgPnB4i53TSVx6nsFe0MP3oaX95EP+0upHRcEG3U7NZSl4p0AAtmyQrkvHCyOcz9lPgbTyQLFBqfvA1mTSqyPtn4vK18mwhmdVBXQUidFdXKa4kHW6YRe9jlnEzJEuZKtchTlIBsIZCEsl325ySbQQ99uM8NpnJR7pB6QDhcOfQoTyoCKeEeQpHrzkOeMQ9omV8uunH19mYvV/m7VSz+7SJk5NDFPy38H0DGArbtBLMKDSoBxCoBKPkLqW27yauFGyQAAAAASUVORK5CYII=";
+
 var WinButton = function (_a) {
     var children = _a.children, image = _a.image, onClick = _a.onClick;
     return (React__default["default"].createElement(Flex, { width: "fit-content", position: "relative", alignItems: "center" },
@@ -5975,6 +5977,7 @@ exports.ConnectorNames = void 0;
     ConnectorNames["WalletConnect"] = "walletconnect";
     ConnectorNames["BSC"] = "bsc";
     ConnectorNames["Coin98"] = "coin98";
+    ConnectorNames["WalletLink"] = "walletLink";
 })(exports.ConnectorNames || (exports.ConnectorNames = {}));
 
 var connectorsDefault = [
@@ -6028,6 +6031,11 @@ var connectorsAvalanche = [
     {
         title: "Coin98",
         icon: Coin98,
+        connectorId: exports.ConnectorNames.Injected,
+    },
+    {
+        title: "Coinbase Wallet",
+        icon: COINBASE,
         connectorId: exports.ConnectorNames.Injected,
     },
 ];
@@ -12292,6 +12300,7 @@ exports.ButtonMenuItem = ButtonMenuItem;
 exports.ButtonsBlock = ButtonsBlock;
 exports.ButtonsBlockBTC = ButtonsBlockBTC;
 exports.COIN4 = COIN4;
+exports.COINBASE = COINBASE;
 exports.COINS = coins;
 exports.COINS2 = coins2;
 exports.CONTROLLER = CONTROLLER;

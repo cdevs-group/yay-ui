@@ -7,6 +7,7 @@ import {
   BinanceWallet,
   SafepackWallet,
   Coin98,
+  COINBASE,
 } from "../../constants/images";
 import { Config, ConnectorNames } from "./types";
 
@@ -62,6 +63,11 @@ export const connectorsAvalanche: Config[] = [
   {
     title: "Coin98",
     icon: Coin98,
+    connectorId: ConnectorNames.Injected,
+  },
+  {
+    title: "Coinbase Wallet",
+    icon: COINBASE,
     connectorId: ConnectorNames.Injected,
   },
 ];
