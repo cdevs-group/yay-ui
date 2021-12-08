@@ -10873,7 +10873,7 @@ function CurrencySearch(_a) {
         React__default.createElement("div", null,
             React__default.createElement(AutoColumn, { gap: "16px" },
                 React__default.createElement(Row$7, null,
-                    React__default.createElement(InputSearch, { id: "token-search-input", placeholder: placeholder, name: "token-search-input", autoComplete: "off", value: searchQuery, ref: inputRef, onChange: handleInput, onKeyDown: handleEnter, width: "100%" })),
+                    React__default.createElement(InputSearch, { id: "token-search-input", placeholder: placeholder, name: "token-search-input", autoComplete: "off", value: searchQuery || "", innerRef: inputRef, onChange: handleInput, onKeyDown: handleEnter, width: "100%" })),
                 showCommonBases && commonBases),
             searchToken && !searchTokenIsAdded ? (React__default.createElement(Column$1, { style: { padding: "20px 0", height: "100%" } }, importRow)) : (filteredSortedTokens === null || filteredSortedTokens === void 0 ? void 0 : filteredSortedTokens.length) > 0 || (filteredInactiveTokens === null || filteredInactiveTokens === void 0 ? void 0 : filteredInactiveTokens.length) > 0 ? (React__default.createElement(Box, { margin: "24px -24px" }, currencyList)) : (React__default.createElement(Column$1, { style: { padding: "60px 0 100px", height: "100%", alignItems: "center" } },
                 imgNoResult || React__default.createElement("img", { src: OneGhost2, alt: "" }),
@@ -10918,8 +10918,8 @@ var MenuItem = styled(RowBetween)(templateObject_4$8 || (templateObject_4$8 = __
     return (disabled || selected ? 0.5 : 1);
 });
 function CurrencyRow(_a) {
-    var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, balanceComponent = _a.balanceComponent, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, key = _a.key, CurrencyLogo = _a.CurrencyLogo;
-    return (React__default.createElement(MenuItem, { style: style, className: "token-item-" + key, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
+    var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, balanceComponent = _a.balanceComponent, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, keyID = _a.keyID, CurrencyLogo = _a.CurrencyLogo;
+    return (React__default.createElement(MenuItem, { style: style, className: "token-item-" + keyID, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
         CurrencyLogo,
         React__default.createElement(Column$1, null,
             React__default.createElement(Text, { fontWeight: 500, letterSpacing: "0.5px" }, currency.symbol),

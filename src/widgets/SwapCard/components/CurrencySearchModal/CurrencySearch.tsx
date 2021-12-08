@@ -56,8 +56,8 @@ function CurrencySearch({
               placeholder={placeholder}
               name="token-search-input"
               autoComplete="off"
-              value={searchQuery}
-              ref={inputRef as RefObject<HTMLInputElement>}
+              value={searchQuery || ""}
+              innerRef={inputRef as RefObject<HTMLInputElement>}
               onChange={handleInput}
               onKeyDown={handleEnter}
               width="100%"
