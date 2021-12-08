@@ -14,7 +14,7 @@ export interface InputSearchProp
   height?: string;
   name: string;
   ref?: Ref<HTMLInputElement>;
-  innerRef? : Ref<HTMLInputElement>;
+  innerRef?: Ref<HTMLInputElement>;
   icon?: ReactNode;
   disabled?: boolean;
 }

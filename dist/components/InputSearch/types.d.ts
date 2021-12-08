@@ -9,6 +9,7 @@ export interface InputSearchProp extends InputHTMLAttributes<HTMLInputElement>, 
     height?: string;
     name: string;
     ref?: Ref<HTMLInputElement>;
+    innerRef?: Ref<HTMLInputElement>;
     icon?: ReactNode;
     disabled?: boolean;
 }
