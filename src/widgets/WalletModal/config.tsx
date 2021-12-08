@@ -68,7 +68,7 @@ export const connectorsAvalanche: Config[] = [
   {
     title: "Coinbase Wallet",
     icon: COINBASE,
-    connectorId: ConnectorNames.Injected,
+    connectorId: ConnectorNames.WalletLink,
   },
 ];
 
