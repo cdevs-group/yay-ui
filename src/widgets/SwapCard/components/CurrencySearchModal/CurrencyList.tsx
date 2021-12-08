@@ -60,7 +60,7 @@ export function CurrencyRow({
   balanceComponent,
   customAdded,
   isOnSelectedList,
-  key,
+  keyID,
   CurrencyLogo,
 }: {
   currency: any;
@@ -73,13 +73,13 @@ export function CurrencyRow({
   balance: any;
   customAdded: any;
   isOnSelectedList: any;
-  key: any;
+  keyID: any;
   CurrencyLogo: ReactNode;
 }) {
   return (
     <MenuItem
       style={style}
-      className={`token-item-${key}`}
+      className={`token-item-${keyID}`}
       onClick={() => (isSelected ? null : onSelect())}
       disabled={isSelected}
       selected={otherSelected}
