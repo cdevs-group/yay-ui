@@ -1833,11 +1833,11 @@ var ButtonsBlock = function (_a) {
             React__default["default"].createElement("p", null, ((_b = texts === null || texts === void 0 ? void 0 : texts.prize) === null || _b === void 0 ? void 0 : _b.toUpperCase()) || "PRIZE POOL"),
             React__default["default"].createElement("p", null, pool)),
         React__default["default"].createElement(Buttons$a, null,
-            React__default["default"].createElement(ButtonWrap$3, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
+            React__default["default"].createElement(ButtonWrap$2, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
                 React__default["default"].createElement(Button$9, { width: "100%", variant: "green", onClick: function () { return handleSetPosition(BetPosition.BULL); }, disabled: disabledButton }, (texts === null || texts === void 0 ? void 0 : texts.enterUp) || "Enter UP"),
                 React__default["default"].createElement(IconComplete$2, { className: "completeIcon", hasEntered: hasEnteredUp },
                     React__default["default"].createElement(Icon$N, { fill: "#FFB72C" }))),
-            React__default["default"].createElement(ButtonWrap$3, { className: hasEnteredUp ? "unCoise" : "" },
+            React__default["default"].createElement(ButtonWrap$2, { className: hasEnteredUp ? "unCoise" : "" },
                 React__default["default"].createElement(Button$9, { width: "100%", variant: "pink", onClick: function () { return handleSetPosition(BetPosition.BEAR); }, disabled: disabledButton }, (texts === null || texts === void 0 ? void 0 : texts.enterDown) || "Enter DOWN"),
                 React__default["default"].createElement(IconComplete$2, { className: "completeIcon", hasEntered: hasEnteredDown },
                     React__default["default"].createElement(Icon$N, { fill: "#FFB72C" }))))));
@@ -1847,7 +1847,7 @@ var PrizeBlock$1 = styled__default["default"].div(templateObject_2$2I || (templa
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ButtonWrap$3 = styled__default["default"].div(templateObject_3$2b || (templateObject_3$2b = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
+var ButtonWrap$2 = styled__default["default"].div(templateObject_3$2b || (templateObject_3$2b = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
 var IconComplete$2 = styled__default["default"].div(templateObject_4$1K || (templateObject_4$1K = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 19px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  right: 19px;\n"])), function (_a) {
     var hasEntered = _a.hasEntered;
     return (hasEntered ? "flex" : "none");
@@ -2879,10 +2879,10 @@ var templateObject_1$34, templateObject_2$2o, templateObject_3$1W;
 
 var SwapButton = function (_a) {
     var onClick = _a.onClick;
-    return (React__default["default"].createElement(ButtonWrap$2, { onClick: onClick },
+    return (React__default["default"].createElement(ButtonWrap$1, { onClick: onClick },
         React__default["default"].createElement(Icon$o, null)));
 };
-var ButtonWrap$2 = styled__default["default"].button(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  width: 55px;\n  height: 55px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  box-sizing: border-box;\n  border: none;\n  background: ", ";\n  border: 5px solid ", ";\n  cursor: pointer;\n"], ["\n  width: 55px;\n  height: 55px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  box-sizing: border-box;\n  border: none;\n  background: ", ";\n  border: 5px solid ", ";\n  cursor: pointer;\n"])), function (_a) {
+var ButtonWrap$1 = styled__default["default"].button(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  width: 55px;\n  height: 55px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  box-sizing: border-box;\n  border: none;\n  background: ", ";\n  border: 5px solid ", ";\n  cursor: pointer;\n"], ["\n  width: 55px;\n  height: 55px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  box-sizing: border-box;\n  border: none;\n  background: ", ";\n  border: 5px solid ", ";\n  cursor: pointer;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg3;
 }, function (_a) {
@@ -3353,7 +3353,7 @@ var ButtonsBlockBTC = function (_a) {
             React__default["default"].createElement("p", null, ((_b = texts === null || texts === void 0 ? void 0 : texts.prize) === null || _b === void 0 ? void 0 : _b.toUpperCase()) || "PRIZE POOL"),
             React__default["default"].createElement("p", null, pool)),
         React__default["default"].createElement(Buttons$9, null,
-            React__default["default"].createElement(ButtonWrap$1, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
+            React__default["default"].createElement(ButtonWrap, { style: { marginBottom: 14 }, className: hasEnteredDown ? "unCoise" : "" },
                 React__default["default"].createElement(ButtonItem, { width: "100%", variant: "yellow", onClick: function () { return handleSetPosition(BetPosition.BULL); }, disabled: disabledButton },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         React__default["default"].createElement(Currency, null,
@@ -3363,7 +3363,7 @@ var ButtonsBlockBTC = function (_a) {
                             btcButton,
                             React__default["default"].createElement(IconComplete, { className: "completeIcon", hasEntered: hasEnteredUp },
                                 React__default["default"].createElement(Icon$N, { fill: "#FFB72C" })))))),
-            React__default["default"].createElement(ButtonWrap$1, { className: hasEnteredUp ? "unCoise" : "" },
+            React__default["default"].createElement(ButtonWrap, { className: hasEnteredUp ? "unCoise" : "" },
                 React__default["default"].createElement(ButtonItem, { width: "100%", variant: "gray", onClick: function () { return handleSetPosition(BetPosition.BEAR); }, disabled: disabledButton, display: "flex" },
                     React__default["default"].createElement(React__default["default"].Fragment, null,
                         React__default["default"].createElement(Currency, null,
@@ -3388,7 +3388,7 @@ var PrizeBlock = styled__default["default"].div(templateObject_5$11 || (template
     var theme = _a.theme;
     return theme.colors.text;
 });
-var ButtonWrap$1 = styled__default["default"].div(templateObject_6$O || (templateObject_6$O = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
+var ButtonWrap = styled__default["default"].div(templateObject_6$O || (templateObject_6$O = __makeTemplateObject(["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"], ["\n  position: relative;\n  &.unCoise {\n    opacity: 0.25;\n  }\n"])));
 var ButtonRightBlock = styled__default["default"].div(templateObject_7$y || (templateObject_7$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n"], ["\n  display: flex;\n  align-items: center;\n"])));
 var IconComplete = styled__default["default"].div(templateObject_8$r || (templateObject_8$r = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n  margin-right: -5px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n  margin-right: -5px;\n"])), function (_a) {
     var hasEntered = _a.hasEntered;
@@ -4562,7 +4562,7 @@ var Arrow$1 = styled__default["default"].div(templateObject_1$2x || (templateObj
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
-var StyledTooltip$1 = styled__default["default"].div(templateObject_2$1Y || (templateObject_2$1Y = __makeTemplateObject(["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"], ["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled__default["default"].div(templateObject_2$1Y || (templateObject_2$1Y = __makeTemplateObject(["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"], ["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -4717,7 +4717,7 @@ var useTooltip = function (content, options) {
             { name: "preventOverflow", options: { padding: tooltipPadding } },
         ],
     }), styles = _k.styles, attributes = _k.attributes;
-    var tooltip = (React__default["default"].createElement(StyledTooltip$1, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
+    var tooltip = (React__default["default"].createElement(StyledTooltip, __assign({ ref: setTooltipElement, style: styles.popper }, attributes.popper),
         React__default["default"].createElement(styled.ThemeProvider, { theme: invertTheme }, content),
         React__default["default"].createElement(Arrow$1, { ref: setArrowElement, style: styles.arrow })));
     var tooltipInPortal = portalRoot ? reactDom.createPortal(tooltip, portalRoot) : null;
@@ -10181,7 +10181,7 @@ var Stake = function (_a) {
 
 var Unstake = function (_a) {
     var texts = _a.texts, cooldownDisabled = _a.cooldownDisabled, handleCooldown = _a.handleCooldown, time = _a.time, isBlur = _a.isBlur, loadingCooldown = _a.loadingCooldown, progress = _a.progress, restakeDisabed = _a.restakeDisabed, handleRestake = _a.handleRestake, loadingRestake = _a.loadingRestake, isStaker = _a.isStaker;
-    var _b = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef;
+    var _b = useTooltip(texts.tooltipButton, { placement: "top-start", trigger: "hover" }); _b.tooltipVisible; _b.targetRef;
     return (React__default["default"].createElement("div", { style: { position: "relative" } },
         React__default["default"].createElement(UnstakeWrapper, { id: "unstake" },
             React__default["default"].createElement("div", null,
@@ -10195,17 +10195,13 @@ var Unstake = function (_a) {
                         React__default["default"].createElement(ProgressBar, { progress: progress })))),
             React__default["default"].createElement(Buttons$3, null,
                 React__default["default"].createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, isStaker ? texts.unstake : texts.cooldownButton),
-                React__default["default"].createElement(ButtonWrap, { ref: targetRef },
-                    tooltipVisible && !isStaker && React__default["default"].createElement(StyledTooltip, null, texts.tooltipButton),
-                    React__default["default"].createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
-                        isStaker ? texts.claim : texts.restake,
-                        React__default["default"].createElement(Flex, { ml: "10px", alignItems: "center" }, !isStaker && (React__default["default"].createElement(Flex, { alignItems: "center" },
-                            React__default["default"].createElement(Icon$z, null)))))),
-                " ")),
+                React__default["default"].createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
+                    isStaker ? texts.claim : texts.restake,
+                    React__default["default"].createElement(Flex, { ml: "10px", alignItems: "center" })))),
         isBlur && React__default["default"].createElement(Claimed$1, { id: "unstake" })));
 };
 var ButtonStyle$3 = styled__default["default"](Button$9)(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"], ["\n  position: relative;\n  padding: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n"])));
-var ButtonWrap = styled__default["default"].div(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  pointer-events: all;\n"], ["\n  position: relative;\n  width: 100%;\n  pointer-events: all;\n"])));
+styled__default["default"].div(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  pointer-events: all;\n"], ["\n  position: relative;\n  width: 100%;\n  pointer-events: all;\n"])));
 var Claimed$1 = styled__default["default"].div(templateObject_3$q || (templateObject_3$q = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  pointer-events: none;\n  border-radius: 20px;\n  z-index: 1;\n  background-image: ", ";\n  background-repeat: no-repeat;\n  background-position: 50% 0;\n  filter: blur(10px);\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  width: 100%;\n  height: 100%;\n  backdrop-filter: blur(15px);\n  background: ", ";\n  transition: 0.3s;\n  pointer-events: none;\n  border-radius: 20px;\n  z-index: 1;\n  background-image: ", ";\n  background-repeat: no-repeat;\n  background-position: 50% 0;\n  filter: blur(10px);\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.5, theme.colors.bgGray);
@@ -10213,7 +10209,7 @@ var Claimed$1 = styled__default["default"].div(templateObject_3$q || (templateOb
     var id = _a.id;
     return "-moz-element(#" + id + ")";
 });
-var StyledTooltip = styled__default["default"].div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
+styled__default["default"].div(templateObject_4$k || (templateObject_4$k = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
