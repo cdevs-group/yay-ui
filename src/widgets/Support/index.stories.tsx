@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SupportWindow from "./SupportWindow";
 import { IStateInput, IStateInputError } from "./types";
 import styled from "styled-components";
@@ -13,6 +13,7 @@ export const SupportBlock = () => {
   const product = ["Bridge", "Igo", "Doodle", "Pinball"];
   const networks = ["AVAX", "BSC"];
   const [openModal, setOpenModal] = useState(false);
+  const [fileUpload, setFileUpload] = useState(false);
   const [inputError, setInputError] = useState<IStateInputError>({
     email: "",
     address: "",
@@ -26,7 +27,16 @@ export const SupportBlock = () => {
     problem: "",
     networks: networks[0],
     product: product[0],
+    file: null,
   });
+
+  useEffect(() => {
+    if (inputsState.file === null) {
+      setFileUpload(false);
+    } else {
+      setFileUpload(true);
+    }
+  }, [inputsState.file]);
 
   const handleInput = (e: any) => {
     const { name, value } = e.target;
@@ -57,6 +67,8 @@ export const SupportBlock = () => {
     modalTitle: "Success",
     modalText: "This page can`t be displayed right now due to an error. Please check back soon.",
     modalButton: "Go to marketplace",
+    file: "Upload screenshots",
+    filePlaceholder: fileUpload ? "File has been uploaded" : "Browse to upload",
   };
 
   const points = [

@@ -5,6 +5,7 @@ export interface IStateInput {
   problem: string;
   product: string;
   networks: string;
+  file?: any;
 }
 export interface IStateInputError {
   email?: string;
@@ -30,4 +31,6 @@ export interface ITexts {
   modalTitle: string;
   modalText: string;
   modalButton: string;
+  file: string;
+  filePlaceholder: string;
 }

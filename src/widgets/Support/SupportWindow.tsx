@@ -6,6 +6,7 @@ import { Button } from "../../components/Button";
 import { IStateInput, IStateInputError, ITexts } from "./types";
 import TitlePage from "./components/TitlePage";
 import NoticeModal from "./components/NoticeModal";
+import InputFile from "./components/InputFile";
 
 const SupportWindow = ({
   texts,
@@ -94,6 +95,13 @@ const SupportWindow = ({
               name="txHash"
               value={state["txHash"]}
               inputError={inputError?.txHash}
+            />
+            <InputFile
+              onChange={handleInput}
+              name="file"
+              placeholder={texts.filePlaceholder}
+              margin="0 0 45px"
+              title={texts.file}
             />
             <Button onClick={handleButton} width="100%" variant="green">
               {texts.button}

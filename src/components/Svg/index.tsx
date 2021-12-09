@@ -72,6 +72,7 @@ export { default as CheckmarkIcon } from "./Icons/Checkmark";
 export { default as CheckIcon2 } from "./Icons/CheckIcon2";
 export { default as CloseIcon3 } from "./Icons/CloseIcon3";
 export { default as ArrowBack2 } from "./Icons/ArrowBack2";
+export { default as CloudIcon } from "./Icons/Cloud";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
