@@ -4420,7 +4420,7 @@ var InputRow = styled__default["default"].div(templateObject_1$2z || (templateOb
     var selected = _a.selected;
     return (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem");
 });
-var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n  }\n"], ["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n  }\n"])));
+var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n    cursor: default;\n  }\n"], ["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n    cursor: default;\n  }\n"])));
 var LabelRow = styled__default["default"].div(templateObject_3$1D || (templateObject_3$1D = __makeTemplateObject(["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"], ["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
