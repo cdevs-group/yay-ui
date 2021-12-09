@@ -33,9 +33,9 @@ export interface SettingsModalProps {
     slippageTabs: string[];
     isRememberChecked: boolean;
     setIsRememberChecked: Dispatch<SetStateAction<boolean>>;
-    activeTabGas: number | null | any;
+    activeTabGas: number;
     activeTabSlippage: number | null;
-    toggleTabGas: (e: any) => void;
+    toggleTabGas: (e: number) => void;
     toggleTabSlippage: (e: any) => void;
     slippageInput: string;
     deadlineInput: string;

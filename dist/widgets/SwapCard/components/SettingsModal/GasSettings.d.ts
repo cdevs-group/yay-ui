@@ -1,8 +1,8 @@
 /// <reference types="react" />
 declare const GasSettings: ({ activeTabGas, title, gasTabs, setGasPrice, }: {
-    activeTabGas: number | null;
+    activeTabGas: number;
     title?: string | undefined;
-    setGasPrice: any;
+    setGasPrice: (cur: number) => void;
     gasTabs: string[];
 }) => JSX.Element;
 export default GasSettings;

@@ -11619,27 +11619,20 @@ var ExpertModal = function (_a) {
             } }, texts.turnOnExpert)));
 };
 
-var GAS_PRICE_GWEI;
-(function (GAS_PRICE_GWEI) {
-    GAS_PRICE_GWEI[GAS_PRICE_GWEI["default"] = 5] = "default";
-    GAS_PRICE_GWEI[GAS_PRICE_GWEI["fast"] = 6] = "fast";
-    GAS_PRICE_GWEI[GAS_PRICE_GWEI["instant"] = 7] = "instant";
-})(GAS_PRICE_GWEI || (GAS_PRICE_GWEI = {}));
-
 var GasSettings = function (_a) {
     var activeTabGas = _a.activeTabGas, title = _a.title, gasTabs = _a.gasTabs, setGasPrice = _a.setGasPrice;
     return (React__default["default"].createElement(Flex, { flexDirection: "column" },
         React__default["default"].createElement(Flex, { mb: "12px", alignItems: "center" },
             React__default["default"].createElement(TextStyle$1, null, title)),
         React__default["default"].createElement(TabsWrapBlock, { width: "100%", length: 3 },
-            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === GAS_PRICE_GWEI.default ? "active" : "", value: GAS_PRICE_GWEI.default, onClick: function () {
-                    setGasPrice(GAS_PRICE_GWEI.default);
+            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === 0 ? "active" : "", onClick: function () {
+                    setGasPrice(0);
                 } }, gasTabs[0]),
-            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === GAS_PRICE_GWEI.fast ? "active" : "", value: GAS_PRICE_GWEI.fast, onClick: function () {
-                    setGasPrice(GAS_PRICE_GWEI.fast);
+            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === 1 ? "active" : "", onClick: function () {
+                    setGasPrice(1);
                 } }, gasTabs[1]),
-            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === GAS_PRICE_GWEI.instant ? "active" : "", value: GAS_PRICE_GWEI.instant, onClick: function () {
-                    setGasPrice(GAS_PRICE_GWEI.instant);
+            React__default["default"].createElement(Tab, { colorActive: baseColors.green, paddingTabs: "7px", className: activeTabGas === 2 ? "active" : "", onClick: function () {
+                    setGasPrice(2);
                 } }, gasTabs[2]))));
 };
 
