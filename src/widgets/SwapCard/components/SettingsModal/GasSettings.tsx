@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex } from "../../../../components/Box";
-import { GAS_PRICE_GWEI } from "./types";
 import { TextStyle, TabsWrapBlock, Tab } from "./styles";
 import { baseColors } from "../../../../theme/colors";
 
@@ -10,9 +9,9 @@ const GasSettings = ({
   gasTabs,
   setGasPrice,
 }: {
-  activeTabGas: number | null;
+  activeTabGas: number;
   title?: string;
-  setGasPrice: any;
+  setGasPrice: (cur: number) => void;
   gasTabs: string[];
 }) => {
   return (
@@ -24,10 +23,9 @@ const GasSettings = ({
         <Tab
           colorActive={baseColors.green}
           paddingTabs="7px"
-          className={activeTabGas === GAS_PRICE_GWEI.default ? "active" : ""}
-          value={GAS_PRICE_GWEI.default}
+          className={activeTabGas === 0 ? "active" : ""}
           onClick={() => {
-            setGasPrice(GAS_PRICE_GWEI.default);
+            setGasPrice(0);
           }}
         >
           {gasTabs[0]}
@@ -35,10 +33,9 @@ const GasSettings = ({
         <Tab
           colorActive={baseColors.green}
           paddingTabs="7px"
-          className={activeTabGas === GAS_PRICE_GWEI.fast ? "active" : ""}
-          value={GAS_PRICE_GWEI.fast}
+          className={activeTabGas === 1 ? "active" : ""}
           onClick={() => {
-            setGasPrice(GAS_PRICE_GWEI.fast);
+            setGasPrice(1);
           }}
         >
           {gasTabs[1]}
@@ -46,10 +43,9 @@ const GasSettings = ({
         <Tab
           colorActive={baseColors.green}
           paddingTabs="7px"
-          className={activeTabGas === GAS_PRICE_GWEI.instant ? "active" : ""}
-          value={GAS_PRICE_GWEI.instant}
+          className={activeTabGas === 2 ? "active" : ""}
           onClick={() => {
-            setGasPrice(GAS_PRICE_GWEI.instant);
+            setGasPrice(2);
           }}
         >
           {gasTabs[2]}
