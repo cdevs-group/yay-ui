@@ -16,6 +16,9 @@ const InputRow = styled.div<{ selected: boolean }>`
 `;
 const CurrencySelectButton = styled(Button).attrs({ variant: "text", scale: "sm" })`
   padding: 0 0.5rem;
+  &:disabled {
+    opacity: 1;
+  }
 `;
 const LabelRow = styled.div`
   display: flex;
@@ -98,6 +101,7 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
           )}
 
           <CurrencySelectButton
+            disabled={disableCurrencySelect}
             selected={!!currency}
             className="open-currency-select-button"
             onClick={() => {
