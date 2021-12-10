@@ -124,7 +124,7 @@ export const StyledSupport = styled.div`
   padding: 20px 10px 30px;
   margin: 0 auto;
   max-width: 404px;
-  max-height: 100vh;
+  max-height: 200vh;
   min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
