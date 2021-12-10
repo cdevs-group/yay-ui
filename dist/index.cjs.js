@@ -1097,7 +1097,7 @@ var Icon$4 = function (props) {
 
 var Icon$3 = function (props) {
     return (React__default["default"].createElement(Svg, __assign({ viewBox: "0 0 26 26" }, props),
-        React__default["default"].createElement("g", { "clip-path": "url(#clip0_5809_2126)" },
+        React__default["default"].createElement("g", { clipPath: "url(#clip0_5809_2126)" },
             React__default["default"].createElement("path", { d: "M18.4203 11.4816V11.3732C18.4203 8.33795 16.0354 5.95312 13.0002 5.95312C10.2902 5.95312 8.01376 7.90434 7.68856 10.6144C5.73734 11.2648 4.32812 12.9992 4.32812 15.1672C4.32812 17.8772 6.49615 20.0453 9.20617 20.0453C11.049 20.0453 15.6018 20.0453 17.3363 20.0453C19.7211 20.0453 21.6723 18.094 21.6723 15.7092C21.6723 13.6496 20.2631 12.0236 18.4203 11.4816Z", fill: "white" }),
             React__default["default"].createElement("path", { d: "M14.0841 14.6251V17.8771H11.9161V14.6251H8.66406L13.0001 10.2891L17.3361 14.6251H14.0841Z", fill: "black" })),
         React__default["default"].createElement("defs", null,
@@ -1318,7 +1318,7 @@ var Metamask = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6z
 
 var TrustWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAeCAYAAAAy2w7YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOuSURBVHgBzZZdbBRVFMfPuTOl23YXipBStfqgaKJUHzDwYHywiYkmxESL3Qc1RnxRi1uqtsboQ60JRpMGV7spiaKxMb5su8VgNMGopAYICQGWB0hIeOgDH2n5XDo7s8zOvYcz27szpZSyZSHhn+zcO/eee373nHtmdgDuVSUydkvX704bLFJYsSURdmWsLon4NS+KINCO2mj084EXcaqS5bcEEQO6/7A3eC58gUjPzJk+QwTJOkHDA+2xqYpAnWmr2VS0smiiEJIawcS1AvEpBr3E0w+EZLjEwGME+NwsPx4B/M3Oxnn+qKfkJRMMh6OWg/HY8QDUmc6tFqZxkI0a4eah5RXh9iVWceu3bzfmEmP2OwDqE3bxOCwkpXpTHUsHhN8XBqyfF4J4lQEHuLNZRuRDQx3R3uSm5ZeRQ0ptbPhpUkafFAJe4PldbG3NC0Kx3m/MElQKl2FaYlAg7AcPTp2FukMjcXRutlmek9z86//6+vaY59asazVqzQfR8+6TgD9w6iKE5AYgRFHwk1+Cgvw/1R4bhUWqv7/N4yarf7A5nUuBYUQEcVb87fuXq860XV5gglkHd0BomDV+qxCLAaihITZdNpCgauGOiEp+lOeGEXlFmStPc6gRqFI9u6mh7FsYNSEII0ZQMYSqHqqUYxVWlvtcoHYAMsm1QzOMQpUicJvCO+NCAFqWzfoRKW3WAlUKpRE8k4hwOgDNlCae0aBHoEoZgpaX+0TeZADSIyf0Hu6HKqVQPFH2CjW1Yeq0JnS7qmeMmqAKISn9lqeLK2JLJq4HIR7WvWWudFZDFSKENaUWxIn+NizMAdG+wFCoDrhNfTg6zRAsnTO/6/aWxwNQqj16lP/ETs7sBF57fg+ZcBsqIn6mfZCUxl83gPQOftHdltYL1mBHmgxYhD4Yzb3Jzev6dvf2eN34vKBILJpkWnaGiu81CWs8sbPwKNxC3TupMTFmfceFPQwz4VwBNLfAdUHMUdcu+2Hlyn8Y9Jgecvj8hgvkbt2xccWp2bZ9ROL8iPUumtjHzlfpYalQvT/UvvTHBUG+ev+kZsfJf8+zYVEQXOTLtpydT/76VnM+kclv4GfvK66wp2fZHOEcbfLPe67PBb+CtmTy6/iVkeSzezb0BRMIeIR7r4ZjNMVjn07Kid9G4q3ufL4q+q7j/L+hiL5EXbazlnNaYZst6r/5+RWcXshHxR+QnempZsOo7+GIPvLXcRT/kcSPh+LRLNwNdWfyaxOj+ZfhXtU1k1hmPhDWXrwAAAAASUVORK5CYII=";
 
-var MathWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAATCAYAAAD4f6+NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMnSURBVHgB7ZVfSFNRHMfv3eYm1ZCZDSwoCywMoYdWMIJqajrRCPsjJoZJEFgUIkYQvgwrQtiDYb1FKf1Bn+YwnDoxhqzyIYJegsjsr9hDkJDpmrt9TtwrS2/brbfAH/z4nfO9v3N+39/vd865krQi/5nIRh1DoVCuLMvtqDWRSDR5vd6pVP6Dg4PnMeX4d5eWlj6QDIrFqKPJZGrB1IkxQd5hLvzJNxKJrJubm+tQp7tRw4RMRh2pymdtDKHJVL7z8/MxzIw6nZb+QlK2bGBgIM9sNt9h6ITQWYvFkoVNMP+KdkPsYywWO15RUfFW+A8NDTVjmsH7sH6sJx6PP8FeY74d7SgrK7ueKmbKCkGgHLMPLaBljSUlJQHOQ5D5FXSjoihum812JGlJG7oB/MzCwoIJ/1sklAehSnQLeklKIynPEJtFyVBhKBPkUTAYXCVwsB7I7mH4BQ1p/vhECOrFTlKJ1+FweO3s7OzTzMxMcQFywW9LaUS3ZcPDw+foTBGELpLpd6wdEvlUqYtNTXyrysjImCHYG+wavreDj0Wj0U632+3i+0sIh9lqF3iXqAxrc4qLi1/Q1ibGLvZt0bupuhVikxY2ES15TqY+lWQT8yxw0coG2lGn4ifAj4EX+Xw+cT7GCZovyPzKWJZrafNJhp/wk8XTgbWQxEOw+0tj654h2Dey6DKLO5NI3sR8QN9TrVYN51CLKy3epxoNg8ArURl12qbh+ChU7xTaSkK6T8Fiy0ZGRjZBpJ6N/FTlm4ZTgTBYDiQqnU7n9MTEhGy329eTYQB8HN/Tmi+VqcL4CXiDdvh5HFeLvcCvgh9kTT1te6b5870GTIFcz7IKQWYbRtyCbA0LBAJ2gu5luIO+F7pcrh/V1dUxzk2uwNCjv2UnywcwmwlySMyTEqtECyFauMS/AaxWt0JC1B4ryRgVKoDsVjLuW4IfxneK7B5rWG9vb7bD4fCAj4EvPojiPbNarftJ6q7H44mni7lM+G95KHOnZEBGR0ctkLvX39+/04g/5OrUFuqK7qGm5KJtBWRsltIIh9pGlnncvFWSAaFKYm+HtCL/KD8B1wF1hV4sChMAAAAASUVORK5CYII=";
+var mathWallet = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAATCAYAAAD4f6+NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMnSURBVHgB7ZVfSFNRHMfv3eYm1ZCZDSwoCywMoYdWMIJqajrRCPsjJoZJEFgUIkYQvgwrQtiDYb1FKf1Bn+YwnDoxhqzyIYJegsjsr9hDkJDpmrt9TtwrS2/brbfAH/z4nfO9v3N+39/vd865krQi/5nIRh1DoVCuLMvtqDWRSDR5vd6pVP6Dg4PnMeX4d5eWlj6QDIrFqKPJZGrB1IkxQd5hLvzJNxKJrJubm+tQp7tRw4RMRh2pymdtDKHJVL7z8/MxzIw6nZb+QlK2bGBgIM9sNt9h6ITQWYvFkoVNMP+KdkPsYywWO15RUfFW+A8NDTVjmsH7sH6sJx6PP8FeY74d7SgrK7ueKmbKCkGgHLMPLaBljSUlJQHOQ5D5FXSjoihum812JGlJG7oB/MzCwoIJ/1sklAehSnQLeklKIynPEJtFyVBhKBPkUTAYXCVwsB7I7mH4BQ1p/vhECOrFTlKJ1+FweO3s7OzTzMxMcQFywW9LaUS3ZcPDw+foTBGELpLpd6wdEvlUqYtNTXyrysjImCHYG+wavreDj0Wj0U632+3i+0sIh9lqF3iXqAxrc4qLi1/Q1ibGLvZt0bupuhVikxY2ES15TqY+lWQT8yxw0coG2lGn4ifAj4EX+Xw+cT7GCZovyPzKWJZrafNJhp/wk8XTgbWQxEOw+0tj654h2Dey6DKLO5NI3sR8QN9TrVYN51CLKy3epxoNg8ArURl12qbh+ChU7xTaSkK6T8Fiy0ZGRjZBpJ6N/FTlm4ZTgTBYDiQqnU7n9MTEhGy329eTYQB8HN/Tmi+VqcL4CXiDdvh5HFeLvcCvgh9kTT1te6b5870GTIFcz7IKQWYbRtyCbA0LBAJ2gu5luIO+F7pcrh/V1dUxzk2uwNCjv2UnywcwmwlySMyTEqtECyFauMS/AaxWt0JC1B4ryRgVKoDsVjLuW4IfxneK7B5rWG9vb7bD4fCAj4EvPojiPbNarftJ6q7H44mni7lM+G95KHOnZEBGR0ctkLvX39+/04g/5OrUFuqK7qGm5KJtBWRsltIIh9pGlnncvFWSAaFKYm+HtCL/KD8B1wF1hV4sChMAAAAASUVORK5CYII=";
 
 var TokenPocket = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGvSURBVHgB7ZRNS0JBFIbfGS8lUbRpEZSClrVq16JltAv31SL6CUW7dv2E+hFqbQOhXUbRok1gECGKFATtxPyotO6cRu3q9ePqTBltfOHe+TpnnnPmnrnAQH0QU7LafAhCiNXGBNncZZ8xIdtnCLrG0exZbxgRQzjr7WTEY9ld8SZ2oCLGrkAfW4jMp51hocwCuHHbyd9IFvGZeIUCCbWsKQ/Bgzj2X9pXOfqq+vGOgVMIGynPH8Ka5IWL7/UHxuy15VBnRGtYjhl6MOq4UQ+D6vwEpgKTejDW1lGUtBfmuDUyGvMj70Dpvr4hYx4Z/WizM0FbLsrY0A6KFKIyrGA1IuXSb1MSkZk5a/DDAumWIWu0hJB9RQ/GVL4ZWcA0suJQH0atHYbuxUIp+VrBaSCnD2Ot0LaBpaLc8gBGeQkR/2ProgFlWf+9Jt4+OE/IqhUg8wn5lziii46VpAHrkAnxC4R951BU72PUvce/gtH300S1stQ4GOgWCGtxEyWtvJVCo2k3XONGlWbe5dZR5IXaQiEODTnDyLyR7+FK13TLTNxDlUtdBvedYJuVMNB/6Qu9r4QNjf96IQAAAABJRU5ErkJggg==";
 
@@ -4420,7 +4420,7 @@ var InputRow = styled__default["default"].div(templateObject_1$2z || (templateOb
     var selected = _a.selected;
     return (selected ? "0.75rem 0.5rem 0.75rem 1rem" : "0.75rem 0.75rem 0.75rem 1rem");
 });
-var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 0 0.5rem;\n"], ["\n  padding: 0 0.5rem;\n"])));
+var CurrencySelectButton = styled__default["default"](Button$9).attrs({ variant: "text", scale: "sm" })(templateObject_2$1_ || (templateObject_2$1_ = __makeTemplateObject(["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n    cursor: default;\n  }\n"], ["\n  padding: 0 0.5rem;\n  &:disabled {\n    opacity: 1;\n    cursor: default;\n  }\n"])));
 var LabelRow = styled__default["default"].div(templateObject_3$1D || (templateObject_3$1D = __makeTemplateObject(["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"], ["\n  display: flex;\n  flex-flow: row nowrap;\n  align-items: center;\n  color: ", ";\n  font-size: 0.75rem;\n  line-height: 1rem;\n  padding: 0.75rem 1rem 0 1rem;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -4452,7 +4452,7 @@ var CurrencyInputPanel = function (_a) {
                             onUserInput(val);
                         } }),
                     account && currency && showMaxButton && label !== "To" && (React__default["default"].createElement(Button$9, { onClick: onMax, scale: "sm", variant: "text" }, texts.max)))),
-                React__default["default"].createElement(CurrencySelectButton, { selected: !!currency, className: "open-currency-select-button", onClick: function () {
+                React__default["default"].createElement(CurrencySelectButton, { disabled: disableCurrencySelect, selected: !!currency, className: "open-currency-select-button", onClick: function () {
                         if (!disableCurrencySelect) {
                             onPresentCurrencyModal();
                         }
@@ -5997,6 +5997,11 @@ var connectorsDefault = [
         connectorId: exports.ConnectorNames.Injected,
     },
     {
+        title: "Coinbase Wallet",
+        icon: COINBASE,
+        connectorId: exports.ConnectorNames.WalletLink || exports.ConnectorNames.Injected,
+    },
+    {
         title: "Coin98",
         icon: Coin98,
         connectorId: exports.ConnectorNames.Injected,
@@ -6004,11 +6009,6 @@ var connectorsDefault = [
     {
         title: "Trust Wallet",
         icon: TrustWallet,
-        connectorId: exports.ConnectorNames.Injected,
-    },
-    {
-        title: "MathWallet",
-        icon: MathWallet,
         connectorId: exports.ConnectorNames.Injected,
     },
     {
@@ -6039,14 +6039,14 @@ var connectorsAvalanche = [
         connectorId: exports.ConnectorNames.Injected,
     },
     {
+        title: "Coinbase Wallet",
+        icon: COINBASE,
+        connectorId: exports.ConnectorNames.WalletLink || exports.ConnectorNames.Injected,
+    },
+    {
         title: "Coin98",
         icon: Coin98,
         connectorId: exports.ConnectorNames.Injected,
-    },
-    {
-        title: "Coinbase Wallet",
-        icon: COINBASE,
-        connectorId: exports.ConnectorNames.WalletLink,
     },
 ];
 var connectorLocalStorageKey = "connectorId";
@@ -12222,23 +12222,23 @@ var Icon = styled__default["default"](Flex)(templateObject_4 || (templateObject_
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var SupportWindow = function (_a) {
-    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, networks = _a.networks, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess;
+    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess, handleInputFile = _a.handleInputFile;
     return (React__default["default"].createElement("div", { style: { maxWidth: "520px", margin: "0 auto" } }, !modalOpen ? (React__default["default"].createElement(React__default["default"].Fragment, null,
         " ",
         React__default["default"].createElement(TitlePage, { points: points, title: texts.title, note: texts.note }),
         React__default["default"].createElement(StyledSupport, null,
+            React__default["default"].createElement(Input$1, { title: texts.name, margin: "0 0 25px", placeholder: texts.namePlaceholder, onChange: handleInput, name: "name", value: state["name"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.name }),
             React__default["default"].createElement(Select, { margin: "0 0 21px", handleSelect: handleInput, optionsList: product, selectTarget: state["product"], title: texts.product, name: "product" }),
-            React__default["default"].createElement(Select, { margin: "0 0 25px", handleSelect: handleInput, optionsList: networks, selectTarget: state["networks"], title: texts.networks, name: "networks" }),
             React__default["default"].createElement(Input$1, { title: texts.problem, margin: "0 0 25px", placeholder: texts.problemPlaceholder, onChange: handleInput, name: "problem", textArea: true, value: state["problem"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.problem }),
             React__default["default"].createElement(Input$1, { title: texts.email, margin: "0 0 25px", placeholder: texts.emailPlaceholder, onChange: handleInput, name: "email", value: state["email"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.email }),
             React__default["default"].createElement(Input$1, { title: texts.address, margin: "0 0 25px", placeholder: texts.addressPlaceholder, onChange: handleInput, name: "address", value: state["address"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.address }),
             React__default["default"].createElement(Input$1, { title: texts.txHash, margin: "0 0 45px", placeholder: texts.txHashPlaceholder, onChange: handleInput, name: "txHash", value: state["txHash"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.txHash }),
-            React__default["default"].createElement(InputFile, { onChange: handleInput, name: "file", placeholder: texts.filePlaceholder, margin: "0 0 45px", title: texts.file }),
+            React__default["default"].createElement(InputFile, { onChange: handleInputFile, name: "file", placeholder: texts.filePlaceholder, margin: "0 0 45px", title: texts.file }),
             React__default["default"].createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button)))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(TitlePage, { title: titleSuccess, note: noteSuccess }),
         React__default["default"].createElement(NoticeModal, { href: href, text: texts.modalText, button: texts.modalButton, title: texts.modalTitle })))));
 };
-var StyledSupport = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"], ["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"])), function (_a) {
+var StyledSupport = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 200vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"], ["\n  padding: 20px 10px 30px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 200vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 45px 30px 30px;\n    min-width: 449px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -12474,7 +12474,7 @@ exports.ManageListTooltip = ManageListTooltip;
 exports.ManageLists = ManageLists;
 exports.ManageTokenList = ManageTokenList;
 exports.ManageTokens = ManageTokens;
-exports.MathWallet = MathWallet;
+exports.MathWallet = mathWallet;
 exports.MenuIcon = Icon$E;
 exports.Metamask = Metamask;
 exports.MetamaskIcon = Icon$e;

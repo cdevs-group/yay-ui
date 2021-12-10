@@ -18,6 +18,11 @@ export const connectorsDefault: Config[] = [
     connectorId: ConnectorNames.Injected,
   },
   {
+    title: "Coinbase Wallet",
+    icon: COINBASE,
+    connectorId: ConnectorNames.WalletLink || ConnectorNames.Injected,
+  },
+  {
     title: "Coin98",
     icon: Coin98,
     connectorId: ConnectorNames.Injected,
@@ -25,11 +30,6 @@ export const connectorsDefault: Config[] = [
   {
     title: "Trust Wallet",
     icon: TrustWallet,
-    connectorId: ConnectorNames.Injected,
-  },
-  {
-    title: "MathWallet",
-    icon: MathWallet,
     connectorId: ConnectorNames.Injected,
   },
   {
@@ -61,14 +61,14 @@ export const connectorsAvalanche: Config[] = [
     connectorId: ConnectorNames.Injected,
   },
   {
+    title: "Coinbase Wallet",
+    icon: COINBASE,
+    connectorId: ConnectorNames.WalletLink || ConnectorNames.Injected,
+  },
+  {
     title: "Coin98",
     icon: Coin98,
     connectorId: ConnectorNames.Injected,
-  },
-  {
-    title: "Coinbase Wallet",
-    icon: COINBASE,
-    connectorId: ConnectorNames.WalletLink,
   },
 ];
 

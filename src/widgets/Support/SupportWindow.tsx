@@ -15,12 +15,12 @@ const SupportWindow = ({
   product,
   handleButton,
   points,
-  networks,
   inputError,
   modalOpen,
   href,
   noteSuccess,
   titleSuccess,
+  handleInputFile,
 }: {
   points: ReactNode[];
   handleButton: () => void | Promise<void>;
@@ -29,11 +29,11 @@ const SupportWindow = ({
   state: IStateInput;
   handleInput: (e: any) => void;
   inputError?: IStateInputError;
-  networks: string[];
   modalOpen: boolean;
   href: string;
   noteSuccess: ReactNode;
   titleSuccess: string;
+  handleInputFile: (e: any) => void;
 }) => {
   return (
     <div style={{ maxWidth: "520px", margin: "0 auto" }}>
@@ -42,6 +42,15 @@ const SupportWindow = ({
           {" "}
           <TitlePage points={points} title={texts.title} note={texts.note} />
           <StyledSupport>
+            <Input
+              title={texts.name}
+              margin="0 0 25px"
+              placeholder={texts.namePlaceholder}
+              onChange={handleInput}
+              name="name"
+              value={state["name"]}
+              inputError={inputError?.name}
+            />
             <Select
               margin="0 0 21px"
               handleSelect={handleInput}
@@ -49,15 +58,6 @@ const SupportWindow = ({
               selectTarget={state["product"]}
               title={texts.product}
               name="product"
-            />
-
-            <Select
-              margin="0 0 25px"
-              handleSelect={handleInput}
-              optionsList={networks}
-              selectTarget={state["networks"]}
-              title={texts.networks}
-              name="networks"
             />
             <Input
               title={texts.problem}
@@ -97,7 +97,7 @@ const SupportWindow = ({
               inputError={inputError?.txHash}
             />
             <InputFile
-              onChange={handleInput}
+              onChange={handleInputFile}
               name="file"
               placeholder={texts.filePlaceholder}
               margin="0 0 45px"
@@ -124,7 +124,7 @@ export const StyledSupport = styled.div`
   padding: 20px 10px 30px;
   margin: 0 auto;
   max-width: 404px;
-  max-height: 100vh;
+  max-height: 200vh;
   min-width: 303px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};

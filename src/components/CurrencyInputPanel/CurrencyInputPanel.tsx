@@ -18,6 +18,7 @@ const CurrencySelectButton = styled(Button).attrs({ variant: "text", scale: "sm"
   padding: 0 0.5rem;
   &:disabled {
     opacity: 1;
+    cursor: default;
   }
 `;
 const LabelRow = styled.div`

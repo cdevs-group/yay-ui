@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SupportWindow from "./SupportWindow";
 import { IStateInput, IStateInputError } from "./types";
 import styled from "styled-components";
@@ -19,13 +19,14 @@ export const SupportBlock = () => {
     address: "",
     txHash: "",
     problem: "",
+    name: "",
   });
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
     address: "",
     txHash: "",
     problem: "",
-    networks: networks[0],
+    name: "",
     product: product[0],
     file: null,
   });
@@ -45,8 +46,17 @@ export const SupportBlock = () => {
       [name]: value,
     });
   };
-  const handleSend = () => {
-    setOpenModal(!openModal);
+
+  const handleSend = async () => {
+    setOpenModal(true);
+  };
+
+  const handleInputFile = (e: any) => {
+    const { name, files } = e.target;
+    setInputsState({
+      ...inputsState,
+      [name]: files[0],
+    });
   };
 
   const texts = {
@@ -63,12 +73,13 @@ export const SupportBlock = () => {
     txHashPlaceholder: "Enter transaction hash",
     title: "Tech support",
     note: "Please understand that we can only assist with issues directly related to YAY Games services. ",
-    networks: "Network",
+    name: "Name",
     modalTitle: "Success",
     modalText: "This page can`t be displayed right now due to an error. Please check back soon.",
     modalButton: "Go to marketplace",
     file: "Upload screenshots",
     filePlaceholder: fileUpload ? "File has been uploaded" : "Browse to upload",
+    namePlaceholder: "Enter your name",
   };
 
   const points = [
@@ -91,8 +102,8 @@ export const SupportBlock = () => {
 
   return (
     <SupportWindow
+      handleInputFile={handleInputFile}
       state={inputsState}
-      networks={networks}
       handleInput={handleInput}
       product={product}
       texts={texts}
