@@ -13,7 +13,7 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdo
     if (setOpenDropdown) setOpenDropdown(false);
     setOpenMenu(false);
   };
-  
+
   if (submenu?.length) {
     return (
       <DropdownLayout
