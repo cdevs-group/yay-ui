@@ -5,7 +5,8 @@ import DropdownLayout from "../../../components/DropDown/DropDown";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
-const MenuLink = ({ name, url, setOpenMenu, submenu, setOpenDropdown, openDropdown }: LinkHeaderProps) => {
+const MenuLink = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) => {
+  const [openDropdown, setOpenDropdown] = useState(false);
   const isHttpLink = url?.startsWith("http");
   const Item = () => <LinkItem>{name}</LinkItem>;
 
@@ -24,13 +25,7 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, setOpenDropdown, openDropdo
       >
         <Dropdown open={openDropdown}>
           {submenu?.map((el, i) => (
-            <MenuLink
-              {...el}
-              key={i}
-              setOpenMenu={setOpenMenu}
-              openDropdown={openDropdown}
-              setOpenDropdown={setOpenDropdown}
-            />
+            <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} />
           ))}
         </Dropdown>
       </DropdownLayout>

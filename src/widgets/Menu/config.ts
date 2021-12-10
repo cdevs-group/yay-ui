@@ -21,6 +21,16 @@ export const linksSubmenu = [
   {
     name: "Gaming Marketplace",
     url: "http://gf",
+    submenu: [
+      {
+        name: "Swap",
+        url: "/swap",
+      },
+      {
+        name: "Top stakeRs",
+        url: "/tops-takers",
+      },
+    ],
   },
   {
     name: "Zeus",
