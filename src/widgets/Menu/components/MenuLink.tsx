@@ -1,31 +1,30 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
 
-const MenuLink = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) => {
-  const [openDropdown, setOpenDropdown] = useState(false);
+const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdown }: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
   const Item = () => <LinkItem>{name}</LinkItem>;
 
   const handleLink = () => {
-    setOpenDropdown(false);
+    if (setOpenDropdown) setOpenDropdown(false);
     setOpenMenu(false);
   };
-
+  
   if (submenu?.length) {
     return (
       <DropdownLayout
-        open={openDropdown}
-        setOpen={setOpenDropdown}
-        icon={<LinkItem onClick={() => setOpenDropdown(true)}>{name}</LinkItem>}
+        open={openDropdown || false}
+        setOpen={setOpenDropdown || (() => null)}
+        icon={<LinkItem onClick={() => (setOpenDropdown ? setOpenDropdown(true) : () => null)}>{name}</LinkItem>}
         variant="menu"
       >
         <Dropdown open={openDropdown}>
           {submenu?.map((el, i) => (
-            <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} />
+            <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} setOpenDropdown={setOpenDropdown} />
           ))}
         </Dropdown>
       </DropdownLayout>
@@ -50,9 +49,6 @@ const MenuLink = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) => {
 
 export default MenuLink;
 
-const DropdownWrapper = styled.div`
-  position: relative;
-`;
 const Dropdown = styled.div<{ open?: boolean }>`
   display: flex;
   flex-direction: column;

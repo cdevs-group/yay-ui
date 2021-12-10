@@ -9,6 +9,7 @@ import Languages from "../../../components/DropDown/Languages";
 import Logo from "../image/Logo.png";
 import Network from "./Network";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
+import MenuLinkDropdown from "./MenuLinkDropdown";
 
 const Header: React.FC<NavProps> = ({
   account,
@@ -79,7 +80,7 @@ const Header: React.FC<NavProps> = ({
           </LogoWrap>
           <Nav className={openMenu ? "open" : ""}>
             {links?.map((item, i) => (
-              <MenuLink key={i} name={item.name} url={item.url} submenu={item.submenu} setOpenMenu={setOpenMenu} />
+              <MenuLinkDropdown key={i} name={item.name} url={item.url} submenu={item.submenu} setOpenMenu={setOpenMenu} />
             ))}
             {currentLang && (
               <LanguageBlockMob>
