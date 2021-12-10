@@ -116,7 +116,7 @@ const TransactionSettings = ({
               value={slippageInput}
               onChange={(event) => {
                 if (event.currentTarget.validity.valid) {
-                  parseCustomSlippage(event.target.value.replace(/,/g, '.'))
+                  parseCustomSlippage(event.target.value.replace(/,/g, "."));
                 }
               }}
               width="90px"

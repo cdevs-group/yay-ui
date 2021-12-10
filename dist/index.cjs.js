@@ -11698,10 +11698,10 @@ var TransactionSettings = function (_a) {
                 React__default["default"].createElement(InputWrap, null,
                     React__default["default"].createElement(InputSearch, { padding: "16px 41px 16px 12px", name: "slippage", value: slippageInput, onChange: function (event) {
                             if (event.currentTarget.validity.valid) {
-                                parseCustomSlippage(event.target.value);
+                                parseCustomSlippage(event.target.value.replace(/,/g, '.'));
                             }
                         }, width: "90px", height: "33px", onBlur: function () {
-                            parseCustomSlippage((slippageInput / 100).toFixed(2));
+                            parseCustomSlippage((activeTabSlippage / 100).toFixed(2));
                         }, placeholder: "0.00", icon: React__default["default"].createElement(Text, { color: "rgba(255,255,255,.7)", fontSize: "13px" }, "%"), background: baseColors.bgOpacity, borderRadius: "9px" })))),
         React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "34px" },
             React__default["default"].createElement(Flex, { alignItems: "center" },
