@@ -5,12 +5,12 @@ export declare const links: {
 export declare const linksSubmenu: ({
     name: string;
     url: string;
-    submenu?: undefined;
-} | {
-    name: string;
-    url: string;
     submenu: {
         name: string;
         url: string;
     }[];
+} | {
+    name: string;
+    url: string;
+    submenu?: undefined;
 })[];

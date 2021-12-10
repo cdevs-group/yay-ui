@@ -7052,7 +7052,8 @@ var Block$8 = styled__default["default"].div(templateObject_1$1V || (templateObj
 var templateObject_1$1V;
 
 var MenuLink = function (_a) {
-    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu, setOpenDropdown = _a.setOpenDropdown, openDropdown = _a.openDropdown;
+    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu;
+    var _b = React.useState(false), openDropdown = _b[0], setOpenDropdown = _b[1];
     var isHttpLink = url === null || url === void 0 ? void 0 : url.startsWith("http");
     var Item = function () { return React__default["default"].createElement(LinkItem$1, null, name); };
     var handleLink = function () {
@@ -7061,7 +7062,7 @@ var MenuLink = function (_a) {
     };
     if (submenu === null || submenu === void 0 ? void 0 : submenu.length) {
         return (React__default["default"].createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default["default"].createElement(LinkItem$1, { onClick: function () { return setOpenDropdown(true); } }, name), variant: "menu" },
-            React__default["default"].createElement(Dropdown, { open: openDropdown }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el, i) { return (React__default["default"].createElement(MenuLink, __assign({}, el, { key: i, setOpenMenu: setOpenMenu, openDropdown: openDropdown, setOpenDropdown: setOpenDropdown }))); }))));
+            React__default["default"].createElement(Dropdown, { open: openDropdown }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el, i) { return (React__default["default"].createElement(MenuLink, __assign({}, el, { key: i, setOpenMenu: setOpenMenu }))); }))));
     }
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         isHttpLink && (React__default["default"].createElement("a", { href: url, target: "_blank" },
@@ -7253,7 +7254,6 @@ var templateObject_1$1P, templateObject_2$1o, templateObject_3$16;
 var Header = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout; _a.isDark; _a.toggleTheme; var langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textConnect = _a.textConnect, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, vesting = _a.vesting, yayBalance = _a.yayBalance, dataTransactions = _a.dataTransactions, handleClaimed = _a.handleClaimed, bridge = _a.bridge, textsBridge = _a.textsBridge, transactionsList = _a.transactionsList, handleAddToken = _a.handleAddToken, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, marginContent = _a.marginContent, minHeight = _a.minHeight, buttonLogoutType = _a.buttonLogoutType, linkExternalWalletModal = _a.linkExternalWalletModal;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
-    var _c = React.useState(false), openDropdown = _c[0], setOpenDropdown = _c[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
         if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
@@ -7275,7 +7275,7 @@ var Header = function (_a) {
                 React__default["default"].createElement(LogoWrap, { to: linkLogo },
                     React__default["default"].createElement("img", { src: Logo, alt: "" })),
                 React__default["default"].createElement(Nav, { className: openMenu ? "open" : "" }, links === null || links === void 0 ? void 0 :
-                    links.map(function (item, i) { return (React__default["default"].createElement(MenuLink, { key: i, name: item.name, url: item.url, submenu: item.submenu, setOpenMenu: setOpenMenu, openDropdown: openDropdown, setOpenDropdown: setOpenDropdown })); }),
+                    links.map(function (item, i) { return (React__default["default"].createElement(MenuLink, { key: i, name: item.name, url: item.url, submenu: item.submenu, setOpenMenu: setOpenMenu })); }),
                     currentLang && (React__default["default"].createElement(LanguageBlockMob, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 textsAccount && textsConnect && (React__default["default"].createElement(RightContent$1, null,
