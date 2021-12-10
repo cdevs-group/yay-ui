@@ -5868,8 +5868,7 @@ var BodyLock = function () {
 var Overlay$3 = function (props) {
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(BodyLock, null),
-        React__default.createElement(StyledOverlay, __assign({ role: "presentation" }, props)),
-        ";"));
+        React__default.createElement(StyledOverlay, __assign({ role: "presentation" }, props))));
 };
 var templateObject_1$2l;
 
