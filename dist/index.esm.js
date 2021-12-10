@@ -1065,7 +1065,7 @@ var Icon$4 = function (props) {
 
 var Icon$3 = function (props) {
     return (React__default.createElement(Svg, __assign({ viewBox: "0 0 26 26" }, props),
-        React__default.createElement("g", { "clip-path": "url(#clip0_5809_2126)" },
+        React__default.createElement("g", { clipPath: "url(#clip0_5809_2126)" },
             React__default.createElement("path", { d: "M18.4203 11.4816V11.3732C18.4203 8.33795 16.0354 5.95312 13.0002 5.95312C10.2902 5.95312 8.01376 7.90434 7.68856 10.6144C5.73734 11.2648 4.32812 12.9992 4.32812 15.1672C4.32812 17.8772 6.49615 20.0453 9.20617 20.0453C11.049 20.0453 15.6018 20.0453 17.3363 20.0453C19.7211 20.0453 21.6723 18.094 21.6723 15.7092C21.6723 13.6496 20.2631 12.0236 18.4203 11.4816Z", fill: "white" }),
             React__default.createElement("path", { d: "M14.0841 14.6251V17.8771H11.9161V14.6251H8.66406L13.0001 10.2891L17.3361 14.6251H14.0841Z", fill: "black" })),
         React__default.createElement("defs", null,
@@ -12190,18 +12190,18 @@ var Icon = styled(Flex)(templateObject_4 || (templateObject_4 = __makeTemplateOb
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4;
 
 var SupportWindow = function (_a) {
-    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, networks = _a.networks, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess;
+    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess, handleInputFile = _a.handleInputFile;
     return (React__default.createElement("div", { style: { maxWidth: "520px", margin: "0 auto" } }, !modalOpen ? (React__default.createElement(React__default.Fragment, null,
         " ",
         React__default.createElement(TitlePage, { points: points, title: texts.title, note: texts.note }),
         React__default.createElement(StyledSupport, null,
+            React__default.createElement(Input$1, { title: texts.name, margin: "0 0 25px", placeholder: texts.namePlaceholder, onChange: handleInput, name: "name", value: state["name"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.name }),
             React__default.createElement(Select, { margin: "0 0 21px", handleSelect: handleInput, optionsList: product, selectTarget: state["product"], title: texts.product, name: "product" }),
-            React__default.createElement(Select, { margin: "0 0 25px", handleSelect: handleInput, optionsList: networks, selectTarget: state["networks"], title: texts.networks, name: "networks" }),
             React__default.createElement(Input$1, { title: texts.problem, margin: "0 0 25px", placeholder: texts.problemPlaceholder, onChange: handleInput, name: "problem", textArea: true, value: state["problem"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.problem }),
             React__default.createElement(Input$1, { title: texts.email, margin: "0 0 25px", placeholder: texts.emailPlaceholder, onChange: handleInput, name: "email", value: state["email"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.email }),
             React__default.createElement(Input$1, { title: texts.address, margin: "0 0 25px", placeholder: texts.addressPlaceholder, onChange: handleInput, name: "address", value: state["address"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.address }),
             React__default.createElement(Input$1, { title: texts.txHash, margin: "0 0 45px", placeholder: texts.txHashPlaceholder, onChange: handleInput, name: "txHash", value: state["txHash"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.txHash }),
-            React__default.createElement(InputFile, { onChange: handleInput, name: "file", placeholder: texts.filePlaceholder, margin: "0 0 45px", title: texts.file }),
+            React__default.createElement(InputFile, { onChange: handleInputFile, name: "file", placeholder: texts.filePlaceholder, margin: "0 0 45px", title: texts.file }),
             React__default.createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button)))) : (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(TitlePage, { title: titleSuccess, note: noteSuccess }),
         React__default.createElement(NoticeModal, { href: href, text: texts.modalText, button: texts.modalButton, title: texts.modalTitle })))));
