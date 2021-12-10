@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { IStateInput, IStateInputError, ITexts } from "./types";
-declare const SupportWindow: ({ texts, state, handleInput, product, handleButton, points, inputError, modalOpen, href, noteSuccess, titleSuccess, handleInputFile }: {
+declare const SupportWindow: ({ texts, state, handleInput, product, handleButton, points, inputError, modalOpen, href, noteSuccess, titleSuccess, handleInputFile, }: {
     points: ReactNode[];
     handleButton: () => void | Promise<void>;
     texts: ITexts;
