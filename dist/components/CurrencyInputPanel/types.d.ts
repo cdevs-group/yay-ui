@@ -22,4 +22,5 @@ export interface CurrencyInputPanelProps {
         balance: string;
     };
     hideBalance: boolean;
+    disabledInput?: boolean;
 }

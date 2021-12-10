@@ -4439,7 +4439,7 @@ var Container = styled__default["default"].div(templateObject_5$Y || (templateOb
 var CurrencyInputPanel = function (_a) {
     var value = _a.value, onUserInput = _a.onUserInput, onMax = _a.onMax, showMaxButton = _a.showMaxButton, label = _a.label, currency = _a.currency, _b = _a.disableCurrencySelect, disableCurrencySelect = _b === void 0 ? false : _b, _c = _a.hideBalance, hideBalance = _c === void 0 ? false : _c, _d = _a.pair, pair = _d === void 0 ? null : _d, // used for double token logo
     _e = _a.hideInput, // used for double token logo
-    hideInput = _e === void 0 ? false : _e, id = _a.id, account = _a.account, onPresentCurrencyModal = _a.onPresentCurrencyModal, сurrencyLogo = _a.сurrencyLogo, doubleCurrencyLogo = _a.doubleCurrencyLogo, texts = _a.texts;
+    hideInput = _e === void 0 ? false : _e, id = _a.id, account = _a.account, onPresentCurrencyModal = _a.onPresentCurrencyModal, сurrencyLogo = _a.сurrencyLogo, doubleCurrencyLogo = _a.doubleCurrencyLogo, texts = _a.texts, disabledInput = _a.disabledInput;
     return (React__default["default"].createElement(InputPanel$1, { id: id },
         React__default["default"].createElement(Container, { hideInput: hideInput },
             !hideInput && (React__default["default"].createElement(LabelRow, null,
@@ -4450,7 +4450,7 @@ var CurrencyInputPanel = function (_a) {
                 !hideInput && (React__default["default"].createElement(React__default["default"].Fragment, null,
                     React__default["default"].createElement(Input$4, { className: "token-amount-input", title: texts.numericalInputTitle, value: value, onUserInput: function (val) {
                             onUserInput(val);
-                        } }),
+                        }, disabled: disabledInput }),
                     account && currency && showMaxButton && label !== "To" && (React__default["default"].createElement(Button$9, { onClick: onMax, scale: "sm", variant: "text" }, texts.max)))),
                 React__default["default"].createElement(CurrencySelectButton, { disabled: disableCurrencySelect, selected: !!currency, className: "open-currency-select-button", onClick: function () {
                         if (!disableCurrencySelect) {

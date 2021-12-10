@@ -60,6 +60,7 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
   сurrencyLogo,
   doubleCurrencyLogo,
   texts,
+  disabledInput,
 }) => {
   return (
     <InputPanel id={id}>
@@ -92,6 +93,7 @@ const CurrencyInputPanel: React.FC<CurrencyInputPanelProps> = ({
                 onUserInput={(val) => {
                   onUserInput(val);
                 }}
+                disabled={disabledInput}
               />
               {account && currency && showMaxButton && label !== "To" && (
                 <Button onClick={onMax} scale="sm" variant="text">
