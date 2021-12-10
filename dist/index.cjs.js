@@ -6046,7 +6046,7 @@ var connectorsAvalanche = [
     {
         title: "Coinbase Wallet",
         icon: COINBASE,
-        connectorId: exports.ConnectorNames.WalletLink,
+        connectorId: exports.ConnectorNames.WalletLink || exports.ConnectorNames.Injected,
     },
 ];
 var connectorLocalStorageKey = "connectorId";
