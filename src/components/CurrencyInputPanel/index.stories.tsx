@@ -44,6 +44,7 @@ export const CurrencyInputPanelBlock: React.FC = () => {
           balance: "Balance: 0.53453 YAY",
         }}
         hideBalance={false}
+        disabledInput={false}
       />
     </div>
   );
