@@ -12146,7 +12146,7 @@ var NoticeModal = function (_a) {
             React__default.createElement(Title, null, title),
             React__default.createElement("img", { src: GhostsIcon, alt: "success" }),
             React__default.createElement(Description, null, text),
-            React__default.createElement(Button$9, { as: "a", href: href, target: "_blank", width: "100%", variant: "green" }, button))));
+            React__default.createElement(Button$9, { as: "a", href: href, width: "100%", variant: "green" }, button))));
 };
 var Wrapper = styled.div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  margin-top: 40px;\n"], ["\n  margin-top: 40px;\n"])));
 var Modal = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  padding: 27px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  text-align: center;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 27px;\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  padding: 27px;\n  margin: 0 auto;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  text-align: center;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    padding: 27px;\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {

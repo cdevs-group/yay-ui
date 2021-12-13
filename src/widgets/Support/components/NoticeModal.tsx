@@ -11,7 +11,7 @@ const NoticeModal = ({ title, text, button, href }: { href: string; title: strin
         <Title>{title}</Title>
         <img src={GhostsIcon} alt="success" />
         <Description>{text}</Description>
-        <Button as="a" href={href} target="_blank" width="100%" variant="green">
+        <Button as="a" href={href} width="100%" variant="green">
           {button}
         </Button>
       </Modal>
