@@ -90,16 +90,18 @@ const Unstake = ({
           </ButtonStyle>
           {/*<ButtonWrap ref={targetRef}>*/}
           {/*  {tooltipVisible && !isStaker && <StyledTooltip>{texts.tooltipButton}</StyledTooltip>}*/}
-          <ButtonStyle disabled={restakeDisabed} onClick={handleRestake} variant="green" spin={loadingRestake}>
-            {isStaker ? texts.claim : texts.restake}
-            <Flex ml="10px" alignItems="center">
-              {/*{!isStaker && (*/}
-              {/*  <Flex alignItems="center">*/}
-              {/*    <HelpIcon2 />*/}
-              {/*  </Flex>*/}
-              {/*)}*/}
-            </Flex>
-          </ButtonStyle>
+          {isStaker && (
+            <ButtonStyle disabled={restakeDisabed} onClick={handleRestake} variant="green" spin={loadingRestake}>
+              {texts.restake}
+              <Flex ml="10px" alignItems="center">
+                {/*{!isStaker && (*/}
+                {/*  <Flex alignItems="center">*/}
+                {/*    <HelpIcon2 />*/}
+                {/*  </Flex>*/}
+                {/*)}*/}
+              </Flex>
+            </ButtonStyle>
+          )}
           {/*</ButtonWrap>{" "}*/}
         </Buttons>
       </UnstakeWrapper>

@@ -10180,8 +10180,8 @@ var Unstake = function (_a) {
                         React__default.createElement(ProgressBar, { progress: progress })))),
             React__default.createElement(Buttons$3, null,
                 React__default.createElement(ButtonStyle$3, { disabled: cooldownDisabled, onClick: handleCooldown, variant: "green", spin: loadingCooldown }, isStaker ? texts.unstake : texts.cooldownButton),
-                React__default.createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
-                    isStaker ? texts.claim : texts.restake,
+                isStaker && React__default.createElement(ButtonStyle$3, { disabled: restakeDisabed, onClick: handleRestake, variant: "green", spin: loadingRestake },
+                    texts.restake,
                     React__default.createElement(Flex, { ml: "10px", alignItems: "center" })))),
         isBlur && React__default.createElement(Claimed$1, { id: "unstake" })));
 };
