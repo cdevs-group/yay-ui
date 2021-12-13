@@ -30,7 +30,7 @@ const Select = ({
   return (
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
-      <DropdownLayout open={selectOpen} setOpen={setSelectOpen} icon={<InputWrapper>{selectTarget}</InputWrapper>}>
+      <DropdownLayout open={selectOpen} setOpen={setSelectOpen} icon={<InputBlock>{selectTarget}</InputBlock>}>
         <SelectWrapper>
           {optionsList.map((option, i) => (
             <OptionItem name={name} value={option} onClick={handleClick} key={i}>
@@ -48,6 +48,9 @@ const Select = ({
 
 export default Select;
 
+const InputBlock = styled(InputWrapper)`
+  cursor: pointer;
+`;
 const SelectWrapper = styled.div`
   padding: 10px 0;
   background: #1d1d22;
@@ -85,4 +88,5 @@ const ArrowBlock = styled(Flex)`
   justify-content: center;
   right: 15px;
   bottom: 7px;
+  pointer-events: none;
 `;
