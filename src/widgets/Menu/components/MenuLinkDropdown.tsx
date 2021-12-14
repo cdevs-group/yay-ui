@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LinkHeaderProps } from "../types";
 import MenuLink from "./MenuLink";
 
-const MenuLinkDropdown = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) => {
+const MenuLinkDropdown = ({ name, url, setOpenMenu, submenu, variant, comingSoon }: LinkHeaderProps) => {
   const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
@@ -13,6 +13,8 @@ const MenuLinkDropdown = ({ name, url, setOpenMenu, submenu }: LinkHeaderProps) 
       submenu={submenu}
       setOpenDropdown={setOpenDropdown}
       openDropdown={openDropdown}
+      variant={variant}
+      comingSoon={comingSoon}
     />
   );
 };

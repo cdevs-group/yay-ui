@@ -53,6 +53,7 @@ import {
   CloseIcon3,
   ArrowBack2,
   ArrowBackIcon,
+  WalletIcon,
 } from ".";
 
 export default {
@@ -101,6 +102,7 @@ export default {
     CloseRed,
     ControllerMouse,
     ArrowBorder,
+    WalletIcon,
   ],
   argTypes: {},
 };
@@ -269,6 +271,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <ArrowBorder />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <WalletIcon />
         </div>
       </div>
     </div>

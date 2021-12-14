@@ -22,6 +22,21 @@ export const styleVariants = {
       },
     },
   },
+  [variants.BEHIND]: {
+    left: 35,
+    top: 48,
+    overflow: "visible",
+    marginTop: 0,
+    borderRadius: '0 0 12px 12px',
+    transform: 'translate(0,-50%) scaleY(0)',
+    "&.open": {
+      transform: 'translate(0,0)',
+      position: "absolute",
+      left: 35,
+      marginTop: 0,
+      overflow: "visible",
+    },
+  }
 };
 
 export const styleVariantsButton = {
