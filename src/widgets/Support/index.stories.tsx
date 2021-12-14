@@ -110,6 +110,7 @@ export const SupportBlock = () => {
       texts={texts}
       inputError={inputError}
       handleButton={handleSend}
+      buttonLoading={{ spin: true, disabled: true }}
       points={points}
       href="/"
       modalOpen={openModal}

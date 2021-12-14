@@ -12232,7 +12232,7 @@ var TextStyleError = styled__default["default"](Text)(templateObject_5 || (templ
 var templateObject_1$2, templateObject_2, templateObject_3, templateObject_4, templateObject_5;
 
 var SupportWindow = function (_a) {
-    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess, handleInputFile = _a.handleInputFile;
+    var texts = _a.texts, state = _a.state, handleInput = _a.handleInput, product = _a.product, handleButton = _a.handleButton, points = _a.points, inputError = _a.inputError, modalOpen = _a.modalOpen, href = _a.href, noteSuccess = _a.noteSuccess, titleSuccess = _a.titleSuccess, handleInputFile = _a.handleInputFile, buttonLoading = _a.buttonLoading;
     return (React__default["default"].createElement("div", { style: { maxWidth: "520px", margin: "0 auto" } }, !modalOpen ? (React__default["default"].createElement(React__default["default"].Fragment, null,
         " ",
         React__default["default"].createElement(TitlePage, { points: points, title: texts.title, note: texts.note }),
@@ -12244,7 +12244,7 @@ var SupportWindow = function (_a) {
             React__default["default"].createElement(Input$1, { title: texts.address, margin: "0 0 25px", placeholder: texts.addressPlaceholder, onChange: handleInput, name: "address", value: state["address"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.address }),
             React__default["default"].createElement(Input$1, { title: texts.txHash, margin: "0 0 45px", placeholder: texts.txHashPlaceholder, onChange: handleInput, name: "txHash", value: state["txHash"], inputError: inputError === null || inputError === void 0 ? void 0 : inputError.txHash }),
             React__default["default"].createElement(InputFile, { inputError: inputError === null || inputError === void 0 ? void 0 : inputError.file, onChange: handleInputFile, name: "file", placeholder: texts.filePlaceholder, margin: "0 0 45px", title: texts.file }),
-            React__default["default"].createElement(Button$9, { onClick: handleButton, width: "100%", variant: "green" }, texts.button)))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
+            React__default["default"].createElement(Button$9, __assign({ onClick: handleButton, width: "100%", variant: "green" }, buttonLoading), texts.button)))) : (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(TitlePage, { title: titleSuccess, note: noteSuccess }),
         React__default["default"].createElement(NoticeModal, { href: href, text: texts.modalText, button: texts.modalButton, title: texts.modalTitle })))));
 };

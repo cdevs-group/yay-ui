@@ -7,6 +7,7 @@ import { IStateInput, IStateInputError, ITexts } from "./types";
 import TitlePage from "./components/TitlePage";
 import NoticeModal from "./components/NoticeModal";
 import InputFile from "./components/InputFile";
+import { ButtonProps } from "../../components/Button/types";
 
 const SupportWindow = ({
   texts,
@@ -21,6 +22,7 @@ const SupportWindow = ({
   noteSuccess,
   titleSuccess,
   handleInputFile,
+  buttonLoading,
 }: {
   points: ReactNode[];
   handleButton: () => void | Promise<void>;
@@ -34,6 +36,7 @@ const SupportWindow = ({
   noteSuccess: ReactNode;
   titleSuccess: string;
   handleInputFile: (e: any) => void;
+  buttonLoading: ButtonProps;
 }) => {
   return (
     <div style={{ maxWidth: "520px", margin: "0 auto" }}>
@@ -104,7 +107,7 @@ const SupportWindow = ({
               margin="0 0 45px"
               title={texts.file}
             />
-            <Button onClick={handleButton} width="100%" variant="green">
+            <Button onClick={handleButton} width="100%" variant="green" {...buttonLoading}>
               {texts.button}
             </Button>
           </StyledSupport>
