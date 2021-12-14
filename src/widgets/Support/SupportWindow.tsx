@@ -97,6 +97,7 @@ const SupportWindow = ({
               inputError={inputError?.txHash}
             />
             <InputFile
+              inputError={inputError?.file}
               onChange={handleInputFile}
               name="file"
               placeholder={texts.filePlaceholder}

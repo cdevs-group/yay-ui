@@ -20,6 +20,7 @@ export const SupportBlock = () => {
     txHash: "",
     problem: "",
     name: "",
+    file: "",
   });
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
