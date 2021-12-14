@@ -11449,7 +11449,7 @@ var Subtitle = styled(Text)(templateObject_2$d || (templateObject_2$d = __makeTe
     return theme.colors.text;
 });
 var AppHeader = function (_a) {
-    var title = _a.title, subtitle = _a.subtitle, helper = _a.helper, backTo = _a.backTo, _b = _a.noConfig, noConfig = _b === void 0 ? false : _b, expertMode = _a.expertMode, transactions = _a.transactions, globalSettings = _a.globalSettings;
+    var title = _a.title, subtitle = _a.subtitle, helper = _a.helper, backTo = _a.backTo, _b = _a.noConfig, noConfig = _b === void 0 ? false : _b, expertMode = _a.expertMode, transactions = _a.transactions, globalSettings = _a.globalSettings, options = _a.options;
     return (React__default.createElement(AppHeaderContainer, null,
         React__default.createElement(Flex, { alignItems: "center", mr: noConfig ? 0 : "16px" },
             backTo && (React__default.createElement(IconButton, { as: Link$4, to: backTo },
@@ -11460,6 +11460,7 @@ var AppHeader = function (_a) {
                     helper && React__default.createElement(QuestionHelper, { text: helper, mr: "4px", placement: "top-start" }),
                     React__default.createElement(Subtitle, null, subtitle)))),
         !noConfig && (React__default.createElement(Flex, { alignItems: "center" },
+            options && React__default.createElement(Flex, { mr: "2px" }, options),
             React__default.createElement(NotificationDot, { show: expertMode }, globalSettings),
             transactions))));
 };
