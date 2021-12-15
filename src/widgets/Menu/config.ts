@@ -30,6 +30,10 @@ export const linksSubmenu = [
         name: "Top stakeRs",
         url: "/tops-takers",
       },
+      {
+        name: "Top stakeRs",
+        url: "/tops-takers",
+      },
     ],
   },
   {
@@ -51,7 +55,8 @@ export const linksSubmenu = [
     url: "/2",
   },
   {
-    name: "Profile",
+    name: "NFT Marketplace",
     url: "/3",
+    comingSoon: "Coming soon"
   },
 ];

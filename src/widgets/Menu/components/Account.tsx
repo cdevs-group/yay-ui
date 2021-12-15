@@ -148,7 +148,7 @@ const AccountBlock = styled(Text)`
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     min-height: 40px;
     min-width: 160px;
     margin-right: 11px;
@@ -175,7 +175,7 @@ const Avatar = styled.div`
   &.notAuth {
     width: calc(100% - 4px);
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     right: 4px;
     & img {
       width: 32px;

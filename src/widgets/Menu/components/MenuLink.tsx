@@ -1,11 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { variant } from "styled-system";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import Text from "../../../components/Text/Text";
 import { LinkHeaderProps } from "../types";
+import { styleVariantsDropdownMenu } from "./theme";
+import { Variant as VariantDropdown } from "../../../components/DropDown/types";
+import { ArrowDownIcon, Flex } from "../../..";
 
-const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdown }: LinkHeaderProps) => {
+const MenuLink = ({
+  name,
+  url,
+  setOpenMenu,
+  submenu,
+  openDropdown,
+  setOpenDropdown,
+  variant,
+  comingSoon,
+}: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
   const Item = () => <LinkItem>{name}</LinkItem>;
 
@@ -19,10 +32,21 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdo
       <DropdownLayout
         open={openDropdown || false}
         setOpen={setOpenDropdown || (() => null)}
-        icon={<LinkItem onClick={() => (setOpenDropdown ? setOpenDropdown(true) : () => null)}>{name}</LinkItem>}
-        variant="menu"
+        icon={
+          <LinkItem onClick={() => (setOpenDropdown ? setOpenDropdown(true) : () => null)}>
+            <Flex alignItems="center">
+              {name}
+              {submenu && variant === "behind" && (
+                <div style={{ marginLeft: 10 }}>
+                  <ArrowDownIcon />
+                </div>
+              )}
+            </Flex>
+          </LinkItem>
+        }
+        variant={variant || "menu"}
       >
-        <Dropdown open={openDropdown}>
+        <Dropdown open={openDropdown} variant={variant}>
           {submenu?.map((el, i) => (
             <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} setOpenDropdown={setOpenDropdown} />
           ))}
@@ -30,6 +54,14 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdo
       </DropdownLayout>
     );
   }
+
+  if (comingSoon)
+    return (
+      <StyledComingSoon>
+        <TextComingSoon>{name}</TextComingSoon>
+        <ComingSoon>{comingSoon}</ComingSoon>
+      </StyledComingSoon>
+    );
 
   return (
     <>
@@ -49,7 +81,7 @@ const MenuLink = ({ name, url, setOpenMenu, submenu, openDropdown, setOpenDropdo
 
 export default MenuLink;
 
-const Dropdown = styled.div<{ open?: boolean }>`
+const Dropdown = styled.div<{ open?: boolean; variant?: VariantDropdown }>`
   display: flex;
   flex-direction: column;
   padding: 11px 16px;
@@ -57,10 +89,39 @@ const Dropdown = styled.div<{ open?: boolean }>`
   background: rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
+  ${variant({
+    variants: styleVariantsDropdownMenu,
+  })}
 `;
 
 const StyledLink = styled(NavLink)``;
 
+const StyledComingSoon = styled.div`
+  display: flex;
+  margin: 0 0 20px;
+  ${({ theme }) => theme.mediaQueries.xl} {
+    margin: 0 20px;
+  }
+  ${({ theme }) => theme.mediaQueries.xxl} {
+    margin: 0 35px;
+  }
+`;
+
+const ComingSoon = styled.div`
+  position: relative;
+  top: -13px;
+  left: -2px;
+  padding: 5px 11px;
+  background: ${({ theme }) => theme.colors.green};
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 9px;
+  line-height: 11px;
+  font-weight: normal;
+  border-radius: 6px;
+`;
+const TextComingSoon = styled(Text)`
+  opacity: 0.5;
+`;
 const LinkItem = styled(Text)`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
@@ -71,7 +132,7 @@ const LinkItem = styled(Text)`
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     &::after {
       display: block;
       bottom: -30px;
@@ -91,7 +152,7 @@ const LinkItem = styled(Text)`
       }
     }
   }
-  ${({ theme }) => theme.mediaQueries.xl} {
+  ${({ theme }) => theme.mediaQueries.xxl} {
     margin: 0 35px;
   }
   ${Dropdown} & {

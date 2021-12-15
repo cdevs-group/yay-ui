@@ -11,6 +11,7 @@ export const baseColors = {
   warning: "#FFB237",
   blueGradient: "linear-gradient(180deg, #0064C0 0%, #0056A5 100%)",
   dark2: "#1C1C1C",
+  dark3: "#101016",
 
   green: "#4BE43E",
   textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -74,6 +75,7 @@ export const baseColors = {
   darkGradient3: "linear-gradient(180deg, #17171e -8.54%, #17171e 100%)",
   darkGradient4: "linear-gradient(0deg, rgba(75, 228, 62, 0) 0%, rgba(75, 228, 62, 0.16) 56.77%)",
   darkGradient5: "linear-gradient(0.13deg, #17171e 0.12%, rgba(27, 26, 32, 0) 32.18%)",
+  darkGradient6: "linear-gradient(0deg, #2E2E35, #2E2E35), #141419",
   textShadow1: "0px 4px 8px rgba(0, 0, 0, 0.35)",
   lightGray: "#dbdbdb",
   darkBlue: "#1f1c2b",

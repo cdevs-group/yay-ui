@@ -73,6 +73,7 @@ export { default as CheckIcon2 } from "./Icons/CheckIcon2";
 export { default as CloseIcon3 } from "./Icons/CloseIcon3";
 export { default as ArrowBack2 } from "./Icons/ArrowBack2";
 export { default as CloudIcon } from "./Icons/Cloud";
+export { default as WalletIcon } from "./Icons/WalletIcon";
 export { default as LineIcon } from "./Icons/LineIcon";
 export { default as NFTShareIcon } from "./Icons/NFTShare";
 export { default as StarIcon } from "./Icons/Star";

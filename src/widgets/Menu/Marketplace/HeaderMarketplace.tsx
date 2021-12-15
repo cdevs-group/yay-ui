@@ -1,26 +1,23 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { NavProps } from "../types";
-import Account from "./Account";
-import Burger from "./Burger";
-import Languages from "../../../components/DropDown/Languages";
+import { NavMarketplaceProps } from "../types";
+import AccountMarketplace from "./AccountMarketplace";
+import Burger from "../components/Burger";
 import Logo from "../image/Logo.png";
-import Network from "./Network";
+import Network from "../components/Network";
 import Disclaimer from "../../../components/Disclaimer/Disclaimer";
-import MenuLinkDropdown from "./MenuLinkDropdown";
+import MenuLinkDropdown from "../components/MenuLinkDropdown";
+import { Languages } from "../../../components/DropDown";
 
-const Header: React.FC<NavProps> = ({
+const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   account,
   login,
   logout,
-  isDark,
-  toggleTheme,
   langs,
   setLang,
   currentLang,
   links,
-  textConnect,
   textsAccount,
   textsConnect,
   hrefLearnHow,
@@ -32,20 +29,8 @@ const Header: React.FC<NavProps> = ({
   titleNetwork,
   valuesNetworks,
   listNetwork,
-  vesting,
-  yayBalance,
-  dataTransactions,
-  handleClaimed,
-  bridge,
-  textsBridge,
-  transactionsList,
-  handleAddToken,
   disclaimer,
   disclaimerText,
-  marginContent,
-  minHeight,
-  buttonLogoutType,
-  linkExternalWalletModal,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -85,6 +70,8 @@ const Header: React.FC<NavProps> = ({
                 url={item.url}
                 submenu={item.submenu}
                 setOpenMenu={setOpenMenu}
+                variant="behind"
+                comingSoon={item.comingSoon}
               />
             ))}
             {currentLang && (
@@ -93,60 +80,34 @@ const Header: React.FC<NavProps> = ({
               </LanguageBlockMob>
             )}
           </Nav>
-          {textsAccount && textsConnect && (
-            <RightContent>
-              {network ? (
-                <Network
-                  titleNetwork={titleNetwork}
-                  linkHrefNetwork={linkHrefNetwork}
-                  linkTextNetwork={linkTextNetwork}
-                  handleToggleNetwork={handleToggleNetwork}
-                  network={network}
-                  valuesNetworks={valuesNetworks}
-                  listNetwork={listNetwork}
-                />
-              ) : null}
-              <Account
-                text={textConnect || "Connect"}
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
+          <RightContent>
+            {network ? (
+              <Network
+                titleNetwork={titleNetwork}
+                linkHrefNetwork={linkHrefNetwork}
+                linkTextNetwork={linkTextNetwork}
+                handleToggleNetwork={handleToggleNetwork}
                 network={network}
-                vesting={vesting}
-                bridge={bridge}
-                yayBalance={yayBalance}
-                dataTransactions={dataTransactions}
-                handleClaimed={handleClaimed}
-                textsBridge={textsBridge}
-                transactionsList={transactionsList}
-                handleAddToken={handleAddToken}
-                marginContent={marginContent}
-                minHeight={minHeight}
-                buttonLogoutType={buttonLogoutType}
-                linkExternalWalletModal={linkExternalWalletModal}
+                valuesNetworks={valuesNetworks}
+                listNetwork={listNetwork}
               />
-              {currentLang && (
-                <LanguageBlockDesk>
-                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-                </LanguageBlockDesk>
-              )}
-              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-            </RightContent>
-          )}
-          {!textsConnect && !textsConnect && (
-            <RightContent>
-              {" "}
-              {currentLang && (
-                <LanguageBlockDesk>
-                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-                </LanguageBlockDesk>
-              )}
-              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-            </RightContent>
-          )}
+            ) : null}
+            <AccountMarketplace
+              account={account}
+              login={login}
+              logout={logout}
+              textsAccount={textsAccount}
+              textsConnect={textsConnect}
+              hrefLearnHow={hrefLearnHow}
+              network={network}
+            />
+            {currentLang && (
+              <LanguageBlockDesk>
+                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+              </LanguageBlockDesk>
+            )}
+            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+          </RightContent>
         </Line>
       </Content>
     </HeaderWrap>
@@ -259,4 +220,4 @@ const LogoWrap = styled(NavLink)`
   }
 `;
 
-export default Header;
+export default HeaderMarketplace;

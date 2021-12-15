@@ -9,6 +9,9 @@ export interface LanguagesProps {
 
 export const variants = {
   MENU: "menu",
+  BEHIND: "behind",
+  CENTER_BEHIND: "center-behind",
+  VISIBLE: "visible"
 } as const;
 
 export type Variant = typeof variants[keyof typeof variants];
