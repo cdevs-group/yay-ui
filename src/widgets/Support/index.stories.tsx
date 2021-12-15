@@ -20,6 +20,7 @@ export const SupportBlock = () => {
     txHash: "",
     problem: "",
     name: "",
+    file: "",
   });
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
@@ -109,6 +110,7 @@ export const SupportBlock = () => {
       texts={texts}
       inputError={inputError}
       handleButton={handleSend}
+      buttonLoading={{ spin: true, disabled: true }}
       points={points}
       href="/"
       modalOpen={openModal}

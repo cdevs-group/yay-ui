@@ -13,6 +13,7 @@ export interface IStateInputError {
   txHash?: string;
   problem?: string;
   name?: string;
+  file?: string;
 }
 
 export interface ITexts {

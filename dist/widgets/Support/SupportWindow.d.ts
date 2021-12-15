@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { IStateInput, IStateInputError, ITexts } from "./types";
-declare const SupportWindow: ({ texts, state, handleInput, product, handleButton, points, inputError, modalOpen, href, noteSuccess, titleSuccess, handleInputFile, }: {
+import { ButtonProps } from "../../components/Button/types";
+declare const SupportWindow: ({ texts, state, handleInput, product, handleButton, points, inputError, modalOpen, href, noteSuccess, titleSuccess, handleInputFile, buttonLoading, }: {
     points: ReactNode[];
     handleButton: () => void | Promise<void>;
     texts: ITexts;
@@ -13,6 +14,7 @@ declare const SupportWindow: ({ texts, state, handleInput, product, handleButton
     noteSuccess: ReactNode;
     titleSuccess: string;
     handleInputFile: (e: any) => void;
+    buttonLoading: ButtonProps;
 }) => JSX.Element;
 export default SupportWindow;
 export declare const StyledSupport: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

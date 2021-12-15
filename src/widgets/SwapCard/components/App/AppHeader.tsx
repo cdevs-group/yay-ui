@@ -30,6 +30,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
   expertMode,
   transactions,
   globalSettings,
+  options,
 }) => {
   return (
     <AppHeaderContainer>
@@ -51,6 +52,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
       </Flex>
       {!noConfig && (
         <Flex alignItems="center">
+          {options && <Flex mr="2px">{options}</Flex>}
           <NotificationDot show={expertMode}>{globalSettings}</NotificationDot>
           {transactions}
         </Flex>

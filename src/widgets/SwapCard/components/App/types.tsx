@@ -7,4 +7,5 @@ export interface AppHeaderProps {
   expertMode: boolean;
   globalSettings: React.ReactElement | React.ReactElement[];
   transactions: React.ReactNode;
+  options?: React.ReactNode;
 }

@@ -12,23 +12,30 @@ const InputFile = ({
   placeholder,
   onChange,
   name,
+  inputError,
 }: {
   onChange: any;
   name: string;
   margin?: string;
   title: string;
   placeholder: string;
+  inputError?: string;
 }) => {
   return (
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
       <InputWrapper>
-        <Input onChange={onChange} name={name} type="file" />
+        <Input accept=".png, .jpeg, .jpg" onChange={onChange} name={name} type="file" />
         <TextStyle>{placeholder}</TextStyle>
         <Icon>
           <CloudIcon />
         </Icon>
       </InputWrapper>
+      {inputError && (
+        <TextStyleError color={baseColors.darkPink} fontSize="13px">
+          {inputError}
+        </TextStyleError>
+      )}
     </Wrapper>
   );
 };
@@ -74,4 +81,8 @@ const Icon = styled(Flex)`
   background: ${({ theme }) => theme.colors.whiteRgba};
   border-radius: 7px;
   pointer-events: none;
+`;
+const TextStyleError = styled(Text)`
+  position: absolute;
+  bottom: -25px;
 `;
