@@ -12204,7 +12204,7 @@ var InputFile = function (_a) {
     return (React__default["default"].createElement(Wrapper$2, { margin: margin },
         React__default["default"].createElement(TitleStyle, null, title),
         React__default["default"].createElement(InputWrapper, null,
-            React__default["default"].createElement(Input, { onChange: onChange, name: name, type: "file" }),
+            React__default["default"].createElement(Input, { accept: ".png, .jpeg, .jpg", onChange: onChange, name: name, type: "file" }),
             React__default["default"].createElement(TextStyle, null, placeholder),
             React__default["default"].createElement(Icon, null,
                 React__default["default"].createElement(Icon$3, null))),

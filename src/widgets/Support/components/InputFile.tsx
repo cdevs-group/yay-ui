@@ -25,7 +25,7 @@ const InputFile = ({
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
       <InputWrapper>
-        <Input onChange={onChange} name={name} type="file" />
+        <Input accept=".png, .jpeg, .jpg" onChange={onChange} name={name} type="file" />
         <TextStyle>{placeholder}</TextStyle>
         <Icon>
           <CloudIcon />
