@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
-        <Box marginRight="20px" width="50%">
+        <SignUpBlock>
           <Text fontSize="21px">Stay in the loop</Text>
           <InputBlock>
             <InputSearch
@@ -26,12 +26,12 @@ const Footer = () => {
               width="100%"
               name="email"
             />
-            <Button variant="green" onClick={() => null} maxWidth="170px" width="100%" marginLeft="20px">
+            <Button variant="green" onClick={() => null} width="100%">
               Sign Up
             </Button>
           </InputBlock>
-        </Box>
-        <Flex justifyContent="flex-end" marginLeft="20px" alignItems="baseline" width="50%">
+        </SignUpBlock>
+        <BuyBlock justifyContent="flex-end" alignItems="baseline">
           <Icon>
             <LineIcon />
             <IconBg>
@@ -40,19 +40,19 @@ const Footer = () => {
             </IconBg>
           </Icon>
 
-          <Button variant="green" onClick={() => null} maxWidth="170px" width="100%" marginLeft="40px">
+          <Button variant="green" onClick={() => null} width="100%">
             Buy YAY
           </Button>
-        </Flex>
+        </BuyBlock>
       </StayBlock>
       <MainLine>
-        <Column maxWidth="293px">
+        <ColumnDescription>
           <img src={LOGO_FOOTER} alt="logo" />
           <Description>
             Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks
             for navigating YAY Games.
           </Description>
-        </Column>
+        </ColumnDescription>
         <Column>
           <NavColumn data={aboutData} />
         </Column>
@@ -62,9 +62,9 @@ const Footer = () => {
         <Column>
           <NavColumn data={companyData} />
         </Column>
-        <Column>
+        <ColumnSocial>
           <Social data={socialData} />
-        </Column>
+        </ColumnSocial>
       </MainLine>
       <TextFooter>© 2021 YAY Games | All Rights Reserved</TextFooter>
     </Wrapper>
@@ -74,53 +74,163 @@ const Footer = () => {
 export default Footer;
 
 const Wrapper = styled.div``;
-const StayBlock = styled(Flex)``;
+const StayBlock = styled(Flex)`
+  flex-direction: column;
+  align-items: center;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+`;
+const SignUpBlock = styled(Box)`
+  text-align: center;
+  width: 100%;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin-right: 20px;
+    text-align: left;
+    width: 50%;
+  }
+`;
 const InputBlock = styled(Flex)`
   align-items: center;
   margin-top: 30px;
+  flex-direction: column;
+
+  & button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+
+    & button {
+      margin-top: 0;
+      width: 100%;
+      max-width: 50%;
+      margin-left: 20px;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    & button {
+      margin-right: 20px;
+      max-width: 170px;
+    }
+  }
+`;
+const BuyBlock = styled(Flex)`
+  width: 100%;
+  margin-top: 50px;
+  flex-direction: column;
+
+  & button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+
+    & button {
+      margin-top: 0;
+      width: 100%;
+      max-width: 50%;
+      margin-left: 20px;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 0;
+
+    & button {
+      margin-left: 40px;
+      max-width: 170px;
+    }
+  }
 `;
 const MainLine = styled(Flex)`
   margin-top: 40px;
   padding-bottom: 100px;
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.whiteRgba};
+  flex-wrap: wrap;
+  ${({ theme }) => theme.mediaQueries.md} {
+    flex-wrap: nowrap;
+  }
 `;
-const Column = styled(Box)``;
+const Column = styled(Box)`
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  ${({ theme }) => theme.mediaQueries.xs} {
+    width: auto;
+    text-align: left;
+    margin-top: 0;
+  }
+`;
+const ColumnDescription = styled(Box)`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    width: auto;
+    max-width: 293px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+`;
+const ColumnSocial = styled(Box)`
+  width: 100%;
+  margin-top: 40px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: auto;
+    margin-top: 0;
+  }
+`;
 const Description = styled(Text)`
   margin-top: 20px;
   font-weight: normal;
   font-size: 15px;
   line-height: 24px;
+  text-align: center;
   color: ${({ theme }) => theme.colors.textGray};
 `;
 const svgAnimation = keyframes`
-0% {
-  stroke-dashoffset: 257;
-  stroke-dasharray: 255;
-} 
+  0% {
+    stroke-dashoffset: 257;
+    stroke-dasharray: 255;
+  }
   100% {
-
     stroke-dashoffset: 257;
     stroke-dasharray: 522;
   }
-  //51%{
-  //  stroke-dashoffset: 0;
-  //  stroke-dasharray: 255;
-  //}
-  //100%{
-  //  stroke-dashoffset: -255;
-  //  stroke-dasharray: 255;
-  //}
 `;
 const Icon = styled.div`
   position: relative;
+  margin: 0 auto;
+
   & svg {
     position: relative;
     z-index: 2;
-    top: 15px;
+    top: 0;
     fill: transparent;
     stroke-dasharray: 0;
     animation: ${svgAnimation} 3s infinite;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & svg {
+      top: 15px;
+    }
+  }
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    margin: 0;
   }
 `;
 const IconBg = styled.div`
@@ -128,9 +238,16 @@ const IconBg = styled.div`
   left: 0;
   z-index: 1;
   top: 0;
+
   & img {
     position: relative;
-    top: 15px;
+    top: 0;
+  }
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    & img {
+      top: 15px;
+    }
   }
 `;
 const TextFooter = styled(Text)`

@@ -21,7 +21,11 @@ const Social = ({ data }: { data: { title: string; links: { img: string; url: st
 
 export default Social;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  text-align: center;
+  max-width: 320px;
+  margin: 0 auto;
+`;
 const Title = styled(Text)`
   margin-bottom: 20px;
   font-weight: normal;

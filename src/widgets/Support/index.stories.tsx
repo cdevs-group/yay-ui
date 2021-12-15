@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SupportWindow from "./SupportWindow";
 import { IStateInput, IStateInputError } from "./types";
 import styled from "styled-components";
