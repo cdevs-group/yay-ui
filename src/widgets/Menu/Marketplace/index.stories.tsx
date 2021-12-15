@@ -54,7 +54,7 @@ export const HeaderForMarketplace = () => {
 
   const textsAccount = {
     copy: "Copy",
-    title: "Your wallet",
+    title: "My wallet",
     button: "Logout",
     view: "View on BscScan",
     copied: "Copied",
@@ -96,6 +96,12 @@ export const HeaderForMarketplace = () => {
           linkLogo="/"
           network={network}
           handleToggleNetwork={handleToggleNetwork}
+          linkTextNetwork="Learn how connect"
+          linkHrefNetwork="http"
+          titleNetwork="Choose network"
+          valuesNetworks={["56", "43114"]}
+          listNetwork={NETWORK_CHAIN}
+          hrefLearnHow="http://"
         />
       </div>
     </BrowserRouter>

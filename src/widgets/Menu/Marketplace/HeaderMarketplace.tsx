@@ -80,46 +80,34 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
               </LanguageBlockMob>
             )}
           </Nav>
-          {textsAccount && textsConnect && (
-            <RightContent>
-              {network ? (
-                <Network
-                  titleNetwork={titleNetwork}
-                  linkHrefNetwork={linkHrefNetwork}
-                  linkTextNetwork={linkTextNetwork}
-                  handleToggleNetwork={handleToggleNetwork}
-                  network={network}
-                  valuesNetworks={valuesNetworks}
-                  listNetwork={listNetwork}
-                />
-              ) : null}
-              <AccountMarketplace
-                account={account}
-                login={login}
-                logout={logout}
-                textsAccount={textsAccount}
-                textsConnect={textsConnect}
-                hrefLearnHow={hrefLearnHow}
+          <RightContent>
+            {network ? (
+              <Network
+                titleNetwork={titleNetwork}
+                linkHrefNetwork={linkHrefNetwork}
+                linkTextNetwork={linkTextNetwork}
+                handleToggleNetwork={handleToggleNetwork}
                 network={network}
+                valuesNetworks={valuesNetworks}
+                listNetwork={listNetwork}
               />
-              {currentLang && (
-                <LanguageBlockDesk>
-                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-                </LanguageBlockDesk>
-              )}
-              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-            </RightContent>
-          )}
-          {!textsConnect && !textsConnect && (
-            <RightContent>
-              {currentLang && (
-                <LanguageBlockDesk>
-                  <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
-                </LanguageBlockDesk>
-              )}
-              <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
-            </RightContent>
-          )}
+            ) : null}
+            <AccountMarketplace
+              account={account}
+              login={login}
+              logout={logout}
+              textsAccount={textsAccount}
+              textsConnect={textsConnect}
+              hrefLearnHow={hrefLearnHow}
+              network={network}
+            />
+            {currentLang && (
+              <LanguageBlockDesk>
+                <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
+              </LanguageBlockDesk>
+            )}
+            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+          </RightContent>
         </Line>
       </Content>
     </HeaderWrap>
@@ -151,7 +139,7 @@ const Line = styled.div`
   margin-right: auto;
   max-width: 1200px;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     padding: 21px 15px 15px;
   }
 `;
@@ -175,7 +163,7 @@ const Nav = styled.div`
 
   background-color: ${({ theme }) => theme.colors.bgBlackRgba};
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     flex-direction: row;
     position: relative;
     background: transparent;
@@ -193,7 +181,7 @@ const RightContent = styled.div`
 `;
 
 const LanguageBlockMob = styled.div`
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     display: none;
   }
 `;
@@ -201,7 +189,7 @@ const LanguageBlockMob = styled.div`
 const LanguageBlockDesk = styled.div`
   display: none;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     display: block;
     margin-left: 11px;
   }
@@ -219,12 +207,12 @@ const LogoWrap = styled(NavLink)`
   & svg {
     width: 133px;
 
-    ${({ theme }) => theme.mediaQueries.lg} {
+    ${({ theme }) => theme.mediaQueries.xl} {
       width: 153px;
     }
   }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     & img {
       width: auto;
       height: auto;

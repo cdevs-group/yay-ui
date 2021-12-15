@@ -132,6 +132,7 @@ export type Colors = {
   greyRgba2: string;
   blur: string;
   dark2: string;
+  dark3: string;
   redRgba: string;
   darkGradient1: string;
   darkGradient2: string;

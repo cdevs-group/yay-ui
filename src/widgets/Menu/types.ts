@@ -129,21 +129,21 @@ export type BlockChainNetwork = {
 };
 
 export interface NavMarketplaceProps extends PanelProps {
-  account?: string;
+  account: string;
   login: Login;
   profile?: Profile;
   logout: () => void;
-  textsConnect?: TextsConnect;
-  textsAccount?: TextsAccount;
-  hrefLearnHow?: string;
+  textsConnect: TextsConnect;
+  textsAccount: TextsAccount;
+  hrefLearnHow: string;
   linkLogo: string;
-  network?: BlockChainNetwork;
-  titleNetwork?: string;
-  linkTextNetwork?: string;
-  linkHrefNetwork?: string;
-  handleToggleNetwork?: (e: any) => void;
-  valuesNetworks?: string[];
-  listNetwork?: BlockChainNetwork[];
+  network: BlockChainNetwork;
+  titleNetwork: string;
+  linkTextNetwork: string;
+  linkHrefNetwork: string;
+  handleToggleNetwork: (e: any) => void;
+  valuesNetworks: string[];
+  listNetwork: BlockChainNetwork[];
   disclaimer?: boolean;
   disclaimerText?: string;
 }

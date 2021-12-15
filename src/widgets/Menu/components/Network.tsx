@@ -70,7 +70,7 @@ const NetworkBlock = styled.button`
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     min-height: 40px;
     margin-right: 11px;
     font-size: 15px;
@@ -82,7 +82,7 @@ const NetworkBlock = styled.button`
 const TextStyled = styled(Text)`
   display: none;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     display: block;
     padding: 0 17px;
     flex-grow: 1;
@@ -101,7 +101,7 @@ const AvatarNetwork = styled.div`
   &.notAuth {
     width: calc(100% - 4px);
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     margin-right: 2px;
     & img {
       width: 32px;

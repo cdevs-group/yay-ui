@@ -6,7 +6,7 @@ import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork } from "../types";
 import { useModal } from "../../Modal";
 import ConnectModal from "../../WalletModal/ConnectModal";
-import { AccountIcon, WalletIcon } from "../../..";
+import { AccountIcon, Flex, WalletIcon } from "../../..";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import { ellipsis } from "../../../helpers/ellipsis";
 
@@ -40,20 +40,23 @@ const AccountMarketplace: React.FC<Props> = ({
         <DropdownLayout
           open={open}
           setOpen={setOpen}
-          variant="behind"
           icon={
             <Wrapper>
               <WalletIcon />
             </Wrapper>
           }
+          variant="center-behind"
         >
           <Dropdown>
-            <AccountBlock as="button">
-              {ellipsis(account)}
-              <Avatar>
-                <img src={AccountIcon} />
-              </Avatar>
-            </AccountBlock>
+            <Flex justifyContent="space-between" alignItems="center">
+              <Text>{textsAccount.title}</Text>
+              <AccountBlock as="button">
+                {ellipsis(account)}
+                <Avatar>
+                  <img src={AccountIcon} />
+                </Avatar>
+              </AccountBlock>
+            </Flex>
           </Dropdown>
         </DropdownLayout>
       ) : (
@@ -75,15 +78,25 @@ const Wrapper = styled.div<{ notAuth?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
   background: ${({ theme, notAuth }) => (notAuth ? theme.colors.whiteRgba : theme.colors.bgOpacity)};
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
-  border-radius: 9px;
+  border-radius: 7px;
   border: none;
   cursor: pointer;
+  order: -1;
   & path {
     fill: ${({ theme, notAuth }) => (notAuth ? theme.colors.text : theme.colors.green)};
+  }
+  ${({ theme }) => theme.mediaQueries.xl} {
+    width: 40px;
+    height: 40px;
+    margin-right: 9px;
+    margin-left: 9px;
+    border-radius: 9px;
+    order: 0;
   }
 `;
 
@@ -108,7 +121,7 @@ const AccountBlock = styled(Text)`
   &.notAuth {
     background: ${({ theme }) => theme.colors.green};
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     min-height: 40px;
     min-width: 160px;
     margin-right: 11px;
@@ -135,7 +148,7 @@ const Avatar = styled.div`
   &.notAuth {
     width: calc(100% - 4px);
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     right: 4px;
     & img {
       width: 32px;
@@ -148,7 +161,6 @@ const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
   padding: 11px 16px;
-  min-width: 140px;
   background: ${({ theme }) => theme.colors.darkGradient6};
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
   border-radius: 0 0 9px 9px;

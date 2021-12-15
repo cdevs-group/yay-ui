@@ -30,6 +30,10 @@ export const linksSubmenu = [
         name: "Top stakeRs",
         url: "/tops-takers",
       },
+      {
+        name: "Top stakeRs",
+        url: "/tops-takers",
+      },
     ],
   },
   {

@@ -11,6 +11,7 @@ export const baseColors = {
   warning: "#FFB237",
   blueGradient: "linear-gradient(180deg, #0064C0 0%, #0056A5 100%)",
   dark2: "#1C1C1C",
+  dark3: "#101016",
 
   green: "#4BE43E",
   textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",

@@ -100,6 +100,9 @@ const StyledComingSoon = styled.div`
   display: flex;
   margin: 0 0 20px;
   ${({ theme }) => theme.mediaQueries.xl} {
+    margin: 0 20px;
+  }
+  ${({ theme }) => theme.mediaQueries.xxl} {
     margin: 0 35px;
   }
 `;
@@ -129,7 +132,7 @@ const LinkItem = styled(Text)`
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     &::after {
       display: block;
       bottom: -30px;
@@ -149,7 +152,7 @@ const LinkItem = styled(Text)`
       }
     }
   }
-  ${({ theme }) => theme.mediaQueries.xl} {
+  ${({ theme }) => theme.mediaQueries.xxl} {
     margin: 0 35px;
   }
   ${Dropdown} & {

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { NavProps } from "../types";
 import Account from "./Account";
-import MenuLink from "./MenuLink";
 import Burger from "./Burger";
 import Languages from "../../../components/DropDown/Languages";
 import Logo from "../image/Logo.png";
@@ -179,7 +178,7 @@ const Line = styled.div`
   margin-right: auto;
   max-width: 1200px;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     padding: 21px 15px 15px;
   }
 `;
@@ -203,7 +202,7 @@ const Nav = styled.div`
 
   background-color: ${({ theme }) => theme.colors.bgBlackRgba};
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     flex-direction: row;
     position: relative;
     background: transparent;
@@ -221,7 +220,7 @@ const RightContent = styled.div`
 `;
 
 const LanguageBlockMob = styled.div`
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     display: none;
   }
 `;
@@ -229,7 +228,7 @@ const LanguageBlockMob = styled.div`
 const LanguageBlockDesk = styled.div`
   display: none;
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     display: block;
     margin-left: 11px;
   }
@@ -247,12 +246,12 @@ const LogoWrap = styled(NavLink)`
   & svg {
     width: 133px;
 
-    ${({ theme }) => theme.mediaQueries.lg} {
+    ${({ theme }) => theme.mediaQueries.xl} {
       width: 153px;
     }
   }
 
-  ${({ theme }) => theme.mediaQueries.lg} {
+  ${({ theme }) => theme.mediaQueries.xl} {
     & img {
       width: auto;
       height: auto;
