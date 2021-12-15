@@ -1,10 +1,15 @@
 import React from "react";
+import CollectionItem from "./components/CollectionItem";
+import { NFT_EXAMPLE } from "../../constants/images";
 import NFTCard from "./Card"
-
+        
 export default {
-    title: "Widgets/Marketplace",
-    argTypes: {},
-  };
+  title: "Widgets/Marketplace",
+};
+
+export const CollectionItemBlock = () => (
+  <CollectionItem data={{ name: "Passage", price: "$3,512,645", index: 1, img: NFT_EXAMPLE }} />
+);
 
 export const NFTCardBlock = () => {
     return (
