@@ -68,6 +68,7 @@ export type Colors = {
   greyText: string;
   greyText2: string;
   greyText3: string;
+  whiteText: string;
   darkGreyBg: string;
   greyBg2: string;
   orangeBg: string;
@@ -104,6 +105,7 @@ export type Colors = {
   bgCard3: string;
   bgCard4: string;
   bgCard5: string;
+  bgCard6: string;
   yellow: string;
   bgHeader: string;
   buttonBg2: string;
@@ -127,6 +129,7 @@ export type Colors = {
   boxShadow10: string;
   greeanRgba2: string;
   bgGrey2: string;
+  bgGrey3: string;
   whiteRgba2: string;
   filterShadow: string;
   greyRgba2: string;

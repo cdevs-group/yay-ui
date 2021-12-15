@@ -202,7 +202,7 @@ export const SwapModalFooterBlock = () => {
         price: "Price",
         receivedOrSold: "Minimum received",
         slippageAdjustedAmounts: "-",
-        outputAmount: null,
+        outputAmount: "",
         priceImpact: "Price Impact",
         liquidityProviderFee: "Liquidity Provider Fee",
         currencySymbolBottom: "-",

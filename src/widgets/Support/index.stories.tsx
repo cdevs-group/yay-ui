@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SupportWindow from "./SupportWindow";
 import { IStateInput, IStateInputError } from "./types";
 import styled from "styled-components";
@@ -20,6 +20,7 @@ export const SupportBlock = () => {
     txHash: "",
     problem: "",
     name: "",
+    file: "",
   });
   const [inputsState, setInputsState] = useState<IStateInput>({
     email: "",
@@ -109,6 +110,7 @@ export const SupportBlock = () => {
       texts={texts}
       inputError={inputError}
       handleButton={handleSend}
+      buttonLoading={{ spin: true, disabled: true }}
       points={points}
       href="/"
       modalOpen={openModal}

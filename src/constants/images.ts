@@ -45,6 +45,13 @@ import MAIN_GAME from "../../public/images/main-game.png";
 import WALLET_KYC from "../../public/images/wallet-kyc.png";
 import BLUR from "../../public/images/blur.png";
 import COINBASE from "../../public/images/coinbase.png";
+import LOGO_FOOTER from "../../public/images/logo-footer.png";
+import TWITTER from "../../public/images/twitter.png";
+import TELEGRAM from "../../public/images/telegram.png";
+import INSTAGRAM from "../../public/images/instagram.png";
+import GITHUB from "../../public/images/git.png";
+import BG_LINE from "../../public/images/bg-line.png";
+import NFT_EXAMPLE from "../../public/images/nft-example.png";
 
 export {
   BG_IMG,
@@ -94,4 +101,11 @@ export {
   WALLET_KYC,
   BLUR,
   COINBASE,
+  LOGO_FOOTER,
+  TWITTER,
+  TELEGRAM,
+  INSTAGRAM,
+  GITHUB,
+  BG_LINE,
+  NFT_EXAMPLE,
 };
