@@ -51,6 +51,7 @@ import TELEGRAM from "../../public/images/telegram.png";
 import INSTAGRAM from "../../public/images/instagram.png";
 import GITHUB from "../../public/images/git.png";
 import BG_LINE from "../../public/images/bg-line.png";
+import NFT_EXAMPLE from "../../public/images/nft-example.png";
 
 export {
   BG_IMG,
@@ -106,4 +107,5 @@ export {
   INSTAGRAM,
   GITHUB,
   BG_LINE,
+  NFT_EXAMPLE,
 };
