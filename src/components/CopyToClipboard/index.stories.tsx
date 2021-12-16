@@ -10,7 +10,7 @@ export default {
 export const Default: React.FC = () => {
   return (
     <div>
-      <CopyToClipboard toCopy="nkjfnvbkjfnb" textCopied="copied" propsIcon={{stroke: 'red'}}>
+      <CopyToClipboard toCopy="nkjfnvbkjfnb" textCopied="copied" propsIcon={{ stroke: "red" }}>
         Click me
       </CopyToClipboard>
     </div>

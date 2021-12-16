@@ -1,5 +1,5 @@
 /// <reference types="react" />
-declare const Input: ({ value, onChange, name, margin }: {
+declare const Input: ({ value, onChange, name, margin, }: {
     margin?: string | undefined;
     value: string | number;
     onChange: (e: any) => void;

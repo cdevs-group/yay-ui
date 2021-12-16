@@ -118,13 +118,34 @@ export declare type BlockChainNetwork = {
     rpcUrls: string[];
     blockExplorerUrls: string[];
 };
+export interface TextsAccountMarketplace {
+    title: string;
+    copied: string;
+    totalBalance: string;
+    myFunds: string;
+    myProfile: string;
+    favorities: string;
+    myCollections: string;
+    comingSoon: string;
+    disconnect: string;
+    linkMyProfile?: string;
+    linkFavorities?: string;
+    linkMyCollections?: string;
+}
+export interface Funds {
+    icon: string;
+    currencyName: string;
+    currencyFullName: string;
+    balance: string;
+    balanceDollars: string;
+}
 export interface NavMarketplaceProps extends PanelProps {
     account: string;
     login: Login;
     profile?: Profile;
     logout: () => void;
     textsConnect: TextsConnect;
-    textsAccount: TextsAccount;
+    textsAccount: TextsAccountMarketplace;
     hrefLearnHow: string;
     linkLogo: string;
     network: BlockChainNetwork;
@@ -136,5 +157,7 @@ export interface NavMarketplaceProps extends PanelProps {
     listNetwork: BlockChainNetwork[];
     disclaimer?: boolean;
     disclaimerText?: string;
+    totalBalance: string;
+    funds: Funds[];
 }
 export {};

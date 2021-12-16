@@ -170,5 +170,5 @@ export interface NavMarketplaceProps extends PanelProps {
   disclaimer?: boolean;
   disclaimerText?: string;
   totalBalance: string;
-  funds: Funds[]
+  funds: Funds[];
 }

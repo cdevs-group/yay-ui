@@ -3,7 +3,7 @@ import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { linksSubmenu } from "../config";
 import { useState } from "react";
-import { BNB2 ,YAY_TOKEN} from "../../../constants/images";
+import { BNB2, YAY_TOKEN } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 import HeaderMarketplace from "./HeaderMarketplace";
 
@@ -84,7 +84,8 @@ export const HeaderForMarketplace = () => {
       currencyFullName: "YAY Games",
       balance: "100,500.0001 YAY",
       balanceDollars: "$23,313.81",
-    },{
+    },
+    {
       icon: BNB2,
       currencyName: "YAY",
       currencyFullName: "YAY Games",
