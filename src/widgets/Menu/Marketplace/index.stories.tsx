@@ -99,7 +99,6 @@ export const HeaderForMarketplace = () => {
           linkTextNetwork="Learn how connect"
           linkHrefNetwork="http"
           titleNetwork="Choose network"
-          valuesNetworks={["56", "43114"]}
           listNetwork={NETWORK_CHAIN}
           hrefLearnHow="http://"
         />

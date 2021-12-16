@@ -142,7 +142,7 @@ export interface NavMarketplaceProps extends PanelProps {
   linkTextNetwork: string;
   linkHrefNetwork: string;
   handleToggleNetwork: (e: any) => void;
-  valuesNetworks: string[];
+  valuesNetworks?: string[];
   listNetwork: BlockChainNetwork[];
   disclaimer?: boolean;
   disclaimerText?: string;
