@@ -6,28 +6,48 @@ import { InputSearch } from "../../components/InputSearch";
 import { Flex, Box } from "../../components/Box";
 import { BG_LINE, LOGO_FOOTER } from "../../constants/images";
 import NavColumn from "./components/NavColumn";
-import { aboutData, companyData, socialData, tokenData } from "./config";
 import Social from "./components/Social";
 import { LineIcon } from "../../components/Svg";
+import { IText, IDataLinks, IDataSocial } from "./types";
 
-const Footer = () => {
+const Footer = ({
+  valueInput,
+  handleInput,
+  handleBuy,
+  handleSignIn,
+  texts,
+  aboutData,
+  companyData,
+  socialData,
+  tokenData,
+}: {
+  valueInput: string;
+  handleInput: (e: any) => void;
+  handleBuy: () => void | Promise<void>;
+  handleSignIn: () => void | Promise<void>;
+  texts: IText;
+  tokenData: IDataLinks;
+  aboutData: IDataLinks;
+  companyData: IDataLinks;
+  socialData: IDataSocial;
+}) => {
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
         <SignUpBlock>
-          <Text fontSize="21px">Stay in the loop</Text>
+          <Text fontSize="21px">{texts.stayLoop}</Text>
           <InputBlock>
             <InputSearch
               height="50px"
-              placeholder="Enter your email"
-              value=""
-              onChange={() => null}
+              placeholder={texts.enterEmail}
+              value={valueInput}
+              onChange={handleInput}
               iconLess
               width="100%"
               name="email"
             />
-            <Button variant="green" onClick={() => null} width="100%">
-              Sign Up
+            <Button variant="green" onClick={handleSignIn} width="100%">
+              {texts.signUp}
             </Button>
           </InputBlock>
         </SignUpBlock>
@@ -36,22 +56,18 @@ const Footer = () => {
             <LineIcon />
             <IconBg>
               <img src={BG_LINE} />
-              {/*<LineIcon />*/}
             </IconBg>
           </Icon>
 
-          <Button variant="green" onClick={() => null} width="100%">
-            Buy YAY
+          <Button variant="green" onClick={handleBuy} width="100%">
+            {texts.buyYAY}
           </Button>
         </BuyBlock>
       </StayBlock>
       <MainLine>
         <ColumnDescription>
           <img src={LOGO_FOOTER} alt="logo" />
-          <Description>
-            Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks
-            for navigating YAY Games.
-          </Description>
+          <Description>{texts.joinOur}</Description>
         </ColumnDescription>
         <Column>
           <NavColumn data={aboutData} />
@@ -66,7 +82,7 @@ const Footer = () => {
           <Social data={socialData} />
         </ColumnSocial>
       </MainLine>
-      <TextFooter>© 2021 YAY Games | All Rights Reserved</TextFooter>
+      <TextFooter>{texts.reserved}</TextFooter>
     </Wrapper>
   );
 };
@@ -159,6 +175,7 @@ const MainLine = styled(Flex)`
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.whiteRgba};
   flex-wrap: wrap;
+
   ${({ theme }) => theme.mediaQueries.md} {
     flex-wrap: nowrap;
   }
@@ -167,6 +184,7 @@ const Column = styled(Box)`
   width: 100%;
   text-align: center;
   margin-top: 30px;
+
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
     text-align: left;
@@ -177,6 +195,7 @@ const ColumnDescription = styled(Box)`
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
+
   ${({ theme }) => theme.mediaQueries.md} {
     width: auto;
     max-width: 293px;
@@ -187,6 +206,7 @@ const ColumnDescription = styled(Box)`
 const ColumnSocial = styled(Box)`
   width: 100%;
   margin-top: 40px;
+
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-top: 0;
@@ -199,6 +219,10 @@ const Description = styled(Text)`
   line-height: 24px;
   text-align: center;
   color: ${({ theme }) => theme.colors.textGray};
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    text-align: left;
+  }
 `;
 const svgAnimation = keyframes`
   0% {

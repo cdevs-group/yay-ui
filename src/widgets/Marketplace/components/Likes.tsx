@@ -3,18 +3,14 @@ import styled from "styled-components";
 import { ILikesProps } from "./types";
 import { Text, HeartIcon } from "../../..";
 
-const Likes: React.FC<ILikesProps> = ({
-  likes,
-  wrapperStyle,
-  textStyle
-}) => {
+const Likes: React.FC<ILikesProps> = ({ likes, wrapperStyle, textStyle }) => {
   return (
     <LikesWrapper style={wrapperStyle}>
       <HeartIcon />
       <LikesText style={textStyle}>{likes}</LikesText>
     </LikesWrapper>
   );
-}
+};
 
 export default Likes;
 

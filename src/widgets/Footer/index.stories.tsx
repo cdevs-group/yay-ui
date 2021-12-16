@@ -1,7 +1,6 @@
-import React from "react";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
-import { background } from "styled-system";
+import { aboutData, companyData, socialData, tokenData } from "./config";
 
 export default {
   title: "Widgets/Footer",
@@ -9,10 +8,30 @@ export default {
 };
 
 export const FooterBlock = () => {
+  const texts = {
+    stayLoop: "Stay in the loop",
+    enterEmail: "Enter your email",
+    buyYAY: "Buy YAY",
+    signUp: "Sign Up",
+    joinOur:
+      "Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating YAY Games.",
+    reserved: "© 2021 YAY Games | All Rights Reserved",
+  };
+
   return (
     <BrowserRouter>
       <div style={{ maxWidth: "1440px", padding: "0 20px", background: "#000" }}>
-        <Footer />
+        <Footer
+          valueInput={""}
+          handleInput={(e: any) => console.log(e)}
+          handleBuy={() => console.log("buy")}
+          handleSignIn={() => console.log("signin")}
+          socialData={socialData}
+          tokenData={tokenData}
+          aboutData={aboutData}
+          companyData={companyData}
+          texts={texts}
+        />
       </div>
     </BrowserRouter>
   );

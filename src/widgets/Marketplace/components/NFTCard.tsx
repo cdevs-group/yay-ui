@@ -17,11 +17,14 @@ const NFTCard: React.FC<ICardProps> = ({
 }) => {
   return (
     <Card>
-      <Likes likes={likes} wrapperStyle={{
-         position: "absolute",
-         top: "15px",
-         right: "20px"
-      }} />
+      <Likes
+        likes={likes}
+        wrapperStyle={{
+          position: "absolute",
+          top: "15px",
+          right: "20px",
+        }}
+      />
       <Picture src={picUrl} alt={title} />
       <CenteredContainer>
         <Avatar src={avatarUrl} alt={author} />
@@ -37,11 +40,11 @@ const NFTCard: React.FC<ICardProps> = ({
         <PriceText>{price} YAY</PriceText>
         <Buttons>
           <CenteredContainer>
-            <IconWrapper style={{padding: "10px 8px"}} onClick={() => onShare()}>
-              <NFTShareIcon/>
+            <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
+              <NFTShareIcon />
             </IconWrapper>
-            <IconWrapper style={{padding: "8px"}} onClick={() => onFavoritesAdd()}>
-              <StarIcon/>
+            <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
+              <StarIcon />
             </IconWrapper>
           </CenteredContainer>
         </Buttons>
