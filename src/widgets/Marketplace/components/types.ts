@@ -24,4 +24,3 @@ export interface ITabsProps {
   handleToggleTab: (e: any) => void;
   tabBodyList: React.ReactNode[];
 }
-

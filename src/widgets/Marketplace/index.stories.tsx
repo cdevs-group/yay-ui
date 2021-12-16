@@ -54,7 +54,7 @@ export const MarketTabsBlock = () => {
 
   return (
     <Block>
-      <MarketTabs 
+      <MarketTabs
         tabsList={tabsList}
         tabActive={tabActive}
         handleToggleTab={handleToggleTab}
