@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { ICardProps } from "./types";
-import { Text, NFTShareIcon, StarIcon, HeartIcon } from "../../..";
+import { Text, NFTShareIcon, StarIcon } from "../../..";
+import Likes from "./Likes";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -16,10 +17,11 @@ const NFTCard: React.FC<ICardProps> = ({
 }) => {
   return (
     <Card>
-      <LikesWrapper>
-        <HeartIcon />
-        <LikesText>{likes}</LikesText>
-      </LikesWrapper>
+      <Likes likes={likes} wrapperStyle={{
+         position: "absolute",
+         top: "15px",
+         right: "20px"
+      }} />
       <Picture src={picUrl} alt={title} />
       <CenteredContainer>
           <Avatar src={avatarUrl} alt={author} />
@@ -33,14 +35,16 @@ const NFTCard: React.FC<ICardProps> = ({
       </DescriptionContainer>
       <FooterContainer>
         <PriceText>{price} YAY</PriceText>
-        <CenteredContainer>
-          <IconWrapper style={{padding: "10px 8px"}} onClick={() => onShare()}>
-            <NFTShareIcon/>
-          </IconWrapper>
-          <IconWrapper style={{padding: "8px"}} onClick={() => onFavoritesAdd()}>
-            <StarIcon/>
-          </IconWrapper>
-        </CenteredContainer>
+        <Buttons>
+          <CenteredContainer>
+            <IconWrapper style={{padding: "10px 8px"}} onClick={() => onShare()}>
+              <NFTShareIcon/>
+            </IconWrapper>
+            <IconWrapper style={{padding: "8px"}} onClick={() => onFavoritesAdd()}>
+              <StarIcon/>
+            </IconWrapper>
+          </CenteredContainer>
+        </Buttons>
       </FooterContainer>
     </Card>
   );
@@ -104,12 +108,17 @@ const DescriptionText = styled(Text)`
   line-height: 19px;
   letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.greyText};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const FooterContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px 12px 20px;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  max-width: 261px;
 `;
 
 const PriceText = styled(Text)`
@@ -131,23 +140,8 @@ const IconWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bgGrey3};
 `;
 
-const LikesWrapper = styled.div`
+const Buttons = styled.div`
   position: absolute;
-  display: flex;
-  top: 15px;
   right: 20px;
-  width: 67px;
-  height: 32px;
-  background-color: ${({ theme }) => theme.colors.bgCard6};
-  color: white;
-  padding 8px 10px;
-  border-radius: 8px;
-`;
-
-const LikesText = styled(Text)`
-  font-size: 13px;
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  padding-left: 5px;
-  color: ${({ theme }) => theme.colors.whiteText};
+  bottom: 13px;
 `;
