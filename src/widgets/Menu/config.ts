@@ -37,7 +37,7 @@ export const linksSubmenu = [
     ],
   },
   {
-    name: "Zeus",
+    name: "ZEUS ⚡️",
     url: "/1",
     submenu: [
       {
@@ -51,7 +51,7 @@ export const linksSubmenu = [
     ],
   },
   {
-    name: "Farm",
+    name: "Services",
     url: "/2",
   },
   {

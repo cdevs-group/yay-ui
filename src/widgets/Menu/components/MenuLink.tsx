@@ -8,6 +8,7 @@ import { LinkHeaderProps } from "../types";
 import { styleVariantsDropdownMenu } from "./theme";
 import { Variant as VariantDropdown } from "../../../components/DropDown/types";
 import { ArrowDownIcon, Flex } from "../../..";
+import { LabelTop } from "../../../components/LabelTop";
 
 const MenuLink = ({
   name,
@@ -57,10 +58,9 @@ const MenuLink = ({
 
   if (comingSoon)
     return (
-      <StyledComingSoon>
-        <TextComingSoon>{name}</TextComingSoon>
-        <ComingSoon>{comingSoon}</ComingSoon>
-      </StyledComingSoon>
+      <CominSoonWrapper>
+        <LabelTop label={comingSoon}>{name}</LabelTop>
+      </CominSoonWrapper>
     );
 
   return (
@@ -96,31 +96,14 @@ const Dropdown = styled.div<{ open?: boolean; variant?: VariantDropdown }>`
 
 const StyledLink = styled(NavLink)``;
 
-const StyledComingSoon = styled.div`
-  display: flex;
+const CominSoonWrapper = styled.div`
   margin: 0 0 20px;
   ${({ theme }) => theme.mediaQueries.xl} {
     margin: 0 20px;
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
-    margin: 0 35px;
+    margin: 0 30px;
   }
-`;
-
-const ComingSoon = styled.div`
-  position: relative;
-  top: -13px;
-  left: -2px;
-  padding: 5px 11px;
-  background: ${({ theme }) => theme.colors.green};
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 9px;
-  line-height: 11px;
-  font-weight: normal;
-  border-radius: 6px;
-`;
-const TextComingSoon = styled(Text)`
-  opacity: 0.5;
 `;
 const LinkItem = styled(Text)`
   position: relative;
@@ -129,6 +112,7 @@ const LinkItem = styled(Text)`
   transition: 0.3s;
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
+  font-weight: 400;
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
@@ -153,7 +137,7 @@ const LinkItem = styled(Text)`
     }
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
-    margin: 0 35px;
+    margin: 0 30px;
   }
   ${Dropdown} & {
     margin: 0;

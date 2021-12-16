@@ -3,7 +3,7 @@ import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { linksSubmenu } from "../config";
 import { useState } from "react";
-import { BNB2 } from "../../../constants/images";
+import { BNB2, YAY_TOKEN } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 import HeaderMarketplace from "./HeaderMarketplace";
 
@@ -53,17 +53,18 @@ export const HeaderForMarketplace = () => {
   ];
 
   const textsAccount = {
-    copy: "Copy",
     title: "My wallet",
-    button: "Logout",
-    view: "View on BscScan",
     copied: "Copied",
-    yayBalance: "$YAY balance",
-    address: "Your address",
-    tabs: ["Wallet", "Transactions"],
-    recentTransactions: "Recent transactions",
-    claimed: "Claimed",
-    addToken: "Add token",
+    totalBalance: "Total balance",
+    myFunds: "My funds",
+    myProfile: "My profile",
+    favorities: "Favorities",
+    myCollections: "My collections",
+    linkMyProfile: "",
+    linkFavorities: "",
+    linkMyCollections: "",
+    comingSoon: "Coming soon",
+    disconnect: "Disconnect",
   };
 
   const textsConnect = {
@@ -75,6 +76,23 @@ export const HeaderForMarketplace = () => {
   const handleToggleNetwork = (val) => {
     setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
+
+  const funds = [
+    {
+      icon: YAY_TOKEN,
+      currencyName: "YAY",
+      currencyFullName: "YAY Games",
+      balance: "100,500.0001 YAY",
+      balanceDollars: "$23,313.81",
+    },
+    {
+      icon: BNB2,
+      currencyName: "YAY",
+      currencyFullName: "YAY Games",
+      balance: "100,500.0001 YAY",
+      balanceDollars: "$23,313.81",
+    },
+  ];
 
   return (
     <BrowserRouter>
@@ -101,6 +119,8 @@ export const HeaderForMarketplace = () => {
           titleNetwork="Choose network"
           listNetwork={NETWORK_CHAIN}
           hrefLearnHow="http://"
+          totalBalance="$232,001.76"
+          funds={funds}
         />
       </div>
     </BrowserRouter>

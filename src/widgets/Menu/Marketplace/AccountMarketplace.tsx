@@ -2,22 +2,26 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { Login } from "../../WalletModal/types";
-import { TextsConnect, TextsAccount } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork } from "../types";
+import { TextsConnect } from "../../WalletModal/useWalletModal";
+import { BlockChainNetwork, Funds, TextsAccountMarketplace } from "../types";
 import { useModal } from "../../Modal";
 import ConnectModal from "../../WalletModal/ConnectModal";
-import { AccountIcon, Flex, WalletIcon } from "../../..";
+import { Button, CollectionIcon, FavoritesIcon, Flex, UserIcon, WalletIcon } from "../../..";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import { ellipsis } from "../../../helpers/ellipsis";
+import { CopyToClipboard } from "../../../components/CopyToClipboard";
+import { LabelTop } from "../../../components/LabelTop";
 
 interface Props {
   account?: string;
   login: Login;
   logout: () => void;
   textsConnect: TextsConnect;
-  textsAccount: TextsAccount;
+  textsAccount: TextsAccountMarketplace;
   hrefLearnHow?: string;
   network?: BlockChainNetwork;
+  totalBalance: string;
+  funds: Funds[];
 }
 
 const AccountMarketplace: React.FC<Props> = ({
@@ -28,11 +32,31 @@ const AccountMarketplace: React.FC<Props> = ({
   textsConnect,
   hrefLearnHow,
   network,
+  totalBalance,
+  funds,
 }) => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
   );
   const [open, setOpen] = useState<boolean>(false);
+
+  const links = [
+    {
+      icon: <UserIcon />,
+      text: textsAccount.myProfile,
+      link: textsAccount.linkMyProfile,
+    },
+    {
+      icon: <FavoritesIcon />,
+      text: textsAccount.favorities,
+      link: textsAccount.linkFavorities,
+    },
+    {
+      icon: <CollectionIcon />,
+      text: textsAccount.myCollections,
+      link: textsAccount.linkMyCollections,
+    },
+  ];
 
   return (
     <>
@@ -48,15 +72,66 @@ const AccountMarketplace: React.FC<Props> = ({
           variant="center-behind"
         >
           <Dropdown>
-            <Flex justifyContent="space-between" alignItems="center">
-              <Text>{textsAccount.title}</Text>
-              <AccountBlock as="button">
-                {ellipsis(account)}
-                <Avatar>
-                  <img src={AccountIcon} />
-                </Avatar>
+            <Flex justifyContent="space-between" alignItems="center" mb="14px">
+              <StyledText fontSize="21px">{textsAccount.title}</StyledText>
+              <AccountBlock>
+                <CopyToClipboard
+                  toCopy={account}
+                  textCopied={textsAccount.copied}
+                  propsIcon={{ stroke: "#fff", marginLeft: 14 }}
+                >
+                  {ellipsis(account)}
+                </CopyToClipboard>
               </AccountBlock>
             </Flex>
+            <Flex justifyContent="space-between" mb="20px">
+              <Text>{textsAccount.totalBalance}</Text>
+              <Text color="textGray">{totalBalance}</Text>
+            </Flex>
+            {funds?.length && (
+              <>
+                <StyledText fontSize="21px" mb="20px">
+                  {textsAccount.myFunds}
+                </StyledText>
+                {funds?.map((el) => (
+                  <Flex key={el.currencyName} justifyContent="space-between" alignItems="center" mb="20px">
+                    <Flex alignItems="center">
+                      <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
+                      <div>
+                        <Text mb="4px" lineHeight="19px">
+                          {el.currencyName}
+                        </Text>
+                        <Text fontSize="13px" lineHeight="16px" color="textGray">
+                          {el.currencyFullName}
+                        </Text>
+                      </div>
+                    </Flex>
+                    <div>
+                      <Text mb="4px" textAlign="right" lineHeight="19px">
+                        {el.balance}
+                      </Text>
+                      <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right">
+                        {el.balanceDollars}
+                      </Text>
+                    </div>
+                  </Flex>
+                ))}
+              </>
+            )}
+            <Line />
+            {links.map((el) => (
+              // <a href={el.link}>
+              <LabelTop label={textsAccount.comingSoon} mb="19px" key={el.text}>
+                <Flex alignItems="center">
+                  {el.icon}
+                  <div style={{ marginLeft: 11 }}>{el.text}</div>
+                </Flex>
+              </LabelTop>
+              // </a>
+            ))}
+            <Button variant="option" onClick={() => logout()} mt="19px">
+              {textsAccount.disconnect}
+            </Button>
           </Dropdown>
         </DropdownLayout>
       ) : (
@@ -107,63 +182,45 @@ const AccountBlock = styled(Text)`
   height: 100%;
   min-width: 120px;
   align-items: center;
-  justify-content: center;
-  margin-right: 6px;
+  justify-content: space-between;
   font-size: 11px;
   line-height: 14px;
-  padding: 0 26px 0 10px;
+  padding: 0 20px;
   background: ${({ theme }) => theme.colors.bgOpacity};
   border-radius: 7px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
   border: none;
-  order: -1;
-  &.notAuth {
-    background: ${({ theme }) => theme.colors.green};
-  }
   ${({ theme }) => theme.mediaQueries.xl} {
     min-height: 40px;
     min-width: 160px;
-    margin-right: 11px;
     font-size: 15px;
     line-height: 19px;
-    padding: 0 56px 0 20px;
+    padding: 0 20px;
     border-radius: 12px;
-    order: 0;
-  }
-`;
-const Avatar = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-  right: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-  & img {
-    width: 26px;
-    height: 26px;
-  }
-  &.notAuth {
-    width: calc(100% - 4px);
-  }
-  ${({ theme }) => theme.mediaQueries.xl} {
-    right: 4px;
-    & img {
-      width: 32px;
-      height: 32px;
-    }
   }
 `;
 
 const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 11px 16px;
+  padding: 33px;
   background: ${({ theme }) => theme.colors.darkGradient6};
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
   border-radius: 0 0 9px 9px;
+`;
+
+const StyledText = styled(Text)`
+  text-shadow: ${({ theme }) => theme.colors.textShadow};
+`;
+
+const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  margin-bottom: 28px;
+  margin-top: 9px;
+  opacity: 0.5;
+  background: ${({ theme }) => theme.colors.bgCard};
 `;
 
 export default AccountMarketplace;

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Text from "../Text/Text";
 import Select from "./Select";
 import { Flex } from "../Box";
 import { ArrowDownIcon } from "../Svg";
 import { Avalanche, BNB } from "../../constants/images";
+import InjectedSelect from "./InjectSelect";
 
 export default {
   title: "Components/Select",
@@ -14,6 +15,7 @@ export default {
 
 export const Default: React.FC = () => {
   const [value, setValue] = useState("1");
+  const [value2, setValue2] = useState("BSC");
 
   const options = [
     {
@@ -30,7 +32,6 @@ export const Default: React.FC = () => {
     },
   ];
 
-  const [value2, setValue2] = useState("BSC");
   const options2 = [
     {
       name: "All networks",
@@ -69,7 +70,7 @@ export const Default: React.FC = () => {
         }
         value={value}
         setValue={setValue}
-        nameInputOptions="days"
+        nameInputOptions="price"
         options={options}
         propsDropdown={{
           minWidth: 160,
@@ -98,6 +99,80 @@ export const Default: React.FC = () => {
         optionsSpacing="12px"
         openDropdown={open}
         setOpenDropdown={setOpen}
+      />
+    </Flex>
+  );
+};
+
+export const InjectedDropDownBlock = () => {
+  const options2 = [
+    {
+      name: (
+        <Flex alignItems="center">
+          <img src={BNB} alt="" />
+          <Text ml={10}>BSC</Text>
+        </Flex>
+      ),
+      value: "BNB",
+    },
+    {
+      name: (
+        <Flex alignItems="center">
+          <img src={Avalanche} alt="" />
+          <Text ml={10}>AVAX</Text>
+        </Flex>
+      ),
+      value: "AVAX",
+    },
+    {
+      name: (
+        <Flex alignItems="center">
+          <img src={BNB} alt="" />
+          <Text ml={10}>YAY</Text>
+        </Flex>
+      ),
+      value: "YAY",
+    },
+  ];
+
+  const [value2, setValue2] = useState(options2[0].value);
+  const [open, setOpen] = useState<boolean>(true);
+  const [inputsValue, setInputsValue] = useState({ from: "", to: "" });
+
+  const inputHandler = (e: any) => {
+    const { name, value } = e.target;
+    console.log(name);
+    setInputsValue({ ...inputsValue, [name]: value });
+  };
+
+  return (
+    <Flex>
+      <InjectedSelect
+        selectItem={
+          <Flex width="156px" alignItems="center">
+            <Text mr="15px">Price</Text>
+          </Flex>
+        }
+        value={value2}
+        setValue={setValue2}
+        nameInputOptions="Price"
+        options={options2}
+        propsDropdown={{
+          minWidth: 170,
+        }}
+        propsOption={{
+          padding: "0 15px 0 3px",
+        }}
+        width="220px"
+        mr={100}
+        optionsSpacing="12px"
+        openDropdown={open}
+        setOpenDropdown={setOpen}
+        buttonHandler={() => console.log("buy")}
+        inputsValue={inputsValue}
+        inputsName={{ from: "From", to: "To" }}
+        inputHandler={inputHandler}
+        buttonText="Applay"
       />
     </Flex>
   );

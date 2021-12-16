@@ -78,6 +78,9 @@ export { default as LineIcon } from "./Icons/LineIcon";
 export { default as NFTShareIcon } from "./Icons/NFTShare";
 export { default as StarIcon } from "./Icons/Star";
 export { default as HeartIcon } from "./Icons/Heart";
+export { default as UserIcon } from "./Icons/UserIcon";
+export { default as FavoritesIcon } from "./Icons/FavoritesIcon";
+export { default as CollectionIcon } from "./Icons/CollectionIcon";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
