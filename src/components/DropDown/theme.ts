@@ -38,12 +38,12 @@ export const styleVariants = {
       position: "absolute",
       left: 18,
       top: 48,
-      borderRadius: '0 0 12px 12px',
-      transform: 'translate(0,-50%) scaleY(0)',
+      borderRadius: "0 0 12px 12px",
+      transform: "translate(0,-50%) scaleY(0)",
       "&.open": {
-        transform: 'translate(0,0)',
+        transform: "translate(0,0)",
         position: "absolute",
-        maxHeight: 'auto',
+        maxHeight: "auto",
         marginBottom: 0,
         marginTop: 0,
       },
@@ -58,15 +58,15 @@ export const styleVariants = {
     top: 59,
     overflow: "visible",
     marginTop: 0,
-    borderRadius: '0 0 9px 9px',
-    maxHeight: 'none',
+    borderRadius: "0 0 9px 9px",
+    maxHeight: "none",
     maxWidth: 420,
-    transform: 'translate(0,-50%) scaleY(0)',
+    transform: "translate(0,-50%) scaleY(0)",
     "&.open": {
       marginTop: 0,
       marginBottom: 0,
       overflow: "visible",
-      transform: 'translate(0,0)',
+      transform: "translate(0,0)",
     },
     "@media screen and (min-width: 1080px)": {
       top: 80,
@@ -74,13 +74,13 @@ export const styleVariants = {
     "@media screen and (min-width: 1440px)": {
       position: "absolute",
       top: 57,
-      right: 'auto',
-      left: '50%',
-      maxWidth: '100%',
+      right: "auto",
+      left: "50%",
+      maxWidth: "100%",
       minWidth: 420,
-      transform: 'translate(-50%,-50%) scaleY(0)',
+      transform: "translate(-50%,-50%) scaleY(0)",
       "&.open": {
-        transform: 'translate(-50%,0)',
+        transform: "translate(-50%,0)",
         marginBottom: 0,
         marginTop: 0,
       },
@@ -88,7 +88,7 @@ export const styleVariants = {
   },
   [variants.VISIBLE]: {
     overflow: "visible",
-  }
+  },
 };
 
 export const styleVariantsButton = {

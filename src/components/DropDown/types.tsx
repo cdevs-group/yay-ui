@@ -11,7 +11,7 @@ export const variants = {
   MENU: "menu",
   BEHIND: "behind",
   CENTER_BEHIND: "center-behind",
-  VISIBLE: "visible"
+  VISIBLE: "visible",
 } as const;
 
 export type Variant = typeof variants[keyof typeof variants];

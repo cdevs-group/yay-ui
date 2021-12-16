@@ -1,7 +1,7 @@
 import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
-import { Variant as VariantDropdown } from '../../components/DropDown/types'
+import { Variant as VariantDropdown } from "../../components/DropDown/types";
 
 export const sizes = {
   MD: "md",

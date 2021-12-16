@@ -1,6 +1,7 @@
 import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
+import { Variant as VariantDropdown } from '../../components/DropDown/types';
 export declare const sizes: {
     readonly MD: "md";
     readonly LG: "lg";
@@ -15,6 +16,8 @@ export interface LinkHeaderProps {
     submenu?: MenuEntry[];
     openDropdown?: boolean;
     setOpenDropdown?: (val: boolean) => void | undefined;
+    variant?: VariantDropdown;
+    comingSoon?: string;
 }
 export interface AccProps {
     isAuth: boolean;
@@ -36,14 +39,15 @@ export interface MenuEntry {
     name: string;
     url: string;
     submenu?: MenuEntry[];
+    comingSoon?: string;
 }
 export interface LangType {
     code: string;
     language: string;
 }
 export interface PanelProps {
-    isDark: boolean;
-    toggleTheme: (isDark: boolean) => void;
+    isDark?: boolean;
+    toggleTheme?: (isDark: boolean) => void;
     currentLang?: string;
     langs?: LangType[];
     setLang?: (lang: LangType) => void;
@@ -114,4 +118,23 @@ export declare type BlockChainNetwork = {
     rpcUrls: string[];
     blockExplorerUrls: string[];
 };
+export interface NavMarketplaceProps extends PanelProps {
+    account: string;
+    login: Login;
+    profile?: Profile;
+    logout: () => void;
+    textsConnect: TextsConnect;
+    textsAccount: TextsAccount;
+    hrefLearnHow: string;
+    linkLogo: string;
+    network: BlockChainNetwork;
+    titleNetwork: string;
+    linkTextNetwork: string;
+    linkHrefNetwork: string;
+    handleToggleNetwork: (e: any) => void;
+    valuesNetworks: string[];
+    listNetwork: BlockChainNetwork[];
+    disclaimer?: boolean;
+    disclaimerText?: string;
+}
 export {};
