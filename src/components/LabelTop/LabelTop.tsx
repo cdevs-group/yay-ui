@@ -41,4 +41,5 @@ const ComingSoon = styled.div`
 `;
 const TextComingSoon = styled(Text)`
   opacity: 0.5;
+  font-weight: 400;
 `;
