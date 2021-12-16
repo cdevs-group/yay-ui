@@ -7430,7 +7430,7 @@ var ComingSoon = styled.div(templateObject_2$1y || (templateObject_2$1y = __make
     var theme = _a.theme;
     return theme.colors.text;
 });
-var TextComingSoon = styled(Text)(templateObject_3$1e || (templateObject_3$1e = __makeTemplateObject(["\n  opacity: 0.5;\n"], ["\n  opacity: 0.5;\n"])));
+var TextComingSoon = styled(Text)(templateObject_3$1e || (templateObject_3$1e = __makeTemplateObject(["\n  opacity: 0.5;\n  font-weight: 400;\n"], ["\n  opacity: 0.5;\n  font-weight: 400;\n"])));
 var templateObject_1$1_, templateObject_2$1y, templateObject_3$1e;
 
 var MenuLink = function (_a) {
@@ -7463,14 +7463,14 @@ var Dropdown$1 = styled.div(templateObject_1$1Z || (templateObject_1$1Z = __make
     variants: styleVariantsDropdownMenu,
 }));
 var StyledLink = styled(NavLink)(templateObject_2$1x || (templateObject_2$1x = __makeTemplateObject([""], [""])));
-var CominSoonWrapper = styled.div(templateObject_3$1d || (templateObject_3$1d = __makeTemplateObject(["\n  margin: 0 0 20px;\n  ", " {\n    margin: 0 20px;\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"], ["\n  margin: 0 0 20px;\n  ", " {\n    margin: 0 20px;\n  }\n  ", " {\n    margin: 0 35px;\n  }\n"])), function (_a) {
+var CominSoonWrapper = styled.div(templateObject_3$1d || (templateObject_3$1d = __makeTemplateObject(["\n  margin: 0 0 20px;\n  ", " {\n    margin: 0 20px;\n  }\n  ", " {\n    margin: 0 30px;\n  }\n"], ["\n  margin: 0 0 20px;\n  ", " {\n    margin: 0 20px;\n  }\n  ", " {\n    margin: 0 30px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xxl;
 });
-var LinkItem$3 = styled(Text)(templateObject_4$12 || (templateObject_4$12 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 35px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"])), function (_a) {
+var LinkItem$3 = styled(Text)(templateObject_4$12 || (templateObject_4$12 = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
