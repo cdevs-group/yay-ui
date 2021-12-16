@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { TitleStyle, Wrapper } from "./styles";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
-import { baseColors, lightColors } from "../../../theme/colors";
+import { baseColors } from "../../../theme/colors";
 import { CloudIcon } from "../../../components/Svg";
 
 const InputFile = ({
@@ -21,12 +21,30 @@ const InputFile = ({
   placeholder: string;
   inputError?: string;
 }) => {
+  const [imgFile, setImgFile] = useState(null);
   return (
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
       <InputWrapper>
-        <Input accept=".png, .jpeg, .jpg" onChange={onChange} name={name} type="file" />
-        <TextStyle>{placeholder}</TextStyle>
+        {imgFile && (
+          <Image>
+            <img src={imgFile} />
+          </Image>
+        )}
+        <Input
+          accept=".png, .jpeg, .jpg"
+          onChange={(e: any) => {
+            const fReader = new FileReader();
+            fReader.readAsDataURL(e.target.files[0]);
+            fReader.onloadend = function (event: any) {
+              setImgFile(event.target.result);
+            };
+            onChange(e);
+          }}
+          name={name}
+          type="file"
+        />
+        <TextStyle upload={!!imgFile}>{placeholder}</TextStyle>
         <Icon>
           <CloudIcon />
         </Icon>
@@ -44,6 +62,7 @@ export default InputFile;
 
 const InputWrapper = styled(Flex)`
   align-items: center;
+  height: 62px;
   justify-content: space-between;
   position: relative;
   padding: 16px 30px;
@@ -63,13 +82,14 @@ const Input = styled.input`
   cursor: pointer;
   opacity: 0;
 `;
-const TextStyle = styled(Text)`
+const TextStyle = styled.div<{ upload: boolean }>`
+  margin-right: auto;
   font-weight: normal;
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.5px;
-  color: ${({ theme }) => theme.colors.text};
-  opacity: 0.2;
+  color: ${({ theme, upload }) => (upload ? theme.colors.green : theme.colors.text)};
+  opacity: ${({ upload }) => !upload && 0.2};
   text-shadow: ${({ theme }) => theme.colors.textShadow3};
   pointer-events: none;
 `;
@@ -85,4 +105,13 @@ const Icon = styled(Flex)`
 const TextStyleError = styled(Text)`
   position: absolute;
   bottom: -25px;
+`;
+const Image = styled(Flex)`
+  margin-right: 10px;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  & img {
+    width: 100%;
+  }
 `;
