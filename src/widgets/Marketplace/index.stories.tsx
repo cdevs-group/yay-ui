@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
 import CollectionItem from "./components/CollectionItem";
 import { NFT_EXAMPLE } from "../../constants/images";
 import NFTCard from "./components/NFTCard";
 import Likes from "./components/Likes";
+import MarketTabs from "./components/MarketTabs";
 
 export default {
   title: "Widgets/Marketplace",
@@ -35,3 +37,40 @@ export const NFTCardBlock = () => {
     />
   );
 };
+
+export const MarketTabsBlock = () => {
+  const tabsList = ["Details", "Bids", "History"];
+  const [tabActive, setTabActive] = useState<number>(0);
+
+  const handleToggleTab = (e: any) => {
+    setTabActive(+e.target.value);
+  };
+
+  const firstTabBody = <Paragraph>Details Body</Paragraph>;
+  const secondTabBody = <Paragraph>Bids Body</Paragraph>;
+  const thirdTabBody = <Paragraph>History Body</Paragraph>;
+
+  const tabBodyList = [firstTabBody, secondTabBody, thirdTabBody];
+
+  return (
+    <Block>
+      <MarketTabs 
+        tabsList={tabsList}
+        tabActive={tabActive}
+        handleToggleTab={handleToggleTab}
+        tabBodyList={tabBodyList}
+      />
+    </Block>
+  );
+};
+
+const Block = styled.div`
+  padding: 21px;
+  max-width: 230px;
+  background: ${({ theme }) => theme.colors.bgCard2};
+`;
+
+const Paragraph = styled.p`
+  padding-top: 20px;
+  color: ${({ theme }) => theme.colors.whiteText};
+`;
