@@ -102,7 +102,7 @@ const CominSoonWrapper = styled.div`
     margin: 0 20px;
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
-    margin: 0 35px;
+    margin: 0 30px;
   }
 `;
 const LinkItem = styled(Text)`
@@ -112,6 +112,7 @@ const LinkItem = styled(Text)`
   transition: 0.3s;
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   cursor: pointer;
+  font-weight: 400;
   &:hover {
     color: ${({ theme }) => theme.colors.green};
   }
@@ -136,7 +137,7 @@ const LinkItem = styled(Text)`
     }
   }
   ${({ theme }) => theme.mediaQueries.xxl} {
-    margin: 0 35px;
+    margin: 0 30px;
   }
   ${Dropdown} & {
     margin: 0;
