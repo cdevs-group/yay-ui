@@ -23,6 +23,7 @@ import {
   BnbIcon,
   BtnPanel,
   CopyIcon,
+  CopyIcon2,
   HelpIcon,
   HelpIcon2,
   OpenNewIcon,
@@ -54,6 +55,9 @@ import {
   ArrowBack2,
   ArrowBackIcon,
   WalletIcon,
+  UserIcon,
+  FavoritesIcon,
+  CollectionIcon,
 } from ".";
 
 export default {
@@ -82,6 +86,7 @@ export default {
     BnbIcon,
     BtnPanel,
     CopyIcon,
+    CopyIcon2,
     HelpIcon,
     HelpIcon2,
     OpenNewIcon,
@@ -103,6 +108,9 @@ export default {
     ControllerMouse,
     ArrowBorder,
     WalletIcon,
+    UserIcon,
+    FavoritesIcon,
+    CollectionIcon,
   ],
   argTypes: {},
 };
@@ -195,6 +203,9 @@ export const Default: React.FC = () => {
           <CopyIcon />
         </div>
         <div style={{ marginRight: 20 }}>
+          <CopyIcon2 />
+        </div>
+        <div style={{ marginRight: 20 }}>
           <HelpIcon />
         </div>
         <div style={{ marginRight: 20 }}>
@@ -274,6 +285,15 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <WalletIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <UserIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <FavoritesIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CollectionIcon />
         </div>
       </div>
     </div>
