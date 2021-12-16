@@ -2,6 +2,7 @@ import React from "react";
 import CollectionItem from "./components/CollectionItem";
 import { NFT_EXAMPLE } from "../../constants/images";
 import NFTCard from "./Card"
+import Likes from "./components/Likes";
         
 export default {
   title: "Widgets/Marketplace",
@@ -9,6 +10,10 @@ export default {
 
 export const CollectionItemBlock = () => (
   <CollectionItem data={{ name: "Passage", price: "$3,512,645", index: 1, img: NFT_EXAMPLE }} />
+);
+
+export const LikesBlock = () => (
+  <Likes likes={322} wrapperStyle={{backgroundColor: "green", borderRadius: "10px"}} textStyle={{fontWeight: "bold"}} />
 );
 
 export const NFTCardBlock = () => {
