@@ -17,3 +17,10 @@ export interface ILikesProps {
   wrapperStyle?: React.CSSProperties;
   textStyle?: React.CSSProperties;
 }
+
+export interface ITabsProps {
+  tabsList: string[];
+  tabActive: number;
+  handleToggleTab: (e: any) => void;
+  tabBodyList: React.ReactNode[];
+}
