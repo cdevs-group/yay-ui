@@ -64,7 +64,11 @@ const NetworkModal: React.FC<Props> = ({
         <Buttons>
           {listNetwork?.map((el, i) => (
             <>
-              <Button value={valuesNetworks?.[i] || el.chainId} onClick={handleClick}>
+              <Button
+                key={valuesNetworks?.[i] || el.chainId}
+                value={valuesNetworks?.[i] || el.chainId}
+                onClick={handleClick}
+              >
                 <TextStyled>{el.name}</TextStyled>
                 <img src={el.icon} alt="" />
               </Button>
