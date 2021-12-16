@@ -7,6 +7,9 @@ export interface LanguagesProps {
 }
 export declare const variants: {
     readonly MENU: "menu";
+    readonly BEHIND: "behind";
+    readonly CENTER_BEHIND: "center-behind";
+    readonly VISIBLE: "visible";
 };
 export declare type Variant = typeof variants[keyof typeof variants];
 export interface DropDownProps {

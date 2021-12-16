@@ -204,6 +204,7 @@ export const CurrencySearchModalBlock = () => {
     }) => {
       return (
         <CurrencyRow
+          keyID="1"
           currency={currency}
           onSelect={onSelect}
           isSelected={isSelected}

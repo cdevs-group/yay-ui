@@ -13,7 +13,7 @@ const NFTCard: React.FC<ICardProps> = ({
   price,
   likes,
   onShare,
-  onFavoritesAdd
+  onFavoritesAdd,
 }) => {
   return (
     <Card>
@@ -24,11 +24,11 @@ const NFTCard: React.FC<ICardProps> = ({
       }} />
       <Picture src={picUrl} alt={title} />
       <CenteredContainer>
-          <Avatar src={avatarUrl} alt={author} />
-          <div>
-            <Title>{title}</Title>
-            <Author>{author}</Author>
-          </div>
+        <Avatar src={avatarUrl} alt={author} />
+        <div>
+          <Title>{title}</Title>
+          <Author>{author}</Author>
+        </div>
       </CenteredContainer>
       <DescriptionContainer>
         <DescriptionText>{description}</DescriptionText>

@@ -3,7 +3,7 @@ import CollectionItem from "./components/CollectionItem";
 import { NFT_EXAMPLE } from "../../constants/images";
 import NFTCard from "./components/NFTCard"
 import Likes from "./components/Likes";
-        
+
 export default {
   title: "Widgets/Marketplace",
 };

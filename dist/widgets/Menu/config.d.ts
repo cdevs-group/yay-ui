@@ -9,8 +9,15 @@ export declare const linksSubmenu: ({
         name: string;
         url: string;
     }[];
+    comingSoon?: undefined;
 } | {
     name: string;
     url: string;
+    submenu?: undefined;
+    comingSoon?: undefined;
+} | {
+    name: string;
+    url: string;
+    comingSoon: string;
     submenu?: undefined;
 })[];

@@ -57,6 +57,6 @@ export const linksSubmenu = [
   {
     name: "NFT Marketplace",
     url: "/3",
-    comingSoon: "Coming soon"
+    comingSoon: "Coming soon",
   },
 ];
