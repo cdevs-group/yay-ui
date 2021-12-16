@@ -31,6 +31,8 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   listNetwork,
   disclaimer,
   disclaimerText,
+  totalBalance,
+  funds,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -100,6 +102,8 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
               textsConnect={textsConnect}
               hrefLearnHow={hrefLearnHow}
               network={network}
+              totalBalance={totalBalance}
+              funds={funds}
             />
             {currentLang && (
               <LanguageBlockDesk>
