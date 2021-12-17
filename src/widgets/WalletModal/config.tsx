@@ -8,6 +8,7 @@ import {
   SafepackWallet,
   Coin98,
   COINBASE,
+  BLANK,
 } from "../../constants/images";
 import { Config, ConnectorNames } from "./types";
 
@@ -50,6 +51,11 @@ export const connectorsDefault: Config[] = [
   {
     title: "SafePal Wallet",
     icon: SafepackWallet,
+    connectorId: ConnectorNames.Injected,
+  },
+  {
+    title: "Blank Wallet",
+    icon: BLANK,
     connectorId: ConnectorNames.Injected,
   },
 ];
