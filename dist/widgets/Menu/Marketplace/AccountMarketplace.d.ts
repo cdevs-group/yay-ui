@@ -12,6 +12,7 @@ interface Props {
     network?: BlockChainNetwork;
     totalBalance: string;
     funds: Funds[];
+    heightDisclaimer?: number;
 }
 declare const AccountMarketplace: React.FC<Props>;
 export default AccountMarketplace;

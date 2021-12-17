@@ -4912,7 +4912,6 @@ var styleVariants = (_a$2 = {},
     _a$2[variants.CENTER_BEHIND] = {
         position: "fixed",
         right: 0,
-        top: 59,
         overflow: "visible",
         marginTop: 0,
         borderRadius: "0 0 9px 9px",
@@ -4925,9 +4924,7 @@ var styleVariants = (_a$2 = {},
             overflow: "visible",
             transform: "translate(0,0)",
         },
-        "@media screen and (min-width: 1080px)": {
-            top: 80,
-        },
+        "@media screen and (min-width: 1080px)": {},
         "@media screen and (min-width: 1440px)": {
             position: "absolute",
             top: 57,
@@ -4964,13 +4961,22 @@ var StyledButton$6 = styled__default["default"].div(templateObject_1$2K || (temp
 }));
 var templateObject_1$2K;
 
-var StyledDropdown = styled__default["default"].div(templateObject_1$2J || (templateObject_1$2J = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", "\n"])), styledSystem.variant({
+var StyledDropdown = styled__default["default"].div(templateObject_1$2J || (templateObject_1$2J = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: 260px;\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"])), function (_a) {
+    var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
+    return variant === variants.CENTER_BEHIND ? 59 + (plusMarginTop || 0) + "px" : "auto";
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.xl;
+}, function (_a) {
+    var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
+    return variant === variants.CENTER_BEHIND ? 80 + (plusMarginTop || 0) + "px" : "auto";
+}, styledSystem.variant({
     variants: styleVariants,
 }));
 var templateObject_1$2J;
 
 var DropdownLayout = function (_a) {
-    var children = _a.children, open = _a.open, setOpen = _a.setOpen, icon = _a.icon, variant = _a.variant;
+    var children = _a.children, open = _a.open, setOpen = _a.setOpen, icon = _a.icon, variant = _a.variant, plusMarginTop = _a.plusMarginTop;
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
         if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
@@ -4990,7 +4996,7 @@ var DropdownLayout = function (_a) {
     };
     return (React__default["default"].createElement(Block$b, { ref: refSelect },
         React__default["default"].createElement(StyledButton$6, { onClick: handleClickOpen, variant: variant }, icon),
-        React__default["default"].createElement(StyledDropdown, { className: open ? "open" : "", variant: variant }, children)));
+        React__default["default"].createElement(StyledDropdown, { className: open ? "open" : "", variant: variant, plusMarginTop: plusMarginTop }, children)));
 };
 var Block$b = styled__default["default"].div(templateObject_1$2I || (templateObject_1$2I = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var templateObject_1$2I;
@@ -7409,10 +7415,45 @@ var AvatarNetwork = styled__default["default"].div(templateObject_3$1i || (templ
 });
 var templateObject_1$21, templateObject_2$1B, templateObject_3$1i;
 
+function useWindowDimensions() {
+    var hasWindow = typeof window !== "undefined";
+    var getWindowDimensions = function () {
+        var width = hasWindow ? window.innerWidth : null;
+        var height = hasWindow ? window.innerHeight : null;
+        return {
+            width: width,
+            height: height,
+        };
+    };
+    var _a = React.useState(getWindowDimensions()), windowDimensions = _a[0], setWindowDimensions = _a[1];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    var handleResize = function () {
+        setWindowDimensions(getWindowDimensions());
+    };
+    React.useEffect(function () {
+        if (window && hasWindow) {
+            window.addEventListener("resize", handleResize);
+        }
+        return function () {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [handleResize, hasWindow]);
+    return windowDimensions;
+}
+
 var Disclaimer = function (_a) {
-    var text = _a.text;
+    var text = _a.text, setHeight = _a.setHeight;
     var _b = React.useState(true), open = _b[0], setOpen = _b[1];
-    return (React__default["default"].createElement(Block$7, { open: open },
+    var refDisclaimer = React.useRef(null);
+    var width = useWindowDimensions().width;
+    React.useEffect(function () {
+        var _a;
+        if (setHeight && !open)
+            setHeight(0);
+        if (setHeight && open)
+            setHeight((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight);
+    }, [open, width]);
+    return (React__default["default"].createElement(Block$7, { open: open, ref: refDisclaimer },
         React__default["default"].createElement(StyledText$4, null, text),
         React__default["default"].createElement(Button$1, { onClick: function () { return setOpen(false); } },
             React__default["default"].createElement(Icon$1j, { role: "button" }))));
@@ -7633,7 +7674,7 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$1Y, templateObject_2$1w, templateObject_3$1d;
 
 var AccountMarketplace = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds;
+    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds, heightDisclaimer = _a.heightDisclaimer;
     var onPresentConnectModal = useModal(React__default["default"].createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
     var _b = React.useState(false), open = _b[0], setOpen = _b[1];
     var links = [
@@ -7654,7 +7695,7 @@ var AccountMarketplace = function (_a) {
         },
     ];
     return (React__default["default"].createElement(React__default["default"].Fragment, null, account ? (React__default["default"].createElement(DropdownLayout, { open: open, setOpen: setOpen, icon: React__default["default"].createElement(Wrapper$A, null,
-            React__default["default"].createElement(Icon$b, null)), variant: "center-behind" },
+            React__default["default"].createElement(Icon$b, null)), variant: "center-behind", plusMarginTop: heightDisclaimer },
         React__default["default"].createElement(Dropdown, null,
             React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "14px" },
                 React__default["default"].createElement(StyledText$3, { fontSize: "21px" }, textsAccount.title),
@@ -7731,6 +7772,7 @@ var templateObject_1$1X, templateObject_2$1v, templateObject_3$1c, templateObjec
 var HeaderMarketplace = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds;
     var _b = React.useState(false), openMenu = _b[0], setOpenMenu = _b[1];
+    var _c = React.useState(0), heightDisclaimer = _c[0], setHeightDisclaimer = _c[1];
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
         if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
@@ -7746,7 +7788,7 @@ var HeaderMarketplace = function (_a) {
         };
     }, [refSelect, handleClickOutside]);
     return (React__default["default"].createElement(HeaderWrap, { ref: refSelect },
-        disclaimer ? React__default["default"].createElement(Disclaimer, { text: disclaimerText || "" }) : null,
+        disclaimer ? React__default["default"].createElement(Disclaimer, { text: disclaimerText || "", setHeight: setHeightDisclaimer }) : null,
         React__default["default"].createElement(Content$4, null,
             React__default["default"].createElement(Line$4, null,
                 React__default["default"].createElement(LogoWrap, { to: linkLogo },
@@ -7757,7 +7799,7 @@ var HeaderMarketplace = function (_a) {
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 React__default["default"].createElement(RightContent$1, null,
                     network ? (React__default["default"].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
-                    React__default["default"].createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds }),
+                    React__default["default"].createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer }),
                     currentLang && (React__default["default"].createElement(LanguageBlockDesk, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
                     React__default["default"].createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));

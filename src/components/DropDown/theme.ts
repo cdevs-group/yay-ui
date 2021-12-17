@@ -67,8 +67,7 @@ export const styleVariants = {
       overflow: "visible",
       transform: "translate(0,0)",
     },
-    "@media screen and (min-width: 1080px)": {
-    },
+    "@media screen and (min-width: 1080px)": {},
     "@media screen and (min-width: 1440px)": {
       position: "absolute",
       top: 57,

@@ -53,7 +53,6 @@ export declare const styleVariants: {
     "center-behind": {
         position: string;
         right: number;
-        top: number;
         overflow: string;
         marginTop: number;
         borderRadius: string;
@@ -66,9 +65,7 @@ export declare const styleVariants: {
             overflow: string;
             transform: string;
         };
-        "@media screen and (min-width: 1080px)": {
-            top: number;
-        };
+        "@media screen and (min-width: 1080px)": {};
         "@media screen and (min-width: 1440px)": {
             position: string;
             top: number;
