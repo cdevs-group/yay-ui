@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
 import { CopyIcon2 } from "../..";
+import { Box } from "../Box";
 import { Text } from "../Text";
 
 interface Props extends SpaceProps {
@@ -10,6 +11,7 @@ interface Props extends SpaceProps {
   icon?: React.ReactNode;
   left?: string;
   propsIcon?: any;
+  propsChildren?: SpaceProps;
 }
 
 const StyleButton = styled(Text).attrs({ role: "button" })`
@@ -35,7 +37,19 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
   opacity: 0.7;
 `;
 
-const CopyToClipboard: React.FC<Props> = ({ toCopy, textCopied, children, icon, propsIcon, ...props }) => {
+const StyleBox = styled(Box)`
+  ${space}
+`;
+
+const CopyToClipboard: React.FC<Props> = ({
+  toCopy,
+  textCopied,
+  children,
+  icon,
+  propsIcon,
+  propsChildren,
+  ...props
+}) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
@@ -52,8 +66,8 @@ const CopyToClipboard: React.FC<Props> = ({ toCopy, textCopied, children, icon, 
       }}
       {...props}
     >
-      {children}
-      {icon || <CopyIcon2 ml="4px" {...propsIcon} />}
+      <StyleBox {...propsChildren}>{children}</StyleBox>
+      {icon || <CopyIcon2 {...propsIcon} />}
       <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopied}</Tooltip>
     </StyleButton>
   );
