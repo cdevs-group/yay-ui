@@ -12913,14 +12913,14 @@ var templateObject_1$6, templateObject_2$4, templateObject_3$3, templateObject_4
 var CollectionItem = function (_a) {
     var data = _a.data;
     return (React__default["default"].createElement(Flex, { alignItems: "center" },
-        data.index && (React__default["default"].createElement(Text, { fontSize: "17px", color: baseColors.textGray }, data.index)),
+        data.index && (React__default["default"].createElement(Text, { marginRight: '15px', fontSize: "17px", color: baseColors.textGray }, data.index)),
         React__default["default"].createElement(Logo, null,
             React__default["default"].createElement("img", { src: data.img, alt: "logo" })),
         React__default["default"].createElement("div", null,
             React__default["default"].createElement(Text, { fontSize: "17px", color: lightColors.text }, data.name),
             data.price && (React__default["default"].createElement(Text, { fontSize: "13px", color: baseColors.textGray }, data.price)))));
 };
-var Logo = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  width: 53px;\n  height: 53px;\n  margin: 0 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  width: 53px;\n  height: 53px;\n  margin: 0 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
+var Logo = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
 var templateObject_1$5;
 
 var Likes = function (_a) {
