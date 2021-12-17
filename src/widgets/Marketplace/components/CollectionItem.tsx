@@ -8,7 +8,7 @@ const CollectionItem = ({ data }: { data: { index?: number; img: string; name: s
   return (
     <Flex alignItems="center">
       {data.index && (
-        <Text fontSize="17px" color={baseColors.textGray}>
+        <Text marginRight="15px" fontSize="17px" color={baseColors.textGray}>
           {data.index}
         </Text>
       )}
@@ -34,7 +34,7 @@ export default CollectionItem;
 const Logo = styled.div`
   width: 53px;
   height: 53px;
-  margin: 0 10px;
+  margin-right: 10px;
   & img {
     width: 100%;
     height: 100%;
