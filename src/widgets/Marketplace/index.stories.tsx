@@ -5,14 +5,26 @@ import { NFT_EXAMPLE } from "../../constants/images";
 import NFTCard from "./components/NFTCard";
 import Likes from "./components/Likes";
 import MarketTabs from "./components/MarketTabs";
+import PropertieItem from "./components/ProretieItem";
 
 export default {
   title: "Widgets/Marketplace",
 };
 
 export const CollectionItemBlock = () => (
-  <CollectionItem data={{ name: "Passage", price: "$3,512,645", index: 1, img: NFT_EXAMPLE }} />
+  <>
+    <CollectionItem data={{ name: "Passage", price: "$3,512,645", index: 1, img: NFT_EXAMPLE }} />
+    <CollectionItem data={{ name: "Passage", img: NFT_EXAMPLE }} />
+  </>
 );
+
+export const PropertieItemBlock = () => {
+  return (
+    <div>
+      <PropertieItem name="Health" value="+5" />
+    </div>
+  );
+};
 
 export const LikesBlock = () => (
   <Likes

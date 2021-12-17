@@ -17,4 +17,5 @@ export interface InputSearchProp
   innerRef?: Ref<HTMLInputElement>;
   icon?: ReactNode;
   disabled?: boolean;
+  backgroundColor?: string;
 }

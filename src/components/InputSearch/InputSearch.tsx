@@ -14,6 +14,7 @@ const InputSearch = ({
   iconLess,
   width,
   name,
+  backgroundColor,
   ...props
 }: InputSearchProp) => {
   const [focus, setFocus] = useState<boolean>(false);
@@ -21,6 +22,7 @@ const InputSearch = ({
   return (
     <InputBlock height={height} width={width}>
       <InputItem
+        backgroundColor={backgroundColor}
         width={width}
         value={value}
         onChange={onChange}
@@ -47,7 +49,7 @@ const InputBlock = styled.div<{ width?: string; height?: string }>`
   height: ${({ height }) => (height ? height : "auto")};
 `;
 
-const InputItem = styled.input`
+const InputItem = styled.input<{ backgroundColor?: string }>`
   width: ${({ width }) => (width ? width : "fit-content")};
   height: 100%;
   position: relative;
@@ -64,7 +66,7 @@ const InputItem = styled.input`
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   outline: none;
   border: 1px solid transparent;
-  ${background}
+  background: ${({ backgroundColor }) => backgroundColor || background};
   ${space}
   ${border}
   &::placeholder {

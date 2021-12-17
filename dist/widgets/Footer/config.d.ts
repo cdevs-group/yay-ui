@@ -3,6 +3,7 @@ export declare const aboutData: {
     links: {
         name: string;
         url: string;
+        out: boolean;
     }[];
 };
 export declare const tokenData: {
@@ -10,6 +11,7 @@ export declare const tokenData: {
     links: {
         name: string;
         url: string;
+        out: boolean;
     }[];
 };
 export declare const companyData: {
@@ -17,6 +19,7 @@ export declare const companyData: {
     links: {
         name: string;
         url: string;
+        out: boolean;
     }[];
 };
 export declare const socialData: {

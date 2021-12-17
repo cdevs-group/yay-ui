@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Flex } from "../../../components/Box";
 import { Text } from "../../../components/Text";
-import { Link } from "react-router-dom";
 
 const Social = ({ data }: { data: { title: string; links: { img: string; url: string }[] } }) => {
   return (
@@ -10,7 +9,7 @@ const Social = ({ data }: { data: { title: string; links: { img: string; url: st
       <Title>{data.title}</Title>
       <Flex justifyContent="space-between">
         {data.links.map((link) => (
-          <LinkItem to={link.url}>
+          <LinkItem key={link.url} target="_blank" href={link.url}>
             <img src={link.img} alt="socail" />
           </LinkItem>
         ))}
@@ -32,7 +31,7 @@ const Title = styled(Text)`
   font-size: 18px;
   line-height: 23px;
 `;
-const LinkItem = styled(Link)`
+const LinkItem = styled.a`
   font-size: 14px;
   line-height: 30px;
   opacity: 0.8;

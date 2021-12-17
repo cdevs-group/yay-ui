@@ -4,12 +4,14 @@ import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { baseColors, lightColors } from "../../../theme/colors";
 
-const CollectionItem = ({ data }: { data: { index: number; img: string; name: string; price: string } }) => {
+const CollectionItem = ({ data }: { data: { index?: number; img: string; name: string; price?: string } }) => {
   return (
     <Flex alignItems="center">
-      <Text fontSize="17px" color={baseColors.textGray}>
-        {data.index}.
-      </Text>
+      {data.index && (
+        <Text fontSize="17px" color={baseColors.textGray}>
+          {data.index}
+        </Text>
+      )}
       <Logo>
         <img src={data.img} alt="logo" />
       </Logo>
@@ -17,9 +19,11 @@ const CollectionItem = ({ data }: { data: { index: number; img: string; name: st
         <Text fontSize="17px" color={lightColors.text}>
           {data.name}
         </Text>
-        <Text fontSize="13px" color={baseColors.textGray}>
-          {data.price}
-        </Text>
+        {data.price && (
+          <Text fontSize="13px" color={baseColors.textGray}>
+            {data.price}
+          </Text>
+        )}
       </div>
     </Flex>
   );

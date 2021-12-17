@@ -4,14 +4,22 @@ import { Flex } from "../../../components/Box";
 import { Text } from "../../../components/Text";
 import { Link } from "react-router-dom";
 
-const NavColumn = ({ data }: { data: { title: string; links: { name: string; url: string }[] } }) => {
+const NavColumn = ({ data }: { data: { title: string; links: { name: string; url: string; out: boolean }[] } }) => {
   return (
     <Wrapper>
       <Title>{data.title}</Title>
       <Flex flexDirection="column">
-        {data.links.map((link) => (
-          <LinkItem to={link.url}>{link.name}</LinkItem>
-        ))}
+        {data.links.map((link) =>
+          link.out ? (
+            <LinkOut key={link.name} target="_blank" as="a" href={link.url}>
+              {link.name}
+            </LinkOut>
+          ) : (
+            <LinkItem key={link.name} to={link.url}>
+              {link.name}
+            </LinkItem>
+          )
+        )}
       </Flex>
     </Wrapper>
   );
@@ -32,3 +40,4 @@ const LinkItem = styled(Link)`
   opacity: 0.8;
   color: ${({ theme }) => theme.colors.text};
 `;
+const LinkOut = styled(LinkItem)``;

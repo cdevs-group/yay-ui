@@ -1,10 +1,10 @@
 /// <reference types="react" />
 declare const CollectionItem: ({ data }: {
     data: {
-        index: number;
+        index?: number;
         img: string;
         name: string;
-        price: string;
+        price?: string;
     };
 }) => JSX.Element;
 export default CollectionItem;

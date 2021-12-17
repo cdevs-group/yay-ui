@@ -11,6 +11,7 @@ export interface IDataLinks {
     links: {
         name: string;
         url: string;
+        out: boolean;
     }[];
 }
 export interface IDataSocial {

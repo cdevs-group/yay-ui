@@ -1,3 +1,4 @@
+import React from "react";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 import { aboutData, companyData, socialData, tokenData } from "./config";
@@ -20,7 +21,7 @@ export const FooterBlock = () => {
 
   return (
     <BrowserRouter>
-      <div style={{ maxWidth: "1440px", padding: "0 20px", background: "#000" }}>
+      <div style={{ maxWidth: "1440px", padding: "0 20px" }}>
         <Footer
           valueInput={""}
           handleInput={(e: any) => console.log(e)}

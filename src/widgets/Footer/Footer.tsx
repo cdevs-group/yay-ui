@@ -9,6 +9,7 @@ import NavColumn from "./components/NavColumn";
 import Social from "./components/Social";
 import { LineIcon } from "../../components/Svg";
 import { IText, IDataLinks, IDataSocial } from "./types";
+import { baseColors } from "../../theme/colors";
 
 const Footer = ({
   valueInput,
@@ -45,6 +46,7 @@ const Footer = ({
               iconLess
               width="100%"
               name="email"
+              backgroundColor={baseColors.whiteRgba3}
             />
             <Button variant="green" onClick={handleSignIn} width="100%">
               {texts.signUp}

@@ -5,6 +5,7 @@ declare const NavColumn: ({ data }: {
         links: {
             name: string;
             url: string;
+            out: boolean;
         }[];
     };
 }) => JSX.Element;

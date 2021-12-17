@@ -2,23 +2,23 @@ import { GITHUB, INSTAGRAM, TELEGRAM, TWITTER } from "../../constants/images";
 
 export const aboutData = {
   title: "About",
-  links: [{ name: "Docs", url: "/" }],
+  links: [{ name: "Docs", url: "/", out: false }],
 };
 
 export const tokenData = {
   title: "Token",
   links: [
-    { name: "Token Metrics", url: "/" },
-    { name: "Litepapper", url: "/" },
-    { name: "Claim YAY", url: "/" },
+    { name: "Token Metrics", url: "/", out: false },
+    { name: "Litepapper", url: "/", out: false },
+    { name: "Claim YAY", url: "/", out: true },
   ],
 };
 
 export const companyData = {
   title: "Company",
   links: [
-    { name: "Backers & Partners", url: "/" },
-    { name: "Help Center", url: "/" },
+    { name: "Backers & Partners", url: "/", out: true },
+    { name: "Help Center", url: "/", out: true },
   ],
 };
 
