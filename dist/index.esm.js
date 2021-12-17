@@ -12712,7 +12712,7 @@ var NavColumn = function (_a) {
     var data = _a.data;
     return (React__default.createElement(Wrapper$2, null,
         React__default.createElement(Title$2, null, data.title),
-        React__default.createElement(Flex, { flexDirection: "column" }, data.links.map(function (link) { return (React__default.createElement(LinkItem$1, { to: link.url, key: link.url }, link.name)); }))));
+        React__default.createElement(Flex, { flexDirection: "column" }, data.links.map(function (link, i) { return (React__default.createElement(LinkItem$1, { to: link.url, key: link.url + "-" + i }, link.name)); }))));
 };
 var Wrapper$2 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject([""], [""])));
 var Title$2 = styled(Text)(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"], ["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"])));
@@ -12726,7 +12726,7 @@ var Social = function (_a) {
     var data = _a.data;
     return (React__default.createElement(Wrapper$1, null,
         React__default.createElement(Title$1, null, data.title),
-        React__default.createElement(Flex, { justifyContent: "space-between" }, data.links.map(function (link) { return (React__default.createElement(LinkItem, { to: link.url, key: link.url },
+        React__default.createElement(Flex, { justifyContent: "space-between" }, data.links.map(function (link, i) { return (React__default.createElement(LinkItem, { to: link.url, key: link.url + "-" + i },
             React__default.createElement("img", { src: link.img, alt: "socail" }))); }))));
 };
 var Wrapper$1 = styled.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"], ["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"])));
