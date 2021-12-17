@@ -22,6 +22,7 @@ interface Props {
   network?: BlockChainNetwork;
   totalBalance: string;
   funds: Funds[];
+  heightDisclaimer?: number
 }
 
 const AccountMarketplace: React.FC<Props> = ({
@@ -34,6 +35,7 @@ const AccountMarketplace: React.FC<Props> = ({
   network,
   totalBalance,
   funds,
+  heightDisclaimer
 }) => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
@@ -70,6 +72,7 @@ const AccountMarketplace: React.FC<Props> = ({
             </Wrapper>
           }
           variant="center-behind"
+          plusMarginTop={heightDisclaimer}
         >
           <Dropdown>
             <Flex justifyContent="space-between" alignItems="center" mb="14px">

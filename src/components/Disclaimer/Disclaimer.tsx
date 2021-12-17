@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
+import useWindowDimensions from "../../hooks/useResize";
 import { CloseIcon2 } from "../Svg";
 import { Text } from "../Text";
 
-const Disclaimer: React.FC<{ text: string }> = ({ text }) => {
+const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = ({ text, setHeight }) => {
   const [open, setOpen] = useState(true);
+  const refDisclaimer = useRef<any>(null);
+  const { width } = useWindowDimensions();
+
+  useEffect(() => {
+    if (setHeight && !open) setHeight(0);
+    if (setHeight && open) setHeight(refDisclaimer?.current?.clientHeight);
+  }, [open, width]);
 
   return (
-    <Block open={open}>
+    <Block open={open} ref={refDisclaimer}>
       <StyledText>{text}</StyledText>
       <Button onClick={() => setOpen(false)}>
         <CloseIcon2 role="button" />

@@ -35,7 +35,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   funds,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
-
+  const [heightDisclaimer, setHeightDisclaimer] = useState(0);
   const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
@@ -58,7 +58,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
 
   return (
     <HeaderWrap ref={refSelect}>
-      {disclaimer ? <Disclaimer text={disclaimerText || ""} /> : null}
+      {disclaimer ? <Disclaimer text={disclaimerText || ""} setHeight={setHeightDisclaimer} /> : null}
       <Content>
         <Line>
           <LogoWrap to={linkLogo}>
@@ -104,6 +104,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
               network={network}
               totalBalance={totalBalance}
               funds={funds}
+              heightDisclaimer={heightDisclaimer}
             />
             {currentLang && (
               <LanguageBlockDesk>

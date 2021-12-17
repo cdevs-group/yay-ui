@@ -55,7 +55,6 @@ export const styleVariants = {
   [variants.CENTER_BEHIND]: {
     position: "fixed",
     right: 0,
-    top: 59,
     overflow: "visible",
     marginTop: 0,
     borderRadius: "0 0 9px 9px",
@@ -69,7 +68,6 @@ export const styleVariants = {
       transform: "translate(0,0)",
     },
     "@media screen and (min-width: 1080px)": {
-      top: 80,
     },
     "@media screen and (min-width: 1440px)": {
       position: "absolute",
