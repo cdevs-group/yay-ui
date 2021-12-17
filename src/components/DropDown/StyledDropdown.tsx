@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { variant } from "styled-system";
 import { styleVariants } from "./theme";
-import { Variant } from "./types";
+import { Variant, variants } from "./types";
 
-const StyledDropdown = styled.div<{ variant?: Variant }>`
+const StyledDropdown = styled.div<{ variant?: Variant; plusMarginTop?: number }>`
   position: absolute;
   width: 100%;
   margin-top: 18px;
@@ -14,12 +14,18 @@ const StyledDropdown = styled.div<{ variant?: Variant }>`
   overflow-y: auto;
   pointer-events: none;
   max-height: 260px;
+  top: ${({ plusMarginTop, variant }) =>
+    variant === variants.CENTER_BEHIND ? `${59 + (plusMarginTop || 0)}px` : "auto"};
   &.open {
     transition: 0.3s;
     z-index: 10;
     opacity: 1;
     margin-top: 4px;
     pointer-events: all;
+  }
+  ${({ theme }) => theme.mediaQueries.xl} {
+    top: ${({ plusMarginTop, variant }) =>
+      variant === variants.CENTER_BEHIND ? `${80 + (plusMarginTop || 0)}px` : "auto"};
   }
   ${variant({
     variants: styleVariants,

@@ -121,6 +121,8 @@ export const HeaderForMarketplace = () => {
           hrefLearnHow="http://"
           totalBalance="$232,001.76"
           funds={funds}
+          disclaimer
+          disclaimerText="Always make sure the URL is https://www.yay.games/ - Press CTRL+D or CMD+D to bookmark it to be safe. Telegram: https://t.me/yay_games"
         />
       </div>
     </BrowserRouter>
