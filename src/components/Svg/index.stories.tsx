@@ -58,6 +58,9 @@ import {
   UserIcon,
   FavoritesIcon,
   CollectionIcon,
+  CategoryIcon,
+  BlockchainIcon,
+  DollarIcon,
 } from ".";
 
 export default {
@@ -111,6 +114,9 @@ export default {
     UserIcon,
     FavoritesIcon,
     CollectionIcon,
+    CategoryIcon,
+    BlockchainIcon,
+    DollarIcon,
   ],
   argTypes: {},
 };
@@ -294,6 +300,15 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <CollectionIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CategoryIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <BlockchainIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <DollarIcon />
         </div>
       </div>
     </div>
