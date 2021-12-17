@@ -57,8 +57,10 @@ export default NFTCard;
 
 const Card = styled.div`
   position: relative;
-  width: 261px;
-  height: 422px;
+  width: 100%;
+  max-width: 261px;
+  min-height: 422px;
+  margin: 0 auto;
   background: ${({ theme }) => theme.colors.bgCard5};
   border-radius: 16px;
 `;

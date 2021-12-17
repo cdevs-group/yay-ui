@@ -85,8 +85,10 @@ const AccountMarketplace: React.FC<Props> = ({
               </AccountBlock>
             </Flex>
             <Flex justifyContent="space-between" mb="20px">
-              <Text>{textsAccount.totalBalance}</Text>
-              <Text color="textGray">{totalBalance}</Text>
+              <Text fontWeight={400}>{textsAccount.totalBalance}</Text>
+              <Text color="textGray" fontWeight={400}>
+                {totalBalance}
+              </Text>
             </Flex>
             {funds?.length && (
               <>
@@ -98,19 +100,19 @@ const AccountMarketplace: React.FC<Props> = ({
                     <Flex alignItems="center">
                       <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
                       <div>
-                        <Text mb="4px" lineHeight="19px">
+                        <Text mb="4px" lineHeight="19px" fontWeight={400}>
                           {el.currencyName}
                         </Text>
-                        <Text fontSize="13px" lineHeight="16px" color="textGray">
+                        <Text fontSize="13px" lineHeight="16px" color="textGray" fontWeight={400}>
                           {el.currencyFullName}
                         </Text>
                       </div>
                     </Flex>
                     <div>
-                      <Text mb="4px" textAlign="right" lineHeight="19px">
+                      <Text mb="4px" textAlign="right" lineHeight="19px" fontWeight={400}>
                         {el.balance}
                       </Text>
-                      <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right">
+                      <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right" fontWeight={400}>
                         {el.balanceDollars}
                       </Text>
                     </div>
@@ -212,6 +214,7 @@ const Dropdown = styled.div`
 
 const StyledText = styled(Text)`
   text-shadow: ${({ theme }) => theme.colors.textShadow};
+  font-weight: 400;
 `;
 
 const Line = styled.div`
