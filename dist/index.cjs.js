@@ -7657,19 +7657,19 @@ var AccountMarketplace = function (_a) {
                 React__default["default"].createElement(AccountBlock, null,
                     React__default["default"].createElement(CopyToClipboard, { toCopy: account, textCopied: textsAccount.copied, propsIcon: { stroke: "#fff", marginLeft: 14 } }, ellipsis(account)))),
             React__default["default"].createElement(Flex, { justifyContent: "space-between", mb: "20px" },
-                React__default["default"].createElement(Text, null, textsAccount.totalBalance),
-                React__default["default"].createElement(Text, { color: "textGray" }, totalBalance)),
+                React__default["default"].createElement(Text, { fontWeight: 400 }, textsAccount.totalBalance),
+                React__default["default"].createElement(Text, { color: "textGray", fontWeight: 400 }, totalBalance)),
             (funds === null || funds === void 0 ? void 0 : funds.length) && (React__default["default"].createElement(React__default["default"].Fragment, null,
                 React__default["default"].createElement(StyledText$3, { fontSize: "21px", mb: "20px" }, textsAccount.myFunds), funds === null || funds === void 0 ? void 0 :
                 funds.map(function (el) { return (React__default["default"].createElement(Flex, { key: el.currencyName, justifyContent: "space-between", alignItems: "center", mb: "20px" },
                     React__default["default"].createElement(Flex, { alignItems: "center" },
                         React__default["default"].createElement("img", { alt: "", src: el.icon, style: { marginRight: 12, width: 37, height: 37 } }),
                         React__default["default"].createElement("div", null,
-                            React__default["default"].createElement(Text, { mb: "4px", lineHeight: "19px" }, el.currencyName),
-                            React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", color: "textGray" }, el.currencyFullName))),
+                            React__default["default"].createElement(Text, { mb: "4px", lineHeight: "19px", fontWeight: 400 }, el.currencyName),
+                            React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", color: "textGray", fontWeight: 400 }, el.currencyFullName))),
                     React__default["default"].createElement("div", null,
-                        React__default["default"].createElement(Text, { mb: "4px", textAlign: "right", lineHeight: "19px" }, el.balance),
-                        React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", color: "textGray", textAlign: "right" }, el.balanceDollars)))); }))),
+                        React__default["default"].createElement(Text, { mb: "4px", textAlign: "right", lineHeight: "19px", fontWeight: 400 }, el.balance),
+                        React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", color: "textGray", textAlign: "right", fontWeight: 400 }, el.balanceDollars)))); }))),
             React__default["default"].createElement(Line$5, null),
             links.map(function (el) { return (
             // <a href={el.link}>
@@ -7707,11 +7707,14 @@ var AccountBlock = styled__default["default"](Text)(templateObject_2$1u || (temp
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-var Dropdown = styled__default["default"].div(templateObject_3$1b || (templateObject_3$1b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 33px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 33px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n"])), function (_a) {
+var Dropdown = styled__default["default"].div(templateObject_3$1b || (templateObject_3$1b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.darkGradient6;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.md;
 });
-var StyledText$3 = styled__default["default"](Text)(templateObject_4$10 || (templateObject_4$10 = __makeTemplateObject(["\n  text-shadow: ", ";\n"], ["\n  text-shadow: ", ";\n"])), function (_a) {
+var StyledText$3 = styled__default["default"](Text)(templateObject_4$10 || (templateObject_4$10 = __makeTemplateObject(["\n  text-shadow: ", ";\n  font-weight: 400;\n"], ["\n  text-shadow: ", ";\n  font-weight: 400;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textShadow;
 });
@@ -12916,7 +12919,7 @@ var NFTCard = function (_a) {
                     React__default["default"].createElement(IconWrapper, { style: { padding: "8px" }, onClick: function () { return onFavoritesAdd(); } },
                         React__default["default"].createElement(Icon$8, null)))))));
 };
-var Card = styled__default["default"].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  width: 261px;\n  height: 422px;\n  background: ", ";\n  border-radius: 16px;\n"], ["\n  position: relative;\n  width: 261px;\n  height: 422px;\n  background: ", ";\n  border-radius: 16px;\n"])), function (_a) {
+var Card = styled__default["default"].div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgCard5;
 });

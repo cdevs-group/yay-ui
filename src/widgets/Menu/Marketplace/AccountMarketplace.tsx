@@ -206,10 +206,13 @@ const AccountBlock = styled(Text)`
 const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 33px;
+  padding: 20px;
   background: ${({ theme }) => theme.colors.darkGradient6};
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
   border-radius: 0 0 9px 9px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    padding: 33px;
+  }
 `;
 
 const StyledText = styled(Text)`
