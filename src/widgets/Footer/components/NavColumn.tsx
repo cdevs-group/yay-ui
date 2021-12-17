@@ -10,7 +10,9 @@ const NavColumn = ({ data }: { data: { title: string; links: { name: string; url
       <Title>{data.title}</Title>
       <Flex flexDirection="column">
         {data.links.map((link) => (
-          <LinkItem to={link.url}>{link.name}</LinkItem>
+          <LinkItem to={link.url} key={link.url}>
+            {link.name}
+          </LinkItem>
         ))}
       </Flex>
     </Wrapper>

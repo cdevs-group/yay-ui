@@ -78,7 +78,8 @@ const AccountMarketplace: React.FC<Props> = ({
                 <CopyToClipboard
                   toCopy={account}
                   textCopied={textsAccount.copied}
-                  propsIcon={{ stroke: "#fff", marginLeft: 14 }}
+                  propsIcon={{ stroke: "#fff" }}
+                  propsChildren={{ marginRight: 14 }}                  
                 >
                   {ellipsis(account)}
                 </CopyToClipboard>

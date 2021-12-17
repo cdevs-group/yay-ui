@@ -10,7 +10,7 @@ const Social = ({ data }: { data: { title: string; links: { img: string; url: st
       <Title>{data.title}</Title>
       <Flex justifyContent="space-between">
         {data.links.map((link) => (
-          <LinkItem to={link.url}>
+          <LinkItem to={link.url} key={link.url}>
             <img src={link.img} alt="socail" />
           </LinkItem>
         ))}
