@@ -6,11 +6,12 @@ import { TextsConnect } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork, Funds, TextsAccountMarketplace } from "../types";
 import { useModal } from "../../Modal";
 import ConnectModal from "../../WalletModal/ConnectModal";
-import { Button, CollectionIcon, FavoritesIcon, Flex, UserIcon, WalletIcon } from "../../..";
+import { ACHIEVEMENTS, Button, CollectionIcon, FavoritesIcon, Flex, UserIcon, WalletIcon } from "../../..";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import { ellipsis } from "../../../helpers/ellipsis";
 import { CopyToClipboard } from "../../../components/CopyToClipboard";
 import { LabelTop } from "../../../components/LabelTop";
+import { Link } from "react-router-dom";
 
 interface Props {
   account?: string;
@@ -47,18 +48,48 @@ const AccountMarketplace: React.FC<Props> = ({
       icon: <UserIcon />,
       text: textsAccount.myProfile,
       link: textsAccount.linkMyProfile,
+      comingSoon: true,
     },
     {
       icon: <FavoritesIcon />,
       text: textsAccount.favorities,
       link: textsAccount.linkFavorities,
+      comingSoon: true,
     },
     {
       icon: <CollectionIcon />,
       text: textsAccount.myCollections,
       link: textsAccount.linkMyCollections,
+      comingSoon: true,
+    },
+    {
+      icon: <img src={ACHIEVEMENTS} alt="" />,
+      text: textsAccount.achievements,
+      link: textsAccount.linkAchievements,
     },
   ];
+
+  const LinkUser = ({ el }: { icon: React.ReactNode; text: string; link: string; comingSoon?: boolean }) => {
+    console.log(el);
+    const Item = () => (
+      <Flex alignItems="center">
+        {el.icon}
+        <Text style={{ marginLeft: 11 }}>{el.text}</Text>
+      </Flex>
+    );
+
+    if (el.comingSoon)
+      return (
+        <LabelTop label={textsAccount.comingSoon} mb="19px">
+          <Item />
+        </LabelTop>
+      );
+    return (
+      <Link to={el.link}>
+        <Item />
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -127,16 +158,9 @@ const AccountMarketplace: React.FC<Props> = ({
               )}
               <Line />
               {links.map((el) => (
-                // <a href={el.link}>
-                <LabelTop label={textsAccount.comingSoon} mb="19px" key={el.text}>
-                  <Flex alignItems="center">
-                    {el.icon}
-                    <div style={{ marginLeft: 11 }}>{el.text}</div>
-                  </Flex>
-                </LabelTop>
-                // </a>
+                <LinkUser key={el.text} el={el} />
               ))}
-              <Button variant="option" onClick={() => logout()} mt="19px">
+              <Button variant="option" onClick={() => logout()} mt="43px">
                 {textsAccount.disconnect}
               </Button>
             </Dropdown>

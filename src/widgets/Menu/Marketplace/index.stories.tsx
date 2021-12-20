@@ -65,6 +65,7 @@ export const HeaderForMarketplace = () => {
     linkMyCollections: "",
     comingSoon: "Coming soon",
     disconnect: "Disconnect",
+    achievements: "Profile Achievements",
   };
 
   const textsConnect = {
