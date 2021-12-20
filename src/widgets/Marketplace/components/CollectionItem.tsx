@@ -7,7 +7,7 @@ import { baseColors, lightColors } from "../../../theme/colors";
 const CollectionItem = ({
   data,
 }: {
-  data: { index?: number; img: string; name: string | React.ReactNode; price?: string };
+  data: { index?: number; img: string; name: string | React.ReactNode; price?: string | React.ReactNode };
 }) => {
   return (
     <Flex alignItems="center">

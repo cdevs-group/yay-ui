@@ -4,7 +4,7 @@ declare const CollectionItem: ({ data, }: {
         index?: number;
         img: string;
         name: string | React.ReactNode;
-        price?: string;
+        price?: string | React.ReactNode;
     };
 }) => JSX.Element;
 export default CollectionItem;
