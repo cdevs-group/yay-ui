@@ -7458,8 +7458,9 @@ function useWindowDimensions() {
 }
 
 var Disclaimer = function (_a) {
+    var _b;
     var text = _a.text, setHeight = _a.setHeight;
-    var _b = useState(true), open = _b[0], setOpen = _b[1];
+    var _c = useState(true), open = _c[0], setOpen = _c[1];
     var refDisclaimer = useRef(null);
     var width = useWindowDimensions().width;
     useEffect(function () {
@@ -7468,7 +7469,7 @@ var Disclaimer = function (_a) {
             setHeight(0);
         if (setHeight && open)
             setHeight((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight);
-    }, [open, width]);
+    }, [open, width, refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current, (_b = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _b === void 0 ? void 0 : _b.clienHeight]);
     return (React__default.createElement(Block$7, { open: open, ref: refDisclaimer, onLoad: function (e) { var _a; return setHeight && setHeight((_a = e.target) === null || _a === void 0 ? void 0 : _a.clientHeight); } },
         React__default.createElement(StyledText$4, null, text),
         React__default.createElement(Button$1, { onClick: function () { return setOpen(false); } },

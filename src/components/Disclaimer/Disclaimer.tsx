@@ -12,7 +12,7 @@ const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = (
   useEffect(() => {
     if (setHeight && !open) setHeight(0);
     if (setHeight && open) setHeight(refDisclaimer?.current?.clientHeight);
-  }, [open, width]);
+  }, [open, width, refDisclaimer?.current, refDisclaimer?.current?.clienHeight]);
 
   return (
     <Block open={open} ref={refDisclaimer} onLoad={(e: any) => setHeight && setHeight(e.target?.clientHeight)}>
