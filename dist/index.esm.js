@@ -7432,11 +7432,13 @@ var Disclaimer = function (_a) {
     var refDisclaimer = useRef(null);
     var width = useWindowDimensions().width;
     useLayoutEffect(function () {
-        var _a;
+        var _a, _b;
+        console.log((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight, refDisclaimer, 'refDisclaimer');
+        console.log(setHeight && open, 'setHeight && open');
         if (setHeight && !open)
             setHeight(0);
         if (setHeight && open)
-            setHeight((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight);
+            setHeight((_b = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _b === void 0 ? void 0 : _b.clientHeight);
     }, [open, width]);
     return (React__default.createElement(Block$7, { open: open, ref: refDisclaimer },
         React__default.createElement(StyledText$4, null, text),
