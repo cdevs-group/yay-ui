@@ -4936,7 +4936,7 @@ var styleVariants = (_a$2 = {},
             marginTop: 0,
             marginBottom: 0,
             overflow: "visible",
-            overflowY: 'auto',
+            overflowY: "auto",
             transform: "translate(0,0)",
         },
         "@media screen and (min-width: 1440px)": {
@@ -7463,7 +7463,7 @@ var Disclaimer = function (_a) {
     var _b = React.useState(true), open = _b[0], setOpen = _b[1];
     var refDisclaimer = React.useRef(null);
     var width = useWindowDimensions().width;
-    React.useEffect(function () {
+    React.useLayoutEffect(function () {
         var _a;
         if (setHeight && !open)
             setHeight(0);
@@ -7774,7 +7774,7 @@ var AccountBlock = styled__default["default"](Text)(templateObject_3$1c || (temp
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-var Dropdown = styled__default["default"].div(templateObject_4$11 || (templateObject_4$11 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;  \n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;  \n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
+var Dropdown = styled__default["default"].div(templateObject_4$11 || (templateObject_4$11 = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.darkGradient6;
 }, function (_a) {
