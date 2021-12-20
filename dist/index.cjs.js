@@ -1469,6 +1469,8 @@ var BG_LINE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKYAAABKCAYAAAAxDi+
 
 var nftExample = "data:image/png;base64,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";
 
+var ACHIEVEMENTS = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHoSURBVHgBvZS9Sh5BFIZnJCFNgiZpUgTcFKmSIoSEpEq+5ApyA4khV5BUgaTQVrDxAvzFQrQQOystBEHwF2xU+FYLBRFUEEG0GJ+j78I6fLvfauGBhxnOOfPu7Dkz410TCyG0MbyFN3Af5mHRe3/sbmMmCF1wCGswCBOwBKfQD+03FU0ghRn4JN9z82v+Uh9KM18V0VYt6Iz8U/ahyNep3LYqwn0wHPlqErCy1KLYdLwJMx8lPWDYhw9wAl/hGfyCMTiHDhiCVViBBCbgBQ09cgW7tZ3VNbdGmQ3Af3ishtrvjys2q9wN+OJKyvATJjV/ApswBD6X49W4dcuRbwQ68lotDfRPLmvk/QHDe7BT8SMX/wafrVzKMWuNRWLhVEJO4lazM9hlR7+1q71cLLPXsOWKjIWP8p1nfKhaHqosqeYhO2KM72AHWlyZqTkzmrerMd9zcevDck54DnpdM1PnrTHdFXJ7Kl8QLUiy4wQfG8Rruu6h6Erfa+SkMVsssOkujOu4bSr8yl29coNQs9yGGq5416acsHCbqR2vRKENWIOnkBIv1CgUDiXPYlauonj5EbkuYjUdDRWfyWbCdn3/MS67qwdnG+r4utxtTaXYh4Wgx15+2309uyjupqZL8Lck/idED/+d2AXja+xxUUAA1QAAAABJRU5ErkJggg==";
+
 var WinButton = function (_a) {
     var children = _a.children, image = _a.image, onClick = _a.onClick;
     return (React__default["default"].createElement(Flex, { width: "fit-content", position: "relative", alignItems: "center" },
@@ -7746,18 +7748,37 @@ var AccountMarketplace = function (_a) {
             icon: React__default["default"].createElement(Icon$9, null),
             text: textsAccount.myProfile,
             link: textsAccount.linkMyProfile,
+            comingSoon: true,
         },
         {
             icon: React__default["default"].createElement(Icon$8, null),
             text: textsAccount.favorities,
             link: textsAccount.linkFavorities,
+            comingSoon: true,
         },
         {
             icon: React__default["default"].createElement(Icon$7, null),
             text: textsAccount.myCollections,
             link: textsAccount.linkMyCollections,
+            comingSoon: true,
+        },
+        {
+            icon: React__default["default"].createElement("img", { src: ACHIEVEMENTS, alt: "" }),
+            text: textsAccount.achievements,
+            link: textsAccount.linkAchievements,
         },
     ];
+    var LinkUser = function (_a) {
+        var icon = _a.icon, text = _a.text, link = _a.link, comingSoon = _a.comingSoon;
+        var Item = function () { return (React__default["default"].createElement(Flex, { alignItems: "center" },
+            icon,
+            React__default["default"].createElement(Text, { style: { marginLeft: 11 } }, text))); };
+        if (comingSoon)
+            return (React__default["default"].createElement(LabelTop, { label: textsAccount.comingSoon, mb: "19px" },
+                React__default["default"].createElement(Item, null)));
+        return (React__default["default"].createElement(reactRouterDom.Link, { to: link || "/" },
+            React__default["default"].createElement(Item, null)));
+    };
     return (React__default["default"].createElement(React__default["default"].Fragment, null, account ? (React__default["default"].createElement(WrapperDropdown, null,
         React__default["default"].createElement(DropdownLayout, { open: open, setOpen: setOpen, icon: React__default["default"].createElement(Wrapper$A, null,
                 React__default["default"].createElement(Icon$e, null)), variant: "center-behind", plusMarginTop: heightDisclaimer },
@@ -7781,15 +7802,8 @@ var AccountMarketplace = function (_a) {
                             React__default["default"].createElement(Text, { mb: "4px", textAlign: "right", lineHeight: "19px", fontWeight: 400 }, el.balance),
                             React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", color: "textGray", textAlign: "right", fontWeight: 400 }, el.balanceDollars)))); }))),
                 React__default["default"].createElement(Line$5, null),
-                links.map(function (el) { return (
-                // <a href={el.link}>
-                React__default["default"].createElement(LabelTop, { label: textsAccount.comingSoon, mb: "19px", key: el.text },
-                    React__default["default"].createElement(Flex, { alignItems: "center" },
-                        el.icon,
-                        React__default["default"].createElement("div", { style: { marginLeft: 11 } }, el.text)))
-                // </a>
-                ); }),
-                React__default["default"].createElement(Button$9, { variant: "option", onClick: function () { return logout(); }, mt: "19px" }, textsAccount.disconnect))))) : (React__default["default"].createElement(Wrapper$A, { as: "button", onClick: function () {
+                links.map(function (el) { return (React__default["default"].createElement(LinkUser, __assign({ key: el.text }, el))); }),
+                React__default["default"].createElement(Button$9, { variant: "option", onClick: function () { return logout(); }, mt: "43px" }, textsAccount.disconnect))))) : (React__default["default"].createElement(Wrapper$A, { as: "button", onClick: function () {
             onPresentConnectModal();
         }, notAuth: true },
         React__default["default"].createElement(Icon$e, null)))));
@@ -13122,6 +13136,7 @@ var ResetCSS = styled.createGlobalStyle(templateObject_1 || (templateObject_1 = 
 });
 var templateObject_1;
 
+exports.ACHIEVEMENTS = ACHIEVEMENTS;
 exports.ADA = cardanoWhite;
 exports.AVATAR_PLAYER = AVATAR_PLAYER;
 exports.AVATAR_PLAYER_2 = avatarPlayer2;

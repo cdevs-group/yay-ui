@@ -69,23 +69,32 @@ const AccountMarketplace: React.FC<Props> = ({
     },
   ];
 
-  const LinkUser = ({ el }: { icon: React.ReactNode; text: string; link: string; comingSoon?: boolean }) => {
-    console.log(el);
+  const LinkUser = ({
+    icon,
+    text,
+    link,
+    comingSoon,
+  }: {
+    icon: React.ReactNode;
+    text: string;
+    link?: string;
+    comingSoon?: boolean;
+  }) => {
     const Item = () => (
       <Flex alignItems="center">
-        {el.icon}
-        <Text style={{ marginLeft: 11 }}>{el.text}</Text>
+        {icon}
+        <Text style={{ marginLeft: 11 }}>{text}</Text>
       </Flex>
     );
 
-    if (el.comingSoon)
+    if (comingSoon)
       return (
         <LabelTop label={textsAccount.comingSoon} mb="19px">
           <Item />
         </LabelTop>
       );
     return (
-      <Link to={el.link}>
+      <Link to={link || "/"}>
         <Item />
       </Link>
     );
@@ -157,8 +166,8 @@ const AccountMarketplace: React.FC<Props> = ({
                 </>
               )}
               <Line />
-              {links.map((el) => (
-                <LinkUser key={el.text} el={el} />
+              {links.map((el: any) => (
+                <LinkUser key={el.text} {...el} />
               ))}
               <Button variant="option" onClick={() => logout()} mt="43px">
                 {textsAccount.disconnect}
