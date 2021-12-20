@@ -3753,9 +3753,9 @@ var TabsWithBottomBorder = function (_a) {
         React__default.createElement(Tabs, null, tabsList.map(function (el, i) { return (React__default.createElement(Tab$8, { active: tabActive === i, value: i, key: i, onClick: handleToggleTab, ref: refTab[i] }, el)); })),
         React__default.createElement(LineTab$1, { widthTabActive: widthTabsActive[tabActive] || 0, right: widthTabsActive.slice(tabActive + 1, tabsList.length).reduce(function (prev, acc) { return prev + acc; }, 0) })));
 };
-var TopLine$3 = styled(Flex)(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  margin-right: 25px;\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"], ["\n  margin-right: 25px;\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"])));
+var TopLine$3 = styled(Flex)(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"], ["\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"])));
 var Tabs = styled(Flex)(templateObject_2$2j || (templateObject_2$2j = __makeTemplateObject([""], [""])));
-var Tab$8 = styled.button(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
+var Tab$8 = styled.button(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n  position: relative;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
     var theme = _a.theme, active = _a.active;
     return (active ? theme.colors.text : theme.colors.textGray);
 });
