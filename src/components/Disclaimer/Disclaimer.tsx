@@ -7,15 +7,33 @@ import { Text } from "../Text";
 const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = ({ text, setHeight }) => {
   const [open, setOpen] = useState(true);
   const refDisclaimer = useRef<any>(null);
+  const refCounter = useRef<any>(null);
   const { width } = useWindowDimensions();
 
   useEffect(() => {
     if (setHeight && !open) setHeight(0);
-    if (setHeight && open) setHeight(refDisclaimer?.current?.clientHeight);
-  }, [open, width, refDisclaimer?.current, refDisclaimer?.current?.clienHeight]);
+    let cancelled = false;
+
+    const getHeight = () => {
+      ++refCounter.current;
+      const { current } = refDisclaimer;
+      if (!current || !current.clientHeight) {
+        if (!cancelled) {
+          requestAnimationFrame(getHeight);
+        }
+      } else {
+        setHeight && setHeight(current.clientHeight);
+      }
+    };
+    if (setHeight && open) getHeight();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [open, width]);
 
   return (
-    <Block open={open} ref={refDisclaimer} onLoad={(e: any) => setHeight && setHeight(e.target?.clientHeight)}>
+    <Block open={open} ref={refDisclaimer}>
       <StyledText>{text}</StyledText>
       <Button onClick={() => setOpen(false)}>
         <CloseIcon2 role="button" />
