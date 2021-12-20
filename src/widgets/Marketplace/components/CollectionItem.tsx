@@ -4,7 +4,11 @@ import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { baseColors, lightColors } from "../../../theme/colors";
 
-const CollectionItem = ({ data }: { data: { index?: number; img: string; name: string; price?: string } }) => {
+const CollectionItem = ({
+  data,
+}: {
+  data: { index?: number; img: string; name: string | React.ReactNode; price?: string };
+}) => {
   return (
     <Flex alignItems="center">
       {data.index && (
