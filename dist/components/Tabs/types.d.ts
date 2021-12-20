@@ -18,7 +18,7 @@ export interface TabsSmallProp {
     tabsList?: Array<string | number>;
 }
 export interface TabsWithMovingLineProps {
-    title: string;
+    title?: string;
     tabsList: string[];
     tabActive: number;
     handleToggleTab: (e: any) => void;

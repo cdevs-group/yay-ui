@@ -22,7 +22,7 @@ export interface TabsSmallProp {
 }
 
 export interface TabsWithMovingLineProps {
-  title: string;
+  title?: string;
   tabsList: string[];
   tabActive: number;
   handleToggleTab: (e: any) => void;

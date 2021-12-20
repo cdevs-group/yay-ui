@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Box } from "../../components/Box";
 import Tabs from "./Tabs";
 import TabsSmall from "./TabsSmall";
 import TabsWithMovingLine from "./TabsWithMovingLine";
+import TabsWithBottomBorder from "./TabsWithBottomBorder";
 
 export default {
   title: "Components/Tabs",
@@ -70,3 +72,18 @@ const Block = styled.div`
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.bgCard2};
 `;
+
+export const TabsWithBottomBorderBlock = () => {
+  const tabsList = ["Live", "Round", "Your History"];
+  const [tabActive, setTabActive] = useState<number>(0);
+
+  const handleToggleTab = (e: any) => {
+    setTabActive(+e.target.value);
+  };
+
+  return (
+    <Box width="fit-content">
+      <TabsWithBottomBorder tabsList={tabsList} tabActive={tabActive} handleToggleTab={handleToggleTab} />
+    </Box>
+  );
+};
