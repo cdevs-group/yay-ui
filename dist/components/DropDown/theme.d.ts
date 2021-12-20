@@ -56,16 +56,15 @@ export declare const styleVariants: {
         overflow: string;
         marginTop: number;
         borderRadius: string;
-        maxHeight: string;
         maxWidth: number;
         transform: string;
         "&.open": {
             marginTop: number;
             marginBottom: number;
             overflow: string;
+            overflowY: string;
             transform: string;
         };
-        "@media screen and (min-width: 1080px)": {};
         "@media screen and (min-width: 1440px)": {
             position: string;
             top: number;
