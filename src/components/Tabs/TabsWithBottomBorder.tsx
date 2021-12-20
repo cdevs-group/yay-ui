@@ -33,10 +33,10 @@ const TabsWithBottomBorder: React.FC<TabsWithMovingLineProps> = ({ tabsList, tab
 export default TabsWithBottomBorder;
 
 const TopLine = styled(Flex)`
+  width: fit-content;
   position: relative;
   align-items: center;
   padding-bottom: 15px;
-  border-bottom: 2px solid #1c1c1c;
 `;
 const Tabs = styled(Flex)``;
 
