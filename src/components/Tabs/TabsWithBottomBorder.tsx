@@ -24,6 +24,7 @@ const TabsWithBottomBorder: React.FC<TabsWithMovingLineProps> = ({ tabsList, tab
       </Tabs>
       <LineTab
         widthTabActive={widthTabsActive[tabActive] || 0}
+        tabActive={tabsList.length - tabActive}
         right={widthTabsActive.slice(tabActive + 1, tabsList.length).reduce((prev, acc) => prev + acc, 0)}
       />
     </TopLine>
@@ -43,6 +44,7 @@ const Tab = styled.button<{
   active: boolean;
 }>`
   position: relative;
+  padding: 0 0 10px;
   margin-right: 25px;
   background: none;
   border: none;
@@ -54,13 +56,13 @@ const Tab = styled.button<{
   transition: 0.3s;
 `;
 
-const LineTab = styled.span<{ widthTabActive?: number; right: number }>`
+const LineTab = styled.span<{ widthTabActive?: number; right: number; tabActive: number }>`
   position: absolute;
   display: block;
   height: 1.5px;
   background: ${({ theme }) => theme.colors.green};
   transition: 0.3s;
   width: ${({ widthTabActive }) => `${widthTabActive}px`};
-  right: ${({ right }) => `${right}px`};
+  right: ${({ right, tabActive }) => `${right + 25 * tabActive}px`};
   bottom: -1px;
 `;

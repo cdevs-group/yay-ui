@@ -3751,11 +3751,11 @@ var TabsWithBottomBorder = function (_a) {
     }, []);
     return (React__default.createElement(TopLine$3, null,
         React__default.createElement(Tabs, null, tabsList.map(function (el, i) { return (React__default.createElement(Tab$8, { active: tabActive === i, value: i, key: i, onClick: handleToggleTab, ref: refTab[i] }, el)); })),
-        React__default.createElement(LineTab$1, { widthTabActive: widthTabsActive[tabActive] || 0, right: widthTabsActive.slice(tabActive + 1, tabsList.length).reduce(function (prev, acc) { return prev + acc; }, 0) })));
+        React__default.createElement(LineTab$1, { widthTabActive: widthTabsActive[tabActive] || 0, tabActive: tabsList.length - tabActive, right: widthTabsActive.slice(tabActive + 1, tabsList.length).reduce(function (prev, acc) { return prev + acc; }, 0) })));
 };
 var TopLine$3 = styled(Flex)(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"], ["\n  width: fit-content;\n  position: relative;\n  align-items: center;\n"])));
 var Tabs = styled(Flex)(templateObject_2$2j || (templateObject_2$2j = __makeTemplateObject([""], [""])));
-var Tab$8 = styled.button(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n  position: relative;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
+var Tab$8 = styled.button(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n  position: relative;\n  padding: 0 0 10px;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  padding: 0 0 10px;\n  margin-right: 25px;\n  background: none;\n  border: none;\n  font-weight: normal;\n  font-size: 15px;\n  line-height: 19px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
     var theme = _a.theme, active = _a.active;
     return (active ? theme.colors.text : theme.colors.textGray);
 });
@@ -3766,8 +3766,8 @@ var LineTab$1 = styled.span(templateObject_4$1x || (templateObject_4$1x = __make
     var widthTabActive = _a.widthTabActive;
     return widthTabActive + "px";
 }, function (_a) {
-    var right = _a.right;
-    return right + "px";
+    var right = _a.right, tabActive = _a.tabActive;
+    return right + 25 * tabActive + "px";
 });
 var templateObject_1$30, templateObject_2$2j, templateObject_3$1V, templateObject_4$1x;
 
@@ -7464,8 +7464,8 @@ var Disclaimer = function (_a) {
     var width = useWindowDimensions().width;
     useLayoutEffect(function () {
         var _a, _b;
-        console.log((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight, refDisclaimer, 'refDisclaimer');
-        console.log(setHeight && open, 'setHeight && open');
+        console.log((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight, refDisclaimer, "refDisclaimer");
+        console.log(setHeight && open, "setHeight && open");
         if (setHeight && !open)
             setHeight(0);
         if (setHeight && open)
