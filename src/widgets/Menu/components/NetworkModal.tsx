@@ -63,12 +63,12 @@ const NetworkModal: React.FC<Props> = ({
       <Wrap>
         <Buttons>
           {listNetwork?.map((el, i) => (
-            <>
+            <React.Fragment key={`${el.chainId}-${i}`}>
               <Button value={valuesNetworks?.[i] || el.chainId} onClick={handleClick}>
                 <TextStyled>{el.name}</TextStyled>
                 <img src={el.icon} alt="" />
               </Button>
-            </>
+            </React.Fragment>
           ))}
         </Buttons>
         <Link href={linkHref} style={{ margin: "0 auto" }}>

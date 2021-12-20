@@ -55,19 +55,18 @@ export const styleVariants = {
   [variants.CENTER_BEHIND]: {
     position: "fixed",
     right: 0,
-    overflow: "visible",
+    overflow: "visible",    
     marginTop: 0,
     borderRadius: "0 0 9px 9px",
-    maxHeight: "none",
     maxWidth: 420,
     transform: "translate(0,-50%) scaleY(0)",
     "&.open": {
       marginTop: 0,
       marginBottom: 0,
       overflow: "visible",
+      overflowY: 'auto',
       transform: "translate(0,0)",
     },
-    "@media screen and (min-width: 1080px)": {},
     "@media screen and (min-width: 1440px)": {
       position: "absolute",
       top: 57,

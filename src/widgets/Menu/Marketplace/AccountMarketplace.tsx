@@ -63,83 +63,85 @@ const AccountMarketplace: React.FC<Props> = ({
   return (
     <>
       {account ? (
-        <DropdownLayout
-          open={open}
-          setOpen={setOpen}
-          icon={
-            <Wrapper>
-              <WalletIcon />
-            </Wrapper>
-          }
-          variant="center-behind"
-          plusMarginTop={heightDisclaimer}
-        >
-          <Dropdown>
-            <Flex justifyContent="space-between" alignItems="center" mb="14px">
-              <StyledText fontSize="21px">{textsAccount.title}</StyledText>
-              <AccountBlock>
-                <CopyToClipboard
-                  toCopy={account}
-                  textCopied={textsAccount.copied}
-                  propsIcon={{ stroke: "#fff" }}
-                  propsChildren={{ marginRight: 14 }}
-                >
-                  {ellipsis(account)}
-                </CopyToClipboard>
-              </AccountBlock>
-            </Flex>
-            <Flex justifyContent="space-between" mb="20px">
-              <Text fontWeight={400}>{textsAccount.totalBalance}</Text>
-              <Text color="textGray" fontWeight={400}>
-                {totalBalance}
-              </Text>
-            </Flex>
-            {funds?.length && (
-              <>
-                <StyledText fontSize="21px" mb="20px">
-                  {textsAccount.myFunds}
-                </StyledText>
-                {funds?.map((el) => (
-                  <Flex key={el.currencyName} justifyContent="space-between" alignItems="center" mb="20px">
-                    <Flex alignItems="center">
-                      <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
+        <WrapperDropdown>
+          <DropdownLayout
+            open={open}
+            setOpen={setOpen}
+            icon={
+              <Wrapper>
+                <WalletIcon />
+              </Wrapper>
+            }
+            variant="center-behind"
+            plusMarginTop={heightDisclaimer}
+          >
+            <Dropdown>
+              <Flex justifyContent="space-between" alignItems="center" mb="14px">
+                <StyledText fontSize="21px">{textsAccount.title}</StyledText>
+                <AccountBlock>
+                  <CopyToClipboard
+                    toCopy={account}
+                    textCopied={textsAccount.copied}
+                    propsIcon={{ stroke: "#fff" }}
+                    propsChildren={{ marginRight: 14 }}
+                  >
+                    {ellipsis(account)}
+                  </CopyToClipboard>
+                </AccountBlock>
+              </Flex>
+              <Flex justifyContent="space-between" mb="20px">
+                <Text fontWeight={400}>{textsAccount.totalBalance}</Text>
+                <Text color="textGray" fontWeight={400}>
+                  {totalBalance}
+                </Text>
+              </Flex>
+              {funds?.length && (
+                <>
+                  <StyledText fontSize="21px" mb="20px">
+                    {textsAccount.myFunds}
+                  </StyledText>
+                  {funds?.map((el) => (
+                    <Flex key={el.currencyName} justifyContent="space-between" alignItems="center" mb="20px">
+                      <Flex alignItems="center">
+                        <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
+                        <div>
+                          <Text mb="4px" lineHeight="19px" fontWeight={400}>
+                            {el.currencyName}
+                          </Text>
+                          <Text fontSize="13px" lineHeight="16px" color="textGray" fontWeight={400}>
+                            {el.currencyFullName}
+                          </Text>
+                        </div>
+                      </Flex>
                       <div>
-                        <Text mb="4px" lineHeight="19px" fontWeight={400}>
-                          {el.currencyName}
+                        <Text mb="4px" textAlign="right" lineHeight="19px" fontWeight={400}>
+                          {el.balance}
                         </Text>
-                        <Text fontSize="13px" lineHeight="16px" color="textGray" fontWeight={400}>
-                          {el.currencyFullName}
+                        <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right" fontWeight={400}>
+                          {el.balanceDollars}
                         </Text>
                       </div>
                     </Flex>
-                    <div>
-                      <Text mb="4px" textAlign="right" lineHeight="19px" fontWeight={400}>
-                        {el.balance}
-                      </Text>
-                      <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right" fontWeight={400}>
-                        {el.balanceDollars}
-                      </Text>
-                    </div>
+                  ))}
+                </>
+              )}
+              <Line />
+              {links.map((el) => (
+                // <a href={el.link}>
+                <LabelTop label={textsAccount.comingSoon} mb="19px" key={el.text}>
+                  <Flex alignItems="center">
+                    {el.icon}
+                    <div style={{ marginLeft: 11 }}>{el.text}</div>
                   </Flex>
-                ))}
-              </>
-            )}
-            <Line />
-            {links.map((el) => (
-              // <a href={el.link}>
-              <LabelTop label={textsAccount.comingSoon} mb="19px" key={el.text}>
-                <Flex alignItems="center">
-                  {el.icon}
-                  <div style={{ marginLeft: 11 }}>{el.text}</div>
-                </Flex>
-              </LabelTop>
-              // </a>
-            ))}
-            <Button variant="option" onClick={() => logout()} mt="19px">
-              {textsAccount.disconnect}
-            </Button>
-          </Dropdown>
-        </DropdownLayout>
+                </LabelTop>
+                // </a>
+              ))}
+              <Button variant="option" onClick={() => logout()} mt="19px">
+                {textsAccount.disconnect}
+              </Button>
+            </Dropdown>
+          </DropdownLayout>
+        </WrapperDropdown>
       ) : (
         <Wrapper
           as="button"
@@ -155,6 +157,12 @@ const AccountMarketplace: React.FC<Props> = ({
   );
 };
 
+const WrapperDropdown = styled.div`
+  order: -1;
+  ${({ theme }) => theme.mediaQueries.xl} {
+    order: 0;
+  }
+`;
 const Wrapper = styled.div<{ notAuth?: boolean }>`
   display: flex;
   align-items: center;
@@ -213,7 +221,7 @@ const Dropdown = styled.div`
   padding: 20px;
   background: ${({ theme }) => theme.colors.darkGradient6};
   box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 0 0 9px 9px;
+  border-radius: 0 0 9px 9px;  
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 33px;
   }

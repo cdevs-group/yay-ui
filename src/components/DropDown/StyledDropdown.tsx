@@ -13,7 +13,8 @@ const StyledDropdown = styled.div<{ variant?: Variant; plusMarginTop?: number }>
   opacity: 0;
   overflow-y: auto;
   pointer-events: none;
-  max-height: 260px;
+  max-height: ${({ plusMarginTop, variant }) =>
+    variant === variants.CENTER_BEHIND ? `calc(100vh - ${59 + (plusMarginTop || 0)}px)` : "260px"};
   top: ${({ plusMarginTop, variant }) =>
     variant === variants.CENTER_BEHIND ? `${59 + (plusMarginTop || 0)}px` : "auto"};
   &.open {
