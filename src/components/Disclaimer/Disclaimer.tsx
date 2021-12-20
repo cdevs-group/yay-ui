@@ -10,14 +10,12 @@ const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = (
   const { width } = useWindowDimensions();
 
   useLayoutEffect(() => {
-    console.log(refDisclaimer?.current?.clientHeight, refDisclaimer, "refDisclaimer");
-    console.log(setHeight && open, "setHeight && open");
     if (setHeight && !open) setHeight(0);
     if (setHeight && open) setHeight(refDisclaimer?.current?.clientHeight);
   }, [open, width]);
 
   return (
-    <Block open={open} ref={refDisclaimer}>
+    <Block open={open} ref={refDisclaimer} onLoad={(e: any) => setHeight && setHeight(e.target?.clientHeight)}>
       <StyledText>{text}</StyledText>
       <Button onClick={() => setOpen(false)}>
         <CloseIcon2 role="button" />

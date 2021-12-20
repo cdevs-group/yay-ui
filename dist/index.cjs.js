@@ -7495,15 +7495,13 @@ var Disclaimer = function (_a) {
     var refDisclaimer = React.useRef(null);
     var width = useWindowDimensions().width;
     React.useLayoutEffect(function () {
-        var _a, _b;
-        console.log((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight, refDisclaimer, 'refDisclaimer');
-        console.log(setHeight && open, 'setHeight && open');
+        var _a;
         if (setHeight && !open)
             setHeight(0);
         if (setHeight && open)
-            setHeight((_b = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _b === void 0 ? void 0 : _b.clientHeight);
+            setHeight((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight);
     }, [open, width]);
-    return (React__default["default"].createElement(Block$7, { open: open, ref: refDisclaimer },
+    return (React__default["default"].createElement(Block$7, { open: open, ref: refDisclaimer, onLoad: function (e) { var _a; return setHeight && setHeight((_a = e.target) === null || _a === void 0 ? void 0 : _a.clientHeight); } },
         React__default["default"].createElement(StyledText$4, null, text),
         React__default["default"].createElement(Button$1, { onClick: function () { return setOpen(false); } },
             React__default["default"].createElement(Icon$1m, { role: "button" }))));
