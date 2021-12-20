@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../../hooks/useResize";
 import { CloseIcon2 } from "../Svg";
@@ -9,7 +9,7 @@ const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = (
   const refDisclaimer = useRef<any>(null);
   const { width } = useWindowDimensions();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (setHeight && !open) setHeight(0);
     if (setHeight && open) setHeight(refDisclaimer?.current?.clientHeight);
   }, [open, width]);

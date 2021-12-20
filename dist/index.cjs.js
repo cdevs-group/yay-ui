@@ -7494,14 +7494,8 @@ var Disclaimer = function (_a) {
     var _b = React.useState(true), open = _b[0], setOpen = _b[1];
     var refDisclaimer = React.useRef(null);
     var width = useWindowDimensions().width;
-    React.useLayoutEffect(function () {
-<<<<<<< HEAD
+    React.useEffect(function () {
         var _a;
-=======
-        var _a, _b;
-        console.log((_a = refDisclaimer === null || refDisclaimer === void 0 ? void 0 : refDisclaimer.current) === null || _a === void 0 ? void 0 : _a.clientHeight, refDisclaimer, "refDisclaimer");
-        console.log(setHeight && open, "setHeight && open");
->>>>>>> 480a95401d46b265a3a0ae8e2022b268147525e4
         if (setHeight && !open)
             setHeight(0);
         if (setHeight && open)
