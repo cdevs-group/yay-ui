@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import { COIN4 } from "../../constants/images";
-import { baseColors, lightColors } from "../../theme/colors";
+import { baseColors } from "../../theme/colors";
 import { Flex } from "../../components/Box";
 import { Button } from "../../components/Button";
 
@@ -42,7 +42,7 @@ const Achievement = ({
             >
               {count}
             </Text>
-            <span style={{ color: lightColors.text }}>/</span>
+            <Text fontSize="10px">/</Text>
             <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
               {countMax}
             </Text>
@@ -86,6 +86,7 @@ const AchievementWrap = styled.div`
   cursor: pointer;
   &:hover {
     border: 1.5px solid ${({ theme }) => theme.colors.green};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow14};
   }
 `;
 const Counter = styled.div`
@@ -162,6 +163,7 @@ const ButtonStyle = styled(Button)`
   align-items: center;
   justify-content: center;
   font-size: 13px;
+  border-radius: 7px;
 `;
 const ButtonText = styled(Text)`
   position: relative;

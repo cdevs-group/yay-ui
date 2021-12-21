@@ -156,6 +156,7 @@ export type Colors = {
   bgGreenRgba: string;
   bgOpacity4: string;
   boxShadow13: string;
+  boxShadow14: string;
 
   // Gradients
   gradients: Gradients;

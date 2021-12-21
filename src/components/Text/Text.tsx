@@ -1,5 +1,5 @@
 import styled, { DefaultTheme } from "styled-components";
-import { space, typography } from "styled-system";
+import { layout, space, typography } from "styled-system";
 import { TextProps, sizes } from "./types";
 import getThemeValue from "../../util/getThemeValue";
 
@@ -49,6 +49,7 @@ const Text = styled.div<TextProps>`
   line-height: 1.5;
   ${space}
   ${typography}
+  ${layout}
 `;
 
 Text.defaultProps = {
