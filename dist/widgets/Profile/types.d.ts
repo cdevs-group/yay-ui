@@ -7,9 +7,11 @@ export interface ProfileCardProps {
         wins: string;
         losses: string;
         edit: string;
+        refferal: string;
     };
     account: string;
-    link: string;
+    linkAccount: string;
+    linkRefferal: string;
     coins?: string;
     games?: string;
     wins?: string;

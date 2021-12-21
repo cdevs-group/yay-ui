@@ -74,9 +74,13 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           </Text>
         </div>
       </Flex>
-      <Text mb="3px" fontSize="16px" textAlign="left" width="100%">{texts.refferal}</Text>
+      <Text mb="3px" fontSize="16px" textAlign="left" width="100%">
+        {texts.refferal}
+      </Text>
       <Flex justifyContent="space-between" alignItems="center" width="100%" mb="36px">
-        <Text color="textGray" fontSize="13px">{linkRefferal}</Text>
+        <Text color="textGray" fontSize="13px">
+          {linkRefferal}
+        </Text>
         <Link href={linkRefferal}>
           <ArrowTopRight />
         </Link>
