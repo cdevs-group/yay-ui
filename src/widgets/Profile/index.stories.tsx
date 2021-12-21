@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileCard from "./ProfileCard";
 import Achievement from "./Achievement";
+import AccountProfileBlock from "./AccountProfileBlock";
 import { ROKET1 } from "../../constants/images";
 import coins from "./images/coins.png";
 import rocket from "./images/rocket.png";
@@ -64,5 +65,16 @@ export const AchievementSolo = () => {
         />
       </div>
     </div>
+  );
+};
+
+export const AccountProfile: React.FC = () => {
+  return (
+    <AccountProfileBlock
+      linkAccount="dd"
+      texts={textsCard}
+      account="6x3438e324938438e32438e329828x46R65"
+      marginTop={50}
+    />
   );
 };
