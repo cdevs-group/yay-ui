@@ -24,3 +24,12 @@ export interface ITabsProps {
   handleToggleTab: (e: any) => void;
   tabBodyList: React.ReactNode[];
 }
+
+export interface IProfileCardProps {
+  title: string;
+  picUrl: string;
+  likes: number;
+  price: number;
+  isLiked: boolean;
+  onLike: () => void;
+}

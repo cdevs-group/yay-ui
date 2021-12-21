@@ -84,6 +84,8 @@ export { default as CollectionIcon } from "./Icons/CollectionIcon";
 export { default as CategoryIcon } from "./Icons/CategoryIcon";
 export { default as BlockchainIcon } from "./Icons/BlockchainIcon";
 export { default as DollarIcon } from "./Icons/DollarIcon";
+export { default as GreenHollowHeartIcon } from "./Icons/GreenHollowHeart";
+export { default as GreenFilledHeartIcon } from "./Icons/GreenFilledHeart";
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";
