@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../../..";
 import { IProfileCardProps } from "./types";
 
-const ProfileCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike }) => {
+const ProfileNftCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike }) => {
   return (
     <Card>
       <Picture src={picUrl} alt={title} />
@@ -23,7 +23,7 @@ const ProfileCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes,
   );
 };
 
-export default ProfileCard;
+export default ProfileNftCard;
 
 const Card = styled.div`
   position: relative;

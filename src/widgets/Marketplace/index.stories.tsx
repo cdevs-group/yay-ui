@@ -6,7 +6,7 @@ import NFTCard from "./components/NFTCard";
 import Likes from "./components/Likes";
 import MarketTabs from "./components/MarketTabs";
 import PropertieItem from "./components/ProretieItem";
-import ProfileCard from "./components/ProfileCard";
+import ProfileNftCard from "./components/ProfileNftCard";
 
 export default {
   title: "Widgets/Marketplace",
@@ -51,9 +51,9 @@ export const NFTCardBlock = () => {
   );
 };
 
-export const ProfileCardBlock = () => {
+export const ProfileNftCardBlock = () => {
   return (
-    <ProfileCard
+    <ProfileNftCard
       title="BabyYoda #1687"
       picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
       price={0.25}
@@ -62,7 +62,7 @@ export const ProfileCardBlock = () => {
       onLike={() => console.log("Liked")}
     />
   );
-}
+};
 
 export const MarketTabsBlock = () => {
   const tabsList = ["Details", "Bids", "History"];
