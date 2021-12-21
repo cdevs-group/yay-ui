@@ -1,16 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon } from "../../..";
+import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../../..";
 import { IProfileCardProps } from "./types";
 
-const ProfileCard: React.FC<IProfileCardProps> = ({
-  title,
-  picUrl,
-  price,
-  likes,
-  isLiked,
-  onLike
-}) => {
+const ProfileCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike }) => {
   return (
     <Card>
       <Picture src={picUrl} alt={title} />
@@ -20,7 +13,7 @@ const ProfileCard: React.FC<IProfileCardProps> = ({
         <Likes>
           <CenteredContainer>
             <IconWrapper onClick={() => onLike()}>
-              {isLiked ? <GreenFilledHeartIcon /> : <GreenHollowHeartIcon />}
+              <HeartIcon fill={isLiked ? "#4BE43E" : "none"} stroke="#4BE43E" />
             </IconWrapper>
             <LikesText>{likes}</LikesText>
           </CenteredContainer>
