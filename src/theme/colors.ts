@@ -26,6 +26,7 @@ export const baseColors = {
   boxShadow11: "0px 4px 25px rgba(0, 0, 0, 0.35)",
   boxShadow12: "0px 0px 29px #2CB021",
   boxShadow13: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
+  boxShadow14: "0px 0px 10px rgba(86, 239, 75, 0.35)",
   filterShadow: "drop-shadow(-3px 0px 8px rgba(0, 0, 0, 0.25))",
   bgOpacity: "rgba(0, 0, 0, 0.3)",
   bgOpacity2: "rgba(0, 0, 0, 0.05)",

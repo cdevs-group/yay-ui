@@ -12,7 +12,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   token,
   texts,
   account,
-  link,
+  linkAccount,
+  linkRefferal,
   coins,
   games,
   wins,
@@ -31,15 +32,15 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       <Title>{texts.title}</Title>
       <AccountLine>
         <Input readOnly value={ellipsis(account, 10)} type={isVisibleAccount ? "text" : "password"} />
-        <Eye onClick={handleClickEye}>
+        {/* <Eye onClick={handleClickEye}>
           {!isVisibleAccount && <EyeCloseIcon />}
           {isVisibleAccount && <EyeOpenIcon fill="whiteRgba" />}
-        </Eye>
-        <Link href={link}>
+        </Eye> */}
+        <Link href={linkAccount}>
           <ArrowTopRight />
         </Link>
       </AccountLine>
-      <Flex justifyContent="space-between" alignItems="center" width="100%">
+      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="38px">
         <div>
           <Text fontSize="21px" lineHeight="27px" letterSpacing="0.05em" mb="7px">
             {coins || 0}
@@ -72,6 +73,13 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             {texts.losses}
           </Text>
         </div>
+      </Flex>
+      <Text mb="3px" fontSize="16px" textAlign="left" width="100%">{texts.refferal}</Text>
+      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="36px">
+        <Text color="textGray" fontSize="13px">{linkRefferal}</Text>
+        <Link href={linkRefferal}>
+          <ArrowTopRight />
+        </Link>
       </Flex>
       <AwardsLine>
         {awards?.map((el) => (
@@ -112,12 +120,12 @@ const Title = styled(Text)`
 `;
 const Token = styled.img`
   margin-top: -30px;
-  margin-bottom: 22px;
+  margin-bottom: 8px;
   width: 127px;
   height: 87px;
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-top: -33px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     width: auto;
     height: auto;
   }
@@ -155,13 +163,9 @@ const AccountLine = styled(Flex)`
 `;
 
 const AwardsLine = styled(Flex)`
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin-top: 39px;
-  margin-bottom: 30px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 40px;
-    margin-top: 112px;
-  }
+  max-width: 250px;
+  margin: 0 auto 35px;
 `;

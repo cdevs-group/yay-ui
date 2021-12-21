@@ -19,13 +19,15 @@ const textsCard = {
   wins: "wins",
   losses: "losses",
   edit: "Edit Profile",
+  refferal: "Refferal Program",
 };
 
 export const ProfileCardWidget: React.FC = () => {
   return (
     <div style={{ marginTop: 50, maxWidth: 373 }}>
       <ProfileCard
-        link="dd"
+        linkAccount="dd"
+        linkRefferal="ldk"
         texts={textsCard}
         account="6x3438e324938438e32438e329828x46R65"
         awards={[coins, win, skull, rocket]}
