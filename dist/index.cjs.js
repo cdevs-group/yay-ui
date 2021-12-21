@@ -9571,7 +9571,7 @@ var AwardsLine = styled__default["default"](Flex)(templateObject_8$f || (templat
 var templateObject_1$1k, templateObject_2$10, templateObject_3$O, templateObject_4$G, templateObject_5$q, templateObject_6$o, templateObject_7$j, templateObject_8$f;
 
 var Achievement = function (_a) {
-    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, complete = _a.complete;
+    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, complete = _a.complete, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, refferal = _a.refferal, refferalReward = _a.refferalReward;
     return (React__default["default"].createElement(AchievementWrap, null,
         !complete && (React__default["default"].createElement(Counter$1, null,
             React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
@@ -9579,14 +9579,18 @@ var Achievement = function (_a) {
                 React__default["default"].createElement(Text, { fontSize: "10px" }, "/"),
                 React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, countMax)),
             React__default["default"].createElement("img", { src: COIN4 }))),
+        complete && refferal && (React__default["default"].createElement(Counter$1, null,
+            React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
+                React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, refferalReward)),
+            React__default["default"].createElement("img", { src: COIN4 }))),
         React__default["default"].createElement(Content, null,
             React__default["default"].createElement(ImageBlock, null,
                 React__default["default"].createElement("img", { src: image })),
             React__default["default"].createElement(TitleStyle$2, { mb: "5px", fontWeight: 500, letterSpacing: "0.05em", fontSize: "13px" }, title),
             React__default["default"].createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "11px", color: baseColors.textGray }, description),
             count && countMax && !complete && React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
-            complete && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect },
-                React__default["default"].createElement(ButtonText, null, collectText),
+            complete && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
+                React__default["default"].createElement(ButtonText, { loading: loadingButton }, collectText),
                 React__default["default"].createElement(ButtonTextMob, null, collectTextMob))))));
 };
 var AchievementWrap = styled__default["default"].div(templateObject_1$1j || (templateObject_1$1j = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"])), function (_a) {
@@ -9633,11 +9637,14 @@ var RangeTrack$3 = styled__default["default"].div(templateObject_5$p || (templat
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var ButtonStyle$7 = styled__default["default"](Button$9)(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  margin-top: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  border-radius: 7px;\n"], ["\n  margin-top: 10px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 13px;\n  border-radius: 7px;\n"])));
-var ButtonText = styled__default["default"](Text)(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n  &:after {\n    display: block;\n    content: url(\"", "\");\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n"], ["\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n  &:after {\n    display: block;\n    content: url(\"", "\");\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n"])), function (_a) {
+var ButtonStyle$7 = styled__default["default"](Button$9)(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"])));
+var ButtonText = styled__default["default"](Text)(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n"], ["\n  position: relative;\n  display: none;\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
-}, COIN4);
+}, function (_a) {
+    var loading = _a.loading;
+    return (loading ? "none" : "url(\"" + COIN4 + "\")");
+});
 var ButtonTextMob = styled__default["default"](ButtonText)(templateObject_8$e || (templateObject_8$e = __makeTemplateObject(["\n  font-size: 13px;\n  display: block;\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: block;\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
