@@ -39,31 +39,41 @@ export const ProfileCardWidget: React.FC = () => {
 
 export const AchievementSolo = () => {
   return (
-    <div style={{ display: "grid", gap: "0 7px", gridTemplateColumns: "1fr 1fr" }}>
-      <div style={{ maxWidth: 180 }}>
-        <Achievement
-          image={ROKET1}
-          // count={2}
-          countMax="10"
-          title="Great loser"
-          description="lose 10 times in a row"
-          complete
-          collectText="Collect Reward"
-          collectTextMob="Collect"
-        />
-      </div>
-      <div style={{ maxWidth: 180 }}>
-        <Achievement
-          image={ROKET1}
-          count={2}
-          countMax="10"
-          title="Great loser"
-          description="lose 10 times in a row"
-          complete={false}
-          collectText="Collect Reward"
-          collectTextMob="Collect"
-        />
-      </div>
+    <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(6, 1fr)" }}>
+      <Achievement
+        image={ROKET1}
+        countMax="10"
+        title="Great loser"
+        description="lose 10 times in a row"
+        complete
+        collectText="Collect Reward"
+        collectTextMob="Collect"
+        disabledButton
+        loadingButton
+      />
+
+      <Achievement
+        image={ROKET1}
+        countMax="10"
+        title="Great loser"
+        description="lose 10 times in a row"
+        complete
+        collectText="Collect Reward"
+        collectTextMob="Collect"
+        refferal
+        refferalReward="12 YAY"
+      />
+
+      <Achievement
+        image={ROKET1}
+        count={2}
+        countMax="10"
+        title="Great loser"
+        description="lose 10 times in a row"
+        complete={false}
+        collectText="Collect Reward"
+        collectTextMob="Collect"
+      />
     </div>
   );
 };

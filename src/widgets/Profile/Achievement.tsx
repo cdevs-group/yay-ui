@@ -16,6 +16,10 @@ interface IAchievementProps {
   handleCollect?: () => void;
   complete: boolean;
   collectTextMob?: string;
+  disabledButton?: boolean;
+  loadingButton?: boolean;
+  refferal?: boolean;
+  refferalReward?: string;
 }
 
 const Achievement = ({
@@ -28,6 +32,10 @@ const Achievement = ({
   collectTextMob,
   handleCollect,
   complete,
+  disabledButton,
+  loadingButton,
+  refferal,
+  refferalReward,
 }: IAchievementProps) => {
   return (
     <AchievementWrap>
@@ -50,6 +58,16 @@ const Achievement = ({
           <img src={COIN4} />
         </Counter>
       )}
+      {complete && refferal && (
+        <Counter>
+          <Flex alignItems="center" justifyContent="center">
+            <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
+              {refferalReward}
+            </Text>
+          </Flex>
+          <img src={COIN4} />
+        </Counter>
+      )}
       <Content>
         <ImageBlock>
           <img src={image} />
@@ -62,8 +80,16 @@ const Achievement = ({
         </DescriptionStyle>
         {count && countMax && !complete && <RangeTrack progress={(+count / +countMax) * 100} />}
         {complete && (
-          <ButtonStyle padding="0 15px" height="30px" width="100%" variant="green" onClick={handleCollect}>
-            <ButtonText>{collectText}</ButtonText>
+          <ButtonStyle
+            padding="0 15px"
+            height="30px"
+            width="100%"
+            variant="green"
+            onClick={handleCollect}
+            disabled={disabledButton}
+            spin={loadingButton}
+          >
+            <ButtonText loading={loadingButton}>{collectText}</ButtonText>
             <ButtonTextMob>{collectTextMob}</ButtonTextMob>
           </ButtonStyle>
         )}
@@ -158,14 +184,15 @@ const RangeTrack = styled.div<{ progress?: number }>`
   }
 `;
 const ButtonStyle = styled(Button)`
-  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
+  padding: 0;
   font-size: 13px;
   border-radius: 7px;
 `;
-const ButtonText = styled(Text)`
+const ButtonText = styled(Text)<{ loading?: boolean }>`
   position: relative;
   display: none;
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -174,7 +201,7 @@ const ButtonText = styled(Text)`
   }
   &:after {
     display: block;
-    content: url("${COIN4}");
+    content: ${({ loading }) => (loading ? "none" : `url("${COIN4}")`)};
     position: absolute;
     right: -20px;
     top: 0;
