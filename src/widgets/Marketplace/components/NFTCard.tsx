@@ -71,6 +71,7 @@ const Title = styled(Text)`
   letter-spacing: 0.03em;
   margin-top: 15px;
 `;
+
 const Author = styled(Text)`
   font-size: 13px;
   line-height: 16px;
