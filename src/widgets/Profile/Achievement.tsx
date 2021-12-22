@@ -91,7 +91,7 @@ const Achievement = ({
             spin={loadingButton}
           >
             <ButtonText loading={loadingButton}>{collectText}</ButtonText>
-            <ButtonTextMob>{collectTextMob}</ButtonTextMob>
+            <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
           </ButtonStyle>
         )}
       </Content>
@@ -196,10 +196,6 @@ const ButtonStyle = styled(Button)`
 const ButtonText = styled(Text)<{ loading?: boolean }>`
   position: relative;
   display: none;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    display: block;
-    font-size: 13px;
-  }
   &:after {
     display: block;
     content: ${({ loading }) => (loading ? "none" : `url("${COIN4}")`)};
@@ -207,10 +203,17 @@ const ButtonText = styled(Text)<{ loading?: boolean }>`
     right: -20px;
     top: 0;
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    display: block;
+    font-size: 13px;
+  }
 `;
-const ButtonTextMob = styled(ButtonText)`
+const ButtonTextMob = styled(ButtonText)<{ loading?: boolean }>`
   font-size: 13px;
   display: block;
+  &:after {
+    content: ${({ loading }) => (loading ? "none" : `url("${COIN4}")`)};
+  }
   ${({ theme }) => theme.mediaQueries.sm} {
     display: none;
   }
