@@ -91,7 +91,7 @@ const Picture = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 251px;
+  max-width: 100%;
   max-height: 251px;
   border-radius: 16px;
 `;
