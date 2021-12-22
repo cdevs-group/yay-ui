@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ICardProps } from "./types";
-import { Text, NFTShareIcon, StarIcon } from "../../..";
+import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
 import Likes from "./Likes";
 
 const NFTCard: React.FC<ICardProps> = ({
@@ -25,30 +25,32 @@ const NFTCard: React.FC<ICardProps> = ({
           right: "20px",
         }}
       />
-      <Picture src={picUrl} alt={title} />
-      <CenteredContainer>
-        <Avatar src={avatarUrl} alt={author} />
-        <div>
-          <Title>{title}</Title>
-          <Author>{author}</Author>
-        </div>
-      </CenteredContainer>
-      <DescriptionContainer>
-        <DescriptionText>{description}</DescriptionText>
-      </DescriptionContainer>
-      <FooterContainer>
-        <PriceText>{price} YAY</PriceText>
-        <Buttons>
-          <CenteredContainer>
+      <PictureWrapper>
+        <Picture src={picUrl} alt={title} />
+      </PictureWrapper>
+      <Body>
+        <Flex alignItems="center" mb="24px">
+          <Avatar src={avatarUrl} alt={author} />
+          <div style={{ overflow: "hidden" }}>
+            <Title>{title}</Title>
+            <Author>{author}</Author>
+          </div>
+        </Flex>
+        <Text color="textGray" mb="29px">
+          {description}
+        </Text>
+        <FooterContainer>
+          <PriceText>{price} YAY</PriceText>
+          <Flex>
             <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
               <NFTShareIcon />
             </IconWrapper>
             <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
               <StarIcon />
             </IconWrapper>
-          </CenteredContainer>
-        </Buttons>
-      </FooterContainer>
+          </Flex>
+        </FooterContainer>
+      </Body>
     </Card>
   );
 };
@@ -69,7 +71,9 @@ const Title = styled(Text)`
   font-size: 19px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  margin-top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const Author = styled(Text)`
@@ -79,13 +83,16 @@ const Author = styled(Text)`
   color: ${({ theme }) => theme.colors.greyText};
 `;
 
+const PictureWrapper = styled.div`
+  padding: 5px;
+`;
+
 const Picture = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 251px;
-  height: 251px;
-  padding-top: 5px;
+  max-width: 251px;
+  max-height: 251px;
   border-radius: 16px;
 `;
 
@@ -96,35 +103,12 @@ const Avatar = styled.img`
   background-position: top center;
   border-radius: 50%;
   margin-right: 10px;
-  margin-top: 20px;
   cursor: pointer;
 `;
 
-const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const DescriptionContainer = styled.div`
-  padding: 25px 22px;
-`;
-
-const DescriptionText = styled(Text)`
-  font-size: 15px;
-  line-height: 19px;
-  letter-spacing: 0.03em;
-  color: ${({ theme }) => theme.colors.greyText};
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-`;
-
-const FooterContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  padding: 20px;
-  width: 100%;
-  max-width: 261px;
+const FooterContainer = styled(Flex)`
+  margin-top: auto;
+  justify-content: space-between;
 `;
 
 const PriceText = styled(Text)`
@@ -146,8 +130,7 @@ const IconWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bgGrey3};
 `;
 
-const Buttons = styled.div`
-  position: absolute;
-  right: 20px;
-  bottom: 13px;
+const Body = styled(Flex)`
+  flex-direction: column;
+  padding: 18px 20px 12px 20px;
 `;
