@@ -1,12 +1,13 @@
 /// <reference types="react" />
 interface IAchievementProps {
+    id?: string | number;
     image: string;
     count?: string | number;
     countMax?: string | number;
     title: string;
     description: string;
     collectText?: string;
-    handleCollect?: () => void;
+    handleCollect?: (val?: string | number) => void;
     complete: boolean;
     collectTextMob?: string;
     disabledButton?: boolean;
