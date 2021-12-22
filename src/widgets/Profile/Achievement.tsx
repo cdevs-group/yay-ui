@@ -7,13 +7,14 @@ import { Flex } from "../../components/Box";
 import { Button } from "../../components/Button";
 
 interface IAchievementProps {
+  id?: string | number;
   image: string;
   count?: string | number;
   countMax?: string | number;
   title: string;
   description: string;
   collectText?: string;
-  handleCollect?: () => void;
+  handleCollect?: (val?: string | number) => void;
   complete: boolean;
   collectTextMob?: string;
   disabledButton?: boolean;
