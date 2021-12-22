@@ -51,8 +51,8 @@ const Select = ({
         variant="visible"
       >
         <Dropdown {...propsDropdown}>
-          {options?.map((el) => (
-            <Option optionsSpacing={optionsSpacing}>
+          {options?.map((el, i) => (
+            <Option optionsSpacing={optionsSpacing} key={i + 1}>
               <Input
                 type="radio"
                 name={nameInputOptions}

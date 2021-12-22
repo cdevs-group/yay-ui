@@ -5038,7 +5038,7 @@ var Select$2 = function (_a) {
     };
     return (React__default.createElement(Wrapper$L, __assign({}, props),
         React__default.createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
-            React__default.createElement(Dropdown$3, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el) { return (React__default.createElement(Option$1, { optionsSpacing: optionsSpacing },
+            React__default.createElement(Dropdown$3, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default.createElement(Option$1, { optionsSpacing: optionsSpacing, key: i + 1 },
                 React__default.createElement(Input$6, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
                 React__default.createElement(Item$1, __assign({}, propsOption),
                     React__default.createElement(Text, null, el.name),
