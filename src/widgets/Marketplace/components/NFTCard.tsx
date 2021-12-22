@@ -36,7 +36,7 @@ const NFTCard: React.FC<ICardProps> = ({
             <Author>{author}</Author>
           </div>
         </Flex>
-        <Text color="textGray" mb="29px">
+        <Text color="textGray" mb="29px" fontWeight={400}>
           {description}
         </Text>
         <FooterContainer>
@@ -74,11 +74,13 @@ const Title = styled(Text)`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 400;
 `;
 
 const Author = styled(Text)`
   font-size: 13px;
   line-height: 16px;
+  font-weight: 400;
   letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.greyText};
 `;
@@ -113,6 +115,7 @@ const FooterContainer = styled(Flex)`
 
 const PriceText = styled(Text)`
   font-size: 13px;
+  font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
@@ -132,5 +135,5 @@ const IconWrapper = styled.div`
 
 const Body = styled(Flex)`
   flex-direction: column;
-  padding: 18px 20px 12px 20px;
+  padding: 18px 16px 12px 16px;
 `;

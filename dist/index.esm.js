@@ -13069,7 +13069,7 @@ var NFTCard = function (_a) {
                 React__default.createElement("div", { style: { overflow: "hidden" } },
                     React__default.createElement(Title$1, null, title),
                     React__default.createElement(Author, null, author))),
-            React__default.createElement(Text, { color: "textGray", mb: "29px" }, description),
+            React__default.createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
             React__default.createElement(FooterContainer$1, null,
                 React__default.createElement(PriceText$1, null,
                     price,
@@ -13084,8 +13084,8 @@ var Card$1 = styled.div(templateObject_1$4 || (templateObject_1$4 = __makeTempla
     var theme = _a.theme;
     return theme.colors.bgCard5;
 });
-var Title$1 = styled(Text)(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"], ["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n"])));
-var Author = styled(Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  color: ", ";\n"])), function (_a) {
+var Title$1 = styled(Text)(templateObject_2$3 || (templateObject_2$3 = __makeTemplateObject(["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 400;\n"], ["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 400;\n"])));
+var Author = styled(Text)(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  font-weight: 400;\n  letter-spacing: 0.03em;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  font-weight: 400;\n  letter-spacing: 0.03em;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
@@ -13093,7 +13093,7 @@ var PictureWrapper = styled.div(templateObject_4$1 || (templateObject_4$1 = __ma
 var Picture$1 = styled.img(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 100%;\n  max-height: 251px;\n  border-radius: 16px;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 100%;\n  max-height: 251px;\n  border-radius: 16px;\n"])));
 var Avatar = styled.img(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"])));
 var FooterContainer$1 = styled(Flex)(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  margin-top: auto;\n  justify-content: space-between;\n"], ["\n  margin-top: auto;\n  justify-content: space-between;\n"])));
-var PriceText$1 = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"])), function (_a) {
+var PriceText$1 = styled(Text)(templateObject_8$1 || (templateObject_8$1 = __makeTemplateObject(["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
@@ -13101,7 +13101,7 @@ var IconWrapper$1 = styled.div(templateObject_9$1 || (templateObject_9$1 = __mak
     var theme = _a.theme;
     return theme.colors.bgGrey3;
 });
-var Body = styled(Flex)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  flex-direction: column;\n  padding: 18px 20px 12px 20px;\n"], ["\n  flex-direction: column;\n  padding: 18px 20px 12px 20px;\n"])));
+var Body = styled(Flex)(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n  flex-direction: column;\n  padding: 18px 16px 12px 16px;\n"], ["\n  flex-direction: column;\n  padding: 18px 16px 12px 16px;\n"])));
 var templateObject_1$4, templateObject_2$3, templateObject_3$3, templateObject_4$1, templateObject_5$1, templateObject_6$1, templateObject_7$1, templateObject_8$1, templateObject_9$1, templateObject_10;
 
 var MarketTabs = function (_a) {
