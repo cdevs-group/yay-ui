@@ -17,6 +17,7 @@ const ImportCollection = ({
   button,
   buttonHandler,
   buttonProps,
+  handleClick,
 }: {
   title: string;
   description: string;
@@ -28,10 +29,11 @@ const ImportCollection = ({
   button: string;
   buttonHandler: () => void | Promise<void>;
   buttonProps?: ButtonProps;
+  handleClick: () => void;
 }) => {
   return (
     <Wrapper>
-      <ButtonClose>
+      <ButtonClose onClick={handleClick}>
         <CloseIcon />
       </ButtonClose>
       <Title>{title}</Title>

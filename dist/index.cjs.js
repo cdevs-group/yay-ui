@@ -13224,9 +13224,9 @@ var LikesText = styled__default["default"](Text)(templateObject_9 || (templateOb
 var templateObject_1$2, templateObject_2$1, templateObject_3$1, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9;
 
 var ImportCollection = function (_a) {
-    var title = _a.title, description = _a.description, inputTitle = _a.inputTitle, placeholder = _a.placeholder, inputValue = _a.inputValue, inputHandler = _a.inputHandler, inputError = _a.inputError, button = _a.button, buttonHandler = _a.buttonHandler, buttonProps = _a.buttonProps;
+    var title = _a.title, description = _a.description, inputTitle = _a.inputTitle, placeholder = _a.placeholder, inputValue = _a.inputValue, inputHandler = _a.inputHandler, inputError = _a.inputError, button = _a.button, buttonHandler = _a.buttonHandler, buttonProps = _a.buttonProps, handleClick = _a.handleClick;
     return (React__default["default"].createElement(Wrapper, null,
-        React__default["default"].createElement(ButtonClose, null,
+        React__default["default"].createElement(ButtonClose, { onClick: handleClick },
             React__default["default"].createElement(Icon$1p, null)),
         React__default["default"].createElement(Title, null, title),
         React__default["default"].createElement(Description, null, description),

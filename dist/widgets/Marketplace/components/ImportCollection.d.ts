@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { ButtonProps } from "../../../components/Button/types";
-declare const ImportCollection: ({ title, description, inputTitle, placeholder, inputValue, inputHandler, inputError, button, buttonHandler, buttonProps, }: {
+declare const ImportCollection: ({ title, description, inputTitle, placeholder, inputValue, inputHandler, inputError, button, buttonHandler, buttonProps, handleClick, }: {
     title: string;
     description: string;
     inputTitle: string;
@@ -11,5 +11,6 @@ declare const ImportCollection: ({ title, description, inputTitle, placeholder, 
     button: string;
     buttonHandler: () => void | Promise<void>;
     buttonProps?: ButtonProps<"button"> | undefined;
+    handleClick: () => void;
 }) => JSX.Element;
 export default ImportCollection;
