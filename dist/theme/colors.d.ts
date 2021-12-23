@@ -40,6 +40,7 @@ export declare const baseColors: {
     darkPink: string;
     whiteRgba: string;
     whiteRgba2: string;
+    whiteRgba4: string;
     greenGradient2: string;
     greenGradient3: string;
     greenRgba: string;

@@ -43,6 +43,7 @@ export const baseColors = {
   darkPink: "#FF6161",
   whiteRgba: "rgba(255, 255, 255, 0.15)",
   whiteRgba2: "rgba(255, 255, 255, 0.2)",
+  whiteRgba4: "rgba(255, 255, 255, 0.5)",
   greenGradient2: "linear-gradient(180deg, rgba(76, 238, 62, 0.21) -16%, #47da3b 100%)",
   greenGradient3: "linear-gradient(107.51deg, #9BE43E 26.63%, #39DB2C 73.7%)",
   greenRgba: "rgba(86, 239, 75, 0.5)",

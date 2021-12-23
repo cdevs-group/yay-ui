@@ -7,6 +7,7 @@ import Likes from "./components/Likes";
 import MarketTabs from "./components/MarketTabs";
 import PropertieItem from "./components/ProretieItem";
 import ProfileNftCard from "./components/ProfileNftCard";
+import ImportCollection from "./components/ImportCollection";
 
 export default {
   title: "Widgets/Marketplace",
@@ -87,6 +88,29 @@ export const MarketTabsBlock = () => {
         tabBodyList={tabBodyList}
       />
     </Block>
+  );
+};
+
+export const ImportCollectionBlock = () => {
+  const [inputValue, setInputValue] = useState("");
+
+  const inputHandler = (e: any) => {
+    setInputValue(e.target.value);
+  };
+
+  return (
+    <ImportCollection
+      title="Import your collection"
+      description="What is the address of your ERC721 or ERC1155 contract on the Mainnet Network? "
+      inputTitle="Collection address"
+      placeholder="Enter your ERC721 or ERC1155 collection address"
+      inputValue={inputValue}
+      inputHandler={inputHandler}
+      inputError="Invalid address or ENS name"
+      button="Submit"
+      buttonHandler={() => console.log("log")}
+      buttonProps={{}}
+    />
   );
 };
 

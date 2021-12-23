@@ -1,13 +1,13 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import Select from "./components/Select";
-import Input from "./components/Input";
 import { Button } from "../../components/Button";
 import { IStateInput, IStateInputError, ITexts } from "./types";
 import TitlePage from "./components/TitlePage";
 import NoticeModal from "./components/NoticeModal";
 import InputFile from "./components/InputFile";
 import { ButtonProps } from "../../components/Button/types";
+import InputWithArea from "../../components/Input/InputWithArea";
 
 const SupportWindow = ({
   texts,
@@ -45,7 +45,7 @@ const SupportWindow = ({
           {" "}
           <TitlePage points={points} title={texts.title} note={texts.note} />
           <StyledSupport>
-            <Input
+            <InputWithArea
               title={texts.name}
               margin="0 0 25px"
               placeholder={texts.namePlaceholder}
@@ -62,7 +62,7 @@ const SupportWindow = ({
               title={texts.product}
               name="product"
             />
-            <Input
+            <InputWithArea
               title={texts.problem}
               margin="0 0 25px"
               placeholder={texts.problemPlaceholder}
@@ -72,7 +72,7 @@ const SupportWindow = ({
               value={state["problem"]}
               inputError={inputError?.problem}
             />
-            <Input
+            <InputWithArea
               title={texts.email}
               margin="0 0 25px"
               placeholder={texts.emailPlaceholder}
@@ -81,7 +81,7 @@ const SupportWindow = ({
               value={state["email"]}
               inputError={inputError?.email}
             />
-            <Input
+            <InputWithArea
               title={texts.address}
               margin="0 0 25px"
               placeholder={texts.addressPlaceholder}
@@ -90,7 +90,7 @@ const SupportWindow = ({
               value={state["address"]}
               inputError={inputError?.address}
             />
-            <Input
+            <InputWithArea
               title={texts.txHash}
               margin="0 0 45px"
               placeholder={texts.txHashPlaceholder}
