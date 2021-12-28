@@ -80,17 +80,45 @@ export const HeaderForMarketplace = () => {
 
   const funds = [
     {
+      id: "1",
       icon: YAY_TOKEN,
       currencyName: "YAY",
       currencyFullName: "YAY Games",
       balance: "100,500.0001 YAY",
       balanceDollars: "$23,313.81",
+      includes: [
+        {
+          id: "1-1",
+          icon: YAY_TOKEN,
+          currencyName: "YAY (BSC)",
+          currencyFullName: "YAY Games",
+          balance: "100,500.0001 YAY",
+          balanceDollars: "$23,313.81",
+        },
+        {
+          id: "1-2",
+          icon: YAY_TOKEN,
+          currencyName: "YAY (AVAX)",
+          currencyFullName: "YAY Games",
+          balance: "100,500.0001 YAY",
+          balanceDollars: "$23,313.81",
+        },
+      ],
     },
     {
+      id: "2",
       icon: BNB2,
-      currencyName: "YAY",
-      currencyFullName: "YAY Games",
+      currencyName: "BNB",
+      currencyFullName: "BSC",
       balance: "100,500.0001 YAY",
+      balanceDollars: "$23,313.81",
+    },
+    {
+      id: "3",
+      icon: BNB2,
+      currencyName: "AVAX",
+      currencyFullName: "Avalanche",
+      balance: "0.00001 AVAX",
       balanceDollars: "$23,313.81",
     },
   ];

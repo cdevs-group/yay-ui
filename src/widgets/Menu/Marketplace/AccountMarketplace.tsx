@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { transparentize } from "polished";
 import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { Login } from "../../WalletModal/types";
@@ -6,7 +7,16 @@ import { TextsConnect } from "../../WalletModal/useWalletModal";
 import { BlockChainNetwork, Funds, TextsAccountMarketplace } from "../types";
 import { useModal } from "../../Modal";
 import ConnectModal from "../../WalletModal/ConnectModal";
-import { ACHIEVEMENTS, Button, CollectionIcon, FavoritesIcon, Flex, UserIcon, WalletIcon } from "../../..";
+import {
+  ACHIEVEMENTS,
+  ArrowDownIcon,
+  Button,
+  CollectionIcon,
+  FavoritesIcon,
+  Flex,
+  UserIcon,
+  WalletIcon,
+} from "../../..";
 import DropdownLayout from "../../../components/DropDown/DropDown";
 import { ellipsis } from "../../../helpers/ellipsis";
 import { CopyToClipboard } from "../../../components/CopyToClipboard";
@@ -41,7 +51,13 @@ const AccountMarketplace: React.FC<Props> = ({
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
   );
-  const [open, setOpen] = useState<boolean>(false);
+  const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  const [openFunds, setOpenFunds] = useState<boolean>(false);
+
+  const handleOpenFunds = () => {
+    console.log(1);
+    setOpenFunds(!openFunds);
+  };
 
   const links = [
     {
@@ -101,13 +117,45 @@ const AccountMarketplace: React.FC<Props> = ({
     );
   };
 
+  const FundsItem = (el: Funds & { includesItem?: boolean }) => {
+    return (
+      <FundsItemStyled
+        justifyContent="space-between"
+        alignItems="center"
+        onClick={el.includes && handleOpenFunds}
+        className={el.includesItem ? "includes" : ""}
+      >
+        <Flex alignItems="center">
+          <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
+          <div>
+            <TextName>{el.currencyName}</TextName>
+            <TextFullName color="textGray">{el.currencyFullName}</TextFullName>
+          </div>
+        </Flex>
+        <Flex alignItems="center">
+          <div>
+            <TextName textAlign="right">{el.balance}</TextName>
+            <TextFullName color="textGray" textAlign="right">
+              {el.balanceDollars}
+            </TextFullName>
+          </div>
+          {el.includes && (
+            <ArrowIcon alignItems="center" open={openFunds}>
+              <ArrowDownIcon />
+            </ArrowIcon>
+          )}
+        </Flex>
+      </FundsItemStyled>
+    );
+  };
+
   return (
     <>
       {account ? (
         <WrapperDropdown>
           <DropdownLayout
-            open={open}
-            setOpen={setOpen}
+            open={openDropdown}
+            setOpen={setOpenDropdown}
             icon={
               <Wrapper>
                 <WalletIcon />
@@ -118,7 +166,7 @@ const AccountMarketplace: React.FC<Props> = ({
           >
             <Dropdown>
               <Flex justifyContent="space-between" alignItems="center" mb="14px">
-                <StyledText fontSize="21px">{textsAccount.title}</StyledText>
+                <StyledTitle fontSize="21px">{textsAccount.title}</StyledTitle>
                 <AccountBlock>
                   <CopyToClipboard
                     toCopy={account}
@@ -138,32 +186,24 @@ const AccountMarketplace: React.FC<Props> = ({
               </Flex>
               {funds?.length && (
                 <>
-                  <StyledText fontSize="21px" mb="20px">
+                  <StyledTitle fontSize="21px" mb="20px">
                     {textsAccount.myFunds}
-                  </StyledText>
-                  {funds?.map((el) => (
-                    <Flex key={el.currencyName} justifyContent="space-between" alignItems="center" mb="20px">
-                      <Flex alignItems="center">
-                        <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
-                        <div>
-                          <Text mb="4px" lineHeight="19px" fontWeight={400}>
-                            {el.currencyName}
-                          </Text>
-                          <Text fontSize="13px" lineHeight="16px" color="textGray" fontWeight={400}>
-                            {el.currencyFullName}
-                          </Text>
-                        </div>
-                      </Flex>
-                      <div>
-                        <Text mb="4px" textAlign="right" lineHeight="19px" fontWeight={400}>
-                          {el.balance}
-                        </Text>
-                        <Text fontSize="13px" lineHeight="16px" color="textGray" textAlign="right" fontWeight={400}>
-                          {el.balanceDollars}
-                        </Text>
-                      </div>
-                    </Flex>
-                  ))}
+                  </StyledTitle>
+                  <FundsWrapper>
+                    {funds?.map((el, i) => (
+                      <React.Fragment key={`${el.id}-${i + 1}`}>
+                        <FundsItem {...el} />
+                        {el.includes && (
+                          <FundsHidden open={openFunds}>
+                            {el.includes?.map((item, j) => {
+                              const a = { includesItem: true, ...item };
+                              return <FundsItem key={`${el.id}-${i + 1}-${j + 1}`} {...a} />;
+                            })}
+                          </FundsHidden>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </FundsWrapper>
                 </>
               )}
               <Line />
@@ -261,18 +301,76 @@ const Dropdown = styled.div`
   }
 `;
 
-const StyledText = styled(Text)`
+const FundsItemStyled = styled(Flex)`
+  margin-bottom: 20px;
+  &.includes {
+    cursor: pointer;
+  }
+`;
+const TextName = styled(Text)`
+  margin-bottom: 4px;
+  font-weight: normal;
+  line-height: 19px;
+  ${FundsItemStyled}.includes & {
+    font-size: 13px;
+    line-height: 16px;
+  }
+`;
+
+const TextFullName = styled(Text)`
+  font-size: 13px;
+  line-height: 16px;
+  ${FundsItemStyled}.includes & {
+    font-size: 11px;
+    line-height: 14px;
+  }
+`;
+
+const StyledTitle = styled(Text)`
   text-shadow: ${({ theme }) => theme.colors.textShadow};
   font-weight: 400;
 `;
 
 const Line = styled.div`
+  position: relative;
   width: 100%;
   height: 1px;
   margin-bottom: 28px;
-  margin-top: 9px;
-  opacity: 0.5;
-  background: ${({ theme }) => theme.colors.bgCard};
+  background: ${({ theme }) => transparentize(0.5, theme.colors.bgCard)};
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    display: block;
+    width: 100%;
+    height: 36px;
+    background: linear-gradient(180deg, rgba(46, 46, 53, 0) 0%, #2e2e35 100%);
+  }
+`;
+
+const FundsWrapper = styled.div`
+  max-height: 200px;
+  overflow: auto;
+  ::-webkit-scrollbar {
+    width: 2px;
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.bgCard};
+  }
+`;
+
+const FundsHidden = styled.div<{ open?: boolean }>`
+  margin-right: 20px;
+  overflow: hidden;
+  max-height: ${({ open }) => (open ? "200px" : 0)};
+  transition: 0.3s;
+`;
+
+const ArrowIcon = styled(Flex)<{ open?: boolean }>`
+  margin-left: 10px;
+  transition: 0.3s;
+  transform: ${({ open }) => (open ? "scale(1, -1)" : "none")};
 `;
 
 export default AccountMarketplace;

@@ -2,6 +2,7 @@ import { Variant } from "../../components/Button/types";
 import { Login } from "../WalletModal/types";
 import { TextsAccount, TextsConnect } from "../WalletModal/useWalletModal";
 import { Variant as VariantDropdown } from "../../components/DropDown/types";
+import { ReactNode } from "react";
 
 export const sizes = {
   MD: "md",
@@ -146,11 +147,13 @@ export interface TextsAccountMarketplace {
 }
 
 export interface Funds {
+  id: string;
   icon: string;
-  currencyName: string;
+  currencyName: string | ReactNode;
   currencyFullName: string;
   balance: string;
   balanceDollars: string;
+  includes?: Funds[]
 }
 
 export interface NavMarketplaceProps extends PanelProps {
