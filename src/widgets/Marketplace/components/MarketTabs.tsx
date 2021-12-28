@@ -28,7 +28,7 @@ const MarketTabs: React.FC<ITabsProps> = ({ tabsList, tabActive, tabBodyList, ha
           right={widthTabsActive.slice(tabActive + 1, tabsList.length).reduce((prev, acc) => prev + acc, 0)}
         />
       </TopLine>
-      {tabBodyList[tabActive]}
+      {tabBodyList[tabActive] || null}
     </>
   );
 };

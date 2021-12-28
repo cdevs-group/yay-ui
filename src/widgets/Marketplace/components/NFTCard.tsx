@@ -14,11 +14,15 @@ const NFTCard: React.FC<ICardProps> = ({
   likes,
   onShare,
   onFavoritesAdd,
+  onAuthorClick,
+  onNftClick,
+  onLikeAdd
 }) => {
   return (
     <Card>
       <Likes
         likes={likes}
+        onLikeAdd={onLikeAdd}
         wrapperStyle={{
           position: "absolute",
           top: "15px",
@@ -26,14 +30,14 @@ const NFTCard: React.FC<ICardProps> = ({
         }}
       />
       <PictureWrapper>
-        <Picture src={picUrl} alt={title} />
+        <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
       </PictureWrapper>
       <Body>
         <Flex alignItems="center" mb="24px">
-          <Avatar src={avatarUrl} alt={author} />
+          <Avatar src={avatarUrl} alt={author} onClick={() => onAuthorClick()} />
           <div style={{ overflow: "hidden" }}>
-            <Title>{title}</Title>
-            <Author>{author}</Author>
+            <Title onClick={() => onNftClick()}>{title}</Title>
+            <Author onClick={() => onAuthorClick()}>{author}</Author>
           </div>
         </Flex>
         <Text color="textGray" mb="29px" fontWeight={400}>
@@ -75,6 +79,7 @@ const Title = styled(Text)`
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
+  cursor: pointer;
 `;
 
 const Author = styled(Text)`
@@ -82,6 +87,7 @@ const Author = styled(Text)`
   line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.03em;
+  cursor: pointer;
   color: ${({ theme }) => theme.colors.greyText};
 `;
 
@@ -96,6 +102,7 @@ const Picture = styled.img`
   max-width: 100%;
   max-height: 251px;
   border-radius: 16px;
+  cursor: pointer;
 `;
 
 const Avatar = styled.img`
