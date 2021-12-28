@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { ILikesProps } from "./types";
 import { Text, HeartIcon } from "../../..";
 
-const Likes: React.FC<ILikesProps> = ({ likes, wrapperStyle, textStyle }) => {
+const Likes: React.FC<ILikesProps> = ({ likes, wrapperStyle, textStyle, onLikeAdd }) => {
   return (
-    <LikesWrapper style={wrapperStyle}>
+    <LikesWrapper style={wrapperStyle} onClick={() => onLikeAdd()}>
       <HeartIcon />
       <LikesText style={textStyle}>{likes}</LikesText>
     </LikesWrapper>
@@ -22,6 +22,7 @@ const LikesWrapper = styled.div`
   color: white;
   padding: 8px 10px;
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 const LikesText = styled(Text)`

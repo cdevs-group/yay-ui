@@ -31,6 +31,7 @@ export const PropertieItemBlock = () => {
 export const LikesBlock = () => (
   <Likes
     likes={322}
+    onLikeAdd={() => console.log("Liked")}
     wrapperStyle={{ backgroundColor: "grey", borderRadius: "10px" }}
     textStyle={{ fontWeight: "bold" }}
   />
@@ -48,6 +49,9 @@ export const NFTCardBlock = () => {
       likes={350}
       onShare={() => console.log("share NFT")}
       onFavoritesAdd={() => console.log("Add to Favorites")}
+      onAuthorClick={() => console.log("Go to Author Page")}
+      onNftClick={() => console.log("Go to Nft Page")}
+      onLikeAdd={() => console.log("Liked")}
     />
   );
 };
@@ -110,6 +114,7 @@ export const ImportCollectionBlock = () => {
       button="Submit"
       buttonHandler={() => console.log("log")}
       buttonProps={{}}
+      handleClick={() => null}
     />
   );
 };
