@@ -9,9 +9,13 @@ export interface ICardProps {
     price: number;
     onShare: () => void;
     onFavoritesAdd: () => void;
+    onAuthorClick: () => void;
+    onNftClick: () => void;
+    onLikeAdd: () => void;
 }
 export interface ILikesProps {
     likes: number;
+    onLikeAdd: () => void;
     wrapperStyle?: React.CSSProperties;
     textStyle?: React.CSSProperties;
 }

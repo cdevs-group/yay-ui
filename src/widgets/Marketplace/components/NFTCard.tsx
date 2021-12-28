@@ -16,7 +16,7 @@ const NFTCard: React.FC<ICardProps> = ({
   onFavoritesAdd,
   onAuthorClick,
   onNftClick,
-  onLikeAdd
+  onLikeAdd,
 }) => {
   return (
     <Card>
