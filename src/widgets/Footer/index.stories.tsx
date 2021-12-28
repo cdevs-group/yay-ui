@@ -32,6 +32,8 @@ export const FooterBlock = () => {
           aboutData={aboutData}
           companyData={companyData}
           texts={texts}
+          disabledInput
+          disabledSignUp
         />
       </div>
     </BrowserRouter>

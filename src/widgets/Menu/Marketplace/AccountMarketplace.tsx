@@ -66,6 +66,7 @@ const AccountMarketplace: React.FC<Props> = ({
       icon: <img src={ACHIEVEMENTS} alt="" />,
       text: textsAccount.achievements,
       link: textsAccount.linkAchievements,
+      comingSoon: true,
     },
   ];
 

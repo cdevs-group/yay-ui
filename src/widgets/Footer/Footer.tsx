@@ -21,6 +21,8 @@ const Footer = ({
   companyData,
   socialData,
   tokenData,
+  disabledInput,
+  disabledSignUp,
 }: {
   valueInput: string;
   handleInput: (e: any) => void;
@@ -31,6 +33,8 @@ const Footer = ({
   aboutData: IDataLinks;
   companyData: IDataLinks;
   socialData: IDataSocial;
+  disabledInput?: boolean;
+  disabledSignUp?: boolean;
 }) => {
   return (
     <Wrapper>
@@ -47,8 +51,9 @@ const Footer = ({
               width="100%"
               name="email"
               backgroundColor={baseColors.whiteRgba3}
+              disabled={disabledInput}
             />
-            <Button variant="green" onClick={handleSignIn} width="100%">
+            <Button variant="green" onClick={handleSignIn} width="100%" disabled={disabledSignUp}>
               {texts.signUp}
             </Button>
           </InputBlock>
@@ -115,6 +120,9 @@ const InputBlock = styled(Flex)`
   align-items: center;
   margin-top: 30px;
   flex-direction: column;
+  & input:disabled {
+    opacity: 0.3;
+  }
 
   & button {
     width: 100%;
