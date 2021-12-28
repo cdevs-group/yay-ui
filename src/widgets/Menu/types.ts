@@ -153,7 +153,7 @@ export interface Funds {
   currencyFullName: string;
   balance: string;
   balanceDollars: string;
-  includes?: Funds[]
+  includes?: Funds[];
 }
 
 export interface NavMarketplaceProps extends PanelProps {
