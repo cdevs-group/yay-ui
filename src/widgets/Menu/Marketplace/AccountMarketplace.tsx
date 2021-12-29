@@ -124,6 +124,7 @@ const AccountMarketplace: React.FC<Props> = ({
         alignItems="center"
         onClick={el.includes && handleOpenFunds}
         className={el.includesItem ? "includes" : ""}
+        style={{ cursor: el.includes ? "pointer" : "auto" }}
       >
         <Flex alignItems="center">
           <img alt="" src={el.icon} style={{ marginRight: 12, width: 37, height: 37 }} />
@@ -303,9 +304,6 @@ const Dropdown = styled.div`
 
 const FundsItemStyled = styled(Flex)`
   margin-bottom: 20px;
-  &.includes {
-    cursor: pointer;
-  }
 `;
 const TextName = styled(Text)`
   margin-bottom: 4px;
