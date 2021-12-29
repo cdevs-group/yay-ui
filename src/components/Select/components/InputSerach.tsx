@@ -5,18 +5,18 @@ const InputSearch = ({
   value,
   onChange,
   name,
-  margin,
+  inputPlaceholder,
 }: {
-  margin?: string;
   value: string | number;
   onChange: (e: any) => void;
   name: string;
-}) => <InputBlock margin={margin} value={value} onChange={onChange} name={name.toLowerCase()} placeholder={name} />;
+  inputPlaceholder?: string;
+}) => <InputBlock value={value} onChange={onChange} name={name.toLowerCase()} placeholder={inputPlaceholder} />;
 
 export default InputSearch;
 
 const InputBlock = styled.input<{ margin?: string }>`
-  margin: ${({ margin }) => margin || 0};
+  margin: 0 0 18px 0;
   width: 100%;
   padding: 8px 10px;
   border-radius: 9px;
@@ -26,6 +26,7 @@ const InputBlock = styled.input<{ margin?: string }>`
   color: ${({ theme }) => theme.colors.text};
   outline: none;
   background: transparent;
+
   &::placeholder {
     color: ${({ theme }) => theme.colors.textGray};
   }

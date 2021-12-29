@@ -236,6 +236,10 @@ export const SelectSearchBlock = () => {
             <ArrowDownIcon />
           </Flex>
         }
+        valueInput=""
+        inputHandler={(e: any) => null}
+        inputPlaceholder="dearch"
+        inputName="serch"
         value={value}
         setValue={setValue}
         nameInputOptions="price"

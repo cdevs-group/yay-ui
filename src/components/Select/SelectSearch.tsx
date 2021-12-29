@@ -23,6 +23,10 @@ export interface SelectProps extends SpaceProps, LayoutProps {
   optionsSpacing?: string;
   openDropdown?: boolean;
   setOpenDropdown?: (val: boolean) => void;
+  valueInput: string;
+  inputHandler: (e: any) => void;
+  inputName: string;
+  inputPlaceholder?: string;
 }
 
 const SelectSearch = ({
@@ -36,6 +40,10 @@ const SelectSearch = ({
   optionsSpacing,
   openDropdown,
   setOpenDropdown,
+  valueInput,
+  inputHandler,
+  inputName,
+  inputPlaceholder,
   ...props
 }: SelectProps) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -53,7 +61,12 @@ const SelectSearch = ({
         variant="visible"
       >
         <Dropdown {...propsDropdown}>
-          <InputSearch value="" onChange={(e: any) => null} name="seacrh" margin="0 0 18px" />
+          <InputSearch
+            inputPlaceholder={inputPlaceholder}
+            value={valueInput}
+            onChange={inputHandler}
+            name={inputName}
+          />
           <DropdownList>
             {options?.map((el, i) => (
               <Option optionsSpacing={optionsSpacing} key={i + 1}>
