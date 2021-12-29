@@ -53,6 +53,7 @@ import GITHUB from "../../public/images/git.png";
 import BG_LINE from "../../public/images/bg-line.png";
 import NFT_EXAMPLE from "../../public/images/nft-example.png";
 import ACHIEVEMENTS from "../../public/images/AchievementsIcon.png";
+import GREEN_ELLIPSE from "../../public/images/green-ellips.png";
 
 export {
   BG_IMG,
@@ -110,4 +111,5 @@ export {
   BG_LINE,
   NFT_EXAMPLE,
   ACHIEVEMENTS,
+  GREEN_ELLIPSE,
 };

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Meta } from "@storybook/react/types-6-0";
 import Text from "../Text/Text";
 import Select from "./Select";
 import { Flex } from "../Box";
 import { ArrowDownIcon } from "../Svg";
-import { Avalanche, BNB } from "../../constants/images";
+import { Avalanche, BNB, DESU_TOKEN, GREEN_ELLIPSE } from "../../constants/images";
 import InjectedSelect from "./InjectSelect";
+import SelectSearch from "./SelectSearch";
+import styled from "styled-components";
 
 export default {
   title: "Components/Select",
@@ -173,6 +175,76 @@ export const InjectedDropDownBlock = () => {
         inputsName={{ from: "From", to: "To" }}
         inputHandler={inputHandler}
         buttonText="Applay"
+      />
+    </Flex>
+  );
+};
+
+export const SelectSearchBlock = () => {
+  const [value, setValue] = useState("Collection");
+
+  const options = [
+    {
+      name: "All",
+      value: "All",
+      img: GREEN_ELLIPSE,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+    {
+      name: "Passage",
+      value: "Passage",
+      img: DESU_TOKEN,
+    },
+  ];
+  const [open, setOpen] = useState<boolean>(true);
+
+  return (
+    <Flex>
+      <SelectSearch
+        selectItem={
+          <Flex alignItems="center">
+            <Text mr="15px">{options.find((el) => el.value === value)?.name}</Text>
+            <ArrowDownIcon />
+          </Flex>
+        }
+        value={value}
+        setValue={setValue}
+        nameInputOptions="price"
+        options={options}
+        propsDropdown={{
+          minWidth: 219,
+        }}
+        width="fit-content"
+        mr={100}
       />
     </Flex>
   );
