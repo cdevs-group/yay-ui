@@ -7766,7 +7766,7 @@ var AccountMarketplace = function (_a) {
             React__default.createElement(Item, null)));
     };
     var FundsItem = function (el) {
-        return (React__default.createElement(FundsItemStyled, { justifyContent: "space-between", alignItems: "center", onClick: el.includes && handleOpenFunds, className: el.includesItem ? "includes" : "" },
+        return (React__default.createElement(FundsItemStyled, { justifyContent: "space-between", alignItems: "center", onClick: el.includes && handleOpenFunds, className: el.includesItem ? "includes" : "", style: { cursor: el.includes ? "pointer" : "auto" } },
             React__default.createElement(Flex, { alignItems: "center" },
                 React__default.createElement("img", { alt: "", src: el.icon, style: { marginRight: 12, width: 37, height: 37 } }),
                 React__default.createElement("div", null,
@@ -7842,7 +7842,7 @@ var Dropdown = styled.div(templateObject_4$15 || (templateObject_4$15 = __makeTe
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var FundsItemStyled = styled(Flex)(templateObject_5$N || (templateObject_5$N = __makeTemplateObject(["\n  margin-bottom: 20px;\n  &.includes {\n    cursor: pointer;\n  }\n"], ["\n  margin-bottom: 20px;\n  &.includes {\n    cursor: pointer;\n  }\n"])));
+var FundsItemStyled = styled(Flex)(templateObject_5$N || (templateObject_5$N = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
 var TextName = styled(Text)(templateObject_6$D || (templateObject_6$D = __makeTemplateObject(["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"], ["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"])), FundsItemStyled);
 var TextFullName = styled(Text)(templateObject_7$t || (templateObject_7$t = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"])), FundsItemStyled);
 var StyledTitle$5 = styled(Text)(templateObject_8$n || (templateObject_8$n = __makeTemplateObject(["\n  text-shadow: ", ";\n  font-weight: 400;\n"], ["\n  text-shadow: ", ";\n  font-weight: 400;\n"])), function (_a) {
