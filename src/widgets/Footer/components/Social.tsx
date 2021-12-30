@@ -26,7 +26,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 const Title = styled(Text)`
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-weight: normal;
   font-size: 18px;
   line-height: 23px;

@@ -13035,7 +13035,7 @@ var Social = function (_a) {
             React__default.createElement("img", { src: link.img, alt: "socail" }))); }))));
 };
 var Wrapper$2 = styled.div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"], ["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"])));
-var Title$3 = styled(Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"], ["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"])));
+var Title$3 = styled(Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  margin-bottom: 22px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"], ["\n  margin-bottom: 22px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"])));
 var LinkItem = styled.a(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
