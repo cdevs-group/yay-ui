@@ -32,6 +32,8 @@ const Title = styled(Text)`
   line-height: 23px;
 `;
 const LinkItem = styled.a`
+  display: flex;
+  align-items: center;
   font-size: 14px;
   line-height: 30px;
   opacity: 0.8;
