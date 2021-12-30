@@ -22,6 +22,7 @@ import { ellipsis } from "../../../helpers/ellipsis";
 import { CopyToClipboard } from "../../../components/CopyToClipboard";
 import { LabelTop } from "../../../components/LabelTop";
 import { Link } from "react-router-dom";
+import { connectorLocalStorageKey } from "../../WalletModal";
 
 interface Props {
   account?: string;
@@ -211,7 +212,16 @@ const AccountMarketplace: React.FC<Props> = ({
               {links.map((el: any) => (
                 <LinkUser key={el.text} {...el} />
               ))}
-              <Button variant="option" onClick={() => logout()} mt="43px">
+              <Button
+                variant="option"
+                onClick={() => {
+                  {
+                    logout();
+                    window.localStorage.removeItem(connectorLocalStorageKey);
+                  }
+                }}
+                mt="43px"
+              >
                 {textsAccount.disconnect}
               </Button>
             </Dropdown>
