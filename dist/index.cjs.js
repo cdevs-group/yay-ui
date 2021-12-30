@@ -13068,7 +13068,7 @@ var Social = function (_a) {
 };
 var Wrapper$2 = styled__default["default"].div(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"], ["\n  text-align: center;\n  max-width: 320px;\n  margin: 0 auto;\n"])));
 var Title$3 = styled__default["default"](Text)(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"], ["\n  margin-bottom: 20px;\n  font-weight: normal;\n  font-size: 18px;\n  line-height: 23px;\n"])));
-var LinkItem = styled__default["default"].a(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"], ["\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"])), function (_a) {
+var LinkItem = styled__default["default"].a(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  font-size: 14px;\n  line-height: 30px;\n  opacity: 0.8;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 });
