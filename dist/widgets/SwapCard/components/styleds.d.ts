@@ -15,5 +15,5 @@ export declare function SwapCallbackError({ error }: {
 }): JSX.Element;
 export declare const SwapShowAcceptChanges: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     gap?: string | undefined;
-    justify?: "center" | "end" | "start" | "flex-end" | "flex-start" | "stretch" | "space-between" | undefined;
+    justify?: "space-between" | "stretch" | "center" | "end" | "flex-end" | "flex-start" | "start" | undefined;
 }, never>;
