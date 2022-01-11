@@ -15,12 +15,13 @@ interface IAchievementProps {
   description: string;
   collectText?: string;
   handleCollect?: (val?: string | number) => void;
-  complete: boolean;
+  progress?: boolean;
   collectTextMob?: string;
   disabledButton?: boolean;
   loadingButton?: boolean;
   refferal?: boolean;
   refferalReward?: string;
+  network?: string;
 }
 
 const Achievement = ({
@@ -32,15 +33,17 @@ const Achievement = ({
   collectText,
   collectTextMob,
   handleCollect,
-  complete,
+  progress,
   disabledButton,
   loadingButton,
   refferal,
   refferalReward,
+  network,
 }: IAchievementProps) => {
   return (
     <AchievementWrap>
-      {!complete && (
+      {network && <Network src={network} alt="" />}
+      {progress && (
         <Counter>
           <Flex alignItems="center" justifyContent="center">
             <Text
@@ -59,7 +62,7 @@ const Achievement = ({
           <img src={COIN4} />
         </Counter>
       )}
-      {complete && refferal && (
+      {refferal && (
         <Counter>
           <Flex alignItems="center" justifyContent="center">
             <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
@@ -79,8 +82,8 @@ const Achievement = ({
         <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
           {description}
         </DescriptionStyle>
-        {count && countMax && !complete && <RangeTrack progress={(+count / +countMax) * 100} />}
-        {complete && (
+        {progress && countMax && (count || count === 0) && <RangeTrack progress={(+count / +countMax) * 100} />}
+        {!progress && (
           <ButtonStyle
             padding="0 15px"
             height="30px"
@@ -229,4 +232,12 @@ const DescriptionStyle = styled(Text)`
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 11px;
   }
+`;
+
+const Network = styled.img`
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  width: 22px;
+  height: 22px;
 `;
