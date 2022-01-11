@@ -13,6 +13,7 @@ interface IAchievementProps {
   countMax?: string | number;
   title: string;
   description: string;
+  fullDescription?: string;
   collectText?: string;
   handleCollect?: (val?: string | number) => void;
   progress?: boolean;
@@ -30,6 +31,7 @@ const Achievement = ({
   countMax,
   title,
   description,
+  fullDescription,
   collectText,
   collectTextMob,
   handleCollect,
@@ -41,84 +43,80 @@ const Achievement = ({
   network,
 }: IAchievementProps) => {
   return (
-    <AchievementWrap>
-      {network && <Network src={network} alt="" />}
-      {progress && (
-        <Counter>
-          <Flex alignItems="center" justifyContent="center">
-            <Text
-              fontWeight={500}
-              color={count === 0 || count === "0" ? "text" : baseColors.green}
-              letterSpacing="0.05em"
-              fontSize="10px"
-            >
-              {count}
-            </Text>
-            <Text fontSize="10px">/</Text>
-            <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
-              {countMax}
+    <Wrapper progress={progress}>
+      <Inner className="card-inner">
+        <CardFront progress={progress}>
+          {network && <Network src={network} alt="" />}
+          {progress && (
+            <Counter>
+              <Flex alignItems="center" justifyContent="center">
+                <Text
+                  fontWeight={500}
+                  color={count === 0 || count === "0" ? "text" : baseColors.green}
+                  letterSpacing="0.05em"
+                  fontSize="10px"
+                >
+                  {count}
+                </Text>
+                <Text fontSize="10px">/</Text>
+                <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
+                  {countMax}
+                </Text>
+              </Flex>
+              <img src={COIN4} />
+            </Counter>
+          )}
+          {refferal && (
+            <Counter>
+              <Flex alignItems="center" justifyContent="center">
+                <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
+                  {refferalReward}
+                </Text>
+              </Flex>
+              <img src={COIN4} />
+            </Counter>
+          )}
+          <Content>
+            <ImageBlock>
+              <img src={image} />
+            </ImageBlock>
+            <TitleStyle mb="5px" fontWeight={500} letterSpacing="0.05em" fontSize="13px">
+              {title}
+            </TitleStyle>
+            <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
+              {description}
+            </DescriptionStyle>
+            {progress && countMax && (count || count === 0) && <RangeTrack progress={(+count / +countMax) * 100} />}
+            {!progress && (
+              <ButtonStyle
+                padding="0 15px"
+                height="30px"
+                width="100%"
+                variant="green"
+                onClick={handleCollect}
+                disabled={disabledButton}
+                spin={loadingButton}
+              >
+                <ButtonText loading={loadingButton}>{collectText}</ButtonText>
+                <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
+              </ButtonStyle>
+            )}
+          </Content>
+        </CardFront>
+        <CardBack progress={progress}>
+          <Flex alignItems="center" justifyContent="center" height="100%">
+            <Text fontWeight={400} letterSpacing="0.05em" fontSize="10px">
+              {fullDescription}
             </Text>
           </Flex>
-          <img src={COIN4} />
-        </Counter>
-      )}
-      {refferal && (
-        <Counter>
-          <Flex alignItems="center" justifyContent="center">
-            <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
-              {refferalReward}
-            </Text>
-          </Flex>
-          <img src={COIN4} />
-        </Counter>
-      )}
-      <Content>
-        <ImageBlock>
-          <img src={image} />
-        </ImageBlock>
-        <TitleStyle mb="5px" fontWeight={500} letterSpacing="0.05em" fontSize="13px">
-          {title}
-        </TitleStyle>
-        <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
-          {description}
-        </DescriptionStyle>
-        {progress && countMax && (count || count === 0) && <RangeTrack progress={(+count / +countMax) * 100} />}
-        {!progress && (
-          <ButtonStyle
-            padding="0 15px"
-            height="30px"
-            width="100%"
-            variant="green"
-            onClick={handleCollect}
-            disabled={disabledButton}
-            spin={loadingButton}
-          >
-            <ButtonText loading={loadingButton}>{collectText}</ButtonText>
-            <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
-          </ButtonStyle>
-        )}
-      </Content>
-    </AchievementWrap>
+        </CardBack>
+      </Inner>
+    </Wrapper>
   );
 };
 
 export default Achievement;
 
-const AchievementWrap = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
-  padding: 0 14px 16px;
-  background: ${({ theme }) => theme.colors.bgGray};
-  border: 1.5px solid ${({ theme }) => theme.colors.bgGray};
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-  &:hover {
-    border: 1.5px solid ${({ theme }) => theme.colors.green};
-    box-shadow: ${({ theme }) => theme.colors.boxShadow14};
-  }
-`;
 const Counter = styled.div`
   top: -5px;
   right: -5px;
@@ -240,4 +238,54 @@ const Network = styled.img`
   top: 7px;
   width: 22px;
   height: 22px;
+`;
+
+const Wrapper = styled.div<{ progress?: boolean }>`
+  position: relative;
+  perspective: 1000px;
+  min-height: 210px;
+  width: 100%;
+  border-radius: 10px;
+  &:hover {
+    & .card-inner {
+      transform: ${({ progress }) => (!progress ? "none" : "rotateY(180deg)")};
+    }
+  }
+`;
+
+const Inner = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 600ms;
+  border-radius: 10px;
+  box-sizing: border-box;
+`;
+
+const CardFront = styled.div<{ progress?: boolean }>`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 14px 16px;
+  background: ${({ theme }) => theme.colors.bgGray};
+  border: 1.5px solid ${({ theme }) => theme.colors.bgGray};
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  transition: 0;
+  backface-visibility: ${({ progress }) => (!progress ? "" : "hidden")};
+
+  &:hover {
+    border: 1.5px solid ${({ theme }) => theme.colors.green};
+    box-shadow: ${({ theme }) => theme.colors.boxShadow14};
+  }
+`;
+
+const CardBack = styled(CardFront)`
+  transform: rotateY(180deg) translateX(50%);
 `;

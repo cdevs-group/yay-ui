@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EyeCloseIcon, EyeOpenIcon, ArrowTopRight } from "../../components/Svg";
+import { EyeCloseIcon, EyeOpenIcon, ArrowTopRight, CopyIcon } from "../../components/Svg";
 import { Flex } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { ellipsis } from "../../helpers/ellipsis";
 import YAY_TOKEN_CIRCLE from "./images/logo-circle.png";
 import { ProfileCardProps } from "./types";
 import { Button } from "../..";
+import { CopyToClipboard } from "../../components/CopyToClipboard";
 
 const ProfileCard: React.FC<ProfileCardProps> = ({
   token,
@@ -36,7 +37,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           {!isVisibleAccount && <EyeCloseIcon />}
           {isVisibleAccount && <EyeOpenIcon fill="whiteRgba" />}
         </Eye> */}
-        <Link href={linkAccount}>
+        <Link href={linkAccount} target="_blank">
           <ArrowTopRight />
         </Link>
       </AccountLine>
@@ -78,12 +79,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         {texts.refferal}
       </Text>
       <Flex justifyContent="space-between" alignItems="center" width="100%" mb="36px">
-        <Text color="textGray" fontSize="13px">
+        <TextLinkRefferal color="textGray" fontSize="13px">
           {linkRefferal}
-        </Text>
-        <Link href={linkRefferal}>
-          <ArrowTopRight />
-        </Link>
+        </TextLinkRefferal>
+        <CopyToClipboard toCopy={linkRefferal} textCopied="copied" icon={<CopyIcon />} />
       </Flex>
       <AwardsLine>
         {awards?.map((el) => (
@@ -172,4 +171,11 @@ const AwardsLine = styled(Flex)`
   width: 100%;
   max-width: 250px;
   margin: 0 auto 35px;
+`;
+
+const TextLinkRefferal = styled(Text)`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
 `;

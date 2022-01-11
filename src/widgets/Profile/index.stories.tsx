@@ -28,7 +28,7 @@ export const ProfileCardWidget: React.FC = () => {
     <div style={{ marginTop: 50, maxWidth: 373 }}>
       <ProfileCard
         linkAccount="dd"
-        linkRefferal="ldk"
+        linkRefferal={`https://play.yay.games/sponsor/6x3438e324938438e32438e329828x46R65`}
         texts={textsCard}
         account="6x3438e324938438e32438e329828x46R65"
         awards={[coins, win, skull, rocket]}
@@ -50,6 +50,7 @@ export const AchievementSolo = () => {
         collectText="Collect Reward"
         collectTextMob="Collect"
         network={BNB2}
+        fullDescription="lose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a ro"
       />
 
       <Achievement
