@@ -13395,12 +13395,12 @@ var RegisterProfile = function (_a) {
         React__default["default"].createElement(Form, null,
             React__default["default"].createElement(Input, { onChange: onChange, name: inputName1, value: inputValue1, title: texts.inputTitle1, placeholder: texts.inputPlaceholder1, inputError: inputError1 }),
             React__default["default"].createElement(Input, { margin: "25px 0 0", onChange: onChange, name: inputName2, value: inputValue2, title: texts.inputTitle2, placeholder: texts.inputPlaceholder2, inputError: inputError2 }),
-            React__default["default"].createElement(Button$9, __assign({ width: "100%", variant: "green", onClick: onClick, margin: "30px 0 0 0", type: 'submit' }, buttonProps), texts.buttonText))));
+            React__default["default"].createElement(Button$9, __assign({ width: "100%", variant: "green", onClick: onClick, margin: "30px 0 0 0", type: "submit" }, buttonProps), texts.buttonText))));
 };
 var Wrapper = styled__default["default"].div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  max-width: 500px;\n  margin: 0 auto;\n"], ["\n  max-width: 500px;\n  margin: 0 auto;\n"])));
 var Title = styled__default["default"](Text)(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n"], ["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n"])));
 var Description = styled__default["default"](Text)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  margin-top: 30px;\n  margin-bottom: 30px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.17em;\n"], ["\n  margin-top: 30px;\n  margin-bottom: 30px;\n  font-size: 15px;\n  line-height: 19px;\n  text-align: center;\n  letter-spacing: 0.17em;\n"])));
-var Form = styled__default["default"].form(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 15px 15px 25px;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"], ["\n  padding: 15px 15px 25px;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"])), function (_a) {
+var Form = styled__default["default"].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  padding: 15px 15px 25px;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"], ["\n  padding: 15px 15px 25px;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {

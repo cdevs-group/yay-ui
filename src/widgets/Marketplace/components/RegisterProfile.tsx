@@ -70,7 +70,7 @@ const Description = styled(Text)`
   text-align: center;
   letter-spacing: 0.17em;
 `;
-const Form = styled.form`
+const Form = styled.div`
   padding: 15px 15px 25px;
   max-width: 500px;
   width: 100%;
