@@ -134,7 +134,10 @@ const Paragraph = styled.p`
 export const RegisterProfileBlock = () => {
   return (
     <RegisterProfile
-      onClick={() => console.log("click")}
+      handleSubmit={(e) => {
+        e.preventDefault();
+        console.log("ds");
+      }}
       title="Register"
       description="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
       onChange={(e: any) => null}

@@ -37,7 +37,8 @@ export interface IProfileCardProps {
 export interface IRegisterProfileProps {
     title?: ReactNode | string;
     description?: ReactNode | string;
-    onClick?: () => void | Promise<void>;
+    handleSubmit?: (e?: any) => void | Promise<void>;
+    onClick?: (e?: any) => void | Promise<void>;
     onChange: (e: any) => void;
     inputValue1: string;
     inputValue2: string;
