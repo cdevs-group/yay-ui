@@ -169,7 +169,7 @@ var rotate$1 = styled.keyframes(templateObject_1$43 || (templateObject_1$43 = __
 var spinStyle = styled.css(templateObject_2$38 || (templateObject_2$38 = __makeTemplateObject(["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"], ["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"])), rotate$1);
 var Svg = styled__default["default"].svg(templateObject_3$2B || (templateObject_3$2B = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 }, function (_a) {
     var spin = _a.spin;
     return spin && spinStyle;
@@ -1300,7 +1300,7 @@ var getDisabledStyles = function (_a) {
         return "\n      &:disabled,\n      &.yay-button--disabled {\n        cursor: not-allowed;\n      }\n    ";
     }
     var opacity = variant === variants$4.LOAD_COLOR ? 1 : 0.2;
-    return "\n    &:disabled,\n    &.yay-button--disabled {\n      box-shadow: none;\n      opacity: ".concat(opacity, ";\n      color: ").concat(theme.colors.text, ";\n      cursor: not-allowed;\n    }\n  ");
+    return "\n    &:disabled,\n    &.yay-button--disabled {\n      box-shadow: none;\n      opacity: " + opacity + ";\n      color: " + theme.colors.text + ";\n      cursor: not-allowed;\n    }\n  ";
 };
 var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
@@ -1495,7 +1495,7 @@ var templateObject_1$40;
 
 var getColor$3 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$3(_a) {
     var expiryTimestamp = _a.expiryTimestamp, color = _a.color, disabled = _a.disabled;
@@ -1509,7 +1509,7 @@ function MyTimer$3(_a) {
     };
     var timeArray = [hours, minutes, seconds];
     return (React__default["default"].createElement(Wrap$z, null,
-        React__default["default"].createElement(Block$f, { color: color, disabled: disabled }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-".concat(i) },
+        React__default["default"].createElement(Block$f, { color: color, disabled: disabled }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-" + i },
             handleDigit(item).leftDigit,
             handleDigit(item).rightDigit,
             i === 2 ? null : React__default["default"].createElement(Dots$1, null, ":"))); }))));
@@ -1578,7 +1578,7 @@ var UpContentWin$1 = styled__default["default"].div(templateObject_8$B || (templ
     var show = _a.show;
     return (show ? "flex" : "none");
 });
-var ButtonBnb$1 = styled__default["default"].div(templateObject_9$q || (templateObject_9$q = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
+var ButtonBnb$1 = styled__default["default"].div(templateObject_9$r || (templateObject_9$r = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg$1 = styled__default["default"].div(templateObject_10$l || (templateObject_10$l = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
 var RightText$3 = styled__default["default"].div(templateObject_11$i || (templateObject_11$i = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
@@ -1587,15 +1587,15 @@ var RightText$3 = styled__default["default"].div(templateObject_11$i || (templat
     var theme = _a.theme;
     return polished.transparentize(0.2, theme.colors.text);
 });
-var IconComplete$3 = styled__default["default"].div(templateObject_12$f || (templateObject_12$f = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
+var IconComplete$3 = styled__default["default"].div(templateObject_12$g || (templateObject_12$g = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
     var showIcon = _a.showIcon;
     return (showIcon ? "flex" : "none");
 });
-var IconCompleteDown$1 = styled__default["default"].div(templateObject_13$c || (templateObject_13$c = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
+var IconCompleteDown$1 = styled__default["default"].div(templateObject_13$d || (templateObject_13$d = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
     var showIcon = _a.showIcon;
     return (showIcon ? "flex" : "none");
 });
-var MainBlock$5 = styled__default["default"].div(templateObject_14$9 || (templateObject_14$9 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
+var MainBlock$5 = styled__default["default"].div(templateObject_14$a || (templateObject_14$a = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: 23px 35px 25px 32px;\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
     var theme = _a.theme, negative = _a.negative, colorNone = _a.colorNone;
     return (negative ? theme.colors.redBg : colorNone ? "none" : theme.colors.greenText);
 }, function (_a) {
@@ -1648,7 +1648,7 @@ var StyledCard = function (_a) {
                         React__default["default"].createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default["default"].createElement(Icon$11, { fill: "#FFB72C" }))))))));
 };
-var templateObject_1$3_, templateObject_2$36, templateObject_3$2z, templateObject_4$23, templateObject_5$1n, templateObject_6$14, templateObject_7$J, templateObject_8$B, templateObject_9$q, templateObject_10$l, templateObject_11$i, templateObject_12$f, templateObject_13$c, templateObject_14$9, templateObject_15$6, templateObject_16$5;
+var templateObject_1$3_, templateObject_2$36, templateObject_3$2z, templateObject_4$23, templateObject_5$1n, templateObject_6$14, templateObject_7$J, templateObject_8$B, templateObject_9$r, templateObject_10$l, templateObject_11$i, templateObject_12$g, templateObject_13$d, templateObject_14$a, templateObject_15$6, templateObject_16$5;
 
 var Card$m = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -1681,7 +1681,7 @@ var LinePrice$1 = styled__default["default"].div(templateObject_6$13 || (templat
 });
 var Info$1 = styled__default["default"].div(templateObject_7$I || (templateObject_7$I = __makeTemplateObject(["\n  margin-top: 35px;\n"], ["\n  margin-top: 35px;\n"])));
 var LockedPrice$1 = styled__default["default"].div(templateObject_8$A || (templateObject_8$A = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"])));
-var Prize$1 = styled__default["default"].div(templateObject_9$p || (templateObject_9$p = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
+var Prize$1 = styled__default["default"].div(templateObject_9$q || (templateObject_9$q = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
 var ExpiredCardNA = function (_a) {
     var negative = _a.negative, closedCount = _a.closedCount, linePrice = _a.linePrice, lockedPrice = _a.lockedPrice, prize = _a.prize, texts = _a.texts;
     return (React__default["default"].createElement(Wrap$x, null,
@@ -1708,7 +1708,7 @@ var ExpiredCardNA = function (_a) {
                     prize,
                     " ")))));
 };
-var templateObject_1$3Z, templateObject_2$35, templateObject_3$2y, templateObject_4$22, templateObject_5$1m, templateObject_6$13, templateObject_7$I, templateObject_8$A, templateObject_9$p;
+var templateObject_1$3Z, templateObject_2$35, templateObject_3$2y, templateObject_4$22, templateObject_5$1m, templateObject_6$13, templateObject_7$I, templateObject_8$A, templateObject_9$q;
 
 var Wrap$w = styled__default["default"].div(templateObject_1$3Y || (templateObject_1$3Y = __makeTemplateObject(["\n  font-weight: 500;\n  color: ", ";\n"], ["\n  font-weight: 500;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -1736,7 +1736,7 @@ var LinePrice = styled__default["default"].div(templateObject_6$12 || (templateO
 });
 var Info = styled__default["default"].div(templateObject_7$H || (templateObject_7$H = __makeTemplateObject(["\n  margin-top: 35px;\n"], ["\n  margin-top: 35px;\n"])));
 var LockedPrice = styled__default["default"].div(templateObject_8$z || (templateObject_8$z = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-bottom: 13px;\n  font-weight: normal;\n  font-size: 13px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  & div {\n    font-weight: 500;\n    font-size: 15px;\n  }\n"])));
-var Prize = styled__default["default"].div(templateObject_9$o || (templateObject_9$o = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
+var Prize = styled__default["default"].div(templateObject_9$p || (templateObject_9$p = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-weight: 500;\n  font-size: 13px;\n  line-height: 16px;\n  & div {\n    font-size: 15px;\n  }\n"])));
 var LiveCard = function (_a) {
     var texts = _a.texts, negative = _a.negative, closedCount = _a.closedCount, linePrice = _a.linePrice, lockedPrice = _a.lockedPrice, prize = _a.prize;
     return (React__default["default"].createElement(Wrap$w, null,
@@ -1757,7 +1757,7 @@ var LiveCard = function (_a) {
                 ": ",
                 React__default["default"].createElement("div", null, prize)))));
 };
-var templateObject_1$3Y, templateObject_2$34, templateObject_3$2x, templateObject_4$21, templateObject_5$1l, templateObject_6$12, templateObject_7$H, templateObject_8$z, templateObject_9$o;
+var templateObject_1$3Y, templateObject_2$34, templateObject_3$2x, templateObject_4$21, templateObject_5$1l, templateObject_6$12, templateObject_7$H, templateObject_8$z, templateObject_9$p;
 
 var orangeAnimation$1 = styled.keyframes(templateObject_1$3X || (templateObject_1$3X = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, -20px); }\n  50% { transform: translate(20px, 0); }\n  75% { transform: translate(-20px, 0); }\n"])));
 var redAnimation$1 = styled.keyframes(templateObject_2$33 || (templateObject_2$33 = __makeTemplateObject(["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"], ["\n  0%, 100% { transform: translate(0, 0); }\n  25% { transform: translate(0, 20px); }\n  50% { transform: translate(-20px, 0); }\n  75% { transform: translate(20px, 0); }\n"])));
@@ -1773,7 +1773,7 @@ var OrangeCircle$1 = styled__default["default"].div(templateObject_8$y || (templ
     var theme = _a.theme;
     return theme.colors.orangeBg;
 });
-var GreenCircle$1 = styled__default["default"].div(templateObject_9$n || (templateObject_9$n = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), greenAnimation$1, function (_a) {
+var GreenCircle$1 = styled__default["default"].div(templateObject_9$o || (templateObject_9$o = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), greenAnimation$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg;
 });
@@ -1785,7 +1785,7 @@ var YellowCircle$1 = styled__default["default"].div(templateObject_11$h || (temp
     var theme = _a.theme;
     return theme.colors.yellowBg;
 });
-var BottomText$1 = styled__default["default"].div(templateObject_12$e || (templateObject_12$e = __makeTemplateObject(["\n  margin-top: auto;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: auto;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var BottomText$1 = styled__default["default"].div(templateObject_12$f || (templateObject_12$f = __makeTemplateObject(["\n  margin-top: auto;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: auto;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
@@ -1800,7 +1800,7 @@ var LoaderCard = function (_a) {
                 React__default["default"].createElement(YellowCircle$1, null)),
             textTooltip && React__default["default"].createElement(BottomText$1, null, textTooltip))));
 };
-var templateObject_1$3X, templateObject_2$33, templateObject_3$2w, templateObject_4$20, templateObject_5$1k, templateObject_6$11, templateObject_7$G, templateObject_8$y, templateObject_9$n, templateObject_10$k, templateObject_11$h, templateObject_12$e;
+var templateObject_1$3X, templateObject_2$33, templateObject_3$2w, templateObject_4$20, templateObject_5$1k, templateObject_6$11, templateObject_7$G, templateObject_8$y, templateObject_9$o, templateObject_10$k, templateObject_11$h, templateObject_12$f;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -1841,7 +1841,7 @@ var style$1 = (_a$6 = {},
     _a$6);
 var getColor$2 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
@@ -1858,7 +1858,7 @@ var Text = styled__default["default"].div(templateObject_1$3W || (templateObject
     return theme.colors.text;
 }, getColor$2, getFontSize, function (_a) {
     var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
+    return textTransform && "text-transform: " + textTransform + ";";
 }, function (_a) {
     var bold = _a.bold;
     return (bold ? 700 : 500) || 500;
@@ -1949,7 +1949,7 @@ var templateObject_1$3T, templateObject_2$31, templateObject_3$2v, templateObjec
 
 var Front$1 = styled__default["default"].div(templateObject_1$3S || (templateObject_1$3S = __makeTemplateObject(["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var Back$1 = styled__default["default"](Front$1)(templateObject_2$30 || (templateObject_2$30 = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
-var Inner$2 = styled__default["default"].div(templateObject_3$2u || (templateObject_3$2u = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"])), function (_a) {
+var Inner$3 = styled__default["default"].div(templateObject_3$2u || (templateObject_3$2u = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"])), function (_a) {
     var isFlipped = _a.isFlipped;
     return (isFlipped ? 180 : 0);
 }, Front$1, function (_a) {
@@ -1976,7 +1976,7 @@ var CardFlip = function (_a) {
     var isFlipped = _a.isFlipped, children = _a.children;
     var _b = getComponents$1(children), front = _b[0], back = _b[1];
     return (React__default["default"].createElement(StyledCardFlip$1, null,
-        React__default["default"].createElement(Inner$2, { isFlipped: isFlipped },
+        React__default["default"].createElement(Inner$3, { isFlipped: isFlipped },
             React__default["default"].createElement(Front$1, null, front),
             React__default["default"].createElement(Back$1, null, back))));
 };
@@ -2018,7 +2018,7 @@ var BalanceInput = function (_a) {
     return (React__default["default"].createElement(InputWrap$4, __assign({ disabled: disabled }, props),
         React__default["default"].createElement(LeftBlock, null,
             React__default["default"].createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
-            React__default["default"].createElement(Input$c, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, disabled: disabled }, inputProps))),
+            React__default["default"].createElement(Input$c, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, disabled: disabled }, inputProps))),
         React__default["default"].createElement(RightBlock, null,
             handleButtonToMax ? (React__default["default"].createElement(ButtonToMax, { as: "button", onClick: handleButtonToMax }, "MAX")) : null,
             React__default["default"].createElement(InputIcon, null,
@@ -2094,7 +2094,7 @@ var TabsCard = function (_a) {
             var handleClick = function () {
                 handlePercentChange(percentShortcut);
             };
-            return (React__default["default"].createElement(Tab$b, { key: percentShortcut, onClick: handleClick, disabled: disabledTab }, "".concat(percentShortcut, "%")));
+            return (React__default["default"].createElement(Tab$b, { key: percentShortcut, onClick: handleClick, disabled: disabledTab }, percentShortcut + "%"));
         }),
         React__default["default"].createElement(Tab$b, { onClick: function () { return handlePercentChange(100); }, disabled: disabledTab }, "Max")));
 };
@@ -2178,7 +2178,7 @@ var templateObject_1$3M;
 
 var getColor$1 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$2(_a) {
     var expiryTimestamp = _a.expiryTimestamp, color = _a.color, avax = _a.avax;
@@ -2192,7 +2192,7 @@ function MyTimer$2(_a) {
     };
     var timeArray = [hours, minutes, seconds];
     return (React__default["default"].createElement(Wrap$r, null,
-        React__default["default"].createElement(Block$e, { avax: avax, color: color }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-".concat(i) },
+        React__default["default"].createElement(Block$e, { avax: avax, color: color }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-" + i },
             React__default["default"].createElement(Item$3, { avax: avax },
                 handleDigit(item).leftDigit,
                 handleDigit(item).rightDigit,
@@ -2203,7 +2203,7 @@ var LoadIcons = [React__default["default"].createElement(Icon$10, { spin: true, 
 var LoadingTimer$1 = function (_a) {
     var avax = _a.avax;
     return (React__default["default"].createElement(Wrap$r, null,
-        React__default["default"].createElement(Block$e, { avax: avax }, LoadIcons.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-".concat(i) },
+        React__default["default"].createElement(Block$e, { avax: avax }, LoadIcons.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-" + i },
             React__default["default"].createElement(Item$3, { avax: avax }, item),
             i === 2 ? null : React__default["default"].createElement(Dots, null, ":"))); }))));
 };
@@ -2243,7 +2243,7 @@ var templateObject_1$3L, templateObject_2$2X, templateObject_3$2q, templateObjec
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$1(_a) {
     // const days = Math.floor(expiryTimestamp / 86400);
@@ -2263,7 +2263,7 @@ function MyTimer$1(_a) {
     };
     var timeArray = [days, hours, minutes, seconds];
     var timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
-    return (React__default["default"].createElement(Wrap$q, { color: color }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-".concat(i) },
+    return (React__default["default"].createElement(Wrap$q, { color: color }, timeArray.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-" + i },
         handleDigit(item).leftDigit,
         handleDigit(item).rightDigit,
         timeTextArray[i],
@@ -2293,7 +2293,7 @@ function MyTimer(_a) {
         };
     }
     var date = getTimeRemaining(expiryTimestamp);
-    return (React__default["default"].createElement(Wrapper$T, { widthWrapper: widthWrapper, margin: margin },
+    return (React__default["default"].createElement(Wrapper$U, { widthWrapper: widthWrapper, margin: margin },
         React__default["default"].createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, color: color },
             date.days > 0 ? date.days + "d :" : "",
             " ",
@@ -2309,16 +2309,16 @@ var LoadingTimer = function (_a) {
         ? [React__default["default"].createElement(Icon$10, { spin: true, fill: "none" }), React__default["default"].createElement(Icon$10, { spin: true, fill: "none" })]
         : [React__default["default"].createElement(Icon$10, { spin: true, fill: "none" }), React__default["default"].createElement(Icon$10, { spin: true, fill: "none" }), React__default["default"].createElement(Icon$10, { spin: true, fill: "none" })];
     var pointsAfter = hoursHide ? 1 : 2;
-    return (React__default["default"].createElement(Wrapper$T, { margin: margin, widthWrapper: widthWrapper },
-        React__default["default"].createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, hoursHide: hoursHide }, LoadIcons.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-".concat(i) },
+    return (React__default["default"].createElement(Wrapper$U, { margin: margin, widthWrapper: widthWrapper },
+        React__default["default"].createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, hoursHide: hoursHide }, LoadIcons.map(function (item, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "item-" + i },
             React__default["default"].createElement(ItemWithoutBg, null, item),
             i === pointsAfter ? null : React__default["default"].createElement(DotsWithoutBg, { marginPoint: marginPoint }, ":"))); }))));
 };
 var TimerNotSolidWithoutBg = function (_a) {
     var time = _a.time, color = _a.color, isLoad = _a.isLoad, height = _a.height, borderRadius = _a.borderRadius, width = _a.width, background = _a.background, marginPoint = _a.marginPoint, margin = _a.margin, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize, hoursHide = _a.hoursHide, withTime = _a.withTime;
-    return (React__default["default"].createElement("div", { style: { width: "".concat(widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default["default"].createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "#fff", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default["default"].createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
+    return (React__default["default"].createElement("div", { style: { width: "" + (widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default["default"].createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "#fff", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default["default"].createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
 };
-var Wrapper$T = styled__default["default"](Wrap$r)(templateObject_1$3J || (templateObject_1$3J = __makeTemplateObject(["\n  margin: ", ";\n  width: ", ";\n"], ["\n  margin: ", ";\n  width: ", ";\n"])), function (_a) {
+var Wrapper$U = styled__default["default"](Wrap$r)(templateObject_1$3J || (templateObject_1$3J = __makeTemplateObject(["\n  margin: ", ";\n  width: ", ";\n"], ["\n  margin: ", ";\n  width: ", ";\n"])), function (_a) {
     var margin = _a.margin;
     return (margin ? margin : 0);
 }, function (_a) {
@@ -2499,7 +2499,7 @@ var observerOptions = {
     threshold: 0,
 };
 
-var Wrapper$S = styled__default["default"].div(templateObject_1$3E || (templateObject_1$3E = __makeTemplateObject(["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"], ["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"])), function (_a) {
+var Wrapper$T = styled__default["default"].div(templateObject_1$3E || (templateObject_1$3E = __makeTemplateObject(["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"], ["\n  position: relative;\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  height: ", "px;\n  max-width: ", "px;\n  max-height: ", "px;\n  width: 100%;\n  padding-top: ", "%;\n  ", "\n"])), function (_a) {
     var height = _a.height, responsive = _a.responsive;
     return (responsive ? 0 : height);
 }, function (_a) {
@@ -2523,7 +2523,7 @@ var BackgroundImage = function (_a) {
             entries.forEach(function (entry) {
                 var isIntersecting = entry.isIntersecting;
                 if (isIntersecting) {
-                    img.style.backgroundImage = "url(\"".concat(src, "\")");
+                    img.style.backgroundImage = "url(\"" + src + "\")";
                     observer.disconnect();
                 }
             });
@@ -2533,7 +2533,7 @@ var BackgroundImage = function (_a) {
             observer.disconnect();
         };
     }, [src]);
-    return React__default["default"].createElement(Wrapper$S, __assign({ ref: imgRef }, otherProps));
+    return React__default["default"].createElement(Wrapper$T, __assign({ ref: imgRef }, otherProps));
 };
 
 var StyledImage = styled__default["default"].img(templateObject_1$3D || (templateObject_1$3D = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  max-width: 100%;\n"])));
@@ -2558,7 +2558,7 @@ var Image$2 = function (_a) {
             observer.disconnect();
         };
     }, [src]);
-    return (React__default["default"].createElement(Wrapper$S, __assign({ ref: imgRef }, otherProps), isLoaded ? React__default["default"].createElement(StyledImage, { src: src, alt: alt }) : React__default["default"].createElement(Placeholder, null)));
+    return (React__default["default"].createElement(Wrapper$T, __assign({ ref: imgRef }, otherProps), isLoaded ? React__default["default"].createElement(StyledImage, { src: src, alt: alt }) : React__default["default"].createElement(Placeholder, null)));
 };
 var templateObject_1$3D, templateObject_2$2R;
 
@@ -2605,7 +2605,7 @@ var CardWrap$1 = styled__default["default"].div(templateObject_1$3C || (template
     return (small ? "118px !important" : "43vw");
 }, function (_a) {
     var backgroundImage = _a.backgroundImage;
-    return (backgroundImage ? "url(".concat(backgroundImage, ")") : setColor);
+    return (backgroundImage ? "url(" + backgroundImage + ")" : setColor);
 }, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
     var closed = _a.closed;
     return (closed ? "default" : "pointer");
@@ -2785,7 +2785,7 @@ var templateObject_1$3y, templateObject_2$2O, templateObject_3$2j, templateObjec
 
 var BaseLayoutBlock = styled__default["default"].div(templateObject_1$3x || (templateObject_1$3x = __makeTemplateObject(["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"], ["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat center top / cover");
+    return "url(" + src + ") no-repeat center top / cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
@@ -2838,7 +2838,7 @@ var RowBetween = styled__default["default"](Row$7)(templateObject_2$2M || (templ
 var RowFlat = styled__default["default"].div(templateObject_3$2h || (templateObject_3$2h = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n"], ["\n  display: flex;\n  align-items: flex-end;\n"])));
 var AutoRow = styled__default["default"](Row$7)(templateObject_4$1T || (templateObject_4$1T = __makeTemplateObject(["\n  flex-wrap: wrap;\n  margin: ", ";\n  justify-content: ", ";\n\n  & > * {\n    margin: ", " !important;\n  }\n"], ["\n  flex-wrap: wrap;\n  margin: ", ";\n  justify-content: ", ";\n\n  & > * {\n    margin: ", " !important;\n  }\n"])), function (_a) {
     var gap = _a.gap;
-    return gap && "-".concat(gap);
+    return gap && "-" + gap;
 }, function (_a) {
     var justify = _a.justify;
     return justify && justify;
@@ -2848,7 +2848,7 @@ var AutoRow = styled__default["default"](Row$7)(templateObject_4$1T || (template
 });
 var RowFixed = styled__default["default"](Row$7)(templateObject_5$1i || (templateObject_5$1i = __makeTemplateObject(["\n  width: fit-content;\n  margin: ", ";\n"], ["\n  width: fit-content;\n  margin: ", ";\n"])), function (_a) {
     var gap = _a.gap;
-    return gap && "-".concat(gap);
+    return gap && "-" + gap;
 });
 var templateObject_1$3v, templateObject_2$2M, templateObject_3$2h, templateObject_4$1T, templateObject_5$1i;
 
@@ -3202,7 +3202,7 @@ var UpContentWin = styled__default["default"].div(templateObject_8$x || (templat
     var show = _a.show;
     return (show ? "flex" : "none");
 });
-var ButtonBnb = styled__default["default"].div(templateObject_9$m || (templateObject_9$m = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
+var ButtonBnb = styled__default["default"].div(templateObject_9$n || (templateObject_9$n = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg = styled__default["default"].div(templateObject_10$j || (templateObject_10$j = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
 var RightText$2 = styled__default["default"].div(templateObject_11$g || (templateObject_11$g = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
@@ -3211,15 +3211,15 @@ var RightText$2 = styled__default["default"].div(templateObject_11$g || (templat
     var theme = _a.theme;
     return polished.transparentize(0.2, theme.colors.text);
 });
-var IconComplete$1 = styled__default["default"].div(templateObject_12$d || (templateObject_12$d = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
+var IconComplete$1 = styled__default["default"].div(templateObject_12$e || (templateObject_12$e = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
     var showIcon = _a.showIcon;
     return (showIcon ? "flex" : "none");
 });
-var IconCompleteDown = styled__default["default"].div(templateObject_13$b || (templateObject_13$b = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
+var IconCompleteDown = styled__default["default"].div(templateObject_13$c || (templateObject_13$c = __makeTemplateObject(["\n  display: ", ";\n  margin-left: 7px;\n"], ["\n  display: ", ";\n  margin-left: 7px;\n"])), function (_a) {
     var showIcon = _a.showIcon;
     return (showIcon ? "flex" : "none");
 });
-var MainBlock$4 = styled__default["default"].div(templateObject_14$8 || (templateObject_14$8 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
+var MainBlock$4 = styled__default["default"].div(templateObject_14$9 || (templateObject_14$9 = __makeTemplateObject(["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"], ["\n  position: relative;\n  z-index: 2;\n  padding: ", ";\n  width: 308px;\n  height: 193px;\n  background: #26262d;\n  border: 2px solid\n    ", ";\n  box-sizing: border-box;\n  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.31);\n  border-radius: 15px;\n  ", " {\n    width: 335px;\n  }\n"])), function (_a) {
     var loader = _a.loader;
     return (loader ? "23px 12px 25px" : "23px 35px 25px 32px");
 }, function (_a) {
@@ -3287,7 +3287,7 @@ var StyledCardBTC = function (_a) {
                         React__default["default"].createElement(IconCompleteDown, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default["default"].createElement(Icon$11, { fill: "#FFB72C" }))))))))));
 };
-var templateObject_1$3k, templateObject_2$2C, templateObject_3$28, templateObject_4$1N, templateObject_5$1e, templateObject_6$Z, templateObject_7$F, templateObject_8$x, templateObject_9$m, templateObject_10$j, templateObject_11$g, templateObject_12$d, templateObject_13$b, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
+var templateObject_1$3k, templateObject_2$2C, templateObject_3$28, templateObject_4$1N, templateObject_5$1e, templateObject_6$Z, templateObject_7$F, templateObject_8$x, templateObject_9$n, templateObject_10$j, templateObject_11$g, templateObject_12$e, templateObject_13$c, templateObject_14$9, templateObject_15$5, templateObject_16$4, templateObject_17$4;
 
 var CardBTC = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3408,7 +3408,7 @@ var templateObject_1$3i, templateObject_2$2A, templateObject_3$26, templateObjec
 
 var Front = styled__default["default"].div(templateObject_1$3h || (templateObject_1$3h = __makeTemplateObject(["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var Back = styled__default["default"](Front)(templateObject_2$2z || (templateObject_2$2z = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
-var Inner$1 = styled__default["default"].div(templateObject_3$25 || (templateObject_3$25 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"])), function (_a) {
+var Inner$2 = styled__default["default"].div(templateObject_3$25 || (templateObject_3$25 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform: rotateY(", "deg);\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n\n  ", " {\n    z-index: ", ";\n    backface-visibility: hidden;\n    transition: 0;\n    width: 278px;\n    ", " {\n      width: 308px;\n    }\n  }\n\n  ", " {\n    z-index: ", ";\n    padding: 18px 15px 20px;\n    transition: 0;\n    background: ", ";\n    border-radius: 15px;\n    height: 100%;\n    width: 100%;\n  }\n"])), function (_a) {
     var isFlipped = _a.isFlipped;
     return (isFlipped ? 180 : 0);
 }, Front, function (_a) {
@@ -3435,7 +3435,7 @@ var CardFlipBTC = function (_a) {
     var isFlipped = _a.isFlipped, children = _a.children;
     var _b = getComponents(children), front = _b[0], back = _b[1];
     return (React__default["default"].createElement(StyledCardFlip, null,
-        React__default["default"].createElement(Inner$1, { isFlipped: isFlipped },
+        React__default["default"].createElement(Inner$2, { isFlipped: isFlipped },
             React__default["default"].createElement(Front, null, front),
             React__default["default"].createElement(Back, null, back))));
 };
@@ -3562,7 +3562,7 @@ var GreenCircle = styled__default["default"].div(templateObject_8$v || (template
     var theme = _a.theme;
     return theme.colors.greenBg;
 });
-var RedCircle = styled__default["default"].div(templateObject_9$l || (templateObject_9$l = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), redAnimation, function (_a) {
+var RedCircle = styled__default["default"].div(templateObject_9$m || (templateObject_9$m = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), redAnimation, function (_a) {
     var theme = _a.theme;
     return theme.colors.redBg;
 });
@@ -3584,7 +3584,7 @@ var LoaderCardText = function (_a) {
             React__default["default"].createElement(YellowCircle, null)),
         React__default["default"].createElement(BottomText, null, textTooltip)));
 };
-var templateObject_1$3d, templateObject_2$2v, templateObject_3$22, templateObject_4$1H, templateObject_5$1a, templateObject_6$V, templateObject_7$D, templateObject_8$v, templateObject_9$l, templateObject_10$i, templateObject_11$f;
+var templateObject_1$3d, templateObject_2$2v, templateObject_3$22, templateObject_4$1H, templateObject_5$1a, templateObject_6$V, templateObject_7$D, templateObject_8$v, templateObject_9$m, templateObject_10$i, templateObject_11$f;
 
 var BalanceBlock$1 = function (_a) {
     var btc = _a.btc, value = _a.value;
@@ -3617,34 +3617,34 @@ var templateObject_1$3c, templateObject_2$2u;
 var bunnyFall = styled.keyframes(templateObject_1$3b || (templateObject_1$3b = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"], ["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"])));
 var Bunny = styled__default["default"].div(templateObject_2$2t || (templateObject_2$2t = __makeTemplateObject(["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"], ["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"])), function (_a) {
     var position = _a.position;
-    return "".concat(position, "vw");
+    return position + "vw";
 }, bunnyFall, function (_a) {
     var duration = _a.duration;
-    return "".concat(duration, "s");
+    return duration + "s";
 }, function (_a) {
     var iterations = _a.iterations;
     return (Number.isFinite(iterations) ? String(iterations) : "infinite");
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.3, "s");
+    return (duration / 10) * 1.3 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.5, "s");
+    return (duration / 10) * 1.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.7, "s");
+    return (duration / 10) * 1.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 2.7, "s");
+    return (duration / 10) * 2.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 3.5, "s");
+    return (duration / 10) * 3.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 5.5, "s");
+    return (duration / 10) * 5.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 8, "s");
+    return (duration / 10) * 8 + "s";
 });
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b; _a.size; var _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
@@ -3717,7 +3717,7 @@ var TabsWrap$6 = styled__default["default"].div(templateObject_1$39 || (template
     return width || "auto";
 }, function (_a) {
     var length = _a.length, variant = _a.variant;
-    return "repeat(".concat(length || 2, ", ").concat(variant === "small" ? "auto" : "1fr", ")");
+    return "repeat(" + (length || 2) + ", " + (variant === "small" ? "auto" : "1fr") + ")";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
@@ -3779,10 +3779,10 @@ var LineTab$2 = styled__default["default"].span(templateObject_5$18 || (template
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right;
-    return "".concat(right, "px");
+    return right + "px";
 });
 var templateObject_1$38, templateObject_2$2q, templateObject_3$20, templateObject_4$1F, templateObject_5$18;
 
@@ -3810,10 +3810,10 @@ var LineTab$1 = styled__default["default"].span(templateObject_4$1E || (template
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right, tabActive = _a.tabActive;
-    return "".concat(right + 25 * tabActive, "px");
+    return right + 25 * tabActive + "px";
 });
 var templateObject_1$37, templateObject_2$2p, templateObject_3$1$, templateObject_4$1E;
 
@@ -4017,7 +4017,7 @@ var RangeTrack$5 = styled__default["default"].div(templateObject_4$1D || (templa
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -4078,7 +4078,7 @@ var RangeTrack$4 = styled__default["default"].div(templateObject_2$2m || (templa
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -4094,7 +4094,7 @@ var ProgressAVAX = function (_a) {
         var to = blockTo - blockFrom;
         return Math.floor((100 * from) / to);
     };
-    return (React__default["default"].createElement(Wrapper$R, null,
+    return (React__default["default"].createElement(Wrapper$S, null,
         React__default["default"].createElement(BlocksAndTimer, null,
             React__default["default"].createElement(Block$c, null,
                 React__default["default"].createElement(Text, { size: "xs" }, blockFrom)),
@@ -4118,7 +4118,7 @@ var ProgressAVAX = function (_a) {
                 React__default["default"].createElement(CloseButton, { onClick: function () { return setNoteOpen(!noteOpen); } },
                     React__default["default"].createElement(Icon$1p, null))))));
 };
-var Wrapper$R = styled__default["default"].div(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  position: relative;\n  ", " {\n    max-width: 360px;\n  }\n"], ["\n  position: relative;\n  ", " {\n    max-width: 360px;\n  }\n"])), function (_a) {
+var Wrapper$S = styled__default["default"].div(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  position: relative;\n  ", " {\n    max-width: 360px;\n  }\n"], ["\n  position: relative;\n  ", " {\n    max-width: 360px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -4137,7 +4137,7 @@ var Block$c = styled__default["default"].div(templateObject_5$17 || (templateObj
 });
 var RoundCurrentBlock = styled__default["default"].div(templateObject_6$U || (templateObject_6$U = __makeTemplateObject(["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"], ["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"])), function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 });
 var Round$1 = styled__default["default"].div(templateObject_7$C || (templateObject_7$C = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 5px;\n  right: 10px;\n  width: 15px;\n  height: 15px;\n  border-radius: 25px;\n  background: ", ";\n  &:before {\n    content: \"\";\n    display: block;\n    top: -5px;\n    left: -5px;\n    position: absolute;\n    border: 9px solid ", ";\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 5px;\n  right: 10px;\n  width: 15px;\n  height: 15px;\n  border-radius: 25px;\n  background: ", ";\n  &:before {\n    content: \"\";\n    display: block;\n    top: -5px;\n    left: -5px;\n    position: absolute;\n    border: 9px solid ", ";\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -4147,7 +4147,7 @@ var Round$1 = styled__default["default"].div(templateObject_7$C || (templateObje
     return theme.colors.greeanRgba2;
 });
 var Note$1 = styled__default["default"].div(templateObject_8$u || (templateObject_8$u = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var NoteContent = styled__default["default"].div(templateObject_9$k || (templateObject_9$k = __makeTemplateObject(["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"], ["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"])), function (_a) {
+var NoteContent = styled__default["default"].div(templateObject_9$l || (templateObject_9$l = __makeTemplateObject(["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"], ["\n  width: 100%;\n  padding: 12px 57px 12px 20px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 12px;\n  z-index: 4;\n  transition: 0.3s;\n  opacity: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -4159,11 +4159,11 @@ var TextUnderRound = styled__default["default"].div(templateObject_11$e || (temp
     var theme = _a.theme;
     return theme.colors.background2;
 });
-var CurrentBlockText = styled__default["default"](Text)(templateObject_12$c || (templateObject_12$c = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
+var CurrentBlockText = styled__default["default"](Text)(templateObject_12$d || (templateObject_12$d = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
-var Indicator = styled__default["default"].div(templateObject_13$a || (templateObject_13$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n    max-width: 100%;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n    max-width: 100%;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"])), function (_a) {
+var Indicator = styled__default["default"].div(templateObject_13$b || (templateObject_13$b = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n    max-width: 100%;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 8px;\n  margin-bottom: 13px;\n  background: ", ";\n  //box-shadow: ", ";\n  border-radius: 6px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: calc(100% - 5px);\n    height: 100%;\n    top: 0;\n    left: 0;\n    background: ", ";\n    border-radius: 2px;\n    width: ", ";\n    box-shadow: ", ";\n    border-radius: 6px;\n    max-width: 100%;\n  }\n  &:hover ", " {\n    left: ", ";\n    display: block;\n    opacity: 1;\n    transition: 0.3s;\n  }\n  &:hover ~ ", " > ", " {\n    opacity: 0;\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greenRgba;
 }, function (_a) {
@@ -4174,7 +4174,7 @@ var Indicator = styled__default["default"].div(templateObject_13$a || (templateO
     return theme.colors.greenText2;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow9;
@@ -4182,7 +4182,7 @@ var Indicator = styled__default["default"].div(templateObject_13$a || (templateO
     var progress = _a.progress;
     return (progress && progress > 50 ? "-100%" : 0);
 }, Note$1, NoteContent);
-var templateObject_1$33, templateObject_2$2l, templateObject_3$1Y, templateObject_4$1C, templateObject_5$17, templateObject_6$U, templateObject_7$C, templateObject_8$u, templateObject_9$k, templateObject_10$h, templateObject_11$e, templateObject_12$c, templateObject_13$a;
+var templateObject_1$33, templateObject_2$2l, templateObject_3$1Y, templateObject_4$1C, templateObject_5$17, templateObject_6$U, templateObject_7$C, templateObject_8$u, templateObject_9$l, templateObject_10$h, templateObject_11$e, templateObject_12$d, templateObject_13$b;
 
 var SwitchUnitsButton = styled__default["default"](IconButton)(templateObject_1$32 || (templateObject_1$32 = __makeTemplateObject(["\n  width: auto;\n"], ["\n  width: auto;\n"])));
 var UnitContainer = styled__default["default"](Text)(templateObject_2$2k || (templateObject_2$2k = __makeTemplateObject(["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
@@ -4220,7 +4220,7 @@ var BalanceInputInversion = function (_a) {
             React__default["default"].createElement(Box, null,
                 React__default["default"].createElement(Flex, { alignItems: "center" },
                     unit && React__default["default"].createElement(UnitContainer, null, unit),
-                    React__default["default"].createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps))),
+                    React__default["default"].createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps))),
                 currencyValue && (React__default["default"].createElement(Text, { fontSize: "13px", letterSpacing: "0.5px", color: "greyText3", mt: "22px" }, currencyValue))),
             switchEditingUnits && (React__default["default"].createElement(Flex, { alignItems: "center", pl: "12px" },
                 React__default["default"].createElement(SwitchUnitsButton, { scale: "sm", variant: "text", onClick: switchEditingUnits },
@@ -4269,7 +4269,7 @@ var templateObject_1$31;
 
 var getBackgroundColor = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 var StyledButtonMenu$1 = styled__default["default"].div(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"])), getBackgroundColor, function (_a) {
     var fullWidth = _a.fullWidth;
@@ -4286,7 +4286,7 @@ var StyledButtonMenu$1 = styled__default["default"].div(templateObject_1$30 || (
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, color = _a.color;
     if (disabled) {
-        return "\n        opacity: 0.5;\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(color ? theme.colors[color] : theme.colors.text, ";\n        }\n    ");
+        return "\n        opacity: 0.5;\n        & > button:disabled {\n          background-color: transparent;\n          color: " + (color ? theme.colors[color] : theme.colors.text) + ";\n        }\n    ";
     }
     return "";
 }, styledSystem.space);
@@ -4370,7 +4370,7 @@ var getOutlineStyles = function (_a) {
     if (outline) {
         var themeColorKey = styleVariants$1[variantKey].backgroundColor;
         var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: transparent;\n      border: 2px solid ").concat(color, ";\n    ");
+        return "\n      color: " + color + ";\n      background: transparent;\n      border: 2px solid " + color + ";\n    ";
     }
     return "";
 };
@@ -4610,17 +4610,17 @@ var breakpointMap = {
     xxl: 1300,
     xxxl: 1440,
 };
-var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return "".concat(breakpoint, "px"); });
+var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries$1 = {
-    xs: "@media screen and (min-width: ".concat(breakpointMap.xs, "px)"),
-    sm: "@media screen and (min-width: ".concat(breakpointMap.sm, "px)"),
-    xmd: "@media screen and (min-width: ".concat(breakpointMap.xmd, "px)"),
-    md: "@media screen and (min-width: ".concat(breakpointMap.md, "px)"),
-    lg: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
-    xl: "@media screen and (min-width: ".concat(breakpointMap.xl, "px)"),
-    xxl: "@media screen and (min-width: ".concat(breakpointMap.xxl, "px)"),
-    xxxl: "@media screen and (min-width: ".concat(breakpointMap.xxxl, "px)"),
-    nav: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
+    xs: "@media screen and (min-width: " + breakpointMap.xs + "px)",
+    sm: "@media screen and (min-width: " + breakpointMap.sm + "px)",
+    xmd: "@media screen and (min-width: " + breakpointMap.xmd + "px)",
+    md: "@media screen and (min-width: " + breakpointMap.md + "px)",
+    lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
+    xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
+    xxl: "@media screen and (min-width: " + breakpointMap.xxl + "px)",
+    xxxl: "@media screen and (min-width: " + breakpointMap.xxxl + "px)",
+    nav: "@media screen and (min-width: " + breakpointMap.lg + "px)",
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
@@ -5024,16 +5024,16 @@ var templateObject_1$2R;
 
 var StyledDropdown = styled__default["default"].div(templateObject_1$2Q || (templateObject_1$2Q = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"])), function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "calc(100vh - ".concat(59 + (plusMarginTop || 0), "px)") : "260px";
+    return variant === variants.CENTER_BEHIND ? "calc(100vh - " + (59 + (plusMarginTop || 0)) + "px)" : "260px";
 }, function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "".concat(59 + (plusMarginTop || 0), "px") : "auto";
+    return variant === variants.CENTER_BEHIND ? 59 + (plusMarginTop || 0) + "px" : "auto";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 }, function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "".concat(80 + (plusMarginTop || 0), "px") : "auto";
+    return variant === variants.CENTER_BEHIND ? 80 + (plusMarginTop || 0) + "px" : "auto";
 }, styledSystem.variant({
     variants: styleVariants,
 }));
@@ -5071,7 +5071,7 @@ var Select$2 = function (_a) {
     var handleChange = function (e) {
         setValue(e.target.value);
     };
-    return (React__default["default"].createElement(Wrapper$Q, __assign({}, props),
+    return (React__default["default"].createElement(Wrapper$R, __assign({}, props),
         React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
             React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
                 React__default["default"].createElement(Input$8, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
@@ -5079,7 +5079,7 @@ var Select$2 = function (_a) {
                     React__default["default"].createElement(Text, null, el.name),
                     React__default["default"].createElement(Icon$k, null)))); })))));
 };
-var Wrapper$Q = styled__default["default"].div(templateObject_1$2O || (templateObject_1$2O = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
+var Wrapper$R = styled__default["default"].div(templateObject_1$2O || (templateObject_1$2O = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$4 = styled__default["default"].div(templateObject_2$2e || (templateObject_2$2e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
@@ -5088,7 +5088,7 @@ var Dropdown$4 = styled__default["default"].div(templateObject_2$2e || (template
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(polished.transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + polished.transparentize(0.8, theme.colors.textGray);
 }, styledSystem.layout);
 var Option$2 = styled__default["default"].label(templateObject_3$1T || (templateObject_3$1T = __makeTemplateObject(["\n  display: flex;\n  cursor: pointer;\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n  & path {\n    stroke-width: 3;\n  }\n"], ["\n  display: flex;\n  cursor: pointer;\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n  & path {\n    stroke-width: 3;\n  }\n"])), function (_a) {
     var optionsSpacing = _a.optionsSpacing;
@@ -5127,7 +5127,7 @@ var InjectedSelect = function (_a) {
     var _b;
     var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options; _a.nameInputOptions; var propsDropdown = _a.propsDropdown; _a.propsOption; _a.optionsSpacing; var openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, buttonHandler = _a.buttonHandler, inputsValue = _a.inputsValue, inputsName = _a.inputsName, inputHandler = _a.inputHandler, buttonText = _a.buttonText, props = __rest(_a, ["selectItem", "value", "setValue", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown", "buttonHandler", "inputsValue", "inputsName", "inputHandler", "buttonText"]);
     var _c = React.useState(false), open = _c[0], setOpen = _c[1];
-    return (React__default["default"].createElement(Wrapper$P, __assign({}, props),
+    return (React__default["default"].createElement(Wrapper$Q, __assign({}, props),
         React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
             React__default["default"].createElement(Dropdown$3, __assign({}, propsDropdown),
                 React__default["default"].createElement(Select$2, { selectItem: React__default["default"].createElement(Currency, null,
@@ -5140,7 +5140,7 @@ var InjectedSelect = function (_a) {
                     React__default["default"].createElement(Input$7, { margin: "0 0 0 2px", value: inputsValue.to, onChange: inputHandler, name: inputsName.to })),
                 React__default["default"].createElement(Button$9, { variant: "green", height: "30px", marginTop: "15px", width: "100%", onClick: buttonHandler }, buttonText)))));
 };
-var Wrapper$P = styled__default["default"].div(templateObject_1$2M || (templateObject_1$2M = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
+var Wrapper$Q = styled__default["default"].div(templateObject_1$2M || (templateObject_1$2M = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$3 = styled__default["default"].div(templateObject_2$2d || (templateObject_2$2d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
@@ -5149,7 +5149,7 @@ var Dropdown$3 = styled__default["default"].div(templateObject_2$2d || (template
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(polished.transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + polished.transparentize(0.8, theme.colors.textGray);
 }, styledSystem.layout);
 var Currency = styled__default["default"](Flex)(templateObject_3$1S || (templateObject_3$1S = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 10px;\n  width: 100%;\n  background: ", ";\n  border-radius: 9px;\n\n  & img {\n    width: 28px;\n    height: 28px;\n  }\n\n  & svg {\n    right: 10px;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 10px;\n  width: 100%;\n  background: ", ";\n  border-radius: 9px;\n\n  & img {\n    width: 28px;\n    height: 28px;\n  }\n\n  & svg {\n    right: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -5180,7 +5180,7 @@ var SelectSearch = function (_a) {
     var handleChange = function (e) {
         setValue(e.target.value);
     };
-    return (React__default["default"].createElement(Wrapper$O, __assign({}, props),
+    return (React__default["default"].createElement(Wrapper$P, __assign({}, props),
         React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
             React__default["default"].createElement(Dropdown$2, __assign({}, propsDropdown),
                 React__default["default"].createElement(InputSearch, { inputPlaceholder: inputPlaceholder, value: valueInput, onChange: inputHandler, name: inputName }),
@@ -5192,7 +5192,7 @@ var SelectSearch = function (_a) {
                             React__default["default"].createElement(Text, null, el.name),
                             React__default["default"].createElement(Icon$k, null))))); }))))));
 };
-var Wrapper$O = styled__default["default"].div(templateObject_1$2K || (templateObject_1$2K = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
+var Wrapper$P = styled__default["default"].div(templateObject_1$2K || (templateObject_1$2K = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$2 = styled__default["default"].div(templateObject_2$2c || (templateObject_2$2c = __makeTemplateObject(["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
@@ -5201,7 +5201,7 @@ var Dropdown$2 = styled__default["default"].div(templateObject_2$2c || (template
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(polished.transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + polished.transparentize(0.8, theme.colors.textGray);
 }, styledSystem.layout);
 var Option$1 = styled__default["default"].label(templateObject_3$1R || (templateObject_3$1R = __makeTemplateObject(["\n  display: flex;\n  cursor: pointer;\n\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n\n  & path {\n    stroke-width: 3;\n  }\n"], ["\n  display: flex;\n  cursor: pointer;\n\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n\n  & path {\n    stroke-width: 3;\n  }\n"])), function (_a) {
     var optionsSpacing = _a.optionsSpacing;
@@ -5230,16 +5230,16 @@ var mediaQueries = (function () {
         var _a, _b;
         // Largest size is just a min-width of second highest max-width
         if (index === Object.keys(breakpointMap).length - 1) {
-            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: ".concat(prevMinWidth, "px)"), _a));
+            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: " + prevMinWidth + "px)", _a));
         }
         var minWidth = prevMinWidth;
         var breakpoint = breakpointMap[size];
         // Min width for next iteration
         prevMinWidth = breakpoint + 1;
-        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: ".concat(minWidth, "px) and (max-width: ").concat(breakpoint, "px)"), _b));
+        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: " + minWidth + "px) and (max-width: " + breakpoint + "px)", _b));
     }, {});
 })();
-var getKey = function (size) { return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1)); };
+var getKey = function (size) { return "is" + size.charAt(0).toUpperCase() + size.slice(1); };
 var useMatchBreakpoints = function () {
     var _a = React.useState(function () {
         return Object.keys(mediaQueries).reduce(function (accum, size) {
@@ -5297,21 +5297,21 @@ var createParticle = function (x, y, imgSrc, options) {
     var delay = Math.random() * 200;
     particle.style.backgroundRepeat = "no-repeat";
     particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.backgroundImage = "url(" + imgSrc + ")";
     particle.style.left = "0";
     particle.style.top = "0";
     particle.style.opacity = "0";
     particle.style.pointerEvents = "none";
     particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
+    particle.style.width = width + "px";
+    particle.style.height = height + "px";
     var animation = particle.animate([
         {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            transform: "translate(-50%, -50%) translate(" + x + "px, " + y + "px) rotate(0deg)",
             opacity: 1,
         },
         {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            transform: "translate(-50%, -50%) translate(" + (x + destinationX) + "px, " + (y + destinationY) + "px) rotate(" + rotation + "deg)",
             opacity: 0,
         },
     ], {
@@ -5492,7 +5492,7 @@ var Border$1 = styled__default["default"].div(templateObject_2$2b || (templateOb
 styled__default["default"].div(templateObject_3$1Q || (templateObject_3$1Q = __makeTemplateObject(["\n  margin: 0 auto;\n  position: relative;\n  width: fit-content;\n  height: fit-content;\n"], ["\n  margin: 0 auto;\n  position: relative;\n  width: fit-content;\n  height: fit-content;\n"])));
 var templateObject_1$2J, templateObject_2$2b, templateObject_3$1Q;
 
-var Wrapper$N = styled__default["default"].div(templateObject_1$2I || (templateObject_1$2I = __makeTemplateObject(["\n  position: relative;\n  width: fit-content;\n  margin: 0 auto;\n"], ["\n  position: relative;\n  width: fit-content;\n  margin: 0 auto;\n"])));
+var Wrapper$O = styled__default["default"].div(templateObject_1$2I || (templateObject_1$2I = __makeTemplateObject(["\n  position: relative;\n  width: fit-content;\n  margin: 0 auto;\n"], ["\n  position: relative;\n  width: fit-content;\n  margin: 0 auto;\n"])));
 var BridgeWrapper$1 = styled__default["default"].div(templateObject_2$2a || (templateObject_2$2a = __makeTemplateObject(["\n  position: relative;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  z-index: 1;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  position: relative;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  z-index: 1;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
@@ -5527,7 +5527,7 @@ var NameChain$1 = styled__default["default"](Text)(templateObject_5$13 || (templ
 var Label$4 = styled__default["default"](Text)(templateObject_6$S || (templateObject_6$S = __makeTemplateObject([""], [""])));
 var InputWrap$3 = styled__default["default"].div(templateObject_7$B || (templateObject_7$B = __makeTemplateObject(["\n  margin-top: 13px;\n  position: relative;\n"], ["\n  margin-top: 13px;\n  position: relative;\n"])));
 var ButtonReverse = styled__default["default"].div(templateObject_8$t || (templateObject_8$t = __makeTemplateObject(["\n  width: fit-content;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -10px);\n"], ["\n  width: fit-content;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, -10px);\n"])));
-var MessageBox = styled__default["default"].div(templateObject_9$j || (templateObject_9$j = __makeTemplateObject(["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"], ["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"])));
+var MessageBox = styled__default["default"].div(templateObject_9$k || (templateObject_9$k = __makeTemplateObject(["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"], ["\n  margin: 10px 0 0 auto;\n  width: fit-content;\n"])));
 var MessageText$1 = styled__default["default"](Text)(templateObject_10$g || (templateObject_10$g = __makeTemplateObject(["\n  letter-spacing: 0.05em;\n  ", " {\n    letter-spacing: 0.13em;\n  } ;\n"], ["\n  letter-spacing: 0.05em;\n  ", " {\n    letter-spacing: 0.13em;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
@@ -5536,8 +5536,8 @@ var Error$1 = styled__default["default"](Text)(templateObject_11$d || (templateO
     var theme = _a.theme;
     return theme.colors.redBg;
 });
-var ButtonOpenProof = styled__default["default"](Text)(templateObject_12$b || (templateObject_12$b = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
-var ButtonsWrap = styled__default["default"].div(templateObject_13$9 || (templateObject_13$9 = __makeTemplateObject(["\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n"], ["\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n"])));
+var ButtonOpenProof = styled__default["default"](Text)(templateObject_12$c || (templateObject_12$c = __makeTemplateObject(["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"], ["\n  text-align: center;\n  margin: 32px auto 0;\n  background: none;\n  border: none;\n  cursor: pointer;\n"])));
+var ButtonsWrap = styled__default["default"].div(templateObject_13$a || (templateObject_13$a = __makeTemplateObject(["\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n"], ["\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  flex-direction: column;\n"])));
 var BridgeStep1 = function (_a) {
     var handleButtonToMax = _a.handleButtonToMax, texts = _a.texts, onUserInput = _a.onUserInput, value = _a.value, inputError = _a.inputError, balanceText = _a.balanceText, handleToggleNetwork = _a.handleToggleNetwork, iconNetwork1 = _a.iconNetwork1, iconNetwork2 = _a.iconNetwork2, iconBalanceInput = _a.iconBalanceInput, handleOpenProofOfAssets = _a.handleOpenProofOfAssets, handleOpenTransactionsHistory = _a.handleOpenTransactionsHistory, disabledInput = _a.disabledInput, actionButton = _a.actionButton, noticeVisible = _a.noticeVisible, blurContent = _a.blurContent, noticeType = _a.noticeType, radiusBlur = _a.radiusBlur;
     var BlockChainName = function (_a) {
@@ -5546,7 +5546,7 @@ var BridgeStep1 = function (_a) {
             icon,
             React__default["default"].createElement(NameChain$1, { margin: "0 0 0 10px" }, name)));
     };
-    return (React__default["default"].createElement(Wrapper$N, null,
+    return (React__default["default"].createElement(Wrapper$O, null,
         React__default["default"].createElement(BridgeWrapper$1, null,
             React__default["default"].createElement(BridgeContent, { blur: noticeVisible },
                 React__default["default"].createElement(Label$4, { size: "lg" }, texts.from),
@@ -5572,7 +5572,7 @@ var BridgeStep1 = function (_a) {
             React__default["default"].createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
             React__default["default"].createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory))));
 };
-var templateObject_1$2I, templateObject_2$2a, templateObject_3$1P, templateObject_4$1v, templateObject_5$13, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$j, templateObject_10$g, templateObject_11$d, templateObject_12$b, templateObject_13$9;
+var templateObject_1$2I, templateObject_2$2a, templateObject_3$1P, templateObject_4$1v, templateObject_5$13, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$k, templateObject_10$g, templateObject_11$d, templateObject_12$c, templateObject_13$a;
 
 var NoticeBridgeType;
 (function (NoticeBridgeType) {
@@ -5590,7 +5590,7 @@ var BridgeStep2 = function (_a) {
         bscIcon || React__default["default"].createElement(Icon$1j, null),
         React__default["default"].createElement(Text, { marginLeft: "10px" }, texts.bsc || "BSC"))); };
     return (React__default["default"].createElement(Content$6, null,
-        React__default["default"].createElement(Wrapper$M, { blur: noticeVisible },
+        React__default["default"].createElement(Wrapper$N, { blur: noticeVisible },
             React__default["default"].createElement(Title$q, { size: "lg" }, texts.title),
             React__default["default"].createElement(ButtonClose$5, { onClick: onDismiss },
                 React__default["default"].createElement(Icon$1p, null)),
@@ -5676,7 +5676,7 @@ var Border = styled__default["default"].div(templateObject_2$29 || (templateObje
 });
 var Notice = styled__default["default"].div(templateObject_3$1O || (templateObject_3$1O = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 0 10px 50px;\n  z-index: 2;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  padding: 0 10px 50px;\n  z-index: 2;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n"])));
 var Title$q = styled__default["default"](Text)(templateObject_4$1u || (templateObject_4$1u = __makeTemplateObject(["\n  letter-spacing: 0.5px;\n"], ["\n  letter-spacing: 0.5px;\n"])));
-var Wrapper$M = styled__default["default"].div(templateObject_5$12 || (templateObject_5$12 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  padding: 33px 14px 12px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  filter: ", ";\n  z-index: 1;\n  ", " {\n    padding: 33px 23px;\n  } ;\n"], ["\n  position: relative;\n  overflow: hidden;\n  padding: 33px 14px 12px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  filter: ", ";\n  z-index: 1;\n  ", " {\n    padding: 33px 23px;\n  } ;\n"])), function (_a) {
+var Wrapper$N = styled__default["default"].div(templateObject_5$12 || (templateObject_5$12 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  padding: 33px 14px 12px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  filter: ", ";\n  z-index: 1;\n  ", " {\n    padding: 33px 23px;\n  } ;\n"], ["\n  position: relative;\n  overflow: hidden;\n  padding: 33px 14px 12px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  filter: ", ";\n  z-index: 1;\n  ", " {\n    padding: 33px 23px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 }, function (_a) {
@@ -5704,7 +5704,7 @@ var AmountTransfer = styled__default["default"].div(templateObject_8$s || (templ
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TopLineTitle = styled__default["default"](Text)(templateObject_9$i || (templateObject_9$i = __makeTemplateObject(["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"], ["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var TopLineTitle = styled__default["default"](Text)(templateObject_9$j || (templateObject_9$j = __makeTemplateObject(["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"], ["\n  margin-bottom: 10px;\n  width: 100%;\n  letter-spacing: 0.05em;\n  opacity: 0.7;\n  &.middle {\n    display: none;\n  }\n  ", " {\n    margin-bottom: 18px;\n    &.middle {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -5719,15 +5719,15 @@ var ApproximatelyPrice = styled__default["default"](Text)(templateObject_11$c ||
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Token$2 = styled__default["default"].div(templateObject_12$a || (templateObject_12$a = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  &.main {\n    flex-direction: row;\n    margin-bottom: 25px;\n    & svg {\n      margin: 0 10px 0 0;\n    }\n  }\n  & div {\n    margin: 5px 0 0;\n    &:first-child {\n      margin: 0;\n    }\n  }\n  ", " {\n    flex-direction: row;\n    &.main {\n      margin-bottom: 0;\n    }\n    & div {\n      &:first-child {\n        margin: 0 10px 0 0;\n      }\n    }\n  } ;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  &.main {\n    flex-direction: row;\n    margin-bottom: 25px;\n    & svg {\n      margin: 0 10px 0 0;\n    }\n  }\n  & div {\n    margin: 5px 0 0;\n    &:first-child {\n      margin: 0;\n    }\n  }\n  ", " {\n    flex-direction: row;\n    &.main {\n      margin-bottom: 0;\n    }\n    & div {\n      &:first-child {\n        margin: 0 10px 0 0;\n      }\n    }\n  } ;\n"])), function (_a) {
+var Token$2 = styled__default["default"].div(templateObject_12$b || (templateObject_12$b = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  &.main {\n    flex-direction: row;\n    margin-bottom: 25px;\n    & svg {\n      margin: 0 10px 0 0;\n    }\n  }\n  & div {\n    margin: 5px 0 0;\n    &:first-child {\n      margin: 0;\n    }\n  }\n  ", " {\n    flex-direction: row;\n    &.main {\n      margin-bottom: 0;\n    }\n    & div {\n      &:first-child {\n        margin: 0 10px 0 0;\n      }\n    }\n  } ;\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  &.main {\n    flex-direction: row;\n    margin-bottom: 25px;\n    & svg {\n      margin: 0 10px 0 0;\n    }\n  }\n  & div {\n    margin: 5px 0 0;\n    &:first-child {\n      margin: 0;\n    }\n  }\n  ", " {\n    flex-direction: row;\n    &.main {\n      margin-bottom: 0;\n    }\n    & div {\n      &:first-child {\n        margin: 0 10px 0 0;\n      }\n    }\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TokenImg$2 = styled__default["default"].div(templateObject_13$8 || (templateObject_13$8 = __makeTemplateObject(["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: ", ";\n  border-radius: 9px;\n  margin: 0 10px 0 0;\n"], ["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: ", ";\n  border-radius: 9px;\n  margin: 0 10px 0 0;\n"])), function (_a) {
+var TokenImg$2 = styled__default["default"].div(templateObject_13$9 || (templateObject_13$9 = __makeTemplateObject(["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: ", ";\n  border-radius: 9px;\n  margin: 0 10px 0 0;\n"], ["\n  width: 38px;\n  height: 38px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: ", ";\n  border-radius: 9px;\n  margin: 0 10px 0 0;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 });
-var MetamaskAdd = styled__default["default"](Token$2)(templateObject_14$7 || (templateObject_14$7 = __makeTemplateObject(["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"], ["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"])));
+var MetamaskAdd = styled__default["default"](Token$2)(templateObject_14$8 || (templateObject_14$8 = __makeTemplateObject(["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"], ["\n  cursor: pointer;\n  padding: 0;\n  margin: 0;\n  border: none;\n  background: none;\n"])));
 var BodyBlock = styled__default["default"].div(templateObject_15$4 || (templateObject_15$4 = __makeTemplateObject(["\n  padding: 0;\n  margin-top: 30px;\n  ", " {\n    padding: 0 15px 0 25px;\n  } ;\n"], ["\n  padding: 0;\n  margin-top: 30px;\n  ", " {\n    padding: 0 15px 0 25px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.lg;
@@ -5770,12 +5770,12 @@ var TitleDesk = styled__default["default"](Text)(templateObject_26$1 || (templat
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$2H, templateObject_2$29, templateObject_3$1O, templateObject_4$1u, templateObject_5$12, templateObject_6$R, templateObject_7$A, templateObject_8$s, templateObject_9$i, templateObject_10$f, templateObject_11$c, templateObject_12$a, templateObject_13$8, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
+var templateObject_1$2H, templateObject_2$29, templateObject_3$1O, templateObject_4$1u, templateObject_5$12, templateObject_6$R, templateObject_7$A, templateObject_8$s, templateObject_9$j, templateObject_10$f, templateObject_11$c, templateObject_12$b, templateObject_13$9, templateObject_14$8, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
 
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
     if (value && value.length && value.length > 10) {
-        return "".concat(value.substr(0, count), " ... ").concat(value.substr(value.length - count, value.length));
+        return value.substr(0, count) + " ... " + value.substr(value.length - count, value.length);
     }
     return value;
 };
@@ -5785,7 +5785,7 @@ var TokenInfo$2 = function (_a) {
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     var ButtonsBlock = function (_a) {
         var type = _a.type;
-        return (React__default["default"].createElement(RightColumn$2, { className: "".concat(type, " ").concat(supple ? "supple" : "") },
+        return (React__default["default"].createElement(RightColumn$2, { className: type + " " + (supple ? "supple" : "") },
             React__default["default"].createElement(Button$6, { className: supple ? "supple" : "", onClick: addTokenHandler }, addTokenIcon || React__default["default"].createElement("img", { src: Metamask })),
             React__default["default"].createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
@@ -5802,7 +5802,7 @@ var TokenInfo$2 = function (_a) {
     };
     return (React__default["default"].createElement(WrapBlock$1, { supple: supple },
         React__default["default"].createElement(Text, null, textsInfo.title),
-        React__default["default"].createElement(Wrapper$L, null,
+        React__default["default"].createElement(Wrapper$M, null,
             React__default["default"].createElement(LeftColumn$2, null,
                 React__default["default"].createElement(Text, { marginBottom: "10px", size: "xs" }, textsInfo.token),
                 React__default["default"].createElement(Text, { size: "xs" }, ellipsis(textsInfo.address, 10)),
@@ -5814,7 +5814,7 @@ var WrapBlock$1 = styled__default["default"].div(templateObject_1$2G || (templat
     var supple = _a.supple;
     return (supple ? "20px 0 0" : 0);
 });
-var Wrapper$L = styled__default["default"].div(templateObject_2$28 || (templateObject_2$28 = __makeTemplateObject(["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"], ["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"])), function (_a) {
+var Wrapper$M = styled__default["default"].div(templateObject_2$28 || (templateObject_2$28 = __makeTemplateObject(["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"], ["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 }, function (_a) {
@@ -5859,7 +5859,7 @@ var templateObject_1$2G, templateObject_2$28, templateObject_3$1N, templateObjec
 
 var InfoWrapper = function (_a) {
     var tokenLogo = _a.tokenLogo, proofData = _a.proofData, wrappedData = _a.wrappedData, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenName = _a.tokenName;
-    return (React__default["default"].createElement(Wrapper$K, null,
+    return (React__default["default"].createElement(Wrapper$L, null,
         React__default["default"].createElement(TokenLogo$4, null,
             React__default["default"].createElement(TokenImg$1, null, tokenLogo || React__default["default"].createElement(Icon$C, null)),
             React__default["default"].createElement(Text, null, tokenName || "YAY")),
@@ -5870,7 +5870,7 @@ var InfoWrapper = function (_a) {
                 React__default["default"].createElement(Icon$D, null)),
             React__default["default"].createElement(RightColumn$1, null, wrappedData.map(function (item, i) { return (React__default["default"].createElement(TokenInfo$2, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, supple: i === 1, textsInfo: item })); })))));
 };
-var Wrapper$K = styled__default["default"].div(templateObject_1$2F || (templateObject_1$2F = __makeTemplateObject(["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
+var Wrapper$L = styled__default["default"].div(templateObject_1$2F || (templateObject_1$2F = __makeTemplateObject(["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 60px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -5910,7 +5910,7 @@ var BridgeProof = function (_a) {
     //     block.addEventListener("scroll", () => setShadowVisibility(block.scrollTop > 0));
     //   }
     // }, [scrollBlock]);
-    return (React__default["default"].createElement(Wrapper$J, null,
+    return (React__default["default"].createElement(Wrapper$K, null,
         React__default["default"].createElement(Text, { size: "lg" }, texts.title),
         React__default["default"].createElement(Description$b, { marginTop: "10px" }, texts.description),
         React__default["default"].createElement(ButtonClose$4, { onClick: onDismiss },
@@ -5918,7 +5918,7 @@ var BridgeProof = function (_a) {
         React__default["default"].createElement(Shadow$1, { show: shadowVisibility }),
         React__default["default"].createElement(TokenList$1, { ref: scrollBlock }, ProofOfAssetsData.map(function (item, i) { return (React__default["default"].createElement(InfoWrapper, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, proofData: item.proofData, wrappedData: item.wrappedData, tokenLogo: tokenLogo, tokenName: tokenName })); }))));
 };
-var Wrapper$J = styled__default["default"].div(templateObject_1$2E || (templateObject_1$2E = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  border-radius: 10px 10px 0 0;\n  background: ", ";\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  }\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  border-radius: 10px 10px 0 0;\n  background: ", ";\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  }\n"])), function (_a) {
+var Wrapper$K = styled__default["default"].div(templateObject_1$2E || (templateObject_1$2E = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  border-radius: 10px 10px 0 0;\n  background: ", ";\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  }\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: auto;\n  padding: 33px 24px 0 14px;\n  box-sizing: border-box;\n  border-radius: 10px 10px 0 0;\n  background: ", ";\n  ", " {\n    padding: 38px 44px 0 34px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -5956,7 +5956,7 @@ var TokenInfoTransaction = function (_a) {
     var _c = React.useState(false), isTooltipDisplayed = _c[0], setIsTooltipDisplayed = _c[1];
     var ButtonsBlock = function (_a) {
         var type = _a.type;
-        return (React__default["default"].createElement(BlockInfo, { className: "".concat(type) },
+        return (React__default["default"].createElement(BlockInfo, { className: "" + type },
             React__default["default"].createElement(Button$5, { onClick: function () { return addTokenHandler(data === null || data === void 0 ? void 0 : data.network); }, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default["default"].createElement("img", { src: Metamask })),
             React__default["default"].createElement(Button$5, { onClick: function () {
                     if (navigator.clipboard) {
@@ -6092,17 +6092,17 @@ var getChainIdByName = function (name) {
 var getBscScanTransactionUrl = function (transactionHash, network) {
     var idNetwork = getChainIdByName(network);
     if (idNetwork === MAINNET_BSC_CHAIN_ID) {
-        return "".concat(BASE_BSC_SCAN_URL, "/tx/").concat(transactionHash);
+        return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
     }
     if (idNetwork === MAINNET_AVAX_CHAIN_ID) {
-        return "".concat(BASE_AVAX_SCAN_URL, "/tx/").concat(transactionHash);
+        return BASE_AVAX_SCAN_URL + "/tx/" + transactionHash;
     }
-    return "".concat(BASE_BSC_SCAN_URL, "/tx/").concat(transactionHash);
+    return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
 };
 
 var InfoWrapperTransactionHistory = function (_a) {
     var tokenLogo = _a.tokenLogo, data = _a.data, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenName = _a.tokenName, textTransaction = _a.textTransaction;
-    return (React__default["default"].createElement(Wrapper$I, null,
+    return (React__default["default"].createElement(Wrapper$J, null,
         React__default["default"].createElement(TokenLogo$3, null,
             React__default["default"].createElement(TokenImg, null, tokenLogo || React__default["default"].createElement(Icon$C, null)),
             React__default["default"].createElement(Text, null, tokenName || "YAY")),
@@ -6124,7 +6124,7 @@ var InfoWrapperTransactionHistory = function (_a) {
                         link: getBscScanTransactionUrl(data === null || data === void 0 ? void 0 : data.hash, data === null || data === void 0 ? void 0 : data.network),
                     }, textCopy: textCopy, addTokenHandler: addTokenHandler, addTokenIcon: addTokenIcon, textTransaction: textTransaction })))));
 };
-var Wrapper$I = styled__default["default"].div(templateObject_1$2C || (templateObject_1$2C = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
+var Wrapper$J = styled__default["default"].div(templateObject_1$2C || (templateObject_1$2C = __makeTemplateObject(["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"], ["\n  margin-top: 30px;\n  padding: 22px 13px 27px 13px;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin-top: 0;\n  }\n  &:last-child {\n    margin-bottom: 30px;\n  }\n  ", " {\n    padding: 22px 23px 27px 23px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -6159,7 +6159,7 @@ styled__default["default"].div(templateObject_8$r || (templateObject_8$r = __mak
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-styled__default["default"].button(templateObject_9$h || (templateObject_9$h = __makeTemplateObject(["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"], ["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"])), function (_a) {
+styled__default["default"].button(templateObject_9$i || (templateObject_9$i = __makeTemplateObject(["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"], ["\n  cursor: pointer;\n  margin-left: 0;\n  width: 30px;\n  height: 30px;\n  background: ", ";\n  border-radius: 7px;\n  border: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  & img {\n    width: 27px;\n  }\n  &.arrow {\n    & svg {\n      transform: rotate(135deg) translate(-1px, 2px);\n    }\n  }\n  ", " {\n    margin-left: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 }, function (_a) {
@@ -6183,7 +6183,7 @@ styled__default["default"].div(templateObject_11$b || (templateObject_11$b = __m
     var theme = _a.theme;
     return theme.colors.invertedContrast;
 });
-styled__default["default"].div(templateObject_12$9 || (templateObject_12$9 = __makeTemplateObject(["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"], ["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"])), function (_a) {
+styled__default["default"].div(templateObject_12$a || (templateObject_12$a = __makeTemplateObject(["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"], ["\n  width: 206px;\n  margin: 7px 0 0;\n  padding: 19px 12px 19px 11px;\n  max-width: 331px;\n  min-height: 77px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  background: ", ";\n  border-radius: 12px;\n  &:first-child {\n    margin: 0;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    padding: 19px 22px 19px 16px;\n  }\n  ", " {\n    width: auto;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.whiteRgba;
 }, function (_a) {
@@ -6196,8 +6196,8 @@ styled__default["default"].div(templateObject_12$9 || (templateObject_12$9 = __m
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-styled__default["default"].div(templateObject_13$7 || (templateObject_13$7 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var templateObject_1$2C, templateObject_2$24, templateObject_3$1J, templateObject_4$1p, templateObject_5$Z, templateObject_6$N, templateObject_7$y, templateObject_8$r, templateObject_9$h, templateObject_10$e, templateObject_11$b, templateObject_12$9, templateObject_13$7;
+styled__default["default"].div(templateObject_13$8 || (templateObject_13$8 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var templateObject_1$2C, templateObject_2$24, templateObject_3$1J, templateObject_4$1p, templateObject_5$Z, templateObject_6$N, templateObject_7$y, templateObject_8$r, templateObject_9$i, templateObject_10$e, templateObject_11$b, templateObject_12$a, templateObject_13$8;
 
 var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
@@ -6215,7 +6215,7 @@ var TransactionHistory = function (_a) {
             block === null || block === void 0 ? void 0 : block.removeEventListener("scroll", function () { return toggleShadow(block); });
         };
     }, [scrollBlock]);
-    return (React__default["default"].createElement(Wrapper$H, null,
+    return (React__default["default"].createElement(Wrapper$I, null,
         React__default["default"].createElement(Text, { size: "lg" }, texts.title),
         React__default["default"].createElement(Description$a, { marginTop: "10px" }, texts.description),
         React__default["default"].createElement(ButtonClose$3, { onClick: onDismiss },
@@ -6226,7 +6226,7 @@ var TransactionHistory = function (_a) {
                 transactionHistoryData.map(function (item, i) { return (React__default["default"].createElement(InfoWrapperTransactionHistory, { addTokenIcon: addTokenIcon, textCopy: textCopy, addTokenHandler: addTokenHandler, key: i, data: item, tokenLogo: tokenLogo, tokenName: tokenName, textTransaction: textTransaction })); }),
                 React__default["default"].createElement(SeeMore, __assign({ variant: "text" }, propsBtnSeeMore), texts.seeMore)))));
 };
-var Wrapper$H = styled__default["default"].div(templateObject_1$2B || (templateObject_1$2B = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"])), function (_a) {
+var Wrapper$I = styled__default["default"].div(templateObject_1$2B || (templateObject_1$2B = __makeTemplateObject(["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"], ["\n  position: relative;\n  max-width: 875px;\n  height: 70vh;\n  padding: 33px 14px 0 14px;\n  box-sizing: border-box;\n  background: ", ";\n  border-radius: 10px;\n  width: 100%;\n  overflow: hidden;\n  top: 80px;\n  ", " {\n    padding: 38px 44px 0 34px;\n    height: auto;\n    overflow: auto;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -6286,13 +6286,13 @@ var ModalHeader$3 = styled__default["default"].div(templateObject_4$1n || (templ
     return background || "transparent";
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "20px", " 14px 24px");
+    return " " + (paddingTopHeader || "20px") + " 14px 24px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "27px", " 20px 40px 27px");
+    return " " + (paddingTopHeader || "27px") + " 20px 40px 27px";
 });
 var ModalTitle$3 = styled__default["default"].div(templateObject_5$X || (templateObject_5$X = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -6305,7 +6305,7 @@ var Modal$1 = function (_a) {
     var theme = styled.useTheme();
     return (React__default["default"].createElement(StyledModal$3, __assign({}, props),
         React__default["default"].createElement(ModalContent, null,
-            React__default["default"].createElement(ModalHeader$3, { className: welcome ? "welcome" : "", paddingTopHeader: paddingTopHeader, background: getThemeValue("colors.".concat(headerBackground), headerBackground)(theme) },
+            React__default["default"].createElement(ModalHeader$3, { className: welcome ? "welcome" : "", paddingTopHeader: paddingTopHeader, background: getThemeValue("colors." + headerBackground, headerBackground)(theme) },
                 React__default["default"].createElement(ModalTitle$3, null,
                     React__default["default"].createElement(Heading, { className: welcome ? "welcome" : "" }, title)),
                 image ? (React__default["default"].createElement(Image$1, null,
@@ -6575,7 +6575,7 @@ var AccountModal = function (_a) {
                 React__default["default"].createElement(AccountWrap$1, { as: "div" },
                     React__default["default"].createElement(AccountText$1, { fontWeight: 500, color: "text" }, account))),
             React__default["default"].createElement(Flex, { mb: "32px" },
-                React__default["default"].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" }, texts.view),
+                React__default["default"].createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, texts.view),
                 React__default["default"].createElement(CopyText$1, { color: "#47DA3B" },
                     React__default["default"].createElement(CopyToClipboard$1, { toCopy: account, textCopied: texts.copied }, texts.copy))),
             React__default["default"].createElement(Flex, { justifyContent: "center" },
@@ -6621,7 +6621,7 @@ var AccountVestingModal = function (_a) {
                     React__default["default"].createElement(Text, { letterSpacing: "-0.02em", fontWeight: "400" }, yayBalance),
                     React__default["default"].createElement(ButtonAddToken, { onClick: handleAddToken }, texts.addToken)),
                 React__default["default"].createElement(Flex, { mb: "30px" },
-                    React__default["default"].createElement(LinkExternal, { color: "#47DA3B", small: true, href: linkExternalWalletModal || "https://bscscan.com/address/".concat(account), mr: "16px", icon: React__default["default"].createElement(Icon$H, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
+                    React__default["default"].createElement(LinkExternal, { color: "#47DA3B", small: true, href: linkExternalWalletModal || "https://bscscan.com/address/" + account, mr: "16px", icon: React__default["default"].createElement(Icon$H, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
                 React__default["default"].createElement(Flex, { justifyContent: "center" },
                     React__default["default"].createElement(Button$9, { scale: "md", width: "100%", variant: buttonLogoutType || variants$4.SECONDARY, style: { fontWeight: 400 }, onClick: function () {
                             logout();
@@ -6630,7 +6630,7 @@ var AccountVestingModal = function (_a) {
                         } }, texts.button)))),
             tabValue === 1 && (React__default["default"].createElement(React__default["default"].Fragment, null,
                 React__default["default"].createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "21px", fontSize: "14px", lineHeight: "24px", marginTop: "26px", fontWeight: 400 }, texts.recentTransactions),
-                (dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.length) ? (React__default["default"].createElement(Table$5, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "".concat(el.id, "-").concat(i) },
+                (dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.length) ? (React__default["default"].createElement(Table$5, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: el.id + "-" + i },
                     React__default["default"].createElement(StyledText$4, null, el.id),
                     React__default["default"].createElement(ButtonClaimed, { onClick: function () { return handleClaimed(el.id); } },
                         texts.claimed,
@@ -6680,7 +6680,7 @@ var templateObject_1$2u, templateObject_2$1_, templateObject_3$1E, templateObjec
 var WalletSide = function (_a) {
     var textsBridge = _a.textsBridge, account = _a.account, handleDisconnect = _a.handleDisconnect;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
-    return (React__default["default"].createElement(Wrapper$G, null,
+    return (React__default["default"].createElement(Wrapper$H, null,
         React__default["default"].createElement(Title$p, null, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.title),
         React__default["default"].createElement(Address, null,
             React__default["default"].createElement(AddressTextWrapper, null,
@@ -6704,7 +6704,7 @@ var WalletSide = function (_a) {
             React__default["default"].createElement(Text, { size: "sm" }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.walletName)),
         React__default["default"].createElement(DisconnetButton, { onClick: handleDisconnect }, textsBridge === null || textsBridge === void 0 ? void 0 : textsBridge.button)));
 };
-var Wrapper$G = styled__default["default"].div(templateObject_1$2t || (templateObject_1$2t = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
+var Wrapper$H = styled__default["default"].div(templateObject_1$2t || (templateObject_1$2t = __makeTemplateObject(["\n  margin-top: 37px;\n"], ["\n  margin-top: 37px;\n"])));
 var Title$p = styled__default["default"](Text)(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
@@ -6730,7 +6730,7 @@ var CopyButton$1 = styled__default["default"].button(templateObject_8$p || (temp
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var Tooltip$3 = styled__default["default"].div(templateObject_9$g || (templateObject_9$g = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
+var Tooltip$3 = styled__default["default"].div(templateObject_9$h || (templateObject_9$h = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
 }, function (_a) {
@@ -6744,11 +6744,11 @@ var Tooltip$3 = styled__default["default"].div(templateObject_9$g || (templateOb
     return theme.colors.invertedContrast;
 });
 var AddressTextWrapper = styled__default["default"].div(templateObject_10$d || (templateObject_10$d = __makeTemplateObject(["\n  overflow: hidden;\n  width: 100%;\n"], ["\n  overflow: hidden;\n  width: 100%;\n"])));
-var templateObject_1$2t, templateObject_2$1Z, templateObject_3$1D, templateObject_4$1j, templateObject_5$V, templateObject_6$J, templateObject_7$v, templateObject_8$p, templateObject_9$g, templateObject_10$d;
+var templateObject_1$2t, templateObject_2$1Z, templateObject_3$1D, templateObject_4$1j, templateObject_5$V, templateObject_6$J, templateObject_7$v, templateObject_8$p, templateObject_9$h, templateObject_10$d;
 
 var TransactionSide = function (_a) {
     var transactionsList = _a.transactionsList, transactionTitle = _a.transactionTitle, noRecentTransactions = _a.noRecentTransactions;
-    return (React__default["default"].createElement(Wrapper$F, null,
+    return (React__default["default"].createElement(Wrapper$G, null,
         React__default["default"].createElement(Title$o, null, transactionTitle),
         React__default["default"].createElement(TransactionsBlock, null, transactionsList && transactionsList.length > 0 ? (transactionsList === null || transactionsList === void 0 ? void 0 : transactionsList.map(function (item, i) { return (React__default["default"].createElement(Transaction$1, { key: i },
             React__default["default"].createElement(TextBlock$4, null, item.number),
@@ -6757,7 +6757,7 @@ var TransactionSide = function (_a) {
                 React__default["default"].createElement(Icon$1l, null)),
             React__default["default"].createElement(TextBlock$4, { color: item.status ? lightColors.greenText2 : lightColors.redBg }, item.profit))); })) : (React__default["default"].createElement(Text, { fontSize: "13px", letterSpacing: "0.05em", textAlign: "center", padding: "16px 0" }, noRecentTransactions)))));
 };
-var Wrapper$F = styled__default["default"].div(templateObject_1$2s || (templateObject_1$2s = __makeTemplateObject(["\n  margin-top: 26px;\n"], ["\n  margin-top: 26px;\n"])));
+var Wrapper$G = styled__default["default"].div(templateObject_1$2s || (templateObject_1$2s = __makeTemplateObject(["\n  margin-top: 26px;\n"], ["\n  margin-top: 26px;\n"])));
 var Title$o = styled__default["default"](Text)(templateObject_2$1Y || (templateObject_2$1Y = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
@@ -7009,7 +7009,7 @@ var ProgressWrap$6 = styled__default["default"].div(templateObject_1$2m || (temp
 var Progress$1 = styled__default["default"].div(templateObject_2$1U || (templateObject_2$1U = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  overflow: hidden;\n"], ["\n  display: flex;\n  width: 100%;\n  overflow: hidden;\n"])));
 var Step$1 = styled__default["default"].div(templateObject_3$1z || (templateObject_3$1z = __makeTemplateObject(["\n  height: 9px;\n  width: ", ";\n  background: ", ";\n  transition: none.3s;\n  border-radius: 3px;\n"], ["\n  height: 9px;\n  width: ", ";\n  background: ", ";\n  transition: none.3s;\n  border-radius: 3px;\n"])), function (_a) {
     var width = _a.width;
-    return "".concat(width, "%");
+    return width + "%";
 }, function (_a) {
     var color = _a.color;
     return color;
@@ -7495,7 +7495,7 @@ var NetworkModal = function (_a) {
     };
     return (React__default["default"].createElement(Modal$1, { title: title, welcome: true, paddingTopHeader: "20px", onDismiss: onDismiss },
         React__default["default"].createElement(Wrap$9, null,
-            React__default["default"].createElement(Buttons$8, null, listNetwork === null || listNetwork === void 0 ? void 0 : listNetwork.map(function (el, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: "".concat(el.chainId, "-").concat(i) },
+            React__default["default"].createElement(Buttons$8, null, listNetwork === null || listNetwork === void 0 ? void 0 : listNetwork.map(function (el, i) { return (React__default["default"].createElement(React__default["default"].Fragment, { key: el.chainId + "-" + i },
                 React__default["default"].createElement(Button$2, { value: (valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[i]) || el.chainId, onClick: handleClick },
                     React__default["default"].createElement(TextStyled$4, null, el.name),
                     React__default["default"].createElement("img", { src: el.icon, alt: "" })))); })),
@@ -7874,7 +7874,7 @@ var AccountMarketplace = function (_a) {
                     React__default["default"].createElement(Icon$R, null))))));
     };
     return (React__default["default"].createElement(React__default["default"].Fragment, null, account ? (React__default["default"].createElement(WrapperDropdown, null,
-        React__default["default"].createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default["default"].createElement(Wrapper$E, null,
+        React__default["default"].createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default["default"].createElement(Wrapper$F, null,
                 React__default["default"].createElement(Icon$g, null)), variant: "center-behind", plusMarginTop: heightDisclaimer },
             React__default["default"].createElement(Dropdown, null,
                 React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "14px" },
@@ -7888,11 +7888,11 @@ var AccountMarketplace = function (_a) {
                     React__default["default"].createElement(StyledTitle$5, { fontSize: "21px", mb: "20px" }, textsAccount.myFunds),
                     React__default["default"].createElement(FundsWrapper, null, funds === null || funds === void 0 ? void 0 : funds.map(function (el, i) {
                         var _a;
-                        return (React__default["default"].createElement(React__default["default"].Fragment, { key: "".concat(el.id, "-").concat(i + 1) },
+                        return (React__default["default"].createElement(React__default["default"].Fragment, { key: el.id + "-" + (i + 1) },
                             React__default["default"].createElement(FundsItem, __assign({}, el)),
                             el.includes && (React__default["default"].createElement(FundsHidden, { open: openFunds }, (_a = el.includes) === null || _a === void 0 ? void 0 : _a.map(function (item, j) {
                                 var a = __assign({ includesItem: true }, item);
-                                return React__default["default"].createElement(FundsItem, __assign({ key: "".concat(el.id, "-").concat(i + 1, "-").concat(j + 1) }, a));
+                                return React__default["default"].createElement(FundsItem, __assign({ key: el.id + "-" + (i + 1) + "-" + (j + 1) }, a));
                             })))));
                     })))),
                 React__default["default"].createElement(Line$5, null),
@@ -7902,7 +7902,7 @@ var AccountMarketplace = function (_a) {
                             logout();
                             window.localStorage.removeItem(connectorLocalStorageKey);
                         }
-                    }, mt: "43px" }, textsAccount.disconnect))))) : (React__default["default"].createElement(Wrapper$E, { as: "button", onClick: function () {
+                    }, mt: "43px" }, textsAccount.disconnect))))) : (React__default["default"].createElement(Wrapper$F, { as: "button", onClick: function () {
             onPresentConnectModal();
         }, notAuth: true },
         React__default["default"].createElement(Icon$g, null)))));
@@ -7911,7 +7911,7 @@ var WrapperDropdown = styled__default["default"].div(templateObject_1$20 || (tem
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-var Wrapper$E = styled__default["default"].div(templateObject_2$1A || (templateObject_2$1A = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"])), function (_a) {
+var Wrapper$F = styled__default["default"].div(templateObject_2$1A || (templateObject_2$1A = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme, notAuth = _a.notAuth;
     return (notAuth ? theme.colors.whiteRgba : theme.colors.bgOpacity);
 }, function (_a) {
@@ -7948,7 +7948,7 @@ var StyledTitle$5 = styled__default["default"](Text)(templateObject_8$n || (temp
     var theme = _a.theme;
     return theme.colors.textShadow;
 });
-var Line$5 = styled__default["default"].div(templateObject_9$f || (templateObject_9$f = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 1px;\n  margin-bottom: 28px;\n  background: ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    bottom: 1px;\n    display: block;\n    width: 100%;\n    height: 36px;\n    background: linear-gradient(180deg, rgba(46, 46, 53, 0) 0%, #2e2e35 100%);\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 1px;\n  margin-bottom: 28px;\n  background: ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    bottom: 1px;\n    display: block;\n    width: 100%;\n    height: 36px;\n    background: linear-gradient(180deg, rgba(46, 46, 53, 0) 0%, #2e2e35 100%);\n  }\n"])), function (_a) {
+var Line$5 = styled__default["default"].div(templateObject_9$g || (templateObject_9$g = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  height: 1px;\n  margin-bottom: 28px;\n  background: ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    bottom: 1px;\n    display: block;\n    width: 100%;\n    height: 36px;\n    background: linear-gradient(180deg, rgba(46, 46, 53, 0) 0%, #2e2e35 100%);\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  height: 1px;\n  margin-bottom: 28px;\n  background: ", ";\n  &::before {\n    content: \"\";\n    position: absolute;\n    bottom: 1px;\n    display: block;\n    width: 100%;\n    height: 36px;\n    background: linear-gradient(180deg, rgba(46, 46, 53, 0) 0%, #2e2e35 100%);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.5, theme.colors.bgCard);
 });
@@ -7960,11 +7960,11 @@ var FundsHidden = styled__default["default"].div(templateObject_11$a || (templat
     var open = _a.open;
     return (open ? "200px" : 0);
 });
-var ArrowIcon = styled__default["default"](Flex)(templateObject_12$8 || (templateObject_12$8 = __makeTemplateObject(["\n  margin-left: 10px;\n  transition: 0.3s;\n  transform: ", ";\n"], ["\n  margin-left: 10px;\n  transition: 0.3s;\n  transform: ", ";\n"])), function (_a) {
+var ArrowIcon = styled__default["default"](Flex)(templateObject_12$9 || (templateObject_12$9 = __makeTemplateObject(["\n  margin-left: 10px;\n  transition: 0.3s;\n  transform: ", ";\n"], ["\n  margin-left: 10px;\n  transition: 0.3s;\n  transform: ", ";\n"])), function (_a) {
     var open = _a.open;
     return (open ? "scale(1, -1)" : "none");
 });
-var templateObject_1$20, templateObject_2$1A, templateObject_3$1h, templateObject_4$17, templateObject_5$N, templateObject_6$D, templateObject_7$t, templateObject_8$n, templateObject_9$f, templateObject_10$c, templateObject_11$a, templateObject_12$8;
+var templateObject_1$20, templateObject_2$1A, templateObject_3$1h, templateObject_4$17, templateObject_5$N, templateObject_6$D, templateObject_7$t, templateObject_8$n, templateObject_9$g, templateObject_10$c, templateObject_11$a, templateObject_12$9;
 
 var HeaderMarketplace = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds;
@@ -8039,7 +8039,7 @@ var TOKEN = "b9634c6ff728ffe1.svg";
 
 var PlayerList = function (_a) {
     var texts = _a.texts, playersList = _a.playersList, tokenIcon = _a.tokenIcon, myAccount = _a.myAccount, total = _a.total;
-    return (React__default["default"].createElement(Wrapper$D, null,
+    return (React__default["default"].createElement(Wrapper$E, null,
         React__default["default"].createElement(Title$m, null,
             texts.title,
             React__default["default"].createElement("span", null,
@@ -8059,7 +8059,7 @@ var PlayerList = function (_a) {
                 React__default["default"].createElement(Cell$5, null, ellipsis(item.account)),
                 React__default["default"].createElement(Cell$5, null, item.score))); }))));
 };
-var Wrapper$D = styled__default["default"].div(templateObject_1$1_ || (templateObject_1$1_ = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
+var Wrapper$E = styled__default["default"].div(templateObject_1$1_ || (templateObject_1$1_ = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -8106,17 +8106,17 @@ var GamesTable = function (_a) {
     for (var i = 0; i < 12; i++) {
         list.push(gamesList[i] || {});
     }
-    return (React__default["default"].createElement(Wrapper$C, null,
+    return (React__default["default"].createElement(Wrapper$D, null,
         React__default["default"].createElement(Title$l, null,
             texts.title,
             React__default["default"].createElement("span", null,
                 "(",
                 gamesList.length,
                 ")")),
-        React__default["default"].createElement(Table$3, null, list.map(function (item, i) { return (React__default["default"].createElement(ItemGame, { className: "".concat(item.imgSrc ? "" : "empty", " ").concat(selectGame === item.value ? "active" : ""), key: i, onClick: function () { return (!item.disabled && item.imgSrc ? handleSelectValue(item.value) : function () { }); }, bg: item.imgSrc },
+        React__default["default"].createElement(Table$3, null, list.map(function (item, i) { return (React__default["default"].createElement(ItemGame, { className: (item.imgSrc ? "" : "empty") + " " + (selectGame === item.value ? "active" : ""), key: i, onClick: function () { return (!item.disabled && item.imgSrc ? handleSelectValue(item.value) : function () { }); }, bg: item.imgSrc },
             React__default["default"].createElement(Text, { fontSize: "11px" }, item.title))); }))));
 };
-var Wrapper$C = styled__default["default"].div(templateObject_1$1Z || (templateObject_1$1Z = __makeTemplateObject(["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {
+var Wrapper$D = styled__default["default"].div(templateObject_1$1Z || (templateObject_1$1Z = __makeTemplateObject(["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
@@ -8139,7 +8139,7 @@ var Table$3 = styled__default["default"].div(templateObject_3$1e || (templateObj
 });
 var ItemGame = styled__default["default"].div(templateObject_4$14 || (templateObject_4$14 = __makeTemplateObject(["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  border: 2px solid transparent;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  border: 2px solid transparent;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"])), function (_a) {
     var bg = _a.bg;
-    return "url(".concat(bg, ") no-repeat center center / cover");
+    return "url(" + bg + ") no-repeat center center / cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
@@ -8157,7 +8157,7 @@ var templateObject_1$1Z, templateObject_2$1x, templateObject_3$1e, templateObjec
 
 var GamesList = function (_a) {
     var texts = _a.texts, gamesList = _a.gamesList, handleSelectValue = _a.handleSelectValue, selectGame = _a.selectGame;
-    return (React__default["default"].createElement(Wrapper$B, null,
+    return (React__default["default"].createElement(Wrapper$C, null,
         React__default["default"].createElement(Title$k, null,
             texts.title,
             React__default["default"].createElement("span", null,
@@ -8177,7 +8177,7 @@ var GamesList = function (_a) {
                 React__default["default"].createElement(Cell$4, null, item.title),
                 React__default["default"].createElement(Cell$4, { style: { paddingRight: 16 } }, item.playedOnce))); }))));
 };
-var Wrapper$B = styled__default["default"].div(templateObject_1$1Y || (templateObject_1$1Y = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
+var Wrapper$C = styled__default["default"].div(templateObject_1$1Y || (templateObject_1$1Y = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  padding: 21px 0;\n  border-radius: 10px;\n  background: ", ";\n  ", " {\n    padding: 30px 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -8245,7 +8245,7 @@ var templateObject_1$1X;
 
 var ListWrap = function (_a) {
     var children = _a.children, handleInput = _a.handleInput, inputValue = _a.inputValue, placeholder = _a.placeholder, players = _a.players, activeTab = _a.activeTab, toggleTab = _a.toggleTab, tabsList = _a.tabsList, toggleTypeList = _a.toggleTypeList, typeTabsList = _a.typeTabsList, texts = _a.texts, myPositionButton = _a.myPositionButton, length = _a.length, togglePage = _a.togglePage, currentPage = _a.currentPage, nameInput = _a.nameInput, title = _a.title;
-    return (React__default["default"].createElement(Wrapper$A, null,
+    return (React__default["default"].createElement(Wrapper$B, null,
         React__default["default"].createElement(TopContent$1, { players: players }, players ? (React__default["default"].createElement(Tabs$2, { tabValue: activeTab, onClick: toggleTab, tabsList: tabsList })) : (React__default["default"].createElement(React__default["default"].Fragment, null,
             nameInput && (React__default["default"].createElement(InputSearch$1, { name: nameInput, placeholder: placeholder, value: inputValue, onChange: handleInput, width: "272px" })),
             title && React__default["default"].createElement(TitleStyle$5, null, title)))),
@@ -8255,7 +8255,7 @@ var ListWrap = function (_a) {
                 React__default["default"].createElement(ButtonPosition, { scale: "sm", variant: "option", height: "30px", onClick: myPositionButton }, texts === null || texts === void 0 ? void 0 : texts.button)),
             length ? React__default["default"].createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage }) : null)) : (React__default["default"].createElement(TabsTypeList, { toggleTypeList: toggleTypeList, typeTabsList: typeTabsList })))));
 };
-var Wrapper$A = styled__default["default"].div(templateObject_1$1W || (templateObject_1$1W = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
+var Wrapper$B = styled__default["default"].div(templateObject_1$1W || (templateObject_1$1W = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"], ["\n  max-width: 100%;\n  width: 100%;\n  ", " {\n    max-width: 568px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
@@ -8464,7 +8464,7 @@ var bounceInKeyframe$1 = styled.keyframes(templateObject_1$1Q || (templateObject
 var bounceOutKeyframe$1 = styled.keyframes(templateObject_2$1r || (templateObject_2$1r = __makeTemplateObject(["\n  20% {\n    transform: translate3d(0, 10px, 0) scaleY(0.985);\n  }\n\n  40%,\n  45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0) scaleY(0.9);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0) scaleY(3);\n  }\n"], ["\n  20% {\n    transform: translate3d(0, 10px, 0) scaleY(0.985);\n  }\n\n  40%,\n  45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0) scaleY(0.9);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0) scaleY(3);\n  }\n"])));
 var bounceInAnimation$1 = styled.css(templateObject_3$18 || (templateObject_3$18 = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceInKeyframe$1);
 var bounceOutAnimation$1 = styled.css(templateObject_4$$ || (templateObject_4$$ = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceOutKeyframe$1);
-var Wrapper$z = styled__default["default"].div(templateObject_5$G || (templateObject_5$G = __makeTemplateObject(["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"], ["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"])), bounceInAnimation$1, bounceOutAnimation$1);
+var Wrapper$A = styled__default["default"].div(templateObject_5$G || (templateObject_5$G = __makeTemplateObject(["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"], ["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"])), bounceInAnimation$1, bounceOutAnimation$1);
 var Popup = styled__default["default"].div(templateObject_6$x || (templateObject_6$x = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  background: ", ";\n  border-radius: 14px;\n  color: #ffffff;\n  max-width: 320px;\n  padding-right: 70px;\n  & button {\n    white-space: nowrap;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  background: ", ";\n  border-radius: 14px;\n  color: #ffffff;\n  max-width: 320px;\n  padding-right: 70px;\n  & button {\n    white-space: nowrap;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
@@ -8473,7 +8473,7 @@ var Img$1 = styled__default["default"](Box)(templateObject_7$p || (templateObjec
 var CloseBtn = styled__default["default"](IconButton)(templateObject_8$k || (templateObject_8$k = __makeTemplateObject(["\n  position: absolute;\n  right: 0;\n"], ["\n  position: absolute;\n  right: 0;\n"])));
 var CollectWinningsPopup = function (_a) {
     var handleOpenHistory = _a.handleOpenHistory, handleClick = _a.handleClick, btnText = _a.btnText, img = _a.img, ref = _a.ref;
-    return (React__default["default"].createElement(Wrapper$z, { ref: ref },
+    return (React__default["default"].createElement(Wrapper$A, { ref: ref },
         React__default["default"].createElement(Popup, null,
             React__default["default"].createElement(Button$9, { style: { flex: 1 }, onClick: handleOpenHistory, variant: "green" }, btnText),
             " ",
@@ -8499,14 +8499,14 @@ var bounceInKeyframe = styled.keyframes(templateObject_1$1P || (templateObject_1
 var bounceOutKeyframe = styled.keyframes(templateObject_2$1q || (templateObject_2$1q = __makeTemplateObject(["\n  20% {\n    transform: translate3d(0, 10px, 0) scaleY(0.985);\n  }\n\n  40%,\n  45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0) scaleY(0.9);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0) scaleY(3);\n  }\n"], ["\n  20% {\n    transform: translate3d(0, 10px, 0) scaleY(0.985);\n  }\n\n  40%,\n  45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0) scaleY(0.9);\n  }\n\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0) scaleY(3);\n  }\n"])));
 var bounceInAnimation = styled.css(templateObject_3$17 || (templateObject_3$17 = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceInKeyframe);
 var bounceOutAnimation = styled.css(templateObject_4$_ || (templateObject_4$_ = __makeTemplateObject(["\n  animation: ", " 1s;\n"], ["\n  animation: ", " 1s;\n"])), bounceOutKeyframe);
-var Wrapper$y = styled__default["default"].div(templateObject_5$F || (templateObject_5$F = __makeTemplateObject(["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"], ["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"])), bounceInAnimation, bounceOutAnimation);
+var Wrapper$z = styled__default["default"].div(templateObject_5$F || (templateObject_5$F = __makeTemplateObject(["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"], ["\n  align-items: flex-start;\n  bottom: 0px;\n  color: #ffffff;\n  display: flex;\n  justify-content: flex-end;\n  right: 0;\n  z-index: 50;\n\n  &.popup-enter-active {\n    ", "\n  }\n\n  &.popup-enter-done {\n    bottom: 0px;\n  }\n\n  &.popup-exit-done {\n    bottom: -2000px;\n  }\n\n  &.popup-exit-active {\n    ", "\n  }\n"])), bounceInAnimation, bounceOutAnimation);
 var StyledButton$5 = styled__default["default"](Button$9)(templateObject_6$w || (templateObject_6$w = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: flex-start;\n  border-radius: 14px;\n  max-width: 394px;\n  width: 100%;\n  height: 92px;\n  padding: 31px;\n  white-space: nowrap;\n  background: ", ";\n  & img {\n    position: relative;\n    max-width: none;\n    margin: 0 10px 0 -16px;\n    left: 0px;\n    bottom: 16px;\n    pointer-events: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.yellowGradient3;
 });
 var GiftPopup = function (_a) {
     var handleOpenForm = _a.handleOpenForm, btnText = _a.btnText, img = _a.img, ref = _a.ref;
-    return (React__default["default"].createElement(Wrapper$y, { ref: ref },
+    return (React__default["default"].createElement(Wrapper$z, { ref: ref },
         React__default["default"].createElement(StyledButton$5, { style: { flex: 1 }, onClick: handleOpenForm, width: "100%" },
             React__default["default"].createElement("img", { src: img || Gift, alt: "" }),
             React__default["default"].createElement(Text, { fontSize: "21px" }, btnText))));
@@ -8560,7 +8560,7 @@ var Claimed$5 = styled__default["default"].div(templateObject_2$1o || (templateO
     return (disabledTopCards || !canClaim ? "auto" : "none");
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var templateObject_1$1N, templateObject_2$1o;
 
@@ -8570,19 +8570,19 @@ var CardTimer = function (_a) {
     var Progress = function () { return (React__default["default"].createElement(ProgressTrack$4, null,
         React__default["default"].createElement(ProgressBar$4, { progress: progress }))); };
     return (React__default["default"].createElement("div", { style: { position: "relative" } },
-        React__default["default"].createElement(Wrapper$x, { canClaim: canClaim, disabledTopCards: !!disabledTopCards, id: "CardTimer" },
-            React__default["default"].createElement(Inner, { className: "card-inner" },
-                React__default["default"].createElement(CardFront, { canClaim: canClaim, disabledTopCards: !!disabledTopCards },
+        React__default["default"].createElement(Wrapper$y, { canClaim: canClaim, disabledTopCards: !!disabledTopCards, id: "CardTimer" },
+            React__default["default"].createElement(Inner$1, { className: "card-inner" },
+                React__default["default"].createElement(CardFront$1, { canClaim: canClaim, disabledTopCards: !!disabledTopCards },
                     React__default["default"].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.textBack),
                     React__default["default"].createElement(Text, { fontSize: "24px", lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "400" }, data.textStage),
                     React__default["default"].createElement(Progress, null)),
-                React__default["default"].createElement(CardBack, { canClaim: canClaim, disabledTopCards: !!disabledTopCards },
+                React__default["default"].createElement(CardBack$1, { canClaim: canClaim, disabledTopCards: !!disabledTopCards },
                     React__default["default"].createElement(Text, { color: "greyText", fontSize: "14px", lineHeight: "24px", letterSpacing: "-0.02em", marginBottom: "2px", fontWeight: "400" }, data.textFront),
                     React__default["default"].createElement(TimerSimple, { time: data.timeSecond, texts: data.textsTime }),
                     React__default["default"].createElement(Progress, null)))),
         React__default["default"].createElement(Claimed$4, { canClaim: canClaim, disabledTopCards: !!disabledTopCards })));
 };
-var CardFront = styled__default["default"].div(templateObject_1$1M || (templateObject_1$1M = __makeTemplateObject(["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n"], ["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n"])), function (_a) {
+var CardFront$1 = styled__default["default"].div(templateObject_1$1M || (templateObject_1$1M = __makeTemplateObject(["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n"], ["\n  width: 100%;\n  padding: 18px 24px 10px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 20px;\n  left: 50%;\n  transform: translateX(-50%);\n  position: absolute;\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 }, function (_a) {
@@ -8592,12 +8592,12 @@ var CardFront = styled__default["default"].div(templateObject_1$1M || (templateO
     var canClaim = _a.canClaim, disabledTopCards = _a.disabledTopCards;
     return (disabledTopCards || !canClaim ? "" : "hidden");
 });
-var CardBack = styled__default["default"](CardFront)(templateObject_2$1n || (templateObject_2$1n = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
-var Wrapper$x = styled__default["default"].div(templateObject_3$15 || (templateObject_3$15 = __makeTemplateObject(["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"], ["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"])), function (_a) {
+var CardBack$1 = styled__default["default"](CardFront$1)(templateObject_2$1n || (templateObject_2$1n = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
+var Wrapper$y = styled__default["default"].div(templateObject_3$15 || (templateObject_3$15 = __makeTemplateObject(["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"], ["\n  position: relative;\n  perspective: 1000px;\n  min-height: 97px;\n  width: 100%;\n  border-radius: 20px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"])), function (_a) {
     var canClaim = _a.canClaim, disabledTopCards = _a.disabledTopCards;
     return (disabledTopCards || !canClaim ? "none" : "rotateY(180deg)");
 });
-var Inner = styled__default["default"].div(templateObject_4$Y || (templateObject_4$Y = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n"])));
+var Inner$1 = styled__default["default"].div(templateObject_4$Y || (templateObject_4$Y = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 15px;\n  box-sizing: border-box;\n"])));
 var ProgressTrack$4 = styled__default["default"].div(templateObject_5$D || (templateObject_5$D = __makeTemplateObject(["\n  height: 2px;\n  width: 100%;\n  margin-top: 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"], ["\n  height: 2px;\n  width: 100%;\n  margin-top: 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"])), function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.9, theme.colors.greyBg2);
@@ -8607,7 +8607,7 @@ var ProgressTrack$4 = styled__default["default"].div(templateObject_5$D || (temp
 });
 var ProgressBar$4 = styled__default["default"].div(templateObject_6$u || (templateObject_6$u = __makeTemplateObject(["\n  height: 100%;\n  width: ", ";\n  background: ", ";\n  border-radius: inherit;\n"], ["\n  height: 100%;\n  width: ", ";\n  background: ", ";\n  border-radius: inherit;\n"])), function (_a) {
     var progress = _a.progress;
-    return "".concat(progress, "%");
+    return progress + "%";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -8701,12 +8701,12 @@ var ProgressBar$3 = styled__default["default"].div(templateObject_8$j || (templa
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
 });
-var ProgressThumb$2 = styled__default["default"].div(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"])), function (_a) {
+var ProgressThumb$2 = styled__default["default"].div(templateObject_9$f || (templateObject_9$f = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-shrink: 0;\n  width: 25px;\n  height: 25px;\n  background: ", ";\n  border-radius: 50%;\n  &::before {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 44px;\n    height: 44px;\n    background: ", ";\n    border-radius: 50%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
@@ -8715,7 +8715,7 @@ var ProgressThumb$2 = styled__default["default"].div(templateObject_9$e || (temp
 });
 var Texts$1 = styled__default["default"].div(templateObject_10$b || (templateObject_10$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  text-align: right;\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  text-align: right;\n"])));
 var TextBlock$3 = styled__default["default"].div(templateObject_11$9 || (templateObject_11$9 = __makeTemplateObject(["\n  padding: 0 10px;\n"], ["\n  padding: 0 10px;\n"])));
-var TextHoverBlock$1 = styled__default["default"].div(templateObject_12$7 || (templateObject_12$7 = __makeTemplateObject(["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"], ["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"])), function (_a) {
+var TextHoverBlock$1 = styled__default["default"].div(templateObject_12$8 || (templateObject_12$8 = __makeTemplateObject(["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"], ["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"])), function (_a) {
     var widthProgress = _a.widthProgress;
     return (widthProgress >= 50 ? 0 : "-130px");
 }, function (_a) {
@@ -8725,15 +8725,15 @@ var TextHoverBlock$1 = styled__default["default"].div(templateObject_12$7 || (te
     var widthProgress = _a.widthProgress;
     return (widthProgress >= 50 ? "right" : "left");
 }, ProgressBar$3);
-var StyledText$2 = styled__default["default"](Text)(templateObject_13$6 || (templateObject_13$6 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"])));
-var StyledButton$4 = styled__default["default"](Button$9)(templateObject_14$6 || (templateObject_14$6 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"])), function (_a) {
+var StyledText$2 = styled__default["default"](Text)(templateObject_13$7 || (templateObject_13$7 = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  font-weight: 400;\n"])));
+var StyledButton$4 = styled__default["default"](Button$9)(templateObject_14$7 || (templateObject_14$7 = __makeTemplateObject(["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"], ["\n  width: 100%;\n  font-weight: 400;\n  ", " {\n    width: auto;\n    margin-left: 43px;\n  }\n  &:disabled {\n    opacity: 1;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
     var theme = _a.theme;
     return polished.transparentize(0.85, theme.colors.text);
 });
-var templateObject_1$1L, templateObject_2$1m, templateObject_3$14, templateObject_4$X, templateObject_5$C, templateObject_6$t, templateObject_7$n, templateObject_8$j, templateObject_9$e, templateObject_10$b, templateObject_11$9, templateObject_12$7, templateObject_13$6, templateObject_14$6;
+var templateObject_1$1L, templateObject_2$1m, templateObject_3$14, templateObject_4$X, templateObject_5$C, templateObject_6$t, templateObject_7$n, templateObject_8$j, templateObject_9$f, templateObject_10$b, templateObject_11$9, templateObject_12$8, templateObject_13$7, templateObject_14$7;
 
 var BG$1 = "4277beef4ce8429d.png";
 
@@ -8747,7 +8747,7 @@ var MarketplaceLink = function (_a) {
 };
 var Card$h = styled__default["default"].a(templateObject_1$1K || (templateObject_1$1K = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
@@ -8813,7 +8813,7 @@ var templateObject_1$1J, templateObject_2$1k, templateObject_3$13, templateObjec
 var TokenOnPoolz = function (_a) {
     var images = _a.images, texts = _a.texts, linkClaimTokens = _a.linkClaimTokens, disabledCardClaimTokens = _a.disabledCardClaimTokens;
     return (React__default["default"].createElement(Wrap$3, { style: { position: "relative" } },
-        React__default["default"].createElement(Wrapper$w, { disabledCard: disabledCardClaimTokens, id: "TokenOnPoolz" },
+        React__default["default"].createElement(Wrapper$x, { disabledCard: disabledCardClaimTokens, id: "TokenOnPoolz" },
             React__default["default"].createElement(CardStyle, { src: (images === null || images === void 0 ? void 0 : images.bg) || BG$1 },
                 React__default["default"].createElement(StyledTitle$4, { size: "xl" }, texts.title),
                 React__default["default"].createElement(Text, { margin: "42px 0" }, texts.description),
@@ -8836,9 +8836,9 @@ var Blur$1 = styled__default["default"].div(templateObject_2$1j || (templateObje
 }, "-moz-element(#TokenOnPoolz)");
 var CardStyle = styled__default["default"].div(templateObject_3$12 || (templateObject_3$12 = __makeTemplateObject(["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"], ["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 });
-var Wrapper$w = styled__default["default"].div(templateObject_4$V || (templateObject_4$V = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
+var Wrapper$x = styled__default["default"].div(templateObject_4$V || (templateObject_4$V = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark;
 }, function (_a) {
@@ -8856,7 +8856,7 @@ var templateObject_1$1I, templateObject_2$1j, templateObject_3$12, templateObjec
 
 var VestingWidget = function (_a) {
     var dataClaimTokens = _a.dataClaimTokens, textsClaimTokens = _a.textsClaimTokens, handleClaimTokens = _a.handleClaimTokens, dataCardsIndicators = _a.dataCardsIndicators, textMarketplaceLink = _a.textMarketplaceLink, linkMarketplace = _a.linkMarketplace, textsTakeGift = _a.textsTakeGift, handleTakeGift = _a.handleTakeGift, claimedGift = _a.claimedGift, imagesGift = _a.imagesGift, imagesMarketplace = _a.imagesMarketplace, dataTimer = _a.dataTimer, canClaim = _a.canClaim, textsPoolz = _a.textsPoolz, linkClaimTokens = _a.linkClaimTokens, disabledButtonClaimTokens = _a.disabledButtonClaimTokens, isLoadingButtonClaimTokens = _a.isLoadingButtonClaimTokens, endIconButtonClaimTokens = _a.endIconButtonClaimTokens, disabledTopCards = _a.disabledTopCards, disabledCardClaimTokens = _a.disabledCardClaimTokens, giftLoader = _a.giftLoader;
-    return (React__default["default"].createElement(Wrapper$v, null,
+    return (React__default["default"].createElement(Wrapper$w, null,
         React__default["default"].createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[0], id: "CardIndicator-1" }),
         React__default["default"].createElement(CardIndicator$1, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataCardsIndicators[1], id: "CardIndicator-2" }),
         React__default["default"].createElement(CardTimer, { canClaim: canClaim, disabledTopCards: disabledTopCards, data: dataTimer }),
@@ -8865,7 +8865,7 @@ var VestingWidget = function (_a) {
         React__default["default"].createElement(MarketplaceLink, { text: textMarketplaceLink, link: linkMarketplace, images: imagesMarketplace }),
         React__default["default"].createElement(TakeGift, { giftLoader: giftLoader, texts: textsTakeGift, handleTakeGift: handleTakeGift, claimedGift: claimedGift, images: imagesGift })));
 };
-var Wrapper$v = styled__default["default"].div(templateObject_1$1H || (templateObject_1$1H = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
+var Wrapper$w = styled__default["default"].div(templateObject_1$1H || (templateObject_1$1H = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"], ["\n  display: grid;\n  grid-template-columns: repeat(1, 1fr);\n  grid-gap: 30px 20px;\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -8877,7 +8877,7 @@ var templateObject_1$1H;
 var LobbyNav = function (_a) {
     var texts = _a.texts, handleJoin = _a.handleJoin, handleCreate = _a.handleCreate, imgJoin = _a.imgJoin, imgCreate = _a.imgCreate, isApprove = _a.isApprove, handleApprove = _a.handleApprove, propsWrapper = _a.propsWrapper, propsCreateButton = _a.propsCreateButton;
     return (React__default["default"].createElement(NavBlock, __assign({}, propsWrapper),
-        React__default["default"].createElement(Wrapper$u, { id: "LobbyNav" },
+        React__default["default"].createElement(Wrapper$v, { id: "LobbyNav" },
             React__default["default"].createElement(ButtonAdd, { onClick: handleJoin },
                 React__default["default"].createElement(Text, { fontSize: "19px" }, texts.join),
                 React__default["default"].createElement("img", { src: imgJoin || UNIT, alt: "avatar" })),
@@ -8892,7 +8892,7 @@ var NavBlock = styled__default["default"].div(templateObject_1$1G || (templateOb
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Wrapper$u = styled__default["default"].div(templateObject_2$1i || (templateObject_2$1i = __makeTemplateObject(["\n  position: relative;\n  max-width: 222px;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  ", " {\n    max-width: 469px;\n  }\n"], ["\n  position: relative;\n  max-width: 222px;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  ", " {\n    max-width: 469px;\n  }\n"])), function (_a) {
+var Wrapper$v = styled__default["default"].div(templateObject_2$1i || (templateObject_2$1i = __makeTemplateObject(["\n  position: relative;\n  max-width: 222px;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  ", " {\n    max-width: 469px;\n  }\n"], ["\n  position: relative;\n  max-width: 222px;\n  margin: 0 auto;\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  ", " {\n    max-width: 469px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -8935,7 +8935,7 @@ var Status$1;
     Status["REVERT"] = "revert";
 })(Status$1 || (Status$1 = {}));
 
-var Wrapper$t = styled__default["default"].div(templateObject_1$1F || (templateObject_1$1F = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
+var Wrapper$u = styled__default["default"].div(templateObject_1$1F || (templateObject_1$1F = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"], ["\n  display: grid;\n  grid-template-columns: 2fr 1.5fr 3fr;\n  gap: 0 10px;\n  align-items: flex-end;\n  padding: 10px 14px 14px;\n  background: ", ";\n  border-radius: 15px;\n  box-sizing: border-box;\n  margin-bottom: 15px;\n  &:last-child {\n    margin-bottom: 0;\n  }\n  ", " {\n    padding: 18px 33px 18px 38px;\n  }\n  ", " {\n    gap: 0 20px;\n    grid-template-columns: ", ";\n    gap: 0 15px;\n    align-items: flex-start;\n    margin-bottom: 10px;\n  }\n  ", " {\n    grid-template-columns: ", ";\n    gap: 0 15px;\n  } ;\n"])), function (_a) {
     _a.theme;
     return lightColors.cardBg;
 }, function (_a) {
@@ -8988,7 +8988,7 @@ var ButtonStyle$9 = styled__default["default"](Button$9)(templateObject_8$i || (
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextStyle$7 = styled__default["default"](Text)(templateObject_9$d || (templateObject_9$d = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
+var TextStyle$7 = styled__default["default"](Text)(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -9006,15 +9006,15 @@ var TextButton = styled__default["default"](Text)(templateObject_11$8 || (templa
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextButtonMob = styled__default["default"](Text)(templateObject_12$6 || (templateObject_12$6 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
+var TextButtonMob = styled__default["default"](Text)(templateObject_12$7 || (templateObject_12$7 = __makeTemplateObject(["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"], ["\n  display: block;\n  font-size: 11px;\n  ", " {\n    display: none;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-styled__default["default"].div(templateObject_13$5 || (templateObject_13$5 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
+styled__default["default"].div(templateObject_13$6 || (templateObject_13$6 = __makeTemplateObject(["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"], ["\n  min-width: 120px;\n  display: flex;\n  align-items: flex-end;\n  justify-content: center;\n  flex-direction: column-reverse;\n  height: 100%;\n  flex: none;\n  ", " {\n    flex-direction: row;\n    align-items: center;\n    min-width: 210px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var LoaderWrap = styled__default["default"].div(templateObject_14$5 || (templateObject_14$5 = __makeTemplateObject(["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
+var LoaderWrap = styled__default["default"].div(templateObject_14$6 || (templateObject_14$6 = __makeTemplateObject(["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"], ["\n  width: 0;\n  margin-left: -20px;\n  height: 40px;\n  margin-top: -10px;\n  transform: scale(0.4);\n  align-self: center;\n  ", " {\n    align-self: baseline;\n    margin-left: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -9042,7 +9042,7 @@ var Icons = styled__default["default"].div(templateObject_19$2 || (templateObjec
     return theme.mediaQueries.lg;
 });
 var PlayerWrap = styled__default["default"](Flex)(templateObject_20$2 || (templateObject_20$2 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"])));
-var templateObject_1$1F, templateObject_2$1h, templateObject_3$10, templateObject_4$T, templateObject_5$y, templateObject_6$r, templateObject_7$m, templateObject_8$i, templateObject_9$d, templateObject_10$a, templateObject_11$8, templateObject_12$6, templateObject_13$5, templateObject_14$5, templateObject_15$3, templateObject_16$2, templateObject_17$2, templateObject_18$2, templateObject_19$2, templateObject_20$2;
+var templateObject_1$1F, templateObject_2$1h, templateObject_3$10, templateObject_4$T, templateObject_5$y, templateObject_6$r, templateObject_7$m, templateObject_8$i, templateObject_9$e, templateObject_10$a, templateObject_11$8, templateObject_12$7, templateObject_13$6, templateObject_14$6, templateObject_15$3, templateObject_16$2, templateObject_17$2, templateObject_18$2, templateObject_19$2, templateObject_20$2;
 
 var Bet = function (_a) {
     var title = _a.title, red = _a.red, bet = _a.bet;
@@ -9117,7 +9117,7 @@ var LobbyListItem = function (_a) {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(TimerMob, { show: ![Status$1.PLAY].find(function (el) { return el === status; }) },
             React__default["default"].createElement(TimerNotSolidWithoutBg, { color: lightColors.text, marginPoint: "0 18px", width: "186px", borderRadius: "7px", background: lightColors.buttonBg, height: "30px", time: startTime, widthWrapper: "100%", margin: "0 auto" })),
-        React__default["default"].createElement(Wrapper$t, { history: !![Status$1.COLLECT, Status$1.WAITINGOPPONENT, Status$1.WIN, Status$1.DRAW, Status$1.REVERT, Status$1.LOSE].find(function (el) { return el === status; }) },
+        React__default["default"].createElement(Wrapper$u, { history: !![Status$1.COLLECT, Status$1.WAITINGOPPONENT, Status$1.WIN, Status$1.DRAW, Status$1.REVERT, Status$1.LOSE].find(function (el) { return el === status; }) },
             React__default["default"].createElement(Player, { title: texts.player, gamer: creator, icon: icon }),
             React__default["default"].createElement(Bet, { title: texts.bet, red: status === Status$1.LOSE, bet: bet }),
             [Status$1.COLLECT, Status$1.WAITINGOPPONENT, Status$1.WIN, Status$1.DRAW, Status$1.REVERT, Status$1.LOSE].find(function (el) { return el === status; }) ? (React__default["default"].createElement(Scores, { titleYou: texts.yourScore, titleOpponent: texts.opportunScore, yourScore: yourScore, opponentScore: status === Status$1.WAITINGOPPONENT ? "-" : opponentScore })) : (React__default["default"].createElement(Timer, { title: texts.time, color: ![Status$1.PLAY].find(function (el) { return el === status; }) ? baseColors.whiteRgba2 : lightColors.text, time: startTime })),
@@ -9140,9 +9140,9 @@ var LobbyListItem = function (_a) {
 
 var LobbyList = function (_a) {
     var data = _a.data, texts = _a.texts, handleButton = _a.handleButton, open = _a.open;
-    return (React__default["default"].createElement(Wrapper$s, null, data.map(function (item, i) { return (React__default["default"].createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts, open: open })); })));
+    return (React__default["default"].createElement(Wrapper$t, null, data.map(function (item, i) { return (React__default["default"].createElement(LobbyListItem, { isEnoughYay: item.isEnoughYay, epoch: item.epoch, creator: item.creator, bet: item.bet, startTime: item.startTime, status: item.status, handleButton: handleButton, key: i, texts: texts, open: open })); })));
 };
-var Wrapper$s = styled__default["default"].div(templateObject_1$1E || (templateObject_1$1E = __makeTemplateObject(["\n  max-width: 986px;\n"], ["\n  max-width: 986px;\n"])));
+var Wrapper$t = styled__default["default"].div(templateObject_1$1E || (templateObject_1$1E = __makeTemplateObject(["\n  max-width: 986px;\n"], ["\n  max-width: 986px;\n"])));
 var templateObject_1$1E;
 
 var TabsSmall = function (_a) {
@@ -9343,7 +9343,7 @@ var PrizePoolBlock = function (_a) {
                 React__default["default"].createElement(Text, { fontSize: "14px" }, price),
                 React__default["default"].createElement(Text, { fontSize: "14px" }, priceValue))));
     };
-    return (React__default["default"].createElement(Wrapper$r, null,
+    return (React__default["default"].createElement(Wrapper$s, null,
         React__default["default"].createElement(TopContent, null,
             React__default["default"].createElement(LeftContent, null, leftContent),
             React__default["default"].createElement(TimerNotSolidWithoutBg, { marginPoint: "0 12px", fontSize: "21px", width: "100%", widthWrapper: "100%", background: "#232323", time: time, color: "#fff", disabled: disabled }),
@@ -9357,7 +9357,7 @@ var PrizePoolBlock = function (_a) {
                 React__default["default"].createElement(Card, { margin: "0 0 0 5px", name: cardData2.name, coefficient: cardData2.coefficient, price: cardData2.coefficient, priceValue: cardData2.priceValue }),
                 React__default["default"].createElement(RoundVS, null, versus || "VS")))));
 };
-var Wrapper$r = styled__default["default"].div(templateObject_1$1v || (templateObject_1$1v = __makeTemplateObject(["\n  max-width: 366px;\n  width: 100%;\n"], ["\n  max-width: 366px;\n  width: 100%;\n"])));
+var Wrapper$s = styled__default["default"].div(templateObject_1$1v || (templateObject_1$1v = __makeTemplateObject(["\n  max-width: 366px;\n  width: 100%;\n"], ["\n  max-width: 366px;\n  width: 100%;\n"])));
 var TopContent = styled__default["default"].div(templateObject_2$1a || (templateObject_2$1a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n"])));
 var LeftContent = styled__default["default"].div(templateObject_3$W || (templateObject_3$W = __makeTemplateObject(["\n  flex: none;\n  display: flex;\n  margin-right: 12px;\n  align-items: center;\n  justify-content: center;\n  width: 66px;\n  height: 50px;\n  border-radius: 12px;\n  font-weight: bold;\n  font-size: 16px;\n  line-height: 22px;\n  margin-right: 12px;\n  background: ", ";\n  color: ", ";\n"], ["\n  flex: none;\n  display: flex;\n  margin-right: 12px;\n  align-items: center;\n  justify-content: center;\n  width: 66px;\n  height: 50px;\n  border-radius: 12px;\n  font-weight: bold;\n  font-size: 16px;\n  line-height: 22px;\n  margin-right: 12px;\n  background: ", ";\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -9380,7 +9380,7 @@ var CardWrapper = styled__default["default"](Flex)(templateObject_8$h || (templa
     var theme = _a.theme;
     return theme.colors.bgCard3;
 });
-var RoundVS = styled__default["default"].div(templateObject_9$c || (templateObject_9$c = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"])), function (_a) {
+var RoundVS = styled__default["default"].div(templateObject_9$d || (templateObject_9$d = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 45px;\n  height: 45px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background: ", ";\n  border: 5px solid ", ";\n  border-radius: 50%;\n  box-shadow: ", ";\n  color: ", ";\n  font-size: 16px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark2;
 }, function (_a) {
@@ -9393,7 +9393,7 @@ var RoundVS = styled__default["default"].div(templateObject_9$c || (templateObje
     var theme = _a.theme;
     return theme.colors.text;
 });
-var templateObject_1$1v, templateObject_2$1a, templateObject_3$W, templateObject_4$O, templateObject_5$t, templateObject_6$q, templateObject_7$l, templateObject_8$h, templateObject_9$c;
+var templateObject_1$1v, templateObject_2$1a, templateObject_3$W, templateObject_4$O, templateObject_5$t, templateObject_6$q, templateObject_7$l, templateObject_8$h, templateObject_9$d;
 
 var BridgeWrapper = styled__default["default"].div(templateObject_1$1u || (templateObject_1$1u = __makeTemplateObject(["\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  margin: 0 auto;\n  padding: 33px 23px 23px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  margin: 0 auto;\n  padding: 33px 23px 23px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 15px;\n  z-index: ", ";\n  overflow-y: auto;\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9619,7 +9619,7 @@ var ProfileCard = function (_a) {
         React__default["default"].createElement(Title$g, null, texts.title),
         React__default["default"].createElement(AccountLine$1, null,
             React__default["default"].createElement(Input$5, { readOnly: true, value: ellipsis(account, 10), type: isVisibleAccount ? "text" : "password" }),
-            React__default["default"].createElement(Link$1, { href: linkAccount },
+            React__default["default"].createElement(Link$1, { href: linkAccount, target: "_blank" },
                 React__default["default"].createElement(Icon$T, null))),
         React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", width: "100%", mb: "38px" },
             React__default["default"].createElement("div", null,
@@ -9636,9 +9636,8 @@ var ProfileCard = function (_a) {
                 React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "16px", letterSpacing: "0.05em", color: "greyText" }, texts.losses))),
         React__default["default"].createElement(Text, { mb: "3px", fontSize: "16px", textAlign: "left", width: "100%" }, texts.refferal),
         React__default["default"].createElement(Flex, { justifyContent: "space-between", alignItems: "center", width: "100%", mb: "36px" },
-            React__default["default"].createElement(Text, { color: "textGray", fontSize: "13px" }, linkRefferal),
-            React__default["default"].createElement(Link$1, { href: linkRefferal },
-                React__default["default"].createElement(Icon$T, null))),
+            React__default["default"].createElement(TextLinkRefferal, { color: "textGray", fontSize: "13px" }, linkRefferal),
+            React__default["default"].createElement(CopyToClipboard, { toCopy: linkRefferal, textCopied: "copied", icon: React__default["default"].createElement(Icon$1f, null) })),
         React__default["default"].createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default["default"].createElement("img", { alt: "", src: el, key: el })); })),
         React__default["default"].createElement(Button$9, { width: "100%", variant: "option" }, texts.edit)));
 };
@@ -9671,54 +9670,47 @@ var AccountLine$1 = styled__default["default"](Flex)(templateObject_7$j || (temp
     return theme.mediaQueries.sm;
 });
 var AwardsLine = styled__default["default"](Flex)(templateObject_8$f || (templateObject_8$f = __makeTemplateObject(["\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto 35px;\n"], ["\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto 35px;\n"])));
-var templateObject_1$1n, templateObject_2$13, templateObject_3$R, templateObject_4$K, templateObject_5$r, templateObject_6$o, templateObject_7$j, templateObject_8$f;
+var TextLinkRefferal = styled__default["default"](Text)(templateObject_9$c || (templateObject_9$c = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"])));
+var templateObject_1$1n, templateObject_2$13, templateObject_3$R, templateObject_4$K, templateObject_5$r, templateObject_6$o, templateObject_7$j, templateObject_8$f, templateObject_9$c;
 
 var Achievement = function (_a) {
-    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, progress = _a.progress, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, refferal = _a.refferal, refferalReward = _a.refferalReward, network = _a.network;
-    return (React__default["default"].createElement(AchievementWrap, null,
-        network && React__default["default"].createElement(Network, { src: network, alt: "" }),
-        progress && (React__default["default"].createElement(Counter$1, null,
-            React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
-                React__default["default"].createElement(Text, { fontWeight: 500, color: count === 0 || count === "0" ? "text" : baseColors.green, letterSpacing: "0.05em", fontSize: "10px" }, count),
-                React__default["default"].createElement(Text, { fontSize: "10px" }, "/"),
-                React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, countMax)),
-            React__default["default"].createElement("img", { src: COIN4 }))),
-        refferal && (React__default["default"].createElement(Counter$1, null,
-            React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
-                React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, refferalReward)),
-            React__default["default"].createElement("img", { src: COIN4 }))),
-        React__default["default"].createElement(Content, null,
-            React__default["default"].createElement(ImageBlock, null,
-                React__default["default"].createElement("img", { src: image })),
-            React__default["default"].createElement(TitleStyle$4, { mb: "5px", fontWeight: 500, letterSpacing: "0.05em", fontSize: "13px" }, title),
-            React__default["default"].createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "11px", color: baseColors.textGray }, description),
-            progress && countMax && (count || count === 0) && React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
-            !progress && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
-                React__default["default"].createElement(ButtonText, { loading: loadingButton }, collectText),
-                React__default["default"].createElement(ButtonTextMob, { loading: loadingButton }, collectTextMob))))));
+    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, fullDescription = _a.fullDescription, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, progress = _a.progress, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, refferal = _a.refferal, refferalReward = _a.refferalReward, network = _a.network;
+    return (React__default["default"].createElement(Wrapper$r, { progress: progress },
+        React__default["default"].createElement(Inner, { className: "card-inner" },
+            React__default["default"].createElement(CardFront, { progress: progress },
+                network && React__default["default"].createElement(Network, { src: network, alt: "" }),
+                progress && (React__default["default"].createElement(Counter$1, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
+                        React__default["default"].createElement(Text, { fontWeight: 500, color: count === 0 || count === "0" ? "text" : baseColors.green, letterSpacing: "0.05em", fontSize: "10px" }, count),
+                        React__default["default"].createElement(Text, { fontSize: "10px" }, "/"),
+                        React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, countMax)),
+                    React__default["default"].createElement("img", { src: COIN4 }))),
+                refferal && (React__default["default"].createElement(Counter$1, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
+                        React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, refferalReward)),
+                    React__default["default"].createElement("img", { src: COIN4 }))),
+                React__default["default"].createElement(Content, null,
+                    React__default["default"].createElement(ImageBlock, null,
+                        React__default["default"].createElement("img", { src: image })),
+                    React__default["default"].createElement(TitleStyle$4, { mb: "5px", fontWeight: 500, letterSpacing: "0.05em", fontSize: "13px" }, title),
+                    React__default["default"].createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "11px", color: baseColors.textGray }, description),
+                    progress && countMax && (count || count === 0) && React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
+                    !progress && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
+                        React__default["default"].createElement(ButtonText, { loading: loadingButton }, collectText),
+                        React__default["default"].createElement(ButtonTextMob, { loading: loadingButton }, collectTextMob))))),
+            React__default["default"].createElement(CardBack, { progress: progress },
+                React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center", height: "100%" },
+                    React__default["default"].createElement(Text, { fontWeight: 400, letterSpacing: "0.05em", fontSize: "10px" }, fullDescription))))));
 };
-var AchievementWrap = styled__default["default"].div(templateObject_1$1m || (templateObject_1$1m = __makeTemplateObject(["\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"], ["\n  position: relative;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.bgGray;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.bgGray;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.boxShadow14;
-});
-var Counter$1 = styled__default["default"].div(templateObject_2$12 || (templateObject_2$12 = __makeTemplateObject(["\n  top: -5px;\n  right: -5px;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 54px;\n  height: 25px;\n  padding: 6px 3px 6px 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  z-index: 2;\n"], ["\n  top: -5px;\n  right: -5px;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 54px;\n  height: 25px;\n  padding: 6px 3px 6px 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  z-index: 2;\n"])), function (_a) {
+var Counter$1 = styled__default["default"].div(templateObject_1$1m || (templateObject_1$1m = __makeTemplateObject(["\n  top: -5px;\n  right: -5px;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 54px;\n  height: 25px;\n  padding: 6px 3px 6px 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  z-index: 2;\n"], ["\n  top: -5px;\n  right: -5px;\n  position: absolute;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  min-width: 54px;\n  height: 25px;\n  padding: 6px 3px 6px 8px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  z-index: 2;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray5;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow11;
 });
-var Content = styled__default["default"].div(templateObject_3$Q || (templateObject_3$Q = __makeTemplateObject(["\n  text-align: center;\n"], ["\n  text-align: center;\n"])));
-var ImageBlock = styled__default["default"].div(templateObject_4$J || (templateObject_4$J = __makeTemplateObject(["\n  position: relative;\n  width: fit-content;\n  height: 109px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    height: 114px;\n  }\n  &:after {\n    width: 100%;\n    height: 4px;\n    content: \"\";\n    display: block;\n    position: absolute;\n    background: ", ";\n    filter: blur(4px);\n    bottom: 5px;\n    left: 0;\n    opacity: 0.5;\n  }\n  & img {\n    transform: scale(0.7);\n    ", " {\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  width: fit-content;\n  height: 109px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    height: 114px;\n  }\n  &:after {\n    width: 100%;\n    height: 4px;\n    content: \"\";\n    display: block;\n    position: absolute;\n    background: ", ";\n    filter: blur(4px);\n    bottom: 5px;\n    left: 0;\n    opacity: 0.5;\n  }\n  & img {\n    transform: scale(0.7);\n    ", " {\n      transform: none;\n    }\n  }\n"])), function (_a) {
+var Content = styled__default["default"].div(templateObject_2$12 || (templateObject_2$12 = __makeTemplateObject(["\n  text-align: center;\n"], ["\n  text-align: center;\n"])));
+var ImageBlock = styled__default["default"].div(templateObject_3$Q || (templateObject_3$Q = __makeTemplateObject(["\n  position: relative;\n  width: fit-content;\n  height: 109px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    height: 114px;\n  }\n  &:after {\n    width: 100%;\n    height: 4px;\n    content: \"\";\n    display: block;\n    position: absolute;\n    background: ", ";\n    filter: blur(4px);\n    bottom: 5px;\n    left: 0;\n    opacity: 0.5;\n  }\n  & img {\n    transform: scale(0.7);\n    ", " {\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  width: fit-content;\n  height: 109px;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  ", " {\n    height: 114px;\n  }\n  &:after {\n    width: 100%;\n    height: 4px;\n    content: \"\";\n    display: block;\n    position: absolute;\n    background: ", ";\n    filter: blur(4px);\n    bottom: 5px;\n    left: 0;\n    opacity: 0.5;\n  }\n  & img {\n    transform: scale(0.7);\n    ", " {\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -9728,7 +9720,7 @@ var ImageBlock = styled__default["default"].div(templateObject_4$J || (templateO
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var RangeTrack$3 = styled__default["default"].div(templateObject_5$q || (templateObject_5$q = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"])), function (_a) {
+var RangeTrack$3 = styled__default["default"].div(templateObject_4$J || (templateObject_4$J = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  margin-top: 18px;\n  height: 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 3px;\n  &:after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: ", ";\n    height: calc(100% - 6px);\n    top: 3px;\n    left: 2.5px;\n    border-radius: 2px;\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
 }, function (_a) {
@@ -9736,36 +9728,58 @@ var RangeTrack$3 = styled__default["default"].div(templateObject_5$q || (templat
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText2;
 });
-var ButtonStyle$7 = styled__default["default"](Button$9)(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"])));
-var ButtonText = styled__default["default"](Text)(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n"])), function (_a) {
+var ButtonStyle$7 = styled__default["default"](Button$9)(templateObject_5$q || (templateObject_5$q = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-top: 10px;\n  padding: 0;\n  font-size: 13px;\n  border-radius: 7px;\n"])));
+var ButtonText = styled__default["default"](Text)(templateObject_6$n || (templateObject_6$n = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    position: absolute;\n    right: -20px;\n    top: 0;\n  }\n  ", " {\n    display: block;\n    font-size: 13px;\n  }\n"])), function (_a) {
     var loading = _a.loading;
-    return (loading ? "none" : "url(\"".concat(COIN4, "\")"));
+    return (loading ? "none" : "url(\"" + COIN4 + "\")");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ButtonTextMob = styled__default["default"](ButtonText)(templateObject_8$e || (templateObject_8$e = __makeTemplateObject(["\n  font-size: 13px;\n  display: block;\n  &:after {\n    content: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: block;\n  &:after {\n    content: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var ButtonTextMob = styled__default["default"](ButtonText)(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  font-size: 13px;\n  display: block;\n  &:after {\n    content: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: block;\n  &:after {\n    content: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var loading = _a.loading;
-    return (loading ? "none" : "url(\"".concat(COIN4, "\")"));
+    return (loading ? "none" : "url(\"" + COIN4 + "\")");
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TitleStyle$4 = styled__default["default"](Text)(templateObject_9$b || (templateObject_9$b = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
+var TitleStyle$4 = styled__default["default"](Text)(templateObject_8$e || (templateObject_8$e = __makeTemplateObject(["\n  font-size: 11px;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  font-size: 11px;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var DescriptionStyle = styled__default["default"](Text)(templateObject_10$9 || (templateObject_10$9 = __makeTemplateObject(["\n  font-size: 9px;\n  ", " {\n    font-size: 11px;\n  }\n"], ["\n  font-size: 9px;\n  ", " {\n    font-size: 11px;\n  }\n"])), function (_a) {
+var DescriptionStyle = styled__default["default"](Text)(templateObject_9$b || (templateObject_9$b = __makeTemplateObject(["\n  font-size: 9px;\n  ", " {\n    font-size: 11px;\n  }\n"], ["\n  font-size: 9px;\n  ", " {\n    font-size: 11px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Network = styled__default["default"].img(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"], ["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"])));
-var templateObject_1$1m, templateObject_2$12, templateObject_3$Q, templateObject_4$J, templateObject_5$q, templateObject_6$n, templateObject_7$i, templateObject_8$e, templateObject_9$b, templateObject_10$9, templateObject_11$7;
+var Network = styled__default["default"].img(templateObject_10$9 || (templateObject_10$9 = __makeTemplateObject(["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"], ["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"])));
+var Wrapper$r = styled__default["default"].div(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  position: relative;\n  perspective: 1000px;\n  min-height: 210px;\n  width: 100%;\n  border-radius: 10px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"], ["\n  position: relative;\n  perspective: 1000px;\n  min-height: 210px;\n  width: 100%;\n  border-radius: 10px;\n  &:hover {\n    & .card-inner {\n      transform: ", ";\n    }\n  }\n"])), function (_a) {
+    var progress = _a.progress;
+    return (!progress ? "none" : "rotateY(180deg)");
+});
+var Inner = styled__default["default"].div(templateObject_12$6 || (templateObject_12$6 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 10px;\n  box-sizing: border-box;\n"], ["\n  display: flex;\n  justify-content: center;\n  height: 100%;\n  position: relative;\n  transform-style: preserve-3d;\n  transition: transform 600ms;\n  border-radius: 10px;\n  box-sizing: border-box;\n"])));
+var CardFront = styled__default["default"].div(templateObject_13$5 || (templateObject_13$5 = __makeTemplateObject(["\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  left: 50%;\n  transform: translateX(-50%);\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"], ["\n  position: absolute;\n  height: 100%;\n  width: 100%;\n  padding: 0 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n  left: 50%;\n  transform: translateX(-50%);\n  top: 0;\n  transition: 0;\n  backface-visibility: ", ";\n\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.bgGray;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.bgGray;
+}, function (_a) {
+    var progress = _a.progress;
+    return (!progress ? "" : "hidden");
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.green;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.boxShadow14;
+});
+var CardBack = styled__default["default"](CardFront)(templateObject_14$5 || (templateObject_14$5 = __makeTemplateObject(["\n  transform: rotateY(180deg) translateX(50%);\n"], ["\n  transform: rotateY(180deg) translateX(50%);\n"])));
+var templateObject_1$1m, templateObject_2$12, templateObject_3$Q, templateObject_4$J, templateObject_5$q, templateObject_6$n, templateObject_7$i, templateObject_8$e, templateObject_9$b, templateObject_10$9, templateObject_11$7, templateObject_12$6, templateObject_13$5, templateObject_14$5;
 
 var YAY_TOKEN_CIRCLE2 = "data:image/png;base64,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";
 
@@ -9952,7 +9966,7 @@ var ProgressBar$2 = styled__default["default"].div(templateObject_8$d || (templa
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -9997,7 +10011,7 @@ var ClaimBlock = function (_a) {
 };
 var Card$a = styled__default["default"].a(templateObject_1$1h || (templateObject_1$1h = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
@@ -10090,7 +10104,7 @@ var RangeTrack$2 = styled__default["default"].div(templateObject_2$Z || (templat
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -10107,7 +10121,7 @@ var templateObject_1$1d;
 
 var BlurBlock = function (_a) {
     var statusText = _a.statusText, marginStatusText = _a.marginStatusText;
-    return (React__default["default"].createElement(Wrap, { position: marginStatusText === 45 ? "relative" : "absolute", marginTop: "".concat(marginStatusText, "px") },
+    return (React__default["default"].createElement(Wrap, { position: marginStatusText === 45 ? "relative" : "absolute", marginTop: marginStatusText + "px" },
         React__default["default"].createElement(TextStyle$6, null, statusText)));
 };
 var Wrap = styled__default["default"](Flex)(templateObject_1$1c || (templateObject_1$1c = __makeTemplateObject(["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"], ["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"])), function (_a) {
@@ -10160,7 +10174,7 @@ var Progress = function (_a) {
                     React__default["default"].createElement(Icon$L, null)))),
         React__default["default"].createElement(CounterWrapper, null,
             React__default["default"].createElement(Counter, { stop: isFinish, width: isFinish ? widthTotal + 12 : widthProgress },
-                React__default["default"].createElement(Current, { marginLeft: widthProgress > 50 ? "-".concat(widthCurrent, "px") : 0, ref: refCurrent },
+                React__default["default"].createElement(Current, { marginLeft: widthProgress > 50 ? "-" + widthCurrent + "px" : 0, ref: refCurrent },
                     currentVolume,
                     " ",
                     tokenName),
@@ -10186,7 +10200,7 @@ var ProgressBar$1 = styled__default["default"].div(templateObject_3$L || (templa
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -10194,7 +10208,7 @@ var ProgressBar$1 = styled__default["default"].div(templateObject_3$L || (templa
 var CounterWrapper = styled__default["default"](Flex)(templateObject_4$E || (templateObject_4$E = __makeTemplateObject(["\n  margin-top: 13px;\n  justify-content: flex-end;\n"], ["\n  margin-top: 13px;\n  justify-content: flex-end;\n"])));
 var Counter = styled__default["default"](Flex)(templateObject_5$n || (templateObject_5$n = __makeTemplateObject(["\n  justify-content: space-between;\n  width: ", ";\n"], ["\n  justify-content: space-between;\n  width: ", ";\n"])), function (_a) {
     var width = _a.width, stop = _a.stop;
-    return (stop ? "".concat(width, "px") : "calc(100% - ".concat(width, "%)"));
+    return (stop ? width + "px" : "calc(100% - " + width + "%)");
 });
 var Current = styled__default["default"](Text)(templateObject_6$k || (templateObject_6$k = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  flex: none;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  flex: none;\n"])));
 var Total = styled__default["default"](Current)(templateObject_7$f || (templateObject_7$f = __makeTemplateObject([""], [""])));
@@ -10328,7 +10342,7 @@ var ProgressWrap$2 = styled__default["default"].div(templateObject_1$19 || (temp
 var RangeTrackWrap = styled__default["default"].div(templateObject_2$V || (templateObject_2$V = __makeTemplateObject(["\n  border-radius: 6px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n"], ["\n  border-radius: 6px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n"])));
 var RangeTrack$1 = styled__default["default"].div(templateObject_3$J || (templateObject_3$J = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n"], ["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenGradient;
@@ -10338,7 +10352,7 @@ var templateObject_1$19, templateObject_2$V, templateObject_3$J, templateObject_
 
 var SlotSummary = function (_a) {
     var text = _a.text, error = _a.error, circleHidden = _a.circleHidden, opacity = _a.opacity;
-    return (React__default["default"].createElement(TextStyled, { className: "".concat(error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, opacity: opacity, color: error ? "darkPink" : "green", mr: "5px" },
+    return (React__default["default"].createElement(TextStyled, { className: "" + (error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, opacity: opacity, color: error ? "darkPink" : "green", mr: "5px" },
         !circleHidden && React__default["default"].createElement(Circle$1, { error: error }),
         text));
 };
@@ -10373,7 +10387,7 @@ var RangeTrack = styled__default["default"].div(templateObject_2$T || (templateO
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 10px)") : 0);
+    return (progress ? "calc(" + progress + "% - 10px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -10780,7 +10794,7 @@ var Title$e = styled__default["default"](Text)(templateObject_2$N || (templateOb
 });
 var MainImg = styled__default["default"].div(templateObject_3$F || (templateObject_3$F = __makeTemplateObject(["\n  height: 250px;\n  background: ", ";\n  background-size: cover;\n  border-radius: 6px;\n  background-position: center;\n"], ["\n  height: 250px;\n  background: ", ";\n  background-size: cover;\n  border-radius: 6px;\n  background-position: center;\n"])), function (_a) {
     var src = _a.src, theme = _a.theme;
-    return (src === "" ? theme.colors.whiteRgba : "url(".concat(src, ")"));
+    return (src === "" ? theme.colors.whiteRgba : "url(" + src + ")");
 });
 var Description$7 = styled__default["default"](Text)(templateObject_4$y || (templateObject_4$y = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  font-weight: normal;\n  ", " {\n    font-size: 18px;\n    line-height: 22px;\n  }\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  font-weight: normal;\n  ", " {\n    font-size: 18px;\n    line-height: 22px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -10791,11 +10805,11 @@ var Images = styled__default["default"].div(templateObject_5$i || (templateObjec
     return theme.mediaQueries.md;
 }, function (_a) {
     var length = _a.length;
-    return "repeat(".concat(length, ", 1fr)");
+    return "repeat(" + length + ", 1fr)";
 });
 var ImgItem = styled__default["default"].div(templateObject_6$f || (templateObject_6$f = __makeTemplateObject(["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"], ["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ")");
+    return "url(" + src + ")";
 });
 var templateObject_1$$, templateObject_2$N, templateObject_3$F, templateObject_4$y, templateObject_5$i, templateObject_6$f;
 
@@ -10876,7 +10890,7 @@ var Claimed$2 = styled__default["default"].div(templateObject_5$g || (templateOb
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var templateObject_1$Z, templateObject_2$L, templateObject_3$D, templateObject_4$w, templateObject_5$g;
 
@@ -10921,7 +10935,7 @@ var ProgressTrack = styled__default["default"].div(templateObject_8$9 || (templa
 var ProgressWrap = styled__default["default"].div(templateObject_9$7 || (templateObject_9$7 = __makeTemplateObject(["\n  overflow: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  width: calc(100% - 6px);\n  height: calc(100% - 4px);\n  border-radius: 6px;\n"], ["\n  overflow: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  width: calc(100% - 6px);\n  height: calc(100% - 4px);\n  border-radius: 6px;\n"])));
 var ProgressBar = styled__default["default"].div(templateObject_10$5 || (templateObject_10$5 = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"], ["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"])), function (_a) {
     var progress = _a.progress;
-    return "".concat(progress, "%");
+    return progress + "%";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -10982,7 +10996,7 @@ var Claimed$1 = styled__default["default"].div(templateObject_3$B || (templateOb
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 styled__default["default"].div(templateObject_4$u || (templateObject_4$u = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -11028,7 +11042,7 @@ var Claimed = styled__default["default"].div(templateObject_3$A || (templateObje
     return polished.transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var StyleText = styled__default["default"](Text)(templateObject_4$t || (templateObject_4$t = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"])));
 var templateObject_1$W, templateObject_2$I, templateObject_3$A, templateObject_4$t;
@@ -11646,13 +11660,13 @@ var ModalHeader$2 = styled__default["default"].div(templateObject_4$j || (templa
     return background || "transparent";
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "20px", " 14px 24px");
+    return " " + (paddingTopHeader || "20px") + " 14px 24px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "27px", " 20px 40px 27px");
+    return " " + (paddingTopHeader || "27px") + " 20px 40px 27px";
 });
 var ModalTitle$2 = styled__default["default"].div(templateObject_5$8 || (templateObject_5$8 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 1;\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 1;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -11722,7 +11736,7 @@ var MenuItem = styled__default["default"](RowBetween)(templateObject_4$i || (tem
 });
 function CurrencyRow(_a) {
     var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, balanceComponent = _a.balanceComponent, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, keyID = _a.keyID, CurrencyLogo = _a.CurrencyLogo;
-    return (React__default["default"].createElement(MenuItem, { style: style, className: "token-item-".concat(keyID), onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
+    return (React__default["default"].createElement(MenuItem, { style: style, className: "token-item-" + keyID, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
         CurrencyLogo,
         React__default["default"].createElement(Column$2, null,
             React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.5px" }, currency.symbol),
@@ -11763,7 +11777,7 @@ function ImportList(_a) {
                                         list.tokens.length,
                                         " ",
                                         texts.tokens)),
-                                React__default["default"].createElement(Link$4, { small: true, external: true, ellipsis: true, maxWidth: "90%", href: "https://tokenlists.org/token-list?url=".concat(listURL) }, listURL))))),
+                                React__default["default"].createElement(Link$4, { small: true, external: true, ellipsis: true, maxWidth: "90%", href: "https://tokenlists.org/token-list?url=" + listURL }, listURL))))),
                 React__default["default"].createElement(Message$2, null,
                     React__default["default"].createElement(Flex, { flexDirection: "column" },
                         React__default["default"].createElement(Text, { fontSize: "20px", color: "redBg", mb: "16px" }, texts.importRisk),
@@ -11913,7 +11927,7 @@ function ManageListTooltip(_a) {
 function ManageListRow(_a) {
     var tooltipVisible = _a.tooltipVisible, tooltip = _a.tooltip, targetRef = _a.targetRef, isActive = _a.isActive, onChangeBaseToggle = _a.onChangeBaseToggle, list = _a.list, listUrl = _a.listUrl, listLogo = _a.listLogo, texts = _a.texts;
     function listUrlRowHTMLId(listUrl) {
-        return "list-row-".concat(listUrl.replace(/\./g, "-"));
+        return "list-row-" + listUrl.replace(/\./g, "-");
     }
     return (React__default["default"].createElement(RowWrapper, { active: isActive, key: listUrl, id: listUrlRowHTMLId(listUrl) },
         tooltipVisible && tooltip,
@@ -12146,14 +12160,14 @@ var StyledBalanceMaxMini = styled__default["default"].button(templateObject_5$7 
 styled__default["default"](Text).attrs({ ellipsis: true })(templateObject_6$6 || (templateObject_6$6 = __makeTemplateObject(["\n  width: 220px;\n"], ["\n  width: 220px;\n"])));
 var SwapCallbackErrorInner = styled__default["default"].div(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return "".concat(theme.colors.failure, "33");
+    return theme.colors.failure + "33";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.failure;
 });
 var SwapCallbackErrorInnerAlertTriangle = styled__default["default"].div(templateObject_8$5 || (templateObject_8$5 = __makeTemplateObject(["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"], ["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"])), function (_a) {
     var theme = _a.theme;
-    return "".concat(theme.colors.failure, "33");
+    return theme.colors.failure + "33";
 });
 function SwapCallbackError(_a) {
     var error = _a.error;
@@ -12337,7 +12351,7 @@ var TabsWrapBlock = styled__default["default"].div(templateObject_11$2 || (templ
     return width || "auto";
 }, function (_a) {
     var length = _a.length, variant = _a.variant;
-    return "repeat(".concat(length || 2, ", ").concat(variant === "small" ? "auto" : "1fr", ")");
+    return "repeat(" + (length || 2) + ", " + (variant === "small" ? "auto" : "1fr") + ")";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacity;
@@ -13266,7 +13280,7 @@ var MarketTabs = function (_a) {
 };
 var TopLine = styled__default["default"](Flex)(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n  align-items: center;\n  padding-bottom: 15px;\n  border-bottom: 2px solid #1c1c1c;\n"], ["\n  width: ", ";\n  position: relative;\n  align-items: center;\n  padding-bottom: 15px;\n  border-bottom: 2px solid #1c1c1c;\n"])), function (_a) {
     var allWidth = _a.allWidth;
-    return "".concat(allWidth, "px");
+    return allWidth + "px";
 });
 var Tab = styled__default["default"].button(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: 600;\n  font-size: 14px;\n  line-height: 17px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: 600;\n  font-size: 14px;\n  line-height: 17px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
     var theme = _a.theme, active = _a.active;
@@ -13277,10 +13291,10 @@ var LineTab = styled__default["default"].span(templateObject_3$5 || (templateObj
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right;
-    return "".concat(right, "px");
+    return right + "px";
 });
 var templateObject_1$6, templateObject_2$5, templateObject_3$5;
 
