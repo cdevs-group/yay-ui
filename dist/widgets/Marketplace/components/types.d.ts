@@ -53,4 +53,5 @@ export interface IRegisterProfileProps {
         buttonText: string;
     };
     buttonProps: ButtonProps;
+    handleSubmit?: () => void | Promise<void>;
 }

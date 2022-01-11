@@ -18,12 +18,13 @@ const RegisterProfile = ({
   inputValue1,
   inputValue2,
   onChange,
+  handleSubmit,
 }: IRegisterProfileProps) => {
   return (
     <Wrapper>
       {title && <Title>{title}</Title>}
       {description && <Description>{description}</Description>}
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Input
           onChange={onChange}
           name={inputName1}
@@ -51,7 +52,7 @@ const RegisterProfile = ({
 
 export default RegisterProfile;
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
   max-width: 500px;
   margin: 0 auto;
 `;
