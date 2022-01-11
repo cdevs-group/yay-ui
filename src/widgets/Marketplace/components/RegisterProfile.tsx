@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { IRegisterProfileProps } from "./types";
 import styled from "styled-components";
 import Input from "./Input";
@@ -41,7 +41,7 @@ const RegisterProfile = ({
           placeholder={texts.inputPlaceholder2}
           inputError={inputError2}
         />
-        <Button width="100%" variant="green" margin="30px 0 0 0" onClick={onClick} {...buttonProps}>
+        <Button width="100%" variant="green" onClick={onClick} margin="30px 0 0 0" type="submit" {...buttonProps}>
           {texts.buttonText}
         </Button>
       </Form>
@@ -70,7 +70,7 @@ const Description = styled(Text)`
   text-align: center;
   letter-spacing: 0.17em;
 `;
-const Form = styled.div`
+const Form = styled.form`
   padding: 15px 15px 25px;
   max-width: 500px;
   width: 100%;
