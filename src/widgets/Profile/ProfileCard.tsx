@@ -89,9 +89,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           <img alt="" src={el} key={el} />
         ))}
       </AwardsLine>
-      <Button width="100%" variant="option">
+      {/* <Button width="100%" variant="option">
         {texts.edit}
-      </Button>
+      </Button> */}
     </Card>
   );
 };

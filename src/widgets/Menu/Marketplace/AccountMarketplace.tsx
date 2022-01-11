@@ -65,7 +65,6 @@ const AccountMarketplace: React.FC<Props> = ({
       icon: <UserIcon />,
       text: textsAccount.myProfile,
       link: textsAccount.linkMyProfile,
-      comingSoon: true,
     },
     {
       icon: <FavoritesIcon />,
@@ -99,7 +98,7 @@ const AccountMarketplace: React.FC<Props> = ({
     comingSoon?: boolean;
   }) => {
     const Item = () => (
-      <Flex alignItems="center">
+      <Flex alignItems="center" marginBottom={comingSoon ? 0 : 20}>
         {icon}
         <Text style={{ marginLeft: 11 }}>{text}</Text>
       </Flex>
