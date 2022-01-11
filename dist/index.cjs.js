@@ -7819,8 +7819,10 @@ var AccountMarketplace = function (_a) {
     var _b = React.useState(false), openDropdown = _b[0], setOpenDropdown = _b[1];
     var _c = React.useState(false), openFunds = _c[0], setOpenFunds = _c[1];
     var handleOpenFunds = function () {
-        console.log(1);
         setOpenFunds(!openFunds);
+    };
+    var handleLink = function () {
+        setOpenDropdown(false);
     };
     var links = [
         {
@@ -7855,7 +7857,7 @@ var AccountMarketplace = function (_a) {
         if (comingSoon)
             return (React__default["default"].createElement(LabelTop, { label: textsAccount.comingSoon, mb: "19px" },
                 React__default["default"].createElement(Item, null)));
-        return (React__default["default"].createElement(reactRouterDom.Link, { to: link || "/" },
+        return (React__default["default"].createElement(reactRouterDom.Link, { to: link || "/", onClick: handleLink },
             React__default["default"].createElement(Item, null)));
     };
     var FundsItem = function (el) {
