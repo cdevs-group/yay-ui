@@ -8,12 +8,13 @@ interface IAchievementProps {
     description: string;
     collectText?: string;
     handleCollect?: (val?: string | number) => void;
-    complete: boolean;
+    progress?: boolean;
     collectTextMob?: string;
     disabledButton?: boolean;
     loadingButton?: boolean;
     refferal?: boolean;
     refferalReward?: string;
+    network?: string;
 }
-declare const Achievement: ({ image, count, countMax, title, description, collectText, collectTextMob, handleCollect, complete, disabledButton, loadingButton, refferal, refferalReward, }: IAchievementProps) => JSX.Element;
+declare const Achievement: ({ image, count, countMax, title, description, collectText, collectTextMob, handleCollect, progress, disabledButton, loadingButton, refferal, refferalReward, network, }: IAchievementProps) => JSX.Element;
 export default Achievement;

@@ -1580,7 +1580,7 @@ var UpContentWin$1 = styled__default["default"].div(templateObject_8$B || (templ
 });
 var ButtonBnb$1 = styled__default["default"].div(templateObject_9$q || (templateObject_9$q = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg$1 = styled__default["default"].div(templateObject_10$l || (templateObject_10$l = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
-var RightText$3 = styled__default["default"].div(templateObject_11$h || (templateObject_11$h = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
+var RightText$3 = styled__default["default"].div(templateObject_11$i || (templateObject_11$i = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
     return (displayNone ? "none" : "flex");
 }, function (_a) {
@@ -1648,7 +1648,7 @@ var StyledCard = function (_a) {
                         React__default["default"].createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default["default"].createElement(Icon$11, { fill: "#FFB72C" }))))))));
 };
-var templateObject_1$3Y, templateObject_2$34, templateObject_3$2x, templateObject_4$21, templateObject_5$1n, templateObject_6$14, templateObject_7$J, templateObject_8$B, templateObject_9$q, templateObject_10$l, templateObject_11$h, templateObject_12$f, templateObject_13$c, templateObject_14$9, templateObject_15$6, templateObject_16$5;
+var templateObject_1$3Y, templateObject_2$34, templateObject_3$2x, templateObject_4$21, templateObject_5$1n, templateObject_6$14, templateObject_7$J, templateObject_8$B, templateObject_9$q, templateObject_10$l, templateObject_11$i, templateObject_12$f, templateObject_13$c, templateObject_14$9, templateObject_15$6, templateObject_16$5;
 
 var Card$m = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -1781,7 +1781,7 @@ var RedCircle$1 = styled__default["default"].div(templateObject_10$k || (templat
     var theme = _a.theme;
     return theme.colors.redBg;
 });
-var YellowCircle$1 = styled__default["default"].div(templateObject_11$g || (templateObject_11$g = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), yellowAnimation$1, function (_a) {
+var YellowCircle$1 = styled__default["default"].div(templateObject_11$h || (templateObject_11$h = __makeTemplateObject(["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"], ["\n  position: absolute;\n  width: 14px;\n  height: 14px;\n  animation: ", " 2s linear infinite;\n  border-radius: 50%;\n  background: ", ";\n"])), yellowAnimation$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.yellowBg;
 });
@@ -1800,7 +1800,7 @@ var LoaderCard = function (_a) {
                 React__default["default"].createElement(YellowCircle$1, null)),
             textTooltip && React__default["default"].createElement(BottomText$1, null, textTooltip))));
 };
-var templateObject_1$3V, templateObject_2$31, templateObject_3$2u, templateObject_4$1_, templateObject_5$1k, templateObject_6$11, templateObject_7$G, templateObject_8$y, templateObject_9$n, templateObject_10$k, templateObject_11$g, templateObject_12$e;
+var templateObject_1$3V, templateObject_2$31, templateObject_3$2u, templateObject_4$1_, templateObject_5$1k, templateObject_6$11, templateObject_7$G, templateObject_8$y, templateObject_9$n, templateObject_10$k, templateObject_11$h, templateObject_12$e;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -3204,7 +3204,7 @@ var UpContentWin = styled__default["default"].div(templateObject_8$x || (templat
 });
 var ButtonBnb = styled__default["default"].div(templateObject_9$m || (templateObject_9$m = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  & button {\n    border-top-left-radius: 12px;\n    border-top-right-radius: 12px;\n    border-bottom-left-radius: 0;\n    border-bottom-right-radius: 0;\n  }\n"])));
 var WinnerImg = styled__default["default"].div(templateObject_10$j || (templateObject_10$j = __makeTemplateObject(["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"], ["\n  position: absolute;\n  top: -64px;\n  right: -37px;\n  pointer-events: none;\n  z-index: 3;\n"])));
-var RightText$2 = styled__default["default"].div(templateObject_11$f || (templateObject_11$f = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
+var RightText$2 = styled__default["default"].div(templateObject_11$g || (templateObject_11$g = __makeTemplateObject(["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"], ["\n  display: ", ";\n  align-items: center;\n  & div.payout {\n    margin-right: 9px;\n    font-weight: normal;\n    color: ", ";\n  }\n"])), function (_a) {
     var displayNone = _a.displayNone;
     return (displayNone ? "none" : "flex");
 }, function (_a) {
@@ -3287,7 +3287,7 @@ var StyledCardBTC = function (_a) {
                         React__default["default"].createElement(IconCompleteDown, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default["default"].createElement(Icon$11, { fill: "#FFB72C" }))))))))));
 };
-var templateObject_1$3i, templateObject_2$2A, templateObject_3$26, templateObject_4$1L, templateObject_5$1e, templateObject_6$Z, templateObject_7$F, templateObject_8$x, templateObject_9$m, templateObject_10$j, templateObject_11$f, templateObject_12$d, templateObject_13$b, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
+var templateObject_1$3i, templateObject_2$2A, templateObject_3$26, templateObject_4$1L, templateObject_5$1e, templateObject_6$Z, templateObject_7$F, templateObject_8$x, templateObject_9$m, templateObject_10$j, templateObject_11$g, templateObject_12$d, templateObject_13$b, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
 
 var CardBTC = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3570,7 +3570,7 @@ var YellowCircle = styled__default["default"].div(templateObject_10$i || (templa
     var theme = _a.theme;
     return theme.colors.yellowBg;
 });
-var BottomText = styled__default["default"].div(templateObject_11$e || (templateObject_11$e = __makeTemplateObject(["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
+var BottomText = styled__default["default"].div(templateObject_11$f || (templateObject_11$f = __makeTemplateObject(["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"], ["\n  margin-top: 75px;\n  text-align: center;\n  font-weight: normal;\n  font-size: 11px;\n  line-height: 14px;\n  color: ", ";\n  letter-spacing: 0.05em;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.greyText;
 });
@@ -3584,7 +3584,7 @@ var LoaderCardText = function (_a) {
             React__default["default"].createElement(YellowCircle, null)),
         React__default["default"].createElement(BottomText, null, textTooltip)));
 };
-var templateObject_1$3b, templateObject_2$2t, templateObject_3$20, templateObject_4$1F, templateObject_5$1a, templateObject_6$V, templateObject_7$D, templateObject_8$v, templateObject_9$l, templateObject_10$i, templateObject_11$e;
+var templateObject_1$3b, templateObject_2$2t, templateObject_3$20, templateObject_4$1F, templateObject_5$1a, templateObject_6$V, templateObject_7$D, templateObject_8$v, templateObject_9$l, templateObject_10$i, templateObject_11$f;
 
 var BalanceBlock$1 = function (_a) {
     var btc = _a.btc, value = _a.value;
@@ -4155,7 +4155,7 @@ var NoteContent = styled__default["default"].div(templateObject_9$k || (template
     return (open ? 1 : 0);
 });
 var CloseButton = styled__default["default"].button(templateObject_10$h || (templateObject_10$h = __makeTemplateObject(["\n  border: none;\n  background: none;\n  padding: 0;\n  position: absolute;\n  right: 12px;\n  top: 50%;\n  cursor: pointer;\n  transform: translateY(-50%);\n"], ["\n  border: none;\n  background: none;\n  padding: 0;\n  position: absolute;\n  right: 12px;\n  top: 50%;\n  cursor: pointer;\n  transform: translateY(-50%);\n"])));
-var TextUnderRound = styled__default["default"].div(templateObject_11$d || (templateObject_11$d = __makeTemplateObject(["\n  display: none;\n  position: relative;\n  white-space: nowrap;\n  opacity: 0;\n  transition: 0.3s;\n  background: ", ";\n  border-radius: 6px;\n  padding: 4px 8px;\n"], ["\n  display: none;\n  position: relative;\n  white-space: nowrap;\n  opacity: 0;\n  transition: 0.3s;\n  background: ", ";\n  border-radius: 6px;\n  padding: 4px 8px;\n"])), function (_a) {
+var TextUnderRound = styled__default["default"].div(templateObject_11$e || (templateObject_11$e = __makeTemplateObject(["\n  display: none;\n  position: relative;\n  white-space: nowrap;\n  opacity: 0;\n  transition: 0.3s;\n  background: ", ";\n  border-radius: 6px;\n  padding: 4px 8px;\n"], ["\n  display: none;\n  position: relative;\n  white-space: nowrap;\n  opacity: 0;\n  transition: 0.3s;\n  background: ", ";\n  border-radius: 6px;\n  padding: 4px 8px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.background2;
 });
@@ -4182,7 +4182,7 @@ var Indicator = styled__default["default"].div(templateObject_13$a || (templateO
     var progress = _a.progress;
     return (progress && progress > 50 ? "-100%" : 0);
 }, Note$1, NoteContent);
-var templateObject_1$31, templateObject_2$2j, templateObject_3$1W, templateObject_4$1A, templateObject_5$17, templateObject_6$U, templateObject_7$C, templateObject_8$u, templateObject_9$k, templateObject_10$h, templateObject_11$d, templateObject_12$c, templateObject_13$a;
+var templateObject_1$31, templateObject_2$2j, templateObject_3$1W, templateObject_4$1A, templateObject_5$17, templateObject_6$U, templateObject_7$C, templateObject_8$u, templateObject_9$k, templateObject_10$h, templateObject_11$e, templateObject_12$c, templateObject_13$a;
 
 var SwitchUnitsButton = styled__default["default"](IconButton)(templateObject_1$30 || (templateObject_1$30 = __makeTemplateObject(["\n  width: auto;\n"], ["\n  width: auto;\n"])));
 var UnitContainer = styled__default["default"](Text)(templateObject_2$2i || (templateObject_2$2i = __makeTemplateObject(["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
@@ -5532,7 +5532,7 @@ var MessageText$1 = styled__default["default"](Text)(templateObject_10$g || (tem
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var Error$1 = styled__default["default"](Text)(templateObject_11$c || (templateObject_11$c = __makeTemplateObject(["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"], ["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"])), function (_a) {
+var Error$1 = styled__default["default"](Text)(templateObject_11$d || (templateObject_11$d = __makeTemplateObject(["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"], ["\n  margin: 33px 0 43px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  font-weight: 400;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.redBg;
 });
@@ -5572,7 +5572,7 @@ var BridgeStep1 = function (_a) {
             React__default["default"].createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
             React__default["default"].createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory))));
 };
-var templateObject_1$2G, templateObject_2$28, templateObject_3$1N, templateObject_4$1t, templateObject_5$13, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$j, templateObject_10$g, templateObject_11$c, templateObject_12$b, templateObject_13$9;
+var templateObject_1$2G, templateObject_2$28, templateObject_3$1N, templateObject_4$1t, templateObject_5$13, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$j, templateObject_10$g, templateObject_11$d, templateObject_12$b, templateObject_13$9;
 
 var NoticeBridgeType;
 (function (NoticeBridgeType) {
@@ -5712,7 +5712,7 @@ var TokenValue = styled__default["default"](Text)(templateObject_10$f || (templa
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ApproximatelyPrice = styled__default["default"](Text)(templateObject_11$b || (templateObject_11$b = __makeTemplateObject(["\n  letter-spacing: 0.05em;\n  color: ", ";\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  letter-spacing: 0.05em;\n  color: ", ";\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
+var ApproximatelyPrice = styled__default["default"](Text)(templateObject_11$c || (templateObject_11$c = __makeTemplateObject(["\n  letter-spacing: 0.05em;\n  color: ", ";\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"], ["\n  letter-spacing: 0.05em;\n  color: ", ";\n  font-size: 11px;\n  ", " {\n    font-size: 15px;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textGray;
 }, function (_a) {
@@ -5770,7 +5770,7 @@ var TitleDesk = styled__default["default"](Text)(templateObject_26$1 || (templat
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$2F, templateObject_2$27, templateObject_3$1M, templateObject_4$1s, templateObject_5$12, templateObject_6$R, templateObject_7$A, templateObject_8$s, templateObject_9$i, templateObject_10$f, templateObject_11$b, templateObject_12$a, templateObject_13$8, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
+var templateObject_1$2F, templateObject_2$27, templateObject_3$1M, templateObject_4$1s, templateObject_5$12, templateObject_6$R, templateObject_7$A, templateObject_8$s, templateObject_9$i, templateObject_10$f, templateObject_11$c, templateObject_12$a, templateObject_13$8, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
 
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
@@ -6170,7 +6170,7 @@ styled__default["default"].div(templateObject_10$e || (templateObject_10$e = __m
     var supple = _a.supple;
     return (supple ? "20px 0 0" : 0);
 });
-styled__default["default"].div(templateObject_11$a || (templateObject_11$a = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
+styled__default["default"].div(templateObject_11$b || (templateObject_11$b = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"], ["\n  display: ", ";\n  position: absolute;\n  bottom: -22px;\n  right: 0;\n  left: ", ";\n  text-align: center;\n  background-color: ", ";\n  color: ", ";\n  border-radius: 16px;\n  opacity: 0.7;\n"])), function (_a) {
     var isTooltipDisplayed = _a.isTooltipDisplayed;
     return (isTooltipDisplayed ? "block" : "none");
 }, function (_a) {
@@ -6197,7 +6197,7 @@ styled__default["default"].div(templateObject_12$9 || (templateObject_12$9 = __m
     return theme.mediaQueries.xs;
 });
 styled__default["default"].div(templateObject_13$7 || (templateObject_13$7 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var templateObject_1$2A, templateObject_2$22, templateObject_3$1H, templateObject_4$1n, templateObject_5$Z, templateObject_6$N, templateObject_7$y, templateObject_8$r, templateObject_9$h, templateObject_10$e, templateObject_11$a, templateObject_12$9, templateObject_13$7;
+var templateObject_1$2A, templateObject_2$22, templateObject_3$1H, templateObject_4$1n, templateObject_5$Z, templateObject_6$N, templateObject_7$y, templateObject_8$r, templateObject_9$h, templateObject_10$e, templateObject_11$b, templateObject_12$9, templateObject_13$7;
 
 var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
@@ -7503,7 +7503,7 @@ var NetworkModal = function (_a) {
 };
 var templateObject_1$25, templateObject_2$1F, templateObject_3$1m, templateObject_4$18;
 
-var Network = function (_a) {
+var Network$1 = function (_a) {
     var network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork;
     var onPresentConnectModal = useModal(React__default["default"].createElement(NetworkModal, { title: titleNetwork, linkHref: linkHrefNetwork, linkText: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, valuesNetworks: valuesNetworks, listNetwork: listNetwork }))[0];
     return (React__default["default"].createElement(NetworkBlock$3, { as: "button", onClick: function () {
@@ -7738,7 +7738,7 @@ var Header = function (_a) {
                     currentLang && (React__default["default"].createElement(LanguageBlockMob$1, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 textsAccount && textsConnect && (React__default["default"].createElement(RightContent$2, null,
-                    network ? (React__default["default"].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
+                    network ? (React__default["default"].createElement(Network$1, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
                     React__default["default"].createElement(Account, { text: textConnect || "Connect", account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, vesting: vesting, bridge: bridge, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, textsBridge: textsBridge, transactionsList: transactionsList, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, linkExternalWalletModal: linkExternalWalletModal }),
                     currentLang && (React__default["default"].createElement(LanguageBlockDesk$1, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
@@ -7956,7 +7956,7 @@ var FundsWrapper = styled__default["default"].div(templateObject_10$c || (templa
     var theme = _a.theme;
     return theme.colors.bgCard;
 });
-var FundsHidden = styled__default["default"].div(templateObject_11$9 || (templateObject_11$9 = __makeTemplateObject(["\n  margin-right: 20px;\n  overflow: hidden;\n  max-height: ", ";\n  transition: 0.3s;\n"], ["\n  margin-right: 20px;\n  overflow: hidden;\n  max-height: ", ";\n  transition: 0.3s;\n"])), function (_a) {
+var FundsHidden = styled__default["default"].div(templateObject_11$a || (templateObject_11$a = __makeTemplateObject(["\n  margin-right: 20px;\n  overflow: hidden;\n  max-height: ", ";\n  transition: 0.3s;\n"], ["\n  margin-right: 20px;\n  overflow: hidden;\n  max-height: ", ";\n  transition: 0.3s;\n"])), function (_a) {
     var open = _a.open;
     return (open ? "200px" : 0);
 });
@@ -7964,7 +7964,7 @@ var ArrowIcon = styled__default["default"](Flex)(templateObject_12$8 || (templat
     var open = _a.open;
     return (open ? "scale(1, -1)" : "none");
 });
-var templateObject_1$1_, templateObject_2$1y, templateObject_3$1f, templateObject_4$15, templateObject_5$N, templateObject_6$D, templateObject_7$t, templateObject_8$n, templateObject_9$f, templateObject_10$c, templateObject_11$9, templateObject_12$8;
+var templateObject_1$1_, templateObject_2$1y, templateObject_3$1f, templateObject_4$15, templateObject_5$N, templateObject_6$D, templateObject_7$t, templateObject_8$n, templateObject_9$f, templateObject_10$c, templateObject_11$a, templateObject_12$8;
 
 var HeaderMarketplace = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds;
@@ -7995,7 +7995,7 @@ var HeaderMarketplace = function (_a) {
                     currentLang && (React__default["default"].createElement(LanguageBlockMob, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 React__default["default"].createElement(RightContent$1, null,
-                    network ? (React__default["default"].createElement(Network, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
+                    network ? (React__default["default"].createElement(Network$1, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
                     React__default["default"].createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer }),
                     currentLang && (React__default["default"].createElement(LanguageBlockDesk, null,
                         React__default["default"].createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
@@ -8714,7 +8714,7 @@ var ProgressThumb$2 = styled__default["default"].div(templateObject_9$e || (temp
     return polished.transparentize(0.92, theme.colors.greenBg2);
 });
 var Texts$1 = styled__default["default"].div(templateObject_10$b || (templateObject_10$b = __makeTemplateObject(["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  text-align: right;\n"], ["\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  text-align: right;\n"])));
-var TextBlock$3 = styled__default["default"].div(templateObject_11$8 || (templateObject_11$8 = __makeTemplateObject(["\n  padding: 0 10px;\n"], ["\n  padding: 0 10px;\n"])));
+var TextBlock$3 = styled__default["default"].div(templateObject_11$9 || (templateObject_11$9 = __makeTemplateObject(["\n  padding: 0 10px;\n"], ["\n  padding: 0 10px;\n"])));
 var TextHoverBlock$1 = styled__default["default"].div(templateObject_12$7 || (templateObject_12$7 = __makeTemplateObject(["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"], ["\n  position: absolute;\n  top: 30px;\n  right: ", ";\n  min-width: 130px;\n  padding: 3px 3px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  opacity: 0;\n  text-align: ", ";\n  ", ":hover & {\n    transition: 0.3s;\n    opacity: 1;\n  }\n"])), function (_a) {
     var widthProgress = _a.widthProgress;
     return (widthProgress >= 50 ? 0 : "-130px");
@@ -8733,7 +8733,7 @@ var StyledButton$4 = styled__default["default"](Button$9)(templateObject_14$6 ||
     var theme = _a.theme;
     return polished.transparentize(0.85, theme.colors.text);
 });
-var templateObject_1$1J, templateObject_2$1k, templateObject_3$12, templateObject_4$V, templateObject_5$C, templateObject_6$t, templateObject_7$n, templateObject_8$j, templateObject_9$e, templateObject_10$b, templateObject_11$8, templateObject_12$7, templateObject_13$6, templateObject_14$6;
+var templateObject_1$1J, templateObject_2$1k, templateObject_3$12, templateObject_4$V, templateObject_5$C, templateObject_6$t, templateObject_7$n, templateObject_8$j, templateObject_9$e, templateObject_10$b, templateObject_11$9, templateObject_12$7, templateObject_13$6, templateObject_14$6;
 
 var BG$1 = "4277beef4ce8429d.png";
 
@@ -9002,7 +9002,7 @@ var BetValue = styled__default["default"](TextStyle$6)(templateObject_10$a || (t
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TextButton = styled__default["default"](Text)(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
+var TextButton = styled__default["default"](Text)(templateObject_11$8 || (templateObject_11$8 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"], ["\n  display: none;\n  ", " {\n    display: block;\n  } ;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -9042,7 +9042,7 @@ var Icons = styled__default["default"].div(templateObject_19$2 || (templateObjec
     return theme.mediaQueries.lg;
 });
 var PlayerWrap = styled__default["default"](Flex)(templateObject_20$2 || (templateObject_20$2 = __makeTemplateObject(["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"], ["\n  flex-direction: column;\n  justify-content: space-between;\n  height: 53px;\n"])));
-var templateObject_1$1D, templateObject_2$1f, templateObject_3$_, templateObject_4$R, templateObject_5$y, templateObject_6$r, templateObject_7$m, templateObject_8$i, templateObject_9$d, templateObject_10$a, templateObject_11$7, templateObject_12$6, templateObject_13$5, templateObject_14$5, templateObject_15$3, templateObject_16$2, templateObject_17$2, templateObject_18$2, templateObject_19$2, templateObject_20$2;
+var templateObject_1$1D, templateObject_2$1f, templateObject_3$_, templateObject_4$R, templateObject_5$y, templateObject_6$r, templateObject_7$m, templateObject_8$i, templateObject_9$d, templateObject_10$a, templateObject_11$8, templateObject_12$6, templateObject_13$5, templateObject_14$5, templateObject_15$3, templateObject_16$2, templateObject_17$2, templateObject_18$2, templateObject_19$2, templateObject_20$2;
 
 var Bet = function (_a) {
     var title = _a.title, red = _a.red, bet = _a.bet;
@@ -9674,15 +9674,16 @@ var AwardsLine = styled__default["default"](Flex)(templateObject_8$f || (templat
 var templateObject_1$1l, templateObject_2$11, templateObject_3$P, templateObject_4$I, templateObject_5$r, templateObject_6$o, templateObject_7$j, templateObject_8$f;
 
 var Achievement = function (_a) {
-    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, complete = _a.complete, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, refferal = _a.refferal, refferalReward = _a.refferalReward;
+    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, progress = _a.progress, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, refferal = _a.refferal, refferalReward = _a.refferalReward, network = _a.network;
     return (React__default["default"].createElement(AchievementWrap, null,
-        !complete && (React__default["default"].createElement(Counter$1, null,
+        network && React__default["default"].createElement(Network, { src: network, alt: "" }),
+        progress && (React__default["default"].createElement(Counter$1, null,
             React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                 React__default["default"].createElement(Text, { fontWeight: 500, color: count === 0 || count === "0" ? "text" : baseColors.green, letterSpacing: "0.05em", fontSize: "10px" }, count),
                 React__default["default"].createElement(Text, { fontSize: "10px" }, "/"),
                 React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, countMax)),
             React__default["default"].createElement("img", { src: COIN4 }))),
-        complete && refferal && (React__default["default"].createElement(Counter$1, null,
+        refferal && (React__default["default"].createElement(Counter$1, null,
             React__default["default"].createElement(Flex, { alignItems: "center", justifyContent: "center" },
                 React__default["default"].createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, refferalReward)),
             React__default["default"].createElement("img", { src: COIN4 }))),
@@ -9691,8 +9692,8 @@ var Achievement = function (_a) {
                 React__default["default"].createElement("img", { src: image })),
             React__default["default"].createElement(TitleStyle$3, { mb: "5px", fontWeight: 500, letterSpacing: "0.05em", fontSize: "13px" }, title),
             React__default["default"].createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "11px", color: baseColors.textGray }, description),
-            count && countMax && !complete && React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
-            complete && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
+            progress && countMax && (count || count === 0) && React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
+            !progress && (React__default["default"].createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
                 React__default["default"].createElement(ButtonText, { loading: loadingButton }, collectText),
                 React__default["default"].createElement(ButtonTextMob, { loading: loadingButton }, collectTextMob))))));
 };
@@ -9763,7 +9764,8 @@ var DescriptionStyle = styled__default["default"](Text)(templateObject_10$9 || (
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$1k, templateObject_2$10, templateObject_3$O, templateObject_4$H, templateObject_5$q, templateObject_6$n, templateObject_7$i, templateObject_8$e, templateObject_9$b, templateObject_10$9;
+var Network = styled__default["default"].img(templateObject_11$7 || (templateObject_11$7 = __makeTemplateObject(["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"], ["\n  position: absolute;\n  left: 7px;\n  top: 7px;\n  width: 22px;\n  height: 22px;\n"])));
+var templateObject_1$1k, templateObject_2$10, templateObject_3$O, templateObject_4$H, templateObject_5$q, templateObject_6$n, templateObject_7$i, templateObject_8$e, templateObject_9$b, templateObject_10$9, templateObject_11$7;
 
 var YAY_TOKEN_CIRCLE2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJoAAACaCAYAAABR/1EXAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAB+LSURBVHgB7V17cBz1ff/u3ks6vU6SLcsGg8A2zxjUtHnQkCDSJLjNAxNI2mSasWkmSVuYAk3bJE0ZTPJHk2ZaSCdMJ8202H0laUmxhzZA0oBIoYXQFBnzKpaMjLHxS9LpdSfd7aPfz29v7/Z29057J+lu77SfGc3p9nb39vb32e/79/1JFIAGBi4ZCIUig7Isna/r+oAuUULizURSQuL/sQ+2ux0rSdJ47nPjlWhc4v8lSU7qunZQkrTk4cMvjdAah0RrCAMDg4lwWBlkElypkT4okTTI1BikmkAaIUFAaRgEHB19YZjWEJqeaFu3vmWIZHmIB/kaMoiVIP9gmK9rmF+faHbiNR3RILUiEXWnRnQNS6ydPiNWGUhJkE7Xpf2qKh8YHx9JUhOhKYhmqkQ2mO6qVmrJ7RJF+uX8n9xmvAfM11JQ54i0OY2yJzXS5nXxav5pczpVBZ326zrtGxs7tJ+aAA1NtG3bLhvUpfBOHpTbKiEXiBMfDFN0S4j/D1HL1tCSZKoWINrCqMJ/KqUPKoJ8i/y/V+gEZ0MfVrOhu1nKjVODoiGJJuwuIb1oyMv+IFH71RFqvTJCbUwwSK96AuSbH1GYeFlK8WsFxINNd3cj2nMNRbRt27bvZkW0izwQDBKr7V0R6rg6umrSaqUAKQfCzTy6KF6XgpByGu0ZG3t+HzUIGoJoIBgkWKlYlgmTXIkdsbpLrWphkm7qBwtLSrpGIpyvR8OLigShunZEqf1dUUG0ZgJId3ZfmtIjhm1XCgbh9NvZcThAPoUviXbJJYMDiqreT2UIBnXYxZKr+8bGlV5eAZtu9sksTTDpyhOO9vrVafDVCIkwRVS7vZwXCanVeV1MSLG1iOlHMksSjrXA3aOvPr+HfATfEA1qUpLl+0vZYZBgvbta1yzB7FiKcFCnala+1i/Sre5EgxQLRbQ9Eum3uX0Otbhud6tQkQGcWFLC+US61ZVohi2mPVgqsd1zU0xIsWa3wZYL02mYYdK5wQ/SrW4juPXiK25n1/wuN1sMkfr1t8SbzotcbYBwx+6YLSXdOJfK0m30+XupDghRHbBl2xX3SrqOsEWL/TOoyY13tvk+yOpHhFjyd9/UwtqS3AK//AHt6OndkJicPP0o1Rg1lWjlVCWItemr7UKaBVg+yks3aUTJyjfUUpXWjGggmappj7t5lYEttjpQOf4GR2HqgUXHZ7W222oyskaEX37Qbo8FHmVtAKKdvi/l9lFSIvXaWpSarzrRLuQ8JVtb99u3B6qytiinSnVN2r3a+dJVHWV4lpJOf2XfDnKd+/UOip0XkKxWgKPQfnWUUgcVUieLizHZedjZ09M/PTl56mlaJazaSG+96Io9pOt/at+OyP6mO9sp3BN4lbUGyNbx3ihljqmUed0m2eCRruuXJidODdMqYFWIJmJkLiSD0b/hjjaSooHRXy/IfO87mWwoOV94yVGGNLRakm3FiQabzE1dwuhf95lWCuAPtL094h5vY8nW3d0/PjV16iCtIFaUaNu2DQ5yzvJh+3aQrHdXCwXwF+KD7mQzbLa+JziwO04rhBUjGuJkmq79N9mi/QHJ/I1SZOONOzs7N30/mTy5ItP+VoRoZjCWHeV+63bYZIG69D9ANhebrUUK0c6uzo0HVoJsK+L6Ia1kj/hj1hES4wEaA308Vp22Wj82gwbCEaQMl49lSzSRICd9p3Ub4mTncDA28C4bC5Bs889m7XG2/pVIxC+LaEZAVlRh5IGIP4KxQZys8YDQB7zRuaey9hn271xu2KNqkZOrxHjOnr+88LtdQYlPgwOz6pGuspEtqWRDv1BtEr5qRuSM/yKS9d0aD0jWBIDps26Xw4lLwF5D6T1VgapUZy69VGSXmaU+AZoDrZeF3TzRfjmkt1Rjr1WsOnNzLl+zboMUG/hOZ1BP1mRAPdvRz8w4Kz50/dpK+39UrOcMlVmMzfd0BCRrQiAJj1IuO3RJvr9SFVoR0aAy7fEyRP4Du6x5AXvNntkR8bWwchtVAM9iqJTKhJcZoPkxzirU1nSmIi/UsyhSVfUu+zaozABrA323uHmh6v3kEZ6ItmXL9p0cUdlt3YYCxkBlrh0ga9B9k2Nux5CYD+IBnpgih6R7rO/NPhgB1hZcZ6oZbcWWxJJEE10WbQ4AvjCQZmsP8EJdArlDW7ZcsWupY5dmi42xRl+yoKPPWgXUp0PIyLRnqePKEq2UNAuwtmHnAMIdS0m18hItkGYBXAAO2BvwSLK+u9wxJYkGbyKQZgFKAV03bSjrgZaWaIE0C1AGruGtMh6oK9GQBSBbo+JAmgWwo/M6h+AZwmo2bvu6Es2eBQBzO66OUIAAVqAXmz2upuvy9W77uqtOSRqyvo37YFmbAP4D4mpddqkmSbe7VXY4iCbSTYETEMAj2p2azlhp0AYH0SSJiuIhsVVc+S1A4wM5UEevYRenoIhBQuRJVFSi3X1jMMs8QHlg/S0bBu3qs4hoWLnXfkTQGTvAUsBSSTYkQqFskVNQRDRdp6IPQbJAbQZYCnAKnAJJHip6V/SZVBw7c4n+BgjgCrv6lORiEyxPtFz6oEivBmozgFdgAV4bEtaUlFWiXWPdK/A2A1QCcCXs5EueU4VP7EHaKwNpFqAydNi9TwunrBQcsu7TOli7lJOe1Ut/purk+Ty6nj+ftuD9uFpBS+n2fhZNhVanqZUPc4hP3Mo72lbYPjv62bO0eDhLoS6Z1Glnr3u5XTbaJj2T4X043RWSSJ3URNOGULdM2qxG+iLRth8Vev0d+dhp3qaRxtv1TGEA0S4L76UIvyq66Gio86mkEIgLMR+itve00PSBFLVsDdPmb60red3KhEavffI0J4B1scSvuP60TqFEiNQJleJvjdI5X+txHAeyj330lHN7hii6OUzqnCbOKYUlcZ0aX6++qFPbO2Kkzmi0eEShlosj1PqWKHV/rE0cmxpZpBN3TolJkrELIuI3KlOauD+xc8OkzKh8Tbo4t84PmtSSSxuqxQ9e941t1Lt75WewxQdLZgmGBZt4IK60Pmewz1Y8t5mTNm4kAzS+OSAZBkg5q7O+D1HXh+Ok8aBGNsg0+U/zTsnHV6/yvnIrDxZfryktTNKZ++e+WpAMyJ5UKfnP8+QF8z9bKCIxBla8nlTEPZp/ZpEWR7N8z4pvssr7uUmv1suilH6JH6YODgm8NUazTyyQFJMEyYCZR9P5fedOqZR9U80TLX+vZnVKP59bMpGHSTmjUmZcEeSKnseEO5X7odPkCuvvWUkgzAE7TbG0UAC3+GVYqE5dL7bPVsMJCPWEWAqUP2/LZRGS4xK1XhkV5En+6zylfr5AE3vnXG9O6+WGpwMykuo8n/mw4JxuD44EqZksf9Mn/mHOsn/xZ107jI6WMz9KO45TWQKbEgXfL0nG/yCZ+K0sqUK5HnJSjqNF1ynnrt92eZH+MLUPWbI1+BzjmmtB2/7uGKuw+tUN2m17TZNE3tPYKkkD1l+0Go5AfHuUIpbmfFCV4kJYks08viCe6IX/Y9XaJlHmNUWoDzzp0fMi1PGesKGypoqloRzBYBsJ/9ShLGnHixv+5iUcn1tqw/cZ71suiVBsICykQai7dEOl9MtZUk5YGCyBCDg+SgsvZ2jqgXlBhtmfpGndzR0ktRbIjIeq81daDZXLSLBUSv5LQYoKqfpgKn/e9bd28AM1S21XtVDiQ3Gaedj4DA+oCZAMqh7ofH8r/+YMSw/j+mAiAJP/6C6p44NRYTKI33/x6hER2pAsvYYkWbcQzbasYWzryhOt5zddmoUwAU5+LZlXGxD9isWWwPb+3++i8EZ3Mmz4QiHsl3lDofFPnXHdT6hMVqMgLo7pvNZb/nb6QPGgicFk4ZU5khUtnYDwhjC1MnHnn1uk9l8unDfcG6INf9Dler0Lr2bpjc9PFPZdJ1OaSYMHA2qw9Yqo+LMDRLH+5rn/TNPJr0/nr8UNOKb/jxPUur02Us6pDQ2JJmNtAPvOtVoILMNPI2yU/CXlrhFGcKTPuIap/SlP55r5j3TZz3VWr5v/stczyaCqZ3+y4NzOpFUmC5I1M5al6X9P0dT35zydN3NCoTfumKDY+RHaeFe3kIiQ4HN8H/B/eiRDqecWPZ1r+pG0g2RWEwEkO/ee3pqRDGhxEVIXXHDp+bKuK0XZABh0tSpyjJ0fpp5PFiSdnhu/xddZdaaMGzj90Lx4yssBamhyn3Ogrb+j+zfaqeUi7yGbmcfSeXXkBtNeM52A9PNZWnglS0shuilMMb6O9IsZevMrU4Z9lb9e40k7dc/0kueZfiRF8/+1SOG+3NPJL3AEoucWBrqX1bmpLmsFSDQ7f2RZGpRzXkEe4RpnA3p3tVPknOKnANIHthsAQ//s3vLSArYNADtu455E/oeaNhpu9vrPVebOT/9bSqhaN0R4cOVO4z7B4zQx+1h5qWqi/4sJYc/13dZF7VcXJKyW88izx1Tx/eUwkXuwlNPGMRFW4XAmYEIAnWy7dn6gPgWrdvUpy/IAS7Ti/Gat006IIW38srOnG8iS4HgPDPaZH6aElHMDVJEZEkDoJMvGe4Sf6rarCwUBm+7upkqQOaawHaYUSZsixJyOCTD9cFo8JEshsiEkrgnnUHMPFOJpmuXYM9+ZLSlRoarhBJieLJDlcIsybYRU8GD17qpfpyeEo6zgqMYASzRpoNxOtUDLpRFK3FRY/AIqBE+oMMZz93rib2Zdjz31jemc98i5tl5Z7LfIKmz+ScPO6WQPLnZRZVmOJH8vbLTIphAb+wXVA4khXnPrJ0RZ9YctqglSePqH3mzKtrfFOHAbEuov1Ck5SKWx1538gdODBDHNkIuZCTHesHR70zAxutkcqbXKtMI5YYUSMl/fQLmdagU8geagwftcZCNbtwixuZ8ucGQ8U3TMzI/TwnjGTYZ0QBTfCGMYwM3u+2wnVQIMuHJGE0Z/5qhSCH6SkUIC+SLnMAHZWdnAHrG9leHsT72pTyB2aVR4nLq7sGZCzTuCvlPfn8+HNEwgHhjuNn53+7s5PPLh+q5YY9eKkqQPyEvtVCuEWIr1/2FOhdoeRhAQfxP7iqXa7OOFQY3/QswYdA0TJmIU2xKhPg4vyB2VPTjwXlP/u2i7tsI5Eh+JU9evxdk2Uun4lyfzUsQMRsMpSB3MePkqdgxCwjwIsb0XvypmBGzbCt8FCTn5vYJ9CmmWfKhYyiEVhSfNdJ7W/25lD9ZqwDmxmCUaq/kB6zbT86kHkDdM3BDPx9VMwKbBTYf0mv+ZQQJ4XQgLmBJl4XBG5DSxH4KwiY+2UdsvVl64Of1QilNXto1yYfA73hcX1wnJDw/ShDVzMfeEd6nWfUMbtfJDgtgcvkdIzQ2GxASSnI/NnrZIMIv0w+o07dcYvxHZBWiFeqrMUuAIpjMnFKrz/M3e3+oosouA9MFMXoWcvm9GvMLrQljDtOHwOVI+CDuknl1kklUeO8L5Fl7KOoiOLAXQyrYk7EA4MMg/wqtDZqLtnTFBEBMzP17wXKUBz7b/j7oosjFseNrI3SN/mSOXkGosyXFtZ/DbLcOjcs4T6bkoZzkgFeHB+wFuWhFe5wD5CFChIJsdLZdHxE3Osvd57PaJvJ0Sf3tBamGwYVsJe29D5U+2Na8pvpMDxy0c7JQ5bIK0VddHCsntzvfHhaQJ8fdY42cgTMc1LewJe3MKTMQtmQC7DYbA8ak/S9IMArQWAosqF0KmQqVz/7x3GQsurS74sgZ8WULb9QFDSlix8GI2L70g4SI5tZXKqVJIMqTOOq9rFTGkajD/dHEmALnXBU4NIV8JMsUt1xThtBhSSQgUq8lcLGtzmLJvKiL8MPvUAlWC7o+3carNPfWnsYRNPVew++K/ZFwHnB9g3e/4U2Va4dta7b47Eg5D3uoRZ08oRe8hybo+2EZ9t1bXjn6aJZA6UYiNmYMJQIq0s5QK2ywNJLatyB4zDKg4q+00E8OrUwDI7C1v+HynbZvkKqVS/5NzVvjB63hvi6OMyI/wLdEQfV/36cKNF4l1m9ljt4PkWPXps7nhYgmUH0wyPEprwtwEVKT5fZBw5317nXif+rlBMKtX7AVwXro+VAhNiDxmGVMPYY11n6m/l+kFvp59krg+LiL8MHYRRjATyPYiQ6Dlsih1/mp1KhOGdvoFw86CFMX3mblM1Ha1cLzLLr3EviyF+n4vJ0HlnMdqMa9gW1Vaur2OU2XRC4pVKMiL7cgeWIGKGL+rTBO+n4HSd0sXHf10cfmPNb9oYuOdVa3uJ5DcP1/IrbInpzBbIudFOHySFSEVDOb0wykRwkAeUoojH0si3oeSayB7nPOTxw0HAHlMM18Lp0Ck0jwCzhCqTMY+XCgDB1nhZVuzB7imnk/4X2WaCHPsadxvnqcVuKGo7cqknOFzSDzEmbDPcp5sa6kSgIHNzBXIDIknUl0eYc13IgBcCdGAkEssU7dNtml/V0vJpL/fwFc+7vhF2ZMqNQJQuwaSLRewoxBOQOZhNdJv8FbtqbNmh2PZRUaYM+vJshanjxA9J0xyr0QLnObRNVoRzOWkmVLiAQP55Licv0VidlUoN9NKNSpGlprsMctSLb4Cdfz4TswzUBpEGJiQdH2cbTQ9ad3oxka/IIM5AccL7xE3WxxVqFpkbRW+CCfYK1Y3cyDUS/XH0c+docVXFZE5MONbqI/DvFR8x/rfrmzhXHix2TeLCSWm1zUAydw4hCzeuHWDnye4ml6XOXtoOSQD5jio2nJ5tFAoaSMZ7D6vJUYIfyAp3p2rGO4YauXrNe6nKB96uDI1b5owUrTxWrraOcRacxxlQsUS7ZT/JBpymOHukJAWgDq5MteIWUxiJrzkHn/reJ/3cEmCk+MoXDSrfWeH0/mMgXj/WGUxNVNVxwcbr+W+XaJJkj7OEk0fL7eTHyBmR02p/BA41YbcKXGsq/IqDUgzqCEUSWIWvP0pjG2LcMDYe5UqktoI4GJ+qUla2HDmhJtqnQJRrdJgQs0urPg5TsqaJh21blR8bKPF38aR8w/GxQRjE9qMzrEub7OGrEAhJWA9lwmQo5qxRZ7V3l/D6rTMPFKll8yna39PC7W9IypKg/wOu7Bi1TkiRyKhEetGlW+SXx0C2EDRgdCy1Qnsn7knDaKJIKh9CUqOT8UurbzJTdxW/9Zim+Y299Si5/CRPS6IviWZo6rRi6TTv2RT55yNbCRJnZZfecW5JvbCqD89G4Qiztw3SxN/VyjnqfSmY+LJiT+ZzL83q0JQDWI6G7C1Fl/Olp1u53puzg7ELoyIRi3i3IeKVSWcguNfmvR0Ljsh4YFiG8rMzfo4P8LNQTt8+KWRXApKGrHOVjdcaB+vlGIZf9x0Ob50VgAVubgJGDBM71scK74h+oImZlGgjg3zBBZYgmDmO/KJUNdekHo+Q7GLw5R5XRHS11oMaUI5q9GRj58S8y9RRYuSprhHGxNJdDgvyP923ejP9JNTSOlCYxrdhPgN35I80RZ9KtEA2dI1qBIgZ5m4vk3MuEKQVZlkMr1QSDOZs8+tk1FExS1LJS9EA7mmvjdnlBqFqOS0O0g1bQ4dgAxpV8oMwMwoBJ+snqvZK27hYFaUJEU3+i+hnh6xSTQObeAlp3f0IjstdXB58anVxHLifGlWk6e/NU1jO08VkcyEOcvbWp3b9m5vIY7xXWdIzZVfQ/Kc+w2jZ1qIQzJwYoDOD3oPlyB+ZiWZFehUZBZ8+g1Oj1Mfxqu4s6wxDloNYjgDGFC/rP+EGd2LoxlaGMtS+lDWkDrMt/D60JLtEkygE8/8U2ljzug5IRG1x/xMzCwCMdAmK8SqTGIuwM5Cs7qJv58ToQ8vQCk2pllirmf2DYXSL7AavSAssg0Iz7ReHhHkFipzncx/fO1nVdEkxvU339rJUpIl6mhWTPGb+l5h9hPGJbzefw4BHAG7NoTHiVfBJLR/DEfU18jSlXvTV9t9u6IdSmbMwCiAzjubv9lLzQrED8/+7SzN5vqwocw98ZE2arvKX+35Z5/M0Ik7i6cDjh4+JDgmHovx8RFkB4rUZ3pk6YYl9QJm+yR+vS1fJqOcbqwkc6XA9LuNX0rkG+zNP71IqZ/7T3XOPWnjjG6oTUB22ygOesq/RAPWfapdzGW09p9odmA+BB4yvy5puTjmeOCHzX+siv4J6x6w0/xcyYEyalFevYbWRIttCXM4JO7LwgdwxRmtkIbN//JEGx19ARuLEuxzT/q7YA9k89K9p5kQKjEzqt5IOU2t5OjoobzwKnJ5+Pr387DtNt9DfWI5Y78CSe9KEt/NALlDpose20h+w/QjNqGkF9QmYPeRi9RnioNvzbwAQ4CVAdRm2hZ71XVtv/V9EdGy2RA+LFKf04/4MzAYwD9wUZukqpED1vdFRHMLc/jd+wxQf0z9wCaMdNqf41IeLvO69Lutb6E+UyP+TUkFqC/cvE1dV/fa93MQTVHCkGgN5X0GqB/O7i0uUccczrGxlw7Y93MQTYg8Xb/Xum3m0UzgFARwALnNtLMAY9htX9fMrCRpB+wnnHwgcAoCFAOazh7UV7PZu932dSUaKiLJxsyZRwOiBSjGxD5bDzhOY46PvzLutm/pWhObUwDmBqGOACbABWeKUtpTav+SRMulpIat22CrBQgA2KUZnABrysmOstVzEqn7rO8R5gikWgBXaaZpe8ods2R6dttF21+ztrVCx+ULv1td+84AzYEjn5guIpoIaRw+dEG5Y5auB9ZVh6029UBljYADNA+qkWbAkkRjD3Qv2Ww16Ocgrrb2AIK52WZjYy/uW+pYbzMcbB4o4mr2iHCA5gfG3CnN6HYvx3oimpsHikRqkANdOwDB7FEHlmZ7x8YOHfByvOc5W+FQ9may5UDP3Lf81p4BGgPH7nAuY1kqC+AGz1Odz549m+zp6Wvh/NSQuU2ZhJ0mUXzQ9829AywDUJmOcjFd33PkyEuepBlQ0SxURQl/E128rdsm9qV93UIhwPJQygFgc8qzNAMqIhoqO3RNv9m+/fidc4EX2oTAmJZQmddShai4S8jk5Onxnt4NmNH+TusFoZFv29t93IEoQMU489dpmn/W3rSlMpVpoqp2NJ2dm56RQ7SD/+03ty28rIq1PlsvC+y1ZsAkB+VdY2ajL9xAVaCqTiFQoeFQBl9Y5IXiwgJ7rfEBu+zMfY44abIalWmi6gZbhhe6fpG90B3mNp3DLPPPZqn96mjdVzIOUB1AMthljvagpH+RVeajVCWW1cltcvLM0272Gsp7O98bbcge+WsZGLvXb5l1Rv91urdSL9OOZbcMZOfg0Z7e/p1ksdcQX1OnNCHZAjQOTnxlXtjaxdBHRqu0y6xYkW5usNfs8TVMkT/9rSBz0CjAWNmDsjD+layybJIBK9IEFfZa3/qeA5oe2k2W/j7G0xFkDvwORP4nv+soaIXxf1WpOQCVYsW67eZSVM+wc7Dbut2YjhWQza8AyRyTTEhUV1915MjLr9AKYUXbOiOY29u7ASux7LRuD8jmT5Qima5pu0dHq/cw3bDi/cOZbCMc9pi2hj0AkA1eTZA98Adgk7moS4Qxbh8dffHbtMJYlUb1IuzR00fWSg8ANhvaT7Yz2YLQR32Ah/3kX6Ro+iGXGW2cXmIP8+u0Cli1FRFYsj3hJtkyr2uU4qAuJFsQ1K0tEB87/oU5Z/6STEm2OiQDVnXpDUg2N5sNcTa40kEGoXbA0jkgGR50OwybbOXVpRU1GeVt2y4b1Cn0OFnWMTDRd0urr9uXNgPMBLlLKVeSg2U7y038XSnUTJxccsklA6oWedw6R9RE940xWre71bdtzRsVWm4SkaNRHhnBWCTJVypOthRqOrIgm6JGH7SupGcCE5M339MhXgMsH1CVJ+6cK9HCXx9BxL9WJAPqIkK2btt+D7+4TtPq3dXK0i1QpctBqfiYgEiQH7qDaoy6rMMnEvGGR4qqjyJWId6GaV2Bo1A50LQYazHNPu7adziJUp/lVmFUi7qOZDm7Dei6Lkq9bLsF6rQ8ytliBmqvKu3whcjYuvUtd7F02+P2GUjWu6uFunb4ayU3v6CMR2mAVaWizN49Pj6epDrCN7ppKekWEK4YaLYCgpVarwtepaTT7lqELrzAd0ZQOekGrHXCgWCo9UuXXiVaNLtWlLlv1luKWeFLa1tINzVyl3VdKjtMwnWw09Ds8TdNNKteEE5S2RUHdX1YUZSb62mLlYKvR2jLlu3XyyG6t5Q6BUC4+JXhpnQa4EVisdXppdrvi7VWpT1+UZNuaAhRwCms3SSF7ipHOCC2JcTprBjFByMNSzoQKsnqEQQrox4FYIehCZ6X/mT1RkPpHK+EA1pZynXtiDYE6aAOsR65F3IJsATTdX1vIxDMREMaN1u3br+G7/Yee71bKUDStWwNiSAwqnzrbdNBahlrbGWZYFlSTnlc6bkBVGQpNLQVbToN/CuGvEg5EyAepFwrk65la1iQcLXIZy7KlTmpilcQzDOxDAgvUpb1/a+++uJBalA0jbsGx0GSdFat0s5qjgfRIhtkQUD8ifc5lRvpL5+py55Uc6/GOvSQWOL/U1q1XZZArhFILw62HvRTmKJaNF1cYGBgIBGJxHfqunx9TrUmqDGQ1DVtfygUGs5kZg40A7msaPqsdc6eG+J/h7zadDVCTmqhN7A03Ih2VyVYc+URIB6r2EG26Zh4sOukQaoJ9BFd00dkWRrRdWmkWVSiVwR1OJQrNddDXTkCJjh0MCBJ0gA+M1/Z0hpwO1YioxWETjrKopN87LgkyUk+17imSfynjLz22stHaY3j/wEzV4er1HLJKwAAAABJRU5ErkJggg==";
 
@@ -13612,7 +13614,7 @@ exports.ModalUnstake = ModalUnstake;
 exports.NFTCard = NFTCard;
 exports.NFTShareIcon = Icon$e;
 exports.NFT_EXAMPLE = nftExample;
-exports.Network = Network;
+exports.Network = Network$1;
 exports.NetworkModal = NetworkModal;
 exports.NoHistory = NoHistory;
 exports.NotificationDot = NotificationDot;
