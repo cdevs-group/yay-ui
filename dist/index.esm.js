@@ -7795,7 +7795,6 @@ var AccountMarketplace = function (_a) {
             icon: React__default.createElement(Icon$b, null),
             text: textsAccount.myProfile,
             link: textsAccount.linkMyProfile,
-            comingSoon: true,
         },
         {
             icon: React__default.createElement(Icon$a, null),
@@ -7818,7 +7817,7 @@ var AccountMarketplace = function (_a) {
     ];
     var LinkUser = function (_a) {
         var icon = _a.icon, text = _a.text, link = _a.link, comingSoon = _a.comingSoon;
-        var Item = function () { return (React__default.createElement(Flex, { alignItems: "center" },
+        var Item = function () { return (React__default.createElement(Flex, { alignItems: "center", marginBottom: comingSoon ? 0 : 20 },
             icon,
             React__default.createElement(Text, { style: { marginLeft: 11 } }, text))); };
         if (comingSoon)
@@ -9606,8 +9605,7 @@ var ProfileCard = function (_a) {
         React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center", width: "100%", mb: "36px" },
             React__default.createElement(TextLinkRefferal, { color: "textGray", fontSize: "13px" }, linkRefferal),
             React__default.createElement(CopyToClipboard, { toCopy: linkRefferal, textCopied: "copied", icon: React__default.createElement(Icon$1f, null) })),
-        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); })),
-        React__default.createElement(Button$9, { width: "100%", variant: "option" }, texts.edit)));
+        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); }))));
 };
 var Card$f = styled.div(templateObject_1$1n || (templateObject_1$1n = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
