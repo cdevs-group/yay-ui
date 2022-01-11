@@ -8,6 +8,7 @@ import MarketTabs from "./components/MarketTabs";
 import PropertieItem from "./components/ProretieItem";
 import ProfileNftCard from "./components/ProfileNftCard";
 import ImportCollection from "./components/ImportCollection";
+import { RegisterProfile } from "./index";
 
 export default {
   title: "Widgets/Marketplace",
@@ -129,3 +130,28 @@ const Paragraph = styled.p`
   padding-top: 20px;
   color: ${({ theme }) => theme.colors.whiteText};
 `;
+
+export const RegisterProfileBlock = () => {
+  return (
+    <RegisterProfile
+      onClick={() => console.log("click")}
+      title="Register"
+      description="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
+      onChange={(e: any) => null}
+      inputValue1=""
+      inputValue2=""
+      inputName1=""
+      inputName2=""
+      inputError1=""
+      inputError2=""
+      texts={{
+        inputTitle1: "Your login",
+        inputTitle2: "Your sponsor",
+        inputPlaceholder1: "Enter your login",
+        inputPlaceholder2: "Ivan1337_PRO100Blockchain",
+        buttonText: "Register",
+      }}
+      buttonProps={{ spin: false, disabled: false }}
+    />
+  );
+};

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import { ButtonProps } from "../../../components/Button/types";
 export interface ICardProps {
     title: string;
     author: string;
@@ -32,4 +33,24 @@ export interface IProfileCardProps {
     price: number;
     isLiked: boolean;
     onLike: () => void;
+}
+export interface IRegisterProfileProps {
+    title?: ReactNode | string;
+    description?: ReactNode | string;
+    onClick: () => void | Promise<void>;
+    onChange: (e: any) => void;
+    inputValue1: string;
+    inputValue2: string;
+    inputName1: string;
+    inputName2: string;
+    inputError1: string;
+    inputError2: string;
+    texts: {
+        inputTitle1: string;
+        inputTitle2: string;
+        inputPlaceholder1: string;
+        inputPlaceholder2: string;
+        buttonText: string;
+    };
+    buttonProps: ButtonProps;
 }
