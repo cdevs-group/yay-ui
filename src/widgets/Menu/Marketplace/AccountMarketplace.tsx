@@ -56,8 +56,11 @@ const AccountMarketplace: React.FC<Props> = ({
   const [openFunds, setOpenFunds] = useState<boolean>(false);
 
   const handleOpenFunds = () => {
-    console.log(1);
     setOpenFunds(!openFunds);
+  };
+
+  const handleLink = () => {
+    setOpenDropdown(false);
   };
 
   const links = [
@@ -111,7 +114,7 @@ const AccountMarketplace: React.FC<Props> = ({
         </LabelTop>
       );
     return (
-      <Link to={link || "/"}>
+      <Link to={link || "/"} onClick={handleLink}>
         <Item />
       </Link>
     );
