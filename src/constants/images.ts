@@ -55,6 +55,8 @@ import BG_LINE from "../../public/images/bg-line.png";
 import NFT_EXAMPLE from "../../public/images/nft-example.png";
 import ACHIEVEMENTS from "../../public/images/AchievementsIcon.png";
 import GREEN_ELLIPSE from "../../public/images/green-ellips.png";
+import LOGO_ROUND from "../../public/images/logo-round.png";
+import EXAMPLE_AVATAR from "../../public/images/example-avatar.png";
 import USER_ICON from "../../public/images/user.png";
 
 export {
@@ -114,6 +116,8 @@ export {
   NFT_EXAMPLE,
   ACHIEVEMENTS,
   GREEN_ELLIPSE,
+  LOGO_ROUND,
+  EXAMPLE_AVATAR,
   USER_ICON,
   COIN5,
 };

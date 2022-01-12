@@ -6,6 +6,7 @@ import { Flex } from "../../../components/Box";
 import { ArrowDownIcon } from "../../../components/Svg";
 import { IReferralListProps } from "./types";
 import ReferralListItems from "./ReferralListItems";
+import { Pagination } from "../../../components/Pagination";
 
 const ReferralList = ({
   handleBack,
@@ -15,6 +16,9 @@ const ReferralList = ({
   miniValue,
   predictionValue,
   nftValue,
+  length,
+  togglePage,
+  currentPage,
 }: IReferralListProps) => {
   return (
     <div>
@@ -32,6 +36,11 @@ const ReferralList = ({
       </TopLine>
       <TitleList>{texts.referralTitle}</TitleList>
       <ReferralListItems data={data} texts={texts} />
+      {length && (
+        <Flex mt={20} justifyContent="flex-end">
+          <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
+        </Flex>
+      )}
     </div>
   );
 };
@@ -80,6 +89,7 @@ const TitleList = styled(Text)`
   font-size: 25px;
   line-height: 27px;
   letter-spacing: 0.03em;
+
   ${({ theme }) => theme.mediaQueries.xmd} {
     font-size: 31px;
     line-height: 39px;

@@ -89,4 +89,7 @@ export interface IReferralListProps {
   miniValue: string;
   predictionValue: string;
   nftValue: string;
+  length?: number;
+  togglePage: (e: any) => Promise<void>;
+  currentPage: number;
 }
