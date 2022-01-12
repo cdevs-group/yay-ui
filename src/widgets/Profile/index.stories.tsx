@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileCard from "./ProfileCard";
 import Achievement from "./Achievement";
+import RefferalCard from "./RefferalCard";
 import AccountProfileBlock from "./AccountProfileBlock";
 import { ROKET1, BNB2 } from "../../constants/images";
 import coins from "./images/coins.png";
@@ -21,6 +22,11 @@ const textsCard = {
   losses: "losses",
   edit: "Edit Profile",
   refferal: "Refferal Program",
+  sponsor: "Sponsor",
+  kyc: "KYC",
+  kycVerified: "Verified",
+  kycNotVerified: "Not Verified",
+  tooltip: "Kyc info",
 };
 
 export const ProfileCardWidget: React.FC = () => {
@@ -32,17 +38,20 @@ export const ProfileCardWidget: React.FC = () => {
         texts={textsCard}
         account="6x3438e324938438e32438e329828x46R65"
         awards={[coins, win, skull, rocket]}
+        sponsor="0x3asadsasasd2112312112321312312321312"
+        verified
       />
     </div>
   );
 };
 
-export const AchievementSolo = () => {
+export const Cards = () => {
   return (
     <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(6, 1fr)" }}>
       <Achievement
         image={ROKET1}
         count={0}
+        reward="12 YAY"
         countMax="10"
         title="Great loser"
         description="lose 10 times in a row"
@@ -50,25 +59,38 @@ export const AchievementSolo = () => {
         collectText="Collect Reward"
         collectTextMob="Collect"
         network={BNB2}
+        backTitle="Entered the games"
         fullDescription="lose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a ro"
       />
-
       <Achievement
         image={ROKET1}
+        count={0}
+        reward="12 YAY"
+        countMax="10"
         title="Great loser"
         description="lose 10 times in a row"
+        progress={false}
         collectText="Collect Reward"
         collectTextMob="Collect"
-        refferal
-        refferalReward="12 YAY"
+        network={BNB2}
+        backTitle="Entered the games"
+        fullDescription="lose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a ro"
+      />
+      <RefferalCard
+        image={ROKET1}
+        title="Doodle Pump"
+        description="From 0x343..987"
+        collectText="Collect Reward"
+        collectTextMob="Collect"
+        reward="12 YAY"
         disabledButton
         loadingButton
+        created="11.01.2022 23:03"
       />
 
-      <Achievement
+      <RefferalCard
         image={ROKET1}
-        count={2}
-        countMax="10"
+        reward="12 YAY"
         title="Great loser"
         description="lose 10 times in a row"
         collectText="Collect Reward"

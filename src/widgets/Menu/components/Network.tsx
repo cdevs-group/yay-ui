@@ -81,6 +81,7 @@ const NetworkBlock = styled.button`
 
 const TextStyled = styled(Text)`
   display: none;
+  line-height: 1;
 
   ${({ theme }) => theme.mediaQueries.xl} {
     display: block;

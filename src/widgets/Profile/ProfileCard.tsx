@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { EyeCloseIcon, EyeOpenIcon, ArrowTopRight, CopyIcon } from "../../components/Svg";
+import { ArrowTopRight, CopyIcon3, CompleteIcon } from "../../components/Svg";
 import { Flex } from "../../components/Box";
 import { Text } from "../../components/Text";
 import { ellipsis } from "../../helpers/ellipsis";
 import YAY_TOKEN_CIRCLE from "./images/logo-circle.png";
 import { ProfileCardProps } from "./types";
-import { Button } from "../..";
 import { CopyToClipboard } from "../../components/CopyToClipboard";
+import TextWithTooltip from "../../components/TextWithTooltip/TextWithTooltip";
+import { USER_ICON } from "../..";
 
 const ProfileCard: React.FC<ProfileCardProps> = ({
   token,
@@ -15,41 +16,26 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   account,
   linkAccount,
   linkRefferal,
-  coins,
   games,
   wins,
   losses,
   awards,
+  sponsor,
+  verified,
 }) => {
-  const [isVisibleAccount, setIsVisibleAccount] = useState(true);
-
-  const handleClickEye = () => {
-    setIsVisibleAccount(!isVisibleAccount);
-  };
+  const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
     <Card>
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
       <Title>{texts.title}</Title>
       <AccountLine>
-        <Input readOnly value={ellipsis(account, 10)} type={isVisibleAccount ? "text" : "password"} />
-        {/* <Eye onClick={handleClickEye}>
-          {!isVisibleAccount && <EyeCloseIcon />}
-          {isVisibleAccount && <EyeOpenIcon fill="whiteRgba" />}
-        </Eye> */}
+        <Input readOnly value={ellipsis(account, 10)} type="text" />
         <Link href={linkAccount} target="_blank">
           <ArrowTopRight />
         </Link>
       </AccountLine>
-      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="38px">
-        <div>
-          <Text fontSize="21px" lineHeight="27px" letterSpacing="0.05em" mb="7px">
-            {coins || 0}
-          </Text>
-          <Text fontSize="13px" lineHeight="16px" letterSpacing="0.05em" color="greyText">
-            {texts.coins}
-          </Text>
-        </div>
+      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="31px">
         <div>
           <Text fontSize="21px" lineHeight="27px" letterSpacing="0.05em" mb="7px">
             {games || 0}
@@ -75,14 +61,40 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           </Text>
         </div>
       </Flex>
-      <Text mb="3px" fontSize="16px" textAlign="left" width="100%">
+      <Text fontSize="16px" textAlign="left" width="100%">
         {texts.refferal}
       </Text>
-      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="36px">
+      <Flex justifyContent="space-between" alignItems="center" width="100%" mb="17px">
         <TextLinkRefferal color="textGray" fontSize="13px">
           {linkRefferal}
         </TextLinkRefferal>
-        <CopyToClipboard toCopy={linkRefferal} textCopied="copied" icon={<CopyIcon />} />
+        <CopyToClipboard
+          toCopy={linkRefferal}
+          textCopied=""
+          icon={isTooltipDisplayed ? <CompleteIcon /> : <CopyIcon3 />}
+          isTooltip={isTooltipDisplayed}
+          setIsTooltip={setIsTooltipDisplayed}
+        />
+      </Flex>
+      <Text fontSize="16px" textAlign="left" width="100%" mb="10px">
+        {texts.sponsor}
+      </Text>
+      <Text color="textGray" fontSize="13px" textAlign="left" width="100%" mb="32px">
+        {sponsor}
+      </Text>
+      <Flex mb="10px" justifyContent="flex-start" width="100%">
+        <Text fontSize="16px" textAlign="left">
+          {texts.kyc}
+        </Text>
+        <TextWithTooltip textTooltip={texts.tooltip} />
+      </Flex>
+      <Flex justifyContent="flex-start" alignItems="center" width="100%" mb="13px">
+        <User verified={verified}>
+          <img src={USER_ICON} />
+        </User>
+        <Text color={verified ? "green" : "textGray"} fontSize="13px" textAlign="left" width="100%">
+          {verified ? texts.kycVerified : texts.kycNotVerified}
+        </Text>
       </Flex>
       <AwardsLine>
         {awards?.map((el) => (
@@ -115,7 +127,7 @@ const Title = styled(Text)`
   font-size: 18px;
   line-height: 23px;
   letter-spacing: 0.03em;
-  margin-bottom: 9px;
+  margin-bottom: 3px;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 20px;
     line-height: 25px;
@@ -134,11 +146,6 @@ const Token = styled.img`
   }
 `;
 
-const Eye = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-`;
 const Input = styled.input`
   color: ${({ theme }) => theme.colors.greyText};
   font-size: 13px;
@@ -159,10 +166,7 @@ const AccountLine = styled(Flex)`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 19px;
 `;
 
 const AwardsLine = styled(Flex)`
@@ -178,4 +182,11 @@ const TextLinkRefferal = styled(Text)`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 80%;
+`;
+
+const User = styled.div<{ verified?: boolean }>`
+  padding: 3px;
+  margin-right: 11px;
+  background: ${({ theme, verified }) => (verified ? theme.colors.green : theme.colors.whiteRgba)};
+  border-radius: 7px;
 `;
