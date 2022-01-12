@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import ProfileCard from "./ProfileCard";
 import Achievement from "./Achievement";
 import RefferalCard from "./RefferalCard";
@@ -27,21 +28,37 @@ const textsCard = {
   kycVerified: "Verified",
   kycNotVerified: "Not Verified",
   tooltip: "Kyc info",
+  refferalListBtn: "Referral list",
 };
 
 export const ProfileCardWidget: React.FC = () => {
   return (
-    <div style={{ marginTop: 50, maxWidth: 373 }}>
-      <ProfileCard
-        linkAccount="dd"
-        linkRefferal={`https://play.yay.games/sponsor/6x3438e324938438e32438e329828x46R65`}
-        texts={textsCard}
-        account="6x3438e324938438e32438e329828x46R65"
-        awards={[coins, win, skull, rocket]}
-        sponsor="0x3asadsasasd2112312112321312312321312"
-        verified
-      />
-    </div>
+    <BrowserRouter>
+      <div style={{ marginTop: 50, maxWidth: 373 }}>
+        <ProfileCard
+          linkAccount="dd"
+          linkRefferal={`https://play.yay.games/sponsor/6x3438e324938438e32438e329828x46R65`}
+          texts={textsCard}
+          account="6x3438e324938438e32438e329828x46R65"
+          awards={[coins, win, skull, rocket]}
+          sponsor="0x3asadsasasd2112312112321312312321312"
+          verified
+          refferal
+          linkRefferalList="/"
+        />
+      </div>
+      <div style={{ marginTop: 50, maxWidth: 373 }}>
+        <ProfileCard
+          linkAccount="dd"
+          linkRefferal={`https://play.yay.games/sponsor/6x3438e324938438e32438e329828x46R65`}
+          texts={textsCard}
+          account="6x3438e324938438e32438e329828x46R65"
+          awards={[coins, win, skull, rocket]}
+          sponsor="0x3asadsasasd2112312112321312312321312"
+          verified
+        />
+      </div>
+    </BrowserRouter>
   );
 };
 

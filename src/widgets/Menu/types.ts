@@ -139,7 +139,7 @@ export interface TextsAccountMarketplace {
   myCollections: string;
   comingSoon: string;
   disconnect: string;
-  achievements: string;
+  achievements?: string;
   linkMyProfile?: string;
   linkFavorities?: string;
   linkMyCollections?: string;

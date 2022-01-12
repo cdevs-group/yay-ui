@@ -62,6 +62,7 @@ import {
   CategoryIcon,
   BlockchainIcon,
   DollarIcon,
+  JoystickIcon,
 } from ".";
 
 export default {
@@ -119,6 +120,7 @@ export default {
     CategoryIcon,
     BlockchainIcon,
     DollarIcon,
+    JoystickIcon,
   ],
   argTypes: {},
 };
@@ -314,6 +316,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <DollarIcon />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <JoystickIcon />
         </div>
       </div>
     </div>

@@ -81,12 +81,12 @@ const AccountMarketplace: React.FC<Props> = ({
       link: textsAccount.linkMyCollections,
       comingSoon: true,
     },
-    {
-      icon: <img src={ACHIEVEMENTS} alt="" />,
-      text: textsAccount.achievements,
-      link: textsAccount.linkAchievements,
-      comingSoon: true,
-    },
+    // {
+    //   icon: <img src={ACHIEVEMENTS} alt="" />,
+    //   text: textsAccount.achievements,
+    //   link: textsAccount.linkAchievements,
+    //   comingSoon: true,
+    // },
   ];
 
   const LinkUser = ({

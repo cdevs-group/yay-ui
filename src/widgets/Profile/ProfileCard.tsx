@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ArrowTopRight, CopyIcon3, CompleteIcon } from "../../components/Svg";
 import { Flex } from "../../components/Box";
@@ -8,7 +9,7 @@ import YAY_TOKEN_CIRCLE from "./images/logo-circle.png";
 import { ProfileCardProps } from "./types";
 import { CopyToClipboard } from "../../components/CopyToClipboard";
 import TextWithTooltip from "../../components/TextWithTooltip/TextWithTooltip";
-import { USER_ICON } from "../..";
+import { Button, USER_ICON } from "../..";
 
 const ProfileCard: React.FC<ProfileCardProps> = ({
   token,
@@ -22,18 +23,26 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   awards,
   sponsor,
   verified,
+  refferal,
+  linkRefferalList,
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
     <Card>
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
+      {refferal && linkRefferalList && (
+        <RefferalBtn as={Link} to={linkRefferalList}>
+          {texts.refferalListBtn}
+        </RefferalBtn>
+      )}
+
       <Title>{texts.title}</Title>
       <AccountLine>
         <Input readOnly value={ellipsis(account, 10)} type="text" />
-        <Link href={linkAccount} target="_blank">
+        <LinkAccount href={linkAccount} target="_blank">
           <ArrowTopRight />
-        </Link>
+        </LinkAccount>
       </AccountLine>
       <Flex justifyContent="space-between" alignItems="center" width="100%" mb="31px">
         <div>
@@ -79,9 +88,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       <Text fontSize="16px" textAlign="left" width="100%" mb="10px">
         {texts.sponsor}
       </Text>
-      <Text color="textGray" fontSize="13px" textAlign="left" width="100%" mb="32px">
+      <TextSponsor color="textGray" fontSize="13px" textAlign="left" width="100%" mb="32px">
         {sponsor}
-      </Text>
+      </TextSponsor>
       <Flex mb="10px" justifyContent="flex-start" width="100%">
         <Text fontSize="16px" textAlign="left">
           {texts.kyc}
@@ -111,6 +120,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 export default ProfileCard;
 
 const Card = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,15 +144,15 @@ const Title = styled(Text)`
   }
 `;
 const Token = styled.img`
-  margin-top: -30px;
-  margin-bottom: 8px;
   width: 127px;
   height: 87px;
+  margin-top: -30px;
+  margin-bottom: 8px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-top: -33px;
-    margin-bottom: 16px;
     width: auto;
     height: auto;
+    margin-top: -33px;
+    margin-bottom: 16px;
   }
 `;
 
@@ -156,7 +166,7 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const Link = styled.a`
+const LinkAccount = styled.a`
   & rect {
     fill: ${({ theme }) => theme.colors.whiteRgba};
   }
@@ -183,10 +193,30 @@ const TextLinkRefferal = styled(Text)`
   text-overflow: ellipsis;
   max-width: 80%;
 `;
-
+const TextSponsor = styled(Text)`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+`;
 const User = styled.div<{ verified?: boolean }>`
   padding: 3px;
   margin-right: 11px;
   background: ${({ theme, verified }) => (verified ? theme.colors.green : theme.colors.whiteRgba)};
   border-radius: 7px;
+`;
+
+const RefferalBtn = styled(Button)`
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  padding: 9px 15px;
+  background: ${({ theme }) => theme.colors.whiteRgba};
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: 7px;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  height: auto;
 `;
