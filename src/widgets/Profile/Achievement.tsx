@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
-import { COIN4 } from "../../constants/images";
 import { baseColors } from "../../theme/colors";
-import { Flex } from "../../components/Box";
-import { Button } from "../../components/Button";
+import { Flex, Box } from "../../components/Box";
+import { ButtonStyle, Network, Reward, ButtonText, ButtonTextMob, TitleStyle, DescriptionStyle } from "./StyledCards";
 
 interface IAchievementProps {
   id?: string | number;
@@ -20,9 +19,9 @@ interface IAchievementProps {
   collectTextMob?: string;
   disabledButton?: boolean;
   loadingButton?: boolean;
-  refferal?: boolean;
-  refferalReward?: string;
+  reward?: string;
   network?: string;
+  backTitle?: string;
 }
 
 const Achievement = ({
@@ -38,18 +37,31 @@ const Achievement = ({
   progress,
   disabledButton,
   loadingButton,
-  refferal,
-  refferalReward,
+  reward,
   network,
+  backTitle,
 }: IAchievementProps) => {
   return (
     <Wrapper progress={progress}>
       <Inner className="card-inner">
         <CardFront progress={progress}>
           {network && <Network src={network} alt="" />}
-          {progress && (
-            <Counter>
-              <Flex alignItems="center" justifyContent="center">
+          <Reward>
+            <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
+              {reward}
+            </Text>
+          </Reward>
+          <ImageBlock>
+            <img src={image} />
+          </ImageBlock>
+          <TitleStyle>{title}</TitleStyle>
+          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
+            {description}
+          </DescriptionStyle>
+          {progress && countMax && (count || count === 0) && (
+            <Box marginTop="auto" width="100%">
+              <RangeTrack progress={(+count / +countMax) * 100} />
+              <Flex justifyContent="center" mt="5px">
                 <Text
                   fontWeight={500}
                   color={count === 0 || count === "0" ? "text" : baseColors.green}
@@ -63,51 +75,40 @@ const Achievement = ({
                   {countMax}
                 </Text>
               </Flex>
-              <img src={COIN4} />
-            </Counter>
+            </Box>
           )}
-          {refferal && (
-            <Counter>
-              <Flex alignItems="center" justifyContent="center">
-                <Text fontWeight={500} letterSpacing="0.05em" fontSize="10px">
-                  {refferalReward}
-                </Text>
-              </Flex>
-              <img src={COIN4} />
-            </Counter>
+          {!progress && (
+            <ButtonStyle
+              padding="0 15px"
+              height="30px"
+              width="100%"
+              variant="green"
+              onClick={handleCollect}
+              disabled={disabledButton}
+              spin={loadingButton}
+            >
+              <ButtonText loading={loadingButton}>{collectText}</ButtonText>
+              <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
+            </ButtonStyle>
           )}
-          <Content>
-            <ImageBlock>
-              <img src={image} />
-            </ImageBlock>
-            <TitleStyle mb="5px" fontWeight={500} letterSpacing="0.05em" fontSize="13px">
-              {title}
-            </TitleStyle>
-            <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
-              {description}
-            </DescriptionStyle>
-            {progress && countMax && (count || count === 0) && <RangeTrack progress={(+count / +countMax) * 100} />}
-            {!progress && (
-              <ButtonStyle
-                padding="0 15px"
-                height="30px"
-                width="100%"
-                variant="green"
-                onClick={handleCollect}
-                disabled={disabledButton}
-                spin={loadingButton}
-              >
-                <ButtonText loading={loadingButton}>{collectText}</ButtonText>
-                <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
-              </ButtonStyle>
-            )}
-          </Content>
         </CardFront>
         <CardBack progress={progress}>
           <Flex alignItems="center" justifyContent="center" height="100%">
-            <Text fontWeight={400} letterSpacing="0.05em" fontSize="10px">
-              {fullDescription}
-            </Text>
+            <div>
+              <Text fontWeight={400} letterSpacing="0.05em" fontSize="13px" textAlign="center" mb="5px">
+                {backTitle}
+              </Text>
+              <Text
+                fontWeight={400}
+                letterSpacing="0.05em"
+                color="grayText"
+                textAlign="center"
+                fontSize="11px"
+                lineHeight="14px"
+              >
+                {fullDescription}
+              </Text>
+            </div>
           </Flex>
         </CardBack>
       </Inner>
@@ -117,51 +118,13 @@ const Achievement = ({
 
 export default Achievement;
 
-const Counter = styled.div`
-  top: -5px;
-  right: -5px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-width: 54px;
-  height: 25px;
-  padding: 6px 3px 6px 8px;
-  background: ${({ theme }) => theme.colors.bgGray5};
-  box-shadow: ${({ theme }) => theme.colors.boxShadow11};
-  border-radius: 4px;
-  z-index: 2;
-`;
-const Content = styled.div`
-  text-align: center;
-`;
 const ImageBlock = styled.div`
-  position: relative;
-  width: fit-content;
-  height: 109px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    height: 114px;
-  }
-  &:after {
-    width: 100%;
-    height: 4px;
-    content: "";
-    display: block;
-    position: absolute;
-    background: ${({ theme }) => theme.colors.darkGradient};
-    filter: blur(4px);
-    bottom: 5px;
-    left: 0;
-    opacity: 0.5;
-  }
+  margin: 0 auto 5px;
   & img {
-    transform: scale(0.7);
+    max-width: 100%;
+    max-height: 61px;
     ${({ theme }) => theme.mediaQueries.sm} {
-      transform: none;
+      max-height: 95px;
     }
   }
 `;
@@ -184,60 +147,6 @@ const RangeTrack = styled.div<{ progress?: number }>`
     border-radius: 2px;
     background: ${({ theme }) => theme.colors.greenText2};
   }
-`;
-const ButtonStyle = styled(Button)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  padding: 0;
-  font-size: 13px;
-  border-radius: 7px;
-`;
-const ButtonText = styled(Text)<{ loading?: boolean }>`
-  position: relative;
-  display: none;
-  &:after {
-    display: block;
-    content: ${({ loading }) => (loading ? "none" : `url("${COIN4}")`)};
-    position: absolute;
-    right: -20px;
-    top: 0;
-  }
-  ${({ theme }) => theme.mediaQueries.sm} {
-    display: block;
-    font-size: 13px;
-  }
-`;
-const ButtonTextMob = styled(ButtonText)<{ loading?: boolean }>`
-  font-size: 13px;
-  display: block;
-  &:after {
-    content: ${({ loading }) => (loading ? "none" : `url("${COIN4}")`)};
-  }
-  ${({ theme }) => theme.mediaQueries.sm} {
-    display: none;
-  }
-`;
-const TitleStyle = styled(Text)`
-  font-size: 11px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 13px;
-  }
-`;
-const DescriptionStyle = styled(Text)`
-  font-size: 9px;
-  ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 11px;
-  }
-`;
-
-const Network = styled.img`
-  position: absolute;
-  left: 7px;
-  top: 7px;
-  width: 22px;
-  height: 22px;
 `;
 
 const Wrapper = styled.div<{ progress?: boolean }>`
@@ -268,7 +177,10 @@ const CardFront = styled.div<{ progress?: boolean }>`
   position: absolute;
   height: 100%;
   width: 100%;
-  padding: 0 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: ${({ progress }) => (progress ? "14px 14px 6px" : "14px 14px 16px")};
   background: ${({ theme }) => theme.colors.bgGray};
   border: 1.5px solid ${({ theme }) => theme.colors.bgGray};
   border-radius: 10px;

@@ -38,6 +38,7 @@ import LOSE from "../../public/images/lose-gift.png";
 import YAY_TOKEN_GREEN from "../../public/images/logo-green.png";
 import WINNER_MIN from "../../public/images/winnerMin.png";
 import COIN4 from "../../public/images/coin4.png";
+import COIN5 from "../../public/images/coin5.png";
 import ROKET1 from "../../public/images/rocket1.png";
 import DESU_TOKEN from "../../public/images/desu.png";
 import BSC_ICON from "../../public/images/bsc-icon.png";
@@ -56,6 +57,7 @@ import ACHIEVEMENTS from "../../public/images/AchievementsIcon.png";
 import GREEN_ELLIPSE from "../../public/images/green-ellips.png";
 import LOGO_ROUND from "../../public/images/logo-round.png";
 import EXAMPLE_AVATAR from "../../public/images/example-avatar.png";
+import USER_ICON from "../../public/images/user.png";
 
 export {
   BG_IMG,
@@ -116,4 +118,6 @@ export {
   GREEN_ELLIPSE,
   LOGO_ROUND,
   EXAMPLE_AVATAR,
+  USER_ICON,
+  COIN5,
 };

@@ -9,7 +9,14 @@ import { Pagination } from "../../../components/Pagination";
 import { IChooseModalProps } from "../types";
 import NftsTable from "./NftsTable";
 
-const ChooseAvatarModal = ({ togglePage, currentPage, length, nftsList, onDismiss }: IChooseModalProps) => {
+const ChooseAvatarModal = ({
+  togglePage,
+  currentPage,
+  length,
+  nftsList,
+  onDismiss,
+  handleImgSelect,
+}: IChooseModalProps) => {
   return (
     <Wrapper>
       <Flex alignItems="center" justifyContent="space-between">
@@ -18,7 +25,7 @@ const ChooseAvatarModal = ({ togglePage, currentPage, length, nftsList, onDismis
           <CloseIcon />
         </ButtonClose>
       </Flex>
-      <NftsTable handleSelectValue={() => null} nftsList={nftsList} />
+      <NftsTable handleSelectValue={handleImgSelect} nftsList={nftsList} />
       {length && (
         <Flex mt={20} justifyContent="flex-end">
           <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />

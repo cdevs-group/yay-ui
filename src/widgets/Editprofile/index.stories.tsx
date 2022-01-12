@@ -48,6 +48,7 @@ export const EditProfileBlock = () => {
       <Overlay open={modalOpen} />
       <ModalWrapper open={modalOpen}>
         <ChooseAvatarModal
+          handleImgSelect={(e?: string) => console.log("select")}
           nftsList={nftsList}
           togglePage={async (e: any) => setCurrentPage(+e.target.value)}
           currentPage={currentPage}

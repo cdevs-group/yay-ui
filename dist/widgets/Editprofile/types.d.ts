@@ -21,6 +21,7 @@ export interface IEditProfileProps {
 export interface IChooseModalProps {
     onDismiss?: () => void;
     togglePage?: (e: any) => Promise<void>;
+    handleImgSelect: (e?: string) => Promise<void> | void;
     currentPage: number;
     length?: number;
     nftsList: {

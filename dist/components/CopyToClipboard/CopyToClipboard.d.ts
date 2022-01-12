@@ -7,6 +7,8 @@ interface Props extends SpaceProps {
     left?: string;
     propsIcon?: any;
     propsChildren?: SpaceProps;
+    isTooltip?: boolean;
+    setIsTooltip?: (val: boolean) => void;
 }
 declare const CopyToClipboard: React.FC<Props>;
 export default CopyToClipboard;
