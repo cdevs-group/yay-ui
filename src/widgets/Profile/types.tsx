@@ -25,4 +25,6 @@ export interface ProfileCardProps {
   sponsor?: string;
   verified?: boolean;
   refferal?: boolean;
+  linkEdit: string;
+  linkKYC: string;
 }

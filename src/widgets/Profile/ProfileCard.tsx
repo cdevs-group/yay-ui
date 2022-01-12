@@ -25,8 +25,21 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   verified,
   refferal,
   linkRefferalList,
+  linkEdit,
+  linkKYC,
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
+
+  const VerifiedBlock = () => (
+    <Flex justifyContent="flex-start" alignItems="center" width="100%" mb="13px">
+      <User verified={verified}>
+        <img src={USER_ICON} />
+      </User>
+      <Text color={verified ? "green" : "textGray"} fontSize="13px" textAlign="left" width="100%">
+        {verified ? texts.kycVerified : texts.kycNotVerified}
+      </Text>
+    </Flex>
+  );
 
   return (
     <Card>
@@ -97,22 +110,20 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         </Text>
         <TextWithTooltip textTooltip={texts.tooltip} />
       </Flex>
-      <Flex justifyContent="flex-start" alignItems="center" width="100%" mb="13px">
-        <User verified={verified}>
-          <img src={USER_ICON} />
-        </User>
-        <Text color={verified ? "green" : "textGray"} fontSize="13px" textAlign="left" width="100%">
-          {verified ? texts.kycVerified : texts.kycNotVerified}
-        </Text>
-      </Flex>
+      {verified && <VerifiedBlock />}
+      {!verified && (
+        <Link to={linkKYC} style={{ width: "100%" }}>
+          <VerifiedBlock />
+        </Link>
+      )}
       <AwardsLine>
         {awards?.map((el) => (
           <img alt="" src={el} key={el} />
         ))}
       </AwardsLine>
-      {/* <Button width="100%" variant="option">
+      <Button width="100%" variant="option" as={Link} to={linkEdit}>
         {texts.edit}
-      </Button> */}
+      </Button>
     </Card>
   );
 };

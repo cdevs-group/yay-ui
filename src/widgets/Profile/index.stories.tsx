@@ -45,6 +45,8 @@ export const ProfileCardWidget: React.FC = () => {
           verified
           refferal
           linkRefferalList="/"
+          linkEdit="/"
+          linkKYC="/"
         />
       </div>
       <div style={{ marginTop: 50, maxWidth: 373 }}>
@@ -55,7 +57,8 @@ export const ProfileCardWidget: React.FC = () => {
           account="6x3438e324938438e32438e329828x46R65"
           awards={[coins, win, skull, rocket]}
           sponsor="0x3asadsasasd2112312112321312312321312"
-          verified
+          linkEdit="/"
+          linkKYC="/"
         />
       </div>
     </BrowserRouter>
