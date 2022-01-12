@@ -203,6 +203,9 @@ export const ReferralListBlock = () => {
   return (
     <div>
       <ReferralList
+        togglePage={async (e: any) => console.log("click")}
+        currentPage={2}
+        length={20}
         earnValue="436 000 YAY"
         miniValue="436 000 YAY"
         predictionValue="436 000 YAY"
