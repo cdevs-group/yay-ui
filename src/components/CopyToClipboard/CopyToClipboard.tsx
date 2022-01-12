@@ -12,6 +12,8 @@ interface Props extends SpaceProps {
   left?: string;
   propsIcon?: any;
   propsChildren?: SpaceProps;
+  isTooltip?: boolean;
+  setIsTooltip?: (val: boolean) => void;
 }
 
 const StyleButton = styled(Text).attrs({ role: "button" })`
@@ -38,6 +40,7 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
 `;
 
 const StyleBox = styled(Box)`
+  line-height: 1;
   ${space}
 `;
 
@@ -48,6 +51,8 @@ const CopyToClipboard: React.FC<Props> = ({
   icon,
   propsIcon,
   propsChildren,
+  isTooltip,
+  setIsTooltip,
   ...props
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
@@ -58,9 +63,13 @@ const CopyToClipboard: React.FC<Props> = ({
       onClick={() => {
         if (navigator.clipboard) {
           navigator.clipboard.writeText(toCopy);
-          setIsTooltipDisplayed(true);
+          if (setIsTooltip) {
+            setIsTooltip(true);
+          } else setIsTooltipDisplayed(true);
           setTimeout(() => {
-            setIsTooltipDisplayed(false);
+            if (setIsTooltip) {
+              setIsTooltip(false);
+            } else setIsTooltipDisplayed(false);
           }, 1000);
         }
       }}
@@ -68,7 +77,7 @@ const CopyToClipboard: React.FC<Props> = ({
     >
       <StyleBox {...propsChildren}>{children}</StyleBox>
       {icon || <CopyIcon2 {...propsIcon} />}
-      <Tooltip isTooltipDisplayed={isTooltipDisplayed}>{textCopied}</Tooltip>
+      <Tooltip isTooltipDisplayed={isTooltip || isTooltipDisplayed}>{textCopied}</Tooltip>
     </StyleButton>
   );
 };

@@ -48,6 +48,7 @@ export { default as InstagramIcon } from "./Icons/InstagramIcon";
 export { default as TwitterIcon } from "./Icons/TwitterIcon";
 export { default as ArrowDownRightIcon } from "./Icons/ArrowDownRightIcon";
 export { default as CopyIcon2 } from "./Icons/CopyIcon2";
+export { default as CopyIcon3 } from "./Icons/CopyIcon3";
 export { default as AvalancheIcon } from "./Icons/AvalancheIcon";
 export { default as ReverseArrowsIcon } from "./Icons/ReverseArrowsIcon";
 export { default as ClipIcon } from "./Icons/ClipIcon";

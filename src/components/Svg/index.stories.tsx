@@ -24,6 +24,7 @@ import {
   BtnPanel,
   CopyIcon,
   CopyIcon2,
+  CopyIcon3,
   HelpIcon,
   HelpIcon2,
   OpenNewIcon,
@@ -90,6 +91,7 @@ export default {
     BtnPanel,
     CopyIcon,
     CopyIcon2,
+    CopyIcon3,
     HelpIcon,
     HelpIcon2,
     OpenNewIcon,
@@ -210,6 +212,9 @@ export const Default: React.FC = () => {
         </div>
         <div style={{ marginRight: 20 }}>
           <CopyIcon2 />
+        </div>
+        <div style={{ marginRight: 20 }}>
+          <CopyIcon3 />
         </div>
         <div style={{ marginRight: 20 }}>
           <HelpIcon />
