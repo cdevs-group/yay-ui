@@ -60,3 +60,33 @@ export interface IRegisterProfileProps {
   };
   buttonProps: ButtonProps;
 }
+
+export interface ITextsReferralList {
+  buttonBack: string;
+  topRef: string;
+  topMini: string;
+  topPrediction: string;
+  topNft: string;
+  referralTitle: string;
+  itemRef: string;
+  itemType: string;
+  itemEarn: string;
+  itemTime: string;
+}
+
+export interface IReferralListItem {
+  ref: string;
+  type: string;
+  earn: number | string;
+  time: number | string;
+}
+
+export interface IReferralListProps {
+  handleBack: () => void;
+  data: IReferralListItem[];
+  texts: ITextsReferralList;
+  earnValue: string;
+  miniValue: string;
+  predictionValue: string;
+  nftValue: string;
+}

@@ -9,6 +9,7 @@ import PropertieItem from "./components/ProretieItem";
 import ProfileNftCard from "./components/ProfileNftCard";
 import ImportCollection from "./components/ImportCollection";
 import { RegisterProfile } from "./index";
+import ReferralList from "./components/ReferralList";
 
 export default {
   title: "Widgets/Marketplace",
@@ -156,5 +157,60 @@ export const RegisterProfileBlock = () => {
       }}
       buttonProps={{ spin: false, disabled: false }}
     />
+  );
+};
+
+export const ReferralListBlock = () => {
+  const data = [
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      type: "Mini Games",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      type: "Mini Games",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      type: "Mini Games",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      type: "Mini Games",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+  ];
+
+  const texts = {
+    buttonBack: "Back to Referral page",
+    topRef: "Ref Earned",
+    topMini: "Mini game earned",
+    topPrediction: "Prediction earned",
+    topNft: "NFT marketplace earned",
+    referralTitle: "Referral list",
+    itemRef: "Referral TX",
+    itemType: "Type",
+    itemEarn: "All earned",
+    itemTime: "Time",
+  };
+  return (
+    <div>
+      <ReferralList
+        earnValue="436 000 YAY"
+        miniValue="436 000 YAY"
+        predictionValue="436 000 YAY"
+        nftValue="436 000 YAY"
+        texts={texts}
+        data={data}
+        handleBack={() => null}
+      />
+    </div>
   );
 };
