@@ -9699,8 +9699,12 @@ var TextWithTooltip$1 = function (_a) {
 };
 
 var ProfileCard = function (_a) {
-    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList;
+    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC;
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
+    var VerifiedBlock = function () { return (React__default.createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
+        React__default.createElement(User, { verified: verified },
+            React__default.createElement("img", { src: USER_ICON })),
+        React__default.createElement(Text, { color: verified ? "green" : "textGray", fontSize: "13px", textAlign: "left", width: "100%" }, verified ? texts.kycVerified : texts.kycNotVerified))); };
     return (React__default.createElement(Card$f, null,
         React__default.createElement(Token$1, { src: token || YAY_TOKEN_CIRCLE, alt: "token1" }),
         refferal && linkRefferalList && (React__default.createElement(RefferalBtn, { as: Link$4, to: linkRefferalList }, texts.refferalListBtn)),
@@ -9728,11 +9732,11 @@ var ProfileCard = function (_a) {
         React__default.createElement(Flex, { mb: "10px", justifyContent: "flex-start", width: "100%" },
             React__default.createElement(Text, { fontSize: "16px", textAlign: "left" }, texts.kyc),
             React__default.createElement(TextWithTooltip$1, { textTooltip: texts.tooltip })),
-        React__default.createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
-            React__default.createElement(User, { verified: verified },
-                React__default.createElement("img", { src: USER_ICON })),
-            React__default.createElement(Text, { color: verified ? "green" : "textGray", fontSize: "13px", textAlign: "left", width: "100%" }, verified ? texts.kycVerified : texts.kycNotVerified)),
-        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); }))));
+        verified && React__default.createElement(VerifiedBlock, null),
+        !verified && (React__default.createElement(Link$4, { to: linkKYC, style: { width: "100%" } },
+            React__default.createElement(VerifiedBlock, null))),
+        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); })),
+        React__default.createElement(Button$9, { width: "100%", variant: "option", as: Link$4, to: linkEdit }, texts.edit)));
 };
 var Card$f = styled.div(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
