@@ -5,6 +5,7 @@ import { Button } from "../../components/Button";
 import { LOGO_ROUND } from "../../constants/images";
 import Input from "./Components/Input";
 import { IEditProfileProps } from "./types";
+import { ButtonProps } from "../../components/Button/types";
 
 const EditProfile = ({
   logo,
@@ -14,6 +15,8 @@ const EditProfile = ({
   inputHandle,
   avatarHandle,
   updateHandle,
+  avatarButtonProps,
+  updateButtonProps,
 }: IEditProfileProps) => {
   return (
     <Wrapper>
@@ -26,9 +29,17 @@ const EditProfile = ({
         <AvatarContent>
           <BlockTitle>{texts.avatarTitle}</BlockTitle>
           <BlockDescription>{texts.avatarDescription}</BlockDescription>
-          <AvatarButton onClick={avatarHandle} mt={24} width="100%" variant="green">
+          <Button
+            fontSize="15px"
+            fontWeight="400"
+            onClick={avatarHandle}
+            mt={24}
+            width="100%"
+            variant="green"
+            {...avatarButtonProps}
+          >
             {texts.avatarButton}
-          </AvatarButton>
+          </Button>
         </AvatarContent>
       </AvatarBlock>
       <NameBlock>
@@ -42,9 +53,17 @@ const EditProfile = ({
           placeholder={texts.inputPlaceholder}
         />
       </NameBlock>
-      <UpdateButton onClick={updateHandle} width="100%" variant="green">
+      <Button
+        mt={30}
+        fontSize="15px"
+        fontWeight="400"
+        onClick={updateHandle}
+        width="100%"
+        variant="green"
+        {...updateButtonProps}
+      >
         {texts.uploadButton}
-      </UpdateButton>
+      </Button>
     </Wrapper>
   );
 };
@@ -127,7 +146,7 @@ const BlockDescription = styled(Text)`
 const BlockDescriptionName = styled(BlockDescription)`
   margin: 15px 0;
 `;
-const AvatarButton = styled(Button)`
+const AvatarButton = styled(Button)<ButtonProps>`
   margin-top: 24px;
   font-size: 15px;
   line-height: 19px;
@@ -141,7 +160,4 @@ const NameBlock = styled(AvatarBlock)`
   ${({ theme }) => theme.mediaQueries.md} {
     padding: 25px 34px;
   }
-`;
-const UpdateButton = styled(AvatarButton)`
-  margin-top: 30px;
 `;

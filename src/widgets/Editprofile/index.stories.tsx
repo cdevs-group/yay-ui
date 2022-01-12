@@ -44,6 +44,8 @@ export const EditProfileBlock = () => {
         updateHandle={() => console.log("click")}
         inputValue=""
         inputName="name"
+        avatarButtonProps={{ spin: false, disabled: true }}
+        updateButtonProps={{ spin: true, disabled: false }}
       />
       <Overlay open={modalOpen} />
       <ModalWrapper open={modalOpen}>

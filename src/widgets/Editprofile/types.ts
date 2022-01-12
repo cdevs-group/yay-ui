@@ -1,3 +1,5 @@
+import { ButtonProps } from "../../components/Button/types";
+
 interface IEditProfileText {
   title: string;
   description: string;
@@ -18,6 +20,8 @@ export interface IEditProfileProps {
   updateHandle: () => void | Promise<void>;
   inputValue: string;
   inputName: string;
+  avatarButtonProps?: ButtonProps;
+  updateButtonProps?: ButtonProps;
 }
 
 export interface IChooseModalProps {
