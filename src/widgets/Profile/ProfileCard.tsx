@@ -121,9 +121,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           <img alt="" src={el} key={el} />
         ))}
       </AwardsLine>
-      <Button width="100%" variant="option" as={Link} to={linkEdit}>
+      {/* <Button width="100%" variant="option" as={Link} to={linkEdit} mt={20}>
         {texts.edit}
-      </Button>
+      </Button> */}
     </Card>
   );
 };
@@ -190,12 +190,14 @@ const AccountLine = styled(Flex)`
   margin-bottom: 19px;
 `;
 
-const AwardsLine = styled(Flex)`
-  justify-content: space-around;
+const AwardsLine = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
   align-items: center;
   width: 100%;
   max-width: 250px;
-  margin: 0 auto 35px;
+  margin: 0 auto;
 `;
 
 const TextLinkRefferal = styled(Text)`
