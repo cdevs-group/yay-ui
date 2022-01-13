@@ -9699,7 +9699,7 @@ var TextWithTooltip$1 = function (_a) {
 };
 
 var ProfileCard = function (_a) {
-    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC;
+    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList; _a.linkEdit; var linkKYC = _a.linkKYC;
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     var VerifiedBlock = function () { return (React__default.createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
         React__default.createElement(User, { verified: verified },
@@ -9735,8 +9735,7 @@ var ProfileCard = function (_a) {
         verified && React__default.createElement(VerifiedBlock, null),
         !verified && (React__default.createElement(Link$4, { to: linkKYC, style: { width: "100%" } },
             React__default.createElement(VerifiedBlock, null))),
-        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); })),
-        React__default.createElement(Button$9, { width: "100%", variant: "option", as: Link$4, to: linkEdit }, texts.edit)));
+        React__default.createElement(AwardsLine, null, awards === null || awards === void 0 ? void 0 : awards.map(function (el) { return (React__default.createElement("img", { alt: "", src: el, key: el })); }))));
 };
 var Card$f = styled.div(templateObject_1$1q || (templateObject_1$1q = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  width: 100%;\n  padding: 0 14px 16px 14px;\n  background: ", ";\n  border-radius: 10px;\n  ", " {\n    padding: 0 27px 29px 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9762,7 +9761,7 @@ var LinkAccount = styled.a(templateObject_5$s || (templateObject_5$s = __makeTem
     return theme.colors.whiteRgba;
 });
 var AccountLine$1 = styled(Flex)(templateObject_6$p || (templateObject_6$p = __makeTemplateObject(["\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 19px;\n"], ["\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 19px;\n"])));
-var AwardsLine = styled(Flex)(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto 35px;\n"], ["\n  justify-content: space-around;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto 35px;\n"])));
+var AwardsLine = styled.div(templateObject_7$i || (templateObject_7$i = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 16px;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 16px;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto;\n"])));
 var TextLinkRefferal = styled(Text)(templateObject_8$e || (templateObject_8$e = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"])));
 var TextSponsor = styled(Text)(templateObject_9$b || (templateObject_9$b = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n"])));
 var User = styled.div(templateObject_10$9 || (templateObject_10$9 = __makeTemplateObject(["\n  padding: 3px;\n  margin-right: 11px;\n  background: ", ";\n  border-radius: 7px;\n"], ["\n  padding: 3px;\n  margin-right: 11px;\n  background: ", ";\n  border-radius: 7px;\n"])), function (_a) {
