@@ -5254,6 +5254,16 @@ var Item$2 = styled__default["default"](Flex)(templateObject_5$16 || (templateOb
 var DropdownList = styled__default["default"](Flex)(templateObject_6$V || (templateObject_6$V = __makeTemplateObject(["\n  flex-direction: column;\n  overflow-y: auto;\n  height: calc(100% - 80px);\n"], ["\n  flex-direction: column;\n  overflow-y: auto;\n  height: calc(100% - 80px);\n"])));
 var templateObject_1$2P, templateObject_2$2h, templateObject_3$1V, templateObject_4$1A, templateObject_5$16, templateObject_6$V;
 
+var TextWithTooltip$1 = function (_a) {
+    var text = _a.text, textTooltip = _a.textTooltip;
+    var _b = useTooltip(textTooltip, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef, tooltip = _b.tooltip;
+    return (React__default["default"].createElement(Flex, { alignItems: "center" },
+        React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "100%", fontWeight: 400, color: "textGray", mr: "5px" }, text),
+        React__default["default"].createElement(Flex, { alignItems: "center", ref: targetRef },
+            React__default["default"].createElement(Icon$R, null)),
+        tooltipVisible && tooltip));
+};
+
 /**
  * Can't use the media queries from "base.mediaQueries" because of how matchMedia works
  * In order for the listener to trigger we need have have the media query with a range, e.g.
@@ -9720,16 +9730,6 @@ var templateObject_1$1r, templateObject_2$17;
 
 var YAY_TOKEN_CIRCLE = "4afcc97f0abd5ec8.png";
 
-var TextWithTooltip$1 = function (_a) {
-    var text = _a.text, textTooltip = _a.textTooltip;
-    var _b = useTooltip(textTooltip, { placement: "top-start", trigger: "hover" }), tooltipVisible = _b.tooltipVisible, targetRef = _b.targetRef, tooltip = _b.tooltip;
-    return (React__default["default"].createElement(Flex, { alignItems: "center" },
-        React__default["default"].createElement(Text, { fontSize: "13px", lineHeight: "100%", fontWeight: 400, color: "textGray", mr: "5px" }, text),
-        React__default["default"].createElement(Flex, { alignItems: "center", ref: targetRef },
-            React__default["default"].createElement(Icon$R, null)),
-        tooltipVisible && tooltip));
-};
-
 var ProfileCard = function (_a) {
     var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList; _a.linkEdit; var linkKYC = _a.linkKYC;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
@@ -13955,6 +13955,7 @@ exports.Tag = Tag;
 exports.TelegramIcon = Icon$M;
 exports.Text = Text;
 exports.TextField = Textfield;
+exports.TextWithTooltip = TextWithTooltip$1;
 exports.Timer = Timer$3;
 exports.TimerNotSolid = TimerNotSolid;
 exports.TimerNotSolidWithoutBg = TimerNotSolidWithoutBg;

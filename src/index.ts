@@ -36,6 +36,7 @@ export * from "./components//CurrencyInputPanel";
 export * from "./components/QuestionHelper";
 export * from "./components/StyledCard";
 export * from "./components/Select";
+export * from "./components/TextWithTooltip";
 
 // Hooks
 export * from "./hooks";
