@@ -148,6 +148,8 @@ export const RegisterProfileBlock = () => {
       inputName2=""
       inputError1=""
       inputError2=""
+      loginInputDisabled
+      sponsorInputDisabled={false}
       texts={{
         inputTitle1: "Your login",
         inputTitle2: "Your sponsor",

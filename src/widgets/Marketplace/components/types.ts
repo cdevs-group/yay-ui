@@ -51,6 +51,8 @@ export interface IRegisterProfileProps {
   inputName2: string;
   inputError1: string;
   inputError2: string;
+  loginInputDisabled?: boolean;
+  sponsorInputDisabled?: boolean;
   texts: {
     inputTitle1: string;
     inputTitle2: string;

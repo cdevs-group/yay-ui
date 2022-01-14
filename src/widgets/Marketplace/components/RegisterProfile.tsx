@@ -19,6 +19,8 @@ const RegisterProfile = ({
   inputValue2,
   onChange,
   handleSubmit,
+  loginInputDisabled,
+  sponsorInputDisabled,
 }: IRegisterProfileProps) => {
   return (
     <Wrapper>
@@ -32,6 +34,7 @@ const RegisterProfile = ({
           title={texts.inputTitle1}
           placeholder={texts.inputPlaceholder1}
           inputError={inputError1}
+          disabled={loginInputDisabled}
         />
         <Input
           margin="25px 0 0"
@@ -41,6 +44,7 @@ const RegisterProfile = ({
           title={texts.inputTitle2}
           placeholder={texts.inputPlaceholder2}
           inputError={inputError2}
+          disabled={sponsorInputDisabled}
         />
         <Button width="100%" variant="green" onClick={onClick} margin="30px 0 0 0" type="submit" {...buttonProps}>
           {texts.buttonText}

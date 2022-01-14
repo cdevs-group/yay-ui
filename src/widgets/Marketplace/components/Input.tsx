@@ -11,6 +11,7 @@ const Input = ({
   value,
   onChange,
   inputError,
+  disabled,
 }: {
   onChange: (e: any) => void;
   name: string;
@@ -19,11 +20,12 @@ const Input = ({
   margin?: string;
   placeholder: string;
   inputError?: string;
+  disabled?: boolean;
 }) => {
   return (
     <Wrapper margin={margin}>
       <TitleStyle>{title}</TitleStyle>
-      <InputBlock name={name} value={value} onChange={onChange} placeholder={placeholder} />
+      <InputBlock disabled={disabled} name={name} value={value} onChange={onChange} placeholder={placeholder} />
       {inputError && (
         <TextStyle color={baseColors.darkPink} fontSize="13px">
           {inputError}
@@ -35,7 +37,7 @@ const Input = ({
 
 export default Input;
 
-const InputBlock = styled.input`
+const InputBlock = styled.input<{ disabled?: boolean }>`
   outline: none;
   box-shadow: none;
   border: none;
@@ -50,6 +52,7 @@ const InputBlock = styled.input`
   text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
   color: ${({ theme }) => theme.colors.text};
   cursor: auto;
+  opacity: ${({ disabled }) => (disabled ? ".6" : 1)};
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 15px;
   }
