@@ -12,12 +12,12 @@ export declare const ButtonStyle: import("styled-components").StyledComponent<{
 export declare const Network: import("styled-components").StyledComponent<"img", import("styled-components").DefaultTheme, {}, never>;
 export declare const Reward: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;
 export declare const ButtonText: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps & {
-    loading?: boolean | undefined;
+    loadingButton?: boolean | undefined;
 }, never>;
 export declare const ButtonTextMob: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps & {
-    loading?: boolean | undefined;
+    loadingButton?: boolean | undefined;
 } & {
-    loading?: boolean | undefined;
+    loadingButton?: boolean | undefined;
 }, never>;
 export declare const TitleStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps, never>;
 export declare const DescriptionStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps, never>;

@@ -137,7 +137,7 @@ var rotate$1 = keyframes(templateObject_1$48 || (templateObject_1$48 = __makeTem
 var spinStyle = css(templateObject_2$3d || (templateObject_2$3d = __makeTemplateObject(["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"], ["\n  & path {\n    animation: ", " 1.5s ease-in-out infinite;\n    transform-origin: center center;\n  }\n"])), rotate$1);
 var Svg = styled.svg(templateObject_3$2F || (templateObject_3$2F = __makeTemplateObject(["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"], ["\n  fill: ", ";\n  flex-shrink: 0;\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, color = _a.color;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 }, function (_a) {
     var spin = _a.spin;
     return spin && spinStyle;
@@ -1296,7 +1296,7 @@ var getDisabledStyles = function (_a) {
         return "\n      &:disabled,\n      &.yay-button--disabled {\n        cursor: not-allowed;\n      }\n    ";
     }
     var opacity = variant === variants$4.LOAD_COLOR ? 1 : 0.2;
-    return "\n    &:disabled,\n    &.yay-button--disabled {\n      box-shadow: none;\n      opacity: ".concat(opacity, ";\n      color: ").concat(theme.colors.text, ";\n      cursor: not-allowed;\n    }\n  ");
+    return "\n    &:disabled,\n    &.yay-button--disabled {\n      box-shadow: none;\n      opacity: " + opacity + ";\n      color: " + theme.colors.text + ";\n      cursor: not-allowed;\n    }\n  ";
 };
 var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
@@ -1499,7 +1499,7 @@ var templateObject_1$45;
 
 var getColor$3 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$3(_a) {
     var expiryTimestamp = _a.expiryTimestamp, color = _a.color, disabled = _a.disabled;
@@ -1513,7 +1513,7 @@ function MyTimer$3(_a) {
     };
     var timeArray = [hours, minutes, seconds];
     return (React__default.createElement(Wrap$z, null,
-        React__default.createElement(Block$f, { color: color, disabled: disabled }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-".concat(i) },
+        React__default.createElement(Block$f, { color: color, disabled: disabled }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
             handleDigit(item).leftDigit,
             handleDigit(item).rightDigit,
             i === 2 ? null : React__default.createElement(Dots$1, null, ":"))); }))));
@@ -1845,7 +1845,7 @@ var style$1 = (_a$6 = {},
     _a$6);
 var getColor$2 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
@@ -1862,7 +1862,7 @@ var Text = styled.div(templateObject_1$3$ || (templateObject_1$3$ = __makeTempla
     return theme.colors.text;
 }, getColor$2, getFontSize, function (_a) {
     var textTransform = _a.textTransform;
-    return textTransform && "text-transform: ".concat(textTransform, ";");
+    return textTransform && "text-transform: " + textTransform + ";";
 }, function (_a) {
     var bold = _a.bold;
     return (bold ? 700 : 500) || 500;
@@ -2022,7 +2022,7 @@ var BalanceInput = function (_a) {
     return (React__default.createElement(InputWrap$4, __assign({ disabled: disabled }, props),
         React__default.createElement(LeftBlock, null,
             React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
-            React__default.createElement(Input$c, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, disabled: disabled }, inputProps))),
+            React__default.createElement(Input$c, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, disabled: disabled }, inputProps))),
         React__default.createElement(RightBlock, null,
             handleButtonToMax ? (React__default.createElement(ButtonToMax, { as: "button", onClick: handleButtonToMax }, "MAX")) : null,
             React__default.createElement(InputIcon, null,
@@ -2098,7 +2098,7 @@ var TabsCard = function (_a) {
             var handleClick = function () {
                 handlePercentChange(percentShortcut);
             };
-            return (React__default.createElement(Tab$b, { key: percentShortcut, onClick: handleClick, disabled: disabledTab }, "".concat(percentShortcut, "%")));
+            return (React__default.createElement(Tab$b, { key: percentShortcut, onClick: handleClick, disabled: disabledTab }, percentShortcut + "%"));
         }),
         React__default.createElement(Tab$b, { onClick: function () { return handlePercentChange(100); }, disabled: disabledTab }, "Max")));
 };
@@ -2182,7 +2182,7 @@ var templateObject_1$3R;
 
 var getColor$1 = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$2(_a) {
     var expiryTimestamp = _a.expiryTimestamp, color = _a.color, avax = _a.avax;
@@ -2196,7 +2196,7 @@ function MyTimer$2(_a) {
     };
     var timeArray = [hours, minutes, seconds];
     return (React__default.createElement(Wrap$r, null,
-        React__default.createElement(Block$e, { avax: avax, color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-".concat(i) },
+        React__default.createElement(Block$e, { avax: avax, color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
             React__default.createElement(Item$4, { avax: avax },
                 handleDigit(item).leftDigit,
                 handleDigit(item).rightDigit,
@@ -2207,7 +2207,7 @@ var LoadIcons = [React__default.createElement(Icon$12, { spin: true, fill: "none
 var LoadingTimer$1 = function (_a) {
     var avax = _a.avax;
     return (React__default.createElement(Wrap$r, null,
-        React__default.createElement(Block$e, { avax: avax }, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-".concat(i) },
+        React__default.createElement(Block$e, { avax: avax }, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
             React__default.createElement(Item$4, { avax: avax }, item),
             i === 2 ? null : React__default.createElement(Dots, null, ":"))); }))));
 };
@@ -2247,7 +2247,7 @@ var templateObject_1$3Q, templateObject_2$30, templateObject_3$2u, templateObjec
 
 var getColor = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 function MyTimer$1(_a) {
     // const days = Math.floor(expiryTimestamp / 86400);
@@ -2267,7 +2267,7 @@ function MyTimer$1(_a) {
     };
     var timeArray = [days, hours, minutes, seconds];
     var timeTextArray = [texts.days, texts.hours, texts.minutes, texts.seconds];
-    return (React__default.createElement(Wrap$q, { color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-".concat(i) },
+    return (React__default.createElement(Wrap$q, { color: color }, timeArray.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
         handleDigit(item).leftDigit,
         handleDigit(item).rightDigit,
         timeTextArray[i],
@@ -2314,13 +2314,13 @@ var LoadingTimer = function (_a) {
         : [React__default.createElement(Icon$12, { spin: true, fill: "none" }), React__default.createElement(Icon$12, { spin: true, fill: "none" }), React__default.createElement(Icon$12, { spin: true, fill: "none" })];
     var pointsAfter = hoursHide ? 1 : 2;
     return (React__default.createElement(Wrapper$W, { margin: margin, widthWrapper: widthWrapper },
-        React__default.createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, hoursHide: hoursHide }, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-".concat(i) },
+        React__default.createElement(BlockWithoutBg, { fontSize: fontSize, borderRadius: borderRadius, background: background, width: width, height: height, hoursHide: hoursHide }, LoadIcons.map(function (item, i) { return (React__default.createElement(React__default.Fragment, { key: "item-" + i },
             React__default.createElement(ItemWithoutBg, null, item),
             i === pointsAfter ? null : React__default.createElement(DotsWithoutBg, { marginPoint: marginPoint }, ":"))); }))));
 };
 var TimerNotSolidWithoutBg = function (_a) {
     var time = _a.time, color = _a.color, isLoad = _a.isLoad, height = _a.height, borderRadius = _a.borderRadius, width = _a.width, background = _a.background, marginPoint = _a.marginPoint, margin = _a.margin, widthWrapper = _a.widthWrapper, fontSize = _a.fontSize, hoursHide = _a.hoursHide, withTime = _a.withTime;
-    return (React__default.createElement("div", { style: { width: "".concat(widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "#fff", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default.createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
+    return (React__default.createElement("div", { style: { width: "" + (widthWrapper ? widthWrapper : "auto") } }, (time || time === 0) && !isLoad ? (React__default.createElement(MyTimer, { marginPoint: marginPoint, borderRadius: borderRadius, width: width, background: background, height: height, expiryTimestamp: time, color: color || "#fff", margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide, withTime: withTime })) : (React__default.createElement(LoadingTimer, { borderRadius: borderRadius, width: width, background: background, height: height, marginPoint: marginPoint, margin: margin, widthWrapper: widthWrapper, fontSize: fontSize, hoursHide: hoursHide }))));
 };
 var Wrapper$W = styled(Wrap$r)(templateObject_1$3O || (templateObject_1$3O = __makeTemplateObject(["\n  margin: ", ";\n  width: ", ";\n"], ["\n  margin: ", ";\n  width: ", ";\n"])), function (_a) {
     var margin = _a.margin;
@@ -2527,7 +2527,7 @@ var BackgroundImage = function (_a) {
             entries.forEach(function (entry) {
                 var isIntersecting = entry.isIntersecting;
                 if (isIntersecting) {
-                    img.style.backgroundImage = "url(\"".concat(src, "\")");
+                    img.style.backgroundImage = "url(\"" + src + "\")";
                     observer.disconnect();
                 }
             });
@@ -2609,7 +2609,7 @@ var CardWrap$1 = styled.div(templateObject_1$3H || (templateObject_1$3H = __make
     return (small ? "118px !important" : "43vw");
 }, function (_a) {
     var backgroundImage = _a.backgroundImage;
-    return (backgroundImage ? "url(".concat(backgroundImage, ")") : setColor);
+    return (backgroundImage ? "url(" + backgroundImage + ")" : setColor);
 }, function (props) { return (props.closed ? 0.3 : 1); }, function (_a) {
     var closed = _a.closed;
     return (closed ? "default" : "pointer");
@@ -2789,7 +2789,7 @@ var templateObject_1$3D, templateObject_2$2T, templateObject_3$2n, templateObjec
 
 var BaseLayoutBlock = styled.div(templateObject_1$3C || (templateObject_1$3C = __makeTemplateObject(["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"], ["\n  width: 100%;\n  min-height: 100vh;\n  padding-top: 59px;\n  background: ", ", ", ";\n  ", " {\n    padding-top: 80px;\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat center top / cover");
+    return "url(" + src + ") no-repeat center top / cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.background;
@@ -2842,7 +2842,7 @@ var RowBetween = styled(Row$7)(templateObject_2$2R || (templateObject_2$2R = __m
 var RowFlat = styled.div(templateObject_3$2l || (templateObject_3$2l = __makeTemplateObject(["\n  display: flex;\n  align-items: flex-end;\n"], ["\n  display: flex;\n  align-items: flex-end;\n"])));
 var AutoRow = styled(Row$7)(templateObject_4$1X || (templateObject_4$1X = __makeTemplateObject(["\n  flex-wrap: wrap;\n  margin: ", ";\n  justify-content: ", ";\n\n  & > * {\n    margin: ", " !important;\n  }\n"], ["\n  flex-wrap: wrap;\n  margin: ", ";\n  justify-content: ", ";\n\n  & > * {\n    margin: ", " !important;\n  }\n"])), function (_a) {
     var gap = _a.gap;
-    return gap && "-".concat(gap);
+    return gap && "-" + gap;
 }, function (_a) {
     var justify = _a.justify;
     return justify && justify;
@@ -2852,7 +2852,7 @@ var AutoRow = styled(Row$7)(templateObject_4$1X || (templateObject_4$1X = __make
 });
 var RowFixed = styled(Row$7)(templateObject_5$1k || (templateObject_5$1k = __makeTemplateObject(["\n  width: fit-content;\n  margin: ", ";\n"], ["\n  width: fit-content;\n  margin: ", ";\n"])), function (_a) {
     var gap = _a.gap;
-    return gap && "-".concat(gap);
+    return gap && "-" + gap;
 });
 var templateObject_1$3A, templateObject_2$2R, templateObject_3$2l, templateObject_4$1X, templateObject_5$1k;
 
@@ -3621,34 +3621,34 @@ var templateObject_1$3h, templateObject_2$2z;
 var bunnyFall = keyframes(templateObject_1$3g || (templateObject_1$3g = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"], ["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"])));
 var Bunny = styled.div(templateObject_2$2y || (templateObject_2$2y = __makeTemplateObject(["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"], ["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"])), function (_a) {
     var position = _a.position;
-    return "".concat(position, "vw");
+    return position + "vw";
 }, bunnyFall, function (_a) {
     var duration = _a.duration;
-    return "".concat(duration, "s");
+    return duration + "s";
 }, function (_a) {
     var iterations = _a.iterations;
     return (Number.isFinite(iterations) ? String(iterations) : "infinite");
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.3, "s");
+    return (duration / 10) * 1.3 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.5, "s");
+    return (duration / 10) * 1.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 1.7, "s");
+    return (duration / 10) * 1.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 2.7, "s");
+    return (duration / 10) * 2.7 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 3.5, "s");
+    return (duration / 10) * 3.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 5.5, "s");
+    return (duration / 10) * 5.5 + "s";
 }, function (_a) {
     var duration = _a.duration;
-    return "".concat((duration / 10) * 8, "s");
+    return (duration / 10) * 8 + "s";
 });
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b; _a.size; var _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
@@ -3721,7 +3721,7 @@ var TabsWrap$6 = styled.div(templateObject_1$3e || (templateObject_1$3e = __make
     return width || "auto";
 }, function (_a) {
     var length = _a.length, variant = _a.variant;
-    return "repeat(".concat(length || 2, ", ").concat(variant === "small" ? "auto" : "1fr", ")");
+    return "repeat(" + (length || 2) + ", " + (variant === "small" ? "auto" : "1fr") + ")";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg;
@@ -3783,10 +3783,10 @@ var LineTab$2 = styled.span(templateObject_5$1a || (templateObject_5$1a = __make
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right;
-    return "".concat(right, "px");
+    return right + "px";
 });
 var templateObject_1$3d, templateObject_2$2v, templateObject_3$24, templateObject_4$1J, templateObject_5$1a;
 
@@ -3814,10 +3814,10 @@ var LineTab$1 = styled.span(templateObject_4$1I || (templateObject_4$1I = __make
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right, tabActive = _a.tabActive;
-    return "".concat(right + 25 * tabActive, "px");
+    return right + 25 * tabActive + "px";
 });
 var templateObject_1$3c, templateObject_2$2u, templateObject_3$23, templateObject_4$1I;
 
@@ -4021,7 +4021,7 @@ var RangeTrack$5 = styled.div(templateObject_4$1H || (templateObject_4$1H = __ma
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -4082,7 +4082,7 @@ var RangeTrack$4 = styled.div(templateObject_2$2r || (templateObject_2$2r = __ma
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -4141,7 +4141,7 @@ var Block$c = styled.div(templateObject_5$19 || (templateObject_5$19 = __makeTem
 });
 var RoundCurrentBlock = styled.div(templateObject_6$W || (templateObject_6$W = __makeTemplateObject(["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"], ["\n  position: absolute;\n  z-index: 3;\n  top: -4px;\n  left: ", ";\n"])), function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 });
 var Round$1 = styled.div(templateObject_7$C || (templateObject_7$C = __makeTemplateObject(["\n  position: relative;\n  margin-bottom: 5px;\n  right: 10px;\n  width: 15px;\n  height: 15px;\n  border-radius: 25px;\n  background: ", ";\n  &:before {\n    content: \"\";\n    display: block;\n    top: -5px;\n    left: -5px;\n    position: absolute;\n    border: 9px solid ", ";\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n  }\n"], ["\n  position: relative;\n  margin-bottom: 5px;\n  right: 10px;\n  width: 15px;\n  height: 15px;\n  border-radius: 25px;\n  background: ", ";\n  &:before {\n    content: \"\";\n    display: block;\n    top: -5px;\n    left: -5px;\n    position: absolute;\n    border: 9px solid ", ";\n    width: 25px;\n    height: 25px;\n    border-radius: 25px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -4178,7 +4178,7 @@ var Indicator = styled.div(templateObject_13$a || (templateObject_13$a = __makeT
     return theme.colors.greenText2;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow9;
@@ -4224,7 +4224,7 @@ var BalanceInputInversion = function (_a) {
             React__default.createElement(Box, null,
                 React__default.createElement(Flex, { alignItems: "center" },
                     unit && React__default.createElement(UnitContainer, null, unit),
-                    React__default.createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0,".concat(decimals, "}$"), inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps))),
+                    React__default.createElement(StyledInput$1, __assign({ pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: handleOnChange, placeholder: placeholder, ref: innerRef }, inputProps))),
                 currencyValue && (React__default.createElement(Text, { fontSize: "13px", letterSpacing: "0.5px", color: "greyText3", mt: "22px" }, currencyValue))),
             switchEditingUnits && (React__default.createElement(Flex, { alignItems: "center", pl: "12px" },
                 React__default.createElement(SwitchUnitsButton, { scale: "sm", variant: "text", onClick: switchEditingUnits },
@@ -4273,7 +4273,7 @@ var templateObject_1$36;
 
 var getBackgroundColor = function (_a) {
     var color = _a.color, theme = _a.theme;
-    return getThemeValue$1("colors.".concat(color), color)(theme);
+    return getThemeValue$1("colors." + color, color)(theme);
 };
 var StyledButtonMenu$1 = styled.div(templateObject_1$35 || (templateObject_1$35 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 9px;\n  display: ", ";\n  width: ", ";\n  box-shadow: ", ";\n  font-weight: 400;\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n  ", "\n  ", "\n"])), getBackgroundColor, function (_a) {
     var fullWidth = _a.fullWidth;
@@ -4290,7 +4290,7 @@ var StyledButtonMenu$1 = styled.div(templateObject_1$35 || (templateObject_1$35 
 }, function (_a) {
     var disabled = _a.disabled, theme = _a.theme, color = _a.color;
     if (disabled) {
-        return "\n        opacity: 0.5;\n        & > button:disabled {\n          background-color: transparent;\n          color: ".concat(color ? theme.colors[color] : theme.colors.text, ";\n        }\n    ");
+        return "\n        opacity: 0.5;\n        & > button:disabled {\n          background-color: transparent;\n          color: " + (color ? theme.colors[color] : theme.colors.text) + ";\n        }\n    ";
     }
     return "";
 }, space);
@@ -4374,7 +4374,7 @@ var getOutlineStyles = function (_a) {
     if (outline) {
         var themeColorKey = styleVariants$1[variantKey].backgroundColor;
         var color = theme.colors[themeColorKey];
-        return "\n      color: ".concat(color, ";\n      background: transparent;\n      border: 2px solid ").concat(color, ";\n    ");
+        return "\n      color: " + color + ";\n      background: transparent;\n      border: 2px solid " + color + ";\n    ";
     }
     return "";
 };
@@ -4614,17 +4614,17 @@ var breakpointMap = {
     xxl: 1300,
     xxxl: 1440,
 };
-var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return "".concat(breakpoint, "px"); });
+var breakpoints = Object.values(breakpointMap).map(function (breakpoint) { return breakpoint + "px"; });
 var mediaQueries$1 = {
-    xs: "@media screen and (min-width: ".concat(breakpointMap.xs, "px)"),
-    sm: "@media screen and (min-width: ".concat(breakpointMap.sm, "px)"),
-    xmd: "@media screen and (min-width: ".concat(breakpointMap.xmd, "px)"),
-    md: "@media screen and (min-width: ".concat(breakpointMap.md, "px)"),
-    lg: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
-    xl: "@media screen and (min-width: ".concat(breakpointMap.xl, "px)"),
-    xxl: "@media screen and (min-width: ".concat(breakpointMap.xxl, "px)"),
-    xxxl: "@media screen and (min-width: ".concat(breakpointMap.xxxl, "px)"),
-    nav: "@media screen and (min-width: ".concat(breakpointMap.lg, "px)"),
+    xs: "@media screen and (min-width: " + breakpointMap.xs + "px)",
+    sm: "@media screen and (min-width: " + breakpointMap.sm + "px)",
+    xmd: "@media screen and (min-width: " + breakpointMap.xmd + "px)",
+    md: "@media screen and (min-width: " + breakpointMap.md + "px)",
+    lg: "@media screen and (min-width: " + breakpointMap.lg + "px)",
+    xl: "@media screen and (min-width: " + breakpointMap.xl + "px)",
+    xxl: "@media screen and (min-width: " + breakpointMap.xxl + "px)",
+    xxxl: "@media screen and (min-width: " + breakpointMap.xxxl + "px)",
+    nav: "@media screen and (min-width: " + breakpointMap.lg + "px)",
 };
 var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
@@ -4702,7 +4702,7 @@ var Arrow$1 = styled.div(templateObject_1$2Z || (templateObject_1$2Z = __makeTem
     var theme = _a.theme;
     return theme.colors.bgGray;
 });
-var StyledTooltip = styled.div(templateObject_2$2l || (templateObject_2$2l = __makeTemplateObject(["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  max-width: 290px;\n  ", "{\n    max-width: 320px;\n  }\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"], ["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  max-width: 290px;\n  ", "{\n    max-width: 320px;\n  }\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled.div(templateObject_2$2l || (templateObject_2$2l = __makeTemplateObject(["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  max-width: 290px;\n  ", " {\n    max-width: 320px;\n  }\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"], ["\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n  max-width: 290px;\n  ", " {\n    max-width: 320px;\n  }\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -5px;\n  }\n  &[data-popper-placement^=\"top\"] > ", "::before {\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -5px;\n  }\n  &[data-popper-placement^=\"bottom\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -5px;\n  }\n  &[data-popper-placement^=\"left\"] > ", "::before {\n    border-bottom: none;\n    border-top: 1px solid #606060;\n    border-left: none;\n    border-right: 1px solid #606060;\n  }\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -5px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
 }, function (_a) {
@@ -5031,16 +5031,16 @@ var templateObject_1$2W;
 
 var StyledDropdown = styled.div(templateObject_1$2V || (templateObject_1$2V = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"])), function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "calc(100vh - ".concat(59 + (plusMarginTop || 0), "px)") : "260px";
+    return variant === variants.CENTER_BEHIND ? "calc(100vh - " + (59 + (plusMarginTop || 0)) + "px)" : "260px";
 }, function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "".concat(59 + (plusMarginTop || 0), "px") : "auto";
+    return variant === variants.CENTER_BEHIND ? 59 + (plusMarginTop || 0) + "px" : "auto";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 }, function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
-    return variant === variants.CENTER_BEHIND ? "".concat(80 + (plusMarginTop || 0), "px") : "auto";
+    return variant === variants.CENTER_BEHIND ? 80 + (plusMarginTop || 0) + "px" : "auto";
 }, variant$1({
     variants: styleVariants,
 }));
@@ -5095,7 +5095,7 @@ var Dropdown$4 = styled.div(templateObject_2$2j || (templateObject_2$2j = __make
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + transparentize(0.8, theme.colors.textGray);
 }, layout);
 var Option$2 = styled.label(templateObject_3$1X || (templateObject_3$1X = __makeTemplateObject(["\n  display: flex;\n  cursor: pointer;\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n  & path {\n    stroke-width: 3;\n  }\n"], ["\n  display: flex;\n  cursor: pointer;\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n  & path {\n    stroke-width: 3;\n  }\n"])), function (_a) {
     var optionsSpacing = _a.optionsSpacing;
@@ -5156,7 +5156,7 @@ var Dropdown$3 = styled.div(templateObject_2$2i || (templateObject_2$2i = __make
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + transparentize(0.8, theme.colors.textGray);
 }, layout);
 var Currency = styled(Flex)(templateObject_3$1W || (templateObject_3$1W = __makeTemplateObject(["\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 10px;\n  width: 100%;\n  background: ", ";\n  border-radius: 9px;\n\n  & img {\n    width: 28px;\n    height: 28px;\n  }\n\n  & svg {\n    right: 10px;\n  }\n"], ["\n  align-items: center;\n  justify-content: space-between;\n  padding: 5px 10px;\n  width: 100%;\n  background: ", ";\n  border-radius: 9px;\n\n  & img {\n    width: 28px;\n    height: 28px;\n  }\n\n  & svg {\n    right: 10px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -5208,7 +5208,7 @@ var Dropdown$2 = styled.div(templateObject_2$2h || (templateObject_2$2h = __make
     return theme.colors.boxShadow2;
 }, function (_a) {
     var theme = _a.theme;
-    return "1px solid ".concat(transparentize(0.8, theme.colors.textGray));
+    return "1px solid " + transparentize(0.8, theme.colors.textGray);
 }, layout);
 var Option$1 = styled.label(templateObject_3$1V || (templateObject_3$1V = __makeTemplateObject(["\n  display: flex;\n  cursor: pointer;\n\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n\n  & path {\n    stroke-width: 3;\n  }\n"], ["\n  display: flex;\n  cursor: pointer;\n\n  &:not(:last-child) {\n    margin-bottom: ", ";\n  }\n\n  & svg {\n    display: none;\n    width: 12px;\n    height: 10px;\n  }\n\n  & path {\n    stroke-width: 3;\n  }\n"])), function (_a) {
     var optionsSpacing = _a.optionsSpacing;
@@ -5247,16 +5247,16 @@ var mediaQueries = (function () {
         var _a, _b;
         // Largest size is just a min-width of second highest max-width
         if (index === Object.keys(breakpointMap).length - 1) {
-            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: ".concat(prevMinWidth, "px)"), _a));
+            return __assign(__assign({}, accum), (_a = {}, _a[size] = "(min-width: " + prevMinWidth + "px)", _a));
         }
         var minWidth = prevMinWidth;
         var breakpoint = breakpointMap[size];
         // Min width for next iteration
         prevMinWidth = breakpoint + 1;
-        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: ".concat(minWidth, "px) and (max-width: ").concat(breakpoint, "px)"), _b));
+        return __assign(__assign({}, accum), (_b = {}, _b[size] = "(min-width: " + minWidth + "px) and (max-width: " + breakpoint + "px)", _b));
     }, {});
 })();
-var getKey = function (size) { return "is".concat(size.charAt(0).toUpperCase()).concat(size.slice(1)); };
+var getKey = function (size) { return "is" + size.charAt(0).toUpperCase() + size.slice(1); };
 var useMatchBreakpoints = function () {
     var _a = useState(function () {
         return Object.keys(mediaQueries).reduce(function (accum, size) {
@@ -5314,21 +5314,21 @@ var createParticle = function (x, y, imgSrc, options) {
     var delay = Math.random() * 200;
     particle.style.backgroundRepeat = "no-repeat";
     particle.style.backgroundSize = "contain";
-    particle.style.backgroundImage = "url(".concat(imgSrc, ")");
+    particle.style.backgroundImage = "url(" + imgSrc + ")";
     particle.style.left = "0";
     particle.style.top = "0";
     particle.style.opacity = "0";
     particle.style.pointerEvents = "none";
     particle.style.position = "fixed";
-    particle.style.width = "".concat(width, "px");
-    particle.style.height = "".concat(height, "px");
+    particle.style.width = width + "px";
+    particle.style.height = height + "px";
     var animation = particle.animate([
         {
-            transform: "translate(-50%, -50%) translate(".concat(x, "px, ").concat(y, "px) rotate(0deg)"),
+            transform: "translate(-50%, -50%) translate(" + x + "px, " + y + "px) rotate(0deg)",
             opacity: 1,
         },
         {
-            transform: "translate(-50%, -50%) translate(".concat(x + destinationX, "px, ").concat(y + destinationY, "px) rotate(").concat(rotation, "deg)"),
+            transform: "translate(-50%, -50%) translate(" + (x + destinationX) + "px, " + (y + destinationY) + "px) rotate(" + rotation + "deg)",
             opacity: 0,
         },
     ], {
@@ -5792,7 +5792,7 @@ var templateObject_1$2M, templateObject_2$2e, templateObject_3$1S, templateObjec
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
     if (value && value.length && value.length > 10) {
-        return "".concat(value.substr(0, count), " ... ").concat(value.substr(value.length - count, value.length));
+        return value.substr(0, count) + " ... " + value.substr(value.length - count, value.length);
     }
     return value;
 };
@@ -5802,7 +5802,7 @@ var TokenInfo$2 = function (_a) {
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     var ButtonsBlock = function (_a) {
         var type = _a.type;
-        return (React__default.createElement(RightColumn$2, { className: "".concat(type, " ").concat(supple ? "supple" : "") },
+        return (React__default.createElement(RightColumn$2, { className: type + " " + (supple ? "supple" : "") },
             React__default.createElement(Button$6, { className: supple ? "supple" : "", onClick: addTokenHandler }, addTokenIcon || React__default.createElement("img", { src: Metamask })),
             React__default.createElement(Button$6, { onClick: function () {
                     if (navigator.clipboard) {
@@ -5973,7 +5973,7 @@ var TokenInfoTransaction = function (_a) {
     var _c = useState(false), isTooltipDisplayed = _c[0], setIsTooltipDisplayed = _c[1];
     var ButtonsBlock = function (_a) {
         var type = _a.type;
-        return (React__default.createElement(BlockInfo, { className: "".concat(type) },
+        return (React__default.createElement(BlockInfo, { className: "" + type },
             React__default.createElement(Button$5, { onClick: function () { return addTokenHandler(data === null || data === void 0 ? void 0 : data.network); }, value: data === null || data === void 0 ? void 0 : data.network }, addTokenIcon || React__default.createElement("img", { src: Metamask })),
             React__default.createElement(Button$5, { onClick: function () {
                     if (navigator.clipboard) {
@@ -6109,12 +6109,12 @@ var getChainIdByName = function (name) {
 var getBscScanTransactionUrl = function (transactionHash, network) {
     var idNetwork = getChainIdByName(network);
     if (idNetwork === MAINNET_BSC_CHAIN_ID) {
-        return "".concat(BASE_BSC_SCAN_URL, "/tx/").concat(transactionHash);
+        return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
     }
     if (idNetwork === MAINNET_AVAX_CHAIN_ID) {
-        return "".concat(BASE_AVAX_SCAN_URL, "/tx/").concat(transactionHash);
+        return BASE_AVAX_SCAN_URL + "/tx/" + transactionHash;
     }
-    return "".concat(BASE_BSC_SCAN_URL, "/tx/").concat(transactionHash);
+    return BASE_BSC_SCAN_URL + "/tx/" + transactionHash;
 };
 
 var InfoWrapperTransactionHistory = function (_a) {
@@ -6303,13 +6303,13 @@ var ModalHeader$3 = styled.div(templateObject_4$1r || (templateObject_4$1r = __m
     return background || "transparent";
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "20px", " 14px 24px");
+    return " " + (paddingTopHeader || "20px") + " 14px 24px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "27px", " 20px 40px 27px");
+    return " " + (paddingTopHeader || "27px") + " 20px 40px 27px";
 });
 var ModalTitle$3 = styled.div(templateObject_5$Z || (templateObject_5$Z = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n"], ["\n  align-items: center;\n  flex: 1;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -6322,7 +6322,7 @@ var Modal$1 = function (_a) {
     var theme = useTheme();
     return (React__default.createElement(StyledModal$3, __assign({}, props),
         React__default.createElement(ModalContent, null,
-            React__default.createElement(ModalHeader$3, { className: welcome ? "welcome" : "", paddingTopHeader: paddingTopHeader, background: getThemeValue("colors.".concat(headerBackground), headerBackground)(theme) },
+            React__default.createElement(ModalHeader$3, { className: welcome ? "welcome" : "", paddingTopHeader: paddingTopHeader, background: getThemeValue("colors." + headerBackground, headerBackground)(theme) },
                 React__default.createElement(ModalTitle$3, null,
                     React__default.createElement(Heading, { className: welcome ? "welcome" : "" }, title)),
                 image ? (React__default.createElement(Image$1, null,
@@ -6592,7 +6592,7 @@ var AccountModal = function (_a) {
                 React__default.createElement(AccountWrap$1, { as: "div" },
                     React__default.createElement(AccountText$1, { fontWeight: 500, color: "text" }, account))),
             React__default.createElement(Flex, { mb: "32px" },
-                React__default.createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/".concat(account), mr: "16px" }, texts.view),
+                React__default.createElement(LinkExternal, { color: "#47DA3B", small: true, href: "https://bscscan.com/address/" + account, mr: "16px" }, texts.view),
                 React__default.createElement(CopyText$1, { color: "#47DA3B" },
                     React__default.createElement(CopyToClipboard$1, { toCopy: account, textCopied: texts.copied }, texts.copy))),
             React__default.createElement(Flex, { justifyContent: "center" },
@@ -6638,7 +6638,7 @@ var AccountVestingModal = function (_a) {
                     React__default.createElement(Text, { letterSpacing: "-0.02em", fontWeight: "400" }, yayBalance),
                     React__default.createElement(ButtonAddToken, { onClick: handleAddToken }, texts.addToken)),
                 React__default.createElement(Flex, { mb: "30px" },
-                    React__default.createElement(LinkExternal, { color: "#47DA3B", small: true, href: linkExternalWalletModal || "https://bscscan.com/address/".concat(account), mr: "16px", icon: React__default.createElement(Icon$J, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
+                    React__default.createElement(LinkExternal, { color: "#47DA3B", small: true, href: linkExternalWalletModal || "https://bscscan.com/address/" + account, mr: "16px", icon: React__default.createElement(Icon$J, { style: { marginLeft: 5 } }), style: { fontWeight: 400 } }, texts.view)),
                 React__default.createElement(Flex, { justifyContent: "center" },
                     React__default.createElement(Button$9, { scale: "md", width: "100%", variant: buttonLogoutType || variants$4.SECONDARY, style: { fontWeight: 400 }, onClick: function () {
                             logout();
@@ -6647,7 +6647,7 @@ var AccountVestingModal = function (_a) {
                         } }, texts.button)))),
             tabValue === 1 && (React__default.createElement(React__default.Fragment, null,
                 React__default.createElement(Text, { letterSpacing: "-0.02em", color: "textGray", marginBottom: "21px", fontSize: "14px", lineHeight: "24px", marginTop: "26px", fontWeight: 400 }, texts.recentTransactions),
-                (dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.length) ? (React__default.createElement(Table$5, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default.createElement(React__default.Fragment, { key: "".concat(el.id, "-").concat(i) },
+                (dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.length) ? (React__default.createElement(Table$5, null, dataTransactions === null || dataTransactions === void 0 ? void 0 : dataTransactions.map(function (el, i) { return (React__default.createElement(React__default.Fragment, { key: el.id + "-" + i },
                     React__default.createElement(StyledText$4, null, el.id),
                     React__default.createElement(ButtonClaimed, { onClick: function () { return handleClaimed(el.id); } },
                         texts.claimed,
@@ -7026,7 +7026,7 @@ var ProgressWrap$6 = styled.div(templateObject_1$2r || (templateObject_1$2r = __
 var Progress$1 = styled.div(templateObject_2$1Z || (templateObject_2$1Z = __makeTemplateObject(["\n  display: flex;\n  width: 100%;\n  overflow: hidden;\n"], ["\n  display: flex;\n  width: 100%;\n  overflow: hidden;\n"])));
 var Step$1 = styled.div(templateObject_3$1D || (templateObject_3$1D = __makeTemplateObject(["\n  height: 9px;\n  width: ", ";\n  background: ", ";\n  transition: none.3s;\n  border-radius: 3px;\n"], ["\n  height: 9px;\n  width: ", ";\n  background: ", ";\n  transition: none.3s;\n  border-radius: 3px;\n"])), function (_a) {
     var width = _a.width;
-    return "".concat(width, "%");
+    return width + "%";
 }, function (_a) {
     var color = _a.color;
     return color;
@@ -7512,7 +7512,7 @@ var NetworkModal = function (_a) {
     };
     return (React__default.createElement(Modal$1, { title: title, welcome: true, paddingTopHeader: "20px", onDismiss: onDismiss },
         React__default.createElement(Wrap$9, null,
-            React__default.createElement(Buttons$8, null, listNetwork === null || listNetwork === void 0 ? void 0 : listNetwork.map(function (el, i) { return (React__default.createElement(React__default.Fragment, { key: "".concat(el.chainId, "-").concat(i) },
+            React__default.createElement(Buttons$8, null, listNetwork === null || listNetwork === void 0 ? void 0 : listNetwork.map(function (el, i) { return (React__default.createElement(React__default.Fragment, { key: el.chainId + "-" + i },
                 React__default.createElement(Button$2, { value: (valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[i]) || el.chainId, onClick: handleClick },
                     React__default.createElement(TextStyled$4, null, el.name),
                     React__default.createElement("img", { src: el.icon, alt: "" })))); })),
@@ -7914,11 +7914,11 @@ var AccountMarketplace = function (_a) {
                     React__default.createElement(StyledTitle$5, { fontSize: "21px", mb: "20px" }, textsAccount.myFunds),
                     React__default.createElement(FundsWrapper, null, funds === null || funds === void 0 ? void 0 : funds.map(function (el, i) {
                         var _a;
-                        return (React__default.createElement(React__default.Fragment, { key: "".concat(el.id, "-").concat(i + 1) },
+                        return (React__default.createElement(React__default.Fragment, { key: el.id + "-" + (i + 1) },
                             React__default.createElement(FundsItem, __assign({}, el)),
                             el.includes && (React__default.createElement(FundsHidden, { open: openFunds }, (_a = el.includes) === null || _a === void 0 ? void 0 : _a.map(function (item, j) {
                                 var a = __assign({ includesItem: true }, item);
-                                return React__default.createElement(FundsItem, __assign({ key: "".concat(el.id, "-").concat(i + 1, "-").concat(j + 1) }, a));
+                                return React__default.createElement(FundsItem, __assign({ key: el.id + "-" + (i + 1) + "-" + (j + 1) }, a));
                             })))));
                     })))),
                 React__default.createElement(Line$5, null),
@@ -8139,7 +8139,7 @@ var GamesTable = function (_a) {
                 "(",
                 gamesList.length,
                 ")")),
-        React__default.createElement(Table$3, null, list.map(function (item, i) { return (React__default.createElement(ItemGame, { className: "".concat(item.imgSrc ? "" : "empty", " ").concat(selectGame === item.value ? "active" : ""), key: i, onClick: function () { return (!item.disabled && item.imgSrc ? handleSelectValue(item.value) : function () { }); }, bg: item.imgSrc },
+        React__default.createElement(Table$3, null, list.map(function (item, i) { return (React__default.createElement(ItemGame, { className: (item.imgSrc ? "" : "empty") + " " + (selectGame === item.value ? "active" : ""), key: i, onClick: function () { return (!item.disabled && item.imgSrc ? handleSelectValue(item.value) : function () { }); }, bg: item.imgSrc },
             React__default.createElement(Text, { fontSize: "11px" }, item.title))); }))));
 };
 var Wrapper$F = styled.div(templateObject_1$22 || (templateObject_1$22 = __makeTemplateObject(["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"], ["\n  ", " {\n    width: 100%;\n    height: 100%;\n    padding: 30px 32px;\n    border-radius: 10px;\n    background: ", ";\n  }\n"])), function (_a) {
@@ -8165,7 +8165,7 @@ var Table$3 = styled.div(templateObject_3$1i || (templateObject_3$1i = __makeTem
 });
 var ItemGame = styled.div(templateObject_4$18 || (templateObject_4$18 = __makeTemplateObject(["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  border: 2px solid transparent;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"], ["\n  width: 100%;\n  min-height: 118px;\n  border-radius: 15px;\n  flex-shrink: 0;\n  max-width: 133px;\n  margin-right: 7px;\n  background: ", ";\n  cursor: pointer;\n  padding: 10px 14px;\n  border: 2px solid transparent;\n  &.empty {\n    background: ", ";\n    cursor: default;\n  }\n  &.active {\n    border: 2px solid ", ";\n    box-shadow: ", ";\n    transition: 0.3s;\n  }\n  ", " {\n    margin-right: 0;\n  }\n"])), function (_a) {
     var bg = _a.bg;
-    return "url(".concat(bg, ") no-repeat center center / cover");
+    return "url(" + bg + ") no-repeat center center / cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
@@ -8586,7 +8586,7 @@ var Claimed$6 = styled.div(templateObject_2$1t || (templateObject_2$1t = __makeT
     return (disabledTopCards || !canClaim ? "auto" : "none");
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var templateObject_1$1S, templateObject_2$1t;
 
@@ -8633,7 +8633,7 @@ var ProgressTrack$4 = styled.div(templateObject_5$F || (templateObject_5$F = __m
 });
 var ProgressBar$4 = styled.div(templateObject_6$w || (templateObject_6$w = __makeTemplateObject(["\n  height: 100%;\n  width: ", ";\n  background: ", ";\n  border-radius: inherit;\n"], ["\n  height: 100%;\n  width: ", ";\n  background: ", ";\n  border-radius: inherit;\n"])), function (_a) {
     var progress = _a.progress;
-    return "".concat(progress, "%");
+    return progress + "%";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -8727,7 +8727,7 @@ var ProgressBar$3 = styled.div(templateObject_8$i || (templateObject_8$i = __mak
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -8773,7 +8773,7 @@ var MarketplaceLink = function (_a) {
 };
 var Card$i = styled.a(templateObject_1$1P || (templateObject_1$1P = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
@@ -8862,7 +8862,7 @@ var Blur$1 = styled.div(templateObject_2$1o || (templateObject_2$1o = __makeTemp
 }, "-moz-element(#TokenOnPoolz)");
 var CardStyle = styled.div(templateObject_3$16 || (templateObject_3$16 = __makeTemplateObject(["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"], ["\n  text-align: center;\n  padding: 20px 50px 21px;\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 });
 var Wrapper$z = styled.div(templateObject_4$Z || (templateObject_4$Z = __makeTemplateObject(["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"], ["\n  position: relative;\n  background: ", ";\n  border-radius: 20px;\n  ", " {\n    grid-column: 1/3;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -9645,16 +9645,16 @@ var Reward = styled.div(templateObject_3$V || (templateObject_3$V = __makeTempla
     return theme.colors.boxShadow11;
 });
 var ButtonText = styled(Text)(templateObject_4$O || (templateObject_4$O = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"])), function (_a) {
-    var loading = _a.loading;
-    return (loading ? "none" : "''");
-}, function () { return "url(".concat(COIN5, ") no-repeat left center /cover"); }, function (_a) {
+    var loadingButton = _a.loadingButton;
+    return (loadingButton ? "none" : "''");
+}, function () { return "url(" + COIN5 + ") no-repeat left center /cover"; }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
 var ButtonTextMob = styled(ButtonText)(templateObject_5$t || (templateObject_5$t = __makeTemplateObject(["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
-    var loading = _a.loading;
-    return (loading ? "none" : "''");
-}, function () { return "url(".concat(COIN5, ") no-repeat left center /cover"); }, function (_a) {
+    var loadingButton = _a.loadingButton;
+    return (loadingButton ? "none" : "''");
+}, function () { return "url(" + COIN5 + ") no-repeat left center /cover"; }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -9680,8 +9680,8 @@ var RefferalCard = function (_a) {
         React__default.createElement(TitleStyle$4, null, title),
         React__default.createElement(DescriptionStyle, { color: baseColors.textGray }, description),
         React__default.createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
-            React__default.createElement(ButtonText, { loading: loadingButton }, collectText),
-            React__default.createElement(ButtonTextMob, { loading: loadingButton }, collectTextMob))));
+            React__default.createElement(ButtonText, { loadingButton: loadingButton }, collectText),
+            React__default.createElement(ButtonTextMob, { loadingButton: loadingButton }, collectTextMob))));
 };
 var ImageBlock$1 = styled.div(templateObject_1$1r || (templateObject_1$1r = __makeTemplateObject(["\n  margin: 0 auto 6px;\n  & img {\n    max-height: 61px;\n    max-width: 100%;\n  }\n"], ["\n  margin: 0 auto 6px;\n  & img {\n    max-height: 61px;\n    max-width: 100%;\n  }\n"])));
 var Card$g = styled.div(templateObject_2$17 || (templateObject_2$17 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n  padding: 25px 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  height: 100%;\n  width: 100%;\n  padding: 25px 14px 16px;\n  background: ", ";\n  border: 1.5px solid ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  cursor: pointer;\n\n  &:hover {\n    border: 1.5px solid ", ";\n    box-shadow: ", ";\n  }\n"])), function (_a) {
@@ -9799,8 +9799,8 @@ var Achievement = function (_a) {
                         React__default.createElement(Text, { fontSize: "10px" }, "/"),
                         React__default.createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, countMax)))),
                 !progress && (React__default.createElement(ButtonStyle$7, { padding: "0 15px", height: "30px", width: "100%", variant: "green", onClick: handleCollect, disabled: disabledButton, spin: loadingButton },
-                    React__default.createElement(ButtonText, { loading: loadingButton }, collectText),
-                    React__default.createElement(ButtonTextMob, { loading: loadingButton }, collectTextMob)))),
+                    React__default.createElement(ButtonText, { loadingButton: loadingButton }, collectText),
+                    React__default.createElement(ButtonTextMob, { loadingButton: loadingButton }, collectTextMob)))),
             React__default.createElement(CardBack, { progress: progress },
                 React__default.createElement(Flex, { alignItems: "center", justifyContent: "center", height: "100%" },
                     React__default.createElement("div", null,
@@ -9819,7 +9819,7 @@ var RangeTrack$3 = styled.div(templateObject_2$15 || (templateObject_2$15 = __ma
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText2;
@@ -10036,7 +10036,7 @@ var ProgressBar$2 = styled.div(templateObject_8$d || (templateObject_8$d = __mak
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -10081,7 +10081,7 @@ var ClaimBlock = function (_a) {
 };
 var Card$a = styled.a(templateObject_1$1k || (templateObject_1$1k = __makeTemplateObject(["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"], ["\n  position: relative;\n  display: block;\n  min-height: 250px;\n  padding: 18px 24px;\n  background: ", ";\n  background-color: ", ";\n  border-radius: 20px;\n\n  & img {\n    position: absolute;\n    left: 50%;\n    transform: translateX(-50%);\n    bottom: 0;\n\n    ", " {\n      right: -41px;\n      left: auto;\n      transform: none;\n    }\n  }\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ") no-repeat left center /cover");
+    return "url(" + src + ") no-repeat left center /cover";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgGray;
@@ -10174,7 +10174,7 @@ var RangeTrack$2 = styled.div(templateObject_2$10 || (templateObject_2$10 = __ma
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 5px)") : 0);
+    return (progress ? "calc(" + progress + "% - 5px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -10191,7 +10191,7 @@ var templateObject_1$1g;
 
 var BlurBlock = function (_a) {
     var statusText = _a.statusText, marginStatusText = _a.marginStatusText;
-    return (React__default.createElement(Wrap, { position: marginStatusText === 45 ? "relative" : "absolute", marginTop: "".concat(marginStatusText, "px") },
+    return (React__default.createElement(Wrap, { position: marginStatusText === 45 ? "relative" : "absolute", marginTop: marginStatusText + "px" },
         React__default.createElement(TextStyle$6, null, statusText)));
 };
 var Wrap = styled(Flex)(templateObject_1$1f || (templateObject_1$1f = __makeTemplateObject(["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"], ["\n  left: 0;\n  top: 0;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n  height: 100%;\n  background: ", ";\n  z-index: 2;\n"])), function (_a) {
@@ -10244,7 +10244,7 @@ var Progress = function (_a) {
                     React__default.createElement(Icon$N, null)))),
         React__default.createElement(CounterWrapper, null,
             React__default.createElement(Counter, { stop: isFinish, width: isFinish ? widthTotal + 12 : widthProgress },
-                React__default.createElement(Current, { marginLeft: widthProgress > 50 ? "-".concat(widthCurrent, "px") : 0, ref: refCurrent },
+                React__default.createElement(Current, { marginLeft: widthProgress > 50 ? "-" + widthCurrent + "px" : 0, ref: refCurrent },
                     currentVolume,
                     " ",
                     tokenName),
@@ -10270,7 +10270,7 @@ var ProgressBar$1 = styled.div(templateObject_3$O || (templateObject_3$O = __mak
     return (widthProgress <= 2 ? "flex-start" : "flex-end");
 }, function (_a) {
     var widthProgress = _a.widthProgress;
-    return "".concat(widthProgress, "%") || 0;
+    return widthProgress + "%" || 0;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -10278,7 +10278,7 @@ var ProgressBar$1 = styled.div(templateObject_3$O || (templateObject_3$O = __mak
 var CounterWrapper = styled(Flex)(templateObject_4$H || (templateObject_4$H = __makeTemplateObject(["\n  margin-top: 13px;\n  justify-content: flex-end;\n"], ["\n  margin-top: 13px;\n  justify-content: flex-end;\n"])));
 var Counter = styled(Flex)(templateObject_5$o || (templateObject_5$o = __makeTemplateObject(["\n  justify-content: space-between;\n  width: ", ";\n"], ["\n  justify-content: space-between;\n  width: ", ";\n"])), function (_a) {
     var width = _a.width, stop = _a.stop;
-    return (stop ? "".concat(width, "px") : "calc(100% - ".concat(width, "%)"));
+    return (stop ? width + "px" : "calc(100% - " + width + "%)");
 });
 var Current = styled(Text)(templateObject_6$l || (templateObject_6$l = __makeTemplateObject(["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  flex: none;\n"], ["\n  font-size: 10px;\n  line-height: 19px;\n  letter-spacing: 0.13em;\n  text-transform: uppercase;\n  flex: none;\n"])));
 var Total = styled(Current)(templateObject_7$f || (templateObject_7$f = __makeTemplateObject([""], [""])));
@@ -10412,7 +10412,7 @@ var ProgressWrap$2 = styled.div(templateObject_1$1c || (templateObject_1$1c = __
 var RangeTrackWrap = styled.div(templateObject_2$Y || (templateObject_2$Y = __makeTemplateObject(["\n  border-radius: 6px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n"], ["\n  border-radius: 6px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n"])));
 var RangeTrack$1 = styled.div(templateObject_3$M || (templateObject_3$M = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n"], ["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n"])), function (_a) {
     var progress = _a.progress;
-    return (progress ? "".concat(progress, "%") : 0);
+    return (progress ? progress + "%" : 0);
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenGradient;
@@ -10422,7 +10422,7 @@ var templateObject_1$1c, templateObject_2$Y, templateObject_3$M, templateObject_
 
 var SlotSummary = function (_a) {
     var text = _a.text, error = _a.error, circleHidden = _a.circleHidden, opacity = _a.opacity;
-    return (React__default.createElement(TextStyled, { className: "".concat(error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, opacity: opacity, color: error ? "darkPink" : "green", mr: "5px" },
+    return (React__default.createElement(TextStyled, { className: "" + (error || ""), fontSize: "13px", lineHeight: "100%", fontWeight: 400, opacity: opacity, color: error ? "darkPink" : "green", mr: "5px" },
         !circleHidden && React__default.createElement(Circle$1, { error: error }),
         text));
 };
@@ -10457,7 +10457,7 @@ var RangeTrack = styled.div(templateObject_2$W || (templateObject_2$W = __makeTe
     return theme.colors.boxShadow4;
 }, function (_a) {
     var progress = _a.progress;
-    return (progress ? "calc(".concat(progress, "% - 10px)") : 0);
+    return (progress ? "calc(" + progress + "% - 10px)" : 0);
 }, function (_a) {
     var theme = _a.theme, isError = _a.isError;
     return (isError ? theme.colors.redBg : theme.colors.greenText2);
@@ -10864,7 +10864,7 @@ var Title$f = styled(Text)(templateObject_2$Q || (templateObject_2$Q = __makeTem
 });
 var MainImg = styled.div(templateObject_3$I || (templateObject_3$I = __makeTemplateObject(["\n  height: 250px;\n  background: ", ";\n  background-size: cover;\n  border-radius: 6px;\n  background-position: center;\n"], ["\n  height: 250px;\n  background: ", ";\n  background-size: cover;\n  border-radius: 6px;\n  background-position: center;\n"])), function (_a) {
     var src = _a.src, theme = _a.theme;
-    return (src === "" ? theme.colors.whiteRgba : "url(".concat(src, ")"));
+    return (src === "" ? theme.colors.whiteRgba : "url(" + src + ")");
 });
 var Description$7 = styled(Text)(templateObject_4$B || (templateObject_4$B = __makeTemplateObject(["\n  font-size: 15px;\n  line-height: 19px;\n  font-weight: normal;\n  ", " {\n    font-size: 18px;\n    line-height: 22px;\n  }\n"], ["\n  font-size: 15px;\n  line-height: 19px;\n  font-weight: normal;\n  ", " {\n    font-size: 18px;\n    line-height: 22px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -10875,11 +10875,11 @@ var Images = styled.div(templateObject_5$j || (templateObject_5$j = __makeTempla
     return theme.mediaQueries.md;
 }, function (_a) {
     var length = _a.length;
-    return "repeat(".concat(length, ", 1fr)");
+    return "repeat(" + length + ", 1fr)";
 });
 var ImgItem = styled.div(templateObject_6$g || (templateObject_6$g = __makeTemplateObject(["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"], ["\n  max-width: 254px;\n  width: 100%;\n  height: 109px;\n  border-radius: 12px;\n  justify-self: center;\n  background: ", ";\n  background-size: cover;\n  background-position: center;\n"])), function (_a) {
     var src = _a.src;
-    return "url(".concat(src, ")");
+    return "url(" + src + ")";
 });
 var templateObject_1$12, templateObject_2$Q, templateObject_3$I, templateObject_4$B, templateObject_5$j, templateObject_6$g;
 
@@ -10960,7 +10960,7 @@ var Claimed$3 = styled.div(templateObject_5$h || (templateObject_5$h = __makeTem
     return transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var templateObject_1$10, templateObject_2$O, templateObject_3$G, templateObject_4$z, templateObject_5$h;
 
@@ -11005,7 +11005,7 @@ var ProgressTrack = styled.div(templateObject_8$9 || (templateObject_8$9 = __mak
 var ProgressWrap = styled.div(templateObject_9$7 || (templateObject_9$7 = __makeTemplateObject(["\n  overflow: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  width: calc(100% - 6px);\n  height: calc(100% - 4px);\n  border-radius: 6px;\n"], ["\n  overflow: hidden;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  position: absolute;\n  width: calc(100% - 6px);\n  height: calc(100% - 4px);\n  border-radius: 6px;\n"])));
 var ProgressBar = styled.div(templateObject_10$5 || (templateObject_10$5 = __makeTemplateObject(["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"], ["\n  width: ", ";\n  height: 100%;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 6px;\n"])), function (_a) {
     var progress = _a.progress;
-    return "".concat(progress, "%");
+    return progress + "%";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenBg2;
@@ -11066,7 +11066,7 @@ var Claimed$2 = styled.div(templateObject_3$E || (templateObject_3$E = __makeTem
     return transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 styled.div(templateObject_4$x || (templateObject_4$x = __makeTemplateObject(["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"], ["\n  opacity: 1;\n  left: -100px;\n  top: -70px;\n  width: 230px;\n  position: absolute;\n  padding: 11px;\n  font-size: 11px;\n  line-height: 16px;\n  border-radius: 8px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  border: 1px solid #606060;\n  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);\n\n  ", " {\n    left: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -11112,7 +11112,7 @@ var Claimed$1 = styled.div(templateObject_3$D || (templateObject_3$D = __makeTem
     return transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var StyleText = styled(Text)(templateObject_4$w || (templateObject_4$w = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: 15;\n  font-size: 25px;\n  left: 0;\n  top: 0;\n"])));
 var templateObject_1$Z, templateObject_2$L, templateObject_3$D, templateObject_4$w;
@@ -11730,13 +11730,13 @@ var ModalHeader$2 = styled.div(templateObject_4$m || (templateObject_4$m = __mak
     return background || "transparent";
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "20px", " 14px 24px");
+    return " " + (paddingTopHeader || "20px") + " 14px 24px";
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
     var paddingTopHeader = _a.paddingTopHeader;
-    return " ".concat(paddingTopHeader || "27px", " 20px 40px 27px");
+    return " " + (paddingTopHeader || "27px") + " 20px 40px 27px";
 });
 var ModalTitle$2 = styled.div(templateObject_5$9 || (templateObject_5$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 1;\n  color: ", ";\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  flex: 1;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -11806,7 +11806,7 @@ var MenuItem = styled(RowBetween)(templateObject_4$l || (templateObject_4$l = __
 });
 function CurrencyRow(_a) {
     var currency = _a.currency, onSelect = _a.onSelect, isSelected = _a.isSelected, otherSelected = _a.otherSelected, style = _a.style, account = _a.account, balance = _a.balance, balanceComponent = _a.balanceComponent, customAdded = _a.customAdded, isOnSelectedList = _a.isOnSelectedList, keyID = _a.keyID, CurrencyLogo = _a.CurrencyLogo;
-    return (React__default.createElement(MenuItem, { style: style, className: "token-item-".concat(keyID), onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
+    return (React__default.createElement(MenuItem, { style: style, className: "token-item-" + keyID, onClick: function () { return (isSelected ? null : onSelect()); }, disabled: isSelected, selected: otherSelected },
         CurrencyLogo,
         React__default.createElement(Column$3, null,
             React__default.createElement(Text, { fontWeight: 500, letterSpacing: "0.5px" }, currency.symbol),
@@ -11847,7 +11847,7 @@ function ImportList(_a) {
                                         list.tokens.length,
                                         " ",
                                         texts.tokens)),
-                                React__default.createElement(Link$3, { small: true, external: true, ellipsis: true, maxWidth: "90%", href: "https://tokenlists.org/token-list?url=".concat(listURL) }, listURL))))),
+                                React__default.createElement(Link$3, { small: true, external: true, ellipsis: true, maxWidth: "90%", href: "https://tokenlists.org/token-list?url=" + listURL }, listURL))))),
                 React__default.createElement(Message$2, null,
                     React__default.createElement(Flex, { flexDirection: "column" },
                         React__default.createElement(Text, { fontSize: "20px", color: "redBg", mb: "16px" }, texts.importRisk),
@@ -11997,7 +11997,7 @@ function ManageListTooltip(_a) {
 function ManageListRow(_a) {
     var tooltipVisible = _a.tooltipVisible, tooltip = _a.tooltip, targetRef = _a.targetRef, isActive = _a.isActive, onChangeBaseToggle = _a.onChangeBaseToggle, list = _a.list, listUrl = _a.listUrl, listLogo = _a.listLogo, texts = _a.texts;
     function listUrlRowHTMLId(listUrl) {
-        return "list-row-".concat(listUrl.replace(/\./g, "-"));
+        return "list-row-" + listUrl.replace(/\./g, "-");
     }
     return (React__default.createElement(RowWrapper, { active: isActive, key: listUrl, id: listUrlRowHTMLId(listUrl) },
         tooltipVisible && tooltip,
@@ -12230,14 +12230,14 @@ var StyledBalanceMaxMini = styled.button(templateObject_5$8 || (templateObject_5
 styled(Text).attrs({ ellipsis: true })(templateObject_6$7 || (templateObject_6$7 = __makeTemplateObject(["\n  width: 220px;\n"], ["\n  width: 220px;\n"])));
 var SwapCallbackErrorInner = styled.div(templateObject_7$5 || (templateObject_7$5 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"], ["\n  background-color: ", ";\n  border-radius: 1rem;\n  display: flex;\n  align-items: center;\n  font-size: 0.825rem;\n  width: 100%;\n  padding: 3rem 1.25rem 1rem 1rem;\n  margin-top: -2rem;\n  color: ", ";\n  z-index: -1;\n  p {\n    padding: 0;\n    margin: 0;\n    font-weight: 500;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return "".concat(theme.colors.failure, "33");
+    return theme.colors.failure + "33";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.failure;
 });
 var SwapCallbackErrorInnerAlertTriangle = styled.div(templateObject_8$5 || (templateObject_8$5 = __makeTemplateObject(["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"], ["\n  background-color: ", ";\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-right: 12px;\n  border-radius: 12px;\n  min-width: 48px;\n  height: 48px;\n"])), function (_a) {
     var theme = _a.theme;
-    return "".concat(theme.colors.failure, "33");
+    return theme.colors.failure + "33";
 });
 function SwapCallbackError(_a) {
     var error = _a.error;
@@ -12421,7 +12421,7 @@ var TabsWrapBlock = styled.div(templateObject_11$2 || (templateObject_11$2 = __m
     return width || "auto";
 }, function (_a) {
     var length = _a.length, variant = _a.variant;
-    return "repeat(".concat(length || 2, ", ").concat(variant === "small" ? "auto" : "1fr", ")");
+    return "repeat(" + (length || 2) + ", " + (variant === "small" ? "auto" : "1fr") + ")";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacity;
@@ -13350,7 +13350,7 @@ var MarketTabs = function (_a) {
 };
 var TopLine$1 = styled(Flex)(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  width: ", ";\n  position: relative;\n  align-items: center;\n  padding-bottom: 15px;\n  border-bottom: 2px solid #1c1c1c;\n"], ["\n  width: ", ";\n  position: relative;\n  align-items: center;\n  padding-bottom: 15px;\n  border-bottom: 2px solid #1c1c1c;\n"])), function (_a) {
     var allWidth = _a.allWidth;
-    return "".concat(allWidth, "px");
+    return allWidth + "px";
 });
 var Tab = styled.button(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: 600;\n  font-size: 14px;\n  line-height: 17px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"], ["\n  position: relative;\n  padding: 0 10px;\n  background: none;\n  border: none;\n  font-weight: 600;\n  font-size: 14px;\n  line-height: 17px;\n  color: ", ";\n  cursor: pointer;\n  transition: 0.3s;\n"])), function (_a) {
     var theme = _a.theme, active = _a.active;
@@ -13361,10 +13361,10 @@ var LineTab = styled.span(templateObject_3$8 || (templateObject_3$8 = __makeTemp
     return theme.colors.green;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
-    return "".concat(widthTabActive, "px");
+    return widthTabActive + "px";
 }, function (_a) {
     var right = _a.right;
-    return "".concat(right, "px");
+    return right + "px";
 });
 var templateObject_1$9, templateObject_2$8, templateObject_3$8;
 
@@ -13520,7 +13520,7 @@ var Claimed = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTempl
     return transparentize(0.5, theme.colors.bgGray);
 }, function (_a) {
     var id = _a.id;
-    return "-moz-element(#".concat(id, ")");
+    return "-moz-element(#" + id + ")";
 });
 var templateObject_1$3, templateObject_2$2, templateObject_3$2, templateObject_4$2;
 
