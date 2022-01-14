@@ -23,12 +23,15 @@ export const StyledTooltip = styled.div`
   font-size: 11px;
   line-height: 16px;
   border-radius: 8px;
-  max-width: 320px;
   z-index: 101;
   background: ${({ theme }) => theme.colors.bgGray};
   color: ${({ theme }) => theme.colors.text};
   border: 1px solid #606060;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 290px;
+  ${({ theme }) => theme.mediaQueries.xs} {
+    max-width: 320px;
+  }
   &[data-popper-placement^="top"] > ${Arrow} {
     bottom: -5px;
   }
