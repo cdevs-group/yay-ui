@@ -9631,14 +9631,14 @@ var Reward = styled.div(templateObject_3$V || (templateObject_3$V = __makeTempla
     var theme = _a.theme;
     return theme.colors.boxShadow11;
 });
-var ButtonText = styled(Text)(templateObject_4$O || (templateObject_4$O = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 8px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 8px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"])), function (_a) {
+var ButtonText = styled(Text)(templateObject_4$O || (templateObject_4$O = __makeTemplateObject(["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"], ["\n  position: relative;\n  display: none;\n  &:after {\n    display: block;\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: flex;\n    align-items: center;\n    font-size: 13px;\n  }\n"])), function (_a) {
     var loading = _a.loading;
     return (loading ? "none" : "''");
 }, function () { return "url(" + COIN5 + ") no-repeat left center /cover"; }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var ButtonTextMob = styled(ButtonText)(templateObject_5$t || (templateObject_5$t = __makeTemplateObject(["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 8px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 8px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
+var ButtonTextMob = styled(ButtonText)(templateObject_5$t || (templateObject_5$t = __makeTemplateObject(["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"], ["\n  font-size: 13px;\n  display: flex;\n  align-items: center;\n  &:after {\n    content: ", ";\n    width: 18px;\n    height: 17px;\n    margin-left: 4px;\n    background: ", ";\n  }\n  ", " {\n    display: none;\n  }\n"])), function (_a) {
     var loading = _a.loading;
     return (loading ? "none" : "''");
 }, function () { return "url(" + COIN5 + ") no-repeat left center /cover"; }, function (_a) {

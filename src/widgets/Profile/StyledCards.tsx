@@ -43,7 +43,7 @@ export const ButtonText = styled(Text)<{ loading?: boolean }>`
     content: ${({ loading }) => (loading ? "none" : `''`)};
     width: 18px;
     height: 17px;
-    margin-left: 8px;
+    margin-left: 4px;
     background: ${() => `url(${COIN5}) no-repeat left center /cover`};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -61,7 +61,7 @@ export const ButtonTextMob = styled(ButtonText)<{ loading?: boolean }>`
     content: ${({ loading }) => (loading ? "none" : `''`)};
     width: 18px;
     height: 17px;
-    margin-left: 8px;
+    margin-left: 4px;
     background: ${() => `url(${COIN5}) no-repeat left center /cover`};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
