@@ -87,8 +87,8 @@ const Achievement = ({
               disabled={disabledButton}
               spin={loadingButton}
             >
-              <ButtonText loading={loadingButton}>{collectText}</ButtonText>
-              <ButtonTextMob loading={loadingButton}>{collectTextMob}</ButtonTextMob>
+              <ButtonText loadingButton={loadingButton}>{collectText}</ButtonText>
+              <ButtonTextMob loadingButton={loadingButton}>{collectTextMob}</ButtonTextMob>
             </ButtonStyle>
           )}
         </CardFront>

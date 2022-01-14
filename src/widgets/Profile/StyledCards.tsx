@@ -35,12 +35,12 @@ export const Reward = styled.div`
   z-index: 2;
 `;
 
-export const ButtonText = styled(Text)<{ loading?: boolean }>`
+export const ButtonText = styled(Text)<{ loadingButton?: boolean }>`
   position: relative;
   display: none;
   &:after {
     display: block;
-    content: ${({ loading }) => (loading ? "none" : `''`)};
+    content: ${({ loadingButton }) => (loadingButton ? "none" : `''`)};
     width: 18px;
     height: 17px;
     margin-left: 4px;
@@ -53,12 +53,12 @@ export const ButtonText = styled(Text)<{ loading?: boolean }>`
   }
 `;
 
-export const ButtonTextMob = styled(ButtonText)<{ loading?: boolean }>`
+export const ButtonTextMob = styled(ButtonText)<{ loadingButton?: boolean }>`
   font-size: 13px;
   display: flex;
   align-items: center;
   &:after {
-    content: ${({ loading }) => (loading ? "none" : `''`)};
+    content: ${({ loadingButton }) => (loadingButton ? "none" : `''`)};
     width: 18px;
     height: 17px;
     margin-left: 4px;
