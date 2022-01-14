@@ -40,22 +40,29 @@ export const ButtonText = styled(Text)<{ loading?: boolean }>`
   display: none;
   &:after {
     display: block;
-    content: ${({ loading }) => (loading ? "none" : `url("${COIN5}")`)};
-    position: absolute;
-    right: -25px;
-    top: 0;
+    content: ${({ loading }) => (loading ? "none" : `''`)};
+    width: 18px;
+    height: 17px;
+    margin-left: 8px;
+    background: ${() => `url(${COIN5}) no-repeat left center /cover`};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: 13px;
   }
 `;
 
 export const ButtonTextMob = styled(ButtonText)<{ loading?: boolean }>`
   font-size: 13px;
-  display: block;
+  display: flex;
+  align-items: center;
   &:after {
-    content: ${({ loading }) => (loading ? "none" : `url("${COIN5}")`)};
+    content: ${({ loading }) => (loading ? "none" : `''`)};
+    width: 18px;
+    height: 17px;
+    margin-left: 8px;
+    background: ${() => `url(${COIN5}) no-repeat left center /cover`};
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     display: none;
