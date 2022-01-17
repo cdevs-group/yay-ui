@@ -7993,7 +7993,7 @@ var ArrowIcon = styled(Flex)(templateObject_12$8 || (templateObject_12$8 = __mak
 var templateObject_1$26, templateObject_2$1G, templateObject_3$1m, templateObject_4$1c, templateObject_5$Q, templateObject_6$G, templateObject_7$u, templateObject_8$n, templateObject_9$g, templateObject_10$d, templateObject_11$b, templateObject_12$8;
 
 var HeaderMarketplace = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds;
+    var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds, linksViews = _a.linksViews;
     var _b = useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var _c = useState(0), heightDisclaimer = _c[0], setHeightDisclaimer = _c[1];
     var refSelect = useRef(null);
@@ -8022,7 +8022,7 @@ var HeaderMarketplace = function (_a) {
                         React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 React__default.createElement(RightContent$1, null,
                     network ? (React__default.createElement(Network$3, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
-                    React__default.createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer }),
+                    React__default.createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer, linksViews: linksViews }),
                     currentLang && (React__default.createElement(LanguageBlockDesk, null,
                         React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
                     React__default.createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));
