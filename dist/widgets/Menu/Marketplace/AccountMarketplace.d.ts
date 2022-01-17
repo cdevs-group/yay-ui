@@ -13,6 +13,12 @@ interface Props {
     totalBalance: string;
     funds: Funds[];
     heightDisclaimer?: number;
+    linksViews?: {
+        icon: React.ReactNode;
+        text: string;
+        link: string;
+        comingSoon?: boolean;
+    }[];
 }
 declare const AccountMarketplace: React.FC<Props>;
 export default AccountMarketplace;
