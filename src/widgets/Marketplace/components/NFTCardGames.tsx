@@ -1,60 +1,44 @@
 import React from "react";
 import styled from "styled-components";
-import { ICardProps } from "./types";
+import { ICardGamesProps } from "./types";
 import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
-import Likes from "./Likes";
 
-const NFTCard: React.FC<ICardProps> = ({
+const NFTCardGames: React.FC<ICardGamesProps> = ({
   title,
   picUrl,
-  author,
   avatarUrl,
   description,
-  price,
-  likes,
+  textSeeNow,
   onShare,
-  onFavoritesAdd,
-  onAuthorClick,
   onNftClick,
-  onLikeAdd,
-  network,
+  network1,
+  network2,
+  onSeeNowClick
 }) => {
   return (
     <Card>
       <Network>
-        <img alt="" src={network} />
+        <img alt="" src={network1} />
+        <img alt="" src={network2} className="network2" />
       </Network>
-      <Likes
-        likes={likes}
-        onLikeAdd={onLikeAdd}
-        wrapperStyle={{
-          position: "absolute",
-          top: "15px",
-          right: "15px",
-        }}
-      />
       <PictureWrapper>
         <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
       </PictureWrapper>
       <Body>
-        <Flex alignItems="center" mb="24px">
-          <Avatar src={avatarUrl} alt={author} onClick={() => onAuthorClick()} />
+        <Flex alignItems="center" mb="24px" onClick={() => onNftClick()} >
+          <Avatar src={avatarUrl} alt=''/>
           <div style={{ overflow: "hidden" }}>
-            <Title onClick={() => onNftClick()}>{title}</Title>
-            <Author onClick={() => onAuthorClick()}>{author}</Author>
+            <Title>{title}</Title>
           </div>
         </Flex>
         <Text color="textGray" mb="29px" fontWeight={400}>
           {description}
         </Text>
         <FooterContainer>
-          <PriceText>{price}</PriceText>
+          <SeeText onClick={() => onSeeNowClick()} role="button">{textSeeNow}</SeeText>
           <Flex>
-            <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
+            <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
               <NFTShareIcon />
-            </IconWrapper>
-            <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
-              <StarIcon />
             </IconWrapper>
           </Flex>
         </FooterContainer>
@@ -63,7 +47,7 @@ const NFTCard: React.FC<ICardProps> = ({
   );
 };
 
-export default NFTCard;
+export default NFTCardGames;
 
 const Card = styled.div`
   position: relative;
@@ -82,6 +66,11 @@ const Network = styled.div`
   & img {
     width: 32px;
     height: 32px;
+    box-shadow: ${({ theme }) => theme.colors.textShadow};
+    border-radius: 9px;
+  }
+  & .network2 {
+    margin-left: -17px;
   }
 `;
 
@@ -94,15 +83,6 @@ const Title = styled(Text)`
   text-overflow: ellipsis;
   font-weight: 400;
   cursor: pointer;
-`;
-
-const Author = styled(Text)`
-  font-size: 13px;
-  line-height: 16px;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.greyText};
 `;
 
 const PictureWrapper = styled.div`
@@ -134,13 +114,14 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const PriceText = styled(Text)`
+const SeeText = styled(Text)`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
   color: ${({ theme }) => theme.colors.green};
+  cursor: pointer;
 `;
 
 const IconWrapper = styled.div`
