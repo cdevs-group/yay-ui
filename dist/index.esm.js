@@ -7839,7 +7839,7 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$27, templateObject_2$1H, templateObject_3$1n;
 
 var AccountMarketplace = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds, heightDisclaimer = _a.heightDisclaimer;
+    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds, heightDisclaimer = _a.heightDisclaimer, linksViews = _a.linksViews;
     var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
     var _b = useState(false), openDropdown = _b[0], setOpenDropdown = _b[1];
     var _c = useState(false), openFunds = _c[0], setOpenFunds = _c[1];
@@ -7922,7 +7922,7 @@ var AccountMarketplace = function (_a) {
                             })))));
                     })))),
                 React__default.createElement(Line$5, null),
-                links.map(function (el) { return (React__default.createElement(LinkUser, __assign({ key: el.text }, el))); }),
+                (linksViews || links).map(function (el) { return (React__default.createElement(LinkUser, __assign({ key: el.text }, el))); }),
                 React__default.createElement(Button$9, { variant: "option", onClick: function () {
                         {
                             logout();
@@ -13285,8 +13285,7 @@ var templateObject_1$c, templateObject_2$b;
 var NFTCard = function (_a) {
     var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price, likes = _a.likes, onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick, onLikeAdd = _a.onLikeAdd, network = _a.network;
     return (React__default.createElement(Card$2, null,
-        React__default.createElement(Network$1, null,
-            React__default.createElement("img", { alt: "", src: network })),
+        React__default.createElement(Network$1, null, network && React__default.createElement("img", { alt: "", src: network })),
         React__default.createElement(Likes$1, { likes: likes, onLikeAdd: onLikeAdd, wrapperStyle: {
                 position: "absolute",
                 top: "15px",
@@ -13339,12 +13338,12 @@ var NFTCardGames = function (_a) {
     return (React__default.createElement(Card$1, null,
         React__default.createElement(Network, null,
             React__default.createElement("img", { alt: "", src: network1 }),
-            React__default.createElement("img", { alt: "", src: network2, className: "network2" })),
+            network2 && React__default.createElement("img", { alt: "", src: network2, className: "network2" })),
         React__default.createElement(PictureWrapper, null,
             React__default.createElement(Picture$1, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
         React__default.createElement(Body, null,
             React__default.createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onNftClick(); } },
-                React__default.createElement(Avatar, { src: avatarUrl, alt: '' }),
+                React__default.createElement(Avatar, { src: avatarUrl, alt: "" }),
                 React__default.createElement("div", { style: { overflow: "hidden" } },
                     React__default.createElement(Title$4, null, title))),
             React__default.createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
