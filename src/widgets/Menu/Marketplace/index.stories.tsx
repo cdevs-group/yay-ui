@@ -6,6 +6,7 @@ import { useState } from "react";
 import { BNB2, YAY_TOKEN } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 import HeaderMarketplace from "./HeaderMarketplace";
+import { CollectionIcon, FavoritesIcon, UserIcon } from "../../..";
 
 export default {
   title: "Components/Header/HeaderMarketplace",
@@ -78,6 +79,33 @@ export const HeaderForMarketplace = () => {
     setNetwork(NETWORK_CHAIN.find((el) => el.chainId === val));
   };
 
+  const links = [
+    {
+      icon: <UserIcon />,
+      text: textsAccount.myProfile,
+      link: textsAccount.linkMyProfile,
+      comingSoon: true,
+    },
+    {
+      icon: <FavoritesIcon />,
+      text: textsAccount.favorities,
+      link: textsAccount.linkFavorities,
+      comingSoon: true,
+    },
+    {
+      icon: <CollectionIcon />,
+      text: textsAccount.myCollections,
+      link: textsAccount.linkMyCollections,
+      comingSoon: true,
+    },
+    // {
+    //   icon: <img src={ACHIEVEMENTS} alt="" />,
+    //   text: textsAccount.achievements,
+    //   link: textsAccount.linkAchievements,
+    //   comingSoon: true,
+    // },
+  ];
+
   const funds = [
     {
       id: "1",
@@ -133,6 +161,7 @@ export const HeaderForMarketplace = () => {
           langs={langs}
           setLang={noop}
           currentLang="EN"
+          linksViews={links}
           links={linksSubmenu}
           profile={{
             profileLink: "/profile",

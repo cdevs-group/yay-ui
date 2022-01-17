@@ -33,6 +33,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   disclaimerText,
   totalBalance,
   funds,
+  linksViews,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [heightDisclaimer, setHeightDisclaimer] = useState(0);
@@ -105,6 +106,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
               totalBalance={totalBalance}
               funds={funds}
               heightDisclaimer={heightDisclaimer}
+              linksViews={linksViews}
             />
             {currentLang && (
               <LanguageBlockDesk>
