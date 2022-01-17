@@ -13,7 +13,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
   onNftClick,
   network1,
   network2,
-  onSeeNowClick
+  onSeeNowClick,
 }) => {
   return (
     <Card>
@@ -25,8 +25,8 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
         <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
       </PictureWrapper>
       <Body>
-        <Flex alignItems="center" mb="24px" onClick={() => onNftClick()} >
-          <Avatar src={avatarUrl} alt=''/>
+        <Flex alignItems="center" mb="24px" onClick={() => onNftClick()}>
+          <Avatar src={avatarUrl} alt="" />
           <div style={{ overflow: "hidden" }}>
             <Title>{title}</Title>
           </div>
@@ -35,7 +35,9 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
           {description}
         </Text>
         <FooterContainer>
-          <SeeText onClick={() => onSeeNowClick()} role="button">{textSeeNow}</SeeText>
+          <SeeText onClick={() => onSeeNowClick()} role="button">
+            {textSeeNow}
+          </SeeText>
           <Flex>
             <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
               <NFTShareIcon />

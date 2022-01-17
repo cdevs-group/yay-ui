@@ -7,12 +7,25 @@ export interface ICardProps {
     picUrl: string;
     avatarUrl: string;
     likes: number;
-    price: number;
+    price: string;
     onShare: () => void;
     onFavoritesAdd: () => void;
     onAuthorClick: () => void;
     onNftClick: () => void;
     onLikeAdd: () => void;
+    network: string;
+}
+export interface ICardGamesProps {
+    title: string;
+    description: string;
+    picUrl: string;
+    avatarUrl: string;
+    textSeeNow: string;
+    onShare: (id?: string | number) => void;
+    onNftClick: (id?: string | number) => void;
+    network1: string;
+    network2?: string;
+    onSeeNowClick: (id?: string | number) => void;
 }
 export interface ILikesProps {
     likes: number;
