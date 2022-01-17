@@ -19,7 +19,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
     <Card>
       <Network>
         <img alt="" src={network1} />
-        <img alt="" src={network2} className="network2" />
+        {network2 && <img alt="" src={network2} className="network2" />}
       </Network>
       <PictureWrapper>
         <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />

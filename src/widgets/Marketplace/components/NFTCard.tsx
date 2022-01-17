@@ -21,9 +21,7 @@ const NFTCard: React.FC<ICardProps> = ({
 }) => {
   return (
     <Card>
-      <Network>
-        <img alt="" src={network} />
-      </Network>
+      <Network>{network && <img alt="" src={network} />}</Network>
       <Likes
         likes={likes}
         onLikeAdd={onLikeAdd}

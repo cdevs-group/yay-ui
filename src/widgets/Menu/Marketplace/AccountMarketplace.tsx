@@ -35,6 +35,12 @@ interface Props {
   totalBalance: string;
   funds: Funds[];
   heightDisclaimer?: number;
+  linksViews?: {
+    icon: React.ReactNode;
+    text: string;
+    link: string;
+    comingSoon?: boolean;
+  }[];
 }
 
 const AccountMarketplace: React.FC<Props> = ({
@@ -48,6 +54,7 @@ const AccountMarketplace: React.FC<Props> = ({
   totalBalance,
   funds,
   heightDisclaimer,
+  linksViews,
 }) => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
@@ -211,7 +218,7 @@ const AccountMarketplace: React.FC<Props> = ({
                 </>
               )}
               <Line />
-              {links.map((el: any) => (
+              {(linksViews || links).map((el: any) => (
                 <LinkUser key={el.text} {...el} />
               ))}
               <Button
