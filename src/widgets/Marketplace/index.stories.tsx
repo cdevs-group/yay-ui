@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CollectionItem from "./components/CollectionItem";
-import { NFT_EXAMPLE } from "../../constants/images";
+import { NFT_EXAMPLE, BNB, Avalanche } from "../../constants/images";
 import NFTCard from "./components/NFTCard";
+import NFTCardGames from "./components/NFTCardGames";
 import Likes from "./components/Likes";
 import MarketTabs from "./components/MarketTabs";
 import PropertieItem from "./components/ProretieItem";
@@ -10,6 +11,7 @@ import ProfileNftCard from "./components/ProfileNftCard";
 import ImportCollection from "./components/ImportCollection";
 import { RegisterProfile } from "./index";
 import ReferralList from "./components/ReferralList";
+import { Flex } from "../..";
 
 export default {
   title: "Widgets/Marketplace",
@@ -41,20 +43,35 @@ export const LikesBlock = () => (
 
 export const NFTCardBlock = () => {
   return (
-    <NFTCard
-      title="The Amazing Game"
-      author="Rostislav Berezhnoy"
-      description="Highest bid 1/20"
-      picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
-      avatarUrl="https://64.media.tumblr.com/4027ba285822c2e0255415eb81a54901/49f64d2b415f8d60-ed/s540x810/dc649d2b437724f9c0ba385443dff85b6238e89d.png"
-      price={2500.5}
-      likes={350}
-      onShare={() => console.log("share NFT")}
-      onFavoritesAdd={() => console.log("Add to Favorites")}
-      onAuthorClick={() => console.log("Go to Author Page")}
-      onNftClick={() => console.log("Go to Nft Page")}
-      onLikeAdd={() => console.log("Liked")}
-    />
+    <Flex>
+      <NFTCard
+        title="The Amazing Game"
+        author="Rostislav Berezhnoy"
+        description="Highest bid 1/20"
+        picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
+        avatarUrl="https://64.media.tumblr.com/4027ba285822c2e0255415eb81a54901/49f64d2b415f8d60-ed/s540x810/dc649d2b437724f9c0ba385443dff85b6238e89d.png"
+        price="2500.5 YAY"
+        likes={350}
+        onShare={() => console.log("share NFT")}
+        onFavoritesAdd={() => console.log("Add to Favorites")}
+        onAuthorClick={() => console.log("Go to Author Page")}
+        onNftClick={() => console.log("Go to Nft Page")}
+        onLikeAdd={() => console.log("Liked")}
+        network={BNB}
+      />
+      <NFTCardGames
+        title="Bold Point"
+        description="Total NFTs: 1920"
+        picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
+        avatarUrl="https://64.media.tumblr.com/4027ba285822c2e0255415eb81a54901/49f64d2b415f8d60-ed/s540x810/dc649d2b437724f9c0ba385443dff85b6238e89d.png"
+        textSeeNow="See now"
+        onShare={() => console.log("share NFT")}
+        onNftClick={() => console.log("Go to Nft Page")}
+        network1={BNB}
+        network2={Avalanche}
+        onSeeNowClick={() => console.log("onSeeNowClick")}
+      />
+    </Flex>
   );
 };
 
