@@ -23,9 +23,7 @@ const EditProfile = ({
       <Title>{texts.title}</Title>
       <Description>{texts.description}</Description>
       <AvatarBlock>
-        <Avatar onClick={avatarHandle}>
-          <img src={logo || LOGO_ROUND} alt="logo" />
-        </Avatar>
+        <Avatar onClick={avatarHandle} logo={logo || LOGO_ROUND} />
         <AvatarContent>
           <BlockTitle>{texts.avatarTitle}</BlockTitle>
           <BlockDescription>{texts.avatarDescription}</BlockDescription>
@@ -105,7 +103,7 @@ const AvatarContent = styled.div`
   max-width: 358px;
   margin: 0 auto;
 `;
-const Avatar = styled.button`
+const Avatar = styled.button<{ logo: string }>`
   padding: 0;
   margin: 0 auto;
   position: relative;
@@ -118,10 +116,7 @@ const Avatar = styled.button`
   overflow: hidden;
   outline: none;
   cursor: pointer;
-  & img {
-    width: 100%;
-    height: 100%;
-  }
+  background: ${({ logo }) => `url(${logo}) no-repeat center center /auto auto`};
 `;
 const BlockTitle = styled(Text)`
   font-size: 15px;
