@@ -13,6 +13,7 @@ export interface ProfileCardProps {
     kycNotVerified: string;
     tooltip: string;
     refferalListBtn?: string;
+    comingSoon?: string;
   };
   account: string;
   linkAccount: string;
@@ -27,4 +28,6 @@ export interface ProfileCardProps {
   refferal?: boolean;
   linkEdit: string;
   linkKYC: string;
+  disabledEditButton?: boolean;
+  comingSoonEditButton?: boolean;
 }

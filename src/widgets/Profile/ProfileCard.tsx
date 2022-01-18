@@ -27,6 +27,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   linkRefferalList,
   linkEdit,
   linkKYC,
+  comingSoonEditButton,
+  disabledEditButton,
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
@@ -121,9 +123,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           <img alt="" src={el} key={el} />
         ))}
       </AwardsLine>
-      {/* <Button width="100%" variant="option" as={Link} to={linkEdit} mt={20}>
-        {texts.edit}
-      </Button> */}
+      <EditButton comingSoon={comingSoonEditButton} text={texts.comingSoon}>
+        <Button width="100%" variant="option" as={Link} to={linkEdit} disabled={disabledEditButton}>
+          {texts.edit}
+        </Button>
+      </EditButton>
     </Card>
   );
 };
@@ -232,4 +236,24 @@ const RefferalBtn = styled(Button)`
   text-align: center;
   letter-spacing: 0.5px;
   height: auto;
+`;
+
+const EditButton = styled.div<{ comingSoon?: boolean; text?: string }>`
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+  &::before {
+    content: ${({ text }) => `"${text}"`};
+    position: absolute;
+    right: -9px;
+    top: -9px;
+    display: ${({ comingSoon }) => (comingSoon ? "block" : "none")};
+    padding: 5px 11px;
+    background: ${({ theme }) => theme.colors.green};
+    border-radius: 6px;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 11px;
+    color: ${({ theme }) => theme.colors.text};
+  }
 `;

@@ -29,6 +29,7 @@ const textsCard = {
   kycNotVerified: "Not Verified",
   tooltip: "Kyc info",
   refferalListBtn: "Referral list",
+  comingSoon: "Coming Soon",
 };
 
 export const ProfileCardWidget: React.FC = () => {
@@ -47,6 +48,8 @@ export const ProfileCardWidget: React.FC = () => {
           linkRefferalList="/"
           linkEdit="/"
           linkKYC="/"
+          disabledEditButton
+          comingSoonEditButton
         />
       </div>
       <div style={{ marginTop: 50, maxWidth: 373 }}>
