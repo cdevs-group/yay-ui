@@ -164,5 +164,11 @@ export interface NavMarketplaceProps extends PanelProps {
     disclaimerText?: string;
     totalBalance: string;
     funds: Funds[];
+    linksViews?: {
+        icon: React.ReactNode;
+        text: string;
+        link: string;
+        comingSoon?: boolean;
+    }[];
 }
 export {};
