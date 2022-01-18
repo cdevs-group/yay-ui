@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Text } from "../../../components/Text";
-import { StyledModal } from "../../Modal/Modal";
-import { CloseIcon } from "../../../components/Svg";
-import { Button } from "../../../components/Button";
-import { Flex } from "../../../components/Box";
-import { Pagination } from "../../../components/Pagination";
+import { Text } from "../../../../components/Text";
+import { StyledModal } from "../../../Modal/Modal";
+import { CloseIcon } from "../../../../components/Svg";
+import { Button } from "../../../../components/Button";
+import { Flex } from "../../../../components/Box";
+import { Pagination } from "../../../../components/Pagination";
 import { IChooseModalProps } from "../types";
 import NftsTable from "./NftsTable";
 

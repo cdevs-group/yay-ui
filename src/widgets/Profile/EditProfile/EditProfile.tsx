@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Text } from "../../components/Text";
-import { Button } from "../../components/Button";
-import { LOGO_ROUND } from "../../constants/images";
-import Input from "./Components/Input";
+import { Text } from "../../../components/Text";
+import { Button } from "../../../components/Button";
+import { LOGO_ROUND } from "../../../constants/images";
+import Input from "./components/Input";
 import { IEditProfileProps } from "./types";
-import { ButtonProps } from "../../components/Button/types";
+import { ButtonProps } from "../../../components/Button/types";
 
 const EditProfile = ({
   logo,

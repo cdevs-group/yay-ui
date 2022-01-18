@@ -1,4 +1,4 @@
-import { ButtonProps } from "../../components/Button/types";
+import { ButtonProps } from "../../../components/Button/types";
 
 interface IEditProfileText {
   title: string;

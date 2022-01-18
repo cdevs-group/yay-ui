@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import EditProfile from "./EditProfile";
 import styled from "styled-components";
-import ChooseAvatarModal from "./Components/ChooseAvatarModal";
-import { EXAMPLE_AVATAR } from "../../constants/images";
+import ChooseAvatarModal from "./components/ChooseAvatarModal";
+import { EXAMPLE_AVATAR } from "../../../constants/images";
 
 export default {
   title: "Widgets/EditProfile",
