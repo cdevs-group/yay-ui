@@ -1,11 +1,11 @@
 import React from "react";
-import TopBlock from "./TopBlock";
+import TopBlock from "./components/TopBlock";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { ArrowDownIcon } from "../../../components/Svg";
 import { IReferralListProps } from "./types";
-import ReferralListItems from "./ReferralListItems";
+import ReferralListItems from "./components/ReferralListItems";
 import { Pagination } from "../../../components/Pagination";
 
 const ReferralList = ({

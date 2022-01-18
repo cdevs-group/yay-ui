@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Flex } from "../../../components/Box";
-import { Text } from "../../../components/Text";
-import { IReferralListItem, ITextsReferralList } from "./types";
-import { ellipsis } from "../../../helpers/ellipsis";
+import { Text } from "../../../../components/Text";
+import { IReferralListItem, ITextsReferralList } from "../types";
+import { ellipsis } from "../../../../helpers/ellipsis";
 
 const ReferralListItems = ({ data, texts }: { data: IReferralListItem[]; texts: ITextsReferralList }) => {
   return (
