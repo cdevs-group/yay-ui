@@ -123,7 +123,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           <img alt="" src={el} key={el} />
         ))}
       </AwardsLine>
-      <EditButton comingSoon={comingSoonEditButton} text={texts.comingSoon}>
+      <EditButton comingSoon={comingSoonEditButton} text={texts.comingSoon} disabled={disabledEditButton}>
         <Button width="100%" variant="option" as={Link} to={linkEdit} disabled={disabledEditButton}>
           {texts.edit}
         </Button>
@@ -238,10 +238,11 @@ const RefferalBtn = styled(Button)`
   height: auto;
 `;
 
-const EditButton = styled.div<{ comingSoon?: boolean; text?: string }>`
+const EditButton = styled.div<{ comingSoon?: boolean; text?: string; disabled?: boolean }>`
   position: relative;
   width: 100%;
   margin-top: 24px;
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
   &::before {
     content: ${({ text }) => `"${text}"`};
     position: absolute;
