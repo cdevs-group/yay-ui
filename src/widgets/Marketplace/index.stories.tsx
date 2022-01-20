@@ -56,6 +56,7 @@ export const NFTCardBlock = () => {
         onNftClick={() => console.log("Go to Nft Page")}
         onLikeAdd={() => console.log("Liked")}
         network={BNB}
+        onGameClick={() => console.log("onGameClick")}
       />
       <NFTCardGames
         title="Bold Point"
@@ -68,6 +69,7 @@ export const NFTCardBlock = () => {
         network1={BNB}
         network2={Avalanche}
         onSeeNowClick={() => console.log("onSeeNowClick")}
+        onGameClick={() => console.log("onGameClick")}
       />
     </Flex>
   );

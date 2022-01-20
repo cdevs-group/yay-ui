@@ -19,6 +19,7 @@ const NFTCard: React.FC<ICardProps> = ({
   onNftClick,
   onLikeAdd,
   network,
+  onGameClick,
 }) => {
   return (
     <CardWrapper>
@@ -38,9 +39,9 @@ const NFTCard: React.FC<ICardProps> = ({
         </PictureWrapper>
         <Body>
           <Flex alignItems="center" mb="24px">
-            <Avatar src={avatarUrl} alt={author} onClick={() => onAuthorClick()} />
+            <Avatar src={avatarUrl} alt={author} onClick={() => onGameClick()} />
             <div style={{ overflow: "hidden" }}>
-              <Title onClick={() => onNftClick()}>{title}</Title>
+              <Title onClick={() => onGameClick()}>{title}</Title>
               <Author onClick={() => onAuthorClick()}>{author}</Author>
             </div>
           </Flex>

@@ -4,12 +4,21 @@ import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../
 import { CardHover, CardWrapper } from "../styled";
 import { IProfileCardProps } from "./types";
 
-const ProfileNftCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike, onNftClick }) => {
+const ProfileNftCard: React.FC<IProfileCardProps> = ({
+  title,
+  picUrl,
+  price,
+  likes,
+  isLiked,
+  onLike,
+  onNftClick,
+  onTitleClick,
+}) => {
   return (
     <CardWrapper maxWidth={233}>
       <Card>
         <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-        <Title>{title}</Title>
+        <Title onClick={() => (onTitleClick ? onTitleClick() : null)}>{title}</Title>
         <FooterContainer>
           <PriceText>{price}</PriceText>
           {/* <Likes>

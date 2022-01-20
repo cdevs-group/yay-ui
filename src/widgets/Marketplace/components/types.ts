@@ -15,6 +15,7 @@ export interface ICardProps {
   onNftClick: (id?: string | number) => void;
   onLikeAdd?: () => void;
   network: string;
+  onGameClick: (id?: string | number) => void;
 }
 
 export interface ICardGamesProps {
@@ -28,6 +29,7 @@ export interface ICardGamesProps {
   network1: string;
   network2?: string;
   onSeeNowClick: (id?: string | number) => void;
+  onGameClick: (id?: string | number) => void;
 }
 
 export interface ILikesProps {
@@ -52,6 +54,7 @@ export interface IProfileCardProps {
   isLiked?: boolean;
   onLike?: () => void;
   onNftClick: (id?: string | number) => void;
+  onTitleClick?: (id?: string | number) => void;
 }
 
 export interface IRegisterProfileProps {
