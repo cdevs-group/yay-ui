@@ -13592,7 +13592,7 @@ var CardHover = styled.div(templateObject_2$6 || (templateObject_2$6 = __makeTem
 var templateObject_1$7, templateObject_2$6;
 
 var NFTCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network;
+    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onGameClick = _a.onGameClick;
     return (React__default.createElement(CardWrapper, null,
         React__default.createElement(Card$2, null,
             React__default.createElement(Network$1, null, network && React__default.createElement("img", { alt: "", src: network })),
@@ -13600,9 +13600,9 @@ var NFTCard = function (_a) {
                 React__default.createElement(Picture$2, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
             React__default.createElement(Body$1, null,
                 React__default.createElement(Flex, { alignItems: "center", mb: "24px" },
-                    React__default.createElement(Avatar$1, { src: avatarUrl, alt: author, onClick: function () { return onAuthorClick(); } }),
+                    React__default.createElement(Avatar$1, { src: avatarUrl, alt: author, onClick: function () { return onGameClick(); } }),
                     React__default.createElement("div", { style: { overflow: "hidden" } },
-                        React__default.createElement(Title$3, { onClick: function () { return onNftClick(); } }, title),
+                        React__default.createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
                         React__default.createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
                 React__default.createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
                 React__default.createElement(FooterContainer$2, null,
@@ -13643,7 +13643,7 @@ var Body$1 = styled(Flex)(templateObject_11 || (templateObject_11 = __makeTempla
 var templateObject_1$6, templateObject_2$5, templateObject_3$5, templateObject_4$3, templateObject_5$2, templateObject_6$2, templateObject_7$2, templateObject_8$2, templateObject_9$2, templateObject_10$1, templateObject_11;
 
 var NFTCardGames = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl, description = _a.description, textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick;
+    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl, description = _a.description, textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick;
     return (React__default.createElement(CardWrapper, null,
         React__default.createElement(Card$1, null,
             React__default.createElement(Network, null,
@@ -13652,7 +13652,7 @@ var NFTCardGames = function (_a) {
             React__default.createElement(PictureWrapper, null,
                 React__default.createElement(Picture$1, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
             React__default.createElement(Body, null,
-                React__default.createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onNftClick(); } },
+                React__default.createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onGameClick(); } },
                     React__default.createElement(Avatar, { src: avatarUrl, alt: "" }),
                     React__default.createElement("div", { style: { overflow: "hidden" } },
                         React__default.createElement(Title$2, null, title))),
@@ -13741,11 +13741,11 @@ var Value = styled(Text)(templateObject_3$2 || (templateObject_3$2 = __makeTempl
 var templateObject_1$3, templateObject_2$2, templateObject_3$2;
 
 var ProfileNftCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick;
+    var title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick, onTitleClick = _a.onTitleClick;
     return (React__default.createElement(CardWrapper, { maxWidth: 233 },
         React__default.createElement(Card, null,
             React__default.createElement(Picture, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } }),
-            React__default.createElement(Title$1, null, title),
+            React__default.createElement(Title$1, { onClick: function () { return (onTitleClick ? onTitleClick() : null); } }, title),
             React__default.createElement(FooterContainer, null,
                 React__default.createElement(PriceText, null, price))),
         React__default.createElement(CardHover, null)));
