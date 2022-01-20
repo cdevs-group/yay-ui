@@ -5112,12 +5112,12 @@ var Select$2 = function (_a) {
     var handleChange = function (e) {
         setValue(e.target.value);
     };
-    return (React__default["default"].createElement(Wrapper$V, __assign({}, props, { style: singleOption ? { cursor: 'default' } : { cursor: 'pointer' } }),
-        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, !singleOption && React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
+    return (React__default["default"].createElement(Wrapper$V, __assign({}, props, { style: singleOption ? { cursor: "default" } : { cursor: "pointer" } }),
+        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, !singleOption && (React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
             React__default["default"].createElement(Input$9, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
             React__default["default"].createElement(Item$3, __assign({}, propsOption),
                 React__default["default"].createElement(Text, null, el.name),
-                React__default["default"].createElement(Icon$l, null)))); })))));
+                React__default["default"].createElement(Icon$l, null)))); }))))));
 };
 var Wrapper$V = styled__default["default"].div(templateObject_1$2Z || (templateObject_1$2Z = __makeTemplateObject(["\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$4 = styled__default["default"].div(templateObject_2$2o || (templateObject_2$2o = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
