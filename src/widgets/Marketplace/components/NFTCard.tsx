@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ICardProps } from "./types";
 import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
 import Likes from "./Likes";
+import { CardHover, CardWrapper } from "../styled";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -20,9 +21,10 @@ const NFTCard: React.FC<ICardProps> = ({
   network,
 }) => {
   return (
-    <Card>
-      <Network>{network && <img alt="" src={network} />}</Network>
-      <Likes
+    <CardWrapper>
+      <Card>
+        <Network>{network && <img alt="" src={network} />}</Network>
+        {/* <Likes
         likes={likes}
         onLikeAdd={onLikeAdd}
         wrapperStyle={{
@@ -30,47 +32,57 @@ const NFTCard: React.FC<ICardProps> = ({
           top: "15px",
           right: "15px",
         }}
-      />
-      <PictureWrapper>
-        <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-      </PictureWrapper>
-      <Body>
-        <Flex alignItems="center" mb="24px">
-          <Avatar src={avatarUrl} alt={author} onClick={() => onAuthorClick()} />
-          <div style={{ overflow: "hidden" }}>
-            <Title onClick={() => onNftClick()}>{title}</Title>
-            <Author onClick={() => onAuthorClick()}>{author}</Author>
-          </div>
-        </Flex>
-        <Text color="textGray" mb="29px" fontWeight={400}>
-          {description}
-        </Text>
-        <FooterContainer>
-          <PriceText>{price}</PriceText>
-          <Flex>
-            <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
-              <NFTShareIcon />
-            </IconWrapper>
-            <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
-              <StarIcon />
-            </IconWrapper>
+      /> */}
+        <PictureWrapper>
+          <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
+        </PictureWrapper>
+        <Body>
+          <Flex alignItems="center" mb="24px">
+            <Avatar src={avatarUrl} alt={author} onClick={() => onAuthorClick()} />
+            <div style={{ overflow: "hidden" }}>
+              <Title onClick={() => onNftClick()}>{title}</Title>
+              <Author onClick={() => onAuthorClick()}>{author}</Author>
+            </div>
           </Flex>
-        </FooterContainer>
-      </Body>
-    </Card>
+          <Text color="textGray" mb="29px" fontWeight={400}>
+            {description}
+          </Text>
+          <FooterContainer>
+            <PriceText>{price}</PriceText>
+            <Flex>
+              <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
+                <NFTShareIcon />
+              </IconWrapper>
+              {onFavoritesAdd && (
+                <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
+                  <StarIcon />
+                </IconWrapper>
+              )}
+            </Flex>
+          </FooterContainer>
+        </Body>
+      </Card>
+      <CardHover />
+    </CardWrapper>
   );
 };
 
 export default NFTCard;
 
+
 const Card = styled.div`
   position: relative;
   width: 100%;
-  max-width: 261px;
   min-height: 422px;
   margin: 0 auto;
-  background: ${({ theme }) => theme.colors.bgCard5};
+  background: ${({ theme }) => theme.colors.dark3};
   border-radius: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  ${CardWrapper}:hover & {
+    background: ${({ theme }) => theme.colors.dark3};
+    transition: 0.3s;
+  }
 `;
 
 const Network = styled.div`

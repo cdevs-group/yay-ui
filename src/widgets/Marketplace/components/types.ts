@@ -7,13 +7,13 @@ export interface ICardProps {
   description: string;
   picUrl: string;
   avatarUrl: string;
-  likes: number;
+  likes?: number;
   price: string;
   onShare: () => void;
-  onFavoritesAdd: () => void;
+  onFavoritesAdd?: () => void;
   onAuthorClick: () => void;
   onNftClick: () => void;
-  onLikeAdd: () => void;
+  onLikeAdd?: () => void;
   network: string;
 }
 
@@ -47,10 +47,10 @@ export interface ITabsProps {
 export interface IProfileCardProps {
   title: string;
   picUrl: string;
-  likes: number;
+  likes?: number;
   price: number;
-  isLiked: boolean;
-  onLike: () => void;
+  isLiked?: boolean;
+  onLike?: () => void;
 }
 
 export interface IRegisterProfileProps {
