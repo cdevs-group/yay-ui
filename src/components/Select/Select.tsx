@@ -11,6 +11,7 @@ export interface SelectProps extends SpaceProps, LayoutProps {
   selectItem: ReactNode;
   value: string | number;
   setValue: (e: any) => void;
+  singleOption?: boolean;
   options: {
     name: ReactNode | string | number;
     value: string | number;
@@ -27,6 +28,7 @@ const Select = ({
   selectItem,
   value,
   setValue,
+  singleOption,
   options,
   nameInputOptions,
   propsDropdown,
@@ -43,14 +45,14 @@ const Select = ({
   };
 
   return (
-    <Wrapper {...props}>
+    <Wrapper {...props} style={singleOption ? { cursor: 'default' } : { cursor: 'pointer' }}>
       <DropdownLayout
         icon={selectItem}
         open={openDropdown || open}
         setOpen={setOpenDropdown || setOpen}
         variant="visible"
       >
-        <Dropdown {...propsDropdown}>
+        {!singleOption && <Dropdown {...propsDropdown}>
           {options?.map((el, i) => (
             <Option optionsSpacing={optionsSpacing} key={i + 1}>
               <Input
@@ -66,7 +68,7 @@ const Select = ({
               </Item>
             </Option>
           ))}
-        </Dropdown>
+        </Dropdown>}
       </DropdownLayout>
     </Wrapper>
   );
@@ -75,7 +77,6 @@ const Select = ({
 export default Select;
 
 const Wrapper = styled.div`
-  cursor: pointer;
   ${layout}
   ${space}
 `;
