@@ -18,6 +18,7 @@ export interface SelectProps extends SpaceProps, LayoutProps {
     name: ReactNode | string | number;
     value: string | number;
   }[];
+  singleOption?: boolean;
   nameInputOptions: string;
   propsDropdown?: LayoutProps;
   propsOption?: SpaceProps & LayoutProps;
@@ -36,6 +37,7 @@ const InjectedSelect = ({
   value,
   setValue,
   options,
+  singleOption,
   nameInputOptions,
   propsDropdown,
   propsOption,
@@ -60,10 +62,11 @@ const InjectedSelect = ({
       >
         <Dropdown {...propsDropdown}>
           <Select
+            singleOption={singleOption}
             selectItem={
               <Currency>
                 <Text mr="15px">{options.find((el) => el.value === value)?.name}</Text>
-                <ArrowDownIcon />
+                {!singleOption && <ArrowDownIcon />}
               </Currency>
             }
             value={value}
