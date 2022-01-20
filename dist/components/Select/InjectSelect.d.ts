@@ -8,6 +8,7 @@ export interface SelectProps extends SpaceProps, LayoutProps {
         name: ReactNode | string | number;
         value: string | number;
     }[];
+    singleOption?: boolean;
     nameInputOptions: string;
     propsDropdown?: LayoutProps;
     propsOption?: SpaceProps & LayoutProps;
@@ -26,5 +27,5 @@ export interface SelectProps extends SpaceProps, LayoutProps {
     inputHandler: (e: any) => void;
     buttonText: string;
 }
-declare const InjectedSelect: ({ selectItem, value, setValue, options, nameInputOptions, propsDropdown, propsOption, optionsSpacing, openDropdown, setOpenDropdown, buttonHandler, inputsValue, inputsName, inputHandler, buttonText, ...props }: SelectProps) => JSX.Element;
+declare const InjectedSelect: ({ selectItem, value, setValue, options, singleOption, nameInputOptions, propsDropdown, propsOption, optionsSpacing, openDropdown, setOpenDropdown, buttonHandler, inputsValue, inputsName, inputHandler, buttonText, ...props }: SelectProps) => JSX.Element;
 export default InjectedSelect;

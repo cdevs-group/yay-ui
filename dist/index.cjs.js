@@ -5107,20 +5107,19 @@ var Block$b = styled__default["default"].div(templateObject_1$2_ || (templateObj
 var templateObject_1$2_;
 
 var Select$2 = function (_a) {
-    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options, nameInputOptions = _a.nameInputOptions, propsDropdown = _a.propsDropdown, propsOption = _a.propsOption, optionsSpacing = _a.optionsSpacing, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, props = __rest(_a, ["selectItem", "value", "setValue", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown"]);
+    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, singleOption = _a.singleOption, options = _a.options, nameInputOptions = _a.nameInputOptions, propsDropdown = _a.propsDropdown, propsOption = _a.propsOption, optionsSpacing = _a.optionsSpacing, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, props = __rest(_a, ["selectItem", "value", "setValue", "singleOption", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown"]);
     var _b = React.useState(false), open = _b[0], setOpen = _b[1];
     var handleChange = function (e) {
         setValue(e.target.value);
     };
-    return (React__default["default"].createElement(Wrapper$V, __assign({}, props),
-        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
-            React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
-                React__default["default"].createElement(Input$9, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
-                React__default["default"].createElement(Item$3, __assign({}, propsOption),
-                    React__default["default"].createElement(Text, null, el.name),
-                    React__default["default"].createElement(Icon$l, null)))); })))));
+    return (React__default["default"].createElement(Wrapper$V, __assign({}, props, { style: singleOption ? { cursor: 'default' } : { cursor: 'pointer' } }),
+        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, !singleOption && React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
+            React__default["default"].createElement(Input$9, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
+            React__default["default"].createElement(Item$3, __assign({}, propsOption),
+                React__default["default"].createElement(Text, null, el.name),
+                React__default["default"].createElement(Icon$l, null)))); })))));
 };
-var Wrapper$V = styled__default["default"].div(templateObject_1$2Z || (templateObject_1$2Z = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
+var Wrapper$V = styled__default["default"].div(templateObject_1$2Z || (templateObject_1$2Z = __makeTemplateObject(["\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$4 = styled__default["default"].div(templateObject_2$2o || (templateObject_2$2o = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
@@ -5166,14 +5165,14 @@ var templateObject_1$2Y;
 
 var InjectedSelect = function (_a) {
     var _b;
-    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options; _a.nameInputOptions; var propsDropdown = _a.propsDropdown; _a.propsOption; _a.optionsSpacing; var openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, buttonHandler = _a.buttonHandler, inputsValue = _a.inputsValue, inputsName = _a.inputsName, inputHandler = _a.inputHandler, buttonText = _a.buttonText, props = __rest(_a, ["selectItem", "value", "setValue", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown", "buttonHandler", "inputsValue", "inputsName", "inputHandler", "buttonText"]);
+    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options, singleOption = _a.singleOption; _a.nameInputOptions; var propsDropdown = _a.propsDropdown; _a.propsOption; _a.optionsSpacing; var openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, buttonHandler = _a.buttonHandler, inputsValue = _a.inputsValue, inputsName = _a.inputsName, inputHandler = _a.inputHandler, buttonText = _a.buttonText, props = __rest(_a, ["selectItem", "value", "setValue", "options", "singleOption", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown", "buttonHandler", "inputsValue", "inputsName", "inputHandler", "buttonText"]);
     var _c = React.useState(false), open = _c[0], setOpen = _c[1];
     return (React__default["default"].createElement(Wrapper$U, __assign({}, props),
         React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
             React__default["default"].createElement(Dropdown$3, __assign({}, propsDropdown),
-                React__default["default"].createElement(Select$2, { selectItem: React__default["default"].createElement(Currency, null,
+                React__default["default"].createElement(Select$2, { singleOption: singleOption, selectItem: React__default["default"].createElement(Currency, null,
                         React__default["default"].createElement(Text, { mr: "15px" }, (_b = options.find(function (el) { return el.value === value; })) === null || _b === void 0 ? void 0 : _b.name),
-                        React__default["default"].createElement(Icon$T, null)), value: value, setValue: setValue, nameInputOptions: "Currency", options: options, propsDropdown: {
+                        !singleOption && React__default["default"].createElement(Icon$T, null)), value: value, setValue: setValue, nameInputOptions: "Currency", options: options, propsDropdown: {
                         minWidth: 160,
                     }, width: "100%", mr: 100 }),
                 React__default["default"].createElement(Inputs, null,
@@ -13618,7 +13617,7 @@ var LikesText = styled__default["default"](Text)(templateObject_2$7 || (template
 var templateObject_1$8, templateObject_2$7;
 
 var CardWrapper = styled__default["default"].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  margin: 0 auto;\n  border-radius: 16px;\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  margin: 0 auto;\n  border-radius: 16px;\n  ", "\n"])), styledSystem.layout);
-var CardHover = styled__default["default"].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;  \n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);  \n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;  \n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;  \n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);  \n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;  \n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"])), function (_a) {
+var CardHover = styled__default["default"].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;\n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);\n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;\n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);\n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 }, CardWrapper);
@@ -13697,7 +13696,7 @@ var NFTCardGames = function (_a) {
                             React__default["default"].createElement(Icon$f, null)))))),
         React__default["default"].createElement(CardHover, null)));
 };
-var Card$1 = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;  \n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;  \n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
+var Card$1 = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
 }, CardWrapper, function (_a) {

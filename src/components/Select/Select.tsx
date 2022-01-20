@@ -45,30 +45,32 @@ const Select = ({
   };
 
   return (
-    <Wrapper {...props} style={singleOption ? { cursor: 'default' } : { cursor: 'pointer' }}>
+    <Wrapper {...props} style={singleOption ? { cursor: "default" } : { cursor: "pointer" }}>
       <DropdownLayout
         icon={selectItem}
         open={openDropdown || open}
         setOpen={setOpenDropdown || setOpen}
         variant="visible"
       >
-        {!singleOption && <Dropdown {...propsDropdown}>
-          {options?.map((el, i) => (
-            <Option optionsSpacing={optionsSpacing} key={i + 1}>
-              <Input
-                type="radio"
-                name={nameInputOptions}
-                value={el.value}
-                onChange={handleChange}
-                checked={el.value === value}
-              />
-              <Item {...propsOption}>
-                <Text>{el.name}</Text>
-                <CheckIcon2 />
-              </Item>
-            </Option>
-          ))}
-        </Dropdown>}
+        {!singleOption && (
+          <Dropdown {...propsDropdown}>
+            {options?.map((el, i) => (
+              <Option optionsSpacing={optionsSpacing} key={i + 1}>
+                <Input
+                  type="radio"
+                  name={nameInputOptions}
+                  value={el.value}
+                  onChange={handleChange}
+                  checked={el.value === value}
+                />
+                <Item {...propsOption}>
+                  <Text>{el.name}</Text>
+                  <CheckIcon2 />
+                </Item>
+              </Option>
+            ))}
+          </Dropdown>
+        )}
       </DropdownLayout>
     </Wrapper>
   );
