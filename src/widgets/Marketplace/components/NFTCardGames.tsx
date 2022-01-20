@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ICardGamesProps } from "./types";
 import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
+import { CardHover, CardWrapper } from "../styled";
 
 const NFTCardGames: React.FC<ICardGamesProps> = ({
   title,
@@ -16,36 +17,39 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
   onSeeNowClick,
 }) => {
   return (
-    <Card>
-      <Network>
-        <img alt="" src={network1} />
-        {network2 && <img alt="" src={network2} className="network2" />}
-      </Network>
-      <PictureWrapper>
-        <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-      </PictureWrapper>
-      <Body>
-        <Flex alignItems="center" mb="24px" onClick={() => onNftClick()}>
-          <Avatar src={avatarUrl} alt="" />
-          <div style={{ overflow: "hidden" }}>
-            <Title>{title}</Title>
-          </div>
-        </Flex>
-        <Text color="textGray" mb="29px" fontWeight={400}>
-          {description}
-        </Text>
-        <FooterContainer>
-          <SeeText onClick={() => onSeeNowClick()} role="button">
-            {textSeeNow}
-          </SeeText>
-          <Flex>
-            <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
-              <NFTShareIcon />
-            </IconWrapper>
+    <CardWrapper>
+      <Card>
+        <Network>
+          <img alt="" src={network1} />
+          {network2 && <img alt="" src={network2} className="network2" />}
+        </Network>
+        <PictureWrapper>
+          <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
+        </PictureWrapper>
+        <Body>
+          <Flex alignItems="center" mb="24px" onClick={() => onNftClick()}>
+            <Avatar src={avatarUrl} alt="" />
+            <div style={{ overflow: "hidden" }}>
+              <Title>{title}</Title>
+            </div>
           </Flex>
-        </FooterContainer>
-      </Body>
-    </Card>
+          <Text color="textGray" mb="29px" fontWeight={400}>
+            {description}
+          </Text>
+          <FooterContainer>
+            <SeeText onClick={() => onSeeNowClick()} role="button">
+              {textSeeNow}
+            </SeeText>
+            <Flex>
+              <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
+                <NFTShareIcon />
+              </IconWrapper>
+            </Flex>
+          </FooterContainer>
+        </Body>
+      </Card>
+      <CardHover />
+    </CardWrapper>
   );
 };
 
@@ -54,11 +58,15 @@ export default NFTCardGames;
 const Card = styled.div`
   position: relative;
   width: 100%;
-  max-width: 261px;
-  min-height: 422px;
-  margin: 0 auto;
-  background: ${({ theme }) => theme.colors.bgCard5};
+  min-height: 422px;  
+  background: ${({ theme }) => theme.colors.dark3};
   border-radius: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  ${CardWrapper}:hover & {
+    background: ${({ theme }) => theme.colors.dark3};
+    transition: 0.3s;
+  }
 `;
 
 const Network = styled.div`

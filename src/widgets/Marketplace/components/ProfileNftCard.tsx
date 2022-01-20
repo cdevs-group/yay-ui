@@ -1,25 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../../..";
+import { CardHover, CardWrapper } from "../styled";
 import { IProfileCardProps } from "./types";
 
 const ProfileNftCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike }) => {
   return (
-    <Card>
-      <Picture src={picUrl} alt={title} />
-      <Title>{title}</Title>
-      <FooterContainer>
-        <PriceText>{price} YAY</PriceText>
-        <Likes>
+    <CardWrapper maxWidth={233}>
+      <Card>
+        <Picture src={picUrl} alt={title} />
+        <Title>{title}</Title>
+        <FooterContainer>
+          <PriceText>{price} YAY</PriceText>
+          {/* <Likes>
           <CenteredContainer>
             <IconWrapper onClick={() => onLike()}>
               <HeartIcon fill={isLiked ? "#4BE43E" : "none"} stroke="#4BE43E" />
             </IconWrapper>
             <LikesText>{likes}</LikesText>
           </CenteredContainer>
-        </Likes>
-      </FooterContainer>
-    </Card>
+        </Likes> */}
+        </FooterContainer>
+      </Card>
+      <CardHover />
+    </CardWrapper>
   );
 };
 
@@ -28,11 +32,16 @@ export default ProfileNftCard;
 const Card = styled.div`
   position: relative;
   width: 100%;
-  max-width: 233px;
   min-height: 320px;
-  margin: 0 auto;
-  background: ${({ theme }) => theme.colors.bgCard5};
+  background: ${({ theme }) => theme.colors.dark3};
   border-radius: 10px;
+  transition: 0.3s;
+  z-index: 1;
+  padding: 10px 10px 22px;
+  ${CardWrapper}:hover & {
+    background: ${({ theme }) => theme.colors.dark3};
+    transition: 0.3s;
+  }
 `;
 
 const Picture = styled.img`
@@ -41,15 +50,11 @@ const Picture = styled.img`
   margin-right: auto;
   width: 210px;
   height: 230px;
-  padding-top: 12px;
   border-radius: 16px;
 `;
 
 const Title = styled(Text)`
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.03em;
-  margin: 20px 10px 5px 10px;
+  margin: 15px 0 5px;
 `;
 
 const CenteredContainer = styled.div`
@@ -58,9 +63,6 @@ const CenteredContainer = styled.div`
 `;
 
 const FooterContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  padding: 0 10px 22px 10px;
   width: 100%;
   max-width: 261px;
 `;
@@ -69,7 +71,6 @@ const PriceText = styled(Text)`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
-  margin-top: 10px;
 `;
 
 const IconWrapper = styled.div`
