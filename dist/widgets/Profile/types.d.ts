@@ -18,14 +18,13 @@ export interface ProfileCardProps {
     account: string;
     linkAccount: string;
     linkRefferal: string;
-    linkRefferalList?: string;
+    linkRefferalList: string;
     games?: string;
     wins?: string;
     losses?: string;
     awards?: string[];
     sponsor?: string;
     verified?: boolean;
-    refferal?: boolean;
     linkEdit: string;
     linkKYC: string;
     disabledEditButton?: boolean;

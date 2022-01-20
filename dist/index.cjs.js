@@ -9734,7 +9734,7 @@ var templateObject_1$1w, templateObject_2$1b;
 var YAY_TOKEN_CIRCLE = "4afcc97f0abd5ec8.png";
 
 var ProfileCard = function (_a) {
-    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, refferal = _a.refferal, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC, comingSoonEditButton = _a.comingSoonEditButton, disabledEditButton = _a.disabledEditButton;
+    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC, comingSoonEditButton = _a.comingSoonEditButton, disabledEditButton = _a.disabledEditButton;
     var _b = React.useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     var VerifiedBlock = function () { return (React__default["default"].createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
         React__default["default"].createElement(User, { verified: verified },
@@ -9742,7 +9742,7 @@ var ProfileCard = function (_a) {
         React__default["default"].createElement(Text, { color: verified ? "green" : "textGray", fontSize: "13px", textAlign: "left", width: "100%" }, verified ? texts.kycVerified : texts.kycNotVerified))); };
     return (React__default["default"].createElement(Card$g, null,
         React__default["default"].createElement(Token$1, { src: token || YAY_TOKEN_CIRCLE, alt: "token1" }),
-        refferal && linkRefferalList && (React__default["default"].createElement(RefferalBtn, { as: reactRouterDom.Link, to: linkRefferalList }, texts.refferalListBtn)),
+        React__default["default"].createElement(RefferalBtn, { as: reactRouterDom.Link, to: linkRefferalList }, texts.refferalListBtn),
         React__default["default"].createElement(Title$k, null, texts.title),
         React__default["default"].createElement(AccountLine$1, null,
             React__default["default"].createElement(Input$6, { readOnly: true, value: ellipsis(account, 10), type: "text" }),
