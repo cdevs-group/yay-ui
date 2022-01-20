@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { layout, LayoutProps } from 'styled-system'
+import { layout, LayoutProps } from "styled-system";
 
 export const CardWrapper = styled.div<LayoutProps>`
   position: relative;
@@ -15,7 +15,7 @@ export const CardHover = styled.div`
   top: 0;
   left: 0;
   display: block;
-  width: 100%;  
+  width: 100%;
   height: 100%;
   border-radius: inherit;
   border: 2px solid ${({ theme }) => theme.colors.green};
@@ -24,7 +24,7 @@ export const CardHover = styled.div`
   opacity: 0;
   z-index: 0;
   ${CardWrapper}:hover & {
-    width: calc(100% + 6px);  
+    width: calc(100% + 6px);
     opacity: 0.3;
     transition: 0.5s;
     transform: translate(-11px, 9px) rotate(3.42deg);
@@ -32,7 +32,7 @@ export const CardHover = styled.div`
   &::after {
     content: "";
     position: absolute;
-    top: 50%;  
+    top: 50%;
     left: 50%;
     display: block;
     width: calc(100% + 8px);

@@ -43,6 +43,7 @@ export declare const baseColors: {
     whiteRgba4: string;
     greenGradient2: string;
     greenGradient3: string;
+    greenGradient4: string;
     greenRgba: string;
     greeanRgba2: string;
     greenRgba3: string;
@@ -55,6 +56,7 @@ export declare const baseColors: {
     bgCard4: string;
     bgCard5: string;
     bgCard6: string;
+    bgCard7: string;
     cardShadow: string;
     yellow: string;
     bgHeader: string;

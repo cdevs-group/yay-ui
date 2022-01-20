@@ -58,7 +58,7 @@ export default NFTCardGames;
 const Card = styled.div`
   position: relative;
   width: 100%;
-  min-height: 422px;  
+  min-height: 422px;
   background: ${({ theme }) => theme.colors.dark3};
   border-radius: 16px;
   transition: 0.3s;

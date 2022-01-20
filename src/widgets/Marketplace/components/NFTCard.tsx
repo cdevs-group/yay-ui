@@ -69,7 +69,6 @@ const NFTCard: React.FC<ICardProps> = ({
 
 export default NFTCard;
 
-
 const Card = styled.div`
   position: relative;
   width: 100%;
