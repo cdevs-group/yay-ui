@@ -23,7 +23,6 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   awards,
   sponsor,
   verified,
-  refferal,
   linkRefferalList,
   linkEdit,
   linkKYC,
@@ -46,12 +45,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   return (
     <Card>
       <Token src={token || YAY_TOKEN_CIRCLE} alt="token1" />
-      {refferal && linkRefferalList && (
-        <RefferalBtn as={Link} to={linkRefferalList}>
-          {texts.refferalListBtn}
-        </RefferalBtn>
-      )}
-
+      <RefferalBtn as={Link} to={linkRefferalList}>
+        {texts.refferalListBtn}
+      </RefferalBtn>
       <Title>{texts.title}</Title>
       <AccountLine>
         <Input readOnly value={ellipsis(account, 10)} type="text" />
