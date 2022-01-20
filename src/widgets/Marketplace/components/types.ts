@@ -9,10 +9,10 @@ export interface ICardProps {
   avatarUrl: string;
   likes?: number;
   price: string;
-  onShare: () => void;
-  onFavoritesAdd?: () => void;
-  onAuthorClick: () => void;
-  onNftClick: () => void;
+  onShare: (id?: string | number) => void;
+  onFavoritesAdd?: (id?: string | number) => void;
+  onAuthorClick: (id?: string | number) => void;
+  onNftClick: (id?: string | number) => void;
   onLikeAdd?: () => void;
   network: string;
 }
@@ -48,9 +48,10 @@ export interface IProfileCardProps {
   title: string;
   picUrl: string;
   likes?: number;
-  price: number;
+  price: string;
   isLiked?: boolean;
   onLike?: () => void;
+  onNftClick: (id?: string | number) => void;
 }
 
 export interface IRegisterProfileProps {

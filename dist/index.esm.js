@@ -13741,15 +13741,13 @@ var Value = styled(Text)(templateObject_3$2 || (templateObject_3$2 = __makeTempl
 var templateObject_1$3, templateObject_2$2, templateObject_3$2;
 
 var ProfileNftCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike;
+    var title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick;
     return (React__default.createElement(CardWrapper, { maxWidth: 233 },
         React__default.createElement(Card, null,
-            React__default.createElement(Picture, { src: picUrl, alt: title }),
+            React__default.createElement(Picture, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } }),
             React__default.createElement(Title$1, null, title),
             React__default.createElement(FooterContainer, null,
-                React__default.createElement(PriceText, null,
-                    price,
-                    " YAY"))),
+                React__default.createElement(PriceText, null, price))),
         React__default.createElement(CardHover, null)));
 };
 var Card = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
@@ -13759,11 +13757,11 @@ var Card = styled.div(templateObject_1$2 || (templateObject_1$2 = __makeTemplate
     var theme = _a.theme;
     return theme.colors.dark3;
 });
-var Picture = styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 210px;\n  height: 230px;\n  border-radius: 16px;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 210px;\n  height: 230px;\n  border-radius: 16px;\n"])));
+var Picture = styled.img(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 210px;\n  height: 230px;\n  border-radius: 16px;\n  cursor: pointer;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 210px;\n  height: 230px;\n  border-radius: 16px;\n  cursor: pointer;\n"])));
 var Title$1 = styled(Text)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  margin: 15px 0 5px;\n"], ["\n  margin: 15px 0 5px;\n"])));
 styled.div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n"], ["\n  display: flex;\n  justify-content: center;\n"])));
 var FooterContainer = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 261px;\n"], ["\n  width: 100%;\n  max-width: 261px;\n"])));
-var PriceText = styled(Text)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n"], ["\n  font-size: 14px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n"])));
+var PriceText = styled(Text)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  font-size: 14px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  font-weight: 400;\n"], ["\n  font-size: 14px;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  font-weight: 400;\n"])));
 styled.div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  cursor: pointer;\n  margin: 2px 5px 0 0;\n"], ["\n  cursor: pointer;\n  margin: 2px 5px 0 0;\n"])));
 styled.div(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  bottom: 20px;\n"], ["\n  position: absolute;\n  right: 20px;\n  bottom: 20px;\n"])));
 styled(Text)(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n  font-size: 12px;\n  letter-spacing: 0.03em;\n"], ["\n  font-size: 12px;\n  letter-spacing: 0.03em;\n"])));

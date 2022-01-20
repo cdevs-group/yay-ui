@@ -4,14 +4,14 @@ import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../
 import { CardHover, CardWrapper } from "../styled";
 import { IProfileCardProps } from "./types";
 
-const ProfileNftCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike }) => {
+const ProfileNftCard: React.FC<IProfileCardProps> = ({ title, picUrl, price, likes, isLiked, onLike, onNftClick }) => {
   return (
     <CardWrapper maxWidth={233}>
       <Card>
-        <Picture src={picUrl} alt={title} />
+        <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
         <Title>{title}</Title>
         <FooterContainer>
-          <PriceText>{price} YAY</PriceText>
+          <PriceText>{price}</PriceText>
           {/* <Likes>
           <CenteredContainer>
             <IconWrapper onClick={() => onLike()}>
@@ -51,6 +51,7 @@ const Picture = styled.img`
   width: 210px;
   height: 230px;
   border-radius: 16px;
+  cursor: pointer;
 `;
 
 const Title = styled(Text)`
@@ -71,6 +72,7 @@ const PriceText = styled(Text)`
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
+  font-weight: 400;
 `;
 
 const IconWrapper = styled.div`
