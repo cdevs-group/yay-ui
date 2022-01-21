@@ -5063,7 +5063,7 @@ var StyledButton$6 = styled__default["default"].div(templateObject_1$30 || (temp
 }));
 var templateObject_1$30;
 
-var StyledDropdown = styled__default["default"].div(templateObject_1$2$ || (templateObject_1$2$ = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n"])), function (_a) {
+var StyledDropdown = styled__default["default"].div(templateObject_1$2$ || (templateObject_1$2$ = __makeTemplateObject(["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n  ", "\n  ", "\n"], ["\n  position: absolute;\n  width: 100%;\n  margin-top: 18px;\n  border-radius: 5px;\n  transition: 0.3s;\n  z-index: -1;\n  opacity: 0;\n  overflow-y: auto;\n  pointer-events: none;\n  max-height: ", ";\n  top: ", ";\n  &.open {\n    transition: 0.3s;\n    z-index: 10;\n    opacity: 1;\n    margin-top: 4px;\n    pointer-events: all;\n  }\n  ", " {\n    top: ", ";\n  }\n  ", "\n  ", "\n  ", "\n"])), function (_a) {
     var plusMarginTop = _a.plusMarginTop, variant = _a.variant;
     return variant === variants.CENTER_BEHIND ? "calc(100vh - " + (59 + (plusMarginTop || 0)) + "px)" : "260px";
 }, function (_a) {
@@ -5077,11 +5077,11 @@ var StyledDropdown = styled__default["default"].div(templateObject_1$2$ || (temp
     return variant === variants.CENTER_BEHIND ? 80 + (plusMarginTop || 0) + "px" : "auto";
 }, styledSystem.variant({
     variants: styleVariants,
-}));
+}), styledSystem.position, styledSystem.layout);
 var templateObject_1$2$;
 
 var DropdownLayout = function (_a) {
-    var children = _a.children, open = _a.open, setOpen = _a.setOpen, icon = _a.icon, variant = _a.variant, plusMarginTop = _a.plusMarginTop;
+    var children = _a.children, open = _a.open, setOpen = _a.setOpen, icon = _a.icon, variant = _a.variant, plusMarginTop = _a.plusMarginTop, propsDropdownLayout = __rest(_a, ["children", "open", "setOpen", "icon", "variant", "plusMarginTop"]);
     var refSelect = React.useRef(null);
     var handleClickOutside = React.useCallback(function (e) {
         if (refSelect.current !== e.target && refSelect.current && !refSelect.current.contains(e.target)) {
@@ -5101,19 +5101,19 @@ var DropdownLayout = function (_a) {
     };
     return (React__default["default"].createElement(Block$b, { ref: refSelect },
         React__default["default"].createElement(StyledButton$6, { onClick: handleClickOpen, variant: variant }, icon),
-        React__default["default"].createElement(StyledDropdown, { className: open ? "open" : "", variant: variant, plusMarginTop: plusMarginTop }, children)));
+        React__default["default"].createElement(StyledDropdown, __assign({ className: open ? "open" : "", variant: variant, plusMarginTop: plusMarginTop }, propsDropdownLayout), children)));
 };
 var Block$b = styled__default["default"].div(templateObject_1$2_ || (templateObject_1$2_ = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
 var templateObject_1$2_;
 
 var Select$2 = function (_a) {
-    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, singleOption = _a.singleOption, options = _a.options, nameInputOptions = _a.nameInputOptions, propsDropdown = _a.propsDropdown, propsOption = _a.propsOption, optionsSpacing = _a.optionsSpacing, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, props = __rest(_a, ["selectItem", "value", "setValue", "singleOption", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown"]);
+    var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, singleOption = _a.singleOption, options = _a.options, nameInputOptions = _a.nameInputOptions, propsDropdown = _a.propsDropdown, propsDropdownLayout = _a.propsDropdownLayout, propsOption = _a.propsOption, optionsSpacing = _a.optionsSpacing, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, props = __rest(_a, ["selectItem", "value", "setValue", "singleOption", "options", "nameInputOptions", "propsDropdown", "propsDropdownLayout", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown"]);
     var _b = React.useState(false), open = _b[0], setOpen = _b[1];
     var handleChange = function (e) {
         setValue(e.target.value);
     };
     return (React__default["default"].createElement(Wrapper$V, __assign({}, props, { style: singleOption ? { cursor: "default" } : { cursor: "pointer" } }),
-        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, !singleOption && (React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
+        React__default["default"].createElement(DropdownLayout, __assign({ icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, propsDropdownLayout), !singleOption && (React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
             React__default["default"].createElement(Input$9, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
             React__default["default"].createElement(Item$3, __assign({}, propsOption),
                 React__default["default"].createElement(Text, null, el.name),
@@ -5135,7 +5135,7 @@ var Option$2 = styled__default["default"].label(templateObject_3$1_ || (template
     return optionsSpacing || 0;
 });
 var Input$9 = styled__default["default"].input(templateObject_4$1E || (templateObject_4$1E = __makeTemplateObject(["\n  display: none;\n"], ["\n  display: none;\n"])));
-var Item$3 = styled__default["default"](Flex)(templateObject_5$19 || (templateObject_5$19 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n    & svg {\n      display: block;\n    }\n  }\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n    & svg {\n      display: block;\n    }\n  }\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n  ", "\n  ", "\n"])), Input$9, function (_a) {
+var Item$3 = styled__default["default"](Flex)(templateObject_5$19 || (templateObject_5$19 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n    & svg {\n      display: block;\n      margin-left: 16px;\n    }\n  }\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n    & svg {\n      display: block;\n      margin-left: 16px;\n    }\n  }\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n  ", "\n  ", "\n"])), Input$9, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 }, function (_a) {
@@ -5247,7 +5247,7 @@ var Option$1 = styled__default["default"].label(templateObject_3$1Y || (template
     return optionsSpacing || 0;
 });
 var Input$7 = styled__default["default"].input(templateObject_4$1C || (templateObject_4$1C = __makeTemplateObject(["\n  display: none;\n"], ["\n  display: none;\n"])));
-var Item$2 = styled__default["default"](Flex)(templateObject_5$18 || (templateObject_5$18 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"])), Input$7, function (_a) {
+var Item$2 = styled__default["default"](Flex)(templateObject_5$18 || (templateObject_5$18 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n      margin-left: 16px;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n      margin-left: 16px;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"])), Input$7, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 }, function (_a) {
