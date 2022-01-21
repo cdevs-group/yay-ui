@@ -58,6 +58,7 @@ import GREEN_ELLIPSE from "../../public/images/green-ellips.png";
 import LOGO_ROUND from "../../public/images/logo-round.png";
 import EXAMPLE_AVATAR from "../../public/images/example-avatar.png";
 import USER_ICON from "../../public/images/user.png";
+import UPLOAD_ICON from "../../public/images/upload.png";
 
 export {
   BG_IMG,
@@ -119,5 +120,6 @@ export {
   LOGO_ROUND,
   EXAMPLE_AVATAR,
   USER_ICON,
-  COIN5,
+  COIN5, 
+  UPLOAD_ICON
 };
