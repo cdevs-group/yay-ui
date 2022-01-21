@@ -59,6 +59,7 @@ import LOGO_ROUND from "../../public/images/logo-round.png";
 import EXAMPLE_AVATAR from "../../public/images/example-avatar.png";
 import USER_ICON from "../../public/images/user.png";
 import UPLOAD_ICON from "../../public/images/upload.png";
+import SHARE_ICON from "../../public/images/share.png";
 
 export {
   BG_IMG,
@@ -122,4 +123,5 @@ export {
   USER_ICON,
   COIN5,
   UPLOAD_ICON,
+  SHARE_ICON
 };

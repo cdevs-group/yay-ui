@@ -16,6 +16,10 @@ export const Default: React.FC = () => {
 
   const handleInputChange = (e) => {
     const file = e.target.files[0];
+    if (file.size > 1 * 1024 * 1024) {
+      setError(true);
+      return;
+    }
     if (file) {
       const reader = new FileReader();
       reader.onload = ({ target: { result } }) => {

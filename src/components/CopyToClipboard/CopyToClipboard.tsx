@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 import { CopyIcon2 } from "../..";
 import { Box } from "../Box";
 import { Text } from "../Text";
 
-interface Props extends SpaceProps {
+interface Props extends SpaceProps, LayoutProps {
   toCopy: string;
   textCopied: string;
   icon?: React.ReactNode;
   left?: string;
   propsIcon?: any;
-  propsChildren?: SpaceProps;
+  propsChildren?: SpaceProps & LayoutProps;
   isTooltip?: boolean;
   setIsTooltip?: (val: boolean) => void;
 }
@@ -23,7 +23,8 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
   padding: 0;
   background: none;
   border: none;
-  ${space}
+  ${space}  
+  ${layout}
 `;
 
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
@@ -39,9 +40,10 @@ const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
   opacity: 0.7;
 `;
 
-const StyleBox = styled(Box)`
+const StyleBox = styled(Box)<LayoutProps & SpaceProps>`
   line-height: 1;
   ${space}
+  ${layout}
 `;
 
 const CopyToClipboard: React.FC<Props> = ({

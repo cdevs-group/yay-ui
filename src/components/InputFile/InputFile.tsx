@@ -16,7 +16,7 @@ const InputFile: React.FC<IProps> = ({ handleInputChange, loading, success, erro
     <Wrapper loading={loading} success={success} error={error} {...props}>
       <Input name="file" type="file" onChange={handleInputChange} accept="image/*" />
       {!loading && !success && !error && <img src={UPLOAD_ICON} alt="" />}
-      {loading && <CercleIcon spin fill="none" />}
+      {loading && !success && !error && <CercleIcon spin fill="none" />}
       {success && <CheckIcon2 stroke="#fff" />}
       {error && <CloseIcon fill="none" />}
     </Wrapper>
@@ -41,7 +41,7 @@ const Wrapper = styled.label<{ loading?: boolean; success?: boolean; error?: boo
     background: ${({ theme, error }) => (error ? theme.colors.redBg : theme.colors.green)};
     width: ${({ loading, success, error }) => (loading || success || error ? "100%" : 0)};
     height: 100%;
-    transition: width 2s, background 0.3s;
+    transition: ${({ error }) => (error ? "0" : "width 2s, background 0.3s")};
   }
   & img,
   & svg {
