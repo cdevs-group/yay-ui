@@ -36,6 +36,7 @@ export * from "./components/QuestionHelper";
 export * from "./components/StyledCard";
 export * from "./components/Select";
 export * from "./components/TextWithTooltip";
+export * from "./components/InputFile";
 export * from "./hooks";
 export * from "./constants/images";
 export * from "./widgets/Bridge";

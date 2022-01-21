@@ -41,7 +41,7 @@ export const Default: React.FC = () => {
 
   useEffect(() => {
     let timer = setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
       setError(true);
     }, 6000);
     return () => {
