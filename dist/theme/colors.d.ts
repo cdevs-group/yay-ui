@@ -35,6 +35,8 @@ export declare const baseColors: {
     bgGray: string;
     bgGrey2: string;
     bgGrey3: string;
+    bgBlackTab: string;
+    bgGreyTab: string;
     greenGradient: string;
     text2: string;
     darkPink: string;

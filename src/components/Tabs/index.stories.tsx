@@ -5,7 +5,7 @@ import Tabs from "./Tabs";
 import TabsSmall from "./TabsSmall";
 import TabsWithMovingLine from "./TabsWithMovingLine";
 import TabsWithBottomBorder from "./TabsWithBottomBorder";
-import TabsWithCommingSoon from './TabsWithCommingSoon'
+import TabsWithCommingSoon from "./TabsWithCommingSoon";
 
 export default {
   title: "Components/Tabs",
@@ -92,18 +92,18 @@ export const TabsWithBottomBorderBlock = () => {
 export const TabsBlockWithCommingSoon: React.FC = () => {
   const tabsList = [
     {
-      title: 'Amount'
+      title: "Amount",
     },
     {
-      title: 'Winning',
+      title: "Winning",
       disabled: true,
-      commingSoonText: 'Comming soon'
+      commingSoonText: "Comming soon",
     },
     {
-      title: 'Games',
-      commingSoonText: 'Comming soon'
-    }
-  ]
+      title: "Games",
+      commingSoonText: "Comming soon",
+    },
+  ];
 
   const [activeTab, setActiveTab] = useState(0);
 
