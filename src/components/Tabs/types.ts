@@ -15,14 +15,14 @@ export interface TabsProp {
   variant?: Variant;
 }
 
-export interface TabsWithCommingSoonProp extends Omit<TabsProp, 'tabsList'> {
-  tabsList: TabTitleProp[]
+export interface TabsWithCommingSoonProp extends Omit<TabsProp, "tabsList"> {
+  tabsList: TabTitleProp[];
 }
 
 export interface TabTitleProp {
-  title: string
-  disabled?: boolean
-  commingSoonText?: string
+  title: string;
+  disabled?: boolean;
+  commingSoonText?: string;
 }
 
 export interface TabsSmallProp {

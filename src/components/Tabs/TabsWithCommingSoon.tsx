@@ -5,7 +5,16 @@ import { TabsWithCommingSoonProp, Variant } from "./types";
 import { variant } from "styled-system";
 import { styleVariantsTab, styleVariantsTabs } from "./theme";
 
-const TabsWithCommingSoon = ({ tabValue, onClick, fontSize, tabsList, width, paddingTabs, colorActive, variant }: TabsWithCommingSoonProp) => {
+const TabsWithCommingSoon = ({
+  tabValue,
+  onClick,
+  fontSize,
+  tabsList,
+  width,
+  paddingTabs,
+  colorActive,
+  variant,
+}: TabsWithCommingSoonProp) => {
   return (
     <TabsWrap width={width} length={tabsList?.length} variant={variant}>
       {tabsList?.map((item, i) => (
@@ -38,8 +47,8 @@ const TabsWrap = styled.div<{ length?: number; width?: string; variant?: Variant
   border-radius: 12px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow4};
   ${variant({
-  variants: styleVariantsTabs,
-})}
+    variants: styleVariantsTabs,
+  })}
 `;
 
 const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize?: string; variant?: Variant }>`
@@ -65,16 +74,16 @@ const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize
     padding: ${({ paddingTabs }) => paddingTabs || "15px 30px"};
   }
   ${variant({
-  variants: styleVariantsTab,
-})}
+    variants: styleVariantsTab,
+  })}
   &:disabled {
-      box-shadow: none;
-      color: ${({ theme }) => transparentize(0.5, theme.colors.text)};
-      cursor: not-allowed;
-    }
+    box-shadow: none;
+    color: ${({ theme }) => transparentize(0.5, theme.colors.text)};
+    cursor: not-allowed;
+  }
 `;
 
-const CommingSoonWrapper = styled.div<{ text?: string; }>`
+const CommingSoonWrapper = styled.div<{ text?: string }>`
   position: relative;
   width: 100%;
   &::before {

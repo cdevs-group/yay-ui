@@ -126,6 +126,8 @@ export declare type Colors = {
     greeanRgba2: string;
     bgGrey2: string;
     bgGrey3: string;
+    bgBlackTab: string;
+    bgGreyTab: string;
     whiteRgba2: string;
     filterShadow: string;
     greyRgba2: string;
