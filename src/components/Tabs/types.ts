@@ -15,6 +15,16 @@ export interface TabsProp {
   variant?: Variant;
 }
 
+export interface TabsWithCommingSoonProp extends Omit<TabsProp, 'tabsList'> {
+  tabsList: TabTitleProp[]
+}
+
+export interface TabTitleProp {
+  title: string
+  disabled?: boolean
+  commingSoonText?: string
+}
+
 export interface TabsSmallProp {
   tabValue?: number | string;
   onClick?: (e: any) => Promise<void> | void;
