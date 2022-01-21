@@ -5228,9 +5228,8 @@ var SelectSearch = function (_a) {
                     React__default["default"].createElement(Input$7, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
                     React__default["default"].createElement(Item$2, __assign({}, propsOption),
                         React__default["default"].createElement("img", { src: el.img }),
-                        React__default["default"].createElement(Box, null,
-                            React__default["default"].createElement(Text, null, el.name),
-                            React__default["default"].createElement(Icon$l, null))))); }))))));
+                        React__default["default"].createElement(Text, { mr: "auto" }, el.name),
+                        React__default["default"].createElement(Icon$l, null)))); }))))));
 };
 var Wrapper$T = styled__default["default"].div(templateObject_1$2V || (templateObject_1$2V = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$2 = styled__default["default"].div(templateObject_2$2m || (templateObject_2$2m = __makeTemplateObject(["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
@@ -5248,7 +5247,7 @@ var Option$1 = styled__default["default"].label(templateObject_3$1Y || (template
     return optionsSpacing || 0;
 });
 var Input$7 = styled__default["default"].input(templateObject_4$1C || (templateObject_4$1C = __makeTemplateObject(["\n  display: none;\n"], ["\n  display: none;\n"])));
-var Item$2 = styled__default["default"](Flex)(templateObject_5$18 || (templateObject_5$18 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: flex-start;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: flex-start;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"])), Input$7, function (_a) {
+var Item$2 = styled__default["default"](Flex)(templateObject_5$18 || (templateObject_5$18 = __makeTemplateObject(["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"], ["\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  height: 38px;\n  padding: 0px 15px;\n  border-radius: 9px;\n  transition: 0.3s;\n\n  & img {\n    width: 24px;\n    height: 24px;\n    margin-right: 17px;\n  }\n\n  ", ":checked ~ & {\n    transition: 0.3s;\n    background: ", ";\n\n    & svg {\n      display: block;\n    }\n  }\n\n  &:hover {\n    transition: 0.3s;\n    background: ", ";\n  }\n\n  ", "\n  ", "\n"])), Input$7, function (_a) {
     var theme = _a.theme;
     return theme.colors.bgOpacitY3;
 }, function (_a) {
