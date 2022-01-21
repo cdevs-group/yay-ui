@@ -5,6 +5,7 @@ import Tabs from "./Tabs";
 import TabsSmall from "./TabsSmall";
 import TabsWithMovingLine from "./TabsWithMovingLine";
 import TabsWithBottomBorder from "./TabsWithBottomBorder";
+import TabsWithCommingSoon from './TabsWithCommingSoon'
 
 export default {
   title: "Components/Tabs",
@@ -85,5 +86,36 @@ export const TabsWithBottomBorderBlock = () => {
     <Box width="fit-content">
       <TabsWithBottomBorder tabsList={tabsList} tabActive={tabActive} handleToggleTab={handleToggleTab} />
     </Box>
+  );
+};
+
+export const TabsBlockWithCommingSoon: React.FC = () => {
+  const tabsList = [
+    {
+      title: 'Amount'
+    },
+    {
+      title: 'Winning',
+      disabled: true,
+      commingSoonText: 'Comming soon'
+    },
+    {
+      title: 'Games',
+      commingSoonText: 'Comming soon'
+    }
+  ]
+
+  const [activeTab, setActiveTab] = useState(0);
+
+  const toggleTab = async (e: any) => {
+    setActiveTab(+e.target.value);
+  };
+
+  return (
+    <>
+      <div style={{ width: "400px", marginTop: "50px" }}>
+        <TabsWithCommingSoon onClick={toggleTab} tabValue={activeTab} tabsList={tabsList} />
+      </div>
+    </>
   );
 };

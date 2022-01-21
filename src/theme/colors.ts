@@ -38,6 +38,8 @@ export const baseColors = {
   bgGray: "#26262D",
   bgGrey2: "#252525",
   bgGrey3: "#FFFFFF26",
+  bgBlackTab: "#131419",
+  bgGreyTab: "#36373B",
   greenGradient: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
   text2: "#F3F3F3",
   darkPink: "#FF6161",
