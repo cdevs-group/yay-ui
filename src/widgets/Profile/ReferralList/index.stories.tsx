@@ -6,11 +6,11 @@ export default {
 };
 
 export const ReferralListBlock = () => {
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
 
   const togglePaginationPage = async (e: any) => {
-    setCurrentPage(+e.target.value)
-  }
+    setCurrentPage(+e.target.value);
+  };
 
   const data = [
     {
@@ -117,7 +117,7 @@ export const ReferralListBlock = () => {
         pagination={{
           togglePage: togglePaginationPage,
           currentPage,
-          countPerPage: 4
+          countPerPage: 4,
         }}
         earnValue="436 000 YAY"
         miniValue="436 000 YAY"
@@ -127,10 +127,10 @@ export const ReferralListBlock = () => {
         data={data}
         handleBack={() => null}
         keys={{
-          txHashKey: 'ref',
-          loginKey: 'loginName',
-          earnedKey: 'earn',
-          dateKey: 'time'
+          txHashKey: "ref",
+          loginKey: "loginName",
+          earnedKey: "earn",
+          dateKey: "time",
         }}
       />
     </div>

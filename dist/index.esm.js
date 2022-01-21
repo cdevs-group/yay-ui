@@ -9945,21 +9945,27 @@ var Claimed$3 = styled.div(templateObject_4$M || (templateObject_4$M = __makeTem
 var templateObject_1$1t, templateObject_2$18, templateObject_3$U, templateObject_4$M;
 
 var ReferralListItems = function (_a) {
-    var data = _a.data, texts = _a.texts;
-    return (React__default.createElement(Wrapper$t, null, data.map(function (item, i) { return (React__default.createElement(Item$1, { key: i },
-        React__default.createElement(ItemContent, null,
-            React__default.createElement(Column$1, null,
-                React__default.createElement(Name$1, null, texts.itemRef),
-                React__default.createElement(Value$2, null, ellipsis(item.ref, 7))),
-            React__default.createElement(Column$1, null,
-                React__default.createElement(Name$1, null, texts.itemType),
-                React__default.createElement(Value$2, null, item.type)),
-            React__default.createElement(Column$1, null,
-                React__default.createElement(Name$1, null, texts.itemEarn),
-                React__default.createElement(Value$2, null, item.earn)),
-            React__default.createElement(Column$1, null,
-                React__default.createElement(Name$1, null, texts.itemTime),
-                React__default.createElement(Value$2, null, item.time))))); })));
+    var data = _a.data, keys = _a.keys, texts = _a.texts, pagination = _a.pagination;
+    var txHashKey = keys.txHashKey, loginKey = keys.loginKey, earnedKey = keys.earnedKey, dateKey = keys.dateKey;
+    var countPerPage = pagination.countPerPage, togglePage = pagination.togglePage, currentPage = pagination.currentPage;
+    return (React__default.createElement(Wrapper$t, null,
+        (data === null || data === void 0 ? void 0 : data.length) &&
+            (data === null || data === void 0 ? void 0 : data.slice(countPerPage * (currentPage - 1), currentPage * countPerPage).map(function (item, i) { return (React__default.createElement(Item$1, { key: i },
+                React__default.createElement(ItemContent, null,
+                    React__default.createElement(Column$1, null,
+                        React__default.createElement(Name$1, null, texts.itemRef),
+                        React__default.createElement(Value$2, null, ellipsis(item[txHashKey], 7))),
+                    React__default.createElement(Column$1, null,
+                        React__default.createElement(Name$1, null, texts.itemLogin),
+                        React__default.createElement(Value$2, null, item[loginKey])),
+                    React__default.createElement(Column$1, null,
+                        React__default.createElement(Name$1, null, texts.itemEarn),
+                        React__default.createElement(Value$2, null, item[earnedKey])),
+                    React__default.createElement(Column$1, null,
+                        React__default.createElement(Name$1, null, texts.itemTime),
+                        React__default.createElement(Value$2, null, item[dateKey]))))); })),
+        React__default.createElement(Flex, { mt: 20, justifyContent: "flex-end" },
+            React__default.createElement(Pagination, { currentPage: currentPage, length: data.length / countPerPage, togglePage: togglePage }))));
 };
 var Wrapper$t = styled.div(templateObject_1$1s || (templateObject_1$1s = __makeTemplateObject([""], [""])));
 var Item$1 = styled.div(templateObject_2$17 || (templateObject_2$17 = __makeTemplateObject(["\n  margin-top: 16px;\n  padding: 19px 34px 23px;\n  background: ", ";\n  border-radius: 15px;\n  overflow-x: auto;\n  &::-webkit-scrollbar {\n    height: 7px;\n  }\n"], ["\n  margin-top: 16px;\n  padding: 19px 34px 23px;\n  background: ", ";\n  border-radius: 15px;\n  overflow-x: auto;\n  &::-webkit-scrollbar {\n    height: 7px;\n  }\n"])), function (_a) {
@@ -9976,8 +9982,8 @@ var Value$2 = styled(Text)(templateObject_6$o || (templateObject_6$o = __makeTem
 var templateObject_1$1s, templateObject_2$17, templateObject_3$T, templateObject_4$L, templateObject_5$r, templateObject_6$o;
 
 var ReferralList = function (_a) {
-    var handleBack = _a.handleBack, data = _a.data, texts = _a.texts, earnValue = _a.earnValue, miniValue = _a.miniValue, predictionValue = _a.predictionValue, nftValue = _a.nftValue, length = _a.length, togglePage = _a.togglePage, currentPage = _a.currentPage;
-    return (React__default.createElement("div", null,
+    var handleBack = _a.handleBack, data = _a.data, texts = _a.texts, earnValue = _a.earnValue, miniValue = _a.miniValue, predictionValue = _a.predictionValue, nftValue = _a.nftValue, pagination = _a.pagination, keys = _a.keys;
+    return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Flex, { alignItems: "center" },
             React__default.createElement(ButtonBackButton, { onClick: handleBack },
                 React__default.createElement(Icon$T, null)),
@@ -9988,9 +9994,7 @@ var ReferralList = function (_a) {
             React__default.createElement(TopBlock$1, { title: predictionValue, value: texts.topPrediction }),
             React__default.createElement(TopBlock$1, { title: nftValue, value: texts.topNft })),
         React__default.createElement(TitleList, null, texts.referralTitle),
-        React__default.createElement(ReferralListItems, { data: data, texts: texts }),
-        length && (React__default.createElement(Flex, { mt: 20, justifyContent: "flex-end" },
-            React__default.createElement(Pagination, { currentPage: currentPage, length: length, togglePage: togglePage })))));
+        React__default.createElement(ReferralListItems, { data: data, keys: keys, texts: texts, pagination: pagination })));
 };
 var TopLine$2 = styled.div(templateObject_1$1r || (templateObject_1$1r = __makeTemplateObject(["\n  margin-top: 50px;\n  display: grid;\n  gap: 15px;\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n    gap: 0 15px;\n  }\n"], ["\n  margin-top: 50px;\n  display: grid;\n  gap: 15px;\n  grid-template-columns: 1fr;\n\n  ", " {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  ", " {\n    grid-template-columns: repeat(4, 1fr);\n    gap: 0 15px;\n  }\n"])), function (_a) {
     var theme = _a.theme;

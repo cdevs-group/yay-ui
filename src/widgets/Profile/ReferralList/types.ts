@@ -98,22 +98,22 @@ export interface IReferralListProps {
   miniValue: string;
   predictionValue: string;
   nftValue: string;
-  pagination: IReferralListItemPagination
-  keys: IReferralListItemKeys
+  pagination: IReferralListItemPagination;
+  keys: IReferralListItemKeys;
 }
 
 export interface ReferralListItemsProps {
-  data: any[]
-  keys: IReferralListItemKeys
-  texts: ITextsReferralList
-  pagination: IReferralListItemPagination
+  data: any[];
+  keys: IReferralListItemKeys;
+  texts: ITextsReferralList;
+  pagination: IReferralListItemPagination;
 }
 
 export interface IReferralListItemKeys {
-  txHashKey: string
-  loginKey: string
-  earnedKey: string
-  dateKey: string
+  txHashKey: string;
+  loginKey: string;
+  earnedKey: string;
+  dateKey: string;
 }
 
 export interface IReferralListItemPagination {

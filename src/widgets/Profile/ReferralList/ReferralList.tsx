@@ -16,7 +16,7 @@ const ReferralList = ({
   predictionValue,
   nftValue,
   pagination,
-  keys
+  keys,
 }: IReferralListProps) => {
   return (
     <>

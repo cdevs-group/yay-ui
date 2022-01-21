@@ -1,7 +1,4 @@
 /// <reference types="react" />
-import { IReferralListItem, ITextsReferralList } from "../types";
-declare const ReferralListItems: ({ data, texts }: {
-    data: IReferralListItem[];
-    texts: ITextsReferralList;
-}) => JSX.Element;
+import { ReferralListItemsProps } from "../types";
+declare const ReferralListItems: ({ data, keys, texts, pagination }: ReferralListItemsProps) => JSX.Element;
 export default ReferralListItems;
