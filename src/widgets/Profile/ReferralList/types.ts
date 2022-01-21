@@ -85,27 +85,39 @@ export interface ITextsReferralList {
   topNft: string;
   referralTitle: string;
   itemRef: string;
-  itemType: string;
+  itemLogin: string;
   itemEarn: string;
   itemTime: string;
 }
 
-export interface IReferralListItem {
-  ref: string;
-  type: string;
-  earn: number | string;
-  time: number | string;
-}
-
 export interface IReferralListProps {
   handleBack: () => void;
-  data: IReferralListItem[];
+  data: any[];
   texts: ITextsReferralList;
   earnValue: string;
   miniValue: string;
   predictionValue: string;
   nftValue: string;
-  length?: number;
+  pagination: IReferralListItemPagination
+  keys: IReferralListItemKeys
+}
+
+export interface ReferralListItemsProps {
+  data: any[]
+  keys: IReferralListItemKeys
+  texts: ITextsReferralList
+  pagination: IReferralListItemPagination
+}
+
+export interface IReferralListItemKeys {
+  txHashKey: string
+  loginKey: string
+  earnedKey: string
+  dateKey: string
+}
+
+export interface IReferralListItemPagination {
+  countPerPage: number;
   togglePage: (e: any) => Promise<void>;
   currentPage: number;
 }

@@ -6,7 +6,6 @@ import { Flex } from "../../../components/Box";
 import { ArrowDownIcon } from "../../../components/Svg";
 import { IReferralListProps } from "./types";
 import ReferralListItems from "./components/ReferralListItems";
-import { Pagination } from "../../../components/Pagination";
 
 const ReferralList = ({
   handleBack,
@@ -16,12 +15,11 @@ const ReferralList = ({
   miniValue,
   predictionValue,
   nftValue,
-  length,
-  togglePage,
-  currentPage,
+  pagination,
+  keys
 }: IReferralListProps) => {
   return (
-    <div>
+    <>
       <Flex alignItems="center">
         <ButtonBackButton onClick={handleBack}>
           <ArrowDownIcon />
@@ -35,13 +33,8 @@ const ReferralList = ({
         <TopBlock title={nftValue} value={texts.topNft} />
       </TopLine>
       <TitleList>{texts.referralTitle}</TitleList>
-      <ReferralListItems data={data} texts={texts} />
-      {length && (
-        <Flex mt={20} justifyContent="flex-end">
-          <Pagination currentPage={currentPage} length={length} togglePage={togglePage} />
-        </Flex>
-      )}
-    </div>
+      <ReferralListItems data={data} keys={keys} texts={texts} pagination={pagination} />
+    </>
   );
 };
 
