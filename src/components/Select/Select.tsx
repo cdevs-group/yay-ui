@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import { transparentize } from "polished";
 import styled from "styled-components";
-import { layout, LayoutProps, space, SpaceProps } from "styled-system";
+import { layout, LayoutProps, space, SpaceProps, position, PositionProps } from "styled-system";
 import DropdownLayout from "../DropDown/DropDown";
 import { Text } from "../Text";
 import { CheckIcon2 } from "../Svg";
@@ -22,6 +22,7 @@ export interface SelectProps extends SpaceProps, LayoutProps {
   optionsSpacing?: string;
   openDropdown?: boolean;
   setOpenDropdown?: (val: boolean) => void;
+  propsDropdownLayout?: LayoutProps & PositionProps;
 }
 
 const Select = ({
@@ -32,6 +33,7 @@ const Select = ({
   options,
   nameInputOptions,
   propsDropdown,
+  propsDropdownLayout,
   propsOption,
   optionsSpacing,
   openDropdown,
@@ -51,6 +53,7 @@ const Select = ({
         open={openDropdown || open}
         setOpen={setOpenDropdown || setOpen}
         variant="visible"
+        {...propsDropdownLayout}
       >
         {!singleOption && (
           <Dropdown {...propsDropdown}>
@@ -126,6 +129,7 @@ const Item = styled(Flex)`
     background: ${({ theme }) => theme.colors.bgOpacitY3};
     & svg {
       display: block;
+      margin-left: 16px;
     }
   }
   &:hover {

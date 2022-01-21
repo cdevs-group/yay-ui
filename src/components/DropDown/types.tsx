@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { LayoutProps, PositionProps } from "styled-system";
 import { LangType } from "../../widgets/Menu/types";
 
 export interface LanguagesProps {
@@ -15,7 +16,7 @@ export const variants = {
 } as const;
 
 export type Variant = typeof variants[keyof typeof variants];
-export interface DropDownProps {
+export interface DropDownProps extends PositionProps, LayoutProps {
   icon: ReactNode;
   open: boolean;
   setOpen: (value: boolean) => void;

@@ -4,7 +4,15 @@ import StyledButton from "./StyledButton";
 import StyledDropdown from "./StyledDropdown";
 import { DropDownProps } from "./types";
 
-const DropdownLayout = ({ children, open, setOpen, icon, variant, plusMarginTop }: DropDownProps) => {
+const DropdownLayout = ({
+  children,
+  open,
+  setOpen,
+  icon,
+  variant,
+  plusMarginTop,
+  ...propsDropdownLayout
+}: DropDownProps) => {
   const refSelect = useRef<any>(null);
 
   const handleClickOutside = useCallback(
@@ -34,7 +42,12 @@ const DropdownLayout = ({ children, open, setOpen, icon, variant, plusMarginTop 
       <StyledButton onClick={handleClickOpen} variant={variant}>
         {icon}
       </StyledButton>
-      <StyledDropdown className={open ? "open" : ""} variant={variant} plusMarginTop={plusMarginTop}>
+      <StyledDropdown
+        className={open ? "open" : ""}
+        variant={variant}
+        plusMarginTop={plusMarginTop}
+        {...propsDropdownLayout}
+      >
         {children}
       </StyledDropdown>
     </Block>

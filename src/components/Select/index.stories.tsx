@@ -43,7 +43,7 @@ export const Default: React.FC = () => {
       name: (
         <Flex alignItems="center">
           <img src={BNB} alt="" />
-          <Text ml={10}>BSC</Text>
+          <Text ml={10}>BSCdfdfdffdf</Text>
         </Flex>
       ),
       value: "BSC",
@@ -77,7 +77,6 @@ export const Default: React.FC = () => {
         propsDropdown={{
           minWidth: 160,
         }}
-        width="fit-content"
         mr={100}
       />
       <Select
@@ -101,6 +100,10 @@ export const Default: React.FC = () => {
         optionsSpacing="12px"
         openDropdown={open}
         setOpenDropdown={setOpen}
+        propsDropdownLayout={{
+          right: 0,
+          width: "auto",
+        }}
       />
     </Flex>
   );

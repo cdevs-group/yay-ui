@@ -154,6 +154,7 @@ const Item = styled(Flex)`
 
     & svg {
       display: block;
+      margin-left: 16px;
     }
   }
 

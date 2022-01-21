@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { variant } from "styled-system";
+import { layout, position, variant } from "styled-system";
 import { styleVariants } from "./theme";
 import { Variant, variants } from "./types";
 
@@ -31,6 +31,8 @@ const StyledDropdown = styled.div<{ variant?: Variant; plusMarginTop?: number }>
   ${variant({
     variants: styleVariants,
   })}
+  ${position}
+  ${layout}
 `;
 
 export default StyledDropdown;
