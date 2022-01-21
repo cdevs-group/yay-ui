@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReferralList } from "./index";
 
 export default {
@@ -6,30 +6,96 @@ export default {
 };
 
 export const ReferralListBlock = () => {
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const togglePaginationPage = async (e: any) => {
+    setCurrentPage(+e.target.value)
+  }
+
   const data = [
     {
       ref: "0x412123432iudbuyweyufbeuwygfasd2341",
-      type: "Mini Games",
+      loginName: "RostislavB1",
       earn: 0,
       time: "12.12.2021 21:43",
     },
     {
       ref: "0x412123432iudbuyweyufbeuwygfasd2341",
-      type: "Mini Games",
+      loginName: "RostislavB2",
       earn: 0,
       time: "12.12.2021 21:43",
     },
     {
       ref: "0x412123432iudbuyweyufbeuwygfasd2341",
-      type: "Mini Games",
+      loginName: "RostislavB3",
       earn: 0,
       time: "12.12.2021 21:43",
     },
     {
       ref: "0x412123432iudbuyweyufbeuwygfasd2341",
-      type: "Mini Games",
+      loginName: "RostislavB4",
       earn: 0,
       time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB5",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB6",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB7",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB8",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB9",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB10",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB11",
+      earn: 0,
+      time: "12.12.2021 21:43",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB12",
+      earn: 0,
+      time: "12.12.2021 21:4313",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB14",
+      earn: 0,
+      time: "12.12.2021 21:4313",
+    },
+    {
+      ref: "0x412123432iudbuyweyufbeuwygfasd2341",
+      loginName: "RostislavB15",
+      earn: 0,
+      time: "12.12.2021 21:4313",
     },
   ];
 
@@ -41,16 +107,18 @@ export const ReferralListBlock = () => {
     topNft: "NFT marketplace earned",
     referralTitle: "Referral list",
     itemRef: "Referral TX",
-    itemType: "Type",
+    itemLogin: "Login",
     itemEarn: "All earned",
     itemTime: "Time",
   };
   return (
     <div>
       <ReferralList
-        togglePage={async (e: any) => console.log("click")}
-        currentPage={2}
-        length={20}
+        pagination={{
+          togglePage: togglePaginationPage,
+          currentPage,
+          countPerPage: 4
+        }}
         earnValue="436 000 YAY"
         miniValue="436 000 YAY"
         predictionValue="436 000 YAY"
@@ -58,6 +126,12 @@ export const ReferralListBlock = () => {
         texts={texts}
         data={data}
         handleBack={() => null}
+        keys={{
+          txHashKey: 'ref',
+          loginKey: 'loginName',
+          earnedKey: 'earn',
+          dateKey: 'time'
+        }}
       />
     </div>
   );
