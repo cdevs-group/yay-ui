@@ -5,7 +5,7 @@ import { CopyIcon2 } from "../..";
 import { Box } from "../Box";
 import { Text } from "../Text";
 
-interface Props extends SpaceProps, LayoutProps {
+interface Props extends SpaceProps {
   toCopy: string;
   textCopied: string;
   icon?: React.ReactNode;
@@ -14,6 +14,7 @@ interface Props extends SpaceProps, LayoutProps {
   propsChildren?: SpaceProps & LayoutProps;
   isTooltip?: boolean;
   setIsTooltip?: (val: boolean) => void;
+  widthButton?: string;
 }
 
 const StyleButton = styled(Text).attrs({ role: "button" })`
@@ -23,7 +24,7 @@ const StyleButton = styled(Text).attrs({ role: "button" })`
   padding: 0;
   background: none;
   border: none;
-  ${space}  
+  ${space}
   ${layout}
 `;
 
@@ -55,12 +56,14 @@ const CopyToClipboard: React.FC<Props> = ({
   propsChildren,
   isTooltip,
   setIsTooltip,
+  widthButton,
   ...props
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
   return (
     <StyleButton
+      width={widthButton}
       as="button"
       onClick={() => {
         if (navigator.clipboard) {

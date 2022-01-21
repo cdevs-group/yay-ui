@@ -68,7 +68,7 @@ const ShareModal: React.FC<Props> = ({ texts, copyLink, buttonsSocial, onDismiss
           icon={<></>}
           isTooltip={isCopiedDisplayed}
           setIsTooltip={setIsCopiedDisplayed}
-          width="100%"
+          widthButton="100%"
           propsChildren={{
             width: "100%",
           }}
