@@ -79,10 +79,8 @@ const SelectSearch = ({
                 />
                 <Item {...propsOption}>
                   <img src={el.img} />
-                  <Box>
-                    <Text>{el.name}</Text>
-                    <CheckIcon2 />
-                  </Box>
+                  <Text mr="auto">{el.name}</Text>
+                  <CheckIcon2 />
                 </Item>
               </Option>
             ))}
@@ -138,7 +136,7 @@ const Input = styled.input`
 const Item = styled(Flex)`
   width: 100%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 38px;
   padding: 0px 15px;
   border-radius: 9px;
