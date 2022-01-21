@@ -72,5 +72,6 @@ export * from "./widgets/SwapCard";
 export * from "./widgets/Support";
 export * from "./widgets/Footer";
 export * from "./widgets/Marketplace";
+export * from "./widgets/ShareModal";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";

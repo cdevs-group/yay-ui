@@ -123,5 +123,5 @@ export {
   USER_ICON,
   COIN5,
   UPLOAD_ICON,
-  SHARE_ICON
+  SHARE_ICON,
 };
