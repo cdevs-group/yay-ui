@@ -83,27 +83,28 @@ const Tab = styled.button<{ paddingTabs?: string; colorActive?: string; fontSize
   }
 `;
 
-const CommingSoonWrapper = styled.div<{ text?: string; }>`
- position: relative;
- width: 100%;
- z-index: 1;
- &::before {
-  z-index: -1;
-  white-space: nowrap;
-  content: ${({ text }) => `"${text}"`};
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: -15px;
-  width: 83px;
-  display: ${({ text }) => (text ? "block" : "none")};
-  padding: 5px 11px;
-  background: ${({ theme }) => theme.colors.green};
-  border-radius: 6px;
-  font-weight: normal;
-  font-size: 9px;
-  line-height: 11px;
-  color: ${({ theme }) => theme.colors.text}; }
+const CommingSoonWrapper = styled.div<{ text?: string }>`
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  &::before {
+    z-index: -1;
+    white-space: nowrap;
+    content: ${({ text }) => `"${text}"`};
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: -15px;
+    width: 83px;
+    display: ${({ text }) => (text ? "block" : "none")};
+    padding: 5px 11px;
+    background: ${({ theme }) => theme.colors.green};
+    border-radius: 6px;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 11px;
+    color: ${({ theme }) => theme.colors.text};
+  }
 `;
