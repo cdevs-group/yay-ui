@@ -1,7 +1,7 @@
 import React from "react";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork, Funds, TextsAccountMarketplace } from "../types";
+import { BlockChainNetwork, Funds, NavMarketplaceLinksViewsProps, TextsAccountMarketplace } from "../types";
 interface Props {
     account?: string;
     login: Login;
@@ -13,12 +13,7 @@ interface Props {
     totalBalance: string;
     funds: Funds[];
     heightDisclaimer?: number;
-    linksViews?: {
-        icon: React.ReactNode;
-        text: string;
-        link: string;
-        comingSoon?: boolean;
-    }[];
+    linksViews?: NavMarketplaceLinksViewsProps[];
 }
 declare const AccountMarketplace: React.FC<Props>;
 export default AccountMarketplace;
