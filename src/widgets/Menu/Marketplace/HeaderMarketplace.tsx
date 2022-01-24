@@ -65,7 +65,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
           <LogoWrap to={linkLogo}>
             <img src={Logo} alt="" />
           </LogoWrap>
-          <Nav className={openMenu ? "open" : ""}>
+          <Nav className={openMenu ? "open" : ""} heightDisclaimer={heightDisclaimer}>
             {links?.map((item, i) => (
               <MenuLinkDropdown
                 key={i}
@@ -151,7 +151,7 @@ const Line = styled.div`
   }
 `;
 
-const Nav = styled.div`
+const Nav = styled.div<{ heightDisclaimer?: number }>`
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -160,7 +160,7 @@ const Nav = styled.div`
   min-height: 100vh;
   height: 100%;
   left: -100%;
-  padding: 20px 30px 20px;
+  padding: ${({ heightDisclaimer }) => (heightDisclaimer ? `calc(${heightDisclaimer + 20}px) 30px` : "20px 30px 20px")};
   top: 59px;
   transition: 0.3s ease-in-out;
 

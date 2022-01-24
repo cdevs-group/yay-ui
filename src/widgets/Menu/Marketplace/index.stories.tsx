@@ -84,13 +84,15 @@ export const HeaderForMarketplace = () => {
       icon: <UserIcon />,
       text: textsAccount.myProfile,
       link: textsAccount.linkMyProfile,
-      comingSoon: true,
+      comingSoon: false,
+      notice: 100,
     },
     {
       icon: <FavoritesIcon />,
       text: textsAccount.favorities,
       link: textsAccount.linkFavorities,
-      comingSoon: true,
+      comingSoon: false,
+      notice: 10,
     },
     {
       icon: <CollectionIcon />,
