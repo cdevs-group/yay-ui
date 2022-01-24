@@ -103,6 +103,15 @@ export const TabsBlockWithCommingSoon: React.FC = () => {
       title: "Games",
       commingSoonText: "Comming soon",
     },
+    {
+      title: "Amount",
+    },
+    {
+      title: "Amount",
+    },
+    {
+      title: "Amount",
+    },
   ];
 
   const [activeTab, setActiveTab] = useState(0);
@@ -113,7 +122,7 @@ export const TabsBlockWithCommingSoon: React.FC = () => {
 
   return (
     <>
-      <div style={{ width: "400px", marginTop: "50px" }}>
+      <div style={{marginTop: "50px" }}>
         <TabsWithCommingSoon onClick={toggleTab} tabValue={activeTab} tabsList={tabsList} />
       </div>
     </>
