@@ -60,6 +60,8 @@ import EXAMPLE_AVATAR from "../../public/images/example-avatar.png";
 import USER_ICON from "../../public/images/user.png";
 import UPLOAD_ICON from "../../public/images/upload.png";
 import SHARE_ICON from "../../public/images/share.png";
+import YAY_TOKEN_LOGO from "../../public/images/yay-logo.png";
+import AVAX_LOGO from "../../public/images/avax-logo.png";
 
 export {
   BG_IMG,
@@ -124,4 +126,6 @@ export {
   COIN5,
   UPLOAD_ICON,
   SHARE_ICON,
+  YAY_TOKEN_LOGO,
+  AVAX_LOGO,
 };

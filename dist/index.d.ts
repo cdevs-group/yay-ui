@@ -73,5 +73,6 @@ export * from "./widgets/Support";
 export * from "./widgets/Footer";
 export * from "./widgets/Marketplace";
 export * from "./widgets/ShareModal";
+export * from "./widgets/Staking";
 export { default as ResetCSS } from "./ResetCSS";
 export * from "./theme";
