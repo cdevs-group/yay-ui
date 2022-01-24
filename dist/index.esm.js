@@ -1660,15 +1660,7 @@ var StyledCard = function (_a) {
                         React__default.createElement(IconCompleteDown$1, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$13, { fill: "#FFB72C" }))))))));
 };
-<<<<<<< HEAD
 var templateObject_1$4e, templateObject_2$3k, templateObject_3$2J, templateObject_4$2a, templateObject_5$1s, templateObject_6$19, templateObject_7$M, templateObject_8$D, templateObject_9$s, templateObject_10$n, templateObject_11$k, templateObject_12$g, templateObject_13$d, templateObject_14$9, templateObject_15$6, templateObject_16$5;
-=======
-<<<<<<< HEAD
-var templateObject_1$4e, templateObject_2$3k, templateObject_3$2J, templateObject_4$2a, templateObject_5$1s, templateObject_6$19, templateObject_7$M, templateObject_8$D, templateObject_9$s, templateObject_10$n, templateObject_11$k, templateObject_12$g, templateObject_13$c, templateObject_14$9, templateObject_15$6, templateObject_16$5;
-=======
-var templateObject_1$4c, templateObject_2$3j, templateObject_3$2I, templateObject_4$29, templateObject_5$1r, templateObject_6$18, templateObject_7$L, templateObject_8$C, templateObject_9$s, templateObject_10$n, templateObject_11$k, templateObject_12$g, templateObject_13$d, templateObject_14$9, templateObject_15$6, templateObject_16$5;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var Card$p = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3307,15 +3299,7 @@ var StyledCardBTC = function (_a) {
                         React__default.createElement(IconCompleteDown, { className: "completeIcon", showIcon: hasEnteredDown },
                             React__default.createElement(Icon$13, { fill: "#FFB72C" }))))))))));
 };
-<<<<<<< HEAD
 var templateObject_1$3A, templateObject_2$2Q, templateObject_3$2i, templateObject_4$1U, templateObject_5$1j, templateObject_6$12, templateObject_7$I, templateObject_8$z, templateObject_9$o, templateObject_10$l, templateObject_11$i, templateObject_12$e, templateObject_13$c, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
-=======
-<<<<<<< HEAD
-var templateObject_1$3A, templateObject_2$2Q, templateObject_3$2i, templateObject_4$1U, templateObject_5$1j, templateObject_6$12, templateObject_7$I, templateObject_8$z, templateObject_9$o, templateObject_10$l, templateObject_11$i, templateObject_12$e, templateObject_13$b, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
-=======
-var templateObject_1$3y, templateObject_2$2P, templateObject_3$2h, templateObject_4$1T, templateObject_5$1i, templateObject_6$11, templateObject_7$H, templateObject_8$y, templateObject_9$o, templateObject_10$l, templateObject_11$i, templateObject_12$e, templateObject_13$c, templateObject_14$8, templateObject_15$5, templateObject_16$4, templateObject_17$4;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var CardBTC = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -3865,15 +3849,7 @@ var TabsWrap$6 = styled.div(templateObject_1$3m || (templateObject_1$3m = __make
 }, variant$1({
     variants: styleVariantsTabs,
 }));
-<<<<<<< HEAD
 var Tab$8 = styled.button(templateObject_2$2C || (templateObject_2$2C = __makeTemplateObject(["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"], ["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var Tab$8 = styled.button(templateObject_2$2C || (templateObject_2$2C = __makeTemplateObject(["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: ", ";\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"], ["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: ", ";\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"])), function (_a) {
-=======
-var Tab$8 = styled.button(templateObject_2$2B || (templateObject_2$2B = __makeTemplateObject(["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"], ["\n  padding: ", ";\n  width: 100%;\n  border: none;\n  background: transparent;\n  border-radius: 12px;\n  font-size: ", ";\n  line-height: 19px;\n  font-weight: 500;\n  text-align: center;\n  letter-spacing: 0.5px;\n  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);\n  transition: 0.3s;\n  cursor: pointer;\n  color: ", ";\n  &.active {\n    background: ", ";\n    color: ", ";\n  }\n  ", " {\n    padding: ", ";\n  }\n  ", "\n  &:disabled {\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var paddingTabs = _a.paddingTabs;
     return paddingTabs || "15px 16px";
 }, function (_a) {
@@ -3900,15 +3876,7 @@ var Tab$8 = styled.button(templateObject_2$2B || (templateObject_2$2B = __makeTe
     var theme = _a.theme;
     return transparentize(0.5, theme.colors.text);
 });
-<<<<<<< HEAD
 var CommingSoonWrapper = styled.div(templateObject_3$28 || (templateObject_3$28 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 50%;\n    top: -15px;\n    transform: translateX(-50%);\n    display: ", ";\n    padding: 3px 11px 1px;\n    background: ", ";\n    border-radius: 6px 6px 0 0;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 50%;\n    top: -15px;\n    transform: translateX(-50%);\n    display: ", ";\n    padding: 3px 11px 1px;\n    background: ", ";\n    border-radius: 6px 6px 0 0;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var CommingSoonWrapper = styled.div(templateObject_3$28 || (templateObject_3$28 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 0;\n    right: 0;\n    margin-left: auto;\n    margin-right: auto;\n    top: -15px;\n    width: 83px;\n    display: ", ";\n    padding: 5px 11px;\n    background: ", ";\n    border-radius: 6px;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 0;\n    right: 0;\n    margin-left: auto;\n    margin-right: auto;\n    top: -15px;\n    width: 83px;\n    display: ", ";\n    padding: 5px 11px;\n    background: ", ";\n    border-radius: 6px;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"])), function (_a) {
-=======
-var CommingSoonWrapper = styled.div(templateObject_3$27 || (templateObject_3$27 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 50%;\n    top: -15px;\n    transform: translateX(-50%);\n    display: ", ";\n    padding: 3px 11px 1px;\n    background: ", ";\n    border-radius: 6px 6px 0 0;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  z-index: 1;\n  &::before {\n    z-index: -1;\n    white-space: nowrap;\n    content: ", ";\n    position: absolute;\n    left: 50%;\n    top: -15px;\n    transform: translateX(-50%);\n    display: ", ";\n    padding: 3px 11px 1px;\n    background: ", ";\n    border-radius: 6px 6px 0 0;\n    font-weight: normal;\n    font-size: 9px;\n    line-height: 11px;\n    color: ", ";\n  }\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var text = _a.text;
     return "\"".concat(text, "\"");
 }, function (_a) {
@@ -4293,15 +4261,7 @@ var Indicator = styled.div(templateObject_13$b || (templateObject_13$b = __makeT
     var progress = _a.progress;
     return (progress && progress > 50 ? "-100%" : 0);
 }, Note$1, NoteContent);
-<<<<<<< HEAD
 var templateObject_1$3i, templateObject_2$2y, templateObject_3$25, templateObject_4$1J, templateObject_5$1c, templateObject_6$Z, templateObject_7$F, templateObject_8$w, templateObject_9$m, templateObject_10$j, templateObject_11$g, templateObject_12$d, templateObject_13$b;
-=======
-<<<<<<< HEAD
-var templateObject_1$3i, templateObject_2$2y, templateObject_3$25, templateObject_4$1J, templateObject_5$1c, templateObject_6$Z, templateObject_7$F, templateObject_8$w, templateObject_9$m, templateObject_10$j, templateObject_11$g, templateObject_12$d, templateObject_13$a;
-=======
-var templateObject_1$3g, templateObject_2$2x, templateObject_3$24, templateObject_4$1I, templateObject_5$1b, templateObject_6$Y, templateObject_7$E, templateObject_8$v, templateObject_9$m, templateObject_10$j, templateObject_11$g, templateObject_12$d, templateObject_13$b;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var SwitchUnitsButton = styled(IconButton)(templateObject_1$3h || (templateObject_1$3h = __makeTemplateObject(["\n  width: auto;\n"], ["\n  width: auto;\n"])));
 var UnitContainer = styled(Text)(templateObject_2$2x || (templateObject_2$2x = __makeTemplateObject(["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-right: 4px;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
@@ -5727,15 +5687,7 @@ var BridgeStep1 = function (_a) {
             React__default.createElement(ButtonOpenProof, { onClick: handleOpenProofOfAssets }, texts.buttonProofOfState),
             React__default.createElement(ButtonOpenProof, { onClick: handleOpenTransactionsHistory }, texts.buttonTransactionsHistory))));
 };
-<<<<<<< HEAD
 var templateObject_1$2W, templateObject_2$2m, templateObject_3$1Y, templateObject_4$1C, templateObject_5$18, templateObject_6$X, templateObject_7$E, templateObject_8$v, templateObject_9$l, templateObject_10$i, templateObject_11$f, templateObject_12$c, templateObject_13$a;
-=======
-<<<<<<< HEAD
-var templateObject_1$2W, templateObject_2$2m, templateObject_3$1Y, templateObject_4$1C, templateObject_5$18, templateObject_6$X, templateObject_7$E, templateObject_8$v, templateObject_9$l, templateObject_10$i, templateObject_11$f, templateObject_12$c, templateObject_13$9;
-=======
-var templateObject_1$2U, templateObject_2$2l, templateObject_3$1X, templateObject_4$1B, templateObject_5$17, templateObject_6$W, templateObject_7$D, templateObject_8$u, templateObject_9$l, templateObject_10$i, templateObject_11$f, templateObject_12$c, templateObject_13$a;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var NoticeBridgeType;
 (function (NoticeBridgeType) {
@@ -5933,15 +5885,7 @@ var TitleDesk = styled(Text)(templateObject_26$1 || (templateObject_26$1 = __mak
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-<<<<<<< HEAD
 var templateObject_1$2V, templateObject_2$2l, templateObject_3$1X, templateObject_4$1B, templateObject_5$17, templateObject_6$W, templateObject_7$D, templateObject_8$u, templateObject_9$k, templateObject_10$h, templateObject_11$e, templateObject_12$b, templateObject_13$9, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
-=======
-<<<<<<< HEAD
-var templateObject_1$2V, templateObject_2$2l, templateObject_3$1X, templateObject_4$1B, templateObject_5$17, templateObject_6$W, templateObject_7$D, templateObject_8$u, templateObject_9$k, templateObject_10$h, templateObject_11$e, templateObject_12$b, templateObject_13$8, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
-=======
-var templateObject_1$2T, templateObject_2$2k, templateObject_3$1W, templateObject_4$1A, templateObject_5$16, templateObject_6$V, templateObject_7$C, templateObject_8$t, templateObject_9$k, templateObject_10$h, templateObject_11$e, templateObject_12$b, templateObject_13$9, templateObject_14$7, templateObject_15$4, templateObject_16$3, templateObject_17$3, templateObject_18$3, templateObject_19$3, templateObject_20$3, templateObject_21$1, templateObject_22$1, templateObject_23$1, templateObject_24$1, templateObject_25$1, templateObject_26$1;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var ellipsis = function (value, count) {
     if (count === void 0) { count = 4; }
@@ -6367,17 +6311,8 @@ styled.div(templateObject_12$a || (templateObject_12$a = __makeTemplateObject(["
     var theme = _a.theme;
     return theme.mediaQueries.xs;
 });
-<<<<<<< HEAD
-styled.div(templateObject_13$7 || (templateObject_13$7 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var templateObject_1$2Q, templateObject_2$2g, templateObject_3$1S, templateObject_4$1w, templateObject_5$12, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$j, templateObject_10$g, templateObject_11$d, templateObject_12$a, templateObject_13$7;
-=======
 styled.div(templateObject_13$8 || (templateObject_13$8 = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-<<<<<<< HEAD
 var templateObject_1$2Q, templateObject_2$2g, templateObject_3$1S, templateObject_4$1w, templateObject_5$12, templateObject_6$S, templateObject_7$B, templateObject_8$t, templateObject_9$j, templateObject_10$g, templateObject_11$d, templateObject_12$a, templateObject_13$8;
-=======
-var templateObject_1$2O, templateObject_2$2f, templateObject_3$1R, templateObject_4$1v, templateObject_5$11, templateObject_6$R, templateObject_7$A, templateObject_8$s, templateObject_9$j, templateObject_10$g, templateObject_11$d, templateObject_12$a, templateObject_13$8;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var TransactionHistory = function (_a) {
     var texts = _a.texts, transactionHistoryData = _a.transactionHistoryData, onDismiss = _a.onDismiss, textCopy = _a.textCopy, addTokenHandler = _a.addTokenHandler, addTokenIcon = _a.addTokenIcon, tokenLogo = _a.tokenLogo, tokenName = _a.tokenName, propsBtnSeeMore = _a.propsBtnSeeMore, textTransaction = _a.textTransaction;
@@ -8100,15 +8035,7 @@ var WrapperDropdown = styled.div(templateObject_1$2e || (templateObject_1$2e = _
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-<<<<<<< HEAD
 var Wrapper$J = styled.div(templateObject_2$1M || (templateObject_2$1M = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  &:after {\n    content: ", ";\n    position: absolute;\n    top: -6px;\n    right: -5px;\n    min-width: 13px;\n    display: ", ";\n    justify-content: center;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 11px;\n    font-size: 9px;\n    background: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n    &:after {\n      left: 30px;\n      right: auto;\n      min-width: 16px;\n      line-height: 14px;\n      font-size: 11px;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  &:after {\n    content: ", ";\n    position: absolute;\n    top: -6px;\n    right: -5px;\n    min-width: 13px;\n    display: ", ";\n    justify-content: center;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 11px;\n    font-size: 9px;\n    background: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n    &:after {\n      left: 30px;\n      right: auto;\n      min-width: 16px;\n      line-height: 14px;\n      font-size: 11px;\n    }\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var Wrapper$J = styled.div(templateObject_2$1M || (templateObject_2$1M = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n  }\n"])), function (_a) {
-=======
-var Wrapper$J = styled.div(templateObject_2$1L || (templateObject_2$1L = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  &:after {\n    content: ", ";\n    position: absolute;\n    top: -6px;\n    right: -5px;\n    min-width: 13px;\n    display: ", ";\n    justify-content: center;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 11px;\n    font-size: 9px;\n    background: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n    &:after {\n      left: 30px;\n      right: auto;\n      min-width: 16px;\n      line-height: 14px;\n      font-size: 11px;\n    }\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 30px;\n  height: 30px;\n  margin-right: 6px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 7px;\n  border: none;\n  cursor: pointer;\n  order: -1;\n  & path {\n    fill: ", ";\n  }\n  &:after {\n    content: ", ";\n    position: absolute;\n    top: -6px;\n    right: -5px;\n    min-width: 13px;\n    display: ", ";\n    justify-content: center;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 11px;\n    font-size: 9px;\n    background: ", ";\n  }\n  ", " {\n    width: 40px;\n    height: 40px;\n    margin-right: 9px;\n    margin-left: 9px;\n    border-radius: 9px;\n    order: 0;\n    &:after {\n      left: 30px;\n      right: auto;\n      min-width: 16px;\n      line-height: 14px;\n      font-size: 11px;\n    }\n  }\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var theme = _a.theme, notAuth = _a.notAuth;
     return (notAuth ? theme.colors.whiteRgba : theme.colors.bgOpacity);
 }, function (_a) {
@@ -8133,14 +8060,7 @@ var Wrapper$J = styled.div(templateObject_2$1L || (templateObject_2$1L = __makeT
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-<<<<<<< HEAD
 var TextLinkUser = styled(Text)(templateObject_3$1q || (templateObject_3$1q = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  margin-left: 11px;\n  &:after {\n    content: ", ";\n    min-width: 16px;\n    display: ", ";\n    justify-content: center;\n    margin-top: -16px;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 14px;\n    font-size: 11px;\n    background: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  margin-left: 11px;\n  &:after {\n    content: ", ";\n    min-width: 16px;\n    display: ", ";\n    justify-content: center;\n    margin-top: -16px;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 14px;\n    font-size: 11px;\n    background: ", ";\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var AccountBlock = styled(Text)(templateObject_3$1q || (templateObject_3$1q = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
-=======
-var TextLinkUser = styled(Text)(templateObject_3$1p || (templateObject_3$1p = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  margin-left: 11px;\n  &:after {\n    content: ", ";\n    min-width: 16px;\n    display: ", ";\n    justify-content: center;\n    margin-top: -16px;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 14px;\n    font-size: 11px;\n    background: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  margin-left: 11px;\n  &:after {\n    content: ", ";\n    min-width: 16px;\n    display: ", ";\n    justify-content: center;\n    margin-top: -16px;\n    padding: 1px 4px;\n    border-radius: 50px;\n    color: ", ";\n    line-height: 14px;\n    font-size: 11px;\n    background: ", ";\n  }\n"])), function (_a) {
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var badge = _a.badge;
     return "\"".concat(badge && badge > 99 ? "99+" : badge, "\"");
 }, function (_a) {
@@ -8153,12 +8073,7 @@ var TextLinkUser = styled(Text)(templateObject_3$1p || (templateObject_3$1p = __
     var theme = _a.theme;
     return theme.colors.green;
 });
-<<<<<<< HEAD
 var AccountBlock = styled(Text)(templateObject_4$1e || (templateObject_4$1e = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
-=======
-var AccountBlock = styled(Text)(templateObject_4$1d || (templateObject_4$1d = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var theme = _a.theme;
     return theme.colors.bgOpacity;
 }, function (_a) {
@@ -8168,38 +8083,17 @@ var AccountBlock = styled(Text)(templateObject_4$1d || (templateObject_4$1d = __
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-<<<<<<< HEAD
 var Dropdown = styled.div(templateObject_5$S || (templateObject_5$S = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var Dropdown = styled.div(templateObject_4$1e || (templateObject_4$1e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
-=======
-var Dropdown = styled.div(templateObject_5$R || (templateObject_5$R = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  background: ", ";\n  box-shadow: inset 0px 2px 20px rgba(0, 0, 0, 0.25);\n  border-radius: 0 0 9px 9px;\n  ", " {\n    padding: 33px;\n  }\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var theme = _a.theme;
     return theme.colors.darkGradient6;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-<<<<<<< HEAD
 var FundsItemStyled = styled(Flex)(templateObject_6$I || (templateObject_6$I = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
 var TextName = styled(Text)(templateObject_7$w || (templateObject_7$w = __makeTemplateObject(["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"], ["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"])), FundsItemStyled);
 var TextFullName = styled(Text)(templateObject_8$p || (templateObject_8$p = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"])), FundsItemStyled);
-=======
-<<<<<<< HEAD
-var FundsItemStyled = styled(Flex)(templateObject_5$S || (templateObject_5$S = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
-var TextName = styled(Text)(templateObject_6$I || (templateObject_6$I = __makeTemplateObject(["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"], ["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"])), FundsItemStyled);
-var TextFullName = styled(Text)(templateObject_7$w || (templateObject_7$w = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"])), FundsItemStyled);
-var StyledTitle$5 = styled(Text)(templateObject_8$p || (templateObject_8$p = __makeTemplateObject(["\n  text-shadow: ", ";\n  font-weight: 400;\n"], ["\n  text-shadow: ", ";\n  font-weight: 400;\n"])), function (_a) {
-=======
-var FundsItemStyled = styled(Flex)(templateObject_6$H || (templateObject_6$H = __makeTemplateObject(["\n  margin-bottom: 20px;\n"], ["\n  margin-bottom: 20px;\n"])));
-var TextName = styled(Text)(templateObject_7$v || (templateObject_7$v = __makeTemplateObject(["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"], ["\n  margin-bottom: 4px;\n  font-weight: normal;\n  line-height: 19px;\n  ", ".includes & {\n    font-size: 13px;\n    line-height: 16px;\n  }\n"])), FundsItemStyled);
-var TextFullName = styled(Text)(templateObject_8$o || (templateObject_8$o = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  ", ".includes & {\n    font-size: 11px;\n    line-height: 14px;\n  }\n"])), FundsItemStyled);
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 var StyledTitle$5 = styled(Text)(templateObject_9$h || (templateObject_9$h = __makeTemplateObject(["\n  text-shadow: ", ";\n  font-weight: 400;\n"], ["\n  text-shadow: ", ";\n  font-weight: 400;\n"])), function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
     var theme = _a.theme;
     return theme.colors.textShadow;
 });
@@ -8219,15 +8113,7 @@ var ArrowIcon = styled(Flex)(templateObject_13$7 || (templateObject_13$7 = __mak
     var open = _a.open;
     return (open ? "scale(1, -1)" : "none");
 });
-<<<<<<< HEAD
 var templateObject_1$2e, templateObject_2$1M, templateObject_3$1q, templateObject_4$1e, templateObject_5$S, templateObject_6$I, templateObject_7$w, templateObject_8$p, templateObject_9$h, templateObject_10$e, templateObject_11$c, templateObject_12$9, templateObject_13$7;
-=======
-<<<<<<< HEAD
-var templateObject_1$2e, templateObject_2$1M, templateObject_3$1q, templateObject_4$1e, templateObject_5$S, templateObject_6$I, templateObject_7$w, templateObject_8$p, templateObject_9$h, templateObject_10$e, templateObject_11$c, templateObject_12$9;
-=======
-var templateObject_1$2c, templateObject_2$1L, templateObject_3$1p, templateObject_4$1d, templateObject_5$R, templateObject_6$H, templateObject_7$v, templateObject_8$o, templateObject_9$h, templateObject_10$e, templateObject_11$c, templateObject_12$9, templateObject_13$7;
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
 
 var HeaderMarketplace = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds, linksViews = _a.linksViews;
@@ -8273,18 +8159,10 @@ var Line$4 = styled.div(templateObject_3$1p || (templateObject_3$1p = __makeTemp
     var theme = _a.theme;
     return theme.mediaQueries.xl;
 });
-<<<<<<< HEAD
 var Nav = styled.div(templateObject_4$1d || (templateObject_4$1d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: ", ";\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: ", ";\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"])), function (_a) {
-=======
-<<<<<<< HEAD
-var Nav = styled.div(templateObject_4$1d || (templateObject_4$1d = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: 20px 30px 20px;\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: 20px 30px 20px;\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"])), function (_a) {
-=======
-var Nav = styled.div(templateObject_4$1c || (templateObject_4$1c = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: ", ";\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"], ["\n  display: flex;\n  flex-direction: column;\n  align-items: start;\n  justify-content: flex-start;\n  position: fixed;\n  min-height: 100vh;\n  height: 100%;\n  left: -100%;\n  padding: ", ";\n  top: 59px;\n  transition: 0.3s ease-in-out;\n\n  &.open {\n    left: 0;\n  }\n\n  background-color: ", ";\n\n  ", " {\n    flex-direction: row;\n    position: relative;\n    background: transparent;\n    padding: 0;\n    height: auto;\n    min-height: 0;\n    left: 0;\n    top: 0;\n  }\n"])), function (_a) {
->>>>>>> 259d06e27d899ed339874ccd95851a4270d36c52
     var heightDisclaimer = _a.heightDisclaimer;
     return (heightDisclaimer ? "calc(".concat(heightDisclaimer + 20, "px) 30px") : "20px 30px 20px");
 }, function (_a) {
->>>>>>> 848632aa7e1a0ba6222f941d974784b033e314a7
     var theme = _a.theme;
     return theme.colors.bgBlackRgba;
 }, function (_a) {
