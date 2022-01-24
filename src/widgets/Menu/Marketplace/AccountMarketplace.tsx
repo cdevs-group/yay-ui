@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Text from "../../../components/Text/Text";
 import { Login } from "../../WalletModal/types";
 import { TextsConnect } from "../../WalletModal/useWalletModal";
-import { BlockChainNetwork, Funds, TextsAccountMarketplace } from "../types";
+import { BlockChainNetwork, Funds, NavMarketplaceLinksViewsProps, TextsAccountMarketplace } from "../types";
 import { useModal } from "../../Modal";
 import ConnectModal from "../../WalletModal/ConnectModal";
 import {
@@ -35,12 +35,7 @@ interface Props {
   totalBalance: string;
   funds: Funds[];
   heightDisclaimer?: number;
-  linksViews?: {
-    icon: React.ReactNode;
-    text: string;
-    link: string;
-    comingSoon?: boolean;
-  }[];
+  linksViews?: NavMarketplaceLinksViewsProps[];
 }
 
 const AccountMarketplace: React.FC<Props> = ({
@@ -96,21 +91,11 @@ const AccountMarketplace: React.FC<Props> = ({
     // },
   ];
 
-  const LinkUser = ({
-    icon,
-    text,
-    link,
-    comingSoon,
-  }: {
-    icon: React.ReactNode;
-    text: string;
-    link?: string;
-    comingSoon?: boolean;
-  }) => {
+  const LinkUser = ({ icon, text, link, comingSoon, notice }: NavMarketplaceLinksViewsProps) => {
     const Item = () => (
       <Flex alignItems="center" marginBottom={comingSoon ? 0 : 20}>
         {icon}
-        <Text style={{ marginLeft: 11 }}>{text}</Text>
+        <TextLinkUser badge={notice}>{text}</TextLinkUser>
       </Flex>
     );
 
@@ -168,7 +153,7 @@ const AccountMarketplace: React.FC<Props> = ({
             open={openDropdown}
             setOpen={setOpenDropdown}
             icon={
-              <Wrapper>
+              <Wrapper badge={linksViews?.reduce((sum, current) => sum + (Number(current?.notice) || 0), 0)}>
                 <WalletIcon />
               </Wrapper>
             }
@@ -257,7 +242,8 @@ const WrapperDropdown = styled.div`
     order: 0;
   }
 `;
-const Wrapper = styled.div<{ notAuth?: boolean }>`
+const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string }>`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -273,6 +259,21 @@ const Wrapper = styled.div<{ notAuth?: boolean }>`
   & path {
     fill: ${({ theme, notAuth }) => (notAuth ? theme.colors.text : theme.colors.green)};
   }
+  &:after {
+    content: ${({ badge }) => `"${badge && badge > 99 ? "99+" : badge}"`};
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    min-width: 13px;
+    display: ${({ notAuth, badge }) => (!notAuth && badge ? "flex" : "none")};
+    justify-content: center;
+    padding: 1px 4px;
+    border-radius: 50px;
+    color: ${({ theme }) => theme.colors.text};
+    line-height: 11px;
+    font-size: 9px;
+    background: ${({ theme }) => theme.colors.green};
+  }
   ${({ theme }) => theme.mediaQueries.xl} {
     width: 40px;
     height: 40px;
@@ -280,9 +281,34 @@ const Wrapper = styled.div<{ notAuth?: boolean }>`
     margin-left: 9px;
     border-radius: 9px;
     order: 0;
+    &:after {
+      left: 30px;
+      right: auto;
+      min-width: 16px;
+      line-height: 14px;
+      font-size: 11px;
+    }
   }
 `;
 
+const TextLinkUser = styled(Text)<{ badge?: number | string }>`
+  display: flex;
+  align-items: center;
+  margin-left: 11px;
+  &:after {
+    content: ${({ badge }) => `"${badge && badge > 99 ? "99+" : badge}"`};
+    min-width: 16px;
+    display: ${({ badge }) => (badge ? "flex" : "none")};
+    justify-content: center;
+    margin-top: -16px;
+    padding: 1px 4px;
+    border-radius: 50px;
+    color: ${({ theme }) => theme.colors.text};
+    line-height: 14px;
+    font-size: 11px;
+    background: ${({ theme }) => theme.colors.green};
+  }
+`;
 const AccountBlock = styled(Text)`
   position: relative;
   display: flex;
