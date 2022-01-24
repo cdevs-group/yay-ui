@@ -122,7 +122,7 @@ export const TabsBlockWithCommingSoon: React.FC = () => {
 
   return (
     <>
-      <div style={{marginTop: "50px" }}>
+      <div style={{ marginTop: "50px" }}>
         <TabsWithCommingSoon onClick={toggleTab} tabValue={activeTab} tabsList={tabsList} />
       </div>
     </>
