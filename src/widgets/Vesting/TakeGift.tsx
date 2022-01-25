@@ -24,7 +24,7 @@ interface IProps {
 
 const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", zIndex: 0 }}>
       <Card id="TakeGift">
         <StyledTitle>{texts.title}</StyledTitle>
         <img alt="" src={images?.gift || GIFT} />
