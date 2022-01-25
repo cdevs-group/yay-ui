@@ -13717,16 +13717,23 @@ var TextFooter = styled__default["default"](Text)(templateObject_14 || (template
 var templateObject_1$d, templateObject_2$a, templateObject_3$8, templateObject_4$5, templateObject_5$4, templateObject_6$4, templateObject_7$4, templateObject_8$4, templateObject_9$3, templateObject_10$2, templateObject_11$1, templateObject_12, templateObject_13, templateObject_14;
 
 var CollectionItem = function (_a) {
-    var data = _a.data;
+    var data = _a.data, isLoading = _a.isLoading;
     return (React__default["default"].createElement(Flex, { alignItems: "center" },
-        data.index && (React__default["default"].createElement(Text, { marginRight: "15px", fontSize: "17px", color: baseColors.textGray }, data.index)),
-        React__default["default"].createElement(Logo, null,
-            React__default["default"].createElement("img", { src: data.img, alt: "logo" })),
-        React__default["default"].createElement("div", null,
-            React__default["default"].createElement(Text, { fontSize: "17px", color: lightColors.text }, data.name),
-            data.price && (React__default["default"].createElement(Text, { fontSize: "13px", color: baseColors.textGray }, data.price)))));
+        !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+            data.index && (React__default["default"].createElement(Text, { marginRight: "15px", fontSize: "17px", color: baseColors.textGray }, data.index)),
+            React__default["default"].createElement(Logo, null,
+                React__default["default"].createElement("img", { src: data.img, alt: "logo" })),
+            React__default["default"].createElement("div", null,
+                React__default["default"].createElement(Text, { fontSize: "17px", color: lightColors.text }, data.name),
+                data.price && (React__default["default"].createElement(Text, { fontSize: "13px", color: baseColors.textGray }, data.price))))),
+        isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+            React__default["default"].createElement(Skeleton, { height: 17, width: 16, marginRight: "10px" }),
+            React__default["default"].createElement(Skeleton, { variant: "circle", width: 53, height: 53, marginRight: "10px" }),
+            React__default["default"].createElement("div", null,
+                React__default["default"].createElement(Skeleton, { height: 17, width: 90, marginBottom: "6px" }),
+                React__default["default"].createElement(Skeleton, { height: 13, width: 90 }))))));
 };
-var Logo = styled__default["default"].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"], ["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n"])));
+var Logo = styled__default["default"].div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n  }\n"], ["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n  }\n"])));
 var templateObject_1$c;
 
 var Likes = function (_a) {
