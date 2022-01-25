@@ -60,4 +60,5 @@ export interface VestingWidgetProps {
     disabledTopCards?: boolean;
     disabledCardClaimTokens?: boolean;
     giftLoader?: boolean;
+    disabledClaimGift?: boolean;
 }
