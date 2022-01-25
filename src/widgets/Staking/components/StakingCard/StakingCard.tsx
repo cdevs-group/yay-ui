@@ -5,6 +5,7 @@ import { Text } from "../../../../components/Text";
 import PairToken from "./PairToken";
 import { Button } from "../../../../components/Button";
 import { ButtonProps } from "../../../../components/Button/types";
+import { TextWithTooltip } from "../../../../components/TextWithTooltip";
 
 interface IProps {
   logoToken0: string;
@@ -22,6 +23,8 @@ interface IProps {
     exit: string;
     withdrawAndClaim: string;
     andEarn: string;
+    getLp: string;
+    tooltip: string;
   };
   tokenReward: string;
   startDate: string;
@@ -36,6 +39,11 @@ interface IProps {
   claimButtonProps?: ButtonProps;
   withdrawButtonProps?: ButtonProps;
   exitButtonProps?: ButtonProps;
+  depositHandleClick: () => void | Promise<void>;
+  claimHandleClick: () => void | Promise<void>;
+  widthDrawHandleClick: () => void | Promise<void>;
+  exitHandleClick: () => void | Promise<void>;
+  getLpHandleClick: () => void | Promise<void>;
 }
 
 const StakingCard = ({
@@ -55,6 +63,11 @@ const StakingCard = ({
   withdrawButtonProps,
   claimButtonProps,
   depositButtonProps,
+  depositHandleClick,
+  claimHandleClick,
+  widthDrawHandleClick,
+  exitHandleClick,
+  getLpHandleClick,
 }: IProps) => {
   return (
     <Flex flexDirection="column" alignItems="center">
@@ -76,7 +89,20 @@ const StakingCard = ({
           </Pair>
         </TopBlock>
         <Content>
-          <Flex justifyContent="space-between">
+          <ButtonWrap>
+            <Button
+              onClick={getLpHandleClick}
+              fontSize="11px"
+              padding="3px"
+              variant="option"
+              height="30px"
+              width="100%"
+              maxWidth="125px"
+            >
+              {texts.getLp} <TextWithTooltip textTooltip={texts.tooltip} />
+            </Button>
+          </ButtonWrap>
+          <Flex mt={15} justifyContent="space-between">
             <LeftText>{texts.startDate}</LeftText>
             <RightText>{startDate}</RightText>
           </Flex>
@@ -95,13 +121,13 @@ const StakingCard = ({
             <RightText>{reward}</RightText>
           </Flex>
           <Buttons>
-            <Button padding="5px" variant="green" width="100%" {...depositButtonProps}>
+            <Button onClick={depositHandleClick} padding="5px" variant="green" width="100%" {...depositButtonProps}>
               <div>
                 <Text fontSize="13px">{texts.deposit}</Text>
                 {!depositButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
               </div>
             </Button>
-            <Button padding="5px" variant="green" width="100%" {...claimButtonProps}>
+            <Button onClick={claimHandleClick} padding="5px" variant="green" width="100%" {...claimButtonProps}>
               <div>
                 <Text fontSize="13px">{texts.claim}</Text>
                 {!claimButtonProps?.spin && (
@@ -111,13 +137,13 @@ const StakingCard = ({
                 )}
               </div>
             </Button>
-            <Button padding="5px" variant="green" width="100%" {...withdrawButtonProps}>
+            <Button onClick={widthDrawHandleClick} padding="5px" variant="green" width="100%" {...withdrawButtonProps}>
               <div>
                 <Text fontSize="13px">{texts.withdraw}</Text>
                 {!withdrawButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
               </div>
             </Button>
-            <Button padding="5px" variant="green" width="100%" {...exitButtonProps}>
+            <Button onClick={exitHandleClick} padding="5px" variant="green" width="100%" {...exitButtonProps}>
               <div>
                 <Text fontSize="13px">{texts.exit}</Text>
                 {!exitButtonProps?.spin && <Text fontSize="11px">{texts.withdrawAndClaim}</Text>}
@@ -172,9 +198,9 @@ const Pair = styled.div`
   }
 `;
 const Content = styled.div`
-  padding: 85px 10px 0;
+  padding: 45px 10px 0;
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 85px 20px 0;
+    padding: 45px 20px 0;
   }
 `;
 
@@ -196,4 +222,7 @@ const Buttons = styled.div`
   ${({ theme }) => theme.mediaQueries.sm} {
     gap: 17px 23px;
   }
+`;
+const ButtonWrap = styled.div`
+  text-align: center;
 `;

@@ -17,6 +17,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
   handleButtonToMax,
   icon,
   disabled,
+  pairBlock,
   ...props
 }) => {
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,10 +48,12 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
             MAX
           </ButtonToMax>
         ) : null}
-        <InputIcon>
-          {icon || <BnbIcon />}
-          {texts?.currency || "BNB"}
-        </InputIcon>
+        {pairBlock || (
+          <InputIcon>
+            {icon || <BnbIcon />}
+            {texts?.currency || "BNB"}
+          </InputIcon>
+        )}
       </RightBlock>
     </InputWrap>
   );
@@ -90,9 +93,11 @@ const InputIcon = styled.div`
   line-height: 14px;
   letter-spacing: 0.5px;
   color: ${({ theme }) => theme.colors.text};
+
   & svg {
     margin-bottom: 7px;
   }
+
   & div {
     display: flex;
     align-items: center;
@@ -115,6 +120,7 @@ const ButtonToMax = styled(Text)`
   cursor: pointer;
   transition: 0.3s;
   color: ${({ theme }) => theme.colors.textGray};
+
   &:hover {
     color: ${({ theme }) => theme.colors.text};
     transition: 0.3s;
