@@ -16,6 +16,8 @@ interface IProps {
         exit: string;
         withdrawAndClaim: string;
         andEarn: string;
+        getLp: string;
+        tooltip: string;
     };
     tokenReward: string;
     startDate: string;
@@ -30,6 +32,11 @@ interface IProps {
     claimButtonProps?: ButtonProps;
     withdrawButtonProps?: ButtonProps;
     exitButtonProps?: ButtonProps;
+    depositHandleClick: () => void | Promise<void>;
+    claimHandleClick: () => void | Promise<void>;
+    widthDrawHandleClick: () => void | Promise<void>;
+    exitHandleClick: () => void | Promise<void>;
+    getLpHandleClick: () => void | Promise<void>;
 }
-declare const StakingCard: ({ logoToken0, logoToken1, texts, tokenReward, startDate, endDate, yourStake, reward, lp, pair, total, apy, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, }: IProps) => JSX.Element;
+declare const StakingCard: ({ logoToken0, logoToken1, texts, tokenReward, startDate, endDate, yourStake, reward, lp, pair, total, apy, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, depositHandleClick, claimHandleClick, widthDrawHandleClick, exitHandleClick, getLpHandleClick, }: IProps) => JSX.Element;
 export default StakingCard;
