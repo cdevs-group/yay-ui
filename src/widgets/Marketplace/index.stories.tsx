@@ -18,7 +18,8 @@ export default {
 export const CollectionItemBlock = () => (
   <>
     <CollectionItem data={{ name: "Passage", price: "$3,512,645", index: 1, img: NFT_EXAMPLE }} />
-    <CollectionItem data={{ name: "Passage", img: NFT_EXAMPLE }} />
+    {/* <CollectionItem data={{ name: "Passage", img: NFT_EXAMPLE }} /> */}
+    <CollectionItem data={{ name: "Passage", img: NFT_EXAMPLE }} isLoading />
   </>
 );
 
