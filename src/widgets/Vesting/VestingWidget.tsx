@@ -30,6 +30,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
   disabledTopCards,
   disabledCardClaimTokens,
   giftLoader,
+  disabledClaimGift,
 }) => {
   return (
     <Wrapper>
@@ -77,6 +78,7 @@ const VestingWidget: React.FC<VestingWidgetProps> = ({
         handleTakeGift={handleTakeGift}
         claimedGift={claimedGift}
         images={imagesGift}
+        disabledClaimGift={disabledClaimGift}
       />
     </Wrapper>
   );

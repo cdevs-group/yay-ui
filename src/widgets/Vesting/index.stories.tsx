@@ -91,6 +91,7 @@ export const VestingWidgetComponent: React.FC = () => {
       disabledTopCards={false}
       // giftLoader
       disabledCardClaimTokens
+      disabledClaimGift={false}
     />
   );
 };

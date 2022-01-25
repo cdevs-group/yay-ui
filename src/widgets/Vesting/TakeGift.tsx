@@ -20,9 +20,10 @@ interface IProps {
     gift2: string;
   };
   giftLoader?: boolean;
+  disabledClaimGift?: boolean;
 }
 
-const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IProps) => {
+const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader, disabledClaimGift }: IProps) => {
   return (
     <div style={{ position: "relative", zIndex: 0 }}>
       <Card id="TakeGift">
@@ -32,16 +33,18 @@ const TakeGift = ({ handleTakeGift, texts, claimedGift, images, giftLoader }: IP
           {texts.button}
         </StyledButton>
       </Card>
-      <BlurWrapper claimedGift={claimedGift} giftLoader={giftLoader}></BlurWrapper>
+      <BlurWrapper claimedGift={claimedGift || disabledClaimGift} giftLoader={giftLoader}></BlurWrapper>
       <Claimed giftLoader={giftLoader}>
         <Loader />
       </Claimed>
-      <Claimed claimedGift={claimedGift}>
-        <img alt="" src={images?.gift2 || GIFT2} />
-        <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
-          {texts.claimed}
-        </Text>
-      </Claimed>
+      {!disabledClaimGift && (
+        <Claimed claimedGift={claimedGift}>
+          <img alt="" src={images?.gift2 || GIFT2} />
+          <Text fontSize="24px" lineHeight="32px" letterSpacing="-0.02em" textAlign="center">
+            {texts.claimed}
+          </Text>
+        </Claimed>
+      )}
     </div>
   );
 };
