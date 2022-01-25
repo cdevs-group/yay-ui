@@ -8951,7 +8951,7 @@ var GIFT2 = "13c5906f9a4df20c.png";
 
 var TakeGift = function (_a) {
     var handleTakeGift = _a.handleTakeGift, texts = _a.texts, claimedGift = _a.claimedGift, images = _a.images, giftLoader = _a.giftLoader;
-    return (React__default["default"].createElement("div", { style: { position: "relative" } },
+    return (React__default["default"].createElement("div", { style: { position: "relative", zIndex: 0 } },
         React__default["default"].createElement(Card$j, { id: "TakeGift" },
             React__default["default"].createElement(StyledTitle$2, null, texts.title),
             React__default["default"].createElement("img", { alt: "", src: (images === null || images === void 0 ? void 0 : images.gift) || GIFT }),
