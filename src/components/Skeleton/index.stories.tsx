@@ -31,7 +31,6 @@ Animation.args = {
 export const ParentSize: React.FC = (args) => {
   return (
     <div style={{ width: 200, height: 90 }}>
-      {" "}
       <Skeleton {...args} />{" "}
     </div>
   );

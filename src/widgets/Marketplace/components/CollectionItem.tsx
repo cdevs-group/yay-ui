@@ -38,12 +38,9 @@ const CollectionItem = ({
       )}
       {isLoading && (
         <>
-          <Skeleton height={17} width={16} marginRight="10px" />
+          <Skeleton height={53} width={16} marginRight="10px" />
           <Skeleton variant="circle" width={53} height={53} marginRight="10px" />
-          <div>
-            <Skeleton height={17} width={90} marginBottom="6px" />
-            <Skeleton height={13} width={90} />
-          </div>
+          <Skeleton height={53} width="100%" />
         </>
       )}
     </Flex>
