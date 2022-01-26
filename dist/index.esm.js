@@ -3679,7 +3679,7 @@ var waves = keyframes(templateObject_1$3s || (templateObject_1$3s = __makeTempla
 var pulse = keyframes(templateObject_2$2H || (templateObject_2$2H = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
 var Root = styled.div(templateObject_3$2c || (templateObject_3$2c = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.backgroundDisabled;
+    return theme.colors.whiteRgba;
 }, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return (variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small);
@@ -13695,11 +13695,9 @@ var CollectionItem = function (_a) {
                 React__default.createElement(Text, { fontSize: "17px", color: lightColors.text }, data.name),
                 data.price && (React__default.createElement(Text, { fontSize: "13px", color: baseColors.textGray }, data.price))))),
         isLoading && (React__default.createElement(React__default.Fragment, null,
-            React__default.createElement(Skeleton, { height: 17, width: 16, marginRight: "10px" }),
+            React__default.createElement(Skeleton, { height: 53, width: 16, marginRight: "10px" }),
             React__default.createElement(Skeleton, { variant: "circle", width: 53, height: 53, marginRight: "10px" }),
-            React__default.createElement("div", null,
-                React__default.createElement(Skeleton, { height: 17, width: 90, marginBottom: "6px" }),
-                React__default.createElement(Skeleton, { height: 13, width: 90 }))))));
+            React__default.createElement(Skeleton, { height: 53, width: "100%" })))));
 };
 var Logo = styled.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n  }\n"], ["\n  width: 53px;\n  height: 53px;\n  margin-right: 10px;\n  & img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n  }\n"])));
 var templateObject_1$e;
