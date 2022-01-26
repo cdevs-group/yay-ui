@@ -15,6 +15,7 @@ export interface ICardProps {
     onLikeAdd?: () => void;
     network: string;
     onGameClick: (id?: string | number) => void;
+    isLoading?: boolean;
 }
 export interface ICardGamesProps {
     title: string;
@@ -28,6 +29,7 @@ export interface ICardGamesProps {
     network2?: string;
     onSeeNowClick: (id?: string | number) => void;
     onGameClick: (id?: string | number) => void;
+    isLoading?: boolean;
 }
 export interface ILikesProps {
     likes: number;

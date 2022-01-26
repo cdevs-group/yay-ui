@@ -13760,36 +13760,50 @@ var CardHover = styled__default["default"].div(templateObject_2$9 || (templateOb
 var templateObject_1$c, templateObject_2$9;
 
 var NFTCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onGameClick = _a.onGameClick;
+    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
     return (React__default["default"].createElement(CardWrapper, null,
         React__default["default"].createElement(Card$3, null,
-            React__default["default"].createElement(Network$1, null, network && React__default["default"].createElement("img", { alt: "", src: network })),
-            React__default["default"].createElement(PictureWrapper$1, null,
-                React__default["default"].createElement(Picture$2, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
-            React__default["default"].createElement(Body$1, null,
-                React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px" },
-                    React__default["default"].createElement(Avatar$1, { src: avatarUrl, alt: author, onClick: function () { return onGameClick(); } }),
-                    React__default["default"].createElement("div", { style: { overflow: "hidden" } },
-                        React__default["default"].createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
-                        React__default["default"].createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
-                React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
-                React__default["default"].createElement(FooterContainer$2, null,
-                    React__default["default"].createElement(PriceText$1, null, price),
-                    React__default["default"].createElement(Flex, null,
-                        React__default["default"].createElement(IconWrapper$1, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); } },
-                            React__default["default"].createElement(Icon$f, null)),
-                        onFavoritesAdd && (React__default["default"].createElement(IconWrapper$1, { style: { padding: "8px" }, onClick: function () { return onFavoritesAdd(); } },
-                            React__default["default"].createElement(Icon$e, null))))))),
+            !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                " ",
+                React__default["default"].createElement(Network$1, null, network && React__default["default"].createElement("img", { alt: "", src: network })),
+                React__default["default"].createElement(PictureWrapper$1, null,
+                    React__default["default"].createElement(Picture$2, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
+                React__default["default"].createElement(Body$1, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px" },
+                        React__default["default"].createElement(Avatar$1, { src: avatarUrl, alt: author, onClick: function () { return onGameClick(); } }),
+                        React__default["default"].createElement("div", { style: { overflow: "hidden" } },
+                            React__default["default"].createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
+                            React__default["default"].createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
+                    React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
+                    React__default["default"].createElement(FooterContainer$2, null,
+                        React__default["default"].createElement(PriceText$1, null, price),
+                        React__default["default"].createElement(Flex, null,
+                            React__default["default"].createElement(IconWrapper$1, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); } },
+                                React__default["default"].createElement(Icon$f, null)),
+                            onFavoritesAdd && (React__default["default"].createElement(IconWrapper$1, { style: { padding: "8px" }, onClick: function () { return onFavoritesAdd(); } },
+                                React__default["default"].createElement(Icon$e, null)))))))),
+            isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                React__default["default"].createElement(PictureWrapper$1, null,
+                    React__default["default"].createElement(Skeleton, { maxWidth: "100%", height: 251, width: "100%" })),
+                React__default["default"].createElement(Body$1, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px" },
+                        React__default["default"].createElement(Skeleton, { width: 32, height: 32, variant: "circle" }),
+                        React__default["default"].createElement("div", { style: { overflow: "hidden", marginLeft: "20px" } },
+                            React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "6px" }),
+                            React__default["default"].createElement(Skeleton, { height: 13, width: 150 }))),
+                    React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "29px" }),
+                    React__default["default"].createElement(FooterContainer$2, null,
+                        React__default["default"].createElement(Skeleton, { height: 17, width: 100 })))))),
         React__default["default"].createElement(CardHover, null)));
 };
-var Card$3 = styled__default["default"].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
+var Card$3 = styled__default["default"].div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
 }, CardWrapper, function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
 });
-var Network$1 = styled__default["default"].div(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  position: absolute;\n  left: 15px;\n  top: 15px;\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n"], ["\n  position: absolute;\n  left: 15px;\n  top: 15px;\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n"])));
+var Network$1 = styled__default["default"].div(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  position: absolute;\n  left: 15px;\n  top: 15px;\n\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n"], ["\n  position: absolute;\n  left: 15px;\n  top: 15px;\n\n  & img {\n    width: 32px;\n    height: 32px;\n  }\n"])));
 var Title$3 = styled__default["default"](Text)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 400;\n  cursor: pointer;\n"], ["\n  font-size: 19px;\n  line-height: 24px;\n  letter-spacing: 0.03em;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  font-weight: 400;\n  cursor: pointer;\n"])));
 var Author = styled__default["default"](Text)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  font-size: 13px;\n  line-height: 16px;\n  font-weight: 400;\n  letter-spacing: 0.03em;\n  cursor: pointer;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  line-height: 16px;\n  font-weight: 400;\n  letter-spacing: 0.03em;\n  cursor: pointer;\n  color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -13811,25 +13825,39 @@ var Body$1 = styled__default["default"](Flex)(templateObject_11 || (templateObje
 var templateObject_1$b, templateObject_2$8, templateObject_3$8, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$1, templateObject_11;
 
 var NFTCardGames = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl, description = _a.description, textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick;
+    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl, description = _a.description, textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
     return (React__default["default"].createElement(CardWrapper, null,
         React__default["default"].createElement(Card$2, null,
-            React__default["default"].createElement(Network, null,
-                React__default["default"].createElement("img", { alt: "", src: network1 }),
-                network2 && React__default["default"].createElement("img", { alt: "", src: network2, className: "network2" })),
-            React__default["default"].createElement(PictureWrapper, null,
-                React__default["default"].createElement(Picture$1, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
-            React__default["default"].createElement(Body, null,
-                React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onGameClick(); } },
-                    React__default["default"].createElement(Avatar, { src: avatarUrl, alt: "" }),
-                    React__default["default"].createElement("div", { style: { overflow: "hidden" } },
-                        React__default["default"].createElement(Title$2, null, title))),
-                React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
-                React__default["default"].createElement(FooterContainer$1, null,
-                    React__default["default"].createElement(SeeText, { onClick: function () { return onSeeNowClick(); }, role: "button" }, textSeeNow),
-                    React__default["default"].createElement(Flex, null,
-                        React__default["default"].createElement(IconWrapper, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); }, role: "button" },
-                            React__default["default"].createElement(Icon$f, null)))))),
+            !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                " ",
+                React__default["default"].createElement(Network, null,
+                    React__default["default"].createElement("img", { alt: "", src: network1 }),
+                    network2 && React__default["default"].createElement("img", { alt: "", src: network2, className: "network2" })),
+                React__default["default"].createElement(PictureWrapper, null,
+                    React__default["default"].createElement(Picture$1, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } })),
+                React__default["default"].createElement(Body, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onGameClick(); } },
+                        React__default["default"].createElement(Avatar, { src: avatarUrl, alt: "" }),
+                        React__default["default"].createElement("div", { style: { overflow: "hidden" } },
+                            React__default["default"].createElement(Title$2, null, title))),
+                    React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
+                    React__default["default"].createElement(FooterContainer$1, null,
+                        React__default["default"].createElement(SeeText, { onClick: function () { return onSeeNowClick(); }, role: "button" }, textSeeNow),
+                        React__default["default"].createElement(Flex, null,
+                            React__default["default"].createElement(IconWrapper, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); }, role: "button" },
+                                React__default["default"].createElement(Icon$f, null))))),
+                " ")),
+            isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
+                React__default["default"].createElement(PictureWrapper, null,
+                    React__default["default"].createElement(Skeleton, { maxWidth: "100%", height: 251, width: "100%" })),
+                React__default["default"].createElement(Body, null,
+                    React__default["default"].createElement(Flex, { alignItems: "center", mb: "24px", onClick: function () { return onGameClick(); } },
+                        React__default["default"].createElement(Skeleton, { width: 32, height: 32, variant: "circle" }),
+                        React__default["default"].createElement("div", { style: { overflow: "hidden", marginLeft: "20px" } },
+                            React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "6px" }))),
+                    React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "29px" }),
+                    React__default["default"].createElement(FooterContainer$1, null,
+                        React__default["default"].createElement(Skeleton, { height: 17, width: 100 })))))),
         React__default["default"].createElement(CardHover, null)));
 };
 var Card$2 = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
