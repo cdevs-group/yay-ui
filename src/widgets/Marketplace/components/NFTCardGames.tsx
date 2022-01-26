@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ICardGamesProps } from "./types";
 import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
 import { CardHover, CardWrapper } from "../styled";
+import { Skeleton } from "../../../components/Skeleton";
 
 const NFTCardGames: React.FC<ICardGamesProps> = ({
   title,
@@ -16,38 +17,63 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
   network2,
   onSeeNowClick,
   onGameClick,
+  isLoading,
 }) => {
   return (
     <CardWrapper>
       <Card>
-        <Network>
-          <img alt="" src={network1} />
-          {network2 && <img alt="" src={network2} className="network2" />}
-        </Network>
-        <PictureWrapper>
-          <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-        </PictureWrapper>
-        <Body>
-          <Flex alignItems="center" mb="24px" onClick={() => onGameClick()}>
-            <Avatar src={avatarUrl} alt="" />
-            <div style={{ overflow: "hidden" }}>
-              <Title>{title}</Title>
-            </div>
-          </Flex>
-          <Text color="textGray" mb="29px" fontWeight={400}>
-            {description}
-          </Text>
-          <FooterContainer>
-            <SeeText onClick={() => onSeeNowClick()} role="button">
-              {textSeeNow}
-            </SeeText>
-            <Flex>
-              <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
-                <NFTShareIcon />
-              </IconWrapper>
-            </Flex>
-          </FooterContainer>
-        </Body>
+        {!isLoading && (
+          <>
+            {" "}
+            <Network>
+              <img alt="" src={network1} />
+              {network2 && <img alt="" src={network2} className="network2" />}
+            </Network>
+            <PictureWrapper>
+              <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
+            </PictureWrapper>
+            <Body>
+              <Flex alignItems="center" mb="24px" onClick={() => onGameClick()}>
+                <Avatar src={avatarUrl} alt="" />
+                <div style={{ overflow: "hidden" }}>
+                  <Title>{title}</Title>
+                </div>
+              </Flex>
+              <Text color="textGray" mb="29px" fontWeight={400}>
+                {description}
+              </Text>
+              <FooterContainer>
+                <SeeText onClick={() => onSeeNowClick()} role="button">
+                  {textSeeNow}
+                </SeeText>
+                <Flex>
+                  <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()} role="button">
+                    <NFTShareIcon />
+                  </IconWrapper>
+                </Flex>
+              </FooterContainer>
+            </Body>{" "}
+          </>
+        )}
+        {isLoading && (
+          <>
+            <PictureWrapper>
+              <Skeleton maxWidth="100%" height={251} width="100%" />
+            </PictureWrapper>
+            <Body>
+              <Flex alignItems="center" mb="24px" onClick={() => onGameClick()}>
+                <Skeleton width={32} height={32} variant="circle" />
+                <div style={{ overflow: "hidden", marginLeft: "20px" }}>
+                  <Skeleton height={17} width={150} marginBottom="6px" />
+                </div>
+              </Flex>
+              <Skeleton height={17} width={150} marginBottom="29px" />
+              <FooterContainer>
+                <Skeleton height={17} width={100} />
+              </FooterContainer>
+            </Body>
+          </>
+        )}
       </Card>
       <CardHover />
     </CardWrapper>
