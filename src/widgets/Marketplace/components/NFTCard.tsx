@@ -4,6 +4,7 @@ import { ICardProps } from "./types";
 import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
 import Likes from "./Likes";
 import { CardHover, CardWrapper } from "../styled";
+import { Skeleton } from "../../../components/Skeleton";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -20,12 +21,16 @@ const NFTCard: React.FC<ICardProps> = ({
   onLikeAdd,
   network,
   onGameClick,
+  isLoading,
 }) => {
   return (
     <CardWrapper>
       <Card>
-        <Network>{network && <img alt="" src={network} />}</Network>
-        {/* <Likes
+        {!isLoading && (
+          <>
+            {" "}
+            <Network>{network && <img alt="" src={network} />}</Network>
+            {/* <Likes
         likes={likes}
         onLikeAdd={onLikeAdd}
         wrapperStyle={{
@@ -34,34 +39,56 @@ const NFTCard: React.FC<ICardProps> = ({
           right: "15px",
         }}
       /> */}
-        <PictureWrapper>
-          <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-        </PictureWrapper>
-        <Body>
-          <Flex alignItems="center" mb="24px">
-            <Avatar src={avatarUrl} alt={author} onClick={() => onGameClick()} />
-            <div style={{ overflow: "hidden" }}>
-              <Title onClick={() => onGameClick()}>{title}</Title>
-              <Author onClick={() => onAuthorClick()}>{author}</Author>
-            </div>
-          </Flex>
-          <Text color="textGray" mb="29px" fontWeight={400}>
-            {description}
-          </Text>
-          <FooterContainer>
-            <PriceText>{price}</PriceText>
-            <Flex>
-              <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
-                <NFTShareIcon />
-              </IconWrapper>
-              {onFavoritesAdd && (
-                <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
-                  <StarIcon />
-                </IconWrapper>
-              )}
-            </Flex>
-          </FooterContainer>
-        </Body>
+            <PictureWrapper>
+              <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
+            </PictureWrapper>
+            <Body>
+              <Flex alignItems="center" mb="24px">
+                <Avatar src={avatarUrl} alt={author} onClick={() => onGameClick()} />
+                <div style={{ overflow: "hidden" }}>
+                  <Title onClick={() => onGameClick()}>{title}</Title>
+                  <Author onClick={() => onAuthorClick()}>{author}</Author>
+                </div>
+              </Flex>
+              <Text color="textGray" mb="29px" fontWeight={400}>
+                {description}
+              </Text>
+              <FooterContainer>
+                <PriceText>{price}</PriceText>
+                <Flex>
+                  <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
+                    <NFTShareIcon />
+                  </IconWrapper>
+                  {onFavoritesAdd && (
+                    <IconWrapper style={{ padding: "8px" }} onClick={() => onFavoritesAdd()}>
+                      <StarIcon />
+                    </IconWrapper>
+                  )}
+                </Flex>
+              </FooterContainer>
+            </Body>
+          </>
+        )}
+        {isLoading && (
+          <>
+            <PictureWrapper>
+              <Skeleton maxWidth="100%" height={251} width="100%" />
+            </PictureWrapper>
+            <Body>
+              <Flex alignItems="center" mb="24px">
+                <Skeleton width={32} height={32} variant="circle" />
+                <div style={{ overflow: "hidden", marginLeft: "20px" }}>
+                  <Skeleton height={17} width={150} marginBottom="6px" />
+                  <Skeleton height={13} width={150} />
+                </div>
+              </Flex>
+              <Skeleton height={17} width={150} marginBottom="29px" />
+              <FooterContainer>
+                <Skeleton height={17} width={100} />
+              </FooterContainer>
+            </Body>
+          </>
+        )}
       </Card>
       <CardHover />
     </CardWrapper>
@@ -79,6 +106,7 @@ const Card = styled.div`
   border-radius: 16px;
   transition: 0.3s;
   z-index: 1;
+
   ${CardWrapper}:hover & {
     background: ${({ theme }) => theme.colors.dark3};
     transition: 0.3s;
@@ -89,6 +117,7 @@ const Network = styled.div`
   position: absolute;
   left: 15px;
   top: 15px;
+
   & img {
     width: 32px;
     height: 32px;

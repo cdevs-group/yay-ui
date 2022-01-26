@@ -60,6 +60,7 @@ export const NFTCardBlock = () => {
         onGameClick={() => console.log("onGameClick")}
       />
       <NFTCardGames
+        isLoading
         title="Bold Point"
         description="Total NFTs: 1920"
         picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
