@@ -90,6 +90,7 @@ export const baseColors = {
   bgGray5: "#34343B",
   darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
   redBg: "#FF6161",
+  purple: "#9E3DFF",
 };
 
 export const brandColors = {

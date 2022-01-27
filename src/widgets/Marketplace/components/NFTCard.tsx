@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { ICardProps } from "./types";
-import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
+import { Text, NFTShareIcon, StarIcon, Flex, lightColors } from "../../..";
 import Likes from "./Likes";
 import { CardHover, CardWrapper } from "../styled";
 import { Skeleton } from "../../../components/Skeleton";
+import { baseColors } from "../../../theme/colors";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -20,8 +21,10 @@ const NFTCard: React.FC<ICardProps> = ({
   onNftClick,
   onLikeAdd,
   network,
+  onSeeNowClick,
   onGameClick,
   isLoading,
+  assets,
 }) => {
   return (
     <CardWrapper>
@@ -50,11 +53,16 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Text color="textGray" mb="29px" fontWeight={400}>
-                {description}
+              <Text color={lightColors.whiteText} mb="29px" fontSize="15px" fontWeight={400}>
+                {price}
+                {assets && (
+                  <span style={{ color: baseColors.whiteRgba4, fontSize: "15px", marginLeft: 5 }}>{assets}</span>
+                )}
               </Text>
               <FooterContainer>
-                <PriceText>{price}</PriceText>
+                <SeeText onClick={() => onSeeNowClick()} role="button">
+                  {description}
+                </SeeText>
                 <Flex>
                   <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
                     <NFTShareIcon />
@@ -173,13 +181,14 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const PriceText = styled(Text)`
+const SeeText = styled(Text)<{ color?: string }>`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
   color: ${({ theme }) => theme.colors.green};
+  cursor: pointer;
 `;
 
 const IconWrapper = styled.div`
