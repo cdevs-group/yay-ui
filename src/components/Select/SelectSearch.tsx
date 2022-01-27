@@ -7,6 +7,7 @@ import { Text } from "../Text";
 import { CheckIcon2 } from "../Svg";
 import { Flex, Box } from "../Box";
 import InputSearch from "./components/InputSerach";
+import { baseColors } from "../../theme/colors";
 
 export interface SelectProps extends SpaceProps, LayoutProps {
   selectItem: ReactNode;
@@ -80,7 +81,7 @@ const SelectSearch = ({
                 <Item {...propsOption}>
                   <img src={el.img} />
                   <Text mr="auto">{el.name}</Text>
-                  <CheckIcon2 />
+                  <CheckIcon2 color={baseColors.purple} />
                 </Item>
               </Option>
             ))}
