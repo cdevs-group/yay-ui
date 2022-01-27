@@ -8,7 +8,7 @@ export interface ICardProps {
   picUrl: string;
   avatarUrl?: string;
   likes?: number;
-  price: string;
+  price?: string;
   onShare: (id?: string | number) => void;
   onFavoritesAdd?: (id?: string | number) => void;
   onAuthorClick: (id?: string | number) => void;

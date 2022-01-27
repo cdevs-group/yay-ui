@@ -54,12 +54,18 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Text color={lightColors.whiteText} mb="29px" fontSize="15px" fontWeight={400}>
-                {price}
-                {assets && (
-                  <span style={{ color: baseColors.whiteRgba4, fontSize: "15px", marginLeft: 5 }}>{assets}</span>
+              <Flex mb="29px" alignItems="center">
+                {price && (
+                  <Text mr="7px" fontSize="15px" fontWeight={400}>
+                    {price}
+                  </Text>
                 )}
-              </Text>
+                {assets && (
+                  <Text color={lightColors.whiteRgba2} fontSize="15px">
+                    {assets}
+                  </Text>
+                )}
+              </Flex>
               <FooterContainer>
                 <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
                   {description}
