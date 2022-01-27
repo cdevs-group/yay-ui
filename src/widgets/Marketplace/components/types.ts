@@ -19,6 +19,7 @@ export interface ICardProps {
   isLoading?: boolean;
   onSeeNowClick: () => void | Promise<void>;
   assets?: string;
+  color?: string;
 }
 
 export interface ICardGamesProps {
@@ -34,6 +35,7 @@ export interface ICardGamesProps {
   onSeeNowClick: (id?: string | number) => void;
   onGameClick: (id?: string | number) => void;
   isLoading?: boolean;
+  color?: string;
 }
 
 export interface ILikesProps {
@@ -60,6 +62,7 @@ export interface IProfileCardProps {
   onLike?: () => void;
   onNftClick: (id?: string | number) => void;
   onTitleClick?: (id?: string | number) => void;
+  color?: string;
 }
 
 export interface IRegisterProfileProps {

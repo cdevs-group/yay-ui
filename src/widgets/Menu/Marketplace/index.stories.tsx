@@ -3,10 +3,11 @@ import noop from "lodash/noop";
 import { BrowserRouter } from "react-router-dom";
 import { linksSubmenu } from "../config";
 import { useState } from "react";
-import { BNB2, YAY_TOKEN } from "../../../constants/images";
+import { BNB2, LOGO_LOOT, YAY_TOKEN } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 import HeaderMarketplace from "./HeaderMarketplace";
 import { CollectionIcon, FavoritesIcon, UserIcon } from "../../..";
+import { baseColors } from "../../../theme/colors";
 
 export default {
   title: "Components/Header/HeaderMarketplace",
@@ -157,6 +158,8 @@ export const HeaderForMarketplace = () => {
     <BrowserRouter>
       <div style={{ marginTop: "50px" }}>
         <HeaderMarketplace
+          logoImg={LOGO_LOOT}
+          // colorTheme={baseColors.purple}
           account="0xbdda50183d817c3289f895a4472eb475967dc980"
           login={noop}
           logout={noop}

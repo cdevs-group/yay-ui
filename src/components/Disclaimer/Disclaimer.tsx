@@ -4,7 +4,11 @@ import useWindowDimensions from "../../hooks/useResize";
 import { CloseIcon2 } from "../Svg";
 import { Text } from "../Text";
 
-const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = ({ text, setHeight }) => {
+const Disclaimer: React.FC<{ text: string; colorTheme?: string; setHeight?: (val: any) => void }> = ({
+  text,
+  setHeight,
+  colorTheme,
+}) => {
   const [open, setOpen] = useState(true);
   const refDisclaimer = useRef<any>(null);
   const refCounter = useRef<any>(null);
@@ -33,7 +37,7 @@ const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = (
   }, [open, width]);
 
   return (
-    <Block open={open} ref={refDisclaimer}>
+    <Block colorTheme={colorTheme} open={open} ref={refDisclaimer}>
       <StyledText>{text}</StyledText>
       <Button onClick={() => setOpen(false)}>
         <CloseIcon2 role="button" />
@@ -44,7 +48,7 @@ const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = (
 
 export default Disclaimer;
 
-const Block = styled.div<{ open: boolean }>`
+const Block = styled.div<{ open: boolean; colorTheme?: string }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -52,7 +56,7 @@ const Block = styled.div<{ open: boolean }>`
   transition: 0.3s;
   width: 100%;
   padding: ${({ open }) => (!open ? 0 : "13px 46px 13px 23px")};
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   z-index: 1;
   overflow: hidden;
   max-height: ${({ open }) => (!open ? 0 : 100)};
