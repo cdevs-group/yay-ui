@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../../..";
 import { CardHover, CardWrapper } from "../styled";
 import { IProfileCardProps } from "./types";
+import { Skeleton } from "../../../components/Skeleton";
 
 const ProfileNftCard: React.FC<IProfileCardProps> = ({
+  isLoading,
   title,
   picUrl,
   price,
@@ -17,11 +19,13 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
   return (
     <CardWrapper maxWidth={233}>
       <Card>
-        <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
-        <Title onClick={() => (onTitleClick ? onTitleClick() : null)}>{title}</Title>
-        <FooterContainer>
-          <PriceText>{price}</PriceText>
-          {/* <Likes>
+        {!isLoading && (
+          <>
+            <Picture src={picUrl} alt={title} onClick={() => onNftClick()} />
+            <Title onClick={() => (onTitleClick ? onTitleClick() : null)}>{title}</Title>
+            <FooterContainer>
+              <PriceText>{price}</PriceText>
+              {/* <Likes>
           <CenteredContainer>
             <IconWrapper onClick={() => onLike()}>
               <HeartIcon fill={isLiked ? "#4BE43E" : "none"} stroke="#4BE43E" />
@@ -29,7 +33,23 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
             <LikesText>{likes}</LikesText>
           </CenteredContainer>
         </Likes> */}
-        </FooterContainer>
+            </FooterContainer>
+          </>
+        )}
+        {isLoading && (
+          <>
+            <Skeleton width={210} height={230} />
+            <Title>
+              {" "}
+              <Skeleton width={150} />
+            </Title>
+            <FooterContainer>
+              <PriceText>
+                <Skeleton width={75} />
+              </PriceText>
+            </FooterContainer>
+          </>
+        )}
       </Card>
       <CardHover />
     </CardWrapper>

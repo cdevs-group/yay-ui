@@ -81,6 +81,7 @@ export const NFTCardBlock = () => {
 export const ProfileNftCardBlock = () => {
   return (
     <ProfileNftCard
+      isLoading
       title="BabyYoda #1687"
       picUrl="https://i.pinimg.com/originals/6f/4a/96/6f4a96c33aa496477932d717e55c990a.gif"
       price="0.25 YAY"
