@@ -44,7 +44,7 @@ const NFTCard: React.FC<ICardProps> = ({
             </PictureWrapper>
             <Body>
               <Flex alignItems="center" mb="24px">
-                <Avatar src={avatarUrl} alt={author} onClick={() => onGameClick()} />
+                {avatarUrl && <Avatar src={avatarUrl} alt={author} onClick={() => onGameClick()} />}
                 <div style={{ overflow: "hidden" }}>
                   <Title onClick={() => onGameClick()}>{title}</Title>
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
@@ -76,7 +76,7 @@ const NFTCard: React.FC<ICardProps> = ({
             </PictureWrapper>
             <Body>
               <Flex alignItems="center" mb="24px">
-                <Skeleton width={32} height={32} variant="circle" />
+                {/*<Skeleton width={32} height={32} variant="circle" />*/}
                 <div style={{ overflow: "hidden", marginLeft: "20px" }}>
                   <Skeleton height={17} width={150} marginBottom="6px" />
                   <Skeleton height={13} width={150} />
