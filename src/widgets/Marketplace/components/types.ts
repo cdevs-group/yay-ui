@@ -49,6 +49,7 @@ export interface ITabsProps {
 }
 
 export interface IProfileCardProps {
+  isLoading?: boolean;
   title: string;
   picUrl: string;
   likes?: number;
