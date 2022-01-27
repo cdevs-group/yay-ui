@@ -13902,13 +13902,22 @@ var Value = styled(Text)(templateObject_3$5 || (templateObject_3$5 = __makeTempl
 var templateObject_1$8, templateObject_2$5, templateObject_3$5;
 
 var ProfileNftCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick, onTitleClick = _a.onTitleClick;
+    var isLoading = _a.isLoading, title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick, onTitleClick = _a.onTitleClick;
     return (React__default.createElement(CardWrapper, { maxWidth: 233 },
         React__default.createElement(Card$1, null,
-            React__default.createElement(Picture, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } }),
-            React__default.createElement(Title$1, { onClick: function () { return (onTitleClick ? onTitleClick() : null); } }, title),
-            React__default.createElement(FooterContainer, null,
-                React__default.createElement(PriceText, null, price))),
+            !isLoading && (React__default.createElement(React__default.Fragment, null,
+                React__default.createElement(Picture, { src: picUrl, alt: title, onClick: function () { return onNftClick(); } }),
+                React__default.createElement(Title$1, { onClick: function () { return (onTitleClick ? onTitleClick() : null); } }, title),
+                React__default.createElement(FooterContainer, null,
+                    React__default.createElement(PriceText, null, price)))),
+            isLoading && (React__default.createElement(React__default.Fragment, null,
+                React__default.createElement(Skeleton, { width: 210, height: 230 }),
+                React__default.createElement(Title$1, null,
+                    " ",
+                    React__default.createElement(Skeleton, { width: 150 })),
+                React__default.createElement(FooterContainer, null,
+                    React__default.createElement(PriceText, null,
+                        React__default.createElement(Skeleton, { width: 75 })))))),
         React__default.createElement(CardHover, null)));
 };
 var Card$1 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {

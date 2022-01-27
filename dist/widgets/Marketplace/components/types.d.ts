@@ -44,6 +44,7 @@ export interface ITabsProps {
     tabBodyList: React.ReactNode[];
 }
 export interface IProfileCardProps {
+    isLoading?: boolean;
     title: string;
     picUrl: string;
     likes?: number;
