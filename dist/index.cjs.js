@@ -4094,6 +4094,7 @@ var baseColors = {
     bgGray5: "#34343B",
     darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
     redBg: "#FF6161",
+    purple: "#9E3DFF",
 };
 var brandColors = {
     binance: "#F0B90B",
@@ -13758,7 +13759,7 @@ var CardHover = styled__default["default"].div(templateObject_2$9 || (templateOb
 var templateObject_1$c, templateObject_2$9;
 
 var NFTCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
+    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading, assets = _a.assets;
     return (React__default["default"].createElement(CardWrapper, null,
         React__default["default"].createElement(Card$3, null,
             !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
@@ -13772,9 +13773,11 @@ var NFTCard = function (_a) {
                         React__default["default"].createElement("div", { style: { overflow: "hidden" } },
                             React__default["default"].createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
                             React__default["default"].createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
-                    React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
+                    React__default["default"].createElement(Text, { color: lightColors.whiteText, mb: "29px", fontSize: "15px", fontWeight: 400 },
+                        price,
+                        assets && (React__default["default"].createElement("span", { style: { color: baseColors.whiteRgba4, fontSize: "15px", marginLeft: 5 } }, assets))),
                     React__default["default"].createElement(FooterContainer$2, null,
-                        React__default["default"].createElement(PriceText$1, null, price),
+                        React__default["default"].createElement(SeeText$1, { onClick: function () { return onSeeNowClick(); }, role: "button" }, description),
                         React__default["default"].createElement(Flex, null,
                             React__default["default"].createElement(IconWrapper$1, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); } },
                                 React__default["default"].createElement(Icon$f, null)),
@@ -13810,7 +13813,7 @@ var PictureWrapper$1 = styled__default["default"].div(templateObject_5$3 || (tem
 var Picture$2 = styled__default["default"].img(templateObject_6$3 || (templateObject_6$3 = __makeTemplateObject(["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 100%;\n  max-height: 251px;\n  border-radius: 16px;\n  cursor: pointer;\n"], ["\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 100%;\n  max-height: 251px;\n  border-radius: 16px;\n  cursor: pointer;\n"])));
 var Avatar$1 = styled__default["default"].img(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"])));
 var FooterContainer$2 = styled__default["default"](Flex)(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  margin-top: auto;\n  justify-content: space-between;\n"], ["\n  margin-top: auto;\n  justify-content: space-between;\n"])));
-var PriceText$1 = styled__default["default"](Text)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"], ["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n"])), function (_a) {
+var SeeText$1 = styled__default["default"](Text)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.green;
 });
@@ -13822,7 +13825,7 @@ var Body$1 = styled__default["default"](Flex)(templateObject_11 || (templateObje
 var templateObject_1$b, templateObject_2$8, templateObject_3$8, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$1, templateObject_11;
 
 var NFTCardGames = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl, description = _a.description, textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
+    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl; _a.description; var textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
     return (React__default["default"].createElement(CardWrapper, null,
         React__default["default"].createElement(Card$2, null,
             !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
@@ -13837,7 +13840,6 @@ var NFTCardGames = function (_a) {
                         React__default["default"].createElement(Avatar, { src: avatarUrl, alt: "" }),
                         React__default["default"].createElement("div", { style: { overflow: "hidden" } },
                             React__default["default"].createElement(Title$2, null, title))),
-                    React__default["default"].createElement(Text, { color: "textGray", mb: "29px", fontWeight: 400 }, description),
                     React__default["default"].createElement(FooterContainer$1, null,
                         React__default["default"].createElement(SeeText, { onClick: function () { return onSeeNowClick(); }, role: "button" }, textSeeNow),
                         React__default["default"].createElement(Flex, null,
@@ -13852,12 +13854,11 @@ var NFTCardGames = function (_a) {
                         React__default["default"].createElement(Skeleton, { width: 32, height: 32, variant: "circle" }),
                         React__default["default"].createElement("div", { style: { overflow: "hidden", marginLeft: "20px" } },
                             React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "6px" }))),
-                    React__default["default"].createElement(Skeleton, { height: 17, width: 150, marginBottom: "29px" }),
                     React__default["default"].createElement(FooterContainer$1, null,
                         React__default["default"].createElement(Skeleton, { height: 17, width: 100 })))))),
         React__default["default"].createElement(CardHover, null)));
 };
-var Card$2 = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
+var Card$2 = styled__default["default"].div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.dark3;
 }, CardWrapper, function (_a) {

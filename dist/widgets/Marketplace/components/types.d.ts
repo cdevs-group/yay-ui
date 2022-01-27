@@ -16,6 +16,8 @@ export interface ICardProps {
     network: string;
     onGameClick: (id?: string | number) => void;
     isLoading?: boolean;
+    onSeeNowClick: () => void | Promise<void>;
+    assets?: string;
 }
 export interface ICardGamesProps {
     title: string;
