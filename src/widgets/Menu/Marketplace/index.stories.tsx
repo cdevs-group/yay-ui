@@ -159,7 +159,7 @@ export const HeaderForMarketplace = () => {
       <div style={{ marginTop: "50px" }}>
         <HeaderMarketplace
           logoImg={LOGO_LOOT}
-          // colorTheme={baseColors.purple}
+          colorTheme={baseColors.purple}
           account="0xbdda50183d817c3289f895a4472eb475967dc980"
           login={noop}
           logout={noop}
