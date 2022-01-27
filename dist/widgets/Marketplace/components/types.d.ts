@@ -5,7 +5,7 @@ export interface ICardProps {
     author: string;
     description: string;
     picUrl: string;
-    avatarUrl: string;
+    avatarUrl?: string;
     likes?: number;
     price: string;
     onShare: (id?: string | number) => void;
