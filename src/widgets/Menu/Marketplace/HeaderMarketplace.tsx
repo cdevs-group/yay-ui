@@ -64,7 +64,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
       {disclaimer ? (
         <Disclaimer colorTheme={colorTheme} text={disclaimerText || ""} setHeight={setHeightDisclaimer} />
       ) : null}
-      <Content>
+      <Content colorTheme={colorTheme}>
         <Line>
           <LogoWrap to={linkLogo}>
             <img src={logoImg || Logo} alt="" />
@@ -139,9 +139,9 @@ const HeaderWrap = styled.div`
     flex-shrink: 0;
   }
 `;
-const Content = styled.div`
+const Content = styled.div<{ colorTheme?: string }>`
   background-color: ${({ theme }) => theme.colors.bgBlackRgba};
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: ${({ colorTheme }) => (colorTheme ? "#2B2B32" : "0px 4px 30px rgba(0, 0, 0, 0.2)")};
 `;
 
 const Line = styled.div`

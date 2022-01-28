@@ -8220,7 +8220,7 @@ var HeaderMarketplace = function (_a) {
     }, [refSelect, handleClickOutside]);
     return (React__default["default"].createElement(HeaderWrap, { ref: refSelect },
         disclaimer ? (React__default["default"].createElement(Disclaimer, { colorTheme: colorTheme, text: disclaimerText || "", setHeight: setHeightDisclaimer })) : null,
-        React__default["default"].createElement(Content$4, null,
+        React__default["default"].createElement(Content$4, { colorTheme: colorTheme },
             React__default["default"].createElement(Line$4, null,
                 React__default["default"].createElement(LogoWrap, { to: linkLogo },
                     React__default["default"].createElement("img", { src: logoImg || Logo$1, alt: "" })),
@@ -8236,9 +8236,12 @@ var HeaderMarketplace = function (_a) {
                     React__default["default"].createElement(Burger, { colorTheme: colorTheme, open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));
 };
 var HeaderWrap = styled__default["default"].div(templateObject_1$2h || (templateObject_1$2h = __makeTemplateObject(["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  z-index: 10;\n\n  & svg {\n    flex-shrink: 0;\n  }\n"], ["\n  position: fixed;\n  width: 100%;\n  left: 0;\n  top: 0;\n  z-index: 10;\n\n  & svg {\n    flex-shrink: 0;\n  }\n"])));
-var Content$4 = styled__default["default"].div(templateObject_2$1O || (templateObject_2$1O = __makeTemplateObject(["\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n"], ["\n  background-color: ", ";\n  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);\n"])), function (_a) {
+var Content$4 = styled__default["default"].div(templateObject_2$1O || (templateObject_2$1O = __makeTemplateObject(["\n  background-color: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.bgBlackRgba;
+}, function (_a) {
+    var colorTheme = _a.colorTheme;
+    return (colorTheme ? "#2B2B32" : "0px 4px 30px rgba(0, 0, 0, 0.2)");
 });
 var Line$4 = styled__default["default"].div(templateObject_3$1r || (templateObject_3$1r = __makeTemplateObject(["\n  padding: 15px 15px 10px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 1200px;\n\n  ", " {\n    padding: 21px 15px 15px;\n  }\n"], ["\n  padding: 15px 15px 10px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  margin-left: auto;\n  margin-right: auto;\n  max-width: 1200px;\n\n  ", " {\n    padding: 21px 15px 15px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
