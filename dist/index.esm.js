@@ -13796,7 +13796,7 @@ var NFTCard = function (_a) {
                         React__default.createElement("div", { style: { overflow: "hidden" } },
                             React__default.createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
                             React__default.createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
-                    React__default.createElement(Flex, { mb: "10px", alignItems: "center" },
+                    React__default.createElement(Flex, { height: "22.5px", mb: "10px", alignItems: "center" },
                         price && (React__default.createElement(Text, { mr: "7px", fontSize: "15px", fontWeight: 400 }, price)),
                         assets && (React__default.createElement(Text, { color: lightColors.whiteRgba2, fontSize: "15px" }, assets))),
                     React__default.createElement(FooterContainer$2, null,
@@ -13817,7 +13817,7 @@ var NFTCard = function (_a) {
                     React__default.createElement(Skeleton, { height: 17, width: 150, marginBottom: "10px" }),
                     React__default.createElement(FooterContainer$2, null,
                         React__default.createElement(Skeleton, { height: 17, width: 100 })))))),
-        React__default.createElement(CardHover, { colorTheme: color })));
+        !isLoading && React__default.createElement(CardHover, { colorTheme: color })));
 };
 var Card$3 = styled.div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -13879,7 +13879,7 @@ var NFTCardGames = function (_a) {
                             React__default.createElement(Skeleton, { height: 17, width: 150, marginBottom: "6px" }))),
                     React__default.createElement(FooterContainer$1, null,
                         React__default.createElement(Skeleton, { height: 17, width: 100 })))))),
-        React__default.createElement(CardHover, { colorTheme: color })));
+        !isLoading && React__default.createElement(CardHover, { colorTheme: color })));
 };
 var Card$2 = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;

@@ -54,7 +54,7 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Flex mb="10px" alignItems="center">
+              <Flex height="22.5px" mb="10px" alignItems="center">
                 {price && (
                   <Text mr="7px" fontSize="15px" fontWeight={400}>
                     {price}
@@ -105,7 +105,7 @@ const NFTCard: React.FC<ICardProps> = ({
           </>
         )}
       </Card>
-      <CardHover colorTheme={color} />
+      {!isLoading && <CardHover colorTheme={color} />}
     </CardWrapper>
   );
 };

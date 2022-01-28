@@ -76,7 +76,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
           </>
         )}
       </Card>
-      <CardHover colorTheme={color} />
+      {!isLoading && <CardHover colorTheme={color} />}
     </CardWrapper>
   );
 };
