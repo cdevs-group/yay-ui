@@ -22,6 +22,8 @@ export interface YayTheme {
 
 export { default as dark } from "./dark";
 export { default as light } from "./light";
+export { default as purple } from "./purple";
 
 export { lightColors } from "./colors";
 export { darkColors } from "./colors";
+export { purpleColors } from "./colors";

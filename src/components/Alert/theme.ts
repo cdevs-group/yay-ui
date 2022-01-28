@@ -1,4 +1,4 @@
-import { darkColors, lightColors } from "../../theme/colors";
+import { darkColors, lightColors, purpleColors } from "../../theme/colors";
 import { AlertTheme } from "./types";
 
 export const light: AlertTheme = {
@@ -7,4 +7,8 @@ export const light: AlertTheme = {
 
 export const dark: AlertTheme = {
   background: darkColors.card,
+};
+
+export const purple: AlertTheme = {
+  background: purpleColors.card,
 };

@@ -1,3 +1,4 @@
+import React from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant, typography } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
@@ -85,9 +86,8 @@ const StyledButton = styled.button<BaseButtonProps>`
     prop: "scale",
     variants: scaleVariants,
   })}
-  ${variant({
-    variants: styleVariants,
-  })}
+  
+  ${({ theme }) => variant({ variants: styleVariants(theme) })}
   ${layout}
   ${space}
   ${typography}

@@ -1,4 +1,4 @@
-import { darkColors, lightColors } from "../../theme/colors";
+import { darkColors, lightColors, purpleColors } from "../../theme/colors";
 import { ToggleTheme } from "./types";
 
 export const light: ToggleTheme = {
@@ -7,4 +7,8 @@ export const light: ToggleTheme = {
 
 export const dark: ToggleTheme = {
   handleBackground: darkColors.background,
+};
+
+export const purple: ToggleTheme = {
+  handleBackground: purpleColors.background,
 };
