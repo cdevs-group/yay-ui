@@ -17,8 +17,8 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
   network2,
   onSeeNowClick,
   onGameClick,
-  isLoading,
   color,
+  isLoading,
 }) => {
   return (
     <CardWrapper>

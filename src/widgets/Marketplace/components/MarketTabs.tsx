@@ -62,7 +62,7 @@ const LineTab = styled.span<{ widthTabActive?: number; right: number }>`
   position: absolute;
   display: block;
   height: 1.5px;
-  background: ${({ theme }) => theme.colors.green};
+  background: ${({ theme }) => theme.colors.purple}};
   transition: 0.3s;
   width: ${({ widthTabActive }) => `${widthTabActive}px`};
   right: ${({ right }) => `${right}px`};

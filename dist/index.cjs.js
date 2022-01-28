@@ -13843,7 +13843,7 @@ var Body$1 = styled__default["default"](Flex)(templateObject_11 || (templateObje
 var templateObject_1$b, templateObject_2$8, templateObject_3$8, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$1, templateObject_11;
 
 var NFTCardGames = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl; _a.description; var textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading, color = _a.color;
+    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl; _a.description; var textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, color = _a.color, isLoading = _a.isLoading;
     return (React__default["default"].createElement(CardWrapper, null,
         React__default["default"].createElement(Card$2, null,
             !isLoading && (React__default["default"].createElement(React__default["default"].Fragment, null,
@@ -13926,9 +13926,9 @@ var Tab = styled__default["default"].button(templateObject_2$6 || (templateObjec
     var theme = _a.theme, active = _a.active;
     return (active ? theme.colors.whiteText : theme.colors.textGray);
 });
-var LineTab = styled__default["default"].span(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: absolute;\n  display: block;\n  height: 1.5px;\n  background: ", ";\n  transition: 0.3s;\n  width: ", ";\n  right: ", ";\n  bottom: -1px;\n"], ["\n  position: absolute;\n  display: block;\n  height: 1.5px;\n  background: ", ";\n  transition: 0.3s;\n  width: ", ";\n  right: ", ";\n  bottom: -1px;\n"])), function (_a) {
+var LineTab = styled__default["default"].span(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  position: absolute;\n  display: block;\n  height: 1.5px;\n  background: ", "};\n  transition: 0.3s;\n  width: ", ";\n  right: ", ";\n  bottom: -1px;\n"], ["\n  position: absolute;\n  display: block;\n  height: 1.5px;\n  background: ", "};\n  transition: 0.3s;\n  width: ", ";\n  right: ", ";\n  bottom: -1px;\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.colors.green;
+    return theme.colors.purple;
 }, function (_a) {
     var widthTabActive = _a.widthTabActive;
     return "".concat(widthTabActive, "px");
