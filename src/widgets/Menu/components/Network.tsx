@@ -14,6 +14,7 @@ interface Props {
   handleToggleNetwork?: (e: any) => void;
   valuesNetworks?: string[];
   listNetwork?: BlockChainNetwork[];
+  colorTheme?: string;
 }
 
 const Network: React.FC<Props> = ({
@@ -24,6 +25,7 @@ const Network: React.FC<Props> = ({
   titleNetwork,
   valuesNetworks,
   listNetwork,
+  colorTheme,
 }) => {
   const [onPresentConnectModal] = useModal(
     <NetworkModal
@@ -33,11 +35,13 @@ const Network: React.FC<Props> = ({
       handleToggleNetwork={handleToggleNetwork}
       valuesNetworks={valuesNetworks}
       listNetwork={listNetwork}
+      colorTheme={colorTheme}
     />
   );
 
   return (
     <NetworkBlock
+      colorTheme={colorTheme}
       as="button"
       onClick={() => {
         onPresentConnectModal();
@@ -51,7 +55,7 @@ const Network: React.FC<Props> = ({
   );
 };
 
-const NetworkBlock = styled.button`
+const NetworkBlock = styled.button<{ colorTheme?: string }>`
   position: relative;
   display: flex;
   min-height: 30px;
@@ -66,9 +70,9 @@ const NetworkBlock = styled.button`
   border-radius: 7px;
   box-shadow: ${({ theme }) => theme.colors.boxShadow};
   cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.colors.green};
+  border: 1px solid ${({ theme, colorTheme }) => (colorTheme ? "transparent" : theme.colors.green)};
   &.notAuth {
-    background: ${({ theme }) => theme.colors.green};
+    background: ${({ theme, colorTheme }) => (colorTheme ? "none" : theme.colors.green)};
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     min-height: 40px;

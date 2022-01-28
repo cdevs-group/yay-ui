@@ -25,6 +25,7 @@ const NFTCard: React.FC<ICardProps> = ({
   onGameClick,
   isLoading,
   assets,
+  color,
 }) => {
   return (
     <CardWrapper>
@@ -53,14 +54,20 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Text color={lightColors.whiteText} mb="29px" fontSize="15px" fontWeight={400}>
-                {price}
-                {assets && (
-                  <span style={{ color: baseColors.whiteRgba4, fontSize: "15px", marginLeft: 5 }}>{assets}</span>
+              <Flex mb="29px" alignItems="center">
+                {price && (
+                  <Text mr="7px" fontSize="15px" fontWeight={400}>
+                    {price}
+                  </Text>
                 )}
-              </Text>
+                {assets && (
+                  <Text color={lightColors.whiteRgba2} fontSize="15px">
+                    {assets}
+                  </Text>
+                )}
+              </Flex>
               <FooterContainer>
-                <SeeText onClick={() => onSeeNowClick()} role="button">
+                <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
                   {description}
                 </SeeText>
                 <Flex>
@@ -98,7 +105,7 @@ const NFTCard: React.FC<ICardProps> = ({
           </>
         )}
       </Card>
-      <CardHover />
+      <CardHover colorTheme={color} />
     </CardWrapper>
   );
 };
@@ -181,13 +188,13 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const SeeText = styled(Text)<{ color?: string }>`
+const SeeText = styled(Text)<{ colorTheme?: string }>`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  color: ${({ theme }) => theme.colors.green};
+  color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   cursor: pointer;
 `;
 

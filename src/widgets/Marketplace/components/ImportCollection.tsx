@@ -48,7 +48,7 @@ const ImportCollection = ({
         inputError={inputError}
         name="import"
       />
-      <Button width="100%" marginTop="65px" onClick={buttonHandler} variant="green" {...buttonProps}>
+      <Button width="100%" variant="purple" marginTop="65px" onClick={buttonHandler} {...buttonProps}>
         {button}
       </Button>
     </Wrapper>

@@ -17,14 +17,15 @@ interface Props {
   };
   hrefLearnHow?: string;
   network?: BlockChainNetwork;
+  colorTheme?: string;
 }
 
-const HelpLink = styled(Link)`
+const HelpLink = styled(Link)<{ colorTheme?: string }>`
   display: block;
   align-self: center;
   margin: 0 auto;
   padding: 24px 0 26px 0;
-  background: ${({ theme }) => theme.colors.linkColor};
+  background: ${({ theme, colorTheme }) => colorTheme || theme.colors.linkColor};
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -71,7 +72,7 @@ const ImgWrap = styled.div`
   background: ${({ theme }) => transparentize(0.95, theme.colors.text)};
 `;
 
-const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, onDismiss = () => null }) => (
+const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, onDismiss = () => null, colorTheme }) => (
   <Modal title={texts.title} onDismiss={onDismiss}>
     {getNetwork(network?.chainId)?.map((entry, index) => (
       <Wrap key={index}>
@@ -91,7 +92,7 @@ const ConnectModal: React.FC<Props> = ({ texts, login, hrefLearnHow, network, on
         </Button>
       </Wrap>
     ))}
-    <HelpLink href={hrefLearnHow} external>
+    <HelpLink colorTheme={colorTheme} href={hrefLearnHow} external>
       {texts.link}
     </HelpLink>
   </Modal>

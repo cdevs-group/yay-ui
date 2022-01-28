@@ -62,6 +62,8 @@ import UPLOAD_ICON from "../../public/images/upload.png";
 import SHARE_ICON from "../../public/images/share.png";
 import YAY_TOKEN_LOGO from "../../public/images/yay-logo.png";
 import AVAX_LOGO from "../../public/images/avax-logo.png";
+import LOGO_LOOT from "../../public/images/logo-loot.png";
+import BG_LINE_PURPLE from "../../public/images/bg-line-purple.png";
 
 export {
   BG_IMG,
@@ -128,4 +130,6 @@ export {
   SHARE_ICON,
   YAY_TOKEN_LOGO,
   AVAX_LOGO,
+  LOGO_LOOT,
+  BG_LINE_PURPLE,
 };
