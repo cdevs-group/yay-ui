@@ -46,20 +46,21 @@ const Select = ({
   const handleChange = (e: any) => {
     setValue(e.target.value);
   };
-
+  const setOpenFunction = setOpenDropdown || setOpen;
+  
   return (
     <Wrapper {...props} style={singleOption ? { cursor: "default" } : { cursor: "pointer" }}>
       <DropdownLayout
         icon={selectItem}
         open={openDropdown || open}
-        setOpen={setOpenDropdown || setOpen}
+        setOpen={setOpenFunction}
         variant="visible"
         {...propsDropdownLayout}
       >
         {!singleOption && (
           <Dropdown {...propsDropdown}>
             {options?.map((el, i) => (
-              <Option optionsSpacing={optionsSpacing} key={i + 1}>
+              <Option optionsSpacing={optionsSpacing} key={i + 1} onClick={() => setOpenFunction(false)}>
                 <Input
                   type="radio"
                   name={nameInputOptions}

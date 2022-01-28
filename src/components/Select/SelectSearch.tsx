@@ -48,6 +48,7 @@ const SelectSearch = ({
   ...props
 }: SelectProps) => {
   const [open, setOpen] = useState<boolean>(false);
+  const setOpenFunction = setOpenDropdown || setOpen;
 
   const handleChange = (e: any) => {
     setValue(e.target.value);
@@ -55,12 +56,7 @@ const SelectSearch = ({
 
   return (
     <Wrapper {...props}>
-      <DropdownLayout
-        icon={selectItem}
-        open={openDropdown || open}
-        setOpen={setOpenDropdown || setOpen}
-        variant="visible"
-      >
+      <DropdownLayout icon={selectItem} open={openDropdown || open} setOpen={setOpenFunction} variant="visible">
         <Dropdown {...propsDropdown}>
           <InputSearch
             inputPlaceholder={inputPlaceholder}
@@ -70,7 +66,7 @@ const SelectSearch = ({
           />
           <DropdownList>
             {options?.map((el, i) => (
-              <Option optionsSpacing={optionsSpacing} key={i + 1}>
+              <Option optionsSpacing={optionsSpacing} key={i + 1} onClick={() => setOpenFunction(false)}>
                 <Input
                   type="radio"
                   name={nameInputOptions}
