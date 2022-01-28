@@ -228,6 +228,7 @@ export const OrderConformitionBlock = () => {
           pay="12 YAY"
           handleClick={() => console.log("click")}
           buttonProps={{ spin: true, disabled: true }}
+          error=" Insufficiently balance"
         />
       </Modal>
     </>

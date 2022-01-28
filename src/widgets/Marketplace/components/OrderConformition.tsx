@@ -19,9 +19,19 @@ interface IProps {
   pay: string;
   handleClick: () => void | Promise<void>;
   buttonProps?: ButtonProps;
+  error?: string;
 }
 
-const OrderConformition = ({ texts, onDismiss, description, balance, pay, handleClick, buttonProps }: IProps) => {
+const OrderConformition = ({
+  texts,
+  onDismiss,
+  description,
+  balance,
+  pay,
+  handleClick,
+  buttonProps,
+  error,
+}: IProps) => {
   return (
     <Wrapper>
       <Flex alignItems="center" justifyContent="space-between">
@@ -32,13 +42,18 @@ const OrderConformition = ({ texts, onDismiss, description, balance, pay, handle
       </Flex>
       <Text mt={36}>{description}</Text>
       <Flex justifyContent="space-between" mt={20}>
-        <Text color="#A3A3A3">{texts.balance}</Text>
-        <Text>{balance}</Text>
+        <Text fontSize="17px" color="#A3A3A3">
+          {texts.balance}
+        </Text>
+        <Text fontSize="17px">{balance}</Text>
       </Flex>
       <Flex justifyContent="space-between" mt={20}>
-        <Text color="#A3A3A3">{texts.pay}</Text>
-        <Text>{pay}</Text>
+        <Text fontSize="17px" color="#A3A3A3">
+          {texts.pay}
+        </Text>
+        <Text fontSize="17px">{pay}</Text>
       </Flex>
+      {error && <TextError>{error}</TextError>}
       <Button onClick={handleClick} variant="purple" width="100%" mt={50} {...buttonProps}>
         {texts.button}
       </Button>
@@ -78,4 +93,12 @@ const ButtonClose = styled(Button)`
   position: absolute;
   right: 10px;
   top: 15px;
+`;
+const TextError = styled(Text)`
+  position: absolute;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+  color: ${({ theme }) => theme.colors.redBg};
+  transform: translateY(10px);
 `;

@@ -13,6 +13,7 @@ interface IProps {
     pay: string;
     handleClick: () => void | Promise<void>;
     buttonProps?: ButtonProps;
+    error?: string;
 }
-declare const OrderConformition: ({ texts, onDismiss, description, balance, pay, handleClick, buttonProps }: IProps) => JSX.Element;
+declare const OrderConformition: ({ texts, onDismiss, description, balance, pay, handleClick, buttonProps, error, }: IProps) => JSX.Element;
 export default OrderConformition;
