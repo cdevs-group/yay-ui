@@ -8660,9 +8660,9 @@ var templateObject_1$28;
 
 var Wrap$7 = styled__default["default"].div(templateObject_1$27 || (templateObject_1$27 = __makeTemplateObject(["\n  padding: 0 20px 26px;\n"], ["\n  padding: 0 20px 26px;\n"])));
 var Ghosts = styled__default["default"].div(templateObject_2$1H || (templateObject_2$1H = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n"], ["\n  display: flex;\n  justify-content: center;\n"])));
-var Description$a = styled__default["default"](Text)(templateObject_3$1j || (templateObject_3$1j = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"])));
+var Description$a = styled__default["default"](Text)(templateObject_3$1j || (templateObject_3$1j = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"])));
 var PausedErrorModals = function (_a) {
-    var title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding;
+    var title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding, buttonVariant = _a.buttonVariant;
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Modal$1, { title: title, welcome: true, hideCloseButton: true },
             React__default["default"].createElement(Wrap$7, null,
@@ -8673,7 +8673,7 @@ var PausedErrorModals = function (_a) {
                     React__default["default"].createElement("br", null),
                     React__default["default"].createElement("br", null),
                     descriptionBottom),
-                React__default["default"].createElement(Button$a, { width: "100%", variant: "green", onClick: handleConfirm, disabled: disabledButton }, buttonText)))));
+                React__default["default"].createElement(Button$a, { width: "100%", variant: buttonVariant || "green", onClick: handleConfirm, disabled: disabledButton }, buttonText)))));
 };
 var templateObject_1$27, templateObject_2$1H, templateObject_3$1j;
 
