@@ -24,7 +24,7 @@ export const CardHover = styled.div<{ colorTheme?: string }>`
   opacity: 0;
   z-index: 0;
   will-change: transform, opacity, width;
-  
+
   ${CardWrapper}:hover & {
     width: calc(100% + 6px);
     opacity: 0.3;
