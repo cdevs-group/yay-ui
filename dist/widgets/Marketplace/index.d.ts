@@ -6,3 +6,5 @@ export { default as MarketTabs } from "./components/MarketTabs";
 export { default as PropertieItem } from "./components/ProretieItem";
 export { default as ProfileNftCard } from "./components/ProfileNftCard";
 export { default as ImportCollection } from "./components/ImportCollection";
+export { default as OrderConformition } from './components/OrderConformition';
+export { default as OrderModal } from './components/OrderModal';
