@@ -101,6 +101,10 @@ export const styleVariants = (theme: any) => {
       color: "green",
       boxShadow: "none",
       opacity: "1",
-    },
-  }
+    },  
+    [variants.PURPLE]: {
+      background: "#9E3DFF",
+      color: "#fff",
+      boxShadow: "none",
+    }
 };

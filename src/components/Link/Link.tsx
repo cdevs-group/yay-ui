@@ -11,14 +11,15 @@ const StyledLink = styled(Text)<LinkProps>`
   &:hover {
     text-decoration: underline;
   }
+  color: ${({ colorTheme, theme }) => colorTheme || theme.colors.green};
   & svg {
-    fill: ${({ theme }) => theme.colors.green};
+    fill: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   }
 `;
 
-const Link: React.FC<any> = ({ external, ...props }) => {
+const Link: React.FC<any> = ({ external, colorTheme, ...props }) => {
   const internalProps = external ? getExternalLinkProps() : {};
-  return <StyledLink as="a" bold {...internalProps} {...props} />;
+  return <StyledLink colorTheme={colorTheme} as="a" bold {...internalProps} {...props} />;
 };
 
 Link.defaultProps = {

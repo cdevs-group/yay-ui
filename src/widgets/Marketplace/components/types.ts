@@ -8,7 +8,7 @@ export interface ICardProps {
   picUrl: string;
   avatarUrl?: string;
   likes?: number;
-  price: string;
+  price?: string;
   onShare: (id?: string | number) => void;
   onFavoritesAdd?: (id?: string | number) => void;
   onAuthorClick: (id?: string | number) => void;
@@ -17,6 +17,9 @@ export interface ICardProps {
   network: string;
   onGameClick: (id?: string | number) => void;
   isLoading?: boolean;
+  onSeeNowClick: () => void | Promise<void>;
+  assets?: string;
+  color?: string;
 }
 
 export interface ICardGamesProps {
@@ -32,6 +35,7 @@ export interface ICardGamesProps {
   onSeeNowClick: (id?: string | number) => void;
   onGameClick: (id?: string | number) => void;
   isLoading?: boolean;
+  color?: string;
 }
 
 export interface ILikesProps {
@@ -58,6 +62,7 @@ export interface IProfileCardProps {
   onLike?: () => void;
   onNftClick: (id?: string | number) => void;
   onTitleClick?: (id?: string | number) => void;
+  color?: string;
 }
 
 export interface IRegisterProfileProps {

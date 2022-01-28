@@ -83,7 +83,7 @@ const InjectedSelect = ({
             <Input margin="0 2px  0 0 " value={inputsValue.from} onChange={inputHandler} name={inputsName.from} />
             <Input margin="0 0 0 2px" value={inputsValue.to} onChange={inputHandler} name={inputsName.to} />
           </Inputs>
-          <Button variant="green" height="30px" marginTop="15px" width="100%" onClick={buttonHandler}>
+          <Button variant="purple" height="30px" marginTop="15px" width="100%" onClick={buttonHandler}>
             {buttonText}
           </Button>
         </Dropdown>

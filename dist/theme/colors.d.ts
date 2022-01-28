@@ -87,6 +87,7 @@ export declare const baseColors: {
     bgGray5: string;
     darkGradient: string;
     redBg: string;
+    purple: string;
 };
 export declare const brandColors: {
     binance: string;

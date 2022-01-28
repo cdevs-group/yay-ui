@@ -58,6 +58,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   opacity: ${getOpacity};
   outline: 0;
   transition: 0.2s;
+
   &.withGreenBorder {
     display: flex;
     width: 100%;
@@ -66,18 +67,22 @@ const StyledButton = styled.button<BaseButtonProps>`
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
+
   &.withRedBorder {
     border: 1.5px solid #ff6161;
     background: none;
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
+
   &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {
     box-shadow: ${({ variant }) =>
       variant === "green"
         ? "0px 0px 29px #2CB021"
         : variant === "pink"
         ? "0px 0px 20px rgba(255, 97, 97, 0.38)"
+        : variant === "purple"
+        ? "0px 0px 29px 0px #9E3DFF"
         : "none"};
   }
 

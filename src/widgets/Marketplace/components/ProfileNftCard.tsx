@@ -15,6 +15,7 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
   onLike,
   onNftClick,
   onTitleClick,
+  color,
 }) => {
   return (
     <CardWrapper maxWidth={233}>
@@ -51,7 +52,7 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
           </>
         )}
       </Card>
-      <CardHover />
+      <CardHover colorTheme={color} />
     </CardWrapper>
   );
 };

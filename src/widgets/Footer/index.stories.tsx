@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 import { aboutData, companyData, socialData, tokenData } from "./config";
+import { baseColors } from "../../theme/colors";
+import { LOGO_LOOT } from "../../constants/images";
 
 export default {
   title: "Widgets/Footer",
@@ -23,6 +25,8 @@ export const FooterBlock = () => {
     <BrowserRouter>
       <div style={{ maxWidth: "1440px", padding: "0 20px" }}>
         <Footer
+          logoImg={LOGO_LOOT}
+          colorTheme={baseColors.purple}
           valueInput={""}
           handleInput={(e: any) => console.log(e)}
           handleBuy={() => console.log("buy")}
