@@ -25,6 +25,7 @@ export const Welcome: React.FC = () => {
           buttonText="Show history"
           errorPadding
           buttonVariant="purple"
+          marginImg="20px 0"
         />
       </div>
     </Flex>

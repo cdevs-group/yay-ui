@@ -9,6 +9,8 @@ interface Props {
     disabledButton?: boolean;
     errorPadding?: boolean;
     buttonVariant?: Variant;
+    img?: string;
+    marginImg?: string;
 }
 declare const PausedErrorModals: React.FC<Props>;
 export default PausedErrorModals;

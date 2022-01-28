@@ -15,13 +15,16 @@ interface Props {
   disabledButton?: boolean;
   errorPadding?: boolean;
   buttonVariant?: Variant;
+  img?: string;
+  marginImg?: string;
 }
 
 const Wrap = styled.div`
   padding: 0 20px 26px;
 `;
 
-const Ghosts = styled.div`
+const Ghosts = styled.div<{ marginImg?: string }>`
+  margin: ${({ marginImg }) => marginImg || "0"};
   display: flex;
   justify-content: center;
 `;
@@ -47,12 +50,14 @@ const PausedErrorModals: React.FC<Props> = ({
   disabledButton,
   errorPadding,
   buttonVariant,
+  img,
+  marginImg,
 }) => (
   <>
     <Modal title={title} welcome hideCloseButton>
       <Wrap>
-        <Ghosts>
-          <img src={OneGhost} />
+        <Ghosts marginImg={marginImg}>
+          <img src={img || OneGhost} />
         </Ghosts>
         <Description size="sm" className={errorPadding ? "errorPadding" : ""}>
           {descriptionTop}
