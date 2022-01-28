@@ -120,7 +120,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
                 <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
               </LanguageBlockDesk>
             )}
-            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            <Burger colorTheme={colorTheme} open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
           </RightContent>
         </Line>
       </Content>

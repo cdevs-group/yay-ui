@@ -54,7 +54,7 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Flex mb="29px" alignItems="center">
+              <Flex mb="10px" alignItems="center">
                 {price && (
                   <Text mr="7px" fontSize="15px" fontWeight={400}>
                     {price}
@@ -97,7 +97,7 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Skeleton height={13} width={150} />
                 </div>
               </Flex>
-              <Skeleton height={17} width={150} marginBottom="29px" />
+              <Skeleton height={17} width={150} marginBottom="10px" />
               <FooterContainer>
                 <Skeleton height={17} width={100} />
               </FooterContainer>
