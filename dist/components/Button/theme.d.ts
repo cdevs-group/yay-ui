@@ -96,4 +96,9 @@ export declare const styleVariants: {
         boxShadow: string;
         opacity: string;
     };
+    purple: {
+        background: string;
+        color: string;
+        boxShadow: string;
+    };
 };

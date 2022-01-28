@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { IText, IDataLinks, IDataSocial } from "./types";
-declare const Footer: ({ valueInput, handleInput, handleBuy, handleSignIn, texts, aboutData, companyData, socialData, tokenData, disabledInput, disabledSignUp, }: {
+declare const Footer: ({ valueInput, handleInput, handleBuy, handleSignIn, texts, aboutData, companyData, socialData, tokenData, disabledInput, disabledSignUp, colorTheme, logoImg, }: {
     valueInput: string;
     handleInput: (e: any) => void;
     handleBuy: () => void | Promise<void>;
@@ -12,5 +12,7 @@ declare const Footer: ({ valueInput, handleInput, handleBuy, handleSignIn, texts
     socialData: IDataSocial;
     disabledInput?: boolean | undefined;
     disabledSignUp?: boolean | undefined;
+    colorTheme?: string | undefined;
+    logoImg?: string | undefined;
 }) => JSX.Element;
 export default Footer;

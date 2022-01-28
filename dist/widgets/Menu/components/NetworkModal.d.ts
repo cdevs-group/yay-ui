@@ -8,6 +8,7 @@ interface Props {
     onDismiss?: () => void;
     valuesNetworks?: string[];
     listNetwork?: BlockChainNetwork[];
+    colorTheme?: string;
 }
 declare const NetworkModal: React.FC<Props>;
 export default NetworkModal;

@@ -1055,7 +1055,7 @@ var Icon$m = function (props) {
 
 var Icon$l = function (props) {
     return (React__default.createElement("svg", __assign({ width: "17", height: "14", viewBox: "0 0 17 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default.createElement("path", __assign({ d: "M1 5.88889L7.25 12L16 1", stroke: "#49DE3C", strokeWidth: "2", strokeLinecap: "round" }, props))));
+        React__default.createElement("path", __assign({ d: "M1 5.88889L7.25 12L16 1", stroke: props.color || "#49DE3C", fill: "transparent", strokeWidth: "2", strokeLinecap: "round" }, props))));
 };
 
 var Icon$k = function (props) {
@@ -1092,12 +1092,12 @@ var Icon$i = function (props) {
 
 var Icon$h = function (props) {
     return (React__default.createElement("svg", __assign({ width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default.createElement("path", { d: "M15.5 13.75C15.5 13.5511 15.579 13.3603 15.7197 13.2197C15.8603 13.079 16.0511 13 16.25 13H18.25C18.4489 13 18.6397 13.079 18.7803 13.2197C18.921 13.3603 19 13.5511 19 13.75C19 13.9489 18.921 14.1397 18.7803 14.2803C18.6397 14.421 18.4489 14.5 18.25 14.5H16.25C16.0511 14.5 15.8603 14.421 15.7197 14.2803C15.579 14.1397 15.5 13.9489 15.5 13.75ZM3 5H3.014C3.07549 4.44999 3.33754 3.94194 3.75004 3.57297C4.16255 3.20401 4.69656 3.00002 5.25 3H16.75C17.0455 3 17.3381 3.0582 17.611 3.17127C17.884 3.28434 18.1321 3.45008 18.341 3.65901C18.5499 3.86794 18.7157 4.11598 18.8287 4.38896C18.9418 4.66194 19 4.95453 19 5.25V6.087C19.7118 6.25601 20.3458 6.66019 20.7995 7.23417C21.2532 7.80815 21.5 8.51838 21.5 9.25V17.75C21.5 18.612 21.1576 19.4386 20.5481 20.0481C19.9386 20.6576 19.112 21 18.25 21H6.25C5.38805 21 4.5614 20.6576 3.9519 20.0481C3.34241 19.4386 3 18.612 3 17.75V5ZM18.25 7.5H4.5V17.75C4.5 18.716 5.284 19.5 6.25 19.5H18.25C18.7141 19.5 19.1592 19.3156 19.4874 18.9874C19.8156 18.6592 20 18.2141 20 17.75V9.25C20 8.78587 19.8156 8.34075 19.4874 8.01256C19.1592 7.68437 18.7141 7.5 18.25 7.5ZM17.5 6V5.25C17.5 5.05109 17.421 4.86032 17.2803 4.71967C17.1397 4.57902 16.9489 4.5 16.75 4.5H5.25C5.05109 4.5 4.86032 4.57902 4.71967 4.71967C4.57902 4.86032 4.5 5.05109 4.5 5.25C4.5 5.44891 4.57902 5.63968 4.71967 5.78033C4.86032 5.92098 5.05109 6 5.25 6H17.5Z", fill: "#4BE43E" })));
+        React__default.createElement("path", { d: "M15.5 13.75C15.5 13.5511 15.579 13.3603 15.7197 13.2197C15.8603 13.079 16.0511 13 16.25 13H18.25C18.4489 13 18.6397 13.079 18.7803 13.2197C18.921 13.3603 19 13.5511 19 13.75C19 13.9489 18.921 14.1397 18.7803 14.2803C18.6397 14.421 18.4489 14.5 18.25 14.5H16.25C16.0511 14.5 15.8603 14.421 15.7197 14.2803C15.579 14.1397 15.5 13.9489 15.5 13.75ZM3 5H3.014C3.07549 4.44999 3.33754 3.94194 3.75004 3.57297C4.16255 3.20401 4.69656 3.00002 5.25 3H16.75C17.0455 3 17.3381 3.0582 17.611 3.17127C17.884 3.28434 18.1321 3.45008 18.341 3.65901C18.5499 3.86794 18.7157 4.11598 18.8287 4.38896C18.9418 4.66194 19 4.95453 19 5.25V6.087C19.7118 6.25601 20.3458 6.66019 20.7995 7.23417C21.2532 7.80815 21.5 8.51838 21.5 9.25V17.75C21.5 18.612 21.1576 19.4386 20.5481 20.0481C19.9386 20.6576 19.112 21 18.25 21H6.25C5.38805 21 4.5614 20.6576 3.9519 20.0481C3.34241 19.4386 3 18.612 3 17.75V5ZM18.25 7.5H4.5V17.75C4.5 18.716 5.284 19.5 6.25 19.5H18.25C18.7141 19.5 19.1592 19.3156 19.4874 18.9874C19.8156 18.6592 20 18.2141 20 17.75V9.25C20 8.78587 19.8156 8.34075 19.4874 8.01256C19.1592 7.68437 18.7141 7.5 18.25 7.5ZM17.5 6V5.25C17.5 5.05109 17.421 4.86032 17.2803 4.71967C17.1397 4.57902 16.9489 4.5 16.75 4.5H5.25C5.05109 4.5 4.86032 4.57902 4.71967 4.71967C4.57902 4.86032 4.5 5.05109 4.5 5.25C4.5 5.44891 4.57902 5.63968 4.71967 5.78033C4.86032 5.92098 5.05109 6 5.25 6H17.5Z", fill: props.fill || "#4BE43E" })));
 };
 
 var Icon$g = function (props) {
     return (React__default.createElement(Svg, __assign({ width: "166", height: "69", viewBox: "0 0 166 69", fill: "none", xmlns: "http://www.w3.org/2000/svg" }, props),
-        React__default.createElement("path", { d: "M1 67.388C8.21337 65.1045 14.145 51.1797 22.7519 48.8391C27.3393 47.5916 31.0142 50.0196 35.1145 53.7922C39.2148 57.5649 38.4121 59.1939 47.6336 62.1024C55.2434 64.5025 57.234 38.6255 64.6908 39.6197C72.1477 40.6139 75.5966 9.50179 83.4695 12.0989C91.3423 14.696 92.9153 7.98128 100.316 20.7072C107.716 33.433 114.554 3.76985 123.844 1.17273C133.133 -1.42439 135.553 26.141 139.962 25.1021C144.371 24.0633 148.34 43.7054 152.119 46.5623C155.898 49.4191 156.97 39.0412 165 39.0412", stroke: "#4BE43E", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })));
+        React__default.createElement("path", { d: "M1 67.388C8.21337 65.1045 14.145 51.1797 22.7519 48.8391C27.3393 47.5916 31.0142 50.0196 35.1145 53.7922C39.2148 57.5649 38.4121 59.1939 47.6336 62.1024C55.2434 64.5025 57.234 38.6255 64.6908 39.6197C72.1477 40.6139 75.5966 9.50179 83.4695 12.0989C91.3423 14.696 92.9153 7.98128 100.316 20.7072C107.716 33.433 114.554 3.76985 123.844 1.17273C133.133 -1.42439 135.553 26.141 139.962 25.1021C144.371 24.0633 148.34 43.7054 152.119 46.5623C155.898 49.4191 156.97 39.0412 165 39.0412", stroke: props.fill || "#4BE43E", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" })));
 };
 
 var Icon$f = function (props) {
@@ -1187,6 +1187,7 @@ var variants$4 = {
     GRAY: "gray",
     WHITE: "white",
     LOAD_COLOR: "load-color",
+    PURPLE: "purple",
 };
 
 var _a$7, _b$3;
@@ -1288,6 +1289,11 @@ var styleVariants$2 = (_b$3 = {},
         boxShadow: "none",
         opacity: "1",
     },
+    _b$3[variants$4.PURPLE] = {
+        background: "#9E3DFF",
+        color: "#fff",
+        boxShadow: "none",
+    },
     _b$3);
 
 var getDisabledStyles = function (_a) {
@@ -1302,7 +1308,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$7 = styled.button(templateObject_1$4k || (templateObject_1$4k = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$7 = styled.button(templateObject_1$4k || (templateObject_1$4k = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
 }, function (_a) {
@@ -1323,7 +1329,9 @@ var StyledButton$7 = styled.button(templateObject_1$4k || (templateObject_1$4k =
         ? "0px 0px 29px #2CB021"
         : variant === "pink"
             ? "0px 0px 20px rgba(255, 97, 97, 0.38)"
-            : "none";
+            : variant === "purple"
+                ? "0px 0px 29px 0px #9E3DFF"
+                : "none";
 }, getDisabledStyles, variant$1({
     prop: "scale",
     variants: scaleVariants$1,
@@ -1494,6 +1502,10 @@ var SHARE_ICON = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADF
 var yayLogo = "data:image/png;base64,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";
 
 var avaxLogo = "data:image/png;base64,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";
+
+var logoLoot = "data:image/png;base64,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";
+
+var BG_LINE_PURPLE = "data:image/png;base64,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";
 
 var WinButton = function (_a) {
     var children = _a.children, image = _a.image, onClick = _a.onClick;
@@ -1881,14 +1893,17 @@ Text.defaultProps = {
 };
 var templateObject_1$4c;
 
-var StyledLink$1 = styled(Text)(templateObject_1$4b || (templateObject_1$4b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+var StyledLink$1 = styled(Text)(templateObject_1$4b || (templateObject_1$4b = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  color: ", ";\n  & svg {\n    fill: ", ";\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n  color: ", ";\n  & svg {\n    fill: ", ";\n  }\n"])), function (_a) {
+    var colorTheme = _a.colorTheme, theme = _a.theme;
+    return colorTheme || theme.colors.green;
+}, function (_a) {
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 });
 var Link$3 = function (_a) {
-    var external = _a.external, props = __rest(_a, ["external"]);
+    var external = _a.external, colorTheme = _a.colorTheme, props = __rest(_a, ["external", "colorTheme"]);
     var internalProps = external ? getExternalLinkProps() : {};
-    return React__default.createElement(StyledLink$1, __assign({ as: "a", bold: true }, internalProps, props));
+    return React__default.createElement(StyledLink$1, __assign({ colorTheme: colorTheme, as: "a", bold: true }, internalProps, props));
 };
 Link$3.defaultProps = {
     color: "green",
@@ -5159,7 +5174,7 @@ var Select$2 = function (_a) {
             React__default.createElement(Input$a, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
             React__default.createElement(Item$3, __assign({}, propsOption),
                 React__default.createElement(Text, null, el.name),
-                React__default.createElement(Icon$l, null)))); }))))));
+                React__default.createElement(Icon$l, { color: baseColors.purple })))); }))))));
 };
 var Wrapper$X = styled.div(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n"])), layout, space);
 var Dropdown$4 = styled.div(templateObject_2$2s || (templateObject_2$2s = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
@@ -5220,7 +5235,7 @@ var InjectedSelect = function (_a) {
                 React__default.createElement(Inputs, null,
                     React__default.createElement(Input$9, { margin: "0 2px  0 0 ", value: inputsValue.from, onChange: inputHandler, name: inputsName.from }),
                     React__default.createElement(Input$9, { margin: "0 0 0 2px", value: inputsValue.to, onChange: inputHandler, name: inputsName.to })),
-                React__default.createElement(Button$a, { variant: "green", height: "30px", marginTop: "15px", width: "100%", onClick: buttonHandler }, buttonText)))));
+                React__default.createElement(Button$a, { variant: "purple", height: "30px", marginTop: "15px", width: "100%", onClick: buttonHandler }, buttonText)))));
 };
 var Wrapper$W = styled.div(templateObject_1$31 || (templateObject_1$31 = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), layout, space);
 var Dropdown$3 = styled.div(templateObject_2$2r || (templateObject_2$2r = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
@@ -5271,7 +5286,7 @@ var SelectSearch = function (_a) {
                     React__default.createElement(Item$2, __assign({}, propsOption),
                         React__default.createElement("img", { src: el.img }),
                         React__default.createElement(Text, { mr: "auto" }, el.name),
-                        React__default.createElement(Icon$l, null)))); }))))));
+                        React__default.createElement(Icon$l, { color: baseColors.purple })))); }))))));
 };
 var Wrapper$V = styled.div(templateObject_1$2$ || (templateObject_1$2$ = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), layout, space);
 var Dropdown$2 = styled.div(templateObject_2$2q || (templateObject_2$2q = __makeTemplateObject(["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  max-height: 275px;\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
@@ -6610,8 +6625,8 @@ var getNetwork = function (network) {
 };
 
 var HelpLink = styled(Link$3)(templateObject_1$2N || (templateObject_1$2N = __makeTemplateObject(["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"], ["\n  display: block;\n  align-self: center;\n  margin: 0 auto;\n  padding: 24px 0 26px 0;\n  background: ", ";\n  background-clip: text;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  font-size: 15px;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.linkColor;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.linkColor;
 });
 var Wrap$i = styled.div(templateObject_2$2e || (templateObject_2$2e = __makeTemplateObject(["\n  text-align: center;\n  padding: 0 14px;\n  min-width: 303px;\n  ", " {\n    padding: 0 20px 0 27px;\n  }\n"], ["\n  text-align: center;\n  padding: 0 14px;\n  min-width: 303px;\n  ", " {\n    padding: 0 20px 0 27px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -6633,7 +6648,7 @@ var ImgWrap$1 = styled.div(templateObject_4$1u || (templateObject_4$1u = __makeT
 });
 var ConnectModal = function (_a) {
     var _b;
-    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, network = _a.network, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
+    var texts = _a.texts, login = _a.login, hrefLearnHow = _a.hrefLearnHow, network = _a.network, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, colorTheme = _a.colorTheme;
     return (React__default.createElement(Modal$1, { title: texts.title, onDismiss: onDismiss }, (_b = getNetwork(network === null || network === void 0 ? void 0 : network.chainId)) === null || _b === void 0 ? void 0 :
         _b.map(function (entry, index) { return (React__default.createElement(Wrap$i, { key: index },
             React__default.createElement(Button$5, { onClick: function () {
@@ -6644,7 +6659,7 @@ var ConnectModal = function (_a) {
                 React__default.createElement(Text, { fontWeight: 500, color: "text", mr: "16px", fontSize: "15px" }, entry.title),
                 React__default.createElement(ImgWrap$1, null,
                     React__default.createElement("img", { src: entry.icon }))))); }),
-        React__default.createElement(HelpLink, { href: hrefLearnHow, external: true }, texts.link)));
+        React__default.createElement(HelpLink, { colorTheme: colorTheme, href: hrefLearnHow, external: true }, texts.link)));
 };
 var templateObject_1$2N, templateObject_2$2e, templateObject_3$1Q, templateObject_4$1u;
 
@@ -7604,7 +7619,7 @@ var Button$3 = styled.button(templateObject_2$1U || (templateObject_2$1U = __mak
 var Buttons$9 = styled.div(templateObject_3$1y || (templateObject_3$1y = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  grid-gap: 14px;\n  margin: 40px 0;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  grid-gap: 14px;\n  margin: 40px 0;\n"])));
 var TextStyled$4 = styled(Text)(templateObject_4$1i || (templateObject_4$1i = __makeTemplateObject(["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"], ["\n  flex-grow: 1;\n  font-weight: 500;\n  letter-spacing: 0.5px;\n  text-align: center;\n"])));
 var NetworkModal = function (_a) {
-    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, _b = _a.handleToggleNetwork, handleToggleNetwork = _b === void 0 ? function (e) { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork;
+    var title = _a.title, linkText = _a.linkText, linkHref = _a.linkHref, _b = _a.handleToggleNetwork, handleToggleNetwork = _b === void 0 ? function (e) { return null; } : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, valuesNetworks = _a.valuesNetworks, colorTheme = _a.colorTheme, listNetwork = _a.listNetwork;
     var handleClick = function (e) {
         handleToggleNetwork(e.currentTarget.value);
         onDismiss();
@@ -7615,14 +7630,14 @@ var NetworkModal = function (_a) {
                 React__default.createElement(Button$3, { value: (valuesNetworks === null || valuesNetworks === void 0 ? void 0 : valuesNetworks[i]) || el.chainId, onClick: handleClick },
                     React__default.createElement(TextStyled$4, null, el.name),
                     React__default.createElement("img", { src: el.icon, alt: "" })))); })),
-            React__default.createElement(Link$3, { href: linkHref, style: { margin: "0 auto" } }, linkText))));
+            React__default.createElement(Link$3, { colorTheme: colorTheme, href: linkHref, style: { margin: "0 auto" } }, linkText))));
 };
 var templateObject_1$2n, templateObject_2$1U, templateObject_3$1y, templateObject_4$1i;
 
 var Network$3 = function (_a) {
-    var network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork;
-    var onPresentConnectModal = useModal(React__default.createElement(NetworkModal, { title: titleNetwork, linkHref: linkHrefNetwork, linkText: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, valuesNetworks: valuesNetworks, listNetwork: listNetwork }))[0];
-    return (React__default.createElement(NetworkBlock$3, { as: "button", onClick: function () {
+    var network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, colorTheme = _a.colorTheme;
+    var onPresentConnectModal = useModal(React__default.createElement(NetworkModal, { title: titleNetwork, linkHref: linkHrefNetwork, linkText: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, valuesNetworks: valuesNetworks, listNetwork: listNetwork, colorTheme: colorTheme }))[0];
+    return (React__default.createElement(NetworkBlock$3, { colorTheme: colorTheme, as: "button", onClick: function () {
             onPresentConnectModal();
         } },
         React__default.createElement(TextStyled$3, null, (network === null || network === void 0 ? void 0 : network.name) || "Binance"),
@@ -7636,11 +7651,11 @@ var NetworkBlock$3 = styled.button(templateObject_1$2m || (templateObject_1$2m =
     var theme = _a.theme;
     return theme.colors.boxShadow;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return (colorTheme ? "transparent" : theme.colors.green);
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return (colorTheme ? "none" : theme.colors.green);
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
@@ -7682,7 +7697,7 @@ function useWindowDimensions() {
 }
 
 var Disclaimer = function (_a) {
-    var text = _a.text, setHeight = _a.setHeight;
+    var text = _a.text, setHeight = _a.setHeight, colorTheme = _a.colorTheme;
     var _b = useState(true), open = _b[0], setOpen = _b[1];
     var refDisclaimer = useRef(null);
     var refCounter = useRef(null);
@@ -7709,7 +7724,7 @@ var Disclaimer = function (_a) {
             cancelled = true;
         };
     }, [open, width]);
-    return (React__default.createElement(Block$7, { open: open, ref: refDisclaimer },
+    return (React__default.createElement(Block$7, { colorTheme: colorTheme, open: open, ref: refDisclaimer },
         React__default.createElement(StyledText$3, null, text),
         React__default.createElement(Button$2, { onClick: function () { return setOpen(false); } },
             React__default.createElement(Icon$1q, { role: "button" }))));
@@ -7718,8 +7733,8 @@ var Block$7 = styled.div(templateObject_1$2l || (templateObject_1$2l = __makeTem
     var open = _a.open;
     return (!open ? 0 : "13px 46px 13px 23px");
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 }, function (_a) {
     var open = _a.open;
     return (!open ? 0 : 100);
@@ -7749,15 +7764,15 @@ var styleVariantsDropdownMenu = (_a$1 = {},
     _a$1);
 
 var LabelTop = function (_a) {
-    var children = _a.children, label = _a.label, props = __rest(_a, ["children", "label"]);
+    var children = _a.children, label = _a.label, colorTheme = _a.colorTheme, props = __rest(_a, ["children", "label", "colorTheme"]);
     return (React__default.createElement(StyledComingSoon, __assign({}, props),
         React__default.createElement(TextComingSoon, null, children),
-        React__default.createElement(ComingSoon, null, label)));
+        React__default.createElement(ComingSoon, { colorTheme: colorTheme }, label)));
 };
 var StyledComingSoon = styled.div(templateObject_1$2k || (templateObject_1$2k = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  ", "\n"], ["\n  display: flex;\n  align-items: center;\n  ", "\n"])), space);
 var ComingSoon = styled.div(templateObject_2$1R || (templateObject_2$1R = __makeTemplateObject(["\n  position: relative;\n  top: -13px;\n  left: 0px;\n  display: flex;\n  align-items: center;\n  padding: 5px 11px;\n  background: ", ";\n  color: ", ";\n  font-size: 9px;\n  line-height: 11px;\n  font-weight: normal;\n  border-radius: 6px;\n"], ["\n  position: relative;\n  top: -13px;\n  left: 0px;\n  display: flex;\n  align-items: center;\n  padding: 5px 11px;\n  background: ", ";\n  color: ", ";\n  font-size: 9px;\n  line-height: 11px;\n  font-weight: normal;\n  border-radius: 6px;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
@@ -7766,25 +7781,25 @@ var TextComingSoon = styled(Text)(templateObject_3$1v || (templateObject_3$1v = 
 var templateObject_1$2k, templateObject_2$1R, templateObject_3$1v;
 
 var MenuLink = function (_a) {
-    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, variant = _a.variant, comingSoon = _a.comingSoon;
+    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, variant = _a.variant, comingSoon = _a.comingSoon, colorTheme = _a.colorTheme;
     var isHttpLink = url === null || url === void 0 ? void 0 : url.startsWith("http");
-    var Item = function () { return React__default.createElement(LinkItem$3, null, name); };
+    var Item = function () { return React__default.createElement(LinkItem$3, { colorTheme: colorTheme }, name); };
     var handleLink = function () {
         if (setOpenDropdown)
             setOpenDropdown(false);
         setOpenMenu(false);
     };
     if (submenu === null || submenu === void 0 ? void 0 : submenu.length) {
-        return (React__default.createElement(DropdownLayout, { open: openDropdown || false, setOpen: setOpenDropdown || (function () { return null; }), icon: React__default.createElement(LinkItem$3, { onClick: function () { return (setOpenDropdown ? setOpenDropdown(true) : function () { return null; }); } },
+        return (React__default.createElement(DropdownLayout, { open: openDropdown || false, setOpen: setOpenDropdown || (function () { return null; }), icon: React__default.createElement(LinkItem$3, { colorTheme: colorTheme, onClick: function () { return (setOpenDropdown ? setOpenDropdown(true) : function () { return null; }); } },
                 React__default.createElement(Flex, { alignItems: "center" },
                     name,
                     submenu && variant === "behind" && (React__default.createElement("div", { style: { marginLeft: 10 } },
                         React__default.createElement(Icon$T, null))))), variant: variant || "menu" },
-            React__default.createElement(Dropdown$1, { open: openDropdown, variant: variant }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el, i) { return (React__default.createElement(MenuLink, __assign({}, el, { key: i, setOpenMenu: setOpenMenu, setOpenDropdown: setOpenDropdown }))); }))));
+            React__default.createElement(Dropdown$1, { open: openDropdown, variant: variant }, submenu === null || submenu === void 0 ? void 0 : submenu.map(function (el, i) { return (React__default.createElement(MenuLink, __assign({ colorTheme: colorTheme }, el, { key: i, setOpenMenu: setOpenMenu, setOpenDropdown: setOpenDropdown }))); }))));
     }
     if (comingSoon)
         return (React__default.createElement(CominSoonWrapper, null,
-            React__default.createElement(LabelTop, { label: comingSoon }, name)));
+            React__default.createElement(LabelTop, { colorTheme: colorTheme, label: comingSoon }, name)));
     return (React__default.createElement(React__default.Fragment, null,
         isHttpLink && (React__default.createElement("a", { href: url, target: "_blank" },
             React__default.createElement(Item, null))),
@@ -7802,18 +7817,21 @@ var CominSoonWrapper = styled.div(templateObject_3$1u || (templateObject_3$1u = 
     var theme = _a.theme;
     return theme.mediaQueries.xxl;
 });
-var LinkItem$3 = styled(Text)(templateObject_4$1h || (templateObject_4$1h = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: #4be43e;\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"])), function (_a) {
+var LinkItem$3 = styled(Text)(templateObject_4$1h || (templateObject_4$1h = __makeTemplateObject(["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: ", ";\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"], ["\n  position: relative;\n  color: ", ";\n  margin: 0 0 20px;\n  transition: 0.3s;\n  text-shadow: ", ";\n  cursor: pointer;\n  font-weight: 400;\n  &:hover {\n    color: ", ";\n  }\n  ", " {\n    &::after {\n      display: block;\n      bottom: -30px;\n      width: 0;\n      height: 2px;\n      content: \"\";\n      position: absolute;\n      background: ", ";\n      transition: all.3s;\n      opacity: 0;\n    }\n    margin: 0 20px;\n    ", ".active & {\n      &::after {\n        width: 100%;\n        opacity: 1;\n      }\n    }\n  }\n  ", " {\n    margin: 0 30px;\n  }\n  ", " & {\n    margin: 0;\n    text-transform: uppercase;\n    font-size: 11px;\n    line-height: 14px;\n    letter-spacing: 0.11em;\n    padding: 9px 0;\n    &::after {\n      content: none;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textShadow;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
+}, function (_a) {
+    var colorTheme = _a.colorTheme;
+    return colorTheme || "#4be43e";
 }, StyledLink, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xxl;
@@ -7821,9 +7839,9 @@ var LinkItem$3 = styled(Text)(templateObject_4$1h || (templateObject_4$1h = __ma
 var templateObject_1$2j, templateObject_2$1Q, templateObject_3$1u, templateObject_4$1h;
 
 var MenuLinkDropdown = function (_a) {
-    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu, variant = _a.variant, comingSoon = _a.comingSoon;
+    var name = _a.name, url = _a.url, setOpenMenu = _a.setOpenMenu, submenu = _a.submenu, variant = _a.variant, comingSoon = _a.comingSoon, colorTheme = _a.colorTheme;
     var _b = useState(false), openDropdown = _b[0], setOpenDropdown = _b[1];
-    return (React__default.createElement(MenuLink, { name: name, url: url, setOpenMenu: setOpenMenu, submenu: submenu, setOpenDropdown: setOpenDropdown, openDropdown: openDropdown, variant: variant, comingSoon: comingSoon }));
+    return (React__default.createElement(MenuLink, { colorTheme: colorTheme, name: name, url: url, setOpenMenu: setOpenMenu, submenu: submenu, setOpenDropdown: setOpenDropdown, openDropdown: openDropdown, variant: variant, comingSoon: comingSoon }));
 };
 
 var Header = function (_a) {
@@ -7938,8 +7956,8 @@ var CopyToClipboard = function (_a) {
 var templateObject_1$2h, templateObject_2$1O, templateObject_3$1s;
 
 var AccountMarketplace = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds, heightDisclaimer = _a.heightDisclaimer, linksViews = _a.linksViews;
-    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
+    var account = _a.account, login = _a.login, logout = _a.logout, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, network = _a.network, totalBalance = _a.totalBalance, funds = _a.funds, heightDisclaimer = _a.heightDisclaimer, linksViews = _a.linksViews, colorTheme = _a.colorTheme;
+    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, colorTheme: colorTheme, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
     var _b = useState(false), openDropdown = _b[0], setOpenDropdown = _b[1];
     var _c = useState(false), openFunds = _c[0], setOpenFunds = _c[1];
     var handleOpenFunds = function () {
@@ -7977,9 +7995,9 @@ var AccountMarketplace = function (_a) {
         var icon = _a.icon, text = _a.text, link = _a.link, comingSoon = _a.comingSoon, notice = _a.notice;
         var Item = function () { return (React__default.createElement(Flex, { alignItems: "center", marginBottom: comingSoon ? 0 : 20 },
             icon,
-            React__default.createElement(TextLinkUser, { badge: notice }, text))); };
+            React__default.createElement(TextLinkUser, { colorTheme: colorTheme, badge: notice }, text))); };
         if (comingSoon)
-            return (React__default.createElement(LabelTop, { label: textsAccount.comingSoon, mb: "19px" },
+            return (React__default.createElement(LabelTop, { colorTheme: colorTheme, label: textsAccount.comingSoon, mb: "19px" },
                 React__default.createElement(Item, null)));
         return (React__default.createElement(Link$4, { to: link || "/", onClick: handleLink },
             React__default.createElement(Item, null)));
@@ -7999,7 +8017,7 @@ var AccountMarketplace = function (_a) {
                     React__default.createElement(Icon$T, null))))));
     };
     return (React__default.createElement(React__default.Fragment, null, account ? (React__default.createElement(WrapperDropdown, null,
-        React__default.createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default.createElement(Wrapper$K, { badge: linksViews === null || linksViews === void 0 ? void 0 : linksViews.reduce(function (sum, current) { return sum + (Number(current === null || current === void 0 ? void 0 : current.notice) || 0); }, 0) },
+        React__default.createElement(DropdownLayout, { open: openDropdown, setOpen: setOpenDropdown, icon: React__default.createElement(Wrapper$K, { colorTheme: colorTheme, badge: linksViews === null || linksViews === void 0 ? void 0 : linksViews.reduce(function (sum, current) { return sum + (Number(current === null || current === void 0 ? void 0 : current.notice) || 0); }, 0) },
                 React__default.createElement(Icon$h, null)), variant: "center-behind", plusMarginTop: heightDisclaimer },
             React__default.createElement(Dropdown, null,
                 React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center", mb: "14px" },
@@ -8027,7 +8045,7 @@ var AccountMarketplace = function (_a) {
                             logout();
                             window.localStorage.removeItem(connectorLocalStorageKey);
                         }
-                    }, mt: "43px" }, textsAccount.disconnect))))) : (React__default.createElement(Wrapper$K, { as: "button", onClick: function () {
+                    }, mt: "43px" }, textsAccount.disconnect))))) : (React__default.createElement(Wrapper$K, { colorTheme: colorTheme, as: "button", onClick: function () {
             onPresentConnectModal();
         }, notAuth: true },
         React__default.createElement(Icon$h, null)))));
@@ -8043,8 +8061,8 @@ var Wrapper$K = styled.div(templateObject_2$1N || (templateObject_2$1N = __makeT
     var theme = _a.theme;
     return theme.colors.boxShadow;
 }, function (_a) {
-    var theme = _a.theme, notAuth = _a.notAuth;
-    return (notAuth ? theme.colors.text : theme.colors.green);
+    var theme = _a.theme, notAuth = _a.notAuth, colorTheme = _a.colorTheme;
+    return notAuth ? theme.colors.text : colorTheme ? colorTheme : theme.colors.green;
 }, function (_a) {
     var badge = _a.badge;
     return "\"".concat(badge && badge > 99 ? "99+" : badge, "\"");
@@ -8055,8 +8073,8 @@ var Wrapper$K = styled.div(templateObject_2$1N || (templateObject_2$1N = __makeT
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xl;
@@ -8071,8 +8089,8 @@ var TextLinkUser = styled(Text)(templateObject_3$1r || (templateObject_3$1r = __
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 });
 var AccountBlock = styled(Text)(templateObject_4$1f || (templateObject_4$1f = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"], ["\n  position: relative;\n  display: flex;\n  min-height: 30px;\n  height: 100%;\n  min-width: 120px;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 11px;\n  line-height: 14px;\n  padding: 0 20px;\n  background: ", ";\n  border-radius: 7px;\n  box-shadow: ", ";\n  cursor: pointer;\n  border: none;\n  ", " {\n    min-height: 40px;\n    min-width: 160px;\n    font-size: 15px;\n    line-height: 19px;\n    padding: 0 20px;\n    border-radius: 12px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -8117,7 +8135,7 @@ var ArrowIcon = styled(Flex)(templateObject_13$7 || (templateObject_13$7 = __mak
 var templateObject_1$2g, templateObject_2$1N, templateObject_3$1r, templateObject_4$1f, templateObject_5$S, templateObject_6$I, templateObject_7$w, templateObject_8$p, templateObject_9$i, templateObject_10$e, templateObject_11$c, templateObject_12$9, templateObject_13$7;
 
 var HeaderMarketplace = function (_a) {
-    var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds, linksViews = _a.linksViews;
+    var account = _a.account, login = _a.login, logout = _a.logout, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, links = _a.links, textsAccount = _a.textsAccount, textsConnect = _a.textsConnect, hrefLearnHow = _a.hrefLearnHow, linkLogo = _a.linkLogo, network = _a.network, handleToggleNetwork = _a.handleToggleNetwork, linkTextNetwork = _a.linkTextNetwork, linkHrefNetwork = _a.linkHrefNetwork, titleNetwork = _a.titleNetwork, valuesNetworks = _a.valuesNetworks, listNetwork = _a.listNetwork, disclaimer = _a.disclaimer, disclaimerText = _a.disclaimerText, totalBalance = _a.totalBalance, funds = _a.funds, linksViews = _a.linksViews, colorTheme = _a.colorTheme, logoImg = _a.logoImg;
     var _b = useState(false), openMenu = _b[0], setOpenMenu = _b[1];
     var _c = useState(0), heightDisclaimer = _c[0], setHeightDisclaimer = _c[1];
     var refSelect = useRef(null);
@@ -8135,18 +8153,18 @@ var HeaderMarketplace = function (_a) {
         };
     }, [refSelect, handleClickOutside]);
     return (React__default.createElement(HeaderWrap, { ref: refSelect },
-        disclaimer ? React__default.createElement(Disclaimer, { text: disclaimerText || "", setHeight: setHeightDisclaimer }) : null,
+        disclaimer ? (React__default.createElement(Disclaimer, { colorTheme: colorTheme, text: disclaimerText || "", setHeight: setHeightDisclaimer })) : null,
         React__default.createElement(Content$4, null,
             React__default.createElement(Line$4, null,
                 React__default.createElement(LogoWrap, { to: linkLogo },
-                    React__default.createElement("img", { src: Logo$1, alt: "" })),
+                    React__default.createElement("img", { src: logoImg || Logo$1, alt: "" })),
                 React__default.createElement(Nav, { className: openMenu ? "open" : "", heightDisclaimer: heightDisclaimer }, links === null || links === void 0 ? void 0 :
-                    links.map(function (item, i) { return (React__default.createElement(MenuLinkDropdown, { key: i, name: item.name, url: item.url, submenu: item.submenu, setOpenMenu: setOpenMenu, variant: "behind", comingSoon: item.comingSoon })); }),
+                    links.map(function (item, i) { return (React__default.createElement(MenuLinkDropdown, { colorTheme: colorTheme, key: i, name: item.name, url: item.url, submenu: item.submenu, setOpenMenu: setOpenMenu, variant: "behind", comingSoon: item.comingSoon })); }),
                     currentLang && (React__default.createElement(LanguageBlockMob, null,
                         React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs })))),
                 React__default.createElement(RightContent$1, null,
-                    network ? (React__default.createElement(Network$3, { titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
-                    React__default.createElement(AccountMarketplace, { account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer, linksViews: linksViews }),
+                    network ? (React__default.createElement(Network$3, { colorTheme: colorTheme, titleNetwork: titleNetwork, linkHrefNetwork: linkHrefNetwork, linkTextNetwork: linkTextNetwork, handleToggleNetwork: handleToggleNetwork, network: network, valuesNetworks: valuesNetworks, listNetwork: listNetwork })) : null,
+                    React__default.createElement(AccountMarketplace, { colorTheme: colorTheme, account: account, login: login, logout: logout, textsAccount: textsAccount, textsConnect: textsConnect, hrefLearnHow: hrefLearnHow, network: network, totalBalance: totalBalance, funds: funds, heightDisclaimer: heightDisclaimer, linksViews: linksViews }),
                     currentLang && (React__default.createElement(LanguageBlockDesk, null,
                         React__default.createElement(Languages, { currentLang: currentLang, setLang: setLang, langs: langs }))),
                     React__default.createElement(Burger, { open: openMenu, onClick: function () { return setOpenMenu(!openMenu); } }))))));
@@ -13593,23 +13611,23 @@ var LinkItem = styled.a(templateObject_3$a || (templateObject_3$a = __makeTempla
 var templateObject_1$g, templateObject_2$c, templateObject_3$a;
 
 var Footer = function (_a) {
-    var valueInput = _a.valueInput, handleInput = _a.handleInput, handleBuy = _a.handleBuy, handleSignIn = _a.handleSignIn, texts = _a.texts, aboutData = _a.aboutData, companyData = _a.companyData, socialData = _a.socialData, tokenData = _a.tokenData, disabledInput = _a.disabledInput, disabledSignUp = _a.disabledSignUp;
+    var valueInput = _a.valueInput, handleInput = _a.handleInput, handleBuy = _a.handleBuy, handleSignIn = _a.handleSignIn, texts = _a.texts, aboutData = _a.aboutData, companyData = _a.companyData, socialData = _a.socialData, tokenData = _a.tokenData, disabledInput = _a.disabledInput, disabledSignUp = _a.disabledSignUp, colorTheme = _a.colorTheme, logoImg = _a.logoImg;
     return (React__default.createElement(Wrapper$2, null,
         React__default.createElement(StayBlock, { alignItems: "flex-end", justifyContent: "space-between" },
             React__default.createElement(SignUpBlock, null,
                 React__default.createElement(Text, { fontSize: "21px" }, texts.stayLoop),
                 React__default.createElement(InputBlock, null,
                     React__default.createElement(InputSearch$1, { height: "50px", placeholder: texts.enterEmail, value: valueInput, onChange: handleInput, iconLess: true, width: "100%", name: "email", backgroundColor: baseColors.whiteRgba3, disabled: disabledInput }),
-                    React__default.createElement(Button$a, { variant: "green", onClick: handleSignIn, width: "100%", disabled: disabledSignUp }, texts.signUp))),
+                    React__default.createElement(Button$a, { variant: colorTheme ? "purple" : "green", onClick: handleSignIn, width: "100%", disabled: disabledSignUp }, texts.signUp))),
             React__default.createElement(BuyBlock, { justifyContent: "flex-end", alignItems: "baseline" },
                 React__default.createElement(Icon, null,
-                    React__default.createElement(Icon$g, null),
+                    React__default.createElement(Icon$g, { fill: colorTheme || baseColors.green }),
                     React__default.createElement(IconBg, null,
-                        React__default.createElement("img", { src: BG_LINE }))),
-                React__default.createElement(Button$a, { variant: "green", onClick: handleBuy, width: "100%" }, texts.buyYAY))),
+                        React__default.createElement("img", { src: colorTheme ? BG_LINE_PURPLE : BG_LINE }))),
+                React__default.createElement(Button$a, { variant: colorTheme ? "purple" : "green", onClick: handleBuy, width: "100%" }, texts.buyYAY))),
         React__default.createElement(MainLine, null,
             React__default.createElement(ColumnDescription, null,
-                React__default.createElement("img", { src: LOGO_FOOTER, alt: "logo" }),
+                React__default.createElement("img", { src: logoImg || LOGO_FOOTER, alt: "logo" }),
                 React__default.createElement(Description$1, null, texts.joinOur)),
             React__default.createElement(Column, null,
                 React__default.createElement(NavColumn, { data: aboutData })),
@@ -13721,13 +13739,13 @@ var templateObject_1$d, templateObject_2$a;
 
 var CardWrapper = styled.div(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  margin: 0 auto;\n  border-radius: 16px;\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n  max-width: 261px;\n  margin: 0 auto;\n  border-radius: 16px;\n  ", "\n"])), layout);
 var CardHover = styled.div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;\n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);\n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  display: block;\n  width: 100%;\n  height: 100%;\n  border-radius: inherit;\n  border: 2px solid ", ";\n  transform: rotate(0deg);\n  transition: 0.5s;\n  opacity: 0;\n  z-index: 0;\n  ", ":hover & {\n    width: calc(100% + 6px);\n    opacity: 0.3;\n    transition: 0.5s;\n    transform: translate(-11px, 9px) rotate(3.42deg);\n  }\n  &::after {\n    content: \"\";\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    display: block;\n    width: calc(100% + 8px);\n    height: calc(100% + 8px);\n    border-radius: inherit;\n    box-shadow: 1px 100px 93px 8px rgba(27, 27, 34, 0.9) inset;\n    transform: translate(-50%, -50%);\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 }, CardWrapper);
 var templateObject_1$c, templateObject_2$9;
 
 var NFTCard = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading, assets = _a.assets;
+    var title = _a.title, picUrl = _a.picUrl, author = _a.author, avatarUrl = _a.avatarUrl, description = _a.description, price = _a.price; _a.likes; var onShare = _a.onShare, onFavoritesAdd = _a.onFavoritesAdd, onAuthorClick = _a.onAuthorClick, onNftClick = _a.onNftClick; _a.onLikeAdd; var network = _a.network, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading, assets = _a.assets, color = _a.color;
     return (React__default.createElement(CardWrapper, null,
         React__default.createElement(Card$3, null,
             !isLoading && (React__default.createElement(React__default.Fragment, null,
@@ -13741,11 +13759,11 @@ var NFTCard = function (_a) {
                         React__default.createElement("div", { style: { overflow: "hidden" } },
                             React__default.createElement(Title$3, { onClick: function () { return onGameClick(); } }, title),
                             React__default.createElement(Author, { onClick: function () { return onAuthorClick(); } }, author))),
-                    React__default.createElement(Text, { color: lightColors.whiteText, mb: "29px", fontSize: "15px", fontWeight: 400 },
-                        price,
-                        assets && (React__default.createElement("span", { style: { color: baseColors.whiteRgba4, fontSize: "15px", marginLeft: 5 } }, assets))),
+                    React__default.createElement(Flex, { mb: "29px", alignItems: "center" },
+                        price && (React__default.createElement(Text, { mr: "7px", fontSize: "15px", fontWeight: 400 }, price)),
+                        assets && (React__default.createElement(Text, { color: lightColors.whiteRgba2, fontSize: "15px" }, assets))),
                     React__default.createElement(FooterContainer$2, null,
-                        React__default.createElement(SeeText$1, { onClick: function () { return onSeeNowClick(); }, role: "button" }, description),
+                        React__default.createElement(SeeText$1, { colorTheme: color, onClick: function () { return onSeeNowClick(); }, role: "button" }, description),
                         React__default.createElement(Flex, null,
                             React__default.createElement(IconWrapper$1, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); } },
                                 React__default.createElement(Icon$f, null)),
@@ -13762,7 +13780,7 @@ var NFTCard = function (_a) {
                     React__default.createElement(Skeleton, { height: 17, width: 150, marginBottom: "29px" }),
                     React__default.createElement(FooterContainer$2, null,
                         React__default.createElement(Skeleton, { height: 17, width: 100 })))))),
-        React__default.createElement(CardHover, null)));
+        React__default.createElement(CardHover, { colorTheme: color })));
 };
 var Card$3 = styled.div(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 422px;\n  margin: 0 auto;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -13782,8 +13800,8 @@ var Picture$2 = styled.img(templateObject_6$3 || (templateObject_6$3 = __makeTem
 var Avatar$1 = styled.img(templateObject_7$3 || (templateObject_7$3 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"])));
 var FooterContainer$2 = styled(Flex)(templateObject_8$3 || (templateObject_8$3 = __makeTemplateObject(["\n  margin-top: auto;\n  justify-content: space-between;\n"], ["\n  margin-top: auto;\n  justify-content: space-between;\n"])));
 var SeeText$1 = styled(Text)(templateObject_9$3 || (templateObject_9$3 = __makeTemplateObject(["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 });
 var IconWrapper$1 = styled.div(templateObject_10$1 || (templateObject_10$1 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer;\n  background-color: ", ";\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -13793,7 +13811,7 @@ var Body$1 = styled(Flex)(templateObject_11 || (templateObject_11 = __makeTempla
 var templateObject_1$b, templateObject_2$8, templateObject_3$8, templateObject_4$5, templateObject_5$3, templateObject_6$3, templateObject_7$3, templateObject_8$3, templateObject_9$3, templateObject_10$1, templateObject_11;
 
 var NFTCardGames = function (_a) {
-    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl; _a.description; var textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading;
+    var title = _a.title, picUrl = _a.picUrl, avatarUrl = _a.avatarUrl; _a.description; var textSeeNow = _a.textSeeNow, onShare = _a.onShare, onNftClick = _a.onNftClick, network1 = _a.network1, network2 = _a.network2, onSeeNowClick = _a.onSeeNowClick, onGameClick = _a.onGameClick, isLoading = _a.isLoading, color = _a.color;
     return (React__default.createElement(CardWrapper, null,
         React__default.createElement(Card$2, null,
             !isLoading && (React__default.createElement(React__default.Fragment, null,
@@ -13809,7 +13827,7 @@ var NFTCardGames = function (_a) {
                         React__default.createElement("div", { style: { overflow: "hidden" } },
                             React__default.createElement(Title$2, null, title))),
                     React__default.createElement(FooterContainer$1, null,
-                        React__default.createElement(SeeText, { onClick: function () { return onSeeNowClick(); }, role: "button" }, textSeeNow),
+                        React__default.createElement(SeeText, { colorTheme: color, onClick: function () { return onSeeNowClick(); }, role: "button" }, textSeeNow),
                         React__default.createElement(Flex, null,
                             React__default.createElement(IconWrapper, { style: { padding: "10px 8px" }, onClick: function () { return onShare(); }, role: "button" },
                                 React__default.createElement(Icon$f, null))))),
@@ -13824,7 +13842,7 @@ var NFTCardGames = function (_a) {
                             React__default.createElement(Skeleton, { height: 17, width: 150, marginBottom: "6px" }))),
                     React__default.createElement(FooterContainer$1, null,
                         React__default.createElement(Skeleton, { height: 17, width: 100 })))))),
-        React__default.createElement(CardHover, null)));
+        React__default.createElement(CardHover, { colorTheme: color })));
 };
 var Card$2 = styled.div(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 378px;\n  background: ", ";\n  border-radius: 16px;\n  transition: 0.3s;\n  z-index: 1;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -13843,8 +13861,8 @@ var Picture$1 = styled.img(templateObject_5$2 || (templateObject_5$2 = __makeTem
 var Avatar = styled.img(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-right: 10px;\n  cursor: pointer;\n"])));
 var FooterContainer$1 = styled(Flex)(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  margin-top: auto;\n  justify-content: space-between;\n"], ["\n  margin-top: auto;\n  justify-content: space-between;\n"])));
 var SeeText = styled(Text)(templateObject_8$2 || (templateObject_8$2 = __makeTemplateObject(["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"], ["\n  font-size: 13px;\n  font-weight: 400;\n  line-height: 16px;\n  letter-spacing: 0.03em;\n  margin-top: 10px;\n  color: ", ";\n  cursor: pointer;\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.colors.green;
+    var theme = _a.theme, colorTheme = _a.colorTheme;
+    return colorTheme || theme.colors.green;
 });
 var IconWrapper = styled.div(templateObject_9$2 || (templateObject_9$2 = __makeTemplateObject(["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer;\n  background-color: ", ";\n"], ["\n  width: 32px;\n  height: 32px;\n  background-size: cover;\n  background-position: top center;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer;\n  background-color: ", ";\n"])), function (_a) {
     var theme = _a.theme;
@@ -13903,7 +13921,7 @@ var Value = styled(Text)(templateObject_3$5 || (templateObject_3$5 = __makeTempl
 var templateObject_1$8, templateObject_2$5, templateObject_3$5;
 
 var ProfileNftCard = function (_a) {
-    var isLoading = _a.isLoading, title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick, onTitleClick = _a.onTitleClick;
+    var isLoading = _a.isLoading, title = _a.title, picUrl = _a.picUrl, price = _a.price; _a.likes; _a.isLiked; _a.onLike; var onNftClick = _a.onNftClick, onTitleClick = _a.onTitleClick, color = _a.color;
     return (React__default.createElement(CardWrapper, { maxWidth: 233 },
         React__default.createElement(Card$1, null,
             !isLoading && (React__default.createElement(React__default.Fragment, null,
@@ -13919,7 +13937,7 @@ var ProfileNftCard = function (_a) {
                 React__default.createElement(FooterContainer, null,
                     React__default.createElement(PriceText, null,
                         React__default.createElement(Skeleton, { width: 75 })))))),
-        React__default.createElement(CardHover, null)));
+        React__default.createElement(CardHover, { colorTheme: color })));
 };
 var Card$1 = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  min-height: 320px;\n  background: ", ";\n  border-radius: 10px;\n  transition: 0.3s;\n  z-index: 1;\n  padding: 10px 10px 22px;\n  ", ":hover & {\n    background: ", ";\n    transition: 0.3s;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -13946,7 +13964,7 @@ var ImportCollection = function (_a) {
         React__default.createElement(Title, null, title),
         React__default.createElement(Description, null, description),
         React__default.createElement(Input, { fontSize: "13px", margin: "35px 0 0", title: inputTitle, placeholder: placeholder, value: inputValue, onChange: inputHandler, inputError: inputError, name: "import" }),
-        React__default.createElement(Button$a, __assign({ width: "100%", marginTop: "65px", onClick: buttonHandler, variant: "green" }, buttonProps), button)));
+        React__default.createElement(Button$a, __assign({ width: "100%", variant: "purple", marginTop: "65px", onClick: buttonHandler }, buttonProps), button)));
 };
 var Wrapper$1 = styled.div(templateObject_1$6 || (templateObject_1$6 = __makeTemplateObject(["\n  padding: 28px;\n  position: relative;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  //z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"], ["\n  padding: 28px;\n  position: relative;\n  max-width: 404px;\n  max-height: 100vh;\n  min-width: 303px;\n  width: 100%;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border-radius: 15px;\n  //z-index: ", ";\n  overflow-y: auto;\n\n  ", " {\n    min-width: 360px;\n    width: 100%;\n  }\n\n  ", " {\n    min-width: 404px;\n    width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -14236,4 +14254,4 @@ var ResetCSS = createGlobalStyle(templateObject_1 || (templateObject_1 = __makeT
 });
 var templateObject_1;
 
-export { AchievementsIcon as ACHIEVEMENTS, cardanoWhite as ADA, AVATAR_PLAYER, avatarPlayer2 as AVATAR_PLAYER_2, avaxLogo as AVAX_LOGO, Accordeon, AccordeonCard, AccountIcon, AccountProfileBlock, Achievement, Icon$1s as AddIcon, AddressInputPanel, AdvancedSwapDetails, AdvancedSwapDetailsDropdown, AgreeMessage, Alert, AlertBlur, AlertBlurCustom, AppBody, AppHeader, ApproveStakingBPT, Icon$j as ArrowBack2, Icon$n as ArrowBackIcon, Icon$$ as ArrowBigDownIcon, Icon$u as ArrowBorder, Icon$_ as ArrowCardDown, Icon$Y as ArrowDouble, Icon$T as ArrowDownIcon, Icon$J as ArrowDownRightIcon, Icon$18 as ArrowIcon, Icon$1n as ArrowLeft, Icon$17 as ArrowPanel, Icon$W as ArrowRight, Icon$Z as ArrowSingl, ArrowSlider, Icon$V as ArrowTopRight, Icon$X as ArrowUpIcon, ArrowWrapper, AutoColumn, Icon$r as AutoRenewIcon, AutoRow, avalanche as Avalanche, Icon$G as AvalancheIcon, bg2 as BG2_IMG, bg3 as BG3_IMG, BG_IMG, BG_LINE, blur as BLUR, BNB2 as BNB, BNB2, bscIcon as BSC_ICON, BTC as BTCIMG, BackgroundImage, BalanceBlock$1 as BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, BaseToggle, Icon$1m as BinanceIcon, BinanceWallet, Icon$8 as BlockchainIcon, Icon$1l as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep, Icon$16 as BtnPanel, Button$a as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, coin4 as COIN4, COIN5, COINBASE, coins as COINS, coins2 as COINS2, CONTROLLER, Icon$B as CalculateIcon, Card$p as Card, CardBTC, CardChoose, CardFlip, CardFlipBTC, CardIndicator, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardTopIndicator, CardsBalance, CardsProducts, Icon$9 as CategoryIcon, Icon$12 as CercleIcon, ChartDisclaimer, Icon$1k as ChartIcon, Icon$N as CheckIcon, Icon$l as CheckIcon2, CheckboxInput, Icon$q as CheckmarkCircleIcon, Icon$m as CheckmarkIcon, Icon$p as ChevronRightIcon, ChooseAvatarModal, CircleLoader, Icon$E as ClipIcon, Icon$1r as CloseIcon, Icon$1q as CloseIcon2, Icon$k as CloseIcon3, Icon$w as CloseRed, Icon$1p as CloseSimpleIcon, Icon$i as CloudIcon, Icon$o as CogIcon, Coin98, CollectRoundWinningsModal, CollectWinningsPopup, Icon$a as CollectionIcon, CollectionItem, Column$3 as Column, ColumnCenter, ComingSoon$1 as ComingSoon, ComingSoonIcon, ComingSoonWithButton, CommonBases, CommonBasesChildren, Icon$13 as CompleteIcon, Icon$x as ComunityIcon, ConfirmationModalContent, CongratulateModal, ConnectorNames, Container$1 as Container, Icon$v as ControllerMouse, Icon$1h as CopyIcon, Icon$I as CopyIcon2, Icon$H as CopyIcon3, CurrencyInputPanel, CurrencyList, CurrencyRow, CurrencySearch, CurrencySearchModal, desu as DESU_TOKEN, DepositFarmModal, Icon$7 as DollarIcon, ETH as ETHIMG, exampleAvatar as EXAMPLE_AVATAR, EditProfile, Icon$P as ErrorIcon, ErrorText, ExpertModal, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$1a as EyeClose, Icon$19 as EyeCloseIcon, Icon$1c as EyeOpen, Icon$1b as EyeOpenIcon, FallingBunnies, Icon$b as FavoritesIcon, FixedSizeListRow, Flex, Footer, GHOST$1 as GHOST, git as GITHUB, greenEllips as GREEN_ELLIPSE, GamesList, GamesTable, GhostCard, GhostsIcon, Gift, Gift2, Gift3, GiftFormModal, GiftPopup, Icon$1i as GreenArrow, Icon$5 as GreenFilledHeartIcon, Icon$6 as GreenHollowHeartIcon, GreyCard, Grid$1 as Grid, Header, HeaderBridgeStaking, HeaderHistory, HeaderMarketplace, Heading$1 as Heading, Icon$d as HeartIcon, Icon$S as HelpIcon, Icon$R as HelpIcon2, HiddenItemAccordeonCard, HistoryBlock, Icon$1j as HistoryIcon, HistoryPanel, IGOCard, IGOCardV2, IGODetailCardV2 as IGODeatailCardV2, IGODetailCard, IGODetailProgressCard, IGODetailProgressCard2, IGOHistoryCard, IGOInfoCard, IGOStake, IGOSubscriptionCard, IGOTopList, IGOTopList2Yers, instagram as INSTAGRAM, IconButton, Image$2 as Image, ImportCollection, ImportList, ImportRow, ImportToken, ImportTokenChildren, InfoBoard, InfoWrapper, InjectedSelect, Input$e as Input, InputFile$1 as InputFile, InputSearch$1 as InputSearch, Icon$L as InstagramIcon, Icon$4 as JoystickIcon, KYCSteps, LOGO_FOOTER, LOGO_ROUND, LOSE$1 as LOSE, LightCard, LightGreyCard, Likes, Icon$g as LineIcon, Link$3 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LoaderSmall, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, LobbyResultModal, mainGame as MAIN_GAME, Manage, ManageListRow, ManageListTooltip, ManageLists, ManageTokenList, ManageTokens, MarketTabs, mathWallet as MathWallet, Icon$U as MenuIcon, Metamask, Icon$t as MetamaskIcon, Icon$z as MinusIcon, Modal$1 as Modal, ModalPlatform, ModalProvider, ModalUnstake, NFTCard, NFTCardGames, Icon$f as NFTShareIcon, nftExample as NFT_EXAMPLE, Network$3 as Network, NetworkModal, NoHistory, NotificationDot, OneGhost, OneGhost2, Icon$1o as OpenNewIcon, pancake as PANCAKE, pangolin as PANGOLIN, Pagination, PausedErrorModals, Icon$15 as PenIcon, Icon$10 as PlayIcon, PlayerList, Icon$Q as PlayingCardsIcon, Icon$A as PlusIcon, PrizePoolBlock, ProfileCard, ProfileNftCard, ProgressAVAX, ProgressBar$5 as ProgressBar, ProgressCircles, ProgressRange$1 as ProgressRange, ProgressSteps, PropertieItem, rocket1 as ROKET1, ReferralList, RefferalCard, RegisterProfile, ResetCSS, Icon$F as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, RowBetween, RowFixed, RowFlat, SHARE_ICON, SafepackWallet, Icon$1g as SearchIcon, Icon$1f as SearchIcon2, Select$2 as Select, SelectSearch, SetPositionCard, SetPositionCardBTC, SettingsModal, Icon$O as ShareIcon, ShareModal, Skeleton, Icon$1d as SquaresIcon, Stake, StakingCard, StakingDashboard, Icon$e as StarIcon, Statistic, StepWrapper$1 as StepWrapper, StepWrapperFrame, Icon$1e as StrikeIcon, Icon$14 as StrikesWideIcon, Card$o as StyledCard, StyledCardBTC, SupportWindow, Svg, SwapButton, SwapCallbackError, SwapModalFooter, SwapModalHeader, SwapRoute, Icon$C as SwapVertIcon, SwapWarningModal, telegram as TELEGRAM, twitter as TWITTER, Tabs$2 as Tabs, TabsCard, TabsWithBottomBorder, TabsWithCommingSoon, TabsWithMovingLine, Tag, Icon$M as TelegramIcon, Text, Textfield as TextField, TextWithTooltip$1 as TextWithTooltip, Timer$3 as Timer, TimerNotSolid, TimerNotSolidWithoutBg, TimerSimple, TitleBlock$4 as TitleBlock, ToastContainer, Toggle, TokenPairImage, TokenPocket, TopBlock$1 as TopBlock, TopContent$3 as TopContent, TradePrice, Transaction, TransactionConfirmationModal, TransactionErrorContent, TransactionHistory, Transactions, TransactionsModal, TrustWallet, Icon$K as TwitterIcon, UNIT, UPLOAD_ICON, USER_ICON, Unstake, UnsupportedCurrencyFooter, UnsupportedModal, Icon$c as UserIcon, ValueRow, Icon$y as VerifideIcon, VestingWidget, walletKyc as WALLET_KYC, WIN$1 as WINIMG, WINNER2, WINNER3, WINNER_MIN, WalletConnect, WalletHistoryModal, Icon$h as WalletIcon, Icon$s as WarningIcon, Icon$11 as WatchIcon, WelcomeModal, win as Win, WinButton, Winner, WinnersBlock, Wrapper$a as Wrapper, Icon$D as YAYIcon, YAY_TOKEN, YAY_TOKEN_GREEN, yayLogo as YAY_TOKEN_LOGO, YourHistory, variants$3 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useLobbyResultModal, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };
+export { AchievementsIcon as ACHIEVEMENTS, cardanoWhite as ADA, AVATAR_PLAYER, avatarPlayer2 as AVATAR_PLAYER_2, avaxLogo as AVAX_LOGO, Accordeon, AccordeonCard, AccountIcon, AccountProfileBlock, Achievement, Icon$1s as AddIcon, AddressInputPanel, AdvancedSwapDetails, AdvancedSwapDetailsDropdown, AgreeMessage, Alert, AlertBlur, AlertBlurCustom, AppBody, AppHeader, ApproveStakingBPT, Icon$j as ArrowBack2, Icon$n as ArrowBackIcon, Icon$$ as ArrowBigDownIcon, Icon$u as ArrowBorder, Icon$_ as ArrowCardDown, Icon$Y as ArrowDouble, Icon$T as ArrowDownIcon, Icon$J as ArrowDownRightIcon, Icon$18 as ArrowIcon, Icon$1n as ArrowLeft, Icon$17 as ArrowPanel, Icon$W as ArrowRight, Icon$Z as ArrowSingl, ArrowSlider, Icon$V as ArrowTopRight, Icon$X as ArrowUpIcon, ArrowWrapper, AutoColumn, Icon$r as AutoRenewIcon, AutoRow, avalanche as Avalanche, Icon$G as AvalancheIcon, bg2 as BG2_IMG, bg3 as BG3_IMG, BG_IMG, BG_LINE, BG_LINE_PURPLE, blur as BLUR, BNB2 as BNB, BNB2, bscIcon as BSC_ICON, BTC as BTCIMG, BackgroundImage, BalanceBlock$1 as BalanceBlock, BalanceInput, BalanceInputInversion, BaseLayout, BaseToggle, Icon$1m as BinanceIcon, BinanceWallet, Icon$8 as BlockchainIcon, Icon$1l as BnbIcon, Box, BridgeProof, BridgeStep1, BridgeStep2, BridgeWidgetStep, Icon$16 as BtnPanel, Button$a as Button, ButtonMenu, ButtonMenuItem, ButtonsBlock, ButtonsBlockBTC, coin4 as COIN4, COIN5, COINBASE, coins as COINS, coins2 as COINS2, CONTROLLER, Icon$B as CalculateIcon, Card$p as Card, CardBTC, CardChoose, CardFlip, CardFlipBTC, CardIndicator, CardNext$1 as CardNext, CardNext as CardNextBTC, CardProduct, CardTopIndicator, CardsBalance, CardsProducts, Icon$9 as CategoryIcon, Icon$12 as CercleIcon, ChartDisclaimer, Icon$1k as ChartIcon, Icon$N as CheckIcon, Icon$l as CheckIcon2, CheckboxInput, Icon$q as CheckmarkCircleIcon, Icon$m as CheckmarkIcon, Icon$p as ChevronRightIcon, ChooseAvatarModal, CircleLoader, Icon$E as ClipIcon, Icon$1r as CloseIcon, Icon$1q as CloseIcon2, Icon$k as CloseIcon3, Icon$w as CloseRed, Icon$1p as CloseSimpleIcon, Icon$i as CloudIcon, Icon$o as CogIcon, Coin98, CollectRoundWinningsModal, CollectWinningsPopup, Icon$a as CollectionIcon, CollectionItem, Column$3 as Column, ColumnCenter, ComingSoon$1 as ComingSoon, ComingSoonIcon, ComingSoonWithButton, CommonBases, CommonBasesChildren, Icon$13 as CompleteIcon, Icon$x as ComunityIcon, ConfirmationModalContent, CongratulateModal, ConnectorNames, Container$1 as Container, Icon$v as ControllerMouse, Icon$1h as CopyIcon, Icon$I as CopyIcon2, Icon$H as CopyIcon3, CurrencyInputPanel, CurrencyList, CurrencyRow, CurrencySearch, CurrencySearchModal, desu as DESU_TOKEN, DepositFarmModal, Icon$7 as DollarIcon, ETH as ETHIMG, exampleAvatar as EXAMPLE_AVATAR, EditProfile, Icon$P as ErrorIcon, ErrorText, ExpertModal, ExpiredCardNA as ExpiredCard, ExpiredCardBTC, Icon$1a as EyeClose, Icon$19 as EyeCloseIcon, Icon$1c as EyeOpen, Icon$1b as EyeOpenIcon, FallingBunnies, Icon$b as FavoritesIcon, FixedSizeListRow, Flex, Footer, GHOST$1 as GHOST, git as GITHUB, greenEllips as GREEN_ELLIPSE, GamesList, GamesTable, GhostCard, GhostsIcon, Gift, Gift2, Gift3, GiftFormModal, GiftPopup, Icon$1i as GreenArrow, Icon$5 as GreenFilledHeartIcon, Icon$6 as GreenHollowHeartIcon, GreyCard, Grid$1 as Grid, Header, HeaderBridgeStaking, HeaderHistory, HeaderMarketplace, Heading$1 as Heading, Icon$d as HeartIcon, Icon$S as HelpIcon, Icon$R as HelpIcon2, HiddenItemAccordeonCard, HistoryBlock, Icon$1j as HistoryIcon, HistoryPanel, IGOCard, IGOCardV2, IGODetailCardV2 as IGODeatailCardV2, IGODetailCard, IGODetailProgressCard, IGODetailProgressCard2, IGOHistoryCard, IGOInfoCard, IGOStake, IGOSubscriptionCard, IGOTopList, IGOTopList2Yers, instagram as INSTAGRAM, IconButton, Image$2 as Image, ImportCollection, ImportList, ImportRow, ImportToken, ImportTokenChildren, InfoBoard, InfoWrapper, InjectedSelect, Input$e as Input, InputFile$1 as InputFile, InputSearch$1 as InputSearch, Icon$L as InstagramIcon, Icon$4 as JoystickIcon, KYCSteps, LOGO_FOOTER, logoLoot as LOGO_LOOT, LOGO_ROUND, LOSE$1 as LOSE, LightCard, LightGreyCard, Likes, Icon$g as LineIcon, Link$3 as Link, LinkExternal, ListWrap, LiveCard, LiveCardBTC, Loader$1 as Loader, LoaderCard, LoaderCardText, LoaderSmall, LobbyCreatModal, LobbyList, LobbyListItem, LobbyNav, LobbyResultModal, mainGame as MAIN_GAME, Manage, ManageListRow, ManageListTooltip, ManageLists, ManageTokenList, ManageTokens, MarketTabs, mathWallet as MathWallet, Icon$U as MenuIcon, Metamask, Icon$t as MetamaskIcon, Icon$z as MinusIcon, Modal$1 as Modal, ModalPlatform, ModalProvider, ModalUnstake, NFTCard, NFTCardGames, Icon$f as NFTShareIcon, nftExample as NFT_EXAMPLE, Network$3 as Network, NetworkModal, NoHistory, NotificationDot, OneGhost, OneGhost2, Icon$1o as OpenNewIcon, pancake as PANCAKE, pangolin as PANGOLIN, Pagination, PausedErrorModals, Icon$15 as PenIcon, Icon$10 as PlayIcon, PlayerList, Icon$Q as PlayingCardsIcon, Icon$A as PlusIcon, PrizePoolBlock, ProfileCard, ProfileNftCard, ProgressAVAX, ProgressBar$5 as ProgressBar, ProgressCircles, ProgressRange$1 as ProgressRange, ProgressSteps, PropertieItem, rocket1 as ROKET1, ReferralList, RefferalCard, RegisterProfile, ResetCSS, Icon$F as ReverseArrowsIcon, RoundHistory, RoundHistoryBTC, Rounds, RoundsLink, RowBetween, RowFixed, RowFlat, SHARE_ICON, SafepackWallet, Icon$1g as SearchIcon, Icon$1f as SearchIcon2, Select$2 as Select, SelectSearch, SetPositionCard, SetPositionCardBTC, SettingsModal, Icon$O as ShareIcon, ShareModal, Skeleton, Icon$1d as SquaresIcon, Stake, StakingCard, StakingDashboard, Icon$e as StarIcon, Statistic, StepWrapper$1 as StepWrapper, StepWrapperFrame, Icon$1e as StrikeIcon, Icon$14 as StrikesWideIcon, Card$o as StyledCard, StyledCardBTC, SupportWindow, Svg, SwapButton, SwapCallbackError, SwapModalFooter, SwapModalHeader, SwapRoute, Icon$C as SwapVertIcon, SwapWarningModal, telegram as TELEGRAM, twitter as TWITTER, Tabs$2 as Tabs, TabsCard, TabsWithBottomBorder, TabsWithCommingSoon, TabsWithMovingLine, Tag, Icon$M as TelegramIcon, Text, Textfield as TextField, TextWithTooltip$1 as TextWithTooltip, Timer$3 as Timer, TimerNotSolid, TimerNotSolidWithoutBg, TimerSimple, TitleBlock$4 as TitleBlock, ToastContainer, Toggle, TokenPairImage, TokenPocket, TopBlock$1 as TopBlock, TopContent$3 as TopContent, TradePrice, Transaction, TransactionConfirmationModal, TransactionErrorContent, TransactionHistory, Transactions, TransactionsModal, TrustWallet, Icon$K as TwitterIcon, UNIT, UPLOAD_ICON, USER_ICON, Unstake, UnsupportedCurrencyFooter, UnsupportedModal, Icon$c as UserIcon, ValueRow, Icon$y as VerifideIcon, VestingWidget, walletKyc as WALLET_KYC, WIN$1 as WINIMG, WINNER2, WINNER3, WINNER_MIN, WalletConnect, WalletHistoryModal, Icon$h as WalletIcon, Icon$s as WarningIcon, Icon$11 as WatchIcon, WelcomeModal, win as Win, WinButton, Winner, WinnersBlock, Wrapper$a as Wrapper, Icon$D as YAYIcon, YAY_TOKEN, YAY_TOKEN_GREEN, yayLogo as YAY_TOKEN_LOGO, YourHistory, variants$3 as alertVariants, connectorLocalStorageKey, darkTheme as dark, darkColors, lightTheme as light, lightColors, types as toastTypes, useAccordeon, useGiftFormModal, useKonamiCheatCode, useLobbyResultModal, useMatchBreakpoints, useModal, useParticleBurst, useTooltip, useWalletHistoryModal, useWalletModal, useWelcomeModal };
