@@ -5229,8 +5229,9 @@ var Select$2 = function (_a) {
     var handleChange = function (e) {
         setValue(e.target.value);
     };
+    var setOpenFunction = setOpenDropdown || setOpen;
     return (React__default["default"].createElement(Wrapper$Z, __assign({}, props, { style: singleOption ? { cursor: "default" } : { cursor: "pointer" } }),
-        React__default["default"].createElement(DropdownLayout, __assign({ icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" }, propsDropdownLayout), !singleOption && (React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1 },
+        React__default["default"].createElement(DropdownLayout, __assign({ icon: selectItem, open: openDropdown || open, setOpen: setOpenFunction, variant: "visible" }, propsDropdownLayout), !singleOption && (React__default["default"].createElement(Dropdown$4, __assign({}, propsDropdown), options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$2, { optionsSpacing: optionsSpacing, key: i + 1, onClick: function () { return setOpenFunction(false); } },
             React__default["default"].createElement(Input$a, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
             React__default["default"].createElement(Item$3, __assign({}, propsOption),
                 React__default["default"].createElement(Text, null, el.name),
@@ -5284,8 +5285,9 @@ var InjectedSelect = function (_a) {
     var _b;
     var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options, singleOption = _a.singleOption; _a.nameInputOptions; var propsDropdown = _a.propsDropdown; _a.propsOption; _a.optionsSpacing; var openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, buttonHandler = _a.buttonHandler, inputsValue = _a.inputsValue, inputsName = _a.inputsName, inputHandler = _a.inputHandler, buttonText = _a.buttonText, props = __rest(_a, ["selectItem", "value", "setValue", "options", "singleOption", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown", "buttonHandler", "inputsValue", "inputsName", "inputHandler", "buttonText"]);
     var _c = React.useState(false), open = _c[0], setOpen = _c[1];
+    var setOpenFunction = setOpenDropdown || setOpen;
     return (React__default["default"].createElement(Wrapper$Y, __assign({}, props),
-        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
+        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenFunction, variant: "visible" },
             React__default["default"].createElement(Dropdown$3, __assign({}, propsDropdown),
                 React__default["default"].createElement(Select$2, { singleOption: singleOption, selectItem: React__default["default"].createElement(Currency, null,
                         React__default["default"].createElement(Text, { mr: "15px" }, (_b = options.find(function (el) { return el.value === value; })) === null || _b === void 0 ? void 0 : _b.name),
@@ -5295,7 +5297,10 @@ var InjectedSelect = function (_a) {
                 React__default["default"].createElement(Inputs, null,
                     React__default["default"].createElement(Input$9, { margin: "0 2px  0 0 ", value: inputsValue.from, onChange: inputHandler, name: inputsName.from }),
                     React__default["default"].createElement(Input$9, { margin: "0 0 0 2px", value: inputsValue.to, onChange: inputHandler, name: inputsName.to })),
-                React__default["default"].createElement(Button$a, { variant: "purple", height: "30px", marginTop: "15px", width: "100%", onClick: buttonHandler }, buttonText)))));
+                React__default["default"].createElement(Button$a, { variant: "purple", height: "30px", marginTop: "15px", width: "100%", onClick: function () {
+                        setOpenFunction(false);
+                        buttonHandler();
+                    } }, buttonText)))));
 };
 var Wrapper$Y = styled__default["default"].div(templateObject_1$33 || (templateObject_1$33 = __makeTemplateObject(["\n  cursor: pointer;\n  ", "\n  ", "\n"], ["\n  cursor: pointer;\n  ", "\n  ", "\n"])), styledSystem.layout, styledSystem.space);
 var Dropdown$3 = styled__default["default"].div(templateObject_2$2t || (templateObject_2$2t = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"], ["\n  display: flex;\n  flex-direction: column;\n  padding: 15px 12px;\n  background: ", ";\n  box-shadow: ", ";\n  border-radius: 12px;\n  border: ", ";\n  ", "\n"])), function (_a) {
@@ -5334,14 +5339,15 @@ var templateObject_1$32;
 var SelectSearch = function (_a) {
     var selectItem = _a.selectItem, value = _a.value, setValue = _a.setValue, options = _a.options, nameInputOptions = _a.nameInputOptions, propsDropdown = _a.propsDropdown, propsOption = _a.propsOption, optionsSpacing = _a.optionsSpacing, openDropdown = _a.openDropdown, setOpenDropdown = _a.setOpenDropdown, valueInput = _a.valueInput, inputHandler = _a.inputHandler, inputName = _a.inputName, inputPlaceholder = _a.inputPlaceholder, props = __rest(_a, ["selectItem", "value", "setValue", "options", "nameInputOptions", "propsDropdown", "propsOption", "optionsSpacing", "openDropdown", "setOpenDropdown", "valueInput", "inputHandler", "inputName", "inputPlaceholder"]);
     var _b = React.useState(false), open = _b[0], setOpen = _b[1];
+    var setOpenFunction = setOpenDropdown || setOpen;
     var handleChange = function (e) {
         setValue(e.target.value);
     };
     return (React__default["default"].createElement(Wrapper$X, __assign({}, props),
-        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenDropdown || setOpen, variant: "visible" },
+        React__default["default"].createElement(DropdownLayout, { icon: selectItem, open: openDropdown || open, setOpen: setOpenFunction, variant: "visible" },
             React__default["default"].createElement(Dropdown$2, __assign({}, propsDropdown),
                 React__default["default"].createElement(InputSearch, { inputPlaceholder: inputPlaceholder, value: valueInput, onChange: inputHandler, name: inputName }),
-                React__default["default"].createElement(DropdownList, null, options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$1, { optionsSpacing: optionsSpacing, key: i + 1 },
+                React__default["default"].createElement(DropdownList, null, options === null || options === void 0 ? void 0 : options.map(function (el, i) { return (React__default["default"].createElement(Option$1, { optionsSpacing: optionsSpacing, key: i + 1, onClick: function () { return setOpenFunction(false); } },
                     React__default["default"].createElement(Input$8, { type: "radio", name: nameInputOptions, value: el.value, onChange: handleChange, checked: el.value === value }),
                     React__default["default"].createElement(Item$2, __assign({}, propsOption),
                         React__default["default"].createElement("img", { src: el.img }),

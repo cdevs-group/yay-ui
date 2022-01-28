@@ -47,7 +47,7 @@ const Select = ({
     setValue(e.target.value);
   };
   const setOpenFunction = setOpenDropdown || setOpen;
-  
+
   return (
     <Wrapper {...props} style={singleOption ? { cursor: "default" } : { cursor: "pointer" }}>
       <DropdownLayout
