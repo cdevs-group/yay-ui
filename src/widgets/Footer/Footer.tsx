@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
@@ -40,6 +40,8 @@ const Footer = ({
   colorTheme?: string;
   logoImg?: string;
 }) => {
+  const theme = useTheme();
+
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
@@ -69,7 +71,7 @@ const Footer = ({
         </SignUpBlock>
         <BuyBlock justifyContent="flex-end" alignItems="baseline">
           <Icon>
-            <LineIcon fill={colorTheme || baseColors.green} />
+            <LineIcon fill={colorTheme || theme.colors.green} />
             <IconBg>
               <img src={colorTheme ? BG_LINE_PURPLE : BG_LINE} />
             </IconBg>

@@ -2,6 +2,8 @@ import React from "react";
 import { withThemesProvider } from "themeprovider-storybook";
 import light from "../src/theme/light";
 import dark from "../src/theme/dark";
+import purple from "../src/theme/purple";
+
 import ResetCSS from "../src/ResetCSS";
 import { ModalProvider } from "../src/widgets/Modal";
 
@@ -26,6 +28,11 @@ const themes = [
     name: "Dark",
     backgroundColor: dark.colors.background,
     ...dark,
+  },
+  {
+    name: "Purple",
+    backgroundColor: purple.colors.background,
+    ...purple,
   },
 ];
 

@@ -63,7 +63,7 @@ const StyledButton = styled.button<BaseButtonProps>`
     display: flex;
     width: 100%;
     border: 1.5px solid ${({ theme }) => theme.colors.greenText};
-    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);
+    background: ${({ theme }) => theme.colors.gradients.greenGradient};
     color: ${({ theme }) => theme.colors.greenText};
     text-shadow: ${({ theme }) => theme.colors.boxShadow5};
   }
@@ -76,9 +76,9 @@ const StyledButton = styled.button<BaseButtonProps>`
   }
 
   &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {
-    box-shadow: ${({ variant }) =>
+    box-shadow: ${({ theme, variant }) =>
       variant === "green"
-        ? "0px 0px 29px #2CB021"
+        ? theme.colors.boxShadow12
         : variant === "pink"
         ? "0px 0px 20px rgba(255, 97, 97, 0.38)"
         : variant === "purple"

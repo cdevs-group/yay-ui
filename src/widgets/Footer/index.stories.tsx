@@ -26,7 +26,7 @@ export const FooterBlock = () => {
       <div style={{ maxWidth: "1440px", padding: "0 20px" }}>
         <Footer
           logoImg={LOGO_LOOT}
-          colorTheme={baseColors.purple}
+          // colorTheme={baseColors.purple}
           valueInput={""}
           handleInput={(e: any) => console.log(e)}
           handleBuy={() => console.log("buy")}
