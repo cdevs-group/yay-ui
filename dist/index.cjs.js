@@ -1343,9 +1343,12 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (templateObject_1$4n = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (templateObject_1$4n = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: ", ";\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: ", ";\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.colors.gradients.greenGradient;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
@@ -1359,9 +1362,9 @@ var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (t
     var theme = _a.theme;
     return theme.colors.boxShadow5;
 }, function (_a) {
-    var variant = _a.variant;
+    var theme = _a.theme, variant = _a.variant;
     return variant === "green"
-        ? "0px 0px 29px #2CB021"
+        ? theme.colors.boxShadow12
         : variant === "pink"
             ? "0px 0px 20px rgba(255, 97, 97, 0.38)"
             : variant === "purple"
@@ -2172,10 +2175,10 @@ var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { gre
         greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var purpleColors = __assign(__assign(__assign({}, baseColors), brandColors), { green: "#9E3DFF", greenGradient: "linear-gradient(180deg, #9E3DFF -16%, #9E3DFF 100%)", background: "#FAF9FA", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", darkGreyBg: "#1d1d22", greyText2: "#9A9191", greyText3: "#BCBCBC", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "rgba(255,255,255,.15)", contrast: "#000", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", tertiary: "#EFF4F5", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#26262D", panel: "#2E2E35", dark: "#26262D", gradients: {
-        greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
-        bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
-    } });
+var purpleColors = __assign(__assign(__assign({}, baseColors), brandColors), { green: "#9E3DFF", greenGradient: "linear-gradient(180deg, #9E3DFF -16%, #9E3DFF 100%)", background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #9E3DFF -16%, #9E3DFF 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", greyText3: "#BCBCBC", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#9E3DFF", orangeBg: "#FF9525", greenBg: "#9E3DFF", greenBg2: "#9E3DFF", greyBg2: "#201e1e", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "#9E3DFF", whiteText: "#FFFFFF", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
+        greenGradient: "linear-gradient(180deg, rgba(158, 61, 255, 0.15) -16%, rgba(158, 61, 255, 0.15) 100%)",
+        bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
+    }, boxShadow6: "0px 4px 10px rgba(158, 61, 255, 0.25)", boxShadow9: "0px 0px 20px rgba(158, 61, 255, 0.35)", boxShadow12: "0px 0px 29px #9E3DFF", boxShadow14: "0px 0px 10px rgba(158, 61, 255, 0.35)", bgGreenRgba: "rgba(158, 61, 255, 0.11)", greenGradient2: "linear-gradient(180deg, rgba(158, 61, 255, 0.21) -16%, #9E3DFF 100%)", greenGradient3: "linear-gradient(107.51deg, #9E3DFF 26.63%, #9E3DFF 73.7%)", greenGradient4: "linear-gradient(356.95deg, #9E3DFF 2.53%, rgba(75, 228, 62, 0) 100%)", greenRgba: "rgba(158, 61, 255, 0.5)", greeanRgba2: "rgba(158, 61, 255, 0.08)", greenRgba3: "rgba(158, 61, 255, 0.4)", darkGradient4: "linear-gradient(0deg, rgba(75, 228, 62, 0) 0%, rgba(158, 61, 255, 0.16) 56.77%)" });
 
 var SimpleInput = function (_a) {
     var title = _a.title, margin = _a.margin, placeholder = _a.placeholder, name = _a.name, value = _a.value, onChange = _a.onChange, inputError = _a.inputError, disabled = _a.disabled;
@@ -13698,6 +13701,7 @@ var templateObject_1$i, templateObject_2$e, templateObject_3$b;
 
 var Footer = function (_a) {
     var valueInput = _a.valueInput, handleInput = _a.handleInput, handleBuy = _a.handleBuy, handleSignIn = _a.handleSignIn, texts = _a.texts, aboutData = _a.aboutData, companyData = _a.companyData, socialData = _a.socialData, tokenData = _a.tokenData, disabledInput = _a.disabledInput, disabledSignUp = _a.disabledSignUp, colorTheme = _a.colorTheme, logoImg = _a.logoImg;
+    var theme = styled.useTheme();
     return (React__default["default"].createElement(Wrapper$4, null,
         React__default["default"].createElement(StayBlock, { alignItems: "flex-end", justifyContent: "space-between" },
             React__default["default"].createElement(SignUpBlock, null,
@@ -13707,7 +13711,7 @@ var Footer = function (_a) {
                     React__default["default"].createElement(Button$a, { variant: colorTheme ? "purple" : "green", onClick: handleSignIn, width: "100%", disabled: disabledSignUp }, texts.signUp))),
             React__default["default"].createElement(BuyBlock, { justifyContent: "flex-end", alignItems: "baseline" },
                 React__default["default"].createElement(Icon, null,
-                    React__default["default"].createElement(Icon$g, { fill: colorTheme || baseColors.green }),
+                    React__default["default"].createElement(Icon$g, { fill: colorTheme || theme.colors.green }),
                     React__default["default"].createElement(IconBg, null,
                         React__default["default"].createElement("img", { src: colorTheme ? BG_LINE_PURPLE : BG_LINE }))),
                 React__default["default"].createElement(Button$a, { variant: colorTheme ? "purple" : "green", onClick: handleBuy, width: "100%" }, texts.buyYAY))),
