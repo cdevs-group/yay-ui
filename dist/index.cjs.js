@@ -1222,7 +1222,7 @@ var variants$4 = {
     PURPLE: "purple",
 };
 
-var _a$7, _b$3;
+var _a$7;
 var scaleVariants$1 = (_a$7 = {},
     _a$7[scales$5.MD] = {
         height: "50px",
@@ -1243,90 +1243,93 @@ var scaleVariants$1 = (_a$7 = {},
         padding: "0 8px",
     },
     _a$7);
-var styleVariants$2 = (_b$3 = {},
-    _b$3[variants$4.PRIMARY] = {
-        backgroundColor: "primary",
-        color: "white",
-    },
-    _b$3[variants$4.SECONDARY] = {
-        backgroundColor: "transparent",
-        border: "1px solid #4BE43E",
-        boxShadow: "none",
-        borderRadius: 10,
-        color: "#4BE43E",
-        ":disabled": {
-            backgroundColor: "transparent",
+var styleVariants$2 = function (theme) {
+    var _a;
+    return (_a = {},
+        _a[variants$4.PRIMARY] = {
+            backgroundColor: "primary",
+            color: "white",
         },
-    },
-    _b$3[variants$4.TERTIARY] = {
-        backgroundColor: "tertiary",
-        boxShadow: "none",
-        color: "primary",
-    },
-    _b$3[variants$4.SUBTLE] = {
-        backgroundColor: "textSubtle",
-        color: "white",
-    },
-    _b$3[variants$4.DANGER] = {
-        backgroundColor: "failure",
-        color: "white",
-    },
-    _b$3[variants$4.SUCCESS] = {
-        backgroundColor: "success",
-        color: "white",
-    },
-    _b$3[variants$4.TEXT] = {
-        backgroundColor: "transparent",
-        color: "green",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.GREEN] = {
-        background: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.PINK] = {
-        backgroundColor: "#FF6161",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.OPTION] = {
-        backgroundColor: "rgba(255, 255, 255, 0.15)",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.OPTION_DARK] = {
-        backgroundColor: "rgba(0, 0, 0, 0.25)",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.YELLOW] = {
-        background: " linear-gradient(180deg, #FFB001 -16%, #FFA201 100%)",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.GRAY] = {
-        background: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.WHITE] = {
-        background: "#fff",
-        color: "#4BE43E",
-        boxShadow: "none",
-    },
-    _b$3[variants$4.LOAD_COLOR] = {
-        backgroundColor: "transparent",
-        color: "green",
-        boxShadow: "none",
-        opacity: "1",
-    },
-    _b$3[variants$4.PURPLE] = {
-        background: "#9E3DFF",
-        color: "#fff",
-        boxShadow: "none",
-    },
-    _b$3);
+        _a[variants$4.SECONDARY] = {
+            backgroundColor: "transparent",
+            border: "1px solid #4BE43E",
+            boxShadow: "none",
+            borderRadius: 10,
+            color: "#4BE43E",
+            ":disabled": {
+                backgroundColor: "transparent",
+            },
+        },
+        _a[variants$4.TERTIARY] = {
+            backgroundColor: "tertiary",
+            boxShadow: "none",
+            color: "primary",
+        },
+        _a[variants$4.SUBTLE] = {
+            backgroundColor: "textSubtle",
+            color: "white",
+        },
+        _a[variants$4.DANGER] = {
+            backgroundColor: "failure",
+            color: "white",
+        },
+        _a[variants$4.SUCCESS] = {
+            backgroundColor: "success",
+            color: "white",
+        },
+        _a[variants$4.TEXT] = {
+            backgroundColor: "transparent",
+            color: "green",
+            boxShadow: "none",
+        },
+        _a[variants$4.GREEN] = {
+            background: theme.colors.greenGradient,
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.PINK] = {
+            backgroundColor: "#FF6161",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.OPTION] = {
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.OPTION_DARK] = {
+            backgroundColor: "rgba(0, 0, 0, 0.25)",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.YELLOW] = {
+            background: " linear-gradient(180deg, #FFB001 -16%, #FFA201 100%)",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.GRAY] = {
+            background: "linear-gradient(180deg, #8A92B2 0%, #62688F 100%)",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a[variants$4.WHITE] = {
+            background: "#fff",
+            color: "#4BE43E",
+            boxShadow: "none",
+        },
+        _a[variants$4.LOAD_COLOR] = {
+            backgroundColor: "transparent",
+            color: "green",
+            boxShadow: "none",
+            opacity: "1",
+        },
+        _a[variants$4.PURPLE] = {
+            background: "#9E3DFF",
+            color: "#fff",
+            boxShadow: "none",
+        },
+        _a);
+};
 
 var getDisabledStyles = function (_a) {
     var isLoading = _a.isLoading, theme = _a.theme, variant = _a.variant;
@@ -1340,7 +1343,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (templateObject_1$4n = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
+var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (templateObject_1$4n = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 12px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: 0.2s;\n\n  &.withGreenBorder {\n    display: flex;\n    width: 100%;\n    border: 1.5px solid ", ";\n    background: linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%);\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &.withRedBorder {\n    border: 1.5px solid #ff6161;\n    background: none;\n    color: ", ";\n    text-shadow: ", ";\n  }\n\n  &:hover:not(:disabled):not(.yay-button--disabled):not(.yay-button--disabled):not(:active) {\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  \n  ", "\n  ", "\n  ", "\n  ", "\n"])), getOpacity, function (_a) {
     var theme = _a.theme;
     return theme.colors.greenText;
 }, function (_a) {
@@ -1367,9 +1370,10 @@ var StyledButton$7 = styled__default["default"].button(templateObject_1$4n || (t
 }, getDisabledStyles, styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$1,
-}), styledSystem.variant({
-    variants: styleVariants$2,
-}), styledSystem.layout, styledSystem.space, styledSystem.typography);
+}), function (_a) {
+    var theme = _a.theme;
+    return styledSystem.variant({ variants: styleVariants$2(theme) });
+}, styledSystem.layout, styledSystem.space, styledSystem.typography);
 var templateObject_1$4n;
 
 var Button$a = function (props) {
@@ -2078,7 +2082,6 @@ var baseColors = {
     blueGradient: "linear-gradient(180deg, #0064C0 0%, #0056A5 100%)",
     dark2: "#1C1C1C",
     dark3: "#101016",
-    green: "#4BE43E",
     textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     textShadow2: "0px 4px 7px rgba(0, 0, 0, 0.15)",
     textShadow3: "0px 3px 4px rgba(0, 0, 0, 0.15)",
@@ -2156,17 +2159,20 @@ var baseColors = {
     darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
     redBg: "#FF6161",
     purple: "#9E3DFF",
+    green: "#4BE43E",
 };
 var brandColors = {
     binance: "#F0B90B",
 };
-// export const darkColors: Colors = {
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", greyText3: "#BCBCBC", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "#47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { green: "#4BE43E", background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", greyText2: "#9A9191", greyText3: "#BCBCBC", darkGreyBg: "#1d1d22", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "0px 3px 4px rgba(0, 0, 0, 0.15)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "#47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#000", input: "#483f5a", inputSecondary: "#66578D", primaryDark: "#0098A1", tertiary: "#353547", textDisabled: "#666171", textSubtle: "#A28BD4", borderColor: "#524B63", card: "#FFFFFF", panel: "#2E2E35", dark: "#26262D", gradients: {
         greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
     } });
-// export const lightColors: Colors = {
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", darkGreyBg: "#1d1d22", greyText2: "#9A9191", greyText3: "#BCBCBC", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "rgba(255,255,255,.15)", contrast: "#000", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", tertiary: "#EFF4F5", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#26262D", panel: "#2E2E35", dark: "#26262D", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { green: "#4BE43E", background: "#FAF9FA", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", darkGreyBg: "#1d1d22", greyText2: "#9A9191", greyText3: "#BCBCBC", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "rgba(255,255,255,.15)", contrast: "#000", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", tertiary: "#EFF4F5", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#26262D", panel: "#2E2E35", dark: "#26262D", gradients: {
+        greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
+        bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
+    } });
+var purpleColors = __assign(__assign(__assign({}, baseColors), brandColors), { green: "#9E3DFF", greenGradient: "linear-gradient(180deg, #9E3DFF -16%, #9E3DFF 100%)", background: "#FAF9FA", background2: "#17171c", overlayBg: "rgba(0, 0, 0, 0.7)", linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)", buttonBg: "rgba(0, 0, 0, 0.25)", buttonShadow: "rgba(0, 0, 0, 0.2)", cardBg: "#26262D", greyText: "#A3A3A3", darkGreyBg: "#1d1d22", greyText2: "#9A9191", greyText3: "#BCBCBC", text: "#fff", greenText: "#4AE43D", orangeBg: "#FF9525", greenBg: "#69E35F", greenBg2: "#56EF4B", greyBg2: "#201e1e", redBg: "#FF6161", yellowBg: "#ECCB57", lightGreyBg: "#C0C0C0", yellowBg2: "#FFB72C", boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)", boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)", boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)", blackColor: "#000", greenText2: "47DA3B", whiteText: "#FFFFFF", backgroundDisabled: "rgba(255,255,255,.15)", contrast: "#000", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", tertiary: "#EFF4F5", textDisabled: "#BDC2C4", textSubtle: "#8f80ba", borderColor: "#E9EAEB", card: "#26262D", panel: "#2E2E35", dark: "#26262D", gradients: {
         greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
@@ -4754,6 +4760,9 @@ var light$3 = {
 var dark$3 = {
     background: darkColors.card,
 };
+var purple$2 = {
+    background: purpleColors.card,
+};
 
 var breakpointMap = {
     xs: 370,
@@ -4832,6 +4841,9 @@ var light$1 = {
 var dark$1 = {
     handleBackground: darkColors.background,
 };
+var purple$1 = {
+    handleBackground: purpleColors.background,
+};
 
 var light = {
     background: lightColors.card,
@@ -4839,10 +4851,15 @@ var light = {
 var dark = {
     background: darkColors.card,
 };
+var purple = {
+    background: purpleColors.card,
+};
 
 var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark$3, colors: darkColors, card: dark$2, toggle: dark$1, modal: dark });
 
 var lightTheme = __assign(__assign({}, base), { isDark: false, alert: light$3, colors: lightColors, card: light$2, toggle: light$1, modal: light });
+
+var purpleTheme = __assign(__assign({}, base), { isDark: false, alert: purple$2, colors: purpleColors, card: dark$2, toggle: purple$1, modal: purple });
 
 var isTouchDevice = function () {
     var _a;
@@ -14798,6 +14815,8 @@ exports.dark = darkTheme;
 exports.darkColors = darkColors;
 exports.light = lightTheme;
 exports.lightColors = lightColors;
+exports.purple = purpleTheme;
+exports.purpleColors = purpleColors;
 exports.toastTypes = types;
 exports.useAccordeon = useAccordeon;
 exports.useGiftFormModal = useGiftFormModal;

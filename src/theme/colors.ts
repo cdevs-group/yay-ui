@@ -12,8 +12,6 @@ export const baseColors = {
   blueGradient: "linear-gradient(180deg, #0064C0 0%, #0056A5 100%)",
   dark2: "#1C1C1C",
   dark3: "#101016",
-
-  green: "#4BE43E",
   textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
   textShadow2: "0px 4px 7px rgba(0, 0, 0, 0.15)",
   textShadow3: "0px 3px 4px rgba(0, 0, 0, 0.15)",
@@ -91,17 +89,17 @@ export const baseColors = {
   darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
   redBg: "#FF6161",
   purple: "#9E3DFF",
+  green: "#4BE43E",
 };
 
 export const brandColors = {
   binance: "#F0B90B",
 };
 
-// export const darkColors: Colors = {
 export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
-
+  green: "#4BE43E",
   background: "linear-gradient(180deg, #1B1B22 0%, #0E0E15 100%)",
   background2: "#17171c",
   overlayBg: "rgba(0, 0, 0, 0.7)",
@@ -148,10 +146,66 @@ export const lightColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 };
-// export const lightColors: Colors = {
+
 export const darkColors: Colors = {
   ...baseColors,
   ...brandColors,
+  green: "#4BE43E",
+  background: "#FAF9FA",
+  background2: "#17171c",
+  overlayBg: "rgba(0, 0, 0, 0.7)",
+  linkColor: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
+  buttonBg: "rgba(0, 0, 0, 0.25)",
+  buttonShadow: "rgba(0, 0, 0, 0.2)",
+
+  cardBg: "#26262D",
+  greyText: "#A3A3A3",
+  darkGreyBg: "#1d1d22",
+  greyText2: "#9A9191",
+  greyText3: "#BCBCBC",
+  text: "#fff",
+  greenText: "#4AE43D",
+  orangeBg: "#FF9525",
+  greenBg: "#69E35F",
+  greenBg2: "#56EF4B",
+  greyBg2: "#201e1e",
+  redBg: "#FF6161",
+  yellowBg: "#ECCB57",
+  lightGreyBg: "#C0C0C0",
+  yellowBg2: "#FFB72C",
+
+  boxShadow3: "-4px -3px 8px rgba(0, 0, 0, 0.25)",
+  boxShadow4: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow5: "inset 0px 4px 4px rgba(0, 0, 0, 0.2)",
+  boxShadow7: "inset 0px 1px 8px rgba(0, 0, 0, 0.19)",
+
+  blackColor: "#000",
+  greenText2: "47DA3B",
+  whiteText: "#FFFFFF",
+
+  backgroundDisabled: "rgba(255,255,255,.15)",
+  contrast: "#000",
+  invertedContrast: "#FFFFFF",
+  input: "#eeeaf4",
+  inputSecondary: "#d7caec",
+  tertiary: "#EFF4F5",
+  textDisabled: "#BDC2C4",
+  textSubtle: "#8f80ba",
+  borderColor: "#E9EAEB",
+  card: "#26262D",
+  panel: "#2E2E35",
+  dark: "#26262D",
+  gradients: {
+    greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
+    bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
+  },
+};
+
+export const purpleColors: Colors = {
+  ...baseColors,
+  ...brandColors,
+  green: "#9E3DFF",
+  greenGradient: "linear-gradient(180deg, #9E3DFF -16%, #9E3DFF 100%)",
 
   background: "#FAF9FA",
   background2: "#17171c",

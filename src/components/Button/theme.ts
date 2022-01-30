@@ -1,3 +1,5 @@
+import React from "react";
+import { useTheme } from "styled-components";
 import { scales, variants } from "./types";
 
 export const scaleVariants = {
@@ -21,7 +23,7 @@ export const scaleVariants = {
   },
 };
 
-export const styleVariants = {
+export const styleVariants = (theme: any) => ({
   [variants.PRIMARY]: {
     backgroundColor: "primary",
     color: "white",
@@ -59,7 +61,7 @@ export const styleVariants = {
     boxShadow: "none",
   },
   [variants.GREEN]: {
-    background: "linear-gradient(180deg, #4CEE3E -16%, #47DA3B 100%)",
+    background: theme.colors.greenGradient,
     color: "#fff",
     boxShadow: "none",
   },
@@ -104,4 +106,4 @@ export const styleVariants = {
     color: "#fff",
     boxShadow: "none",
   },
-};
+});

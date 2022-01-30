@@ -18,7 +18,7 @@ export declare const scaleVariants: {
         padding: string;
     };
 };
-export declare const styleVariants: {
+export declare const styleVariants: (theme: any) => {
     primary: {
         backgroundColor: string;
         color: string;
@@ -56,7 +56,7 @@ export declare const styleVariants: {
         boxShadow: string;
     };
     green: {
-        background: string;
+        background: any;
         color: string;
         boxShadow: string;
     };
