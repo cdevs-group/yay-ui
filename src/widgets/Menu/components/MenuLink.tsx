@@ -19,9 +19,10 @@ const MenuLink = ({
   setOpenDropdown,
   variant,
   comingSoon,
+  colorTheme,
 }: LinkHeaderProps) => {
   const isHttpLink = url?.startsWith("http");
-  const Item = () => <LinkItem>{name}</LinkItem>;
+  const Item = () => <LinkItem colorTheme={colorTheme}>{name}</LinkItem>;
 
   const handleLink = () => {
     if (setOpenDropdown) setOpenDropdown(false);
@@ -34,7 +35,7 @@ const MenuLink = ({
         open={openDropdown || false}
         setOpen={setOpenDropdown || (() => null)}
         icon={
-          <LinkItem onClick={() => (setOpenDropdown ? setOpenDropdown(true) : () => null)}>
+          <LinkItem colorTheme={colorTheme} onClick={() => (setOpenDropdown ? setOpenDropdown(true) : () => null)}>
             <Flex alignItems="center">
               {name}
               {submenu && variant === "behind" && (
@@ -49,7 +50,13 @@ const MenuLink = ({
       >
         <Dropdown open={openDropdown} variant={variant}>
           {submenu?.map((el, i) => (
-            <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} setOpenDropdown={setOpenDropdown} />
+            <MenuLink
+              colorTheme={colorTheme}
+              {...el}
+              key={i}
+              setOpenMenu={setOpenMenu}
+              setOpenDropdown={setOpenDropdown}
+            />
           ))}
         </Dropdown>
       </DropdownLayout>
@@ -59,7 +66,9 @@ const MenuLink = ({
   if (comingSoon)
     return (
       <CominSoonWrapper>
-        <LabelTop label={comingSoon}>{name}</LabelTop>
+        <LabelTop colorTheme={colorTheme} label={comingSoon}>
+          {name}
+        </LabelTop>
       </CominSoonWrapper>
     );
 
@@ -105,7 +114,7 @@ const CominSoonWrapper = styled.div`
     margin: 0 30px;
   }
 `;
-const LinkItem = styled(Text)`
+const LinkItem = styled(Text)<{ colorTheme?: string }>`
   position: relative;
   color: ${({ theme }) => theme.colors.text};
   margin: 0 0 20px;
@@ -114,7 +123,7 @@ const LinkItem = styled(Text)`
   cursor: pointer;
   font-weight: 400;
   &:hover {
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     &::after {
@@ -124,7 +133,7 @@ const LinkItem = styled(Text)`
       height: 2px;
       content: "";
       position: absolute;
-      background: #4be43e;
+      background: ${({ colorTheme }) => colorTheme || "#4be43e"};
       transition: all.3s;
       opacity: 0;
     }

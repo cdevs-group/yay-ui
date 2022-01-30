@@ -52,14 +52,11 @@ const InjectedSelect = ({
   ...props
 }: SelectProps) => {
   const [open, setOpen] = useState<boolean>(false);
+  const setOpenFunction = setOpenDropdown || setOpen;
+
   return (
     <Wrapper {...props}>
-      <DropdownLayout
-        icon={selectItem}
-        open={openDropdown || open}
-        setOpen={setOpenDropdown || setOpen}
-        variant="visible"
-      >
+      <DropdownLayout icon={selectItem} open={openDropdown || open} setOpen={setOpenFunction} variant="visible">
         <Dropdown {...propsDropdown}>
           <Select
             singleOption={singleOption}
@@ -83,7 +80,16 @@ const InjectedSelect = ({
             <Input margin="0 2px  0 0 " value={inputsValue.from} onChange={inputHandler} name={inputsName.from} />
             <Input margin="0 0 0 2px" value={inputsValue.to} onChange={inputHandler} name={inputsName.to} />
           </Inputs>
-          <Button variant="green" height="30px" marginTop="15px" width="100%" onClick={buttonHandler}>
+          <Button
+            variant="purple"
+            height="30px"
+            marginTop="15px"
+            width="100%"
+            onClick={() => {
+              setOpenFunction(false);
+              buttonHandler();
+            }}
+          >
             {buttonText}
           </Button>
         </Dropdown>

@@ -7,6 +7,7 @@ import { Text } from "../Text";
 import { CheckIcon2 } from "../Svg";
 import { Flex, Box } from "../Box";
 import InputSearch from "./components/InputSerach";
+import { baseColors } from "../../theme/colors";
 
 export interface SelectProps extends SpaceProps, LayoutProps {
   selectItem: ReactNode;
@@ -47,6 +48,7 @@ const SelectSearch = ({
   ...props
 }: SelectProps) => {
   const [open, setOpen] = useState<boolean>(false);
+  const setOpenFunction = setOpenDropdown || setOpen;
 
   const handleChange = (e: any) => {
     setValue(e.target.value);
@@ -54,12 +56,7 @@ const SelectSearch = ({
 
   return (
     <Wrapper {...props}>
-      <DropdownLayout
-        icon={selectItem}
-        open={openDropdown || open}
-        setOpen={setOpenDropdown || setOpen}
-        variant="visible"
-      >
+      <DropdownLayout icon={selectItem} open={openDropdown || open} setOpen={setOpenFunction} variant="visible">
         <Dropdown {...propsDropdown}>
           <InputSearch
             inputPlaceholder={inputPlaceholder}
@@ -69,7 +66,7 @@ const SelectSearch = ({
           />
           <DropdownList>
             {options?.map((el, i) => (
-              <Option optionsSpacing={optionsSpacing} key={i + 1}>
+              <Option optionsSpacing={optionsSpacing} key={i + 1} onClick={() => setOpenFunction(false)}>
                 <Input
                   type="radio"
                   name={nameInputOptions}
@@ -80,7 +77,7 @@ const SelectSearch = ({
                 <Item {...propsOption}>
                   <img src={el.img} />
                   <Text mr="auto">{el.name}</Text>
-                  <CheckIcon2 />
+                  <CheckIcon2 color={baseColors.purple} />
                 </Item>
               </Option>
             ))}

@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { ICardProps } from "./types";
-import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
+import { Text, NFTShareIcon, StarIcon, Flex, lightColors } from "../../..";
 import Likes from "./Likes";
 import { CardHover, CardWrapper } from "../styled";
 import { Skeleton } from "../../../components/Skeleton";
+import { baseColors } from "../../../theme/colors";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -20,8 +21,11 @@ const NFTCard: React.FC<ICardProps> = ({
   onNftClick,
   onLikeAdd,
   network,
+  onSeeNowClick,
   onGameClick,
   isLoading,
+  assets,
+  color,
 }) => {
   return (
     <CardWrapper>
@@ -50,11 +54,22 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Author onClick={() => onAuthorClick()}>{author}</Author>
                 </div>
               </Flex>
-              <Text color="textGray" mb="29px" fontWeight={400}>
-                {description}
-              </Text>
+              <Flex height="22.5px" mb="10px" alignItems="center">
+                {price && (
+                  <Text mr="7px" fontSize="15px" fontWeight={400}>
+                    {price}
+                  </Text>
+                )}
+                {assets && (
+                  <Text color={lightColors.whiteRgba2} fontSize="15px">
+                    {assets}
+                  </Text>
+                )}
+              </Flex>
               <FooterContainer>
-                <PriceText>{price}</PriceText>
+                <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
+                  {description}
+                </SeeText>
                 <Flex>
                   <IconWrapper style={{ padding: "10px 8px" }} onClick={() => onShare()}>
                     <NFTShareIcon />
@@ -82,7 +97,7 @@ const NFTCard: React.FC<ICardProps> = ({
                   <Skeleton height={13} width={150} />
                 </div>
               </Flex>
-              <Skeleton height={17} width={150} marginBottom="29px" />
+              <Skeleton height={17} width={150} marginBottom="10px" />
               <FooterContainer>
                 <Skeleton height={17} width={100} />
               </FooterContainer>
@@ -90,7 +105,7 @@ const NFTCard: React.FC<ICardProps> = ({
           </>
         )}
       </Card>
-      <CardHover />
+      {!isLoading && <CardHover colorTheme={color} />}
     </CardWrapper>
   );
 };
@@ -173,13 +188,14 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const PriceText = styled(Text)`
+const SeeText = styled(Text)<{ colorTheme?: string }>`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  color: ${({ theme }) => theme.colors.green};
+  color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+  cursor: pointer;
 `;
 
 const IconWrapper = styled.div`

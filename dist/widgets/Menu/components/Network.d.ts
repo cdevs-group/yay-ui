@@ -8,6 +8,7 @@ interface Props {
     handleToggleNetwork?: (e: any) => void;
     valuesNetworks?: string[];
     listNetwork?: BlockChainNetwork[];
+    colorTheme?: string;
 }
 declare const Network: React.FC<Props>;
 export default Network;

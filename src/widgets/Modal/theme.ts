@@ -1,4 +1,4 @@
-import { darkColors, lightColors, purpleColors  } from "../../theme/colors";
+import { darkColors, lightColors, purpleColors } from "../../theme/colors";
 import { ModalTheme } from "./types";
 
 export const light: ModalTheme = {

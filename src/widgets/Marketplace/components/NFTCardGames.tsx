@@ -17,6 +17,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
   network2,
   onSeeNowClick,
   onGameClick,
+  color,
   isLoading,
 }) => {
   return (
@@ -39,11 +40,11 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
                   <Title>{title}</Title>
                 </div>
               </Flex>
-              <Text color="textGray" mb="29px" fontWeight={400}>
-                {description}
-              </Text>
+              {/*<Text color="textGray" mb="29px" fontWeight={400}>*/}
+              {/*  {description}*/}
+              {/*</Text>*/}
               <FooterContainer>
-                <SeeText onClick={() => onSeeNowClick()} role="button">
+                <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
                   {textSeeNow}
                 </SeeText>
                 <Flex>
@@ -67,7 +68,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
                   <Skeleton height={17} width={150} marginBottom="6px" />
                 </div>
               </Flex>
-              <Skeleton height={17} width={150} marginBottom="29px" />
+              {/*<Skeleton height={17} width={150} marginBottom="29px" />*/}
               <FooterContainer>
                 <Skeleton height={17} width={100} />
               </FooterContainer>
@@ -75,7 +76,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
           </>
         )}
       </Card>
-      <CardHover />
+      {!isLoading && <CardHover colorTheme={color} />}
     </CardWrapper>
   );
 };
@@ -85,7 +86,7 @@ export default NFTCardGames;
 const Card = styled.div`
   position: relative;
   width: 100%;
-  min-height: 422px;
+  min-height: 378px;
   background: ${({ theme }) => theme.colors.dark3};
   border-radius: 16px;
   transition: 0.3s;
@@ -151,13 +152,13 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const SeeText = styled(Text)`
+const SeeText = styled(Text)<{ colorTheme?: string }>`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  color: ${({ theme }) => theme.colors.green};
+  color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   cursor: pointer;
 `;
 

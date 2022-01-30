@@ -88,6 +88,8 @@ export const baseColors = {
   bgGray5: "#34343B",
   darkGradient: "radial-gradient(50% 50% at 50% 50%, #000000 0%, rgba(0, 0, 0, 0) 100%)",
   redBg: "#FF6161",
+  purple: "#9E3DFF",
+  green: "#4BE43E",
 };
 
 export const brandColors = {
@@ -253,4 +255,4 @@ export const purpleColors: Colors = {
     greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
     bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
   },
-}
+};

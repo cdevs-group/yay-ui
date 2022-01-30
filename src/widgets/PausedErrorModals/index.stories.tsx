@@ -24,6 +24,8 @@ export const Welcome: React.FC = () => {
           descriptionTop="This page can`t be displayed right now due to an error. Please check back soon."
           buttonText="Show history"
           errorPadding
+          buttonVariant="purple"
+          marginImg="20px 0"
         />
       </div>
     </Flex>

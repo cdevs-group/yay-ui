@@ -4,7 +4,7 @@ import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
 import { Flex, Box } from "../../components/Box";
-import { BG_LINE, LOGO_FOOTER } from "../../constants/images";
+import { BG_LINE, BG_LINE_PURPLE, LOGO_FOOTER } from "../../constants/images";
 import NavColumn from "./components/NavColumn";
 import Social from "./components/Social";
 import { LineIcon } from "../../components/Svg";
@@ -23,6 +23,8 @@ const Footer = ({
   tokenData,
   disabledInput,
   disabledSignUp,
+  colorTheme,
+  logoImg,
 }: {
   valueInput: string;
   handleInput: (e: any) => void;
@@ -35,6 +37,8 @@ const Footer = ({
   socialData: IDataSocial;
   disabledInput?: boolean;
   disabledSignUp?: boolean;
+  colorTheme?: string;
+  logoImg?: string;
 }) => {
   return (
     <Wrapper>
@@ -53,27 +57,32 @@ const Footer = ({
               backgroundColor={baseColors.whiteRgba3}
               disabled={disabledInput}
             />
-            <Button variant="green" onClick={handleSignIn} width="100%" disabled={disabledSignUp}>
+            <Button
+              variant={colorTheme ? "purple" : "green"}
+              onClick={handleSignIn}
+              width="100%"
+              disabled={disabledSignUp}
+            >
               {texts.signUp}
             </Button>
           </InputBlock>
         </SignUpBlock>
         <BuyBlock justifyContent="flex-end" alignItems="baseline">
           <Icon>
-            <LineIcon />
+            <LineIcon fill={colorTheme || baseColors.green} />
             <IconBg>
-              <img src={BG_LINE} />
+              <img src={colorTheme ? BG_LINE_PURPLE : BG_LINE} />
             </IconBg>
           </Icon>
 
-          <Button variant="green" onClick={handleBuy} width="100%">
+          <Button variant={colorTheme ? "purple" : "green"} onClick={handleBuy} width="100%">
             {texts.buyYAY}
           </Button>
         </BuyBlock>
       </StayBlock>
       <MainLine>
         <ColumnDescription>
-          <img src={LOGO_FOOTER} alt="logo" />
+          <img src={logoImg || LOGO_FOOTER} alt="logo" />
           <Description>{texts.joinOur}</Description>
         </ColumnDescription>
         <Column>

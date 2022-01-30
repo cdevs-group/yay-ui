@@ -10,7 +10,7 @@ export const CardWrapper = styled.div<LayoutProps>`
   ${layout}
 `;
 
-export const CardHover = styled.div`
+export const CardHover = styled.div<{ colorTheme?: string }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -18,11 +18,13 @@ export const CardHover = styled.div`
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  border: 2px solid ${({ theme }) => theme.colors.green};
+  border: 2px solid ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
   transform: rotate(0deg);
   transition: 0.5s;
   opacity: 0;
   z-index: 0;
+  will-change: transform, opacity, width;
+
   ${CardWrapper}:hover & {
     width: calc(100% + 6px);
     opacity: 0.3;
