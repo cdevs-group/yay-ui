@@ -30,10 +30,10 @@ export const styleVariants = (theme: any) => ({
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",
-    border: "1px solid #4BE43E",
+    border: `1px solid ${theme.colors.green}`,
     boxShadow: "none",
     borderRadius: 10,
-    color: "#4BE43E",
+    color: theme.colors.green,
     ":disabled": {
       backgroundColor: "transparent",
     },
@@ -57,7 +57,7 @@ export const styleVariants = (theme: any) => ({
   },
   [variants.TEXT]: {
     backgroundColor: "transparent",
-    color: "green",
+    color: theme.colors.green,
     boxShadow: "none",
   },
   [variants.GREEN]: {
@@ -92,17 +92,17 @@ export const styleVariants = (theme: any) => ({
   },
   [variants.WHITE]: {
     background: "#fff",
-    color: "#4BE43E",
+    color: theme.colors.green,
     boxShadow: "none",
   },
   [variants.LOAD_COLOR]: {
     backgroundColor: "transparent",
-    color: "green",
+    color: theme.colors.green,
     boxShadow: "none",
     opacity: "1",
   },
   [variants.PURPLE]: {
-    background: "#9E3DFF",
+    background: theme.colors.purple,
     color: "#fff",
     boxShadow: "none",
   },

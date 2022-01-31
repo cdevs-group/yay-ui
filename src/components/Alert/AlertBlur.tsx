@@ -1,6 +1,6 @@
 import React from "react";
 import { space, background, layout } from "styled-system";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Text from "../Text/Text";
 import { CloseIcon, ArrowIcon, GreenArrow } from "../Svg";
 import { AlertProps } from "./types";
@@ -66,6 +66,7 @@ const AlertBlur: React.FC<AlertProps> = ({
   propsWrapper,
   fillCloseIcon,
 }) => {
+  const theme = useTheme();
   return (
     <StyledAlert {...propsWrapper}>
       <div>
@@ -80,7 +81,7 @@ const AlertBlur: React.FC<AlertProps> = ({
         <div>{children}</div>
         <ButtonNext height="auto" onClick={onClick}>
           {buttonText}
-          <GreenArrow color="#4BE43E" />
+          <GreenArrow color={theme.colors.green} />
         </ButtonNext>
       </div>
     </StyledAlert>

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
 interface IBlurWithBorder {
   noticeType?: NoticeBridgeType;
@@ -12,15 +12,14 @@ export enum NoticeBridgeType {
   SUCCESS = "success",
 }
 
-const getBgNotice = (type: any) => {
+const getBgNotice = (type: any, theme: DefaultTheme) => {
   switch (type) {
     case NoticeBridgeType.SUCCESS:
       return {
         color: "green",
-        bg: `
-      radial-gradient(98% 49.86% at 100.03% 100%, #4BE43E 0%, rgba(75, 228, 62, 0.05) 100%),
-      radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
-      radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        bg: `${theme.colors.greenGradient5},
+        radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
+        radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
       `,
       };
     case NoticeBridgeType.ERROR:
@@ -67,7 +66,7 @@ const Border = styled.div<{ noticeType?: NoticeBridgeType; radiusBlur?: string }
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 1px;
-  background: ${({ noticeType }) => getBgNotice(noticeType)?.bg};
+  background: ${({ theme, noticeType }) => getBgNotice(noticeType, theme)?.bg};
   width: calc(100% + 2px);
   height: calc(100% + 2px);
   border-radius: ${({ radiusBlur }) => (radiusBlur ? radiusBlur : "15px")};

@@ -76,6 +76,11 @@ export const Variants: React.FC = () => {
             Leaderboard
           </WinButton>
         </Row>
+        <Row>
+          <Button width="130px" scale="sm" variant="purple">
+            Button
+          </Button>
+        </Row>
       </BrowserRouter>
     </div>
   );

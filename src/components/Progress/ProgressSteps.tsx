@@ -1,15 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Text } from "../Text";
 import { ProgressStepsProps } from "./types";
-import { baseColors } from "../../theme/colors";
 
 const ProgressSteps = ({ isError, texts, progress }: ProgressStepsProps) => {
+  const theme = useTheme()
   return (
     <ProgressWrap>
       <Title>
         <Text fontSize="10px">{isError ? texts.error : texts.waiting}</Text>
-        <CheckIt color={isError ? baseColors.darkPink : baseColors.green} as="button" fontSize="10px">
+        <CheckIt color={isError ? theme.colors.darkPink : theme.colors.green} as="button" fontSize="10px">
           {isError ? texts.checkIt : texts.confirmations}
         </CheckIt>
       </Title>

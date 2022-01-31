@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import BridgeStep1 from "./BridgeStep1";
 import BridgeStep2 from "./BridgeStep2";
 import useBridgeModal from "./useBridgeModal";
@@ -11,6 +11,7 @@ import { Metamask } from "../../constants/images";
 import { NoticeBridgeType } from "./types";
 import { Button } from "../../components/Button";
 import BlurWithBorder from "../../components/BlurWithBorder/BlurWithBorder";
+import { dark, purple } from "../../theme";
 
 export default {
   title: "Widgets/Bridge",
@@ -136,88 +137,90 @@ export const BridgeStep2Block = () => {
   const stepsText = ["start", "1/25", "3/32", "finish"];
 
   return (
-    <div>
-      <div style={{ marginTop: "20px" }}>
-        <BridgeStep2
-          network1="avax"
-          network2="bsc"
-          onDismiss={() => {}}
-          transferredValue={transferredValue}
-          texts={texts}
-          progress1={1}
-          progress2={100}
-          timer={435}
-          isLoadGas
-          textsProgress2={textsProgress2}
-          textsProgress1={textsProgress1}
-          addTokenHandler={() => {}}
-          stepsText={stepsText}
-          gasPriceTextNetwork1={gasPriceTextNetwork1}
-          gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadGasNetwork2
-          isLoadTimeNetwork
-          isLoadGasNetwork1
-          noticeVisible
-          noticeType={NoticeBridgeType.ERROR}
-          noticeTitle="Something went wrong"
-          noticeText={<>Your request was successfully completed. Check details here</>}
-          noticeButton1={
-            <Button variant="green" maxWidth="362px" width="100%" mb="14px">
-              noticeButton1Text
-            </Button>
-          }
-          noticeButton2={
-            <Button variant="gray" maxWidth="362px" width="100%">
-              noticeButton2Text
-            </Button>
-          }
-        />
+    <ThemeProvider theme={dark}>
+      <div>
+        <div style={{ marginTop: "20px" }}>
+          <BridgeStep2
+            network1="avax"
+            network2="bsc"
+            onDismiss={() => {}}
+            transferredValue={transferredValue}
+            texts={texts}
+            progress1={1}
+            progress2={100}
+            timer={435}
+            isLoadGas
+            textsProgress2={textsProgress2}
+            textsProgress1={textsProgress1}
+            addTokenHandler={() => {}}
+            stepsText={stepsText}
+            gasPriceTextNetwork1={gasPriceTextNetwork1}
+            gasPriceTextNetwork2={gasPriceTextNetwork2}
+            isLoadGasNetwork2
+            isLoadTimeNetwork
+            isLoadGasNetwork1
+            noticeVisible
+            noticeType={NoticeBridgeType.SUCCESS}
+            noticeTitle="Something went wrong"
+            noticeText={<>Your request was successfully completed. Check details here</>}
+            noticeButton1={
+              <Button variant="green" maxWidth="362px" width="100%" mb="14px">
+                noticeButton1Text
+              </Button>
+            }
+            noticeButton2={
+              <Button variant="gray" maxWidth="362px" width="100%">
+                noticeButton2Text
+              </Button>
+            }
+          />
+        </div>
+        <div style={{ marginTop: "20px" }}>
+          <BridgeStep2
+            network1="bsc"
+            network2="avax"
+            onDismiss={() => {}}
+            transferredValue={transferredValue}
+            texts={texts}
+            progress1={50}
+            progress2={100}
+            timer={0}
+            textsProgress2={textsProgress2}
+            textsProgress1={textsProgress1}
+            addTokenHandler={() => {}}
+            stepsText={stepsText}
+            gasPriceTextNetwork1={gasPriceTextNetwork1}
+            gasPriceTextNetwork2={gasPriceTextNetwork2}
+            isLoadGasNetwork2={false}
+            isLoadTimeNetwork
+            isLoadGasNetwork1
+          />
+        </div>
+        <div style={{ marginTop: "20px" }}>
+          <BridgeStep2
+            network1="bsc"
+            network2="avax"
+            onDismiss={() => {}}
+            transferredValue={transferredValue}
+            texts={texts}
+            progress1={28}
+            timer={3601}
+            isErrorNetwork1
+            isErrorNetwork2
+            progress2={20}
+            textsProgress2={textsProgress2}
+            textsProgress1={textsProgress1}
+            addTokenHandler={() => {}}
+            stepsText={stepsText}
+            gasPriceTextNetwork1={gasPriceTextNetwork1}
+            gasPriceTextNetwork2={gasPriceTextNetwork2}
+            isLoadGasNetwork2
+            isLoadGasNetwork1
+            isLoadTimeNetwork={false}
+          />
+        </div>
       </div>
-      <div style={{ marginTop: "20px" }}>
-        <BridgeStep2
-          network1="bsc"
-          network2="avax"
-          onDismiss={() => {}}
-          transferredValue={transferredValue}
-          texts={texts}
-          progress1={50}
-          progress2={100}
-          timer={0}
-          textsProgress2={textsProgress2}
-          textsProgress1={textsProgress1}
-          addTokenHandler={() => {}}
-          stepsText={stepsText}
-          gasPriceTextNetwork1={gasPriceTextNetwork1}
-          gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadGasNetwork2={false}
-          isLoadTimeNetwork
-          isLoadGasNetwork1
-        />
-      </div>
-      <div style={{ marginTop: "20px" }}>
-        <BridgeStep2
-          network1="bsc"
-          network2="avax"
-          onDismiss={() => {}}
-          transferredValue={transferredValue}
-          texts={texts}
-          progress1={28}
-          timer={3601}
-          isErrorNetwork1
-          isErrorNetwork2
-          progress2={20}
-          textsProgress2={textsProgress2}
-          textsProgress1={textsProgress1}
-          addTokenHandler={() => {}}
-          stepsText={stepsText}
-          gasPriceTextNetwork1={gasPriceTextNetwork1}
-          gasPriceTextNetwork2={gasPriceTextNetwork2}
-          isLoadGasNetwork2
-          isLoadGasNetwork1
-          isLoadTimeNetwork={false}
-        />
-      </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

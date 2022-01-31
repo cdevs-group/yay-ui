@@ -133,7 +133,7 @@ const LinkItem = styled(Text)<{ colorTheme?: string }>`
       height: 2px;
       content: "";
       position: absolute;
-      background: ${({ colorTheme }) => colorTheme || "#4be43e"};
+      background: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
       transition: all.3s;
       opacity: 0;
     }
