@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Meta } from "@storybook/react/types-6-0";
 import Text from "../Text/Text";
 import Input from "./Input";
+import InputWithArea from "./InputWithArea";
 import { scales } from "./types";
 
 const Row = styled.div`
@@ -36,6 +37,14 @@ export const Default: React.FC = () => {
           </Row>
         </>
       ))}
+      <InputWithArea
+        placeholder="input with area"
+        name="InputWithArea"
+        value=""
+        title="Title InputWithArea"
+        onChange={() => null}
+        inputError="Error"
+      />
     </div>
   );
 };

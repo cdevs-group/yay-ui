@@ -1,5 +1,5 @@
 import React, { ElementType } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
 import { BaseToggle } from "../../../components/Toggle";
@@ -8,7 +8,6 @@ import { IGODetailProgressCardProps } from "../types";
 import TextWithTooltip from "./components/TextWithTooltip";
 import SlotSummary from "./components/SlotSummary";
 import ProgressRange2 from "./components/ProgressRange2";
-import { baseColors } from "../../../theme/colors";
 import { Button, ButtonProps } from "../../../components/Button";
 import { TimerNotSolidWithoutBg } from "../../..";
 
@@ -36,7 +35,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
   hrefYAYBuy,
 }) => {
   const buttonsList = [buttonLeft, buttonCenter, buttonRight];
-
+  const theme = useTheme();
   return (
     <Card>
       <FlexTop>
@@ -94,7 +93,7 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
       </Grid>
       {balanceError ? (
         <Flex alignItems="center" justifyContent="center" mb={10}>
-          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.darkPink}>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color="darkPink">
             {texts.error}
           </Text>
           <BuyYAYButton
@@ -103,17 +102,17 @@ const IGODetailProgressCard: React.FC<IGODetailProgressCardProps> = ({
             target="_blank"
             fontSize="13px"
             style={{ textsDecoration: "underline", opacity: 0.5 }}
-            color={baseColors.green}
+            color={theme.colors.green}
           >
             {texts.buyYAY}
           </BuyYAYButton>
         </Flex>
       ) : (
         <Flex justifyContent="center" mb={10}>
-          <Text color={baseColors.textGray} style={{ opacity: 0.5 }} fontSize="13px" marginRight="10px">
+          <Text color="textGray" style={{ opacity: 0.5 }} fontSize="13px" marginRight="10px">
             {texts.balance}
           </Text>
-          <Text fontSize="13px" style={{ opacity: 0.5 }} color={baseColors.textGray}>
+          <Text fontSize="13px" style={{ opacity: 0.5 }} color="textGray">
             {balance}
           </Text>
         </Flex>

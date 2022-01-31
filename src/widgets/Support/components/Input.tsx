@@ -2,7 +2,6 @@ import React from "react";
 import { Wrapper, TitleStyle } from "./styles";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
-import { baseColors } from "../../../theme/colors";
 
 const Input = ({
   title,
@@ -30,7 +29,7 @@ const Input = ({
         <>
           <InputArea name={name} value={value} onChange={onChange} placeholder={placeholder} />
           {inputError && (
-            <TextStyle color={baseColors.darkPink} fontSize="13px">
+            <TextStyle color="darkPink" fontSize="13px">
               {inputError}
             </TextStyle>
           )}
@@ -39,7 +38,7 @@ const Input = ({
         <>
           <InputBlock name={name} value={value} onChange={onChange} placeholder={placeholder} />
           {inputError && (
-            <TextStyle color={baseColors.darkPink} fontSize="13px">
+            <TextStyle color="darkPink" fontSize="13px">
               {inputError}
             </TextStyle>
           )}

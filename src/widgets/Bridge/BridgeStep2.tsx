@@ -8,7 +8,6 @@ import { BridgeStep2Props, NoticeBridgeType } from "./types";
 import ProgressSteps from "../../components/Progress/ProgressSteps";
 import ProgressRange from "../../components/Progress/ProgressRange";
 import { Loader } from "../../components/Loader";
-import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
 import { Flex } from "../../components/Box";
 
@@ -100,11 +99,11 @@ const BridgeStep2 = ({
         </TopLineBlock>
         <BodyBlock>
           <HeadLine>
-            <TitleDesk size="sm" fontWeight="400" color={baseColors.textGray}>
+            <TitleDesk size="sm" fontWeight="400" color="textGray">
               {texts.network}
             </TitleDesk>
             <Flex flexDirection="column">
-              <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+              <Text textAlign="center" fontWeight="400" size="sm" color="textGray">
                 {texts.timer}
               </Text>
               <TimerWrap>
@@ -118,7 +117,7 @@ const BridgeStep2 = ({
                 />
               </TimerWrap>
             </Flex>
-            <TitleDesk textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+            <TitleDesk textAlign="center" fontWeight="400" size="sm" color="textGray">
               {texts.coast}
             </TitleDesk>
           </HeadLine>
@@ -146,7 +145,7 @@ const BridgeStep2 = ({
                   <Text size="sm" paddingTop="21px">
                     {gasPriceTextNetwork1?.value}
                   </Text>
-                  <Text size="xs" color={baseColors.textGray}>
+                  <Text size="xs" color="textGray">
                     {gasPriceTextNetwork1?.fiat}
                   </Text>
                 </>
@@ -171,7 +170,7 @@ const BridgeStep2 = ({
                   <Text size="sm" paddingTop="21px">
                     {gasPriceTextNetwork2?.value}
                   </Text>
-                  <Text size="xs" color={baseColors.textGray}>
+                  <Text size="xs" color="textGray">
                     {gasPriceTextNetwork2?.fiat}
                   </Text>
                 </>

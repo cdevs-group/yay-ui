@@ -6,7 +6,6 @@ import DropdownLayout from "../DropDown/DropDown";
 import { Text } from "../Text";
 import { CheckIcon2 } from "../Svg";
 import { Flex } from "../Box";
-import { baseColors } from "../../theme/colors";
 
 export interface SelectProps extends SpaceProps, LayoutProps {
   selectItem: ReactNode;
@@ -70,7 +69,7 @@ const Select = ({
                 />
                 <Item {...propsOption}>
                   <Text>{el.name}</Text>
-                  <CheckIcon2 color={baseColors.purple} />
+                  <CheckIcon2 />
                 </Item>
               </Option>
             ))}

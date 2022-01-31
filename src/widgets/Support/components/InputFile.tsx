@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { TitleStyle, Wrapper } from "./styles";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
-import { baseColors } from "../../../theme/colors";
 import { CloudIcon } from "../../../components/Svg";
 
 const InputFile = ({
@@ -50,7 +49,7 @@ const InputFile = ({
         </Icon>
       </InputWrapper>
       {inputError && (
-        <TextStyleError color={baseColors.darkPink} fontSize="13px">
+        <TextStyleError color="darkPink" fontSize="13px">
           {inputError}
         </TextStyleError>
       )}

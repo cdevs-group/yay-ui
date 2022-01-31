@@ -5,7 +5,6 @@ import { Text } from "../../../components/Text";
 import styled from "styled-components";
 import TabsSmall from "../../../components/Tabs/TabsSmall";
 import { Button } from "../../../components/Button";
-import { baseColors } from "../../../theme/colors";
 import { Flex } from "../../../components/Box";
 
 const LobbyCreatModal = ({
@@ -20,6 +19,7 @@ const LobbyCreatModal = ({
   balance,
   isError,
 }: LobbyCreatModalProps) => {
+
   return (
     <Modal title={texts.title} onDismiss={onDismiss}>
       <Content>
@@ -27,11 +27,11 @@ const LobbyCreatModal = ({
         <TabsSmall tabValue={activeTab} tabsList={tabsList} onClick={toggleTab} />
         <BalanceBlock>
           {isError ? (
-            <Text color={baseColors.darkPink}>{texts.error}</Text>
+            <Text color="darkPink">{texts.error}</Text>
           ) : (
             <Flex>
               <Text mr="10px">{texts.balance}</Text>
-              <Text color={baseColors.green}>{balance}</Text>
+              <Text color="green">{balance}</Text>
             </Flex>
           )}
         </BalanceBlock>

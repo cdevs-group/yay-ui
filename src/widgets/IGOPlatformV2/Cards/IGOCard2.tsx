@@ -1,11 +1,8 @@
 import React from "react";
 import { IGOCardV2Props, StatusType } from "../types";
-import styled from "styled-components";
-import { Text } from "../../../components/Text";
-import { Flex } from "../../../components/Box";
+import styled, { useTheme } from "styled-components";
 import { Button } from "../../../components/Button";
 import NetworksTabs from "../../IGOPlatform/Cards/components/NetworksTabs";
-import { baseColors } from "../../../theme/colors";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import {
   HeadLine,
@@ -48,6 +45,7 @@ const IGOCardV2 = ({
   isLottery,
   holdersRound,
 }: IGOCardV2Props) => {
+  const theme = useTheme();
   return (
     <Wrapper>
       <HeadLine>
@@ -104,7 +102,7 @@ const IGOCardV2 = ({
               fontSize="15px"
               height="fit-content"
               time={time}
-              color={baseColors.green}
+              color={theme.colors.green}
             />
           </>
         )}

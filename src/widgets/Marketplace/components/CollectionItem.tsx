@@ -17,7 +17,7 @@ const CollectionItem = ({
       {!isLoading && (
         <>
           {data.index && (
-            <Text marginRight="15px" fontSize="17px" color={baseColors.textGray}>
+            <Text marginRight="15px" fontSize="17px" color="textGray">
               {data.index}
             </Text>
           )}
@@ -25,11 +25,11 @@ const CollectionItem = ({
             <img src={data.img} alt="logo" />
           </Logo>
           <div>
-            <Text fontSize="17px" color={lightColors.text}>
+            <Text fontSize="17px" color="text">
               {data.name}
             </Text>
             {data.price && (
-              <Text fontSize="13px" color={baseColors.textGray}>
+              <Text fontSize="13px" color="textGray">
                 {data.price}
               </Text>
             )}

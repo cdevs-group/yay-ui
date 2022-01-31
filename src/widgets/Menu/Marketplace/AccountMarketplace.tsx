@@ -23,7 +23,6 @@ import { CopyToClipboard } from "../../../components/CopyToClipboard";
 import { LabelTop } from "../../../components/LabelTop";
 import { Link } from "react-router-dom";
 import { connectorLocalStorageKey } from "../../WalletModal";
-import { baseColors } from "../../../theme/colors";
 
 interface Props {
   account?: string;

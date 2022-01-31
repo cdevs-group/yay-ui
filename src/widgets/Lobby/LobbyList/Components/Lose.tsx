@@ -1,12 +1,11 @@
 import React from "react";
 import { LoseBlock, TextStyle } from "../styles";
-import { baseColors } from "../../../../theme/colors";
 import { LOSE } from "../../../../constants/images";
 
 const Lose = ({ title }: LoseInterface) => {
   return (
     <LoseBlock>
-      <TextStyle mt="10px" textAlign="center" color={baseColors.textGray} textTransform="uppercase">
+      <TextStyle mt="10px" textAlign="center" color="textGray" textTransform="uppercase">
         {title}
       </TextStyle>
       <img src={LOSE} />

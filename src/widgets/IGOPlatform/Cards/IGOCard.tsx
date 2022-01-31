@@ -10,7 +10,6 @@ import BlurBlock from "./components/BlurBlock";
 import Progress from "./components/Progress";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
 import TextWithTooltip from "./components/TextWithTooltip";
-import { baseColors, lightColors } from "../../../theme/colors";
 
 const IGOCard = ({
   status,

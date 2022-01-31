@@ -5,7 +5,6 @@ import { RowBetween, RowFixed } from "../../../components/Layouts/Row";
 import { SwapModalHeaderProps } from "../types";
 import { SwapShowAcceptChanges } from "./styleds";
 import styled from "styled-components";
-import { baseColors } from "../../../theme/colors";
 
 const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
   recipient,
@@ -49,7 +48,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
         <SwapShowAcceptChanges justify="flex-start" gap="0px">
           <RowBetween>
             <RowFixed>
-              <Text color={baseColors.green} fontWeight="500">
+              <Text color="green" fontWeight="500">
                 {texts.priceUpdated}
               </Text>
             </RowFixed>
@@ -59,7 +58,7 @@ const SwapModalHeader: React.FC<SwapModalHeaderProps> = ({
           </RowBetween>
         </SwapShowAcceptChanges>
       ) : null}
-      <Text mt="28px" fontSize="13px" color={baseColors.textGray}>
+      <Text mt="28px" fontSize="13px" color="textGray">
         {outputEstimates}
       </Text>
       {recipient !== null ? (

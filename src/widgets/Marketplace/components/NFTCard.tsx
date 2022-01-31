@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { ICardProps } from "./types";
-import { Text, NFTShareIcon, StarIcon, Flex, lightColors } from "../../..";
+import { Text, NFTShareIcon, StarIcon, Flex } from "../../..";
 import Likes from "./Likes";
 import { CardHover, CardWrapper } from "../styled";
 import { Skeleton } from "../../../components/Skeleton";
-import { baseColors } from "../../../theme/colors";
 
 const NFTCard: React.FC<ICardProps> = ({
   title,
@@ -61,7 +60,7 @@ const NFTCard: React.FC<ICardProps> = ({
                   </Text>
                 )}
                 {assets && (
-                  <Text color={lightColors.whiteRgba2} fontSize="15px">
+                  <Text color="whiteRgba2" fontSize="15px">
                     {assets}
                   </Text>
                 )}

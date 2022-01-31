@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../Text";
-import { baseColors } from "../../theme/colors";
-import { fontSize } from "styled-system";
 
 const Input = ({
   title,
@@ -32,7 +30,7 @@ const Input = ({
         <>
           <InputArea name={name} value={value} onChange={onChange} placeholder={placeholder} />
           {inputError && (
-            <TextStyle color={baseColors.darkPink} fontSize="13px">
+            <TextStyle color="darkPink" fontSize="13px">
               {inputError}
             </TextStyle>
           )}
@@ -41,7 +39,7 @@ const Input = ({
         <>
           <InputBlock fontSize={fontSize} name={name} value={value} onChange={onChange} placeholder={placeholder} />
           {inputError && (
-            <TextStyle color={baseColors.darkPink} fontSize="13px">
+            <TextStyle color="darkPink" fontSize="13px">
               {inputError}
             </TextStyle>
           )}

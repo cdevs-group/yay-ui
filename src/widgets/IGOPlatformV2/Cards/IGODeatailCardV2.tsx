@@ -17,7 +17,7 @@ import {
   NetworkBlock,
 } from "./styles";
 import { IGODetailCardV2Props } from "../types";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ArrowLeft } from "../../../components/Svg";
 import { Text } from "../../../components/Text";
 import { Button, ButtonProps } from "../../../components/Button";
@@ -25,7 +25,6 @@ import CopyButton from "../../IGOPlatform/Cards/components/CopyButton";
 import { ellipsis } from "../../../helpers/ellipsis";
 import NetworksTabs from "../../IGOPlatform/Cards/components/NetworksTabs";
 import TimerNotSolidWithoutBg from "../../../components/Timer/TimerNotSolidWithoutBg";
-import { baseColors } from "../../../theme/colors";
 
 const IGODetailCardV2 = ({
   token,
@@ -46,7 +45,7 @@ const IGODetailCardV2 = ({
   isLottery,
 }: IGODetailCardV2Props) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
-
+  const theme = useTheme();
   return (
     <CardFlex>
       <div>
@@ -86,7 +85,7 @@ const IGODetailCardV2 = ({
               fontSize="15px"
               height="fit-content"
               time={time}
-              color={baseColors.green}
+              color={theme.colors.green}
             />
           </TimerBlock>
         )}
