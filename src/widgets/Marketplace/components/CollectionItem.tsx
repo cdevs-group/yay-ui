@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../../components/Text";
 import { Flex } from "../../../components/Box";
-import { baseColors, lightColors } from "../../../theme/colors";
 import { Skeleton } from "../../..";
 
 const CollectionItem = ({

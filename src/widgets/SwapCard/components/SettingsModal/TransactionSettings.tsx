@@ -4,7 +4,7 @@ import { Text } from "../../../../components/Text";
 import InputSearch from "../../../../components/InputSearch/InputSearch";
 import { TextStyle, TabsWrapBlock, Tab, InputWrap } from "./styles";
 import { IText } from "./types";
-import { baseColors } from "../../../../theme/colors";
+import { useTheme } from "styled-components";
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`);
 
@@ -33,6 +33,7 @@ const TransactionSettings = ({
   slippageInput: any;
   handleSlippageInput: any;
 }) => {
+  const theme = useTheme()
   const parseCustomSlippage = (value: string) => {
     if (value === "" || inputRegex.test(escapeRegExp(value))) {
       handleSlippageInput(value);
@@ -71,7 +72,7 @@ const TransactionSettings = ({
           <TabsWrapBlock width="100%" length={3}>
             <Tab
               fontSize="13px"
-              colorActive={baseColors.green}
+              colorActive={theme.colors.green}
               paddingTabs="7px"
               className={activeTabSlippage === 10 ? "active" : ""}
               value={10}
@@ -84,7 +85,7 @@ const TransactionSettings = ({
             </Tab>
             <Tab
               fontSize="13px"
-              colorActive={baseColors.green}
+              colorActive={theme.colors.green}
               paddingTabs="7px"
               className={activeTabSlippage === 50 ? "active" : ""}
               value={50}
@@ -97,7 +98,7 @@ const TransactionSettings = ({
             </Tab>
             <Tab
               fontSize="13px"
-              colorActive={baseColors.green}
+              colorActive={theme.colors.green}
               paddingTabs="7px"
               className={activeTabSlippage === 100 ? "active" : ""}
               value={100}
@@ -130,7 +131,7 @@ const TransactionSettings = ({
                   %
                 </Text>
               }
-              background={baseColors.bgOpacity}
+              background={theme.colors.bgOpacity}
               borderRadius="9px"
             />
           </InputWrap>
@@ -162,7 +163,7 @@ const TransactionSettings = ({
                   min
                 </Text>
               }
-              background={baseColors.bgOpacity}
+              background={theme.colors.bgOpacity}
               borderRadius="9px"
             />
           </Box>
