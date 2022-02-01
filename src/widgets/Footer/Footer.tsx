@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes, useTheme } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
@@ -65,7 +65,7 @@ const Footer = ({
               iconLess
               width="100%"
               name="email"
-              backgroundColor={baseColors.whiteRgba3}
+              backgroundColor="whiteRgba3"
               disabled={disabledInput}
             />
             <Button
@@ -120,7 +120,6 @@ const Wrapper = styled.div``;
 const StayBlock = styled(Flex)`
   flex-direction: column;
   align-items: center;
-
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
     align-items: flex-end;
@@ -129,7 +128,6 @@ const StayBlock = styled(Flex)`
 const SignUpBlock = styled(Box)`
   text-align: center;
   width: 100%;
-
   ${({ theme }) => theme.mediaQueries.md} {
     margin-right: 20px;
     text-align: left;
@@ -143,15 +141,12 @@ const InputBlock = styled(Flex)`
   & input:disabled {
     opacity: 0.3;
   }
-
   & button {
     width: 100%;
     margin-top: 20px;
   }
-
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
-
     & button {
       margin-top: 0;
       width: 100%;
@@ -159,7 +154,6 @@ const InputBlock = styled(Flex)`
       margin-left: 20px;
     }
   }
-
   ${({ theme }) => theme.mediaQueries.md} {
     & button {
       margin-right: 20px;
@@ -171,15 +165,12 @@ const BuyBlock = styled(Flex)`
   width: 100%;
   margin-top: 50px;
   flex-direction: column;
-
   & button {
     width: 100%;
     margin-top: 20px;
   }
-
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
-
     & button {
       margin-top: 0;
       width: 100%;
@@ -187,12 +178,10 @@ const BuyBlock = styled(Flex)`
       margin-left: 20px;
     }
   }
-
   ${({ theme }) => theme.mediaQueries.md} {
     width: 50%;
     margin-left: 20px;
     margin-top: 0;
-
     & button {
       margin-left: 40px;
       max-width: 170px;
@@ -205,7 +194,6 @@ const MainLine = styled(Flex)`
   justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.whiteRgba};
   flex-wrap: wrap;
-
   ${({ theme }) => theme.mediaQueries.md} {
     flex-wrap: nowrap;
   }
@@ -214,7 +202,6 @@ const Column = styled(Box)`
   width: 100%;
   text-align: center;
   margin-top: 30px;
-
   ${({ theme }) => theme.mediaQueries.xs} {
     width: auto;
     text-align: left;
@@ -225,7 +212,6 @@ const ColumnDescription = styled(Box)`
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
-
   ${({ theme }) => theme.mediaQueries.md} {
     width: auto;
     max-width: 293px;
@@ -236,7 +222,6 @@ const ColumnDescription = styled(Box)`
 const ColumnSocial = styled(Box)`
   width: 100%;
   margin-top: 40px;
-
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     margin-top: 0;
@@ -249,7 +234,6 @@ const Description = styled(Text)`
   line-height: 24px;
   text-align: center;
   color: ${({ theme }) => theme.colors.textGray};
-
   ${({ theme }) => theme.mediaQueries.md} {
     text-align: left;
   }
@@ -267,7 +251,6 @@ const svgAnimation = keyframes`
 const Icon = styled.div`
   position: relative;
   margin: 0 auto;
-
   & svg {
     position: relative;
     z-index: 2;
@@ -276,13 +259,11 @@ const Icon = styled.div`
     stroke-dasharray: 0;
     animation: ${svgAnimation} 3s infinite;
   }
-
   ${({ theme }) => theme.mediaQueries.sm} {
     & svg {
       top: 15px;
     }
   }
-
   ${({ theme }) => theme.mediaQueries.md} {
     margin: 0;
   }
@@ -292,12 +273,10 @@ const IconBg = styled.div`
   left: 0;
   z-index: 1;
   top: 0;
-
   & img {
     position: relative;
     top: 0;
   }
-
   ${({ theme }) => theme.mediaQueries.sm} {
     & img {
       top: 15px;

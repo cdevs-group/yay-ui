@@ -29,6 +29,7 @@ interface IProps {
     price: string;
     count: string;
   };
+  error?: string;
 }
 
 const OrderModal = ({
@@ -41,6 +42,7 @@ const OrderModal = ({
   handleClick,
   buttonProps,
   handleInput,
+  error,
 }: IProps) => {
   return (
     <Wrapper>
@@ -60,15 +62,18 @@ const OrderModal = ({
         />
       </Box>
       {count && (
-        <Box mt={20}>
-          <SimpleInput
-            onChange={handleInput}
-            name="count"
-            value={inputValues.count}
-            placeholder={texts.placeholder2}
-            title={texts.titleInput2}
-          />
-        </Box>
+        <>
+          <Box mt={20}>
+            <SimpleInput
+              onChange={handleInput}
+              name="count"
+              value={inputValues.count}
+              placeholder={texts.placeholder2}
+              title={texts.titleInput2}
+            />
+          </Box>
+          {error && <TextError>{error}</TextError>}
+        </>
       )}
       <Flex justifyContent="space-between" mt={20}>
         <Text color="#A3A3A3">{texts.fee}</Text>
@@ -117,4 +122,11 @@ const ButtonClose = styled(Button)`
   position: absolute;
   right: 10px;
   top: 15px;
+`;
+const TextError = styled(Text)`
+  position: absolute;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+  color: ${({ theme }) => theme.colors.redBg};
 `;
