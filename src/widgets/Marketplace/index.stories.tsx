@@ -198,6 +198,7 @@ export const OrderModalBlock = () => {
           handleClick={() => console.log("a")}
           handleInput={handleInput}
           inputValues={inputState}
+          error="Мало нфт"
         />
       </Modal>
     </>
