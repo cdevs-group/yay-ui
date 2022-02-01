@@ -14,7 +14,23 @@ export const Wallet: React.FC = () => {
     () => null,
     { title: "Your wallet", copy: "Copy", button: "Logout", view: "View on BscScan", copied: "copied" },
     { title: "Сonnect wallet", link: "Learn how connect" },
-    "0x88259603-2f58ee92039d357307e325"
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    'blue'
+
   );
   return (
     <Flex>
