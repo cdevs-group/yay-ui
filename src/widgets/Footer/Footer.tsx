@@ -40,22 +40,6 @@ const Footer = ({
   colorTheme?: string;
   logoImg?: string;
 }) => {
-  const [imgBgGraphics, setImgBgGraphics] = useState(BG_LINE);
-  const theme = useTheme();
-
-  const getImgGraphicBg = (theme: string) => {
-    let img;
-    switch (theme) {
-      case theme === "purple":
-        return (img = BG_LINE_PURPLE);
-      default:
-        return (img = BG_LINE);
-    }
-    console.log(img, "img");
-    setImgBgGraphics(img);
-  };
-
-  getImgGraphicBg(theme.name);
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
