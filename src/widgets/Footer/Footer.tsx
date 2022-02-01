@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes, useTheme } from "styled-components";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
@@ -40,8 +40,22 @@ const Footer = ({
   colorTheme?: string;
   logoImg?: string;
 }) => {
+  const [imgBgGraphics, setImgBgGraphics] = useState(BG_LINE);
   const theme = useTheme();
 
+  const getImgGraphicBg = (theme: string) => {
+    let img;
+    switch (theme) {
+      case theme === "purple":
+        return (img = BG_LINE_PURPLE);
+      default:
+        return (img = BG_LINE);
+    }
+    console.log(img, "img");
+    setImgBgGraphics(img);
+  };
+
+  getImgGraphicBg(theme.name);
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
@@ -73,10 +87,9 @@ const Footer = ({
           <Icon>
             <LineIcon fill={colorTheme || theme.colors.green} />
             <IconBg>
-              <img src={colorTheme ? BG_LINE_PURPLE : BG_LINE} />
+              <img src={imgBgGraphics} />
             </IconBg>
           </Icon>
-
           <Button variant={colorTheme ? "purple" : "green"} onClick={handleBuy} width="100%">
             {texts.buyYAY}
           </Button>
