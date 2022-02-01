@@ -73,7 +73,8 @@ const useWalletModal = (
   marginContent?: string,
   minHeight?: string,
   buttonLogoutType?: Variant,
-  linkExternalWalletModal?: string
+  linkExternalWalletModal?: string,
+  hrefLearnHowColorTheme?: string,
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {
@@ -107,7 +108,7 @@ const useWalletModal = (
   };
 
   const [onPresentConnectModal] = useModal(
-    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
+    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} colorTheme={hrefLearnHowColorTheme} />
   );
   const [onPresentAccountModal] = useModal(pageModal());
 
