@@ -29,8 +29,7 @@ export const Wallet: React.FC = () => {
     undefined,
     undefined,
     undefined,
-    'blue'
-
+    "blue"
   );
   return (
     <Flex>

@@ -7018,7 +7018,7 @@ var useWalletHistoryModal = function () {
     return { onPresentWalletHistoryModal: onPresentWalletHistoryModal };
 };
 
-var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType, linkExternalWalletModal) {
+var useWalletModal = function (login, logout, textsAccount, textsConnect, network, account, hrefLearnHow, vesting, yayBalance, dataTransactions, handleClaimed, bridge, textsBridge, transactionsList, handleAddToken, marginContent, minHeight, buttonLogoutType, linkExternalWalletModal, hrefLearnHowColorTheme) {
     var pageModal = function () {
         if (vesting) {
             return (React__default.createElement(AccountVestingModal, { texts: textsAccount, account: account || "", logout: logout, yayBalance: yayBalance, dataTransactions: dataTransactions, handleClaimed: handleClaimed, handleAddToken: handleAddToken, marginContent: marginContent, minHeight: minHeight, buttonLogoutType: buttonLogoutType, linkExternalWalletModal: linkExternalWalletModal }));
@@ -7030,7 +7030,7 @@ var useWalletModal = function (login, logout, textsAccount, textsConnect, networ
             return React__default.createElement(AccountModal, { texts: textsAccount, account: account || "", logout: logout });
         }
     };
-    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network }))[0];
+    var onPresentConnectModal = useModal(React__default.createElement(ConnectModal, { texts: textsConnect, login: login, hrefLearnHow: hrefLearnHow, network: network, colorTheme: hrefLearnHowColorTheme }))[0];
     var onPresentAccountModal = useModal(pageModal())[0];
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
