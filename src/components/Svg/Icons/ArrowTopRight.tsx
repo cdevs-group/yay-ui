@@ -25,7 +25,7 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>        
+        </filter>
       </defs>
     </Svg>
   );

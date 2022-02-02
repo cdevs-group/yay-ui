@@ -14,7 +14,6 @@ interface Props {
     funds: Funds[];
     heightDisclaimer?: number;
     linksViews?: NavMarketplaceLinksViewsProps[];
-    colorTheme?: string;
 }
 declare const AccountMarketplace: React.FC<Props>;
 export default AccountMarketplace;

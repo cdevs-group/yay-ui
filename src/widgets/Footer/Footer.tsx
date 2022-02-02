@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
@@ -68,12 +68,7 @@ const Footer = ({
               backgroundColor="whiteRgba3"
               disabled={disabledInput}
             />
-            <Button
-              variant="green"
-              onClick={handleSignIn}
-              width="100%"
-              disabled={disabledSignUp}
-            >
+            <Button variant="green" onClick={handleSignIn} width="100%" disabled={disabledSignUp}>
               {texts.signUp}
             </Button>
           </InputBlock>

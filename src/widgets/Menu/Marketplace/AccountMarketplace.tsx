@@ -52,12 +52,7 @@ const AccountMarketplace: React.FC<Props> = ({
   linksViews,
 }) => {
   const [onPresentConnectModal] = useModal(
-    <ConnectModal
-      texts={textsConnect}
-      login={login}
-      hrefLearnHow={hrefLearnHow}
-      network={network}
-    />
+    <ConnectModal texts={textsConnect} login={login} hrefLearnHow={hrefLearnHow} network={network} />
   );
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const [openFunds, setOpenFunds] = useState<boolean>(false);
@@ -100,9 +95,7 @@ const AccountMarketplace: React.FC<Props> = ({
     const Item = () => (
       <Flex alignItems="center" marginBottom={comingSoon ? 0 : 20}>
         {icon}
-        <TextLinkUser badge={notice}>
-          {text}
-        </TextLinkUser>
+        <TextLinkUser badge={notice}>{text}</TextLinkUser>
       </Flex>
     );
 
@@ -160,9 +153,7 @@ const AccountMarketplace: React.FC<Props> = ({
             open={openDropdown}
             setOpen={setOpenDropdown}
             icon={
-              <Wrapper
-                badge={linksViews?.reduce((sum, current) => sum + (Number(current?.notice) || 0), 0)}
-              >
+              <Wrapper badge={linksViews?.reduce((sum, current) => sum + (Number(current?.notice) || 0), 0)}>
                 <WalletIcon />
               </Wrapper>
             }
@@ -266,7 +257,8 @@ const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string }>`
   cursor: pointer;
   order: -1;
   & path {
-    fill: ${({ theme, notAuth }) => (notAuth ? theme.colors.text : theme.colors.green)};  }
+    fill: ${({ theme, notAuth }) => (notAuth ? theme.colors.text : theme.colors.green)};
+  }
   &:after {
     content: ${({ badge }) => `"${badge && badge > 99 ? "99+" : badge}"`};
     position: absolute;

@@ -28,7 +28,7 @@ export declare const styleVariants: (theme: any) => {
         border: string;
         boxShadow: string;
         borderRadius: number;
-        color: string;
+        color: any;
         ":disabled": {
             backgroundColor: string;
         };
@@ -52,7 +52,7 @@ export declare const styleVariants: (theme: any) => {
     };
     text: {
         backgroundColor: string;
-        color: string;
+        color: any;
         boxShadow: string;
     };
     green: {
@@ -87,17 +87,17 @@ export declare const styleVariants: (theme: any) => {
     };
     white: {
         background: string;
-        color: string;
+        color: any;
         boxShadow: string;
     };
     "load-color": {
         backgroundColor: string;
-        color: string;
+        color: any;
         boxShadow: string;
         opacity: string;
     };
     purple: {
-        background: string;
+        background: any;
         color: string;
         boxShadow: string;
     };

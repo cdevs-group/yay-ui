@@ -19,7 +19,6 @@ const LobbyCreatModal = ({
   balance,
   isError,
 }: LobbyCreatModalProps) => {
-
   return (
     <Modal title={texts.title} onDismiss={onDismiss}>
       <Content>

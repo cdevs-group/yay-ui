@@ -4,7 +4,7 @@ import { Text } from "../Text";
 import { ProgressStepsProps } from "./types";
 
 const ProgressSteps = ({ isError, texts, progress }: ProgressStepsProps) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <ProgressWrap>
       <Title>

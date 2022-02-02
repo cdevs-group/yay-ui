@@ -33,7 +33,7 @@ const TransactionSettings = ({
   slippageInput: any;
   handleSlippageInput: any;
 }) => {
-  const theme = useTheme()
+  const theme = useTheme();
   const parseCustomSlippage = (value: string) => {
     if (value === "" || inputRegex.test(escapeRegExp(value))) {
       handleSlippageInput(value);

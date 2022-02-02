@@ -60,9 +60,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
 
   return (
     <HeaderWrap ref={refSelect}>
-      {disclaimer ? (
-        <Disclaimer text={disclaimerText || ""} setHeight={setHeightDisclaimer} />
-      ) : null}
+      {disclaimer ? <Disclaimer text={disclaimerText || ""} setHeight={setHeightDisclaimer} /> : null}
       <Content>
         <Line>
           <LogoWrap to={linkLogo}>

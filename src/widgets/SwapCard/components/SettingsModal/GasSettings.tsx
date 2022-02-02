@@ -14,7 +14,7 @@ const GasSettings = ({
   setGasPrice: (cur: number) => void;
   gasTabs: string[];
 }) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Flex flexDirection="column">
       <Flex mb="12px" alignItems="center">

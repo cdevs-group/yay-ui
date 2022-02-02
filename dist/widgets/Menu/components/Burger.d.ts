@@ -1,7 +1,6 @@
 /// <reference types="react" />
-declare const Burger: ({ open, onClick, colorTheme }: {
+declare const Burger: ({ open, onClick }: {
     open: boolean;
     onClick: () => void;
-    colorTheme?: string | undefined;
 }) => JSX.Element;
 export default Burger;

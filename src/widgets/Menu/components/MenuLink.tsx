@@ -49,12 +49,7 @@ const MenuLink = ({
       >
         <Dropdown open={openDropdown} variant={variant}>
           {submenu?.map((el, i) => (
-            <MenuLink
-              {...el}
-              key={i}
-              setOpenMenu={setOpenMenu}
-              setOpenDropdown={setOpenDropdown}
-            />
+            <MenuLink {...el} key={i} setOpenMenu={setOpenMenu} setOpenDropdown={setOpenDropdown} />
           ))}
         </Dropdown>
       </DropdownLayout>
@@ -64,9 +59,7 @@ const MenuLink = ({
   if (comingSoon)
     return (
       <CominSoonWrapper>
-        <LabelTop label={comingSoon}>
-          {name}
-        </LabelTop>
+        <LabelTop label={comingSoon}>{name}</LabelTop>
       </CominSoonWrapper>
     );
 

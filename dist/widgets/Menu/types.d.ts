@@ -19,7 +19,6 @@ export interface LinkHeaderProps {
     setOpenDropdown?: (val: boolean) => void | undefined;
     variant?: VariantDropdown;
     comingSoon?: string;
-    colorTheme?: string;
 }
 export interface AccProps {
     isAuth: boolean;
@@ -166,7 +165,6 @@ export interface NavMarketplaceProps extends PanelProps {
     totalBalance: string;
     funds: Funds[];
     linksViews?: NavMarketplaceLinksViewsProps[];
-    colorTheme?: string;
     logoImg?: string;
 }
 export interface NavMarketplaceLinksViewsProps {

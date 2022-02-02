@@ -59,6 +59,7 @@ export declare type Colors = {
     greenGradient2: string;
     greenGradient3: string;
     greenGradient4: string;
+    greenGradient5: string;
     cardBg: string;
     greyText: string;
     greyText2: string;

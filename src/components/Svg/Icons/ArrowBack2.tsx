@@ -4,7 +4,7 @@ import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
   const theme = useTheme();
-  
+
   return (
     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill="white" fill-opacity="0.15" />
