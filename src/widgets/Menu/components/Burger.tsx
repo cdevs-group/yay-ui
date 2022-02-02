@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Burger = ({ open, onClick, colorTheme }: { open: boolean; onClick: () => void; colorTheme?: string }) => {
+const Burger = ({ open, onClick }: { open: boolean; onClick: () => void }) => {
   return (
     <BurgerWrap onClick={onClick} className={open ? "open" : ""}>
       <RoundWrap>
         <BurgerRound1 />
         <BurgerRound2 />
-        <BurgerRound3 colorTheme={colorTheme} />
+        <BurgerRound3 />
         <BurgerRound4 />
       </RoundWrap>
     </BurgerWrap>
@@ -59,11 +59,11 @@ const BurgerRound2 = styled(BurgerRound1)`
   left: calc(50% - 3px);
 `;
 
-const BurgerRound3 = styled(BurgerRound1)<{ colorTheme?: string }>`
+const BurgerRound3 = styled(BurgerRound1)`
   left: auto;
   right: 6px;
   top: calc(50% - 3px);
-  background: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+  background: ${({ theme }) => theme.colors.green};
 `;
 
 const BurgerRound4 = styled(BurgerRound2)`

@@ -6,8 +6,9 @@ import { useState } from "react";
 import { BNB2, LOGO_LOOT, YAY_TOKEN } from "../../../constants/images";
 import { Avalanche } from "../../../constants/images";
 import HeaderMarketplace from "./HeaderMarketplace";
-import { CollectionIcon, FavoritesIcon, UserIcon } from "../../..";
+import { CollectionIcon, FavoritesIcon, purple, UserIcon } from "../../..";
 import { baseColors } from "../../../theme/colors";
+import { ThemeProvider } from "styled-components";
 
 export default {
   title: "Components/Header/HeaderMarketplace",
@@ -155,39 +156,40 @@ export const HeaderForMarketplace = () => {
   ];
 
   return (
-    <BrowserRouter>
-      <div style={{ marginTop: "50px" }}>
-        <HeaderMarketplace
-          logoImg={LOGO_LOOT}
-          colorTheme={baseColors.purple}
-          account="0xbdda50183d817c3289f895a4472eb475967dc980"
-          login={noop}
-          logout={noop}
-          langs={langs}
-          setLang={noop}
-          currentLang="EN"
-          linksViews={links}
-          links={linksSubmenu}
-          profile={{
-            profileLink: "/profile",
-            noProfileLink: "/no-profile",
-          }}
-          textsAccount={textsAccount}
-          textsConnect={textsConnect}
-          linkLogo="/"
-          network={network}
-          handleToggleNetwork={handleToggleNetwork}
-          linkTextNetwork="Learn how connect"
-          linkHrefNetwork="http"
-          titleNetwork="Choose network"
-          listNetwork={NETWORK_CHAIN}
-          hrefLearnHow="http://"
-          totalBalance="$232,001.76"
-          funds={funds}
-          disclaimer
-          disclaimerText="Always make sure the URL is https://www.yay.games/ - Press CTRL+D or CMD+D to bookmark it to be safe. Telegram: https://t.me/yay_games"
-        />
-      </div>
-    </BrowserRouter>
+    <ThemeProvider theme={purple}>
+      <BrowserRouter>
+        <div style={{ marginTop: "50px" }}>
+          <HeaderMarketplace
+            logoImg={LOGO_LOOT}
+            account="0xbdda50183d817c3289f895a4472eb475967dc980"
+            login={noop}
+            logout={noop}
+            langs={langs}
+            setLang={noop}
+            currentLang="EN"
+            linksViews={links}
+            links={linksSubmenu}
+            profile={{
+              profileLink: "/profile",
+              noProfileLink: "/no-profile",
+            }}
+            textsAccount={textsAccount}
+            textsConnect={textsConnect}
+            linkLogo="/"
+            network={network}
+            handleToggleNetwork={handleToggleNetwork}
+            linkTextNetwork="Learn how connect"
+            linkHrefNetwork="http"
+            titleNetwork="Choose network"
+            listNetwork={NETWORK_CHAIN}
+            hrefLearnHow="http://"
+            totalBalance="$232,001.76"
+            funds={funds}
+            disclaimer
+            disclaimerText="Always make sure the URL is https://www.yay.games/ - Press CTRL+D or CMD+D to bookmark it to be safe. Telegram: https://t.me/yay_games"
+          />
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };

@@ -255,7 +255,7 @@ export const purpleColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 
-
+  bgBlackRgba: "#2B2B32",
   boxShadow6: "0px 4px 10px rgba(158, 61, 255, 0.25)",
   boxShadow9: "0px 0px 20px rgba(158, 61, 255, 0.35)",
   boxShadow12: "0px 0px 29px #9E3DFF",
