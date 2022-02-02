@@ -30,6 +30,7 @@ interface IProps {
     count: string;
   };
   error?: string;
+  errorPrice?: string;
 }
 
 const OrderModal = ({
@@ -43,6 +44,7 @@ const OrderModal = ({
   buttonProps,
   handleInput,
   error,
+  errorPrice,
 }: IProps) => {
   return (
     <Wrapper>
@@ -61,6 +63,7 @@ const OrderModal = ({
           name="price"
         />
       </Box>
+      {errorPrice && <TextError>{errorPrice}</TextError>}
       {count && (
         <>
           <Box mt={20}>

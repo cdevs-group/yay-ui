@@ -199,6 +199,7 @@ export const OrderModalBlock = () => {
           handleInput={handleInput}
           inputValues={inputState}
           error="Мало нфт"
+          errorPrice="много цена"
         />
       </Modal>
     </>
