@@ -44,7 +44,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
               {/*  {description}*/}
               {/*</Text>*/}
               <FooterContainer>
-                <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
+                <SeeText onClick={() => onSeeNowClick()} role="button">
                   {textSeeNow}
                 </SeeText>
                 <Flex>
@@ -76,7 +76,7 @@ const NFTCardGames: React.FC<ICardGamesProps> = ({
           </>
         )}
       </Card>
-      {!isLoading && <CardHover colorTheme={color} />}
+      {!isLoading && <CardHover />}
     </CardWrapper>
   );
 };
@@ -152,13 +152,13 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const SeeText = styled(Text)<{ colorTheme?: string }>`
+const SeeText = styled(Text)`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+  color: ${({ theme }) => theme.colors.green};
   cursor: pointer;
 `;
 

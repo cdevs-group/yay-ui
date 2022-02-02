@@ -24,7 +24,6 @@ const Footer = ({
   tokenData,
   disabledInput,
   disabledSignUp,
-  colorTheme,
   logoImg,
 }: {
   valueInput: string;
@@ -38,7 +37,6 @@ const Footer = ({
   socialData: IDataSocial;
   disabledInput?: boolean;
   disabledSignUp?: boolean;
-  colorTheme?: string;
   logoImg?: string;
 }) => {
   const theme = useTheme();

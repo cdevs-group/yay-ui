@@ -74,7 +74,6 @@ const useWalletModal = (
   minHeight?: string,
   buttonLogoutType?: Variant,
   linkExternalWalletModal?: string,
-  hrefLearnHowColorTheme?: string
 ): ReturnType => {
   const pageModal = () => {
     if (vesting) {
@@ -113,7 +112,6 @@ const useWalletModal = (
       login={login}
       hrefLearnHow={hrefLearnHow}
       network={network}
-      colorTheme={hrefLearnHowColorTheme}
     />
   );
   const [onPresentAccountModal] = useModal(pageModal());

@@ -24,7 +24,6 @@ const NFTCard: React.FC<ICardProps> = ({
   onGameClick,
   isLoading,
   assets,
-  color,
 }) => {
   return (
     <CardWrapper>
@@ -66,7 +65,7 @@ const NFTCard: React.FC<ICardProps> = ({
                 )}
               </Flex>
               <FooterContainer>
-                <SeeText colorTheme={color} onClick={() => onSeeNowClick()} role="button">
+                <SeeText onClick={() => onSeeNowClick()} role="button">
                   {description}
                 </SeeText>
                 <Flex>
@@ -104,7 +103,7 @@ const NFTCard: React.FC<ICardProps> = ({
           </>
         )}
       </Card>
-      {!isLoading && <CardHover colorTheme={color} />}
+      {!isLoading && <CardHover />}
     </CardWrapper>
   );
 };
@@ -187,13 +186,13 @@ const FooterContainer = styled(Flex)`
   justify-content: space-between;
 `;
 
-const SeeText = styled(Text)<{ colorTheme?: string }>`
+const SeeText = styled(Text)`
   font-size: 13px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  color: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+  color: ${({ theme }) => theme.colors.green};
   cursor: pointer;
 `;
 
