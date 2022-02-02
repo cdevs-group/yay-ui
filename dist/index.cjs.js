@@ -1405,7 +1405,7 @@ var Button$a = function (props) {
 Button$a.defaultProps = {
     isLoading: false,
     external: false,
-    variant: variants$4.PRIMARY,
+    variant: variants$4.GREEN,
     scale: scales$5.MD,
     disabled: false,
 };

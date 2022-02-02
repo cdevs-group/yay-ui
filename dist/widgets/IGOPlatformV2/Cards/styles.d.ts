@@ -25,7 +25,7 @@ export declare const TokenButton: import("styled-components").StyledComponent<{
     defaultProps: {
         isLoading: boolean;
         external: boolean;
-        variant: "primary";
+        variant: "green";
         scale: "md";
         disabled: boolean;
     };
@@ -39,7 +39,7 @@ export declare const StakeButton: import("styled-components").StyledComponent<{
     defaultProps: {
         isLoading: boolean;
         external: boolean;
-        variant: "primary";
+        variant: "green";
         scale: "md";
         disabled: boolean;
     };
