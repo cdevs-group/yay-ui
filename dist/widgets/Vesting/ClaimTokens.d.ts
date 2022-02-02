@@ -32,7 +32,7 @@ export declare const StyledButton: import("styled-components").StyledComponent<{
     defaultProps: {
         isLoading: boolean;
         external: boolean;
-        variant: "green";
+        variant: "primary";
         scale: "md";
         disabled: boolean;
     };
