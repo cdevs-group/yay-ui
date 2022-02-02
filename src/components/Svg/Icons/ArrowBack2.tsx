@@ -1,14 +1,17 @@
 import React from "react";
+import { useTheme } from "styled-components";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
+  const theme = useTheme();
+  
   return (
     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <rect x="6" y="6" width="30" height="30" rx="7" fill="white" fill-opacity="0.15" />
       <g filter="url(#filter0_d_301_3504)">
         <path
           d="M19.5858 26.6561L13.9289 20.9992M13.9289 20.9992L19.5858 15.3424M13.9289 20.9992H28.0711"
-          stroke="#4BE43E"
+          stroke={theme.colors.green}
           strokeWidth="2"
           strokeLinecap="round"
         />

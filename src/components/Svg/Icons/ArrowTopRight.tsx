@@ -1,11 +1,13 @@
 import React from "react";
+import { useTheme } from "styled-components";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
+  const theme = useTheme();
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "#4BE43E"} />
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || theme.colors.green} />
       <g filter={props.fill || "url(#filter0_dArrowTopRight)"}>
         <path
           d="M19 16H27M27 16V24M27 16L17 26"
@@ -23,12 +25,8 @@ const Icon: React.FC<SvgProps> = (props) => {
           <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-        </filter>
-        <linearGradient id="paint0_linear" x1="21" y1="1.2" x2="21" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#4CEE3E" />
-          <stop offset="1" stopColor="#47DA3B" />
-        </linearGradient>
-      </defs>{" "}
+        </filter>        
+      </defs>
     </Svg>
   );
 };

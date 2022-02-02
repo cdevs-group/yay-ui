@@ -4,7 +4,6 @@ import { Text } from "../../../../components/Text";
 import { Flex } from "../../../../components/Box";
 import { Button } from "../../../../components/Button";
 import { CloseIcon } from "../../../../components/Svg";
-import { baseColors } from "../../../../theme/colors";
 import { BalanceInput } from "../../../../components/BalanceInput";
 import PairSquare from "./PairSquare";
 import TextWithTooltip from "../../../../components/TextWithTooltip/TextWithTooltip";
@@ -79,7 +78,7 @@ const DepositFarmModal = ({
         <Text fontSize="11px">
           {lp} {texts.balance}
         </Text>{" "}
-        <Text fontSize="11px" color={baseColors.green}>
+        <Text fontSize="11px" color="green">
           {balance}
         </Text>
       </Flex>
@@ -103,12 +102,12 @@ const DepositFarmModal = ({
           <Text fontSize="11px">{texts.stake} </Text>
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
         </Flex>
-        <Text color={baseColors.green} fontSize="13px">
+        <Text color="green" fontSize="13px">
           {stakeToken}
           {""}
           {tokenName}
         </Text>
-        <Text textAlign="right" color={baseColors.green} fontSize="13px">
+        <Text textAlign="right" color="green" fontSize="13px">
           {stakeUsd}
         </Text>
       </Row>
@@ -118,12 +117,12 @@ const DepositFarmModal = ({
           <Text fontSize="11px">{texts.daily} </Text>
           <TextWithTooltip textTooltip={texts.dailyTooltip} />
         </Flex>
-        <Text color={baseColors.green} fontSize="13px">
+        <Text color="green" fontSize="13px">
           {dailyToken}
           {""}
           {tokenName}
         </Text>
-        <Text textAlign="right" color={baseColors.green} fontSize="13px">
+        <Text textAlign="right" color="green" fontSize="13px">
           {dailyUsd}
         </Text>
       </Row>
@@ -133,12 +132,12 @@ const DepositFarmModal = ({
           <Text fontSize="11px">{texts.monthly} </Text>
           <TextWithTooltip textTooltip={texts.monthlyTooltip} />
         </Flex>
-        <Text color={baseColors.green} fontSize="13px">
+        <Text color="green" fontSize="13px">
           {monthlyToken}
           {""}
           {tokenName}
         </Text>
-        <Text textAlign="right" color={baseColors.green} fontSize="13px">
+        <Text textAlign="right" color="green" fontSize="13px">
           {monthlyUsd}
         </Text>
       </Row>
@@ -148,12 +147,12 @@ const DepositFarmModal = ({
           <Text fontSize="11px">{texts.yearly} </Text>
           <TextWithTooltip textTooltip={texts.yearlyTooltip} />
         </Flex>
-        <Text color={baseColors.green} fontSize="13px">
+        <Text color="green" fontSize="13px">
           {yearlyToken}
           {""}
           {tokenName}
         </Text>
-        <Text textAlign="right" color={baseColors.green} fontSize="13px">
+        <Text textAlign="right" color="green" fontSize="13px">
           {yearlyUsd}
         </Text>
       </Row>

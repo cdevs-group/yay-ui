@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-import { Text, GreenHollowHeartIcon, GreenFilledHeartIcon, HeartIcon } from "../../..";
+import styled, { useTheme } from "styled-components";
+import { Text, HeartIcon } from "../../..";
 import { CardHover, CardWrapper } from "../styled";
 import { IProfileCardProps } from "./types";
 import { Skeleton } from "../../../components/Skeleton";
@@ -17,6 +17,7 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
   onTitleClick,
   color,
 }) => {
+  const theme = useTheme();
   return (
     <CardWrapper maxWidth={233}>
       <Card>
@@ -29,7 +30,7 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
               {/* <Likes>
           <CenteredContainer>
             <IconWrapper onClick={() => onLike()}>
-              <HeartIcon fill={isLiked ? "#4BE43E" : "none"} stroke="#4BE43E" />
+              <HeartIcon fill={isLiked ? theme.colors.green : "none"} stroke={theme.colors.green} />
             </IconWrapper>
             <LikesText>{likes}</LikesText>
           </CenteredContainer>

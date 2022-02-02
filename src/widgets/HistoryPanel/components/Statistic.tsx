@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Text from "../../../components/Text/Text";
 import { ITextsStatistic } from "../types";
 
@@ -30,6 +30,7 @@ const Statistic = ({
   averagePositionPrice,
   texts,
 }: Props) => {
+  const theme = useTheme();
   return (
     <Wrap>
       <Row>
@@ -44,7 +45,7 @@ const Statistic = ({
       {hasBestRound && (
         <Row>
           <Text>{texts?.best || "Best round"}: </Text>
-          <Best fontSize="13px" textAlign="right" color="#4BE43E">
+          <Best fontSize="13px" textAlign="right" color={theme.colors.green}>
             <Text color="#A3A3A3" fontSize="13px">
               {multiplierBestRound} &nbsp;
             </Text>{" "}

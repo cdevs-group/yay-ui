@@ -10,6 +10,7 @@ import Social from "./components/Social";
 import { LineIcon } from "../../components/Svg";
 import { IText, IDataLinks, IDataSocial } from "./types";
 import { baseColors } from "../../theme/colors";
+import { purple } from "../..";
 
 const Footer = ({
   valueInput,
@@ -40,6 +41,16 @@ const Footer = ({
   colorTheme?: string;
   logoImg?: string;
 }) => {
+  const theme = useTheme();
+  const getLineImage = () => {
+    switch (theme) {
+      case purple:
+        return BG_LINE_PURPLE;
+      default:
+        return BG_LINE;
+    }
+  };
+
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
@@ -58,7 +69,7 @@ const Footer = ({
               disabled={disabledInput}
             />
             <Button
-              variant={colorTheme ? "purple" : "green"}
+              variant="green"
               onClick={handleSignIn}
               width="100%"
               disabled={disabledSignUp}
@@ -69,13 +80,13 @@ const Footer = ({
         </SignUpBlock>
         <BuyBlock justifyContent="flex-end" alignItems="baseline">
           <Icon>
-            <LineIcon fill={colorTheme || "green"} />
+            <LineIcon />
             <IconBg>
-              <img src={colorTheme ? BG_LINE_PURPLE : BG_LINE} />
+              <img src={getLineImage()} />
             </IconBg>
           </Icon>
 
-          <Button variant={colorTheme ? "purple" : "green"} onClick={handleBuy} width="100%">
+          <Button variant="green" onClick={handleBuy} width="100%">
             {texts.buyYAY}
           </Button>
         </BuyBlock>

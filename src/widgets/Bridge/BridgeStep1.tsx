@@ -1,10 +1,9 @@
 import React, { ReactNode } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Text from "../../components/Text/Text";
 import { BalanceInput } from "../../components/BalanceInput";
 import { SwapButton } from "../../components/Toggle";
 import { BridgeStep1Props, NoticeBridgeType } from "./types";
-import { lightColors, baseColors } from "../../theme/colors";
 import BlurWithBorder from "../../components/BlurWithBorder/BlurWithBorder";
 
 const Wrapper = styled.div`
@@ -119,6 +118,7 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
   noticeType,
   radiusBlur,
 }) => {
+  const theme = useTheme();
   const BlockChainName = ({ icon, name }: { icon: ReactNode; name?: string }) => {
     return (
       <Field>
@@ -147,10 +147,10 @@ const BridgeStep1: React.FC<BridgeStep1Props> = ({
               <SwapButton onClick={handleToggleNetwork} />
             </ButtonReverse>
             <MessageBox>
-              <MessageText fontWeight={400} color={inputError ? lightColors.redBg : lightColors.text} size="xs">
+              <MessageText fontWeight={400} color={inputError ? 'redBg' : 'text'} size="xs">
                 {balanceText.message1}{" "}
               </MessageText>
-              <MessageText fontWeight={400} color={inputError ? lightColors.redBg : baseColors.green} size="xs">
+              <MessageText fontWeight={400} color={inputError ? 'redBg' : 'green'} size="xs">
                 {" "}
                 {balanceText.message2}
               </MessageText>

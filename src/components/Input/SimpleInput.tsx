@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
-import { baseColors } from "../../theme/colors";
 
 const SimpleInput = ({
   title,
@@ -27,7 +26,7 @@ const SimpleInput = ({
       <TitleStyle>{title}</TitleStyle>
       <InputBlock disabled={disabled} name={name} value={value} onChange={onChange} placeholder={placeholder} />
       {inputError && (
-        <TextStyle color={baseColors.darkPink} fontSize="13px">
+        <TextStyle color="darkPink" fontSize="13px">
           {inputError}
         </TextStyle>
       )}

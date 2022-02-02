@@ -14,7 +14,6 @@ interface Props {
   onDismiss?: () => void;
   valuesNetworks?: string[];
   listNetwork?: BlockChainNetwork[];
-  colorTheme?: string;
 }
 
 const Wrap = styled.div`
@@ -52,7 +51,6 @@ const NetworkModal: React.FC<Props> = ({
   handleToggleNetwork = (e) => null,
   onDismiss = () => null,
   valuesNetworks,
-  colorTheme,
   listNetwork,
 }) => {
   const handleClick = (e: any) => {
@@ -73,7 +71,7 @@ const NetworkModal: React.FC<Props> = ({
             </React.Fragment>
           ))}
         </Buttons>
-        <Link colorTheme={colorTheme} href={linkHref} style={{ margin: "0 auto" }}>
+        <Link href={linkHref} style={{ margin: "0 auto" }}>
           {linkText}
         </Link>
       </Wrap>

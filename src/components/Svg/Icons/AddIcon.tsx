@@ -1,11 +1,14 @@
 import React from "react";
+import { useTheme } from "styled-components";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 
 const Icon: React.FC<SvgProps> = (props) => {
+  const theme = useTheme();
+
   return (
     <Svg width="42px" viewBox="0 0 42 42" {...props}>
-      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || "#4BE43E"} />
+      <rect x="6" y="6" width="30" height="30" rx="7" fill={props.fill || theme.colors.green} />
       <g filter={props.fill || "url(#filter0_dAddIcon)"}>
         <path d="M21 16V26" stroke="white" strokeWidth="2" strokeLinecap="round" />
         <path d="M26 21L16 21" stroke="white" strokeWidth="2" strokeLinecap="round" />

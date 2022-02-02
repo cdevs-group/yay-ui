@@ -90,6 +90,7 @@ export const baseColors = {
   redBg: "#FF6161",
   purple: "#9E3DFF",
   green: "#4BE43E",
+  greenGradient5: 'radial-gradient(98% 49.86% at 100.03% 100%, #4BE43E 0%, rgba(75, 228, 62, 0.05) 100%)'
 };
 
 export const brandColors = {
@@ -199,6 +200,7 @@ export const darkColors: Colors = {
     greenGradient: "linear-gradient(180deg, rgba(76, 238, 62, 0.15) -16%, rgba(71, 218, 59, 0.15) 100%)",
     bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
   },
+
 };
 
 export const purpleColors: Colors = {
@@ -253,6 +255,7 @@ export const purpleColors: Colors = {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },
 
+  bgBlackRgba: "#2B2B32",
   boxShadow6: "0px 4px 10px rgba(158, 61, 255, 0.25)",
   boxShadow9: "0px 0px 20px rgba(158, 61, 255, 0.35)",
   boxShadow12: "0px 0px 29px #9E3DFF",
@@ -265,4 +268,5 @@ export const purpleColors: Colors = {
   greeanRgba2: "rgba(158, 61, 255, 0.08)",
   greenRgba3: "rgba(158, 61, 255, 0.4)",
   darkGradient4: "linear-gradient(0deg, rgba(75, 228, 62, 0) 0%, rgba(158, 61, 255, 0.16) 56.77%)",
+  greenGradient5: 'radial-gradient(98% 49.86% at 100.03% 100%, #9E3DFF 0%, rgba(158, 61, 255, 0.05) 100%)'
 };

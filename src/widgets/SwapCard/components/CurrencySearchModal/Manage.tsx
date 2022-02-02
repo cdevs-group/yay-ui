@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { ButtonMenu, ButtonMenuItem } from "../../../../components/ButtonMenu";
 
 const StyledButtonMenu = styled(ButtonMenu)`
@@ -19,7 +19,7 @@ export default function Manage({
   };
 }) {
   const [showLists, setShowLists] = useState(true);
-
+  const theme = useTheme();
   return (
     <div>
       <StyledButtonMenu
@@ -28,10 +28,10 @@ export default function Manage({
         scale="sm"
         mb="32px"
       >
-        <ButtonMenuItem width="50%" colorActive="#4BE43E">
+        <ButtonMenuItem width="50%" colorActive={theme.colors.green}>
           {texts.lists}
         </ButtonMenuItem>
-        <ButtonMenuItem width="50%" colorActive="#4BE43E">
+        <ButtonMenuItem width="50%" colorActive={theme.colors.green}>
           {texts.tokens}
         </ButtonMenuItem>
       </StyledButtonMenu>

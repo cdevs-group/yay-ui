@@ -34,7 +34,6 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   totalBalance,
   funds,
   linksViews,
-  colorTheme,
   logoImg,
 }) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -62,9 +61,9 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
   return (
     <HeaderWrap ref={refSelect}>
       {disclaimer ? (
-        <Disclaimer colorTheme={colorTheme} text={disclaimerText || ""} setHeight={setHeightDisclaimer} />
+        <Disclaimer text={disclaimerText || ""} setHeight={setHeightDisclaimer} />
       ) : null}
-      <Content colorTheme={colorTheme}>
+      <Content>
         <Line>
           <LogoWrap to={linkLogo}>
             <img src={logoImg || Logo} alt="" />
@@ -72,7 +71,6 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
           <Nav className={openMenu ? "open" : ""} heightDisclaimer={heightDisclaimer}>
             {links?.map((item, i) => (
               <MenuLinkDropdown
-                colorTheme={colorTheme}
                 key={i}
                 name={item.name}
                 url={item.url}
@@ -91,7 +89,6 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
           <RightContent>
             {network ? (
               <Network
-                colorTheme={colorTheme}
                 titleNetwork={titleNetwork}
                 linkHrefNetwork={linkHrefNetwork}
                 linkTextNetwork={linkTextNetwork}
@@ -102,7 +99,6 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
               />
             ) : null}
             <AccountMarketplace
-              colorTheme={colorTheme}
               account={account}
               login={login}
               logout={logout}
@@ -120,7 +116,7 @@ const HeaderMarketplace: React.FC<NavMarketplaceProps> = ({
                 <Languages currentLang={currentLang} setLang={setLang} langs={langs} />
               </LanguageBlockDesk>
             )}
-            <Burger colorTheme={colorTheme} open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
+            <Burger open={openMenu} onClick={() => setOpenMenu(!openMenu)} />
           </RightContent>
         </Line>
       </Content>
@@ -139,8 +135,8 @@ const HeaderWrap = styled.div`
     flex-shrink: 0;
   }
 `;
-const Content = styled.div<{ colorTheme?: string }>`
-  background-color: ${({ theme, colorTheme }) => (colorTheme ? "#2B2B32" : theme.colors.bgBlackRgba)};
+const Content = styled.div`
+  background-color: ${({ theme }) => theme.colors.bgBlackRgba};
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
 `;
 

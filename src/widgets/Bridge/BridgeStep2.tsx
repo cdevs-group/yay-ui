@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 import { Text } from "../../components/Text";
 import YAYIcon from "../../components/Svg/Icons/YAYIcon";
 import { AvalancheIcon, BnbIcon, CloseIcon } from "../../components/Svg";
@@ -8,7 +8,6 @@ import { BridgeStep2Props, NoticeBridgeType } from "./types";
 import ProgressSteps from "../../components/Progress/ProgressSteps";
 import ProgressRange from "../../components/Progress/ProgressRange";
 import { Loader } from "../../components/Loader";
-import { baseColors } from "../../theme/colors";
 import TimerNotSolidWithoutBg from "../../components/Timer/TimerNotSolidWithoutBg";
 import { Flex } from "../../components/Box";
 
@@ -100,11 +99,11 @@ const BridgeStep2 = ({
         </TopLineBlock>
         <BodyBlock>
           <HeadLine>
-            <TitleDesk size="sm" fontWeight="400" color={baseColors.textGray}>
+            <TitleDesk size="sm" fontWeight="400" color="textGray">
               {texts.network}
             </TitleDesk>
             <Flex flexDirection="column">
-              <Text textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+              <Text textAlign="center" fontWeight="400" size="sm" color="textGray">
                 {texts.timer}
               </Text>
               <TimerWrap>
@@ -118,7 +117,7 @@ const BridgeStep2 = ({
                 />
               </TimerWrap>
             </Flex>
-            <TitleDesk textAlign="center" fontWeight="400" size="sm" color={baseColors.textGray}>
+            <TitleDesk textAlign="center" fontWeight="400" size="sm" color="textGray">
               {texts.coast}
             </TitleDesk>
           </HeadLine>
@@ -146,7 +145,7 @@ const BridgeStep2 = ({
                   <Text size="sm" paddingTop="21px">
                     {gasPriceTextNetwork1?.value}
                   </Text>
-                  <Text size="xs" color={baseColors.textGray}>
+                  <Text size="xs" color="textGray">
                     {gasPriceTextNetwork1?.fiat}
                   </Text>
                 </>
@@ -171,7 +170,7 @@ const BridgeStep2 = ({
                   <Text size="sm" paddingTop="21px">
                     {gasPriceTextNetwork2?.value}
                   </Text>
-                  <Text size="xs" color={baseColors.textGray}>
+                  <Text size="xs" color="textGray">
                     {gasPriceTextNetwork2?.fiat}
                   </Text>
                 </>
@@ -211,15 +210,14 @@ const BridgeStep2 = ({
 
 export default BridgeStep2;
 
-const getBgNotice = (type: any) => {
+const getBgNotice = (type: any, theme?: DefaultTheme) => {
   switch (type) {
     case NoticeBridgeType.SUCCESS:
       return {
         color: "green",
-        bg: `
-      radial-gradient(98% 49.86% at 100.03% 100%, #4BE43E 0%, rgba(75, 228, 62, 0.05) 100%),
-      radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
-      radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        bg: `${theme?.colors.greenGradient5},
+        radial-gradient(24.21% 39.21% at 0% 0%, rgba(255, 255, 255, 0.81) 0%, rgba(255, 255, 255, 0.19) 100%),
+        radial-gradient(21.19% 40.1% at 100.03% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
       `,
       };
     case NoticeBridgeType.ERROR:
@@ -247,7 +245,7 @@ const Border = styled.div<{ noticeType?: NoticeBridgeType }>`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: ${({ noticeType }) => getBgNotice(noticeType)?.bg};
+  background: ${({ theme, noticeType }) => getBgNotice(noticeType, theme)?.bg};
   width: calc(100% + 2px);
   height: calc(100% + 2px);
   border-radius: 20px;

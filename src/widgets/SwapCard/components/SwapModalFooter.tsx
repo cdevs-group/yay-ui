@@ -4,7 +4,6 @@ import { AutoColumn } from "../../../components/Layouts/Column";
 import { RowBetween, AutoRow, RowFixed } from "../../../components/Layouts/Row";
 import { Text } from "../../../components/Text";
 import { SwapModalFooterProps } from "../types";
-import { baseColors } from "../../../theme/colors";
 import { Button } from "../../../index";
 
 const SwapModalFooterContainer = styled(AutoColumn)`
@@ -54,7 +53,7 @@ const SwapModalFooter: React.FC<SwapModalFooterProps> = ({
         <RowBetween mt="8px">
           <Text fontSize="11px">{texts.priceImpact}</Text>
 
-          <Text color={baseColors.green} fontSize="11px">
+          <Text color="green" fontSize="11px">
             {" "}
             {priceImpact}
           </Text>

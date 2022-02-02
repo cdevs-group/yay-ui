@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
-import { baseColors } from "../../theme/colors";
 import { Flex, Box } from "../../components/Box";
 import { ButtonStyle, Network, Reward, ButtonText, ButtonTextMob, TitleStyle, DescriptionStyle } from "./StyledCards";
 
@@ -55,7 +54,7 @@ const Achievement = ({
             <img src={image} />
           </ImageBlock>
           <TitleStyle>{title}</TitleStyle>
-          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color={baseColors.textGray}>
+          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color="textGray">
             {description}
           </DescriptionStyle>
           {progress && countMax && (count || count === 0) && (
@@ -64,7 +63,7 @@ const Achievement = ({
               <Flex justifyContent="center" mt="5px">
                 <Text
                   fontWeight={500}
-                  color={count === 0 || count === "0" ? "text" : baseColors.green}
+                  color={count === 0 || count === "0" ? "text" : "green"}
                   letterSpacing="0.05em"
                   fontSize="10px"
                 >

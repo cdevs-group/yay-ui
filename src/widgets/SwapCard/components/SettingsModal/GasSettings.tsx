@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "../../../../components/Box";
 import { TextStyle, TabsWrapBlock, Tab } from "./styles";
-import { baseColors } from "../../../../theme/colors";
+import { useTheme } from "styled-components";
 
 const GasSettings = ({
   activeTabGas,
@@ -14,6 +14,7 @@ const GasSettings = ({
   setGasPrice: (cur: number) => void;
   gasTabs: string[];
 }) => {
+  const theme = useTheme()
   return (
     <Flex flexDirection="column">
       <Flex mb="12px" alignItems="center">
@@ -21,7 +22,7 @@ const GasSettings = ({
       </Flex>
       <TabsWrapBlock width="100%" length={3}>
         <Tab
-          colorActive={baseColors.green}
+          colorActive={theme.colors.green}
           paddingTabs="7px"
           className={activeTabGas === 0 ? "active" : ""}
           onClick={() => {
@@ -31,7 +32,7 @@ const GasSettings = ({
           {gasTabs[0]}
         </Tab>
         <Tab
-          colorActive={baseColors.green}
+          colorActive={theme.colors.green}
           paddingTabs="7px"
           className={activeTabGas === 1 ? "active" : ""}
           onClick={() => {
@@ -41,7 +42,7 @@ const GasSettings = ({
           {gasTabs[1]}
         </Tab>
         <Tab
-          colorActive={baseColors.green}
+          colorActive={theme.colors.green}
           paddingTabs="7px"
           className={activeTabGas === 2 ? "active" : ""}
           onClick={() => {

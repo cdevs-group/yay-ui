@@ -23,7 +23,6 @@ import { CopyToClipboard } from "../../../components/CopyToClipboard";
 import { LabelTop } from "../../../components/LabelTop";
 import { Link } from "react-router-dom";
 import { connectorLocalStorageKey } from "../../WalletModal";
-import { baseColors } from "../../../theme/colors";
 
 interface Props {
   account?: string;
@@ -37,7 +36,6 @@ interface Props {
   funds: Funds[];
   heightDisclaimer?: number;
   linksViews?: NavMarketplaceLinksViewsProps[];
-  colorTheme?: string;
 }
 
 const AccountMarketplace: React.FC<Props> = ({
@@ -52,12 +50,10 @@ const AccountMarketplace: React.FC<Props> = ({
   funds,
   heightDisclaimer,
   linksViews,
-  colorTheme,
 }) => {
   const [onPresentConnectModal] = useModal(
     <ConnectModal
       texts={textsConnect}
-      colorTheme={colorTheme}
       login={login}
       hrefLearnHow={hrefLearnHow}
       network={network}
@@ -104,7 +100,7 @@ const AccountMarketplace: React.FC<Props> = ({
     const Item = () => (
       <Flex alignItems="center" marginBottom={comingSoon ? 0 : 20}>
         {icon}
-        <TextLinkUser colorTheme={colorTheme} badge={notice}>
+        <TextLinkUser badge={notice}>
           {text}
         </TextLinkUser>
       </Flex>
@@ -112,7 +108,7 @@ const AccountMarketplace: React.FC<Props> = ({
 
     if (comingSoon)
       return (
-        <LabelTop colorTheme={colorTheme} label={textsAccount.comingSoon} mb="19px">
+        <LabelTop label={textsAccount.comingSoon} mb="19px">
           <Item />
         </LabelTop>
       );
@@ -165,7 +161,6 @@ const AccountMarketplace: React.FC<Props> = ({
             setOpen={setOpenDropdown}
             icon={
               <Wrapper
-                colorTheme={colorTheme}
                 badge={linksViews?.reduce((sum, current) => sum + (Number(current?.notice) || 0), 0)}
               >
                 <WalletIcon />
@@ -237,7 +232,6 @@ const AccountMarketplace: React.FC<Props> = ({
         </WrapperDropdown>
       ) : (
         <Wrapper
-          colorTheme={colorTheme}
           as="button"
           onClick={() => {
             onPresentConnectModal();
@@ -257,7 +251,7 @@ const WrapperDropdown = styled.div`
     order: 0;
   }
 `;
-const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string; colorTheme?: string }>`
+const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -272,9 +266,7 @@ const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string; colorTh
   cursor: pointer;
   order: -1;
   & path {
-    fill: ${({ theme, notAuth, colorTheme }) =>
-      notAuth ? theme.colors.text : colorTheme ? colorTheme : theme.colors.green};
-  }
+    fill: ${({ theme, notAuth }) => (notAuth ? theme.colors.text : theme.colors.green)};  }
   &:after {
     content: ${({ badge }) => `"${badge && badge > 99 ? "99+" : badge}"`};
     position: absolute;
@@ -288,7 +280,7 @@ const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string; colorTh
     color: ${({ theme }) => theme.colors.text};
     line-height: 11px;
     font-size: 9px;
-    background: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+    background: ${({ theme }) => theme.colors.green};
   }
   ${({ theme }) => theme.mediaQueries.xl} {
     width: 40px;
@@ -307,7 +299,7 @@ const Wrapper = styled.div<{ notAuth?: boolean; badge?: number | string; colorTh
   }
 `;
 
-const TextLinkUser = styled(Text)<{ badge?: number | string; colorTheme?: string }>`
+const TextLinkUser = styled(Text)<{ badge?: number | string }>`
   display: flex;
   align-items: center;
   margin-left: 11px;
@@ -322,7 +314,7 @@ const TextLinkUser = styled(Text)<{ badge?: number | string; colorTheme?: string
     color: ${({ theme }) => theme.colors.text};
     line-height: 14px;
     font-size: 11px;
-    background: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+    background: ${({ theme }) => theme.colors.green};
   }
 `;
 const AccountBlock = styled(Text)`
