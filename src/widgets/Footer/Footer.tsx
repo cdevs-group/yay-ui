@@ -1,16 +1,14 @@
 import React from "react";
-import styled, { keyframes, useTheme } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Text } from "../../components/Text";
 import { Button } from "../../components/Button";
 import { InputSearch } from "../../components/InputSearch";
 import { Flex, Box } from "../../components/Box";
-import { BG_LINE, BG_LINE_PURPLE, LOGO_FOOTER } from "../../constants/images";
+import { LOGO_FOOTER } from "../../constants/images";
 import NavColumn from "./components/NavColumn";
 import Social from "./components/Social";
 import { LineIcon } from "../../components/Svg";
 import { IText, IDataLinks, IDataSocial } from "./types";
-import { baseColors } from "../../theme/colors";
-import { purple } from "../..";
 
 const Footer = ({
   valueInput,
@@ -24,7 +22,6 @@ const Footer = ({
   tokenData,
   disabledInput,
   disabledSignUp,
-  colorTheme,
   logoImg,
 }: {
   valueInput: string;
@@ -38,19 +35,8 @@ const Footer = ({
   socialData: IDataSocial;
   disabledInput?: boolean;
   disabledSignUp?: boolean;
-  colorTheme?: string;
   logoImg?: string;
 }) => {
-  const theme = useTheme();
-  const getLineImage = () => {
-    switch (theme) {
-      case purple:
-        return BG_LINE_PURPLE;
-      default:
-        return BG_LINE;
-    }
-  };
-
   return (
     <Wrapper>
       <StayBlock alignItems="flex-end" justifyContent="space-between">
@@ -76,9 +62,6 @@ const Footer = ({
         <BuyBlock justifyContent="flex-end" alignItems="baseline">
           <Icon>
             <LineIcon />
-            <IconBg>
-              <img src={getLineImage()} />
-            </IconBg>
           </Icon>
 
           <Button variant="green" onClick={handleBuy} width="100%">

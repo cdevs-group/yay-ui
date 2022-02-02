@@ -15,7 +15,6 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
   onLike,
   onNftClick,
   onTitleClick,
-  color,
 }) => {
   const theme = useTheme();
   return (
@@ -53,7 +52,7 @@ const ProfileNftCard: React.FC<IProfileCardProps> = ({
           </>
         )}
       </Card>
-      <CardHover colorTheme={color} />
+      <CardHover />
     </CardWrapper>
   );
 };

@@ -6,14 +6,13 @@ import { Text } from "../Text";
 interface Props extends SpaceProps {
   children: string | React.ReactNode;
   label: string;
-  colorTheme?: string;
 }
 
-const LabelTop: React.FC<Props> = ({ children, label, colorTheme, ...props }) => {
+const LabelTop: React.FC<Props> = ({ children, label, ...props }) => {
   return (
     <StyledComingSoon {...props}>
       <TextComingSoon>{children}</TextComingSoon>
-      <ComingSoon colorTheme={colorTheme}>{label}</ComingSoon>
+      <ComingSoon>{label}</ComingSoon>
     </StyledComingSoon>
   );
 };
@@ -26,14 +25,14 @@ const StyledComingSoon = styled.div`
   ${space}
 `;
 
-const ComingSoon = styled.div<{ colorTheme?: string }>`
+const ComingSoon = styled.div`
   position: relative;
   top: -13px;
   left: 0px;
   display: flex;
   align-items: center;
   padding: 5px 11px;
-  background: ${({ theme, colorTheme }) => colorTheme || theme.colors.green};
+  background: ${({ theme }) => theme.colors.green};
   color: ${({ theme }) => theme.colors.text};
   font-size: 9px;
   line-height: 11px;
