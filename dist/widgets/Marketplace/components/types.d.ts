@@ -57,7 +57,6 @@ export interface IProfileCardProps {
     onLike?: () => void;
     onNftClick: (id?: string | number) => void;
     onTitleClick?: (id?: string | number) => void;
-    color?: string;
 }
 export interface IRegisterProfileProps {
     title?: ReactNode | string;

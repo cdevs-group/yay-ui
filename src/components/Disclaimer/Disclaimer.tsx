@@ -4,10 +4,7 @@ import useWindowDimensions from "../../hooks/useResize";
 import { CloseIcon2 } from "../Svg";
 import { Text } from "../Text";
 
-const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = ({
-  text,
-  setHeight,
-}) => {
+const Disclaimer: React.FC<{ text: string; setHeight?: (val: any) => void }> = ({ text, setHeight }) => {
   const [open, setOpen] = useState(true);
   const refDisclaimer = useRef<any>(null);
   const refCounter = useRef<any>(null);
