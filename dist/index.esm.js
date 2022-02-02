@@ -14082,7 +14082,7 @@ var TextError$1 = styled(Text)(templateObject_3$4 || (templateObject_3$4 = __mak
 var templateObject_1$7, templateObject_2$4, templateObject_3$4;
 
 var OrderModal = function (_a) {
-    var texts = _a.texts, onDismiss = _a.onDismiss, count = _a.count, fee = _a.fee, inputValues = _a.inputValues, receive = _a.receive, handleClick = _a.handleClick, buttonProps = _a.buttonProps, handleInput = _a.handleInput, error = _a.error;
+    var texts = _a.texts, onDismiss = _a.onDismiss, count = _a.count, fee = _a.fee, inputValues = _a.inputValues, receive = _a.receive, handleClick = _a.handleClick, buttonProps = _a.buttonProps, handleInput = _a.handleInput, error = _a.error, errorPrice = _a.errorPrice;
     return (React__default.createElement(Wrapper$1, null,
         React__default.createElement(Flex, { alignItems: "center", justifyContent: "space-between" },
             React__default.createElement(Text, { fontSize: "21px" }, texts.title),
@@ -14090,6 +14090,7 @@ var OrderModal = function (_a) {
                 React__default.createElement(Icon$1r, null))),
         React__default.createElement(Box, { mt: 40 },
             React__default.createElement(SimpleInput, { onChange: handleInput, value: inputValues.price, placeholder: texts.placeholder1, title: texts.titleInput1, name: "price" })),
+        errorPrice && React__default.createElement(TextError, null, errorPrice),
         count && (React__default.createElement(React__default.Fragment, null,
             React__default.createElement(Box, { mt: 20 },
                 React__default.createElement(SimpleInput, { onChange: handleInput, name: "count", value: inputValues.count, placeholder: texts.placeholder2, title: texts.titleInput2 })),

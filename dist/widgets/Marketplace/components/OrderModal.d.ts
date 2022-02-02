@@ -23,6 +23,7 @@ interface IProps {
         count: string;
     };
     error?: string;
+    errorPrice?: string;
 }
-declare const OrderModal: ({ texts, onDismiss, count, fee, inputValues, receive, handleClick, buttonProps, handleInput, error, }: IProps) => JSX.Element;
+declare const OrderModal: ({ texts, onDismiss, count, fee, inputValues, receive, handleClick, buttonProps, handleInput, error, errorPrice, }: IProps) => JSX.Element;
 export default OrderModal;
