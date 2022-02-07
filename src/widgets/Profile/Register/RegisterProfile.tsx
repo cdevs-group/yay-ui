@@ -63,7 +63,7 @@ const Wrapper = styled.form`
 const Title = styled(Text)`
   text-align: center;
   font-weight: normal;
-  font-size: 42px;
+  font-size: 30px;
   line-height: 121.8%;
   letter-spacing: 0.01em;
 `;
