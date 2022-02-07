@@ -56,27 +56,28 @@ const RegisterProfile = ({
 
 export default RegisterProfile;
 
-const Wrapper = styled.form`
-  max-width: 500px;
+const Wrapper = styled.div`
+  max-width: 700px;
   margin: 0 auto;
 `;
 const Title = styled(Text)`
   text-align: center;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 42px;
   line-height: 121.8%;
   letter-spacing: 0.01em;
 `;
 const Description = styled(Text)`
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 15px;
-  line-height: 19px;
+  margin-top: 24px;
+  margin-bottom: 60px;
+  font-size: 28px;
+  line-height: 121.8%;
   text-align: center;
-  letter-spacing: 0.17em;
+  letter-spacing: 0.01em;
 `;
-const Form = styled.div`
+const Form = styled.form`
   padding: 15px 15px 25px;
+  margin: 0 auto;
   max-width: 500px;
   width: 100%;
   background: ${({ theme }) => theme.colors.bgGray};
