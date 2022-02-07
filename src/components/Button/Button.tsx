@@ -43,7 +43,7 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
 Button.defaultProps = {
   isLoading: false,
   external: false,
-  variant: variants.GREEN,
+  variant: variants.PRIMARY,
   scale: scales.MD,
   disabled: false,
 };
