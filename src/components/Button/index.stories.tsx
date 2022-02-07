@@ -27,7 +27,7 @@ export const Variants: React.FC = () => {
           <Button width="170px" scale="md">
             Button
           </Button>
-          <Button width="170px" disabled scale="md" variant="green">
+          <Button width="170px" disabled scale="md">
             Button
           </Button>
           <Button width="170px" scale="md" variant="option">
