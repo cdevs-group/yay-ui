@@ -75,9 +75,9 @@ const DepositFarmModal = ({
         </ButtonClose>
       </Flex>
       <Flex mt={15} marginBottom="7px" justifyContent="flex-end">
-        <Text fontSize="11px">
+        <Text mr="5px" fontSize="11px">
           {lp} {texts.balance}
-        </Text>{" "}
+        </Text>
         <Text fontSize="11px" color="green">
           {balance}
         </Text>
@@ -97,7 +97,7 @@ const DepositFarmModal = ({
         }
       />
       <Row>
-        <Flex>
+        <Flex alignItems="center">
           {" "}
           <Text fontSize="11px">{texts.stake} </Text>
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
@@ -112,7 +112,7 @@ const DepositFarmModal = ({
         </Text>
       </Row>
       <Row>
-        <Flex>
+        <Flex alignItems="center">
           {" "}
           <Text fontSize="11px">{texts.daily} </Text>
           <TextWithTooltip textTooltip={texts.dailyTooltip} />
@@ -127,7 +127,7 @@ const DepositFarmModal = ({
         </Text>
       </Row>
       <Row>
-        <Flex>
+        <Flex alignItems="center">
           {" "}
           <Text fontSize="11px">{texts.monthly} </Text>
           <TextWithTooltip textTooltip={texts.monthlyTooltip} />
@@ -142,7 +142,7 @@ const DepositFarmModal = ({
         </Text>
       </Row>
       <Row>
-        <Flex>
+        <Flex alignItems="center">
           {" "}
           <Text fontSize="11px">{texts.yearly} </Text>
           <TextWithTooltip textTooltip={texts.yearlyTooltip} />
