@@ -57,7 +57,7 @@ const RegisterProfile = ({
 export default RegisterProfile;
 
 const Wrapper = styled.div`
-  max-width: 700px;
+  max-width: 500px;
   margin: 0 auto;
 `;
 const Title = styled(Text)`
@@ -66,6 +66,11 @@ const Title = styled(Text)`
   font-size: 42px;
   line-height: 121.8%;
   letter-spacing: 0.01em;
+  width: 100%;
+  ${({ theme }) => theme.mediaQueries.md} {
+    text-align: left;
+    width: 110%;
+  }
 `;
 const Description = styled(Text)`
   margin-top: 24px;

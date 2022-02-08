@@ -12,8 +12,8 @@ export const RegisterProfileBlock = () => {
         e.preventDefault();
         console.log("ds");
       }}
-      title="Register"
-      description="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
+      title="Welcome to YAY Games -"
+      description="The decentralized GameFi ecosystem"
       onChange={(e: any) => null}
       inputValue1=""
       inputValue2=""
