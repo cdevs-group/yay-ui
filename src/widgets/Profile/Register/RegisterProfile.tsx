@@ -57,7 +57,7 @@ const RegisterProfile = ({
 export default RegisterProfile;
 
 const Wrapper = styled.div`
-  max-width: 500px;
+  max-width: 700px;
   margin: 0 auto;
 `;
 const Title = styled(Text)`

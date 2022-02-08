@@ -10394,7 +10394,7 @@ var RegisterProfile = function (_a) {
             React__default.createElement(Input$3, { margin: "25px 0 0", onChange: onChange, name: inputName2, value: inputValue2, title: texts.inputTitle2, placeholder: texts.inputPlaceholder2, inputError: inputError2, disabled: sponsorInputDisabled }),
             React__default.createElement(Button$a, __assign({ width: "100%", variant: "green", onClick: onClick, margin: "30px 0 0 0", type: "submit" }, buttonProps), texts.buttonText))));
 };
-var Wrapper$s = styled.div(templateObject_1$1s || (templateObject_1$1s = __makeTemplateObject(["\n  max-width: 500px;\n  margin: 0 auto;\n"], ["\n  max-width: 500px;\n  margin: 0 auto;\n"])));
+var Wrapper$s = styled.div(templateObject_1$1s || (templateObject_1$1s = __makeTemplateObject(["\n  max-width: 700px;\n  margin: 0 auto;\n"], ["\n  max-width: 700px;\n  margin: 0 auto;\n"])));
 var Title$f = styled(Text)(templateObject_2$16 || (templateObject_2$16 = __makeTemplateObject(["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n  ", " {\n    text-align: left;\n    width: 110%;\n  }\n"], ["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n  ", " {\n    text-align: left;\n    width: 110%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
