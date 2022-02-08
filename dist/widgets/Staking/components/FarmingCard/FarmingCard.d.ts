@@ -38,5 +38,5 @@ interface IProps {
     exitHandleClick: () => void | Promise<void>;
     getLpHandleClick: () => void | Promise<void>;
 }
-declare const StakingCard: ({ logoToken0, logoToken1, texts, tokenReward, startDate, endDate, yourStake, reward, lp, pair, total, apy, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, depositHandleClick, claimHandleClick, widthDrawHandleClick, exitHandleClick, getLpHandleClick, }: IProps) => JSX.Element;
-export default StakingCard;
+declare const FarmingCard: ({ logoToken0, logoToken1, texts, tokenReward, startDate, endDate, yourStake, reward, lp, pair, total, apy, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, depositHandleClick, claimHandleClick, widthDrawHandleClick, exitHandleClick, getLpHandleClick, }: IProps) => JSX.Element;
+export default FarmingCard;

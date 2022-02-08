@@ -14221,7 +14221,7 @@ var Token = styled__default["default"].div(templateObject_1$4 || (templateObject
 });
 var templateObject_1$4;
 
-var StakingCard = function (_a) {
+var FarmingCard = function (_a) {
     var logoToken0 = _a.logoToken0, logoToken1 = _a.logoToken1, texts = _a.texts, tokenReward = _a.tokenReward, startDate = _a.startDate, endDate = _a.endDate, yourStake = _a.yourStake, reward = _a.reward, lp = _a.lp, pair = _a.pair, total = _a.total, apy = _a.apy, exitButtonProps = _a.exitButtonProps, withdrawButtonProps = _a.withdrawButtonProps, claimButtonProps = _a.claimButtonProps, depositButtonProps = _a.depositButtonProps, depositHandleClick = _a.depositHandleClick, claimHandleClick = _a.claimHandleClick, widthDrawHandleClick = _a.widthDrawHandleClick, exitHandleClick = _a.exitHandleClick, getLpHandleClick = _a.getLpHandleClick;
     return (React__default["default"].createElement(Flex, { flexDirection: "column", alignItems: "center" },
         React__default["default"].createElement(HeadLine, null,
@@ -14345,18 +14345,17 @@ var DepositFarmModal = function (_a) {
             React__default["default"].createElement(ButtonClose, { onClick: onDismiss },
                 React__default["default"].createElement(Icon$1p, null))),
         React__default["default"].createElement(Flex, { mt: 15, marginBottom: "7px", justifyContent: "flex-end" },
-            React__default["default"].createElement(Text, { fontSize: "11px" },
+            React__default["default"].createElement(Text, { mr: "5px", fontSize: "11px" },
                 lp,
                 " ",
                 texts.balance),
-            " ",
             React__default["default"].createElement(Text, { fontSize: "11px", color: "green" }, balance)),
         React__default["default"].createElement(BalanceInput, { onUserInput: onUserInput, value: inputValue, pairBlock: React__default["default"].createElement(React__default["default"].Fragment, null,
                 React__default["default"].createElement(PairBlock, { alignItems: "center" },
                     React__default["default"].createElement(Text, { marginRight: "10px", fontSize: "13px" }, pair),
                     React__default["default"].createElement(PairSquare, { token0: tokenImg0, token1: tokenImg1 }))) }),
         React__default["default"].createElement(Row, null,
-            React__default["default"].createElement(Flex, null,
+            React__default["default"].createElement(Flex, { alignItems: "center" },
                 " ",
                 React__default["default"].createElement(Text, { fontSize: "11px" },
                     texts.stake,
@@ -14368,7 +14367,7 @@ var DepositFarmModal = function (_a) {
                 tokenName),
             React__default["default"].createElement(Text, { textAlign: "right", color: "green", fontSize: "13px" }, stakeUsd)),
         React__default["default"].createElement(Row, null,
-            React__default["default"].createElement(Flex, null,
+            React__default["default"].createElement(Flex, { alignItems: "center" },
                 " ",
                 React__default["default"].createElement(Text, { fontSize: "11px" },
                     texts.daily,
@@ -14380,7 +14379,7 @@ var DepositFarmModal = function (_a) {
                 tokenName),
             React__default["default"].createElement(Text, { textAlign: "right", color: "green", fontSize: "13px" }, dailyUsd)),
         React__default["default"].createElement(Row, null,
-            React__default["default"].createElement(Flex, null,
+            React__default["default"].createElement(Flex, { alignItems: "center" },
                 " ",
                 React__default["default"].createElement(Text, { fontSize: "11px" },
                     texts.monthly,
@@ -14392,7 +14391,7 @@ var DepositFarmModal = function (_a) {
                 tokenName),
             React__default["default"].createElement(Text, { textAlign: "right", color: "green", fontSize: "13px" }, monthlyUsd)),
         React__default["default"].createElement(Row, null,
-            React__default["default"].createElement(Flex, null,
+            React__default["default"].createElement(Flex, { alignItems: "center" },
                 " ",
                 React__default["default"].createElement(Text, { fontSize: "11px" },
                     texts.yearly,
@@ -14587,6 +14586,7 @@ exports.EyeCloseIcon = Icon$17;
 exports.EyeOpen = Icon$1a;
 exports.EyeOpenIcon = Icon$19;
 exports.FallingBunnies = FallingBunnies;
+exports.FarmingCard = FarmingCard;
 exports.FavoritesIcon = Icon$9;
 exports.FixedSizeListRow = FixedSizeListRow;
 exports.Flex = Flex;
@@ -14745,7 +14745,6 @@ exports.SimpleInput = SimpleInput;
 exports.Skeleton = Skeleton;
 exports.SquaresIcon = Icon$1b;
 exports.Stake = Stake;
-exports.StakingCard = StakingCard;
 exports.StakingDashboard = StakingDashboard;
 exports.StarIcon = Icon$c;
 exports.Statistic = Statistic;
