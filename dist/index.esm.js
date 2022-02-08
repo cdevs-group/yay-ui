@@ -10395,10 +10395,7 @@ var RegisterProfile = function (_a) {
             React__default.createElement(Button$a, __assign({ width: "100%", variant: "green", onClick: onClick, margin: "30px 0 0 0", type: "submit" }, buttonProps), texts.buttonText))));
 };
 var Wrapper$s = styled.div(templateObject_1$1s || (templateObject_1$1s = __makeTemplateObject(["\n  max-width: 700px;\n  margin: 0 auto;\n"], ["\n  max-width: 700px;\n  margin: 0 auto;\n"])));
-var Title$f = styled(Text)(templateObject_2$16 || (templateObject_2$16 = __makeTemplateObject(["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n  ", " {\n    text-align: left;\n    width: 110%;\n  }\n"], ["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n  ", " {\n    text-align: left;\n    width: 110%;\n  }\n"])), function (_a) {
-    var theme = _a.theme;
-    return theme.mediaQueries.md;
-});
+var Title$f = styled(Text)(templateObject_2$16 || (templateObject_2$16 = __makeTemplateObject(["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n"], ["\n  text-align: center;\n  font-weight: normal;\n  font-size: 42px;\n  line-height: 121.8%;\n  letter-spacing: 0.01em;\n  width: 100%;\n"])));
 var Description$7 = styled(Text)(templateObject_3$T || (templateObject_3$T = __makeTemplateObject(["\n  margin-top: 24px;\n  margin-bottom: 60px;\n  font-size: 28px;\n  line-height: 121.8%;\n  text-align: center;\n  letter-spacing: 0.01em;\n"], ["\n  margin-top: 24px;\n  margin-bottom: 60px;\n  font-size: 28px;\n  line-height: 121.8%;\n  text-align: center;\n  letter-spacing: 0.01em;\n"])));
 var Form = styled.form(templateObject_4$J || (templateObject_4$J = __makeTemplateObject(["\n  padding: 15px 15px 25px;\n  margin: 0 auto;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"], ["\n  padding: 15px 15px 25px;\n  margin: 0 auto;\n  max-width: 500px;\n  width: 100%;\n  background: ", ";\n  border-radius: 15px;\n  ", " {\n    padding: 25px 30px 35px;\n  }\n"])), function (_a) {
     var theme = _a.theme;

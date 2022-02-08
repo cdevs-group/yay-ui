@@ -67,10 +67,6 @@ const Title = styled(Text)`
   line-height: 121.8%;
   letter-spacing: 0.01em;
   width: 100%;
-  ${({ theme }) => theme.mediaQueries.md} {
-    text-align: left;
-    width: 110%;
-  }
 `;
 const Description = styled(Text)`
   margin-top: 24px;
