@@ -1,2 +1,2 @@
-export { default as StakingCard } from "./components/StakingCard/StakingCard";
-export { default as DepositFarmModal } from "./components/StakingCard/DepositFarmModal";
+export { default as FarmingCard } from "./components/FarmingCard/FarmingCard";
+export { default as DepositFarmModal } from "./components/FarmingCard/DepositFarmModal";

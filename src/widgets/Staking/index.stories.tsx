@@ -1,17 +1,17 @@
 import React, { ReactText, useState } from "react";
-import StakingCard from "./components/StakingCard/StakingCard";
+import FarmingCard from "./components/FarmingCard/FarmingCard";
 import { YAY_TOKEN_LOGO, AVAX_LOGO } from "../../constants/images";
-import DepositFarmModal from "./components/StakingCard/DepositFarmModal";
+import DepositFarmModal from "./components/FarmingCard/DepositFarmModal";
 import styled from "styled-components";
 import { Avalanche, YAY_TOKEN_GREEN } from "../../constants/images";
 import { ButtonProps } from "../../components/Button/types";
 
 export default {
-  title: "Widgets/Staking",
+  title: "Widgets/Farming",
   argTypes: {},
 };
 
-export const StakingCardBlock = () => {
+export const FramingCardBlock = () => {
   const [openModal, setOpenModal] = useState(false);
   const texts = {
     total: "Total Staked",
@@ -45,7 +45,7 @@ export const StakingCardBlock = () => {
 
   return (
     <>
-      <StakingCard
+      <FarmingCard
         texts={texts}
         logoToken0={YAY_TOKEN_LOGO}
         logoToken1={AVAX_LOGO}

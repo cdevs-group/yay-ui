@@ -46,7 +46,7 @@ interface IProps {
   getLpHandleClick: () => void | Promise<void>;
 }
 
-const StakingCard = ({
+const FarmingCard = ({
   logoToken0,
   logoToken1,
   texts,
@@ -156,7 +156,7 @@ const StakingCard = ({
   );
 };
 
-export default StakingCard;
+export default FarmingCard;
 
 const HeadLine = styled.div`
   width: 100%;
