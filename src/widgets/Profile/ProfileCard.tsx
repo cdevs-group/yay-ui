@@ -175,6 +175,8 @@ const Input = styled.input`
   background: none;
   outline: none;
   width: 100%;
+  text-align: center;
+  margin-left: 30px;
 `;
 
 const LinkAccount = styled.a`
