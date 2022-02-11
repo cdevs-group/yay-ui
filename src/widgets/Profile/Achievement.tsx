@@ -54,7 +54,7 @@ const Achievement = ({
             <img src={image} />
           </ImageBlock>
           <TitleStyle>{title}</TitleStyle>
-          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" fontSize="11px" color="textGray">
+          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" textAlign="center" fontSize="11px" color="textGray">
             {description}
           </DescriptionStyle>
           {progress && countMax && (count || count === 0) && (
@@ -151,7 +151,7 @@ const RangeTrack = styled.div<{ progress?: number }>`
 const Wrapper = styled.div<{ progress?: boolean }>`
   position: relative;
   perspective: 1000px;
-  min-height: 210px;
+  min-height: 240px;
   width: 100%;
   border-radius: 10px;
   &:hover {

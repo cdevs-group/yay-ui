@@ -13,6 +13,12 @@ export default {
 
 export const FramingCardBlock = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInput = (input: any) => {
+    setInputValue(input.target.value);
+  };
+
   const texts = {
     total: "Total Staked",
     farming: "Farming APY",
@@ -75,8 +81,8 @@ export const FramingCardBlock = () => {
           onDismiss={() => setOpenModal(false)}
           lp="1LP-YAY-AVAX"
           balance={0}
-          onUserInput={(input: string) => console.log(input)}
-          inputValue=""
+          onUserInput={handleInput}
+          inputValue={inputValue}
           pair="YAY/BUSD"
           tokenImg0={YAY_TOKEN_GREEN}
           tokenImg1={Avalanche}
