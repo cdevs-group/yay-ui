@@ -75,6 +75,7 @@ export const TitleStyle = styled(Text)`
   line-height: 16px;
   letter-spacing: 0.05em;
   font-weight: normal;
+  text-align: center;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 13px;
   }

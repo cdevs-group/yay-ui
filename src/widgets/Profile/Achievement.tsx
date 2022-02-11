@@ -53,7 +53,7 @@ const Achievement = ({
           <ImageBlock>
             <img src={image} />
           </ImageBlock>
-          <TitleStyle>{title}</TitleStyle>
+          <TitleStyle textAlign="center">{title}</TitleStyle>
           <DescriptionStyle fontWeight={500} letterSpacing="0.05em" textAlign="center" fontSize="11px" color="textGray">
             {description}
           </DescriptionStyle>

@@ -9865,7 +9865,7 @@ var ButtonTextMob = styled(ButtonText)(templateObject_5$w || (templateObject_5$w
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TitleStyle$4 = styled(Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
+var TitleStyle$4 = styled(Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -10015,7 +10015,7 @@ var Achievement = function (_a) {
                     React__default.createElement(Text, { fontWeight: 500, letterSpacing: "0.05em", fontSize: "10px" }, reward)),
                 React__default.createElement(ImageBlock, null,
                     React__default.createElement("img", { src: image })),
-                React__default.createElement(TitleStyle$4, null, title),
+                React__default.createElement(TitleStyle$4, { textAlign: "center" }, title),
                 React__default.createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", textAlign: "center", fontSize: "11px", color: "textGray" }, description),
                 progress && countMax && (count || count === 0) && (React__default.createElement(Box, { marginTop: "auto", width: "100%" },
                     React__default.createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
