@@ -10156,8 +10156,8 @@ var ReferralListItems = function (_a) {
     var txHashKey = keys.txHashKey, loginKey = keys.loginKey, earnedKey = keys.earnedKey, dateKey = keys.dateKey;
     var countPerPage = pagination.countPerPage, togglePage = pagination.togglePage, currentPage = pagination.currentPage;
     return (React__default.createElement(Wrapper$w, null,
-        (data === null || data === void 0 ? void 0 : data.length) &&
-            (data === null || data === void 0 ? void 0 : data.slice(countPerPage * (currentPage - 1), currentPage * countPerPage).map(function (item, i) { return (React__default.createElement(Item$1, { key: i },
+        (data === null || data === void 0 ? void 0 : data.length)
+            ? data === null || data === void 0 ? void 0 : data.slice(countPerPage * (currentPage - 1), currentPage * countPerPage).map(function (item, i) { return (React__default.createElement(Item$1, { key: i },
                 React__default.createElement(ItemContent, null,
                     React__default.createElement(Column$1, null,
                         React__default.createElement(Name$1, null, texts.itemRef),
@@ -10170,7 +10170,8 @@ var ReferralListItems = function (_a) {
                         React__default.createElement(Value$2, null, item[earnedKey])),
                     React__default.createElement(Column$1, null,
                         React__default.createElement(Name$1, null, texts.itemTime),
-                        React__default.createElement(Value$2, null, item[dateKey]))))); })),
+                        React__default.createElement(Value$2, null, item[dateKey]))))); })
+            : null,
         React__default.createElement(Flex, { mt: 20, justifyContent: "flex-end" },
             React__default.createElement(Pagination, { currentPage: currentPage, length: data.length / countPerPage, togglePage: togglePage }))));
 };
