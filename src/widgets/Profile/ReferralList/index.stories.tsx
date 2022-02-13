@@ -119,6 +119,7 @@ export const ReferralListBlock = () => {
           currentPage,
           countPerPage: 4,
         }}
+        loading
         earnValue="436 000 YAY"
         miniValue="436 000 YAY"
         predictionValue="436 000 YAY"

@@ -1,18 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { Text } from "../../../..";
+import { Skeleton, Text } from "../../../..";
 import { transparentize } from "polished";
+import StyledTag from "../../../../components/Tag/StyledTag";
 
 const TopBlock = ({
   title,
   value,
   id,
   isBlur,
+  loading,
 }: {
   title: string;
   value: string | number;
   id?: string;
   isBlur?: boolean;
+  loading: boolean;
 }) => {
   return (
     <div style={{ position: "relative" }}>
@@ -20,6 +23,11 @@ const TopBlock = ({
         <Title>{title}</Title>
         <Value>{value}</Value>
       </Wrapper>
+      {loading && (
+        <Skelet>
+          <Skeleton height="100%" width="100%" />
+        </Skelet>
+      )}
       {isBlur && <Claimed id={id || ""} />}
     </div>
   );
@@ -33,11 +41,25 @@ const Wrapper = styled.div`
   background: ${({ theme }) => theme.colors.bgGray};
   box-shadow: ${({ theme }) => theme.colors.boxShadow2};
   border-radius: 15px;
+  z-index: 1;
   overflow: hidden;
   text-align: center;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding: 21px 27px;
   }
+`;
+const Skelet = styled(Wrapper)`
+  position: absolute;
+  padding: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  & div {
+    width: 100%;
+    height: 100%;
+  }
+  z-index: 2;
 `;
 const Title = styled(Text)`
   font-weight: normal;

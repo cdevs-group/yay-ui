@@ -17,6 +17,7 @@ const ReferralList = ({
   nftValue,
   pagination,
   keys,
+  loading,
 }: IReferralListProps) => {
   return (
     <>
@@ -27,10 +28,10 @@ const ReferralList = ({
         <ButtonBackText>{texts.buttonBack}</ButtonBackText>
       </Flex>
       <TopLine>
-        <TopBlock title={earnValue} value={texts.topRef} />
-        <TopBlock title={miniValue} value={texts.topMini} />
-        <TopBlock title={predictionValue} value={texts.topPrediction} />
-        <TopBlock title={nftValue} value={texts.topNft} />
+        <TopBlock loading={loading} title={earnValue} value={texts.topRef} />
+        <TopBlock loading={loading} title={miniValue} value={texts.topMini} />
+        <TopBlock loading={loading} title={predictionValue} value={texts.topPrediction} />
+        <TopBlock loading={loading} title={nftValue} value={texts.topNft} />
       </TopLine>
       <TitleList>{texts.referralTitle}</TitleList>
       <ReferralListItems data={data} keys={keys} texts={texts} pagination={pagination} />

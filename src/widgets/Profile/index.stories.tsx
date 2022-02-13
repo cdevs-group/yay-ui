@@ -41,7 +41,7 @@ export const ProfileCardWidget: React.FC = () => {
           linkRefferal={`https://play.yay.games/sponsor/6x3438e324938438e32438e329828x46R65`}
           texts={textsCard}
           account="6x3438e324938438e32438e329828x46R65"
-          awards={[coins, win, skull, rocket]}
+          // awards={[coins, win, skull, rocket]}
           sponsor="0x3asadsasasd2112312112321312312321312"
           verified
           linkRefferalList="/"

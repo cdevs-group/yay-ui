@@ -92,6 +92,7 @@ export interface IReferralListProps {
     nftValue: string;
     pagination: IReferralListItemPagination;
     keys: IReferralListItemKeys;
+    loading: boolean;
 }
 export interface ReferralListItemsProps {
     data: any[];
