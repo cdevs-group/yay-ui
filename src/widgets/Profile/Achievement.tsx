@@ -189,7 +189,7 @@ const CardFront = styled.div<{ progress?: boolean }>`
   transform: translateX(-50%);
   top: 0;
   transition: 0;
-  backface-visibility: ${({ progress }) => (!progress ? "" : "hidden")};
+  backface-visibility: hidden;
 
   &:hover {
     border: 1.5px solid ${({ theme }) => theme.colors.green};
