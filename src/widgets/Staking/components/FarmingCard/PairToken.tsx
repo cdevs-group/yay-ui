@@ -1,15 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Flex } from "../../../../components/Box";
 
-const PairToken = ({ token0, token1 }: { token0: string; token1: string }) => {
+const PairToken = ({ token0, token1 }: { token0: string | ReactNode; token1: string | ReactNode }) => {
   return (
     <Flex>
       <Token>
-        <img src={token0} />
+        {typeof token0 === "string" ? <img src={token0} /> : token0}
       </Token>
       <Token>
-        <img src={token1} />
+      {typeof token1 === "string" ? <img src={token1} /> : token1}
       </Token>
     </Flex>
   );
@@ -18,6 +18,7 @@ const PairToken = ({ token0, token1 }: { token0: string; token1: string }) => {
 export default PairToken;
 
 const Token = styled.div`
+  z-index: 1;
   width: 40px;
   height: 40px;
   margin-right: -10px;
