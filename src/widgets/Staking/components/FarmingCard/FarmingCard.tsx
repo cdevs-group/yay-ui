@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Flex } from "../../../../components/Box";
 import { Text } from "../../../../components/Text";
@@ -8,8 +8,8 @@ import { ButtonProps } from "../../../../components/Button/types";
 import { TextWithTooltip } from "../../../../components/TextWithTooltip";
 
 interface IProps {
-  logoToken0: string;
-  logoToken1: string;
+  logoToken0: string | ReactNode;
+  logoToken1: string | ReactNode;
   texts: {
     total: string;
     farming: string;
@@ -26,15 +26,16 @@ interface IProps {
     getLp: string;
     tooltip: string;
   };
-  tokenReward: string;
-  startDate: string;
-  endDate: string;
-  yourStake: string;
-  reward: string;
-  lp: string;
-  pair: string;
-  total: string;
-  apy: string;
+  tokenReward: string | ReactNode;
+  startDate: string | ReactNode;
+  endDate: string | ReactNode;
+  yourStake: string | ReactNode;
+  reward: string | ReactNode;
+  lp: string | ReactNode;
+  pair: string | ReactNode;
+  total: string | ReactNode;
+  apy: string | ReactNode;
+  buttonsFooter?: ReactNode;
   depositButtonProps?: ButtonProps;
   claimButtonProps?: ButtonProps;
   withdrawButtonProps?: ButtonProps;
@@ -44,6 +45,7 @@ interface IProps {
   widthDrawHandleClick: () => void | Promise<void>;
   exitHandleClick: () => void | Promise<void>;
   getLpHandleClick: () => void | Promise<void>;
+  getLPTokenNode?: ReactNode
 }
 
 const FarmingCard = ({
@@ -59,6 +61,7 @@ const FarmingCard = ({
   pair,
   total,
   apy,
+  buttonsFooter,
   exitButtonProps,
   withdrawButtonProps,
   claimButtonProps,
@@ -68,6 +71,7 @@ const FarmingCard = ({
   widthDrawHandleClick,
   exitHandleClick,
   getLpHandleClick,
+  getLPTokenNode
 }: IProps) => {
   return (
     <Flex flexDirection="column" alignItems="center">
@@ -89,19 +93,23 @@ const FarmingCard = ({
           </Pair>
         </TopBlock>
         <Content>
-          <ButtonWrap>
-            <Button
-              onClick={getLpHandleClick}
-              fontSize="11px"
-              padding="3px"
-              variant="option"
-              height="30px"
-              width="100%"
-              maxWidth="125px"
-            >
-              {texts.getLp} <TextWithTooltip textTooltip={texts.tooltip} />
-            </Button>
-          </ButtonWrap>
+          {
+            getLPTokenNode
+              ? getLPTokenNode
+              : <ButtonWrap>
+                  <Button
+                    onClick={getLpHandleClick}
+                    fontSize="11px"
+                    padding="3px"
+                    variant="option"
+                    height="30px"
+                    width="100%"
+                    maxWidth="125px"
+                  >
+                    {texts.getLp} <TextWithTooltip textTooltip={texts.tooltip} />
+                  </Button>
+                </ButtonWrap>
+          }
           <Flex mt={15} justifyContent="space-between">
             <LeftText>{texts.startDate}</LeftText>
             <RightText>{startDate}</RightText>
@@ -120,36 +128,40 @@ const FarmingCard = ({
             </LeftText>
             <RightText>{reward}</RightText>
           </Flex>
-          <Buttons>
-            <Button onClick={depositHandleClick} padding="5px" variant="green" width="100%" {...depositButtonProps}>
-              <div>
-                <Text fontSize="13px">{texts.deposit}</Text>
-                {!depositButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
-              </div>
-            </Button>
-            <Button onClick={claimHandleClick} padding="5px" variant="green" width="100%" {...claimButtonProps}>
-              <div>
-                <Text fontSize="13px">{texts.claim}</Text>
-                {!claimButtonProps?.spin && (
-                  <Text fontSize="11px">
-                    {tokenReward} {texts.reward}
-                  </Text>
-                )}
-              </div>
-            </Button>
-            <Button onClick={widthDrawHandleClick} padding="5px" variant="green" width="100%" {...withdrawButtonProps}>
-              <div>
-                <Text fontSize="13px">{texts.withdraw}</Text>
-                {!withdrawButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
-              </div>
-            </Button>
-            <Button onClick={exitHandleClick} padding="5px" variant="green" width="100%" {...exitButtonProps}>
-              <div>
-                <Text fontSize="13px">{texts.exit}</Text>
-                {!exitButtonProps?.spin && <Text fontSize="11px">{texts.withdrawAndClaim}</Text>}
-              </div>
-            </Button>
-          </Buttons>
+          {
+            buttonsFooter
+              ? buttonsFooter
+              : <Buttons>
+                  <Button onClick={depositHandleClick} padding="5px" variant="green" width="100%" {...depositButtonProps}>
+                    <div>
+                      <Text fontSize="13px">{texts.deposit}</Text>
+                      {!depositButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
+                    </div>
+                  </Button>
+                  <Button onClick={claimHandleClick} padding="5px" variant="green" width="100%" {...claimButtonProps}>
+                    <div>
+                      <Text fontSize="13px">{texts.claim}</Text>
+                      {!claimButtonProps?.spin && (
+                        <Text fontSize="11px">
+                          {tokenReward} {texts.reward}
+                        </Text>
+                      )}
+                    </div>
+                  </Button>
+                  <Button onClick={widthDrawHandleClick} padding="5px" variant="green" width="100%" {...withdrawButtonProps}>
+                    <div>
+                      <Text fontSize="13px">{texts.withdraw}</Text>
+                      {!withdrawButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
+                    </div>
+                  </Button>
+                  <Button onClick={exitHandleClick} padding="5px" variant="green" width="100%" {...exitButtonProps}>
+                    <div>
+                      <Text fontSize="13px">{texts.exit}</Text>
+                      {!exitButtonProps?.spin && <Text fontSize="11px">{texts.withdrawAndClaim}</Text>}
+                    </div>
+                  </Button>
+                </Buttons>
+          }
         </Content>
       </Card>
     </Flex>
