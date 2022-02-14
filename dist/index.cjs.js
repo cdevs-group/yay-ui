@@ -14202,12 +14202,10 @@ var templateObject_1$5, templateObject_2$2, templateObject_3$2;
 var PairToken = function (_a) {
     var token0 = _a.token0, token1 = _a.token1;
     return (React__default["default"].createElement(Flex, null,
-        React__default["default"].createElement(Token, null,
-            React__default["default"].createElement("img", { src: token0 })),
-        React__default["default"].createElement(Token, null,
-            React__default["default"].createElement("img", { src: token1 }))));
+        React__default["default"].createElement(Token, null, typeof token0 === "string" ? React__default["default"].createElement("img", { src: token0 }) : token0),
+        React__default["default"].createElement(Token, null, typeof token1 === "string" ? React__default["default"].createElement("img", { src: token1 }) : token1)));
 };
-var Token = styled__default["default"].div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n  &:after {\n    margin-right: 0;\n    margin-left: -10px;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n  &:after {\n    margin-right: 0;\n    margin-left: -10px;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"])), function (_a) {
+var Token = styled__default["default"].div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n  &:after {\n    margin-right: 0;\n    margin-left: -10px;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    width: 100%;\n    height: 100%;\n  }\n  &:after {\n    margin-right: 0;\n    margin-left: -10px;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg3;
 }, function (_a) {
@@ -14223,7 +14221,7 @@ var Token = styled__default["default"].div(templateObject_1$4 || (templateObject
 var templateObject_1$4;
 
 var FarmingCard = function (_a) {
-    var logoToken0 = _a.logoToken0, logoToken1 = _a.logoToken1, texts = _a.texts, tokenReward = _a.tokenReward, startDate = _a.startDate, endDate = _a.endDate, yourStake = _a.yourStake, reward = _a.reward, lp = _a.lp, pair = _a.pair, total = _a.total, apy = _a.apy, exitButtonProps = _a.exitButtonProps, withdrawButtonProps = _a.withdrawButtonProps, claimButtonProps = _a.claimButtonProps, depositButtonProps = _a.depositButtonProps, depositHandleClick = _a.depositHandleClick, claimHandleClick = _a.claimHandleClick, widthDrawHandleClick = _a.widthDrawHandleClick, exitHandleClick = _a.exitHandleClick, getLpHandleClick = _a.getLpHandleClick;
+    var logoToken0 = _a.logoToken0, logoToken1 = _a.logoToken1, texts = _a.texts, tokenReward = _a.tokenReward, startDate = _a.startDate, endDate = _a.endDate, yourStake = _a.yourStake, reward = _a.reward, lp = _a.lp, pair = _a.pair, total = _a.total, apy = _a.apy, buttonsFooter = _a.buttonsFooter, exitButtonProps = _a.exitButtonProps, withdrawButtonProps = _a.withdrawButtonProps, claimButtonProps = _a.claimButtonProps, depositButtonProps = _a.depositButtonProps, depositHandleClick = _a.depositHandleClick, claimHandleClick = _a.claimHandleClick, widthDrawHandleClick = _a.widthDrawHandleClick, exitHandleClick = _a.exitHandleClick, getLpHandleClick = _a.getLpHandleClick, getLPTokenNode = _a.getLPTokenNode;
     return (React__default["default"].createElement(Flex, { flexDirection: "column", alignItems: "center" },
         React__default["default"].createElement(HeadLine, null,
             texts.deposit,
@@ -14244,11 +14242,13 @@ var FarmingCard = function (_a) {
                 React__default["default"].createElement(Pair, null,
                     React__default["default"].createElement(PairToken, { token0: logoToken0, token1: logoToken1 }))),
             React__default["default"].createElement(Content, null,
-                React__default["default"].createElement(ButtonWrap, null,
-                    React__default["default"].createElement(Button$a, { onClick: getLpHandleClick, fontSize: "11px", padding: "3px", variant: "option", height: "30px", width: "100%", maxWidth: "125px" },
-                        texts.getLp,
-                        " ",
-                        React__default["default"].createElement(TextWithTooltip$1, { textTooltip: texts.tooltip }))),
+                getLPTokenNode
+                    ? getLPTokenNode
+                    : React__default["default"].createElement(ButtonWrap, null,
+                        React__default["default"].createElement(Button$a, { onClick: getLpHandleClick, fontSize: "11px", padding: "3px", variant: "option", height: "30px", width: "100%", maxWidth: "125px" },
+                            texts.getLp,
+                            " ",
+                            React__default["default"].createElement(TextWithTooltip$1, { textTooltip: texts.tooltip }))),
                 React__default["default"].createElement(Flex, { mt: 15, justifyContent: "space-between" },
                     React__default["default"].createElement(LeftText, null, texts.startDate),
                     React__default["default"].createElement(RightText, null, startDate)),
@@ -14264,26 +14264,28 @@ var FarmingCard = function (_a) {
                         " ",
                         texts.reward),
                     React__default["default"].createElement(RightText, null, reward)),
-                React__default["default"].createElement(Buttons, null,
-                    React__default["default"].createElement(Button$a, __assign({ onClick: depositHandleClick, padding: "5px", variant: "green", width: "100%" }, depositButtonProps),
-                        React__default["default"].createElement("div", null,
-                            React__default["default"].createElement(Text, { fontSize: "13px" }, texts.deposit),
-                            !(depositButtonProps === null || depositButtonProps === void 0 ? void 0 : depositButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, lp))),
-                    React__default["default"].createElement(Button$a, __assign({ onClick: claimHandleClick, padding: "5px", variant: "green", width: "100%" }, claimButtonProps),
-                        React__default["default"].createElement("div", null,
-                            React__default["default"].createElement(Text, { fontSize: "13px" }, texts.claim),
-                            !(claimButtonProps === null || claimButtonProps === void 0 ? void 0 : claimButtonProps.spin) && (React__default["default"].createElement(Text, { fontSize: "11px" },
-                                tokenReward,
-                                " ",
-                                texts.reward)))),
-                    React__default["default"].createElement(Button$a, __assign({ onClick: widthDrawHandleClick, padding: "5px", variant: "green", width: "100%" }, withdrawButtonProps),
-                        React__default["default"].createElement("div", null,
-                            React__default["default"].createElement(Text, { fontSize: "13px" }, texts.withdraw),
-                            !(withdrawButtonProps === null || withdrawButtonProps === void 0 ? void 0 : withdrawButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, lp))),
-                    React__default["default"].createElement(Button$a, __assign({ onClick: exitHandleClick, padding: "5px", variant: "green", width: "100%" }, exitButtonProps),
-                        React__default["default"].createElement("div", null,
-                            React__default["default"].createElement(Text, { fontSize: "13px" }, texts.exit),
-                            !(exitButtonProps === null || exitButtonProps === void 0 ? void 0 : exitButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, texts.withdrawAndClaim))))))));
+                buttonsFooter
+                    ? buttonsFooter
+                    : React__default["default"].createElement(Buttons, null,
+                        React__default["default"].createElement(Button$a, __assign({ onClick: depositHandleClick, padding: "5px", variant: "green", width: "100%" }, depositButtonProps),
+                            React__default["default"].createElement("div", null,
+                                React__default["default"].createElement(Text, { fontSize: "13px" }, texts.deposit),
+                                !(depositButtonProps === null || depositButtonProps === void 0 ? void 0 : depositButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, lp))),
+                        React__default["default"].createElement(Button$a, __assign({ onClick: claimHandleClick, padding: "5px", variant: "green", width: "100%" }, claimButtonProps),
+                            React__default["default"].createElement("div", null,
+                                React__default["default"].createElement(Text, { fontSize: "13px" }, texts.claim),
+                                !(claimButtonProps === null || claimButtonProps === void 0 ? void 0 : claimButtonProps.spin) && (React__default["default"].createElement(Text, { fontSize: "11px" },
+                                    tokenReward,
+                                    " ",
+                                    texts.reward)))),
+                        React__default["default"].createElement(Button$a, __assign({ onClick: widthDrawHandleClick, padding: "5px", variant: "green", width: "100%" }, withdrawButtonProps),
+                            React__default["default"].createElement("div", null,
+                                React__default["default"].createElement(Text, { fontSize: "13px" }, texts.withdraw),
+                                !(withdrawButtonProps === null || withdrawButtonProps === void 0 ? void 0 : withdrawButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, lp))),
+                        React__default["default"].createElement(Button$a, __assign({ onClick: exitHandleClick, padding: "5px", variant: "green", width: "100%" }, exitButtonProps),
+                            React__default["default"].createElement("div", null,
+                                React__default["default"].createElement(Text, { fontSize: "13px" }, texts.exit),
+                                !(exitButtonProps === null || exitButtonProps === void 0 ? void 0 : exitButtonProps.spin) && React__default["default"].createElement(Text, { fontSize: "11px" }, texts.withdrawAndClaim))))))));
 };
 var HeadLine = styled__default["default"].div(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 250px;\n  padding: 8px;\n  background: ", ";\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  color: ", ";\n  font-size: 11px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  ", " {\n    font-size: 13px;\n    max-width: 308px;\n  }\n"], ["\n  width: 100%;\n  max-width: 250px;\n  padding: 8px;\n  background: ", ";\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  color: ", ";\n  font-size: 11px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  ", " {\n    font-size: 13px;\n    max-width: 308px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
