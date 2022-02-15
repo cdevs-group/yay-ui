@@ -6,7 +6,8 @@ import styled from "styled-components";
 import { Button, Grid } from "../..";
 import { Avalanche, YAY_TOKEN_GREEN } from "../../constants/images";
 import { ButtonProps } from "../../components/Button/types";
-import { Skeleton } from '../../components/Skeleton'
+import { Skeleton } from "../../components/Skeleton";
+import FarmingCardSkeleton from "./components/FarmingCard/FarmingCardSkeleton";
 
 export default {
   title: "Widgets/Farming",
@@ -51,12 +52,16 @@ export const FramingCardBlock = () => {
     dailyTooltip: "dailyTooltip",
   };
 
-  const CustomButton = <div style={{padding: "40px", textAlign: 'center'}}><Button onClick={() => console.log('click')}>Connect Wallet</Button></div>
+  const CustomButton = (
+    <div style={{ padding: "40px", textAlign: "center" }}>
+      <Button onClick={() => console.log("click")}>Connect Wallet</Button>
+    </div>
+  );
 
   const skeletonTextArgs = {
     width: 200,
-    height: 19.5
-  }
+    height: 19.5,
+  };
 
   const variant = {
     RECT: "rect",
@@ -66,17 +71,17 @@ export const FramingCardBlock = () => {
   const skeletonLogoArgs = {
     width: 45,
     height: 45,
-    variant: variant.CIRCLE
-  }
+    variant: variant.CIRCLE,
+  };
 
   const skeletonGetLpTone = {
     width: 100,
     heigth: 50,
-    margin: 'auto'
-  }
+    margin: "auto",
+  };
 
   return (
-    <Grid gridTemplateColumns="repeat(2, 1fr)" gridGap="30px">
+    <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="30px">
       <FarmingCard
         texts={texts}
         logoToken0={YAY_TOKEN_LOGO}
@@ -175,6 +180,9 @@ export const FramingCardBlock = () => {
           yearlyToken={0}
         />
       </Modal>
+      <div style={{ width: 340 }}>
+        <FarmingCardSkeleton />
+      </div>
     </Grid>
   );
 };
