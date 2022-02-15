@@ -37,7 +37,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       <User verified={verified}>
         <img src={USER_ICON} />
       </User>
-      <Text color={verified ? "green" : "textGray"} fontSize="13px" textAlign="left" width="100%">
+      <Text color={verified ? "green" : "textGray"} fontSize="13px" textAlign="left" width="100%" fontWeight={400}>
         {verified ? texts.kycVerified : texts.kycNotVerified}
       </Text>
     </Flex>
@@ -217,12 +217,14 @@ const TextLinkRefferal = styled(Text)`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 80%;
+  font-weight: 400;
 `;
 const TextSponsor = styled(Text)`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  font-weight: 400;
 `;
 const User = styled.div<{ verified?: boolean }>`
   padding: 3px;

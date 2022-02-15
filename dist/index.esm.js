@@ -9914,7 +9914,7 @@ var ProfileCard = function (_a) {
     var VerifiedBlock = function () { return (React__default.createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
         React__default.createElement(User, { verified: verified },
             React__default.createElement("img", { src: USER_ICON })),
-        React__default.createElement(Text, { color: verified ? "green" : "textGray", fontSize: "13px", textAlign: "left", width: "100%" }, verified ? texts.kycVerified : texts.kycNotVerified))); };
+        React__default.createElement(Text, { color: verified ? "green" : "textGray", fontSize: "13px", textAlign: "left", width: "100%", fontWeight: 400 }, verified ? texts.kycVerified : texts.kycNotVerified))); };
     return (React__default.createElement(Card$h, null,
         React__default.createElement(Token$2, { src: token || YAY_TOKEN_CIRCLE, alt: "token1" }),
         React__default.createElement(RefferalBtn, { as: Link$4, to: linkRefferalList }, texts.refferalListBtn),
@@ -9974,8 +9974,8 @@ var LinkAccount = styled.a(templateObject_5$w || (templateObject_5$w = __makeTem
 });
 var AccountLine$1 = styled(Flex)(templateObject_6$s || (templateObject_6$s = __makeTemplateObject(["\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 19px;\n"], ["\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 19px;\n"])));
 var AwardsLine = styled.div(templateObject_7$l || (templateObject_7$l = __makeTemplateObject(["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 16px;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto;\n"], ["\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  grid-gap: 16px;\n  align-items: center;\n  width: 100%;\n  max-width: 250px;\n  margin: 0 auto;\n"])));
-var TextLinkRefferal = styled(Text)(templateObject_8$h || (templateObject_8$h = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n"])));
-var TextSponsor = styled(Text)(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n"])));
+var TextLinkRefferal = styled(Text)(templateObject_8$h || (templateObject_8$h = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n  font-weight: 400;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 80%;\n  font-weight: 400;\n"])));
+var TextSponsor = styled(Text)(templateObject_9$e || (templateObject_9$e = __makeTemplateObject(["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n  font-weight: 400;\n"], ["\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  max-width: 100%;\n  font-weight: 400;\n"])));
 var User = styled.div(templateObject_10$b || (templateObject_10$b = __makeTemplateObject(["\n  padding: 3px;\n  margin-right: 11px;\n  background: ", ";\n  border-radius: 7px;\n"], ["\n  padding: 3px;\n  margin-right: 11px;\n  background: ", ";\n  border-radius: 7px;\n"])), function (_a) {
     var theme = _a.theme, verified = _a.verified;
     return (verified ? theme.colors.green : theme.colors.whiteRgba);
