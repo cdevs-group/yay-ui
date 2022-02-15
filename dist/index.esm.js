@@ -9909,7 +9909,7 @@ var templateObject_1$1E, templateObject_2$1h;
 var YAY_TOKEN_CIRCLE = "4afcc97f0abd5ec8.png";
 
 var ProfileCard = function (_a) {
-    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC, comingSoonEditButton = _a.comingSoonEditButton, disabledEditButton = _a.disabledEditButton;
+    var token = _a.token, texts = _a.texts, account = _a.account, linkAccount = _a.linkAccount, linkRefferal = _a.linkRefferal, games = _a.games, wins = _a.wins, losses = _a.losses, awards = _a.awards, sponsor = _a.sponsor, verified = _a.verified, linkRefferalList = _a.linkRefferalList, linkEdit = _a.linkEdit, linkKYC = _a.linkKYC, comingSoonEditButton = _a.comingSoonEditButton, disabledEditButton = _a.disabledEditButton, hrefSponsor = _a.hrefSponsor;
     var _b = useState(false), isTooltipDisplayed = _b[0], setIsTooltipDisplayed = _b[1];
     var VerifiedBlock = function () { return (React__default.createElement(Flex, { justifyContent: "flex-start", alignItems: "center", width: "100%", mb: "13px" },
         React__default.createElement(User, { verified: verified },
@@ -9938,7 +9938,7 @@ var ProfileCard = function (_a) {
             React__default.createElement(TextLinkRefferal, { color: "textGray", fontSize: "13px" }, linkRefferal),
             React__default.createElement(CopyToClipboard, { toCopy: linkRefferal, textCopied: "", icon: isTooltipDisplayed ? React__default.createElement(Icon$11, null) : React__default.createElement(Icon$F, null), isTooltip: isTooltipDisplayed, setIsTooltip: setIsTooltipDisplayed })),
         React__default.createElement(Text, { fontSize: "16px", textAlign: "left", width: "100%", mb: "10px" }, texts.sponsor),
-        React__default.createElement(TextSponsor, { color: "textGray", fontSize: "13px", textAlign: "left", width: "100%", mb: "32px" }, sponsor),
+        React__default.createElement(TextSponsor, { as: "a", href: hrefSponsor, target: "_blank", color: "textGray", fontSize: "13px", textAlign: "left", width: "100%", mb: "32px" }, sponsor),
         React__default.createElement(Flex, { mb: "10px", justifyContent: "flex-start", width: "100%" },
             React__default.createElement(Text, { fontSize: "16px", textAlign: "left" }, texts.kyc),
             React__default.createElement(TextWithTooltip$1, { textTooltip: texts.tooltip })),

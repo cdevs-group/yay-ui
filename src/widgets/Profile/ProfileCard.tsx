@@ -28,6 +28,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   linkKYC,
   comingSoonEditButton,
   disabledEditButton,
+  hrefSponsor,
 }) => {
   const [isTooltipDisplayed, setIsTooltipDisplayed] = useState(false);
 
@@ -99,7 +100,16 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       <Text fontSize="16px" textAlign="left" width="100%" mb="10px">
         {texts.sponsor}
       </Text>
-      <TextSponsor color="textGray" fontSize="13px" textAlign="left" width="100%" mb="32px">
+      <TextSponsor
+        as="a"
+        href={hrefSponsor}
+        target="_blank"
+        color="textGray"
+        fontSize="13px"
+        textAlign="left"
+        width="100%"
+        mb="32px"
+      >
         {sponsor}
       </TextSponsor>
       <Flex mb="10px" justifyContent="flex-start" width="100%">

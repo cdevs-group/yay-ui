@@ -49,6 +49,7 @@ export const ProfileCardWidget: React.FC = () => {
           linkKYC="/"
           disabledEditButton
           comingSoonEditButton
+          hrefSponsor="/"
         />
       </div>
       <div style={{ marginTop: 50, maxWidth: 373 }}>

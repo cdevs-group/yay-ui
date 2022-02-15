@@ -29,4 +29,5 @@ export interface ProfileCardProps {
     linkKYC: string;
     disabledEditButton?: boolean;
     comingSoonEditButton?: boolean;
+    hrefSponsor?: string;
 }
