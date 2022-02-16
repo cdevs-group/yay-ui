@@ -1,6 +1,6 @@
 import React, { ReactText, useState } from "react";
 import FarmingCard from "./components/FarmingCard/FarmingCard";
-import { YAY_TOKEN_LOGO, AVAX_LOGO } from "../../constants/images";
+import { YAY_TOKEN_LOGO, AVAX_LOGO, BSC_ICON } from "../../constants/images";
 import DepositFarmModal from "./components/FarmingCard/DepositFarmModal";
 import styled from "styled-components";
 import { Button, Grid } from "../..";
@@ -25,6 +25,7 @@ export const FramingCardBlock = () => {
   const texts = {
     total: "Total Staked",
     farming: "Farming APY",
+    network: "Available networks",
     startDate: "Start date",
     endDate: "End date",
     yourStake: "Your stake",
@@ -59,7 +60,7 @@ export const FramingCardBlock = () => {
   );
 
   const skeletonTextArgs = {
-    width: 200,
+    width: 180,
     height: 19.5,
   };
 
@@ -80,6 +81,9 @@ export const FramingCardBlock = () => {
     margin: "auto",
   };
 
+  const network1 = [BSC_ICON, AVAX_LOGO]
+  const network2 = [AVAX_LOGO]
+
   return (
     <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="30px">
       <FarmingCard
@@ -87,6 +91,7 @@ export const FramingCardBlock = () => {
         logoToken0={YAY_TOKEN_LOGO}
         logoToken1={AVAX_LOGO}
         tokenReward="YAY"
+        network={network1}
         startDate="24 Sep 2021 9:00 UTC"
         endDate="23 Jan 2022 9:00 UTC"
         yourStake="$0.00"
@@ -135,6 +140,7 @@ export const FramingCardBlock = () => {
         logoToken0={<Skeleton {...skeletonLogoArgs} />}
         logoToken1={<Skeleton {...skeletonLogoArgs} />}
         tokenReward="YAY"
+        network={network2}
         startDate={<Skeleton {...skeletonTextArgs} />}
         endDate={<Skeleton {...skeletonTextArgs} />}
         yourStake={<Skeleton {...skeletonTextArgs} />}

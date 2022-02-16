@@ -13,6 +13,7 @@ interface IProps {
   texts: {
     total: string;
     farming: string;
+    network: string;
     startDate: string;
     endDate: string;
     yourStake: string;
@@ -27,6 +28,7 @@ interface IProps {
     tooltip: string;
   };
   tokenReward: string | ReactNode;
+  network: string[];
   startDate: string | ReactNode;
   endDate: string | ReactNode;
   yourStake: string | ReactNode;
@@ -53,6 +55,7 @@ const FarmingCard = ({
   logoToken1,
   texts,
   tokenReward,
+  network,
   startDate,
   endDate,
   yourStake,
@@ -110,6 +113,16 @@ const FarmingCard = ({
                   </Button>
                 </ButtonWrap>
           }
+          <Flex mt={15} justifyContent="space-between">
+            <LeftText style={{alignItems: 'center', marginTop: '3px'}}>{texts.network}</LeftText>
+            <RightText style={network.length > 1 ? {marginRight: '5px'} : {}}>
+              <Network>
+                {network && network.map((src, index) => (
+                    <img key={index} alt="" src={src} style={network.length > 1 ? {marginRight: '-5px'} : {}} />
+                ))}
+              </Network>
+            </RightText>
+          </Flex>
           <Flex mt={15} justifyContent="space-between">
             <LeftText>{texts.startDate}</LeftText>
             <RightText>{startDate}</RightText>
@@ -237,4 +250,13 @@ const Buttons = styled.div`
 `;
 const ButtonWrap = styled.div`
   text-align: center;
+`;
+
+const Network = styled.div`
+  display: flex;
+  & img {
+    width: 24px;
+    height: 24px;
+    box-shadow: ${({ theme }) => theme.colors.textShadow};
+  }
 `;
