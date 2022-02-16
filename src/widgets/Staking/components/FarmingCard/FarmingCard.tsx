@@ -115,10 +115,10 @@ const FarmingCard = ({
           }
           <Flex mt={15} justifyContent="space-between">
             <LeftText style={{alignItems: 'center', marginTop: '3px'}}>{texts.network}</LeftText>
-            <RightText style={network.length > 1 ? {marginRight: '5px'} : {}}>
+            <RightText style={network?.length > 1 ? {marginRight: '5px'} : {}}>
               <Network>
                 {network && network.map((src, index) => (
-                    <img key={index} alt="" src={src} style={network.length > 1 ? {marginRight: '-5px'} : {}} />
+                    <img key={index} alt="" src={src} style={network?.length > 1 ? {marginRight: '-5px'} : {}} />
                 ))}
               </Network>
             </RightText>
