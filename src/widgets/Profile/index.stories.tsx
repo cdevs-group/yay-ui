@@ -78,7 +78,6 @@ export const Cards = () => {
         reward="12 YAY"
         countMax="10"
         title="Great loser"
-        description="lose 10 times in a row"
         progress
         collectText="Collect Reward"
         collectTextMob="Collect"
@@ -92,7 +91,6 @@ export const Cards = () => {
         reward="12 YAY"
         countMax="10"
         title="Great loser"
-        description="lose 10 times in a row"
         progress={false}
         collectText="Collect Reward"
         collectTextMob="Collect"
