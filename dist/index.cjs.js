@@ -9897,7 +9897,7 @@ var ButtonTextMob = styled__default["default"](ButtonText)(templateObject_5$y ||
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TitleStyle$4 = styled__default["default"](Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
+var TitleStyle$4 = styled__default["default"](Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: bold;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: bold;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
@@ -10038,7 +10038,7 @@ var EditButton = styled__default["default"].div(templateObject_12$6 || (template
 var templateObject_1$1E, templateObject_2$1h, templateObject_3$11, templateObject_4$S, templateObject_5$x, templateObject_6$s, templateObject_7$l, templateObject_8$h, templateObject_9$e, templateObject_10$c, templateObject_11$9, templateObject_12$6;
 
 var Achievement = function (_a) {
-    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, description = _a.description, fullDescription = _a.fullDescription, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, progress = _a.progress, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, reward = _a.reward, network = _a.network, backTitle = _a.backTitle;
+    var image = _a.image, count = _a.count, countMax = _a.countMax, title = _a.title, fullDescription = _a.fullDescription, collectText = _a.collectText, collectTextMob = _a.collectTextMob, handleCollect = _a.handleCollect, progress = _a.progress, disabledButton = _a.disabledButton, loadingButton = _a.loadingButton, reward = _a.reward, network = _a.network, backTitle = _a.backTitle;
     return (React__default["default"].createElement(Wrapper$y, { progress: progress },
         React__default["default"].createElement(Inner, { className: "card-inner" },
             React__default["default"].createElement(CardFront, { progress: progress },
@@ -10048,8 +10048,7 @@ var Achievement = function (_a) {
                 React__default["default"].createElement(ImageBlock, null,
                     React__default["default"].createElement("img", { src: image })),
                 React__default["default"].createElement(TitleStyle$4, { textAlign: "center" }, title),
-                React__default["default"].createElement(DescriptionStyle, { fontWeight: 500, letterSpacing: "0.05em", textAlign: "center", fontSize: "11px", color: "textGray" }, description),
-                progress && countMax && (count || count === 0) && (React__default["default"].createElement(Box, { marginTop: "auto", width: "100%" },
+                progress && countMax && (count || count === 0) && (React__default["default"].createElement(Box, { marginTop: "auto", marginBottom: "5px", width: "100%" },
                     React__default["default"].createElement(RangeTrack$3, { progress: (+count / +countMax) * 100 }),
                     React__default["default"].createElement(Flex, { justifyContent: "center", mt: "5px" },
                         React__default["default"].createElement(Text, { fontWeight: 500, color: count === 0 || count === "0" ? "text" : "green", letterSpacing: "0.05em", fontSize: "10px" }, count),
@@ -10064,7 +10063,7 @@ var Achievement = function (_a) {
                         React__default["default"].createElement(Text, { fontWeight: 400, letterSpacing: "0.05em", fontSize: "13px", textAlign: "center", mb: "5px" }, backTitle),
                         React__default["default"].createElement(Text, { fontWeight: 400, letterSpacing: "0.05em", color: "grayText", textAlign: "center", fontSize: "11px", lineHeight: "14px" }, fullDescription)))))));
 };
-var ImageBlock = styled__default["default"].div(templateObject_1$1D || (templateObject_1$1D = __makeTemplateObject(["\n  margin: 0 auto 5px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"], ["\n  margin: 0 auto 5px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"])), function (_a) {
+var ImageBlock = styled__default["default"].div(templateObject_1$1D || (templateObject_1$1D = __makeTemplateObject(["\n  margin: 40px auto 10px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"], ["\n  margin: 40px auto 10px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });

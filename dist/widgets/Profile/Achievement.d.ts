@@ -5,7 +5,6 @@ interface IAchievementProps {
     count?: string | number;
     countMax?: string | number;
     title: string;
-    description: string;
     fullDescription?: string;
     collectText?: string;
     handleCollect?: (val?: string | number) => void;
@@ -17,5 +16,5 @@ interface IAchievementProps {
     network?: string;
     backTitle?: string;
 }
-declare const Achievement: ({ image, count, countMax, title, description, fullDescription, collectText, collectTextMob, handleCollect, progress, disabledButton, loadingButton, reward, network, backTitle, }: IAchievementProps) => JSX.Element;
+declare const Achievement: ({ image, count, countMax, title, fullDescription, collectText, collectTextMob, handleCollect, progress, disabledButton, loadingButton, reward, network, backTitle, }: IAchievementProps) => JSX.Element;
 export default Achievement;
