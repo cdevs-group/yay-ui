@@ -113,7 +113,7 @@ const Achievement = ({
 export default Achievement;
 
 const ImageBlock = styled.div`
-  margin: 40px auto 10px;
+  margin: 30px auto 10px;
   & img {
     max-width: 100%;
     max-height: 61px;
