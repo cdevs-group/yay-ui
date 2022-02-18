@@ -10,7 +10,6 @@ interface IAchievementProps {
   count?: string | number;
   countMax?: string | number;
   title: string;
-  description: string;
   fullDescription?: string;
   collectText?: string;
   handleCollect?: (val?: string | number) => void;
@@ -28,7 +27,6 @@ const Achievement = ({
   count,
   countMax,
   title,
-  description,
   fullDescription,
   collectText,
   collectTextMob,
@@ -54,11 +52,8 @@ const Achievement = ({
             <img src={image} />
           </ImageBlock>
           <TitleStyle textAlign="center">{title}</TitleStyle>
-          <DescriptionStyle fontWeight={500} letterSpacing="0.05em" textAlign="center" fontSize="11px" color="textGray">
-            {description}
-          </DescriptionStyle>
           {progress && countMax && (count || count === 0) && (
-            <Box marginTop="auto" width="100%">
+            <Box marginTop="auto" marginBottom="5px" width="100%">
               <RangeTrack progress={(+count / +countMax) * 100} />
               <Flex justifyContent="center" mt="5px">
                 <Text
@@ -118,7 +113,7 @@ const Achievement = ({
 export default Achievement;
 
 const ImageBlock = styled.div`
-  margin: 0 auto 5px;
+  margin: 40px auto 10px;
   & img {
     max-width: 100%;
     max-height: 61px;
