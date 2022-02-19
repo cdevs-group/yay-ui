@@ -21,3 +21,4 @@ export declare const ButtonTextMob: import("styled-components").StyledComponent<
 }, never>;
 export declare const TitleStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps, never>;
 export declare const DescriptionStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps, never>;
+export declare const AddressStyle: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, import("../..").TextProps, never>;
