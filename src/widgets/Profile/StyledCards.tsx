@@ -91,3 +91,7 @@ export const DescriptionStyle = styled(Text)`
     font-size: 11px;
   }
 `;
+
+export const AddressStyle = styled(DescriptionStyle)`
+  margin-bottom: 15px;
+`;

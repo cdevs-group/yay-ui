@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import { baseColors } from "../../theme/colors";
-import { ButtonStyle, Reward, Network, ButtonText, ButtonTextMob, TitleStyle, DescriptionStyle } from "./StyledCards";
+import { ButtonStyle, Reward, Network, ButtonText, ButtonTextMob, TitleStyle, AddressStyle } from "./StyledCards";
 
 interface IRefferalCardProps {
   id?: string | number;
@@ -47,7 +47,7 @@ const RefferalCard = ({
         {created}
       </Text>
       <TitleStyle>{title}</TitleStyle>
-      <DescriptionStyle color={baseColors.textGray}>{description}</DescriptionStyle>
+      <AddressStyle color={baseColors.textGray}>{description}</AddressStyle>
       <ButtonStyle
         padding="0 15px"
         height="30px"
