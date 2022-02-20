@@ -10032,7 +10032,7 @@ var Achievement = function (_a) {
                         React__default.createElement(Text, { fontWeight: 400, letterSpacing: "0.05em", fontSize: "13px", textAlign: "center", mb: "5px" }, backTitle),
                         React__default.createElement(Text, { fontWeight: 400, letterSpacing: "0.05em", color: "grayText", textAlign: "center", fontSize: "11px", lineHeight: "14px" }, fullDescription)))))));
 };
-var ImageBlock = styled.div(templateObject_1$1D || (templateObject_1$1D = __makeTemplateObject(["\n  margin: 30px auto 10px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"], ["\n  margin: 30px auto 10px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"])), function (_a) {
+var ImageBlock = styled.div(templateObject_1$1D || (templateObject_1$1D = __makeTemplateObject(["\n  margin: 30px auto 10px;\n  height: 100%;\n  max-height: 100px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"], ["\n  margin: 30px auto 10px;\n  height: 100%;\n  max-height: 100px;\n  & img {\n    max-width: 100%;\n    max-height: 61px;\n    ", " {\n      max-height: 95px;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
