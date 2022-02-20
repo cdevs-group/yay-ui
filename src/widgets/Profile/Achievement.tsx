@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/Text";
 import { Flex, Box } from "../../components/Box";
-import { ButtonStyle, Network, Reward, ButtonText, ButtonTextMob, TitleStyle, DescriptionStyle } from "./StyledCards";
+import { ButtonStyle, Network, Reward, ButtonText, ButtonTextMob, TitleStyle } from "./StyledCards";
 
 interface IAchievementProps {
   id?: string | number;
@@ -114,6 +114,8 @@ export default Achievement;
 
 const ImageBlock = styled.div`
   margin: 30px auto 10px;
+  height: 100%;
+  max-height: 100px;
   & img {
     max-width: 100%;
     max-height: 61px;
