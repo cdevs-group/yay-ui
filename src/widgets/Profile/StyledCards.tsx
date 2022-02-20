@@ -74,10 +74,10 @@ export const TitleStyle = styled(Text)`
   font-size: 11px;
   line-height: 16px;
   letter-spacing: 0.05em;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 13px;
+    font-size: 14px;
   }
 `;
 
