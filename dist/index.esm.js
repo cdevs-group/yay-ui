@@ -9865,7 +9865,7 @@ var ButtonTextMob = styled(ButtonText)(templateObject_5$y || (templateObject_5$y
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var TitleStyle$4 = styled(Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: bold;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: bold;\n  text-align: center;\n  ", " {\n    font-size: 13px;\n  }\n"])), function (_a) {
+var TitleStyle$4 = styled(Text)(templateObject_6$t || (templateObject_6$t = __makeTemplateObject(["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 14px;\n  }\n"], ["\n  margin-bottom: 5px;\n  font-size: 11px;\n  line-height: 16px;\n  letter-spacing: 0.05em;\n  font-weight: normal;\n  text-align: center;\n  ", " {\n    font-size: 14px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
