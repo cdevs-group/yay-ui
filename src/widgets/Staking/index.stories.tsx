@@ -81,8 +81,8 @@ export const FramingCardBlock = () => {
     margin: "auto",
   };
 
-  const network1 = [BSC_ICON, AVAX_LOGO]
-  const network2 = [AVAX_LOGO]
+  const network1 = [BSC_ICON, AVAX_LOGO];
+  const network2 = [AVAX_LOGO];
 
   return (
     <Grid gridTemplateColumns="repeat(3, 1fr)" gridGap="30px">

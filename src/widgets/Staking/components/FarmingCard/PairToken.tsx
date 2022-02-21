@@ -5,12 +5,8 @@ import { Flex } from "../../../../components/Box";
 const PairToken = ({ token0, token1 }: { token0: string | ReactNode; token1: string | ReactNode }) => {
   return (
     <Flex>
-      <Token>
-        {typeof token0 === "string" ? <img src={token0} /> : token0}
-      </Token>
-      <Token>
-      {typeof token1 === "string" ? <img src={token1} /> : token1}
-      </Token>
+      <Token>{typeof token0 === "string" ? <img src={token0} /> : token0}</Token>
+      <Token>{typeof token1 === "string" ? <img src={token1} /> : token1}</Token>
     </Flex>
   );
 };

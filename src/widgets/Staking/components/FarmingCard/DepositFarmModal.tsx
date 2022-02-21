@@ -83,6 +83,9 @@ const DepositFarmModal = ({
         </Text>
       </Flex>
       <BalanceInput
+        texts={{
+          commit: "Amount Token",
+        }}
         onUserInput={onUserInput}
         value={inputValue}
         pairBlock={
@@ -99,7 +102,9 @@ const DepositFarmModal = ({
       <Row>
         <Flex alignItems="center">
           {" "}
-          <Text fontSize="11px">{texts.stake} </Text>
+          <Text style={{ fontWeight: 400 }} fontSize="11px">
+            {texts.stake}{" "}
+          </Text>
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
@@ -111,10 +116,12 @@ const DepositFarmModal = ({
           {stakeUsd}
         </Text>
       </Row>
-      <Row>
+      <Row style={{ fontWeight: 400 }}>
         <Flex alignItems="center">
           {" "}
-          <Text fontSize="11px">{texts.daily} </Text>
+          <Text style={{ fontWeight: 400 }} fontSize="11px">
+            {texts.daily}{" "}
+          </Text>
           <TextWithTooltip textTooltip={texts.dailyTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
@@ -126,10 +133,12 @@ const DepositFarmModal = ({
           {dailyUsd}
         </Text>
       </Row>
-      <Row>
+      <Row style={{ fontWeight: 400 }}>
         <Flex alignItems="center">
           {" "}
-          <Text fontSize="11px">{texts.monthly} </Text>
+          <Text style={{ fontWeight: 400 }} fontSize="11px">
+            {texts.monthly}{" "}
+          </Text>
           <TextWithTooltip textTooltip={texts.monthlyTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
@@ -144,7 +153,9 @@ const DepositFarmModal = ({
       <Row>
         <Flex alignItems="center">
           {" "}
-          <Text fontSize="11px">{texts.yearly} </Text>
+          <Text style={{ fontWeight: 400 }} fontSize="11px">
+            {texts.yearly}{" "}
+          </Text>
           <TextWithTooltip textTooltip={texts.yearlyTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
@@ -201,7 +212,7 @@ const PairBlock = styled(Flex)`
 const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 0.5fr 0.5fr;
-
+  font-weight: 400;
   margin-top: 22px;
   &:first-child {
     margin-top: 42px;

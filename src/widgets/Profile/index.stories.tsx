@@ -73,7 +73,7 @@ export const Cards = () => {
   return (
     <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(6, 1fr)" }}>
       <Achievement
-        image={'https://yay-backend-stage.herokuapp.com/public/achievements/nostradamus.png'}
+        image={"https://yay-backend-stage.herokuapp.com/public/achievements/nostradamus.png"}
         count={0}
         reward="12 YAY"
         countMax="10"
@@ -86,7 +86,7 @@ export const Cards = () => {
         fullDescription="lose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a rolose 10 times in a ro"
       />
       <Achievement
-        image={'https://yay-backend-stage.herokuapp.com/public/achievements/nostradamus.png'}
+        image={"https://yay-backend-stage.herokuapp.com/public/achievements/nostradamus.png"}
         count={0}
         reward="12 YAY"
         countMax="10"
