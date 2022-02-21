@@ -42,5 +42,5 @@ interface IProps {
     getLpHandleClick: () => void | Promise<void>;
     getLPTokenNode?: ReactNode;
 }
-declare const FarmingCard: ({ logoToken0, logoToken1, texts, tokenReward, network, startDate, endDate, yourStake, reward, lp, pair, total, apy, buttonsFooter, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, depositHandleClick, claimHandleClick, widthDrawHandleClick, exitHandleClick, getLpHandleClick, getLPTokenNode }: IProps) => JSX.Element;
+declare const FarmingCard: ({ logoToken0, logoToken1, texts, tokenReward, network, startDate, endDate, yourStake, reward, lp, pair, total, apy, buttonsFooter, exitButtonProps, withdrawButtonProps, claimButtonProps, depositButtonProps, depositHandleClick, claimHandleClick, widthDrawHandleClick, exitHandleClick, getLpHandleClick, getLPTokenNode, }: IProps) => JSX.Element;
 export default FarmingCard;
