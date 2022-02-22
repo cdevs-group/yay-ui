@@ -24,8 +24,8 @@ const Wrapper = styled(Flex)`
       margin-bottom: -10px;
     }
     &:last-child {
-      margin-top: -10px;
-      margin-left: 15px;
+      margin-top: 0px;
+      margin-left: 20px;
     }
   }
 `;
