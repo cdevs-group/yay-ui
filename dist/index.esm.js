@@ -14238,23 +14238,23 @@ var FarmingCard = function (_a) {
                 buttonsFooter ? (buttonsFooter) : (React__default.createElement(Buttons, null,
                     React__default.createElement(Button$a, __assign({ onClick: depositHandleClick, padding: "5px", variant: "green", width: "100%" }, depositButtonProps),
                         React__default.createElement("div", null,
-                            React__default.createElement(Text, { fontSize: "13px" }, texts.deposit),
-                            !(depositButtonProps === null || depositButtonProps === void 0 ? void 0 : depositButtonProps.spin) && React__default.createElement(Text, { fontSize: "11px" }, lp))),
+                            React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "13px" }, texts.deposit),
+                            !(depositButtonProps === null || depositButtonProps === void 0 ? void 0 : depositButtonProps.spin) && (React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "11px" }, lp)))),
                     React__default.createElement(Button$a, __assign({ onClick: claimHandleClick, padding: "5px", variant: "green", width: "100%" }, claimButtonProps),
                         React__default.createElement("div", null,
-                            React__default.createElement(Text, { fontSize: "13px" }, texts.claim),
-                            !(claimButtonProps === null || claimButtonProps === void 0 ? void 0 : claimButtonProps.spin) && (React__default.createElement(Text, { fontSize: "11px" },
+                            React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "13px" }, texts.claim),
+                            !(claimButtonProps === null || claimButtonProps === void 0 ? void 0 : claimButtonProps.spin) && (React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "11px" },
                                 tokenReward,
                                 " ",
                                 texts.reward)))),
-                    React__default.createElement(Button$a, __assign({ onClick: widthDrawHandleClick, padding: "5px", variant: "green", width: "100%" }, withdrawButtonProps),
+                    React__default.createElement(Button$a, __assign({ onClick: widthDrawHandleClick, padding: "5px", variant: "green", width: "100%", style: { fontWeight: 400 } }, withdrawButtonProps),
                         React__default.createElement("div", null,
-                            React__default.createElement(Text, { fontSize: "13px" }, texts.withdraw),
-                            !(withdrawButtonProps === null || withdrawButtonProps === void 0 ? void 0 : withdrawButtonProps.spin) && React__default.createElement(Text, { fontSize: "11px" }, lp))),
+                            React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "13px" }, texts.withdraw),
+                            !(withdrawButtonProps === null || withdrawButtonProps === void 0 ? void 0 : withdrawButtonProps.spin) && (React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "11px" }, lp)))),
                     React__default.createElement(Button$a, __assign({ onClick: exitHandleClick, padding: "5px", variant: "green", width: "100%" }, exitButtonProps),
                         React__default.createElement("div", null,
-                            React__default.createElement(Text, { fontSize: "13px" }, texts.exit),
-                            !(exitButtonProps === null || exitButtonProps === void 0 ? void 0 : exitButtonProps.spin) && React__default.createElement(Text, { fontSize: "11px" }, texts.withdrawAndClaim)))))))));
+                            React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "13px" }, texts.exit),
+                            !(exitButtonProps === null || exitButtonProps === void 0 ? void 0 : exitButtonProps.spin) && (React__default.createElement(Text, { style: { fontWeight: 400 }, fontSize: "11px" }, texts.withdrawAndClaim))))))))));
 };
 var HeadLine$1 = styled.div(templateObject_1$4 || (templateObject_1$4 = __makeTemplateObject(["\n  width: 100%;\n  max-width: 250px;\n  padding: 8px;\n  background: ", ";\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  color: ", ";\n  font-size: 11px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  ", " {\n    font-size: 13px;\n    max-width: 308px;\n  }\n"], ["\n  width: 100%;\n  max-width: 250px;\n  padding: 8px;\n  background: ", ";\n  border-top-right-radius: 15px;\n  border-top-left-radius: 15px;\n  color: ", ";\n  font-size: 11px;\n  text-align: center;\n  letter-spacing: 0.5px;\n  ", " {\n    font-size: 13px;\n    max-width: 308px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
@@ -14367,7 +14367,7 @@ var PairSquare = function (_a) {
         React__default.createElement("img", { src: token0 }),
         React__default.createElement("img", { src: token1 })));
 };
-var Wrapper = styled(Flex)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: -10px;\n      margin-left: 15px;\n    }\n  }\n"], ["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: -10px;\n      margin-left: 15px;\n    }\n  }\n"])));
+var Wrapper = styled(Flex)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"], ["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"])));
 var templateObject_1$2;
 
 var DepositFarmModal = function (_a) {
