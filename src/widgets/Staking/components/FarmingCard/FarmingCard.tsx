@@ -150,15 +150,23 @@ const FarmingCard = ({
             <Buttons>
               <Button onClick={depositHandleClick} padding="5px" variant="green" width="100%" {...depositButtonProps}>
                 <div>
-                  <Text fontSize="13px">{texts.deposit}</Text>
-                  {!depositButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
+                  <Text style={{ fontWeight: 400 }} fontSize="13px">
+                    {texts.deposit}
+                  </Text>
+                  {!depositButtonProps?.spin && (
+                    <Text style={{ fontWeight: 400 }} fontSize="11px">
+                      {lp}
+                    </Text>
+                  )}
                 </div>
               </Button>
               <Button onClick={claimHandleClick} padding="5px" variant="green" width="100%" {...claimButtonProps}>
                 <div>
-                  <Text fontSize="13px">{texts.claim}</Text>
+                  <Text style={{ fontWeight: 400 }} fontSize="13px">
+                    {texts.claim}
+                  </Text>
                   {!claimButtonProps?.spin && (
-                    <Text fontSize="11px">
+                    <Text style={{ fontWeight: 400 }} fontSize="11px">
                       {tokenReward} {texts.reward}
                     </Text>
                   )}
@@ -169,17 +177,30 @@ const FarmingCard = ({
                 padding="5px"
                 variant="green"
                 width="100%"
+                style={{ fontWeight: 400 }}
                 {...withdrawButtonProps}
               >
                 <div>
-                  <Text fontSize="13px">{texts.withdraw}</Text>
-                  {!withdrawButtonProps?.spin && <Text fontSize="11px">{lp}</Text>}
+                  <Text style={{ fontWeight: 400 }} fontSize="13px">
+                    {texts.withdraw}
+                  </Text>
+                  {!withdrawButtonProps?.spin && (
+                    <Text style={{ fontWeight: 400 }} fontSize="11px">
+                      {lp}
+                    </Text>
+                  )}
                 </div>
               </Button>
               <Button onClick={exitHandleClick} padding="5px" variant="green" width="100%" {...exitButtonProps}>
                 <div>
-                  <Text fontSize="13px">{texts.exit}</Text>
-                  {!exitButtonProps?.spin && <Text fontSize="11px">{texts.withdrawAndClaim}</Text>}
+                  <Text style={{ fontWeight: 400 }} fontSize="13px">
+                    {texts.exit}
+                  </Text>
+                  {!exitButtonProps?.spin && (
+                    <Text style={{ fontWeight: 400 }} fontSize="11px">
+                      {texts.withdrawAndClaim}
+                    </Text>
+                  )}
                 </div>
               </Button>
             </Buttons>
