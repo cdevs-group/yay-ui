@@ -27,7 +27,7 @@ interface IProps {
   lp: string;
   balance: string | number;
   onUserInput: (input: string) => void;
-  inputValue: ReactText;
+  inputValue: string;
   pair: string;
   tokenImg0: string;
   tokenImg1: string;
@@ -86,7 +86,9 @@ const DepositFarmModal = ({
         texts={{
           commit: "Amount Token",
         }}
-        onUserInput={onUserInput}
+        placeholder="0.00"
+        decimals={2}
+        customInputHendler={onUserInput}
         value={inputValue}
         pairBlock={
           <>
