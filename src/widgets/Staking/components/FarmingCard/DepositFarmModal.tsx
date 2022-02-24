@@ -27,7 +27,7 @@ interface IProps {
   lp: string;
   balance: string | number;
   onUserInput: (input: string) => void;
-  inputValue: ReactText;
+  inputValue: string;
   pair: string;
   tokenImg0: string;
   tokenImg1: string;
@@ -86,7 +86,8 @@ const DepositFarmModal = ({
         texts={{
           commit: "Amount Token",
         }}
-        onUserInput={onUserInput}
+        placeholder="0.0"
+        customInputHendler={onUserInput}
         value={inputValue}
         pairBlock={
           <>
@@ -102,7 +103,7 @@ const DepositFarmModal = ({
       <Row>
         <Flex alignItems="center">
           {" "}
-          <Text style={{ fontWeight: 400 }} fontSize="11px">
+          <Text style={{ fontWeight: 400 }} fontSize="11px" marginRight="5px">
             {texts.stake}{" "}
           </Text>
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
@@ -119,7 +120,7 @@ const DepositFarmModal = ({
       <Row style={{ fontWeight: 400 }}>
         <Flex alignItems="center">
           {" "}
-          <Text style={{ fontWeight: 400 }} fontSize="11px">
+          <Text style={{ fontWeight: 400 }} fontSize="11px" marginRight="5px">
             {texts.daily}{" "}
           </Text>
           <TextWithTooltip textTooltip={texts.dailyTooltip} />
@@ -136,7 +137,7 @@ const DepositFarmModal = ({
       <Row style={{ fontWeight: 400 }}>
         <Flex alignItems="center">
           {" "}
-          <Text style={{ fontWeight: 400 }} fontSize="11px">
+          <Text style={{ fontWeight: 400 }} fontSize="11px" marginRight="5px">
             {texts.monthly}{" "}
           </Text>
           <TextWithTooltip textTooltip={texts.monthlyTooltip} />
@@ -153,7 +154,7 @@ const DepositFarmModal = ({
       <Row>
         <Flex alignItems="center">
           {" "}
-          <Text style={{ fontWeight: 400 }} fontSize="11px">
+          <Text style={{ fontWeight: 400 }} fontSize="11px" marginRight="5px">
             {texts.yearly}{" "}
           </Text>
           <TextWithTooltip textTooltip={texts.yearlyTooltip} />
@@ -217,4 +218,4 @@ const Row = styled.div`
   &:first-child {
     margin-top: 42px;
   }
-`;
+`
