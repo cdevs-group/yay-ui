@@ -14378,7 +14378,7 @@ var DepositFarmModal = function (_a) {
             React__default.createElement(ButtonClose, { onClick: onDismiss },
                 React__default.createElement(Icon$1p, null))),
         React__default.createElement(Flex, { mt: 15, marginBottom: "7px", justifyContent: "flex-end" },
-            React__default.createElement(Text, { mr: "5px", fontSize: "11px" },
+            React__default.createElement(Text, { style: { fontWeight: 400 }, mr: "5px", fontSize: "11px" },
                 lp,
                 " ",
                 texts.balance),

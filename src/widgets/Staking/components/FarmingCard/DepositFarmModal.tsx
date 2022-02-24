@@ -75,7 +75,7 @@ const DepositFarmModal = ({
         </ButtonClose>
       </Flex>
       <Flex mt={15} marginBottom="7px" justifyContent="flex-end">
-        <Text mr="5px" fontSize="11px">
+        <Text style={{ fontWeight: 400 }} mr="5px" fontSize="11px">
           {lp} {texts.balance}
         </Text>
         <Text fontSize="11px" color="green">
