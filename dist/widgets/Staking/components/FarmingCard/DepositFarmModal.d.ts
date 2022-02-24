@@ -1,4 +1,4 @@
-import { ReactText } from "react";
+/// <reference types="react" />
 import { ButtonProps } from "../../../../components/Button/types";
 interface IProps {
     onDismiss: () => void;
@@ -18,7 +18,7 @@ interface IProps {
     lp: string;
     balance: string | number;
     onUserInput: (input: string) => void;
-    inputValue: ReactText;
+    inputValue: string;
     pair: string;
     tokenImg0: string;
     tokenImg1: string;
