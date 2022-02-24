@@ -16,21 +16,21 @@ export default {
 
 export const FramingCardBlock = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [inputValue, setInputValue] = useState('0.00');
+  const [inputValue, setInputValue] = useState('0.0');
 
   const handleInput = (e) => {
     let start = e.target.selectionStart;
     let val = e.target.value;
     val = val.replace(/([^0-9.]+)/, "");
     val = val.replace(/^(0|\.)/, "");
-    const match = /(\d{0,7})[^.]*((?:\.\d{0,2})?)/g.exec(val);
+    const match = /(\d{0,9})[^.]*((?:\.\d{0,1})?)/g.exec(val);
     const value = match[1] + match[2];
     e.target.value = value;
     setInputValue(value);
     if (val.length > 0) {
-      e.target.value = Number(value).toFixed(2);
+      e.target.value = Number(value).toFixed(1);
       e.target.setSelectionRange(start, start);
-      setInputValue(Number(value).toFixed(2));
+      setInputValue(Number(value).toFixed(1));
     }
   };
 

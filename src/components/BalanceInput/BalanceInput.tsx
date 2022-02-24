@@ -40,6 +40,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
           onChange={(e) => customInputHendler ? customInputHendler(e) : handleOnChange(e)}
           placeholder={placeholder}
           disabled={disabled}
+          style={customInputHendler ? { paddingLeft: "2px" } : {}}
           {...inputProps}
         />
       </LeftBlock>
