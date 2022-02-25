@@ -85,10 +85,12 @@ const IGOSubscriptionCard = ({
         </Block> */}
       </Row>
       <Row>
-        <div>
-          <TitleBlock>{texts.vesting}</TitleBlock>
-          <ValueBlock>{vestingStatus}</ValueBlock>
-        </div>
+        {vestingStatus && (
+          <div>
+            <TitleBlock>{texts.vesting}</TitleBlock>
+            <ValueBlock>{vestingStatus}</ValueBlock>
+          </div>
+        )}
       </Row>
     </Card>
   );

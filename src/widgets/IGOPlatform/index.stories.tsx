@@ -576,7 +576,7 @@ export const IGOSubscriptionCardBlock = () => {
         hardCap="700 BNB"
         purchasedLimit="2.8 BNB"
         // maxPurchased="2.8 BNB"
-        vestingStatus={<a>Refer to project details</a>}
+        // vestingStatus={<a>Refer to project details</a>}
         texts={texts}
         privateTime="05:00 PM"
         publicTime="05:00 PM"
