@@ -20,6 +20,7 @@ const Wrapper = styled(Flex)`
     //position: absolute;
     width: 30px;
     height: 30px;
+    max-width: none;
     &:first-child {
       margin-bottom: -10px;
     }

@@ -14399,7 +14399,7 @@ var PairSquare = function (_a) {
         React__default["default"].createElement("img", { src: token0 }),
         React__default["default"].createElement("img", { src: token1 })));
 };
-var Wrapper = styled__default["default"](Flex)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"], ["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"])));
+var Wrapper = styled__default["default"](Flex)(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    max-width: none;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"], ["\n  position: relative;\n  flex-direction: column;\n  & img {\n    //position: absolute;\n    width: 30px;\n    height: 30px;\n    max-width: none;\n    &:first-child {\n      margin-bottom: -10px;\n    }\n    &:last-child {\n      margin-top: 0px;\n      margin-left: 20px;\n    }\n  }\n"])));
 var templateObject_1$2;
 
 var DepositFarmModal = function (_a) {
