@@ -161,7 +161,7 @@ export interface IGOSubscriptionCardProps {
     endDate: string;
     hardCap: string;
     purchasedLimit: string;
-    vestingStatus: string | ReactNode;
+    vestingStatus?: string | ReactNode;
     texts: {
         title: string;
         totalSale: string;
