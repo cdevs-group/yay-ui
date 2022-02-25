@@ -14205,7 +14205,7 @@ var PairToken = function (_a) {
         React__default["default"].createElement(Token, null, typeof token0 === "string" ? React__default["default"].createElement("img", { src: token0 }) : token0),
         React__default["default"].createElement(Token2, null, typeof token1 === "string" ? React__default["default"].createElement("img", { src: token1 }) : token1)));
 };
-var Token = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    border-radius: 50%;\n    border: 5px solid ", ";\n    box-sizing: content-box;\n    width: 100%;\n    height: 100%;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    border-radius: 50%;\n    border: 5px solid ", ";\n    box-sizing: content-box;\n    width: 100%;\n    height: 100%;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"])), function (_a) {
+var Token = styled__default["default"].div(templateObject_1$5 || (templateObject_1$5 = __makeTemplateObject(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    display: block;\n    border-radius: 50%;\n    width: 100%;\n    height: 100%;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"], ["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  z-index: 1;\n  width: 40px;\n  height: 40px;\n  margin-right: -10px;\n  background: ", ";\n  border: 5px solid ", ";\n  box-shadow: ", ";\n  border-radius: 50%;\n  & img {\n    display: block;\n    border-radius: 50%;\n    width: 100%;\n    height: 100%;\n  }\n  ", " {\n    width: 55px;\n    height: 55px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.buttonBg3;
 }, function (_a) {
@@ -14214,9 +14214,6 @@ var Token = styled__default["default"].div(templateObject_1$5 || (templateObject
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.boxShadow15;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.cardBg;
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;

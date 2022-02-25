@@ -26,9 +26,8 @@ const Token = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow15};
   border-radius: 50%;
   & img {
+    display: block;
     border-radius: 50%;
-    border: 5px solid ${({ theme }) => theme.colors.cardBg};
-    box-sizing: content-box;
     width: 100%;
     height: 100%;
   }
