@@ -2080,7 +2080,7 @@ var BalanceInput = function (_a) {
     return (React__default.createElement(InputWrap$4, __assign({ disabled: disabled }, props),
         React__default.createElement(LeftBlock, null,
             React__default.createElement(TitleInput, null, (texts === null || texts === void 0 ? void 0 : texts.commit) || "Commit"),
-            React__default.createElement(Input$e, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: function (e) { return customInputHendler ? customInputHendler(e) : handleOnChange(e); }, placeholder: placeholder, disabled: disabled, style: customInputHendler ? { paddingLeft: "2px" } : {} }, inputProps))),
+            React__default.createElement(Input$e, __assign({ className: isWarning ? "warning" : "", pattern: "^[0-9]*[.,]?[0-9]{0," + decimals + "}$", inputMode: "decimal", min: "0", value: value, onChange: function (e) { return (customInputHendler ? customInputHendler(e) : handleOnChange(e)); }, placeholder: placeholder, disabled: disabled, style: customInputHendler ? { paddingLeft: "2px" } : {} }, inputProps))),
         React__default.createElement(RightBlock, null,
             handleButtonToMax ? (React__default.createElement(ButtonToMax, { as: "button", onClick: handleButtonToMax }, "MAX")) : null,
             pairBlock || (React__default.createElement(InputIcon, null,
