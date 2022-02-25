@@ -37,7 +37,7 @@ const BalanceInput: React.FC<BalanceInputProps> = ({
           inputMode="decimal"
           min="0"
           value={value}
-          onChange={(e) => customInputHendler ? customInputHendler(e) : handleOnChange(e)}
+          onChange={(e) => (customInputHendler ? customInputHendler(e) : handleOnChange(e))}
           placeholder={placeholder}
           disabled={disabled}
           style={customInputHendler ? { paddingLeft: "2px" } : {}}

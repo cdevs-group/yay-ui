@@ -25,6 +25,5 @@ export interface BalanceInputProps extends BoxProps, SpaceProps {
   icon?: React.ReactNode;
   disabled?: boolean;
   pairBlock?: React.ReactNode;
-  customInputHendler?: any
+  customInputHendler?: any;
 }
-

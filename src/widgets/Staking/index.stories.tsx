@@ -16,7 +16,7 @@ export default {
 
 export const FramingCardBlock = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [inputValue, setInputValue] = useState('0.0');
+  const [inputValue, setInputValue] = useState("0.0");
 
   const handleInput = (e) => {
     let start = e.target.selectionStart;
