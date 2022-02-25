@@ -6,7 +6,7 @@ const PairToken = ({ token0, token1 }: { token0: string | ReactNode; token1: str
   return (
     <Flex>
       <Token>{typeof token0 === "string" ? <img src={token0} /> : token0}</Token>
-      <Token>{typeof token1 === "string" ? <img src={token1} /> : token1}</Token>
+      <Token2>{typeof token1 === "string" ? <img src={token1} /> : token1}</Token2>
     </Flex>
   );
 };
@@ -14,6 +14,9 @@ const PairToken = ({ token0, token1 }: { token0: string | ReactNode; token1: str
 export default PairToken;
 
 const Token = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   width: 40px;
   height: 40px;
@@ -23,15 +26,18 @@ const Token = styled.div`
   box-shadow: ${({ theme }) => theme.colors.boxShadow15};
   border-radius: 50%;
   & img {
+    border-radius: 50%;
+    border: 5px solid ${({ theme }) => theme.colors.cardBg};
+    box-sizing: content-box;
     width: 100%;
     height: 100%;
-  }
-  &:after {
-    margin-right: 0;
-    margin-left: -10px;
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 55px;
     height: 55px;
   }
+`;
+
+const Token2 = styled(Token)`
+  margin-right: 0;
 `;
