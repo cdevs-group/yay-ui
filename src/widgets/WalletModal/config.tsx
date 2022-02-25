@@ -79,6 +79,7 @@ export const getNetwork = (network?: string) => {
     case "56":
       return connectorsDefault;
     case "43114":
+    case "43113":
       return connectorsAvalanche;
     default:
       return connectorsDefault;
