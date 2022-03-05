@@ -110,7 +110,7 @@ const FarmingCard = ({
                 width="100%"
                 maxWidth="125px"
               >
-                {texts.getLp} <TextWithTooltip textTooltip={texts.tooltip} />
+                {texts.getLp} <TextWithTooltip preLine={true} textTooltip={texts.tooltip} />
               </Button>
             </ButtonWrap>
           )}

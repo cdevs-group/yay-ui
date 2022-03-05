@@ -49,7 +49,8 @@ export const FramingCardBlock = () => {
     withdrawAndClaim: "Withdraw and claim",
     andEarn: "and earn",
     getLp: "Get LP tokens",
-    tooltip: "hsbdchjsd dfvfdev fbdbd  dfgdfb  dfbgfdb dfbdfb fgb dfbdfvb",
+    tooltip:
+      "You can get this LP token on the PancakeSwap. \n Add liquidity YAY & BUSD, get LP token to your wallet and deposit here",
   };
   const textsModal = {
     title: "Deposit",

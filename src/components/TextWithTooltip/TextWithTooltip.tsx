@@ -4,8 +4,9 @@ import { Flex } from "../Box";
 import { HelpIcon2 } from "../Svg";
 import { Text } from "../Text";
 import { TextWithTooltipProps } from "./types";
+import styled from "styled-components";
 
-const TextWithTooltip = ({ text, textTooltip }: TextWithTooltipProps) => {
+const TextWithTooltip = ({ text, textTooltip, preLine }: TextWithTooltipProps) => {
   const { tooltipVisible, targetRef, tooltip } = useTooltip(textTooltip, { placement: "top-start", trigger: "hover" });
 
   return (
@@ -16,9 +17,13 @@ const TextWithTooltip = ({ text, textTooltip }: TextWithTooltipProps) => {
       <Flex alignItems="center" ref={targetRef}>
         <HelpIcon2 />
       </Flex>
-      {tooltipVisible && tooltip}
+      {tooltipVisible && <TooltipText preLine={preLine}>{tooltip}</TooltipText>}
     </Flex>
   );
 };
+
+const TooltipText = styled.div<{ preLine: boolean | undefined }>`
+  white-space: ${({ preLine }) => (preLine ? "pre-line" : "initial")};
+`;
 
 export default TextWithTooltip;
