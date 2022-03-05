@@ -7,7 +7,11 @@ import { TextWithTooltipProps } from "./types";
 import styled from "styled-components";
 
 const TextWithTooltip = ({ text, textTooltip, preLine }: TextWithTooltipProps) => {
-  const { tooltipVisible, targetRef, tooltip } = useTooltip(textTooltip, { placement: "top-start", trigger: "hover" });
+  const { tooltipVisible, targetRef, tooltip } = useTooltip(textTooltip, {
+    placement: "top-start",
+    trigger: "hover",
+    preLine,
+  });
 
   return (
     <Flex alignItems="center">
@@ -17,13 +21,11 @@ const TextWithTooltip = ({ text, textTooltip, preLine }: TextWithTooltipProps) =
       <Flex alignItems="center" ref={targetRef}>
         <HelpIcon2 />
       </Flex>
-      {tooltipVisible && <TooltipText preLine={preLine}>{tooltip}</TooltipText>}
+      {tooltipVisible && <TooltipText>{tooltip}</TooltipText>}
     </Flex>
   );
 };
 
-const TooltipText = styled.div<{ preLine: boolean | undefined }>`
-  white-space: ${({ preLine }) => (preLine ? "pre-line" : "initial")};
-`;
+const TooltipText = styled.div``;
 
 export default TextWithTooltip;

@@ -18,7 +18,7 @@ export const Arrow = styled.div`
   }
 `;
 
-export const StyledTooltip = styled.div`
+export const StyledTooltip = styled.div<{ preLine?: boolean }>`
   padding: 11px;
   font-size: 11px;
   line-height: 16px;
@@ -29,6 +29,7 @@ export const StyledTooltip = styled.div`
   border: 1px solid #606060;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   max-width: 290px;
+  white-space: ${({ preLine }) => (preLine ? "pre-line" : "initial")};
   ${({ theme }) => theme.mediaQueries.xs} {
     max-width: 320px;
   }
