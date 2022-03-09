@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Text } from "../../components/Text";
 import { InfoBoardProps } from "./types";
 
-const InfoBoard = ({ imgMain, images, texts }: InfoBoardProps) => {
+const InfoBoard = ({ imgMain, images, texts, bannerPosition }: InfoBoardProps) => {
   return (
     <Wrapper>
-      <MainImg src={imgMain} />
+      <MainImg position={bannerPosition} src={imgMain} />
       <Title>{texts.title}</Title>
       <Description
         dangerouslySetInnerHTML={{
@@ -49,12 +49,12 @@ const Title = styled(Text)`
     font-size: 28px;
   }
 `;
-const MainImg = styled.div<{ src: string }>`
+const MainImg = styled.div<{ src: string; position?: string }>`
   height: 250px;
   background: ${({ src, theme }) => (src === "" ? theme.colors.whiteRgba : `url(${src})`)};
   background-size: cover;
   border-radius: 6px;
-  background-position: center;
+  background-position: ${({ position }) => position || "center"};
 `;
 const Description = styled(Text)`
   font-size: 15px;
