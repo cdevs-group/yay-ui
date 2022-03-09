@@ -625,7 +625,7 @@ export const InfoBoardBlock = () => {
   };
   return (
     <div>
-      <InfoBoard texts={texts} images={[MAIN_GAME, MAIN_GAME, MAIN_GAME]} imgMain={MAIN_GAME} />
+      <InfoBoard bannerPosition="top" texts={texts} images={[MAIN_GAME, MAIN_GAME, MAIN_GAME]} imgMain={MAIN_GAME} />
     </div>
   );
 };
