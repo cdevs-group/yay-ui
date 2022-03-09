@@ -201,6 +201,7 @@ export interface IGOInfoCardProps {
 export interface InfoBoardProps {
     imgMain: string;
     images: string[];
+    bannerPosition?: string;
     texts: {
         title: string;
         description: string;
