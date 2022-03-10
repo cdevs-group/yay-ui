@@ -14381,7 +14381,7 @@ var Wrapper = styled(Flex)(templateObject_1$2 || (templateObject_1$2 = __makeTem
 var templateObject_1$2;
 
 var DepositFarmModal = function (_a) {
-    var onDismiss = _a.onDismiss, texts = _a.texts, lp = _a.lp, balance = _a.balance, onUserInput = _a.onUserInput, inputValue = _a.inputValue, pair = _a.pair, tokenImg0 = _a.tokenImg0, tokenImg1 = _a.tokenImg1, handleButton = _a.handleButton, tokenName = _a.tokenName, buttonProps = _a.buttonProps, dailyUsd = _a.dailyUsd, monthlyUsd = _a.monthlyUsd, yearlyUsd = _a.yearlyUsd, dailyToken = _a.dailyToken, monthlyToken = _a.monthlyToken, yearlyToken = _a.yearlyToken, stakeUsd = _a.stakeUsd, stakeToken = _a.stakeToken;
+    var onDismiss = _a.onDismiss, texts = _a.texts, lp = _a.lp, shortLp = _a.shortLp, balance = _a.balance, onUserInput = _a.onUserInput, inputValue = _a.inputValue, pair = _a.pair, tokenImg0 = _a.tokenImg0, tokenImg1 = _a.tokenImg1, handleButton = _a.handleButton, tokenName = _a.tokenName, buttonProps = _a.buttonProps, dailyUsd = _a.dailyUsd, monthlyUsd = _a.monthlyUsd, yearlyUsd = _a.yearlyUsd, dailyToken = _a.dailyToken, monthlyToken = _a.monthlyToken, yearlyToken = _a.yearlyToken, stakeUsd = _a.stakeUsd, stakeToken = _a.stakeToken;
     return (React__default.createElement(StyledModal, null,
         React__default.createElement(Flex, { justifyContent: "space-between", alignItems: "center" },
             React__default.createElement(Text, { fontSize: "21px" }, texts.title),
@@ -14409,7 +14409,7 @@ var DepositFarmModal = function (_a) {
             React__default.createElement(Text, { color: "green", fontSize: "13px" },
                 stakeToken,
                 " ",
-                lp),
+                shortLp),
             React__default.createElement(Text, { textAlign: "right", color: "green", fontSize: "13px" }, stakeUsd)),
         React__default.createElement(Row, { style: { fontWeight: 400 } },
             React__default.createElement(Flex, { alignItems: "center" },
