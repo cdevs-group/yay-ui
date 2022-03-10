@@ -14440,7 +14440,7 @@ var DepositFarmModal = function (_a) {
                 React__default["default"].createElement(TextWithTooltip$1, { textTooltip: texts.stakeTooltip })),
             React__default["default"].createElement(Text, { color: "green", fontSize: "13px" },
                 stakeToken,
-                "",
+                " ",
                 lp),
             React__default["default"].createElement(Text, { textAlign: "right", color: "green", fontSize: "13px" }, stakeUsd)),
         React__default["default"].createElement(Row, { style: { fontWeight: 400 } },
