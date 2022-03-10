@@ -109,9 +109,7 @@ const DepositFarmModal = ({
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
-          {stakeToken}
-          {""}
-          {lp}
+          {stakeToken} {lp}
         </Text>
         <Text textAlign="right" color="green" fontSize="13px">
           {stakeUsd}
