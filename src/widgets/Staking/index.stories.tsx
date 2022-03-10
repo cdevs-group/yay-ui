@@ -129,6 +129,7 @@ export const FramingCardBlock = () => {
           texts={textsModal}
           onDismiss={() => setOpenModal(false)}
           lp="1LP-YAY-AVAX"
+          shortLp="LP"
           balance={0}
           onUserInput={handleInput}
           inputValue={inputValue}
@@ -177,6 +178,7 @@ export const FramingCardBlock = () => {
       <Overlay open={openModal} />
       <Modal open={openModal}>
         <DepositFarmModal
+          shortLp="LP"
           texts={textsModal}
           onDismiss={() => setOpenModal(false)}
           lp="1LP-YAY-AVAX"

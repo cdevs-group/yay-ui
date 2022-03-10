@@ -16,6 +16,7 @@ interface IProps {
         dailyTooltip: string;
     };
     lp: string;
+    shortLp: string;
     balance: string | number;
     onUserInput: (input: string) => void;
     inputValue: string;
@@ -34,6 +35,6 @@ interface IProps {
     monthlyToken: string | number;
     yearlyToken: string | number;
 }
-declare const DepositFarmModal: ({ onDismiss, texts, lp, balance, onUserInput, inputValue, pair, tokenImg0, tokenImg1, handleButton, tokenName, buttonProps, dailyUsd, monthlyUsd, yearlyUsd, dailyToken, monthlyToken, yearlyToken, stakeUsd, stakeToken, }: IProps) => JSX.Element;
+declare const DepositFarmModal: ({ onDismiss, texts, lp, shortLp, balance, onUserInput, inputValue, pair, tokenImg0, tokenImg1, handleButton, tokenName, buttonProps, dailyUsd, monthlyUsd, yearlyUsd, dailyToken, monthlyToken, yearlyToken, stakeUsd, stakeToken, }: IProps) => JSX.Element;
 export default DepositFarmModal;
 export declare const StyledModal: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

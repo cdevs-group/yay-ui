@@ -25,6 +25,7 @@ interface IProps {
     dailyTooltip: string;
   };
   lp: string;
+  shortLp: string;
   balance: string | number;
   onUserInput: (input: string) => void;
   inputValue: string;
@@ -48,6 +49,7 @@ const DepositFarmModal = ({
   onDismiss,
   texts,
   lp,
+  shortLp,
   balance,
   onUserInput,
   inputValue,
@@ -109,7 +111,7 @@ const DepositFarmModal = ({
           <TextWithTooltip textTooltip={texts.stakeTooltip} />
         </Flex>
         <Text color="green" fontSize="13px">
-          {stakeToken} {lp}
+          {stakeToken} {shortLp}
         </Text>
         <Text textAlign="right" color="green" fontSize="13px">
           {stakeUsd}
