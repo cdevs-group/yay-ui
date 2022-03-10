@@ -111,7 +111,7 @@ const DepositFarmModal = ({
         <Text color="green" fontSize="13px">
           {stakeToken}
           {""}
-          {tokenName}
+          {lp}
         </Text>
         <Text textAlign="right" color="green" fontSize="13px">
           {stakeUsd}

@@ -130,9 +130,7 @@ const FarmingCard = ({
             <RightText>{yourStake}</RightText>
           </Flex>
           <Flex mt={15} justifyContent="space-between">
-            <LeftText>
-              {tokenReward} {texts.reward}
-            </LeftText>
+            <LeftText>{texts.reward}</LeftText>
             <RightText>{reward}</RightText>
           </Flex>
 
