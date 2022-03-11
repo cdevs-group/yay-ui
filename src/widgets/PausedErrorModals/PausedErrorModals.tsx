@@ -9,17 +9,14 @@ import { Variant } from "../../components/Button/types";
 interface Props {
   title: string;
   buttonText: string;
-  descriptionTop: string | React.ReactNode;
-  descriptionBottom?: string | React.ReactNode;
+  descriptionTop: string;
+  descriptionBottom?: string;
   handleConfirm?: () => void;
   disabledButton?: boolean;
   errorPadding?: boolean;
   buttonVariant?: Variant;
   img?: string;
   marginImg?: string;
-  hideCloseButton?: boolean;
-  onDismiss?: () => void;
-  loaderButton?: boolean;
 }
 
 const Wrap = styled.div`
@@ -33,6 +30,8 @@ const Ghosts = styled.div<{ marginImg?: string }>`
 `;
 
 const Description = styled(Text)`
+  display: flex;
+  justify-content: center;
   padding: 16px 26px 30px;
   letter-spacing: 0.05em;
   text-align: center;
@@ -53,12 +52,9 @@ const PausedErrorModals: React.FC<Props> = ({
   buttonVariant,
   img,
   marginImg,
-  hideCloseButton = true,
-  onDismiss = () => null,
-  loaderButton,
 }) => (
   <>
-    <Modal title={title} welcome hideCloseButton={hideCloseButton} onDismiss={onDismiss}>
+    <Modal title={title} welcome hideCloseButton>
       <Wrap>
         <Ghosts marginImg={marginImg}>
           <img src={img || OneGhost} />
@@ -69,13 +65,7 @@ const PausedErrorModals: React.FC<Props> = ({
           <br />
           {descriptionBottom}
         </Description>
-        <Button
-          width="100%"
-          variant={buttonVariant || "green"}
-          onClick={handleConfirm}
-          disabled={disabledButton}
-          spin={loaderButton}
-        >
+        <Button width="100%" variant={buttonVariant || "green"} onClick={handleConfirm} disabled={disabledButton}>
           {buttonText}
         </Button>
       </Wrap>
