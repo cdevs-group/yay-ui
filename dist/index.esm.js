@@ -8674,7 +8674,7 @@ var Ghosts = styled.div(templateObject_2$1J || (templateObject_2$1J = __makeTemp
 });
 var Description$a = styled(Text)(templateObject_3$1m || (templateObject_3$1m = __makeTemplateObject(["\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"], ["\n  padding: 16px 26px 30px;\n  letter-spacing: 0.05em;\n  text-align: center;\n\n  &.errorPadding {\n    padding: 20px 43px 45px;\n  }\n"])));
 var PausedErrorModals = function (_a) {
-    var title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding, buttonVariant = _a.buttonVariant, img = _a.img, marginImg = _a.marginImg, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? true : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c;
+    var title = _a.title, buttonText = _a.buttonText, descriptionTop = _a.descriptionTop, descriptionBottom = _a.descriptionBottom, handleConfirm = _a.handleConfirm, disabledButton = _a.disabledButton, errorPadding = _a.errorPadding, buttonVariant = _a.buttonVariant, img = _a.img, marginImg = _a.marginImg, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? true : _b, _c = _a.onDismiss, onDismiss = _c === void 0 ? function () { return null; } : _c, loaderButton = _a.loaderButton;
     return (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(Modal$1, { title: title, welcome: true, hideCloseButton: hideCloseButton, onDismiss: onDismiss },
             React__default.createElement(Wrap$7, null,
@@ -8685,7 +8685,7 @@ var PausedErrorModals = function (_a) {
                     React__default.createElement("br", null),
                     React__default.createElement("br", null),
                     descriptionBottom),
-                React__default.createElement(Button$a, { width: "100%", variant: buttonVariant || "green", onClick: handleConfirm, disabled: disabledButton }, buttonText)))));
+                React__default.createElement(Button$a, { width: "100%", variant: buttonVariant || "green", onClick: handleConfirm, disabled: disabledButton, spin: loaderButton }, buttonText)))));
 };
 var templateObject_1$28, templateObject_2$1J, templateObject_3$1m;
 

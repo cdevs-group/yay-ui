@@ -19,6 +19,7 @@ interface Props {
   marginImg?: string;
   hideCloseButton?: boolean;
   onDismiss?: () => void;
+  loaderButton?: boolean;
 }
 
 const Wrap = styled.div`
@@ -54,6 +55,7 @@ const PausedErrorModals: React.FC<Props> = ({
   marginImg,
   hideCloseButton = true,
   onDismiss = () => null,
+  loaderButton,
 }) => (
   <>
     <Modal title={title} welcome hideCloseButton={hideCloseButton} onDismiss={onDismiss}>
@@ -67,7 +69,13 @@ const PausedErrorModals: React.FC<Props> = ({
           <br />
           {descriptionBottom}
         </Description>
-        <Button width="100%" variant={buttonVariant || "green"} onClick={handleConfirm} disabled={disabledButton}>
+        <Button
+          width="100%"
+          variant={buttonVariant || "green"}
+          onClick={handleConfirm}
+          disabled={disabledButton}
+          spin={loaderButton}
+        >
           {buttonText}
         </Button>
       </Wrap>

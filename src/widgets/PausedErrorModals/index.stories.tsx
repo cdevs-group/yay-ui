@@ -21,6 +21,8 @@ export const Welcome: React.FC = () => {
       buttonText="Show history"
       img={GhostsIcon}
       hideCloseButton={false}
+      loaderButton
+      disabledButton
     />
   );
 

@@ -13,6 +13,7 @@ interface Props {
     marginImg?: string;
     hideCloseButton?: boolean;
     onDismiss?: () => void;
+    loaderButton?: boolean;
 }
 declare const PausedErrorModals: React.FC<Props>;
 export default PausedErrorModals;
