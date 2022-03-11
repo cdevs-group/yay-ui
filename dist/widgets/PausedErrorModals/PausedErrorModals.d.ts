@@ -3,14 +3,16 @@ import { Variant } from "../../components/Button/types";
 interface Props {
     title: string;
     buttonText: string;
-    descriptionTop: string;
-    descriptionBottom?: string;
+    descriptionTop: string | React.ReactNode;
+    descriptionBottom?: string | React.ReactNode;
     handleConfirm?: () => void;
     disabledButton?: boolean;
     errorPadding?: boolean;
     buttonVariant?: Variant;
     img?: string;
     marginImg?: string;
+    hideCloseButton?: boolean;
+    onDismiss?: () => void;
 }
 declare const PausedErrorModals: React.FC<Props>;
 export default PausedErrorModals;

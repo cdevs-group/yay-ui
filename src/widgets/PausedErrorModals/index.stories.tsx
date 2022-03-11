@@ -1,5 +1,8 @@
 import React from "react";
 import Flex from "../../components/Box/Flex";
+import { Button } from "../../components/Button";
+import { GhostsIcon } from "../../constants/images";
+import { useModal } from "../Modal";
 import PausedErrorModals from "./PausedErrorModals";
 
 export default {
@@ -8,6 +11,19 @@ export default {
 };
 
 export const Welcome: React.FC = () => {
+  const [onPresentModal] = useModal(
+    <PausedErrorModals
+      title="Paused"
+      descriptionTop={
+        <b>Prediction markets have been paused due to an error. All open positions have been canceled.</b>
+      }
+      descriptionBottom="You can reclaim any funds entered into existing positions via the History tab on this page."
+      buttonText="Show history"
+      img={GhostsIcon}
+      hideCloseButton={false}
+    />
+  );
+
   return (
     <Flex>
       <div style={{ marginRight: 50 }}>
@@ -27,6 +43,9 @@ export const Welcome: React.FC = () => {
           buttonVariant="purple"
           marginImg="20px 0"
         />
+      </div>
+      <div>
+        <Button onClick={onPresentModal}>Open</Button>
       </div>
     </Flex>
   );
