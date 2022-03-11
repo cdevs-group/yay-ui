@@ -31,7 +31,7 @@ const Wrap = styled.div`
 
 const Ghosts = styled.div`
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   & img {
     ${layout}
     ${space}

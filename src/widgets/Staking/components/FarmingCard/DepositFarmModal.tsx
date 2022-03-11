@@ -11,6 +11,7 @@ import { ButtonProps } from "../../../../components/Button/types";
 
 interface IProps {
   onDismiss: () => void;
+  handleMaxButton: () => void;
   texts: {
     title: string;
     balance: string;
@@ -67,6 +68,7 @@ const DepositFarmModal = ({
   yearlyToken,
   stakeUsd,
   stakeToken,
+  handleMaxButton,
 }: IProps) => {
   return (
     <StyledModal>
@@ -94,9 +96,14 @@ const DepositFarmModal = ({
         pairBlock={
           <>
             <PairBlock alignItems="center">
-              <Text marginRight="10px" fontSize="13px">
-                {pair}
-              </Text>
+              <Flex flexDirection="column">
+                <Text marginRight="10px" fontSize="13px">
+                  {pair}
+                </Text>
+                <ButtonMax variant="text" onClick={handleMaxButton}>
+                  max
+                </ButtonMax>
+              </Flex>
               <PairSquare token0={tokenImg0} token1={tokenImg1} />
             </PairBlock>
           </>
@@ -203,6 +210,14 @@ const ButtonClose = styled(Button)`
   padding: 0;
   background: none;
   box-shadow: none;
+`;
+
+const ButtonMax = styled(Button)`
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  height: auto;
+  align-self: flex-start;
 `;
 
 const PairBlock = styled(Flex)`
