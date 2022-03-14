@@ -14414,7 +14414,7 @@ var DepositFarmModal = function (_a) {
         React__default.createElement(BalanceInput, { texts: {
                 commit: "Amount Token",
             }, placeholder: "0.0", customInputHendler: onUserInput, value: inputValue, pairBlock: React__default.createElement(React__default.Fragment, null,
-                React__default.createElement(PairBlock, { alignItems: "center" },
+                React__default.createElement(PairBlock, { paddingLeft: 10, alignItems: "center" },
                     React__default.createElement(Flex, { flexDirection: "column" },
                         React__default.createElement(Text, { marginRight: "10px", fontSize: "13px" }, pair),
                         React__default.createElement(ButtonMax, { variant: "text", onClick: handleMaxButton }, "max")),
