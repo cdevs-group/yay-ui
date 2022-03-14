@@ -86,7 +86,7 @@ const DepositFarmModal = ({
           {balance}
         </Text>
       </Flex>
-      <BalanceInput
+      <BalanceInputStyled
         texts={{
           commit: "Amount Token",
         }}
@@ -233,4 +233,8 @@ const Row = styled.div`
   &:first-child {
     margin-top: 42px;
   }
+`;
+
+const BalanceInputStyled = styled(BalanceInput)`
+  padding-right: 10px;
 `;
