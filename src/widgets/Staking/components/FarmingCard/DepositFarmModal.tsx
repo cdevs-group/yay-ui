@@ -86,7 +86,7 @@ const DepositFarmModal = ({
           {balance}
         </Text>
       </Flex>
-      <BalanceInputStyled
+      <BalanceInput
         texts={{
           commit: "Amount Token",
         }}
@@ -95,7 +95,7 @@ const DepositFarmModal = ({
         value={inputValue}
         pairBlock={
           <>
-            <PairBlock alignItems="center">
+            <PairBlock paddingLeft={10} alignItems="center">
               <Flex flexDirection="column">
                 <Text marginRight="10px" fontSize="13px">
                   {pair}
@@ -233,8 +233,4 @@ const Row = styled.div`
   &:first-child {
     margin-top: 42px;
   }
-`;
-
-const BalanceInputStyled = styled(BalanceInput)`
-  padding-right: 10px;
 `;
